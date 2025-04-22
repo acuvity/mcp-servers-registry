@@ -64,38 +64,6 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 </details>
 
 
-# Quick reference
-
-**Maintained by**:
-  - [Acuvity team](mailto:support@acuvity.ai) for packaging
-  - [ Anthropic, PBC ](https://modelcontextprotocol.io) for application
-
-**Where to get help**:
-  - [The Acuvity MCP Forge repository](https://github.com/acuvity/mcp-servers-registry)
-  - [The Acuvity community Discord](https://discord.gg/BkU7fBkrNk)
-  - [ @modelcontextprotocol/server-sequential-thinking ](https://modelcontextprotocol.io)
-
-**Where to file issues**:
-  - [Github issue tracker](https://github.com/acuvity/mcp-servers-registry/issues)
-  - [ @modelcontextprotocol/server-sequential-thinking ](https://modelcontextprotocol.io)
-
-**Supported architectures**:
-  - `amd64`
-  - `arm64`
-
-**Base image**:
-  - `node:23.11.0-alpine3.21`
-
-**Resources**:
-  - [Charts](https://github.com/acuvity/mcp-servers-registry/mcp-server-sequential-thinking/charts/mcp-server-sequential-thinking)
-  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/mcp-server-sequential-thinking/docker/Dockerfile)
-
-**Current supported tag:**
-  - `latest` -> `0.6.2`
-
-> [!TIP]
-> See [Docker Hub Tags](https://hub.docker.com/r/acuvity/mcp-server-sequential-thinking/tags) section for older tags.
-
 # 📦 How to Use
 
 
@@ -218,6 +186,7 @@ From there your MCP server mcp-server-sequential-thinking will be reachable by d
 
 The deployment will a Kubernetes service with a `healthPort`, that is used for liveness probes and readiness probes. This health port can also be used by the monitoring stack of your choice and exposes metrics under the `/metrics` path.
 
+See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/mcp-server-sequential-thinking/charts/mcp-server-sequential-thinking/README.md) for more details about settings.
 
 </details>
 
@@ -359,10 +328,101 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 
 # 🧠 Server features
 
-> [!NOTE]
-> For detailed list of all features, arguments and SBOM hashes provided by this tool please consult the [readme](https://github.com/acuvity/mcp-servers-registry/mcp-server-sequential-thinking)
-
 ## 🧰 Tools (1)
+<details>
+<summary>sequentialthinking</summary>
+
+**Description**:
+
+```
+A detailed tool for dynamic and reflective problem-solving through thoughts.
+This tool helps analyze problems through a flexible thinking process that can adapt and evolve.
+Each thought can build on, question, or revise previous insights as understanding deepens.
+
+When to use this tool:
+- Breaking down complex problems into steps
+- Planning and design with room for revision
+- Analysis that might need course correction
+- Problems where the full scope might not be clear initially
+- Problems that require a multi-step solution
+- Tasks that need to maintain context over multiple steps
+- Situations where irrelevant information needs to be filtered out
+
+Key features:
+- You can adjust total_thoughts up or down as you progress
+- You can question or revise previous thoughts
+- You can add more thoughts even after reaching what seemed like the end
+- You can express uncertainty and explore alternative approaches
+- Not every thought needs to build linearly - you can branch or backtrack
+- Generates a solution hypothesis
+- Verifies the hypothesis based on the Chain of Thought steps
+- Repeats the process until satisfied
+- Provides a correct answer
+
+Parameters explained:
+- thought: Your current thinking step, which can include:
+* Regular analytical steps
+* Revisions of previous thoughts
+* Questions about previous decisions
+* Realizations about needing more analysis
+* Changes in approach
+* Hypothesis generation
+* Hypothesis verification
+- next_thought_needed: True if you need more thinking, even if at what seemed like the end
+- thought_number: Current number in sequence (can go beyond initial total if needed)
+- total_thoughts: Current estimate of thoughts needed (can be adjusted up/down)
+- is_revision: A boolean indicating if this thought revises previous thinking
+- revises_thought: If is_revision is true, which thought number is being reconsidered
+- branch_from_thought: If branching, which thought number is the branching point
+- branch_id: Identifier for the current branch (if any)
+- needs_more_thoughts: If reaching end but realizing more thoughts needed
+
+You should:
+1. Start with an initial estimate of needed thoughts, but be ready to adjust
+2. Feel free to question or revise previous thoughts
+3. Don't hesitate to add more thoughts if needed, even at the "end"
+4. Express uncertainty when present
+5. Mark thoughts that revise previous thinking or branch into new paths
+6. Ignore information that is irrelevant to the current step
+7. Generate a solution hypothesis when appropriate
+8. Verify the hypothesis based on the Chain of Thought steps
+9. Repeat the process until satisfied with the solution
+10. Provide a single, ideally correct answer as the final output
+11. Only set next_thought_needed to false when truly done and a satisfactory answer is reached
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| branchFromThought | integer | Branching point thought number | No
+| branchId | string | Branch identifier | No
+| isRevision | boolean | Whether this revises previous thinking | No
+| needsMoreThoughts | boolean | If more thoughts are needed | No
+| nextThoughtNeeded | boolean | Whether another thought step is needed | Yes
+| revisesThought | integer | Which thought is being reconsidered | No
+| thought | string | Your current thinking step | Yes
+| thoughtNumber | integer | Current thought number | Yes
+| totalThoughts | integer | Estimated total thoughts needed | Yes
+</details>
+
+
+# 🔐 Resource SBOM
+
+Minibridge will perform hash checks for the following resources. The hashes are given as references and are the sha256 sum of the description.
+
+| Resource | Name | Parameter | Hash |
+|-----------|------|------|------|
+| tools | sequentialthinking | description | 638bac0560badec1e36742fbcf0ded31308fd3a06f05da4a432d43d473c52bed |
+| tools | sequentialthinking | branchFromThought | 6d396d89d8aea6921f5ae4b93998dc6e4630cced82a7fef5aedc8be15ed268dd |
+| tools | sequentialthinking | branchId | 3af8746d0b1d40ca8208d28cb2bdb116506456d937196ff8c3438f2321386536 |
+| tools | sequentialthinking | isRevision | 48760e1f72ade2d06cd8ece8ce099e9385349771f163db3600f7e17d393ff1ad |
+| tools | sequentialthinking | needsMoreThoughts | deb7824277425aea7785a98995eb0b43154ddb93ea2b0245b11e53d58e143e65 |
+| tools | sequentialthinking | nextThoughtNeeded | cea36b8c3492ab029f329050cde7d604200f3afd54f1a638cb6dd6a15c88a1f9 |
+| tools | sequentialthinking | revisesThought | 341da909d262df3e42dd0876feded500421f03c380778522c4ea840f566e3a3b |
+| tools | sequentialthinking | thought | 663e7dc28e5e2e6fee16a0b560a8023b178f35ca3e2e24fbed1a0847232e5786 |
+| tools | sequentialthinking | thoughtNumber | be1ad5c36f2e119ad95831a6e6855e3111fd3a9d4f00826ae27d02eb94fee0d7 |
+| tools | sequentialthinking | totalThoughts | 9cb82eb4f2cd2c5836dfde2480f5538ecd30261801002a1487d2e3c88b2ff4ce |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

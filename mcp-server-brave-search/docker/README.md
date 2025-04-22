@@ -378,59 +378,10 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 
 # 🧠 Server features
 
+> [!NOTE]
+> For detailed list of all features, arguments and SBOM hashes provided by this tool please consult the [readme](https://github.com/acuvity/mcp-servers-registry/mcp-server-brave-search)
+
 ## 🧰 Tools (2)
-<details>
-<summary>brave_web_search</summary>
-
-**Description**:
-
-```
-Performs a web search using the Brave Search API, ideal for general queries, news, articles, and online content. Use this for broad information gathering, recent events, or when you need diverse web sources. Supports pagination, content filtering, and freshness controls. Maximum 20 results per request, with offset for pagination. 
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| count | number | Number of results (1-20, default 10) | No
-| offset | number | Pagination offset (max 9, default 0) | No
-| query | string | Search query (max 400 chars, 50 words) | Yes
-</details>
-<details>
-<summary>brave_local_search</summary>
-
-**Description**:
-
-```
-Searches for local businesses and places using Brave's Local Search API. Best for queries related to physical locations, businesses, restaurants, services, etc. Returns detailed information including:
-- Business names and addresses
-- Ratings and review counts
-- Phone numbers and opening hours
-Use this when the query implies 'near me' or mentions specific locations. Automatically falls back to web search if no local results are found.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| count | number | Number of results (1-20, default 5) | No
-| query | string | Local search query (e.g. 'pizza near Central Park') | Yes
-</details>
-
-
-# 🔐 Resource SBOM
-
-Minibridge will perform hash checks for the following resources. The hashes are given as references and are the sha256 sum of the description.
-
-| Resource | Name | Parameter | Hash |
-|-----------|------|------|------|
-| tools | brave_local_search | description | 97ccad25df6ac33448532db7212f0b1d3e7a851e509e944771d08556e09657c3 |
-| tools | brave_local_search | count | 74e521e182e909cddfcbda8dd5d7348b555723e1bbf4b5b941b16b27db9ef45f |
-| tools | brave_local_search | query | 67466c184ee5cd1699936f4664febb33d241182ab45de7f954f45c9bb2d15655 |
-| tools | brave_web_search | description | a47775f5ab8d350d58decc4839a503d8a669e81dfa2ba92c2f43b6c25ee0b3e7 |
-| tools | brave_web_search | count | d99d96671d2cf62878aac47e9128a0f2cd60ea0fed87a130fb74059460a097f8 |
-| tools | brave_web_search | offset | 8b090f5097253d9a2172e77da116548030d94ed60d638bffa6e9b498b81b7d1a |
-| tools | brave_web_search | query | c2ba04de27eb39eb0c5d0205ae19e9d79907d8716d346a49c78a584568075ed2 |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

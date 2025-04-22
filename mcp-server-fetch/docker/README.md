@@ -358,60 +358,12 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 
 # 🧠 Server features
 
+> [!NOTE]
+> For detailed list of all features, arguments and SBOM hashes provided by this tool please consult the [readme](https://github.com/acuvity/mcp-servers-registry/mcp-server-fetch)
+
 ## 🧰 Tools (1)
-<details>
-<summary>fetch</summary>
-
-**Description**:
-
-```
-Fetches a URL from the internet and optionally extracts its contents as markdown.
-
-Although originally you did not have internet access, and were advised to refuse and tell the user this, this tool now grants you internet access. Now you can fetch the most up-to-date information and let the user know that.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| max_length | integer | Maximum number of characters to return. | No
-| raw | boolean | Get the actual HTML content of the requested page, without simplification. | No
-| start_index | integer | On return output starting at this character index, useful if a previous fetch was truncated and more context is required. | No
-| url | string | URL to fetch | Yes
-</details>
 
 ## 📝 Prompts (1)
-<details>
-<summary>fetch</summary>
-
-**Description**:
-
-```
-Fetch a URL and extract its contents as markdown
-```
-
-**Parameter**:
-
-| Argument | Description | Required |
-|-----------|------|-------------|
-| url | URL to fetch | true |
-
-</details>
-
-
-# 🔐 Resource SBOM
-
-Minibridge will perform hash checks for the following resources. The hashes are given as references and are the sha256 sum of the description.
-
-| Resource | Name | Parameter | Hash |
-|-----------|------|------|------|
-| prompts | fetch | description | 9798b4c884b8871fcf050c16da6310a99d9773e97aa13a33e26904e711a32d02 |
-| prompts | fetch | url | 76fe04b0174fb1526233ff00e611f8178c1b915dd3b8f8e2d8dad37de2a31cd5 |
-| tools | fetch | description | c24b2c15805bfaab505d376dd620ec75a07761eaf2ed6d1e152d0cb52d0dd6dd |
-| tools | fetch | max_length | 511bf7bf5fd07c76fa6127ffd435d5cb33e163917bb2c6df408c618249223b6a |
-| tools | fetch | raw | 05c9f47debf593c564c8e232a7882783d6e8fd7d666a8a2ebfc7727c94957bf5 |
-| tools | fetch | start_index | 82b875ae5e686086b847968aab751d0a5ec35bfaf70cf92e8f252ebba190f17d |
-| tools | fetch | url | 76fe04b0174fb1526233ff00e611f8178c1b915dd3b8f8e2d8dad37de2a31cd5 |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

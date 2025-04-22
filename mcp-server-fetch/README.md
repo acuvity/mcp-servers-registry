@@ -15,22 +15,22 @@
 </p>
 
 
-# What is mcp-server-filesystem?
+# What is mcp-server-fetch?
 
-[![Helm](https://img.shields.io/badge/v1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-filesystem/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/2025.3.28?logo=docker&logoColor=fff&label=2025.3.28)](https://hub.docker.com/r/acuvity/mcp-server-filesystem/tags/2025.3.28)
-[![PyPI](https://img.shields.io/badge/2025.3.28-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-filesystem)](https://modelcontextprotocol.io)
+[![Helm](https://img.shields.io/badge/v1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-fetch/tags/)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/2025.4.7?logo=docker&logoColor=fff&label=2025.4.7)](https://hub.docker.com/r/acuvity/mcp-server-fetch/tags/2025.4.7)
+[![PyPI](https://img.shields.io/badge/2025.4.7-3775A9?logo=pypi&logoColor=fff&label=mcp-server-fetch)](https://pypi.org/project/mcp-server-fetch/)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 
-**Description:** MCP server for filesystem access
+**Description:** A Model Context Protocol server providing tools to fetch and convert web content for usage by LLMs
 
 > [!NOTE]
-> `@modelcontextprotocol/server-filesystem` has been repackaged by Acuvity from its original [sources](https://modelcontextprotocol.io).
+> `mcp-server-fetch` has been repackaged by Acuvity from its original [sources](https://pypi.org/project/mcp-server-fetch/).
 
 # Why We Built This
 
 At [Acuvity](https://acuvity.ai), security is central to our mission—especially for critical systems like MCP servers and integration in agentic systems.
-To address this need, we've created a secure and robust Docker image designed to ensure @modelcontextprotocol/server-filesystem run reliably and safely.
+To address this need, we've created a secure and robust Docker image designed to ensure mcp-server-fetch run reliably and safely.
 
 ## 🔐 Key Security Features
 
@@ -64,47 +64,13 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 </details>
 
 
-# Quick reference
-
-**Maintained by**:
-  - [Acuvity team](mailto:support@acuvity.ai) for packaging
-  - [ Anthropic, PBC ](https://modelcontextprotocol.io) for application
-
-**Where to get help**:
-  - [The Acuvity MCP Forge repository](https://github.com/acuvity/mcp-servers-registry)
-  - [The Acuvity community Discord](https://discord.gg/BkU7fBkrNk)
-  - [ @modelcontextprotocol/server-filesystem ](https://modelcontextprotocol.io)
-
-**Where to file issues**:
-  - [Github issue tracker](https://github.com/acuvity/mcp-servers-registry/issues)
-  - [ @modelcontextprotocol/server-filesystem ](https://modelcontextprotocol.io)
-
-**Supported architectures**:
-  - `amd64`
-  - `arm64`
-
-**Base image**:
-  - `node:23.11.0-alpine3.21`
-
-**Resources**:
-  - [Charts](https://github.com/acuvity/mcp-servers-registry/mcp-server-filesystem/charts/mcp-server-filesystem)
-  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/mcp-server-filesystem/docker/Dockerfile)
-
-**Current supported tag:**
-  - `latest` -> `2025.3.28`
-
-> [!TIP]
-> See [Docker Hub Tags](https://hub.docker.com/r/acuvity/mcp-server-filesystem/tags) section for older tags.
-
 # 📦 How to Use
 
 
 > [!NOTE]
-> Given mcp-server-filesystem scope of operation the intended usage is to run natively on the targeted machine to access local resources.
+> Given mcp-server-fetch scope of operation it can be hosted anywhere.
 
 ## 🐳 With Docker
-**Required volumes or mountPaths:**
-  - data to be mounted on `/data`
 
 
 <details>
@@ -113,7 +79,7 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -v path:/data docker.io/acuvity/mcp-server-filesystem:2025.3.28`
+- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-fetch:2025.4.7`
 
 </details>
 
@@ -123,7 +89,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -i --rm --read-only -v path:/data docker.io/acuvity/mcp-server-filesystem:2025.3.28
+docker run -i --rm --read-only docker.io/acuvity/mcp-server-fetch:2025.4.7
 ```
 
 Add `-p <localport>:8000` to expose the port.
@@ -133,7 +99,7 @@ Then on your application/client, you can configure to use something like:
 ```json
 {
   "mcpServers": {
-    "acuvity-mcp-server-filesystem": {
+    "acuvity-mcp-server-fetch": {
       "url": "http://localhost:<localport>/sse",
     }
   }
@@ -170,7 +136,7 @@ Example for Claude Desktop:
 ```json
 {
   "mcpServers": {
-    "acuvity-mcp-server-filesystem": {
+    "acuvity-mcp-server-fetch": {
       "command": "minibridge",
       "args": ["frontend", "--backend", "wss://<remote-url>:8000/ws", "--tls-client-backend-ca", "/path/to/ca/that/signed/the/server-cert.pem/ca.pem", "--tls-client-cert", "/path/to/client-cert.pem", "--tls-client-key", "/path/to/client-key.pem"]
     }
@@ -193,32 +159,33 @@ Don't be shy to ask question either.
 
 ### How to install
 
-Pick a version from the [OCI registry](https://hub.docker.com/r/acuvity/mcp-server-filesystem/tags) looking for the type `helm`
+Pick a version from the [OCI registry](https://hub.docker.com/r/acuvity/mcp-server-fetch/tags) looking for the type `helm`
 
 You can inspect the chart:
 
 ```console
-helm show chart oci://docker.io/acuvity/mcp-server-filesystem --version <version>
+helm show chart oci://docker.io/acuvity/mcp-server-fetch --version <version>
 ````
 
 You can inspect the values that you can configure:
 
 ```console
-helm show values oci://docker.io/acuvity/mcp-server-filesystem --version <version>
+helm show values oci://docker.io/acuvity/mcp-server-fetch --version <version>
 ````
 
 Install with helm
 
 ```console
-helm install mcp-server-filesystem oci://docker.io/acuvity/mcp-server-filesystem --version <version>
+helm install mcp-server-fetch oci://docker.io/acuvity/mcp-server-fetch --version <version>
 ```
 
-From there your MCP server mcp-server-filesystem will be reachable by default through `http/sse` from inside the cluster using the Kubernetes Service `mcp-server-filesystem` on port `8000` by default. You can change that by looking at the `service` section of the `values.yaml` file.
+From there your MCP server mcp-server-fetch will be reachable by default through `http/sse` from inside the cluster using the Kubernetes Service `mcp-server-fetch` on port `8000` by default. You can change that by looking at the `service` section of the `values.yaml` file.
 
 ### How to Monitor
 
 The deployment will a Kubernetes service with a `healthPort`, that is used for liveness probes and readiness probes. This health port can also be used by the monitoring stack of your choice and exposes metrics under the `/metrics` path.
 
+See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/mcp-server-fetch/charts/mcp-server-fetch/README.md) for more details about settings.
 
 </details>
 
@@ -239,9 +206,9 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
 {
   "mcp": {
     "servers": {
-      "acuvity-mcp-server-filesystem": {
+      "acuvity-mcp-server-fetch": {
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-v","path:/data","docker.io/acuvity/mcp-server-filesystem:2025.3.28"]
+        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-fetch:2025.4.7"]
       }
     }
   }
@@ -255,9 +222,9 @@ In your workspace createa file called `.vscode/mcp.json` and add the following s
 ```json
 {
   "servers": {
-    "acuvity-mcp-server-filesystem": {
+    "acuvity-mcp-server-fetch": {
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-v","path:/data","docker.io/acuvity/mcp-server-filesystem:2025.3.28"]
+      "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-fetch:2025.4.7"]
     }
   }
 }
@@ -275,9 +242,9 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
 ```json
 {
   "mcpServers": {
-    "acuvity-mcp-server-filesystem": {
+    "acuvity-mcp-server-fetch": {
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-v","path:/data","docker.io/acuvity/mcp-server-filesystem:2025.3.28"]
+      "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-fetch:2025.4.7"]
     }
   }
 }
@@ -297,9 +264,9 @@ Add the following JSON block to your mcp configuration file:
 ```json
 {
   "mcpServers": {
-    "acuvity-mcp-server-filesystem": {
+    "acuvity-mcp-server-fetch": {
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-v","path:/data","docker.io/acuvity/mcp-server-filesystem:2025.3.28"]
+      "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-fetch:2025.4.7"]
     }
   }
 }
@@ -317,9 +284,9 @@ In the `claude_desktop_config.json` configuration file add the following section
 ```json
 {
   "mcpServers": {
-    "acuvity-mcp-server-filesystem": {
+    "acuvity-mcp-server-fetch": {
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-v","path:/data","docker.io/acuvity/mcp-server-filesystem:2025.3.28"]
+      "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-fetch:2025.4.7"]
     }
   }
 }
@@ -337,7 +304,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 async with MCPServerStdio(
     params={
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-v","path:/data","docker.io/acuvity/mcp-server-filesystem:2025.3.28"]
+        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-fetch:2025.4.7"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -360,10 +327,60 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 
 # 🧠 Server features
 
-> [!NOTE]
-> For detailed list of all features, arguments and SBOM hashes provided by this tool please consult the [readme](https://github.com/acuvity/mcp-servers-registry/mcp-server-filesystem)
+## 🧰 Tools (1)
+<details>
+<summary>fetch</summary>
 
-## 🧰 Tools (11)
+**Description**:
+
+```
+Fetches a URL from the internet and optionally extracts its contents as markdown.
+
+Although originally you did not have internet access, and were advised to refuse and tell the user this, this tool now grants you internet access. Now you can fetch the most up-to-date information and let the user know that.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| max_length | integer | Maximum number of characters to return. | No
+| raw | boolean | Get the actual HTML content of the requested page, without simplification. | No
+| start_index | integer | On return output starting at this character index, useful if a previous fetch was truncated and more context is required. | No
+| url | string | URL to fetch | Yes
+</details>
+
+## 📝 Prompts (1)
+<details>
+<summary>fetch</summary>
+
+**Description**:
+
+```
+Fetch a URL and extract its contents as markdown
+```
+
+**Parameter**:
+
+| Argument | Description | Required |
+|-----------|------|-------------|
+| url | URL to fetch | true |
+
+</details>
+
+
+# 🔐 Resource SBOM
+
+Minibridge will perform hash checks for the following resources. The hashes are given as references and are the sha256 sum of the description.
+
+| Resource | Name | Parameter | Hash |
+|-----------|------|------|------|
+| prompts | fetch | description | 9798b4c884b8871fcf050c16da6310a99d9773e97aa13a33e26904e711a32d02 |
+| prompts | fetch | url | 76fe04b0174fb1526233ff00e611f8178c1b915dd3b8f8e2d8dad37de2a31cd5 |
+| tools | fetch | description | c24b2c15805bfaab505d376dd620ec75a07761eaf2ed6d1e152d0cb52d0dd6dd |
+| tools | fetch | max_length | 511bf7bf5fd07c76fa6127ffd435d5cb33e163917bb2c6df408c618249223b6a |
+| tools | fetch | raw | 05c9f47debf593c564c8e232a7882783d6e8fd7d666a8a2ebfc7727c94957bf5 |
+| tools | fetch | start_index | 82b875ae5e686086b847968aab751d0a5ec35bfaf70cf92e8f252ebba190f17d |
+| tools | fetch | url | 76fe04b0174fb1526233ff00e611f8178c1b915dd3b8f8e2d8dad37de2a31cd5 |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

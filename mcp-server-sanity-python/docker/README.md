@@ -359,53 +359,10 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 
 # 🧠 Server features
 
+> [!NOTE]
+> For detailed list of all features, arguments and SBOM hashes provided by this tool please consult the [readme](https://github.com/acuvity/mcp-servers-registry/mcp-server-sanity-python)
+
 ## 🧰 Tools (2)
-<details>
-<summary>get_current_time</summary>
-
-**Description**:
-
-```
-Get current time in a specific timezones
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| timezone | string | IANA timezone name (e.g., 'America/New_York', 'Europe/London'). Use 'UTC' as local timezone if no timezone provided by the user. | Yes
-</details>
-<details>
-<summary>convert_time</summary>
-
-**Description**:
-
-```
-Convert time between timezones
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| source_timezone | string | Source IANA timezone name (e.g., 'America/New_York', 'Europe/London'). Use 'UTC' as local timezone if no source timezone provided by the user. | Yes
-| target_timezone | string | Target IANA timezone name (e.g., 'Asia/Tokyo', 'America/San_Francisco'). Use 'UTC' as local timezone if no target timezone provided by the user. | Yes
-| time | string | Time to convert in 24-hour format (HH:MM) | Yes
-</details>
-
-
-# 🔐 Resource SBOM
-
-Minibridge will perform hash checks for the following resources. The hashes are given as references and are the sha256 sum of the description.
-
-| Resource | Name | Parameter | Hash |
-|-----------|------|------|------|
-| tools | convert_time | description | 6e9686a4f2f1f637bb2763db5cf76e7215ea4e3fc35880b2459d3f0107729279 |
-| tools | convert_time | source_timezone | aec643a01f7661984a08a746ea7826d9162c769c44a39582111f649830a1bba0 |
-| tools | convert_time | target_timezone | 2cf4c9c6efe45f3077879d08fec4967ba8b92d70ec5610b1562c9c609236cc8a |
-| tools | convert_time | time | 8d5b709a3f8f71bd7b8bc15638f12f4b06c59e9302427068c85f8091c41902c2 |
-| tools | get_current_time | description | a40a5ced49a8e71bad8015a2c6faa29cdbc232e8de3ae7dd51e84c0d9fe356fd |
-| tools | get_current_time | timezone | 7d9dc790a00a025d6e3119f96a6bfe8df24b226bbb68165a682c20ab2d8e6f5f |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

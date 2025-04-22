@@ -64,38 +64,6 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 </details>
 
 
-# Quick reference
-
-**Maintained by**:
-  - [Acuvity team](mailto:support@acuvity.ai) for packaging
-  - [ Anthropic, PBC ](https://modelcontextprotocol.io) for application
-
-**Where to get help**:
-  - [The Acuvity MCP Forge repository](https://github.com/acuvity/mcp-servers-registry)
-  - [The Acuvity community Discord](https://discord.gg/BkU7fBkrNk)
-  - [ @modelcontextprotocol/server-google-maps ](https://modelcontextprotocol.io)
-
-**Where to file issues**:
-  - [Github issue tracker](https://github.com/acuvity/mcp-servers-registry/issues)
-  - [ @modelcontextprotocol/server-google-maps ](https://modelcontextprotocol.io)
-
-**Supported architectures**:
-  - `amd64`
-  - `arm64`
-
-**Base image**:
-  - `node:23.11.0-alpine3.21`
-
-**Resources**:
-  - [Charts](https://github.com/acuvity/mcp-servers-registry/mcp-server-google-maps/charts/mcp-server-google-maps)
-  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/mcp-server-google-maps/docker/Dockerfile)
-
-**Current supported tag:**
-  - `latest` -> `0.6.2`
-
-> [!TIP]
-> See [Docker Hub Tags](https://hub.docker.com/r/acuvity/mcp-server-google-maps/tags) section for older tags.
-
 # 📦 How to Use
 
 
@@ -227,6 +195,7 @@ From there your MCP server mcp-server-google-maps will be reachable by default t
 
 The deployment will a Kubernetes service with a `healthPort`, that is used for liveness probes and readiness probes. This health port can also be used by the monitoring stack of your choice and exposes metrics under the `/metrics` path.
 
+See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/mcp-server-google-maps/charts/mcp-server-google-maps/README.md) for more details about settings.
 
 </details>
 
@@ -379,10 +348,148 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 
 # 🧠 Server features
 
-> [!NOTE]
-> For detailed list of all features, arguments and SBOM hashes provided by this tool please consult the [readme](https://github.com/acuvity/mcp-servers-registry/mcp-server-google-maps)
-
 ## 🧰 Tools (7)
+<details>
+<summary>maps_geocode</summary>
+
+**Description**:
+
+```
+Convert an address into geographic coordinates
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| address | string | The address to geocode | Yes
+</details>
+<details>
+<summary>maps_reverse_geocode</summary>
+
+**Description**:
+
+```
+Convert coordinates into an address
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| latitude | number | Latitude coordinate | Yes
+| longitude | number | Longitude coordinate | Yes
+</details>
+<details>
+<summary>maps_search_places</summary>
+
+**Description**:
+
+```
+Search for places using Google Places API
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| location | object | Optional center point for the search | No
+| query | string | Search query | Yes
+| radius | number | Search radius in meters (max 50000) | No
+</details>
+<details>
+<summary>maps_place_details</summary>
+
+**Description**:
+
+```
+Get detailed information about a specific place
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| place_id | string | The place ID to get details for | Yes
+</details>
+<details>
+<summary>maps_distance_matrix</summary>
+
+**Description**:
+
+```
+Calculate travel distance and time for multiple origins and destinations
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| destinations | array | Array of destination addresses or coordinates | Yes
+| mode | string | Travel mode (driving, walking, bicycling, transit) | No
+| origins | array | Array of origin addresses or coordinates | Yes
+</details>
+<details>
+<summary>maps_elevation</summary>
+
+**Description**:
+
+```
+Get elevation data for locations on the earth
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| locations | array | Array of locations to get elevation for | Yes
+</details>
+<details>
+<summary>maps_directions</summary>
+
+**Description**:
+
+```
+Get directions between two points
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| destination | string | Ending point address or coordinates | Yes
+| mode | string | Travel mode (driving, walking, bicycling, transit) | No
+| origin | string | Starting point address or coordinates | Yes
+</details>
+
+
+# 🔐 Resource SBOM
+
+Minibridge will perform hash checks for the following resources. The hashes are given as references and are the sha256 sum of the description.
+
+| Resource | Name | Parameter | Hash |
+|-----------|------|------|------|
+| tools | maps_directions | description | be6edc95fb62438faec05e86835dc456919392d8cf18526c951c7a08a4313958 |
+| tools | maps_directions | destination | 2df250de879f7966a9a78785f234cd66b5e147e87cbe9235d5c7ecbef8114710 |
+| tools | maps_directions | mode | fd11df1d8e93e808e44de93385fbb9ac0c42538e437d75eda08274e8f3656043 |
+| tools | maps_directions | origin | 3b406abd35291a57c8bc98bfafc14dd5d385826e32a0b18d60e73e12c339867b |
+| tools | maps_distance_matrix | description | e7862ed22fd55bcb4f38ff942ab0e152ed48f7586dd721e853a658560ce3f4e7 |
+| tools | maps_distance_matrix | destinations | 603580b8ba0838fa89d01745f70e3ca800f38d37edfc34345e7d924027512541 |
+| tools | maps_distance_matrix | mode | fd11df1d8e93e808e44de93385fbb9ac0c42538e437d75eda08274e8f3656043 |
+| tools | maps_distance_matrix | origins | 6e86b75f528b3da9d842ea051020b59ca37b9cbdaa15159304c29211064f087f |
+| tools | maps_elevation | description | 81010e93681dd9f4bb9bdd2b85b6f39f81d21e646380ddf4d590470a0ee2a2a5 |
+| tools | maps_elevation | locations | 69af1eac3164bb92e5f241a90143aa9211a0b3993a465dd7f852aa0714d358da |
+| tools | maps_geocode | description | a2385eab251b9571f1077b9635182b2de477beb3cdcc6e55984676e2f15b190a |
+| tools | maps_geocode | address | 939c8b85e25ecceaeff4e531c5bc982d4be3d0d55ec91a2f17112bce002b1d57 |
+| tools | maps_place_details | description | aa55b1ece847bf2602c7105930e3b77aeeff6001ab9b0228948124d493276746 |
+| tools | maps_place_details | place_id | a31d452f480641a67d14ebb9211a132acae6e656a87dee7619a6ab95357140ef |
+| tools | maps_reverse_geocode | description | 54a9f75c9bdf1a133afa572717edfe37c98fe7320d2a8cf716523347bd5fe84d |
+| tools | maps_reverse_geocode | latitude | 104f84a6e60f6931e5dae557844d219c4399aac6977371a1fe478e03225ac37a |
+| tools | maps_reverse_geocode | longitude | d1ee91527f594ffba2e15f4474146840c27810eb1b7b3637df3c35da6614fe88 |
+| tools | maps_search_places | description | fe1f5391f114826110e251991e5b7cee4b0140d408eceb7601e6f70d3baf596b |
+| tools | maps_search_places | location | 078c6550e737ec47a7b41ca7625466380af519f70e3b14f3f5ea97097a8e9bd6 |
+| tools | maps_search_places | query | 9eef05233ecfc1fbcfe756aa79bd497fa20e58144012561b562b8856040f5100 |
+| tools | maps_search_places | radius | b990286c4cbfb7fff848cf8a4a0588fd0ae823356374dada25f39106e8cee86e |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

@@ -384,36 +384,10 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 
 # 🧠 Server features
 
+> [!NOTE]
+> For detailed list of all features, arguments and SBOM hashes provided by this tool please consult the [readme](https://github.com/acuvity/mcp-servers-registry/mcp-server-aws-kb-retrieval)
+
 ## 🧰 Tools (1)
-<details>
-<summary>retrieve_from_aws_kb</summary>
-
-**Description**:
-
-```
-Performs retrieval from the AWS Knowledge Base using the provided query and Knowledge Base ID.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| knowledgeBaseId | string | The ID of the AWS Knowledge Base | Yes
-| n | number | Number of results to retrieve | No
-| query | string | The query to perform retrieval on | Yes
-</details>
-
-
-# 🔐 Resource SBOM
-
-Minibridge will perform hash checks for the following resources. The hashes are given as references and are the sha256 sum of the description.
-
-| Resource | Name | Parameter | Hash |
-|-----------|------|------|------|
-| tools | retrieve_from_aws_kb | description | 88ffc5560bf074b0c33c0c643665d0ea26bf1c25713f7b60cdac42c74710587a |
-| tools | retrieve_from_aws_kb | knowledgeBaseId | d6726a4de44a9f1de6f457c221f141e48b50f1b81bf80d193824d3b0b0ed8232 |
-| tools | retrieve_from_aws_kb | n | 09f1972c1a99112a69bce71d462cd0665e51316c57c9f56cf6574124ffe16f87 |
-| tools | retrieve_from_aws_kb | query | bfd6dedc73a4801e231ca5f4c7f0ec411bbe9a4682fe7408e7bb4acc6ae7ada7 |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).
