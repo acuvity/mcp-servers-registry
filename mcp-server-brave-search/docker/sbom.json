@@ -1,0 +1,37 @@
+{
+  "tools": [
+    {
+      "name": "brave_local_search",
+      "hash": "97ccad25df6ac33448532db7212f0b1d3e7a851e509e944771d08556e09657c3",
+      "params": [
+        {
+          "name": "count",
+          "hash": "74e521e182e909cddfcbda8dd5d7348b555723e1bbf4b5b941b16b27db9ef45f"
+        },
+        {
+          "name": "query",
+          "hash": "67466c184ee5cd1699936f4664febb33d241182ab45de7f954f45c9bb2d15655"
+        }
+      ]
+    },
+    {
+      "name": "brave_web_search",
+      "hash": "a47775f5ab8d350d58decc4839a503d8a669e81dfa2ba92c2f43b6c25ee0b3e7",
+      "params": [
+        {
+          "name": "count",
+          "hash": "d99d96671d2cf62878aac47e9128a0f2cd60ea0fed87a130fb74059460a097f8"
+        },
+        {
+          "name": "offset",
+          "hash": "8b090f5097253d9a2172e77da116548030d94ed60d638bffa6e9b498b81b7d1a"
+        },
+        {
+          "name": "query",
+          "hash": "c2ba04de27eb39eb0c5d0205ae19e9d79907d8716d346a49c78a584568075ed2"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

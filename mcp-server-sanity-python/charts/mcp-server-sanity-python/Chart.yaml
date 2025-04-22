@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-sanity-python"
+description: A Helm chart for A Model Context Protocol server providing tools for time queries and timezone conversions for LLMs
+home: https://pypi.org/project/mcp-server-time/
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://pypi.org/project/mcp-server-time/
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: v1.0.0
+appVersion: 0.6.2
+keywords:
+  - mcp-server-sanity-python
+  - mcp-server
+  - standalone
+  - mcp

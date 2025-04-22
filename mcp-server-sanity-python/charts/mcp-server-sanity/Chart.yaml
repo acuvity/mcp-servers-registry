@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-sanity"
+description: A Helm chart for MCP server that exercises all the features of the MCP protocol
+home: https://modelcontextprotocol.io
+sources:
+  - https://source.acuvity.ai
+  - https://modelcontextprotocol.io
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: v1.0.0
+appVersion: 2025.4.8
+keywords:
+  - mcp-server-sanity
+  - mcp-server
+  - local
+  - mcp

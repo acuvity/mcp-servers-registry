@@ -1,0 +1,18 @@
+apiVersion: v2
+name: "mcp-server-basic-memory"
+description: A Helm chart for Local-first knowledge management combining Zettelkasten with knowledge graphs
+home: https://pypi.org/project/basic-memory/
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://pypi.org/project/basic-memory/
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: v1.0.0
+appVersion: 0.12.3
+keywords:
+  - mcp-server-basic-memory
+  - mcp-server
+  - standalone

@@ -1,0 +1,65 @@
+{
+  "tools": [
+    {
+      "name": "add_observations",
+      "hash": "f66d1982a935c25deae16641b447a894687858da5f4e56a4ffd5eded9f15287b"
+    },
+    {
+      "name": "create_entities",
+      "hash": "5d2cd1d3e5d4ea6fd952e9568d41dd54e18c1c5a611daffe1c0399ebc57444e1"
+    },
+    {
+      "name": "create_relations",
+      "hash": "eeb160c5595ea67cee737ea4d34dcf3d22b3d316e107d1edcf02d1dc71727f37"
+    },
+    {
+      "name": "delete_entities",
+      "hash": "4e8ad2271cd9cfd21a213070f051534e2fb5c6723d7f5d2eed86c9a2f41b05c2",
+      "params": [
+        {
+          "name": "entityNames",
+          "hash": "a927153ab95010896fc74cf8f26a9c7bc3e840e7aaf9fc7f15866c3525873ab2"
+        }
+      ]
+    },
+    {
+      "name": "delete_observations",
+      "hash": "bae5684867bc99aa4c62c3cb29dccb386983e7575a910a8be7d13ea023aafd80"
+    },
+    {
+      "name": "delete_relations",
+      "hash": "1b07436348ac9732db58c69ed4db4dbebed012fd263851e1ee4e35e86fe0968e",
+      "params": [
+        {
+          "name": "relations",
+          "hash": "16642cf152c4f981edf60e0064e4fa10410158457a438a63b60c21c1c4beb5c9"
+        }
+      ]
+    },
+    {
+      "name": "open_nodes",
+      "hash": "0a799b2e13cab0744fe6b8dd3dbacf7e04753376fdf0adb9d9b6821ad853eded",
+      "params": [
+        {
+          "name": "names",
+          "hash": "7275b2ac1cb2f632b23e78c872c589a8489cda3a5306f3b399dce23ca813e3ca"
+        }
+      ]
+    },
+    {
+      "name": "read_graph",
+      "hash": "1dfb0bb4dcfe39f92a8a0464153263a3d836524a3c8fd9ff3f73be5ecb2a098c"
+    },
+    {
+      "name": "search_nodes",
+      "hash": "cdd54c52fcef34587fc903df13b58b02371a9fb2390cab93d0eeabd229c479f3",
+      "params": [
+        {
+          "name": "query",
+          "hash": "2be985b738ac91d8f1e6039cc46c99b96b49b912c19eefccf337c0fc89173cff"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

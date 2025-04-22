@@ -1,0 +1,55 @@
+{
+  "tools": [
+    {
+      "name": "create_directory",
+      "hash": "7e243b9bddbea4a901f0807ae14535972587b896eecde076b03dd4fbd3a9b5bd"
+    },
+    {
+      "name": "directory_tree",
+      "hash": "a51dfb91799e4e8ff62aad67e4b3665360cc62a328efe43a541e66e0fb78ff01"
+    },
+    {
+      "name": "edit_file",
+      "hash": "1349a91ad62c6a43363a6af7995e3f29f44bf5e9c5310dadd8c278aec75e3969",
+      "params": [
+        {
+          "name": "dryRun",
+          "hash": "3dd869be68e1ef354dda1870b0ed00f8ae2c79ba1604a672b42b054fca958bfc"
+        }
+      ]
+    },
+    {
+      "name": "get_file_info",
+      "hash": "e4cae83266b5e75a423ffb34bd21b66c22d0b9d6b673fb4cc45ea02e7298f7f3"
+    },
+    {
+      "name": "list_allowed_directories",
+      "hash": "6ab054bcfc2f3cbbd833f8a3cb59ede6daae3b43f9939e58524e1d5b29458975"
+    },
+    {
+      "name": "list_directory",
+      "hash": "2a89821007a4702b0f7e7cd13107b335d1c49baba8ffc4d38fe8d1cfbe3ac789"
+    },
+    {
+      "name": "move_file",
+      "hash": "0a86f8ce8d46144ec865434db66cd5c5f90f16123206b3334d7196477526b2a1"
+    },
+    {
+      "name": "read_file",
+      "hash": "fcd11b5a6da30a56f0fb021421897c152c7a6cd1bf77a7a2fd420524064a000e"
+    },
+    {
+      "name": "read_multiple_files",
+      "hash": "d5a30eac51a3257ccd4b0acf3b70788f2b180fe1b9807c02644fa3389ebcbcb0"
+    },
+    {
+      "name": "search_files",
+      "hash": "5a9ec8c0901b2ccf519cf939cdcd3a7fe262be2df9e6ab81605a7e04836b4788"
+    },
+    {
+      "name": "write_file",
+      "hash": "182c8895da7eacc6f301ba5895d779aca5c0a29cf622fa14f34f728657f79688"
+    }
+  ],
+  "prompts": []
+}

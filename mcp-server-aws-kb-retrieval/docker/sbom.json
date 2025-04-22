@@ -1,0 +1,23 @@
+{
+  "tools": [
+    {
+      "name": "retrieve_from_aws_kb",
+      "hash": "88ffc5560bf074b0c33c0c643665d0ea26bf1c25713f7b60cdac42c74710587a",
+      "params": [
+        {
+          "name": "knowledgeBaseId",
+          "hash": "d6726a4de44a9f1de6f457c221f141e48b50f1b81bf80d193824d3b0b0ed8232"
+        },
+        {
+          "name": "n",
+          "hash": "09f1972c1a99112a69bce71d462cd0665e51316c57c9f56cf6574124ffe16f87"
+        },
+        {
+          "name": "query",
+          "hash": "bfd6dedc73a4801e231ca5f4c7f0ec411bbe9a4682fe7408e7bb4acc6ae7ada7"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

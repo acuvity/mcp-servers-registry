@@ -1,0 +1,47 @@
+{
+  "tools": [
+    {
+      "name": "sequentialthinking",
+      "hash": "638bac0560badec1e36742fbcf0ded31308fd3a06f05da4a432d43d473c52bed",
+      "params": [
+        {
+          "name": "branchFromThought",
+          "hash": "6d396d89d8aea6921f5ae4b93998dc6e4630cced82a7fef5aedc8be15ed268dd"
+        },
+        {
+          "name": "branchId",
+          "hash": "3af8746d0b1d40ca8208d28cb2bdb116506456d937196ff8c3438f2321386536"
+        },
+        {
+          "name": "isRevision",
+          "hash": "48760e1f72ade2d06cd8ece8ce099e9385349771f163db3600f7e17d393ff1ad"
+        },
+        {
+          "name": "needsMoreThoughts",
+          "hash": "deb7824277425aea7785a98995eb0b43154ddb93ea2b0245b11e53d58e143e65"
+        },
+        {
+          "name": "nextThoughtNeeded",
+          "hash": "cea36b8c3492ab029f329050cde7d604200f3afd54f1a638cb6dd6a15c88a1f9"
+        },
+        {
+          "name": "revisesThought",
+          "hash": "341da909d262df3e42dd0876feded500421f03c380778522c4ea840f566e3a3b"
+        },
+        {
+          "name": "thought",
+          "hash": "663e7dc28e5e2e6fee16a0b560a8023b178f35ca3e2e24fbed1a0847232e5786"
+        },
+        {
+          "name": "thoughtNumber",
+          "hash": "be1ad5c36f2e119ad95831a6e6855e3111fd3a9d4f00826ae27d02eb94fee0d7"
+        },
+        {
+          "name": "totalThoughts",
+          "hash": "9cb82eb4f2cd2c5836dfde2480f5538ecd30261801002a1487d2e3c88b2ff4ce"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

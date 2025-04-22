@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-filesystem"
+description: A Helm chart for MCP server for filesystem access
+home: https://modelcontextprotocol.io
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://modelcontextprotocol.io
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: v1.0.0
+appVersion: 2025.3.28
+keywords:
+  - mcp-server-filesystem
+  - mcp-server
+  - native
+  - mcp

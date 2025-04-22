@@ -1,0 +1,38 @@
+{
+  "tools": [
+    {
+      "name": "fetch",
+      "hash": "c24b2c15805bfaab505d376dd620ec75a07761eaf2ed6d1e152d0cb52d0dd6dd",
+      "params": [
+        {
+          "name": "max_length",
+          "hash": "511bf7bf5fd07c76fa6127ffd435d5cb33e163917bb2c6df408c618249223b6a"
+        },
+        {
+          "name": "raw",
+          "hash": "05c9f47debf593c564c8e232a7882783d6e8fd7d666a8a2ebfc7727c94957bf5"
+        },
+        {
+          "name": "start_index",
+          "hash": "82b875ae5e686086b847968aab751d0a5ec35bfaf70cf92e8f252ebba190f17d"
+        },
+        {
+          "name": "url",
+          "hash": "76fe04b0174fb1526233ff00e611f8178c1b915dd3b8f8e2d8dad37de2a31cd5"
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "name": "fetch",
+      "hash": "9798b4c884b8871fcf050c16da6310a99d9773e97aa13a33e26904e711a32d02",
+      "params": [
+        {
+          "name": "url",
+          "hash": "76fe04b0174fb1526233ff00e611f8178c1b915dd3b8f8e2d8dad37de2a31cd5"
+        }
+      ]
+    }
+  ]
+}

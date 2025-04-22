@@ -1,0 +1,13 @@
+env:
+
+secrets:
+  SLACK_BOT_TOKEN:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  SLACK_TEAM_ID:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

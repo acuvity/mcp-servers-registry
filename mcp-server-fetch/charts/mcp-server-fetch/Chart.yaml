@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-fetch"
+description: A Helm chart for A Model Context Protocol server providing tools to fetch and convert web content for usage by LLMs
+home: https://pypi.org/project/mcp-server-fetch/
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://pypi.org/project/mcp-server-fetch/
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: v1.0.0
+appVersion: 2025.4.7
+keywords:
+  - mcp-server-fetch
+  - mcp-server
+  - remote
+  - mcp

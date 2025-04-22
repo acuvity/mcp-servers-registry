@@ -1,0 +1,211 @@
+{
+  "tools": [
+    {
+      "name": "create_branch",
+      "hash": "370c8fdea4b4ed2c01e13aa6c698e1e547b27bc86998317a904dfe007c640d3b",
+      "params": [
+        {
+          "name": "branch",
+          "hash": "4c318264c967c58971b8a1e0f74375753c460aafb016099268c365625e14b475"
+        },
+        {
+          "name": "project_id",
+          "hash": "cde85e86297f3b2d27daff2ebffa97697e7eab0b519fcb150aba3dafa86ae058"
+        },
+        {
+          "name": "ref",
+          "hash": "5fe6a4648ba2c040d592f76e6a1e3b06e058613def274087239e5477e963a651"
+        }
+      ]
+    },
+    {
+      "name": "create_issue",
+      "hash": "67bd8b1d40a0d879f02ae6df3e7a032e9f67d8185ff96a946b6407a8da74676d",
+      "params": [
+        {
+          "name": "assignee_ids",
+          "hash": "b1e95a9a21177c02ec9b67f5619cdf261c9226a4b06fc7ccc1baaaa0ff179af3"
+        },
+        {
+          "name": "description",
+          "hash": "6fdf4c7fb5a19e122d009b8deed663a56034d8170be9300906c4368c423da250"
+        },
+        {
+          "name": "labels",
+          "hash": "73e3d3cb50073e91dd598b8c1c00a632d01907f339ed5228197a3d82bd0e1bfd"
+        },
+        {
+          "name": "milestone_id",
+          "hash": "0d1caf40d22dd8764da4abbb92bc5c803236c1b08b4844722a165ce185ea75ea"
+        },
+        {
+          "name": "project_id",
+          "hash": "cde85e86297f3b2d27daff2ebffa97697e7eab0b519fcb150aba3dafa86ae058"
+        },
+        {
+          "name": "title",
+          "hash": "baebb0f722db7150e454ecfb2d432205f6331d57837328637d25ac8413f84644"
+        }
+      ]
+    },
+    {
+      "name": "create_merge_request",
+      "hash": "2c412a96dcbe413da1ec4527c917ada4201af860c44f3db3a3f0fdf7d5b6846a",
+      "params": [
+        {
+          "name": "allow_collaboration",
+          "hash": "79eebf7e7bdf597f123e7d7ce6f7638205f5e21c1d0b62dadbe27b9c4ed68beb"
+        },
+        {
+          "name": "description",
+          "hash": "6ee8d87260dcfc89cd9f7aefb2c9309137a659c7bcff8f6f101326b0061218aa"
+        },
+        {
+          "name": "draft",
+          "hash": "b5890bf1f6c20cd8a358d093142e2d69c59507b4bbdad8c01917649070c5daf6"
+        },
+        {
+          "name": "project_id",
+          "hash": "cde85e86297f3b2d27daff2ebffa97697e7eab0b519fcb150aba3dafa86ae058"
+        },
+        {
+          "name": "source_branch",
+          "hash": "f30a2f6fcdb7af894b1cd42fd17f7651a3e9de4c432a615fe383235d8822d669"
+        },
+        {
+          "name": "target_branch",
+          "hash": "68d3d352a8e9b1b21daef0144ddbd5ebbfdfafa1c150afd9184f2889aeba0f54"
+        },
+        {
+          "name": "title",
+          "hash": "009fb5b5349f3ea12220e3d5a8d86edd8c975c1be01feba848bb14d4823ac9e4"
+        }
+      ]
+    },
+    {
+      "name": "create_or_update_file",
+      "hash": "5a9d17ef2e130c8ce70a42df7f712b4ae8858b25754dd52c2a5f7a26c14cb9c3",
+      "params": [
+        {
+          "name": "branch",
+          "hash": "d6a5e87fe732d76cc378c1d1f1210e9b2deb75c9a0dc93b4e453bd5681e9ebe9"
+        },
+        {
+          "name": "commit_message",
+          "hash": "26306d203c4a6f1a77f32cd065d7d11593ba0c7a9b5c52c188b98f22b620941f"
+        },
+        {
+          "name": "content",
+          "hash": "651936dc46e2fa051b60ccb3cbfe9f87f0f58f41773e79b4839a814525a7d688"
+        },
+        {
+          "name": "file_path",
+          "hash": "c57e5f48646295c4493f5d052c3ce4d46f88f8c963d162f44c187ff5defa6791"
+        },
+        {
+          "name": "previous_path",
+          "hash": "cf397a18416cb0b87c38f5dfff95b3ba924af348310612cb5cce0bd3a472bfc4"
+        },
+        {
+          "name": "project_id",
+          "hash": "cde85e86297f3b2d27daff2ebffa97697e7eab0b519fcb150aba3dafa86ae058"
+        }
+      ]
+    },
+    {
+      "name": "create_repository",
+      "hash": "1d98765246028af2aabc6e3d9257883b4b744bb9b352cd8396c5466306c468f9",
+      "params": [
+        {
+          "name": "description",
+          "hash": "2b96b72a003b28027236e3a9d7b66958233d752e92381122915202c3c00f6058"
+        },
+        {
+          "name": "initialize_with_readme",
+          "hash": "7e2901b2f7514bf8332f7e21b39c372da2839884a4f6f497fc38ba9783044538"
+        },
+        {
+          "name": "name",
+          "hash": "a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558"
+        },
+        {
+          "name": "visibility",
+          "hash": "c184fe837e436f41e9f8c51f845c35976bc65dcb9ee55c21dccbda312d38410b"
+        }
+      ]
+    },
+    {
+      "name": "fork_repository",
+      "hash": "a12e1d457b0dddd2646db05db4abc33f10d2d9e7d85108510a70effce2175e63",
+      "params": [
+        {
+          "name": "namespace",
+          "hash": "1745a33a34c4b0df0dff3502345eb24b9df73588ec9c93253a72a38e29264f88"
+        },
+        {
+          "name": "project_id",
+          "hash": "cde85e86297f3b2d27daff2ebffa97697e7eab0b519fcb150aba3dafa86ae058"
+        }
+      ]
+    },
+    {
+      "name": "get_file_contents",
+      "hash": "ff1b95763ce6d2fc775ed4fe3f8e654b9d2f12d80fa2ccad22f5ae9186ba2310",
+      "params": [
+        {
+          "name": "file_path",
+          "hash": "52efab3f41db809584fb319e63956f45cdcc3a67736a23ea06daaa495c975658"
+        },
+        {
+          "name": "project_id",
+          "hash": "cde85e86297f3b2d27daff2ebffa97697e7eab0b519fcb150aba3dafa86ae058"
+        },
+        {
+          "name": "ref",
+          "hash": "d437b023475af49fe4753ed5eeb9f0f4331f914caa7cb9e61224c77758da1541"
+        }
+      ]
+    },
+    {
+      "name": "push_files",
+      "hash": "bd07cf006dbb6be775064074a39533c7494f70a2e56eea1b4f530e4feee038ba",
+      "params": [
+        {
+          "name": "branch",
+          "hash": "903fd236be715d2d2dabe8871e567bebdb55a876b1f9b4db0c49400e3b944e01"
+        },
+        {
+          "name": "commit_message",
+          "hash": "26306d203c4a6f1a77f32cd065d7d11593ba0c7a9b5c52c188b98f22b620941f"
+        },
+        {
+          "name": "files",
+          "hash": "a9c47d470281bded4c57e1c0278bbc153c1d133c163a1cf7d5da6b9920ccbe3f"
+        },
+        {
+          "name": "project_id",
+          "hash": "cde85e86297f3b2d27daff2ebffa97697e7eab0b519fcb150aba3dafa86ae058"
+        }
+      ]
+    },
+    {
+      "name": "search_repositories",
+      "hash": "7fab15409bf7d2f9911d7cde2a71fdbba5449c8e39f032f37d86feb8b2f33755",
+      "params": [
+        {
+          "name": "page",
+          "hash": "72a453385ec021aacde1c9dedd043203bf0244b3414156f8e9455eca78907d8b"
+        },
+        {
+          "name": "per_page",
+          "hash": "7ab4ede2b5836fe3c170dedd1d2cc91073be26a72af9f1590c05b35f0447ed18"
+        },
+        {
+          "name": "search",
+          "hash": "9eef05233ecfc1fbcfe756aa79bd497fa20e58144012561b562b8856040f5100"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

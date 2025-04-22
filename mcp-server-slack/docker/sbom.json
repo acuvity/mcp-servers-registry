@@ -1,0 +1,121 @@
+{
+  "tools": [
+    {
+      "name": "slack_add_reaction",
+      "hash": "1f62c0d2156feeea70ab2bb08899b0eea724921708ef1f842d5a3274b8a42242",
+      "params": [
+        {
+          "name": "channel_id",
+          "hash": "83651ca4b8296fa718d4acdfeb6cae2c112c95a79d72305e997bf788de804f4f"
+        },
+        {
+          "name": "reaction",
+          "hash": "dde7c05968061cac6874c1977ced5368e35ef7faf132ecbe4581e793abf9ba7d"
+        },
+        {
+          "name": "timestamp",
+          "hash": "6bf125bd35ca506a4fcdde9d16cda3475862d295770c69c704fe5e21a62397de"
+        }
+      ]
+    },
+    {
+      "name": "slack_get_channel_history",
+      "hash": "b43638ece46444f140ef4ee2bcc7361a2a2e45234c3bd1d02b08a2a6562d3bd8",
+      "params": [
+        {
+          "name": "channel_id",
+          "hash": "73a4a19c15485e6ad000420b9a6f6520294a9f79e68febad4f62f408c5243e5b"
+        },
+        {
+          "name": "limit",
+          "hash": "4054928c311253594c8a19a24c514c4a702aa5da1f8109f514e7340cd6c3a043"
+        }
+      ]
+    },
+    {
+      "name": "slack_get_thread_replies",
+      "hash": "f25a9302b989e9d86f701d431e0e5dfce1cf769429eea022e7f13e22888d93cf",
+      "params": [
+        {
+          "name": "channel_id",
+          "hash": "c8d1977d3c00d46ff3c2f206a9d17540dc173cf435ab4ad2a0fcbbaa53174b98"
+        },
+        {
+          "name": "thread_ts",
+          "hash": "e7d2dff0b6b5d4cb27ad3c927afc91e9bf54e44f67468519d23e81625423645f"
+        }
+      ]
+    },
+    {
+      "name": "slack_get_user_profile",
+      "hash": "24e26221d8494e92eee5dfd7c12e4ec57595f985c5873c89b2885cd5f1154b59",
+      "params": [
+        {
+          "name": "user_id",
+          "hash": "f0e13cca2694f31a174eb5bb798a4b5b187952d31bad9d14bcb1167d057e24f0"
+        }
+      ]
+    },
+    {
+      "name": "slack_get_users",
+      "hash": "064d8ff96ee3ebc5262414bcf8d7a3569e50309fa1f47c86e8a504bd380a1bb9",
+      "params": [
+        {
+          "name": "cursor",
+          "hash": "af663f140c35780ea36be96fa602b310c84c5373bd95d8f7e98e2fdb474d5061"
+        },
+        {
+          "name": "limit",
+          "hash": "a0f951f54f777c4126ec2111eeb7387dddd999ace45b68d2ba653a89f25d8db2"
+        }
+      ]
+    },
+    {
+      "name": "slack_list_channels",
+      "hash": "12fa8cc69e919c0d0ef74be3f9fb987c475d69844ff10dbd24990ddceae5695b",
+      "params": [
+        {
+          "name": "cursor",
+          "hash": "af663f140c35780ea36be96fa602b310c84c5373bd95d8f7e98e2fdb474d5061"
+        },
+        {
+          "name": "limit",
+          "hash": "fa1df8a77e411a4caea75403c307b517794b232c64c461f5d72b2ba2aed7755e"
+        }
+      ]
+    },
+    {
+      "name": "slack_post_message",
+      "hash": "d105b99a6bf981dd4dd7cde32c4b8d33778f41b55d598babca8eba58e0897708",
+      "params": [
+        {
+          "name": "channel_id",
+          "hash": "0160eabae43220452e6637867cbf32654460cdc34924d4c5181e600a08adc2c5"
+        },
+        {
+          "name": "text",
+          "hash": "c8aa0df1dbb20587482804936252b53a17db6330c1e42a8889aaeb687ca40a33"
+        }
+      ]
+    },
+    {
+      "name": "slack_reply_to_thread",
+      "hash": "a304e8edbaf0870a55d4d3c33ca6433ddd6ed10eae67ba538ce678da6a520c3a",
+      "params": [
+        {
+          "name": "channel_id",
+          "hash": "c8d1977d3c00d46ff3c2f206a9d17540dc173cf435ab4ad2a0fcbbaa53174b98"
+        },
+        {
+          "name": "text",
+          "hash": "63318714e118e032285fa4f42f874e1b848ce97f3c96b0b429c88bcc3d68e4a3"
+        },
+        {
+          "name": "thread_ts",
+          "hash": "e7d2dff0b6b5d4cb27ad3c927afc91e9bf54e44f67468519d23e81625423645f"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}
