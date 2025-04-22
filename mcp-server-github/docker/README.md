@@ -17,8 +17,8 @@
 
 # What is mcp-server-github?
 
-[![Helm](https://img.shields.io/docker/v/acuvity/mcp-server-github?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-github/tags)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/latest?logo=docker&logoColor=fff&label=latest)](https://hub.docker.com/r/acuvity/mcp-server-github/tags)
+[![Helm](https://img.shields.io/badge/v1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-github/tags/)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/v0.2.1?logo=docker&logoColor=fff&label=v0.2.1)](https://hub.docker.com/r/acuvity/mcp-server-github/tags/v0.2.1)
 [![PyPI](https://img.shields.io/badge/v0.2.1-3775A9?logo=github&logoColor=fff&label=github/github-mcp-server)](https://github.com/github/github-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 
@@ -86,8 +86,9 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 **Base image**:
   - `alpine:3.21`
 
-**Dockerfile**:
-  - `https://github.com/acuvity/mcp-servers-registry/mcp-server-github/docker/Dockerfile`
+**Resources**:
+  - [Charts](https://github.com/acuvity/mcp-servers-registry/mcp-server-github/charts/mcp-server-github)
+  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/mcp-server-github/docker/Dockerfile)
 
 **Current supported tag:**
   - `latest` -> `v0.2.1`

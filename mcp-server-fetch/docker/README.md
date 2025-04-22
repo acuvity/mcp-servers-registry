@@ -17,8 +17,8 @@
 
 # What is mcp-server-fetch?
 
-[![Helm](https://img.shields.io/docker/v/acuvity/mcp-server-fetch?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-fetch/tags)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/latest?logo=docker&logoColor=fff&label=latest)](https://hub.docker.com/r/acuvity/mcp-server-fetch/tags)
+[![Helm](https://img.shields.io/badge/v1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-fetch/tags/)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/2025.4.7?logo=docker&logoColor=fff&label=2025.4.7)](https://hub.docker.com/r/acuvity/mcp-server-fetch/tags/2025.4.7)
 [![PyPI](https://img.shields.io/badge/2025.4.7-3775A9?logo=pypi&logoColor=fff&label=mcp-server-fetch)](https://pypi.org/project/mcp-server-fetch/)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 
@@ -86,8 +86,9 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 **Base image**:
   - `ghcr.io/astral-sh/uv:python3.12-alpine`
 
-**Dockerfile**:
-  - `https://github.com/acuvity/mcp-servers-registry/mcp-server-fetch/docker/Dockerfile`
+**Resources**:
+  - [Charts](https://github.com/acuvity/mcp-servers-registry/mcp-server-fetch/charts/mcp-server-fetch)
+  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/mcp-server-fetch/docker/Dockerfile)
 
 **Current supported tag:**
   - `latest` -> `2025.4.7`

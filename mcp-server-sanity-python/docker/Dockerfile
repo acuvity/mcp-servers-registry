@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@cdfa8e3daef3233d2556efbf5b87b575c5216a43
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@19c423fce2d0010cee33e6b8acd3c4e88ea232c4
 
 FROM ghcr.io/astral-sh/uv:python3.12-alpine
 

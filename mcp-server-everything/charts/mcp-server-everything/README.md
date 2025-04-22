@@ -18,8 +18,8 @@
 
 # What is mcp-server-everything?
 
-[![Helm](https://img.shields.io/docker/v/acuvity/mcp-server-everything?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-everything/tags)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/latest?logo=docker&logoColor=fff&label=latest)](https://hub.docker.com/r/acuvity/mcp-server-everything/tags)
+[![Helm](https://img.shields.io/badge/v1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-everything/tags/)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/2025.4.8?logo=docker&logoColor=fff&label=2025.4.8)](https://hub.docker.com/r/acuvity/mcp-server-everything/tags/2025.4.8)
 [![PyPI](https://img.shields.io/badge/2025.4.8-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-everything)](https://modelcontextprotocol.io)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 
@@ -83,6 +83,14 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
   - `amd64`
   - `arm64`
 
+**Resources**:
+  - [Charts](https://github.com/acuvity/mcp-servers-registry/mcp-server-everything/charts/mcp-server-everything)
+  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/mcp-server-everything/docker/Dockerfile)
+
+**Current supported version:**
+  - charts: `v1.0.0`
+  - container: `2025.4.8`
+
 ---
 
 # Table of Contents
@@ -108,26 +116,24 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 
 # How to install
 
-Pick a version from the [OCI registry](https://hub.docker.com/r/acuvity/mcp-server-everything/tags) looking for the type `helm`
+
+Install will helm
+
+```console
+helm install helm install mcp-server-everything oci://docker.io/acuvity/mcp-server-everything --version v1.0.0
+```
 
 You can inspect the chart:
 
 ```console
-helm show chart oci://docker.io/acuvity/mcp-server-everything --version <version>
+helm show chart oci://docker.io/acuvity/mcp-server-everything --version v1.0.0
 ````
 
 You can inpect the values that you can configure:
 
 ```console
-helm show values oci://docker.io/acuvity/mcp-server-everything --version <version>
+helm show values oci://docker.io/acuvity/mcp-server-everything --version v1.0.0
 ````
-
-Install will helm
-
-```console
-helm install helm install mcp-server-everything oci://docker.io/acuvity/mcp-server-everything --version <version>
-```
-
 From there your MCP server mcp-server-everything will be reachable by default through `http/sse` from inside the cluster using the Kubernetes Service `mcp-server-everything` on port `8000` by default.
 
 

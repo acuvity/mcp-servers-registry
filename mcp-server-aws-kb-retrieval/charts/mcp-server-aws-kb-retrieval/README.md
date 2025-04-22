@@ -18,8 +18,8 @@
 
 # What is mcp-server-aws-kb-retrieval?
 
-[![Helm](https://img.shields.io/docker/v/acuvity/mcp-server-aws-kb-retrieval?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-aws-kb-retrieval/tags)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/latest?logo=docker&logoColor=fff&label=latest)](https://hub.docker.com/r/acuvity/mcp-server-aws-kb-retrieval/tags)
+[![Helm](https://img.shields.io/badge/v1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-aws-kb-retrieval/tags/)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/0.6.2?logo=docker&logoColor=fff&label=0.6.2)](https://hub.docker.com/r/acuvity/mcp-server-aws-kb-retrieval/tags/0.6.2)
 [![PyPI](https://img.shields.io/badge/0.6.2-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-aws-kb-retrieval)](https://modelcontextprotocol.io)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 
@@ -83,6 +83,14 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
   - `amd64`
   - `arm64`
 
+**Resources**:
+  - [Charts](https://github.com/acuvity/mcp-servers-registry/mcp-server-aws-kb-retrieval/charts/mcp-server-aws-kb-retrieval)
+  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/mcp-server-aws-kb-retrieval/docker/Dockerfile)
+
+**Current supported version:**
+  - charts: `v1.0.0`
+  - container: `0.6.2`
+
 ---
 
 # Table of Contents
@@ -120,26 +128,24 @@ This chart requires some mandatory information to be installed.
 
 # How to install
 
-Pick a version from the [OCI registry](https://hub.docker.com/r/acuvity/mcp-server-aws-kb-retrieval/tags) looking for the type `helm`
+
+Install will helm
+
+```console
+helm install helm install mcp-server-aws-kb-retrieval oci://docker.io/acuvity/mcp-server-aws-kb-retrieval --version v1.0.0
+```
 
 You can inspect the chart:
 
 ```console
-helm show chart oci://docker.io/acuvity/mcp-server-aws-kb-retrieval --version <version>
+helm show chart oci://docker.io/acuvity/mcp-server-aws-kb-retrieval --version v1.0.0
 ````
 
 You can inpect the values that you can configure:
 
 ```console
-helm show values oci://docker.io/acuvity/mcp-server-aws-kb-retrieval --version <version>
+helm show values oci://docker.io/acuvity/mcp-server-aws-kb-retrieval --version v1.0.0
 ````
-
-Install will helm
-
-```console
-helm install helm install mcp-server-aws-kb-retrieval oci://docker.io/acuvity/mcp-server-aws-kb-retrieval --version <version>
-```
-
 From there your MCP server mcp-server-aws-kb-retrieval will be reachable by default through `http/sse` from inside the cluster using the Kubernetes Service `mcp-server-aws-kb-retrieval` on port `8000` by default.
 
 

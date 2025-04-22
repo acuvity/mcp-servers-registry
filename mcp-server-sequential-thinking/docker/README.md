@@ -17,8 +17,8 @@
 
 # What is mcp-server-sequential-thinking?
 
-[![Helm](https://img.shields.io/docker/v/acuvity/mcp-server-sequential-thinking?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-sequential-thinking/tags)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/latest?logo=docker&logoColor=fff&label=latest)](https://hub.docker.com/r/acuvity/mcp-server-sequential-thinking/tags)
+[![Helm](https://img.shields.io/badge/v1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-sequential-thinking/tags/)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/0.6.2?logo=docker&logoColor=fff&label=0.6.2)](https://hub.docker.com/r/acuvity/mcp-server-sequential-thinking/tags/0.6.2)
 [![PyPI](https://img.shields.io/badge/0.6.2-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-sequential-thinking)](https://modelcontextprotocol.io)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 
@@ -86,8 +86,9 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 **Base image**:
   - `node:23.11.0-alpine3.21`
 
-**Dockerfile**:
-  - `https://github.com/acuvity/mcp-servers-registry/mcp-server-sequential-thinking/docker/Dockerfile`
+**Resources**:
+  - [Charts](https://github.com/acuvity/mcp-servers-registry/mcp-server-sequential-thinking/charts/mcp-server-sequential-thinking)
+  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/mcp-server-sequential-thinking/docker/Dockerfile)
 
 **Current supported tag:**
   - `latest` -> `0.6.2`
