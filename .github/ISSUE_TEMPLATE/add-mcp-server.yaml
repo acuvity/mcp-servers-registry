@@ -17,12 +17,9 @@ body:
       label: "📦 MCP Tool Source"
       description: "Select one source and provide the corresponding URL."
       options:
-        - label: "GitHub Release"
-          value: "github_release"
-        - label: "npm Package"
-          value: "npm_package"
-        - label: "PyPI Package"
-          value: "pypi_package"
+        - "GitHub Release"
+        - "npm Package"
+        - "PyPI Package"
 
   - type: input
     id: tool_source_url
@@ -30,6 +27,7 @@ body:
       label: "Tool Source URL"
       description: "Paste the link here"
       placeholder: "https://github.com/your-org/your-tool/releases"
+    validations:
       required: true
 
   - type: textarea
@@ -50,6 +48,8 @@ body:
           }
         }
         ```
+
+    validations:
       required: true
 
   - type: textarea
@@ -72,48 +72,43 @@ body:
       description: "What does your tool rely on at runtime? Check all that apply."
       options:
         - label: "Native desktop tools (e.g., git, curl)"
-          value: "native_tools"
         - label: "Remote APIs (e.g., cloud-based endpoints)"
-          value: "remote_apis"
         - label: "Fully self-contained / standalone"
-          value: "self_contained"
 
-  - type: radio
+  - type: dropdown
     id: persistent_storage
     attributes:
       label: "💾 Persistent Storage Required?"
+      description: Does your MCP server requires a persistent storage to store states
       options:
-        - label: "Yes, needs a persistent volume"
-          value: "yes"
-        - label: "No, runs entirely in-memory"
-          value: "no"
+        - "Yes, needs a persistent volume"
+        - "No, runs entirely in-memory"
+    validations:
+      required: true
 
   - type: input
     id: storage_explanation
     attributes:
       label: "If yes, explain what’s stored and why"
       description: "_e.g., stores a SQLite DB for caching results_"
-      required: false
 
-  - type: radio
+  - type: dropdown
     id: concurrent_clients
     attributes:
       label: "👥 Supports Concurrent Clients?"
       description: "Can your tool handle requests from multiple clients at once?"
       options:
-        - label: "Yes"
-          value: "yes"
-        - label: "No, single-client only"
-          value: "no"
-        - label: "Not sure"
-          value: "not_sure"
+        - "Yes"
+        - "No, single-client only"
+        - "Not sure"
+    validations:
+      required: true
 
   - type: textarea
     id: session_state
     attributes:
       label: "Session State / Temp Directory Notes"
       description: "Does it maintain session state or write to shared temp directories?"
-      required: false
 
   - type: markdown
     attributes:
