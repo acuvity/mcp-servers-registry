@@ -1,0 +1,122 @@
+name: "🚀 Contribute with your MCP Server"
+description: "Submit your MCP-compatible tool to the ARC + Minibridge ecosystem."
+title: "MCP Server: {{tool_name}}"
+labels:
+  - mcp
+  - contribution
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for your interest in contributing to the **ARC + Minibridge** ecosystem!
+        Please fill out the details below to help us integrate your MCP-compatible tool securely and efficiently.
+
+  - type: dropdown
+    id: tool_source_type
+    attributes:
+      label: "📦 MCP Tool Source"
+      description: "Select one source and provide the corresponding URL."
+      options:
+        - label: "GitHub Release"
+          value: "github_release"
+        - label: "npm Package"
+          value: "npm_package"
+        - label: "PyPI Package"
+          value: "pypi_package"
+
+  - type: input
+    id: tool_source_url
+    attributes:
+      label: "Tool Source URL"
+      description: "Paste the link here"
+      placeholder: "https://github.com/your-org/your-tool/releases"
+      required: true
+
+  - type: textarea
+    id: run_command
+    attributes:
+      label: "🛠️ Run Command"
+      description: |
+        How is your MCP tool launched?
+        Provide either the CLI command or a sample `mcpServers` JSON configuration block.
+      placeholder: |
+        ```json
+        {
+          "mcpServers": {
+            "your-tool": {
+              "command": "your-binary",
+              "args": ["--run", "mcp-mode"]
+            }
+          }
+        }
+        ```
+      required: true
+
+  - type: textarea
+    id: config_args_env
+    attributes:
+      label: "⚙️ Configuration: Arguments and Environment Variables"
+      description: |
+        List any arguments or environment variables your tool accepts, in table form:
+      placeholder: |
+        | Name       | Type       | Default | Description                       |
+        | ---------- | ---------- | ------- | --------------------------------- |
+        | `MY_TOKEN` | env var    | (none)  | API token used for authentication |
+        | `--debug`  | CLI flag   | false   | Enable verbose output             |
+        | `--port`   | CLI option | 8080    | Port for local HTTP API           |
+
+  - type: checkboxes
+    id: runtime_dependencies
+    attributes:
+      label: "🌐 Runtime Dependencies"
+      description: "What does your tool rely on at runtime? Check all that apply."
+      options:
+        - label: "Native desktop tools (e.g., git, curl)"
+          value: "native_tools"
+        - label: "Remote APIs (e.g., cloud-based endpoints)"
+          value: "remote_apis"
+        - label: "Fully self-contained / standalone"
+          value: "self_contained"
+
+  - type: radio
+    id: persistent_storage
+    attributes:
+      label: "💾 Persistent Storage Required?"
+      options:
+        - label: "Yes, needs a persistent volume"
+          value: "yes"
+        - label: "No, runs entirely in-memory"
+          value: "no"
+
+  - type: input
+    id: storage_explanation
+    attributes:
+      label: "If yes, explain what’s stored and why"
+      description: "_e.g., stores a SQLite DB for caching results_"
+      required: false
+
+  - type: radio
+    id: concurrent_clients
+    attributes:
+      label: "👥 Supports Concurrent Clients?"
+      description: "Can your tool handle requests from multiple clients at once?"
+      options:
+        - label: "Yes"
+          value: "yes"
+        - label: "No, single-client only"
+          value: "no"
+        - label: "Not sure"
+          value: "not_sure"
+
+  - type: textarea
+    id: session_state
+    attributes:
+      label: "Session State / Temp Directory Notes"
+      description: "Does it maintain session state or write to shared temp directories?"
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        Once submitted, we’ll review and help wrap your tool in an **ARC (Acuvity Runtime Container)** with SBOM checks, Rego policy support, and a Helm-based deployment for secure runtime.
+        Let’s make the MCP ecosystem even stronger—together! 🔐🛠️🚀
