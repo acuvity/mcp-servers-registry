@@ -31,8 +31,7 @@ Want to make your own MCP-compatible server part of the secure ARC ecosystem? It
 
 ### ✨ How to Contribute:
 
-1. **Open a GitHub Issue**: Use our quick, friendly [issue template](#).
-   _(Replace `#` with the link to your GitHub issue template.)_
+1. **Open a GitHub Issue**: Use our quick, friendly [issue template](#https://github.com/acuvity/mcp-servers-registry/issues/new?template=add-mcp-server.yaml).
 
 2. **Tell us just two things**:
    - 🌐 **Source Link**: Where your app lives (GitHub release, npm, PyPI, etc.)
