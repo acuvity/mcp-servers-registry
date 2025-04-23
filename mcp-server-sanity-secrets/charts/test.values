@@ -1,9 +1,0 @@
-env:
-  foo: 
-
-secrets:
-  TOKEN:
-    value:
-    valueFrom:
-      name: dummy_path
-      key: dummy_key

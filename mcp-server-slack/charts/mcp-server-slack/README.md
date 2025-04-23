@@ -19,7 +19,7 @@
 # What is mcp-server-slack?
 
 [![Helm](https://img.shields.io/badge/v1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-slack/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/2025.1.17?logo=docker&logoColor=fff&label=2025.1.17)](https://hub.docker.com/r/acuvity/mcp-server-slack/tags/2025.1.17)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-slack/2025.1.17?logo=docker&logoColor=fff&label=2025.1.17)](https://hub.docker.com/r/acuvity/mcp-server-slack/tags/2025.1.17)
 [![PyPI](https://img.shields.io/badge/2025.1.17-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-slack)](https://modelcontextprotocol.io)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 

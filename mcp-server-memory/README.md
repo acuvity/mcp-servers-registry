@@ -205,7 +205,7 @@ From there your MCP server mcp-server-memory will be reachable by default throug
 
 The deployment will a Kubernetes service with a `healthPort`, that is used for liveness probes and readiness probes. This health port can also be used by the monitoring stack of your choice and exposes metrics under the `/metrics` path.
 
-See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/mcp-server-memory/charts/mcp-server-memory/README.md) for more details about settings.
+See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-memory/charts/mcp-server-memory/README.md) for more details about settings.
 
 </details>
 
