@@ -185,7 +185,7 @@ From there your MCP server mcp-server-fetch will be reachable by default through
 
 The deployment will a Kubernetes service with a `healthPort`, that is used for liveness probes and readiness probes. This health port can also be used by the monitoring stack of your choice and exposes metrics under the `/metrics` path.
 
-See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/mcp-server-fetch/charts/mcp-server-fetch/README.md) for more details about settings.
+See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-fetch/charts/mcp-server-fetch/README.md) for more details about settings.
 
 </details>
 

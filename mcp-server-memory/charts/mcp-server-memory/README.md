@@ -19,7 +19,7 @@
 # What is mcp-server-memory?
 
 [![Helm](https://img.shields.io/badge/v1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-memory/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/0.6.2?logo=docker&logoColor=fff&label=0.6.2)](https://hub.docker.com/r/acuvity/mcp-server-memory/tags/0.6.2)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-memory/0.6.2?logo=docker&logoColor=fff&label=0.6.2)](https://hub.docker.com/r/acuvity/mcp-server-memory/tags/0.6.2)
 [![PyPI](https://img.shields.io/badge/0.6.2-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-memory)](https://modelcontextprotocol.io)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 
@@ -84,8 +84,8 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
   - `arm64`
 
 **Resources**:
-  - [Charts](https://github.com/acuvity/mcp-servers-registry/mcp-server-memory/charts/mcp-server-memory)
-  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/mcp-server-memory/docker/Dockerfile)
+  - [Charts](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-memory/charts/mcp-server-memory)
+  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-memory/docker/Dockerfile)
 
 **Current supported version:**
   - charts: `v1.0.0`

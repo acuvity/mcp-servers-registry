@@ -87,8 +87,8 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
   - `node:23.11.0-alpine3.21`
 
 **Resources**:
-  - [Charts](https://github.com/acuvity/mcp-servers-registry/mcp-server-sequential-thinking/charts/mcp-server-sequential-thinking)
-  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/mcp-server-sequential-thinking/docker/Dockerfile)
+  - [Charts](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-sequential-thinking/charts/mcp-server-sequential-thinking)
+  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-sequential-thinking/docker/Dockerfile)
 
 **Current supported tag:**
   - `latest` -> `0.6.2`
@@ -360,7 +360,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 # 🧠 Server features
 
 > [!NOTE]
-> For detailed list of all features, arguments and SBOM hashes provided by this tool please consult the [readme](https://github.com/acuvity/mcp-servers-registry/mcp-server-sequential-thinking)
+> For detailed list of all features, arguments and SBOM hashes provided by this tool please consult the [readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-sequential-thinking)
 
 ## 🧰 Tools (1)
 

@@ -18,7 +18,7 @@
 # What is mcp-server-aws-kb-retrieval?
 
 [![Helm](https://img.shields.io/badge/v1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-aws-kb-retrieval/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/0.6.2?logo=docker&logoColor=fff&label=0.6.2)](https://hub.docker.com/r/acuvity/mcp-server-aws-kb-retrieval/tags/0.6.2)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-kb-retrieval/0.6.2?logo=docker&logoColor=fff&label=0.6.2)](https://hub.docker.com/r/acuvity/mcp-server-aws-kb-retrieval/tags/0.6.2)
 [![PyPI](https://img.shields.io/badge/0.6.2-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-aws-kb-retrieval)](https://modelcontextprotocol.io)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 
@@ -200,7 +200,7 @@ From there your MCP server mcp-server-aws-kb-retrieval will be reachable by defa
 
 The deployment will a Kubernetes service with a `healthPort`, that is used for liveness probes and readiness probes. This health port can also be used by the monitoring stack of your choice and exposes metrics under the `/metrics` path.
 
-See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/mcp-server-aws-kb-retrieval/charts/mcp-server-aws-kb-retrieval/README.md) for more details about settings.
+See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-kb-retrieval/charts/mcp-server-aws-kb-retrieval/README.md) for more details about settings.
 
 </details>
 

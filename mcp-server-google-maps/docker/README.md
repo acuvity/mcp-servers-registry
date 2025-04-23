@@ -18,7 +18,7 @@
 # What is mcp-server-google-maps?
 
 [![Helm](https://img.shields.io/badge/v1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-google-maps/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/0.6.2?logo=docker&logoColor=fff&label=0.6.2)](https://hub.docker.com/r/acuvity/mcp-server-google-maps/tags/0.6.2)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-google-maps/0.6.2?logo=docker&logoColor=fff&label=0.6.2)](https://hub.docker.com/r/acuvity/mcp-server-google-maps/tags/0.6.2)
 [![PyPI](https://img.shields.io/badge/0.6.2-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-google-maps)](https://modelcontextprotocol.io)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 
@@ -87,8 +87,8 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
   - `node:23.11.0-alpine3.21`
 
 **Resources**:
-  - [Charts](https://github.com/acuvity/mcp-servers-registry/mcp-server-google-maps/charts/mcp-server-google-maps)
-  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/mcp-server-google-maps/docker/Dockerfile)
+  - [Charts](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-google-maps/charts/mcp-server-google-maps)
+  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-google-maps/docker/Dockerfile)
 
 **Current supported tag:**
   - `latest` -> `0.6.2`
@@ -380,7 +380,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 # 🧠 Server features
 
 > [!NOTE]
-> For detailed list of all features, arguments and SBOM hashes provided by this tool please consult the [readme](https://github.com/acuvity/mcp-servers-registry/mcp-server-google-maps)
+> For detailed list of all features, arguments and SBOM hashes provided by this tool please consult the [readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-google-maps)
 
 ## 🧰 Tools (7)
 

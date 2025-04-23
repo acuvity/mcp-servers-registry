@@ -18,7 +18,7 @@
 # What is mcp-server-filesystem?
 
 [![Helm](https://img.shields.io/badge/v1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-filesystem/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/2025.3.28?logo=docker&logoColor=fff&label=2025.3.28)](https://hub.docker.com/r/acuvity/mcp-server-filesystem/tags/2025.3.28)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-filesystem/2025.3.28?logo=docker&logoColor=fff&label=2025.3.28)](https://hub.docker.com/r/acuvity/mcp-server-filesystem/tags/2025.3.28)
 [![PyPI](https://img.shields.io/badge/2025.3.28-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-filesystem)](https://modelcontextprotocol.io)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 
@@ -87,8 +87,8 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
   - `node:23.11.0-alpine3.21`
 
 **Resources**:
-  - [Charts](https://github.com/acuvity/mcp-servers-registry/mcp-server-filesystem/charts/mcp-server-filesystem)
-  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/mcp-server-filesystem/docker/Dockerfile)
+  - [Charts](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-filesystem/charts/mcp-server-filesystem)
+  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-filesystem/docker/Dockerfile)
 
 **Current supported tag:**
   - `latest` -> `2025.3.28`
@@ -361,7 +361,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 # 🧠 Server features
 
 > [!NOTE]
-> For detailed list of all features, arguments and SBOM hashes provided by this tool please consult the [readme](https://github.com/acuvity/mcp-servers-registry/mcp-server-filesystem)
+> For detailed list of all features, arguments and SBOM hashes provided by this tool please consult the [readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-filesystem)
 
 ## 🧰 Tools (11)
 

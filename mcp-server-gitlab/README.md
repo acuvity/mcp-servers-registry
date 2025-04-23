@@ -18,7 +18,7 @@
 # What is mcp-server-gitlab?
 
 [![Helm](https://img.shields.io/badge/v1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-gitlab/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/2025.4.7?logo=docker&logoColor=fff&label=2025.4.7)](https://hub.docker.com/r/acuvity/mcp-server-gitlab/tags/2025.4.7)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-gitlab/2025.4.7?logo=docker&logoColor=fff&label=2025.4.7)](https://hub.docker.com/r/acuvity/mcp-server-gitlab/tags/2025.4.7)
 [![PyPI](https://img.shields.io/badge/2025.4.7-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-gitlab)](https://modelcontextprotocol.io)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 

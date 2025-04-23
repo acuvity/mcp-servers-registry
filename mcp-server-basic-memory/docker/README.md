@@ -18,7 +18,7 @@
 # What is mcp-server-basic-memory?
 
 [![Helm](https://img.shields.io/badge/v1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-basic-memory/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/0.12.3?logo=docker&logoColor=fff&label=0.12.3)](https://hub.docker.com/r/acuvity/mcp-server-basic-memory/tags/0.12.3)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-basic-memory/0.12.3?logo=docker&logoColor=fff&label=0.12.3)](https://hub.docker.com/r/acuvity/mcp-server-basic-memory/tags/0.12.3)
 [![PyPI](https://img.shields.io/badge/0.12.3-3775A9?logo=pypi&logoColor=fff&label=basic-memory)](https://pypi.org/project/basic-memory/)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 
@@ -87,8 +87,8 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
   - `ghcr.io/astral-sh/uv:python3.12-alpine`
 
 **Resources**:
-  - [Charts](https://github.com/acuvity/mcp-servers-registry/mcp-server-basic-memory/charts/mcp-server-basic-memory)
-  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/mcp-server-basic-memory/docker/Dockerfile)
+  - [Charts](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-basic-memory/charts/mcp-server-basic-memory)
+  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-basic-memory/docker/Dockerfile)
 
 **Current supported tag:**
   - `latest` -> `0.12.3`
@@ -381,7 +381,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 # 🧠 Server features
 
 > [!NOTE]
-> For detailed list of all features, arguments and SBOM hashes provided by this tool please consult the [readme](https://github.com/acuvity/mcp-servers-registry/mcp-server-basic-memory)
+> For detailed list of all features, arguments and SBOM hashes provided by this tool please consult the [readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-basic-memory)
 
 ## 🧰 Tools (9)
 

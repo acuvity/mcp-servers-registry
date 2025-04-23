@@ -84,8 +84,8 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
   - `arm64`
 
 **Resources**:
-  - [Charts](https://github.com/acuvity/mcp-servers-registry/mcp-server-slack/charts/mcp-server-slack)
-  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/mcp-server-slack/docker/Dockerfile)
+  - [Charts](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-slack/charts/mcp-server-slack)
+  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-slack/docker/Dockerfile)
 
 **Current supported version:**
   - charts: `v1.0.0`

@@ -87,8 +87,8 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
   - `ghcr.io/astral-sh/uv:python3.12-alpine`
 
 **Resources**:
-  - [Charts](https://github.com/acuvity/mcp-servers-registry/mcp-server-fetch/charts/mcp-server-fetch)
-  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/mcp-server-fetch/docker/Dockerfile)
+  - [Charts](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-fetch/charts/mcp-server-fetch)
+  - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-fetch/docker/Dockerfile)
 
 **Current supported tag:**
   - `latest` -> `2025.4.7`
@@ -359,7 +359,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 # 🧠 Server features
 
 > [!NOTE]
-> For detailed list of all features, arguments and SBOM hashes provided by this tool please consult the [readme](https://github.com/acuvity/mcp-servers-registry/mcp-server-fetch)
+> For detailed list of all features, arguments and SBOM hashes provided by this tool please consult the [readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-fetch)
 
 ## 🧰 Tools (1)
 

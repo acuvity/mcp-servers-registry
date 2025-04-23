@@ -18,7 +18,7 @@
 # What is mcp-server-everything?
 
 [![Helm](https://img.shields.io/badge/v1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-everything/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/2025.4.8?logo=docker&logoColor=fff&label=2025.4.8)](https://hub.docker.com/r/acuvity/mcp-server-everything/tags/2025.4.8)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-everything/2025.4.8?logo=docker&logoColor=fff&label=2025.4.8)](https://hub.docker.com/r/acuvity/mcp-server-everything/tags/2025.4.8)
 [![PyPI](https://img.shields.io/badge/2025.4.8-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-everything)](https://modelcontextprotocol.io)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 
@@ -186,7 +186,7 @@ From there your MCP server mcp-server-everything will be reachable by default th
 
 The deployment will a Kubernetes service with a `healthPort`, that is used for liveness probes and readiness probes. This health port can also be used by the monitoring stack of your choice and exposes metrics under the `/metrics` path.
 
-See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/mcp-server-everything/charts/mcp-server-everything/README.md) for more details about settings.
+See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-everything/charts/mcp-server-everything/README.md) for more details about settings.
 
 </details>
 
