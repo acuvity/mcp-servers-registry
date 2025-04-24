@@ -39,6 +39,24 @@ At [Acuvity](https://acuvity.ai), security is essential—especially for MCP ser
 - **Simplified Remote Connectivity**: Effortlessly bridge your MCP server without custom protocols—Minibridge handles HTTP/SSE, WebSockets, and more.
 - **Kubernetes Integration**: Quickly deploy into Kubernetes with Helm charts and sensible defaults.
 
+## Features comparisons
+
+| 🚀 **Feature**                              | 🔹 **MCP**       | 🔸 **Minibridge Wrapper** | 📦 **ARC (Acuvity Containers)** | 🌟 **ARC + Acuvity Platform** |
+| ------------------------------------------- | ---------------- | ------------------------- | ------------------------------- | ----------------------------- |
+| 🌐 **Remote Access**                        | ⚠️ HTTP/SSE Only | ✅ Built-in               | ✅ Built-in                     | ✅ Built-in                   |
+| 🔒 **TLS Support**                          | ❌               | ✅                        | ✅                              | ✅                            |
+| 📃 **Software Bill of Materials (SBOM)**    | ❌               | ✅                        | ✅                              | ✅                            |
+| 🔐 **Security Policy Management**           | ❌               | 👤 User Implemented       | ⚠️ Basic                        | ✅ Advanced                   |
+| 🔑 **Authorization Controls**               | ❌               | 👤 User Implemented       | ⚠️ Basic                        | ✅ Advanced                   |
+| 🕵️ **Secrets Redaction**                    | ❌               | 👤 User Implemented       | ⚠️ Basic                        | ✅ Advanced                   |
+| 🛡️ **Isolation**                            | ❌               | ❌                        | ✅                              | ✅                            |
+| 📌 **Version Pinning**                      | ❌               | ❌                        | ✅                              | ✅                            |
+| 📊 **Visualization and Tracing**            | ❌               | 👤 User Implemented       | 👤 User Implemented             | ✅ Built-in                   |
+| 🧑‍💻 **PII Detection and Redaction**          | ❌               | 👤 User Implemented       | 👤 User Implemented             | ✅ Built-in                   |
+| 🔍 **Deep Multimodal Analysis & Redaction** | ❌               | ❌                        | ❌                              | ✅ Built-in                   |
+
+✅ _Included_ | ⚠️ _Partial/Basic Support_ | 👤 _Requires User Implementation_ | ❌ _Not Supported_
+
 ## ✨ Contribute Your MCP Server to ARC!
 
 Join our secure MCP ecosystem by adding your server to ARC:
