@@ -21,11 +21,13 @@ At [Acuvity](https://acuvity.ai), security is essential—especially for MCP ser
 [Minibridge](https://github.com/acuvity/minibridge) integrates seamlessly with ARC to secure agent-to-MCP interactions, enforcing runtime integrity and policy compliance:
 
 - **Integrity Checks**: Ensures authenticity with runtime component hashing.
-- **Threat Detection & Prevention**:
-  - Identifies hidden instruction patterns.
-  - Detects misuse of schema parameters.
-  - Flags unauthorized access attempts.
-  - Prevents tool shadowing and sensitive information leaks.
+- **Threat Detection & Prevention with built-in Rego Policy**:
+  - Covert‐instruction screening: Blocks any tool description or call arguments that match a wide list of "hidden prompt" phrases (e.g., "do not tell", "ignore previous instructions", Unicode steganography).
+  - Schema-key misuse guard: Rejects tools or call arguments that expose internal-reasoning fields such as note, debug, context, etc., preventing jailbreaks that try to surface private metadata.
+  - Sensitive-resource exposure check: Denies tools whose descriptions—or call arguments—that reference paths, files, or patterns typically associated with secrets (e.g., .env, /etc/passwd, SSH keys).
+  - Tool-shadowing detector: Flags wording like "instead of using" that might instruct an assistant to replace or override an existing tool with a different behaviour.
+  - Cross-tool ex-filtration filter: Scans responses and tool descriptions for instructions to invoke external tools not belonging to this server.
+  - Credential / secret redaction mutator: Automatically replaces recognised tokens formats with `[REDACTED]` in outbound content.
 
 > **ARC** is the fortress. **Minibridge** is the guard.
 > Together, they securely connect and protect your MCP servers.

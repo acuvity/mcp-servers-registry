@@ -81,7 +81,7 @@ Create the name of the service account to use
   {{- end }}
 {{- end }}
 
-{{- with .Values.minibridge.policer }}
+{{- with .Values.minibridge.policer.http }}
     {{- with .token.value }}
     minibridge-policer-token: {{. | b64enc | quote }}
     {{- end }}
@@ -110,7 +110,7 @@ Create the name of the service account to use
   {{- end }}
 {{- end }}
 
-{{- with .Values.minibridge.policer }}
+{{- with .Values.minibridge.policer.http }}
     {{- with .ca.value }}
     - key: minibridge-policer-ca.pem
       path: minibridge-policer-ca.pem
@@ -119,17 +119,29 @@ Create the name of the service account to use
 {{- end }}
 
 {{- define "minibridge.env" -}}
-- name: MINIBRIDGE_MCP_USE_TEMPDIR
-  value: "true"
+
 {{- with .Values.minibridge.mode }}
 - name: MINIBRIDGE_MODE
   value: {{ (eq . "http" ) | ternary "aio" "backend"}}
 {{- end }}
+
 - name: MINIBRIDGE_LISTEN
   value: ":{{ .Values.service.port }}"
+- name: MINIBRIDGE_HEALTH_LISTEN
+  value: ":{{ .Values.service.healthPort }}"
+
 {{- with .Values.minibridge.log.level}}
 - name: MINIBRIDGE_LOG_LEVEL
   value: {{.}}
+{{- end }}
+- name: MINIBRIDGE_MCP_USE_TEMPDIR
+  value: "true"
+
+{{- with .Values.minibridge.tracing.url }}
+- name: MINIBRIDGE_OTEL_EXPORTER
+  value: {{.|quote }}
+- name: MINIBRIDGE_OTEL_EXPORTER_NO_TLS
+  value: "true"
 {{- end }}
 
 {{- with .Values.minibridge.tls }}
@@ -150,8 +162,25 @@ Create the name of the service account to use
   {{- end }}
 {{- end }}
 
-{{- with .Values.minibridge.policer }}
-{{- if .url }}
+{{- if not .Values.minibridge.sbom }}
+- name: MINIBRIDGE_SBOM
+  value: /sbom.disabled
+{{- end }}
+
+{{- with .Values.minibridge.policer.rego}}
+{{- if .enabled }}
+- name: MINIBRIDGE_POLICER_TYPE
+  value: "rego"
+{{- end }}
+- name: MINIBRIDGE_POLICER_REGO_POLICY
+  value: "{{.policy}}"
+{{- end }}
+
+{{- with .Values.minibridge.policer.http }}
+{{- if .enabled }}
+- name: MINIBRIDGE_POLICER_TYPE
+  value: "http"
+{{- end }}
 - name: MINIBRIDGE_POLICER_URL
   value: {{.url}}
   {{- if or .ca.path .ca.value }}
@@ -165,7 +194,6 @@ Create the name of the service account to use
       name: "{{ .pass.valueFrom.name | default (printf "%s-secrets" .Release.name) }}"
       key: "{{ .pass.valueFrom.key | default "minibridge-policer-token" }}"
   {{- end }}
-{{- end }}
 {{- end }}
 
 {{- end }}

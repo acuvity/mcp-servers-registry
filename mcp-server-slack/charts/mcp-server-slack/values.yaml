@@ -193,6 +193,11 @@ minibridge:
   log:
     level: info
 
+  # Tracing
+  tracing:
+    # Set your OTEL endpoint HOST:port to enable tracing
+    url:
+
   # TLS configuration
   tls:
     # To enable TLS
@@ -225,23 +230,37 @@ minibridge:
       # path from existing volume mount
       path:
 
+  # SBOM, to disable set it to false
+  sbom: true
+
   # Policier configuration
   policer:
-    # Address of a Policer to send the traffic to for authentication and/or analysis
-    url:
-    # Token to use to authenticate against the Policer
-    token:
-      # raw value, will be stored as a secret
-      value:
-      # value from an existing secret
-      valueFrom:
-        name:
-        key:
-    # CA to trust Policer server certificates
-    ca:
-      # raw value of certificate b64 encoded
-      value:
-      # path from existing volume mount
-      path:
-    # Do not validate Policer CA. Do not do this in production
-    # insucure: true
+    # Use the rego policer (Default)
+    rego:
+      # To enabled the rego policer
+      enabled: true
+      # path to the default policy
+      policy: /policy.rego
+
+    # Use the remote http policer
+    http:
+      # To enable the http policer
+      enabled: false
+      # Address of a Policer to send the traffic to for authentication and/or analysis
+      url:
+      # Token to use to authenticate against the Policer
+      token:
+        # raw value, will be stored as a secret
+        value:
+        # value from an existing secret
+        valueFrom:
+          name:
+          key:
+      # CA to trust Policer server certificates
+      ca:
+        # raw value of certificate b64 encoded
+        value:
+        # path from existing volume mount
+        path:
+      # Do not validate Policer CA. Do not do this in production
+      # insucure: true

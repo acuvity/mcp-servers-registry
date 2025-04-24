@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@19c423fce2d0010cee33e6b8acd3c4e88ea232c4
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@3b3499a043fc846383453922ac70eb1979d5925b
 FROM alpine:3.21 AS artifacts
 ARG TARGETOS TARGETARCH
 RUN apk update && apk add --no-cache curl file tar unzip
@@ -63,9 +63,8 @@ USER appuser
 
 EXPOSE 8000/tcp
 
-COPY ./sbom.json /
 COPY --from=minibridge /go/bin/minibridge /usr/bin
-COPY ./entrypoint.sh /
+COPY ./entrypoint.sh  ./sbom.json ./policy.rego /
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["stdio"]

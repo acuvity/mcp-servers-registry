@@ -52,13 +52,14 @@ To address this need, we've created a secure and robust Docker image designed to
 
 Minibridge includes built-in guardrails to protect MCP server integrity and detect suspicious behavior:
 
-- **Integrity via Hashing**: Verifies the authenticity and integrity of tool descriptors and runtime components.
-- **Threat Detection**:
-  - Detects hidden or covert instruction patterns.
-  - Monitors for schema parameter misuse as potential exfiltration channels.
-  - Flags unauthorized access to sensitive files or credentials.
-  - Identifies tool shadowing and override attempts.
-  - Enforces cross-origin and server-mismatch protection policies.
+- **Integrity Checks**: Ensures authenticity with runtime component hashing.
+- **Threat Detection & Prevention with built-in Rego Policy**:
+  - Covert‐instruction screening: Blocks any tool description or call arguments that match a wide list of "hidden prompt" phrases (e.g., "do not tell", "ignore previous instructions", Unicode steganography).
+  - Schema-key misuse guard: Rejects tools or call arguments that expose internal-reasoning fields such as note, debug, context, etc., preventing jailbreaks that try to surface private metadata.
+  - Sensitive-resource exposure check: Denies tools whose descriptions—or call arguments—that reference paths, files, or patterns typically associated with secrets (e.g., .env, /etc/passwd, SSH keys).
+  - Tool-shadowing detector: Flags wording like "instead of using" that might instruct an assistant to replace or override an existing tool with a different behaviour.
+  - Cross-tool ex-filtration filter: Scans responses and tool descriptions for instructions to invoke external tools not belonging to this server.
+  - Credential / secret redaction mutator: Automatically replaces recognised tokens formats with `[REDACTED]` in outbound content.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 </details>
@@ -229,6 +230,7 @@ From there your MCP server mcp-server-slack will be reachable by default through
 
 The deployment will a Kubernetes service with a `healthPort`, that is used for liveness probes and readiness probes. This health port can also be used by the monitoring stack of your choice and exposes metrics under the `/metrics` path.
 
+See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-slack/charts/mcp-server-slack/README.md) for more details about settings.
 
 </details>
 
