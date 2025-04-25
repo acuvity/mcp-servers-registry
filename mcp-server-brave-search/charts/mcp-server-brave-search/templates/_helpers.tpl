@@ -138,10 +138,8 @@ Create the name of the service account to use
   value: "true"
 
 {{- with .Values.minibridge.tracing.url }}
-- name: MINIBRIDGE_OTEL_EXPORTER
+- name: OTEL_EXPORTER_OTLP_ENDPOINT
   value: {{.|quote }}
-- name: MINIBRIDGE_OTEL_EXPORTER_NO_TLS
-  value: "true"
 {{- end }}
 
 {{- with .Values.minibridge.tls }}

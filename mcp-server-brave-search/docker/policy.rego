@@ -114,6 +114,7 @@ reasons contains msg if {
 	some pattern in _cross_tool_patterns
 	some tool_match in regex.find_all_string_submatch_n(pattern, tool.description, -1)
 	extracted_tool := tool_match[count(tool_match) - 1]
+	contains(extracted_tool, "_")
 	not extracted_tool in _our_tools
 	msg := sprintf("untrusted tool use detected in tool description %v: %v", [tool.name, extracted_tool])
 }
@@ -155,6 +156,7 @@ reasons contains msg if {
 	some pattern in _cross_tool_patterns
 	some tool_match in regex.find_all_string_submatch_n(pattern, text, -1)
 	extracted_tool := tool_match[count(tool_match) - 1]
+	contains(extracted_tool, "_")
 	not extracted_tool in _our_tools
 	msg := sprintf("untrusted tool detected in call response: %v", [extracted_tool])
 }

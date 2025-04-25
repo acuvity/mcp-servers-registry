@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@3b3499a043fc846383453922ac70eb1979d5925b
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@69ebfa7a85956cb7a3da5bf7943a7469af4445b8
 FROM alpine:3.21 AS artifacts
 ARG TARGETOS TARGETARCH
 RUN apk update && apk add --no-cache curl file tar unzip
