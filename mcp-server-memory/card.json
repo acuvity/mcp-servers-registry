@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-memory",
+  "name": "mcp-server-memory ",
+  "description": "MCP server for enabling memory for Claude through a knowledge graph",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-memory",
+      "application": "https://modelcontextprotocol.io"
+    },
+  "tags": ["mcp"],
+  "official": false,
+  "packaged": true,
+  "scope": "standalone",
+  "mutitenant": false,
+  "runtime": "node",
+  "version": "2025.4.25",
+  "requiresConfiguration": false,
+  "requiresStorage": true,
+  "resources": {
+    "tools": 9,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

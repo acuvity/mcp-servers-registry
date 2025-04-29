@@ -1,5 +1,3 @@
-
-
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
@@ -12,8 +10,10 @@
     <img src="https://img.shields.io/badge/Acuvity-Join-7289DA?logo=discord&logoColor=fff" alt="Join Acuvity community" />
   </a>
 <a href="https://www.linkedin.com/company/acuvity/">
-    <img src="https://img.shields.io/badge/LinkedIn-follow-0a66c2" alt="Follow us on LinkedIn" />
+    <img src="https://img.shields.io/badge/LinkedIn-Follow-7289DA" alt="Follow us on LinkedIn" />
   </a>
+<a href="https://bsky.app/profile/acuvity.bsky.social">
+    <img src="https://img.shields.io/badge/Bluesky-Follow-7289DA"?logo=bluesky&logoColor=fff" alt="Follow us on Bluesky" />
 </p>
 
 
@@ -23,6 +23,7 @@
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-brave-search/0.6.2?logo=docker&logoColor=fff&label=0.6.2)](https://hub.docker.com/r/acuvity/mcp-server-brave-search)
 [![PyPI](https://img.shields.io/badge/0.6.2-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-brave-search)](https://modelcontextprotocol.io)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-brave-search&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22BRAVE_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-brave-search%3A0.6.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** MCP server for Brave Search API integration
 
@@ -416,6 +417,10 @@ minibridge:
 
   # Policier configuration
   policer:
+    # Instruct to enforce policies if enabled
+    # otherwise it will jsut log the verdict as a warning
+    # message in logs
+    enforce: false
     # Use the rego policer (Default)
     rego:
       # To enabled the rego policer

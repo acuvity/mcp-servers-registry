@@ -1,5 +1,3 @@
-
-
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
@@ -12,8 +10,10 @@
     <img src="https://img.shields.io/badge/Acuvity-Join-7289DA?logo=discord&logoColor=fff" alt="Join Acuvity community" />
   </a>
 <a href="https://www.linkedin.com/company/acuvity/">
-    <img src="https://img.shields.io/badge/LinkedIn-follow-0a66c2" alt="Follow us on LinkedIn" />
+    <img src="https://img.shields.io/badge/LinkedIn-Follow-7289DA" alt="Follow us on LinkedIn" />
   </a>
+<a href="https://bsky.app/profile/acuvity.bsky.social">
+    <img src="https://img.shields.io/badge/Bluesky-Follow-7289DA"?logo=bluesky&logoColor=fff" alt="Follow us on Bluesky" />
 </p>
 
 
@@ -23,6 +23,7 @@
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-basic-memory/0.12.3?logo=docker&logoColor=fff&label=0.12.3)](https://hub.docker.com/r/acuvity/mcp-server-basic-memory)
 [![PyPI](https://img.shields.io/badge/0.12.3-3775A9?logo=pypi&logoColor=fff&label=basic-memory)](https://pypi.org/project/basic-memory/)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-basic-memory&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-v%22%2C%22memory%3A%2Fdata%22%2C%22docker.io%2Facuvity%2Fmcp-server-basic-memory%3A0.12.3%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Local-first knowledge management combining Zettelkasten with knowledge graphs
 
@@ -430,6 +431,10 @@ minibridge:
 
   # Policier configuration
   policer:
+    # Instruct to enforce policies if enabled
+    # otherwise it will jsut log the verdict as a warning
+    # message in logs
+    enforce: false
     # Use the rego policer (Default)
     rego:
       # To enabled the rego policer

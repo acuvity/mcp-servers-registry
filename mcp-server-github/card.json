@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-github",
+  "name": "mcp-server-github ",
+  "description": "GitHub's official MCP Server",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-github",
+      "application": "https://github.com/github/github-mcp-server"
+    },
+  "tags": ["mcp"],
+  "official": false,
+  "packaged": true,
+  "scope": "remote",
+  "mutitenant": false,
+  "runtime": "binary",
+  "version": "v0.2.1",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 36,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

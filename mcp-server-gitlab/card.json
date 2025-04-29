@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-gitlab",
+  "name": "mcp-server-gitlab ",
+  "description": "MCP server for using the GitLab API",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-gitlab",
+      "application": "https://modelcontextprotocol.io"
+    },
+  "tags": ["mcp"],
+  "official": false,
+  "packaged": true,
+  "scope": "remote",
+  "mutitenant": false,
+  "runtime": "node",
+  "version": "2025.4.25",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 9,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

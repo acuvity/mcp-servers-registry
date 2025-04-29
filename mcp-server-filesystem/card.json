@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-filesystem",
+  "name": "mcp-server-filesystem ",
+  "description": "MCP server for filesystem access",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-filesystem",
+      "application": "https://modelcontextprotocol.io"
+    },
+  "tags": ["mcp"],
+  "official": false,
+  "packaged": true,
+  "scope": "native",
+  "mutitenant": false,
+  "runtime": "node",
+  "version": "2025.3.28",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 11,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

@@ -41,22 +41,21 @@ At [Acuvity](https://acuvity.ai), security is essential—especially for MCP ser
 
 ## Features comparisons
 
-| 🚀 **Feature**                              | 🔹 **MCP**       | 🔸 **Minibridge Wrapper**  | 📦 **ARC (Acuvity Containers)** | 🌟 **ARC + Acuvity Platform** |
-| ------------------------------------------- | ---------------- | -------------------------- | ------------------------------- | ----------------------------- |
-| 🌐 **Remote Access**                        | ⚠️ HTTP/SSE Only | ✅ Built-in                | ✅ Built-in                     | ✅ Built-in                   |
-| 🔒 **TLS Support**                          | ❌               | ✅ Built-in                | ✅ Built-in                     | ✅ Built-in                   |
-| 📃 **Tool integrity check**                 | ❌               | 👤 Requires Implementation | ✅ Built-in                     | ✅ Built-in                   |
-| 🔐 **Security Policy Management**           | ❌               | 👤 Requires Implementation | ⚠️ Basic                        | ✅ Built-in                   |
-| 🕵️ **Secrets Redaction**                    | ❌               | 👤 Requires Implementation | ⚠️ Basic                        | ✅ Built-in                   |
-| 🛡️ **Isolation**                            | ❌               | ❌                         | ✅ Built-in                     | ✅ Built-in                   |
-| 📃 **Software Bill of Materials (SBOM)**    | ❌               | ❌                         | ✅ Built-in                     | ✅ Built-in                   |
-| 📌 **Version Pinning**                      | ❌               | ❌                         | ✅ Built-in                     | ✅ Built-in                   |
-| 📊 **Visualization and Tracing**            | ❌               | 👤 Requires Implementation | 👤 Requires Implementation      | ✅ Built-in                   |
-| 🔑 **Authorization Controls**               | ❌               | 👤 Requires Implementation | 👤 Requires Implementation      | ✅ Built-in                   |
-| 🧑‍💻 **PII Detection and Redaction**          | ❌               | 👤 Requires Implementation | 👤 Requires Implementation      | ✅ Built-in                   |
-| 🔍 **Deep Multimodal Analysis & Redaction** | ❌               | ❌                         | ❌                              | ✅ Built-in                   |
+| 🚀 **Feature**                              | 🔹 **MCP**       | 🔸 **Minibridge**        | 📦 **ARC (Acuvity Containers)** | 🌟 **ARC + Acuvity Platform** |
+| ------------------------------------------- | ---------------- | ------------------------ | ------------------------------- | ----------------------------- |
+| 🌐 **Remote Access**                        | ⚠️ HTTP/SSE Only | ✅ Built-in              | ✅ Built-in                     | ✅ Built-in                   |
+| 🔒 **TLS Support**                          | ❌               | ✅ Built-in              | ✅ Built-in                     | ✅ Built-in                   |
+| 📃 **Tool integrity check**                 | ❌               | ✅ Built-in              | ✅ Built-in                     | ✅ Built-in                   |
+| 📊 **Visualization and Tracing**            | ❌               | ✅ Built-in              | ✅ Built-in                     | ✅ Built-in                   |
+| 🛡️ **Isolation**                            | ❌               | ⚠️ Basic                 | ✅ Built-in                     | ✅ Built-in                   |
+| 🔐 **Security Policy Management**           | ❌               | 👤 Custom Implementation | ⚠️ Basic                        | ✅ Built-in                   |
+| 🕵️ **Secrets Redaction**                    | ❌               | 👤 Custom Implementation | ⚠️ Basic                        | ✅ Built-in                   |
+| 🔑 **Authorization Controls**               | ❌               | 👤 Custom Implementation | 👤 Custom Implementation        | ✅ Built-in                   |
+| 🧑‍💻 **PII Detection and Redaction**          | ❌               | 👤 Custom Implementation | 👤 Custom Implementation        | ✅ Built-in                   |
+| 📌 **Version Pinning**                      | ❌               | ❌                       | ✅ Built-in                     | ✅ Built-in                   |
+| 🔍 **Deep Multimodal Analysis & Redaction** | ❌               | ❌                       | ❌                              | ✅ Built-in                   |
 
-✅ _Included_ | ⚠️ _Partial/Basic Support_ | 👤 _Requires User Implementation_ | ❌ _Not Supported_
+✅ _Included_ | ⚠️ _Partial/Basic Support_ | 👤 _Custom User Implementation_ | ❌ _Not Supported_
 
 ## ✨ Contribute Your MCP Server to ARC!
 

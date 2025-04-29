@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-basic-memory",
+  "name": "mcp-server-basic-memory ",
+  "description": "Local-first knowledge management combining Zettelkasten with knowledge graphs",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-basic-memory",
+      "application": "https://pypi.org/project/basic-memory/"
+    },
+  "tags": null,
+  "official": false,
+  "packaged": true,
+  "scope": "standalone",
+  "mutitenant": false,
+  "runtime": "python",
+  "version": "0.12.3",
+  "requiresConfiguration": false,
+  "requiresStorage": true,
+  "resources": {
+    "tools": 9,
+    "prompts": 3,
+    "resources": 1,
+    "resourcesTemplates": 0
+  }
+}

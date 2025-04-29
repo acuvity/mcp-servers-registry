@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-everything",
+  "name": "mcp-server-everything ",
+  "description": "MCP server that exercises all the features of the MCP protocol",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-everything",
+      "application": "https://modelcontextprotocol.io"
+    },
+  "tags": ["mcp"],
+  "official": false,
+  "packaged": true,
+  "scope": "standalone",
+  "mutitenant": false,
+  "runtime": "node",
+  "version": "2025.4.28",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 8,
+    "prompts": 3,
+    "resources": 100,
+    "resourcesTemplates": 0
+  }
+}

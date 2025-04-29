@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-brave-search",
+  "name": "mcp-server-brave-search ",
+  "description": "MCP server for Brave Search API integration",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-brave-search",
+      "application": "https://modelcontextprotocol.io"
+    },
+  "tags": ["mcp"],
+  "official": false,
+  "packaged": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.6.2",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 2,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

@@ -1,4 +1,3 @@
-
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
@@ -11,8 +10,10 @@
     <img src="https://img.shields.io/badge/Acuvity-Join-7289DA?logo=discord&logoColor=fff" alt="Join Acuvity community" />
   </a>
 <a href="https://www.linkedin.com/company/acuvity/">
-    <img src="https://img.shields.io/badge/LinkedIn-follow-0a66c2" alt="Follow us on LinkedIn" />
+    <img src="https://img.shields.io/badge/LinkedIn-Follow-7289DA" alt="Follow us on LinkedIn" />
   </a>
+<a href="https://bsky.app/profile/acuvity.bsky.social">
+    <img src="https://img.shields.io/badge/Bluesky-Follow-7289DA"?logo=bluesky&logoColor=fff" alt="Follow us on Bluesky" />
 </p>
 
 
@@ -22,6 +23,7 @@
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-sequential-thinking/0.6.2?logo=docker&logoColor=fff&label=0.6.2)](https://hub.docker.com/r/acuvity/mcp-server-sequential-thinking)
 [![PyPI](https://img.shields.io/badge/0.6.2-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-sequential-thinking)](https://modelcontextprotocol.io)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-sequential-thinking&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-sequential-thinking%3A0.6.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** MCP server for sequential thinking and problem solving
 
@@ -73,133 +75,20 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 > Given mcp-server-sequential-thinking scope of operation it can be hosted anywhere.
 > But keep in mind that this requires a peristent storage and that is might not be capable of serving mulitple clients at the same time.
 
-## 🐳 With Docker
+# 🧰 Clients Integrations
 
-
-<details>
-<summary>Locally with STDIO</summary>
-
-In your client configuration set:
-
-- command: `docker`
-- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-sequential-thinking:0.6.2`
-
-</details>
-
-<details>
-<summary>Locally with HTTP/sse</summary>
-
-Simply run as:
-
-```console
-docker run -i --rm --read-only docker.io/acuvity/mcp-server-sequential-thinking:0.6.2
-```
-
-Add `-p <localport>:8000` to expose the port.
-
-Then on your application/client, you can configure to use something like:
-
-```json
-{
-  "mcpServers": {
-    "acuvity-mcp-server-sequential-thinking": {
-      "url": "http://localhost:<localport>/sse",
-    }
-  }
-}
-```
-
-You might have to use different ports for different tools.
-
-</details>
-
-<details>
-<summary>Remotely with Websocket tunneling and MTLS </summary>
-
-> This section assume you are familiar with TLS and certificates and will require:
-> - a server certificate with proper DNS/IP field matching your tool deployment.
-> - a client-ca used to sign client certificates
-
-1. Start the server in `backend` mode
- - add an environment variable like `-e MINIBRIDGE_MODE=backend`
- - add the TLS certificates (recommended) through a volume let's say `/certs` ex (`-v $PWD/certs:/certs`)
- - instruct minibridge to use those certs with
-   - `-e MINIBRIDGE_TLS_SERVER_CERT=/certs/server-cert.pem`
-   - `-e MINIBRIDGE_TLS_SERVER_KEY=/certs/server-key.pem`
-   - `-e MINIBRIDGE_TLS_SERVER_KEY_PASS=optional`
-   - `-e MINIBRIDGE_TLS_SERVER_CLIENT_CA=/certs/client-ca.pem`
-
-2. Start `minibridge` locally in frontend mode:
-  - Get [minibridge](https://github.com/acuvity/minibridge) binary for your OS.
-
-In your client configuration, Minibridge works like any other STDIO command.
-
-Example for Claude Desktop:
-
-```json
-{
-  "mcpServers": {
-    "acuvity-mcp-server-sequential-thinking": {
-      "command": "minibridge",
-      "args": ["frontend", "--backend", "wss://<remote-url>:8000/ws", "--tls-client-backend-ca", "/path/to/ca/that/signed/the/server-cert.pem/ca.pem", "--tls-client-cert", "/path/to/client-cert.pem", "--tls-client-key", "/path/to/client-key.pem"]
-    }
-  }
-}
-```
-
-That's it.
-
-Of course there are plenty of other options that minibridge can provide.
-
-Don't be shy to ask question either.
-
-</details>
-
-## ☁️ On Kubernetes
-
-<details>
-<summary>Deploy using Helm Charts</summary>
-
-### How to install
-
-Pick a version from the [OCI registry](https://hub.docker.com/r/acuvity/mcp-server-sequential-thinking/tags) looking for the type `helm`
-
-You can inspect the chart:
-
-```console
-helm show chart oci://docker.io/acuvity/mcp-server-sequential-thinking --version <version>
-````
-
-You can inspect the values that you can configure:
-
-```console
-helm show values oci://docker.io/acuvity/mcp-server-sequential-thinking --version <version>
-````
-
-Install with helm
-
-```console
-helm install mcp-server-sequential-thinking oci://docker.io/acuvity/mcp-server-sequential-thinking --version <version>
-```
-
-From there your MCP server mcp-server-sequential-thinking will be reachable by default through `http/sse` from inside the cluster using the Kubernetes Service `mcp-server-sequential-thinking` on port `8000` by default. You can change that by looking at the `service` section of the `values.yaml` file.
-
-### How to Monitor
-
-The deployment will create a Kubernetes service with a `healthPort`, that is used for liveness probes and readiness probes. This health port can also be used by the monitoring stack of your choice and exposes metrics under the `/metrics` path.
-
-See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-sequential-thinking/charts/mcp-server-sequential-thinking/README.md) for more details about settings.
-
-</details>
-
-# 🧰 Integrations
+Below are the steps for configuring most clients that use MCP to elevate their Copilot experience.
 
 > [!NOTE]
-> All the integrations below should work natively for all run mode.
-> Only the `docker` local run is described to keep it concise.
+> These integrations function natively across all Minibridge modes.
+> To keep things brief, only the docker local-run setup is covered here.
 
 <details>
 <summary>Visual Studio Code</summary>
+
+To get started immediately, you can use the "one-click" link below:
+
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-sequential-thinking&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-sequential-thinking%3A0.6.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -327,6 +216,124 @@ async with MCPServerSse(
 See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/) for more info.
 
 </details>
+
+## 🐳 Run it with Docker
+
+
+<details>
+<summary>Locally with STDIO</summary>
+
+In your client configuration set:
+
+- command: `docker`
+- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-sequential-thinking:0.6.2`
+
+</details>
+
+<details>
+<summary>Locally with HTTP/sse</summary>
+
+Simply run as:
+
+```console
+docker run -i --rm --read-only docker.io/acuvity/mcp-server-sequential-thinking:0.6.2
+```
+
+Add `-p <localport>:8000` to expose the port.
+
+Then on your application/client, you can configure to use something like:
+
+```json
+{
+  "mcpServers": {
+    "acuvity-mcp-server-sequential-thinking": {
+      "url": "http://localhost:<localport>/sse",
+    }
+  }
+}
+```
+
+You might have to use different ports for different tools.
+
+</details>
+
+<details>
+<summary>Remotely with Websocket tunneling and MTLS </summary>
+
+> This section assume you are familiar with TLS and certificates and will require:
+> - a server certificate with proper DNS/IP field matching your tool deployment.
+> - a client-ca used to sign client certificates
+
+1. Start the server in `backend` mode
+ - add an environment variable like `-e MINIBRIDGE_MODE=backend`
+ - add the TLS certificates (recommended) through a volume let's say `/certs` ex (`-v $PWD/certs:/certs`)
+ - instruct minibridge to use those certs with
+   - `-e MINIBRIDGE_TLS_SERVER_CERT=/certs/server-cert.pem`
+   - `-e MINIBRIDGE_TLS_SERVER_KEY=/certs/server-key.pem`
+   - `-e MINIBRIDGE_TLS_SERVER_KEY_PASS=optional`
+   - `-e MINIBRIDGE_TLS_SERVER_CLIENT_CA=/certs/client-ca.pem`
+
+2. Start `minibridge` locally in frontend mode:
+  - Get [minibridge](https://github.com/acuvity/minibridge) binary for your OS.
+
+In your client configuration, Minibridge works like any other STDIO command.
+
+Example for Claude Desktop:
+
+```json
+{
+  "mcpServers": {
+    "acuvity-mcp-server-sequential-thinking": {
+      "command": "minibridge",
+      "args": ["frontend", "--backend", "wss://<remote-url>:8000/ws", "--tls-client-backend-ca", "/path/to/ca/that/signed/the/server-cert.pem/ca.pem", "--tls-client-cert", "/path/to/client-cert.pem", "--tls-client-key", "/path/to/client-key.pem"]
+    }
+  }
+}
+```
+
+That's it.
+
+Of course there are plenty of other options that minibridge can provide.
+
+Don't be shy to ask question either.
+
+</details>
+
+## ☁️ Deploy On Kubernetes
+
+<details>
+<summary>Deploy using Helm Charts</summary>
+
+### How to install
+
+You can inspect the chart:
+
+```console
+helm show chart oci://docker.io/acuvity/mcp-server-sequential-thinking --version 1.0.0-
+````
+
+You can inspect the values that you can configure:
+
+```console
+helm show values oci://docker.io/acuvity/mcp-server-sequential-thinking --version 1.0.0
+````
+
+Install with helm
+
+```console
+helm install mcp-server-sequential-thinking oci://docker.io/acuvity/mcp-server-sequential-thinking --version 1.0.0
+```
+
+From there your MCP server mcp-server-sequential-thinking will be reachable by default through `http/sse` from inside the cluster using the Kubernetes Service `mcp-server-sequential-thinking` on port `8000` by default. You can change that by looking at the `service` section of the `values.yaml` file.
+
+### How to Monitor
+
+The deployment will create a Kubernetes service with a `healthPort`, that is used for liveness probes and readiness probes. This health port can also be used by the monitoring stack of your choice and exposes metrics under the `/metrics` path.
+
+See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-sequential-thinking/charts/mcp-server-sequential-thinking/README.md) for more details about settings.
+
+</details>
+
 
 # 🧠 Server features
 

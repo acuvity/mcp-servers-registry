@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-google-maps",
+  "name": "mcp-server-google-maps ",
+  "description": "MCP server for using the Google Maps API",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-google-maps",
+      "application": "https://modelcontextprotocol.io"
+    },
+  "tags": ["mcp"],
+  "official": false,
+  "packaged": true,
+  "scope": "remote",
+  "mutitenant": false,
+  "runtime": "node",
+  "version": "0.6.2",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 7,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}
