@@ -48,7 +48,7 @@ spec:
                   key: "{{ .Values.secrets.GITLAB_PERSONAL_ACCESS_TOKEN.valueFrom.key | default "GITLAB_PERSONAL_ACCESS_TOKEN" }}"
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default (printf  "%s-%s" .Chart.Version .Chart.AppVersion) }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http

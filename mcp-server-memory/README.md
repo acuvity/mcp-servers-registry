@@ -8,7 +8,8 @@
 </p>
 <p align="center">
   <a href="https://discord.gg/BkU7fBkrNk">
-    <img src="https://img.shields.io/badge/Acuvity-Join-7289DA?logo=discord&logoColor=fff)](https://discord.gg/BkU7fBkrNk" alt="Join Acuvity community" /></a>
+    <img src="https://img.shields.io/badge/Acuvity-Join-7289DA?logo=discord&logoColor=fff" alt="Join Acuvity community" />
+  </a>
 <a href="https://www.linkedin.com/company/acuvity/">
     <img src="https://img.shields.io/badge/LinkedIn-follow-0a66c2" alt="Follow us on LinkedIn" />
   </a>
@@ -17,15 +18,15 @@
 
 # What is mcp-server-memory?
 
-[![Helm](https://img.shields.io/badge/v1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-memory/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-memory/0.6.2?logo=docker&logoColor=fff&label=0.6.2)](https://hub.docker.com/r/acuvity/mcp-server-memory/tags/0.6.2)
-[![PyPI](https://img.shields.io/badge/0.6.2-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-memory)](https://modelcontextprotocol.io)
+[![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-memory/tags/)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-memory/2025.4.25?logo=docker&logoColor=fff&label=2025.4.25)](https://hub.docker.com/r/acuvity/mcp-server-memory)
+[![PyPI](https://img.shields.io/badge/2025.4.25-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-memory)](https://modelcontextprotocol.io)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 
 **Description:** MCP server for enabling memory for Claude through a knowledge graph
 
 > [!NOTE]
-> `@modelcontextprotocol/server-memory` has been repackaged by Acuvity from its original [sources](https://modelcontextprotocol.io).
+> `@modelcontextprotocol/server-memory` has been repackaged by Acuvity from Anthropic, PBC original sources.
 
 # Why We Built This
 
@@ -41,8 +42,8 @@ To address this need, we've created a secure and robust Docker image designed to
 - **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
 - **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
 - **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously monitors for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Provides full supply chain transparency with embedded metadata and traceable build information.
+- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
+- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
 </details>
 
 <details>
@@ -50,14 +51,14 @@ To address this need, we've created a secure and robust Docker image designed to
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-Minibridge includes built-in guardrails to protect MCP server integrity and detect suspicious behavior:
+Minibridge includes built-in guardrails that protect MCP server integrity and detect suspicious behaviors in real-time.:
 
 - **Integrity Checks**: Ensures authenticity with runtime component hashing.
 - **Threat Detection & Prevention with built-in Rego Policy**:
   - Covert‐instruction screening: Blocks any tool description or call arguments that match a wide list of "hidden prompt" phrases (e.g., "do not tell", "ignore previous instructions", Unicode steganography).
   - Schema-key misuse guard: Rejects tools or call arguments that expose internal-reasoning fields such as note, debug, context, etc., preventing jailbreaks that try to surface private metadata.
-  - Sensitive-resource exposure check: Denies tools whose descriptions—or call arguments—that reference paths, files, or patterns typically associated with secrets (e.g., .env, /etc/passwd, SSH keys).
-  - Tool-shadowing detector: Flags wording like "instead of using" that might instruct an assistant to replace or override an existing tool with a different behaviour.
+  - Sensitive-resource exposure check: Denies tools whose descriptions - or call arguments - reference paths, files, or patterns typically associated with secrets (e.g., .env, /etc/passwd, SSH keys).
+  - Tool-shadowing detector: Flags wording like "instead of using" that might instruct an assistant to replace or override an existing tool with a different behavior.
   - Cross-tool ex-filtration filter: Scans responses and tool descriptions for instructions to invoke external tools not belonging to this server.
   - Credential / secret redaction mutator: Automatically replaces recognised tokens formats with `[REDACTED]` in outbound content.
 
@@ -70,7 +71,7 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 
 > [!NOTE]
 > Given mcp-server-memory scope of operation it can be hosted anywhere.
-> But keep in mind that this keep a persistent state and that is not meant to be used by several client at the same time.
+> But keep in mind that this requires a peristent storage and that is might not be capable of serving mulitple clients at the same time.
 
 ## 🐳 With Docker
 **Environment variables:**
@@ -85,7 +86,7 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -v memory:/data docker.io/acuvity/mcp-server-memory:0.6.2`
+- arguments: `run -i --rm --read-only -v memory:/data docker.io/acuvity/mcp-server-memory:2025.4.25`
 
 </details>
 
@@ -95,7 +96,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -i --rm --read-only -v memory:/data docker.io/acuvity/mcp-server-memory:0.6.2
+docker run -i --rm --read-only -v memory:/data docker.io/acuvity/mcp-server-memory:2025.4.25
 ```
 
 Add `-p <localport>:8000` to expose the port.
@@ -119,7 +120,7 @@ You might have to use different ports for different tools.
 <details>
 <summary>Remotely with Websocket tunneling and MTLS </summary>
 
-> This section assume you are familar with TLS and certificates and will require:
+> This section assume you are familiar with TLS and certificates and will require:
 > - a server certificate with proper DNS/IP field matching your tool deployment.
 > - a client-ca used to sign client certificates
 
@@ -152,7 +153,7 @@ Example for Claude Desktop:
 
 That's it.
 
-Of course there is plenty of other option that minibridge can provide.
+Of course there are plenty of other options that minibridge can provide.
 
 Don't be shy to ask question either.
 
@@ -204,7 +205,7 @@ From there your MCP server mcp-server-memory will be reachable by default throug
 
 ### How to Monitor
 
-The deployment will a Kubernetes service with a `healthPort`, that is used for liveness probes and readiness probes. This health port can also be used by the monitoring stack of your choice and exposes metrics under the `/metrics` path.
+The deployment will create a Kubernetes service with a `healthPort`, that is used for liveness probes and readiness probes. This health port can also be used by the monitoring stack of your choice and exposes metrics under the `/metrics` path.
 
 See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-memory/charts/mcp-server-memory/README.md) for more details about settings.
 
@@ -229,7 +230,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
     "servers": {
       "acuvity-mcp-server-memory": {
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-v","memory:/data","docker.io/acuvity/mcp-server-memory:0.6.2"]
+        "args": ["run","-i","--rm","--read-only","-v","memory:/data","docker.io/acuvity/mcp-server-memory:2025.4.25"]
       }
     }
   }
@@ -238,14 +239,14 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
 
 ## Workspace scope
 
-In your workspace createa file called `.vscode/mcp.json` and add the following section:
+In your workspace create a file called `.vscode/mcp.json` and add the following section:
 
 ```json
 {
   "servers": {
     "acuvity-mcp-server-memory": {
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-v","memory:/data","docker.io/acuvity/mcp-server-memory:0.6.2"]
+      "args": ["run","-i","--rm","--read-only","-v","memory:/data","docker.io/acuvity/mcp-server-memory:2025.4.25"]
     }
   }
 }
@@ -265,7 +266,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
   "mcpServers": {
     "acuvity-mcp-server-memory": {
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-v","memory:/data","docker.io/acuvity/mcp-server-memory:0.6.2"]
+      "args": ["run","-i","--rm","--read-only","-v","memory:/data","docker.io/acuvity/mcp-server-memory:2025.4.25"]
     }
   }
 }
@@ -287,7 +288,7 @@ Add the following JSON block to your mcp configuration file:
   "mcpServers": {
     "acuvity-mcp-server-memory": {
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-v","memory:/data","docker.io/acuvity/mcp-server-memory:0.6.2"]
+      "args": ["run","-i","--rm","--read-only","-v","memory:/data","docker.io/acuvity/mcp-server-memory:2025.4.25"]
     }
   }
 }
@@ -307,7 +308,7 @@ In the `claude_desktop_config.json` configuration file add the following section
   "mcpServers": {
     "acuvity-mcp-server-memory": {
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-v","memory:/data","docker.io/acuvity/mcp-server-memory:0.6.2"]
+      "args": ["run","-i","--rm","--read-only","-v","memory:/data","docker.io/acuvity/mcp-server-memory:2025.4.25"]
     }
   }
 }
@@ -325,7 +326,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 async with MCPServerStdio(
     params={
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-v","memory:/data","docker.io/acuvity/mcp-server-memory:0.6.2"]
+        "args": ["run","-i","--rm","--read-only","-v","memory:/data","docker.io/acuvity/mcp-server-memory:2025.4.25"]
     }
 ) as server:
     tools = await server.list_tools()

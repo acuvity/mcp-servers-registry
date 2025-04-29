@@ -9,7 +9,8 @@
 </p>
 <p align="center">
   <a href="https://discord.gg/BkU7fBkrNk">
-    <img src="https://img.shields.io/badge/Acuvity-Join-7289DA?logo=discord&logoColor=fff)](https://discord.gg/BkU7fBkrNk" alt="Join Acuvity community" /></a>
+    <img src="https://img.shields.io/badge/Acuvity-Join-7289DA?logo=discord&logoColor=fff" alt="Join Acuvity community" />
+  </a>
 <a href="https://www.linkedin.com/company/acuvity/">
     <img src="https://img.shields.io/badge/LinkedIn-follow-0a66c2" alt="Follow us on LinkedIn" />
   </a>
@@ -18,15 +19,15 @@
 
 # What is mcp-server-fetch?
 
-[![Helm](https://img.shields.io/badge/v1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-fetch/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/2025.4.7?logo=docker&logoColor=fff&label=2025.4.7)](https://hub.docker.com/r/acuvity/mcp-server-fetch/tags/2025.4.7)
+[![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-fetch/tags/)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fetch/2025.4.7?logo=docker&logoColor=fff&label=2025.4.7)](https://hub.docker.com/r/acuvity/mcp-server-fetch)
 [![PyPI](https://img.shields.io/badge/2025.4.7-3775A9?logo=pypi&logoColor=fff&label=mcp-server-fetch)](https://pypi.org/project/mcp-server-fetch/)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 
 **Description:** A Model Context Protocol server providing tools to fetch and convert web content for usage by LLMs
 
 > [!NOTE]
-> `mcp-server-fetch` has been repackaged by Acuvity from its original [sources](https://pypi.org/project/mcp-server-fetch/).
+> `mcp-server-fetch` has been repackaged by Acuvity from Anthropic, PBC. original sources.
 
 # Why We Built This
 
@@ -42,8 +43,8 @@ To address this need, we've created a secure and robust Docker image designed to
 - **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
 - **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
 - **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously monitors for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Provides full supply chain transparency with embedded metadata and traceable build information.
+- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
+- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
 </details>
 
 <details>
@@ -51,14 +52,14 @@ To address this need, we've created a secure and robust Docker image designed to
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-Minibridge includes built-in guardrails to protect MCP server integrity and detect suspicious behavior:
+Minibridge includes built-in guardrails that protect MCP server integrity and detect suspicious behaviors in real-time.:
 
 - **Integrity Checks**: Ensures authenticity with runtime component hashing.
 - **Threat Detection & Prevention with built-in Rego Policy**:
   - Covert‐instruction screening: Blocks any tool description or call arguments that match a wide list of "hidden prompt" phrases (e.g., "do not tell", "ignore previous instructions", Unicode steganography).
   - Schema-key misuse guard: Rejects tools or call arguments that expose internal-reasoning fields such as note, debug, context, etc., preventing jailbreaks that try to surface private metadata.
-  - Sensitive-resource exposure check: Denies tools whose descriptions—or call arguments—that reference paths, files, or patterns typically associated with secrets (e.g., .env, /etc/passwd, SSH keys).
-  - Tool-shadowing detector: Flags wording like "instead of using" that might instruct an assistant to replace or override an existing tool with a different behaviour.
+  - Sensitive-resource exposure check: Denies tools whose descriptions - or call arguments - reference paths, files, or patterns typically associated with secrets (e.g., .env, /etc/passwd, SSH keys).
+  - Tool-shadowing detector: Flags wording like "instead of using" that might instruct an assistant to replace or override an existing tool with a different behavior.
   - Cross-tool ex-filtration filter: Scans responses and tool descriptions for instructions to invoke external tools not belonging to this server.
   - Credential / secret redaction mutator: Automatically replaces recognised tokens formats with `[REDACTED]` in outbound content.
 
@@ -89,8 +90,8 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
   - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-fetch/docker/Dockerfile)
 
 **Current supported version:**
-  - charts: `v1.0.0`
-  - container: `2025.4.7`
+  - charts: `1.0.0`
+  - container: `1.0.0-2025.4.7`
 
 ---
 
@@ -121,19 +122,19 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 Install will helm
 
 ```console
-helm install helm install mcp-server-fetch oci://docker.io/acuvity/mcp-server-fetch --version v1.0.0
+helm install helm install mcp-server-fetch oci://docker.io/acuvity/mcp-server-fetch --version 1.0.0
 ```
 
 You can inspect the chart:
 
 ```console
-helm show chart oci://docker.io/acuvity/mcp-server-fetch --version v1.0.0
+helm show chart oci://docker.io/acuvity/mcp-server-fetch --version 1.0.0
 ````
 
 You can inpect the values that you can configure:
 
 ```console
-helm show values oci://docker.io/acuvity/mcp-server-fetch --version v1.0.0
+helm show values oci://docker.io/acuvity/mcp-server-fetch --version 1.0.0
 ````
 From there your MCP server mcp-server-fetch will be reachable by default through `http/sse` from inside the cluster using the Kubernetes Service `mcp-server-fetch` on port `8000` by default.
 
@@ -352,44 +353,91 @@ Controls Pod scheduling to nodes:
 ## Minibridge
 
 ```yaml
+## Minibridge section
+#
+#
 minibridge:
+  # minibridge mode
+  # set to http, is a brige http/see to sdio, compatible with MCP protocol 2025-03-26 and 2024-11-05
+  # set to websocket is websocket to stdio, you will need minibridge on the client side.
   mode: http
+
+  # Log level
   log:
     level: info
-  tls:
-    enabled: false
-    cert:
-      value:
-      path:
-    key:
-      value:
-      path:
-    pass:
-      value:
-      valueFrom:
-        name:
-        key:
-    clientCA:
-      value:
-      path:
-  policer:
-    url:
-    token:
-      value:
-      valueFrom:
-        name:
-        key:
-    ca:
-      value:
-      path:
-    # insecure: true
-```
 
-Custom “minibridge” settings for HTTP↔STDIO or WebSocket↔STDIO bridging:
-- **mode**: `http` or `websocket`.
-- **log.level**: log verbosity.
-- **tls**: server TLS certificate/key and optional client‑CA.
-- **policer**: external service URL, auth token, and CA for traffic policing.
+  # Tracing
+  tracing:
+    # Set your OTEL endpoint HOST:port to enable tracing
+    url:
+
+  # TLS configuration
+  tls:
+    # To enable TLS
+    enabled: false
+    # [Required] Path to the server certificate when TLS is enabled
+    cert:
+      # raw value of certificate b64 encoded
+      value:
+      # path from existing volume mount
+      path:
+    # [Required] Path to the private key for the certificate when TLS is enabled
+    key:
+      # raw value of certificate b64 encoded
+      value:
+      # path from existing volume mount
+      path:
+    # [Optional] Passphrase for the certificate private key
+    pass:
+      # raw value, will be stored as a secret
+      value:
+      # value from an existing secret
+      valueFrom:
+        name:
+        key:
+
+    # [Optional] MTLS configuration to verify client certificates when TLS is enabled
+    clientCA:
+      # raw value of certificate b64 encoded
+      value:
+      # path from existing volume mount
+      path:
+
+  # SBOM, to disable set it to false
+  sbom: true
+
+  # Policier configuration
+  policer:
+    # Use the rego policer (Default)
+    rego:
+      # To enabled the rego policer
+      enabled: true
+      # path to the default policy
+      policy: /policy.rego
+
+    # Use the remote http policer
+    http:
+      # To enable the http policer
+      enabled: false
+      # Address of a Policer to send the traffic to for authentication and/or analysis
+      url:
+      # Token to use to authenticate against the Policer
+      token:
+        # raw value, will be stored as a secret
+        value:
+        # value from an existing secret
+        valueFrom:
+          name:
+          key:
+      # CA to trust Policer server certificates
+      ca:
+        # raw value of certificate b64 encoded
+        value:
+        # path from existing volume mount
+        path:
+      # Do not validate Policer CA. Do not do this in production
+      # insecure: true
+```
 
 # 🧠 Server features
 

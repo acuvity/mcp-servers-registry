@@ -10,13 +10,11 @@ _covert_patterns := [
 	"(?i)user (should not|must not|cannot) see",
 	"(?i)do(n't| not) (show|display|reveal|share)",
 	"(?i)no need to mention this",
+	"(?i)never (disclose|tell|show|reveal|leak)",
 	"(?i)n</?instructions>",
 	"(?i)</?important>",
 	"(?i)</?secret>",
 	"(?i)</?system>",
-	"(?i)ignore (previous|all|other) instructions",
-	"(?i)instead (of|do|provide|you should)",
-	"(?i)never (disclose|tell|show|reveal|leak)",
 	"(?i)very important",
 	`(?i)(\\xF3\\xA0[\\x80-\\x81][\\x80-\\xBF]){15,}`,
 ]
@@ -39,7 +37,7 @@ _redaction_patterns := [
 	`(xapp-\d-[A-Za-z0-9]+-\d+-[a-z0-9]+)`,
 	`(xox[abrp]-\d{10,13}-\d{10,13}[A-Za-z0-9-]*)`,
 	`https://hooks\.slack\.com/(?:services|workflows)/([A-Z0-9]+/[A-Z0-9]+/[0-9A-Za-z]{17,25})`,
-	`(?i)(?:\\["']|['"])?[A-Za-z0-9_]*(?:TOKEN|KEY|SECRET|PASS|USERNAME)[A-Za-z0-9_]*(?:\\["']|['"])?(?:\\n|\s)*[:=](?:\\n|\s)*(?:\\["']|['"])?([A-Za-z0-9_/\-]{8,})(?:\\["']|['"])?`,
+	`(?i)(?:\\["']|['"])?[A-Za-z0-9_]*(?:TOKEN|API_KEY|SECRET|PASS)[A-Za-z0-9_]*(?:\\["']|['"])?(?:\\n|\s)*[:=](?:\\n|\s)*(?:\\["']|['"])?([A-Za-z0-9_/\-]{12,})(?:\\["']|['"])?`,
 ]
 
 _sensitive_patterns := [
@@ -57,25 +55,57 @@ _shadowing_patterns := [
 	"(?i)instead of using",
 	"(?i)before using",
 	"(?i)after using",
+	"(?i)ignore (previous|all|other) (instructions|directives)",
+	"(?i)instead (of|do|provide|you should)",
 ]
 
 _cross_tool_patterns := [
-	`(?i)(?:use|using|with)(?:\s+(?:the|this))?\s+tool\s+(?:["']([^"']+)["']|([A-Za-z0-9_]{4,}))`,
-	`(?i)(?:use|using|with)(?:\s+(?:the|this))?\s+(?:["']([^"']+)["']|([A-Za-z0-9_]{4,}))\s+tool`,
+	`(?i)\b(?:use|run|launch|execute|start|invoke|trigger|initiate)\s+(?:the\s+)?(?:tool\s+)?([A-Za-z][A-Za-z0-9_-]{5,})\b`,
+	`(?i)\b(?:use|run|launch|execute|start|invoke|trigger|initiate)\s+(?:the\s+)?([A-Za-z][A-Za-z0-9_-]{5,})\b(?:tool)?`,
+	`(?i)\b(?:when|after|before|upon)\s+(?:calling|running|invoking|executing)\s+([A-Za-z][A-Za-z0-9_-]{5,})\b`,
+	`(?i)\b(?:when|after|before|upon)\s+\(?([A-Za-z][A-Za-z0-9_-]{5,})\)?[\s.:_-]*(?i)(?:[A-Za-z][A-Za-z0-9_]*\s+)?(?:is\s+)?(?:invoked|called|run|started|executed|triggered)\b`,
+	`(?i)\b([A-Za-z][A-Za-z0-9_-]{5,})\.([A-Za-z][A-Za-z0-9_-]*)\s+should\s+(?:use|run|launch|execute|start|invoke|trigger|initiate)\b`,
 ]
 
-_our_tools := [
+_cross_tool_exlude := [
+	# add our tools to exlude list
 	#
 	"fetch",
 	#
-	# The last item so to avoid regal formater to mess up
-	# the templating
-	"__placeholder_template",
+	# exclude word that might be misdetected
+	"to",
+	"this",
+	"that",
+	"it",
+	"something",
+	"anything",
+	"tool",
+	"script",
+	"function",
+	"i",
+	"you",
+	"me",
+	"we",
+	"he",
+	"she",
+	"they",
+	"them",
+	"our",
+	"us",
+	"please",
+	"today",
+	"tomorrow",
+	"yesterday",
+	"warning",
+	"discussion",
+	"order",
+	"case",
 ]
 
-# Deny rules for tools/list
+## Deny rules for tools/list response
+#
+
 reasons contains msg if {
-	input.mcp.method == "tools/list"
 	some tool in input.mcp.result.tools
 	some pattern in _covert_patterns
 	regex.match(pattern, tool.description)
@@ -83,7 +113,6 @@ reasons contains msg if {
 }
 
 reasons contains msg if {
-	input.mcp.method == "tools/list"
 	some tool in input.mcp.result.tools
 	some prop in tool.inputSchema.properties
 	lower(prop) in _schema_keys
@@ -91,7 +120,6 @@ reasons contains msg if {
 }
 
 reasons contains msg if {
-	input.mcp.method == "tools/list"
 	some tool in input.mcp.result.tools
 	some pattern in _sensitive_patterns
 	regex.match(pattern, tool.description)
@@ -99,25 +127,24 @@ reasons contains msg if {
 }
 
 reasons contains msg if {
-	input.mcp.method == "tools/list"
 	some tool in input.mcp.result.tools
 	some pattern in _shadowing_patterns
 	regex.match(pattern, tool.description)
 	msg = sprintf("tool-shadowing in tool %v: %v", [tool.name, pattern])
 }
 
-# capture cross origin in tool description
 reasons contains msg if {
 	some tool in input.mcp.result.tools
 	some pattern in _cross_tool_patterns
 	some tool_match in regex.find_all_string_submatch_n(pattern, tool.description, -1)
 	extracted_tool := tool_match[count(tool_match) - 1]
-	contains(extracted_tool, "_")
-	not extracted_tool in _our_tools
+	not extracted_tool in _cross_tool_exlude
 	msg := sprintf("untrusted tool use detected in tool description %v: %v", [tool.name, extracted_tool])
 }
 
-# Deny rules for tools/call
+## Deny rules for tools/call request
+#
+
 reasons contains msg if {
 	input.mcp.method == "tools/call"
 	some pattern in _covert_patterns
@@ -146,21 +173,51 @@ reasons contains msg if {
 	msg = sprintf("tool-shadowing in call args: %v", [pattern])
 }
 
-# capture cross origin in tool calls
+## Deny rules for tools/call response
+#
+
 reasons contains msg if {
-	some idx, element in input.mcp.result.content
+	some element in input.mcp.result.content
+	element.type == "text"
+	some pattern in _covert_patterns
+	regex.match(pattern, sprintf("%v", [element.text]))
+	msg = sprintf("covert content in call response: %v", [pattern])
+}
+
+reasons contains msg if {
+	some element in input.mcp.result.content
+	some arg_name in element
+	lower(arg_name) in _schema_keys
+	msg = sprintf("schema parameter misuse in call response: %v", [arg_name])
+}
+
+reasons contains msg if {
+	some element in input.mcp.result.content
+	element.type == "text"
+	some pattern in _sensitive_patterns
+	regex.match(pattern, sprintf("%v", [element.text]))
+	msg = sprintf("sensitive content in call response: %v", [pattern])
+}
+
+reasons contains msg if {
+	some element in input.mcp.result.content
+	element.type == "text"
+	some pattern in _shadowing_patterns
+	regex.match(pattern, sprintf("%v", [element.text]))
+	msg = sprintf("tool-shadowing in call response: %v", [pattern])
+}
+
+reasons contains msg if {
+	some element in input.mcp.result.content
 	element.type == "text"
 	text := element.text
 	some pattern in _cross_tool_patterns
 	some tool_match in regex.find_all_string_submatch_n(pattern, text, -1)
 	extracted_tool := tool_match[count(tool_match) - 1]
-	contains(extracted_tool, "_")
-	not extracted_tool in _our_tools
+	not extracted_tool in _cross_tool_exlude
 	msg := sprintf("untrusted tool detected in call response: %v", [extracted_tool])
 }
 
-# Mutation: redact sensitive text in responses
-# Only the matched fragment is replaced with "[REDACTED]", preserving the rest of the text.
 mcp := patched if {
 	patches := [patch |
 		some idx, element in input.mcp.result.content
@@ -182,7 +239,8 @@ mcp := patched if {
 	patched := json.patch(input.mcp, patches)
 }
 
-# Allow only if no violations
+## Allow only if no violations
+#
 allow if {
 	count(reasons) == 0
 }

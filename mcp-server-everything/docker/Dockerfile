@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@69ebfa7a85956cb7a3da5bf7943a7469af4445b8
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@2a9b2b847eaa18a1e3fda146333f3c45bf12ec06
 
 FROM node:23.11.0-alpine3.21
 
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="standalone"
 
 LABEL org.opencontainers.image.title="mcp-server-everything"
 LABEL org.opencontainers.image.description="MCP server that exercises all the features of the MCP protocol"
-LABEL org.opencontainers.image.version="2025.4.8"
+LABEL org.opencontainers.image.version="2025.4.25"
 LABEL org.opencontainers.image.source="https://modelcontextprotocol.io"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="Anthropic, PBC"
@@ -53,7 +53,7 @@ RUN if command -v groupadd >/dev/null 2>&1; then \
   chown appuser:appuser -R /app
 
 USER appuser
-RUN npm i --omit-dev @modelcontextprotocol/server-everything@2025.4.8
+RUN npm i --omit-dev @modelcontextprotocol/server-everything@2025.4.25
 
 EXPOSE 8000/tcp
 

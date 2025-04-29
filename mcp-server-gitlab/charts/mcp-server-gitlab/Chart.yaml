@@ -10,8 +10,8 @@ type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
-version: v1.0.0
-appVersion: 2025.4.7
+version: 1.0.0
+appVersion: 2025.4.25
 keywords:
   - mcp-server-gitlab
   - mcp-server

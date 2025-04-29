@@ -1,4 +1,4 @@
 env:
-  memory_file_path: 
+  MEMORY_FILE_PATH: 
 
 secrets:

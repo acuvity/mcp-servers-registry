@@ -1,5 +1,5 @@
 env:
-  gitlab_api_url: 
+  GITLAB_API_URL: 
 
 secrets:
   GITLAB_PERSONAL_ACCESS_TOKEN:

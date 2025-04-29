@@ -9,7 +9,8 @@
 </p>
 <p align="center">
   <a href="https://discord.gg/BkU7fBkrNk">
-    <img src="https://img.shields.io/badge/Acuvity-Join-7289DA?logo=discord&logoColor=fff)](https://discord.gg/BkU7fBkrNk" alt="Join Acuvity community" /></a>
+    <img src="https://img.shields.io/badge/Acuvity-Join-7289DA?logo=discord&logoColor=fff" alt="Join Acuvity community" />
+  </a>
 <a href="https://www.linkedin.com/company/acuvity/">
     <img src="https://img.shields.io/badge/LinkedIn-follow-0a66c2" alt="Follow us on LinkedIn" />
   </a>
@@ -18,15 +19,15 @@
 
 # What is mcp-server-slack?
 
-[![Helm](https://img.shields.io/badge/v1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-slack/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-slack/2025.1.17?logo=docker&logoColor=fff&label=2025.1.17)](https://hub.docker.com/r/acuvity/mcp-server-slack/tags/2025.1.17)
-[![PyPI](https://img.shields.io/badge/2025.1.17-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-slack)](https://modelcontextprotocol.io)
+[![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-slack/tags/)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-slack/2025.4.25?logo=docker&logoColor=fff&label=2025.4.25)](https://hub.docker.com/r/acuvity/mcp-server-slack)
+[![PyPI](https://img.shields.io/badge/2025.4.25-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-slack)](https://modelcontextprotocol.io)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 
 **Description:** MCP server for interacting with Slack
 
 > [!NOTE]
-> `@modelcontextprotocol/server-slack` has been repackaged by Acuvity from its original [sources](https://modelcontextprotocol.io).
+> `@modelcontextprotocol/server-slack` has been repackaged by Acuvity from Anthropic, PBC original sources.
 
 # Why We Built This
 
@@ -42,8 +43,8 @@ To address this need, we've created a secure and robust Docker image designed to
 - **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
 - **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
 - **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously monitors for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Provides full supply chain transparency with embedded metadata and traceable build information.
+- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
+- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
 </details>
 
 <details>
@@ -51,14 +52,14 @@ To address this need, we've created a secure and robust Docker image designed to
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-Minibridge includes built-in guardrails to protect MCP server integrity and detect suspicious behavior:
+Minibridge includes built-in guardrails that protect MCP server integrity and detect suspicious behaviors in real-time.:
 
 - **Integrity Checks**: Ensures authenticity with runtime component hashing.
 - **Threat Detection & Prevention with built-in Rego Policy**:
   - Covert‐instruction screening: Blocks any tool description or call arguments that match a wide list of "hidden prompt" phrases (e.g., "do not tell", "ignore previous instructions", Unicode steganography).
   - Schema-key misuse guard: Rejects tools or call arguments that expose internal-reasoning fields such as note, debug, context, etc., preventing jailbreaks that try to surface private metadata.
-  - Sensitive-resource exposure check: Denies tools whose descriptions—or call arguments—that reference paths, files, or patterns typically associated with secrets (e.g., .env, /etc/passwd, SSH keys).
-  - Tool-shadowing detector: Flags wording like "instead of using" that might instruct an assistant to replace or override an existing tool with a different behaviour.
+  - Sensitive-resource exposure check: Denies tools whose descriptions - or call arguments - reference paths, files, or patterns typically associated with secrets (e.g., .env, /etc/passwd, SSH keys).
+  - Tool-shadowing detector: Flags wording like "instead of using" that might instruct an assistant to replace or override an existing tool with a different behavior.
   - Cross-tool ex-filtration filter: Scans responses and tool descriptions for instructions to invoke external tools not belonging to this server.
   - Credential / secret redaction mutator: Automatically replaces recognised tokens formats with `[REDACTED]` in outbound content.
 
@@ -89,8 +90,8 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
   - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-slack/docker/Dockerfile)
 
 **Current supported version:**
-  - charts: `v1.0.0`
-  - container: `2025.1.17`
+  - charts: `1.0.0`
+  - container: `1.0.0-2025.4.25`
 
 ---
 
@@ -130,19 +131,19 @@ This chart requires some mandatory information to be installed.
 Install will helm
 
 ```console
-helm install helm install mcp-server-slack oci://docker.io/acuvity/mcp-server-slack --version v1.0.0
+helm install helm install mcp-server-slack oci://docker.io/acuvity/mcp-server-slack --version 1.0.0
 ```
 
 You can inspect the chart:
 
 ```console
-helm show chart oci://docker.io/acuvity/mcp-server-slack --version v1.0.0
+helm show chart oci://docker.io/acuvity/mcp-server-slack --version 1.0.0
 ````
 
 You can inpect the values that you can configure:
 
 ```console
-helm show values oci://docker.io/acuvity/mcp-server-slack --version v1.0.0
+helm show values oci://docker.io/acuvity/mcp-server-slack --version 1.0.0
 ````
 From there your MCP server mcp-server-slack will be reachable by default through `http/sse` from inside the cluster using the Kubernetes Service `mcp-server-slack` on port `8000` by default.
 
@@ -361,44 +362,91 @@ Controls Pod scheduling to nodes:
 ## Minibridge
 
 ```yaml
+## Minibridge section
+#
+#
 minibridge:
+  # minibridge mode
+  # set to http, is a brige http/see to sdio, compatible with MCP protocol 2025-03-26 and 2024-11-05
+  # set to websocket is websocket to stdio, you will need minibridge on the client side.
   mode: http
+
+  # Log level
   log:
     level: info
-  tls:
-    enabled: false
-    cert:
-      value:
-      path:
-    key:
-      value:
-      path:
-    pass:
-      value:
-      valueFrom:
-        name:
-        key:
-    clientCA:
-      value:
-      path:
-  policer:
-    url:
-    token:
-      value:
-      valueFrom:
-        name:
-        key:
-    ca:
-      value:
-      path:
-    # insecure: true
-```
 
-Custom “minibridge” settings for HTTP↔STDIO or WebSocket↔STDIO bridging:
-- **mode**: `http` or `websocket`.
-- **log.level**: log verbosity.
-- **tls**: server TLS certificate/key and optional client‑CA.
-- **policer**: external service URL, auth token, and CA for traffic policing.
+  # Tracing
+  tracing:
+    # Set your OTEL endpoint HOST:port to enable tracing
+    url:
+
+  # TLS configuration
+  tls:
+    # To enable TLS
+    enabled: false
+    # [Required] Path to the server certificate when TLS is enabled
+    cert:
+      # raw value of certificate b64 encoded
+      value:
+      # path from existing volume mount
+      path:
+    # [Required] Path to the private key for the certificate when TLS is enabled
+    key:
+      # raw value of certificate b64 encoded
+      value:
+      # path from existing volume mount
+      path:
+    # [Optional] Passphrase for the certificate private key
+    pass:
+      # raw value, will be stored as a secret
+      value:
+      # value from an existing secret
+      valueFrom:
+        name:
+        key:
+
+    # [Optional] MTLS configuration to verify client certificates when TLS is enabled
+    clientCA:
+      # raw value of certificate b64 encoded
+      value:
+      # path from existing volume mount
+      path:
+
+  # SBOM, to disable set it to false
+  sbom: true
+
+  # Policier configuration
+  policer:
+    # Use the rego policer (Default)
+    rego:
+      # To enabled the rego policer
+      enabled: true
+      # path to the default policy
+      policy: /policy.rego
+
+    # Use the remote http policer
+    http:
+      # To enable the http policer
+      enabled: false
+      # Address of a Policer to send the traffic to for authentication and/or analysis
+      url:
+      # Token to use to authenticate against the Policer
+      token:
+        # raw value, will be stored as a secret
+        value:
+        # value from an existing secret
+        valueFrom:
+          name:
+          key:
+      # CA to trust Policer server certificates
+      ca:
+        # raw value of certificate b64 encoded
+        value:
+        # path from existing volume mount
+        path:
+      # Do not validate Policer CA. Do not do this in production
+      # insecure: true
+```
 
 # 🧠 Server features
 
@@ -409,7 +457,7 @@ Custom “minibridge” settings for HTTP↔STDIO or WebSocket↔STDIO bridging:
 **Description**:
 
 ```
-List public channels in the workspace with pagination
+List public or pre-defined channels in the workspace with pagination
 ```
 
 **Parameter**:
@@ -555,7 +603,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | slack_get_users | description | 064d8ff96ee3ebc5262414bcf8d7a3569e50309fa1f47c86e8a504bd380a1bb9 |
 | tools | slack_get_users | cursor | af663f140c35780ea36be96fa602b310c84c5373bd95d8f7e98e2fdb474d5061 |
 | tools | slack_get_users | limit | a0f951f54f777c4126ec2111eeb7387dddd999ace45b68d2ba653a89f25d8db2 |
-| tools | slack_list_channels | description | 12fa8cc69e919c0d0ef74be3f9fb987c475d69844ff10dbd24990ddceae5695b |
+| tools | slack_list_channels | description | 20dcdc291e18a09e8ac35a4335082ec4394a452d18cfff2626d5a57158ef234b |
 | tools | slack_list_channels | cursor | af663f140c35780ea36be96fa602b310c84c5373bd95d8f7e98e2fdb474d5061 |
 | tools | slack_list_channels | limit | fa1df8a77e411a4caea75403c307b517794b232c64c461f5d72b2ba2aed7755e |
 | tools | slack_post_message | description | d105b99a6bf981dd4dd7cde32c4b8d33778f41b55d598babca8eba58e0897708 |

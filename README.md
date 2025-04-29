@@ -25,9 +25,9 @@ At [Acuvity](https://acuvity.ai), security is essential—especially for MCP ser
   - Covert‐instruction screening: Blocks any tool description or call arguments that match a wide list of "hidden prompt" phrases (e.g., "do not tell", "ignore previous instructions", Unicode steganography).
   - Schema-key misuse guard: Rejects tools or call arguments that expose internal-reasoning fields such as note, debug, context, etc., preventing jailbreaks that try to surface private metadata.
   - Sensitive-resource exposure check: Denies tools whose descriptions—or call arguments—that reference paths, files, or patterns typically associated with secrets (e.g., .env, /etc/passwd, SSH keys).
-  - Tool-shadowing detector: Flags wording like "instead of using" that might instruct an assistant to replace or override an existing tool with a different behaviour.
+  - Tool-shadowing detector: Flags wording like "instead of using" that might instruct an assistant to replace or override an existing tool with a different behavior.
   - Cross-tool ex-filtration filter: Scans responses and tool descriptions for instructions to invoke external tools not belonging to this server.
-  - Credential / secret redaction mutator: Automatically replaces recognised tokens formats with `[REDACTED]` in outbound content.
+  - Credential / secret redaction mutator: Automatically replaces recognized tokens format with `[REDACTED]` in outbound content.
 
 > **ARC** is the fortress. **Minibridge** is the guard.
 > Together, they securely connect and protect your MCP servers.
@@ -41,19 +41,20 @@ At [Acuvity](https://acuvity.ai), security is essential—especially for MCP ser
 
 ## Features comparisons
 
-| 🚀 **Feature**                              | 🔹 **MCP**       | 🔸 **Minibridge Wrapper** | 📦 **ARC (Acuvity Containers)** | 🌟 **ARC + Acuvity Platform** |
-| ------------------------------------------- | ---------------- | ------------------------- | ------------------------------- | ----------------------------- |
-| 🌐 **Remote Access**                        | ⚠️ HTTP/SSE Only | ✅ Built-in               | ✅ Built-in                     | ✅ Built-in                   |
-| 🔒 **TLS Support**                          | ❌               | ✅                        | ✅                              | ✅                            |
-| 📃 **Software Bill of Materials (SBOM)**    | ❌               | ✅                        | ✅                              | ✅                            |
-| 🔐 **Security Policy Management**           | ❌               | 👤 User Implemented       | ⚠️ Basic                        | ✅ Advanced                   |
-| 🔑 **Authorization Controls**               | ❌               | 👤 User Implemented       | ⚠️ Basic                        | ✅ Advanced                   |
-| 🕵️ **Secrets Redaction**                    | ❌               | 👤 User Implemented       | ⚠️ Basic                        | ✅ Advanced                   |
-| 🛡️ **Isolation**                            | ❌               | ❌                        | ✅                              | ✅                            |
-| 📌 **Version Pinning**                      | ❌               | ❌                        | ✅                              | ✅                            |
-| 📊 **Visualization and Tracing**            | ❌               | 👤 User Implemented       | 👤 User Implemented             | ✅ Built-in                   |
-| 🧑‍💻 **PII Detection and Redaction**          | ❌               | 👤 User Implemented       | 👤 User Implemented             | ✅ Built-in                   |
-| 🔍 **Deep Multimodal Analysis & Redaction** | ❌               | ❌                        | ❌                              | ✅ Built-in                   |
+| 🚀 **Feature**                              | 🔹 **MCP**       | 🔸 **Minibridge Wrapper**  | 📦 **ARC (Acuvity Containers)** | 🌟 **ARC + Acuvity Platform** |
+| ------------------------------------------- | ---------------- | -------------------------- | ------------------------------- | ----------------------------- |
+| 🌐 **Remote Access**                        | ⚠️ HTTP/SSE Only | ✅ Built-in                | ✅ Built-in                     | ✅ Built-in                   |
+| 🔒 **TLS Support**                          | ❌               | ✅ Built-in                | ✅ Built-in                     | ✅ Built-in                   |
+| 📃 **Tool integrity check**                 | ❌               | 👤 Requires Implementation | ✅ Built-in                     | ✅ Built-in                   |
+| 🔐 **Security Policy Management**           | ❌               | 👤 Requires Implementation | ⚠️ Basic                        | ✅ Built-in                   |
+| 🕵️ **Secrets Redaction**                    | ❌               | 👤 Requires Implementation | ⚠️ Basic                        | ✅ Built-in                   |
+| 🛡️ **Isolation**                            | ❌               | ❌                         | ✅ Built-in                     | ✅ Built-in                   |
+| 📃 **Software Bill of Materials (SBOM)**    | ❌               | ❌                         | ✅ Built-in                     | ✅ Built-in                   |
+| 📌 **Version Pinning**                      | ❌               | ❌                         | ✅ Built-in                     | ✅ Built-in                   |
+| 📊 **Visualization and Tracing**            | ❌               | 👤 Requires Implementation | 👤 Requires Implementation      | ✅ Built-in                   |
+| 🔑 **Authorization Controls**               | ❌               | 👤 Requires Implementation | 👤 Requires Implementation      | ✅ Built-in                   |
+| 🧑‍💻 **PII Detection and Redaction**          | ❌               | 👤 Requires Implementation | 👤 Requires Implementation      | ✅ Built-in                   |
+| 🔍 **Deep Multimodal Analysis & Redaction** | ❌               | ❌                         | ❌                              | ✅ Built-in                   |
 
 ✅ _Included_ | ⚠️ _Partial/Basic Support_ | 👤 _Requires User Implementation_ | ❌ _Not Supported_
 

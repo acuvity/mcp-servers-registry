@@ -10,7 +10,7 @@ type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
-version: v1.0.0
+version: 1.0.0
 appVersion: 0.12.3
 keywords:
   - mcp-server-basic-memory

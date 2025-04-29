@@ -11,7 +11,7 @@ fullnameOverride: ""
 image:
   repository: docker.io/acuvity/mcp-server-gitlab
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
+  # Overrides the image tag whose default is the chart version-appVersion.
   tag: ""
 
 # This is for the secretes for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
@@ -231,9 +231,13 @@ minibridge:
 
   # Policier configuration
   policer:
+    # Instruct to enforce policies if enabled
+    # otherwise it will jsut log the verdict as a warning
+    # message in logs
+    enforce: false
     # Use the rego policer (Default)
     rego:
-      # To enabled the rego policer
+      # To enable the rego policer
       enabled: true
       # path to the default policy
       policy: /policy.rego
@@ -259,4 +263,4 @@ minibridge:
         # path from existing volume mount
         path:
       # Do not validate Policer CA. Do not do this in production
-      # insucure: true
+      # insecure: true

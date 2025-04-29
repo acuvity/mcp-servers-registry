@@ -30,6 +30,7 @@ else
   fi
 fi
 
+export MINIBRIDGE_POLICER_ENFORCE=${MINIBRIDGE_POLICER_ENFORCE:-"false"}
 export MINIBRIDGE_HEALTH_LISTEN=${MINIBRIDGE_HEALTH_LISTEN:-":8080"}
 
 exec minibridge ${MINIBRIDGE_MODE} -- mcp-server-google-maps "$@"

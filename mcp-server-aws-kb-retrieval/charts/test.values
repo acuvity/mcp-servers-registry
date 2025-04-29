@@ -1,5 +1,5 @@
 env:
-  aws_region: dummy_value
+  AWS_REGION: dummy_value
 
 secrets:
   AWS_ACCESS_KEY_ID:

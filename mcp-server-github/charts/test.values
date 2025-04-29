@@ -1,5 +1,5 @@
 env:
-  github_host: 
+  GITHUB_HOST: 
 
 secrets:
   GITHUB_PERSONAL_ACCESS_TOKEN:

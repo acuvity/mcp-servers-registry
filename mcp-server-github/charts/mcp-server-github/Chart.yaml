@@ -10,7 +10,7 @@ type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
-version: v1.0.0
+version: 1.0.0
 appVersion: v0.2.1
 keywords:
   - mcp-server-github

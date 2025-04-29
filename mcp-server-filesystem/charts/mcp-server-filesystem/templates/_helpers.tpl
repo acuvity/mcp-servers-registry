@@ -165,6 +165,11 @@ Create the name of the service account to use
   value: /sbom.disabled
 {{- end }}
 
+{{- with .Values.minibridge.policer.enforce }}
+- name: MINIBRIDGE_POLICER_ENFORCE
+  value: {{.|quote }}
+{{- end }}
+
 {{- with .Values.minibridge.policer.rego}}
 {{- if .enabled }}
 - name: MINIBRIDGE_POLICER_TYPE

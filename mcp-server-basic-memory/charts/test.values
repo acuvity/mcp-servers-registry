@@ -1,5 +1,5 @@
 env:
-  home: 
-  basic_memory_home: 
+  HOME: 
+  BASIC_MEMORY_HOME: 
 
 secrets:

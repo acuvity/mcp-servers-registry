@@ -72,7 +72,7 @@
     },
     {
       "name": "slack_list_channels",
-      "hash": "12fa8cc69e919c0d0ef74be3f9fb987c475d69844ff10dbd24990ddceae5695b",
+      "hash": "20dcdc291e18a09e8ac35a4335082ec4394a452d18cfff2626d5a57158ef234b",
       "params": [
         {
           "name": "cursor",
