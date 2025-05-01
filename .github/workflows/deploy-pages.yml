@@ -1,3 +1,4 @@
+# .github/workflows/deploy-pages.yml
 name: Build & Deploy MCP Servers Site
 
 on:
@@ -5,54 +6,54 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read       # checkout
-  pages: write         # publish
-  id-token: write      # for deploy authentication
-
 jobs:
-  build-and-deploy:
+  build:
+    name: Build mcp-servers.json & Upload Artifact
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: read       # for checkout / discovery.json
+      id-token: write      # required by upload-pages-artifact@v3
     steps:
-      # 1. Check out your code
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. Generate the aggregated mcp-servers.json
       - name: Generate mcp-servers.json
         run: |
           WEBSITE_DIR=assets/website
           mkdir -p "$WEBSITE_DIR"
 
-          # 2a) Slurp all card.json files into a temp array
+          # Collect all card.json
           TMP=$(mktemp)
           find . -maxdepth 1 -type d -name 'mcp-server*' | while read DIR; do
             CARD="$DIR/card.json"
             [ -f "$CARD" ] && cat "$CARD"
           done | jq -s '.' > "$TMP"
 
-          # 2b) Merge discovery.json (base) with cards overrides
+          # Merge with discovery.json, preferring card.json overrides
           jq -s '
             .[0] as $disc |
             .[1] as $cards |
             $disc
-            | map( (. as $d
-                     | ($cards[]? | select(.id == $d.id))
-                     // $d
-                   ) )
-          ' "$WEBSITE_DIR/discovery.json" "$TMP" \
-          > "$WEBSITE_DIR/mcp-servers.json"
+            | map( ( $cards[]? | select(.id == .id) ) // . )
+          ' assets/website/discovery.json "$TMP" \
+            > assets/website/mcp-servers.json
 
           rm "$TMP"
-          echo "✓ Generated $(jq length "$WEBSITE_DIR/mcp-servers.json") entries in mcp-servers.json"
+          echo "✓ Generated $(jq length assets/website/mcp-servers.json) entries."
 
-      # 3. Upload the website folder as the Pages artifact
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: assets/website
 
-      # 4. Deploy to GitHub Pages
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write        # publish
+      id-token: write     # authenticate
+    steps:
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
+        # (no additional with: needed — it picks up the artifact from the build job)
