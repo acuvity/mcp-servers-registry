@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Discover secure, production-ready MCP Servers for AI agents and agentic frameworks" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Secure MCP Servers for AI Agents & Agentic Frameworks" />
+    <meta property="og:description"
+        content="Discover secure, production-ready MCP Servers for AI agents and agentic frameworks." />
+    <meta property="og:image" content="https://console.acuvity.ai/acuvity-single-mono.svg" />
+
+    <title>Secure MCP Servers for AI Agents & Agentic Frameworks</title>
+    <link rel="icon" type="image/svg+xml" href="https://console.acuvity.ai/acuvity-single-mono.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K8G47E1L5K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-K8G47E1L5K');
+    </script>
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Secure MCP Servers",
+    "url": "https://mcp.acuvity.ai",
+    "description": "Secure MCP Servers for AI Agents & Agentic Frameworks",
+    "applicationCategory": "DevelopmentFramework",
+    "author": {
+      "@type": "Organization",
+      "name": "Acuvity",
+      "url": "https://acuvity.ai"
+    },
+    "softwareVersion": "v0.2.1",
+    "datePublished": "2025-05-01",
+    "offers": {
+      "@type": "Offer",
+      "price": "0.00",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body class="bg-white text-gray-800">
+    <!-- Top Banner -->
+    <div class="bg-[#4e55fd] p-3 text-center">
+        <a href="https://acuvity.ai" target="_blank" class="font-bold text-white">Acuvity</a>
+        <span class="text-white">is packaging all the MCP servers to make it secure using</span>
+        <a href="https://github.com/acuvity/minibridge" target="_blank" class="font-bold text-white">Minibridge</a>.
+    </div>
+
+    <div id="app" class="flex max-w-7xl mx-auto mt-10 px-4">
+        <!-- Sidebar -->
+        <aside class="w-1/5 mr-6 sticky top-24 self-start">
+            <h2 class="text-xl font-semibold mb-4 text-black">Categories</h2>
+            <ul class="space-y-2">
+                <li>
+                    <button @click="selectCategory(null)" :class="category===null?activeClass:defaultClass">
+                        All
+                    </button>
+                </li>
+                <li v-for="tag in availableTags" :key="tag">
+                    <button @click="selectCategory(tag)" :class="category===tag?activeClass:defaultClass">
+                        {{ tag }}
+                    </button>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="w-4/5">
+            <header class="mb-6 text-center">
+                <h1 class="text-4xl font-bold text-black flex items-center justify-center gap-3">
+                    <img src="https://avatars.githubusercontent.com/u/182288589?s=200&v=4" alt="MCP Logo"
+                        class="h-10" />
+                    Secure MCP Servers
+                </h1>
+                <p class="text-gray-600 mt-1">
+                    Discover a comprehensive suite of secure, production-ready MCP Servers engineered for AI agents and
+                    agentic frameworks. If a required server isn’t listed, submit a request to have it added.
+                </p>
+            </header>
+
+            <!-- Search -->
+            <input v-model="search" type="text" placeholder="Search by name or description..."
+                class="w-full p-3 rounded border border-gray-300 mb-6 shadow-sm" />
+
+            <div class="text-sm mb-4">
+                <span class="text-gray-600">Showing {{ filteredServers.length }} result(s)</span>
+                <span v-if="category" class="ml-2 text-[#4e55fd]">(filtered by “{{ category }}”)</span>
+            </div>
+
+            <!-- MCP Server Cards -->
+            <div v-for="(server,i) in paginatedServers" :key="server.id"
+                class="bg-white border border-gray-200 rounded-lg shadow p-5 mb-6 relative">
+                <!-- Top-right icons -->
+                <div class="absolute top-3 right-3 grid grid-cols-5 gap-2 text-center text-xs text-gray-500" v-if="server.scope||server.runtime||server.mutitenant!==undefined
+                   ||server.requiresConfiguration!==undefined||server.requiresStorage!==undefined">
+                    <!-- Scope -->
+                    <div v-if="server.scope">
+                        <div class="font-medium">Scope</div>
+                        <div :title="`Scope: ${server.scope}`">
+                            <span v-if="server.scope==='remote'">🌐</span>
+                            <span v-else-if="server.scope==='native'">🖥️</span>
+                            <span v-else-if="server.scope==='standalone'">📦</span>
+                        </div>
+                    </div>
+                    <!-- Runtime -->
+                    <div v-if="server.runtime">
+                        <div class="font-medium">Runtime</div>
+                        <div :title="`Runtime: ${server.runtime}`">
+                            <span v-if="server.runtime.toLowerCase()==='binary'">🧰</span>
+                            <span v-else-if="server.runtime.toLowerCase()==='python'">🐍</span>
+                            <span v-else>📜</span>
+                        </div>
+                    </div>
+                    <!-- Tenant -->
+                    <div v-if="server.mutitenant!==undefined">
+                        <div class="font-medium">Tenant</div>
+                        <div :title="`Multitenant: ${server.mutitenant?'Yes':'No'}`">
+                            <span v-if="server.mutitenant">👥</span><span v-else>🚫</span>
+                        </div>
+                    </div>
+                    <!-- Config -->
+                    <div v-if="server.requiresConfiguration!==undefined">
+                        <div class="font-medium">Config</div>
+                        <div :title="`Config Required: ${server.requiresConfiguration?'Yes':'No'}`">
+                            <span v-if="server.requiresConfiguration">⚙️</span><span v-else>❌</span>
+                        </div>
+                    </div>
+                    <!-- Storage -->
+                    <div v-if="server.requiresStorage!==undefined">
+                        <div class="font-medium">Storage</div>
+                        <div :title="`Storage Required: ${server.requiresStorage?'Yes':'No'}`">
+                            <span v-if="server.requiresStorage">💾</span><span v-else>❌</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Title + Official Pill -->
+                <div class="flex items-center gap-2">
+                    <h2 class="text-2xl font-semibold text-black">{{ server.name }}</h2>
+                    <span v-if="server.official" class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">
+                        Official
+                    </span>
+                </div>
+
+                <!-- Version (with external-link icon) -->
+                <div v-if="server.version" class="text-sm font-mono mt-1 mb-2">
+                    <a v-if="server.links?.application" :href="server.links.application" target="_blank" rel="noopener"
+                        class="text-black hover:text-gray-700 flex items-center" title="Opens in a new tab">
+                        <span>Version: {{ server.version }}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 text-gray-500" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6
+                       M15 3h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </a>
+                    <span v-else class="text-gray-500">Version: {{ server.version }}</span>
+                </div>
+
+                <!-- Tags -->
+                <div v-if="server.tags" class="mb-4">
+                    <span v-for="tag in server.tags" :key="tag"
+                        class="inline-block bg-gray-200 rounded px-2 py-0.5 text-xs mr-1 mb-1">
+                        {{ tag }}
+                    </span>
+                </div>
+
+                <!-- Description -->
+                <div v-if="server.description" class="text-gray-700 mb-4">
+                    <div v-if="expanded[i] || server.description.length <= 300">
+                        {{ server.description }}
+                    </div>
+                    <div v-else>
+                        {{ server.description.substring(0,300) }}…
+                        <button @click="expanded[i]=true" class="text-[#4e55fd] hover:underline text-sm ml-1">
+                            See more…
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Exposed Resources -->
+                <div class="text-sm text-gray-700 mb-2">
+                    <div class="font-semibold text-gray-800 mb-1">Exposed resources</div>
+                    <div v-if="server.resources && (
+                server.resources.tools!==undefined ||
+                server.resources.prompts!==undefined ||
+                server.resources.resources!==undefined ||
+                server.resources.resourcesTemplates!==undefined
+              )" class="flex items-center gap-6 flex-wrap">
+                        <template v-if="server.resources.tools!==undefined">
+                            <div class="flex items-center gap-1">🛠️ <span>{{ server.resources.tools }}</span></div>
+                        </template>
+                        <template v-if="server.resources.prompts!==undefined">
+                            <div class="flex items-center gap-1">💬 <span>{{ server.resources.prompts }}</span></div>
+                        </template>
+                        <template v-if="server.resources.resources!==undefined">
+                            <div class="flex items-center gap-1">📦 <span>{{ server.resources.resources }}</span></div>
+                        </template>
+                        <template v-if="server.resources.resourcesTemplates!==undefined">
+                            <div class="flex items-center gap-1">🧩 <span>{{ server.resources.resourcesTemplates
+                                    }}</span></div>
+                        </template>
+                    </div>
+                    <div v-else class="text-gray-500">no SBOM verification</div>
+                </div>
+
+                <!-- Install vs Request Package (bottom-right) -->
+                <div class="absolute bottom-3 right-3">
+                    <a v-if="server.links?.artifacts" :href="server.links.artifacts" target="_blank"
+                        class="bg-black hover:bg-gray-800 text-white text-xs font-semibold py-1 px-3 rounded">
+                        Install
+                    </a>
+                    <a v-else
+                        href="https://github.com/acuvity/mcp-servers-registry/issues/new?template=add-mcp-server.yaml"
+                        target="_blank"
+                        class="bg-black hover:bg-gray-800 text-white text-xs font-semibold py-1 px-3 rounded">
+                        Request
+                    </a>
+                </div>
+            </div>
+
+            <!-- Pagination Controls -->
+            <div class="flex justify-center items-center space-x-4 mt-8">
+                <button @click="prevPage" :disabled="page===1"
+                    class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50">
+                    Previous
+                </button>
+                <span class="text-gray-700">Page {{ page }} of {{ totalPages }}</span>
+                <button @click="nextPage" :disabled="page===totalPages"
+                    class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50">
+                    Next
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-200 text-center py-4 mt-10 text-xs text-gray-500">
+        &copy; 2025 <a href="https://acuvity.ai" class="text-gray-700 hover:underline">Acuvity</a> Inc.
+    </footer>
+
+    <script>
+        const { createApp } = Vue;
+        createApp({
+            data() {
+                return {
+                    servers: [],
+                    search: '',
+                    page: 1,
+                    perPage: 50,
+                    category: null,
+                    availableTags: [],
+                    expanded: [],
+                    activeClass: "block w-full text-left text-white bg-black px-3 py-1.5 rounded",
+                    defaultClass: "block w-full text-left text-black hover:bg-gray-100 px-3 py-1.5 rounded"
+                };
+            },
+            computed: {
+                filteredServers() {
+                    let res = this.servers;
+                    if (this.category) res = res.filter(s => s.tags?.includes(this.category));
+                    if (this.search.trim()) {
+                        const f = new Fuse(res, { keys: ['name', 'description'], threshold: 0.4 });
+                        res = f.search(this.search).map(r => r.item);
+                    }
+                    return res;
+                },
+                totalPages() { return Math.ceil(this.filteredServers.length / this.perPage); },
+                paginatedServers() {
+                    const start = (this.page - 1) * this.perPage;
+                    return this.filteredServers.slice(start, start + this.perPage);
+                }
+            },
+            methods: {
+                nextPage() { if (this.page < this.totalPages) this.page++; },
+                prevPage() { if (this.page > 1) this.page--; },
+                selectCategory(tag) { this.category = tag; this.page = 1; }
+            },
+            mounted() {
+                axios.get('mcp-servers.json')
+                    .then(r => {
+                        this.servers = r.data;
+                        this.expanded = Array(this.servers.length).fill(false);
+                        const tags = new Set();
+                        this.servers.forEach(s => s.tags?.forEach(t => tags.add(t)));
+                        this.availableTags = [...tags].sort();
+                    })
+                    .catch(e => console.error(e));
+            }
+        }).mount('#app');
+    </script>
+</body>
+
+</html>
