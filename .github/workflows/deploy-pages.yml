@@ -7,13 +7,19 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: read       # for checkout / reading discovery.json
+  pages: write         # for publishing
+  id-token: write      # for authentication
+
 jobs:
   build:
     name: Build mcp-servers.json & Upload Artifact
     runs-on: ubuntu-latest
     permissions:
-      contents: read       # for checkout / discovery.json
-      id-token: write      # required by upload-pages-artifact@v3
+      contents: read
+      id-token: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -23,24 +29,23 @@ jobs:
           WEBSITE_DIR=assets/website
           mkdir -p "$WEBSITE_DIR"
 
-          # Collect all card.json
+          # 1) Gather all card.json files into a temp array
           TMP=$(mktemp)
           find . -maxdepth 1 -type d -name 'mcp-server*' | while read DIR; do
             CARD="$DIR/card.json"
             [ -f "$CARD" ] && cat "$CARD"
           done | jq -s '.' > "$TMP"
 
-          # Merge with discovery.json, preferring card.json overrides
+          # 2) Merge: cards override discovery, but keep any discovery-only entries
           jq -s '
-            .[0] as $disc |
-            .[1] as $cards |
-            $disc
-            | map( ( $cards[]? | select(.id == .id) ) // . )
+            # .[0] = discovery array, .[1] = cards array
+            (.[1] + .[0])
+            | unique_by(.id)
           ' assets/website/discovery.json "$TMP" \
             > assets/website/mcp-servers.json
 
           rm "$TMP"
-          echo "✓ Generated $(jq length assets/website/mcp-servers.json) entries."
+          echo "✓ Generated $(jq length assets/website/mcp-servers.json) server entries."
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
@@ -52,9 +57,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     permissions:
-      pages: write        # publish
-      id-token: write     # authenticate
+      pages: write
+      id-token: write
+
     steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
-        # (no additional with: needed — it picks up the artifact from the build job)

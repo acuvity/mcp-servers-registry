@@ -102,7 +102,7 @@
             </div>
 
             <!-- MCP Server Cards -->
-            <div v-for="(server,i) in paginatedServers" :key="server.id"
+            <div v-for="(server,i) in paginatedServers" :key="server.name"
                 class="bg-white border border-gray-200 rounded-lg shadow p-5 mb-6 relative">
                 <!-- Top-right icons -->
                 <div class="absolute top-3 right-3 grid grid-cols-5 gap-2 text-center text-xs text-gray-500" v-if="server.scope||server.runtime||server.mutitenant!==undefined
