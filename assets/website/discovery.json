@@ -11,7 +11,7 @@
     "scope": "remote",
     "tags": [
       "development",
-      "aggregators",
+      "integration",
       "database"
     ],
     "provider": "github-release",
@@ -41,10 +41,9 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "browser",
+      "web",
       "integration",
-      "aggregators",
-      "docker"
+      "cloud"
     ],
     "provider": "npx",
     "stars": 302,
@@ -77,12 +76,11 @@
     "runtime": "unknown",
     "scope": "unknown",
     "tags": [
-      "search",
+      "research",
       "development",
       "integration",
-      "aggregators",
       "database",
-      "docker"
+      "cloud"
     ],
     "provider": "source",
     "stars": 27854,
@@ -99,7 +97,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "aggregators"
+      "integration"
     ],
     "provider": "npx",
     "stars": 1,
@@ -131,7 +129,6 @@
     "tags": [
       "development",
       "integration",
-      "aggregators",
       "database"
     ],
     "provider": "npx",
@@ -168,8 +165,7 @@
     "tags": [
       "development",
       "integration",
-      "aggregators",
-      "docker"
+      "cloud"
     ],
     "provider": "npx",
     "stars": 24,
@@ -202,8 +198,8 @@
     "scope": "native",
     "tags": [
       "development",
-      "aggregators",
-      "docker"
+      "integration",
+      "cloud"
     ],
     "provider": "docker",
     "stars": 19,
@@ -220,7 +216,7 @@
     "runtime": "unknown",
     "scope": "unknown",
     "tags": [
-      "search",
+      "research",
       "finance"
     ],
     "provider": "source",
@@ -239,8 +235,7 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "aggregators",
-      "docker"
+      "cloud"
     ],
     "provider": "npx",
     "stars": 8,
@@ -257,7 +252,6 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "aggregators",
       "integration"
     ],
     "provider": "source",
@@ -296,7 +290,6 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "aggregators",
       "integration"
     ],
     "provider": "source",
@@ -327,9 +320,7 @@
     "official": false,
     "runtime": "python",
     "scope": "native",
-    "tags": [
-      "art"
-    ],
+    "tags": [],
     "provider": "source",
     "stars": 77,
     "config": [
@@ -359,9 +350,8 @@
     "runtime": "python",
     "scope": "unknown",
     "tags": [
-      "search",
-      "browser",
-      "art",
+      "research",
+      "web",
       "development",
       "integration"
     ],
@@ -403,11 +393,10 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "search",
-      "browser",
-      "art",
+      "research",
+      "web",
       "integration",
-      "docker"
+      "cloud"
     ],
     "provider": "npx",
     "stars": 9,
@@ -439,8 +428,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "search",
-      "art",
+      "research",
       "integration"
     ],
     "provider": "npx",
@@ -458,9 +446,8 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "search",
-      "browser",
-      "art",
+      "research",
+      "web",
       "integration"
     ],
     "provider": "npx",
@@ -493,8 +480,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "search",
-      "art",
+      "research",
       "integration",
       "database"
     ],
@@ -525,7 +511,6 @@
     "runtime": "python",
     "scope": "unknown",
     "tags": [
-      "art",
       "development",
       "integration"
     ],
@@ -578,12 +563,11 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "search",
-      "browser",
-      "art",
+      "research",
+      "web",
       "integration",
       "development",
-      "docker"
+      "cloud"
     ],
     "provider": "npx",
     "stars": 26,
@@ -615,8 +599,7 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "integration",
-      "art"
+      "integration"
     ],
     "provider": "source",
     "stars": 25,
@@ -648,8 +631,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "search",
-      "art",
+      "research",
       "development",
       "integration",
       "database"
@@ -677,11 +659,10 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "search",
-      "art",
+      "research",
       "integration",
       "development",
-      "docker"
+      "cloud"
     ],
     "provider": "npx",
     "stars": 3,
@@ -697,9 +678,7 @@
     "official": false,
     "runtime": "python",
     "scope": "native",
-    "tags": [
-      "art"
-    ],
+    "tags": [],
     "provider": "source",
     "stars": 4,
     "config": [
@@ -726,7 +705,7 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "browser"
+      "web"
     ],
     "provider": "npx",
     "config": []
@@ -742,8 +721,8 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "search",
-      "browser",
+      "research",
+      "web",
       "integration"
     ],
     "provider": "npx",
@@ -756,7 +735,7 @@
             "args": [
               "bilibili-mcp"
             ],
-            "description": "B站视频搜索 MCP 服务，可以在AI应用中搜索B站视频内容。"
+            "description": "B\u7ad9\u89c6\u9891\u641c\u7d22 MCP \u670d\u52a1\uff0c\u53ef\u4ee5\u5728AI\u5e94\u7528\u4e2d\u641c\u7d22B\u7ad9\u89c6\u9891\u5185\u5bb9\u3002"
           }
         }
       }
@@ -773,9 +752,9 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "browser",
+      "web",
       "integration",
-      "docker"
+      "cloud"
     ],
     "provider": "docker",
     "stars": 23,
@@ -792,7 +771,7 @@
     "runtime": "python",
     "scope": "unknown",
     "tags": [
-      "browser",
+      "web",
       "development"
     ],
     "provider": "npx",
@@ -822,7 +801,7 @@
     "runtime": "python",
     "scope": "unknown",
     "tags": [
-      "browser"
+      "web"
     ],
     "provider": "npx",
     "stars": 96,
@@ -850,10 +829,10 @@
     "runtime": "python",
     "scope": "unknown",
     "tags": [
-      "browser",
+      "web",
       "development",
       "integration",
-      "docker"
+      "cloud"
     ],
     "provider": "docker",
     "stars": 397,
@@ -897,7 +876,7 @@
     "runtime": "node",
     "scope": "unknown",
     "tags": [
-      "browser",
+      "web",
       "development",
       "integration"
     ],
@@ -928,8 +907,8 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "search",
-      "browser"
+      "research",
+      "web"
     ],
     "provider": "source",
     "stars": 17,
@@ -960,9 +939,9 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "browser",
+      "web",
       "development",
-      "file"
+      "storage"
     ],
     "provider": "source",
     "stars": 38,
@@ -997,7 +976,7 @@
     "scope": "native",
     "tags": [
       "integration",
-      "browser"
+      "web"
     ],
     "provider": "source",
     "stars": 17,
@@ -1028,7 +1007,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "browser",
+      "web",
       "integration",
       "development"
     ],
@@ -1059,7 +1038,7 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "browser",
+      "web",
       "development"
     ],
     "provider": "source",
@@ -1077,9 +1056,9 @@
     "runtime": "unknown",
     "scope": "unknown",
     "tags": [
-      "browser",
+      "web",
       "development",
-      "docker"
+      "cloud"
     ],
     "provider": "npx",
     "stars": 9233,
@@ -1096,7 +1075,7 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "browser"
+      "web"
     ],
     "provider": "npx",
     "stars": 11,
@@ -1124,8 +1103,8 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "search",
-      "browser",
+      "research",
+      "web",
       "integration"
     ],
     "provider": "source",
@@ -1164,7 +1143,7 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "browser"
+      "web"
     ],
     "provider": "npx",
     "stars": 145,
@@ -1231,9 +1210,8 @@
     "scope": "remote",
     "tags": [
       "development",
-      "file",
-      "cloud",
-      "docker"
+      "storage",
+      "cloud"
     ],
     "provider": "npx",
     "stars": 3,
@@ -1304,10 +1282,9 @@
     "tags": [
       "development",
       "integration",
-      "file",
+      "storage",
       "database",
-      "cloud",
-      "docker"
+      "cloud"
     ],
     "provider": "docker",
     "stars": 88,
@@ -1340,9 +1317,8 @@
     "runtime": "python",
     "scope": "unknown",
     "tags": [
-      "docker",
-      "development",
       "cloud",
+      "development",
       "database"
     ],
     "provider": "source",
@@ -1420,7 +1396,7 @@
   {
     "id": "mcp-server-kubernetes",
     "name": "mcp-server-flux159-kubernetes",
-    "description": "/ Typescript implementation of Kubernetes cluster operations for pods, deployments, services.",
+    "description": "Typescript implementation of Kubernetes cluster operations for pods, deployments, services.",
     "links": {
       "application": "https://github.com/Flux159/mcp-server-kubernetes"
     },
@@ -1430,8 +1406,7 @@
     "tags": [
       "development",
       "integration",
-      "cloud",
-      "docker"
+      "cloud"
     ],
     "provider": "npx",
     "stars": 509,
@@ -1451,7 +1426,7 @@
   {
     "id": "mcp-server-azure-resource-graph-mcp-server",
     "name": "mcp-server-azure-resource-graph",
-    "description": "/ - A Model Context Protocol server for querying and analyzing Azure resources at scale using Azure Resource Graph, enabling AI assistants to explore and monitor Azure infrastructure.",
+    "description": "A Model Context Protocol server for querying and analyzing Azure resources at scale using Azure Resource Graph, enabling AI assistants to explore and monitor Azure infrastructure.",
     "links": {
       "application": "https://github.com/hardik-id/azure-resource-graph-mcp-server"
     },
@@ -1492,8 +1467,7 @@
     "scope": "unknown",
     "tags": [
       "cloud",
-      "development",
-      "docker"
+      "development"
     ],
     "provider": "docker",
     "stars": 62,
@@ -1522,11 +1496,10 @@
     "runtime": "unknown",
     "scope": "remote",
     "tags": [
-      "search",
+      "research",
       "development",
       "integration",
-      "cloud",
-      "docker"
+      "cloud"
     ],
     "provider": "npx",
     "stars": 1,
@@ -1578,8 +1551,7 @@
     "scope": "unknown",
     "tags": [
       "cloud",
-      "development",
-      "docker"
+      "development"
     ],
     "provider": "docker",
     "stars": 247,
@@ -1613,7 +1585,7 @@
     "scope": "remote",
     "tags": [
       "security",
-      "docker",
+      "cloud",
       "database"
     ],
     "provider": "npx",
@@ -1640,7 +1612,7 @@
   {
     "id": "mcp-server-kubectl-mcp-server",
     "name": "mcp-server-kubectl",
-    "description": "/ A Model Context Protocol (MCP) server for Kubernetes that enables AI assistants like Claude, Cursor, and others to interact with Kubernetes clusters through natural language.",
+    "description": "A Model Context Protocol (MCP) server for Kubernetes that enables AI assistants like Claude, Cursor, and others to interact with Kubernetes clusters through natural language.",
     "links": {
       "application": "https://github.com/rohitg00/kubectl-mcp-server"
     },
@@ -1703,7 +1675,7 @@
   {
     "id": "mcp-server-mcp-k8s-go",
     "name": "mcp-server-k8s-go",
-    "description": "/ Kubernetes cluster operations through MCP.",
+    "description": "Kubernetes cluster operations through MCP.",
     "links": {
       "application": "https://github.com/strowk/mcp-k8s-go"
     },
@@ -1712,7 +1684,6 @@
     "scope": "unknown",
     "tags": [
       "development",
-      "docker",
       "cloud"
     ],
     "provider": "npx",
@@ -1731,7 +1702,7 @@
   {
     "id": "mcp-server-mcp-nutanix",
     "name": "mcp-server-nutanix",
-    "description": "/ Go-based MCP Server for interfacing with Nutanix Prism Central resources.",
+    "description": "Go-based MCP Server for interfacing with Nutanix Prism Central resources.",
     "links": {
       "application": "https://github.com/thunderboltsid/mcp-nutanix"
     },
@@ -1749,7 +1720,7 @@
   {
     "id": "mcp-server-k8m",
     "name": "mcp-server-k8m",
-    "description": "/ Provides MCP multi-cluster Kubernetes management and operations, featuring a management interface, logging, and nearly 50 built-in tools covering common DevOps and development scenarios. Supports both standard and CRD resources.",
+    "description": "Provides MCP multi-cluster Kubernetes management and operations, featuring a management interface, logging, and nearly 50 built-in tools covering common DevOps and development scenarios. Supports both standard and CRD resources.",
     "links": {
       "application": "https://github.com/weibaohui/k8m"
     },
@@ -1757,9 +1728,8 @@
     "runtime": "unknown",
     "scope": "unknown",
     "tags": [
-      "docker",
-      "integration",
       "cloud",
+      "integration",
       "development"
     ],
     "provider": "source",
@@ -1769,7 +1739,7 @@
   {
     "id": "mcp-server-kom",
     "name": "mcp-server-kom",
-    "description": "/ Provides MCP multi-cluster Kubernetes management and operations. It can be integrated as an SDK into your own project and includes nearly 50 built-in tools covering common DevOps and development scenarios. Supports both standard and CRD resources.",
+    "description": "Provides MCP multi-cluster Kubernetes management and operations. It can be integrated as an SDK into your own project and includes nearly 50 built-in tools covering common DevOps and development scenarios. Supports both standard and CRD resources.",
     "links": {
       "application": "https://github.com/weibaohui/kom"
     },
@@ -1777,9 +1747,8 @@
     "runtime": "unknown",
     "scope": "unknown",
     "tags": [
-      "docker",
-      "integration",
       "cloud",
+      "integration",
       "development",
       "database"
     ],
@@ -1815,7 +1784,7 @@
   {
     "id": "mcp-server-adls-mcp-server",
     "name": "mcp-server-adls",
-    "description": "/ MCP Server for Azure Data Lake Storage. It can perform manage containers, read/write/upload/download operations on container files and manage file metadata.",
+    "description": "MCP Server for Azure Data Lake Storage. It can perform manage containers, read/write/upload/download operations on container files and manage file metadata.",
     "links": {
       "application": "https://github.com/erikhoward/adls-mcp-server"
     },
@@ -1823,7 +1792,7 @@
     "runtime": "unknown",
     "scope": "unknown",
     "tags": [
-      "file",
+      "storage",
       "development",
       "cloud"
     ],
@@ -1877,9 +1846,8 @@
     "runtime": "binary",
     "scope": "remote",
     "tags": [
-      "docker",
-      "integration",
       "cloud",
+      "integration",
       "development"
     ],
     "provider": "docker",
@@ -1906,9 +1874,8 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "docker",
-      "integration",
       "cloud",
+      "integration",
       "database"
     ],
     "provider": "npx",
@@ -1949,7 +1916,7 @@
   {
     "id": "mcp-server-portainer-mcp",
     "name": "mcp-server-portainer",
-    "description": "/ A powerful MCP server that enables AI assistants to seamlessly interact with Portainer instances, providing natural language access to container management, deployment operations, and infrastructure monitoring capabilities.",
+    "description": "A powerful MCP server that enables AI assistants to seamlessly interact with Portainer instances, providing natural language access to container management, deployment operations, and infrastructure monitoring capabilities.",
     "links": {
       "application": "https://github.com/portainer/portainer-mcp"
     },
@@ -1957,9 +1924,8 @@
     "runtime": "unknown",
     "scope": "unknown",
     "tags": [
-      "docker",
-      "integration",
       "cloud",
+      "integration",
       "development"
     ],
     "provider": "github-release",
@@ -1993,10 +1959,10 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "docker",
-      "browser",
+      "cloud",
+      "web",
       "integration",
-      "code execution"
+      "development"
     ],
     "provider": "npx",
     "config": [],
@@ -2013,9 +1979,9 @@
     "runtime": "binary",
     "scope": "remote",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
-      "code execution"
+      "development"
     ],
     "provider": "docker",
     "config": [],
@@ -2033,9 +1999,8 @@
     "scope": "native",
     "tags": [
       "integration",
-      "file",
-      "search",
-      "coding",
+      "storage",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -2070,7 +2035,6 @@
     "scope": "native",
     "tags": [
       "integration",
-      "coding",
       "development"
     ],
     "provider": "source",
@@ -2113,8 +2077,7 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "search",
-      "coding",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -2150,10 +2113,9 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "browser",
+      "web",
       "integration",
-      "search",
-      "coding",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -2172,9 +2134,8 @@
     "scope": "native",
     "tags": [
       "integration",
-      "file",
-      "search",
-      "coding",
+      "storage",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -2204,8 +2165,8 @@
     "runtime": "unknown",
     "scope": "unknown",
     "tags": [
-      "command line",
-      "browser",
+      "automation",
+      "web",
       "development"
     ],
     "provider": "npx",
@@ -2235,8 +2196,8 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "command line",
-      "browser"
+      "automation",
+      "web"
     ],
     "provider": "npx",
     "config": [
@@ -2264,8 +2225,8 @@
     "runtime": "unknown",
     "scope": "unknown",
     "tags": [
-      "docker",
-      "command line",
+      "cloud",
+      "automation",
       "integration",
       "development"
     ],
@@ -2298,8 +2259,8 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "command line",
-      "browser",
+      "automation",
+      "web",
       "development"
     ],
     "provider": "npx",
@@ -2336,7 +2297,7 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "command line",
+      "automation",
       "integration",
       "development"
     ],
@@ -2355,9 +2316,9 @@
     "runtime": "unknown",
     "scope": "unknown",
     "tags": [
-      "command line",
+      "automation",
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "source",
@@ -2389,9 +2350,9 @@
     "runtime": "unknown",
     "scope": "unknown",
     "tags": [
-      "command line",
+      "automation",
       "development",
-      "docker"
+      "cloud"
     ],
     "provider": "docker",
     "config": [],
@@ -2408,10 +2369,10 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "command line",
+      "automation",
       "integration",
-      "file",
-      "search",
+      "storage",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -2461,7 +2422,7 @@
     "scope": "remote",
     "tags": [
       "communication",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -2479,10 +2440,10 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "browser",
+      "web",
       "integration",
       "communication",
-      "search"
+      "research"
     ],
     "provider": "source",
     "config": [
@@ -2545,11 +2506,11 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
-      "file",
+      "storage",
       "communication",
-      "search",
+      "research",
       "database"
     ],
     "provider": "docker",
@@ -2581,9 +2542,9 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "docker",
+      "cloud",
       "communication",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -2635,10 +2596,10 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
       "communication",
-      "search"
+      "research"
     ],
     "provider": "npx",
     "config": [],
@@ -2657,7 +2618,7 @@
     "tags": [
       "integration",
       "communication",
-      "search",
+      "research",
       "database"
     ],
     "provider": "source",
@@ -2689,7 +2650,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
       "communication"
     ],
@@ -2723,10 +2684,10 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "browser",
+      "web",
       "integration",
       "communication",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -2792,8 +2753,8 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "docker",
-      "browser",
+      "cloud",
+      "web",
       "integration",
       "communication",
       "development"
@@ -2831,10 +2792,10 @@
     "runtime": "unknown",
     "scope": "unknown",
     "tags": [
-      "browser",
+      "web",
       "integration",
       "communication",
-      "search"
+      "research"
     ],
     "provider": "npx",
     "config": [
@@ -2866,7 +2827,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "browser",
+      "web",
       "integration",
       "communication"
     ],
@@ -2965,10 +2926,10 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "browser",
+      "web",
       "integration",
       "communication",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -2997,7 +2958,7 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
       "communication",
       "development"
@@ -3017,7 +2978,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "browser",
+      "web",
       "integration",
       "communication",
       "development"
@@ -3082,10 +3043,10 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
       "communication",
-      "search",
+      "research",
       "development"
     ],
     "provider": "docker",
@@ -3115,7 +3076,6 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "customer data platforms",
       "development"
     ],
     "provider": "npx",
@@ -3134,7 +3094,6 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "customer data platforms",
       "development"
     ],
     "provider": "source",
@@ -3152,9 +3111,9 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "browser",
-      "customer data platforms",
-      "search"
+      "web",
+      "integration",
+      "research"
     ],
     "provider": "npx",
     "config": [
@@ -3191,10 +3150,9 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "browser",
+      "web",
       "integration",
-      "customer data platforms",
-      "file",
+      "storage",
       "development",
       "database"
     ],
@@ -3239,7 +3197,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "customer data platforms"
+      "integration"
     ],
     "provider": "npx",
     "config": [
@@ -3310,7 +3268,7 @@
     "tags": [
       "database",
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "source",
@@ -3451,7 +3409,7 @@
     "scope": "native",
     "tags": [
       "database",
-      "docker",
+      "cloud",
       "integration",
       "development"
     ],
@@ -3485,8 +3443,8 @@
     "scope": "remote",
     "tags": [
       "database",
-      "docker",
-      "search"
+      "cloud",
+      "research"
     ],
     "provider": "npx",
     "config": [
@@ -3532,7 +3490,7 @@
     "tags": [
       "database",
       "integration",
-      "search"
+      "research"
     ],
     "provider": "source",
     "config": [],
@@ -3550,7 +3508,7 @@
     "scope": "remote",
     "tags": [
       "database",
-      "docker"
+      "cloud"
     ],
     "provider": "source",
     "config": [
@@ -3641,7 +3599,7 @@
     "tags": [
       "database",
       "integration",
-      "file",
+      "storage",
       "development"
     ],
     "provider": "npx",
@@ -3673,9 +3631,9 @@
     "scope": "native",
     "tags": [
       "database",
-      "docker",
+      "cloud",
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -3694,10 +3652,10 @@
     "scope": "native",
     "tags": [
       "database",
-      "docker",
+      "cloud",
       "integration",
-      "file",
-      "search"
+      "storage",
+      "research"
     ],
     "provider": "docker",
     "config": [
@@ -3777,7 +3735,7 @@
     "scope": "remote",
     "tags": [
       "database",
-      "docker",
+      "cloud",
       "development"
     ],
     "provider": "github-release",
@@ -3899,7 +3857,7 @@
     "scope": "native",
     "tags": [
       "database",
-      "search"
+      "research"
     ],
     "provider": "source",
     "config": [],
@@ -3918,7 +3876,7 @@
     "tags": [
       "database",
       "integration",
-      "search"
+      "research"
     ],
     "provider": "npx",
     "config": [
@@ -4056,7 +4014,7 @@
     "scope": "remote",
     "tags": [
       "database",
-      "browser"
+      "web"
     ],
     "provider": "source",
     "config": [
@@ -4082,8 +4040,8 @@
     "scope": "native",
     "tags": [
       "database",
-      "docker",
-      "search",
+      "cloud",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -4155,10 +4113,10 @@
     "scope": "remote",
     "tags": [
       "database",
-      "browser",
+      "web",
       "integration",
-      "file",
-      "search",
+      "storage",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -4176,9 +4134,9 @@
     "scope": "remote",
     "tags": [
       "database",
-      "docker",
+      "cloud",
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "source",
@@ -4253,7 +4211,7 @@
     "scope": "remote",
     "tags": [
       "database",
-      "docker",
+      "cloud",
       "integration"
     ],
     "provider": "npx",
@@ -4288,7 +4246,7 @@
     "scope": "remote",
     "tags": [
       "database",
-      "browser",
+      "web",
       "development"
     ],
     "provider": "npx",
@@ -4333,7 +4291,7 @@
     "scope": "remote",
     "tags": [
       "database",
-      "docker"
+      "cloud"
     ],
     "provider": "source",
     "config": [
@@ -4423,8 +4381,8 @@
     "scope": "remote",
     "tags": [
       "database",
-      "browser",
-      "search",
+      "web",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -4469,8 +4427,8 @@
     "scope": "native",
     "tags": [
       "database",
-      "docker",
-      "browser",
+      "cloud",
+      "web",
       "development"
     ],
     "provider": "npx",
@@ -4505,7 +4463,7 @@
     "scope": "native",
     "tags": [
       "database",
-      "browser",
+      "web",
       "integration",
       "development"
     ],
@@ -4538,7 +4496,7 @@
     "scope": "remote",
     "tags": [
       "database",
-      "browser",
+      "web",
       "development"
     ],
     "provider": "npx",
@@ -4592,10 +4550,10 @@
     "scope": "native",
     "tags": [
       "database",
-      "docker",
+      "cloud",
       "integration",
-      "file",
-      "search",
+      "storage",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -4644,7 +4602,7 @@
     "scope": "native",
     "tags": [
       "database",
-      "docker",
+      "cloud",
       "development"
     ],
     "provider": "docker",
@@ -4677,11 +4635,11 @@
     "scope": "native",
     "tags": [
       "database",
-      "docker",
-      "browser",
+      "cloud",
+      "web",
       "integration",
-      "file",
-      "search",
+      "storage",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -4764,7 +4722,7 @@
     "tags": [
       "database",
       "integration",
-      "search"
+      "research"
     ],
     "provider": "npx",
     "config": [
@@ -4820,7 +4778,7 @@
     "tags": [
       "database",
       "integration",
-      "search"
+      "research"
     ],
     "provider": "npx",
     "config": [
@@ -4858,7 +4816,7 @@
     "scope": "remote",
     "tags": [
       "database",
-      "docker",
+      "cloud",
       "development"
     ],
     "provider": "docker",
@@ -4895,8 +4853,8 @@
     "scope": "remote",
     "tags": [
       "database",
-      "docker",
-      "search",
+      "cloud",
+      "research",
       "development"
     ],
     "provider": "docker",
@@ -4966,7 +4924,7 @@
     "scope": "native",
     "tags": [
       "database",
-      "docker",
+      "cloud",
       "development"
     ],
     "provider": "npx",
@@ -5033,8 +4991,8 @@
     "scope": "native",
     "tags": [
       "database",
-      "docker",
-      "search",
+      "cloud",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -5089,9 +5047,9 @@
     "scope": "remote",
     "tags": [
       "database",
-      "browser",
+      "web",
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -5188,7 +5146,7 @@
     "tags": [
       "database",
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -5232,11 +5190,11 @@
     "scope": "remote",
     "tags": [
       "database",
-      "docker",
-      "browser",
+      "cloud",
+      "web",
       "integration",
-      "file",
-      "search"
+      "storage",
+      "research"
     ],
     "provider": "source",
     "config": [],
@@ -5255,7 +5213,7 @@
     "tags": [
       "database",
       "integration",
-      "search"
+      "research"
     ],
     "provider": "npx",
     "config": [
@@ -5364,7 +5322,6 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "data platforms",
       "development"
     ],
     "provider": "npx",
@@ -5383,7 +5340,6 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "data platforms",
       "database"
     ],
     "provider": "npx",
@@ -5401,9 +5357,8 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
-      "data platforms",
       "database"
     ],
     "provider": "npx",
@@ -5421,9 +5376,8 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
-      "data platforms",
       "database"
     ],
     "provider": "npx",
@@ -5460,7 +5414,6 @@
     "scope": "unknown",
     "tags": [
       "integration",
-      "data platforms",
       "development",
       "database"
     ],
@@ -5495,7 +5448,6 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "data platforms",
       "development",
       "database"
     ],
@@ -5592,7 +5544,7 @@
     "runtime": "python",
     "scope": "unknown",
     "tags": [
-      "file",
+      "storage",
       "development"
     ],
     "provider": "source",
@@ -5626,7 +5578,7 @@
     "scope": "native",
     "tags": [
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "source",
@@ -5774,7 +5726,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "browser",
+      "web",
       "integration",
       "development"
     ],
@@ -5807,7 +5759,7 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
       "development"
     ],
@@ -5877,7 +5829,7 @@
     "tags": [
       "integration",
       "database",
-      "search",
+      "research",
       "development"
     ],
     "provider": "source",
@@ -5988,7 +5940,7 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
       "development"
     ],
@@ -6077,7 +6029,7 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "file",
+      "storage",
       "development"
     ],
     "provider": "source",
@@ -6146,7 +6098,7 @@
     "scope": "native",
     "tags": [
       "development",
-      "docker"
+      "cloud"
     ],
     "provider": "npx",
     "config": [
@@ -6252,7 +6204,7 @@
     "tags": [
       "integration",
       "database",
-      "search",
+      "research",
       "development"
     ],
     "provider": "source",
@@ -6356,7 +6308,7 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
       "development"
     ],
@@ -6543,7 +6495,7 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "file",
+      "storage",
       "development",
       "database"
     ],
@@ -6617,7 +6569,7 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -6715,7 +6667,7 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -6749,7 +6701,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
       "development"
     ],
@@ -6802,7 +6754,7 @@
     "scope": "native",
     "tags": [
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "source",
@@ -6831,7 +6783,7 @@
     "runtime": "binary",
     "scope": "native",
     "tags": [
-      "docker",
+      "cloud",
       "development"
     ],
     "provider": "npx",
@@ -6860,7 +6812,7 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
       "development",
       "database"
@@ -6891,8 +6843,8 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "file",
-      "search",
+      "storage",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -6922,7 +6874,7 @@
     "scope": "native",
     "tags": [
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -6989,8 +6941,8 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "docker",
-      "search",
+      "cloud",
+      "research",
       "development"
     ],
     "provider": "docker",
@@ -7016,7 +6968,7 @@
     "runtime": "binary",
     "scope": "remote",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
       "development"
     ],
@@ -7052,8 +7004,8 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "file",
-      "search",
+      "storage",
+      "research",
       "development"
     ],
     "provider": "source",
@@ -7129,9 +7081,9 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
-      "file",
+      "storage",
       "development"
     ],
     "provider": "npx",
@@ -7160,7 +7112,7 @@
     "runtime": "unknown",
     "scope": "unknown",
     "tags": [
-      "browser",
+      "web",
       "development"
     ],
     "provider": "npx",
@@ -7193,7 +7145,7 @@
     "scope": "unknown",
     "tags": [
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -7295,8 +7247,8 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "docker",
-      "browser",
+      "cloud",
+      "web",
       "development"
     ],
     "provider": "npx",
@@ -7327,7 +7279,7 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "browser",
+      "web",
       "development"
     ],
     "provider": "npx",
@@ -7357,7 +7309,7 @@
     "scope": "native",
     "tags": [
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -7457,9 +7409,9 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "browser",
+      "web",
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -7490,7 +7442,7 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -7543,7 +7495,7 @@
     "scope": "native",
     "tags": [
       "development",
-      "docker"
+      "cloud"
     ],
     "provider": "source",
     "config": [],
@@ -7561,7 +7513,7 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "source",
@@ -7642,9 +7594,8 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "data science tools",
-      "file",
-      "docker"
+      "storage",
+      "cloud"
     ],
     "provider": "npx",
     "config": [
@@ -7675,9 +7626,7 @@
     "official": false,
     "runtime": "python",
     "scope": "remote",
-    "tags": [
-      "data science tools"
-    ],
+    "tags": [],
     "provider": "source",
     "mcpServers": {
       "mcpServers": {
@@ -7720,8 +7669,7 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "search",
-      "data science tools"
+      "research"
     ],
     "provider": "source",
     "config": [],
@@ -7738,9 +7686,8 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "docker",
-      "file",
-      "data science tools",
+      "cloud",
+      "storage",
       "development"
     ],
     "provider": "npx",
@@ -7757,9 +7704,7 @@
     "official": false,
     "runtime": "python",
     "scope": "native",
-    "tags": [
-      "data science tools"
-    ],
+    "tags": [],
     "provider": "source",
     "config": [
       {
@@ -7789,10 +7734,9 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
-      "data science tools",
-      "search"
+      "research"
     ],
     "provider": "docker",
     "config": [
@@ -7818,9 +7762,8 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "browser",
+      "web",
       "integration",
-      "data science tools",
       "database"
     ],
     "provider": "source",
@@ -7837,10 +7780,7 @@
     "official": false,
     "runtime": "unknown",
     "scope": "standalone",
-    "tags": [
-      "embedded system",
-      "standalone"
-    ],
+    "tags": [],
     "provider": "source",
     "config": [],
     "stars": 15
@@ -7856,9 +7796,7 @@
     "runtime": "python",
     "scope": "standalone",
     "tags": [
-      "embedded system",
-      "development",
-      "standalone"
+      "development"
     ],
     "provider": "source",
     "config": [
@@ -7894,9 +7832,7 @@
     "runtime": "python",
     "scope": "standalone",
     "tags": [
-      "embedded system",
-      "development",
-      "standalone"
+      "development"
     ],
     "provider": "source",
     "config": [
@@ -7927,7 +7863,6 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "embedded system",
       "integration"
     ],
     "provider": "source",
@@ -7972,7 +7907,6 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "file systems",
       "development"
     ],
     "provider": "source",
@@ -7990,8 +7924,7 @@
     "runtime": "binary",
     "scope": "native",
     "tags": [
-      "integration",
-      "file systems"
+      "integration"
     ],
     "provider": "npx",
     "config": [
@@ -8021,8 +7954,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "integration",
-      "file systems"
+      "integration"
     ],
     "provider": "npx",
     "config": [
@@ -8054,10 +7986,9 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "search",
+      "research",
       "development",
-      "database",
-      "file systems"
+      "database"
     ],
     "provider": "npx",
     "mcpServers": {
@@ -8102,9 +8033,8 @@
     "scope": "native",
     "tags": [
       "integration",
-      "file",
-      "search",
-      "file systems"
+      "storage",
+      "research"
     ],
     "provider": "source",
     "config": [
@@ -8133,12 +8063,11 @@
     "runtime": "binary",
     "scope": "remote",
     "tags": [
-      "docker",
-      "browser",
+      "cloud",
+      "web",
       "integration",
-      "search",
-      "database",
-      "file systems"
+      "research",
+      "database"
     ],
     "provider": "source",
     "config": [],
@@ -8155,11 +8084,10 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
-      "search",
-      "development",
-      "file systems"
+      "research",
+      "development"
     ],
     "provider": "docker",
     "config": [],
@@ -8176,14 +8104,13 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "docker",
-      "browser",
+      "cloud",
+      "web",
       "integration",
-      "file",
+      "storage",
       "database",
-      "search",
-      "development",
-      "file systems"
+      "research",
+      "development"
     ],
     "provider": "npx",
     "config": [
@@ -8212,8 +8139,7 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "development",
-      "file systems"
+      "development"
     ],
     "provider": "npx",
     "config": [
@@ -8245,7 +8171,7 @@
     "scope": "remote",
     "tags": [
       "finance",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -8275,7 +8201,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "browser",
+      "web",
       "integration",
       "finance"
     ],
@@ -8486,7 +8412,7 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
       "finance",
       "development"
@@ -8523,7 +8449,7 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
       "finance"
     ],
@@ -8614,7 +8540,7 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "search",
+      "research",
       "finance"
     ],
     "provider": "npx",
@@ -8643,7 +8569,7 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "browser",
+      "web",
       "finance",
       "development"
     ],
@@ -8719,10 +8645,10 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
       "finance",
-      "search"
+      "research"
     ],
     "provider": "docker",
     "config": [],
@@ -8856,7 +8782,7 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "browser",
+      "web",
       "finance",
       "development"
     ],
@@ -8940,7 +8866,7 @@
     "tags": [
       "integration",
       "finance",
-      "search",
+      "research",
       "development"
     ],
     "provider": "source",
@@ -9069,7 +8995,7 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "browser",
+      "web",
       "finance"
     ],
     "provider": "source",
@@ -9101,7 +9027,7 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "search",
+      "research",
       "finance"
     ],
     "provider": "source",
@@ -9649,7 +9575,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "browser",
+      "web",
       "integration",
       "finance",
       "database",
@@ -9765,7 +9691,7 @@
     "tags": [
       "integration",
       "finance",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -9783,9 +9709,9 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "docker",
+      "cloud",
       "finance",
-      "search"
+      "research"
     ],
     "provider": "source",
     "config": [
@@ -9813,7 +9739,7 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "browser",
+      "web",
       "integration",
       "finance",
       "development"
@@ -10026,7 +9952,7 @@
     "runtime": "binary",
     "scope": "native",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
       "finance"
     ],
@@ -10064,7 +9990,7 @@
     "config": [
       {
         "mcpServers": {
-          "CRIC物业AI": {
+          "CRIC\u7269\u4e1aAI": {
             "transportType": "stdio",
             "command": "npx",
             "args": [
@@ -10072,7 +9998,7 @@
               "@wuye-ai/mcp-server-wuye-ai"
             ],
             "env": {
-              "CRIC_WUYE_AI_ACCESS_TOKEN": "{{您的 CRIC物业AI Access Token}}"
+              "CRIC_WUYE_AI_ACCESS_TOKEN": "{{\u60a8\u7684 CRIC\u7269\u4e1aAI Access Token}}"
             }
           }
         }
@@ -10111,7 +10037,7 @@
     "tags": [
       "integration",
       "gaming",
-      "search",
+      "research",
       "development"
     ],
     "provider": "source",
@@ -10207,10 +10133,10 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
       "gaming",
-      "search"
+      "research"
     ],
     "provider": "source",
     "config": [
@@ -10243,7 +10169,7 @@
     "tags": [
       "gaming",
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -10363,8 +10289,7 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "knowledge & memory",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -10403,9 +10328,8 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "knowledge & memory",
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -10440,10 +10364,9 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "knowledge & memory",
       "integration",
       "database",
-      "search"
+      "research"
     ],
     "provider": "npx",
     "config": [
@@ -10477,9 +10400,8 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "knowledge & memory",
       "integration",
-      "search"
+      "research"
     ],
     "provider": "npx",
     "config": [],
@@ -10495,9 +10417,7 @@
     "official": false,
     "runtime": "unknown",
     "scope": "remote",
-    "tags": [
-      "knowledge & memory"
-    ],
+    "tags": [],
     "provider": "source",
     "config": [],
     "stars": 70
@@ -10513,9 +10433,8 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "knowledge & memory",
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "source",
@@ -10533,8 +10452,7 @@
     "runtime": "binary",
     "scope": "remote",
     "tags": [
-      "knowledge & memory",
-      "docker",
+      "cloud",
       "integration"
     ],
     "provider": "npx",
@@ -10574,9 +10492,8 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "knowledge & memory",
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -10611,11 +10528,10 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "knowledge & memory",
-      "browser",
+      "web",
       "integration",
       "database",
-      "search"
+      "research"
     ],
     "provider": "source",
     "config": [],
@@ -10632,7 +10548,6 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "knowledge & memory",
       "development"
     ],
     "provider": "source",
@@ -10669,8 +10584,7 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "development",
-      "knowledge & memory"
+      "development"
     ],
     "provider": "npx",
     "config": [
@@ -10702,8 +10616,7 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "knowledge & memory",
-      "search",
+      "research",
       "development",
       "database"
     ],
@@ -10739,7 +10652,6 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "location services",
       "integration"
     ],
     "provider": "source",
@@ -10758,9 +10670,8 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "search",
-      "development",
-      "location services"
+      "research",
+      "development"
     ],
     "provider": "npx",
     "config": [],
@@ -10777,10 +10688,9 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "browser",
+      "web",
       "integration",
-      "search",
-      "location services"
+      "research"
     ],
     "provider": "npx",
     "mcpServers": {
@@ -10825,9 +10735,8 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "search",
-      "development",
-      "location services"
+      "research",
+      "development"
     ],
     "provider": "source",
     "config": [
@@ -10861,10 +10770,9 @@
     "runtime": "unknown",
     "scope": "unknown",
     "tags": [
-      "file",
+      "storage",
       "database",
-      "search",
-      "location services"
+      "research"
     ],
     "provider": "source",
     "config": [
@@ -10894,9 +10802,7 @@
     "official": false,
     "runtime": "python",
     "scope": "remote",
-    "tags": [
-      "location services"
-    ],
+    "tags": [],
     "provider": "source",
     "config": []
   },
@@ -10910,9 +10816,7 @@
     "official": false,
     "runtime": "python",
     "scope": "remote",
-    "tags": [
-      "location services"
-    ],
+    "tags": [],
     "provider": "source",
     "config": []
   },
@@ -10926,9 +10830,7 @@
     "official": false,
     "runtime": "python",
     "scope": "native",
-    "tags": [
-      "location services"
-    ],
+    "tags": [],
     "provider": "source",
     "config": [
       {
@@ -10955,8 +10857,7 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "development",
-      "location services"
+      "development"
     ],
     "provider": "source",
     "config": [],
@@ -10973,7 +10874,6 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "location services",
       "integration"
     ],
     "provider": "npx",
@@ -11023,10 +10923,10 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
       "marketing",
-      "search"
+      "research"
     ],
     "provider": "source",
     "config": [
@@ -11056,7 +10956,7 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "browser",
+      "web",
       "integration",
       "marketing",
       "development"
@@ -11101,10 +11001,10 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
       "monitoring",
-      "search"
+      "research"
     ],
     "provider": "docker",
     "config": [
@@ -11345,9 +11245,7 @@
     "official": false,
     "runtime": "unknown",
     "scope": "unknown",
-    "tags": [
-      "multimedia process"
-    ],
+    "tags": [],
     "provider": "source",
     "config": []
   },
@@ -11362,8 +11260,8 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "docker",
-      "search",
+      "cloud",
+      "research",
       "integration",
       "development"
     ],
@@ -11393,7 +11291,7 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "search",
+      "research",
       "integration"
     ],
     "provider": "npx",
@@ -11426,7 +11324,7 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "search"
+      "research"
     ],
     "provider": "npx",
     "config": [
@@ -11455,8 +11353,8 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "browser",
-      "search",
+      "web",
+      "research",
       "integration",
       "development"
     ],
@@ -11486,7 +11384,7 @@
     "runtime": "unknown",
     "scope": "unknown",
     "tags": [
-      "search",
+      "research",
       "integration",
       "development"
     ],
@@ -11528,7 +11426,7 @@
     "runtime": "unknown",
     "scope": "unknown",
     "tags": [
-      "search",
+      "research",
       "integration",
       "development"
     ],
@@ -11547,8 +11445,8 @@
     "runtime": "unknown",
     "scope": "unknown",
     "tags": [
-      "browser",
-      "search",
+      "web",
+      "research",
       "integration",
       "development",
       "database"
@@ -11599,8 +11497,8 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "browser",
-      "search",
+      "web",
+      "research",
       "integration",
       "development"
     ],
@@ -11633,8 +11531,8 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "browser",
-      "search",
+      "web",
+      "research",
       "integration"
     ],
     "provider": "npx",
@@ -11666,7 +11564,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -11705,7 +11603,7 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -11753,7 +11651,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "search",
+      "research",
       "integration",
       "development"
     ],
@@ -11772,7 +11670,7 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "search",
+      "research",
       "integration"
     ],
     "provider": "npx",
@@ -11817,7 +11715,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "search",
+      "research",
       "integration",
       "development",
       "database"
@@ -11852,8 +11750,8 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "browser",
-      "search"
+      "web",
+      "research"
     ],
     "provider": "source",
     "config": [
@@ -11881,8 +11779,8 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "docker",
-      "search",
+      "cloud",
+      "research",
       "integration"
     ],
     "provider": "npx",
@@ -11915,7 +11813,7 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "search",
+      "research",
       "development",
       "database"
     ],
@@ -11949,7 +11847,7 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "search",
+      "research",
       "integration",
       "development"
     ],
@@ -11987,8 +11885,8 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "docker",
-      "search",
+      "cloud",
+      "research",
       "integration",
       "development"
     ],
@@ -12022,8 +11920,8 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "docker",
-      "search",
+      "cloud",
+      "research",
       "integration",
       "development"
     ],
@@ -12058,8 +11956,8 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "browser",
-      "search",
+      "web",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -12089,8 +11987,8 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "browser",
-      "search",
+      "web",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -12120,7 +12018,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "search",
+      "research",
       "integration"
     ],
     "provider": "source",
@@ -12152,8 +12050,8 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "docker",
-      "search",
+      "cloud",
+      "research",
       "integration",
       "development"
     ],
@@ -12172,7 +12070,7 @@
     "runtime": "binary",
     "scope": "native",
     "tags": [
-      "search"
+      "research"
     ],
     "provider": "source",
     "config": [],
@@ -12189,8 +12087,8 @@
     "runtime": "unknown",
     "scope": "unknown",
     "tags": [
-      "search",
-      "browser"
+      "research",
+      "web"
     ],
     "provider": "npx",
     "config": [
@@ -12219,7 +12117,7 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -12248,7 +12146,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "search",
+      "research",
       "integration"
     ],
     "provider": "npx",
@@ -12277,7 +12175,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "search"
+      "research"
     ],
     "provider": "source",
     "mcpServers": {
@@ -12321,7 +12219,7 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "search"
+      "research"
     ],
     "provider": "source",
     "config": [
@@ -12349,7 +12247,7 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "search"
+      "research"
     ],
     "provider": "source",
     "config": [
@@ -12380,7 +12278,7 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -12395,7 +12293,7 @@
               "run",
               "@the0807/geeknews-mcp-server",
               "--key",
-              "smithery에서 발급 받은 키"
+              "smithery\uc5d0\uc11c \ubc1c\uae09 \ubc1b\uc740 \ud0a4"
             ]
           }
         }
@@ -12414,8 +12312,8 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "browser",
-      "search",
+      "web",
+      "research",
       "integration"
     ],
     "provider": "npx",
@@ -12444,7 +12342,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "search",
+      "research",
       "integration",
       "database"
     ],
@@ -12480,8 +12378,8 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "browser",
-      "search",
+      "web",
+      "research",
       "integration"
     ],
     "provider": "npx",
@@ -12515,8 +12413,8 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "browser",
-      "search",
+      "web",
+      "research",
       "integration"
     ],
     "provider": "npx",
@@ -12534,8 +12432,8 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "docker",
-      "search",
+      "cloud",
+      "research",
       "integration",
       "development"
     ],
@@ -12581,8 +12479,8 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "docker",
-      "search",
+      "cloud",
+      "research",
       "integration",
       "development"
     ],
@@ -12645,7 +12543,7 @@
     "tags": [
       "security",
       "development",
-      "browser"
+      "web"
     ],
     "provider": "npx",
     "config": [
@@ -12684,7 +12582,7 @@
     "scope": "remote",
     "tags": [
       "security",
-      "docker",
+      "cloud",
       "development"
     ],
     "provider": "npx",
@@ -12721,8 +12619,8 @@
     "scope": "remote",
     "tags": [
       "security",
-      "docker",
-      "search",
+      "cloud",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -12766,7 +12664,7 @@
     "tags": [
       "security",
       "integration",
-      "search",
+      "research",
       "development",
       "database"
     ],
@@ -12863,7 +12761,7 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "search",
+      "research",
       "security"
     ],
     "provider": "source",
@@ -12997,7 +12895,7 @@
     "scope": "native",
     "tags": [
       "security",
-      "search",
+      "research",
       "database"
     ],
     "provider": "source",
@@ -13081,7 +12979,7 @@
     "scope": "native",
     "tags": [
       "security",
-      "docker",
+      "cloud",
       "database"
     ],
     "provider": "docker",
@@ -13101,7 +12999,7 @@
     "tags": [
       "security",
       "integration",
-      "search"
+      "research"
     ],
     "provider": "source",
     "config": [],
@@ -13119,7 +13017,7 @@
     "scope": "native",
     "tags": [
       "security",
-      "docker"
+      "cloud"
     ],
     "provider": "source",
     "config": [],
@@ -13168,8 +13066,8 @@
     "scope": "remote",
     "tags": [
       "security",
-      "docker",
-      "browser"
+      "cloud",
+      "web"
     ],
     "provider": "docker",
     "config": [],
@@ -13188,7 +13086,7 @@
     "tags": [
       "security",
       "integration",
-      "search"
+      "research"
     ],
     "provider": "source",
     "config": [
@@ -13219,7 +13117,7 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "search",
+      "research",
       "security"
     ],
     "provider": "github-release",
@@ -13250,9 +13148,7 @@
     "official": false,
     "runtime": "python",
     "scope": "native",
-    "tags": [
-      "social media"
-    ],
+    "tags": [],
     "provider": "source",
     "config": [],
     "stars": 2
@@ -13269,9 +13165,8 @@
     "scope": "unknown",
     "tags": [
       "integration",
-      "search",
-      "development",
-      "sports"
+      "research",
+      "development"
     ],
     "provider": "npx",
     "config": [],
@@ -13288,10 +13183,9 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "browser",
+      "web",
       "integration",
-      "search",
-      "sports"
+      "research"
     ],
     "provider": "source",
     "config": [
@@ -13352,8 +13246,7 @@
     "runtime": "unknown",
     "scope": "remote",
     "tags": [
-      "integration",
-      "sports"
+      "integration"
     ],
     "provider": "source",
     "config": [
@@ -13385,8 +13278,7 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "search",
-      "support & service management",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -13433,9 +13325,8 @@
     "runtime": "binary",
     "scope": "remote",
     "tags": [
-      "docker",
-      "search",
-      "support & service management",
+      "cloud",
+      "research",
       "development"
     ],
     "provider": "docker",
@@ -13466,8 +13357,8 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "docker",
-      "search"
+      "cloud",
+      "research"
     ],
     "provider": "npx",
     "config": [
@@ -13492,8 +13383,7 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "docker",
-      "translation services",
+      "cloud",
       "integration"
     ],
     "provider": "npx",
@@ -13526,9 +13416,7 @@
     "official": false,
     "runtime": "python",
     "scope": "native",
-    "tags": [
-      "text-to-speech"
-    ],
+    "tags": [],
     "provider": "github-release",
     "config": [],
     "stars": 18
@@ -13545,9 +13433,8 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "search",
-      "development",
-      "travel & transportation"
+      "research",
+      "development"
     ],
     "provider": "npx",
     "config": [
@@ -13577,9 +13464,8 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "search",
-      "development",
-      "travel & transportation"
+      "research",
+      "development"
     ],
     "provider": "npx",
     "config": [
@@ -13612,9 +13498,8 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "search",
-      "development",
-      "travel & transportation"
+      "research",
+      "development"
     ],
     "provider": "npx",
     "config": [
@@ -13646,10 +13531,9 @@
     "runtime": "python",
     "scope": "unknown",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
-      "search",
-      "travel & transportation"
+      "research"
     ],
     "provider": "docker",
     "config": [
@@ -13683,8 +13567,7 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "development",
-      "version control"
+      "development"
     ],
     "provider": "source",
     "config": [
@@ -13714,10 +13597,9 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
-      "development",
-      "version control"
+      "development"
     ],
     "provider": "npx",
     "config": [
@@ -13748,11 +13630,10 @@
     "runtime": "binary",
     "scope": "remote",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
-      "search",
+      "research",
       "development",
-      "version control",
       "database"
     ],
     "provider": "github-release",
@@ -13769,11 +13650,10 @@
     "runtime": "node",
     "scope": "remote",
     "tags": [
-      "docker",
+      "cloud",
       "integration",
-      "search",
-      "development",
-      "version control"
+      "research",
+      "development"
     ],
     "provider": "docker",
     "config": [
@@ -13810,8 +13690,7 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "development",
-      "version control"
+      "development"
     ],
     "provider": "npx",
     "config": [],
@@ -13829,9 +13708,8 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "search",
-      "development",
-      "version control"
+      "research",
+      "development"
     ],
     "provider": "npx",
     "config": [
@@ -13896,8 +13774,8 @@
     "scope": "unknown",
     "tags": [
       "integration",
-      "docker",
-      "search",
+      "cloud",
+      "research",
       "database"
     ],
     "provider": "source",
@@ -13983,7 +13861,7 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "browser",
+      "web",
       "development"
     ],
     "provider": "npx",
@@ -14036,7 +13914,7 @@
     "runtime": "python",
     "scope": "native",
     "tags": [
-      "file",
+      "storage",
       "integration"
     ],
     "provider": "npx",
@@ -14166,8 +14044,8 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "browser",
-      "search",
+      "web",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -14279,7 +14157,7 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "search",
+      "research",
       "development",
       "database"
     ],
@@ -14313,7 +14191,7 @@
     "scope": "native",
     "tags": [
       "integration",
-      "search",
+      "research",
       "database"
     ],
     "provider": "npx",
@@ -14346,8 +14224,8 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "file",
-      "search",
+      "storage",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -14419,8 +14297,8 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "browser",
-      "search"
+      "web",
+      "research"
     ],
     "provider": "npx",
     "config": [
@@ -14530,7 +14408,7 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "browser"
+      "web"
     ],
     "provider": "source",
     "config": [],
@@ -14579,7 +14457,7 @@
     "runtime": "python",
     "scope": "remote",
     "tags": [
-      "search",
+      "research",
       "integration"
     ],
     "provider": "source",
@@ -14629,8 +14507,8 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "browser",
-      "search",
+      "web",
+      "research",
       "development"
     ],
     "provider": "source",
@@ -14717,7 +14595,7 @@
               "http://localhost/v1"
             ],
             "env": {
-              "DIFY_WORKFLOW_NAME": "workflow-translator“,workflow-genImag",
+              "DIFY_WORKFLOW_NAME": "workflow-translator\u201c,workflow-genImag",
               "DIFY_API_KEYS": "appkey-xxxxxxxxxxxa,appkey-xxxxxxxxxxxb"
             }
           }
@@ -14738,8 +14616,8 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "file",
-      "search",
+      "storage",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -14820,7 +14698,7 @@
     "scope": "native",
     "tags": [
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -14872,7 +14750,7 @@
     "scope": "native",
     "tags": [
       "integration",
-      "search",
+      "research",
       "development",
       "database"
     ],
@@ -15058,7 +14936,7 @@
     "scope": "native",
     "tags": [
       "integration",
-      "browser"
+      "web"
     ],
     "provider": "source",
     "config": [],
@@ -15076,8 +14954,8 @@
     "scope": "unknown",
     "tags": [
       "integration",
-      "docker",
-      "search",
+      "cloud",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -15096,8 +14974,8 @@
     "scope": "unknown",
     "tags": [
       "integration",
-      "docker",
-      "search"
+      "cloud",
+      "research"
     ],
     "provider": "npx",
     "config": [
@@ -15131,8 +15009,8 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "browser",
-      "search"
+      "web",
+      "research"
     ],
     "provider": "source",
     "config": [
@@ -15166,7 +15044,7 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "browser"
+      "web"
     ],
     "provider": "source",
     "config": [
@@ -15267,7 +15145,7 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -15300,8 +15178,7 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "integration",
-      "customer data platforms"
+      "integration"
     ],
     "provider": "npx",
     "config": [
@@ -15336,8 +15213,8 @@
     "scope": "unknown",
     "tags": [
       "integration",
-      "browser",
-      "search"
+      "web",
+      "research"
     ],
     "provider": "source",
     "config": [
@@ -15380,7 +15257,7 @@
     "scope": "native",
     "tags": [
       "integration",
-      "browser",
+      "web",
       "development"
     ],
     "provider": "npx",
@@ -15399,9 +15276,9 @@
     "scope": "native",
     "tags": [
       "integration",
-      "docker",
-      "file",
-      "search",
+      "cloud",
+      "storage",
+      "research",
       "development",
       "database"
     ],
@@ -15421,7 +15298,7 @@
     "scope": "unknown",
     "tags": [
       "integration",
-      "browser",
+      "web",
       "development"
     ],
     "provider": "source",
@@ -15506,7 +15383,7 @@
     "tags": [
       "integration",
       "database",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -15524,8 +15401,8 @@
     "runtime": "unknown",
     "scope": "unknown",
     "tags": [
-      "search",
-      "browser",
+      "research",
+      "web",
       "integration"
     ],
     "provider": "source",
@@ -15674,7 +15551,7 @@
     "scope": "unknown",
     "tags": [
       "integration",
-      "browser",
+      "web",
       "development"
     ],
     "provider": "npx",
@@ -15750,7 +15627,7 @@
     "scope": "native",
     "tags": [
       "integration",
-      "search",
+      "research",
       "development",
       "database"
     ],
@@ -15782,7 +15659,7 @@
     "scope": "native",
     "tags": [
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -15812,8 +15689,7 @@
     "runtime": "node",
     "scope": "native",
     "tags": [
-      "integration",
-      "memory"
+      "integration"
     ],
     "provider": "npx",
     "config": [
@@ -15843,7 +15719,7 @@
     "runtime": "unknown",
     "scope": "unknown",
     "tags": [
-      "search",
+      "research",
       "integration"
     ],
     "provider": "npx",
@@ -15877,10 +15753,10 @@
     "scope": "native",
     "tags": [
       "integration",
-      "docker",
-      "browser",
-      "file",
-      "search",
+      "cloud",
+      "web",
+      "storage",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -15929,7 +15805,7 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "search",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -15996,7 +15872,7 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "search"
+      "research"
     ],
     "provider": "npx",
     "config": [
@@ -16026,9 +15902,9 @@
     "scope": "native",
     "tags": [
       "integration",
-      "browser",
-      "file",
-      "search",
+      "web",
+      "storage",
+      "research",
       "database"
     ],
     "provider": "npx",
@@ -16074,7 +15950,7 @@
     "scope": "native",
     "tags": [
       "integration",
-      "search",
+      "research",
       "development",
       "database"
     ],
@@ -16142,7 +16018,7 @@
     "scope": "native",
     "tags": [
       "integration",
-      "docker"
+      "cloud"
     ],
     "provider": "npx",
     "config": [],
@@ -16207,9 +16083,9 @@
     "runtime": "unknown",
     "scope": "unknown",
     "tags": [
-      "search",
+      "research",
       "integration",
-      "file"
+      "storage"
     ],
     "provider": "npx",
     "config": [],
@@ -16227,8 +16103,8 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "docker",
-      "browser",
+      "cloud",
+      "web",
       "development"
     ],
     "provider": "npx",
@@ -16290,9 +16166,9 @@
     "scope": "remote",
     "tags": [
       "integration",
-      "browser",
-      "file",
-      "search"
+      "web",
+      "storage",
+      "research"
     ],
     "provider": "source",
     "config": [],
@@ -16310,8 +16186,8 @@
     "scope": "unknown",
     "tags": [
       "integration",
-      "docker",
-      "search",
+      "cloud",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -16431,8 +16307,8 @@
     "scope": "unknown",
     "tags": [
       "integration",
-      "file",
-      "search",
+      "storage",
+      "research",
       "development"
     ],
     "provider": "npx",
@@ -16465,8 +16341,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "knowledge",
-      "search",
+      "research",
       "cloud"
     ],
     "provider": "npx",
@@ -16497,7 +16372,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search",
+      "research",
       "integration"
     ],
     "provider": "npx",
@@ -16527,9 +16402,7 @@
     "official": false,
     "runtime": "",
     "scope": "",
-    "tags": [
-      "art"
-    ],
+    "tags": [],
     "provider": "npx",
     "stars": 976,
     "config": [
@@ -16588,7 +16461,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "browser"
+      "web"
     ],
     "provider": "npx",
     "stars": 976,
@@ -16618,7 +16491,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "file",
+      "storage",
       "security"
     ],
     "provider": "npx",
@@ -16649,7 +16522,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search"
+      "research"
     ],
     "provider": "npx",
     "stars": 976,
@@ -16712,8 +16585,8 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search",
-      "file"
+      "research",
+      "storage"
     ],
     "provider": "npx",
     "stars": 976,
@@ -16744,9 +16617,7 @@
     "official": false,
     "runtime": "",
     "scope": "",
-    "tags": [
-      "location services"
-    ],
+    "tags": [],
     "provider": "npx",
     "stars": 976,
     "config": [
@@ -16776,10 +16647,7 @@
     "official": false,
     "runtime": "",
     "scope": "",
-    "tags": [
-      "knowledge",
-      "memory"
-    ],
+    "tags": [],
     "provider": "npx",
     "stars": 976,
     "config": [
@@ -16840,7 +16708,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "browser",
+      "web",
       "integration"
     ],
     "provider": "npx",
@@ -16903,7 +16771,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "coding"
+      "development"
     ],
     "provider": "npx",
     "stars": 976,
@@ -16996,9 +16864,7 @@
     "official": false,
     "runtime": "",
     "scope": "",
-    "tags": [
-      "knowledge"
-    ],
+    "tags": [],
     "provider": "npx",
     "stars": 976,
     "config": [
@@ -17059,8 +16925,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "finance",
-      "location services"
+      "finance"
     ],
     "provider": "uvx",
     "stars": 0,
@@ -17089,8 +16954,8 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search",
-      "browser"
+      "research",
+      "web"
     ],
     "provider": "uvx",
     "stars": 0,
@@ -17148,7 +17013,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search",
+      "research",
       "development",
       "database"
     ],
@@ -17210,7 +17075,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search",
+      "research",
       "cloud"
     ],
     "provider": "npx",
@@ -17241,7 +17106,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "file",
+      "storage",
       "integration"
     ],
     "provider": "npx",
@@ -17302,7 +17167,6 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "art",
       "integration"
     ],
     "provider": "npx",
@@ -17363,8 +17227,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "knowledge",
-      "search",
+      "research",
       "translation"
     ],
     "provider": "npx",
@@ -17486,7 +17349,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search",
+      "research",
       "cloud"
     ],
     "provider": "npx",
@@ -17516,9 +17379,7 @@
     "official": false,
     "runtime": "",
     "scope": "",
-    "tags": [
-      "art"
-    ],
+    "tags": [],
     "provider": "npx",
     "stars": 0,
     "config": [
@@ -17548,7 +17409,7 @@
     "scope": "",
     "tags": [
       "monitoring",
-      "search",
+      "research",
       "translation"
     ],
     "provider": "npx",
@@ -17579,8 +17440,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search",
-      "art"
+      "research"
     ],
     "provider": "npx",
     "stars": 0,
@@ -17610,7 +17470,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "file",
+      "storage",
       "cloud"
     ],
     "provider": "npx",
@@ -17641,8 +17501,8 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search",
-      "browser"
+      "research",
+      "web"
     ],
     "provider": "npx",
     "stars": 0,
@@ -17672,7 +17532,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "browser",
+      "web",
       "cloud"
     ],
     "provider": "npx",
@@ -17763,7 +17623,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search",
+      "research",
       "database"
     ],
     "provider": "npx",
@@ -17793,9 +17653,7 @@
     "official": false,
     "runtime": "",
     "scope": "",
-    "tags": [
-      "data science tools"
-    ],
+    "tags": [],
     "provider": "npx",
     "stars": 0,
     "config": [
@@ -17854,7 +17712,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search",
+      "research",
       "development",
       "database"
     ],
@@ -17918,7 +17776,7 @@
     "scope": "",
     "tags": [
       "monitoring",
-      "search",
+      "research",
       "translation"
     ],
     "provider": "npx",
@@ -17948,9 +17806,7 @@
     "official": false,
     "runtime": "",
     "scope": "",
-    "tags": [
-      "knowledge"
-    ],
+    "tags": [],
     "provider": "npx",
     "stars": 0,
     "config": [
@@ -17979,7 +17835,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search"
+      "research"
     ],
     "provider": "npx",
     "stars": 0,
@@ -18126,9 +17982,7 @@
     "official": false,
     "runtime": "",
     "scope": "",
-    "tags": [
-      "art"
-    ],
+    "tags": [],
     "provider": "npx",
     "stars": 0,
     "config": [
@@ -18216,7 +18070,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search",
+      "research",
       "development",
       "cloud"
     ],
@@ -18370,9 +18224,7 @@
     "official": false,
     "runtime": "",
     "scope": "",
-    "tags": [
-      "knowledge"
-    ],
+    "tags": [],
     "provider": "npx",
     "stars": 0,
     "config": [
@@ -18430,9 +18282,7 @@
     "official": false,
     "runtime": "",
     "scope": "",
-    "tags": [
-      "art"
-    ],
+    "tags": [],
     "provider": "npx",
     "stars": 0,
     "config": [
@@ -18460,9 +18310,7 @@
     "official": false,
     "runtime": "",
     "scope": "",
-    "tags": [
-      "text-to-speech"
-    ],
+    "tags": [],
     "provider": "npx",
     "stars": 0,
     "config": [
@@ -18491,7 +18339,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search"
+      "research"
     ],
     "provider": "npx",
     "stars": 0,
@@ -18550,9 +18398,7 @@
     "official": false,
     "runtime": "",
     "scope": "",
-    "tags": [
-      "data platforms"
-    ],
+    "tags": [],
     "provider": "npx",
     "stars": 0,
     "config": [
@@ -18612,7 +18458,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "browser"
+      "web"
     ],
     "provider": "npx",
     "stars": 0,
@@ -18734,7 +18580,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "browser"
+      "web"
     ],
     "provider": "npx",
     "stars": 0,
@@ -18764,7 +18610,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search"
+      "research"
     ],
     "provider": "npx",
     "stars": 0,
@@ -18794,8 +18640,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search",
-      "art",
+      "research",
       "communication"
     ],
     "provider": "npx",
@@ -18856,7 +18701,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search"
+      "research"
     ],
     "provider": "npx",
     "stars": 0,
@@ -18886,7 +18731,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search"
+      "research"
     ],
     "provider": "npx",
     "stars": 0,
@@ -18916,7 +18761,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "browser"
+      "web"
     ],
     "provider": "npx",
     "stars": 0,
@@ -19036,7 +18881,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search"
+      "research"
     ],
     "provider": "npx",
     "stars": 0,
@@ -19066,7 +18911,6 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "customer data platforms",
       "integration"
     ],
     "provider": "npx",
@@ -19127,7 +18971,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search",
+      "research",
       "integration"
     ],
     "provider": "npx",
@@ -19249,7 +19093,6 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "version control",
       "development"
     ],
     "provider": "npx",
@@ -19403,7 +19246,6 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "customer data platforms",
       "integration"
     ],
     "provider": "npx",
@@ -19463,9 +19305,7 @@
     "official": false,
     "runtime": "",
     "scope": "",
-    "tags": [
-      "knowledge"
-    ],
+    "tags": [],
     "provider": "npx",
     "stars": 0,
     "config": [
@@ -19525,7 +19365,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search",
+      "research",
       "integration"
     ],
     "provider": "npx",
@@ -19556,7 +19396,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search",
+      "research",
       "database"
     ],
     "provider": "npx",
@@ -19587,7 +19427,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search"
+      "research"
     ],
     "provider": "npx",
     "stars": 0,
@@ -19617,7 +19457,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search"
+      "research"
     ],
     "provider": "npx",
     "stars": 0,
@@ -19676,9 +19516,7 @@
     "official": false,
     "runtime": "",
     "scope": "",
-    "tags": [
-      "data platforms"
-    ],
+    "tags": [],
     "provider": "npx",
     "stars": 0,
     "config": [
@@ -19770,7 +19608,7 @@
     "scope": "",
     "tags": [
       "finance",
-      "search"
+      "research"
     ],
     "provider": "npx",
     "stars": 0,
@@ -19801,7 +19639,6 @@
     "scope": "",
     "tags": [
       "marketing",
-      "sports",
       "gaming"
     ],
     "provider": "npx",
@@ -19832,7 +19669,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "browser",
+      "web",
       "integration"
     ],
     "provider": "npx",
@@ -19894,7 +19731,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search",
+      "research",
       "integration"
     ],
     "provider": "npx",
@@ -19925,7 +19762,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "browser",
+      "web",
       "integration"
     ],
     "provider": "npx",
@@ -19956,7 +19793,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "aggregators",
+      "integration",
       "development"
     ],
     "provider": "npx",
@@ -19986,9 +19823,7 @@
     "official": false,
     "runtime": "",
     "scope": "",
-    "tags": [
-      "art"
-    ],
+    "tags": [],
     "provider": "npx",
     "stars": 0,
     "config": [
@@ -20047,9 +19882,8 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search",
-      "database",
-      "memory"
+      "research",
+      "database"
     ],
     "provider": "npx",
     "stars": 0,
@@ -20170,9 +20004,7 @@
     "official": false,
     "runtime": "",
     "scope": "",
-    "tags": [
-      "memory"
-    ],
+    "tags": [],
     "provider": "npx",
     "stars": 0,
     "config": [
@@ -20231,7 +20063,6 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "coding",
       "development"
     ],
     "provider": "npx",
@@ -20262,7 +20093,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search"
+      "research"
     ],
     "provider": "npx",
     "stars": 0,
@@ -20292,7 +20123,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "browser"
+      "web"
     ],
     "provider": "npx",
     "stars": 0,
@@ -20322,8 +20153,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "multimedia process",
-      "browser"
+      "web"
     ],
     "provider": "npx",
     "stars": 0,
@@ -20568,7 +20398,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search"
+      "research"
     ],
     "provider": "npx",
     "stars": 0,
@@ -20629,7 +20459,7 @@
     "scope": "",
     "tags": [
       "finance",
-      "search"
+      "research"
     ],
     "provider": "npx",
     "stars": 0,
@@ -20720,7 +20550,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search"
+      "research"
     ],
     "provider": "npx",
     "stars": 0,
@@ -20749,9 +20579,7 @@
     "official": false,
     "runtime": "",
     "scope": "",
-    "tags": [
-      "data platforms"
-    ],
+    "tags": [],
     "provider": "npx",
     "stars": 0,
     "config": [
@@ -20780,8 +20608,8 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search",
-      "file",
+      "research",
+      "storage",
       "database"
     ],
     "provider": "npx",
@@ -20811,9 +20639,7 @@
     "official": false,
     "runtime": "",
     "scope": "",
-    "tags": [
-      "data platforms"
-    ],
+    "tags": [],
     "provider": "npx",
     "stars": 0,
     "config": [
@@ -20872,9 +20698,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "search",
-      "art",
-      "text-to-speech"
+      "research"
     ],
     "provider": "npx",
     "stars": 0,
@@ -21025,7 +20849,6 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "aggregators",
       "integration"
     ],
     "provider": "npx",
@@ -21086,8 +20909,7 @@
     "runtime": "",
     "scope": "",
     "tags": [
-      "integration",
-      "memory"
+      "integration"
     ],
     "provider": "npx",
     "stars": 41,
