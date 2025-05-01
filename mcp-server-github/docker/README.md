@@ -129,8 +129,19 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
   "mcp": {
     "servers": {
       "acuvity-mcp-server-github": {
+        "env": {
+          "GITHUB_PERSONAL_ACCESS_TOKEN": "TO_BE_SET"
+        },
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","GITHUB_PERSONAL_ACCESS_TOKEN","docker.io/acuvity/mcp-server-github:v0.2.1"]
+        "args": [
+          "run",
+          "-i",
+          "--rm",
+          "--read-only",
+          "-e",
+          "GITHUB_PERSONAL_ACCESS_TOKEN",
+          "docker.io/acuvity/mcp-server-github:v0.2.1"
+        ]
       }
     }
   }
@@ -145,8 +156,19 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
 {
   "servers": {
     "acuvity-mcp-server-github": {
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "TO_BE_SET"
+      },
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-e","GITHUB_PERSONAL_ACCESS_TOKEN","docker.io/acuvity/mcp-server-github:v0.2.1"]
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--read-only",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "docker.io/acuvity/mcp-server-github:v0.2.1"
+      ]
     }
   }
 }
@@ -165,8 +187,19 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
 {
   "mcpServers": {
     "acuvity-mcp-server-github": {
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "TO_BE_SET"
+      },
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-e","GITHUB_PERSONAL_ACCESS_TOKEN","docker.io/acuvity/mcp-server-github:v0.2.1"]
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--read-only",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "docker.io/acuvity/mcp-server-github:v0.2.1"
+      ]
     }
   }
 }
@@ -187,8 +220,19 @@ Add the following JSON block to your mcp configuration file:
 {
   "mcpServers": {
     "acuvity-mcp-server-github": {
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "TO_BE_SET"
+      },
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-e","GITHUB_PERSONAL_ACCESS_TOKEN","docker.io/acuvity/mcp-server-github:v0.2.1"]
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--read-only",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "docker.io/acuvity/mcp-server-github:v0.2.1"
+      ]
     }
   }
 }
@@ -207,8 +251,19 @@ In the `claude_desktop_config.json` configuration file add the following section
 {
   "mcpServers": {
     "acuvity-mcp-server-github": {
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "TO_BE_SET"
+      },
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-e","GITHUB_PERSONAL_ACCESS_TOKEN","docker.io/acuvity/mcp-server-github:v0.2.1"]
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--read-only",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "docker.io/acuvity/mcp-server-github:v0.2.1"
+      ]
     }
   }
 }
@@ -225,6 +280,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 ```python
 async with MCPServerStdio(
     params={
+        "env": {"GITHUB_PERSONAL_ACCESS_TOKEN":"TO_BE_SET"},
         "command": "docker",
         "args": ["run","-i","--rm","--read-only","-e","GITHUB_PERSONAL_ACCESS_TOKEN","docker.io/acuvity/mcp-server-github:v0.2.1"]
     }
@@ -380,7 +436,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-For detailed list of all features, tools, arguments and SBOM hashes provided by this server please consult the [readme]([[.package.packaging.source]]/tree/main/[[.package.name]])
+For detailed list of all features, tools, arguments and SBOM hashes provided by this server please consult the [readme]([[.blueprint.packaging.source]]/tree/main/[[.blueprint.name]])
 
 ## 🧰 Tools (36)
 

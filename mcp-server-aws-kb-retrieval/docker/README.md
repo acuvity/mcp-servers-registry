@@ -128,8 +128,25 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
   "mcp": {
     "servers": {
       "acuvity-mcp-server-aws-kb-retrieval": {
+        "env": {
+          "AWS_ACCESS_KEY_ID": "TO_BE_SET",
+          "AWS_REGION": "TO_BE_SET",
+          "AWS_SECRET_ACCESS_KEY": "TO_BE_SET"
+        },
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","AWS_ACCESS_KEY_ID","-e","AWS_REGION","-e","AWS_SECRET_ACCESS_KEY","docker.io/acuvity/mcp-server-aws-kb-retrieval:0.6.2"]
+        "args": [
+          "run",
+          "-i",
+          "--rm",
+          "--read-only",
+          "-e",
+          "AWS_ACCESS_KEY_ID",
+          "-e",
+          "AWS_REGION",
+          "-e",
+          "AWS_SECRET_ACCESS_KEY",
+          "docker.io/acuvity/mcp-server-aws-kb-retrieval:0.6.2"
+        ]
       }
     }
   }
@@ -144,8 +161,25 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
 {
   "servers": {
     "acuvity-mcp-server-aws-kb-retrieval": {
+      "env": {
+        "AWS_ACCESS_KEY_ID": "TO_BE_SET",
+        "AWS_REGION": "TO_BE_SET",
+        "AWS_SECRET_ACCESS_KEY": "TO_BE_SET"
+      },
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-e","AWS_ACCESS_KEY_ID","-e","AWS_REGION","-e","AWS_SECRET_ACCESS_KEY","docker.io/acuvity/mcp-server-aws-kb-retrieval:0.6.2"]
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--read-only",
+        "-e",
+        "AWS_ACCESS_KEY_ID",
+        "-e",
+        "AWS_REGION",
+        "-e",
+        "AWS_SECRET_ACCESS_KEY",
+        "docker.io/acuvity/mcp-server-aws-kb-retrieval:0.6.2"
+      ]
     }
   }
 }
@@ -164,8 +198,25 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
 {
   "mcpServers": {
     "acuvity-mcp-server-aws-kb-retrieval": {
+      "env": {
+        "AWS_ACCESS_KEY_ID": "TO_BE_SET",
+        "AWS_REGION": "TO_BE_SET",
+        "AWS_SECRET_ACCESS_KEY": "TO_BE_SET"
+      },
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-e","AWS_ACCESS_KEY_ID","-e","AWS_REGION","-e","AWS_SECRET_ACCESS_KEY","docker.io/acuvity/mcp-server-aws-kb-retrieval:0.6.2"]
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--read-only",
+        "-e",
+        "AWS_ACCESS_KEY_ID",
+        "-e",
+        "AWS_REGION",
+        "-e",
+        "AWS_SECRET_ACCESS_KEY",
+        "docker.io/acuvity/mcp-server-aws-kb-retrieval:0.6.2"
+      ]
     }
   }
 }
@@ -186,8 +237,25 @@ Add the following JSON block to your mcp configuration file:
 {
   "mcpServers": {
     "acuvity-mcp-server-aws-kb-retrieval": {
+      "env": {
+        "AWS_ACCESS_KEY_ID": "TO_BE_SET",
+        "AWS_REGION": "TO_BE_SET",
+        "AWS_SECRET_ACCESS_KEY": "TO_BE_SET"
+      },
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-e","AWS_ACCESS_KEY_ID","-e","AWS_REGION","-e","AWS_SECRET_ACCESS_KEY","docker.io/acuvity/mcp-server-aws-kb-retrieval:0.6.2"]
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--read-only",
+        "-e",
+        "AWS_ACCESS_KEY_ID",
+        "-e",
+        "AWS_REGION",
+        "-e",
+        "AWS_SECRET_ACCESS_KEY",
+        "docker.io/acuvity/mcp-server-aws-kb-retrieval:0.6.2"
+      ]
     }
   }
 }
@@ -206,8 +274,25 @@ In the `claude_desktop_config.json` configuration file add the following section
 {
   "mcpServers": {
     "acuvity-mcp-server-aws-kb-retrieval": {
+      "env": {
+        "AWS_ACCESS_KEY_ID": "TO_BE_SET",
+        "AWS_REGION": "TO_BE_SET",
+        "AWS_SECRET_ACCESS_KEY": "TO_BE_SET"
+      },
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-e","AWS_ACCESS_KEY_ID","-e","AWS_REGION","-e","AWS_SECRET_ACCESS_KEY","docker.io/acuvity/mcp-server-aws-kb-retrieval:0.6.2"]
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--read-only",
+        "-e",
+        "AWS_ACCESS_KEY_ID",
+        "-e",
+        "AWS_REGION",
+        "-e",
+        "AWS_SECRET_ACCESS_KEY",
+        "docker.io/acuvity/mcp-server-aws-kb-retrieval:0.6.2"
+      ]
     }
   }
 }
@@ -224,6 +309,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 ```python
 async with MCPServerStdio(
     params={
+        "env": {"AWS_ACCESS_KEY_ID":"TO_BE_SET","AWS_REGION":"TO_BE_SET","AWS_SECRET_ACCESS_KEY":"TO_BE_SET"},
         "command": "docker",
         "args": ["run","-i","--rm","--read-only","-e","AWS_ACCESS_KEY_ID","-e","AWS_REGION","-e","AWS_SECRET_ACCESS_KEY","docker.io/acuvity/mcp-server-aws-kb-retrieval:0.6.2"]
     }
@@ -381,7 +467,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-For detailed list of all features, tools, arguments and SBOM hashes provided by this server please consult the [readme]([[.package.packaging.source]]/tree/main/[[.package.name]])
+For detailed list of all features, tools, arguments and SBOM hashes provided by this server please consult the [readme]([[.blueprint.packaging.source]]/tree/main/[[.blueprint.name]])
 
 ## 🧰 Tools (1)
 

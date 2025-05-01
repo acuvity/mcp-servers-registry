@@ -99,8 +99,19 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
   "mcp": {
     "servers": {
       "acuvity-mcp-server-gitlab": {
+        "env": {
+          "GITLAB_PERSONAL_ACCESS_TOKEN": "TO_BE_SET"
+        },
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","GITLAB_PERSONAL_ACCESS_TOKEN","docker.io/acuvity/mcp-server-gitlab:2025.4.25"]
+        "args": [
+          "run",
+          "-i",
+          "--rm",
+          "--read-only",
+          "-e",
+          "GITLAB_PERSONAL_ACCESS_TOKEN",
+          "docker.io/acuvity/mcp-server-gitlab:2025.4.25"
+        ]
       }
     }
   }
@@ -115,8 +126,19 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
 {
   "servers": {
     "acuvity-mcp-server-gitlab": {
+      "env": {
+        "GITLAB_PERSONAL_ACCESS_TOKEN": "TO_BE_SET"
+      },
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-e","GITLAB_PERSONAL_ACCESS_TOKEN","docker.io/acuvity/mcp-server-gitlab:2025.4.25"]
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--read-only",
+        "-e",
+        "GITLAB_PERSONAL_ACCESS_TOKEN",
+        "docker.io/acuvity/mcp-server-gitlab:2025.4.25"
+      ]
     }
   }
 }
@@ -135,8 +157,19 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
 {
   "mcpServers": {
     "acuvity-mcp-server-gitlab": {
+      "env": {
+        "GITLAB_PERSONAL_ACCESS_TOKEN": "TO_BE_SET"
+      },
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-e","GITLAB_PERSONAL_ACCESS_TOKEN","docker.io/acuvity/mcp-server-gitlab:2025.4.25"]
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--read-only",
+        "-e",
+        "GITLAB_PERSONAL_ACCESS_TOKEN",
+        "docker.io/acuvity/mcp-server-gitlab:2025.4.25"
+      ]
     }
   }
 }
@@ -157,8 +190,19 @@ Add the following JSON block to your mcp configuration file:
 {
   "mcpServers": {
     "acuvity-mcp-server-gitlab": {
+      "env": {
+        "GITLAB_PERSONAL_ACCESS_TOKEN": "TO_BE_SET"
+      },
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-e","GITLAB_PERSONAL_ACCESS_TOKEN","docker.io/acuvity/mcp-server-gitlab:2025.4.25"]
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--read-only",
+        "-e",
+        "GITLAB_PERSONAL_ACCESS_TOKEN",
+        "docker.io/acuvity/mcp-server-gitlab:2025.4.25"
+      ]
     }
   }
 }
@@ -177,8 +221,19 @@ In the `claude_desktop_config.json` configuration file add the following section
 {
   "mcpServers": {
     "acuvity-mcp-server-gitlab": {
+      "env": {
+        "GITLAB_PERSONAL_ACCESS_TOKEN": "TO_BE_SET"
+      },
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-e","GITLAB_PERSONAL_ACCESS_TOKEN","docker.io/acuvity/mcp-server-gitlab:2025.4.25"]
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--read-only",
+        "-e",
+        "GITLAB_PERSONAL_ACCESS_TOKEN",
+        "docker.io/acuvity/mcp-server-gitlab:2025.4.25"
+      ]
     }
   }
 }
@@ -195,6 +250,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 ```python
 async with MCPServerStdio(
     params={
+        "env": {"GITLAB_PERSONAL_ACCESS_TOKEN":"TO_BE_SET"},
         "command": "docker",
         "args": ["run","-i","--rm","--read-only","-e","GITLAB_PERSONAL_ACCESS_TOKEN","docker.io/acuvity/mcp-server-gitlab:2025.4.25"]
     }

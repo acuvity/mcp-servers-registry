@@ -98,8 +98,19 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
   "mcp": {
     "servers": {
       "acuvity-mcp-server-brave-search": {
+        "env": {
+          "BRAVE_API_KEY": "TO_BE_SET"
+        },
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","BRAVE_API_KEY","docker.io/acuvity/mcp-server-brave-search:0.6.2"]
+        "args": [
+          "run",
+          "-i",
+          "--rm",
+          "--read-only",
+          "-e",
+          "BRAVE_API_KEY",
+          "docker.io/acuvity/mcp-server-brave-search:0.6.2"
+        ]
       }
     }
   }
@@ -114,8 +125,19 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
 {
   "servers": {
     "acuvity-mcp-server-brave-search": {
+      "env": {
+        "BRAVE_API_KEY": "TO_BE_SET"
+      },
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-e","BRAVE_API_KEY","docker.io/acuvity/mcp-server-brave-search:0.6.2"]
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--read-only",
+        "-e",
+        "BRAVE_API_KEY",
+        "docker.io/acuvity/mcp-server-brave-search:0.6.2"
+      ]
     }
   }
 }
@@ -134,8 +156,19 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
 {
   "mcpServers": {
     "acuvity-mcp-server-brave-search": {
+      "env": {
+        "BRAVE_API_KEY": "TO_BE_SET"
+      },
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-e","BRAVE_API_KEY","docker.io/acuvity/mcp-server-brave-search:0.6.2"]
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--read-only",
+        "-e",
+        "BRAVE_API_KEY",
+        "docker.io/acuvity/mcp-server-brave-search:0.6.2"
+      ]
     }
   }
 }
@@ -156,8 +189,19 @@ Add the following JSON block to your mcp configuration file:
 {
   "mcpServers": {
     "acuvity-mcp-server-brave-search": {
+      "env": {
+        "BRAVE_API_KEY": "TO_BE_SET"
+      },
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-e","BRAVE_API_KEY","docker.io/acuvity/mcp-server-brave-search:0.6.2"]
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--read-only",
+        "-e",
+        "BRAVE_API_KEY",
+        "docker.io/acuvity/mcp-server-brave-search:0.6.2"
+      ]
     }
   }
 }
@@ -176,8 +220,19 @@ In the `claude_desktop_config.json` configuration file add the following section
 {
   "mcpServers": {
     "acuvity-mcp-server-brave-search": {
+      "env": {
+        "BRAVE_API_KEY": "TO_BE_SET"
+      },
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-e","BRAVE_API_KEY","docker.io/acuvity/mcp-server-brave-search:0.6.2"]
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--read-only",
+        "-e",
+        "BRAVE_API_KEY",
+        "docker.io/acuvity/mcp-server-brave-search:0.6.2"
+      ]
     }
   }
 }
@@ -194,6 +249,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 ```python
 async with MCPServerStdio(
     params={
+        "env": {"BRAVE_API_KEY":"TO_BE_SET"},
         "command": "docker",
         "args": ["run","-i","--rm","--read-only","-e","BRAVE_API_KEY","docker.io/acuvity/mcp-server-brave-search:0.6.2"]
     }

@@ -24,33 +24,16 @@ LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 WORKDIR /app
 
 ARG BUILDKIT_SBOM_SCAN_STAGE=true
-
-
-RUN if command -v apt >/dev/null 2>&1; then \
-  apt-get update \
-  && apt-get install -y curl \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*; \
-  elif command -v apk >/dev/null 2>&1; then \
-  apk update \
-  && apk add --no-cache curl; \
-  else \
-  echo "No supported package manager found." && exit 1; \
-  fi
+RUN apk update \
+    && apk add --no-cache curl
 
 
 
 HEALTHCHECK CMD curl --fail http://localhost:8080 || exit 1
-
-RUN if command -v groupadd >/dev/null 2>&1; then \
-  groupadd -r -g 1001 appuser && \
-  useradd -r -u 1001 -g appuser -m appuser; \
-  else \
-  addgroup -g 1001 -S appuser && \
-  adduser -S -u 1001 -G appuser appuser; \
-  fi && \
-  mkdir -p /home/appuser/.config/minibridge && \
-  chown appuser:appuser -R /app
+RUN addgroup -g 1001 -S appuser && \
+    adduser -S -u 1001 -G appuser appuser && \
+    mkdir -p /home/appuser/.config/minibridge && \
+    chown appuser:appuser -R /app
 
 USER appuser
 RUN npm i --omit-dev @modelcontextprotocol/server-memory@2025.4.25

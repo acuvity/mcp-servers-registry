@@ -99,7 +99,15 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
     "servers": {
       "acuvity-mcp-server-filesystem": {
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-v","path:/data","docker.io/acuvity/mcp-server-filesystem:2025.3.28"]
+        "args": [
+          "run",
+          "-i",
+          "--rm",
+          "--read-only",
+          "-v",
+          "path:/data",
+          "docker.io/acuvity/mcp-server-filesystem:2025.3.28"
+        ]
       }
     }
   }
@@ -115,7 +123,15 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
   "servers": {
     "acuvity-mcp-server-filesystem": {
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-v","path:/data","docker.io/acuvity/mcp-server-filesystem:2025.3.28"]
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--read-only",
+        "-v",
+        "path:/data",
+        "docker.io/acuvity/mcp-server-filesystem:2025.3.28"
+      ]
     }
   }
 }
@@ -135,7 +151,15 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
   "mcpServers": {
     "acuvity-mcp-server-filesystem": {
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-v","path:/data","docker.io/acuvity/mcp-server-filesystem:2025.3.28"]
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--read-only",
+        "-v",
+        "path:/data",
+        "docker.io/acuvity/mcp-server-filesystem:2025.3.28"
+      ]
     }
   }
 }
@@ -157,7 +181,15 @@ Add the following JSON block to your mcp configuration file:
   "mcpServers": {
     "acuvity-mcp-server-filesystem": {
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-v","path:/data","docker.io/acuvity/mcp-server-filesystem:2025.3.28"]
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--read-only",
+        "-v",
+        "path:/data",
+        "docker.io/acuvity/mcp-server-filesystem:2025.3.28"
+      ]
     }
   }
 }
@@ -177,7 +209,15 @@ In the `claude_desktop_config.json` configuration file add the following section
   "mcpServers": {
     "acuvity-mcp-server-filesystem": {
       "command": "docker",
-      "args": ["run","-i","--rm","--read-only","-v","path:/data","docker.io/acuvity/mcp-server-filesystem:2025.3.28"]
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--read-only",
+        "-v",
+        "path:/data",
+        "docker.io/acuvity/mcp-server-filesystem:2025.3.28"
+      ]
     }
   }
 }
