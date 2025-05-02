@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-prisma"
+description: A Helm chart for Gives LLMs the ability to manage Prisma Postgres databases.
+home: https://github.com/prisma/prisma
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/prisma/prisma
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 6.7.0
+keywords:
+  - mcp-server-prisma
+  - mcp-server
+  - remote
+  - database
+  - integration
+  - development
