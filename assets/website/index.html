@@ -55,8 +55,8 @@
         <span class="text-white">is packaging all the MCP servers to make it secure using</span>
         <a href="https://github.com/acuvity/minibridge" target="_blank" class="font-bold text-white">Minibridge</a>.
     </div>
-    <div id="app" class="flex max-w-7xl mx-auto mt-10 px-4">
-        <aside class="w-1/5 mr-6 sticky top-24 self-start">
+    <div id="app" class="flex flex-col md:flex-row max-w-7xl mx-auto mt-10 px-4">
+        <aside class="hidden md:block md:w-1/5 mr-6 sticky top-24 self-start">
             <h2 class="text-xl font-semibold mb-4 text-black">Categories</h2>
             <ul class="space-y-2">
                 <li><button @click="selectCategory(null)" :class="category===null?activeClass:defaultClass">All</button>
@@ -67,113 +67,116 @@
                 </li>
             </ul>
         </aside>
-        <main class="w-4/5">
-            <header class="mb-6 text-center">
-                <h1 class="text-4xl font-bold text-black flex items-center justify-center gap-3">
+        <main class="w-full md:w-4/5">
+            <header class="mb-6 text-center px-2">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
                     <img src="https://avatars.githubusercontent.com/u/182288589?s=200&v=4" alt="MCP Logo"
                         class="h-10" />
-                    Secure MCP Servers
-                </h1>
-                <p class="text-gray-600 mt-1">
+                    <h1 class="text-4xl font-bold text-black">Secure MCP Servers</h1>
+                </div>
+                <p class="text-gray-600 mt-1 px-2">
                     Discover a comprehensive suite of secure, production-ready MCP Servers engineered for AI agents and
                     agentic frameworks. If a required server isn’t listed, submit a request to have it added.
                 </p>
             </header>
-            <input v-model="search" type="text" placeholder="Search by name or description..."
-                class="w-full p-3 rounded border border-gray-300 mb-6 shadow-sm" />
-            <div class="text-sm mb-4">
-                <span class="text-gray-600">Showing {{ filteredServers.length }} result(s)</span>
-                <span v-if="category" class="ml-2 text-[#4e55fd]">(filtered by “{{ category }}”)</span>
-            </div>
-            <div v-for="(server,i) in paginatedServers" :key="server.name"
-                class="bg-white border border-gray-200 rounded-lg shadow p-5 mb-6 relative">
-                <div class="absolute top-3 right-3 flex gap-4 text-gray-500 text-xs"
-                    v-if="server.scope||server.runtime||server.mutitenant||server.requiresConfiguration||server.requiresStorage">
-                    <div v-if="server.scope" class="flex flex-col items-center">
-                        <span class="font-medium">Scope</span>
-                        <i v-if="server.scope==='remote'" class="fas fa-globe" :title="`Scope: ${server.scope}`"></i>
-                        <i v-else-if="server.scope==='native'" class="fas fa-desktop"
-                            :title="`Scope: ${server.scope}`"></i>
-                        <i v-else class="fas fa-box" :title="`Scope: ${server.scope}`"></i>
-                    </div>
-                    <div v-if="server.runtime" class="flex flex-col items-center">
-                        <span class="font-medium">Runtime</span>
-                        <i v-if="server.runtime.toLowerCase()==='binary'" class="fas fa-toolbox"
-                            :title="`Runtime: ${server.runtime}`"></i>
-                        <i v-else-if="server.runtime.toLowerCase()==='python'" class="fab fa-python"
-                            :title="`Runtime: ${server.runtime}`"></i>
-                        <i v-else class="fas fa-file-code" :title="`Runtime: ${server.runtime}`"></i>
-                    </div>
-                    <div v-if="server.mutitenant" class="flex flex-col items-center">
-                        <span class="font-medium">Tenant</span>
-                        <i class="fas fa-users" title="Multitenant: Yes"></i>
-                    </div>
-                    <div v-if="server.requiresConfiguration" class="flex flex-col items-center">
-                        <span class="font-medium">Config</span>
-                        <i class="fas fa-cog" title="Config Required: Yes"></i>
-                    </div>
-                    <div v-if="server.requiresStorage" class="flex flex-col items-center">
-                        <span class="font-medium">Storage</span>
-                        <i class="fas fa-database" title="Storage Required: Yes"></i>
-                    </div>
-                </div>
-                <div class="flex items-center gap-2">
-                    <h2 class="text-2xl font-semibold text-black">{{ server.name }}</h2>
-                    <span v-if="server.official"
-                        class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Official</span>
-                </div>
-                <div v-if="server.version" class="text-sm font-mono mt-1 mb-2">
-                    <a v-if="server.links?.application" :href="server.links.application" target="_blank" rel="noopener"
-                        class="text-black hover:text-gray-700 flex items-center gap-1" title="Opens in a new tab">
-                        <span>Version: {{ server.version }}</span><i
-                            class="fas fa-up-right-from-square text-gray-500"></i>
-                    </a>
-                    <span v-else class="text-gray-500">Version: {{ server.version }}</span>
-                </div>
-                <div v-if="server.tags" class="mb-4">
-                    <span v-for="tag in server.tags" :key="tag"
-                        class="inline-block bg-gray-200 rounded px-2 py-0.5 text-xs mr-1 mb-1">{{ tag }}</span>
-                </div>
-                <div v-if="server.description" class="text-gray-700 mb-4">
-                    <div v-if="expanded[i] || server.description.length <= 300">{{ server.description }}</div>
-                    <div v-else>{{ server.description.substring(0,300) }}…<button @click="expanded[i]=true"
-                            class="text-[#4e55fd] hover:underline text-sm ml-1">See more…</button></div>
-                </div>
-                <div class="text-sm text-gray-700 mb-2" v-if="server.links?.artifacts">
-                    <div class="font-semibold text-gray-800 mb-1">Exposed resources</div>
-                    <div v-if="server.resources && (server.resources.tools!==undefined||server.resources.prompts!==undefined||server.resources.resources!==undefined||server.resources.resourcesTemplates!==undefined)"
-                        class="flex items-center gap-6 flex-wrap">
-                        <template v-if="server.resources.tools!==undefined">
-                            <div class="flex items-center gap-1"><i class="fas fa-wrench" title="Tools"></i><span>{{
-                                    server.resources.tools }}</span></div>
-                        </template>
-                        <template v-if="server.resources.prompts!==undefined">
-                            <div class="flex items-center gap-1"><i class="fas fa-comment-dots"
-                                    title="Prompts"></i><span>{{ server.resources.prompts }}</span></div>
-                        </template>
-                        <template v-if="server.resources.resources!==undefined">
-                            <div class="flex items-center gap-1"><i class="fas fa-box-open"
-                                    title="Resources"></i><span>{{ server.resources.resources }}</span></div>
-                        </template>
-                        <template v-if="server.resources.resourcesTemplates!==undefined">
-                            <div class="flex items-center gap-1"><i class="fas fa-puzzle-piece"
-                                    title="Templates"></i><span>{{ server.resources.resourcesTemplates }}</span></div>
-                        </template>
-                    </div>
-                    <div v-else class="text-gray-500">no SBOM verification</div>
-                </div>
-                <div class="absolute bottom-3 right-3">
-                    <a v-if="server.links?.artifacts" :href="server.links.artifacts" target="_blank"
-                        class="bg-black hover:bg-gray-800 text-white text-xs font-semibold py-1 px-3 rounded flex items-center gap-1"><i
-                            class="fas fa-download"></i>Install</a>
-                    <a v-else
-                        href="https://github.com/acuvity/mcp-servers-registry/issues/new?template=add-mcp-server.yaml"
-                        target="_blank"
-                        class="bg-black hover:bg-gray-800 text-white text-xs font-semibold py-1 px-3 rounded flex items-center gap-1"><i
-                            class="fas fa-plus-circle"></i>Request</a>
+            <div class="px-2">
+                <input v-model="search" type="text" placeholder="Search by name or description..."
+                    class="w-full p-3 rounded border border-gray-300 mb-6 shadow-sm" />
+                <div class="text-sm mb-4">
+                    <span class="text-gray-600">Showing {{ filteredServers.length }} result(s)</span>
+                    <span v-if="category" class="ml-2 text-[#4e55fd]">(filtered by “{{ category }}”)</span>
                 </div>
             </div>
-            <div class="flex justify-center items-center space-x-4 mt-8">
+            <div class="px-2 grid gap-6">
+                <div v-for="(server,i) in paginatedServers" :key="server.name"
+                    class="bg-white border border-gray-200 rounded-lg shadow p-5 relative">
+                    <div class="absolute top-3 right-3 flex gap-3 text-gray-500 text-xs flex-wrap"
+                        v-if="server.scope||server.runtime||server.mutitenant||server.requiresConfiguration||server.requiresStorage">
+                        <div v-if="server.scope" class="flex flex-col items-center">
+                            <span class="font-medium">Scope</span>
+                            <i v-if="server.scope==='remote'" class="fas fa-globe"
+                                :title="`Scope: ${server.scope}`"></i>
+                            <i v-else-if="server.scope==='native'" class="fas fa-desktop"
+                                :title="`Scope: ${server.scope}`"></i>
+                            <i v-else class="fas fa-box" :title="`Scope: ${server.scope}`"></i>
+                        </div>
+                        <div v-if="server.runtime" class="flex flex-col items-center">
+                            <span class="font-medium">Runtime</span>
+                            <i v-if="server.runtime.toLowerCase()==='binary'" class="fas fa-toolbox"
+                                :title="`Runtime: ${server.runtime}`"></i>
+                            <i v-else-if="server.runtime.toLowerCase()==='python'" class="fab fa-python"
+                                :title="`Runtime: ${server.runtime}`"></i>
+                            <i v-else class="fas fa-file-code" :title="`Runtime: ${server.runtime}`"></i>
+                        </div>
+                        <div v-if="server.mutitenant" class="flex flex-col items-center">
+                            <span class="font-medium">Tenant</span>
+                            <i class="fas fa-users" title="Multitenant: Yes"></i>
+                        </div>
+                        <div v-if="server.requiresConfiguration" class="flex flex-col items-center">
+                            <span class="font-medium">Config</span>
+                            <i class="fas fa-cog" title="Config Required: Yes"></i>
+                        </div>
+                        <div v-if="server.requiresStorage" class="flex flex-col items-center">
+                            <span class="font-medium">Storage</span>
+                            <i class="fas fa-database" title="Storage Required: Yes"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <h2 class="text-xl font-semibold text-black">{{ server.name }}</h2>
+                        <span v-if="server.official"
+                            class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Official</span>
+                    </div>
+                    <div v-if="server.version" class="text-sm font-mono mb-4">
+                        <a v-if="server.links?.application" :href="server.links.application" target="_blank"
+                            rel="noopener" class="text-black hover:text-gray-700 flex items-center gap-1"
+                            title="Opens in a new tab">
+                            <span>Version: {{ server.version }}</span><i
+                                class="fas fa-up-right-from-square text-gray-500"></i>
+                        </a>
+                        <span v-else class="text-gray-500">Version: {{ server.version }}</span>
+                    </div>
+                    <div v-if="server.tags" class="mb-4 flex flex-wrap gap-1">
+                        <span v-for="tag in server.tags" :key="tag" class="bg-gray-200 rounded px-2 py-0.5 text-xs">{{
+                            tag }}</span>
+                    </div>
+                    <div v-if="server.description" class="text-gray-700 mb-4">
+                        <div v-if="expanded[i] || server.description.length <= 300">{{ server.description }}</div>
+                        <div v-else>{{ server.description.substring(0,300) }}…<button @click="expanded[i]=true"
+                                class="text-[#4e55fd] hover:underline text-sm ml-1">See more…</button></div>
+                    </div>
+                    <div class="text-sm text-gray-700 mb-4" v-if="server.links?.artifacts">
+                        <div class="font-semibold text-gray-800 mb-1">Exposed resources</div>
+                        <div v-if="server.resources && (server.resources.tools!==undefined||server.resources.prompts!==undefined||server.resources.resources!==undefined||server.resources.resourcesTemplates!==undefined)"
+                            class="flex gap-4 flex-wrap">
+                            <div v-if="server.resources.tools!==undefined" class="flex items-center gap-1"><i
+                                    class="fas fa-wrench" title="Tools"></i><span>{{ server.resources.tools }}</span>
+                            </div>
+                            <div v-if="server.resources.prompts!==undefined" class="flex items-center gap-1"><i
+                                    class="fas fa-comment-dots" title="Prompts"></i><span>{{ server.resources.prompts
+                                    }}</span></div>
+                            <div v-if="server.resources.resources!==undefined" class="flex items-center gap-1"><i
+                                    class="fas fa-box-open" title="Resources"></i><span>{{ server.resources.resources
+                                    }}</span></div>
+                            <div v-if="server.resources.resourcesTemplates!==undefined" class="flex items-center gap-1">
+                                <i class="fas fa-puzzle-piece" title="Templates"></i><span>{{
+                                    server.resources.resourcesTemplates }}</span>
+                            </div>
+                        </div>
+                        <div v-else class="text-gray-500">no SBOM verification</div>
+                    </div>
+                    <div class="absolute bottom-3 right-3">
+                        <a v-if="server.links?.artifacts" :href="server.links.artifacts" target="_blank"
+                            class="bg-black hover:bg-gray-800 text-white text-xs font-semibold py-1 px-3 rounded flex items-center gap-1"><i
+                                class="fas fa-download"></i>Install</a>
+                        <a v-else
+                            href="https://github.com/acuvity/mcp-servers-registry/issues/new?template=add-mcp-server.yaml"
+                            target="_blank"
+                            class="bg-black hover:bg-gray-800 text-white text-xs font-semibold py-1 px-3 rounded flex items-center gap-1"><i
+                                class="fas fa-plus-circle"></i>Request</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center items-center space-x-4 mt-8 px-2">
                 <button @click="prevPage" :disabled="page===1"
                     class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50">Previous</button>
                 <span class="text-gray-700">Page {{ page }} of {{ totalPages }}</span>
@@ -208,37 +211,25 @@
                         const f = new Fuse(res, { keys: ['name', 'description'], threshold: 0.4 });
                         res = f.search(this.search).map(r => r.item);
                     }
-                    res.sort((a, b) => {
-                        const aHas = Boolean(a.links?.artifacts);
-                        const bHas = Boolean(b.links?.artifacts);
-                        if (aHas !== bHas) return aHas ? -1 : 1;
-                        return a.name.localeCompare(b.name);
-                    });
+                    res.sort((a, b) => { const aHas = Boolean(a.links?.artifacts), bHas = Boolean(b.links?.artifacts); return aHas !== bHas ? aHas ? -1 : 1 : a.name.localeCompare(b.name) });
                     return res;
                 },
-                totalPages() {
-                    return Math.ceil(this.filteredServers.length / this.perPage);
-                },
-                paginatedServers() {
-                    const start = (this.page - 1) * this.perPage;
-                    return this.filteredServers.slice(start, start + this.perPage);
-                }
+                totalPages() { return Math.ceil(this.filteredServers.length / this.perPage); },
+                paginatedServers() { const s = (this.page - 1) * this.perPage; return this.filteredServers.slice(s, s + this.perPage) }
             },
             methods: {
-                nextPage() { if (this.page < this.totalPages) this.page++; },
-                prevPage() { if (this.page > 1) this.page--; },
-                selectCategory(tag) { this.category = tag; this.page = 1; }
+                nextPage() { if (this.page < this.totalPages) this.page++ },
+                prevPage() { if (this.page > 1) this.page-- },
+                selectCategory(t) { this.category = t; this.page = 1 }
             },
             mounted() {
-                axios.get('mcp-servers.json')
-                    .then(r => {
-                        this.servers = r.data;
-                        this.expanded = Array(this.servers.length).fill(false);
-                        const tags = new Set();
-                        this.servers.forEach(s => s.tags?.forEach(t => tags.add(t)));
-                        this.availableTags = [...tags].sort();
-                    })
-                    .catch(e => console.error(e));
+                axios.get('mcp-servers.json').then(r => {
+                    this.servers = r.data;
+                    this.expanded = Array(this.servers.length).fill(false);
+                    const t = new Set();
+                    this.servers.forEach(s => s.tags?.forEach(x => t.add(x)));
+                    this.availableTags = [...t].sort();
+                }).catch(e => console.error(e));
             }
         }).mount('#app');
     </script>
