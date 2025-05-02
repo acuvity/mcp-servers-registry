@@ -362,6 +362,7 @@ The deployment will create a Kubernetes service with a `healthPort`, that is use
 See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-cdk/charts/mcp-server-aws-cdk/README.md) for more details about settings.
 
 </details>
+
 # 🧠 Server features
 
 ## 🧰 Tools (7)
