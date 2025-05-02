@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-airbnb"
-LABEL org.opencontainers.image.description="MCP server for Airbnb search and listing details"
+LABEL org.opencontainers.image.description="Provides tools to search Airbnb and get listing details."
 LABEL org.opencontainers.image.version="0.1.1"
 LABEL org.opencontainers.image.source="https://github.com/openbnb-org/mcp-server-airbnb"
 LABEL org.opencontainers.image.licenses="MIT"

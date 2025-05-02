@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-anilist"
-LABEL org.opencontainers.image.description="AniList MCP server for accessing AniList API data"
+LABEL org.opencontainers.image.description="An MCP server integrating AniList API for anime and manga information."
 LABEL org.opencontainers.image.version="1.2.4"
 LABEL org.opencontainers.image.source="https://github.com/yuna0x0/anilist-mcp"
 LABEL org.opencontainers.image.licenses="MIT"

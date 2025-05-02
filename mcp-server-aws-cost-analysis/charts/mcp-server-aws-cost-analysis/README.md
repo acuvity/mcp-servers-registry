@@ -25,7 +25,7 @@
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-cost-analysis&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AWS_PROFILE%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-cost-analysis%3A0.1.8%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** An AWS Labs Model Context Protocol (MCP) server for Cost Analysis of the AWS services
+**Description:** Analyze CDK projects to identify AWS services used and get pricing information from AWS pricing webpages and API.
 
 > [!NOTE]
 > `awslabs.cost-analysis-mcp-server` has been repackaged by Acuvity from AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com> original sources.
@@ -451,6 +451,7 @@ minibridge:
       # Do not validate Policer CA. Do not do this in production
       # insecure: true
 ```
+
 # 🧠 Server features
 
 ## 🧰 Tools (5)
@@ -467,7 +468,7 @@ Analyze a CDK project to identify AWS services used. This tool dynamically extra
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| project_path | string | <no value> | Yes
+| project_path | string | not set | Yes
 </details>
 <details>
 <summary>get_pricing_from_web</summary>
@@ -482,7 +483,7 @@ Get pricing information from AWS pricing webpage. Service codes typically use lo
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| service_code | string | <no value> | Yes
+| service_code | string | not set | Yes
 </details>
 <details>
 <summary>get_pricing_from_api</summary>
@@ -503,8 +504,8 @@ Get pricing information from AWS Price List API.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| region | string | <no value> | Yes
-| service_code | string | <no value> | Yes
+| region | string | not set | Yes
+| service_code | string | not set | Yes
 </details>
 <details>
 <summary>get_bedrock_patterns</summary>
@@ -519,7 +520,7 @@ Get architecture patterns for Amazon Bedrock applications, including component r
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| ctx | any | <no value> | No
+| ctx | any | not set | No
 </details>
 <details>
 <summary>generate_cost_report</summary>
@@ -627,17 +628,17 @@ Example usage:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| assumptions | any | <no value> | No
-| ctx | any | <no value> | No
-| detailed_cost_data | any | <no value> | No
-| exclusions | any | <no value> | No
-| format | string | <no value> | No
-| output_file | any | <no value> | No
-| pricing_data | object | <no value> | Yes
-| pricing_model | string | <no value> | No
-| recommendations | any | <no value> | No
-| related_services | any | <no value> | No
-| service_name | string | <no value> | Yes
+| assumptions | any | not set | No
+| ctx | any | not set | No
+| detailed_cost_data | any | not set | No
+| exclusions | any | not set | No
+| format | string | not set | No
+| output_file | any | not set | No
+| pricing_data | object | not set | Yes
+| pricing_model | string | not set | No
+| recommendations | any | not set | No
+| related_services | any | not set | No
+| service_name | string | not set | Yes
 </details>
 
 

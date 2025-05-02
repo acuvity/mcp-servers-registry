@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-brightdata",
   "name": "mcp-server-brightdata ",
-  "description": "An MCP interface into the Bright Data toolset",
+  "description": "Discover, extract, and interact with the web - one interface powering automated access across the public internet.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-brightdata",

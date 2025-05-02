@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-circleci"
-description: A Helm chart for A Model Context Protocol (MCP) server implementation for CircleCI, enabling natural language interactions with CircleCI functionality through MCP-enabled clients
+description: A Helm chart for Enable AI Agents to fix build failures from CircleCI.
 home: https://github.com/CircleCI-Public/mcp-server-circleci
 sources:
   - https://github.com/acuvity/mcp-servers-registry

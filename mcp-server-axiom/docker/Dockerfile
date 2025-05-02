@@ -20,7 +20,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-axiom"
-LABEL org.opencontainers.image.description="Axiom Model Context Protocol Server"
+LABEL org.opencontainers.image.description="Query and analyze your Axiom logs, traces, and all other event data in natural language."
 LABEL org.opencontainers.image.version="v0.0.1"
 LABEL org.opencontainers.image.source="https://github.com/axiomhq/mcp-server-axiom"
 LABEL org.opencontainers.image.licenses="MIT License"

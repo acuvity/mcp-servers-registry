@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-aws-canvas"
-description: A Helm chart for An AWS Labs Model Context Protocol (MCP) server for Amazon Nova Canvas
+description: A Helm chart for Generate images using Amazon Nova Canvas with text prompts and color guidance.
 home: https://pypi.org/project/awslabs.nova-canvas-mcp-server/
 sources:
   - https://github.com/acuvity/mcp-servers-registry

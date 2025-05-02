@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-apify-actors"
-LABEL org.opencontainers.image.description="Model Context Protocol Server for Apify"
+LABEL org.opencontainers.image.description="Use 3,000+ pre-built cloud tools, known as Actors, to extract data from websites, e-commerce, social media, search engines, maps, and more."
 LABEL org.opencontainers.image.version="0.1.29"
 LABEL org.opencontainers.image.source="https://github.com/apify/actors-mcp-server"
 LABEL org.opencontainers.image.licenses="MIT"

@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-benborla-mysql",
   "name": "mcp-server-benborla-mysql ",
-  "description": "MCP server for interacting with MySQL databases based on Node",
+  "description": "MySQL database integration in NodeJS with configurable access controls and schema inspection.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-benborla-mysql",

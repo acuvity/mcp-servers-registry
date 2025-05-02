@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-calculator",
   "name": "mcp-server-calculator ",
-  "description": "A Model Context Protocol server for calculating",
+  "description": "This server enables LLMs to use calculator for precise numerical calculations.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-calculator",

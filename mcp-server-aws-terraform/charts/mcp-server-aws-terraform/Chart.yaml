@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-aws-terraform"
-description: A Helm chart for An AWS Labs Model Context Protocol (MCP) server for terraform
+description: A Helm chart for MCP server for Terraform on AWS best practices, infrastructure as code patterns, and security compliance with Checkov.
 home: https://github.com/awslabs/mcp/tree/main/src/terraform-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

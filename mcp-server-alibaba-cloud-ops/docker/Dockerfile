@@ -14,10 +14,10 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-alibaba-cloud-ops"
-LABEL org.opencontainers.image.description="A MCP server for Alibaba Cloud"
+LABEL org.opencontainers.image.description="An MCP server that enables AI assistants to operation resources on Alibaba Cloud, supporting ECS, Cloud Monitor, OOS and widely used cloud products."
 LABEL org.opencontainers.image.version="0.8.0"
 LABEL org.opencontainers.image.source="https://github.com/aliyun/alibaba-cloud-ops-mcp-server"
-LABEL org.opencontainers.image.licenses="<no value>"
+LABEL org.opencontainers.image.licenses="unknown"
 LABEL org.opencontainers.image.author="Zheng Dayu <dayu.zdy@alibaba-inc.com>"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 

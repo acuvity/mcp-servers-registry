@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-aws-core",
   "name": "mcp-server-aws-core ",
-  "description": "An AWS Labs Model Context Protocol (MCP) server for aswlabs Core MCP Server",
+  "description": "Core AWS MCP server providing prompt understanding and server management capabilities.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-core",

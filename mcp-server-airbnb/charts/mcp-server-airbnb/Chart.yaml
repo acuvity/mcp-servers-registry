@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-airbnb"
-description: A Helm chart for MCP server for Airbnb search and listing details
+description: A Helm chart for Provides tools to search Airbnb and get listing details.
 home: https://github.com/openbnb-org/mcp-server-airbnb
 sources:
   - https://github.com/acuvity/mcp-servers-registry

@@ -25,7 +25,7 @@
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-paypal&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22PAYPAL_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-paypal%3A0.3.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** A command line tool for setting up PayPal MCP server
+**Description:** A Model Context Protocol (MCP) server that enables AI models to interact with PayPal Apis.
 
 > [!NOTE]
 > `@paypal/mcp` has been repackaged by Acuvity from PayPal original sources.
@@ -455,6 +455,7 @@ minibridge:
       # Do not validate Policer CA. Do not do this in production
       # insecure: true
 ```
+
 # 🧠 Server features
 
 ## 🧰 Tools (26)
@@ -923,12 +924,12 @@ This tool is used to create a new order in PayPal. This is typically the first s
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| cancelUrl | string | <no value> | No
+| cancelUrl | string | not set | No
 | currencyCode | string | Currency code of the amount. | Yes
 | discount | number | The discount amount for the order. | No
-| items | array | <no value> | Yes
-| notes | any | <no value> | No
-| returnUrl | string | <no value> | No
+| items | array | not set | Yes
+| notes | any | not set | No
+| returnUrl | string | not set | No
 | shippingAddress | any | The shipping address for the order. | No
 | shippingCost | number | The cost of shipping for the order. | No
 </details>
@@ -988,9 +989,9 @@ This function retrieves a list of disputes with optional pagination and filterin
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | dispute_state | string | OPEN_INQUIRIES | No
-| disputed_transaction_id | [string null] | <no value> | No
-| page | number | <no value> | No
-| page_size | number | <no value> | No
+| disputed_transaction_id | [string null] | not set | No
+| page | number | not set | No
+| page_size | number | not set | No
 </details>
 <details>
 <summary>get_dispute</summary>
@@ -1028,7 +1029,7 @@ This tool is used to accept liability for a dispute claim. When you accept liabi
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dispute_id | string | <no value> | Yes
+| dispute_id | string | not set | Yes
 | note | string | A note about why the seller is accepting the claim | Yes
 </details>
 <details>
@@ -1057,12 +1058,12 @@ This tool is used to list transactions with optional filtering parameters within
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | end_date | string | Filters the transactions in the response by an end date and time, in ISO8601 date and time format. Seconds are required. Fractional seconds are optional. The maximum supported range is 31 days. | No
-| page | number | <no value> | No
-| page_size | number | <no value> | No
+| page | number | not set | No
+| page_size | number | not set | No
 | search_months | number | Number of months to search back for a transaction by ID. Default is 12 months. | No
 | start_date | string | Filters the transactions in the response by a start date and time, in ISO8601 date and time format. Seconds are required. Fractional seconds are optional. | No
 | transaction_id | any | The ID of the transaction to retrieve. | No
-| transaction_status | string | <no value> | No
+| transaction_status | string | not set | No
 </details>
 
 

@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-base",
   "name": "mcp-server-base ",
-  "description": "A Model Context Protocol (MCP) server that provides onchain tools for Claude AI, allowing it to interact with the Base blockchain and Coinbase API",
+  "description": "Base Network integration for onchain tools, allowing interaction with Base Network and Coinbase API for wallet management, fund transfers, smart contracts, and DeFi operations.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-base",

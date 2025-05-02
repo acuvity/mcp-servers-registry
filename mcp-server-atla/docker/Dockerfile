@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-atla"
-LABEL org.opencontainers.image.description="An MCP server implementation providing a standardized interface for LLMs to interact with the Atla API."
+LABEL org.opencontainers.image.description="Enable AI agents to interact with the Atla API for state-of-the-art LLMJ evaluation."
 LABEL org.opencontainers.image.version="0.1.2"
 LABEL org.opencontainers.image.source="https://github.com/atla-ai/atla-mcp-server"
 LABEL org.opencontainers.image.licenses="MIT"

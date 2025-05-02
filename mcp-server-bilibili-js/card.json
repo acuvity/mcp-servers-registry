@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-bilibili-js",
   "name": "mcp-server-bilibili-js ",
-  "description": "B站视频搜索 MCP（Model Context Protocol）服务",
+  "description": "An MCP server that supports searching for Bilibili content. Provides LangChain integration examples and test scripts.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-bilibili-js",

@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-paypal",
   "name": "mcp-server-paypal ",
-  "description": "A command line tool for setting up PayPal MCP server",
+  "description": "A Model Context Protocol (MCP) server that enables AI models to interact with PayPal Apis.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-paypal",

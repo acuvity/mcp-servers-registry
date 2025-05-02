@@ -14,10 +14,10 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-apify-rag-web-browser"
-LABEL org.opencontainers.image.description="An MCP Server for RAG Web Browser Actor"
+LABEL org.opencontainers.image.description="Use 3,000+ pre-built cloud tools to extract data from websites, e-commerce, social media, search engines, maps, and more."
 LABEL org.opencontainers.image.version="0.1.3"
 LABEL org.opencontainers.image.source="https://github.com/apify/mcp-server-rag-web-browser"
-LABEL org.opencontainers.image.licenses="<no value>"
+LABEL org.opencontainers.image.licenses="unknown"
 LABEL org.opencontainers.image.author="Author"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 

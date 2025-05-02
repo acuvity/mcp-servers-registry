@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-asana",
   "name": "mcp-server-asana ",
-  "description": "MCP Server for Asana",
+  "description": "This Model Context Protocol server implementation of Asana allows you to talk to Asana API from MCP Client such as Anthropic's Claude Desktop Application, and many more.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-asana",

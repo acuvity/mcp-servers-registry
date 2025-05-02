@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-circleci"
-LABEL org.opencontainers.image.description="A Model Context Protocol (MCP) server implementation for CircleCI, enabling natural language interactions with CircleCI functionality through MCP-enabled clients"
+LABEL org.opencontainers.image.description="Enable AI Agents to fix build failures from CircleCI."
 LABEL org.opencontainers.image.version="0.4.0"
 LABEL org.opencontainers.image.source="https://github.com/CircleCI-Public/mcp-server-circleci"
 LABEL org.opencontainers.image.licenses="Apache-2.0"

@@ -14,10 +14,10 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="standalone"
 
 LABEL org.opencontainers.image.title="mcp-server-aws-terraform"
-LABEL org.opencontainers.image.description="An AWS Labs Model Context Protocol (MCP) server for terraform"
+LABEL org.opencontainers.image.description="MCP server for Terraform on AWS best practices, infrastructure as code patterns, and security compliance with Checkov."
 LABEL org.opencontainers.image.version="0.0.9"
 LABEL org.opencontainers.image.source="https://github.com/awslabs/mcp/tree/main/src/terraform-mcp-server"
-LABEL org.opencontainers.image.licenses="<no value>"
+LABEL org.opencontainers.image.licenses="unknown"
 LABEL org.opencontainers.image.author="Author"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 

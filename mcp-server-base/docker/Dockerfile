@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-base"
-LABEL org.opencontainers.image.description="A Model Context Protocol (MCP) server that provides onchain tools for Claude AI, allowing it to interact with the Base blockchain and Coinbase API"
+LABEL org.opencontainers.image.description="Base Network integration for onchain tools, allowing interaction with Base Network and Coinbase API for wallet management, fund transfers, smart contracts, and DeFi operations."
 LABEL org.opencontainers.image.version="1.0.13"
 LABEL org.opencontainers.image.source="https://github.com/base/base-mcp"
 LABEL org.opencontainers.image.licenses="MIT"

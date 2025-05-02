@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-codelogic",
   "name": "mcp-server-codelogic ",
-  "description": "Integrates CodeLogic's powerful codebase knowledge graphs with a Model Context Protocol (MCP) server",
+  "description": "Official MCP server for CodeLogic, providing access to code dependency analytics, architectural risk analysis, and impact assessment tools.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-codelogic",

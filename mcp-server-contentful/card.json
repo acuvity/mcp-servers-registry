@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-contentful",
   "name": "mcp-server-contentful ",
-  "description": "MCP server for Contentful Content Management API integration",
+  "description": "Update, create, delete content, content-models and assets in your Contentful Space.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-contentful",

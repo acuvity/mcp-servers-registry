@@ -25,7 +25,7 @@
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-browserbase&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22BROWSERBASE_API_KEY%22%2C%22-e%22%2C%22BROWSERBASE_PROJECT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-browserbase%3A0.5.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** MCP server for browser automation using browserbase
+**Description:** Automate browser interactions in the cloud (e.g. web navigation, data extraction, form filling, and more).
 
 > [!NOTE]
 > `@browserbasehq/mcp-browserbase` has been repackaged by Acuvity from Anthropic, PBC original sources.
@@ -444,7 +444,7 @@ Close a browser session on Browserbase
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| sessionId | string | <no value> | Yes
+| sessionId | string | not set | Yes
 </details>
 <details>
 <summary>browserbase_navigate</summary>
@@ -459,7 +459,7 @@ Navigate to a URL
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| url | string | <no value> | Yes
+| url | string | not set | Yes
 </details>
 <details>
 <summary>browserbase_screenshot</summary>
@@ -548,7 +548,7 @@ Extract all content from the current page
 
 | Name | Mime type | URI| Content |
 |-----------|------|-------------|-----------|
-| Browser console logs | text/plain | console://logs | <no value> |
+| Browser console logs | text/plain | console://logs | - |
 
 </details>
 

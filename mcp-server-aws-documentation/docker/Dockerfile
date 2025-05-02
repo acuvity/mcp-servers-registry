@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-aws-documentation"
-LABEL org.opencontainers.image.description="An AWS Labs Model Context Protocol (MCP) server for AWS Documentation"
+LABEL org.opencontainers.image.description="Fetch, convert, and search AWS documentation pages, with recommendations for related content."
 LABEL org.opencontainers.image.version="0.1.2"
 LABEL org.opencontainers.image.source="https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server"
 LABEL org.opencontainers.image.licenses="Apache-2.0"

@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="standalone"
 
 LABEL org.opencontainers.image.title="mcp-server-aws-diagram"
-LABEL org.opencontainers.image.description="An MCP server that seamlessly creates diagrams using the Python diagrams package DSL"
+LABEL org.opencontainers.image.description="This MCP server that seamlessly creates diagrams using the Python diagrams package DSL. This server allows you to generate AWS diagrams, sequence diagrams, flow diagrams, and class diagrams using Python code."
 LABEL org.opencontainers.image.version="0.9.3"
 LABEL org.opencontainers.image.source="https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server"
 LABEL org.opencontainers.image.licenses="Apache-2.0"

@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-base"
-description: A Helm chart for A Model Context Protocol (MCP) server that provides onchain tools for Claude AI, allowing it to interact with the Base blockchain and Coinbase API
+description: A Helm chart for Base Network integration for onchain tools, allowing interaction with Base Network and Coinbase API for wallet management, fund transfers, smart contracts, and DeFi operations.
 home: https://github.com/base/base-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

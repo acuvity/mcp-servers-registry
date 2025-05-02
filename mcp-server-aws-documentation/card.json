@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-aws-documentation",
   "name": "mcp-server-aws-documentation ",
-  "description": "An AWS Labs Model Context Protocol (MCP) server for AWS Documentation",
+  "description": "Fetch, convert, and search AWS documentation pages, with recommendations for related content.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-documentation",

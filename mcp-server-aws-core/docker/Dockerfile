@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-aws-core"
-LABEL org.opencontainers.image.description="An AWS Labs Model Context Protocol (MCP) server for aswlabs Core MCP Server"
+LABEL org.opencontainers.image.description="Core AWS MCP server providing prompt understanding and server management capabilities."
 LABEL org.opencontainers.image.version="0.2.3"
 LABEL org.opencontainers.image.source="https://pypi.org/project/awslabs.core-mcp-server/"
 LABEL org.opencontainers.image.licenses="Apache-2.0"

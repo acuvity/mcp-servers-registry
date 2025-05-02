@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-bitcoin",
   "name": "mcp-server-bitcoin ",
-  "description": "A Model Context Protocol server for interacting with Bitcoin.",
+  "description": "A Model Context Protocol (MCP) server that enables AI models to interact with Bitcoin, allowing them to generate keys, validate addresses, decode transactions, query the blockchain, and more.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-bitcoin",

@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-paypal"
-description: A Helm chart for A command line tool for setting up PayPal MCP server
+description: A Helm chart for A Model Context Protocol (MCP) server that enables AI models to interact with PayPal Apis.
 home: https://github.com/paypal/agent-toolkit
 sources:
   - https://github.com/acuvity/mcp-servers-registry

@@ -25,7 +25,7 @@
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-cdk&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-cdk%3A0.1.3%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** An AWS CDK MCP server that provides guidance on AWS Cloud Development Kit best practices, infrastructure as code patterns, and security compliance with CDK Nag. This server offers tools to validate infrastructure designs, explain CDK Nag rules, analyze suppressions, generate Bedrock Agent schemas, and discover Solutions Constructs patterns.
+**Description:** Get prescriptive CDK advice, explain CDK Nag rules, check suppressions, generate Bedrock Agent schemas, and discover AWS Solutions Constructs patterns.
 
 > [!NOTE]
 > `awslabs.cdk-mcp-server` has been repackaged by Acuvity from AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com> original sources.
@@ -442,7 +442,7 @@ Explain a specific CDK Nag rule with AWS Well-Architected guidance.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| rule_id | string | <no value> | Yes
+| rule_id | string | not set | Yes
 </details>
 <details>
 <summary>CheckCDKNagSuppressions</summary>
@@ -469,8 +469,8 @@ Check if CDK code contains Nag suppressions that require human review.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| code | any | <no value> | No
-| file_path | any | <no value> | No
+| code | any | not set | No
+| file_path | any | not set | No
 </details>
 <details>
 <summary>GenerateBedrockAgentSchema</summary>
@@ -501,8 +501,8 @@ Generate OpenAPI schema for Bedrock Agent Action Groups from a file.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| lambda_code_path | string | <no value> | Yes
-| output_path | string | <no value> | Yes
+| lambda_code_path | string | not set | Yes
+| output_path | string | not set | Yes
 </details>
 <details>
 <summary>GetAwsSolutionsConstructPattern</summary>
@@ -544,8 +544,8 @@ Search and discover AWS Solutions Constructs patterns.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| pattern_name | any | <no value> | No
-| services | any | <no value> | No
+| pattern_name | any | not set | No
+| services | any | not set | No
 </details>
 <details>
 <summary>SearchGenAICDKConstructs</summary>
@@ -582,8 +582,8 @@ Search for GenAI CDK constructs by name or type.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| construct_type | any | <no value> | No
-| query | any | <no value> | No
+| construct_type | any | not set | No
+| query | any | not set | No
 </details>
 <details>
 <summary>LambdaLayerDocumentationProvider</summary>
@@ -609,7 +609,7 @@ Provide documentation sources for Lambda layers.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| layer_type | string | <no value> | Yes
+| layer_type | string | not set | Yes
 </details>
 
 ## 📚 Resources (1)
@@ -619,7 +619,7 @@ Provide documentation sources for Lambda layers.
 
 | Name | Mime type | URI| Content |
 |-----------|------|-------------|-----------|
-| lambda-powertools:// | text/plain | lambda-powertools:// | <no value> |
+| lambda-powertools:// | text/plain | lambda-powertools:// | - |
 
 </details>
 

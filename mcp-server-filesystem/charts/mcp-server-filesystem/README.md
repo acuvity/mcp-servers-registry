@@ -444,6 +444,7 @@ minibridge:
       # Do not validate Policer CA. Do not do this in production
       # insecure: true
 ```
+
 # 🧠 Server features
 
 ## 🧰 Tools (11)
@@ -460,7 +461,7 @@ Read the complete contents of a file from the file system. Handles various text 
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| path | string | <no value> | Yes
+| path | string | not set | Yes
 </details>
 <details>
 <summary>read_multiple_files</summary>
@@ -475,7 +476,7 @@ Read the contents of multiple files simultaneously. This is more efficient than 
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| paths | array | <no value> | Yes
+| paths | array | not set | Yes
 </details>
 <details>
 <summary>write_file</summary>
@@ -490,8 +491,8 @@ Create a new file or completely overwrite an existing file with new content. Use
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| content | string | <no value> | Yes
-| path | string | <no value> | Yes
+| content | string | not set | Yes
+| path | string | not set | Yes
 </details>
 <details>
 <summary>edit_file</summary>
@@ -507,8 +508,8 @@ Make line-based edits to a text file. Each edit replaces exact line sequences wi
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | dryRun | boolean | Preview changes using git-style diff format | No
-| edits | array | <no value> | Yes
-| path | string | <no value> | Yes
+| edits | array | not set | Yes
+| path | string | not set | Yes
 </details>
 <details>
 <summary>create_directory</summary>
@@ -523,7 +524,7 @@ Create a new directory or ensure a directory exists. Can create multiple nested 
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| path | string | <no value> | Yes
+| path | string | not set | Yes
 </details>
 <details>
 <summary>list_directory</summary>
@@ -538,7 +539,7 @@ Get a detailed listing of all files and directories in a specified path. Results
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| path | string | <no value> | Yes
+| path | string | not set | Yes
 </details>
 <details>
 <summary>directory_tree</summary>
@@ -553,7 +554,7 @@ Get a recursive tree view of files and directories as a JSON structure. Each ent
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| path | string | <no value> | Yes
+| path | string | not set | Yes
 </details>
 <details>
 <summary>move_file</summary>
@@ -568,8 +569,8 @@ Move or rename files and directories. Can move files between directories and ren
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| destination | string | <no value> | Yes
-| source | string | <no value> | Yes
+| destination | string | not set | Yes
+| source | string | not set | Yes
 </details>
 <details>
 <summary>search_files</summary>
@@ -584,9 +585,9 @@ Recursively search for files and directories matching a pattern. Searches throug
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| excludePatterns | array | <no value> | No
-| path | string | <no value> | Yes
-| pattern | string | <no value> | Yes
+| excludePatterns | array | not set | No
+| path | string | not set | Yes
+| pattern | string | not set | Yes
 </details>
 <details>
 <summary>get_file_info</summary>
@@ -601,7 +602,7 @@ Retrieve detailed metadata about a file or directory. Returns comprehensive info
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| path | string | <no value> | Yes
+| path | string | not set | Yes
 </details>
 <details>
 <summary>list_allowed_directories</summary>

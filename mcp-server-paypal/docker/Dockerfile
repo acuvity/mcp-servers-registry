@@ -14,10 +14,10 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-paypal"
-LABEL org.opencontainers.image.description="A command line tool for setting up PayPal MCP server"
+LABEL org.opencontainers.image.description="A Model Context Protocol (MCP) server that enables AI models to interact with PayPal Apis."
 LABEL org.opencontainers.image.version="0.3.1"
 LABEL org.opencontainers.image.source="https://github.com/paypal/agent-toolkit"
-LABEL org.opencontainers.image.licenses="<no value>"
+LABEL org.opencontainers.image.licenses="unknown"
 LABEL org.opencontainers.image.author="PayPal"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 

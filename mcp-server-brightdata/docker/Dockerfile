@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="native"
 
 LABEL org.opencontainers.image.title="mcp-server-brightdata"
-LABEL org.opencontainers.image.description="An MCP interface into the Bright Data toolset"
+LABEL org.opencontainers.image.description="Discover, extract, and interact with the web - one interface powering automated access across the public internet."
 LABEL org.opencontainers.image.version="1.7.0"
 LABEL org.opencontainers.image.source="https://github.com/luminati-io/brightdata-mcp"
 LABEL org.opencontainers.image.licenses="MIT"

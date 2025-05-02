@@ -25,7 +25,7 @@
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-atla&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22ATLA_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-atla%3A0.1.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** An MCP server implementation providing a standardized interface for LLMs to interact with the Atla API.
+**Description:** Enable AI agents to interact with the Atla API for state-of-the-art LLMJ evaluation.
 
 > [!NOTE]
 > `atla-mcp-server` has been repackaged by Acuvity from Atla <team@atla-ai.com> original sources.
@@ -427,9 +427,12 @@ The deployment will create a Kubernetes service with a `healthPort`, that is use
 See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-atla/charts/mcp-server-atla/README.md) for more details about settings.
 
 </details>
+
+
+
 # 🧠 Server features
 
-For detailed list of all features, tools, arguments and SBOM hashes provided by this server please consult the [readme]([[.blueprint.packaging.source]]/tree/main/[[.blueprint.name]])
+For detailed list of all features, tools, arguments and SBOM hashes provided by this server please consult the [readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-atla)
 
 ## 🧰 Tools (2)
 

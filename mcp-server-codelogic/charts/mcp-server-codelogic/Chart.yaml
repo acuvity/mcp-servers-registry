@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-codelogic"
-description: A Helm chart for Integrates CodeLogic's powerful codebase knowledge graphs with a Model Context Protocol (MCP) server
+description: A Helm chart for Official MCP server for CodeLogic, providing access to code dependency analytics, architectural risk analysis, and impact assessment tools.
 home: https://github.com/CodeLogicIncEngineering/codelogic-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

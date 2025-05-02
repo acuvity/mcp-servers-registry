@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-bankless-onchain",
   "name": "mcp-server-bankless-onchain ",
-  "description": "MCP server for using Bankless Onchain",
+  "description": "Query Onchain data, like ERC20 tokens, transaction history, smart contract state.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-bankless-onchain",

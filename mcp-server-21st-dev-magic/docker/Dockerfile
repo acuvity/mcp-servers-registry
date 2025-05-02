@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-21st-dev-magic"
-LABEL org.opencontainers.image.description="Magic MCP UI builder by 21st.dev"
+LABEL org.opencontainers.image.description="Create crafted UI components inspired by the best 21st.dev design engineers."
 LABEL org.opencontainers.image.version="0.0.47"
 LABEL org.opencontainers.image.source="https://github.com/21st-dev/magic-mcp"
 LABEL org.opencontainers.image.licenses="ISC"

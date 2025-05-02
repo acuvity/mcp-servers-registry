@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="standalone"
 
 LABEL org.opencontainers.image.title="mcp-server-chart"
-LABEL org.opencontainers.image.description="A Model Context Protocol server for generating charts using AntV, This is a TypeScript-based MCP server that provides chart generation capabilities. It allows you to create various types of charts through MCP tools."
+LABEL org.opencontainers.image.description="A Model Context Protocol server for generating visual charts using AntV."
 LABEL org.opencontainers.image.version="0.2.2"
 LABEL org.opencontainers.image.source="https://github.com/antvis/mcp-server-chart"
 LABEL org.opencontainers.image.licenses="MIT"

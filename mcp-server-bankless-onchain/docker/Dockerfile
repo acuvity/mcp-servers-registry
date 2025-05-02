@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-bankless-onchain"
-LABEL org.opencontainers.image.description="MCP server for using Bankless Onchain"
+LABEL org.opencontainers.image.description="Query Onchain data, like ERC20 tokens, transaction history, smart contract state."
 LABEL org.opencontainers.image.version="1.0.6"
 LABEL org.opencontainers.image.source="https://bankless.com"
 LABEL org.opencontainers.image.licenses="MIT"

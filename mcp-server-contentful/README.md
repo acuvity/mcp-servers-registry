@@ -25,7 +25,7 @@
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-contentful&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CONTENTFUL_MANAGEMENT_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-contentful%3A1.13.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** MCP server for Contentful Content Management API integration
+**Description:** Update, create, delete content, content-models and assets in your Contentful Space.
 
 > [!NOTE]
 > `@ivotoby/contentful-management-mcp-server` has been repackaged by Acuvity from Author original sources.
@@ -448,7 +448,7 @@ Retrieve an existing entry
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| entryId | string | <no value> | Yes
+| entryId | string | not set | Yes
 | environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
 | spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
 </details>
@@ -465,9 +465,9 @@ Update an existing entry, very important: always send all field values and all v
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| entryId | string | <no value> | Yes
+| entryId | string | not set | Yes
 | environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
-| fields | object | <no value> | Yes
+| fields | object | not set | Yes
 | spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
 </details>
 <details>
@@ -483,7 +483,7 @@ Delete an entry
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| entryId | string | <no value> | Yes
+| entryId | string | not set | Yes
 | environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
 | spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
 </details>
@@ -552,11 +552,11 @@ Upload a new asset
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| description | string | <no value> | No
+| description | string | not set | No
 | environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
-| file | object | <no value> | Yes
+| file | object | not set | Yes
 | spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
-| title | string | <no value> | Yes
+| title | string | not set | Yes
 </details>
 <details>
 <summary>get_asset</summary>
@@ -571,7 +571,7 @@ Retrieve an asset
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| assetId | string | <no value> | Yes
+| assetId | string | not set | Yes
 | environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
 | spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
 </details>
@@ -588,12 +588,12 @@ Update an asset
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| assetId | string | <no value> | Yes
-| description | string | <no value> | No
+| assetId | string | not set | Yes
+| description | string | not set | No
 | environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
-| file | object | <no value> | No
+| file | object | not set | No
 | spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
-| title | string | <no value> | No
+| title | string | not set | No
 </details>
 <details>
 <summary>delete_asset</summary>
@@ -608,7 +608,7 @@ Delete an asset
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| assetId | string | <no value> | Yes
+| assetId | string | not set | Yes
 | environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
 | spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
 </details>
@@ -625,7 +625,7 @@ Publish an asset
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| assetId | string | <no value> | Yes
+| assetId | string | not set | Yes
 | environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
 | spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
 </details>
@@ -642,7 +642,7 @@ Unpublish an asset
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| assetId | string | <no value> | Yes
+| assetId | string | not set | Yes
 | environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
 | spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
 </details>
@@ -677,7 +677,7 @@ Get details of a specific content type
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| contentTypeId | string | <no value> | Yes
+| contentTypeId | string | not set | Yes
 | environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
 | spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
 </details>
@@ -694,11 +694,11 @@ Create a new content type
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| description | string | <no value> | No
-| displayField | string | <no value> | No
+| description | string | not set | No
+| displayField | string | not set | No
 | environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
 | fields | array | Array of field definitions for the content type | Yes
-| name | string | <no value> | Yes
+| name | string | not set | Yes
 | spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
 </details>
 <details>
@@ -714,12 +714,12 @@ Update an existing content type
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| contentTypeId | string | <no value> | Yes
-| description | string | <no value> | No
-| displayField | string | <no value> | No
+| contentTypeId | string | not set | Yes
+| description | string | not set | No
+| displayField | string | not set | No
 | environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
-| fields | array | <no value> | Yes
-| name | string | <no value> | Yes
+| fields | array | not set | Yes
+| name | string | not set | Yes
 | spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
 </details>
 <details>
@@ -735,7 +735,7 @@ Delete a content type
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| contentTypeId | string | <no value> | Yes
+| contentTypeId | string | not set | Yes
 | environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
 | spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
 </details>
@@ -752,7 +752,7 @@ Publish a content type
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| contentTypeId | string | <no value> | Yes
+| contentTypeId | string | not set | Yes
 | environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
 | spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
 </details>
@@ -783,7 +783,7 @@ Get details of a space
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| spaceId | string | <no value> | Yes
+| spaceId | string | not set | Yes
 </details>
 <details>
 <summary>list_environments</summary>
@@ -798,7 +798,7 @@ List all environments in a space
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| spaceId | string | <no value> | Yes
+| spaceId | string | not set | Yes
 </details>
 <details>
 <summary>create_environment</summary>
@@ -813,9 +813,9 @@ Create a new environment
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| environmentId | string | <no value> | Yes
-| name | string | <no value> | Yes
-| spaceId | string | <no value> | Yes
+| environmentId | string | not set | Yes
+| name | string | not set | Yes
+| spaceId | string | not set | Yes
 </details>
 <details>
 <summary>delete_environment</summary>
@@ -830,8 +830,8 @@ Delete an environment
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| environmentId | string | <no value> | Yes
-| spaceId | string | <no value> | Yes
+| environmentId | string | not set | Yes
+| spaceId | string | not set | Yes
 </details>
 <details>
 <summary>bulk_validate</summary>
@@ -1034,7 +1034,7 @@ Explain Contentful API concepts and relationships
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| concept | Contentful concept (Space/Environment/ContentType/Entry/Asset) | true |
+| concept | Contentful concept (Space/Environment/ContentType/Entry/Asset) |Yes |
 <details>
 <summary>space-identification</summary>
 
@@ -1048,7 +1048,7 @@ Guide for identifying the correct Contentful space for operations
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| operation | Operation you want to perform | true |
+| operation | Operation you want to perform |Yes |
 <details>
 <summary>content-modeling-guide</summary>
 
@@ -1062,7 +1062,7 @@ Guide through content modeling decisions and best practices
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| useCase | Description of the content modeling scenario | true |
+| useCase | Description of the content modeling scenario |Yes |
 <details>
 <summary>api-operation-help</summary>
 
@@ -1076,8 +1076,8 @@ Get detailed help for specific Contentful API operations
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| operation | API operation (CRUD, publish, archive, etc) | true |
-| resourceType | Type of resource (Entry/Asset/ContentType) | true |
+| operation | API operation (CRUD, publish, archive, etc) |Yes |
+| resourceType | Type of resource (Entry/Asset/ContentType) |Yes |
 <details>
 <summary>entry-management</summary>
 
@@ -1091,8 +1091,8 @@ Help with CRUD operations and publishing workflows for content entries
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| task | Specific task (create/read/update/delete/publish/unpublish/bulk) | <no value> |
-| details | Additional context or requirements | <no value> |
+| task | Specific task (create/read/update/delete/publish/unpublish/bulk) |No |
+| details | Additional context or requirements |No |
 <details>
 <summary>asset-management</summary>
 
@@ -1106,8 +1106,8 @@ Guidance on managing digital assets like images, videos, and documents
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| task | Specific task (upload/process/update/delete/publish) | <no value> |
-| details | Additional context about asset types or requirements | <no value> |
+| task | Specific task (upload/process/update/delete/publish) |No |
+| details | Additional context about asset types or requirements |No |
 <details>
 <summary>content-type-operations</summary>
 
@@ -1121,8 +1121,8 @@ Help with defining and managing content types and their fields
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| task | Specific task (create/update/delete/publish/field configuration) | <no value> |
-| details | Additional context about field types or validations | <no value> |
+| task | Specific task (create/update/delete/publish/field configuration) |No |
+| details | Additional context about field types or validations |No |
 <details>
 <summary>ai-actions-overview</summary>
 
@@ -1144,8 +1144,8 @@ Guide for creating and configuring AI Actions in Contentful
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| useCase | Purpose of the AI Action you want to create | true |
-| modelType | AI model type (e.g., gpt-4, claude-3-opus) | <no value> |
+| useCase | Purpose of the AI Action you want to create |Yes |
+| modelType | AI model type (e.g., gpt-4, claude-3-opus) |No |
 <details>
 <summary>ai-actions-variables</summary>
 
@@ -1159,7 +1159,7 @@ Explanation of variable types and configuration for AI Actions
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| variableType | Type of variable (Text, Reference, StandardInput, etc) | <no value> |
+| variableType | Type of variable (Text, Reference, StandardInput, etc) |No |
 <details>
 <summary>ai-actions-invoke</summary>
 
@@ -1173,8 +1173,8 @@ Help with invoking AI Actions and processing results
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| actionId | ID of the AI Action (if known) | <no value> |
-| details | Additional context about your invocation requirements | <no value> |
+| actionId | ID of the AI Action (if known) |No |
+| details | Additional context about your invocation requirements |No |
 <details>
 <summary>bulk-operations</summary>
 
@@ -1188,9 +1188,9 @@ Guidance on performing actions on multiple entities simultaneously
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| operation | Bulk operation type (publish/unpublish/validate) | <no value> |
-| entityType | Type of entities to process (entries/assets) | <no value> |
-| details | Additional context about operation requirements | <no value> |
+| operation | Bulk operation type (publish/unpublish/validate) |No |
+| entityType | Type of entities to process (entries/assets) |No |
+| details | Additional context about operation requirements |No |
 <details>
 <summary>space-environment-management</summary>
 
@@ -1204,9 +1204,9 @@ Help with managing spaces, environments, and deployment workflows
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| task | Specific task (create/list/manage environments/aliases) | <no value> |
-| entity | Entity type (space/environment) | <no value> |
-| details | Additional context about workflow requirements | <no value> |
+| task | Specific task (create/list/manage environments/aliases) |No |
+| entity | Entity type (space/environment) |No |
+| details | Additional context about workflow requirements |No |
 <details>
 <summary>mcp-tool-usage</summary>
 
@@ -1220,7 +1220,7 @@ Instructions for using Contentful MCP tools effectively
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| toolName | Specific tool name (e.g., invoke_ai_action, create_entry) | <no value> |
+| toolName | Specific tool name (e.g., invoke_ai_action, create_entry) |No |
 
 </details>
 

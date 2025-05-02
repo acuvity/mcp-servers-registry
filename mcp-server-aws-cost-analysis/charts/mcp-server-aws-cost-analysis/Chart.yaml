@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-aws-cost-analysis"
-description: A Helm chart for An AWS Labs Model Context Protocol (MCP) server for Cost Analysis of the AWS services
+description: A Helm chart for Analyze CDK projects to identify AWS services used and get pricing information from AWS pricing webpages and API.
 home: https://pypi.org/project/awslabs.cost-analysis-mcp-server/
 sources:
   - https://github.com/acuvity/mcp-servers-registry

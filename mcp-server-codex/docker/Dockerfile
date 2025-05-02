@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-codex"
-LABEL org.opencontainers.image.description="Model Context Protocol (MCP) server for fetching blockchain data from Codex.io"
+LABEL org.opencontainers.image.description="Codex API integration for real-time enriched blockchain and market data on 60+ networks."
 LABEL org.opencontainers.image.version="0.1.3"
 LABEL org.opencontainers.image.source="https://github.com/Codex-Data/codex-mcp"
 LABEL org.opencontainers.image.licenses="ISC"

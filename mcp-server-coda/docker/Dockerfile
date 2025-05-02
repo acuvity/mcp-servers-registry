@@ -14,10 +14,10 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-coda"
-LABEL org.opencontainers.image.description="MCP Server for Coda"
+LABEL org.opencontainers.image.description="MCP server for Coda."
 LABEL org.opencontainers.image.version="1.1.0"
 LABEL org.opencontainers.image.source="https://github.com/orellazri/coda-mcp"
-LABEL org.opencontainers.image.licenses="<no value>"
+LABEL org.opencontainers.image.licenses="unknown"
 LABEL org.opencontainers.image.author="Author"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 

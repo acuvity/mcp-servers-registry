@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-commands",
   "name": "mcp-server-commands ",
-  "description": "An MCP server to run arbitrary commands",
+  "description": "Run any command with `run_command` and `run_script` tools.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-commands",

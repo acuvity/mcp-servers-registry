@@ -410,7 +410,7 @@ Delete a note by title or permalink
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| identifier | string | <no value> | Yes
+| identifier | string | not set | Yes
 </details>
 <details>
 <summary>read_content</summary>
@@ -425,7 +425,7 @@ Read a file's raw content by path or permalink
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| path | string | <no value> | Yes
+| path | string | not set | Yes
 </details>
 <details>
 <summary>build_context</summary>
@@ -449,12 +449,12 @@ Build context from a memory:// URI to continue conversations naturally.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| depth | any | <no value> | No
-| max_related | integer | <no value> | No
-| page | integer | <no value> | No
-| page_size | integer | <no value> | No
-| timeframe | any | <no value> | No
-| url | string | <no value> | Yes
+| depth | any | not set | No
+| max_related | integer | not set | No
+| page | integer | not set | No
+| page_size | integer | not set | No
+| timeframe | any | not set | No
+| url | string | not set | Yes
 </details>
 <details>
 <summary>recent_activity</summary>
@@ -478,12 +478,12 @@ Get recent activity from across the knowledge base.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| depth | integer | <no value> | No
-| max_related | integer | <no value> | No
-| page | integer | <no value> | No
-| page_size | integer | <no value> | No
-| timeframe | string | <no value> | No
-| type | any | <no value> | No
+| depth | integer | not set | No
+| max_related | integer | not set | No
+| page | integer | not set | No
+| page_size | integer | not set | No
+| timeframe | string | not set | No
+| type | any | not set | No
 </details>
 <details>
 <summary>search_notes</summary>
@@ -498,13 +498,13 @@ Search across all content in the knowledge base.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| after_date | any | <no value> | No
-| entity_types | any | <no value> | No
-| page | integer | <no value> | No
-| page_size | integer | <no value> | No
-| query | string | <no value> | Yes
-| search_type | string | <no value> | No
-| types | any | <no value> | No
+| after_date | any | not set | No
+| entity_types | any | not set | No
+| page | integer | not set | No
+| page_size | integer | not set | No
+| query | string | not set | Yes
+| search_type | string | not set | No
+| types | any | not set | No
 </details>
 <details>
 <summary>read_note</summary>
@@ -519,9 +519,9 @@ Read a markdown note by title or permalink.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| identifier | string | <no value> | Yes
-| page | integer | <no value> | No
-| page_size | integer | <no value> | No
+| identifier | string | not set | Yes
+| page | integer | not set | No
+| page_size | integer | not set | No
 </details>
 <details>
 <summary>write_note</summary>
@@ -536,10 +536,10 @@ Create or update a markdown note. Returns a markdown formatted summary of the se
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| content | string | <no value> | Yes
-| folder | string | <no value> | Yes
-| tags | string | <no value> | No
-| title | string | <no value> | Yes
+| content | string | not set | Yes
+| folder | string | not set | Yes
+| tags | string | not set | No
+| title | string | not set | Yes
 </details>
 <details>
 <summary>canvas</summary>
@@ -554,10 +554,10 @@ Create an Obsidian canvas file to visualize concepts and connections.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| edges | array | <no value> | Yes
-| folder | string | <no value> | Yes
-| nodes | array | <no value> | Yes
-| title | string | <no value> | Yes
+| edges | array | not set | Yes
+| folder | string | not set | Yes
+| nodes | array | not set | Yes
+| title | string | not set | Yes
 </details>
 <details>
 <summary>project_info</summary>
@@ -581,7 +581,7 @@ Get information and statistics about the current Basic Memory project.
 
 | Name | Mime type | URI| Content |
 |-----------|------|-------------|-----------|
-| ai assistant guide | text/plain | memory://ai_assistant_guide | <no value> |
+| ai assistant guide | text/plain | memory://ai_assistant_guide | - |
 
 </details>
 
@@ -599,8 +599,8 @@ Continue a previous conversation
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| topic | Topic or keyword to search for | <no value> |
-| timeframe | How far back to look for activity (e.g. '1d', '1 week') | <no value> |
+| topic | Topic or keyword to search for |No |
+| timeframe | How far back to look for activity (e.g. '1d', '1 week') |No |
 <details>
 <summary>Share Recent Activity</summary>
 
@@ -614,7 +614,7 @@ Get recent activity from across the knowledge base
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| timeframe | How far back to look for activity (e.g. '1d', '1 week') | <no value> |
+| timeframe | How far back to look for activity (e.g. '1d', '1 week') |No |
 <details>
 <summary>Search Knowledge Base</summary>
 
@@ -628,8 +628,8 @@ Search across all content in basic-memory
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| query | <no value> | true |
-| timeframe | How far back to search (e.g. '1d', '1 week') | <no value> |
+| query | not set |Yes |
+| timeframe | How far back to search (e.g. '1d', '1 week') |No |
 
 </details>
 

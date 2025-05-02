@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-aws-canvas"
-LABEL org.opencontainers.image.description="An AWS Labs Model Context Protocol (MCP) server for Amazon Nova Canvas"
+LABEL org.opencontainers.image.description="Generate images using Amazon Nova Canvas with text prompts and color guidance."
 LABEL org.opencontainers.image.version="0.2.7"
 LABEL org.opencontainers.image.source="https://pypi.org/project/awslabs.nova-canvas-mcp-server/"
 LABEL org.opencontainers.image.licenses="Apache-2.0"

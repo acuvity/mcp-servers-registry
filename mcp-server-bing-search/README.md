@@ -25,7 +25,7 @@
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-bing-search&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22BING_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-bing-search%3A0.1.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** Add your description here
+**Description:** Web search capabilities using Microsoft Bing Search API.
 
 > [!NOTE]
 > `bing-search-mcp` has been repackaged by Acuvity from Author original sources.
@@ -420,10 +420,10 @@ Performs a web search using the Bing Search API for general information and webs
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| count | integer | <no value> | No
-| market | string | <no value> | No
-| offset | integer | <no value> | No
-| query | string | <no value> | Yes
+| count | integer | not set | No
+| market | string | not set | No
+| offset | integer | not set | No
+| query | string | not set | Yes
 </details>
 <details>
 <summary>bing_news_search</summary>
@@ -445,10 +445,10 @@ Searches for news articles using Bing News Search API for current events and tim
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| count | integer | <no value> | No
-| freshness | string | <no value> | No
-| market | string | <no value> | No
-| query | string | <no value> | Yes
+| count | integer | not set | No
+| freshness | string | not set | No
+| market | string | not set | No
+| query | string | not set | Yes
 </details>
 <details>
 <summary>bing_image_search</summary>
@@ -469,9 +469,9 @@ Searches for images using Bing Image Search API for visual content.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| count | integer | <no value> | No
-| market | string | <no value> | No
-| query | string | <no value> | Yes
+| count | integer | not set | No
+| market | string | not set | No
+| query | string | not set | Yes
 </details>
 
 

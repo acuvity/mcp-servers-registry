@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-bitcoin"
-description: A Helm chart for A Model Context Protocol server for interacting with Bitcoin.
+description: A Helm chart for A Model Context Protocol (MCP) server that enables AI models to interact with Bitcoin, allowing them to generate keys, validate addresses, decode transactions, query the blockchain, and more.
 home: https://github.com/AbdelStark/bitcoin-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

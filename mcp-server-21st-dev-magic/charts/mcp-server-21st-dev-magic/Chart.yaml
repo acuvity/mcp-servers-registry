@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-21st-dev-magic"
-description: A Helm chart for Magic MCP UI builder by 21st.dev
+description: A Helm chart for Create crafted UI components inspired by the best 21st.dev design engineers.
 home: https://github.com/21st-dev/magic-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

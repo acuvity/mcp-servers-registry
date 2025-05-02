@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-bilibili-js"
-LABEL org.opencontainers.image.description="B站视频搜索 MCP（Model Context Protocol）服务"
+LABEL org.opencontainers.image.description="An MCP server that supports searching for Bilibili content. Provides LangChain integration examples and test scripts."
 LABEL org.opencontainers.image.version="0.1.2"
 LABEL org.opencontainers.image.source="https://github.com/34892002/bilibili-mcp-js"
 LABEL org.opencontainers.image.licenses="MIT"

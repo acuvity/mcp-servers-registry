@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-bing-search",
   "name": "mcp-server-bing-search ",
-  "description": "Add your description here",
+  "description": "Web search capabilities using Microsoft Bing Search API.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-bing-search",

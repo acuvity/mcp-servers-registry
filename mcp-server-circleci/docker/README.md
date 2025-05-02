@@ -25,7 +25,7 @@
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-circleci&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-circleci%3A0.4.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** A Model Context Protocol (MCP) server implementation for CircleCI, enabling natural language interactions with CircleCI functionality through MCP-enabled clients
+**Description:** Enable AI Agents to fix build failures from CircleCI.
 
 > [!NOTE]
 > `@circleci/mcp-server-circleci` has been repackaged by Acuvity from Author original sources.
@@ -403,9 +403,12 @@ The deployment will create a Kubernetes service with a `healthPort`, that is use
 See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-circleci/charts/mcp-server-circleci/README.md) for more details about settings.
 
 </details>
+
+
+
 # 🧠 Server features
 
-For detailed list of all features, tools, arguments and SBOM hashes provided by this server please consult the [readme]([[.blueprint.packaging.source]]/tree/main/[[.blueprint.name]])
+For detailed list of all features, tools, arguments and SBOM hashes provided by this server please consult the [readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-circleci)
 
 ## 🧰 Tools (7)
 

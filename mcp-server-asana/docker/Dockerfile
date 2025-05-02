@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-asana"
-LABEL org.opencontainers.image.description="MCP Server for Asana"
+LABEL org.opencontainers.image.description="This Model Context Protocol server implementation of Asana allows you to talk to Asana API from MCP Client such as Anthropic's Claude Desktop Application, and many more."
 LABEL org.opencontainers.image.version="1.7.0"
 LABEL org.opencontainers.image.source="https://github.com/roychri/mcp-server-asana"
 LABEL org.opencontainers.image.licenses="MIT"

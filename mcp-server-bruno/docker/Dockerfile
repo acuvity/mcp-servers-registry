@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-bruno"
-LABEL org.opencontainers.image.description="MCP Server for running Bruno Collections"
+LABEL org.opencontainers.image.description="An MCP server for interacting with Bruno API Client."
 LABEL org.opencontainers.image.version="0.1.0"
 LABEL org.opencontainers.image.source="https://github.com/hungthai1401/bruno-mcp"
 LABEL org.opencontainers.image.licenses="MIT"

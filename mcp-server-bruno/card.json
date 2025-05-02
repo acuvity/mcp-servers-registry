@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-bruno",
   "name": "mcp-server-bruno ",
-  "description": "MCP Server for running Bruno Collections",
+  "description": "An MCP server for interacting with Bruno API Client.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-bruno",

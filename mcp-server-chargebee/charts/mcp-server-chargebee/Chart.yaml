@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-chargebee"
-description: A Helm chart for MCP server for interacting with Chargebee
+description: A Helm chart for MCP Server that connects AI agents to Chargebee platform.
 home: https://github.com/chargebee/agentkit/tree/main/modelcontextprotocol
 sources:
   - https://github.com/acuvity/mcp-servers-registry

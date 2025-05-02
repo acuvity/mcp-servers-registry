@@ -25,7 +25,7 @@
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-documentation&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-documentation%3A0.1.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** An AWS Labs Model Context Protocol (MCP) server for AWS Documentation
+**Description:** Fetch, convert, and search AWS documentation pages, with recommendations for related content.
 
 > [!NOTE]
 > `awslabs.aws-documentation-mcp-server` has been repackaged by Acuvity from AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com> original sources.

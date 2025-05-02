@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-aws-cdk"
-LABEL org.opencontainers.image.description="An AWS CDK MCP server that provides guidance on AWS Cloud Development Kit best practices, infrastructure as code patterns, and security compliance with CDK Nag. This server offers tools to validate infrastructure designs, explain CDK Nag rules, analyze suppressions, generate Bedrock Agent schemas, and discover Solutions Constructs patterns."
+LABEL org.opencontainers.image.description="Get prescriptive CDK advice, explain CDK Nag rules, check suppressions, generate Bedrock Agent schemas, and discover AWS Solutions Constructs patterns."
 LABEL org.opencontainers.image.version="0.1.3"
 LABEL org.opencontainers.image.source="https://pypi.org/project/awslabs.cdk-mcp-server/"
 LABEL org.opencontainers.image.licenses="Apache-2.0"

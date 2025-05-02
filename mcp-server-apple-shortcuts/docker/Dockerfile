@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="native"
 
 LABEL org.opencontainers.image.title="mcp-server-apple-shortcuts"
-LABEL org.opencontainers.image.description="MCP server for automation using Apple Shortcuts"
+LABEL org.opencontainers.image.description="An MCP Server Integration with Apple Shortcuts."
 LABEL org.opencontainers.image.version="1.0.1"
 LABEL org.opencontainers.image.source="https://github.com/recursechat/mcp-server-apple-shortcuts"
 LABEL org.opencontainers.image.licenses="Apache-2.0"

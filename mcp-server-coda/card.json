@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-coda",
   "name": "mcp-server-coda ",
-  "description": "MCP Server for Coda",
+  "description": "MCP server for Coda.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-coda",

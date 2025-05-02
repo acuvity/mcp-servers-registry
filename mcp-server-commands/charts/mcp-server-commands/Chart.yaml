@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-commands"
-description: A Helm chart for An MCP server to run arbitrary commands
+description: A Helm chart for Run any command with `run_command` and `run_script` tools.
 home: https://github.com/g0t4/mcp-server-commands
 sources:
   - https://github.com/acuvity/mcp-servers-registry

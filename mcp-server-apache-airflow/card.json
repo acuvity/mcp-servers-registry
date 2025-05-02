@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-apache-airflow",
   "name": "mcp-server-apache-airflow ",
-  "description": "Model Context Protocol (MCP) server for Apache Airflow",
+  "description": "MCP server that connects to Apache Airflow using official client.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-apache-airflow",

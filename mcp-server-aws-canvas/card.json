@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-aws-canvas",
   "name": "mcp-server-aws-canvas ",
-  "description": "An AWS Labs Model Context Protocol (MCP) server for Amazon Nova Canvas",
+  "description": "Generate images using Amazon Nova Canvas with text prompts and color guidance.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-canvas",

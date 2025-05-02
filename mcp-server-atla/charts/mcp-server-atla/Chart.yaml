@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-atla"
-description: A Helm chart for An MCP server implementation providing a standardized interface for LLMs to interact with the Atla API.
+description: A Helm chart for Enable AI agents to interact with the Atla API for state-of-the-art LLMJ evaluation.
 home: https://github.com/atla-ai/atla-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

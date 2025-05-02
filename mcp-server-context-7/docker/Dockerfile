@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="standalone"
 
 LABEL org.opencontainers.image.title="mcp-server-context-7"
-LABEL org.opencontainers.image.description="MCP server for Context7"
+LABEL org.opencontainers.image.description="Context7 MCP - Up-to-date Docs For Any Cursor Prompt."
 LABEL org.opencontainers.image.version="1.0.6"
 LABEL org.opencontainers.image.source="https://github.com/upstash/context7#readme"
 LABEL org.opencontainers.image.licenses="MIT"

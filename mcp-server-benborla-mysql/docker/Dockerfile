@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-benborla-mysql"
-LABEL org.opencontainers.image.description="MCP server for interacting with MySQL databases based on Node"
+LABEL org.opencontainers.image.description="MySQL database integration in NodeJS with configurable access controls and schema inspection."
 LABEL org.opencontainers.image.version="2.0.0"
 LABEL org.opencontainers.image.source="https://github.com/benborla/mcp-server-mysql"
 LABEL org.opencontainers.image.licenses="MIT"

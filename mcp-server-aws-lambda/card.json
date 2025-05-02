@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-aws-lambda",
   "name": "mcp-server-aws-lambda ",
-  "description": "An AWS Labs Model Context Protocol (MCP) server for AWS Lambda",
+  "description": "A Model Context Protocol (MCP) server for AWS Lambda to select and run Lambda function as MCP tools without code changes.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-lambda",

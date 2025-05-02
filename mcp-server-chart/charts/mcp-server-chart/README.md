@@ -25,7 +25,7 @@
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-chart&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-chart%3A0.2.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** A Model Context Protocol server for generating charts using AntV, This is a TypeScript-based MCP server that provides chart generation capabilities. It allows you to create various types of charts through MCP tools.
+**Description:** A Model Context Protocol server for generating visual charts using AntV.
 
 > [!NOTE]
 > `@antv/mcp-server-chart` has been repackaged by Acuvity from AntV original sources.
@@ -443,6 +443,7 @@ minibridge:
       # Do not validate Policer CA. Do not do this in production
       # insecure: true
 ```
+
 # 🧠 Server features
 
 ## 🧰 Tools (15)
@@ -670,7 +671,7 @@ Generate a dual axes chart which is a combination chart that integrates two diff
 | axisXTitle | string | Set the x-axis title of chart. | No
 | categories | array | Categories for dual axes chart, such as, ['2015', '2016', '2017']. | No
 | height | number | Set the height of chart, default is 400. | No
-| series | array | <no value> | No
+| series | array | not set | No
 | title | string | Set the title of chart. | No
 | width | number | Set the width of chart, default is 600. | No
 </details>

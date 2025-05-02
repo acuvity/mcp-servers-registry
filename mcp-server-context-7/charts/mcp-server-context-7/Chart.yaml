@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-context-7"
-description: A Helm chart for MCP server for Context7
+description: A Helm chart for Context7 MCP - Up-to-date Docs For Any Cursor Prompt.
 home: https://github.com/upstash/context7#readme
 sources:
   - https://github.com/acuvity/mcp-servers-registry

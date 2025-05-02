@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-aws-core"
-description: A Helm chart for An AWS Labs Model Context Protocol (MCP) server for aswlabs Core MCP Server
+description: A Helm chart for Core AWS MCP server providing prompt understanding and server management capabilities.
 home: https://pypi.org/project/awslabs.core-mcp-server/
 sources:
   - https://github.com/acuvity/mcp-servers-registry

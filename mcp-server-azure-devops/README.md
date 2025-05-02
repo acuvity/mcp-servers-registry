@@ -25,7 +25,7 @@
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure-devops&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AZURE_DEVOPS_AUTH_METHOD%22%2C%22-e%22%2C%22AZURE_DEVOPS_DEFAULT_PROJECT%22%2C%22-e%22%2C%22AZURE_DEVOPS_ORG_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure-devops%3A0.1.34%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** Azure DevOps reference server for the Model Context Protocol (MCP)
+**Description:** Azure DevOps integration for repository management, work items, and pipelines.
 
 > [!NOTE]
 > `@tiberriver256/mcp-server-azure-devops` has been repackaged by Acuvity from Author original sources.

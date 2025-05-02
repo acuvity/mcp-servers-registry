@@ -443,6 +443,7 @@ minibridge:
       # Do not validate Policer CA. Do not do this in production
       # insecure: true
 ```
+
 # 🧠 Server features
 
 ## 🧰 Tools (1)
@@ -481,7 +482,7 @@ Fetch a URL and extract its contents as markdown
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| url | URL to fetch | true |
+| url | URL to fetch |Yes |
 
 </details>
 

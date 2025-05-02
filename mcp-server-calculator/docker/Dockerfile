@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="standalone"
 
 LABEL org.opencontainers.image.title="mcp-server-calculator"
-LABEL org.opencontainers.image.description="A Model Context Protocol server for calculating"
+LABEL org.opencontainers.image.description="This server enables LLMs to use calculator for precise numerical calculations."
 LABEL org.opencontainers.image.version="0.1.2"
 LABEL org.opencontainers.image.source="https://github.com/githejie/mcp-server-calculator"
 LABEL org.opencontainers.image.licenses="MIT"

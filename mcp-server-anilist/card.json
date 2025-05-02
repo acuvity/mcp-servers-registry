@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-anilist",
   "name": "mcp-server-anilist ",
-  "description": "AniList MCP server for accessing AniList API data",
+  "description": "An MCP server integrating AniList API for anime and manga information.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-anilist",

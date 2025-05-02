@@ -25,7 +25,7 @@
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-apache-airflow&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AIRFLOW_HOST%22%2C%22-e%22%2C%22AIRFLOW_PASSWORD%22%2C%22-e%22%2C%22AIRFLOW_USERNAME%22%2C%22docker.io%2Facuvity%2Fmcp-server-apache-airflow%3A0.2.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** Model Context Protocol (MCP) server for Apache Airflow
+**Description:** MCP server that connects to Apache Airflow using official client.
 
 > [!NOTE]
 > `mcp-server-apache-airflow` has been repackaged by Acuvity from Gyeongmo Yang <me@gmyang.dev> original sources.
@@ -449,7 +449,7 @@ Get current configuration
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| section | any | <no value> | No
+| section | any | not set | No
 </details>
 <details>
 <summary>get_value</summary>
@@ -464,8 +464,8 @@ Get a specific option from configuration
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| option | string | <no value> | Yes
-| section | string | <no value> | Yes
+| option | string | not set | Yes
+| section | string | not set | Yes
 </details>
 <details>
 <summary>list_connections</summary>
@@ -480,9 +480,9 @@ List all connections
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| limit | any | <no value> | No
-| offset | any | <no value> | No
-| order_by | any | <no value> | No
+| limit | any | not set | No
+| offset | any | not set | No
+| order_by | any | not set | No
 </details>
 <details>
 <summary>create_connection</summary>
@@ -497,14 +497,14 @@ Create a connection
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| conn_id | string | <no value> | Yes
-| conn_type | string | <no value> | Yes
-| extra | any | <no value> | No
-| host | any | <no value> | No
-| login | any | <no value> | No
-| password | any | <no value> | No
-| port | any | <no value> | No
-| schema | any | <no value> | No
+| conn_id | string | not set | Yes
+| conn_type | string | not set | Yes
+| extra | any | not set | No
+| host | any | not set | No
+| login | any | not set | No
+| password | any | not set | No
+| port | any | not set | No
+| schema | any | not set | No
 </details>
 <details>
 <summary>get_connection</summary>
@@ -519,7 +519,7 @@ Get a connection by ID
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| conn_id | string | <no value> | Yes
+| conn_id | string | not set | Yes
 </details>
 <details>
 <summary>update_connection</summary>
@@ -534,14 +534,14 @@ Update a connection by ID
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| conn_id | string | <no value> | Yes
-| conn_type | any | <no value> | No
-| extra | any | <no value> | No
-| host | any | <no value> | No
-| login | any | <no value> | No
-| password | any | <no value> | No
-| port | any | <no value> | No
-| schema | any | <no value> | No
+| conn_id | string | not set | Yes
+| conn_type | any | not set | No
+| extra | any | not set | No
+| host | any | not set | No
+| login | any | not set | No
+| password | any | not set | No
+| port | any | not set | No
+| schema | any | not set | No
 </details>
 <details>
 <summary>delete_connection</summary>
@@ -556,7 +556,7 @@ Delete a connection by ID
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| conn_id | string | <no value> | Yes
+| conn_id | string | not set | Yes
 </details>
 <details>
 <summary>test_connection</summary>
@@ -571,13 +571,13 @@ Test a connection
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| conn_type | string | <no value> | Yes
-| extra | any | <no value> | No
-| host | any | <no value> | No
-| login | any | <no value> | No
-| password | any | <no value> | No
-| port | any | <no value> | No
-| schema | any | <no value> | No
+| conn_type | string | not set | Yes
+| extra | any | not set | No
+| host | any | not set | No
+| login | any | not set | No
+| password | any | not set | No
+| port | any | not set | No
+| schema | any | not set | No
 </details>
 <details>
 <summary>fetch_dags</summary>
@@ -592,13 +592,13 @@ Fetch all DAGs
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id_pattern | any | <no value> | No
-| limit | any | <no value> | No
-| offset | any | <no value> | No
-| only_active | any | <no value> | No
-| order_by | any | <no value> | No
-| paused | any | <no value> | No
-| tags | any | <no value> | No
+| dag_id_pattern | any | not set | No
+| limit | any | not set | No
+| offset | any | not set | No
+| only_active | any | not set | No
+| order_by | any | not set | No
+| paused | any | not set | No
+| tags | any | not set | No
 </details>
 <details>
 <summary>get_dag</summary>
@@ -613,7 +613,7 @@ Get a DAG by ID
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
+| dag_id | string | not set | Yes
 </details>
 <details>
 <summary>get_dag_details</summary>
@@ -628,8 +628,8 @@ Get a simplified representation of DAG
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
-| fields | any | <no value> | No
+| dag_id | string | not set | Yes
+| fields | any | not set | No
 </details>
 <details>
 <summary>get_dag_source</summary>
@@ -644,7 +644,7 @@ Get a source code
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| file_token | string | <no value> | Yes
+| file_token | string | not set | Yes
 </details>
 <details>
 <summary>pause_dag</summary>
@@ -659,7 +659,7 @@ Pause a DAG by ID
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
+| dag_id | string | not set | Yes
 </details>
 <details>
 <summary>unpause_dag</summary>
@@ -674,7 +674,7 @@ Unpause a DAG by ID
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
+| dag_id | string | not set | Yes
 </details>
 <details>
 <summary>get_dag_tasks</summary>
@@ -689,7 +689,7 @@ Get tasks for DAG
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
+| dag_id | string | not set | Yes
 </details>
 <details>
 <summary>get_task</summary>
@@ -704,8 +704,8 @@ Get a task by ID
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
-| task_id | string | <no value> | Yes
+| dag_id | string | not set | Yes
+| task_id | string | not set | Yes
 </details>
 <details>
 <summary>get_tasks</summary>
@@ -720,8 +720,8 @@ Get tasks for DAG
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
-| order_by | any | <no value> | No
+| dag_id | string | not set | Yes
+| order_by | any | not set | No
 </details>
 <details>
 <summary>patch_dag</summary>
@@ -736,9 +736,9 @@ Update a DAG
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
-| is_paused | any | <no value> | No
-| tags | any | <no value> | No
+| dag_id | string | not set | Yes
+| is_paused | any | not set | No
+| tags | any | not set | No
 </details>
 <details>
 <summary>patch_dags</summary>
@@ -753,9 +753,9 @@ Update multiple DAGs
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id_pattern | any | <no value> | No
-| is_paused | any | <no value> | No
-| tags | any | <no value> | No
+| dag_id_pattern | any | not set | No
+| is_paused | any | not set | No
+| tags | any | not set | No
 </details>
 <details>
 <summary>delete_dag</summary>
@@ -770,7 +770,7 @@ Delete a DAG
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
+| dag_id | string | not set | Yes
 </details>
 <details>
 <summary>clear_task_instances</summary>
@@ -785,18 +785,18 @@ Clear a set of task instances
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
-| dry_run | any | <no value> | No
-| end_date | any | <no value> | No
-| include_downstream | any | <no value> | No
-| include_future | any | <no value> | No
-| include_parentdag | any | <no value> | No
-| include_past | any | <no value> | No
-| include_subdags | any | <no value> | No
-| include_upstream | any | <no value> | No
-| reset_dag_runs | any | <no value> | No
-| start_date | any | <no value> | No
-| task_ids | any | <no value> | No
+| dag_id | string | not set | Yes
+| dry_run | any | not set | No
+| end_date | any | not set | No
+| include_downstream | any | not set | No
+| include_future | any | not set | No
+| include_parentdag | any | not set | No
+| include_past | any | not set | No
+| include_subdags | any | not set | No
+| include_upstream | any | not set | No
+| reset_dag_runs | any | not set | No
+| start_date | any | not set | No
+| task_ids | any | not set | No
 </details>
 <details>
 <summary>set_task_instances_state</summary>
@@ -811,15 +811,15 @@ Set a state of task instances
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
-| dry_run | any | <no value> | No
-| execution_date | any | <no value> | No
-| include_downstream | any | <no value> | No
-| include_future | any | <no value> | No
-| include_past | any | <no value> | No
-| include_upstream | any | <no value> | No
-| state | string | <no value> | Yes
-| task_ids | any | <no value> | No
+| dag_id | string | not set | Yes
+| dry_run | any | not set | No
+| execution_date | any | not set | No
+| include_downstream | any | not set | No
+| include_future | any | not set | No
+| include_past | any | not set | No
+| include_upstream | any | not set | No
+| state | string | not set | Yes
+| task_ids | any | not set | No
 </details>
 <details>
 <summary>reparse_dag_file</summary>
@@ -834,7 +834,7 @@ Request re-parsing of a DAG file
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| file_token | string | <no value> | Yes
+| file_token | string | not set | Yes
 </details>
 <details>
 <summary>post_dag_run</summary>
@@ -849,18 +849,18 @@ Trigger a DAG by ID
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
-| dag_run_id | any | <no value> | No
-| data_interval_end | any | <no value> | No
-| data_interval_start | any | <no value> | No
-| end_date | any | <no value> | No
-| execution_date | any | <no value> | No
-| external_trigger | any | <no value> | No
-| last_scheduling_decision | any | <no value> | No
-| logical_date | any | <no value> | No
-| note | any | <no value> | No
-| run_type | any | <no value> | No
-| start_date | any | <no value> | No
+| dag_id | string | not set | Yes
+| dag_run_id | any | not set | No
+| data_interval_end | any | not set | No
+| data_interval_start | any | not set | No
+| end_date | any | not set | No
+| execution_date | any | not set | No
+| external_trigger | any | not set | No
+| last_scheduling_decision | any | not set | No
+| logical_date | any | not set | No
+| note | any | not set | No
+| run_type | any | not set | No
+| start_date | any | not set | No
 </details>
 <details>
 <summary>get_dag_runs</summary>
@@ -875,19 +875,19 @@ Get DAG runs by ID
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
-| end_date_gte | any | <no value> | No
-| end_date_lte | any | <no value> | No
-| execution_date_gte | any | <no value> | No
-| execution_date_lte | any | <no value> | No
-| limit | any | <no value> | No
-| offset | any | <no value> | No
-| order_by | any | <no value> | No
-| start_date_gte | any | <no value> | No
-| start_date_lte | any | <no value> | No
-| state | any | <no value> | No
-| updated_at_gte | any | <no value> | No
-| updated_at_lte | any | <no value> | No
+| dag_id | string | not set | Yes
+| end_date_gte | any | not set | No
+| end_date_lte | any | not set | No
+| execution_date_gte | any | not set | No
+| execution_date_lte | any | not set | No
+| limit | any | not set | No
+| offset | any | not set | No
+| order_by | any | not set | No
+| start_date_gte | any | not set | No
+| start_date_lte | any | not set | No
+| state | any | not set | No
+| updated_at_gte | any | not set | No
+| updated_at_lte | any | not set | No
 </details>
 <details>
 <summary>get_dag_runs_batch</summary>
@@ -902,17 +902,17 @@ List DAG runs (batch)
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_ids | any | <no value> | No
-| end_date_gte | any | <no value> | No
-| end_date_lte | any | <no value> | No
-| execution_date_gte | any | <no value> | No
-| execution_date_lte | any | <no value> | No
-| order_by | any | <no value> | No
-| page_limit | any | <no value> | No
-| page_offset | any | <no value> | No
-| start_date_gte | any | <no value> | No
-| start_date_lte | any | <no value> | No
-| state | any | <no value> | No
+| dag_ids | any | not set | No
+| end_date_gte | any | not set | No
+| end_date_lte | any | not set | No
+| execution_date_gte | any | not set | No
+| execution_date_lte | any | not set | No
+| order_by | any | not set | No
+| page_limit | any | not set | No
+| page_offset | any | not set | No
+| start_date_gte | any | not set | No
+| start_date_lte | any | not set | No
+| state | any | not set | No
 </details>
 <details>
 <summary>get_dag_run</summary>
@@ -927,8 +927,8 @@ Get a DAG run by DAG ID and DAG run ID
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
-| dag_run_id | string | <no value> | Yes
+| dag_id | string | not set | Yes
+| dag_run_id | string | not set | Yes
 </details>
 <details>
 <summary>update_dag_run_state</summary>
@@ -943,9 +943,9 @@ Update a DAG run state by DAG ID and DAG run ID
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
-| dag_run_id | string | <no value> | Yes
-| state | any | <no value> | No
+| dag_id | string | not set | Yes
+| dag_run_id | string | not set | Yes
+| state | any | not set | No
 </details>
 <details>
 <summary>delete_dag_run</summary>
@@ -960,8 +960,8 @@ Delete a DAG run by DAG ID and DAG run ID
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
-| dag_run_id | string | <no value> | Yes
+| dag_id | string | not set | Yes
+| dag_run_id | string | not set | Yes
 </details>
 <details>
 <summary>clear_dag_run</summary>
@@ -976,9 +976,9 @@ Clear a DAG run
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
-| dag_run_id | string | <no value> | Yes
-| dry_run | any | <no value> | No
+| dag_id | string | not set | Yes
+| dag_run_id | string | not set | Yes
+| dry_run | any | not set | No
 </details>
 <details>
 <summary>set_dag_run_note</summary>
@@ -993,9 +993,9 @@ Update the DagRun note
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
-| dag_run_id | string | <no value> | Yes
-| note | string | <no value> | Yes
+| dag_id | string | not set | Yes
+| dag_run_id | string | not set | Yes
+| note | string | not set | Yes
 </details>
 <details>
 <summary>get_upstream_dataset_events</summary>
@@ -1010,8 +1010,8 @@ Get dataset events for a DAG run
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
-| dag_run_id | string | <no value> | Yes
+| dag_id | string | not set | Yes
+| dag_run_id | string | not set | Yes
 </details>
 <details>
 <summary>get_dag_stats</summary>
@@ -1026,7 +1026,7 @@ Get DAG stats
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_ids | any | <no value> | No
+| dag_ids | any | not set | No
 </details>
 <details>
 <summary>get_datasets</summary>
@@ -1041,11 +1041,11 @@ List datasets
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_ids | any | <no value> | No
-| limit | any | <no value> | No
-| offset | any | <no value> | No
-| order_by | any | <no value> | No
-| uri_pattern | any | <no value> | No
+| dag_ids | any | not set | No
+| limit | any | not set | No
+| offset | any | not set | No
+| order_by | any | not set | No
+| uri_pattern | any | not set | No
 </details>
 <details>
 <summary>get_dataset</summary>
@@ -1060,7 +1060,7 @@ Get a dataset by URI
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| uri | string | <no value> | Yes
+| uri | string | not set | Yes
 </details>
 <details>
 <summary>get_dataset_events</summary>
@@ -1075,14 +1075,14 @@ Get dataset events
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dataset_id | any | <no value> | No
-| limit | any | <no value> | No
-| offset | any | <no value> | No
-| order_by | any | <no value> | No
-| source_dag_id | any | <no value> | No
-| source_map_index | any | <no value> | No
-| source_run_id | any | <no value> | No
-| source_task_id | any | <no value> | No
+| dataset_id | any | not set | No
+| limit | any | not set | No
+| offset | any | not set | No
+| order_by | any | not set | No
+| source_dag_id | any | not set | No
+| source_map_index | any | not set | No
+| source_run_id | any | not set | No
+| source_task_id | any | not set | No
 </details>
 <details>
 <summary>create_dataset_event</summary>
@@ -1097,8 +1097,8 @@ Create dataset event
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dataset_uri | string | <no value> | Yes
-| extra | any | <no value> | No
+| dataset_uri | string | not set | Yes
+| extra | any | not set | No
 </details>
 <details>
 <summary>get_dag_dataset_queued_event</summary>
@@ -1113,8 +1113,8 @@ Get a queued Dataset event for a DAG
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
-| uri | string | <no value> | Yes
+| dag_id | string | not set | Yes
+| uri | string | not set | Yes
 </details>
 <details>
 <summary>get_dag_dataset_queued_events</summary>
@@ -1129,7 +1129,7 @@ Get queued Dataset events for a DAG
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
+| dag_id | string | not set | Yes
 </details>
 <details>
 <summary>delete_dag_dataset_queued_event</summary>
@@ -1144,8 +1144,8 @@ Delete a queued Dataset event for a DAG
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
-| uri | string | <no value> | Yes
+| dag_id | string | not set | Yes
+| uri | string | not set | Yes
 </details>
 <details>
 <summary>delete_dag_dataset_queued_events</summary>
@@ -1160,8 +1160,8 @@ Delete queued Dataset events for a DAG
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| before | any | <no value> | No
-| dag_id | string | <no value> | Yes
+| before | any | not set | No
+| dag_id | string | not set | Yes
 </details>
 <details>
 <summary>get_dataset_queued_events</summary>
@@ -1176,7 +1176,7 @@ Get queued Dataset events for a Dataset
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| uri | string | <no value> | Yes
+| uri | string | not set | Yes
 </details>
 <details>
 <summary>delete_dataset_queued_events</summary>
@@ -1191,8 +1191,8 @@ Delete queued Dataset events for a Dataset
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| before | any | <no value> | No
-| uri | string | <no value> | Yes
+| before | any | not set | No
+| uri | string | not set | Yes
 </details>
 <details>
 <summary>get_event_logs</summary>
@@ -1207,20 +1207,20 @@ List log entries from event log
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| after | any | <no value> | No
-| before | any | <no value> | No
-| dag_id | any | <no value> | No
-| event | any | <no value> | No
-| excluded_events | any | <no value> | No
-| included_events | any | <no value> | No
-| limit | any | <no value> | No
-| map_index | any | <no value> | No
-| offset | any | <no value> | No
-| order_by | any | <no value> | No
-| owner | any | <no value> | No
-| run_id | any | <no value> | No
-| task_id | any | <no value> | No
-| try_number | any | <no value> | No
+| after | any | not set | No
+| before | any | not set | No
+| dag_id | any | not set | No
+| event | any | not set | No
+| excluded_events | any | not set | No
+| included_events | any | not set | No
+| limit | any | not set | No
+| map_index | any | not set | No
+| offset | any | not set | No
+| order_by | any | not set | No
+| owner | any | not set | No
+| run_id | any | not set | No
+| task_id | any | not set | No
+| try_number | any | not set | No
 </details>
 <details>
 <summary>get_event_log</summary>
@@ -1235,7 +1235,7 @@ Get a specific log entry by ID
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| event_log_id | integer | <no value> | Yes
+| event_log_id | integer | not set | Yes
 </details>
 <details>
 <summary>get_import_errors</summary>
@@ -1250,9 +1250,9 @@ List import errors
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| limit | any | <no value> | No
-| offset | any | <no value> | No
-| order_by | any | <no value> | No
+| limit | any | not set | No
+| offset | any | not set | No
+| order_by | any | not set | No
 </details>
 <details>
 <summary>get_import_error</summary>
@@ -1267,7 +1267,7 @@ Get a specific import error by ID
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| import_error_id | integer | <no value> | Yes
+| import_error_id | integer | not set | Yes
 </details>
 <details>
 <summary>get_health</summary>
@@ -1310,8 +1310,8 @@ Get a list of loaded plugins
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| limit | any | <no value> | No
-| offset | any | <no value> | No
+| limit | any | not set | No
+| offset | any | not set | No
 </details>
 <details>
 <summary>get_pools</summary>
@@ -1326,9 +1326,9 @@ List pools
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| limit | any | <no value> | No
-| offset | any | <no value> | No
-| order_by | any | <no value> | No
+| limit | any | not set | No
+| offset | any | not set | No
+| order_by | any | not set | No
 </details>
 <details>
 <summary>get_pool</summary>
@@ -1343,7 +1343,7 @@ Get a pool by name
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| pool_name | string | <no value> | Yes
+| pool_name | string | not set | Yes
 </details>
 <details>
 <summary>delete_pool</summary>
@@ -1358,7 +1358,7 @@ Delete a pool
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| pool_name | string | <no value> | Yes
+| pool_name | string | not set | Yes
 </details>
 <details>
 <summary>post_pool</summary>
@@ -1373,10 +1373,10 @@ Create a pool
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| description | any | <no value> | No
-| include_deferred | any | <no value> | No
-| name | string | <no value> | Yes
-| slots | integer | <no value> | Yes
+| description | any | not set | No
+| include_deferred | any | not set | No
+| name | string | not set | Yes
+| slots | integer | not set | Yes
 </details>
 <details>
 <summary>patch_pool</summary>
@@ -1391,10 +1391,10 @@ Update a pool
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| description | any | <no value> | No
-| include_deferred | any | <no value> | No
-| pool_name | string | <no value> | Yes
-| slots | any | <no value> | No
+| description | any | not set | No
+| include_deferred | any | not set | No
+| pool_name | string | not set | Yes
+| slots | any | not set | No
 </details>
 <details>
 <summary>get_task_instance</summary>
@@ -1409,9 +1409,9 @@ Get a task instance by DAG ID, task ID, and DAG run ID
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
-| dag_run_id | string | <no value> | Yes
-| task_id | string | <no value> | Yes
+| dag_id | string | not set | Yes
+| dag_run_id | string | not set | Yes
+| task_id | string | not set | Yes
 </details>
 <details>
 <summary>list_task_instances</summary>
@@ -1426,23 +1426,23 @@ List task instances by DAG ID and DAG run ID
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
-| dag_run_id | string | <no value> | Yes
-| duration_gte | any | <no value> | No
-| duration_lte | any | <no value> | No
-| end_date_gte | any | <no value> | No
-| end_date_lte | any | <no value> | No
-| execution_date_gte | any | <no value> | No
-| execution_date_lte | any | <no value> | No
-| limit | any | <no value> | No
-| offset | any | <no value> | No
-| pool | any | <no value> | No
-| queue | any | <no value> | No
-| start_date_gte | any | <no value> | No
-| start_date_lte | any | <no value> | No
-| state | any | <no value> | No
-| updated_at_gte | any | <no value> | No
-| updated_at_lte | any | <no value> | No
+| dag_id | string | not set | Yes
+| dag_run_id | string | not set | Yes
+| duration_gte | any | not set | No
+| duration_lte | any | not set | No
+| end_date_gte | any | not set | No
+| end_date_lte | any | not set | No
+| execution_date_gte | any | not set | No
+| execution_date_lte | any | not set | No
+| limit | any | not set | No
+| offset | any | not set | No
+| pool | any | not set | No
+| queue | any | not set | No
+| start_date_gte | any | not set | No
+| start_date_lte | any | not set | No
+| state | any | not set | No
+| updated_at_gte | any | not set | No
+| updated_at_lte | any | not set | No
 </details>
 <details>
 <summary>update_task_instance</summary>
@@ -1457,10 +1457,10 @@ Update a task instance by DAG ID, DAG run ID, and task ID
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
-| dag_run_id | string | <no value> | Yes
-| state | any | <no value> | No
-| task_id | string | <no value> | Yes
+| dag_id | string | not set | Yes
+| dag_run_id | string | not set | Yes
+| state | any | not set | No
+| task_id | string | not set | Yes
 </details>
 <details>
 <summary>list_variables</summary>
@@ -1475,9 +1475,9 @@ List all variables
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| limit | any | <no value> | No
-| offset | any | <no value> | No
-| order_by | any | <no value> | No
+| limit | any | not set | No
+| offset | any | not set | No
+| order_by | any | not set | No
 </details>
 <details>
 <summary>create_variable</summary>
@@ -1492,9 +1492,9 @@ Create a variable
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| description | any | <no value> | No
-| key | string | <no value> | Yes
-| value | string | <no value> | Yes
+| description | any | not set | No
+| key | string | not set | Yes
+| value | string | not set | Yes
 </details>
 <details>
 <summary>get_variable</summary>
@@ -1509,7 +1509,7 @@ Get a variable by key
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| key | string | <no value> | Yes
+| key | string | not set | Yes
 </details>
 <details>
 <summary>update_variable</summary>
@@ -1524,9 +1524,9 @@ Update a variable by key
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| description | any | <no value> | No
-| key | string | <no value> | Yes
-| value | any | <no value> | No
+| description | any | not set | No
+| key | string | not set | Yes
+| value | any | not set | No
 </details>
 <details>
 <summary>delete_variable</summary>
@@ -1541,7 +1541,7 @@ Delete a variable by key
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| key | string | <no value> | Yes
+| key | string | not set | Yes
 </details>
 <details>
 <summary>get_xcom_entries</summary>
@@ -1556,13 +1556,13 @@ Get all XCom entries
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
-| dag_run_id | string | <no value> | Yes
-| limit | any | <no value> | No
-| map_index | any | <no value> | No
-| offset | any | <no value> | No
-| task_id | string | <no value> | Yes
-| xcom_key | any | <no value> | No
+| dag_id | string | not set | Yes
+| dag_run_id | string | not set | Yes
+| limit | any | not set | No
+| map_index | any | not set | No
+| offset | any | not set | No
+| task_id | string | not set | Yes
+| xcom_key | any | not set | No
 </details>
 <details>
 <summary>get_xcom_entry</summary>
@@ -1577,13 +1577,13 @@ Get an XCom entry
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dag_id | string | <no value> | Yes
-| dag_run_id | string | <no value> | Yes
-| deserialize | any | <no value> | No
-| map_index | any | <no value> | No
-| stringify | any | <no value> | No
-| task_id | string | <no value> | Yes
-| xcom_key | string | <no value> | Yes
+| dag_id | string | not set | Yes
+| dag_run_id | string | not set | Yes
+| deserialize | any | not set | No
+| map_index | any | not set | No
+| stringify | any | not set | No
+| task_id | string | not set | Yes
+| xcom_key | string | not set | Yes
 </details>
 
 

@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-brightdata"
-description: A Helm chart for An MCP interface into the Bright Data toolset
+description: A Helm chart for Discover, extract, and interact with the web - one interface powering automated access across the public internet.
 home: https://github.com/luminati-io/brightdata-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

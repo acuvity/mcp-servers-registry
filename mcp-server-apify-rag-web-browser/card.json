@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-apify-rag-web-browser",
   "name": "mcp-server-apify-rag-web-browser ",
-  "description": "An MCP Server for RAG Web Browser Actor",
+  "description": "Use 3,000+ pre-built cloud tools to extract data from websites, e-commerce, social media, search engines, maps, and more.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-apify-rag-web-browser",

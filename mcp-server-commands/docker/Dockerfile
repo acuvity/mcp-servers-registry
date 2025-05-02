@@ -14,10 +14,10 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="standalone"
 
 LABEL org.opencontainers.image.title="mcp-server-commands"
-LABEL org.opencontainers.image.description="An MCP server to run arbitrary commands"
+LABEL org.opencontainers.image.description="Run any command with `run_command` and `run_script` tools."
 LABEL org.opencontainers.image.version="0.5.0"
 LABEL org.opencontainers.image.source="https://github.com/g0t4/mcp-server-commands"
-LABEL org.opencontainers.image.licenses="<no value>"
+LABEL org.opencontainers.image.licenses="unknown"
 LABEL org.opencontainers.image.author="Author"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 

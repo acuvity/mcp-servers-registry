@@ -25,7 +25,7 @@
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-calculator&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-calculator%3A0.1.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** A Model Context Protocol server for calculating
+**Description:** This server enables LLMs to use calculator for precise numerical calculations.
 
 > [!NOTE]
 > `mcp-server-calculator` has been repackaged by Acuvity from He Jie <hejie6173@gmail.com> original sources.
@@ -443,6 +443,7 @@ minibridge:
       # Do not validate Policer CA. Do not do this in production
       # insecure: true
 ```
+
 # 🧠 Server features
 
 ## 🧰 Tools (1)
@@ -459,7 +460,7 @@ Calculates/evaluates the given expression.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| expression | string | <no value> | Yes
+| expression | string | not set | Yes
 </details>
 
 

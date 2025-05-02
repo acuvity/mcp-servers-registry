@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-browser-kit",
   "name": "mcp-server-browser-kit ",
-  "description": "<no value>",
+  "description": "An MCP Server for interacting with manifest v2 compatible browsers.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-browser-kit",

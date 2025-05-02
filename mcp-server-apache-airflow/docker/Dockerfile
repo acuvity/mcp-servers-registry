@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-apache-airflow"
-LABEL org.opencontainers.image.description="Model Context Protocol (MCP) server for Apache Airflow"
+LABEL org.opencontainers.image.description="MCP server that connects to Apache Airflow using official client."
 LABEL org.opencontainers.image.version="0.2.2"
 LABEL org.opencontainers.image.source="https://github.com/yangkyeongmo/mcp-server-apache-airflow"
 LABEL org.opencontainers.image.licenses="MIT"

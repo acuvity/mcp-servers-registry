@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-coincap"
-LABEL org.opencontainers.image.description="A MCP server to get crypto prices from coincap"
+LABEL org.opencontainers.image.description="Real-time cryptocurrency market data integration using CoinCap's public API, providing access to crypto prices and market information without API keys."
 LABEL org.opencontainers.image.version="0.9.3"
 LABEL org.opencontainers.image.source="https://github.com/QuantGeekDev/coincap-mcp"
 LABEL org.opencontainers.image.licenses="MIT"

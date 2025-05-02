@@ -14,10 +14,10 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-bugsnag"
-LABEL org.opencontainers.image.description="A Bugsnag MCP server for interacting with Bugsnag API"
+LABEL org.opencontainers.image.description="An MCP server for interacting with Bugsnag."
 LABEL org.opencontainers.image.version="1.1.0"
 LABEL org.opencontainers.image.source="https://github.com/tgeselle/bugsnag-mcp"
-LABEL org.opencontainers.image.licenses="<no value>"
+LABEL org.opencontainers.image.licenses="unknown"
 LABEL org.opencontainers.image.author="Author"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 

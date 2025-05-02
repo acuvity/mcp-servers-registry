@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-aws-bedrock-kb-retrieval",
   "name": "mcp-server-aws-bedrock-kb-retrieval ",
-  "description": "An AWS Labs Model Context Protocol (MCP) server for Bedrock Knowledge Base Retrieval",
+  "description": "Query Amazon Bedrock Knowledge Bases using natural language to retrieve relevant information from your data sources.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-bedrock-kb-retrieval",

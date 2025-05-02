@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-chargebee"
-LABEL org.opencontainers.image.description="MCP server for interacting with Chargebee"
+LABEL org.opencontainers.image.description="MCP Server that connects AI agents to Chargebee platform."
 LABEL org.opencontainers.image.version="0.0.2"
 LABEL org.opencontainers.image.source="https://github.com/chargebee/agentkit/tree/main/modelcontextprotocol"
 LABEL org.opencontainers.image.licenses="MIT"

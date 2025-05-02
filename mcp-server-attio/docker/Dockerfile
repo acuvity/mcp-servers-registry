@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-attio"
-LABEL org.opencontainers.image.description="A Model Context Protocol server that connects Attio to LLMs"
+LABEL org.opencontainers.image.description="Allows AI clients to manage records and notes in Attio CRM."
 LABEL org.opencontainers.image.version="0.0.2"
 LABEL org.opencontainers.image.source="https://github.com/hmk/attio-mcp-server"
 LABEL org.opencontainers.image.licenses="BSD-3-Clause"

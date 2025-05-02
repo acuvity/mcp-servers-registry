@@ -14,10 +14,10 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="native"
 
 LABEL org.opencontainers.image.title="mcp-server-browser-kit"
-LABEL org.opencontainers.image.description="<no value>"
+LABEL org.opencontainers.image.description="An MCP Server for interacting with manifest v2 compatible browsers."
 LABEL org.opencontainers.image.version="5.0.1"
 LABEL org.opencontainers.image.source="https://github.com/ndthanhdev/mcp-browser-kit"
-LABEL org.opencontainers.image.licenses="<no value>"
+LABEL org.opencontainers.image.licenses="unknown"
 LABEL org.opencontainers.image.author="Author"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 

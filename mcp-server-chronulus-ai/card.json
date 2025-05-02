@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-chronulus-ai",
   "name": "mcp-server-chronulus-ai ",
-  "description": "An MCP Server for Chronulus AI Forecasting and Prediction Agents",
+  "description": "Predict anything with Chronulus AI forecasting and prediction agents.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-chronulus-ai",

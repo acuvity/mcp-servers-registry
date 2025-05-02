@@ -25,7 +25,7 @@
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-armor-crypto&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-armor-crypto%3A0.1.22%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** MCP to interface with multiple blockchains, staking, DeFi, swap, bridging, wallet management, DCA, Limit Orders, Coin Lookup, Tracking and more
+**Description:** MCP to interface with multiple blockchains, staking, DeFi, swap, bridging, wallet management, DCA, Limit Orders, Coin Lookup, Tracking and more.
 
 > [!NOTE]
 > `armor-crypto-mcp` has been repackaged by Acuvity from Armor Wallet <info@armorwallet.ai> original sources.
@@ -393,7 +393,7 @@ Wait for some short amount of time, no more than 10 seconds
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| seconds | number | <no value> | Yes
+| seconds | number | not set | Yes
 </details>
 <details>
 <summary>get_current_time</summary>
@@ -429,8 +429,8 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| expression | string | <no value> | Yes
-| variables | object | <no value> | Yes
+| expression | string | not set | Yes
+| variables | object | not set | Yes
 </details>
 <details>
 <summary>get_wallet_token_balance</summary>
@@ -449,7 +449,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| wallet_token_pairs | any | <no value> | Yes
+| wallet_token_pairs | any | not set | Yes
 </details>
 <details>
 <summary>calculate_token_conversion</summary>
@@ -468,7 +468,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| conversion_requests | any | <no value> | Yes
+| conversion_requests | any | not set | Yes
 </details>
 <details>
 <summary>swap_quote</summary>
@@ -487,7 +487,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| swap_quote_requests | any | <no value> | Yes
+| swap_quote_requests | any | not set | Yes
 </details>
 <details>
 <summary>swap_transaction</summary>
@@ -506,7 +506,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| swap_transaction_requests | any | <no value> | Yes
+| swap_transaction_requests | any | not set | Yes
 </details>
 <details>
 <summary>get_all_wallets</summary>
@@ -525,7 +525,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| get_all_wallets_requests | any | <no value> | Yes
+| get_all_wallets_requests | any | not set | Yes
 </details>
 <details>
 <summary>get_all_orders</summary>
@@ -544,7 +544,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| get_all_orders_requests | any | <no value> | Yes
+| get_all_orders_requests | any | not set | Yes
 </details>
 <details>
 <summary>get_token_address</summary>
@@ -561,7 +561,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| token_address_requests | any | <no value> | Yes
+| token_address_requests | any | not set | Yes
 </details>
 <details>
 <summary>get_token_details</summary>
@@ -580,7 +580,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| token_details_requests | any | <no value> | Yes
+| token_details_requests | any | not set | Yes
 </details>
 <details>
 <summary>list_groups</summary>
@@ -617,7 +617,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| list_single_group_requests | any | <no value> | Yes
+| list_single_group_requests | any | not set | Yes
 </details>
 <details>
 <summary>create_wallet</summary>
@@ -636,7 +636,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| create_wallet_requests | any | <no value> | Yes
+| create_wallet_requests | any | not set | Yes
 </details>
 <details>
 <summary>archive_wallets</summary>
@@ -655,7 +655,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| archive_wallet_requests | any | <no value> | Yes
+| archive_wallet_requests | any | not set | Yes
 </details>
 <details>
 <summary>unarchive_wallets</summary>
@@ -674,7 +674,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| unarchive_wallet_requests | any | <no value> | Yes
+| unarchive_wallet_requests | any | not set | Yes
 </details>
 <details>
 <summary>create_groups</summary>
@@ -693,7 +693,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| create_groups_requests | any | <no value> | Yes
+| create_groups_requests | any | not set | Yes
 </details>
 <details>
 <summary>add_wallets_to_group</summary>
@@ -712,7 +712,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| add_wallet_to_group_requests | any | <no value> | Yes
+| add_wallet_to_group_requests | any | not set | Yes
 </details>
 <details>
 <summary>archive_wallet_group</summary>
@@ -731,7 +731,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| archive_wallet_group_requests | any | <no value> | Yes
+| archive_wallet_group_requests | any | not set | Yes
 </details>
 <details>
 <summary>unarchive_wallet_group</summary>
@@ -750,7 +750,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| unarchive_wallet_group_requests | any | <no value> | Yes
+| unarchive_wallet_group_requests | any | not set | Yes
 </details>
 <details>
 <summary>remove_wallets_from_group</summary>
@@ -769,7 +769,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| remove_wallets_from_group_requests | any | <no value> | Yes
+| remove_wallets_from_group_requests | any | not set | Yes
 </details>
 <details>
 <summary>transfer_tokens</summary>
@@ -788,7 +788,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| transfer_tokens_requests | any | <no value> | Yes
+| transfer_tokens_requests | any | not set | Yes
 </details>
 <details>
 <summary>create_dca_order</summary>
@@ -807,7 +807,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dca_order_requests | any | <no value> | Yes
+| dca_order_requests | any | not set | Yes
 </details>
 <details>
 <summary>list_dca_orders</summary>
@@ -826,7 +826,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| list_dca_order_requests | any | <no value> | Yes
+| list_dca_order_requests | any | not set | Yes
 </details>
 <details>
 <summary>cancel_dca_order</summary>
@@ -845,7 +845,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| cancel_dca_order_requests | any | <no value> | Yes
+| cancel_dca_order_requests | any | not set | Yes
 </details>
 <details>
 <summary>create_order</summary>
@@ -864,7 +864,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| create_order_requests | any | <no value> | Yes
+| create_order_requests | any | not set | Yes
 </details>
 <details>
 <summary>cancel_order</summary>
@@ -883,7 +883,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| cancel_order_requests | any | <no value> | Yes
+| cancel_order_requests | any | not set | Yes
 </details>
 <details>
 <summary>stake_quote</summary>
@@ -902,7 +902,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| stake_quote_requests | any | <no value> | Yes
+| stake_quote_requests | any | not set | Yes
 </details>
 <details>
 <summary>unstake_quote</summary>
@@ -921,7 +921,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| unstake_quote_requests | any | <no value> | Yes
+| unstake_quote_requests | any | not set | Yes
 </details>
 <details>
 <summary>stake_transaction</summary>
@@ -940,7 +940,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| stake_transaction_requests | any | <no value> | Yes
+| stake_transaction_requests | any | not set | Yes
 </details>
 <details>
 <summary>unstake_transaction</summary>
@@ -959,7 +959,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| unstake_transaction_requests | any | <no value> | Yes
+| unstake_transaction_requests | any | not set | Yes
 </details>
 <details>
 <summary>get_top_trending_tokens</summary>
@@ -978,7 +978,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| top_trending_tokens_requests | any | <no value> | Yes
+| top_trending_tokens_requests | any | not set | Yes
 </details>
 <details>
 <summary>get_stake_balances</summary>
@@ -1015,7 +1015,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| rename_wallet_requests | any | <no value> | Yes
+| rename_wallet_requests | any | not set | Yes
 </details>
 <details>
 <summary>get_token_candle_data</summary>
@@ -1034,7 +1034,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| candle_stick_requests | any | <no value> | Yes
+| candle_stick_requests | any | not set | Yes
 </details>
 <details>
 <summary>send_key_to_telegram</summary>
@@ -1051,7 +1051,7 @@ Gets the current time and date
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| private_key_request | any | <no value> | Yes
+| private_key_request | any | not set | Yes
 </details>
 
 ## 📝 Prompts (1)
@@ -1070,7 +1070,7 @@ Gets the current time and date
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| email | <no value> | true |
+| email | not set |Yes |
 
 </details>
 

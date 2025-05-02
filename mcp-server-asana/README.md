@@ -25,7 +25,7 @@
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-asana&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22ASANA_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-asana%3A1.7.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** MCP Server for Asana
+**Description:** This Model Context Protocol server implementation of Asana allows you to talk to Asana API from MCP Client such as Anthropic's Claude Desktop Application, and many more.
 
 > [!NOTE]
 > `@roychri/mcp-server-asana` has been repackaged by Acuvity from Christian Roy original sources.
@@ -808,8 +808,8 @@ Set the parent of a task and position the subtask within the other subtasks of t
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| data | any | <no value> | Yes
-| opts | any | <no value> | No
+| data | any | not set | Yes
+| opts | any | not set | No
 | task_id | string | The task ID to operate on | Yes
 </details>
 <details>
@@ -864,7 +864,7 @@ Get a summary and status update for a task based on its notes, custom fields and
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| task_id | The task ID to get summary for | true |
+| task_id | The task ID to get summary for |Yes |
 <details>
 <summary>task-completeness</summary>
 
@@ -878,7 +878,7 @@ Analyze if a task description contains all necessary details for completion
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| task_id | The task ID or URL to analyze | true |
+| task_id | The task ID or URL to analyze |Yes |
 <details>
 <summary>create-task</summary>
 
@@ -892,10 +892,10 @@ Create a new task with specified details
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| project_name | The name of the Asana project where the task should be created | true |
-| title | The title of the task | true |
-| notes | Notes or description for the task | <no value> |
-| due_date | Due date for the task (YYYY-MM-DD format) | <no value> |
+| project_name | The name of the Asana project where the task should be created |Yes |
+| title | The title of the task |Yes |
+| notes | Notes or description for the task |No |
+| due_date | Due date for the task (YYYY-MM-DD format) |No |
 
 </details>
 

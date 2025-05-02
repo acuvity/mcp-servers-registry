@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-aws-bedrock-kb-retrieval"
-LABEL org.opencontainers.image.description="An AWS Labs Model Context Protocol (MCP) server for Bedrock Knowledge Base Retrieval"
+LABEL org.opencontainers.image.description="Query Amazon Bedrock Knowledge Bases using natural language to retrieve relevant information from your data sources."
 LABEL org.opencontainers.image.version="0.1.7"
 LABEL org.opencontainers.image.source="https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server"
 LABEL org.opencontainers.image.licenses="Apache-2.0"

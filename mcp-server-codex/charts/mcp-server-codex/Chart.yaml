@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-codex"
-description: A Helm chart for Model Context Protocol (MCP) server for fetching blockchain data from Codex.io
+description: A Helm chart for Codex API integration for real-time enriched blockchain and market data on 60+ networks.
 home: https://github.com/Codex-Data/codex-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

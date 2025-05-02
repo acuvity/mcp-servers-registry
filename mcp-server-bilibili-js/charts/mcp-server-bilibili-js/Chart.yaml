@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-bilibili-js"
-description: A Helm chart for B站视频搜索 MCP（Model Context Protocol）服务
+description: A Helm chart for An MCP server that supports searching for Bilibili content. Provides LangChain integration examples and test scripts.
 home: https://github.com/34892002/bilibili-mcp-js
 sources:
   - https://github.com/acuvity/mcp-servers-registry

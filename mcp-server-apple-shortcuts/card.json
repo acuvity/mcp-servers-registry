@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-apple-shortcuts",
   "name": "mcp-server-apple-shortcuts ",
-  "description": "MCP server for automation using Apple Shortcuts",
+  "description": "An MCP Server Integration with Apple Shortcuts.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-apple-shortcuts",

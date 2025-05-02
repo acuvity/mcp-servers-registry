@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-armor-crypto",
   "name": "mcp-server-armor-crypto ",
-  "description": "MCP to interface with multiple blockchains, staking, DeFi, swap, bridging, wallet management, DCA, Limit Orders, Coin Lookup, Tracking and more",
+  "description": "MCP to interface with multiple blockchains, staking, DeFi, swap, bridging, wallet management, DCA, Limit Orders, Coin Lookup, Tracking and more.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-armor-crypto",

@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-docker",
   "name": "mcp-server-docker ",
-  "description": "A Docker MCP Server",
+  "description": "Integrate with Docker to manage containers, images, volumes, and networks.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-docker",

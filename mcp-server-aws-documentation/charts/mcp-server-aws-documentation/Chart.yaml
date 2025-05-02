@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-aws-documentation"
-description: A Helm chart for An AWS Labs Model Context Protocol (MCP) server for AWS Documentation
+description: A Helm chart for Fetch, convert, and search AWS documentation pages, with recommendations for related content.
 home: https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

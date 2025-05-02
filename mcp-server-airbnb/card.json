@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-airbnb",
   "name": "mcp-server-airbnb ",
-  "description": "MCP server for Airbnb search and listing details",
+  "description": "Provides tools to search Airbnb and get listing details.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-airbnb",

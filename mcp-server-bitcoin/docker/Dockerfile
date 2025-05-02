@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-bitcoin"
-LABEL org.opencontainers.image.description="A Model Context Protocol server for interacting with Bitcoin."
+LABEL org.opencontainers.image.description="A Model Context Protocol (MCP) server that enables AI models to interact with Bitcoin, allowing them to generate keys, validate addresses, decode transactions, query the blockchain, and more."
 LABEL org.opencontainers.image.version="0.0.6"
 LABEL org.opencontainers.image.source="https://github.com/AbdelStark/bitcoin-mcp"
 LABEL org.opencontainers.image.licenses="MIT"

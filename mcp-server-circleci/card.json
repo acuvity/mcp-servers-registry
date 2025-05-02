@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-circleci",
   "name": "mcp-server-circleci ",
-  "description": "A Model Context Protocol (MCP) server implementation for CircleCI, enabling natural language interactions with CircleCI functionality through MCP-enabled clients",
+  "description": "Enable AI Agents to fix build failures from CircleCI.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-circleci",

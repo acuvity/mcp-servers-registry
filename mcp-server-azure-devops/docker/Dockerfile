@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-azure-devops"
-LABEL org.opencontainers.image.description="Azure DevOps reference server for the Model Context Protocol (MCP)"
+LABEL org.opencontainers.image.description="Azure DevOps integration for repository management, work items, and pipelines."
 LABEL org.opencontainers.image.version="0.1.34"
 LABEL org.opencontainers.image.source="https://github.com/Tiberriver256/mcp-server-azure-devops"
 LABEL org.opencontainers.image.licenses="MIT"

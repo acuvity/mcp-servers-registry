@@ -25,7 +25,7 @@
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-docker&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-v%22%2C%22%2Fvar%2Frun%2Fdocker.sock%3A%2Fvar%2Frun%2Fdocker.sock%22%2C%22docker.io%2Facuvity%2Fmcp-server-docker%3A0.1.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** A Docker MCP Server
+**Description:** Integrate with Docker to manage containers, images, volumes, and networks.
 
 > [!NOTE]
 > `mcp-server-docker` has been repackaged by Acuvity from Christian Kreiling <kreiling@hey.com> original sources.
@@ -443,6 +443,7 @@ minibridge:
       # Do not validate Policer CA. Do not do this in production
       # insecure: true
 ```
+
 # 🧠 Server features
 
 ## 🧰 Tools (19)
@@ -785,20 +786,20 @@ Remove a Docker volume
 
 | Name | Mime type | URI| Content |
 |-----------|------|-------------|-----------|
-| Logs for jolly_hermann | text/plain | docker://containers/9b4f48fe62a077dbda8813daf416d40c8da15c28e2abe7222d6872e5f6743d4e/logs | <no value> |
-| Stats for jolly_hermann | application/json | docker://containers/9b4f48fe62a077dbda8813daf416d40c8da15c28e2abe7222d6872e5f6743d4e/stats | <no value> |
-| Logs for affectionate_bouman | text/plain | docker://containers/7131e201639cd81e4eeb9853be13f785f079e6cfec2519165ea933777d451b30/logs | <no value> |
-| Stats for affectionate_bouman | application/json | docker://containers/7131e201639cd81e4eeb9853be13f785f079e6cfec2519165ea933777d451b30/stats | <no value> |
-| Logs for determined_wing | text/plain | docker://containers/32eaa40002f22358943fe61ee413a9cb8ed3f31885a9e42a068fcc04385aab9b/logs | <no value> |
-| Stats for determined_wing | application/json | docker://containers/32eaa40002f22358943fe61ee413a9cb8ed3f31885a9e42a068fcc04385aab9b/stats | <no value> |
-| Logs for eloquent_knuth | text/plain | docker://containers/7c5c5262ed93dcb47cf2ae9fd89ce08f0bc1dc0328211af3e850fe80d9f01a6e/logs | <no value> |
-| Stats for eloquent_knuth | application/json | docker://containers/7c5c5262ed93dcb47cf2ae9fd89ce08f0bc1dc0328211af3e850fe80d9f01a6e/stats | <no value> |
-| Logs for nervous_haibt | text/plain | docker://containers/33c3146c5ffdb7a8fd05722d9c087ae4ca7cb6aa47136d0d6f9e2b0e5661f992/logs | <no value> |
-| Stats for nervous_haibt | application/json | docker://containers/33c3146c5ffdb7a8fd05722d9c087ae4ca7cb6aa47136d0d6f9e2b0e5661f992/stats | <no value> |
-| Logs for elated_gauss | text/plain | docker://containers/213097640ef2bd48191b276ae646451d1a4e48e7bae8dc54224655a1784b946d/logs | <no value> |
-| Stats for elated_gauss | application/json | docker://containers/213097640ef2bd48191b276ae646451d1a4e48e7bae8dc54224655a1784b946d/stats | <no value> |
-| Logs for mysql | text/plain | docker://containers/fb245b7fc0628668c74e28a1660f103a7bddcbce177cd9bcc0189a2b3d3460e8/logs | <no value> |
-| Stats for mysql | application/json | docker://containers/fb245b7fc0628668c74e28a1660f103a7bddcbce177cd9bcc0189a2b3d3460e8/stats | <no value> |
+| Logs for jolly_hermann | text/plain | docker://containers/9b4f48fe62a077dbda8813daf416d40c8da15c28e2abe7222d6872e5f6743d4e/logs | - |
+| Stats for jolly_hermann | application/json | docker://containers/9b4f48fe62a077dbda8813daf416d40c8da15c28e2abe7222d6872e5f6743d4e/stats | - |
+| Logs for affectionate_bouman | text/plain | docker://containers/7131e201639cd81e4eeb9853be13f785f079e6cfec2519165ea933777d451b30/logs | - |
+| Stats for affectionate_bouman | application/json | docker://containers/7131e201639cd81e4eeb9853be13f785f079e6cfec2519165ea933777d451b30/stats | - |
+| Logs for determined_wing | text/plain | docker://containers/32eaa40002f22358943fe61ee413a9cb8ed3f31885a9e42a068fcc04385aab9b/logs | - |
+| Stats for determined_wing | application/json | docker://containers/32eaa40002f22358943fe61ee413a9cb8ed3f31885a9e42a068fcc04385aab9b/stats | - |
+| Logs for eloquent_knuth | text/plain | docker://containers/7c5c5262ed93dcb47cf2ae9fd89ce08f0bc1dc0328211af3e850fe80d9f01a6e/logs | - |
+| Stats for eloquent_knuth | application/json | docker://containers/7c5c5262ed93dcb47cf2ae9fd89ce08f0bc1dc0328211af3e850fe80d9f01a6e/stats | - |
+| Logs for nervous_haibt | text/plain | docker://containers/33c3146c5ffdb7a8fd05722d9c087ae4ca7cb6aa47136d0d6f9e2b0e5661f992/logs | - |
+| Stats for nervous_haibt | application/json | docker://containers/33c3146c5ffdb7a8fd05722d9c087ae4ca7cb6aa47136d0d6f9e2b0e5661f992/stats | - |
+| Logs for elated_gauss | text/plain | docker://containers/213097640ef2bd48191b276ae646451d1a4e48e7bae8dc54224655a1784b946d/logs | - |
+| Stats for elated_gauss | application/json | docker://containers/213097640ef2bd48191b276ae646451d1a4e48e7bae8dc54224655a1784b946d/stats | - |
+| Logs for mysql | text/plain | docker://containers/fb245b7fc0628668c74e28a1660f103a7bddcbce177cd9bcc0189a2b3d3460e8/logs | - |
+| Stats for mysql | application/json | docker://containers/fb245b7fc0628668c74e28a1660f103a7bddcbce177cd9bcc0189a2b3d3460e8/stats | - |
 
 </details>
 
@@ -816,8 +817,8 @@ Treat the LLM like a Docker Compose manager
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| name | Unique name of the project | true |
-| containers | Describe containers you want | true |
+| name | Unique name of the project |Yes |
+| containers | Describe containers you want |Yes |
 
 </details>
 

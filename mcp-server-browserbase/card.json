@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-browserbase",
   "name": "mcp-server-browserbase ",
-  "description": "MCP server for browser automation using browserbase",
+  "description": "Automate browser interactions in the cloud (e.g. web navigation, data extraction, form filling, and more).",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-browserbase",

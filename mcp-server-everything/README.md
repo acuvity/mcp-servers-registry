@@ -495,106 +495,106 @@ Returns a resource reference that can be used by MCP clients
 
 | Name | Mime type | URI| Content |
 |-----------|------|-------------|-----------|
-| Resource 1 | text/plain | test://static/resource/1 | Resource 1: This is a plaintext resource |
-| Resource 2 | application/octet-stream | test://static/resource/2 | UmVzb3VyY2UgMjogVGhpcyBpcyBhIGJhc2U2NCBibG9i |
-| Resource 3 | text/plain | test://static/resource/3 | Resource 3: This is a plaintext resource |
-| Resource 4 | application/octet-stream | test://static/resource/4 | UmVzb3VyY2UgNDogVGhpcyBpcyBhIGJhc2U2NCBibG9i |
-| Resource 5 | text/plain | test://static/resource/5 | Resource 5: This is a plaintext resource |
-| Resource 6 | application/octet-stream | test://static/resource/6 | UmVzb3VyY2UgNjogVGhpcyBpcyBhIGJhc2U2NCBibG9i |
-| Resource 7 | text/plain | test://static/resource/7 | Resource 7: This is a plaintext resource |
-| Resource 8 | application/octet-stream | test://static/resource/8 | UmVzb3VyY2UgODogVGhpcyBpcyBhIGJhc2U2NCBibG9i |
-| Resource 9 | text/plain | test://static/resource/9 | Resource 9: This is a plaintext resource |
-| Resource 10 | application/octet-stream | test://static/resource/10 | UmVzb3VyY2UgMTA6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 11 | text/plain | test://static/resource/11 | Resource 11: This is a plaintext resource |
-| Resource 12 | application/octet-stream | test://static/resource/12 | UmVzb3VyY2UgMTI6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 13 | text/plain | test://static/resource/13 | Resource 13: This is a plaintext resource |
-| Resource 14 | application/octet-stream | test://static/resource/14 | UmVzb3VyY2UgMTQ6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 15 | text/plain | test://static/resource/15 | Resource 15: This is a plaintext resource |
-| Resource 16 | application/octet-stream | test://static/resource/16 | UmVzb3VyY2UgMTY6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 17 | text/plain | test://static/resource/17 | Resource 17: This is a plaintext resource |
-| Resource 18 | application/octet-stream | test://static/resource/18 | UmVzb3VyY2UgMTg6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 19 | text/plain | test://static/resource/19 | Resource 19: This is a plaintext resource |
-| Resource 20 | application/octet-stream | test://static/resource/20 | UmVzb3VyY2UgMjA6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 21 | text/plain | test://static/resource/21 | Resource 21: This is a plaintext resource |
-| Resource 22 | application/octet-stream | test://static/resource/22 | UmVzb3VyY2UgMjI6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 23 | text/plain | test://static/resource/23 | Resource 23: This is a plaintext resource |
-| Resource 24 | application/octet-stream | test://static/resource/24 | UmVzb3VyY2UgMjQ6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 25 | text/plain | test://static/resource/25 | Resource 25: This is a plaintext resource |
-| Resource 26 | application/octet-stream | test://static/resource/26 | UmVzb3VyY2UgMjY6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 27 | text/plain | test://static/resource/27 | Resource 27: This is a plaintext resource |
-| Resource 28 | application/octet-stream | test://static/resource/28 | UmVzb3VyY2UgMjg6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 29 | text/plain | test://static/resource/29 | Resource 29: This is a plaintext resource |
-| Resource 30 | application/octet-stream | test://static/resource/30 | UmVzb3VyY2UgMzA6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 31 | text/plain | test://static/resource/31 | Resource 31: This is a plaintext resource |
-| Resource 32 | application/octet-stream | test://static/resource/32 | UmVzb3VyY2UgMzI6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 33 | text/plain | test://static/resource/33 | Resource 33: This is a plaintext resource |
-| Resource 34 | application/octet-stream | test://static/resource/34 | UmVzb3VyY2UgMzQ6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 35 | text/plain | test://static/resource/35 | Resource 35: This is a plaintext resource |
-| Resource 36 | application/octet-stream | test://static/resource/36 | UmVzb3VyY2UgMzY6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 37 | text/plain | test://static/resource/37 | Resource 37: This is a plaintext resource |
-| Resource 38 | application/octet-stream | test://static/resource/38 | UmVzb3VyY2UgMzg6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 39 | text/plain | test://static/resource/39 | Resource 39: This is a plaintext resource |
-| Resource 40 | application/octet-stream | test://static/resource/40 | UmVzb3VyY2UgNDA6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 41 | text/plain | test://static/resource/41 | Resource 41: This is a plaintext resource |
-| Resource 42 | application/octet-stream | test://static/resource/42 | UmVzb3VyY2UgNDI6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 43 | text/plain | test://static/resource/43 | Resource 43: This is a plaintext resource |
-| Resource 44 | application/octet-stream | test://static/resource/44 | UmVzb3VyY2UgNDQ6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 45 | text/plain | test://static/resource/45 | Resource 45: This is a plaintext resource |
-| Resource 46 | application/octet-stream | test://static/resource/46 | UmVzb3VyY2UgNDY6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 47 | text/plain | test://static/resource/47 | Resource 47: This is a plaintext resource |
-| Resource 48 | application/octet-stream | test://static/resource/48 | UmVzb3VyY2UgNDg6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 49 | text/plain | test://static/resource/49 | Resource 49: This is a plaintext resource |
-| Resource 50 | application/octet-stream | test://static/resource/50 | UmVzb3VyY2UgNTA6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 51 | text/plain | test://static/resource/51 | Resource 51: This is a plaintext resource |
-| Resource 52 | application/octet-stream | test://static/resource/52 | UmVzb3VyY2UgNTI6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 53 | text/plain | test://static/resource/53 | Resource 53: This is a plaintext resource |
-| Resource 54 | application/octet-stream | test://static/resource/54 | UmVzb3VyY2UgNTQ6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 55 | text/plain | test://static/resource/55 | Resource 55: This is a plaintext resource |
-| Resource 56 | application/octet-stream | test://static/resource/56 | UmVzb3VyY2UgNTY6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 57 | text/plain | test://static/resource/57 | Resource 57: This is a plaintext resource |
-| Resource 58 | application/octet-stream | test://static/resource/58 | UmVzb3VyY2UgNTg6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 59 | text/plain | test://static/resource/59 | Resource 59: This is a plaintext resource |
-| Resource 60 | application/octet-stream | test://static/resource/60 | UmVzb3VyY2UgNjA6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 61 | text/plain | test://static/resource/61 | Resource 61: This is a plaintext resource |
-| Resource 62 | application/octet-stream | test://static/resource/62 | UmVzb3VyY2UgNjI6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 63 | text/plain | test://static/resource/63 | Resource 63: This is a plaintext resource |
-| Resource 64 | application/octet-stream | test://static/resource/64 | UmVzb3VyY2UgNjQ6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 65 | text/plain | test://static/resource/65 | Resource 65: This is a plaintext resource |
-| Resource 66 | application/octet-stream | test://static/resource/66 | UmVzb3VyY2UgNjY6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 67 | text/plain | test://static/resource/67 | Resource 67: This is a plaintext resource |
-| Resource 68 | application/octet-stream | test://static/resource/68 | UmVzb3VyY2UgNjg6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 69 | text/plain | test://static/resource/69 | Resource 69: This is a plaintext resource |
-| Resource 70 | application/octet-stream | test://static/resource/70 | UmVzb3VyY2UgNzA6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 71 | text/plain | test://static/resource/71 | Resource 71: This is a plaintext resource |
-| Resource 72 | application/octet-stream | test://static/resource/72 | UmVzb3VyY2UgNzI6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 73 | text/plain | test://static/resource/73 | Resource 73: This is a plaintext resource |
-| Resource 74 | application/octet-stream | test://static/resource/74 | UmVzb3VyY2UgNzQ6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 75 | text/plain | test://static/resource/75 | Resource 75: This is a plaintext resource |
-| Resource 76 | application/octet-stream | test://static/resource/76 | UmVzb3VyY2UgNzY6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 77 | text/plain | test://static/resource/77 | Resource 77: This is a plaintext resource |
-| Resource 78 | application/octet-stream | test://static/resource/78 | UmVzb3VyY2UgNzg6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 79 | text/plain | test://static/resource/79 | Resource 79: This is a plaintext resource |
-| Resource 80 | application/octet-stream | test://static/resource/80 | UmVzb3VyY2UgODA6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 81 | text/plain | test://static/resource/81 | Resource 81: This is a plaintext resource |
-| Resource 82 | application/octet-stream | test://static/resource/82 | UmVzb3VyY2UgODI6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 83 | text/plain | test://static/resource/83 | Resource 83: This is a plaintext resource |
-| Resource 84 | application/octet-stream | test://static/resource/84 | UmVzb3VyY2UgODQ6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 85 | text/plain | test://static/resource/85 | Resource 85: This is a plaintext resource |
-| Resource 86 | application/octet-stream | test://static/resource/86 | UmVzb3VyY2UgODY6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 87 | text/plain | test://static/resource/87 | Resource 87: This is a plaintext resource |
-| Resource 88 | application/octet-stream | test://static/resource/88 | UmVzb3VyY2UgODg6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 89 | text/plain | test://static/resource/89 | Resource 89: This is a plaintext resource |
-| Resource 90 | application/octet-stream | test://static/resource/90 | UmVzb3VyY2UgOTA6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 91 | text/plain | test://static/resource/91 | Resource 91: This is a plaintext resource |
-| Resource 92 | application/octet-stream | test://static/resource/92 | UmVzb3VyY2UgOTI6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 93 | text/plain | test://static/resource/93 | Resource 93: This is a plaintext resource |
-| Resource 94 | application/octet-stream | test://static/resource/94 | UmVzb3VyY2UgOTQ6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 95 | text/plain | test://static/resource/95 | Resource 95: This is a plaintext resource |
-| Resource 96 | application/octet-stream | test://static/resource/96 | UmVzb3VyY2UgOTY6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 97 | text/plain | test://static/resource/97 | Resource 97: This is a plaintext resource |
-| Resource 98 | application/octet-stream | test://static/resource/98 | UmVzb3VyY2UgOTg6IFRoaXMgaXMgYSBiYXNlNjQgYmxvYg== |
-| Resource 99 | text/plain | test://static/resource/99 | Resource 99: This is a plaintext resource |
-| Resource 100 | application/octet-stream | test://static/resource/100 | UmVzb3VyY2UgMTAwOiBUaGlzIGlzIGEgYmFzZTY0IGJsb2I= |
+| Resource 1 | text/plain | test://static/resource/1 | - |
+| Resource 2 | application/octet-stream | test://static/resource/2 | - |
+| Resource 3 | text/plain | test://static/resource/3 | - |
+| Resource 4 | application/octet-stream | test://static/resource/4 | - |
+| Resource 5 | text/plain | test://static/resource/5 | - |
+| Resource 6 | application/octet-stream | test://static/resource/6 | - |
+| Resource 7 | text/plain | test://static/resource/7 | - |
+| Resource 8 | application/octet-stream | test://static/resource/8 | - |
+| Resource 9 | text/plain | test://static/resource/9 | - |
+| Resource 10 | application/octet-stream | test://static/resource/10 | - |
+| Resource 11 | text/plain | test://static/resource/11 | - |
+| Resource 12 | application/octet-stream | test://static/resource/12 | - |
+| Resource 13 | text/plain | test://static/resource/13 | - |
+| Resource 14 | application/octet-stream | test://static/resource/14 | - |
+| Resource 15 | text/plain | test://static/resource/15 | - |
+| Resource 16 | application/octet-stream | test://static/resource/16 | - |
+| Resource 17 | text/plain | test://static/resource/17 | - |
+| Resource 18 | application/octet-stream | test://static/resource/18 | - |
+| Resource 19 | text/plain | test://static/resource/19 | - |
+| Resource 20 | application/octet-stream | test://static/resource/20 | - |
+| Resource 21 | text/plain | test://static/resource/21 | - |
+| Resource 22 | application/octet-stream | test://static/resource/22 | - |
+| Resource 23 | text/plain | test://static/resource/23 | - |
+| Resource 24 | application/octet-stream | test://static/resource/24 | - |
+| Resource 25 | text/plain | test://static/resource/25 | - |
+| Resource 26 | application/octet-stream | test://static/resource/26 | - |
+| Resource 27 | text/plain | test://static/resource/27 | - |
+| Resource 28 | application/octet-stream | test://static/resource/28 | - |
+| Resource 29 | text/plain | test://static/resource/29 | - |
+| Resource 30 | application/octet-stream | test://static/resource/30 | - |
+| Resource 31 | text/plain | test://static/resource/31 | - |
+| Resource 32 | application/octet-stream | test://static/resource/32 | - |
+| Resource 33 | text/plain | test://static/resource/33 | - |
+| Resource 34 | application/octet-stream | test://static/resource/34 | - |
+| Resource 35 | text/plain | test://static/resource/35 | - |
+| Resource 36 | application/octet-stream | test://static/resource/36 | - |
+| Resource 37 | text/plain | test://static/resource/37 | - |
+| Resource 38 | application/octet-stream | test://static/resource/38 | - |
+| Resource 39 | text/plain | test://static/resource/39 | - |
+| Resource 40 | application/octet-stream | test://static/resource/40 | - |
+| Resource 41 | text/plain | test://static/resource/41 | - |
+| Resource 42 | application/octet-stream | test://static/resource/42 | - |
+| Resource 43 | text/plain | test://static/resource/43 | - |
+| Resource 44 | application/octet-stream | test://static/resource/44 | - |
+| Resource 45 | text/plain | test://static/resource/45 | - |
+| Resource 46 | application/octet-stream | test://static/resource/46 | - |
+| Resource 47 | text/plain | test://static/resource/47 | - |
+| Resource 48 | application/octet-stream | test://static/resource/48 | - |
+| Resource 49 | text/plain | test://static/resource/49 | - |
+| Resource 50 | application/octet-stream | test://static/resource/50 | - |
+| Resource 51 | text/plain | test://static/resource/51 | - |
+| Resource 52 | application/octet-stream | test://static/resource/52 | - |
+| Resource 53 | text/plain | test://static/resource/53 | - |
+| Resource 54 | application/octet-stream | test://static/resource/54 | - |
+| Resource 55 | text/plain | test://static/resource/55 | - |
+| Resource 56 | application/octet-stream | test://static/resource/56 | - |
+| Resource 57 | text/plain | test://static/resource/57 | - |
+| Resource 58 | application/octet-stream | test://static/resource/58 | - |
+| Resource 59 | text/plain | test://static/resource/59 | - |
+| Resource 60 | application/octet-stream | test://static/resource/60 | - |
+| Resource 61 | text/plain | test://static/resource/61 | - |
+| Resource 62 | application/octet-stream | test://static/resource/62 | - |
+| Resource 63 | text/plain | test://static/resource/63 | - |
+| Resource 64 | application/octet-stream | test://static/resource/64 | - |
+| Resource 65 | text/plain | test://static/resource/65 | - |
+| Resource 66 | application/octet-stream | test://static/resource/66 | - |
+| Resource 67 | text/plain | test://static/resource/67 | - |
+| Resource 68 | application/octet-stream | test://static/resource/68 | - |
+| Resource 69 | text/plain | test://static/resource/69 | - |
+| Resource 70 | application/octet-stream | test://static/resource/70 | - |
+| Resource 71 | text/plain | test://static/resource/71 | - |
+| Resource 72 | application/octet-stream | test://static/resource/72 | - |
+| Resource 73 | text/plain | test://static/resource/73 | - |
+| Resource 74 | application/octet-stream | test://static/resource/74 | - |
+| Resource 75 | text/plain | test://static/resource/75 | - |
+| Resource 76 | application/octet-stream | test://static/resource/76 | - |
+| Resource 77 | text/plain | test://static/resource/77 | - |
+| Resource 78 | application/octet-stream | test://static/resource/78 | - |
+| Resource 79 | text/plain | test://static/resource/79 | - |
+| Resource 80 | application/octet-stream | test://static/resource/80 | - |
+| Resource 81 | text/plain | test://static/resource/81 | - |
+| Resource 82 | application/octet-stream | test://static/resource/82 | - |
+| Resource 83 | text/plain | test://static/resource/83 | - |
+| Resource 84 | application/octet-stream | test://static/resource/84 | - |
+| Resource 85 | text/plain | test://static/resource/85 | - |
+| Resource 86 | application/octet-stream | test://static/resource/86 | - |
+| Resource 87 | text/plain | test://static/resource/87 | - |
+| Resource 88 | application/octet-stream | test://static/resource/88 | - |
+| Resource 89 | text/plain | test://static/resource/89 | - |
+| Resource 90 | application/octet-stream | test://static/resource/90 | - |
+| Resource 91 | text/plain | test://static/resource/91 | - |
+| Resource 92 | application/octet-stream | test://static/resource/92 | - |
+| Resource 93 | text/plain | test://static/resource/93 | - |
+| Resource 94 | application/octet-stream | test://static/resource/94 | - |
+| Resource 95 | text/plain | test://static/resource/95 | - |
+| Resource 96 | application/octet-stream | test://static/resource/96 | - |
+| Resource 97 | text/plain | test://static/resource/97 | - |
+| Resource 98 | application/octet-stream | test://static/resource/98 | - |
+| Resource 99 | text/plain | test://static/resource/99 | - |
+| Resource 100 | application/octet-stream | test://static/resource/100 | - |
 
 </details>
 
@@ -620,8 +620,8 @@ A prompt with arguments
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| temperature | Temperature setting | true |
-| style | Output style | <no value> |
+| temperature | Temperature setting |Yes |
+| style | Output style |No |
 <details>
 <summary>resource_prompt</summary>
 
@@ -635,7 +635,7 @@ A prompt that includes an embedded resource reference
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| resourceId | Resource ID to include (1-100) | true |
+| resourceId | Resource ID to include (1-100) |Yes |
 
 </details>
 

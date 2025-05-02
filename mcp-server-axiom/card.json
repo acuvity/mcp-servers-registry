@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-axiom",
   "name": "mcp-server-axiom ",
-  "description": "Axiom Model Context Protocol Server",
+  "description": "Query and analyze your Axiom logs, traces, and all other event data in natural language.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-axiom",

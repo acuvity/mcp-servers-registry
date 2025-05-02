@@ -14,10 +14,10 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-bing-search"
-LABEL org.opencontainers.image.description="Add your description here"
+LABEL org.opencontainers.image.description="Web search capabilities using Microsoft Bing Search API."
 LABEL org.opencontainers.image.version="0.1.0"
 LABEL org.opencontainers.image.source="https://github.com/leehanchung/bing-search-mcp"
-LABEL org.opencontainers.image.licenses="<no value>"
+LABEL org.opencontainers.image.licenses="unknown"
 LABEL org.opencontainers.image.author="Author"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 

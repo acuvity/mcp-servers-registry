@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-benborla-mysql"
-description: A Helm chart for MCP server for interacting with MySQL databases based on Node
+description: A Helm chart for MySQL database integration in NodeJS with configurable access controls and schema inspection.
 home: https://github.com/benborla/mcp-server-mysql
 sources:
   - https://github.com/acuvity/mcp-servers-registry

@@ -25,7 +25,7 @@
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-diagram&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-diagram%3A0.9.3%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** An MCP server that seamlessly creates diagrams using the Python diagrams package DSL
+**Description:** This MCP server that seamlessly creates diagrams using the Python diagrams package DSL. This server allows you to generate AWS diagrams, sequence diagrams, flow diagrams, and class diagrams using Python code.
 
 > [!NOTE]
 > `awslabs.aws-diagram-mcp-server` has been repackaged by Acuvity from AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com> original sources.
@@ -392,9 +392,12 @@ The deployment will create a Kubernetes service with a `healthPort`, that is use
 See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-diagram/charts/mcp-server-aws-diagram/README.md) for more details about settings.
 
 </details>
+
+
+
 # 🧠 Server features
 
-For detailed list of all features, tools, arguments and SBOM hashes provided by this server please consult the [readme]([[.blueprint.packaging.source]]/tree/main/[[.blueprint.name]])
+For detailed list of all features, tools, arguments and SBOM hashes provided by this server please consult the [readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-diagram)
 
 ## 🧰 Tools (3)
 

@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-calculator"
-description: A Helm chart for A Model Context Protocol server for calculating
+description: A Helm chart for This server enables LLMs to use calculator for precise numerical calculations.
 home: https://github.com/githejie/mcp-server-calculator
 sources:
   - https://github.com/acuvity/mcp-servers-registry

@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-contentful"
-LABEL org.opencontainers.image.description="MCP server for Contentful Content Management API integration"
+LABEL org.opencontainers.image.description="Update, create, delete content, content-models and assets in your Contentful Space."
 LABEL org.opencontainers.image.version="1.13.1"
 LABEL org.opencontainers.image.source="https://github.com/ivo-toby/contentful-mcp"
 LABEL org.opencontainers.image.licenses="MIT"

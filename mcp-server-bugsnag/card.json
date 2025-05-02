@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-bugsnag",
   "name": "mcp-server-bugsnag ",
-  "description": "A Bugsnag MCP server for interacting with Bugsnag API",
+  "description": "An MCP server for interacting with Bugsnag.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-bugsnag",

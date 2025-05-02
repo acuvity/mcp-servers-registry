@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-browserbase"
-description: A Helm chart for MCP server for browser automation using browserbase
+description: A Helm chart for Automate browser interactions in the cloud (e.g. web navigation, data extraction, form filling, and more).
 home: https://github.com/browserbase/mcp-server-browserbase
 sources:
   - https://github.com/acuvity/mcp-servers-registry

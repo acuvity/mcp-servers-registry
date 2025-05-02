@@ -14,10 +14,10 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-armor-crypto"
-LABEL org.opencontainers.image.description="MCP to interface with multiple blockchains, staking, DeFi, swap, bridging, wallet management, DCA, Limit Orders, Coin Lookup, Tracking and more"
+LABEL org.opencontainers.image.description="MCP to interface with multiple blockchains, staking, DeFi, swap, bridging, wallet management, DCA, Limit Orders, Coin Lookup, Tracking and more."
 LABEL org.opencontainers.image.version="0.1.22"
 LABEL org.opencontainers.image.source="https://github.com/armorwallet/armor-crypto-mcp"
-LABEL org.opencontainers.image.licenses="<no value>"
+LABEL org.opencontainers.image.licenses="unknown"
 LABEL org.opencontainers.image.author="Armor Wallet <info@armorwallet.ai>"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 

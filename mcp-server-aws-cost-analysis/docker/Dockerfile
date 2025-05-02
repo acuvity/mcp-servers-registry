@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-aws-cost-analysis"
-LABEL org.opencontainers.image.description="An AWS Labs Model Context Protocol (MCP) server for Cost Analysis of the AWS services"
+LABEL org.opencontainers.image.description="Analyze CDK projects to identify AWS services used and get pricing information from AWS pricing webpages and API."
 LABEL org.opencontainers.image.version="0.1.8"
 LABEL org.opencontainers.image.source="https://pypi.org/project/awslabs.cost-analysis-mcp-server/"
 LABEL org.opencontainers.image.licenses="Apache-2.0"

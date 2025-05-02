@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-azure-devops",
   "name": "mcp-server-azure-devops ",
-  "description": "Azure DevOps reference server for the Model Context Protocol (MCP)",
+  "description": "Azure DevOps integration for repository management, work items, and pipelines.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-azure-devops",

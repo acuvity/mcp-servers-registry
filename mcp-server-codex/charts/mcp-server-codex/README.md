@@ -25,7 +25,7 @@
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-codex&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CODEX_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-codex%3A0.1.3%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** Model Context Protocol (MCP) server for fetching blockchain data from Codex.io
+**Description:** Codex API integration for real-time enriched blockchain and market data on 60+ networks.
 
 > [!NOTE]
 > `@codex-data/codex-mcp` has been repackaged by Acuvity from Codex original sources.
@@ -451,6 +451,7 @@ minibridge:
       # Do not validate Policer CA. Do not do this in production
       # insecure: true
 ```
+
 # 🧠 Server features
 
 ## 🧰 Tools (25)
@@ -527,7 +528,7 @@ Get detailed information about multiple tokens
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| ids | array | <no value> | Yes
+| ids | array | not set | Yes
 </details>
 <details>
 <summary>get_token_prices</summary>
@@ -542,7 +543,7 @@ Get real-time or historical prices for a list of tokens
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| inputs | array | <no value> | Yes
+| inputs | array | not set | Yes
 </details>
 <details>
 <summary>filter_tokens</summary>
@@ -633,17 +634,17 @@ Returns bar chart data to track token price changes over time. Can be queried us
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | address | string | The pair address or token address to get chart data for. If a token address is provided, the token's top pair will be used. | Yes
-| countback | number | <no value> | No
-| currencyCode | string | <no value> | No
+| countback | number | not set | No
+| currencyCode | string | not set | No
 | from | number | Unix timestamp | Yes
 | networkId | number | The network ID the pair or token is on | Yes
 | quoteToken | string | The token of interest (token0 or token1) | No
-| removeEmptyBars | boolean | <no value> | No
-| removeLeadingNullValues | any | <no value> | No
+| removeEmptyBars | boolean | not set | No
+| removeLeadingNullValues | any | not set | No
 | resolution | string | The time frame for each candle. Available options are 1, 5, 15, 30, 60, 240, 720, 1D, 7D | Yes
 | statsType | string | The type of statistics returned. Can be FILTERED or UNFILTERED | No
-| symbolType | string | <no value> | No
-| to | any | <no value> | Yes
+| symbolType | string | not set | No
+| to | any | not set | Yes
 </details>
 <details>
 <summary>get_token_chart_urls</summary>
@@ -676,7 +677,7 @@ Get a list of the latests token contracts deployed (Codex Growth and Enterprise 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | limit | number | Maximum number of items to return | No
-| networkFilter | array | <no value> | Yes
+| networkFilter | array | not set | Yes
 | offset | number | Number of items to skip | No
 </details>
 <details>
@@ -749,8 +750,8 @@ Get bucketed stats for a given token within a pair
 | duration | string | The duration for stats | Yes
 | networkId | number | The network ID the pair is on | Yes
 | statsType | string | The type of statistics returned. Can be FILTERED or UNFILTERED | No
-| timestamp | number | <no value> | No
-| tokenOfInterest | string | <no value> | No
+| timestamp | number | not set | No
+| tokenOfInterest | string | not set | No
 </details>
 <details>
 <summary>get_detailed_pairs_stats</summary>
@@ -783,12 +784,12 @@ Get a list of pairs based on various filters like volume, price, liquidity, etc.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| filters | object | <no value> | No
+| filters | object | not set | No
 | limit | number | Maximum number of items to return | No
 | offset | number | Number of items to skip | No
-| pairs | any | <no value> | No
-| phrase | string | <no value> | No
-| rankings | any | <no value> | No
+| pairs | any | not set | No
+| phrase | string | not set | No
+| rankings | any | not set | No
 | statsType | string | The type of statistics returned. Can be FILTERED or UNFILTERED | No
 </details>
 <details>
@@ -889,7 +890,7 @@ Get a list of exchanges based on various filters like volume, transactions, acti
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| filters | object | <no value> | No
+| filters | object | not set | No
 | limit | number | Maximum number of items to return | No
 | offset | number | Number of items to skip | No
 | phrase | string | A phrase to search for. Can match an exchange address or ID (address:networkId), or partially match an exchange name | No

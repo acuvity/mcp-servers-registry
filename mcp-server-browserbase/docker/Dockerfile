@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-browserbase"
-LABEL org.opencontainers.image.description="MCP server for browser automation using browserbase"
+LABEL org.opencontainers.image.description="Automate browser interactions in the cloud (e.g. web navigation, data extraction, form filling, and more)."
 LABEL org.opencontainers.image.version="0.5.1"
 LABEL org.opencontainers.image.source="https://github.com/browserbase/mcp-server-browserbase"
 LABEL org.opencontainers.image.licenses="MIT"

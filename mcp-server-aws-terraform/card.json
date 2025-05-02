@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-aws-terraform",
   "name": "mcp-server-aws-terraform ",
-  "description": "An AWS Labs Model Context Protocol (MCP) server for terraform",
+  "description": "MCP server for Terraform on AWS best practices, infrastructure as code patterns, and security compliance with Checkov.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-terraform",

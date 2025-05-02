@@ -25,7 +25,7 @@
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-brightdata&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_TOKEN%22%2C%22-e%22%2C%22BROWSER_AUTH%22%2C%22docker.io%2Facuvity%2Fmcp-server-brightdata%3A1.7.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** An MCP interface into the Bright Data toolset
+**Description:** Discover, extract, and interact with the web - one interface powering automated access across the public internet.
 
 > [!NOTE]
 > `@brightdata/mcp` has been repackaged by Acuvity from Bright Data original sources.
@@ -434,8 +434,8 @@ Scrape search results from Google, Bing or Yandex. Returns SERP results in markd
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| engine | string | <no value> | No
-| query | string | <no value> | Yes
+| engine | string | not set | No
+| query | string | not set | Yes
 </details>
 <details>
 <summary>scrape_as_markdown</summary>
@@ -450,7 +450,7 @@ Scrape a single webpage URL with advanced options for content extraction and get
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| url | string | <no value> | Yes
+| url | string | not set | Yes
 </details>
 <details>
 <summary>scrape_as_html</summary>
@@ -465,7 +465,7 @@ Scrape a single webpage URL with advanced options for content extraction and get
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| url | string | <no value> | Yes
+| url | string | not set | Yes
 </details>
 <details>
 <summary>session_stats</summary>
@@ -496,7 +496,7 @@ This can be a cache lookup, so it can be more reliable than scraping
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| url | string | <no value> | Yes
+| url | string | not set | Yes
 </details>
 <details>
 <summary>web_data_amazon_product_reviews</summary>
@@ -513,7 +513,7 @@ This can be a cache lookup, so it can be more reliable than scraping
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| url | string | <no value> | Yes
+| url | string | not set | Yes
 </details>
 <details>
 <summary>web_data_linkedin_person_profile</summary>
@@ -529,7 +529,7 @@ This can be a cache lookup, so it can be more reliable than scraping
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| url | string | <no value> | Yes
+| url | string | not set | Yes
 </details>
 <details>
 <summary>web_data_linkedin_company_profile</summary>
@@ -545,7 +545,7 @@ This can be a cache lookup, so it can be more reliable than scraping
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| url | string | <no value> | Yes
+| url | string | not set | Yes
 </details>
 <details>
 <summary>scraping_browser_navigate</summary>

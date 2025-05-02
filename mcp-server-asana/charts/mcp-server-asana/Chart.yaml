@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-asana"
-description: A Helm chart for MCP Server for Asana
+description: A Helm chart for This Model Context Protocol server implementation of Asana allows you to talk to Asana API from MCP Client such as Anthropic's Claude Desktop Application, and many more.
 home: https://github.com/roychri/mcp-server-asana
 sources:
   - https://github.com/acuvity/mcp-servers-registry

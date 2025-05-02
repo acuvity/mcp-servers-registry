@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-alchemy"
-LABEL org.opencontainers.image.description="MCP server for using Alchemy APIs"
+LABEL org.opencontainers.image.description="Allow AI agents to interact with Alchemy's blockchain APIs."
 LABEL org.opencontainers.image.version="0.1.5"
 LABEL org.opencontainers.image.source="https://github.com/alchemyplatform/alchemy-mcp-server"
 LABEL org.opencontainers.image.licenses="MIT"

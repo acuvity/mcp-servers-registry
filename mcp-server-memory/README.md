@@ -408,7 +408,7 @@ Create multiple new entities in the knowledge graph
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| entities | array | <no value> | Yes
+| entities | array | not set | Yes
 </details>
 <details>
 <summary>create_relations</summary>
@@ -423,7 +423,7 @@ Create multiple new relations between entities in the knowledge graph. Relations
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| relations | array | <no value> | Yes
+| relations | array | not set | Yes
 </details>
 <details>
 <summary>add_observations</summary>
@@ -438,7 +438,7 @@ Add new observations to existing entities in the knowledge graph
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| observations | array | <no value> | Yes
+| observations | array | not set | Yes
 </details>
 <details>
 <summary>delete_entities</summary>
@@ -468,7 +468,7 @@ Delete specific observations from entities in the knowledge graph
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| deletions | array | <no value> | Yes
+| deletions | array | not set | Yes
 </details>
 <details>
 <summary>delete_relations</summary>
