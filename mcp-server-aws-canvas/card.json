@@ -1,0 +1,20 @@
+{
+  "id": "mcp-server-aws-canvas",
+  "name": "mcp-server-aws-canvas ",
+  "description": "An AWS Labs Model Context Protocol (MCP) server for Amazon Nova Canvas",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-canvas",
+      "application": "https://pypi.org/project/awslabs.nova-canvas-mcp-server/"
+    },
+  "tags": ["marketing","integration"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.2.7",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-aws-core",
+  "name": "mcp-server-aws-core ",
+  "description": "An AWS Labs Model Context Protocol (MCP) server for aswlabs Core MCP Server",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-core",
+      "application": "https://pypi.org/project/awslabs.core-mcp-server/"
+    },
+  "tags": ["cloud"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.2.3",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

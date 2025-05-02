@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-alibaba-cloud-ops",
+  "name": "mcp-server-alibaba-cloud-ops ",
+  "description": "A MCP server for Alibaba Cloud",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-alibaba-cloud-ops",
+      "application": "https://github.com/aliyun/alibaba-cloud-ops-mcp-server"
+    },
+  "tags": ["cloud","integration"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.8.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 34,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

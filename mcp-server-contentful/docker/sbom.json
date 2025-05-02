@@ -1,0 +1,764 @@
+{
+  "tools": [
+    {
+      "name": "bulk_validate",
+      "hash": "8ecb4456ace22c28b31473a59a7f7e2aafd9ad306660dfb7f5aa863f2b0339e1",
+      "params": [
+        {
+          "name": "entryIds",
+          "hash": "cfb850350044490d46c9983a9681deb2b9cdbf744fffbfedd1bef58721f785fe"
+        },
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "create_ai_action",
+      "hash": "37a11ccdfa19933c2800b850d290e68d97b066cd943c4dd8f5be8e1dde59527d",
+      "params": [
+        {
+          "name": "configuration",
+          "hash": "f9a3b300f3826bdb97e5ae6b377e653524cbe4cc7804ae95eb171c724a5573ef"
+        },
+        {
+          "name": "description",
+          "hash": "738b104b409f46bd943a50c5499f7027bf6544187b26626dc571fb29ca569253"
+        },
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "instruction",
+          "hash": "ebef280526abae1f91c3bbda5ec014e2406c624336fbd84e3c1b2fdb09e31e60"
+        },
+        {
+          "name": "name",
+          "hash": "c44e12cb538c2b6005353bdaa62fff36e89f40a1e3f98ac0c4807bbebb58fb6e"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        },
+        {
+          "name": "testCases",
+          "hash": "195eaaf33aaf9a64981d3ae293b34297dd65614fd38592b2e4e9a8391bc056a6"
+        }
+      ]
+    },
+    {
+      "name": "create_content_type",
+      "hash": "d9744dc50d28fd896e176539b86c4d516298734c6c660c2a91a49b670b262a20",
+      "params": [
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "fields",
+          "hash": "7e77d1884050a7aa4e0929815065ae045983a263c6ead31e28a0b28f1f1b7eaa"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "create_entry",
+      "hash": "c1aae970359d9d305f7c2406cf750ab0a2ab8e175ed5f8b96c1e24eaff2c437d",
+      "params": [
+        {
+          "name": "contentTypeId",
+          "hash": "957e01d15b8b4bb3a68264cc2127b3cbcfd6da3ed8cb2d7a82a9d86834d2e592"
+        },
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "fields",
+          "hash": "992f0a1f879b5f76a0f218fc9c008340914f9d07ef29d35968ed952250d22338"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "create_environment",
+      "hash": "82054b8ea3438535752e8a25bd56d0d23d304f8922bbcf9cd1905c0b5cd8cb12"
+    },
+    {
+      "name": "delete_ai_action",
+      "hash": "acecc366a1002d97e05ae5a4223a9cdff1fc5ca008c5b99df0deeb9ef15c403c",
+      "params": [
+        {
+          "name": "aiActionId",
+          "hash": "9dd183dbe320721e68e17a97af3ebbdf738588d07f9c405d336f055c9b573eb1"
+        },
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "delete_asset",
+      "hash": "6c7c32568e6a7561f8f0415ea51e55a393f63285fe479a88c5d67a0361632b3c",
+      "params": [
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "delete_content_type",
+      "hash": "dd3069640d149019bf7e31d4d2dec205214fdd3254c1b965df50548f33f3775a",
+      "params": [
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "delete_entry",
+      "hash": "e035171af6f9f50e51b2a950ad298dbd11db9a3453f09c25d86e37f37657820c",
+      "params": [
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "delete_environment",
+      "hash": "d71ccc7a648f021ca5e93376a7ec68e806947a2fe212f2e482e35805348e34e7"
+    },
+    {
+      "name": "get_ai_action",
+      "hash": "2a129b4f3e58dbb177e1ca6687be39186ff714ab86efde968e9cc5ff1c6b45b0",
+      "params": [
+        {
+          "name": "aiActionId",
+          "hash": "ec6acb40764c4080207248094c332989c847a2cdfe1aa58eb46e9d3744d5c003"
+        },
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "get_ai_action_invocation",
+      "hash": "8b842c74c84b7761946264e11e6caafdf485a4fe6deed98c8c3583174bfc82be",
+      "params": [
+        {
+          "name": "aiActionId",
+          "hash": "88d16fb7ad95f1013ba5b9ef34cea54f6f41ac20c380109ef0ed475fc9a6d3cb"
+        },
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "invocationId",
+          "hash": "a973285ca3b19dcf75a3df5f0475c00c0aec8d49ab0c8e97f2faa95f79a9025d"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "get_asset",
+      "hash": "f8353610a7c481ca975a62389184e981f7b3a6414a50160fa0c8cba366e254af",
+      "params": [
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "get_content_type",
+      "hash": "2a5357bc685b1b5843c2868b1124211676da3cc45550fe3c688f6a060903ec2f",
+      "params": [
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "get_entry",
+      "hash": "1de1c52a44e35412db5b7ad38ca92ae9881a2655bb5dfe1ad1d5d0aad2aaefb2",
+      "params": [
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "get_space",
+      "hash": "da364db7e6f099c12704b9793a65be4732231c51cd272e87040a287adac3dd88"
+    },
+    {
+      "name": "invoke_ai_action",
+      "hash": "094d76f15f911a0b16205342cab4282094fcf8ce22b465bb24ffa1745dbfcae7",
+      "params": [
+        {
+          "name": "aiActionId",
+          "hash": "d0be2c8158fd0e42df3ebd5949fc36f009c871ac5e83a84bb39b55f58fb5b3d9"
+        },
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "outputFormat",
+          "hash": "9d2301676daaafc442127528bc01d39e9695787f8ac78fd49ca42b4dedacfd03"
+        },
+        {
+          "name": "rawVariables",
+          "hash": "dca5ee1b3ec4ae493f18822b37027480ba5d1ac7c42cc06e6584350b9d735749"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        },
+        {
+          "name": "variables",
+          "hash": "fd104b359a3b6aaa7245bebdfe1d6d46f79783d9488c81404bda970c2d129323"
+        },
+        {
+          "name": "waitForCompletion",
+          "hash": "a4df206ef1cb6fdc68bdcd500ac68e68c9584fb2e239a6119f12909ff37efaaf"
+        }
+      ]
+    },
+    {
+      "name": "list_ai_actions",
+      "hash": "bb0323f41ba668092677e1063b6414c814301be0ce0c5e3d1cdec22677997c3d",
+      "params": [
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "limit",
+          "hash": "daf6a199ced3432a0669924c3a8a5cb68a294de7ca010084c63acf1b933a3f81"
+        },
+        {
+          "name": "skip",
+          "hash": "f4522f1436198fca9e16ad4925e9823ff67be7621a7cfbf4fb9423c8a37ec0af"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        },
+        {
+          "name": "status",
+          "hash": "922717d3f4a75218be2ec6a0431f85aa1cddc723e78d2b3a3ac606bdb4a964f3"
+        }
+      ]
+    },
+    {
+      "name": "list_assets",
+      "hash": "9f9580698576ca34e3b75be7d8d08b87ec3508c743edecd8f9fb89846ce77fb1",
+      "params": [
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "limit",
+          "hash": "50ba5c893a7c24657d068bc5f09c36af857de3ab7ef725d930ba24e60864224e"
+        },
+        {
+          "name": "skip",
+          "hash": "c5afb15fad11afbacdefce188b50323f10c5399af9c5c73570f8f87e1a5e46f5"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "list_content_types",
+      "hash": "a755d641298d1d07ce423a0be43cfa56f6676ef77a426a527bbe865941c02ad4",
+      "params": [
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "limit",
+          "hash": "50ba5c893a7c24657d068bc5f09c36af857de3ab7ef725d930ba24e60864224e"
+        },
+        {
+          "name": "skip",
+          "hash": "c5afb15fad11afbacdefce188b50323f10c5399af9c5c73570f8f87e1a5e46f5"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "list_environments",
+      "hash": "f3e98be6e8fd140fbdd5ca858ca874c62ff2b2f70ae6661441f2ab8b451475ae"
+    },
+    {
+      "name": "list_spaces",
+      "hash": "d21f58227d879eb9c8ac5eb9c628aaf68b8d54d12086acfbe51f93ee2789f384"
+    },
+    {
+      "name": "publish_ai_action",
+      "hash": "ac8dbb10e199ad3a414b039c6bb0aac6a2606823d048f6997da8e287e9992ef5",
+      "params": [
+        {
+          "name": "aiActionId",
+          "hash": "548dd0d2a0fb5464800ac6df64dca7504e9a544770eed634d6dc5c61f06ad939"
+        },
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "publish_asset",
+      "hash": "3e158ff99829e5cee1a52c1306c6dfc57a6dfeaf9830ddfca6ced197ff2edfe3",
+      "params": [
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "publish_content_type",
+      "hash": "9f875bfafa8380b3ca6c560343365319bb3a85525c3a6586c61bf7e041b58fdb",
+      "params": [
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "publish_entry",
+      "hash": "ddfe4d54604e17e0a3832f982ff339d4951017bd9e2082d4725efcb7fe614bfa",
+      "params": [
+        {
+          "name": "entryId",
+          "hash": "30d966f244cd5d2bef94794c9032fd33a7f81fb767b2f8aefea6fa353eda4a7d"
+        },
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "search_entries",
+      "hash": "e169395ebfba855657162ec96336a9f2c0dffafd85f38471334f01a983adcbe4",
+      "params": [
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "query",
+          "hash": "9c4707942dced800fc119a3c9c4fcacc9522d43e656e9cb3c638ee6cb36e5c86"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "unpublish_ai_action",
+      "hash": "556acf65db8245d8e9143d0cf4defdb8ab84db37bc35a7d039a1aa64d5423bd3",
+      "params": [
+        {
+          "name": "aiActionId",
+          "hash": "3a850af2b4a9c08bc3123e13f376170f9a027ef07f954167d75933a6ebcffe44"
+        },
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "unpublish_asset",
+      "hash": "ce18725d3b8294723b1017d325aa92c3c0edeb3f7ff51d4751478b00345bc966",
+      "params": [
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "unpublish_entry",
+      "hash": "a46a000388faf53148196363c067f30509cdc0906328bf7c3a99876e0d769ab4",
+      "params": [
+        {
+          "name": "entryId",
+          "hash": "6af7f8142280aaad6c9b01b479a71f8cb8611c78387dd8d58aa4931d3c7d5a53"
+        },
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "update_ai_action",
+      "hash": "90d6a01c4004be0ed99acfd9aed6083bfc44fb958f7c3c2c1284090c5339db51",
+      "params": [
+        {
+          "name": "aiActionId",
+          "hash": "ba1b82ad534e5a3b7a2ee31231ec2121b809394dd12430f9d87aa0ac51b22fa9"
+        },
+        {
+          "name": "configuration",
+          "hash": "f9a3b300f3826bdb97e5ae6b377e653524cbe4cc7804ae95eb171c724a5573ef"
+        },
+        {
+          "name": "description",
+          "hash": "738b104b409f46bd943a50c5499f7027bf6544187b26626dc571fb29ca569253"
+        },
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "instruction",
+          "hash": "ebef280526abae1f91c3bbda5ec014e2406c624336fbd84e3c1b2fdb09e31e60"
+        },
+        {
+          "name": "name",
+          "hash": "c44e12cb538c2b6005353bdaa62fff36e89f40a1e3f98ac0c4807bbebb58fb6e"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        },
+        {
+          "name": "testCases",
+          "hash": "195eaaf33aaf9a64981d3ae293b34297dd65614fd38592b2e4e9a8391bc056a6"
+        }
+      ]
+    },
+    {
+      "name": "update_asset",
+      "hash": "6e3aa72f38e0036da9795b34fb5fca4838d8fac910dbee7cb4560eddd1262825",
+      "params": [
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "update_content_type",
+      "hash": "dddc16016803deac06cd0b00cfb46199ec5bb4838e3a57dbdc317e367d801667",
+      "params": [
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "update_entry",
+      "hash": "c37726ed20c49012efeeeb182da909b70f80b1ec7dbf99d637988c55f8a4f1af",
+      "params": [
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "upload_asset",
+      "hash": "d74192920518f1dd41465b2fded572980e31c111e90879ceb5ec5d4453e617fe",
+      "params": [
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "name": "ai-actions-create",
+      "hash": "04499ec6931bdbbaf3c31efc46867ff4d15a3265dcbc2ace61a162a708ce819b",
+      "params": [
+        {
+          "name": "modelType",
+          "hash": "9dfcc5d7d4f46417567cad6cc2763e3c4fd846616150775df8aead5a21cf03e2"
+        },
+        {
+          "name": "useCase",
+          "hash": "b3fadad4cca866ea6a0af5ea9f4e039b1ecedb39b6fd519a394a453edd5beff0"
+        }
+      ]
+    },
+    {
+      "name": "ai-actions-invoke",
+      "hash": "52e8446af97f14b421401959ee22a6497b899ded39970eb21d61fe01620e230b",
+      "params": [
+        {
+          "name": "actionId",
+          "hash": "aceaef2f47d6f48f42b1475e35da3981185bf460497724f1f03868b88de6552d"
+        },
+        {
+          "name": "details",
+          "hash": "1320cdcf05919ff23e26d3345cee4d12473d6425d6a2fc853dc7e8830fa8ae14"
+        }
+      ]
+    },
+    {
+      "name": "ai-actions-overview",
+      "hash": "ac01a2f621066d33ba866fd4bda29b67e2cbf17ea248f26187633e2b40997c4d"
+    },
+    {
+      "name": "ai-actions-variables",
+      "hash": "cb29b5346bcf53c1b45c4c47086c199aaeb552bee81c941df59a42ad57606ce8",
+      "params": [
+        {
+          "name": "variableType",
+          "hash": "61d7be4997f2965220a27b0683d008f7bf3f102990cdef003191ef2fc7d45d89"
+        }
+      ]
+    },
+    {
+      "name": "api-operation-help",
+      "hash": "bec79ef2f1d7f1f7d5da6179c8c6aae4417101063122fa088e039c511b5f088b",
+      "params": [
+        {
+          "name": "operation",
+          "hash": "8d7c851d9342f2fc7885d6e383ef1f0371fa2414debe46eedeabd9811b19e5d7"
+        },
+        {
+          "name": "resourceType",
+          "hash": "97420bb6f450e7863a261b3f4ee1e1def0fed7c4b3e38e4d432bfc4e943b1a47"
+        }
+      ]
+    },
+    {
+      "name": "asset-management",
+      "hash": "d6d4f3f6128ce73f7c892b137ac8a4ec32fee70c0d9532101608880649a3981c",
+      "params": [
+        {
+          "name": "details",
+          "hash": "481aaa4af76433ba1e711959678bf714a886318487669b2b8bb7c4c7e6085f4a"
+        },
+        {
+          "name": "task",
+          "hash": "4c47ac467e18ba528dec44f37bda1b82a32c1597f2e348158366f981fdef2961"
+        }
+      ]
+    },
+    {
+      "name": "bulk-operations",
+      "hash": "6094c65ce88cdee99c15f72b80e3988d431bc0a7d49c125bccbb361881d2843b",
+      "params": [
+        {
+          "name": "details",
+          "hash": "267da141093b89c8df57b5711c0b1f0564ffe6e24ff4293e5a1ca1df5b5d76f7"
+        },
+        {
+          "name": "entityType",
+          "hash": "e9e86161585d8773b014cbedeb41952e5cb4bd148ca30acebff21db3cc315636"
+        },
+        {
+          "name": "operation",
+          "hash": "e953f9c8d0f275f816fb0832707d0476df143a79722e3cbb5fc750560ecad32d"
+        }
+      ]
+    },
+    {
+      "name": "content-modeling-guide",
+      "hash": "cacbd0d028478ddeac81a48491d6b4865699c726bebf0fea8f9d58b86e0ecb4f",
+      "params": [
+        {
+          "name": "useCase",
+          "hash": "742e58a5952e3ecf1e44aede7f946f6e5300e43d8d97feafcb2dbfbdfe4d1dce"
+        }
+      ]
+    },
+    {
+      "name": "content-type-operations",
+      "hash": "6e109a3fd416c150e4d0cd71aa4b4124ac83779fd06443215c9b41666f8bb017",
+      "params": [
+        {
+          "name": "details",
+          "hash": "6bc1ca6d233efa0bafb86453a95c6e9939697c65ea221fba183a894ef4d8f032"
+        },
+        {
+          "name": "task",
+          "hash": "469f4a49e5ef2ba9d69a61976cde0a8645d85e71f2f568894c4b4f5160f48b5a"
+        }
+      ]
+    },
+    {
+      "name": "entry-management",
+      "hash": "3da363eb43fc113125caf7656cecc0b5a4305c30c31994613bd13dcee546a58f",
+      "params": [
+        {
+          "name": "details",
+          "hash": "25b4017796283cde87c655584d3c99a3867a801cab5c95c4e15e8eae93ae292c"
+        },
+        {
+          "name": "task",
+          "hash": "4d6866bc18a8ea46246fc6c4db0d2cfe581d641649edab1be01e814de82ff3ab"
+        }
+      ]
+    },
+    {
+      "name": "explain-api-concepts",
+      "hash": "4952c00f37238d1ca7e245fa82e5497248ab4c5bb2244497cf302fa9d8830b24",
+      "params": [
+        {
+          "name": "concept",
+          "hash": "507f981d9d92b55ac0a3f3bd412615d9223b77fcabdc030d052b6debaa5f15e6"
+        }
+      ]
+    },
+    {
+      "name": "mcp-tool-usage",
+      "hash": "2c173ee0b55f51f1b348693bc9cdccc412eb68ee4b7375fa7437fd7bf81d0f11",
+      "params": [
+        {
+          "name": "toolName",
+          "hash": "8de2b1ca936682136c1723d1d4bca5cc33bea7752a326a73cc75b4c68b86be89"
+        }
+      ]
+    },
+    {
+      "name": "space-environment-management",
+      "hash": "8314ebadb16bbe2ad74f77957b124ba68de098562ea1d5b8fd0bb288d00a5195",
+      "params": [
+        {
+          "name": "details",
+          "hash": "5a4d5eaea58b0e5423e15a6fce9c4af71b266a56e1c2fb2ef3cc4a6ac3dbf888"
+        },
+        {
+          "name": "entity",
+          "hash": "5184fcd64e7af348a207b4ad8954f3fe43c50a95573958a8855bf4a057c82b19"
+        },
+        {
+          "name": "task",
+          "hash": "1be912127cba1e2e9a58addade2092215288b45fd136baecb896d2d33cf40460"
+        }
+      ]
+    },
+    {
+      "name": "space-identification",
+      "hash": "3d70262daa49e68385713c991f479d978aaa0d60f374035dea1fef1cfb9cb8d4",
+      "params": [
+        {
+          "name": "operation",
+          "hash": "f86180ad94a556cc138da9712ae9c0fa612b890f28968b511b71980f303594f9"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+apiVersion: v2
+name: "mcp-server-apify-actors"
+description: A Helm chart for Model Context Protocol Server for Apify
+home: https://github.com/apify/actors-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/apify/actors-mcp-server
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.1.29
+keywords:
+  - mcp-server-apify-actors
+  - mcp-server
+  - remote
+  - integration
+  - web
+  - research
+  - development

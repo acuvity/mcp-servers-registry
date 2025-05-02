@@ -1,0 +1,11 @@
+env:
+  CODELOGIC_SERVER_HOST: dummy_value
+  CODELOGIC_USERNAME: dummy_value
+  CODELOGIC_WORKSPACE_NAME: dummy_value
+
+secrets:
+  CODELOGIC_PASSWORD:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

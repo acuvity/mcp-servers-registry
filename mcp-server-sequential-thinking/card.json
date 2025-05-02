@@ -7,9 +7,8 @@
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-sequential-thinking",
       "application": "https://modelcontextprotocol.io"
     },
-  "tags": ["mcp"],
+  "tags": ["development","automation"],
   "official": false,
-  "packaged": true,
   "scope": "standalone",
   "mutitenant": false,
   "runtime": "node",

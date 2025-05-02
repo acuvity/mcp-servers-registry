@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-bankless-onchain"
+description: A Helm chart for MCP server for using Bankless Onchain
+home: https://bankless.com
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://bankless.com
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 1.0.6
+keywords:
+  - mcp-server-bankless-onchain
+  - mcp-server
+  - remote
+  - research
+  - finance

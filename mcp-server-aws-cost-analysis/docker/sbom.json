@@ -1,0 +1,25 @@
+{
+  "tools": [
+    {
+      "name": "analyze_cdk_project",
+      "hash": "0e59249945ebaa4c942e4eed57fa76a9839a4b7eff29209dc040885df4c7870c"
+    },
+    {
+      "name": "generate_cost_report",
+      "hash": "06f4b7e6b649a5b590f75b53abb7a0ac52f98c4f8ea4eb94087da149dcfb3191"
+    },
+    {
+      "name": "get_bedrock_patterns",
+      "hash": "24a3e539acdc6692395ef35f1b997e07afb0786c7baf7d894c865609791b9d00"
+    },
+    {
+      "name": "get_pricing_from_api",
+      "hash": "26ebf13783337949a02727bb57b280b24713e6ddaf725cc7e040a56d80506c79"
+    },
+    {
+      "name": "get_pricing_from_web",
+      "hash": "8e993e44283a59883ac8ca582f22deb90659d6f30af4f7e41aaa947a17dc9736"
+    }
+  ],
+  "prompts": []
+}

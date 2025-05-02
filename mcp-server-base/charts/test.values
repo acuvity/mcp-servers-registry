@@ -1,0 +1,39 @@
+env:
+  CHAIN_ID: 
+
+secrets:
+  ALCHEMY_API_KEY:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  COINBASE_API_KEY_NAME:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  COINBASE_API_PRIVATE_KEY:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  COINBASE_PROJECT_ID:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  OPENROUTER_API_KEY:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  PINATA_JWT:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  SEED_PHRASE:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

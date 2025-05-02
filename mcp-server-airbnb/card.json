@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-airbnb",
+  "name": "mcp-server-airbnb ",
+  "description": "MCP server for Airbnb search and listing details",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-airbnb",
+      "application": "https://github.com/openbnb-org/mcp-server-airbnb"
+    },
+  "tags": ["integration","research","development"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.1.1",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 2,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

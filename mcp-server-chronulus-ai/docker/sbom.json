@@ -1,0 +1,227 @@
+{
+  "tools": [
+    {
+      "name": "create_chronulus_session",
+      "hash": "023375f41c31f4db4d39c0181e002a778ba5863efb4b0f98e629adcd76ebf27d",
+      "params": [
+        {
+          "name": "name",
+          "hash": "df096f2e7ba978c73e165c9dc4761cdd91b8ef6094a1c1cf64c4f912052c603f"
+        },
+        {
+          "name": "situation",
+          "hash": "5cae7eb1ae7a0e28f19e084610745e4b667d888e30cf28bd8bcf25ebdce41bda"
+        },
+        {
+          "name": "task",
+          "hash": "782c060de9cf260b5151ad75ceb801ab37a65bce324158fed0facfc0ad54f3f6"
+        }
+      ]
+    },
+    {
+      "name": "create_forecasting_agent_and_get_forecast",
+      "hash": "0a79b1dcace98bae5f5a36d73c75315b821ca993ce26ef7a2512eecd61115207",
+      "params": [
+        {
+          "name": "forecast_start_dt_str",
+          "hash": "d032b5667a5958a0899585a9a7629d7294cb2bfa4e8f9582383ec5d2255a1bd7"
+        },
+        {
+          "name": "horizon_len",
+          "hash": "319627c012de4f34775626da1fe8f3517e0f201c0c672aaa77ca2dc23eeea758"
+        },
+        {
+          "name": "input_data",
+          "hash": "baa6368ab0bd640437f256f6a0390596742a56c6cf75ef8e5e7861565d847ce5"
+        },
+        {
+          "name": "input_data_model",
+          "hash": "d2a1bef961bc02a591723fe9ae16d4a37737970ebf0791a17caff05077073292"
+        },
+        {
+          "name": "session_id",
+          "hash": "92caca648373b9bee4610361e107d03144091bcca5b4c1f5bcd9400711d0739e"
+        },
+        {
+          "name": "time_scale",
+          "hash": "87229787d5f558d81f3ab245d6792d11f4146a2fb9cc99e23a2704bc3e7e70d0"
+        }
+      ]
+    },
+    {
+      "name": "create_prediction_agent_and_get_predictions",
+      "hash": "1103d7b6acac7686d7aa29d73f94252c8204ca3dcb7978e829f7133db34e9d29",
+      "params": [
+        {
+          "name": "input_data",
+          "hash": "baa6368ab0bd640437f256f6a0390596742a56c6cf75ef8e5e7861565d847ce5"
+        },
+        {
+          "name": "input_data_model",
+          "hash": "d2a1bef961bc02a591723fe9ae16d4a37737970ebf0791a17caff05077073292"
+        },
+        {
+          "name": "num_experts",
+          "hash": "97268e8871eaf94999cffa368b028a4827ef197c50a7987873440d13b8b8db8a"
+        },
+        {
+          "name": "session_id",
+          "hash": "92caca648373b9bee4610361e107d03144091bcca5b4c1f5bcd9400711d0739e"
+        }
+      ]
+    },
+    {
+      "name": "get_risk_assessment_scorecard",
+      "hash": "2fc7b82383275ea8fe0733e72092339d630826b39cfafb477265e205478d8790",
+      "params": [
+        {
+          "name": "as_json",
+          "hash": "248db44ccb2be41a4477162fddf4f844ae1da13ce853399a1e99a92bdff2e6d9"
+        },
+        {
+          "name": "session_id",
+          "hash": "92caca648373b9bee4610361e107d03144091bcca5b4c1f5bcd9400711d0739e"
+        }
+      ]
+    },
+    {
+      "name": "rescale_forecast",
+      "hash": "4e85694cc6af5e2d125701ac116bf0175ac661787c4014e58ef21e6efbb92395",
+      "params": [
+        {
+          "name": "invert_scale",
+          "hash": "ef385c94a69b89c791934f0602dcbd5d02ae00d7707112dfd34c3b0033e901d4"
+        },
+        {
+          "name": "prediction_id",
+          "hash": "1d4a55640700e36dadc1bafdaf36a7118b146c4ed602948cc45f848f90ab98c1"
+        },
+        {
+          "name": "y_max",
+          "hash": "7e002cd3ac9eae9f9dae47483b492117e97a491d2517eabc77c5437eebd9d715"
+        },
+        {
+          "name": "y_min",
+          "hash": "1e0c4c0c4af3c0108fd13db2760fa7f426971812c5332026533ff805c76cfaed"
+        }
+      ]
+    },
+    {
+      "name": "reuse_forecasting_agent_and_get_forecast",
+      "hash": "0a79b1dcace98bae5f5a36d73c75315b821ca993ce26ef7a2512eecd61115207",
+      "params": [
+        {
+          "name": "agent_id",
+          "hash": "9a0bcd98efef7cacb6162ef182b4f4bdb2646caf40fce47120e8bd3caefec1c8"
+        },
+        {
+          "name": "forecast_start_dt_str",
+          "hash": "d032b5667a5958a0899585a9a7629d7294cb2bfa4e8f9582383ec5d2255a1bd7"
+        },
+        {
+          "name": "horizon_len",
+          "hash": "319627c012de4f34775626da1fe8f3517e0f201c0c672aaa77ca2dc23eeea758"
+        },
+        {
+          "name": "input_data",
+          "hash": "baa6368ab0bd640437f256f6a0390596742a56c6cf75ef8e5e7861565d847ce5"
+        },
+        {
+          "name": "time_scale",
+          "hash": "87229787d5f558d81f3ab245d6792d11f4146a2fb9cc99e23a2704bc3e7e70d0"
+        }
+      ]
+    },
+    {
+      "name": "reuse_prediction_agent_and_get_prediction",
+      "hash": "7d418a64924d5babe924f743280763dff97eaa956d0c11801c575d8fe13547a9",
+      "params": [
+        {
+          "name": "agent_id",
+          "hash": "9a0bcd98efef7cacb6162ef182b4f4bdb2646caf40fce47120e8bd3caefec1c8"
+        },
+        {
+          "name": "input_data",
+          "hash": "baa6368ab0bd640437f256f6a0390596742a56c6cf75ef8e5e7861565d847ce5"
+        },
+        {
+          "name": "num_experts",
+          "hash": "97268e8871eaf94999cffa368b028a4827ef197c50a7987873440d13b8b8db8a"
+        }
+      ]
+    },
+    {
+      "name": "save_forecast",
+      "hash": "2b63af460eb2b4b93aa1a2f2b4acba861f3ee0d2a9e5a2d52a3d3eb61f535961",
+      "params": [
+        {
+          "name": "csv_name",
+          "hash": "599711e78254f5f76278742637ac5747b21f3c4d3a3b7dbc00d5cc26153b6417"
+        },
+        {
+          "name": "invert_scale",
+          "hash": "ef385c94a69b89c791934f0602dcbd5d02ae00d7707112dfd34c3b0033e901d4"
+        },
+        {
+          "name": "output_path",
+          "hash": "599711e78254f5f76278742637ac5747b21f3c4d3a3b7dbc00d5cc26153b6417"
+        },
+        {
+          "name": "prediction_id",
+          "hash": "1d4a55640700e36dadc1bafdaf36a7118b146c4ed602948cc45f848f90ab98c1"
+        },
+        {
+          "name": "txt_name",
+          "hash": "f61b6aeb6e1045bdb189db3a71ebf37383fcc6fc533679fa3c77a94b5673ddfd"
+        },
+        {
+          "name": "y_max",
+          "hash": "7e002cd3ac9eae9f9dae47483b492117e97a491d2517eabc77c5437eebd9d715"
+        },
+        {
+          "name": "y_min",
+          "hash": "1e0c4c0c4af3c0108fd13db2760fa7f426971812c5332026533ff805c76cfaed"
+        }
+      ]
+    },
+    {
+      "name": "save_prediction_analysis_html",
+      "hash": "7cdb388bb9f699ad8b8a21afa76490254bdcf82f1814e707f9b520c91947f6cd",
+      "params": [
+        {
+          "name": "chronulus_prediction_summary",
+          "hash": "5d5f640c08878201187f658edacf5c67956bfef487c7369d1e14b3615ccf95d5"
+        },
+        {
+          "name": "dist_shape",
+          "hash": "6089ad4f42b83192534f751fd2dda6c1faa2a60943ad7369a4433cb2c2c88fef"
+        },
+        {
+          "name": "dist_shape_interpretation",
+          "hash": "7e75db3ae524382cd56ecfedae5af93e05bbf754eafb9ef48e70f04a2fe3f6d2"
+        },
+        {
+          "name": "html_name",
+          "hash": "df908c018bdbf282f5b8529500b6743bc9085b6e68360f9196da527fcabd4447"
+        },
+        {
+          "name": "output_path",
+          "hash": "df908c018bdbf282f5b8529500b6743bc9085b6e68360f9196da527fcabd4447"
+        },
+        {
+          "name": "plot_label",
+          "hash": "aa67b58870e4cc6212d3cc39994f9065b8258386da6518313658fff6a0bfa4d6"
+        },
+        {
+          "name": "request_id",
+          "hash": "d7c3b3ab8b4b26b391c6191ef17c715cd9fc30170c5e6a70bf2f2f7526575c9c"
+        },
+        {
+          "name": "title",
+          "hash": "53e2f8aa694041368b8ab8d38465fee64cd28ec85fb0745fb102ad849bd0bb03"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

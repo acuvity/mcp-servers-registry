@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-commands"
+description: A Helm chart for An MCP server to run arbitrary commands
+home: https://github.com/g0t4/mcp-server-commands
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/g0t4/mcp-server-commands
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.5.0
+keywords:
+  - mcp-server-commands
+  - mcp-server
+  - standalone
+  - development
+  - automation

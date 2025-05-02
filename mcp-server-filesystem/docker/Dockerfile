@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@834d659bbe022305f35e00a0aaf62b2a13ad84db
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@b764d0a9a230ebbfeeaaf91db383a57521fa7d91
 
 FROM node:23.11.0-alpine3.21
 
@@ -24,21 +24,23 @@ LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 WORKDIR /app
 
 ARG BUILDKIT_SBOM_SCAN_STAGE=true
+
 RUN apk update \
     && apk add --no-cache curl
 
-
-
 HEALTHCHECK CMD curl --fail http://localhost:8080 || exit 1
+
 RUN addgroup -g 1001 -S appuser && \
     adduser -S -u 1001 -G appuser appuser && \
     mkdir -p /home/appuser/.config/minibridge && \
     chown appuser:appuser -R /app
 
 USER appuser
+
 RUN npm i --omit-dev @modelcontextprotocol/server-filesystem@2025.3.28
 
 EXPOSE 8000/tcp
+
 VOLUME ["/data"]
 
 COPY --from=minibridge /go/bin/minibridge /usr/bin

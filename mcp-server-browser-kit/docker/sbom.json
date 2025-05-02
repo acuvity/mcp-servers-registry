@@ -1,0 +1,151 @@
+{
+  "tools": [
+    {
+      "name": "captureActiveTab",
+      "hash": "af2fce241e21a76efa4e308a4e0063945e0b1752cb63e107a28e2a5031313851"
+    },
+    {
+      "name": "clickOnReadableElement",
+      "hash": "0438df73af4298fd9ec61c2247a0194f476bb8897d5ed905c174e4aad43176c2",
+      "params": [
+        {
+          "name": "index",
+          "hash": "00ce0f742d8f01096ec9c784fdc8602c4c23d2c6892a28f66da5be7b339602b4"
+        },
+        {
+          "name": "tabId",
+          "hash": "ab47f3937da53de3304fcdc69fc699789b345e543a90bff7f350152c4cbec94e"
+        }
+      ]
+    },
+    {
+      "name": "clickOnViewableElement",
+      "hash": "7aa07ce61e8fb1ea991061d521b95bb4dc12b3d883e02a5de0c01a55a5156976",
+      "params": [
+        {
+          "name": "tabId",
+          "hash": "cdbb31fdde2736d3de4f8ad98c1cfacbd2480c4d36538ef4b17087ed9a85b1dd"
+        },
+        {
+          "name": "x",
+          "hash": "59b39337c4a10dcfead421def1e8e8c734c8359009c377b78f2b00e765e3831a"
+        },
+        {
+          "name": "y",
+          "hash": "2c8254757572058da51b836876a7d89ff7784fe35c4d44a83da57be0cba46aa5"
+        }
+      ]
+    },
+    {
+      "name": "fillTextToReadableElement",
+      "hash": "131ce07e5e32af2472619d8e9d496c901d5ea91f9eb509306f5f0e30a22b6fa4",
+      "params": [
+        {
+          "name": "index",
+          "hash": "00ce0f742d8f01096ec9c784fdc8602c4c23d2c6892a28f66da5be7b339602b4"
+        },
+        {
+          "name": "tabId",
+          "hash": "ab47f3937da53de3304fcdc69fc699789b345e543a90bff7f350152c4cbec94e"
+        },
+        {
+          "name": "value",
+          "hash": "e80240577aae2f2bc8b5b22933a8196469ab650feff9be5b30353e8116f3233b"
+        }
+      ]
+    },
+    {
+      "name": "fillTextToViewableElement",
+      "hash": "e575ce47b46f93cdaaba248d3cc71958ab0bbd1bf744f31ccc05f0b581abd8d7",
+      "params": [
+        {
+          "name": "tabId",
+          "hash": "cdbb31fdde2736d3de4f8ad98c1cfacbd2480c4d36538ef4b17087ed9a85b1dd"
+        },
+        {
+          "name": "value",
+          "hash": "e80240577aae2f2bc8b5b22933a8196469ab650feff9be5b30353e8116f3233b"
+        },
+        {
+          "name": "x",
+          "hash": "9ff70902c61f20d5928afc1078266d27bfae4e9a7f6bb0bd047907297e01d640"
+        },
+        {
+          "name": "y",
+          "hash": "1e12d399a5a2b45739d01e30f9085c451692a8cfc68c3b25ae317573a6c649f4"
+        }
+      ]
+    },
+    {
+      "name": "getBasicBrowserContext",
+      "hash": "fbaacf1500b361281d9a9317b0b9d831596d4add5657fb3373efc931386e91c6"
+    },
+    {
+      "name": "getInnerText",
+      "hash": "533f548f87b146e20d054aa3dc6bcda97e79ddfb22a19fe4f5aee630647dc38d",
+      "params": [
+        {
+          "name": "tabId",
+          "hash": "46915f32fdbc787d332e2d237392bdd37e28a82bb9e132c4cc58b202bc9528fb"
+        }
+      ]
+    },
+    {
+      "name": "getReadableElements",
+      "hash": "4d48b9ab52fd816fbdd12d8b3c37236d187d4fd86fd4a91e6bcfef6b0e1215ed",
+      "params": [
+        {
+          "name": "tabId",
+          "hash": "77da1d8b6cc995c38f0b0558fa9212aa7bdcd7ec325b556349dde7a53d4ec534"
+        }
+      ]
+    },
+    {
+      "name": "hitEnterOnReadableElement",
+      "hash": "d2d465c9904dee4b69dfb1504a65bfa3b42c6b01b32a8963e8ccc2331b021dc8",
+      "params": [
+        {
+          "name": "index",
+          "hash": "00ce0f742d8f01096ec9c784fdc8602c4c23d2c6892a28f66da5be7b339602b4"
+        },
+        {
+          "name": "tabId",
+          "hash": "ab47f3937da53de3304fcdc69fc699789b345e543a90bff7f350152c4cbec94e"
+        }
+      ]
+    },
+    {
+      "name": "hitEnterOnViewableElement",
+      "hash": "22a380bd11cb1e39f302a6a94452901bb2f5ecc0decb4d9ae038cc18997bc56a",
+      "params": [
+        {
+          "name": "tabId",
+          "hash": "cdbb31fdde2736d3de4f8ad98c1cfacbd2480c4d36538ef4b17087ed9a85b1dd"
+        },
+        {
+          "name": "x",
+          "hash": "9ff70902c61f20d5928afc1078266d27bfae4e9a7f6bb0bd047907297e01d640"
+        },
+        {
+          "name": "y",
+          "hash": "1e12d399a5a2b45739d01e30f9085c451692a8cfc68c3b25ae317573a6c649f4"
+        }
+      ]
+    },
+    {
+      "name": "invokeJsFn",
+      "hash": "2c31aecf416b17b6875d32778025efffd41943254f213a806892117f0d0633f3",
+      "params": [
+        {
+          "name": "fnBodyCode",
+          "hash": "32bb4de35be8ab9939cd4881e9390f4702545ad99169cceddbe70fcb1efbc8ab"
+        },
+        {
+          "name": "tabId",
+          "hash": "7cf618734c4a34ebe0999b4bea3fc172c6f7f07710d924d9e3df406aa946f1fb"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

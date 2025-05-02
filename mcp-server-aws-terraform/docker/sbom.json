@@ -1,0 +1,113 @@
+{
+  "tools": [
+    {
+      "name": "ExecuteTerraformCommand",
+      "hash": "8c3845a7a63a6506e3a1b5f28c035f2ee994019ce7d724a4a78416f17dc25579",
+      "params": [
+        {
+          "name": "aws_region",
+          "hash": "0ccf66d2fc46cf203d8a16166cf11d5b869a7b6e0141a3bfd1af40af5a993db0"
+        },
+        {
+          "name": "command",
+          "hash": "fb255919af61b9ed7dbbae1afe09e470cc27880f9a64b3f0406f025bc8c0a6a3"
+        },
+        {
+          "name": "strip_ansi",
+          "hash": "4d24b273dd76107e594dee1d73736fb9e0dfd27a482acfa61217ec6b3bbd6e7f"
+        },
+        {
+          "name": "variables",
+          "hash": "956119b45b8389c2b16285de0e326f5ac6cb69f738c4894c0fb3866922d61778"
+        },
+        {
+          "name": "working_directory",
+          "hash": "b5bd542c9a74e4f7b692e0b7381f090f6d30c602eaed2b785cd88b549bb0b66c"
+        }
+      ]
+    },
+    {
+      "name": "RunCheckovScan",
+      "hash": "c58423fbe608d95358d585d232cd4cfcebd6ffda6c0251197c5c9efd2165765d",
+      "params": [
+        {
+          "name": "check_ids",
+          "hash": "c49e44517c1f7c46d100e0d2295f6d3f464fcc4708f871b3c190ee9407097d5c"
+        },
+        {
+          "name": "framework",
+          "hash": "f51b152c5a92795f8fb904076dff58728ec2538c6ba82134d76804aac04b1e23"
+        },
+        {
+          "name": "output_format",
+          "hash": "39591504c5faee5903f2371b283f7b5263076eb3b5e7aaf3e0cb2de4e22cac38"
+        },
+        {
+          "name": "skip_check_ids",
+          "hash": "de51f984d953383f03ffe3b22944311cb67d58123f439aa16f49309909ba8b1a"
+        },
+        {
+          "name": "working_directory",
+          "hash": "b5bd542c9a74e4f7b692e0b7381f090f6d30c602eaed2b785cd88b549bb0b66c"
+        }
+      ]
+    },
+    {
+      "name": "SearchAwsProviderDocs",
+      "hash": "6f58ea1dc0d7e5b9e21a1fc5460c7e159f7aeb9825b22fd15cbb9ac3232a6074",
+      "params": [
+        {
+          "name": "asset_name",
+          "hash": "842715d3f5b1c7a9b29b25dc2946e1686da9522b3b8287429fe229eacb819a53"
+        },
+        {
+          "name": "asset_type",
+          "hash": "c27eec0705d5c708f9f9d460f6173e1a3ae6bdc1d29d10e9f0601be2bf33f673"
+        }
+      ]
+    },
+    {
+      "name": "SearchAwsccProviderDocs",
+      "hash": "8d836ae66622b0025bb1dc5863c180094b89d9598f6e676a2438c6754bce8c63",
+      "params": [
+        {
+          "name": "asset_name",
+          "hash": "e3e43b55a425ce426955afeb6f7ee5c8e41a77f1766846586eb735f3ae562b74"
+        },
+        {
+          "name": "asset_type",
+          "hash": "c27eec0705d5c708f9f9d460f6173e1a3ae6bdc1d29d10e9f0601be2bf33f673"
+        }
+      ]
+    },
+    {
+      "name": "SearchSpecificAwsIaModules",
+      "hash": "006c2d5da3e4dc9111b46a1333fad347d69374d883a677345177cacc4a782508",
+      "params": [
+        {
+          "name": "query",
+          "hash": "c476dc6117aa072fd9825b1ad1f783905cefc2c580461d9b468ca35e3e1ffa26"
+        }
+      ]
+    },
+    {
+      "name": "SearchUserProvidedModule",
+      "hash": "4fdcda060d11fefcce636d0cc247a7e76556ba027d30091952e1e943b0dca117",
+      "params": [
+        {
+          "name": "module_url",
+          "hash": "acbe1ae3097b59e6b325d5b3b6265d29a06d8388fba0fda1fb0aa38188805952"
+        },
+        {
+          "name": "variables",
+          "hash": "950fb140163783b1024dcb46068909da466c24546d8b0779a5c166b964d2cbaf"
+        },
+        {
+          "name": "version",
+          "hash": "3356d37e0f2456c14c252e5d6a3e315c0f8d19e86f115c5d13962ea9dbe1e869"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

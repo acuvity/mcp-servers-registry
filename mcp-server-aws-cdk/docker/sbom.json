@@ -1,0 +1,33 @@
+{
+  "tools": [
+    {
+      "name": "CDKGeneralGuidance",
+      "hash": "296d68dc031855415c3f88fa0655a8e38cf8d7730eb8334f037488257f918f46"
+    },
+    {
+      "name": "CheckCDKNagSuppressions",
+      "hash": "c22fe68fc7d09f9cb2dd6db410b6b395a6729ca74d1ae02ecbe331d946c8ace9"
+    },
+    {
+      "name": "ExplainCDKNagRule",
+      "hash": "f922da8f15e69c0f7092d921043be40015ac8a986ebad4b5645ab88a4e6c6501"
+    },
+    {
+      "name": "GenerateBedrockAgentSchema",
+      "hash": "0e16e1a2af06ca18f7920f2b1274458b596811116c206bddebf7f09afbe98924"
+    },
+    {
+      "name": "GetAwsSolutionsConstructPattern",
+      "hash": "8eb5f6bdde17b9da9a11be5934228c9eba5e895402c3a43e63b92b900eb2cf1f"
+    },
+    {
+      "name": "LambdaLayerDocumentationProvider",
+      "hash": "ce273de51ab6ae533993e38592a458ba42ea1bc7c29e5a1e3ac01989d8be2240"
+    },
+    {
+      "name": "SearchGenAICDKConstructs",
+      "hash": "d3c3f86e49dc4bd73f5d3cde2a9a4c37f04f1a300f238aa1bdd513866e9964b0"
+    }
+  ],
+  "prompts": []
+}

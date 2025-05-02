@@ -1,0 +1,47 @@
+{
+  "tools": [
+    {
+      "name": "read_documentation",
+      "hash": "6db217b77bc397af63242d3d6cd48fe83ba11538d4352993fc514a7ec391bacd",
+      "params": [
+        {
+          "name": "max_length",
+          "hash": "511bf7bf5fd07c76fa6127ffd435d5cb33e163917bb2c6df408c618249223b6a"
+        },
+        {
+          "name": "start_index",
+          "hash": "1a603971ae568b7e893946a4b5051f2e0b7400338ffed3c36d04506a1b8b2986"
+        },
+        {
+          "name": "url",
+          "hash": "4c39d34795e853ba5328692fca354ef75906f2341d44445dcdc3a2d9c559e449"
+        }
+      ]
+    },
+    {
+      "name": "recommend",
+      "hash": "0957b941cdccbd53956e861216f00cb0a42ac8ebf8a2cd59ac0cb9f8cfe74ab1",
+      "params": [
+        {
+          "name": "url",
+          "hash": "00fb834d5360ef6b242f27c72684470bfb789e8ffadf994fde36660e353df77f"
+        }
+      ]
+    },
+    {
+      "name": "search_documentation",
+      "hash": "792056f237c78479f73d2c7547e91b2ed41e0c329765469722b2c677a24ed420",
+      "params": [
+        {
+          "name": "limit",
+          "hash": "b04468046d2f2a5692b75e7d703a30fd2787b8f80972a3b07b618e4ca4b3fa70"
+        },
+        {
+          "name": "search_phrase",
+          "hash": "f93cbb9df9a44cfc1b47f061cd2589bce1142763d092ad6d5c122935968cc02c"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

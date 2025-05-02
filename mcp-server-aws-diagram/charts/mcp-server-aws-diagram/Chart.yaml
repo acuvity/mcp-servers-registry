@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-aws-diagram"
+description: A Helm chart for An MCP server that seamlessly creates diagrams using the Python diagrams package DSL
+home: https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.9.3
+keywords:
+  - mcp-server-aws-diagram
+  - mcp-server
+  - standalone
+  - development
+  - research

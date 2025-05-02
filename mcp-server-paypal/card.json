@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-paypal",
+  "name": "mcp-server-paypal ",
+  "description": "A command line tool for setting up PayPal MCP server",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-paypal",
+      "application": "https://github.com/paypal/agent-toolkit"
+    },
+  "tags": ["development","integration","finance"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.3.1",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 26,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

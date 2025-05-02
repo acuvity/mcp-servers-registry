@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-aws-documentation"
+description: A Helm chart for An AWS Labs Model Context Protocol (MCP) server for AWS Documentation
+home: https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.1.2
+keywords:
+  - mcp-server-aws-documentation
+  - mcp-server
+  - remote
+  - research
+  - cloud

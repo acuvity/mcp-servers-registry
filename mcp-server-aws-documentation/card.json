@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-aws-documentation",
+  "name": "mcp-server-aws-documentation ",
+  "description": "An AWS Labs Model Context Protocol (MCP) server for AWS Documentation",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-documentation",
+      "application": "https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server"
+    },
+  "tags": ["research","cloud"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.1.2",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 3,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

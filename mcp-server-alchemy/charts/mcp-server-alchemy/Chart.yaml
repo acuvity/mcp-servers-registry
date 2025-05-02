@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-alchemy"
+description: A Helm chart for MCP server for using Alchemy APIs
+home: https://github.com/alchemyplatform/alchemy-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/alchemyplatform/alchemy-mcp-server
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.1.5
+keywords:
+  - mcp-server-alchemy
+  - mcp-server
+  - remote
+  - web
+  - integration
+  - finance

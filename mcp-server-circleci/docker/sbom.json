@@ -1,0 +1,33 @@
+{
+  "tools": [
+    {
+      "name": "config_helper",
+      "hash": "f02dd33f38a3495a590d901debe94a7d61f55b1c13aa49695ea04495280a6a81"
+    },
+    {
+      "name": "create_prompt_template",
+      "hash": "17add6d850d6aa05605db4dff2f1d42f605ca8f7c8e8b0b5c0e1671e1fe615a1"
+    },
+    {
+      "name": "find_flaky_tests",
+      "hash": "071518ede9eb2150402c8cc65bab719c6da6a737e05ad4368d33f65239dda823"
+    },
+    {
+      "name": "get_build_failure_logs",
+      "hash": "7bdf20e9458756f919198a4b252114b938b9ae9ba1e0f17054d017f122fb8f6a"
+    },
+    {
+      "name": "get_job_test_results",
+      "hash": "35e3644736d55092c2440a22a149723aec580b67bb50dd2ca992cf730ef58950"
+    },
+    {
+      "name": "get_latest_pipeline_status",
+      "hash": "91f3e892a8a7605b719d92394790a2cb60c320c2d455e362921eca132fd26c85"
+    },
+    {
+      "name": "recommend_prompt_template_tests",
+      "hash": "6be9c0e965a6a22ad8a28b40a5d83ab95fb532cbdb02ebffc46f5fe7f4df4888"
+    }
+  ],
+  "prompts": []
+}

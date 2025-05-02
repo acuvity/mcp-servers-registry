@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-benborla-mysql",
+  "name": "mcp-server-benborla-mysql ",
+  "description": "MCP server for interacting with MySQL databases based on Node",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-benborla-mysql",
+      "application": "https://github.com/benborla/mcp-server-mysql"
+    },
+  "tags": ["database","development"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "2.0.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

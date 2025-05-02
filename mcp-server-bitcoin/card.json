@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-bitcoin",
+  "name": "mcp-server-bitcoin ",
+  "description": "A Model Context Protocol server for interacting with Bitcoin.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-bitcoin",
+      "application": "https://github.com/AbdelStark/bitcoin-mcp"
+    },
+  "tags": ["development","integration"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.0.6",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 7,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

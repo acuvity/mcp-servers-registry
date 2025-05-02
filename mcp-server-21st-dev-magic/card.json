@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-21st-dev-magic",
+  "name": "mcp-server-21st-dev-magic ",
+  "description": "Magic MCP UI builder by 21st.dev",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-21st-dev-magic",
+      "application": "https://github.com/21st-dev/magic-mcp"
+    },
+  "tags": ["development"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.0.47",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 4,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

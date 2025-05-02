@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-bitcoin"
+description: A Helm chart for A Model Context Protocol server for interacting with Bitcoin.
+home: https://github.com/AbdelStark/bitcoin-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/AbdelStark/bitcoin-mcp
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.0.6
+keywords:
+  - mcp-server-bitcoin
+  - mcp-server
+  - remote
+  - development
+  - integration

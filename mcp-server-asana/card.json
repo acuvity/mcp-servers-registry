@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-asana",
+  "name": "mcp-server-asana ",
+  "description": "MCP Server for Asana",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-asana",
+      "application": "https://github.com/roychri/mcp-server-asana"
+    },
+  "tags": ["research","integration"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1.7.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 22,
+    "prompts": 3,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

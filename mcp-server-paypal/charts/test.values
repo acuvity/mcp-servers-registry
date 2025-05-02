@@ -1,0 +1,9 @@
+env:
+  PAYPAL_ENVIRONMENT: 
+
+secrets:
+  PAYPAL_ACCESS_TOKEN:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

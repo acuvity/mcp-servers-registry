@@ -1,0 +1,8 @@
+env:
+
+secrets:
+  CONTENTFUL_MANAGEMENT_ACCESS_TOKEN:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

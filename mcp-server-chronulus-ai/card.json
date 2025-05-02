@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-chronulus-ai",
+  "name": "mcp-server-chronulus-ai ",
+  "description": "An MCP Server for Chronulus AI Forecasting and Prediction Agents",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-chronulus-ai",
+      "application": "https://github.com/ChronulusAI/chronulus-mcp"
+    },
+  "tags": ["integration","finance","automation"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.0.3",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 9,
+    "prompts": 0,
+    "resources": 2,
+    "resourcesTemplates": 0
+  }
+}

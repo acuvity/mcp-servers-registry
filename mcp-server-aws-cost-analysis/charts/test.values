@@ -1,0 +1,4 @@
+env:
+  AWS_PROFILE: dummy_value
+
+secrets:

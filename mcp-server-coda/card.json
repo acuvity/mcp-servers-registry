@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-coda",
+  "name": "mcp-server-coda ",
+  "description": "MCP Server for Coda",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-coda",
+      "application": "https://github.com/orellazri/coda-mcp"
+    },
+  "tags": ["integration"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": false,
+  "runtime": "node",
+  "version": "1.1.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 7,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

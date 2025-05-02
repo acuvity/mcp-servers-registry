@@ -1,0 +1,8 @@
+env:
+
+secrets:
+  TWENTY_FIRST_API_KEY:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

@@ -9,7 +9,6 @@
     },
   "tags": null,
   "official": false,
-  "packaged": true,
   "scope": "standalone",
   "mutitenant": false,
   "runtime": "python",

@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-chart",
+  "name": "mcp-server-chart ",
+  "description": "A Model Context Protocol server for generating charts using AntV, This is a TypeScript-based MCP server that provides chart generation capabilities. It allows you to create various types of charts through MCP tools.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-chart",
+      "application": "https://github.com/antvis/mcp-server-chart"
+    },
+  "tags": ["integration","web","development"],
+  "official": false,
+  "scope": "standalone",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.2.2",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 15,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

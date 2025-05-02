@@ -1,0 +1,20 @@
+{
+  "id": "mcp-server-aws-bedrock-kb-retrieval",
+  "name": "mcp-server-aws-bedrock-kb-retrieval ",
+  "description": "An AWS Labs Model Context Protocol (MCP) server for Bedrock Knowledge Base Retrieval",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-bedrock-kb-retrieval",
+      "application": "https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server"
+    },
+  "tags": ["cloud","integration"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.1.7",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+  }
+}

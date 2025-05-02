@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-chargebee",
+  "name": "mcp-server-chargebee ",
+  "description": "MCP server for interacting with Chargebee",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-chargebee",
+      "application": "https://github.com/chargebee/agentkit/tree/main/modelcontextprotocol"
+    },
+  "tags": ["finance"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.0.2",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 2,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-contentful",
+  "name": "mcp-server-contentful ",
+  "description": "MCP server for Contentful Content Management API integration",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-contentful",
+      "application": "https://github.com/ivo-toby/contentful-mcp"
+    },
+  "tags": ["integration","research","development"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1.13.1",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 35,
+    "prompts": 14,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

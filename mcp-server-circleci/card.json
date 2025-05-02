@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-circleci",
+  "name": "mcp-server-circleci ",
+  "description": "A Model Context Protocol (MCP) server implementation for CircleCI, enabling natural language interactions with CircleCI functionality through MCP-enabled clients",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-circleci",
+      "application": "https://github.com/CircleCI-Public/mcp-server-circleci"
+    },
+  "tags": ["development"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.4.0",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 7,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

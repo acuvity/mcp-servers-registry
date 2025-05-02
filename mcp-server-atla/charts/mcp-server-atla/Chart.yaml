@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-atla"
+description: A Helm chart for An MCP server implementation providing a standardized interface for LLMs to interact with the Atla API.
+home: https://github.com/atla-ai/atla-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/atla-ai/atla-mcp-server
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.1.2
+keywords:
+  - mcp-server-atla
+  - mcp-server
+  - remote
+  - integration
+  - cloud
+  - development

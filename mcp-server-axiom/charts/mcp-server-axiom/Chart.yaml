@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-axiom"
+description: A Helm chart for Axiom Model Context Protocol Server
+home: https://github.com/axiomhq/mcp-server-axiom
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/axiomhq/mcp-server-axiom
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: v0.0.1
+keywords:
+  - mcp-server-axiom
+  - mcp-server
+  - remote
+  - monitoring
+  - research
+  - translation

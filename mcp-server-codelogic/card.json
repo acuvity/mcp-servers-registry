@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-codelogic",
+  "name": "mcp-server-codelogic ",
+  "description": "Integrates CodeLogic's powerful codebase knowledge graphs with a Model Context Protocol (MCP) server",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-codelogic",
+      "application": "https://github.com/CodeLogicIncEngineering/codelogic-mcp-server"
+    },
+  "tags": ["integration","development","database"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "1.0.2",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 2,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

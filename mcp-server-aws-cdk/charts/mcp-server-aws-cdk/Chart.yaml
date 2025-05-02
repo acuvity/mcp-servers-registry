@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-aws-cdk"
+description: A Helm chart for An AWS CDK MCP server that provides guidance on AWS Cloud Development Kit best practices, infrastructure as code patterns, and security compliance with CDK Nag. This server offers tools to validate infrastructure designs, explain CDK Nag rules, analyze suppressions, generate Bedrock Agent schemas, and discover Solutions Constructs patterns.
+home: https://pypi.org/project/awslabs.cdk-mcp-server/
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://pypi.org/project/awslabs.cdk-mcp-server/
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.1.3
+keywords:
+  - mcp-server-aws-cdk
+  - mcp-server
+  - remote
+  - cloud

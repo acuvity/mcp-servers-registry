@@ -1,0 +1,20 @@
+{
+  "id": "mcp-server-apify-actors",
+  "name": "mcp-server-apify-actors ",
+  "description": "Model Context Protocol Server for Apify",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-apify-actors",
+      "application": "https://github.com/apify/actors-mcp-server"
+    },
+  "tags": ["integration","web","research","development"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.1.29",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+  }
+}

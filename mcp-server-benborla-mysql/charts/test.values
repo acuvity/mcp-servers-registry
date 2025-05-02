@@ -1,0 +1,19 @@
+env:
+  MYSQL_HOST: dummy_value
+  MYSQL_PORT: 
+  MYSQL_DB: dummy_value
+  ALLOW_INSERT_OPERATION: 
+  ALLOW_UPDATE_OPERATION: 
+  ALLOW_DELETE_OPERATION: 
+
+secrets:
+  MYSQL_USER:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  MYSQL_PASS:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

@@ -1,0 +1,77 @@
+{
+  "tools": [
+    {
+      "name": "21st_magic_component_builder",
+      "hash": "011e0e5db60e77a06a3fd5063614b7b2b93ced2925663e8168cac8b0c6d7ae66",
+      "params": [
+        {
+          "name": "absolutePathToCurrentFile",
+          "hash": "450130593147c19a97f2a5f0ed209a5f0b84dd8e70b7b27b62400d4ef9957a91"
+        },
+        {
+          "name": "absolutePathToProjectDirectory",
+          "hash": "6303e9e4a0b12ff5e2a097fe5f9abcbdb1ed49ec8ef42ad6fb24134ed64dc822"
+        },
+        {
+          "name": "context",
+          "hash": "512f11c1d32d3e983da308c65118d7b61486c0c73385701d20c8249f8b0cb47f"
+        },
+        {
+          "name": "message",
+          "hash": "48cb03af6caea4c4c7719fdf6a43a50db0542485c3ba341a28532ef756da1652"
+        },
+        {
+          "name": "searchQuery",
+          "hash": "eb695e76137317ae4778f099cfa2f0940f955b1f6fb88c5b3043e782d826b9e3"
+        }
+      ]
+    },
+    {
+      "name": "21st_magic_component_inspiration",
+      "hash": "3226eb3548d20e699204369a805c8e1181d3b51002d6539c0236998ec2aff33e",
+      "params": [
+        {
+          "name": "message",
+          "hash": "48cb03af6caea4c4c7719fdf6a43a50db0542485c3ba341a28532ef756da1652"
+        },
+        {
+          "name": "searchQuery",
+          "hash": "fbc79e6c9c705ce4f5b8022da56323f221687b2af5d4b29478cfb72c10e0e597"
+        }
+      ]
+    },
+    {
+      "name": "21st_magic_component_refiner",
+      "hash": "d7cd82ff345c5062c305ce6152af693a5a934c66cc7a30e0e3051d95dec2452b",
+      "params": [
+        {
+          "name": "absolutePathToRefiningFile",
+          "hash": "35ad0e28bb9a3f39b6ef4e75caa8205ac8d06fd0d3ed51c563b5748863ec1868"
+        },
+        {
+          "name": "context",
+          "hash": "c2d8d152ce6971bcd011ba571ca71577c33831002a0cd7a05ff97b02befffab4"
+        },
+        {
+          "name": "userMessage",
+          "hash": "e6d673475625348fc2c01a43379d8688a94ad59bf976643844a160f78aaf92f6"
+        }
+      ]
+    },
+    {
+      "name": "logo_search",
+      "hash": "4b660e35f86c0c855f48e7ec46c370e9d07f43f9908672506816aa795dd3f5c1",
+      "params": [
+        {
+          "name": "format",
+          "hash": "93c53d3745136c4e4e142811cdff560c8dfb4b9c4c875b7a8687dda559f688e1"
+        },
+        {
+          "name": "queries",
+          "hash": "09c2780a768a860722317a6121664d0c3efbde797a7bf492acec147afb8b89e0"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

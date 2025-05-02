@@ -1,0 +1,34 @@
+{
+  "tools": [
+    {
+      "name": "run_command",
+      "hash": "4e7c43145ccbd5de1d5d851cbb49a01c3ee2c09225632390a6f8e485514799cb",
+      "params": [
+        {
+          "name": "command",
+          "hash": "9c932f4906a641a0d84674b290fb0bf66e93a0294e3c5c9919256230b0262fe8"
+        },
+        {
+          "name": "stdin",
+          "hash": "c8dd18474108fad1780567b5cea4ecc7a0533bfaa07eac52666340df37ae2cca"
+        },
+        {
+          "name": "workdir",
+          "hash": "42dde191c298d9740685fa56dacdfb6715bc173748ee44c62308051aed9b517a"
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "name": "run_command",
+      "hash": "d32e85c0360d865563ca76bb4c5a3871b34f94e2138fc147b66e45af6b6c227e",
+      "params": [
+        {
+          "name": "command",
+          "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    }
+  ]
+}

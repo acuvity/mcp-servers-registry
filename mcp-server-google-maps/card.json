@@ -7,9 +7,8 @@
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-google-maps",
       "application": "https://modelcontextprotocol.io"
     },
-  "tags": ["mcp"],
+  "tags": ["research","web"],
   "official": false,
-  "packaged": true,
   "scope": "remote",
   "mutitenant": false,
   "runtime": "node",

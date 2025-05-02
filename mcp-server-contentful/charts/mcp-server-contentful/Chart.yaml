@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-contentful"
+description: A Helm chart for MCP server for Contentful Content Management API integration
+home: https://github.com/ivo-toby/contentful-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/ivo-toby/contentful-mcp
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 1.13.1
+keywords:
+  - mcp-server-contentful
+  - mcp-server
+  - remote
+  - integration
+  - research
+  - development

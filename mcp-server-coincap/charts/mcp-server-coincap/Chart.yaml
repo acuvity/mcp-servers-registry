@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-coincap"
+description: A Helm chart for A MCP server to get crypto prices from coincap
+home: https://github.com/QuantGeekDev/coincap-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/QuantGeekDev/coincap-mcp
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.9.3
+keywords:
+  - mcp-server-coincap
+  - mcp-server
+  - remote
+  - integration
+  - finance
+  - development

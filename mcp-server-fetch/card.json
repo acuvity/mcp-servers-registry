@@ -7,9 +7,8 @@
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-fetch",
       "application": "https://pypi.org/project/mcp-server-fetch/"
     },
-  "tags": ["mcp"],
+  "tags": ["research","web","automation"],
   "official": false,
-  "packaged": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",

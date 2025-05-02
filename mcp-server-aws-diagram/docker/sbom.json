@@ -1,0 +1,41 @@
+{
+  "tools": [
+    {
+      "name": "generate_diagram",
+      "hash": "ab7f492b6cd8a7f7b50a8336d466834a220cee9ed9c3fbb68ff6882301ab626e",
+      "params": [
+        {
+          "name": "code",
+          "hash": "81d92c6901fd983ec01eca4a22837649d641d07b29904dc7da88a04cf957f0c7"
+        },
+        {
+          "name": "filename",
+          "hash": "95ee87f7eb407bd9b4886cc77edc6ac55d56fb2d407d7b181252c5d0d55bc4d2"
+        },
+        {
+          "name": "timeout",
+          "hash": "2d51588a7b7f7f800bb2aa5bf2d365d25a1a4c06a7f116e5f7f28b402b028d9d"
+        },
+        {
+          "name": "workspace_dir",
+          "hash": "9c67dcd00125ed387e0c227a380de7ef09bf4436df7a7dd3431d2eb344539401"
+        }
+      ]
+    },
+    {
+      "name": "get_diagram_examples",
+      "hash": "77cd71a4aa7771c5e24ee9f1c5408097d6aeeeabf0f1d81111fd66866eff6247",
+      "params": [
+        {
+          "name": "diagram_type",
+          "hash": "8312eac9e82e646c52570dd9c1cddef9bde26fbd6ed64417142f3997c577e373"
+        }
+      ]
+    },
+    {
+      "name": "list_icons",
+      "hash": "94cf469b391033f3d5a9386d5ceb0d08808cc06737c1cb18871e47310bc4e619"
+    }
+  ],
+  "prompts": []
+}

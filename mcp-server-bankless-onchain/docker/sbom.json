@@ -1,0 +1,193 @@
+{
+  "tools": [
+    {
+      "name": "build_event_topic",
+      "hash": "262f27f4028228da097205a7c410f06fa7a823b2040556a721746d1e4cf50bd0",
+      "params": [
+        {
+          "name": "arguments",
+          "hash": "67282223b6da520d3f37a9a8146cfc02993e311b1b1ec2c71473500e73e4784d"
+        },
+        {
+          "name": "name",
+          "hash": "6ed8951c00312e24c4e0ca6dec06cdfea75fbf486288154b923151ec5254a2d0"
+        },
+        {
+          "name": "network",
+          "hash": "9fe098f112c2f4c590f2d77169ce9d1fe466b4d0938191621ef751dada52bbb8"
+        }
+      ]
+    },
+    {
+      "name": "get_abi",
+      "hash": "49edadd258a74f8d62a9b06c2356fc8ddcebcebeade9a3fc236e46f47568f966",
+      "params": [
+        {
+          "name": "contract",
+          "hash": "55c251df417372575201532fe00664fbbf2477e604b99f9e8fc87222d3471c62"
+        },
+        {
+          "name": "network",
+          "hash": "9fe098f112c2f4c590f2d77169ce9d1fe466b4d0938191621ef751dada52bbb8"
+        }
+      ]
+    },
+    {
+      "name": "get_block_info",
+      "hash": "cdd6ae064cb18ddd093b64ad864cf0af9ad5b6f99297510466afce477ee0c8b2",
+      "params": [
+        {
+          "name": "blockId",
+          "hash": "77ebd2d66c92208bc200c76cd91ccb3fce561d3b4592fb3b7c877691840eb705"
+        },
+        {
+          "name": "network",
+          "hash": "9fe098f112c2f4c590f2d77169ce9d1fe466b4d0938191621ef751dada52bbb8"
+        }
+      ]
+    },
+    {
+      "name": "get_events",
+      "hash": "11e496bebf052d4a45c1d427323e47fc0e00617e34751b195e3c38e6da7b5a84",
+      "params": [
+        {
+          "name": "addresses",
+          "hash": "f3433afc56ec432d7da942237b9838973548370a4abed0a8b52f70d8a7ff8c7f"
+        },
+        {
+          "name": "fromBlock",
+          "hash": "bb3f18b71d6e1a36d93340e52b54b32fab0f24676dfd3e7dc0a044f36fcec82a"
+        },
+        {
+          "name": "network",
+          "hash": "9fe098f112c2f4c590f2d77169ce9d1fe466b4d0938191621ef751dada52bbb8"
+        },
+        {
+          "name": "optionalTopics",
+          "hash": "df86f24833db44832dac5eff638f0df4821f303020cb9dcb7d29400c931b0cb1"
+        },
+        {
+          "name": "toBlock",
+          "hash": "8ff070ee8eb0d4a64c9f490771fcb0516ed7091ba119e91bff1088f94e0027c8"
+        },
+        {
+          "name": "topic",
+          "hash": "095440b149b2fc5b6b258519a8f32231f525a90740d929968153872ea9c608ec"
+        }
+      ]
+    },
+    {
+      "name": "get_proxy",
+      "hash": "436a19a7bf59229497f6b870fa2cf42c0bd2578592069370131071e407a112c8",
+      "params": [
+        {
+          "name": "contract",
+          "hash": "3bbd104044dbad8cd8d2723283008b627f3e02c6f517e5c5d252f40f86b80980"
+        },
+        {
+          "name": "network",
+          "hash": "9fe098f112c2f4c590f2d77169ce9d1fe466b4d0938191621ef751dada52bbb8"
+        }
+      ]
+    },
+    {
+      "name": "get_source",
+      "hash": "232c3246004c70ef08d9e17e72dc490270c132ab9a637c051327ca8975a1017c",
+      "params": [
+        {
+          "name": "contract",
+          "hash": "55c251df417372575201532fe00664fbbf2477e604b99f9e8fc87222d3471c62"
+        },
+        {
+          "name": "network",
+          "hash": "9fe098f112c2f4c590f2d77169ce9d1fe466b4d0938191621ef751dada52bbb8"
+        }
+      ]
+    },
+    {
+      "name": "get_token_balances_on_network",
+      "hash": "28baa9b9ac94405d2bc35b0860f7d13635c73067a2f147ada97a2d170c4f430f",
+      "params": [
+        {
+          "name": "address",
+          "hash": "405710c18f1099e1fbe199741ff78a9ade223cf5bde63fd6dad6f57b0ae5e684"
+        },
+        {
+          "name": "network",
+          "hash": "9fe098f112c2f4c590f2d77169ce9d1fe466b4d0938191621ef751dada52bbb8"
+        }
+      ]
+    },
+    {
+      "name": "get_transaction_history_for_user",
+      "hash": "97d03e583c1db4a6b71ed2feded2de7fc39007f3e2732298262bce1f368188b0",
+      "params": [
+        {
+          "name": "contract",
+          "hash": "db0fa3adc605fb68ab41f05976668758d6fbb9e1995f68ec49f7cd1960be22ca"
+        },
+        {
+          "name": "includeData",
+          "hash": "3ccf882c87a83cdb846aebc669f3771512dbc5efccad0761e4441b20a2d709e0"
+        },
+        {
+          "name": "methodId",
+          "hash": "32660cb5cb9250dcbeb97a6c16be7878da4d98aa04e9fd78bdd6abc4c4d007f6"
+        },
+        {
+          "name": "network",
+          "hash": "9fe098f112c2f4c590f2d77169ce9d1fe466b4d0938191621ef751dada52bbb8"
+        },
+        {
+          "name": "startBlock",
+          "hash": "c9feb1fbcecaf65a2cd51919a5adaa2272ef1b05051811d280bd454b11ed13a3"
+        },
+        {
+          "name": "user",
+          "hash": "5c7282f0c6e567a96b80b014ca83778432010c18ac6f90cd1dc8879113b3032b"
+        }
+      ]
+    },
+    {
+      "name": "get_transaction_info",
+      "hash": "3cb6ea3fc5e3c082d042ab9e3bad43752ee3049017b95b76c1862daf208374f4",
+      "params": [
+        {
+          "name": "network",
+          "hash": "27df8fb99fdf67ada2c14cfe2ba1a6e684d6fc1affb76f4ddf6adbe297b82763"
+        },
+        {
+          "name": "txHash",
+          "hash": "108c12c4ccab2dc50c541fae3e1cad3200fa099de05555fe87b5691ac93ac9b8"
+        }
+      ]
+    },
+    {
+      "name": "read_contract",
+      "hash": "a39ce1e9dea8ace0aa384880e028dbe10062cac5975198e3d646c804ef67ff77",
+      "params": [
+        {
+          "name": "contract",
+          "hash": "55c251df417372575201532fe00664fbbf2477e604b99f9e8fc87222d3471c62"
+        },
+        {
+          "name": "inputs",
+          "hash": "68674e5ff81fbba2b59057b879623f4d3b3651732f1fa0786780354da49863f8"
+        },
+        {
+          "name": "method",
+          "hash": "9f86a9f0e03eceff52a4ff49aa79c0a85988d9357a4ac066b19dd6d91b0e2f2f"
+        },
+        {
+          "name": "network",
+          "hash": "9fe098f112c2f4c590f2d77169ce9d1fe466b4d0938191621ef751dada52bbb8"
+        },
+        {
+          "name": "outputs",
+          "hash": "1048bd1cff242e3d62763291c1b1140f5cbe8b06e984314cbe2decc5abb189a2"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

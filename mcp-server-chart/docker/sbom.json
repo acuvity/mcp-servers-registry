@@ -1,0 +1,483 @@
+{
+  "tools": [
+    {
+      "name": "generate_area_chart",
+      "hash": "f96bc61c1cd1f2516048ff2311911a27ad3c51ee90e35535248a31ed719dc626",
+      "params": [
+        {
+          "name": "axisXTitle",
+          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
+        },
+        {
+          "name": "axisYTitle",
+          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
+        },
+        {
+          "name": "data",
+          "hash": "c78e91fc932ad5633c950a406c8490a3d93fdfbc22add00a04f83474886e38e2"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "stack",
+          "hash": "da57ecb43f91bd7f5d6eec67c321b2e0ae8a8714c3e0719902b2adedfb56e6d4"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
+      "name": "generate_bar_chart",
+      "hash": "54908b15980cd5eedf85551873c79cfb332ae31ec5e34e8348676a74b815f856",
+      "params": [
+        {
+          "name": "axisXTitle",
+          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
+        },
+        {
+          "name": "axisYTitle",
+          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
+        },
+        {
+          "name": "data",
+          "hash": "b6f1bfd3a0b5ef1f273fef685cc47d125fe3cdab2ab989407eca2065e336408f"
+        },
+        {
+          "name": "group",
+          "hash": "13c8f482326e26caf8e24a5109ac29dc9d86306b3cf024e1098cdef08da29075"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "stack",
+          "hash": "bdc8f95dd42a52fadbd07bc7720cbfa1e39107d93d9ff28df423bd8085beff5d"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
+      "name": "generate_column_chart",
+      "hash": "cb9505024eff95786bd632bbca3f11f798bd7826f25cdb56a52145ac52899d7f",
+      "params": [
+        {
+          "name": "axisXTitle",
+          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
+        },
+        {
+          "name": "axisYTitle",
+          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
+        },
+        {
+          "name": "data",
+          "hash": "6f35d87a83f01fa3193fc7aed5de24020fb5bf10c2d6c8f2abbab553775ff6ce"
+        },
+        {
+          "name": "group",
+          "hash": "3a8cab0ad6f017d5082ac4a41658f8f1bec9c5496777ce4c477f48c22e9f9462"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "stack",
+          "hash": "0d8e951b5339f93e9fcbdb4cd268790b5ab210bbfc67bd1d7e2f90bea3b7fac2"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
+      "name": "generate_dual_axes_chart",
+      "hash": "ebb7a6509b51f64850dc552ca3e3f6f8e1f62dce81eb77f86b5d71f9f2f27706",
+      "params": [
+        {
+          "name": "axisXTitle",
+          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
+        },
+        {
+          "name": "categories",
+          "hash": "9a3a8ed51be4fe1fbb4bd4a0c55d31489fe24aad87972ad88902a46b0e1198fe"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
+      "name": "generate_fishbone_diagram",
+      "hash": "b4c25d22c4d78e4617ac92578a8979d41fa401ff31eee777bd54ae6c4bff38bb",
+      "params": [
+        {
+          "name": "axisXTitle",
+          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
+        },
+        {
+          "name": "axisYTitle",
+          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
+        },
+        {
+          "name": "data",
+          "hash": "50fffcc2d6b4cd6dbb797703bc866d056a6d65944739bfa848b35ab11bc30d1b"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
+      "name": "generate_flow_diagram",
+      "hash": "be9973fdcd389ee607dfd0dbd8472b1e343a83d126c1614ce35f686aa40cf40c",
+      "params": [
+        {
+          "name": "axisXTitle",
+          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
+        },
+        {
+          "name": "axisYTitle",
+          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
+        },
+        {
+          "name": "data",
+          "hash": "0400dd85ec0609b1a2fe1b3e51edca6a495ca0d2975651f52c7f4e7b3b8ec3d1"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
+      "name": "generate_histogram_chart",
+      "hash": "912a3265e2729b0a7c984e7604e4676200b6b37fd72d338ba939b79584cdeb9e",
+      "params": [
+        {
+          "name": "axisXTitle",
+          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
+        },
+        {
+          "name": "axisYTitle",
+          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
+        },
+        {
+          "name": "binNumber",
+          "hash": "aed7fd9c76b22c81f123e8354e8a1fab5474cf785057e597c82846271da1ed68"
+        },
+        {
+          "name": "data",
+          "hash": "110f1e7cd89de037b2f1d5ae52a12e8b9c729f8ff0d7ffdf500301be3be1911e"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
+      "name": "generate_line_chart",
+      "hash": "9d6966e9e2e13f6da7e4a741a1da19c396cc3fcefddfe7783508e34eece6ea19",
+      "params": [
+        {
+          "name": "axisXTitle",
+          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
+        },
+        {
+          "name": "axisYTitle",
+          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
+        },
+        {
+          "name": "data",
+          "hash": "336d1ef1d3875e1bde3df2f0314264aaa6ec864c307cdbfe853b1c2b905861b2"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "stack",
+          "hash": "94ebe7342735fc11d93fead5b58d420f17706a780cfd3774c1d7169a9c1361af"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
+      "name": "generate_mind_map",
+      "hash": "69bf6897ec2bef7cc910002af1f7cf7d92502920473bae8ab6f9adefbc94a628",
+      "params": [
+        {
+          "name": "axisXTitle",
+          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
+        },
+        {
+          "name": "axisYTitle",
+          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
+        },
+        {
+          "name": "data",
+          "hash": "dca09503b5c4788ff4f0747c4af9ad77dbfd0d46ba87f68a39ceef8e9977ecc9"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
+      "name": "generate_network_graph",
+      "hash": "e9aa42fc72e3246243577e7be1f5c47ee4a10d74bcac5a0a140ff33719e18f44",
+      "params": [
+        {
+          "name": "axisXTitle",
+          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
+        },
+        {
+          "name": "axisYTitle",
+          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
+        },
+        {
+          "name": "data",
+          "hash": "c79e86bb596a8000143c5580d53b59f9a9d3a751b78db2429740b39e610ee359"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
+      "name": "generate_pie_chart",
+      "hash": "2dc22593f3f742f01a0862cca0c664c9021840501d3f83b27f73f40690a742c6",
+      "params": [
+        {
+          "name": "axisXTitle",
+          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
+        },
+        {
+          "name": "axisYTitle",
+          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
+        },
+        {
+          "name": "data",
+          "hash": "d56461d0cbeab155f94cc71c0f356cf961428327c26f8feeca8197d46191f701"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "innerRadius",
+          "hash": "2392b8b38214109309b04f3ece0b5d6883201cb67ab45c39e918d7be2341d561"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
+      "name": "generate_radar_chart",
+      "hash": "eadcd1d7352898155e8664e2c4ab360f4030c7c2f4f68eff86bbd984c4a891ab",
+      "params": [
+        {
+          "name": "axisXTitle",
+          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
+        },
+        {
+          "name": "axisYTitle",
+          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
+        },
+        {
+          "name": "data",
+          "hash": "56d2c3632be9ccd0c97126c9fde5ca4869a3de8368178a7f8832d213ac259f26"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
+      "name": "generate_scatter_chart",
+      "hash": "d75c8ea04f633bdc1f2c1b7a74d9bc24ea7ca1d14138ed75a3b6096321e529cf",
+      "params": [
+        {
+          "name": "axisXTitle",
+          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
+        },
+        {
+          "name": "axisYTitle",
+          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
+        },
+        {
+          "name": "data",
+          "hash": "fb0e6070681773230652c9023313d6abe8653f710c54ddea6db7d4af7408eab1"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
+      "name": "generate_treemap_chart",
+      "hash": "83973c4e02a8d3109dbd82dc491127008f3cf58a550bcc15bff98a583972ad40",
+      "params": [
+        {
+          "name": "axisXTitle",
+          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
+        },
+        {
+          "name": "axisYTitle",
+          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
+        },
+        {
+          "name": "data",
+          "hash": "46418098a4acbdde40f7809faae1b5c912d4834c99f098f8d6fa57eb1876a0d1"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
+      "name": "generate_word_cloud_chart",
+      "hash": "e1661a55c9801f53cd0c3683458fc3dd1b78b0f8bc3e331550603262e2e02a8a",
+      "params": [
+        {
+          "name": "axisXTitle",
+          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
+        },
+        {
+          "name": "axisYTitle",
+          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
+        },
+        {
+          "name": "data",
+          "hash": "2aeb67a1626ca271b2f9343fe7070a2023f722a7dd486e729d73ee92ffaaca14"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

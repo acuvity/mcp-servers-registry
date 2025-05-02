@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-bing-search",
+  "name": "mcp-server-bing-search ",
+  "description": "Add your description here",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-bing-search",
+      "application": "https://github.com/leehanchung/bing-search-mcp"
+    },
+  "tags": ["research","integration"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.1.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 3,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

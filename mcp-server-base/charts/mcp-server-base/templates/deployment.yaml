@@ -1,0 +1,126 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "base.fullname" . }}
+  labels:
+    {{- include "base.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "base.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "base.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "base.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          args:
+          {{- range .Values.args }}
+            - {{ . }}
+          {{- end }}
+          env:
+          {{- include "minibridge.env" . | nindent 12}}
+            - name: ALCHEMY_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: "{{ .Values.secrets.ALCHEMY_API_KEY.valueFrom.name | default (printf "%s-secrets" (include "base.fullname" .) ) }}"
+                  key: "{{ .Values.secrets.ALCHEMY_API_KEY.valueFrom.key | default "ALCHEMY_API_KEY" }}"
+            - name: CHAIN_ID
+              value: {{ .Values.env.CHAIN_ID}}
+            - name: COINBASE_API_KEY_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: "{{ .Values.secrets.COINBASE_API_KEY_NAME.valueFrom.name | default (printf "%s-secrets" (include "base.fullname" .) ) }}"
+                  key: "{{ .Values.secrets.COINBASE_API_KEY_NAME.valueFrom.key | default "COINBASE_API_KEY_NAME" }}"
+            - name: COINBASE_API_PRIVATE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: "{{ .Values.secrets.COINBASE_API_PRIVATE_KEY.valueFrom.name | default (printf "%s-secrets" (include "base.fullname" .) ) }}"
+                  key: "{{ .Values.secrets.COINBASE_API_PRIVATE_KEY.valueFrom.key | default "COINBASE_API_PRIVATE_KEY" }}"
+            - name: COINBASE_PROJECT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: "{{ .Values.secrets.COINBASE_PROJECT_ID.valueFrom.name | default (printf "%s-secrets" (include "base.fullname" .) ) }}"
+                  key: "{{ .Values.secrets.COINBASE_PROJECT_ID.valueFrom.key | default "COINBASE_PROJECT_ID" }}"
+            - name: OPENROUTER_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: "{{ .Values.secrets.OPENROUTER_API_KEY.valueFrom.name | default (printf "%s-secrets" (include "base.fullname" .) ) }}"
+                  key: "{{ .Values.secrets.OPENROUTER_API_KEY.valueFrom.key | default "OPENROUTER_API_KEY" }}"
+            - name: PINATA_JWT
+              valueFrom:
+                secretKeyRef:
+                  name: "{{ .Values.secrets.PINATA_JWT.valueFrom.name | default (printf "%s-secrets" (include "base.fullname" .) ) }}"
+                  key: "{{ .Values.secrets.PINATA_JWT.valueFrom.key | default "PINATA_JWT" }}"
+            - name: SEED_PHRASE
+              valueFrom:
+                secretKeyRef:
+                  name: "{{ .Values.secrets.SEED_PHRASE.valueFrom.name | default (printf "%s-secrets" (include "base.fullname" .) ) }}"
+                  key: "{{ .Values.secrets.SEED_PHRASE.valueFrom.key | default "SEED_PHRASE" }}"
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default (printf  "%s-%s" .Chart.Version .Chart.AppVersion) }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP
+            - name: health
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            {{- toYaml .Values.livenessProbe | nindent 12 }}
+          readinessProbe:
+            {{- toYaml .Values.readinessProbe | nindent 12 }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: {{ include "base.fullname" . }}-sandbox
+              mountPath: /tmp
+            - name: {{ include "base.fullname" . }}-secrets
+              mountPath: /certs/
+          {{- with .Values.volumeMounts }}
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+      volumes:
+        - name: {{ include "base.fullname" . }}-sandbox
+          emptyDir: {}
+        - name: {{ include "base.fullname" . }}-secrets
+          secret:
+            secretName: {{ include "base.fullname" . }}-secrets
+            items:
+              {{- include "minibridge.items" .  | nindent 14 }}
+      {{- with .Values.volumes }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

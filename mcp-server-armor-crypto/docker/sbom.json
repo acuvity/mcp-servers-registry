@@ -1,0 +1,164 @@
+{
+  "tools": [
+    {
+      "name": "add_wallets_to_group",
+      "hash": "a92848ff918afddafecc13d2acb22edf5b380893276a10c5e2c65a5e1c753747"
+    },
+    {
+      "name": "archive_wallet_group",
+      "hash": "834ad1201e6d49fe574311966069cf68060d708f2428d036bd1cf797881878c0"
+    },
+    {
+      "name": "archive_wallets",
+      "hash": "dbfefce51287721c267e3577449d59bbdb4fa3d0716b6cb85dea34021a4c6953"
+    },
+    {
+      "name": "calculate_token_conversion",
+      "hash": "fa276f406ba6f9527323dd020f443ca61f9b1ab9a9c9f49f68a51b2c4ea286b9"
+    },
+    {
+      "name": "calculator",
+      "hash": "c81ae7f6b4be034c50efd9be2d02a13f960cb2ca29cf7766e3199078c85f507a"
+    },
+    {
+      "name": "cancel_dca_order",
+      "hash": "d1dce965b293e44ff4b9aef8199289246fab8f9ee8b4e07d07752f25d7564ff7"
+    },
+    {
+      "name": "cancel_order",
+      "hash": "2c0e81dac0e62c5701af6aee3a0d3b9a5a304127f458f4c4d13b2fb5e567f4eb"
+    },
+    {
+      "name": "create_dca_order",
+      "hash": "3563a16213680f862a3f41490468fd03b142d0456cc7eb52c2bd1092f834b9ed"
+    },
+    {
+      "name": "create_groups",
+      "hash": "065fbf7645047dee0d03e2ad1e95c5261975bfc0d66a384618d286d80d91d73e"
+    },
+    {
+      "name": "create_order",
+      "hash": "1b4031957ce37fdbffec6c0628929aadf73042a188ddfd4cecd536ced03a8f1e"
+    },
+    {
+      "name": "create_wallet",
+      "hash": "e348a008c19665493a85cf188b4f83a96ca74a4afa7d29b44c04629a4a954b8c"
+    },
+    {
+      "name": "get_all_orders",
+      "hash": "543c3eeca882e0f7d1b7ca4fc27155c16793647d04c02018ea2a8fcd2c805211"
+    },
+    {
+      "name": "get_all_wallets",
+      "hash": "a78d9e2ca7068f5928084eacb8c21b29e45a51c8bd493f947892aa9dcfe90504"
+    },
+    {
+      "name": "get_armor_mcp_version",
+      "hash": "7e30f301f4471a7dc9cd43437566b55614a4b51b3acb5b9edfbd2e20b96f0547"
+    },
+    {
+      "name": "get_current_time",
+      "hash": "36a16feb359f4dca32e78bf78853eef054a0ddad07a08cf603aa0c5a7cbf1b13"
+    },
+    {
+      "name": "get_stake_balances",
+      "hash": "3dbd458a0274095a97b0471adc18f197c44894e4c5f83f46de81757f58fcc5d5"
+    },
+    {
+      "name": "get_token_address",
+      "hash": "9a5e78e08c4b96bb77503f9e3a08db60bfe98d4316ac47ae5d4856e950461472"
+    },
+    {
+      "name": "get_token_candle_data",
+      "hash": "a61a2fb25b8dc2db7fe079a4c07109126892b066c23dadd34f67bd117e9d9ce6"
+    },
+    {
+      "name": "get_token_details",
+      "hash": "8e973adea71fa9cd0c3099e614716604414db9f488e880d9ed7ee9a005bea918"
+    },
+    {
+      "name": "get_top_trending_tokens",
+      "hash": "583ec6008c17ec8448134b94b26d29ba33ca0335745bd1f0b0a0015e893fcc1f"
+    },
+    {
+      "name": "get_wallet_token_balance",
+      "hash": "a8474468f5c948b45bd63fed218bd316c89fa0b7a1ff3f1e24e73f2ba4805f37"
+    },
+    {
+      "name": "list_dca_orders",
+      "hash": "3816fa6952ee576ce4d7c02f33d418b52c32ce68d03479210d9e7c37f5d137c0"
+    },
+    {
+      "name": "list_groups",
+      "hash": "66885c0fe5691ee0480c8a6b7d6618ecf87b99b720e1e41e93f8c717976d8fa5"
+    },
+    {
+      "name": "list_single_group",
+      "hash": "a6dc27ac6f49bf6cf46c55868e78fb0296e9a0271ecae7e9f8937fe34d3eed78"
+    },
+    {
+      "name": "remove_wallets_from_group",
+      "hash": "6940d566ff428326ba534638882317f12b40b27ba88a3dc9914b76fc9b629b86"
+    },
+    {
+      "name": "rename_wallets",
+      "hash": "fcd07f846ea7983164a49dcdd06755e9a658d0a57735076db894991307277688"
+    },
+    {
+      "name": "send_key_to_telegram",
+      "hash": "47a717f81f02a337ea460290239c26fa250c59c4b0bfcfd78e57e558ec663db6"
+    },
+    {
+      "name": "stake_quote",
+      "hash": "f4f753918cdec22c4e3cbc8f60bb6e1ec58903f8e8cbed48a602e83ff7eed637"
+    },
+    {
+      "name": "stake_transaction",
+      "hash": "845ba6e75a53a61f956737af0887e5637e2bef5e1041d57750300427d8f05541"
+    },
+    {
+      "name": "swap_quote",
+      "hash": "b165831e70dd803f05264eb2ab89e7fd5b08f8c14bfd528517b7646ff819e6f7"
+    },
+    {
+      "name": "swap_transaction",
+      "hash": "fc23531dd62802f22ead258b29be86a26c19c239b1e09b6c664f738698a6c482"
+    },
+    {
+      "name": "transfer_tokens",
+      "hash": "c6eec1f09699dbebb8e81e9502be4c300f13285abf473c27d98d99882d175244"
+    },
+    {
+      "name": "unarchive_wallet_group",
+      "hash": "626ace1ce93c841e9834cd952f64efc3fb518910412d71171035c466c38e5f07"
+    },
+    {
+      "name": "unarchive_wallets",
+      "hash": "5969c40c29e1916d3ec2e88fed1908b9ac2faff0ea8ca1da9020af5c514047fe"
+    },
+    {
+      "name": "unstake_quote",
+      "hash": "143bbd69b1aae9f84cd90736bf5fb7b6cee4ae56a566771ea13a9e2c532db6e5"
+    },
+    {
+      "name": "unstake_transaction",
+      "hash": "5b637d0e10ad62cd0fb54ff91c271fb303fe8ef8a83edae23d6d897f3ad34535"
+    },
+    {
+      "name": "wait_a_moment",
+      "hash": "d8ba2c2eaf7253f2d0c3acdf7c482a56a45e4b759f0ab55f081d72747d8abd6e"
+    }
+  ],
+  "prompts": [
+    {
+      "name": "login_prompt",
+      "hash": "1d2b1c9081a1da30310bdde4bc3bd285b2fdcdc557a63176b926e752d54e51aa",
+      "params": [
+        {
+          "name": "email",
+          "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    }
+  ]
+}

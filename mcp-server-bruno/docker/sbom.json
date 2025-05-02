@@ -1,0 +1,23 @@
+{
+  "tools": [
+    {
+      "name": "run-collection",
+      "hash": "1879310060d89dcea3ea19a80d3c489ef7e3be6d313e8a0330c2c0ace757e226",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "5d75183bedebef2468d5aa3994cb974c658f650584eb105e3a874477a45a84bb"
+        },
+        {
+          "name": "environment",
+          "hash": "c731410faf8fb180a7ec99a737e1b9221291193a6b637ad84f2b7d56284ebbe7"
+        },
+        {
+          "name": "variables",
+          "hash": "c38e3498492d488db28e04dd77e47abdcd5196ed3602c65dd61372f1fe79c8c6"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

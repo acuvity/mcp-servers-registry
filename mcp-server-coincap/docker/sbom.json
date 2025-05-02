@@ -1,0 +1,23 @@
+{
+  "tools": [
+    {
+      "name": "bitcoin_price",
+      "hash": "945dc5bba86d6127fe4b68605334bcbb151e1880c6b7e298fdbdd60d1f89196e"
+    },
+    {
+      "name": "get_crypto_price",
+      "hash": "28a6a68e80bc81a9cec1a0a1d3e7651bbf48cca3e6db7c95a5b82d570a7ef26e",
+      "params": [
+        {
+          "name": "name",
+          "hash": "4ec4e09bf2126026b7dfadda2fdcd3bac9699ef83177db84a2a1e0d21b4f056b"
+        }
+      ]
+    },
+    {
+      "name": "list_assets",
+      "hash": "24f6082aec2de4a5c31f2ca6099e1e911e9a242a6cc10f8be5daf5a2bd045aa3"
+    }
+  ],
+  "prompts": []
+}

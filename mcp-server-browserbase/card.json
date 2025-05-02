@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-browserbase",
+  "name": "mcp-server-browserbase ",
+  "description": "MCP server for browser automation using browserbase",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-browserbase",
+      "application": "https://github.com/browserbase/mcp-server-browserbase"
+    },
+  "tags": ["web","cloud","automation"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.5.1",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 8,
+    "prompts": 0,
+    "resources": 1,
+    "resourcesTemplates": 0
+  }
+}

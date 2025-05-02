@@ -1,0 +1,37 @@
+{
+  "tools": [
+    {
+      "name": "codelogic-database-impact",
+      "hash": "f48459b988da5079d2220ff245204fc40634a9313e4c8783107c225bfbcf5f02",
+      "params": [
+        {
+          "name": "entity_type",
+          "hash": "2139681d1f2e210166a59e9049b11b136e5ab85e8eaa67dfdc7a5078812054a9"
+        },
+        {
+          "name": "name",
+          "hash": "081923b3b72d2652e6476544625527e727081b2aa2fbfd0c57cb916d1ae854bb"
+        },
+        {
+          "name": "table_or_view",
+          "hash": "0bba0c4ce5aa807b3021084eea3dc74ce75f35be2ca3f345f361c74040b809d9"
+        }
+      ]
+    },
+    {
+      "name": "codelogic-method-impact",
+      "hash": "e767fb6af204b05579f09d8fcb302a7145192e493e021a69119cf32fbbe41d1b",
+      "params": [
+        {
+          "name": "class",
+          "hash": "8cc8837c6c870dfb903fd3d96471ae47592063ab69eaac12e51ec16a239fe162"
+        },
+        {
+          "name": "method",
+          "hash": "dace788853d631ad14730083354d93374b2ad2141c7830e197fe982485969d09"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

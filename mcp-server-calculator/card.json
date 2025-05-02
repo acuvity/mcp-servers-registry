@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-calculator",
+  "name": "mcp-server-calculator ",
+  "description": "A Model Context Protocol server for calculating",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-calculator",
+      "application": "https://github.com/githejie/mcp-server-calculator"
+    },
+  "tags": ["integration"],
+  "official": false,
+  "scope": "standalone",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.1.2",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

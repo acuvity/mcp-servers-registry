@@ -1,0 +1,104 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "base.fullname" . }}
+  labels:
+    {{- include "base.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "base.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "base.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "base.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          args:
+          {{- range .Values.args }}
+            - {{ . }}
+          {{- end }}
+          env:
+          {{- include "minibridge.env" . | nindent 12}}
+            - name: AWS_PROFILE
+              value: {{ required "AWS_PROFILE is required" .Values.env.AWS_PROFILE}}
+            - name: AWS_REGION
+              value: {{ required "AWS_REGION is required" .Values.env.AWS_REGION}}
+            - name: FUNCTION_LIST
+              value: {{ required "FUNCTION_LIST is required" .Values.env.FUNCTION_LIST}}
+            - name: FUNCTION_PREFIX
+              value: {{ required "FUNCTION_PREFIX is required" .Values.env.FUNCTION_PREFIX}}
+            - name: FUNCTION_TAG_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: "{{ .Values.secrets.FUNCTION_TAG_KEY.valueFrom.name | default (printf "%s-secrets" (include "base.fullname" .) ) }}"
+                  key: "{{ .Values.secrets.FUNCTION_TAG_KEY.valueFrom.key | default "FUNCTION_TAG_KEY" }}"
+            - name: FUNCTION_TAG_VALUE
+              value: {{ required "FUNCTION_TAG_VALUE is required" .Values.env.FUNCTION_TAG_VALUE}}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default (printf  "%s-%s" .Chart.Version .Chart.AppVersion) }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP
+            - name: health
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            {{- toYaml .Values.livenessProbe | nindent 12 }}
+          readinessProbe:
+            {{- toYaml .Values.readinessProbe | nindent 12 }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: {{ include "base.fullname" . }}-sandbox
+              mountPath: /tmp
+            - name: {{ include "base.fullname" . }}-secrets
+              mountPath: /certs/
+          {{- with .Values.volumeMounts }}
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+      volumes:
+        - name: {{ include "base.fullname" . }}-sandbox
+          emptyDir: {}
+        - name: {{ include "base.fullname" . }}-secrets
+          secret:
+            secretName: {{ include "base.fullname" . }}-secrets
+            items:
+              {{- include "minibridge.items" .  | nindent 14 }}
+      {{- with .Values.volumes }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

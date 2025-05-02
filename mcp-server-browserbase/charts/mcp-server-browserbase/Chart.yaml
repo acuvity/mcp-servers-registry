@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-browserbase"
+description: A Helm chart for MCP server for browser automation using browserbase
+home: https://github.com/browserbase/mcp-server-browserbase
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/browserbase/mcp-server-browserbase
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.5.1
+keywords:
+  - mcp-server-browserbase
+  - mcp-server
+  - remote
+  - web
+  - cloud
+  - automation

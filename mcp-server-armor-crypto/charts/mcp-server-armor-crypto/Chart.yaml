@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-armor-crypto"
+description: A Helm chart for MCP to interface with multiple blockchains, staking, DeFi, swap, bridging, wallet management, DCA, Limit Orders, Coin Lookup, Tracking and more
+home: https://github.com/armorwallet/armor-crypto-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/armorwallet/armor-crypto-mcp
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.1.22
+keywords:
+  - mcp-server-armor-crypto
+  - mcp-server
+  - remote
+  - finance

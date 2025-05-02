@@ -1,0 +1,13 @@
+env:
+
+secrets:
+  BROWSERBASE_API_KEY:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  BROWSERBASE_PROJECT_ID:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

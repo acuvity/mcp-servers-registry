@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-browser-kit",
+  "name": "mcp-server-browser-kit ",
+  "description": "<no value>",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-browser-kit",
+      "application": "https://github.com/ndthanhdev/mcp-browser-kit"
+    },
+  "tags": ["web","automation"],
+  "official": false,
+  "scope": "native",
+  "mutitenant": false,
+  "runtime": "node",
+  "version": "5.0.1",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 11,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-aws-cost-analysis",
+  "name": "mcp-server-aws-cost-analysis ",
+  "description": "An AWS Labs Model Context Protocol (MCP) server for Cost Analysis of the AWS services",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-cost-analysis",
+      "application": "https://pypi.org/project/awslabs.cost-analysis-mcp-server/"
+    },
+  "tags": ["cloud","integration"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.1.8",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 5,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

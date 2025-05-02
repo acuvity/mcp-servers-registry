@@ -1,0 +1,165 @@
+{
+  "tools": [
+    {
+      "name": "list_error_events",
+      "hash": "95ac8451451be25e3b7e27dac898fa642c66b1700c5cdf484468c9ddbb973ee6",
+      "params": [
+        {
+          "name": "error_id",
+          "hash": "9f4225714bc44a8c55c2813c4140538451ad9f31ef7be2671a52519ba55b05bb"
+        },
+        {
+          "name": "limit",
+          "hash": "638a93c649b59360158a5be8a53da904c181d6c7911ba09da7b827febdc1c939"
+        },
+        {
+          "name": "project_id",
+          "hash": "1d6aef646d3e586b39cef35615f094d8b6afced62f9037125c7d77245b5bc9bb"
+        }
+      ]
+    },
+    {
+      "name": "list_errors",
+      "hash": "343fde21d5ef61a6def43d08570a90cc3e320223c0702c7ace02ec6f68c6848c",
+      "params": [
+        {
+          "name": "limit",
+          "hash": "c6a4ce4be531e8abe4e8cf45c39169cafbf40248b465ca2a8f5b76d1d31592b3"
+        },
+        {
+          "name": "project_id",
+          "hash": "1d6aef646d3e586b39cef35615f094d8b6afced62f9037125c7d77245b5bc9bb"
+        },
+        {
+          "name": "sort",
+          "hash": "b26b0f86e0464ed8865f56f254fea435956e331f85685cb7c7ab5a7f4f35906f"
+        },
+        {
+          "name": "status",
+          "hash": "bdb568d58ab98a5c2fd8342c9b0f4f14b673ffabdd64033485a42a46e2acefaa"
+        }
+      ]
+    },
+    {
+      "name": "list_organizations",
+      "hash": "8afc1eab04f56a9b4fdf6305f377aa96240e555e8e3916b5b8695b373ea713b1"
+    },
+    {
+      "name": "list_projects",
+      "hash": "a25a925729c7debbd803810b21c2559d9ae36906eb9000e8f65d48f625ccfca2",
+      "params": [
+        {
+          "name": "organization_id",
+          "hash": "8f90850f7f18622ceb36614e8c069c8dd8353d2d1d5cba2a7faa2be3fc6534f2"
+        }
+      ]
+    },
+    {
+      "name": "search_issues",
+      "hash": "d6bcfe5083b67eb6fa9ed186eaffc68c733cd532fe7d062e852d4df759e565b6",
+      "params": [
+        {
+          "name": "app_version",
+          "hash": "fc9f6edcf3a7752f37fb69ee272f675c87e5f10fe7d02bd10b548ffd383b5985"
+        },
+        {
+          "name": "error_class",
+          "hash": "34f1e02240bd200e89ad6994eb8d45d58f7226eb43b99030c159ca938aee3f9a"
+        },
+        {
+          "name": "project_id",
+          "hash": "1d6aef646d3e586b39cef35615f094d8b6afced62f9037125c7d77245b5bc9bb"
+        },
+        {
+          "name": "query",
+          "hash": "9eef05233ecfc1fbcfe756aa79bd497fa20e58144012561b562b8856040f5100"
+        }
+      ]
+    },
+    {
+      "name": "view_error",
+      "hash": "dbe777675200bd5b7f376ca368e5e6a81a5fdce885d7f9b24cbc26c2f1bf87db",
+      "params": [
+        {
+          "name": "error_id",
+          "hash": "9f4225714bc44a8c55c2813c4140538451ad9f31ef7be2671a52519ba55b05bb"
+        }
+      ]
+    },
+    {
+      "name": "view_event",
+      "hash": "9eafe212e950a93be6089d71b93bad82cd952c3a63659002bede4f533a4ac51d",
+      "params": [
+        {
+          "name": "event_id",
+          "hash": "aceb675ffe3fd6e9b5e401f5ffab6d3bc764f755c62e6f0c0497c85caef4d98c"
+        },
+        {
+          "name": "project_id",
+          "hash": "1d6aef646d3e586b39cef35615f094d8b6afced62f9037125c7d77245b5bc9bb"
+        }
+      ]
+    },
+    {
+      "name": "view_exception_chain",
+      "hash": "5f53457b2818ea05716ee8d3bf8064834fa19c8834d03e0e4cfdede2dedd3b9f",
+      "params": [
+        {
+          "name": "event_id",
+          "hash": "aceb675ffe3fd6e9b5e401f5ffab6d3bc764f755c62e6f0c0497c85caef4d98c"
+        },
+        {
+          "name": "project_id",
+          "hash": "1d6aef646d3e586b39cef35615f094d8b6afced62f9037125c7d77245b5bc9bb"
+        }
+      ]
+    },
+    {
+      "name": "view_latest_event",
+      "hash": "1a2b42bbe55740f8c673eb2ce2040f3879974eb35b9049362d8c37cc05a04c2f",
+      "params": [
+        {
+          "name": "error_id",
+          "hash": "9f4225714bc44a8c55c2813c4140538451ad9f31ef7be2671a52519ba55b05bb"
+        }
+      ]
+    },
+    {
+      "name": "view_stacktrace",
+      "hash": "34478499b6a4bd894d494bb0169d647958ea4d7e8d001fcad3f9a0c9e462fadc",
+      "params": [
+        {
+          "name": "event_id",
+          "hash": "aceb675ffe3fd6e9b5e401f5ffab6d3bc764f755c62e6f0c0497c85caef4d98c"
+        },
+        {
+          "name": "include_code",
+          "hash": "eb3d98dc6c160ca4d6f25a2ca54a91832bf9cebfedb9520ff0fb3a0e7302e308"
+        },
+        {
+          "name": "project_id",
+          "hash": "1d6aef646d3e586b39cef35615f094d8b6afced62f9037125c7d77245b5bc9bb"
+        }
+      ]
+    },
+    {
+      "name": "view_tabs",
+      "hash": "f7b2ea218184ab7be36e4c5064e4778fbfafd3f3e54b50ee5110ddf66e6547b9",
+      "params": [
+        {
+          "name": "event_id",
+          "hash": "aceb675ffe3fd6e9b5e401f5ffab6d3bc764f755c62e6f0c0497c85caef4d98c"
+        },
+        {
+          "name": "include_code",
+          "hash": "09329bf315973856f11d898f676bd20fb93bc07e9e120232af626f0bfb41fabd"
+        },
+        {
+          "name": "project_id",
+          "hash": "1d6aef646d3e586b39cef35615f094d8b6afced62f9037125c7d77245b5bc9bb"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

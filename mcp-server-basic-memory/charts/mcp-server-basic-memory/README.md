@@ -465,7 +465,6 @@ minibridge:
       # Do not validate Policer CA. Do not do this in production
       # insecure: true
 ```
-
 # 🧠 Server features
 
 ## 🧰 Tools (9)
@@ -521,11 +520,11 @@ Build context from a memory:// URI to continue conversations naturally.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| depth | <no value> | <no value> | No
+| depth | any | <no value> | No
 | max_related | integer | <no value> | No
 | page | integer | <no value> | No
 | page_size | integer | <no value> | No
-| timeframe | <no value> | <no value> | No
+| timeframe | any | <no value> | No
 | url | string | <no value> | Yes
 </details>
 <details>
@@ -555,7 +554,7 @@ Get recent activity from across the knowledge base.
 | page | integer | <no value> | No
 | page_size | integer | <no value> | No
 | timeframe | string | <no value> | No
-| type | <no value> | <no value> | No
+| type | any | <no value> | No
 </details>
 <details>
 <summary>search_notes</summary>
@@ -570,13 +569,13 @@ Search across all content in the knowledge base.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| after_date | <no value> | <no value> | No
-| entity_types | <no value> | <no value> | No
+| after_date | any | <no value> | No
+| entity_types | any | <no value> | No
 | page | integer | <no value> | No
 | page_size | integer | <no value> | No
 | query | string | <no value> | Yes
 | search_type | string | <no value> | No
-| types | <no value> | <no value> | No
+| types | any | <no value> | No
 </details>
 <details>
 <summary>read_note</summary>

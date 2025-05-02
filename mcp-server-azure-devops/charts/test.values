@@ -1,0 +1,6 @@
+env:
+  AZURE_DEVOPS_AUTH_METHOD: dummy_value
+  AZURE_DEVOPS_DEFAULT_PROJECT: dummy_value
+  AZURE_DEVOPS_ORG_URL: dummy_value
+
+secrets:

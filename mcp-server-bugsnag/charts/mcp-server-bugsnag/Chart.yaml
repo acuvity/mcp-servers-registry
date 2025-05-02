@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-bugsnag"
+description: A Helm chart for A Bugsnag MCP server for interacting with Bugsnag API
+home: https://github.com/tgeselle/bugsnag-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/tgeselle/bugsnag-mcp
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 1.1.0
+keywords:
+  - mcp-server-bugsnag
+  - mcp-server
+  - remote
+  - integration
+  - research
+  - development

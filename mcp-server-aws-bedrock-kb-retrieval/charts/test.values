@@ -1,0 +1,6 @@
+env:
+  AWS_PROFILE: dummy_value
+  AWS_REGION: dummy_value
+  KB_INCLUSION_TAG_KEY: 
+
+secrets:

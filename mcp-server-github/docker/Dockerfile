@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@834d659bbe022305f35e00a0aaf62b2a13ad84db
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@b764d0a9a230ebbfeeaaf91db383a57521fa7d91
 FROM alpine:3.21 AS artifacts
 ARG TARGETOS TARGETARCH
 RUN apk update && apk add --no-cache curl file tar unzip
@@ -30,13 +30,14 @@ LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 WORKDIR /app
 
 ARG BUILDKIT_SBOM_SCAN_STAGE=true
+
 RUN apk update \
     && apk add --no-cache curl
+
 COPY --from=artifacts /tmp/binaries /usr/local/bin
 
-
-
 HEALTHCHECK CMD curl --fail http://localhost:8080 || exit 1
+
 RUN addgroup -g 1001 -S appuser && \
     adduser -S -u 1001 -G appuser appuser && \
     mkdir -p /home/appuser/.config/minibridge && \

@@ -1,0 +1,61 @@
+{
+  "tools": [
+    {
+      "name": "create-company-note",
+      "hash": "e555240f0896ae3b17f521d6e0c44c0b8c0424d34cc5dcaebc77c90d07c274b1",
+      "params": [
+        {
+          "name": "companyId",
+          "hash": "3e80ee9df32cd83644c263487eeb675f08c1d7211490546372db69f1694635bf"
+        },
+        {
+          "name": "noteText",
+          "hash": "75196d74f67a3480001215ee1eaf3e3329526752bb1ebd7ce51b991acdd3f82f"
+        },
+        {
+          "name": "noteTitle",
+          "hash": "1f1fea200164d2bd609f7161fd0f2e237f443266c963e3a0e4d142e7029d4582"
+        }
+      ]
+    },
+    {
+      "name": "read-company-details",
+      "hash": "4aa620f80daa66af91325a8edf2e701a50dc3231f57480ee555e4710be680fd7",
+      "params": [
+        {
+          "name": "uri",
+          "hash": "bf4bf0fde6da6ccc45850971952499873124c9b0f2394defaa84d86bfb7a4f2d"
+        }
+      ]
+    },
+    {
+      "name": "read-company-notes",
+      "hash": "f5e9d446fde26b37b87b131064314eed8d5b21602f9ba96230dffbaa87fbee20",
+      "params": [
+        {
+          "name": "limit",
+          "hash": "5375874e76469e4b2006fdfdbbc4097a0561b3e6dd489694c1bb43f1d2a68cde"
+        },
+        {
+          "name": "offset",
+          "hash": "ef3e9b1a7a3f4846601458b682cb81c103fa97ded691a4342156012715670f6e"
+        },
+        {
+          "name": "uri",
+          "hash": "92e1c1d75425c2728e1b4b7d579b2d3d2d1ec524ccf9b355aedb8dbeea0dbb9a"
+        }
+      ]
+    },
+    {
+      "name": "search-companies",
+      "hash": "ac255555df8bdcaeb844014a88c8399cf7481750466e896cb65f6ef93e89240b",
+      "params": [
+        {
+          "name": "query",
+          "hash": "a8fbb186923ab056994563385dd0308cfa965e7bd9520b6179960a5f43e655c7"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

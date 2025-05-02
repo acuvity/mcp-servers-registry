@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-apple-shortcuts",
+  "name": "mcp-server-apple-shortcuts ",
+  "description": "MCP server for automation using Apple Shortcuts",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-apple-shortcuts",
+      "application": "https://github.com/recursechat/mcp-server-apple-shortcuts"
+    },
+  "tags": ["automation","integration"],
+  "official": false,
+  "scope": "native",
+  "mutitenant": false,
+  "runtime": "node",
+  "version": "1.0.1",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 2,
+    "prompts": 0,
+    "resources": 1,
+    "resourcesTemplates": 0
+  }
+}

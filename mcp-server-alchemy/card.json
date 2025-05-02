@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-alchemy",
+  "name": "mcp-server-alchemy ",
+  "description": "MCP server for using Alchemy APIs",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-alchemy",
+      "application": "https://github.com/alchemyplatform/alchemy-mcp-server"
+    },
+  "tags": ["web","integration","finance"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.1.5",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 9,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

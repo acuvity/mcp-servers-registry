@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-docker",
+  "name": "mcp-server-docker ",
+  "description": "A Docker MCP Server",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-docker",
+      "application": "https://github.com/ckreiling/mcp-server-docker"
+    },
+  "tags": ["integration","development","cloud"],
+  "official": false,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.1.0",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 19,
+    "prompts": 1,
+    "resources": 14,
+    "resourcesTemplates": 0
+  }
+}

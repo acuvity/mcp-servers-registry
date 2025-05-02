@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-anilist"
+description: A Helm chart for AniList MCP server for accessing AniList API data
+home: https://github.com/yuna0x0/anilist-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/yuna0x0/anilist-mcp
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 1.2.4
+keywords:
+  - mcp-server-anilist
+  - mcp-server
+  - remote
+  - research
+  - web
+  - integration

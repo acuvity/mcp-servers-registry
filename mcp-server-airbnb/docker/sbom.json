@@ -1,0 +1,97 @@
+{
+  "tools": [
+    {
+      "name": "airbnb_listing_details",
+      "hash": "011db1da885610c9ac150e09ce15eaf2e1f466584906e8433b5a3497b79ef2c2",
+      "params": [
+        {
+          "name": "adults",
+          "hash": "e3da24f237679dc886393c4e256478b4ae4e2c695fd52c0f3239192031e3e8ed"
+        },
+        {
+          "name": "checkin",
+          "hash": "54b67c841748044da6293c79ec45c182ba21377265d19842876136f470ecfaa5"
+        },
+        {
+          "name": "checkout",
+          "hash": "0d4cb2c5f7d2c47ed411d36986309799530a5ebfbf0ec2bc857c871365e0c980"
+        },
+        {
+          "name": "children",
+          "hash": "03678d5d4426e53c30eff8b3047d065f4e73e75226f40ba123024ea4ca197afb"
+        },
+        {
+          "name": "id",
+          "hash": "655303f29b828171fd010ca1e56ee9a94cb55a38e05dfb4682dffe689223b54e"
+        },
+        {
+          "name": "ignoreRobotsText",
+          "hash": "6cf8001889632ce9f32c02310db220717a5188c752a514d05ef3d0949bf1b62b"
+        },
+        {
+          "name": "infants",
+          "hash": "17ab8ac5a1141ae2a690e32ea9b3df319a537a6171ad2f37685ddc6618e5616b"
+        },
+        {
+          "name": "pets",
+          "hash": "6a6267a8ad8a5bbf9949d67eb93b31d73a81c4b2a287bbd3a889db2877b74b64"
+        }
+      ]
+    },
+    {
+      "name": "airbnb_search",
+      "hash": "c23c74d664b028a3c6c30a147149b343118e0570b4e8e8397e2899fb986e216b",
+      "params": [
+        {
+          "name": "adults",
+          "hash": "e3da24f237679dc886393c4e256478b4ae4e2c695fd52c0f3239192031e3e8ed"
+        },
+        {
+          "name": "checkin",
+          "hash": "54b67c841748044da6293c79ec45c182ba21377265d19842876136f470ecfaa5"
+        },
+        {
+          "name": "checkout",
+          "hash": "0d4cb2c5f7d2c47ed411d36986309799530a5ebfbf0ec2bc857c871365e0c980"
+        },
+        {
+          "name": "children",
+          "hash": "03678d5d4426e53c30eff8b3047d065f4e73e75226f40ba123024ea4ca197afb"
+        },
+        {
+          "name": "cursor",
+          "hash": "0f0bb366c5993fb1bad2c211fd27708aabbc88361489a19baae280df249cda9b"
+        },
+        {
+          "name": "ignoreRobotsText",
+          "hash": "6cf8001889632ce9f32c02310db220717a5188c752a514d05ef3d0949bf1b62b"
+        },
+        {
+          "name": "infants",
+          "hash": "17ab8ac5a1141ae2a690e32ea9b3df319a537a6171ad2f37685ddc6618e5616b"
+        },
+        {
+          "name": "location",
+          "hash": "5cd613963f0b0eefabeef72af5dc4f138831ab0801a7c3d0d6648c882f71a352"
+        },
+        {
+          "name": "maxPrice",
+          "hash": "a73a7d9b6103846a3985ada00a4093618e0418e2908bb0f045b010ca7464b9f7"
+        },
+        {
+          "name": "minPrice",
+          "hash": "a115d39d586b0d5e16d20fa7178f379b2b4a4ea085415bbf8ac218a2dcc1b2fb"
+        },
+        {
+          "name": "pets",
+          "hash": "6a6267a8ad8a5bbf9949d67eb93b31d73a81c4b2a287bbd3a889db2877b74b64"
+        },
+        {
+          "name": "placeId",
+          "hash": "ff40c86a746c7cdd4bfbc26b95818ec905cbc5a29361414f9d1b90cad97c8cf1"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

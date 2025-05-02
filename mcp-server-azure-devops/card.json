@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-azure-devops",
+  "name": "mcp-server-azure-devops ",
+  "description": "Azure DevOps reference server for the Model Context Protocol (MCP)",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-azure-devops",
+      "application": "https://github.com/Tiberriver256/mcp-server-azure-devops"
+    },
+  "tags": ["integration","research","development"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.1.34",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 30,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

@@ -1,0 +1,392 @@
+{
+  "tools": [
+    {
+      "name": "build_image",
+      "hash": "705c2a1603d119dd8ecdf6ab10334a19192312197dfedc0baf5e7ea096f03f21",
+      "params": [
+        {
+          "name": "dockerfile",
+          "hash": "a26f7529cdb6b02baa0fe3f86868d7bdf0b1d61d8df03f9331e3f28dcd4cec88"
+        },
+        {
+          "name": "path",
+          "hash": "a4807fcee1dddfc2d8a8105415e6f2a314f2a258039ea62290272c75476c7014"
+        },
+        {
+          "name": "tag",
+          "hash": "c4a77afa3d5cd701f32b5f09c195c635b256db8595687828c3ea0785ab5b72f4"
+        }
+      ]
+    },
+    {
+      "name": "create_container",
+      "hash": "b815a8ce79ac0ab46eef91d033a96a6298aaee44fba2209f038df0f290067a30",
+      "params": [
+        {
+          "name": "auto_remove",
+          "hash": "19d5467374321dbf428f0bcbe1dedc6b4ccb3a42c727be97b8d212a3a31952a0"
+        },
+        {
+          "name": "command",
+          "hash": "88bc0bd30d1b7cd4fb79d98d7afca13530d2e8dbec00725d82f7d4cb1664ae95"
+        },
+        {
+          "name": "detach",
+          "hash": "2eee111e7b30a2e387a1079c743fcfd43199452fb08b127186983d60368e1d36"
+        },
+        {
+          "name": "entrypoint",
+          "hash": "c938459cad356a96aa690ff14d85f9285ffafee1178de254930aa60269fc3ee7"
+        },
+        {
+          "name": "environment",
+          "hash": "75678c388925b748d3a4156df724c332fb18cfd2800ef5f0f8b506fc6312769d"
+        },
+        {
+          "name": "image",
+          "hash": "f8dee27723d20cda724d41bf47ef4f5e915948d4f790d7ec7fb9883aa8907439"
+        },
+        {
+          "name": "labels",
+          "hash": "0c9da99b2d6a5801da677fcc8ae643c33730cd34bca0529bff7f0bbe1f092fe5"
+        },
+        {
+          "name": "name",
+          "hash": "8d3a5415ee22e30f39114240c191b98b52f67ea8d52a6d8fede1ed76768cba98"
+        },
+        {
+          "name": "network",
+          "hash": "278df666180dcee703e0ec0372aeb3f2d58aa723d718f0e93554a2d1f3adddce"
+        },
+        {
+          "name": "ports",
+          "hash": "1de7c6d7ac848432c94231b4b5900034f268aad3391d2f554ee25d7a87a46ed6"
+        },
+        {
+          "name": "volumes",
+          "hash": "952112ecfb6d84475c049817196f529385c4f70b1edd7b7c7a4612d76ead514d"
+        }
+      ]
+    },
+    {
+      "name": "create_network",
+      "hash": "eca09860101dcc7683b41d9a49f27c25828b461cb9eb20602d30bc4ebcb20377",
+      "params": [
+        {
+          "name": "driver",
+          "hash": "f331e050c8e9f40de9b06ce2d03672069350da23bc10e56a9ec0e597acf34c71"
+        },
+        {
+          "name": "internal",
+          "hash": "8610f22d1f97f12965e975a97ee7d61185214850ea7d28b97a2fd13a0e988ebf"
+        },
+        {
+          "name": "labels",
+          "hash": "03073866f417fa0943fbde2ebb822876a88f2be18d5e8f07a16925677eb589bb"
+        },
+        {
+          "name": "name",
+          "hash": "b97af01289460424250ff6ffae944f3b692f478e4fe678e05d4a1ba4859990dc"
+        }
+      ]
+    },
+    {
+      "name": "create_volume",
+      "hash": "fb7b9660e6b26608d8ba47910fd565c5a6ebd014957bf8675be01a866064f383",
+      "params": [
+        {
+          "name": "driver",
+          "hash": "8e0db59b3494cbff0ee006edb671dd0554f10d5e178c88d58aff60563a0a0ce3"
+        },
+        {
+          "name": "labels",
+          "hash": "123172e579a0d2fde759eddc7fe3f90ea9528809ff31dd22b3dac84332101824"
+        },
+        {
+          "name": "name",
+          "hash": "6f7dd2eff222a379423cc7b906910b3bb1473dbd7b145c1ca3c053dfc8ce5c43"
+        }
+      ]
+    },
+    {
+      "name": "fetch_container_logs",
+      "hash": "a230664008063599fa40b21841e1a2039bfd1c53a9117edaec3cc4ffe85804e5",
+      "params": [
+        {
+          "name": "container_id",
+          "hash": "6958c0cf044f0a06dc71decbbc4e3b71fd44bb6a6f57123fc14b5a2f811a7ea6"
+        },
+        {
+          "name": "tail",
+          "hash": "e923fbedccdbc7fc6c8c9cc82b95f01fb6eee2d6d9205186aa96ec9e1fa42985"
+        }
+      ]
+    },
+    {
+      "name": "list_containers",
+      "hash": "b2aaef42684012a93ed74f4ae1470bcd33d0d09fd885bbb25a0d6a3cc298a349",
+      "params": [
+        {
+          "name": "all",
+          "hash": "25217765ac89ca0c21562a18af0b7d06cea3dd6f35f7db05ace677745e8be292"
+        },
+        {
+          "name": "filters",
+          "hash": "12cce9715b61b46554fe483591ecd0eb1442bbe3acf6afde384c0aa4b064aace"
+        }
+      ]
+    },
+    {
+      "name": "list_images",
+      "hash": "897691804adfd369ab4f463158e458d988823292bc1bd988f437380dde1bdfe3",
+      "params": [
+        {
+          "name": "all",
+          "hash": "1797445beff70492315c96d517fe2c694e9fb4271338fb6f3cea05532d7841b7"
+        },
+        {
+          "name": "filters",
+          "hash": "5a46660ef3acccf6234f7ca539018dd595a3bc0100452356a8adec594deed7bb"
+        },
+        {
+          "name": "name",
+          "hash": "49ec60d56114d10bbf4a2318e2096f2bdcb9f1e9dc43267693a95e7430a53eb0"
+        }
+      ]
+    },
+    {
+      "name": "list_networks",
+      "hash": "e0f48e9f0094db78a2fac13454951125b26eac6cd465ba99161f419b4118a6b1",
+      "params": [
+        {
+          "name": "filters",
+          "hash": "89f87a5ab141b2985d9202a8ee7336fad0558361f0aa55e3a76c169692368961"
+        }
+      ]
+    },
+    {
+      "name": "list_volumes",
+      "hash": "7eb1265481e78bde4d9cb61ce4e6bd2aa072aedc28e0c468c37deced52ef7ecb"
+    },
+    {
+      "name": "pull_image",
+      "hash": "2dafd1dba3147223f0a035eb647289c88a66a84b93a1f088869efd81c950ed74",
+      "params": [
+        {
+          "name": "repository",
+          "hash": "9d059b146668a6b686684942d7e00e84a4519e4a2950015ceadc13aa4d651a9d"
+        },
+        {
+          "name": "tag",
+          "hash": "c4a77afa3d5cd701f32b5f09c195c635b256db8595687828c3ea0785ab5b72f4"
+        }
+      ]
+    },
+    {
+      "name": "push_image",
+      "hash": "e6664cd117075eb7632367ee61f0a714b6caed15be2bbe73ca8f8c58efa18382",
+      "params": [
+        {
+          "name": "repository",
+          "hash": "9d059b146668a6b686684942d7e00e84a4519e4a2950015ceadc13aa4d651a9d"
+        },
+        {
+          "name": "tag",
+          "hash": "c4a77afa3d5cd701f32b5f09c195c635b256db8595687828c3ea0785ab5b72f4"
+        }
+      ]
+    },
+    {
+      "name": "recreate_container",
+      "hash": "4cd16e24bbc67a32475afde1b1443954d95c17f762e9ef642b1f3491765495d8",
+      "params": [
+        {
+          "name": "auto_remove",
+          "hash": "19d5467374321dbf428f0bcbe1dedc6b4ccb3a42c727be97b8d212a3a31952a0"
+        },
+        {
+          "name": "command",
+          "hash": "88bc0bd30d1b7cd4fb79d98d7afca13530d2e8dbec00725d82f7d4cb1664ae95"
+        },
+        {
+          "name": "container_id",
+          "hash": "fe957695c0472192c71de78c4a4246f0057b5c5712bd12cdabb4b8d51db2b47c"
+        },
+        {
+          "name": "detach",
+          "hash": "2eee111e7b30a2e387a1079c743fcfd43199452fb08b127186983d60368e1d36"
+        },
+        {
+          "name": "entrypoint",
+          "hash": "c938459cad356a96aa690ff14d85f9285ffafee1178de254930aa60269fc3ee7"
+        },
+        {
+          "name": "environment",
+          "hash": "75678c388925b748d3a4156df724c332fb18cfd2800ef5f0f8b506fc6312769d"
+        },
+        {
+          "name": "image",
+          "hash": "f8dee27723d20cda724d41bf47ef4f5e915948d4f790d7ec7fb9883aa8907439"
+        },
+        {
+          "name": "labels",
+          "hash": "0c9da99b2d6a5801da677fcc8ae643c33730cd34bca0529bff7f0bbe1f092fe5"
+        },
+        {
+          "name": "name",
+          "hash": "8d3a5415ee22e30f39114240c191b98b52f67ea8d52a6d8fede1ed76768cba98"
+        },
+        {
+          "name": "network",
+          "hash": "278df666180dcee703e0ec0372aeb3f2d58aa723d718f0e93554a2d1f3adddce"
+        },
+        {
+          "name": "ports",
+          "hash": "1de7c6d7ac848432c94231b4b5900034f268aad3391d2f554ee25d7a87a46ed6"
+        },
+        {
+          "name": "volumes",
+          "hash": "952112ecfb6d84475c049817196f529385c4f70b1edd7b7c7a4612d76ead514d"
+        }
+      ]
+    },
+    {
+      "name": "remove_container",
+      "hash": "42bba4e113755275e7e176ee6cf3577ac652910e39c870d4268799cfcc0325cf",
+      "params": [
+        {
+          "name": "container_id",
+          "hash": "6958c0cf044f0a06dc71decbbc4e3b71fd44bb6a6f57123fc14b5a2f811a7ea6"
+        },
+        {
+          "name": "force",
+          "hash": "6dd6aa3ffa2b44f62d669a63ee5edfd12aceec7d6d54eac1cef101c6a92fb986"
+        }
+      ]
+    },
+    {
+      "name": "remove_image",
+      "hash": "48678674b4fa9965fdefb4d8df4b1e9ae411da607c095f21c9633e00e7194483",
+      "params": [
+        {
+          "name": "force",
+          "hash": "ad53029af2640459dd4ef4293274b1b3237ef4bbcb399797f0da6203faeb65b9"
+        },
+        {
+          "name": "image",
+          "hash": "2c0ca53ceec83f918f22377d3c79850a2aff203b019ed223c633adce802929cd"
+        }
+      ]
+    },
+    {
+      "name": "remove_network",
+      "hash": "05d6a28c8bdd792facc3ae7610477b6e0e15d9493eb71eb14020a69b7e5a57da",
+      "params": [
+        {
+          "name": "network_id",
+          "hash": "662f55d08dfc2dbe245e4118b04bc4df1dd65c37d0c2640f6600619034b6e511"
+        }
+      ]
+    },
+    {
+      "name": "remove_volume",
+      "hash": "418a93d2135bec9250d71bac6c05ee7ca63d295450e9deebacdb906d61b4e1c5",
+      "params": [
+        {
+          "name": "force",
+          "hash": "21f06736c937cacab95a23aaade6aabc81c7f3fe0888c3eb80e2e56bcee4d363"
+        },
+        {
+          "name": "volume_name",
+          "hash": "6f7dd2eff222a379423cc7b906910b3bb1473dbd7b145c1ca3c053dfc8ce5c43"
+        }
+      ]
+    },
+    {
+      "name": "run_container",
+      "hash": "be3965a693f5235851dfd36772819a6ac3868f43dbed3f6fdcce0baa89e86eaf",
+      "params": [
+        {
+          "name": "auto_remove",
+          "hash": "19d5467374321dbf428f0bcbe1dedc6b4ccb3a42c727be97b8d212a3a31952a0"
+        },
+        {
+          "name": "command",
+          "hash": "88bc0bd30d1b7cd4fb79d98d7afca13530d2e8dbec00725d82f7d4cb1664ae95"
+        },
+        {
+          "name": "detach",
+          "hash": "2eee111e7b30a2e387a1079c743fcfd43199452fb08b127186983d60368e1d36"
+        },
+        {
+          "name": "entrypoint",
+          "hash": "c938459cad356a96aa690ff14d85f9285ffafee1178de254930aa60269fc3ee7"
+        },
+        {
+          "name": "environment",
+          "hash": "75678c388925b748d3a4156df724c332fb18cfd2800ef5f0f8b506fc6312769d"
+        },
+        {
+          "name": "image",
+          "hash": "f8dee27723d20cda724d41bf47ef4f5e915948d4f790d7ec7fb9883aa8907439"
+        },
+        {
+          "name": "labels",
+          "hash": "0c9da99b2d6a5801da677fcc8ae643c33730cd34bca0529bff7f0bbe1f092fe5"
+        },
+        {
+          "name": "name",
+          "hash": "8d3a5415ee22e30f39114240c191b98b52f67ea8d52a6d8fede1ed76768cba98"
+        },
+        {
+          "name": "network",
+          "hash": "278df666180dcee703e0ec0372aeb3f2d58aa723d718f0e93554a2d1f3adddce"
+        },
+        {
+          "name": "ports",
+          "hash": "1de7c6d7ac848432c94231b4b5900034f268aad3391d2f554ee25d7a87a46ed6"
+        },
+        {
+          "name": "volumes",
+          "hash": "952112ecfb6d84475c049817196f529385c4f70b1edd7b7c7a4612d76ead514d"
+        }
+      ]
+    },
+    {
+      "name": "start_container",
+      "hash": "8344d6c6b50cf0415a88139fb79566833b8d4f54e151641f604f31b1e1571549",
+      "params": [
+        {
+          "name": "container_id",
+          "hash": "6958c0cf044f0a06dc71decbbc4e3b71fd44bb6a6f57123fc14b5a2f811a7ea6"
+        }
+      ]
+    },
+    {
+      "name": "stop_container",
+      "hash": "6e5bdc513791aed6ed64f05478f41f6470937dcd4aab044b4564b7b02fc1a09a",
+      "params": [
+        {
+          "name": "container_id",
+          "hash": "6958c0cf044f0a06dc71decbbc4e3b71fd44bb6a6f57123fc14b5a2f811a7ea6"
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "name": "docker_compose",
+      "hash": "1747f0fcc38ce43987a5add1ec0c842f005ff7c543f4bd448707600397805be8",
+      "params": [
+        {
+          "name": "containers",
+          "hash": "54248a6c7bcf5fccbf66bfedebccf37bb90163dfa2b4bd5418f587b81883ca58"
+        },
+        {
+          "name": "name",
+          "hash": "e037ff48f8d7aea7707d027e85290c86c6187a9cf8b65f50ad115e2cb4ea38b1"
+        }
+      ]
+    }
+  ]
+}

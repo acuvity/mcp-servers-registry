@@ -1,0 +1,14 @@
+env:
+  AXIOM_URL: dummy_value
+
+secrets:
+  AXIOM_TOKEN:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  AXIOM_ORG:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

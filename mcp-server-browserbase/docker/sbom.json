@@ -1,0 +1,83 @@
+{
+  "tools": [
+    {
+      "name": "browserbase_click",
+      "hash": "0f5e4e9a2e49b9860eacc68a7dc5312c71ab2f83be1734dcddbc8ce31fc7d82b",
+      "params": [
+        {
+          "name": "selector",
+          "hash": "a6922769712660b619584746585d94b11a460d199e2cb84957988b6f9f7cd3bf"
+        }
+      ]
+    },
+    {
+      "name": "browserbase_close_session",
+      "hash": "be033dac5747af43f17a5e254bd24af517866cab1af756a72549b19d9292a250"
+    },
+    {
+      "name": "browserbase_create_session",
+      "hash": "56bdd0db0c370258b7b7ef2d4604f7602a46d68d3f7cdae47dcf8bb48305c774"
+    },
+    {
+      "name": "browserbase_evaluate",
+      "hash": "0d3a0f5f637a3ca339c8c9bef048bb7db6e97e99b3e930af4f90036cf0ae0eac",
+      "params": [
+        {
+          "name": "script",
+          "hash": "4b891a8ea8149f7f674a0058530d3027453331b59fdc8dd937f97530abe2917d"
+        }
+      ]
+    },
+    {
+      "name": "browserbase_fill",
+      "hash": "9092ab55b68d8d48b44cd4637d7c45d295489784406d1d0b2811c64eb390c12e",
+      "params": [
+        {
+          "name": "selector",
+          "hash": "9b2fd4f2a301cda1ab585f8de553e53bf5907a4b15ee68f56f075d6e57464d23"
+        },
+        {
+          "name": "value",
+          "hash": "11d5ebd4e421f3e0f32524bf28a9c06bfce4a5f82b89ad49f4636dce92377c8f"
+        }
+      ]
+    },
+    {
+      "name": "browserbase_get_content",
+      "hash": "6105d7f8013e0ad9af3aeaeb5638755ccc8337aeb2e402ea526aead14e030569",
+      "params": [
+        {
+          "name": "selector",
+          "hash": "cf9b6a9a4d253d7e4cbb921429945fcc70861aebf48bd8c8a0e6c61201352ade"
+        }
+      ]
+    },
+    {
+      "name": "browserbase_navigate",
+      "hash": "5e517ac29796df4781d6e8f8b3be061cc694f0c8e027f40e42ce0739e887b1d5"
+    },
+    {
+      "name": "browserbase_screenshot",
+      "hash": "5e3558916850d55baa3a9b5dfaec0755a8c16f6bcd03be7a78aadbc65745da85",
+      "params": [
+        {
+          "name": "height",
+          "hash": "0e240884937c1dc91c541aaeceb007bb3bb0994e396a1652edb748fa6198615d"
+        },
+        {
+          "name": "name",
+          "hash": "28c1b883362fcf9a1205e2015271212cbc322322343879408bd5b191917b3379"
+        },
+        {
+          "name": "selector",
+          "hash": "aa5efe3a86a6ab130c1c81e671113a8be57294dedf3bbde39fe0088fea2c14d5"
+        },
+        {
+          "name": "width",
+          "hash": "d10864eef69042788f00ea5522b84a05480ff9a1479b27cc6cdfa409a2304060"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

@@ -1,0 +1,23 @@
+{
+  "tools": [
+    {
+      "name": "list_shortcuts",
+      "hash": "2dfb9d420ddb0fb29ac0290d92be9807170382ace9626c51aad78dea3f22a637"
+    },
+    {
+      "name": "run_shortcut",
+      "hash": "e51d485dd7cbb537a13612d26221c5e873a8806a7aa5e6b31c96f1745e0cde9b",
+      "params": [
+        {
+          "name": "input",
+          "hash": "35280b3261181c369ace52d29995f0ce02ea6ff53931965abd7d62d1f976f653"
+        },
+        {
+          "name": "name",
+          "hash": "853c49d56fbb0c9c49e5d2bc68ba697b2baff1e1a9177beead20b7cd4b942608"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

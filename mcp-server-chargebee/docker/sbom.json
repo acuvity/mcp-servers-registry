@@ -1,0 +1,37 @@
+{
+  "tools": [
+    {
+      "name": "chargebee_code_planner",
+      "hash": "4eca3e4c2e78c54c82bb5eb48f37510f336891d641899c91e9bf3f8e34b78b48",
+      "params": [
+        {
+          "name": "goal",
+          "hash": "04cbd92e8f07a0311c6e815da09c2e24c7e4abd77bf55affd2bb6c5dc71b5ced"
+        },
+        {
+          "name": "language",
+          "hash": "9ae7d3f0fa66607de9b4c660cdc526cc9d4faab6dde1eefb1922fad53c0e28c4"
+        }
+      ]
+    },
+    {
+      "name": "chargebee_documentation_search",
+      "hash": "ce67701be188ea7e41d9271b80dbf7fca5530f6631bc78c49338feef1adfc04a",
+      "params": [
+        {
+          "name": "language",
+          "hash": "711806bbd9d838d0515c6c0273b3b7a8875ecb2fcfe4266500f95ac14d7626e0"
+        },
+        {
+          "name": "query",
+          "hash": "40f9fa844f1e83d00fb229b79b454bf69221c6776cb9c2ae4045cee94d9db378"
+        },
+        {
+          "name": "userRequest",
+          "hash": "e3b43cfb33e9457b7026f1e31dab19d04f0f6370eff5ddc7b26409ec213c5c0f"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

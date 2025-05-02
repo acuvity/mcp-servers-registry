@@ -1,0 +1,14 @@
+env:
+  AIRFLOW_HOST: dummy_value
+
+secrets:
+  AIRFLOW_PASSWORD:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  AIRFLOW_USERNAME:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

@@ -463,8 +463,6 @@ The deployment will create a Kubernetes service with a `healthPort`, that is use
 See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-kb-retrieval/charts/mcp-server-aws-kb-retrieval/README.md) for more details about settings.
 
 </details>
-
-
 # 🧠 Server features
 
 For detailed list of all features, tools, arguments and SBOM hashes provided by this server please consult the [readme]([[.blueprint.packaging.source]]/tree/main/[[.blueprint.name]])
@@ -472,5 +470,5 @@ For detailed list of all features, tools, arguments and SBOM hashes provided by 
 ## 🧰 Tools (1)
 
 
-💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).
+💬 Questions? Open an issue or contact us [ support@acuvity.ai ](mailto:support@acuvity.ai).
 📦 Contributions welcome!

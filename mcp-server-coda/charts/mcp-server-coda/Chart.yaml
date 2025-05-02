@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-coda"
+description: A Helm chart for MCP Server for Coda
+home: https://github.com/orellazri/coda-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/orellazri/coda-mcp
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 1.1.0
+keywords:
+  - mcp-server-coda
+  - mcp-server
+  - remote
+  - integration

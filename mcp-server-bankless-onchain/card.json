@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-bankless-onchain",
+  "name": "mcp-server-bankless-onchain ",
+  "description": "MCP server for using Bankless Onchain",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-bankless-onchain",
+      "application": "https://bankless.com"
+    },
+  "tags": ["research","finance"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1.0.6",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 10,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

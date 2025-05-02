@@ -1,0 +1,15 @@
+{
+  "tools": [
+    {
+      "name": "mysql_query",
+      "hash": "bbf7a08e0f63e3039458951045f6f203c1f9d6cb95f4ee4817eac8dca6f18d48",
+      "params": [
+        {
+          "name": "sql",
+          "hash": "738307ab7126bafa0eec815bd5bbc403d34b383b361c819895575181aded847c"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

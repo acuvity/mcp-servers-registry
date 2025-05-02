@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-codex",
+  "name": "mcp-server-codex ",
+  "description": "Model Context Protocol (MCP) server for fetching blockchain data from Codex.io",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-codex",
+      "application": "https://github.com/Codex-Data/codex-mcp"
+    },
+  "tags": ["integration","finance","database","development"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.1.3",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 25,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

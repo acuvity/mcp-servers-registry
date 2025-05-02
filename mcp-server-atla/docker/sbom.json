@@ -1,0 +1,61 @@
+{
+  "tools": [
+    {
+      "name": "evaluate_llm_response",
+      "hash": "3c696082ec32123f441e9d65fb8424707fe1c25178251ec7b19eaa464c0ad131",
+      "params": [
+        {
+          "name": "evaluation_criteria",
+          "hash": "9e00b1e73b41ba53b7422c388ea050d524021bcf039bc99d07091343b7d834bd"
+        },
+        {
+          "name": "expected_llm_output",
+          "hash": "da44033efb68e905ea4a9064fa4feab414b1d5bd3e838787f656c9d3a5421f19"
+        },
+        {
+          "name": "llm_context",
+          "hash": "1b20afab6e02510b84ef9f8d9443ec70a8a5f8ad4501dcd9f79a7868239255bb"
+        },
+        {
+          "name": "llm_prompt",
+          "hash": "820330fc7a42cac6a378ed50e72bf4b9870ad864503a67ffc00606c3fb9e8a90"
+        },
+        {
+          "name": "llm_response",
+          "hash": "9f6d07917c26559a94cc16bc6f753bac39cd278e28996b0171bf90cdb5f9431e"
+        },
+        {
+          "name": "model_id",
+          "hash": "7e14bd599507bd7a9ccafadef2fd719d0d54728ea2e9b3408be1a0444385d964"
+        }
+      ]
+    },
+    {
+      "name": "evaluate_llm_response_on_multiple_criteria",
+      "hash": "dadff2f7353d13543ee7c401bda85af71d552980219d46f201a2f48649581ce9",
+      "params": [
+        {
+          "name": "expected_llm_output",
+          "hash": "da44033efb68e905ea4a9064fa4feab414b1d5bd3e838787f656c9d3a5421f19"
+        },
+        {
+          "name": "llm_context",
+          "hash": "1b20afab6e02510b84ef9f8d9443ec70a8a5f8ad4501dcd9f79a7868239255bb"
+        },
+        {
+          "name": "llm_prompt",
+          "hash": "820330fc7a42cac6a378ed50e72bf4b9870ad864503a67ffc00606c3fb9e8a90"
+        },
+        {
+          "name": "llm_response",
+          "hash": "9f6d07917c26559a94cc16bc6f753bac39cd278e28996b0171bf90cdb5f9431e"
+        },
+        {
+          "name": "model_id",
+          "hash": "7e14bd599507bd7a9ccafadef2fd719d0d54728ea2e9b3408be1a0444385d964"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

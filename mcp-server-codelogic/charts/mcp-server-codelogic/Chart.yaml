@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-codelogic"
+description: A Helm chart for Integrates CodeLogic's powerful codebase knowledge graphs with a Model Context Protocol (MCP) server
+home: https://github.com/CodeLogicIncEngineering/codelogic-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/CodeLogicIncEngineering/codelogic-mcp-server
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 1.0.2
+keywords:
+  - mcp-server-codelogic
+  - mcp-server
+  - remote
+  - integration
+  - development
+  - database

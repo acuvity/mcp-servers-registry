@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-chart"
+description: A Helm chart for A Model Context Protocol server for generating charts using AntV, This is a TypeScript-based MCP server that provides chart generation capabilities. It allows you to create various types of charts through MCP tools.
+home: https://github.com/antvis/mcp-server-chart
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/antvis/mcp-server-chart
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.2.2
+keywords:
+  - mcp-server-chart
+  - mcp-server
+  - standalone
+  - integration
+  - web
+  - development

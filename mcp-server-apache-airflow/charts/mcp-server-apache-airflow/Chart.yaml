@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-apache-airflow"
+description: A Helm chart for Model Context Protocol (MCP) server for Apache Airflow
+home: https://github.com/yangkyeongmo/mcp-server-apache-airflow
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/yangkyeongmo/mcp-server-apache-airflow
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.2.2
+keywords:
+  - mcp-server-apache-airflow
+  - mcp-server
+  - remote
+  - integration
+  - development

@@ -7,11 +7,10 @@
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-everything",
       "application": "https://modelcontextprotocol.io"
     },
-  "tags": ["mcp"],
+  "tags": ["automation","development"],
   "official": false,
-  "packaged": true,
   "scope": "standalone",
-  "mutitenant": false,
+  "mutitenant": true,
   "runtime": "node",
   "version": "2025.4.28",
   "requiresConfiguration": false,

@@ -1,0 +1,125 @@
+{
+  "tools": [
+    {
+      "name": "scrape_as_html",
+      "hash": "ccb1fe327d30ca65f76fccdc0ce114d0a96d6769d5c08da818bee2aa0374e4ba"
+    },
+    {
+      "name": "scrape_as_markdown",
+      "hash": "48946c5fc24b9fcf9fbadbd981dd26be62eb3f34f642e1950aa4f01e9db9d9bc"
+    },
+    {
+      "name": "scraping_browser_click",
+      "hash": "9e9459df10de555dc6aedcfcf83c6f24d93f16675d0a62b1150aa15e3c71a1d0",
+      "params": [
+        {
+          "name": "selector",
+          "hash": "b472eecbbc30b0cf10580e321a828b5b50472aac057c0712023b625869274969"
+        }
+      ]
+    },
+    {
+      "name": "scraping_browser_get_html",
+      "hash": "e9db1ed3982226fa5e634cefeaac3825200257fb26c11720068c9a5c3d28814d",
+      "params": [
+        {
+          "name": "full_page",
+          "hash": "227462f39892944bb89922121fd64f11432bf36046e72adcaaba2df6e402cb73"
+        }
+      ]
+    },
+    {
+      "name": "scraping_browser_get_text",
+      "hash": "da41b92ae44df5399a35b18908cd1ea1c2ccaf5eb058edc749767a9519eaca96"
+    },
+    {
+      "name": "scraping_browser_go_back",
+      "hash": "1070d603d3951f9282bc8e5111b7a6993fa05215c23ba5099429b567a9bdb467"
+    },
+    {
+      "name": "scraping_browser_go_forward",
+      "hash": "4f74235e282e3cba526b98047b02c344c6bc32566bb325d5408e897eadfc6a7e"
+    },
+    {
+      "name": "scraping_browser_links",
+      "hash": "ad9a62f8931d3317d6627e72de82f4606bab9357cd04d19b7133c81aa4816aa0"
+    },
+    {
+      "name": "scraping_browser_navigate",
+      "hash": "4dd63c7c00a6ccd7de8df8d4efa78821477c05dd0fe9fee4f9f530a8fbc78ddd",
+      "params": [
+        {
+          "name": "url",
+          "hash": "63d749360d127f3c1d0d108336745c687aaa08760a306f0dadbbef4e9fadf27f"
+        }
+      ]
+    },
+    {
+      "name": "scraping_browser_screenshot",
+      "hash": "769e18b9e5b78a944b15bd8342288959fd92d197631e87a9b6f293a8aa9c7caf",
+      "params": [
+        {
+          "name": "full_page",
+          "hash": "b8634cbc1491ba7afc92714a4c557a81e3ae93ef4cc4ee2568f9c15d1bb4ed22"
+        }
+      ]
+    },
+    {
+      "name": "scraping_browser_type",
+      "hash": "9cd8fb996ff445688e56e6c500ed27847e27b72c606d5c8174708d92fe8ec726",
+      "params": [
+        {
+          "name": "selector",
+          "hash": "8432a6c9577dcae09ef6bd2b0f59c8b350c5e6e0703169193a6639555168f976"
+        },
+        {
+          "name": "submit",
+          "hash": "9ad8eef45aadaffc2eceb18d4eded88374b264f66b08c3865109a3d96ba7acac"
+        },
+        {
+          "name": "text",
+          "hash": "2bf42268dbb30ce1452879e6fdf8c10a259316e899df9c4fb0405b1f0e42fe8c"
+        }
+      ]
+    },
+    {
+      "name": "scraping_browser_wait_for",
+      "hash": "dc6f8b68829f63f13684b67baf0e443da64f87e0e4af158f17f798531665b39a",
+      "params": [
+        {
+          "name": "selector",
+          "hash": "036462863c2f283ab491e0e7b27eaf9d692a530b555b7e805c8841d80ea2e2a3"
+        },
+        {
+          "name": "timeout",
+          "hash": "74f20c7f092d948e04cca44c284e61d1fdf8d1a9668dfa5a689ce55bcb15fb32"
+        }
+      ]
+    },
+    {
+      "name": "search_engine",
+      "hash": "596a407954d04c093fd9ff3adec1ddab4bcdfe214b6c82189a2607c514f9ade5"
+    },
+    {
+      "name": "session_stats",
+      "hash": "a361dcc45d17f9cad5e4b1872ef7ff26d4b355774d5be01159573e9616ac7c76"
+    },
+    {
+      "name": "web_data_amazon_product",
+      "hash": "65fba1ff50443ee093a32d8301d918bf2b785e736dbb5cb0aadbc76cb889f599"
+    },
+    {
+      "name": "web_data_amazon_product_reviews",
+      "hash": "8891e947fd3a6e9d47b6ef925dc5976566a78e8e1ede12b2f1e350fea32bbaac"
+    },
+    {
+      "name": "web_data_linkedin_company_profile",
+      "hash": "ccffa642e9b1120c15f275650d1b685bb127c4a6ea8f6048ddc9061698c59f95"
+    },
+    {
+      "name": "web_data_linkedin_person_profile",
+      "hash": "652f6bc070db40560b87b14c185a85ead84a45a05840122b0ec5c4e6775ea283"
+    }
+  ],
+  "prompts": []
+}

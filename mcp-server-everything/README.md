@@ -73,7 +73,6 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 
 > [!NOTE]
 > Given mcp-server-everything scope of operation it can be hosted anywhere.
-> But keep in mind that this requires a peristent storage and that is might not be capable of serving mulitple clients at the same time.
 
 # 🧰 Clients Integrations
 
@@ -363,8 +362,6 @@ The deployment will create a Kubernetes service with a `healthPort`, that is use
 See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-everything/charts/mcp-server-everything/README.md) for more details about settings.
 
 </details>
-
-
 # 🧠 Server features
 
 ## 🧰 Tools (8)

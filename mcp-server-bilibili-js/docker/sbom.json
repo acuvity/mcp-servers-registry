@@ -1,0 +1,23 @@
+{
+  "tools": [
+    {
+      "name": "bilibili-search",
+      "hash": "c7c79c579103151e8eff667673bd41da55a265caaf82589e7ea927ac1597530e",
+      "params": [
+        {
+          "name": "keyword",
+          "hash": "c00a21fdf78473a4494d9f689ac863ee055c35e0a8b4a26c55f3d5e873b6e2b2"
+        },
+        {
+          "name": "limit",
+          "hash": "50697315de106d6cbc6712b3792aa588e0ba1456ed02daf9de5dfccb22fa88c6"
+        },
+        {
+          "name": "page",
+          "hash": "581e4617dac080f78d3f6c3b28c7dbc2e7ff36cf318908c1da367d124b667f03"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

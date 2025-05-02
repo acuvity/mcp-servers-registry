@@ -1,0 +1,31 @@
+{
+  "tools": [
+    {
+      "name": "search",
+      "hash": "d4e4e88e341229bfc62880b1c1779fd511ff9f6c59e845351b590a2dab7ba865",
+      "params": [
+        {
+          "name": "maxResults",
+          "hash": "d9a89334a2638c14a8bd237be63fdad21da606cb8e3d1b3ecfece7ea3f67a804"
+        },
+        {
+          "name": "outputFormats",
+          "hash": "b125fbd9a8a187e3f318011b58110b3271b83d6fc81b3ccd72bba1679ff5ed2b"
+        },
+        {
+          "name": "query",
+          "hash": "1509988afc3a6567947f5050a56030a7866cfdf99cfd47fdb75a41d236d113da"
+        },
+        {
+          "name": "requestTimeoutSecs",
+          "hash": "089863463bab99051479cc0aa13f818454165ea1bdcb546a45dfaff7216c7224"
+        },
+        {
+          "name": "scrapingTool",
+          "hash": "ca811610d889f91eed5173089a31a63b9fe4984e61d32c19ece39dee22d77907"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

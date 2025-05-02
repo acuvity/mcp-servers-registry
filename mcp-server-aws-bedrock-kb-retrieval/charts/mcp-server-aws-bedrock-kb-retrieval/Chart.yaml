@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-aws-bedrock-kb-retrieval"
+description: A Helm chart for An AWS Labs Model Context Protocol (MCP) server for Bedrock Knowledge Base Retrieval
+home: https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.1.7
+keywords:
+  - mcp-server-aws-bedrock-kb-retrieval
+  - mcp-server
+  - remote
+  - cloud
+  - integration

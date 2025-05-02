@@ -1,0 +1,449 @@
+{
+  "tools": [
+    {
+      "name": "filter_exchanges",
+      "hash": "8630c1b6c5eebcc85ba3291a22119ec0c08d81cfd442d6a98e5984a36a43fa7e",
+      "params": [
+        {
+          "name": "limit",
+          "hash": "4fcfd7f301034d3a93e4f4f9f430796d7b41713775c03972f6ca853570df4404"
+        },
+        {
+          "name": "offset",
+          "hash": "8abf1d3bcf2b7ca974c3ddfbb224bdd579328225311ab88f42c50f8097f74d85"
+        },
+        {
+          "name": "phrase",
+          "hash": "53f29b67c8d12d5eba8d98ce93c733c3da39a26b8615c11d42a8d14dbd6ecc64"
+        },
+        {
+          "name": "rankings",
+          "hash": "7ffc7462315f7dc4a4d4d466ae87caba4c8a82ac3434dd69690de0bd6447aa5c"
+        }
+      ]
+    },
+    {
+      "name": "filter_pairs",
+      "hash": "21860fffc620dc64fb8a8950458c0ca1c2d246f10a43132bb0eff087687afc54",
+      "params": [
+        {
+          "name": "limit",
+          "hash": "4fcfd7f301034d3a93e4f4f9f430796d7b41713775c03972f6ca853570df4404"
+        },
+        {
+          "name": "offset",
+          "hash": "8abf1d3bcf2b7ca974c3ddfbb224bdd579328225311ab88f42c50f8097f74d85"
+        },
+        {
+          "name": "statsType",
+          "hash": "0ddbc9e19f5dd643d1319be910b8afb320993917806f9bd83574f8adcbc028d1"
+        }
+      ]
+    },
+    {
+      "name": "filter_tokens",
+      "hash": "7f42285dfb6edeb092932d1d5150790d852fa4088d9843b76fb0146e3c7092f1",
+      "params": [
+        {
+          "name": "excludeTokens",
+          "hash": "2a18cae57bbaa74042dac148d0785f623868ca19c323c6b14009aebf5545819b"
+        },
+        {
+          "name": "filters",
+          "hash": "5e2d490530e30f2a5c970a251f1982736aac2e3d6245f6146115ce846563d092"
+        },
+        {
+          "name": "limit",
+          "hash": "4fcfd7f301034d3a93e4f4f9f430796d7b41713775c03972f6ca853570df4404"
+        },
+        {
+          "name": "offset",
+          "hash": "8abf1d3bcf2b7ca974c3ddfbb224bdd579328225311ab88f42c50f8097f74d85"
+        },
+        {
+          "name": "phrase",
+          "hash": "3a4cd287a899ea850962f034b94b6d9304978abc39f0e5b12e19295dcec4002a"
+        },
+        {
+          "name": "rankings",
+          "hash": "7ffc7462315f7dc4a4d4d466ae87caba4c8a82ac3434dd69690de0bd6447aa5c"
+        },
+        {
+          "name": "statsType",
+          "hash": "0ddbc9e19f5dd643d1319be910b8afb320993917806f9bd83574f8adcbc028d1"
+        },
+        {
+          "name": "tokens",
+          "hash": "620a1127deffb97aeddc2ddef7bfb5d4cfd3160011685d6f16602a2a5d09ffd0"
+        }
+      ]
+    },
+    {
+      "name": "get_detailed_pair_stats",
+      "hash": "9fc39174e9aa193c8ad1c90bb004d9a522d3596cddca3d9de827a1c8a6cc4ee1",
+      "params": [
+        {
+          "name": "address",
+          "hash": "a38aa3fcfff27ccf28aca359f18943a9ec5cea998c7b5634865d63debd9c1084"
+        },
+        {
+          "name": "bucketCount",
+          "hash": "a8115d5bc9d7211a3ba644593d51d8abce2209688f49bbd22071802730a50bbf"
+        },
+        {
+          "name": "duration",
+          "hash": "eca43c06d8b35b718ce4c6f1b1fa2edee25e80de7ff735e5f627e73a4d7b8462"
+        },
+        {
+          "name": "networkId",
+          "hash": "18700deb62cb74d9dfbcee29ff61e94d1ceb4d9c93d9fb8d0c98ba61339459b9"
+        },
+        {
+          "name": "statsType",
+          "hash": "0ddbc9e19f5dd643d1319be910b8afb320993917806f9bd83574f8adcbc028d1"
+        }
+      ]
+    },
+    {
+      "name": "get_detailed_pairs_stats",
+      "hash": "470cb8d70ab7a48d4eaae053c2ac0d6e72bdc8093c1b73d6ce69baa47f3a7cbc",
+      "params": [
+        {
+          "name": "bucketCount",
+          "hash": "a8115d5bc9d7211a3ba644593d51d8abce2209688f49bbd22071802730a50bbf"
+        },
+        {
+          "name": "duration",
+          "hash": "eca43c06d8b35b718ce4c6f1b1fa2edee25e80de7ff735e5f627e73a4d7b8462"
+        },
+        {
+          "name": "networkId",
+          "hash": "769e842b67f6ecd7e0b62c7ded4ac995cd898d2d4c08490ec62a6d96b0cb67a2"
+        },
+        {
+          "name": "pairAddresses",
+          "hash": "bb118d83f2028e02dce29ed7b4f033e1c10535002722036d1d9e9d1884ed0b52"
+        }
+      ]
+    },
+    {
+      "name": "get_latest_tokens",
+      "hash": "6c1f9cf9296841e1ce565d3e5dafd616c18bddf8a0ff3071c523bb919c97b195",
+      "params": [
+        {
+          "name": "limit",
+          "hash": "4fcfd7f301034d3a93e4f4f9f430796d7b41713775c03972f6ca853570df4404"
+        },
+        {
+          "name": "offset",
+          "hash": "8abf1d3bcf2b7ca974c3ddfbb224bdd579328225311ab88f42c50f8097f74d85"
+        }
+      ]
+    },
+    {
+      "name": "get_liquidity_locks",
+      "hash": "46313e0acd7757c54bf60a9c30b5ff96cf35b055e12bc116ef775a424b80a3a0",
+      "params": [
+        {
+          "name": "address",
+          "hash": "a38aa3fcfff27ccf28aca359f18943a9ec5cea998c7b5634865d63debd9c1084"
+        },
+        {
+          "name": "cursor",
+          "hash": "81a3aa63db02772fff8daadbfc1304469ac0c2bee674363902041e3474bd5d14"
+        },
+        {
+          "name": "networkId",
+          "hash": "18700deb62cb74d9dfbcee29ff61e94d1ceb4d9c93d9fb8d0c98ba61339459b9"
+        }
+      ]
+    },
+    {
+      "name": "get_liquidity_metadata",
+      "hash": "9fffc813b44d940c80c42534a9f958e068700e0988c2be7bd759e6cf66b308b6",
+      "params": [
+        {
+          "name": "address",
+          "hash": "a38aa3fcfff27ccf28aca359f18943a9ec5cea998c7b5634865d63debd9c1084"
+        },
+        {
+          "name": "networkId",
+          "hash": "18700deb62cb74d9dfbcee29ff61e94d1ceb4d9c93d9fb8d0c98ba61339459b9"
+        }
+      ]
+    },
+    {
+      "name": "get_network_stats",
+      "hash": "ffcfa8385b76a2fd430b1d9b87e46efe9a5897cc31fa9c7fce6e6ef6086cabbf",
+      "params": [
+        {
+          "name": "networkId",
+          "hash": "51f97a45d980cadc59936925b9f4ba1d832f3025192094619863ddf3bace4f13"
+        }
+      ]
+    },
+    {
+      "name": "get_network_status",
+      "hash": "d00d1303c24cf762215e9237abfceffa4495737886ed702fca5b4ecf014eab1e",
+      "params": [
+        {
+          "name": "networkId",
+          "hash": "ec0489f5be47d47fc4000d7ffa78fe9b986e3845433b8187fcbb61917f137ba8"
+        }
+      ]
+    },
+    {
+      "name": "get_networks",
+      "hash": "d3f5cff9649dd3b2dbfbf114fef1de8109c97ffcc942d2d0c39f5fd9adb0b4be"
+    },
+    {
+      "name": "get_pair_metadata",
+      "hash": "9e96de2e28ddcf03d626555cdd2a0f2122b6da251ffae11d1eba0eb006f94dab",
+      "params": [
+        {
+          "name": "address",
+          "hash": "a38aa3fcfff27ccf28aca359f18943a9ec5cea998c7b5634865d63debd9c1084"
+        },
+        {
+          "name": "networkId",
+          "hash": "18700deb62cb74d9dfbcee29ff61e94d1ceb4d9c93d9fb8d0c98ba61339459b9"
+        },
+        {
+          "name": "quoteToken",
+          "hash": "08bbd99302b6a571a05e72dcaccd7e2be846a5ebd5b6671fc79059888022545b"
+        },
+        {
+          "name": "statsType",
+          "hash": "0ddbc9e19f5dd643d1319be910b8afb320993917806f9bd83574f8adcbc028d1"
+        }
+      ]
+    },
+    {
+      "name": "get_token_balances",
+      "hash": "092b99a455a510605e2c11239bd4e660cc9d59590f5a63881f809ea0ae6e4829",
+      "params": [
+        {
+          "name": "cursor",
+          "hash": "81a3aa63db02772fff8daadbfc1304469ac0c2bee674363902041e3474bd5d14"
+        },
+        {
+          "name": "filterToken",
+          "hash": "856147bf47963c5fa3b398000b8254dc8c9183d4fdc0f19f5b0a53ce6b92e1f9"
+        },
+        {
+          "name": "includeNative",
+          "hash": "1fa43d78f4ac0bf01712926d814025c68c12f802f698c513aec50c724d753ce0"
+        },
+        {
+          "name": "networkId",
+          "hash": "842075da3361b80fb82e59882ca0aeca463b0dfae3a88cafc1d93300c6435f94"
+        },
+        {
+          "name": "walletAddress",
+          "hash": "16994c44e621216227e163edaaa50a589cc00005411bbe22ae036e8761e3438c"
+        }
+      ]
+    },
+    {
+      "name": "get_token_chart_data",
+      "hash": "a19d5851b5e4388b73126f470c87ff7cd2b53bcbedc615ba3123c54a335e193e",
+      "params": [
+        {
+          "name": "address",
+          "hash": "b5f3cdb268f4472b253f29af47672b6790fb7a33594a31e128772ebf02743426"
+        },
+        {
+          "name": "from",
+          "hash": "57c536372fb30c9882041213d54caf3b1c24a0339c1fda6980dd7b07eefa862a"
+        },
+        {
+          "name": "networkId",
+          "hash": "afb0b46b6fb98b529d11e9570a99683ed44f3ead5b731c042a7def871d6cdf9e"
+        },
+        {
+          "name": "quoteToken",
+          "hash": "08bbd99302b6a571a05e72dcaccd7e2be846a5ebd5b6671fc79059888022545b"
+        },
+        {
+          "name": "resolution",
+          "hash": "9411ec331a694f15f2a44c23b97541bd2ef8b3283fcdc08128b4e5d075465e70"
+        },
+        {
+          "name": "statsType",
+          "hash": "0ddbc9e19f5dd643d1319be910b8afb320993917806f9bd83574f8adcbc028d1"
+        }
+      ]
+    },
+    {
+      "name": "get_token_chart_urls",
+      "hash": "d13d3a29be9f78df3f02f44a7efdaf8989d6859601cbaa88c3ab3d97fe1426db",
+      "params": [
+        {
+          "name": "networkId",
+          "hash": "18700deb62cb74d9dfbcee29ff61e94d1ceb4d9c93d9fb8d0c98ba61339459b9"
+        },
+        {
+          "name": "pairAddress",
+          "hash": "a38aa3fcfff27ccf28aca359f18943a9ec5cea998c7b5634865d63debd9c1084"
+        },
+        {
+          "name": "quoteToken",
+          "hash": "08bbd99302b6a571a05e72dcaccd7e2be846a5ebd5b6671fc79059888022545b"
+        }
+      ]
+    },
+    {
+      "name": "get_token_events",
+      "hash": "6d57b89054e980fcfd78227c5a2d6e5227b12c522d3456a8e9f139d3036374e0",
+      "params": [
+        {
+          "name": "cursor",
+          "hash": "bdb32017fa9c6d99d3a448b4b82f877ab67b967dafb13768023bede720ce5e36"
+        },
+        {
+          "name": "direction",
+          "hash": "ae424249e49728aa72ea501db533ddb30f70cc1a41725e4acefd5ff942d6ca28"
+        },
+        {
+          "name": "limit",
+          "hash": "58aeef310c17e3ae9fbad20ae949bfd619e1aa233457b5ec4e319134febc3119"
+        },
+        {
+          "name": "query",
+          "hash": "ad287d740db02910935323d0212f11fa32701a3197672cf6a56241a0cd885d6f"
+        }
+      ]
+    },
+    {
+      "name": "get_token_events_for_maker",
+      "hash": "30d3fca07600242d64807ed0b273c5eb198511dfc0966604d97e185e5702e039",
+      "params": [
+        {
+          "name": "cursor",
+          "hash": "bdb32017fa9c6d99d3a448b4b82f877ab67b967dafb13768023bede720ce5e36"
+        },
+        {
+          "name": "direction",
+          "hash": "ae424249e49728aa72ea501db533ddb30f70cc1a41725e4acefd5ff942d6ca28"
+        },
+        {
+          "name": "limit",
+          "hash": "58aeef310c17e3ae9fbad20ae949bfd619e1aa233457b5ec4e319134febc3119"
+        },
+        {
+          "name": "query",
+          "hash": "ad287d740db02910935323d0212f11fa32701a3197672cf6a56241a0cd885d6f"
+        }
+      ]
+    },
+    {
+      "name": "get_token_holders",
+      "hash": "fc449faf373608ebe12f069e17fd58357247fb08b0beeff0c287e9bbf03cc196",
+      "params": [
+        {
+          "name": "address",
+          "hash": "92cf3586d95381037ab1da77d5f68fd3532dd9d94e3398abe8bf6dee4f945c47"
+        },
+        {
+          "name": "cursor",
+          "hash": "81a3aa63db02772fff8daadbfc1304469ac0c2bee674363902041e3474bd5d14"
+        },
+        {
+          "name": "networkId",
+          "hash": "fbed697d623d0cc2b42dce6e350a9ac29ac3e421d770069fe7812cf6df86643a"
+        },
+        {
+          "name": "sort",
+          "hash": "4a0bb4740faf12bf6d6e89b2ac9d91a4079ee16aa499ff91e757e0fe175232f8"
+        }
+      ]
+    },
+    {
+      "name": "get_token_info",
+      "hash": "73948792b8dee5194fa86152b0b138facda5af769ddf019e7521aedcfb8daf46",
+      "params": [
+        {
+          "name": "address",
+          "hash": "92cf3586d95381037ab1da77d5f68fd3532dd9d94e3398abe8bf6dee4f945c47"
+        },
+        {
+          "name": "networkId",
+          "hash": "fbed697d623d0cc2b42dce6e350a9ac29ac3e421d770069fe7812cf6df86643a"
+        }
+      ]
+    },
+    {
+      "name": "get_token_pairs",
+      "hash": "4892a5976e03b2131377a544ca747d1430ee2d1a26a49bb49be268daa32faddc",
+      "params": [
+        {
+          "name": "address",
+          "hash": "92cf3586d95381037ab1da77d5f68fd3532dd9d94e3398abe8bf6dee4f945c47"
+        },
+        {
+          "name": "limit",
+          "hash": "41d99529a15a9452e284d987dcd32299180074a66358962c9047d6c8e8c24ebc"
+        },
+        {
+          "name": "networkId",
+          "hash": "fbed697d623d0cc2b42dce6e350a9ac29ac3e421d770069fe7812cf6df86643a"
+        }
+      ]
+    },
+    {
+      "name": "get_token_pairs_with_metadata",
+      "hash": "64fe25d2e3dffafedf1e38ad2430f9138a88d669685d55acf62af61a08bff029",
+      "params": [
+        {
+          "name": "address",
+          "hash": "92cf3586d95381037ab1da77d5f68fd3532dd9d94e3398abe8bf6dee4f945c47"
+        },
+        {
+          "name": "limit",
+          "hash": "41d99529a15a9452e284d987dcd32299180074a66358962c9047d6c8e8c24ebc"
+        },
+        {
+          "name": "networkId",
+          "hash": "fbed697d623d0cc2b42dce6e350a9ac29ac3e421d770069fe7812cf6df86643a"
+        }
+      ]
+    },
+    {
+      "name": "get_token_prices",
+      "hash": "ae01f6a57c459aa1829b25acde1a313b6bafe76d56239d96047762000cee346d"
+    },
+    {
+      "name": "get_token_sparklines",
+      "hash": "c8f00c6033b79ff5b4e5a956356df5aea4fcd5bf182c8122cb58285a8f286a26",
+      "params": [
+        {
+          "name": "addresses",
+          "hash": "e27c4e3ea68338285c4c8a4aa13227ea5d3508adeb94adc4111585c82509e2b8"
+        },
+        {
+          "name": "networkId",
+          "hash": "ee19b925f1ac5a57dbd766748d5b17eec77f951b90ea9289b93d29939944e1de"
+        }
+      ]
+    },
+    {
+      "name": "get_tokens",
+      "hash": "5d94664ccc45387dcd5cada3ba00d9458c198d715358e4853e08f513112bc478"
+    },
+    {
+      "name": "get_top_10_holders_percent",
+      "hash": "a51fc3400cb76ea941fec38a581728c9c0df1985b8c3d0dc83088e9f8a0f0114",
+      "params": [
+        {
+          "name": "address",
+          "hash": "92cf3586d95381037ab1da77d5f68fd3532dd9d94e3398abe8bf6dee4f945c47"
+        },
+        {
+          "name": "networkId",
+          "hash": "fbed697d623d0cc2b42dce6e350a9ac29ac3e421d770069fe7812cf6df86643a"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

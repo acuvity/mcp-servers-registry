@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-anilist",
+  "name": "mcp-server-anilist ",
+  "description": "AniList MCP server for accessing AniList API data",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-anilist",
+      "application": "https://github.com/yuna0x0/anilist-mcp"
+    },
+  "tags": ["research","web","integration"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1.2.4",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 44,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

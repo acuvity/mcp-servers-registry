@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-bing-search"
+description: A Helm chart for Add your description here
+home: https://github.com/leehanchung/bing-search-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/leehanchung/bing-search-mcp
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.1.0
+keywords:
+  - mcp-server-bing-search
+  - mcp-server
+  - remote
+  - research
+  - integration

@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-attio"
+description: A Helm chart for A Model Context Protocol server that connects Attio to LLMs
+home: https://github.com/hmk/attio-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/hmk/attio-mcp-server
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.0.2
+keywords:
+  - mcp-server-attio
+  - mcp-server
+  - remote
+  - integration

@@ -1,0 +1,17 @@
+{
+  "tools": [
+    {
+      "name": "bing_image_search",
+      "hash": "5bd8f5d4621377c3f6b47eae9e84130dbf09f63316102883d19ed314fe530278"
+    },
+    {
+      "name": "bing_news_search",
+      "hash": "a9e3a69c48da37ca76ff1e6a6c1691baccd80a54816606c035ba756a093e6f63"
+    },
+    {
+      "name": "bing_web_search",
+      "hash": "a7cb74b458a1ffa564546617ffbcc3417c27e09b406befbedb1c6b033bc8e4e6"
+    }
+  ],
+  "prompts": []
+}

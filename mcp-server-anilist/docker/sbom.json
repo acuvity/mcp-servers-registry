@@ -1,0 +1,537 @@
+{
+  "tools": [
+    {
+      "name": "add_list_entry",
+      "hash": "bee27d9670b8efed6061d9c21427b80864adb334ec9de9f7814db2b46b0f84db",
+      "params": [
+        {
+          "name": "id",
+          "hash": "32b5327ea19475aed51110f4c6227d887523900d8b850b0f2b6441f7365d772f"
+        },
+        {
+          "name": "options",
+          "hash": "03603e2b3e3a692d2e225e2afddd31d0ff4f325b504a90502f6047a10077b8a3"
+        }
+      ]
+    },
+    {
+      "name": "delete_activity",
+      "hash": "631269a0c704d52f32965272087730b4e57990b896e9a77849b7d2d86a26d219",
+      "params": [
+        {
+          "name": "id",
+          "hash": "f50253c3fc047fce20ff991ace60e2ed4a72e300d82902e15a299d652563b798"
+        }
+      ]
+    },
+    {
+      "name": "delete_thread",
+      "hash": "e626f45893a2683465040d7aab912e95a1826a21c2cb6b4b1f746b0da2e2c8f1",
+      "params": [
+        {
+          "name": "id",
+          "hash": "9219c650ea0b5e49c4e6e3d61854ffff56e60b0ee2ee4c2764efc2458fd39bcd"
+        }
+      ]
+    },
+    {
+      "name": "favourite_anime",
+      "hash": "0eca9d1110b65304603a25203ed90f72e09e404ec0a49ecbffe67fb5ab6d261a",
+      "params": [
+        {
+          "name": "id",
+          "hash": "f4d93b25225bd03751f33dd43c5134a036b72e5759dc1c3b908e31102d1bf27d"
+        }
+      ]
+    },
+    {
+      "name": "favourite_character",
+      "hash": "145dd227c1087426e5b0c560a38a696dc0abf4040ef699cf35c9f25d6c81515c",
+      "params": [
+        {
+          "name": "id",
+          "hash": "1255b36c8834583bf3d70deb9db8312d87470aa898bc8c7139d77402dabb58da"
+        }
+      ]
+    },
+    {
+      "name": "favourite_manga",
+      "hash": "1fa1d64e2a87d7e0e3665bb82efc7bc9a7c81a5d7084a633e9e4f717b5ecb855",
+      "params": [
+        {
+          "name": "id",
+          "hash": "f993415b6ac81ce9f580ecf8cca54f1ea063350a6bfa0c9e63f8296fbe17c538"
+        }
+      ]
+    },
+    {
+      "name": "favourite_staff",
+      "hash": "20d3909a6e003cbe21ae5df88f12022ccd1023e97965a727a5656ea3b2cd152f",
+      "params": [
+        {
+          "name": "id",
+          "hash": "78d227992de2a3308d8b2c12d41ce9f8fbec8bf715d366ff569b089549d59c18"
+        }
+      ]
+    },
+    {
+      "name": "favourite_studio",
+      "hash": "99e7d201e6706025e2f6a337a1f8f1c0fac3ebb4aa6821cd724e0336947feffa",
+      "params": [
+        {
+          "name": "id",
+          "hash": "779c76ebe852f380bec80ce5f8b09ddab8b04773b8ba5142d7995de27b486360"
+        }
+      ]
+    },
+    {
+      "name": "follow_user",
+      "hash": "909d0d0ff52cae9ba82c5aee6a3147d5eb40c288ba50ed6217ed1a41f687cae8",
+      "params": [
+        {
+          "name": "userID",
+          "hash": "2bfe283776ae4b0fe78380fef5f015ea80ec03dcdf4ba2a1bf9b66a058f5ef06"
+        }
+      ]
+    },
+    {
+      "name": "get_activity",
+      "hash": "eac43d52c06f518dd5012cf5c9b57cc80419b6a367df510413531e9065b84e0a",
+      "params": [
+        {
+          "name": "activityID",
+          "hash": "29b20be9e6cb1e270f8db6a282d82e6a7f7f23e44d2ac16dc0ed3e99104df00c"
+        }
+      ]
+    },
+    {
+      "name": "get_anime",
+      "hash": "01427fe8bff6f28b326483a960e9f8a703eb65a3b9f6ab6496e2739c4e6eb323",
+      "params": [
+        {
+          "name": "id",
+          "hash": "e84f610046dfa29979b874dd94eedd62985185c1f8725b4cb96ace70df1b68ef"
+        }
+      ]
+    },
+    {
+      "name": "get_authorized_user",
+      "hash": "60fce3f7a98fbd45363251bca9e6f2d00b8e911c37a5fa99b20dee654012cfaf"
+    },
+    {
+      "name": "get_character",
+      "hash": "25c66963c5ccc75b949c507944d7e1ba8b5113a57b4ae11b538b5c7b2910c5d9",
+      "params": [
+        {
+          "name": "id",
+          "hash": "6d3ea78f44c9e999651a8ba595a02cdc17b20e304310edee1852b43d4662b8d3"
+        }
+      ]
+    },
+    {
+      "name": "get_full_user_info",
+      "hash": "8eeed3e8325b958b40680cbe0a4b70e1f23612a7c2f64c8b3b044403e3fe24c3",
+      "params": [
+        {
+          "name": "user",
+          "hash": "43033534e7ab2d124e138f11c785c53358569b48de583e133cbee4c90f177d36"
+        }
+      ]
+    },
+    {
+      "name": "get_genres",
+      "hash": "3119d941576771602937edba90e01bcf1570033840e1d18db43551400ac709b1"
+    },
+    {
+      "name": "get_manga",
+      "hash": "ff745d329e1ded5519ec851464b84991bac3477ba666eb00ebf364c3cdc58f58",
+      "params": [
+        {
+          "name": "id",
+          "hash": "50a243b88b74c604f24eedfc156eed1edac57b0f5a75e686ccc8c502b4363d32"
+        }
+      ]
+    },
+    {
+      "name": "get_media_tags",
+      "hash": "39e9b1d5a8d8d23ce84b0ec13ff1b196999b6abff7ebf1be30603cce8ba774c3"
+    },
+    {
+      "name": "get_recommendation",
+      "hash": "04bf2c96e92b110f870dde57c5c2950dfa48ad4df02cf3a09fc143bf21d02b23",
+      "params": [
+        {
+          "name": "recommendID",
+          "hash": "6fdbc613824fda9d851f7720da13beb6c4c2a83282a699df53c74c51d6c534a9"
+        }
+      ]
+    },
+    {
+      "name": "get_recommendations_for_media",
+      "hash": "0f669753486b55c2745c715349c23de8ec798979031ea1299dcfb89570a58909",
+      "params": [
+        {
+          "name": "mediaID",
+          "hash": "caae22e3a6291aed0aec414007f99d03745239aad999ef886002e1491c877d13"
+        },
+        {
+          "name": "page",
+          "hash": "6455dfbaa427a76661906350f3152bc2445171d5ab7587db8fd0714de8e7168e"
+        },
+        {
+          "name": "perPage",
+          "hash": "f49c259f2bc996a97fb32268bb81898ffecba585f2bd6acd54921b5417b42240"
+        }
+      ]
+    },
+    {
+      "name": "get_site_statistics",
+      "hash": "66e307e81457b3393b280768bf76012b3a2d27319240d182473e8a0f823f9c63"
+    },
+    {
+      "name": "get_staff",
+      "hash": "63a72128dbfd0832c5ec0816560100d2c4aa9ed88dda8d1097089cf37efb80ed",
+      "params": [
+        {
+          "name": "id",
+          "hash": "8db9c77a6485331ca7daf753539abc62c08e029dc6dad688f1787197d5a5f4c0"
+        }
+      ]
+    },
+    {
+      "name": "get_studio",
+      "hash": "3ab74d230b41b7d3dde787e4bb3cb0fd1f96d2bd8940fb4297626c35e23f37dd",
+      "params": [
+        {
+          "name": "studio",
+          "hash": "3770ef402e84d503c19198c5768fc562fbabe1b4638add9d4cfd525139efa59b"
+        }
+      ]
+    },
+    {
+      "name": "get_thread",
+      "hash": "b271d46247da1831713b4d7e83a22dbd04af0199597cc26554ec4db24c9b7257",
+      "params": [
+        {
+          "name": "id",
+          "hash": "dfff86b1cdb6148691863e2700b29f70592b0bc88d57edc1511e8e69c6cd4ff6"
+        }
+      ]
+    },
+    {
+      "name": "get_thread_comments",
+      "hash": "174ede3feb05cb25bb7fcc8db1f49dae33a6d9797b8e52fd4e5bd59e9ee02b52",
+      "params": [
+        {
+          "name": "id",
+          "hash": "e1b76f5e401ec313f6357e8f3f0e9adc1a052c0d9aee06c48fc210472584063c"
+        },
+        {
+          "name": "page",
+          "hash": "e583a34822e645f2f7ca8b876cc4367f3f486dcf70a85334bbdcb37d1aa4c50d"
+        },
+        {
+          "name": "perPage",
+          "hash": "69187aa7046e5b81e1303bb306f8522d982580877cdd74b56b84a1f6efddc816"
+        }
+      ]
+    },
+    {
+      "name": "get_todays_birthday_characters",
+      "hash": "715a5328579cd0ed37ab5a1f1c5ab838f4fd1e8d15318afa07982430f5f14238",
+      "params": [
+        {
+          "name": "page",
+          "hash": "dc1dab940cd36eaae54fb05b0c364a4ce8eacccbe9cfd4bf31f507383b916689"
+        }
+      ]
+    },
+    {
+      "name": "get_todays_birthday_staff",
+      "hash": "5dfd65b8889b8884a94cbd898490cf92cf7eed7a24bf30a65666f4681f644092",
+      "params": [
+        {
+          "name": "page",
+          "hash": "dc1dab940cd36eaae54fb05b0c364a4ce8eacccbe9cfd4bf31f507383b916689"
+        }
+      ]
+    },
+    {
+      "name": "get_user_activity",
+      "hash": "7f63e9582979d0187dbd940a090b22fc43c280805c8c80f6166e72b4c16d8ba7",
+      "params": [
+        {
+          "name": "page",
+          "hash": "0222c1b7b6559fe5dff2abe84c8a16abf5b27382f536c9664ce17d18fa8c7aab"
+        },
+        {
+          "name": "perPage",
+          "hash": "83665689364127ce83c8fd69e25f7cecd380d9a57290582340ef08858edded47"
+        },
+        {
+          "name": "user",
+          "hash": "a12818c6516eca35297f44fceda22594b127b8cef52533743b3e1c4cec292f92"
+        }
+      ]
+    },
+    {
+      "name": "get_user_anime_list",
+      "hash": "3707303269504ea0edc4877d215cca18649117ec32c138dabe0333a09abb62b9",
+      "params": [
+        {
+          "name": "user",
+          "hash": "43033534e7ab2d124e138f11c785c53358569b48de583e133cbee4c90f177d36"
+        }
+      ]
+    },
+    {
+      "name": "get_user_manga_list",
+      "hash": "ed86001c9b4d854db3bbb0e5f5186d6ea7218e6850a7855e477fbc6e5ead3617",
+      "params": [
+        {
+          "name": "user",
+          "hash": "43033534e7ab2d124e138f11c785c53358569b48de583e133cbee4c90f177d36"
+        }
+      ]
+    },
+    {
+      "name": "get_user_profile",
+      "hash": "867bf9e3df013f4055da23343b384c26b6f4eaed45ffa9e9282d5c354adf240c",
+      "params": [
+        {
+          "name": "user",
+          "hash": "43033534e7ab2d124e138f11c785c53358569b48de583e133cbee4c90f177d36"
+        }
+      ]
+    },
+    {
+      "name": "get_user_recent_activity",
+      "hash": "220d3882ae7a7260abe8532307c95045bd126de6cf08f7673a737db25735b15a",
+      "params": [
+        {
+          "name": "user",
+          "hash": "35511f07417cafaf74095c94567cc95d0b6995a68ac96d667fbe829be1ea2ae2"
+        }
+      ]
+    },
+    {
+      "name": "get_user_stats",
+      "hash": "cf0d584101a27d138246dc6583a6125d1121cb9047c423b6443e3fe61baf4b7e",
+      "params": [
+        {
+          "name": "user",
+          "hash": "43033534e7ab2d124e138f11c785c53358569b48de583e133cbee4c90f177d36"
+        }
+      ]
+    },
+    {
+      "name": "post_message_activity",
+      "hash": "55aeb3f9a919df996cddfb4aba05f6f12d13d8aea5b5e56d8362737a63858c21",
+      "params": [
+        {
+          "name": "id",
+          "hash": "8b8734c711b4af5168d78eaf297fd1a8d6c719ac50dc9e7b19ca37fa91aa0fcc"
+        },
+        {
+          "name": "isPrivate",
+          "hash": "6bd128ecedc86b2a671d5b141b4e2ff3995ec790cddc80f11ef92fd45974fd2d"
+        },
+        {
+          "name": "recipientId",
+          "hash": "0cd4254e191fb3025421afd222283cfa31ea5420a7f7bed4c27076a483653c30"
+        },
+        {
+          "name": "text",
+          "hash": "6ad0a9a77ea01d9ae2fc3b441307320d0a429b230b46215a3068834a5b9bb066"
+        }
+      ]
+    },
+    {
+      "name": "post_text_activity",
+      "hash": "138def6f1acb82fcc6b9fcb981e62b7b3948d56456392f945da2d88b106bc152",
+      "params": [
+        {
+          "name": "id",
+          "hash": "8b8734c711b4af5168d78eaf297fd1a8d6c719ac50dc9e7b19ca37fa91aa0fcc"
+        },
+        {
+          "name": "text",
+          "hash": "0b0baa548217ba49a9b769695c1dad0bea7762fd45f2e58c5ccccb2d0b0ab101"
+        }
+      ]
+    },
+    {
+      "name": "remove_list_entry",
+      "hash": "d7c8f3df8c1b92756e6766fe0c0ab02b4dab4c167c9dc8443bcfb77df5a9c879",
+      "params": [
+        {
+          "name": "id",
+          "hash": "2a1730238100e84bb7349ab6fdfb97f205415df4d697dc34ec746a04fddfa1de"
+        }
+      ]
+    },
+    {
+      "name": "search_activity",
+      "hash": "da28e761d186b39f0f8825e0b5350ce267f29e9bdf61f1b81e067479826b2f3a",
+      "params": [
+        {
+          "name": "activityID",
+          "hash": "ff8a578c5bc795861244c09834e31abd18d65f7d8f283810254f7c79a557f28c"
+        },
+        {
+          "name": "filter",
+          "hash": "d4c02df9ce285dd4b24942e220271e78192e897d5e8661f735709e1fe632ea3c"
+        },
+        {
+          "name": "page",
+          "hash": "e9c046b9e5397d63a6112bf628f03e2e5177673e80c21ddef8cc80baa4cda479"
+        },
+        {
+          "name": "perPage",
+          "hash": "97c44f113abc9400ee9dc01556628e652257cd9e0d19e5749b05fa14e0ac8419"
+        }
+      ]
+    },
+    {
+      "name": "search_anime",
+      "hash": "30d33276950da75d2c59893ca0512136de3ac4824c4112a94fe84fdf27054ff2",
+      "params": [
+        {
+          "name": "amount",
+          "hash": "97c44f113abc9400ee9dc01556628e652257cd9e0d19e5749b05fa14e0ac8419"
+        },
+        {
+          "name": "filter",
+          "hash": "7ea94e80fb92a9790152ead80a725befac13e3dbfaca8f8f3af045d9613bf514"
+        },
+        {
+          "name": "page",
+          "hash": "e9c046b9e5397d63a6112bf628f03e2e5177673e80c21ddef8cc80baa4cda479"
+        },
+        {
+          "name": "term",
+          "hash": "6b0adde6925b98b707d33b4ed1eee851914120bf4c4ea9819ee91b3f92f58194"
+        }
+      ]
+    },
+    {
+      "name": "search_character",
+      "hash": "895648a9ecb585e3a8669cdc06f2e1c70a392aca5bebcdf801a43e89b2819824",
+      "params": [
+        {
+          "name": "amount",
+          "hash": "97c44f113abc9400ee9dc01556628e652257cd9e0d19e5749b05fa14e0ac8419"
+        },
+        {
+          "name": "page",
+          "hash": "e9c046b9e5397d63a6112bf628f03e2e5177673e80c21ddef8cc80baa4cda479"
+        },
+        {
+          "name": "term",
+          "hash": "e81d2033587b90aeffff40f077fcf8a5bf879237b90b965cde6c861110784b3f"
+        }
+      ]
+    },
+    {
+      "name": "search_manga",
+      "hash": "625bc19214c8d8e964ce6c16359cceeddb9273778812c3d9471bfceb43bd50fb",
+      "params": [
+        {
+          "name": "amount",
+          "hash": "97c44f113abc9400ee9dc01556628e652257cd9e0d19e5749b05fa14e0ac8419"
+        },
+        {
+          "name": "filter",
+          "hash": "dc9449e93ab03147e11e4bfddaa044261e4e1e9daa5d903de4e84157cfeabe36"
+        },
+        {
+          "name": "page",
+          "hash": "e9c046b9e5397d63a6112bf628f03e2e5177673e80c21ddef8cc80baa4cda479"
+        },
+        {
+          "name": "term",
+          "hash": "c027e49fb27eed94eab51e2f538a9d604e5da863ea6bc463251eb8bb4e997efe"
+        }
+      ]
+    },
+    {
+      "name": "search_staff",
+      "hash": "c17135fe9313def830661391a5d2fdce743ac45e68e7092281319307460dc278",
+      "params": [
+        {
+          "name": "amount",
+          "hash": "97c44f113abc9400ee9dc01556628e652257cd9e0d19e5749b05fa14e0ac8419"
+        },
+        {
+          "name": "page",
+          "hash": "e9c046b9e5397d63a6112bf628f03e2e5177673e80c21ddef8cc80baa4cda479"
+        },
+        {
+          "name": "term",
+          "hash": "5172d58e00b5d1b3ff27000d9004345232286e9ecddc1e873ce4c4fe66110eee"
+        }
+      ]
+    },
+    {
+      "name": "search_studio",
+      "hash": "269bd7055237ca621a27ae2bc551a8bac7b834d17a2fbfefff360bda541f8a81",
+      "params": [
+        {
+          "name": "amount",
+          "hash": "97c44f113abc9400ee9dc01556628e652257cd9e0d19e5749b05fa14e0ac8419"
+        },
+        {
+          "name": "page",
+          "hash": "e9c046b9e5397d63a6112bf628f03e2e5177673e80c21ddef8cc80baa4cda479"
+        },
+        {
+          "name": "term",
+          "hash": "019c4f84eaf8442977bedc6e2f51480c969c8dba76b73d1941b9be26f7c145f3"
+        }
+      ]
+    },
+    {
+      "name": "search_user",
+      "hash": "3b86c3374c917c5e831b4d0548b1e7309e19f8d05e76b150f9f8943bbf04aba0",
+      "params": [
+        {
+          "name": "amount",
+          "hash": "97c44f113abc9400ee9dc01556628e652257cd9e0d19e5749b05fa14e0ac8419"
+        },
+        {
+          "name": "page",
+          "hash": "e9c046b9e5397d63a6112bf628f03e2e5177673e80c21ddef8cc80baa4cda479"
+        },
+        {
+          "name": "term",
+          "hash": "ecf5f8bdcd897ee6f2410844d6cc8482f33354b67c404677d1e119514684f9d7"
+        }
+      ]
+    },
+    {
+      "name": "update_list_entry",
+      "hash": "956f0071c81d4f34921ad16b07c4113e07bbb75c7df99c1c1b1ede3da959989c",
+      "params": [
+        {
+          "name": "id",
+          "hash": "ccf996980d4e6b70ec1583f5d255c19276255ba5ef4a020b958e7b0f28c352ac"
+        },
+        {
+          "name": "options",
+          "hash": "03603e2b3e3a692d2e225e2afddd31d0ff4f325b504a90502f6047a10077b8a3"
+        }
+      ]
+    },
+    {
+      "name": "update_user",
+      "hash": "5fd4dc93e55d9906968cc239b15efca05372ff78127c504527a36a0571cf1403",
+      "params": [
+        {
+          "name": "options",
+          "hash": "c8c24f5214a96cf9d8245c01d143dd57be0cf065c5b0583e65a806ec33e628a5"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

@@ -7,9 +7,8 @@
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-memory",
       "application": "https://modelcontextprotocol.io"
     },
-  "tags": ["mcp"],
+  "tags": ["automation","development","research"],
   "official": false,
-  "packaged": true,
   "scope": "standalone",
   "mutitenant": false,
   "runtime": "node",

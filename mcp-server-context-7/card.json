@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-context-7",
+  "name": "mcp-server-context-7 ",
+  "description": "MCP server for Context7",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-context-7",
+      "application": "https://github.com/upstash/context7#readme"
+    },
+  "tags": ["development","research","integration"],
+  "official": false,
+  "scope": "standalone",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1.0.6",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 2,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

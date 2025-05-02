@@ -1,0 +1,33 @@
+{
+  "tools": [
+    {
+      "name": "get-library-docs",
+      "hash": "cddfbc0fa4f44e5e3373e8f6289e6d329685660cd75d562dcebe92dc9475c8e8",
+      "params": [
+        {
+          "name": "context7CompatibleLibraryID",
+          "hash": "c906658ac565e1266a7e9641bb43392223f38082489258a83d03c4783fc93ab5"
+        },
+        {
+          "name": "tokens",
+          "hash": "fd4de8b412bc8d6f1c86f80f7e035caa30e976c7665dddea2ae37c479e0772c2"
+        },
+        {
+          "name": "topic",
+          "hash": "e8e61edf96c395a9d80df978b4720045e91ed73580b6b699f932f2b86708bf2a"
+        }
+      ]
+    },
+    {
+      "name": "resolve-library-id",
+      "hash": "b817ff1a78162e09bb46093e098e95922ad21811cc54ffb874b05e818dfd2d60",
+      "params": [
+        {
+          "name": "libraryName",
+          "hash": "ea7e56753dac14ab7b06c226689b7db297b1bc9acd23fd68114da61e53f16743"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

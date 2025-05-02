@@ -1,0 +1,63 @@
+{
+  "tools": [
+    {
+      "name": "decode_invoice",
+      "hash": "048e4794ad3f46292f3eff83254c5d1873df3c875fc23e9b3e8d37760d152aa4",
+      "params": [
+        {
+          "name": "invoice",
+          "hash": "aa6469e98e136525f4ab174668a80d5aefb340953da55299ad5fcfc75c84bfaf"
+        }
+      ]
+    },
+    {
+      "name": "decode_tx",
+      "hash": "97e987d8beb05a8c6fd409f11e734caeb07533e702117bd55d3a8a7d2ba05cbf",
+      "params": [
+        {
+          "name": "rawHex",
+          "hash": "a760e15d24d7698b7bc96044f8c2f9a58284d927df43dc5a99dca983d2a27c4f"
+        }
+      ]
+    },
+    {
+      "name": "generate_key",
+      "hash": "da7a30c88ddba732bb0fde802a3322bab109fce8d9a732f2f02042a24c540a04"
+    },
+    {
+      "name": "get_latest_block",
+      "hash": "5576e9e083b2491a9145cbc425b24863981d521700bfa3d55eee617ac3ef407c"
+    },
+    {
+      "name": "get_transaction",
+      "hash": "c51396e35f1dbaedc0550aad5d9c227f6f51ea70e462bdc5fcf2089be190bbaf",
+      "params": [
+        {
+          "name": "txid",
+          "hash": "be8c6227042336e7d869ea00e535b09ceae72c34cba8bac9d0146dd63e5d29fe"
+        }
+      ]
+    },
+    {
+      "name": "pay_invoice",
+      "hash": "a1adc9dcf6a85b876d9eed0d3e9dd57881d86e794cac3523e4842c28ad4b40d5",
+      "params": [
+        {
+          "name": "invoice",
+          "hash": "aa6469e98e136525f4ab174668a80d5aefb340953da55299ad5fcfc75c84bfaf"
+        }
+      ]
+    },
+    {
+      "name": "validate_address",
+      "hash": "fb1ac6f3dbce5671b26c40a162846ecaa7801c7d1a57a0b6ed6ef2223fb02118",
+      "params": [
+        {
+          "name": "address",
+          "hash": "8fd96403dd2a52f9e18f68a1f712c9612f84b36675e6a8c62e8c722728d17508"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

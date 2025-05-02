@@ -1,0 +1,14 @@
+env:
+  WEB_UNLOCKER_ZONE: 
+
+secrets:
+  API_TOKEN:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  BROWSER_AUTH:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

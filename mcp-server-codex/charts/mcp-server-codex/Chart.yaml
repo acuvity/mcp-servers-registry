@@ -1,0 +1,22 @@
+apiVersion: v2
+name: "mcp-server-codex"
+description: A Helm chart for Model Context Protocol (MCP) server for fetching blockchain data from Codex.io
+home: https://github.com/Codex-Data/codex-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/Codex-Data/codex-mcp
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.1.3
+keywords:
+  - mcp-server-codex
+  - mcp-server
+  - remote
+  - integration
+  - finance
+  - database
+  - development

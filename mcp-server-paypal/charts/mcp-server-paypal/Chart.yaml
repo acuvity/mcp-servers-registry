@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-paypal"
+description: A Helm chart for A command line tool for setting up PayPal MCP server
+home: https://github.com/paypal/agent-toolkit
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/paypal/agent-toolkit
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.3.1
+keywords:
+  - mcp-server-paypal
+  - mcp-server
+  - remote
+  - development
+  - integration
+  - finance

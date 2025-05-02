@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-chronulus-ai"
+description: A Helm chart for An MCP Server for Chronulus AI Forecasting and Prediction Agents
+home: https://github.com/ChronulusAI/chronulus-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/ChronulusAI/chronulus-mcp
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.0.3
+keywords:
+  - mcp-server-chronulus-ai
+  - mcp-server
+  - remote
+  - integration
+  - finance
+  - automation

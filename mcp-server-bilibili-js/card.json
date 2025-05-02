@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-bilibili-js",
+  "name": "mcp-server-bilibili-js ",
+  "description": "B站视频搜索 MCP（Model Context Protocol）服务",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-bilibili-js",
+      "application": "https://github.com/34892002/bilibili-mcp-js"
+    },
+  "tags": ["research","web","integration"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.1.2",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

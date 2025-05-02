@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-bilibili-js"
+description: A Helm chart for B站视频搜索 MCP（Model Context Protocol）服务
+home: https://github.com/34892002/bilibili-mcp-js
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/34892002/bilibili-mcp-js
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.1.2
+keywords:
+  - mcp-server-bilibili-js
+  - mcp-server
+  - remote
+  - research
+  - web
+  - integration

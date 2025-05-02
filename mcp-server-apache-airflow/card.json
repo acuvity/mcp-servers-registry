@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-apache-airflow",
+  "name": "mcp-server-apache-airflow ",
+  "description": "Model Context Protocol (MCP) server for Apache Airflow",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-apache-airflow",
+      "application": "https://github.com/yangkyeongmo/mcp-server-apache-airflow"
+    },
+  "tags": ["integration","development"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.2.2",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 65,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

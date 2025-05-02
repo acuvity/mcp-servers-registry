@@ -7,9 +7,8 @@
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-github",
       "application": "https://github.com/github/github-mcp-server"
     },
-  "tags": ["mcp"],
+  "tags": ["development","automation","integration"],
   "official": false,
-  "packaged": true,
   "scope": "remote",
   "mutitenant": false,
   "runtime": "binary",

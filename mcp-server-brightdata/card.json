@@ -1,0 +1,24 @@
+{
+  "id": "mcp-server-brightdata",
+  "name": "mcp-server-brightdata ",
+  "description": "An MCP interface into the Bright Data toolset",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-brightdata",
+      "application": "https://github.com/luminati-io/brightdata-mcp"
+    },
+  "tags": ["research","web"],
+  "official": false,
+  "scope": "native",
+  "mutitenant": false,
+  "runtime": "node",
+  "version": "1.7.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "resources": {
+    "tools": 18,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}
