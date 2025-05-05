@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@b764d0a9a230ebbfeeaaf91db383a57521fa7d91
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@fe2187679e7835a22b9ec865d4d39a0ce6863460
 
 FROM ghcr.io/astral-sh/uv:python3.12-bookworm
 
@@ -14,8 +14,8 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="standalone"
 
 LABEL org.opencontainers.image.title="mcp-server-aws-terraform"
-LABEL org.opencontainers.image.description="MCP server for Terraform on AWS best practices, infrastructure as code patterns, and security compliance with Checkov."
-LABEL org.opencontainers.image.version="0.0.9"
+LABEL org.opencontainers.image.description="Terraform AWS best practices, infrastructure as code patterns, and security compliance with Checkov."
+LABEL org.opencontainers.image.version="0.0.10"
 LABEL org.opencontainers.image.source="https://github.com/awslabs/mcp/tree/main/src/terraform-mcp-server"
 LABEL org.opencontainers.image.licenses="unknown"
 LABEL org.opencontainers.image.author="Author"
@@ -45,7 +45,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uname -sm &&  uv venv && uv pip install awslabs.terraform-mcp-server==0.0.9
+RUN uname -sm &&  uv venv && uv pip install awslabs.terraform-mcp-server==0.0.10
 
 EXPOSE 8000/tcp
 

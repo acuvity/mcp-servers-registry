@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-alibaba-cloud-ops",
   "name": "mcp-server-alibaba-cloud-ops ",
-  "description": "An MCP server that enables AI assistants to operation resources on Alibaba Cloud, supporting ECS, Cloud Monitor, OOS and widely used cloud products.",
+  "description": "Alibaba Cloud integration, supporting ECS, Cloud Monitor, OOS and widely used cloud products.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-alibaba-cloud-ops",

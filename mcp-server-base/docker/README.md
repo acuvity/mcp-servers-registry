@@ -25,7 +25,7 @@
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-base&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22ALCHEMY_API_KEY%22%2C%22-e%22%2C%22COINBASE_API_KEY_NAME%22%2C%22-e%22%2C%22COINBASE_API_PRIVATE_KEY%22%2C%22-e%22%2C%22COINBASE_PROJECT_ID%22%2C%22-e%22%2C%22OPENROUTER_API_KEY%22%2C%22-e%22%2C%22PINATA_JWT%22%2C%22-e%22%2C%22SEED_PHRASE%22%2C%22docker.io%2Facuvity%2Fmcp-server-base%3A1.0.13%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** Base Network integration for onchain tools, allowing interaction with Base Network and Coinbase API for wallet management, fund transfers, smart contracts, and DeFi operations.
+**Description:** Onchain integration for Base Network and Coinbase API manage wallets, transfers, contracts and DeFi.
 
 > [!NOTE]
 > `base-mcp` has been repackaged by Acuvity from Dan Schlabach, Tina He original sources.
@@ -534,9 +534,6 @@ The deployment will create a Kubernetes service with a `healthPort`, that is use
 See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-base/charts/mcp-server-base/README.md) for more details about settings.
 
 </details>
-
-
-
 
 💬 Questions? Open an issue or contact us [ support@acuvity.ai ](mailto:support@acuvity.ai).
 📦 Contributions welcome!

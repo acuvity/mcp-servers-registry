@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-aws-terraform",
   "name": "mcp-server-aws-terraform ",
-  "description": "MCP server for Terraform on AWS best practices, infrastructure as code patterns, and security compliance with Checkov.",
+  "description": "Terraform AWS best practices, infrastructure as code patterns, and security compliance with Checkov.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-terraform",
@@ -12,7 +12,7 @@
   "scope": "standalone",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "requiresConfiguration": false,
   "requiresStorage": false,
   "resources": {

@@ -5,6 +5,10 @@
       "hash": "0e59249945ebaa4c942e4eed57fa76a9839a4b7eff29209dc040885df4c7870c"
     },
     {
+      "name": "analyze_terraform_project",
+      "hash": "a8ceeb0db4ad6ad0150cef1304093130bb62aef8cbc3f87bc9bad4ef9b11c865"
+    },
+    {
       "name": "generate_cost_report",
       "hash": "06f4b7e6b649a5b590f75b53abb7a0ac52f98c4f8ea4eb94087da149dcfb3191"
     },

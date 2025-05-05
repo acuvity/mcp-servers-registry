@@ -20,12 +20,12 @@
 # What is mcp-server-brightdata?
 
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-brightdata/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-brightdata/1.7.0?logo=docker&logoColor=fff&label=1.7.0)](https://hub.docker.com/r/acuvity/mcp-server-brightdata)
-[![PyPI](https://img.shields.io/badge/1.7.0-3775A9?logo=pypi&logoColor=fff&label=@brightdata/mcp)](https://github.com/luminati-io/brightdata-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-brightdata/1.8.0?logo=docker&logoColor=fff&label=1.8.0)](https://hub.docker.com/r/acuvity/mcp-server-brightdata)
+[![PyPI](https://img.shields.io/badge/1.8.0-3775A9?logo=pypi&logoColor=fff&label=@brightdata/mcp)](https://github.com/luminati-io/brightdata-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-brightdata&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_TOKEN%22%2C%22-e%22%2C%22BROWSER_AUTH%22%2C%22docker.io%2Facuvity%2Fmcp-server-brightdata%3A1.7.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-brightdata&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_TOKEN%22%2C%22-e%22%2C%22BROWSER_AUTH%22%2C%22docker.io%2Facuvity%2Fmcp-server-brightdata%3A1.8.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** Discover, extract, and interact with the web - one interface powering automated access across the public internet.
+**Description:** Discover, extract, and interact with the web - automated access across the public internet.
 
 > [!NOTE]
 > `@brightdata/mcp` has been repackaged by Acuvity from Bright Data original sources.
@@ -92,7 +92,7 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-1.7.0`
+  - container: `1.0.0-1.8.0`
 
 ---
 

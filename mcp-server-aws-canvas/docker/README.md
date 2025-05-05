@@ -445,8 +445,5 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 </details>
 
-
-
-
 💬 Questions? Open an issue or contact us [ support@acuvity.ai ](mailto:support@acuvity.ai).
 📦 Contributions welcome!

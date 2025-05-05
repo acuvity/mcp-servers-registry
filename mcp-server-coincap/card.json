@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-coincap",
   "name": "mcp-server-coincap ",
-  "description": "Real-time cryptocurrency market data integration using CoinCap's public API, providing access to crypto prices and market information without API keys.",
+  "description": "Real-time cryptocurrency market data integration using CoinCap's public API.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-coincap",

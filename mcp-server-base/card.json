@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-base",
   "name": "mcp-server-base ",
-  "description": "Base Network integration for onchain tools, allowing interaction with Base Network and Coinbase API for wallet management, fund transfers, smart contracts, and DeFi operations.",
+  "description": "Onchain integration for Base Network and Coinbase API manage wallets, transfers, contracts and DeFi.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-base",

@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-aws-diagram"
-description: A Helm chart for This MCP server that seamlessly creates diagrams using the Python diagrams package DSL. This server allows you to generate AWS diagrams, sequence diagrams, flow diagrams, and class diagrams using Python code.
+description: A Helm chart for Create diagrams using the Python diagrams package: sequence, flow, and class diagrams.
 home: https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

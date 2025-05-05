@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-aws-bedrock-kb-retrieval"
-description: A Helm chart for Query Amazon Bedrock Knowledge Bases using natural language to retrieve relevant information from your data sources.
+description: A Helm chart for Query Amazon Bedrock Knowledge Bases using natural language to retrieve relevant information.
 home: https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

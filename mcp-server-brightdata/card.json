@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-brightdata",
   "name": "mcp-server-brightdata ",
-  "description": "Discover, extract, and interact with the web - one interface powering automated access across the public internet.",
+  "description": "Discover, extract, and interact with the web - automated access across the public internet.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-brightdata",
@@ -12,7 +12,7 @@
   "scope": "native",
   "mutitenant": false,
   "runtime": "node",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "resources": {

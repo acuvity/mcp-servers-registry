@@ -12,7 +12,7 @@
   "scope": "remote",
   "mutitenant": false,
   "runtime": "node",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "resources": {

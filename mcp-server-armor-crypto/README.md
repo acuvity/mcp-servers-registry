@@ -20,12 +20,12 @@
 # What is mcp-server-armor-crypto?
 
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-armor-crypto/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-armor-crypto/0.1.22?logo=docker&logoColor=fff&label=0.1.22)](https://hub.docker.com/r/acuvity/mcp-server-armor-crypto)
-[![PyPI](https://img.shields.io/badge/0.1.22-3775A9?logo=pypi&logoColor=fff&label=armor-crypto-mcp)](https://github.com/armorwallet/armor-crypto-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-armor-crypto/0.1.23?logo=docker&logoColor=fff&label=0.1.23)](https://hub.docker.com/r/acuvity/mcp-server-armor-crypto)
+[![PyPI](https://img.shields.io/badge/0.1.23-3775A9?logo=pypi&logoColor=fff&label=armor-crypto-mcp)](https://github.com/armorwallet/armor-crypto-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-armor-crypto&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-armor-crypto%3A0.1.22%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-armor-crypto&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-armor-crypto%3A0.1.23%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** MCP to interface with multiple blockchains, staking, DeFi, swap, bridging, wallet management, DCA, Limit Orders, Coin Lookup, Tracking and more.
+**Description:** Blockchain integration, staking, DeFi, swap, bridging, wallet, DCA, Orders, Coin Lookup, Tracking.
 
 > [!NOTE]
 > `armor-crypto-mcp` has been repackaged by Acuvity from Armor Wallet <info@armorwallet.ai> original sources.
@@ -88,7 +88,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-armor-crypto&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-armor-crypto%3A0.1.22%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-armor-crypto&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-armor-crypto%3A0.1.23%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -105,7 +105,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "-i",
           "--rm",
           "--read-only",
-          "docker.io/acuvity/mcp-server-armor-crypto:0.1.22"
+          "docker.io/acuvity/mcp-server-armor-crypto:0.1.23"
         ]
       }
     }
@@ -127,7 +127,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-armor-crypto:0.1.22"
+        "docker.io/acuvity/mcp-server-armor-crypto:0.1.23"
       ]
     }
   }
@@ -153,7 +153,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-armor-crypto:0.1.22"
+        "docker.io/acuvity/mcp-server-armor-crypto:0.1.23"
       ]
     }
   }
@@ -181,7 +181,7 @@ Add the following JSON block to your mcp configuration file:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-armor-crypto:0.1.22"
+        "docker.io/acuvity/mcp-server-armor-crypto:0.1.23"
       ]
     }
   }
@@ -207,7 +207,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-armor-crypto:0.1.22"
+        "docker.io/acuvity/mcp-server-armor-crypto:0.1.23"
       ]
     }
   }
@@ -226,7 +226,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 async with MCPServerStdio(
     params={
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-armor-crypto:0.1.22"]
+        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-armor-crypto:0.1.23"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -256,7 +256,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-armor-crypto:0.1.22`
+- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-armor-crypto:0.1.23`
 
 </details>
 
@@ -266,7 +266,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -i --rm --read-only docker.io/acuvity/mcp-server-armor-crypto:0.1.22
+docker run -i --rm --read-only docker.io/acuvity/mcp-server-armor-crypto:0.1.23
 ```
 
 Add `-p <localport>:8000` to expose the port.
@@ -548,32 +548,16 @@ Gets the current time and date
 | get_all_orders_requests | any | not set | Yes
 </details>
 <details>
-<summary>get_token_address</summary>
+<summary>search_official_token_address</summary>
 
 **Description**:
 
 ```
 
-    Get the token address for a token symbol or name.
-    
-```
+    Get the official token address and symbol for a token symbol or token address.
+    Try to use this first to get address and symbol of coin. If not found, use search_token_details to get details.
 
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| token_address_requests | any | not set | Yes
-</details>
-<details>
-<summary>get_token_details</summary>
-
-**Description**:
-
-```
-
-    Retrieve token details.
-    
-    Expects a TokenDetailsRequestContainer, returns a list of TokenDetailsResponse.
+    Expects a TokenDetailsRequestContainer, returns a TokenDetailsResponseContainer.
     
 ```
 
@@ -582,6 +566,26 @@ Gets the current time and date
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | token_details_requests | any | not set | Yes
+</details>
+<details>
+<summary>search_token_details</summary>
+
+**Description**:
+
+```
+
+    Search and retrieve details about single token.
+    If only address or symbol is needed, use get_official_token_address first.
+    
+    Expects a TokenSearchRequest, returns a list of TokenDetailsResponse.
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| token_search_requests | any | not set | Yes
 </details>
 <details>
 <summary>list_groups</summary>
@@ -1100,9 +1104,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | get_armor_mcp_version | description | 7e30f301f4471a7dc9cd43437566b55614a4b51b3acb5b9edfbd2e20b96f0547 |
 | tools | get_current_time | description | 36a16feb359f4dca32e78bf78853eef054a0ddad07a08cf603aa0c5a7cbf1b13 |
 | tools | get_stake_balances | description | 3dbd458a0274095a97b0471adc18f197c44894e4c5f83f46de81757f58fcc5d5 |
-| tools | get_token_address | description | 9a5e78e08c4b96bb77503f9e3a08db60bfe98d4316ac47ae5d4856e950461472 |
 | tools | get_token_candle_data | description | a61a2fb25b8dc2db7fe079a4c07109126892b066c23dadd34f67bd117e9d9ce6 |
-| tools | get_token_details | description | 8e973adea71fa9cd0c3099e614716604414db9f488e880d9ed7ee9a005bea918 |
 | tools | get_top_trending_tokens | description | 583ec6008c17ec8448134b94b26d29ba33ca0335745bd1f0b0a0015e893fcc1f |
 | tools | get_wallet_token_balance | description | a8474468f5c948b45bd63fed218bd316c89fa0b7a1ff3f1e24e73f2ba4805f37 |
 | tools | list_dca_orders | description | 3816fa6952ee576ce4d7c02f33d418b52c32ce68d03479210d9e7c37f5d137c0 |
@@ -1110,6 +1112,8 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | list_single_group | description | a6dc27ac6f49bf6cf46c55868e78fb0296e9a0271ecae7e9f8937fe34d3eed78 |
 | tools | remove_wallets_from_group | description | 6940d566ff428326ba534638882317f12b40b27ba88a3dc9914b76fc9b629b86 |
 | tools | rename_wallets | description | fcd07f846ea7983164a49dcdd06755e9a658d0a57735076db894991307277688 |
+| tools | search_official_token_address | description | 94046a4947c62f52335f048761c321dacc685666b3ee22ad23f0cd05e2f08a44 |
+| tools | search_token_details | description | c01d85c0e22789b5b019d5e9d3ea80bb34cca4bfa64256df66f74d3d37a43b80 |
 | tools | send_key_to_telegram | description | 47a717f81f02a337ea460290239c26fa250c59c4b0bfcfd78e57e558ec663db6 |
 | tools | stake_quote | description | f4f753918cdec22c4e3cbc8f60bb6e1ec58903f8e8cbed48a602e83ff7eed637 |
 | tools | stake_transaction | description | 845ba6e75a53a61f956737af0887e5637e2bef5e1041d57750300427d8f05541 |

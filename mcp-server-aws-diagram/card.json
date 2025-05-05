@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-aws-diagram",
   "name": "mcp-server-aws-diagram ",
-  "description": "This MCP server that seamlessly creates diagrams using the Python diagrams package DSL. This server allows you to generate AWS diagrams, sequence diagrams, flow diagrams, and class diagrams using Python code.",
+  "description": "Create diagrams using the Python diagrams package: sequence, flow, and class diagrams.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-diagram",

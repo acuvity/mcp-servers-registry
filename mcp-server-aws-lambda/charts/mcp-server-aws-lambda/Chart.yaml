@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-aws-lambda"
-description: A Helm chart for A Model Context Protocol (MCP) server for AWS Lambda to select and run Lambda function as MCP tools without code changes.
+description: A Helm chart for AWS Lambda integration to select and run Lambda function as MCP tools without code changes.
 home: https://github.com/awslabs/mcp/tree/main/src/lambda-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

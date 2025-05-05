@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-apify-actors",
   "name": "mcp-server-apify-actors ",
-  "description": "Use 3,000+ pre-built cloud tools, known as Actors, to extract data from websites, e-commerce, social media, search engines, maps, and more.",
+  "description": "Use 3,000+ pre-built cloud tools, known as Actors, to extract data from websites.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-apify-actors",

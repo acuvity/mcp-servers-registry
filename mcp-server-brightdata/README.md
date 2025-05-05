@@ -20,12 +20,12 @@
 # What is mcp-server-brightdata?
 
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-brightdata/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-brightdata/1.7.0?logo=docker&logoColor=fff&label=1.7.0)](https://hub.docker.com/r/acuvity/mcp-server-brightdata)
-[![PyPI](https://img.shields.io/badge/1.7.0-3775A9?logo=pypi&logoColor=fff&label=@brightdata/mcp)](https://github.com/luminati-io/brightdata-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-brightdata/1.8.0?logo=docker&logoColor=fff&label=1.8.0)](https://hub.docker.com/r/acuvity/mcp-server-brightdata)
+[![PyPI](https://img.shields.io/badge/1.8.0-3775A9?logo=pypi&logoColor=fff&label=@brightdata/mcp)](https://github.com/luminati-io/brightdata-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-brightdata&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_TOKEN%22%2C%22-e%22%2C%22BROWSER_AUTH%22%2C%22docker.io%2Facuvity%2Fmcp-server-brightdata%3A1.7.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-brightdata&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_TOKEN%22%2C%22-e%22%2C%22BROWSER_AUTH%22%2C%22docker.io%2Facuvity%2Fmcp-server-brightdata%3A1.8.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** Discover, extract, and interact with the web - one interface powering automated access across the public internet.
+**Description:** Discover, extract, and interact with the web - automated access across the public internet.
 
 > [!NOTE]
 > `@brightdata/mcp` has been repackaged by Acuvity from Bright Data original sources.
@@ -87,7 +87,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-brightdata&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_TOKEN%22%2C%22-e%22%2C%22BROWSER_AUTH%22%2C%22docker.io%2Facuvity%2Fmcp-server-brightdata%3A1.7.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-brightdata&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_TOKEN%22%2C%22-e%22%2C%22BROWSER_AUTH%22%2C%22docker.io%2Facuvity%2Fmcp-server-brightdata%3A1.8.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -112,7 +112,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "API_TOKEN",
           "-e",
           "BROWSER_AUTH",
-          "docker.io/acuvity/mcp-server-brightdata:1.7.0"
+          "docker.io/acuvity/mcp-server-brightdata:1.8.0"
         ]
       }
     }
@@ -142,7 +142,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "API_TOKEN",
         "-e",
         "BROWSER_AUTH",
-        "docker.io/acuvity/mcp-server-brightdata:1.7.0"
+        "docker.io/acuvity/mcp-server-brightdata:1.8.0"
       ]
     }
   }
@@ -176,7 +176,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "API_TOKEN",
         "-e",
         "BROWSER_AUTH",
-        "docker.io/acuvity/mcp-server-brightdata:1.7.0"
+        "docker.io/acuvity/mcp-server-brightdata:1.8.0"
       ]
     }
   }
@@ -212,7 +212,7 @@ Add the following JSON block to your mcp configuration file:
         "API_TOKEN",
         "-e",
         "BROWSER_AUTH",
-        "docker.io/acuvity/mcp-server-brightdata:1.7.0"
+        "docker.io/acuvity/mcp-server-brightdata:1.8.0"
       ]
     }
   }
@@ -246,7 +246,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "API_TOKEN",
         "-e",
         "BROWSER_AUTH",
-        "docker.io/acuvity/mcp-server-brightdata:1.7.0"
+        "docker.io/acuvity/mcp-server-brightdata:1.8.0"
       ]
     }
   }
@@ -266,7 +266,7 @@ async with MCPServerStdio(
     params={
         "env": {"API_TOKEN":"TO_BE_SET","BROWSER_AUTH":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","API_TOKEN","-e","BROWSER_AUTH","docker.io/acuvity/mcp-server-brightdata:1.7.0"]
+        "args": ["run","-i","--rm","--read-only","-e","API_TOKEN","-e","BROWSER_AUTH","docker.io/acuvity/mcp-server-brightdata:1.8.0"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -300,7 +300,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e API_TOKEN -e BROWSER_AUTH docker.io/acuvity/mcp-server-brightdata:1.7.0`
+- arguments: `run -i --rm --read-only -e API_TOKEN -e BROWSER_AUTH docker.io/acuvity/mcp-server-brightdata:1.8.0`
 
 </details>
 
@@ -310,7 +310,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -i --rm --read-only -e API_TOKEN -e BROWSER_AUTH docker.io/acuvity/mcp-server-brightdata:1.7.0
+docker run -i --rm --read-only -e API_TOKEN -e BROWSER_AUTH docker.io/acuvity/mcp-server-brightdata:1.8.0
 ```
 
 Add `-p <localport>:8000` to expose the port.

@@ -67,8 +67,8 @@ _cross_tool_patterns := [
 	`(?i)\b([A-Za-z][A-Za-z0-9_-]{5,})\.([A-Za-z][A-Za-z0-9_-]*)\s+should\s+(?:use|run|launch|execute|start|invoke|trigger|initiate)\b`,
 ]
 
-_cross_tool_exlude := [
-	# add our tools to exlude list
+_cross_tool_exclude := [
+	# add our tools to exclude list
 	#
 	# exclude word that might be misdetected
 	"to",
@@ -136,7 +136,7 @@ reasons contains msg if {
 	some pattern in _cross_tool_patterns
 	some tool_match in regex.find_all_string_submatch_n(pattern, tool.description, -1)
 	extracted_tool := tool_match[count(tool_match) - 1]
-	not extracted_tool in _cross_tool_exlude
+	not extracted_tool in _cross_tool_exclude
 	msg := sprintf("untrusted tool use detected in tool description %v: %v", [tool.name, extracted_tool])
 }
 
@@ -212,7 +212,7 @@ reasons contains msg if {
 	some pattern in _cross_tool_patterns
 	some tool_match in regex.find_all_string_submatch_n(pattern, text, -1)
 	extracted_tool := tool_match[count(tool_match) - 1]
-	not extracted_tool in _cross_tool_exlude
+	not extracted_tool in _cross_tool_exclude
 	msg := sprintf("untrusted tool detected in call response: %v", [extracted_tool])
 }
 

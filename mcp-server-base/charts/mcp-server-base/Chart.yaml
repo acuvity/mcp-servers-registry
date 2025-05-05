@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-base"
-description: A Helm chart for Base Network integration for onchain tools, allowing interaction with Base Network and Coinbase API for wallet management, fund transfers, smart contracts, and DeFi operations.
+description: A Helm chart for Onchain integration for Base Network and Coinbase API manage wallets, transfers, contracts and DeFi.
 home: https://github.com/base/base-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

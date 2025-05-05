@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-aws-cost-analysis",
   "name": "mcp-server-aws-cost-analysis ",
-  "description": "Analyze CDK projects to identify AWS services used and get pricing information from AWS pricing webpages and API.",
+  "description": "Analyze CDK projects to identify AWS services used and get pricing information.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-cost-analysis",
@@ -12,11 +12,11 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "resources": {
-    "tools": 5,
+    "tools": 6,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

@@ -20,12 +20,12 @@
 # What is mcp-server-aws-cost-analysis?
 
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-aws-cost-analysis/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-cost-analysis/0.1.8?logo=docker&logoColor=fff&label=0.1.8)](https://hub.docker.com/r/acuvity/mcp-server-aws-cost-analysis)
-[![PyPI](https://img.shields.io/badge/0.1.8-3775A9?logo=pypi&logoColor=fff&label=awslabs.cost-analysis-mcp-server)](https://pypi.org/project/awslabs.cost-analysis-mcp-server/)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-cost-analysis/0.1.9?logo=docker&logoColor=fff&label=0.1.9)](https://hub.docker.com/r/acuvity/mcp-server-aws-cost-analysis)
+[![PyPI](https://img.shields.io/badge/0.1.9-3775A9?logo=pypi&logoColor=fff&label=awslabs.cost-analysis-mcp-server)](https://pypi.org/project/awslabs.cost-analysis-mcp-server/)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-cost-analysis&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AWS_PROFILE%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-cost-analysis%3A0.1.8%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-cost-analysis&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AWS_PROFILE%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-cost-analysis%3A0.1.9%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** Analyze CDK projects to identify AWS services used and get pricing information from AWS pricing webpages and API.
+**Description:** Analyze CDK projects to identify AWS services used and get pricing information.
 
 > [!NOTE]
 > `awslabs.cost-analysis-mcp-server` has been repackaged by Acuvity from AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com> original sources.
@@ -87,7 +87,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-cost-analysis&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AWS_PROFILE%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-cost-analysis%3A0.1.8%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-cost-analysis&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AWS_PROFILE%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-cost-analysis%3A0.1.9%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -109,7 +109,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "--read-only",
           "-e",
           "AWS_PROFILE",
-          "docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.8"
+          "docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.9"
         ]
       }
     }
@@ -136,7 +136,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "--read-only",
         "-e",
         "AWS_PROFILE",
-        "docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.8"
+        "docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.9"
       ]
     }
   }
@@ -167,7 +167,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "--read-only",
         "-e",
         "AWS_PROFILE",
-        "docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.8"
+        "docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.9"
       ]
     }
   }
@@ -200,7 +200,7 @@ Add the following JSON block to your mcp configuration file:
         "--read-only",
         "-e",
         "AWS_PROFILE",
-        "docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.8"
+        "docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.9"
       ]
     }
   }
@@ -231,7 +231,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "--read-only",
         "-e",
         "AWS_PROFILE",
-        "docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.8"
+        "docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.9"
       ]
     }
   }
@@ -251,7 +251,7 @@ async with MCPServerStdio(
     params={
         "env": {"AWS_PROFILE":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","AWS_PROFILE","docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.8"]
+        "args": ["run","-i","--rm","--read-only","-e","AWS_PROFILE","docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.9"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -283,7 +283,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e AWS_PROFILE docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.8`
+- arguments: `run -i --rm --read-only -e AWS_PROFILE docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.9`
 
 </details>
 
@@ -293,7 +293,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -i --rm --read-only -e AWS_PROFILE docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.8
+docker run -i --rm --read-only -e AWS_PROFILE docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.9
 ```
 
 Add `-p <localport>:8000` to expose the port.
@@ -400,7 +400,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (5)
+## 🧰 Tools (6)
 <details>
 <summary>analyze_cdk_project</summary>
 
@@ -408,6 +408,21 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 ```
 Analyze a CDK project to identify AWS services used. This tool dynamically extracts service information from CDK constructs without relying on hardcoded service mappings.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| project_path | string | not set | Yes
+</details>
+<details>
+<summary>analyze_terraform_project</summary>
+
+**Description**:
+
+```
+Analyze a Terraform project to identify AWS services used. This tool dynamically extracts service information from Terraform resource declarations.
 ```
 
 **Parameter**:
@@ -595,6 +610,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
 | tools | analyze_cdk_project | description | 0e59249945ebaa4c942e4eed57fa76a9839a4b7eff29209dc040885df4c7870c |
+| tools | analyze_terraform_project | description | a8ceeb0db4ad6ad0150cef1304093130bb62aef8cbc3f87bc9bad4ef9b11c865 |
 | tools | generate_cost_report | description | 06f4b7e6b649a5b590f75b53abb7a0ac52f98c4f8ea4eb94087da149dcfb3191 |
 | tools | get_bedrock_patterns | description | 24a3e539acdc6692395ef35f1b997e07afb0786c7baf7d894c865609791b9d00 |
 | tools | get_pricing_from_api | description | 26ebf13783337949a02727bb57b280b24713e6ddaf725cc7e040a56d80506c79 |

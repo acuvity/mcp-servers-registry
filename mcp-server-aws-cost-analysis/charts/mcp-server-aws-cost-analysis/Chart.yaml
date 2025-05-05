@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-aws-cost-analysis"
-description: A Helm chart for Analyze CDK projects to identify AWS services used and get pricing information from AWS pricing webpages and API.
+description: A Helm chart for Analyze CDK projects to identify AWS services used and get pricing information.
 home: https://pypi.org/project/awslabs.cost-analysis-mcp-server/
 sources:
   - https://github.com/acuvity/mcp-servers-registry
@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.1.8
+appVersion: 0.1.9
 keywords:
   - mcp-server-aws-cost-analysis
   - mcp-server

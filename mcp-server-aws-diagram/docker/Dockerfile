@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@b764d0a9a230ebbfeeaaf91db383a57521fa7d91
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@fe2187679e7835a22b9ec865d4d39a0ce6863460
 
 FROM ghcr.io/astral-sh/uv:python3.12-alpine
 
@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="standalone"
 
 LABEL org.opencontainers.image.title="mcp-server-aws-diagram"
-LABEL org.opencontainers.image.description="This MCP server that seamlessly creates diagrams using the Python diagrams package DSL. This server allows you to generate AWS diagrams, sequence diagrams, flow diagrams, and class diagrams using Python code."
+LABEL org.opencontainers.image.description="Create diagrams using the Python diagrams package: sequence, flow, and class diagrams."
 LABEL org.opencontainers.image.version="0.9.3"
 LABEL org.opencontainers.image.source="https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server"
 LABEL org.opencontainers.image.licenses="Apache-2.0"

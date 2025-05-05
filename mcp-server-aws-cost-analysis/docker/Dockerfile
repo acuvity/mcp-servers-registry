@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@b764d0a9a230ebbfeeaaf91db383a57521fa7d91
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@fe2187679e7835a22b9ec865d4d39a0ce6863460
 
 FROM ghcr.io/astral-sh/uv:python3.12-alpine
 
@@ -14,8 +14,8 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-aws-cost-analysis"
-LABEL org.opencontainers.image.description="Analyze CDK projects to identify AWS services used and get pricing information from AWS pricing webpages and API."
-LABEL org.opencontainers.image.version="0.1.8"
+LABEL org.opencontainers.image.description="Analyze CDK projects to identify AWS services used and get pricing information."
+LABEL org.opencontainers.image.version="0.1.9"
 LABEL org.opencontainers.image.source="https://pypi.org/project/awslabs.cost-analysis-mcp-server/"
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 LABEL org.opencontainers.image.author="AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com>"
@@ -43,7 +43,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uname -sm &&  uv venv && uv pip install awslabs.cost-analysis-mcp-server==0.1.8
+RUN uname -sm &&  uv venv && uv pip install awslabs.cost-analysis-mcp-server==0.1.9
 
 EXPOSE 8000/tcp
 

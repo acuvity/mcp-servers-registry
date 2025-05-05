@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-codelogic",
   "name": "mcp-server-codelogic ",
-  "description": "Official MCP server for CodeLogic, providing access to code dependency analytics, architectural risk analysis, and impact assessment tools.",
+  "description": "CodeLogic, provides access to code dependency analytics, risk analysis, and impact assessment.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-codelogic",

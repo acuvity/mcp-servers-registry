@@ -1,7 +1,7 @@
 {
   "id": "mcp-server-aws-cdk",
   "name": "mcp-server-aws-cdk ",
-  "description": "Get prescriptive CDK advice, explain CDK Nag rules, check suppressions, generate Bedrock Agent schemas, and discover AWS Solutions Constructs patterns.",
+  "description": "Explain CDK Nag rules, check suppressions, generate Bedrock schemas, find AWS patterns.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-cdk",

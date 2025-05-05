@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@b764d0a9a230ebbfeeaaf91db383a57521fa7d91
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@fe2187679e7835a22b9ec865d4d39a0ce6863460
 
 FROM node:23.11.0-alpine3.21
 
@@ -14,7 +14,7 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-base"
-LABEL org.opencontainers.image.description="Base Network integration for onchain tools, allowing interaction with Base Network and Coinbase API for wallet management, fund transfers, smart contracts, and DeFi operations."
+LABEL org.opencontainers.image.description="Onchain integration for Base Network and Coinbase API manage wallets, transfers, contracts and DeFi."
 LABEL org.opencontainers.image.version="1.0.13"
 LABEL org.opencontainers.image.source="https://github.com/base/base-mcp"
 LABEL org.opencontainers.image.licenses="MIT"

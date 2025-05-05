@@ -20,12 +20,12 @@
 # What is mcp-server-aws-terraform?
 
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-aws-terraform/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-terraform/0.0.9?logo=docker&logoColor=fff&label=0.0.9)](https://hub.docker.com/r/acuvity/mcp-server-aws-terraform)
-[![PyPI](https://img.shields.io/badge/0.0.9-3775A9?logo=pypi&logoColor=fff&label=awslabs.terraform-mcp-server)](https://github.com/awslabs/mcp/tree/main/src/terraform-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-terraform/0.0.10?logo=docker&logoColor=fff&label=0.0.10)](https://hub.docker.com/r/acuvity/mcp-server-aws-terraform)
+[![PyPI](https://img.shields.io/badge/0.0.10-3775A9?logo=pypi&logoColor=fff&label=awslabs.terraform-mcp-server)](https://github.com/awslabs/mcp/tree/main/src/terraform-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-terraform&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-terraform%3A0.0.9%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-terraform&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-terraform%3A0.0.10%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** MCP server for Terraform on AWS best practices, infrastructure as code patterns, and security compliance with Checkov.
+**Description:** Terraform AWS best practices, infrastructure as code patterns, and security compliance with Checkov.
 
 > [!NOTE]
 > `awslabs.terraform-mcp-server` has been repackaged by Acuvity from Author original sources.
@@ -92,7 +92,7 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.0.9`
+  - container: `1.0.0-0.0.10`
 
 ---
 

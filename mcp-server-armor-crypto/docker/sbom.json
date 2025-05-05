@@ -65,16 +65,8 @@
       "hash": "3dbd458a0274095a97b0471adc18f197c44894e4c5f83f46de81757f58fcc5d5"
     },
     {
-      "name": "get_token_address",
-      "hash": "9a5e78e08c4b96bb77503f9e3a08db60bfe98d4316ac47ae5d4856e950461472"
-    },
-    {
       "name": "get_token_candle_data",
       "hash": "a61a2fb25b8dc2db7fe079a4c07109126892b066c23dadd34f67bd117e9d9ce6"
-    },
-    {
-      "name": "get_token_details",
-      "hash": "8e973adea71fa9cd0c3099e614716604414db9f488e880d9ed7ee9a005bea918"
     },
     {
       "name": "get_top_trending_tokens",
@@ -103,6 +95,14 @@
     {
       "name": "rename_wallets",
       "hash": "fcd07f846ea7983164a49dcdd06755e9a658d0a57735076db894991307277688"
+    },
+    {
+      "name": "search_official_token_address",
+      "hash": "94046a4947c62f52335f048761c321dacc685666b3ee22ad23f0cd05e2f08a44"
+    },
+    {
+      "name": "search_token_details",
+      "hash": "c01d85c0e22789b5b019d5e9d3ea80bb34cca4bfa64256df66f74d3d37a43b80"
     },
     {
       "name": "send_key_to_telegram",
