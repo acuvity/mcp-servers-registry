@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@fe2187679e7835a22b9ec865d4d39a0ce6863460
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@ad7a165cf89e6d8944c924a9910cd30a36be63b8
 
 FROM node:23.11.0-alpine3.21
 

@@ -45,11 +45,11 @@ spec:
                   name: "{{ .Values.secrets.CODELOGIC_PASSWORD.valueFrom.name | default (printf "%s-secrets" (include "base.fullname" .) ) }}"
                   key: "{{ .Values.secrets.CODELOGIC_PASSWORD.valueFrom.key | default "CODELOGIC_PASSWORD" }}"
             - name: CODELOGIC_SERVER_HOST
-              value: {{ required "CODELOGIC_SERVER_HOST is required" .Values.env.CODELOGIC_SERVER_HOST}}
+              value: {{ required "env.CODELOGIC_SERVER_HOST is required" .Values.env.CODELOGIC_SERVER_HOST}}
             - name: CODELOGIC_USERNAME
-              value: {{ required "CODELOGIC_USERNAME is required" .Values.env.CODELOGIC_USERNAME}}
+              value: {{ required "env.CODELOGIC_USERNAME is required" .Values.env.CODELOGIC_USERNAME}}
             - name: CODELOGIC_WORKSPACE_NAME
-              value: {{ required "CODELOGIC_WORKSPACE_NAME is required" .Values.env.CODELOGIC_WORKSPACE_NAME}}
+              value: {{ required "env.CODELOGIC_WORKSPACE_NAME is required" .Values.env.CODELOGIC_WORKSPACE_NAME}}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default (printf  "%s-%s" .Chart.Version .Chart.AppVersion) }}"

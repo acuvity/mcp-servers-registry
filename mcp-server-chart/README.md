@@ -14,21 +14,22 @@
   </a>
 <a href="https://bsky.app/profile/acuvity.bsky.social">
     <img src="https://img.shields.io/badge/Bluesky-Follow-7289DA"?logo=bluesky&logoColor=fff" alt="Follow us on Bluesky" />
+  </a>
 </p>
 
 
 # What is mcp-server-chart?
 
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-chart/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-chart/0.2.2?logo=docker&logoColor=fff&label=0.2.2)](https://hub.docker.com/r/acuvity/mcp-server-chart)
-[![PyPI](https://img.shields.io/badge/0.2.2-3775A9?logo=pypi&logoColor=fff&label=@antv/mcp-server-chart)](https://github.com/antvis/mcp-server-chart)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-chart/0.2.4?logo=docker&logoColor=fff&label=0.2.4)](https://hub.docker.com/r/acuvity/mcp-server-chart)
+[![PyPI](https://img.shields.io/badge/0.2.4-3775A9?logo=pypi&logoColor=fff&label=@antv/mcp-server-chart)](https://github.com/antvis/mcp-server-chart)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-chart&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-chart%3A0.2.2%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-chart&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-chart%3A0.2.4%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** A Model Context Protocol server for generating visual charts using AntV.
 
 > [!NOTE]
-> `@antv/mcp-server-chart` has been repackaged by Acuvity from AntV original sources.
+> `mcp-server-chart` has been packaged by Acuvity from @antv/mcp-server-chart original [sources](https://github.com/antvis/mcp-server-chart).
 
 # Why We Built This
 
@@ -49,23 +50,76 @@ To address this need, we've created a secure and robust Docker image designed to
 </details>
 
 <details>
-<summary>🛡️ Runtime Security</summary>
+<summary>🛡️ Runtime Security and Guardrails</summary>
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-Minibridge includes built-in guardrails that protect MCP server integrity and detect suspicious behaviors in real-time.:
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a built-in Rego policy that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
-- **Integrity Checks**: Ensures authenticity with runtime component hashing.
-- **Threat Detection & Prevention with built-in Rego Policy**:
-  - Covert‐instruction screening: Blocks any tool description or call arguments that match a wide list of "hidden prompt" phrases (e.g., "do not tell", "ignore previous instructions", Unicode steganography).
-  - Schema-key misuse guard: Rejects tools or call arguments that expose internal-reasoning fields such as note, debug, context, etc., preventing jailbreaks that try to surface private metadata.
-  - Sensitive-resource exposure check: Denies tools whose descriptions - or call arguments - reference paths, files, or patterns typically associated with secrets (e.g., .env, /etc/passwd, SSH keys).
-  - Tool-shadowing detector: Flags wording like "instead of using" that might instruct an assistant to replace or override an existing tool with a different behavior.
-  - Cross-tool ex-filtration filter: Scans responses and tool descriptions for instructions to invoke external tools not belonging to this server.
-  - Credential / secret redaction mutator: Automatically replaces recognised tokens formats with `[REDACTED]` in outbound content.
+### 🔒 Resource Integrity
+
+**Mitigates MCP Rug Pull Attacks**
+
+* **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
+* **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
+
+### 🛡️ Gardrails
+
+### Covert Instruction Detection
+
+Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
+
+* **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
+* **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
+
+### Sensitive Pattern Detection
+
+Block user-defined sensitive data patterns (credential paths, filesystem references).
+
+* **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
+* **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
+
+### Shadowing Pattern Detection
+
+Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
+
+* **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
+* **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
+
+### Schema Misuse Prevention
+
+Enforces strict adherence to MCP input schemas.
+
+* **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
+* **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
+
+### Cross-Origin Tool Access
+
+Controls whether tools may invoke tools or services from external origins.
+
+* **Goal:** Prevent untrusted or out-of-scope services from being called.
+* **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
+
+### Secrets Redaction
+
+Automatically masks sensitive values so they never appear in logs or responses.
+
+* **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
+* **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
+
+## Basic Authentication via Shared Secret
+
+Provides a lightweight auth layer using a single shared token.
+
+* **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
+* **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+
 </details>
+
+> [!NOTE]
+> All guardrails start disabled. You can switch each one on or off individually, so you only activate the protections your environment requires.
 
 
 # 📦 How to Use
@@ -87,7 +141,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-chart&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-chart%3A0.2.2%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-chart&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-chart%3A0.2.4%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -104,7 +158,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "-i",
           "--rm",
           "--read-only",
-          "docker.io/acuvity/mcp-server-chart:0.2.2"
+          "docker.io/acuvity/mcp-server-chart:0.2.4"
         ]
       }
     }
@@ -126,7 +180,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-chart:0.2.2"
+        "docker.io/acuvity/mcp-server-chart:0.2.4"
       ]
     }
   }
@@ -152,7 +206,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-chart:0.2.2"
+        "docker.io/acuvity/mcp-server-chart:0.2.4"
       ]
     }
   }
@@ -180,7 +234,7 @@ Add the following JSON block to your mcp configuration file:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-chart:0.2.2"
+        "docker.io/acuvity/mcp-server-chart:0.2.4"
       ]
     }
   }
@@ -206,7 +260,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-chart:0.2.2"
+        "docker.io/acuvity/mcp-server-chart:0.2.4"
       ]
     }
   }
@@ -225,7 +279,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 async with MCPServerStdio(
     params={
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-chart:0.2.2"]
+        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-chart:0.2.4"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -255,7 +309,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-chart:0.2.2`
+- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-chart:0.2.4`
 
 </details>
 
@@ -265,7 +319,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -i --rm --read-only docker.io/acuvity/mcp-server-chart:0.2.2
+docker run -i --rm --read-only docker.io/acuvity/mcp-server-chart:0.2.4
 ```
 
 Add `-p <localport>:8000` to expose the port.
@@ -322,11 +376,30 @@ Example for Claude Desktop:
 
 That's it.
 
-Of course there are plenty of other options that minibridge can provide.
-
-Don't be shy to ask question either.
+Minibridge offers a host of additional features. For step-by-step guidance, please visit the wiki. And if anything’s unclear, don’t hesitate to reach out!
 
 </details>
+
+## 🛡️ Runtime security
+
+To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
+- covert-instruction-detection
+- sensitive-pattern-detection
+- shadowing-pattern-detection
+- schema-misuse-prevention
+- cross-origin-tool-access
+- secrets-redaction
+
+for example, `-e GUARDRAILS="secrets-redaction covert-instruction-detection"` will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
+
+
+To turn on Basic Authentication, set BASIC_AUTH_SECRET like `- e BASIC_AUTH_SECRET="supersecret`
+
+Then you can connect through `http/sse` as usual given that you pass an `Authorization: Bearer supersecret` header with your secret as Bearer token.
+
+> [!CAUTION]
+> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
+> rotate credentials frequently and **always** use TLS.
 
 ## ☁️ Deploy On Kubernetes
 
@@ -335,10 +408,10 @@ Don't be shy to ask question either.
 
 ### How to install
 
-You can inspect the chart:
+You can inspect the chart `README`:
 
 ```console
-helm show chart oci://docker.io/acuvity/mcp-server-chart --version 1.0.0-
+helm show readme oci://docker.io/acuvity/mcp-server-chart --version 1.0.0
 ````
 
 You can inspect the values that you can configure:
@@ -359,7 +432,7 @@ From there your MCP server mcp-server-chart will be reachable by default through
 
 The deployment will create a Kubernetes service with a `healthPort`, that is used for liveness probes and readiness probes. This health port can also be used by the monitoring stack of your choice and exposes metrics under the `/metrics` path.
 
-See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-chart/charts/mcp-server-chart/README.md) for more details about settings.
+See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-chart/charts/mcp-server-chart/README.md) for more details about settings and runtime security including guardrails activation.
 
 </details>
 
@@ -422,8 +495,6 @@ Generate a pie chart to show the proportion of parts, such as, market share and 
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| axisXTitle | string | Set the x-axis title of chart. | No
-| axisYTitle | string | Set the y-axis title of chart. | No
 | data | array | Data for pie chart, (such as, [{ category: '分类一', value: 27 }]) | Yes
 | height | number | Set the height of chart, default is 400. | No
 | innerRadius | number | Set the pie chart as a donut chart. Set the value to 0.6 to enable it. | No
@@ -489,7 +560,7 @@ Generate a histogram chart to show the frequency of data points within a certain
 | axisXTitle | string | Set the x-axis title of chart. | No
 | axisYTitle | string | Set the y-axis title of chart. | No
 | binNumber | number | Number of intervals to define the number of intervals in a histogram. | No
-| data | array | Data for bar chart, such as, [ 78, 88, 60, 100, 95 ]. | Yes
+| data | array | Data for histogram chart, such as, [78, 88, 60, 100, 95]. | Yes
 | height | number | Set the height of chart, default is 400. | No
 | title | string | Set the title of chart. | No
 | width | number | Set the width of chart, default is 600. | No
@@ -527,8 +598,6 @@ Generate a word cloud chart to show word frequency or weight through text size v
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| axisXTitle | string | Set the x-axis title of chart. | No
-| axisYTitle | string | Set the y-axis title of chart. | No
 | data | array | Data for word cloud chart, such as, [{ value: '4.272', text: '形成' }]. | Yes
 | height | number | Set the height of chart, default is 400. | No
 | title | string | Set the title of chart. | No
@@ -547,8 +616,6 @@ Generate a radar chart to display multidimensional data (four dimensions or more
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| axisXTitle | string | Set the x-axis title of chart. | No
-| axisYTitle | string | Set the y-axis title of chart. | No
 | data | array | Data for radar chart, such as, [{ name: 'Design', value: 70 }]. | Yes
 | height | number | Set the height of chart, default is 400. | No
 | title | string | Set the title of chart. | No
@@ -567,8 +634,6 @@ Generate a treemap chart to display hierarchical data and can intuitively show c
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| axisXTitle | string | Set the x-axis title of chart. | No
-| axisYTitle | string | Set the y-axis title of chart. | No
 | data | array | Data for treemap chart, such as, [{ name: 'Design', value: 70, children: [{ name: 'Tech', value: 20 }] }]. | Yes
 | height | number | Set the height of chart, default is 400. | No
 | title | string | Set the title of chart. | No
@@ -588,9 +653,9 @@ Generate a dual axes chart which is a combination chart that integrates two diff
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | axisXTitle | string | Set the x-axis title of chart. | No
-| categories | array | Categories for dual axes chart, such as, ['2015', '2016', '2017']. | No
+| categories | array | Categories for dual axes chart, such as, ['2015', '2016', '2017']. | Yes
 | height | number | Set the height of chart, default is 400. | No
-| series | array | not set | No
+| series | array | not set | Yes
 | title | string | Set the title of chart. | No
 | width | number | Set the width of chart, default is 600. | No
 </details>
@@ -607,8 +672,6 @@ Generate a mind map chart to organizes and presents information in a hierarchica
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| axisXTitle | string | Set the x-axis title of chart. | No
-| axisYTitle | string | Set the y-axis title of chart. | No
 | data | object | Data for mind map chart, such as, { name: 'main topic', children: [{ name: 'topic 1', children: [{ name:'subtopic 1-1' }] } | Yes
 | height | number | Set the height of chart, default is 400. | No
 | title | string | Set the title of chart. | No
@@ -627,8 +690,6 @@ Generate a network graph chart to show relationships (edges) between entities (n
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| axisXTitle | string | Set the x-axis title of chart. | No
-| axisYTitle | string | Set the y-axis title of chart. | No
 | data | object | Data for network graph chart, such as, { nodes: [{ name: 'node1' }, { name: 'node2' }], edges: [{ source: 'node1', target: 'node2', name: 'edge1' }] } | Yes
 | height | number | Set the height of chart, default is 400. | No
 | title | string | Set the title of chart. | No
@@ -647,8 +708,6 @@ Generate a flow diagram chart to show the steps and decision points of a process
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| axisXTitle | string | Set the x-axis title of chart. | No
-| axisYTitle | string | Set the y-axis title of chart. | No
 | data | object | Data for flow diagram chart, such as, { nodes: [{ name: 'node1' }, { name: 'node2' }], edges: [{ source: 'node1', target: 'node2', name: 'edge1' }] } | Yes
 | height | number | Set the height of chart, default is 400. | No
 | title | string | Set the title of chart. | No
@@ -667,8 +726,6 @@ Generate a fishbone diagram chart to uses a fish skeleton, like structure to dis
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| axisXTitle | string | Set the x-axis title of chart. | No
-| axisYTitle | string | Set the y-axis title of chart. | No
 | data | object | Data for fishbone diagram chart , such as, { name: 'main topic', children: [{ name: 'topic 1', children: [{ name: 'subtopic 1-1' }] } | Yes
 | height | number | Set the height of chart, default is 400. | No
 | title | string | Set the title of chart. | No
@@ -715,15 +772,11 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | generate_dual_axes_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_dual_axes_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_fishbone_diagram | description | b4c25d22c4d78e4617ac92578a8979d41fa401ff31eee777bd54ae6c4bff38bb |
-| tools | generate_fishbone_diagram | axisXTitle | 29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a |
-| tools | generate_fishbone_diagram | axisYTitle | 66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77 |
 | tools | generate_fishbone_diagram | data | 50fffcc2d6b4cd6dbb797703bc866d056a6d65944739bfa848b35ab11bc30d1b |
 | tools | generate_fishbone_diagram | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
 | tools | generate_fishbone_diagram | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_fishbone_diagram | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_flow_diagram | description | be9973fdcd389ee607dfd0dbd8472b1e343a83d126c1614ce35f686aa40cf40c |
-| tools | generate_flow_diagram | axisXTitle | 29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a |
-| tools | generate_flow_diagram | axisYTitle | 66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77 |
 | tools | generate_flow_diagram | data | 0400dd85ec0609b1a2fe1b3e51edca6a495ca0d2975651f52c7f4e7b3b8ec3d1 |
 | tools | generate_flow_diagram | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
 | tools | generate_flow_diagram | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
@@ -732,7 +785,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | generate_histogram_chart | axisXTitle | 29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a |
 | tools | generate_histogram_chart | axisYTitle | 66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77 |
 | tools | generate_histogram_chart | binNumber | aed7fd9c76b22c81f123e8354e8a1fab5474cf785057e597c82846271da1ed68 |
-| tools | generate_histogram_chart | data | 110f1e7cd89de037b2f1d5ae52a12e8b9c729f8ff0d7ffdf500301be3be1911e |
+| tools | generate_histogram_chart | data | 35385c4971063de47636b64aef28b82403c3d801c27f2b668d5f895577df95f3 |
 | tools | generate_histogram_chart | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
 | tools | generate_histogram_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_histogram_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
@@ -745,30 +798,22 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | generate_line_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_line_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_mind_map | description | 69bf6897ec2bef7cc910002af1f7cf7d92502920473bae8ab6f9adefbc94a628 |
-| tools | generate_mind_map | axisXTitle | 29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a |
-| tools | generate_mind_map | axisYTitle | 66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77 |
 | tools | generate_mind_map | data | dca09503b5c4788ff4f0747c4af9ad77dbfd0d46ba87f68a39ceef8e9977ecc9 |
 | tools | generate_mind_map | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
 | tools | generate_mind_map | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_mind_map | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_network_graph | description | e9aa42fc72e3246243577e7be1f5c47ee4a10d74bcac5a0a140ff33719e18f44 |
-| tools | generate_network_graph | axisXTitle | 29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a |
-| tools | generate_network_graph | axisYTitle | 66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77 |
 | tools | generate_network_graph | data | c79e86bb596a8000143c5580d53b59f9a9d3a751b78db2429740b39e610ee359 |
 | tools | generate_network_graph | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
 | tools | generate_network_graph | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_network_graph | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_pie_chart | description | 2dc22593f3f742f01a0862cca0c664c9021840501d3f83b27f73f40690a742c6 |
-| tools | generate_pie_chart | axisXTitle | 29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a |
-| tools | generate_pie_chart | axisYTitle | 66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77 |
 | tools | generate_pie_chart | data | d56461d0cbeab155f94cc71c0f356cf961428327c26f8feeca8197d46191f701 |
 | tools | generate_pie_chart | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
 | tools | generate_pie_chart | innerRadius | 2392b8b38214109309b04f3ece0b5d6883201cb67ab45c39e918d7be2341d561 |
 | tools | generate_pie_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_pie_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_radar_chart | description | eadcd1d7352898155e8664e2c4ab360f4030c7c2f4f68eff86bbd984c4a891ab |
-| tools | generate_radar_chart | axisXTitle | 29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a |
-| tools | generate_radar_chart | axisYTitle | 66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77 |
 | tools | generate_radar_chart | data | 56d2c3632be9ccd0c97126c9fde5ca4869a3de8368178a7f8832d213ac259f26 |
 | tools | generate_radar_chart | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
 | tools | generate_radar_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
@@ -781,15 +826,11 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | generate_scatter_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_scatter_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_treemap_chart | description | 83973c4e02a8d3109dbd82dc491127008f3cf58a550bcc15bff98a583972ad40 |
-| tools | generate_treemap_chart | axisXTitle | 29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a |
-| tools | generate_treemap_chart | axisYTitle | 66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77 |
 | tools | generate_treemap_chart | data | 46418098a4acbdde40f7809faae1b5c912d4834c99f098f8d6fa57eb1876a0d1 |
 | tools | generate_treemap_chart | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
 | tools | generate_treemap_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_treemap_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_word_cloud_chart | description | e1661a55c9801f53cd0c3683458fc3dd1b78b0f8bc3e331550603262e2e02a8a |
-| tools | generate_word_cloud_chart | axisXTitle | 29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a |
-| tools | generate_word_cloud_chart | axisYTitle | 66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77 |
 | tools | generate_word_cloud_chart | data | 2aeb67a1626ca271b2f9343fe7070a2023f722a7dd486e729d73ee92ffaaca14 |
 | tools | generate_word_cloud_chart | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
 | tools | generate_word_cloud_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |

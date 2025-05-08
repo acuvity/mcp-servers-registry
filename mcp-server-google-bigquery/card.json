@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-google-bigquery",
+  "name": "mcp-server-google-bigquery ",
+  "description": "A server that lets your LLM securely query BigQuery.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-google-bigquery",
+      "application": "https://github.com/ergut/mcp-bigquery-server"
+    },
+  "tags": ["integration","database","development"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1.0.3",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "D",
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

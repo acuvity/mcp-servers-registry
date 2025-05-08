@@ -90,6 +90,10 @@ Create the name of the service account to use
     {{- end }}
 {{- end }}
 
+{{- with .Values.minibridge.basicAuth.value }}
+    minibridge-basic-auth: {{. | b64enc | quote }}
+{{- end }}
+
 {{- end }}
 
 {{- define "minibridge.items" -}}
@@ -151,7 +155,7 @@ Create the name of the service account to use
 - name: MINIBRIDGE_TLS_SERVER_KEY_PASS
   valueFrom:
     secretKeyRef:
-      name: "{{ .pass.valueFrom.name | default (printf "%s-secrets" (include "base.fullname" .)) }}"
+      name: "{{ .pass.valueFrom.name | default (printf "%s-secrets" (include "base.fullname" $)) }}"
       key: "{{ .pass.valueFrom.key | default "minibridge-key.pass" }}"
     {{- if or .clientCA.value .clientCA.path }}
 - name: MINIBRIDGE_TLS_SERVER_CLIENT_CA
@@ -163,6 +167,16 @@ Create the name of the service account to use
 {{- if not .Values.minibridge.sbom }}
 - name: MINIBRIDGE_SBOM
   value: /sbom.disabled
+{{- end }}
+
+{{- with .Values.minibridge.basicAuth }}
+{{ if or .value .valueFrom.name }}
+- name: BASIC_AUTH_SECRET
+  valueFrom:
+    secretKeyRef:
+      name: "{{ .valueFrom.name | default (printf "%s-secrets" (include "base.fullname" $)) }}"
+      key: "{{ .valueFrom.key | default "minibridge-basic-auth" }}"
+{{- end }}
 {{- end }}
 
 {{- with .Values.minibridge.policer.enforce }}
@@ -194,9 +208,14 @@ Create the name of the service account to use
 - name: MINIBRIDGE_POLICER_TOKEN
   valueFrom:
     secretKeyRef:
-      name: "{{ .pass.valueFrom.name | default (printf "%s-secrets" .Release.name) }}"
+      name: "{{ .valueFrom.name | default (printf "%s-secrets" (include "base.fullname" $)) }}"
       key: "{{ .pass.valueFrom.key | default "minibridge-policer-token" }}"
   {{- end }}
+{{- end }}
+
+{{- with .Values.minibridge.guardrails }}
+- name: GUARDRAILS
+  value: "{{ join " " . }}"
 {{- end }}
 
 {{- end }}

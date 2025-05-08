@@ -141,14 +141,6 @@
       "hash": "b4c25d22c4d78e4617ac92578a8979d41fa401ff31eee777bd54ae6c4bff38bb",
       "params": [
         {
-          "name": "axisXTitle",
-          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
-        },
-        {
-          "name": "axisYTitle",
-          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
-        },
-        {
           "name": "data",
           "hash": "50fffcc2d6b4cd6dbb797703bc866d056a6d65944739bfa848b35ab11bc30d1b"
         },
@@ -170,14 +162,6 @@
       "name": "generate_flow_diagram",
       "hash": "be9973fdcd389ee607dfd0dbd8472b1e343a83d126c1614ce35f686aa40cf40c",
       "params": [
-        {
-          "name": "axisXTitle",
-          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
-        },
-        {
-          "name": "axisYTitle",
-          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
-        },
         {
           "name": "data",
           "hash": "0400dd85ec0609b1a2fe1b3e51edca6a495ca0d2975651f52c7f4e7b3b8ec3d1"
@@ -214,7 +198,7 @@
         },
         {
           "name": "data",
-          "hash": "110f1e7cd89de037b2f1d5ae52a12e8b9c729f8ff0d7ffdf500301be3be1911e"
+          "hash": "35385c4971063de47636b64aef28b82403c3d801c27f2b668d5f895577df95f3"
         },
         {
           "name": "height",
@@ -269,14 +253,6 @@
       "hash": "69bf6897ec2bef7cc910002af1f7cf7d92502920473bae8ab6f9adefbc94a628",
       "params": [
         {
-          "name": "axisXTitle",
-          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
-        },
-        {
-          "name": "axisYTitle",
-          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
-        },
-        {
           "name": "data",
           "hash": "dca09503b5c4788ff4f0747c4af9ad77dbfd0d46ba87f68a39ceef8e9977ecc9"
         },
@@ -299,14 +275,6 @@
       "hash": "e9aa42fc72e3246243577e7be1f5c47ee4a10d74bcac5a0a140ff33719e18f44",
       "params": [
         {
-          "name": "axisXTitle",
-          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
-        },
-        {
-          "name": "axisYTitle",
-          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
-        },
-        {
           "name": "data",
           "hash": "c79e86bb596a8000143c5580d53b59f9a9d3a751b78db2429740b39e610ee359"
         },
@@ -328,14 +296,6 @@
       "name": "generate_pie_chart",
       "hash": "2dc22593f3f742f01a0862cca0c664c9021840501d3f83b27f73f40690a742c6",
       "params": [
-        {
-          "name": "axisXTitle",
-          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
-        },
-        {
-          "name": "axisYTitle",
-          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
-        },
         {
           "name": "data",
           "hash": "d56461d0cbeab155f94cc71c0f356cf961428327c26f8feeca8197d46191f701"
@@ -362,14 +322,6 @@
       "name": "generate_radar_chart",
       "hash": "eadcd1d7352898155e8664e2c4ab360f4030c7c2f4f68eff86bbd984c4a891ab",
       "params": [
-        {
-          "name": "axisXTitle",
-          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
-        },
-        {
-          "name": "axisYTitle",
-          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
-        },
         {
           "name": "data",
           "hash": "56d2c3632be9ccd0c97126c9fde5ca4869a3de8368178a7f8832d213ac259f26"
@@ -423,14 +375,6 @@
       "hash": "83973c4e02a8d3109dbd82dc491127008f3cf58a550bcc15bff98a583972ad40",
       "params": [
         {
-          "name": "axisXTitle",
-          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
-        },
-        {
-          "name": "axisYTitle",
-          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
-        },
-        {
           "name": "data",
           "hash": "46418098a4acbdde40f7809faae1b5c912d4834c99f098f8d6fa57eb1876a0d1"
         },
@@ -452,14 +396,6 @@
       "name": "generate_word_cloud_chart",
       "hash": "e1661a55c9801f53cd0c3683458fc3dd1b78b0f8bc3e331550603262e2e02a8a",
       "params": [
-        {
-          "name": "axisXTitle",
-          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
-        },
-        {
-          "name": "axisYTitle",
-          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
-        },
         {
           "name": "data",
           "hash": "2aeb67a1626ca271b2f9343fe7070a2023f722a7dd486e729d73ee92ffaaca14"

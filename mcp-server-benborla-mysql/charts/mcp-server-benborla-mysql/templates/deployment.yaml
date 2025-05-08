@@ -40,7 +40,7 @@ spec:
           env:
           {{- include "minibridge.env" . | nindent 12}}
             - name: MYSQL_HOST
-              value: {{ required "MYSQL_HOST is required" .Values.env.MYSQL_HOST}}
+              value: {{ required "env.MYSQL_HOST is required" .Values.env.MYSQL_HOST}}
             - name: MYSQL_PORT
               value: {{ .Values.env.MYSQL_PORT}}
             - name: MYSQL_USER
@@ -54,7 +54,7 @@ spec:
                   name: "{{ .Values.secrets.MYSQL_PASS.valueFrom.name | default (printf "%s-secrets" (include "base.fullname" .) ) }}"
                   key: "{{ .Values.secrets.MYSQL_PASS.valueFrom.key | default "MYSQL_PASS" }}"
             - name: MYSQL_DB
-              value: {{ required "MYSQL_DB is required" .Values.env.MYSQL_DB}}
+              value: {{ required "env.MYSQL_DB is required" .Values.env.MYSQL_DB}}
             - name: ALLOW_INSERT_OPERATION
               value: {{ .Values.env.ALLOW_INSERT_OPERATION}}
             - name: ALLOW_UPDATE_OPERATION

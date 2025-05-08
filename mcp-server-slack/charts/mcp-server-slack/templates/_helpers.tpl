@@ -90,6 +90,10 @@ Create the name of the service account to use
     {{- end }}
 {{- end }}
 
+{{- with .Values.minibridge.basicAuth.value }}
+    minibridge-basic-auth: {{. | b64enc | quote }}
+{{- end }}
+
 {{- end }}
 
 {{- define "minibridge.items" -}}
@@ -145,17 +149,17 @@ Create the name of the service account to use
 {{- with .Values.minibridge.tls }}
   {{- if  .enabled }}
 - name: MINIBRIDGE_TLS_SERVER_CERT
-  value: {{ .cert.path | default "/certs/minibrige-cert.pem"}}
+  value: {{ .cert.path | default "/secrets/minibrige-cert.pem"}}
 - name: MINIBRIDGE_TLS_SERVER_KEY
-  value: {{ .key.path | default "/certs/minibrige-key.pem"}}
+  value: {{ .key.path | default "/secrets/minibrige-key.pem"}}
 - name: MINIBRIDGE_TLS_SERVER_KEY_PASS
   valueFrom:
     secretKeyRef:
-      name: "{{ .pass.valueFrom.name | default (printf "%s-secrets" (include "base.fullname" .)) }}"
+      name: "{{ .pass.valueFrom.name | default (printf "%s-secrets" (include "base.fullname" $)) }}"
       key: "{{ .pass.valueFrom.key | default "minibridge-key.pass" }}"
     {{- if or .clientCA.value .clientCA.path }}
 - name: MINIBRIDGE_TLS_SERVER_CLIENT_CA
-  value: {{ .clientCA.path | default "/certs/minibrige-client-ca.pem"}}
+  value: {{ .clientCA.path | default "/secrets/minibrige-client-ca.pem"}}
     {{- end }}
   {{- end }}
 {{- end }}
@@ -163,6 +167,16 @@ Create the name of the service account to use
 {{- if not .Values.minibridge.sbom }}
 - name: MINIBRIDGE_SBOM
   value: /sbom.disabled
+{{- end }}
+
+{{- with .Values.minibridge.basicAuth }}
+{{ if or .value .valueFrom.name }}
+- name: BASIC_AUTH_SECRET
+  valueFrom:
+    secretKeyRef:
+      name: "{{ .valueFrom.name | default (printf "%s-secrets" (include "base.fullname" $)) }}"
+      key: "{{ .valueFrom.key | default "minibridge-basic-auth" }}"
+{{- end }}
 {{- end }}
 
 {{- with .Values.minibridge.policer.enforce }}
@@ -188,15 +202,20 @@ Create the name of the service account to use
   value: {{.url}}
   {{- if or .ca.path .ca.value }}
 - name: MINIBRIDGE_POLICER_CA
-  value: {{ .ca.path | default "/certs/minibrige-key.pem"}}
+  value: {{ .ca.path | default "/secrets/minibrige-key.pem"}}
   {{- end }}
   {{- if or .token.value .token.valueFrom.name }}
 - name: MINIBRIDGE_POLICER_TOKEN
   valueFrom:
     secretKeyRef:
-      name: "{{ .pass.valueFrom.name | default (printf "%s-secrets" .Release.name) }}"
+      name: "{{ .valueFrom.name | default (printf "%s-secrets" (include "base.fullname" $)) }}"
       key: "{{ .pass.valueFrom.key | default "minibridge-policer-token" }}"
   {{- end }}
+{{- end }}
+
+{{- with .Values.minibridge.guardrails }}
+- name: GUARDRAILS
+  value: "{{ join " " . }}"
 {{- end }}
 
 {{- end }}

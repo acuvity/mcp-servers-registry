@@ -12,11 +12,12 @@
   "scope": "native",
   "mutitenant": false,
   "runtime": "node",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
+  "rating": "B",
   "resources": {
-    "tools": 18,
+    "tools": 30,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

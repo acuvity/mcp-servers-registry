@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-metatool-app"
+description: A Helm chart for MetaMCP is the one unified middleware MCP server that manages your MCP connections with GUI.
+home: https://github.com/metatool-ai/metatool-app
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/metatool-ai/metatool-app
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.5.0
+keywords:
+  - mcp-server-metatool-app
+  - mcp-server
+  - remote
+  - development
+  - integration

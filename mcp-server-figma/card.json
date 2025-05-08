@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-figma",
+  "name": "mcp-server-figma ",
+  "description": "Provide coding agents direct access to Figma data to help them one-shot design implementation.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-figma",
+      "application": "https://github.com/GLips/Figma-Context-MCP"
+    },
+  "tags": ["development","integration","web"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.2.2",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "C",
+  "resources": {
+    "tools": 2,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

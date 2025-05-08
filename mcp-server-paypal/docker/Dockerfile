@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@b764d0a9a230ebbfeeaaf91db383a57521fa7d91
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@24197b2f066b91986db7e600c72af3bf4c1701f0
 
 FROM node:23.11.0-alpine3.21
 
@@ -45,4 +45,3 @@ COPY --from=minibridge /go/bin/minibridge /usr/bin
 COPY ./entrypoint.sh  ./sbom.json ./policy.rego /
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["--tools=all"]

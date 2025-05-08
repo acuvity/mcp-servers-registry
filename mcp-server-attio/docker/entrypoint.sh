@@ -19,6 +19,7 @@ else
   unset MINIBRIDGE_SBOM
 fi
 
+
 MINIBRIDGE_POLICER_REGO_POLICY=${MINIBRIDGE_POLICER_REGO_POLICY:-"/policy.rego"}
 if [ -n "$MINIBRIDGE_POLICER_REGO_POLICY" ] && [ -s "$MINIBRIDGE_POLICER_REGO_POLICY" ]; then
   export MINIBRIDGE_POLICER_TYPE="${MINIBRIDGE_POLICER_TYPE:-rego}"
@@ -30,8 +31,15 @@ else
   fi
 fi
 
-export MINIBRIDGE_POLICER_ENFORCE="${MINIBRIDGE_POLICER_ENFORCE:-"false"}"
+export MINIBRIDGE_POLICER_ENFORCE="${MINIBRIDGE_POLICER_ENFORCE:-"true"}"
 export MINIBRIDGE_HEALTH_LISTEN="${MINIBRIDGE_HEALTH_LISTEN:-":8080"}"
 
-exec minibridge ${MINIBRIDGE_MODE} -- attio-mcp-server "$@"
+export REGO_POLICY_RUNTIME_GUARDRAILS="$GUARDRAILS"
+export REGO_POLICY_RUNTIME_BASIC_AUTH_SECRET="$BASIC_AUTH_SECRET"
+
+if [ "$#" -gt 0 ]; then
+  exec minibridge ${MINIBRIDGE_MODE} -- attio-mcp-server "$@"
+else
+  exec minibridge ${MINIBRIDGE_MODE} -- attio-mcp-server
+fi
 

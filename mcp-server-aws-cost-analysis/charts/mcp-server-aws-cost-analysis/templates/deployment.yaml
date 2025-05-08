@@ -40,7 +40,7 @@ spec:
           env:
           {{- include "minibridge.env" . | nindent 12}}
             - name: AWS_PROFILE
-              value: {{ required "AWS_PROFILE is required" .Values.env.AWS_PROFILE}}
+              value: {{ required "env.AWS_PROFILE is required" .Values.env.AWS_PROFILE}}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default (printf  "%s-%s" .Chart.Version .Chart.AppVersion) }}"

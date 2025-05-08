@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-notion",
+  "name": "mcp-server-notion ",
+  "description": "Interacting with Notion API.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-notion",
+      "application": "https://github.com/suekou/mcp-notion-server"
+    },
+  "tags": ["integration","research","development","database"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1.2.3",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 18,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

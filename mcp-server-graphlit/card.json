@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-graphlit",
+  "name": "mcp-server-graphlit ",
+  "description": "Integrates your MCP client with Graphlit to ingest and search content from dev tools.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-graphlit",
+      "application": "https://github.com/graphlit/graphlit-mcp-server"
+    },
+  "tags": ["research","integration","web","cloud"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1.0.20250508004",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "A",
+  "resources": {
+    "tools": 64,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

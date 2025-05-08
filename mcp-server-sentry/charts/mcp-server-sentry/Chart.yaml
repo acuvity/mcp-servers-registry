@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-sentry"
+description: A Helm chart for Retrieving and analyzing issues from Sentry.io.
+home: https://github.com/modelcontextprotocol/servers/tree/main/src/sentry
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/modelcontextprotocol/servers/tree/main/src/sentry
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 2025.1.14
+keywords:
+  - mcp-server-sentry
+  - mcp-server
+  - remote
+  - monitoring
+  - integration

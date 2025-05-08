@@ -1,0 +1,77 @@
+{
+  "tools": [
+    {
+      "name": "create_directory",
+      "hash": "c7fefb3d795ec75837bc8a78cf8d59dc49fc09f1631bacf34d98ce2c4f0cea49"
+    },
+    {
+      "name": "edit_block",
+      "hash": "fc4ff2e1c0f8a5f49897b25b30e6ff6190edff025c91ce8c47682abe11c88f24"
+    },
+    {
+      "name": "execute_command",
+      "hash": "d56794a362c464d21a02e9ae15ab43f532827ba29755d7fb84f259d245d0bdfc"
+    },
+    {
+      "name": "force_terminate",
+      "hash": "1e2f2a73d35cecb07c924ca4e581fd4bf11d022ee20a7cc489dfdef93516f59e"
+    },
+    {
+      "name": "get_config",
+      "hash": "be3f650cba9e9f1a3076d93efd139c936bdaeed69ec3a549147584d771fed347"
+    },
+    {
+      "name": "get_file_info",
+      "hash": "ac0976d058642e602ed54addfed78827b853e009a26b54fe7ac58ab38fa9832b"
+    },
+    {
+      "name": "kill_process",
+      "hash": "72fcd002619ed594586a2999eee8203440a2813155a22fc68e56b400a913ce94"
+    },
+    {
+      "name": "list_directory",
+      "hash": "2cd494ea838c57996713e2d9ea6493b425842b59b0149bcbf07ae9f5d9ff1735"
+    },
+    {
+      "name": "list_processes",
+      "hash": "f256bced396b792c6d64e288112c70f27644d22a4de48ee77c169f6b7bc67f29"
+    },
+    {
+      "name": "list_sessions",
+      "hash": "da9a1e7281fbd5e4cfb27aa59046a142f50b5bcd5c42a243aaee64f8b09f5db5"
+    },
+    {
+      "name": "move_file",
+      "hash": "0a27c32339f4e1623326c0980888cfab884e9d5c3d6a4f18c6cd43b23e219269"
+    },
+    {
+      "name": "read_file",
+      "hash": "9b2a0a3bcaf09cb4713f96d723a0b61f8a0776efcf4b2cf3539a2f0d6915acb9"
+    },
+    {
+      "name": "read_multiple_files",
+      "hash": "56b4f4a9d2b662c03e96fa83c21868d6e35155284048f20f6f3fe422d4ae49e6"
+    },
+    {
+      "name": "read_output",
+      "hash": "c59565a21c11ed4034b8d6546d5019913d0e761929dad7b28bd94796d824d033"
+    },
+    {
+      "name": "search_code",
+      "hash": "89ccd3f91bed92e6a4dcecd8a8723bf31cac3861c3ddaac11617afb981d8eb18"
+    },
+    {
+      "name": "search_files",
+      "hash": "ea128f04fcc0c50080a3197c2555889ebdaf21365325faebb0cee9fa7488ca97"
+    },
+    {
+      "name": "set_config_value",
+      "hash": "ec588a0b568b74e751a8b9095c288eee93d9ce7b434e6c46ed3142493b94feb9"
+    },
+    {
+      "name": "write_file",
+      "hash": "f5427c57d36f7846673f67fc80427bd76589e8b68fa44abb87732f7cfdcaff78"
+    }
+  ],
+  "prompts": []
+}

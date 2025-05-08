@@ -1,0 +1,21 @@
+{
+  "id": "mcp-server-google-drive",
+  "name": "mcp-server-google-drive ",
+  "description": "File access and search capabilities for Google Drive.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-google-drive",
+      "application": "https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive"
+    },
+  "tags": ["research","web","cloud"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "2025.1.14",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "nil",
+  "resources": {
+  }
+}

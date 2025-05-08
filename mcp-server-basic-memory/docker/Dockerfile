@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@fe2187679e7835a22b9ec865d4d39a0ce6863460
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@24197b2f066b91986db7e600c72af3bf4c1701f0
 
 FROM ghcr.io/astral-sh/uv:python3.12-alpine
 
@@ -53,4 +53,3 @@ COPY --from=minibridge /go/bin/minibridge /usr/bin
 COPY ./entrypoint.sh  ./sbom.json ./policy.rego /
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["mcp"]

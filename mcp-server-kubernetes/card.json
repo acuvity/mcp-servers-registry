@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-kubernetes",
+  "name": "mcp-server-kubernetes ",
+  "description": "Typescript implementation of Kubernetes cluster operations for pods, deployments, services.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-kubernetes",
+      "application": "https://github.com/Flux159/mcp-server-kubernetes"
+    },
+  "tags": ["development","integration","cloud"],
+  "official": false,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1.6.2",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": "C",
+  "resources": {
+    "tools": 40,
+    "prompts": 0,
+    "resources": 5,
+    "resourcesTemplates": 0
+  }
+}

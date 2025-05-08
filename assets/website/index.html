@@ -1,271 +1,666 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="Discover secure, production-ready MCP Servers for AI agents and agentic frameworks" />
+    <meta
+      name="description"
+      content="Discover secure, production-ready MCP Servers for AI agents and agentic frameworks"
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Secure MCP Servers for AI Agents & Agentic Frameworks" />
-    <meta property="og:description"
-        content="Discover secure, production-ready MCP Servers for AI agents and agentic frameworks." />
-    <meta property="og:image" content="https://console.acuvity.ai/acuvity-single-mono.svg" />
+    <meta
+      property="og:title"
+      content="Secure MCP Servers for AI Agents & Agentic Frameworks"
+    />
+    <meta
+      property="og:description"
+      content="Discover secure, production-ready MCP Servers for AI agents and agentic frameworks."
+    />
+    <meta
+      property="og:image"
+      content="https://console.acuvity.ai/acuvity-single-mono.svg"
+    />
     <title>Secure MCP Servers for AI Agents & Agentic Frameworks</title>
-    <link rel="icon" type="image/svg+xml" href="https://console.acuvity.ai/acuvity-single-mono.svg">
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://console.acuvity.ai/acuvity-single-mono.svg"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K8G47E1L5K"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-K8G47E1L5K"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-K8G47E1L5K');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-K8G47E1L5K");
     </script>
     <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"SoftwareApplication",
-    "name":"Secure MCP Servers",
-    "url":"https://mcp.acuvity.ai",
-    "description":"Secure MCP Servers for AI Agents & Agentic Frameworks",
-    "applicationCategory":"DevelopmentFramework",
-    "author":{"@type":"Organization","name":"Acuvity","url":"https://acuvity.ai"},
-    "softwareVersion":"v0.2.1",
-    "datePublished":"2025-05-01",
-    "offers":{"@type":"Offer","price":"0.00","priceCurrency":"USD"}
-  }
-  </script>
-</head>
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Secure MCP Servers",
+        "url": "https://mcp.acuvity.ai",
+        "description": "Secure MCP Servers for AI Agents & Agentic Frameworks",
+        "applicationCategory": "DevelopmentFramework",
+        "author": {
+          "@type": "Organization",
+          "name": "Acuvity",
+          "url": "https://acuvity.ai"
+        },
+        "softwareVersion": "v0.2.1",
+        "datePublished": "2025-05-01",
+        "offers": { "@type": "Offer", "price": "0.00", "priceCurrency": "USD" }
+      }
+    </script>
+  </head>
 
-<body class="bg-white text-gray-800">
+  <body class="bg-white text-gray-800">
     <div class="bg-[#4e55fd] p-3 text-center">
-        <a href="https://acuvity.ai" target="_blank" class="font-bold text-white">Acuvity</a>
-        <span class="text-white">is packaging all the MCP servers to make it secure using</span>
-        <a href="https://github.com/acuvity/minibridge" target="_blank" class="font-bold text-white">Minibridge</a>.
+      <a href="https://acuvity.ai" target="_blank" class="font-bold text-white"
+        >Acuvity</a
+      >
+      <span class="text-white"
+        >is packaging all the MCP servers to make it secure using</span
+      >
+      <a
+        href="https://github.com/acuvity/minibridge"
+        target="_blank"
+        class="font-bold text-white"
+        >Minibridge</a
+      >.
     </div>
-    <div id="app" class="flex flex-col md:flex-row max-w-7xl mx-auto mt-10 px-4">
-        <aside class="hidden md:block md:w-1/5 mr-6 sticky top-24 self-start">
-            <h2 class="text-xl font-semibold mb-4">Categories</h2>
-            <ul class="space-y-2">
-                <li><button @click="selectCategory(null)" :class="category===null?activeClass:defaultClass">All</button>
-                </li>
-                <li v-for="tag in availableTags" :key="tag">
-                    <button @click="selectCategory(tag)" :class="category===tag?activeClass:defaultClass">{{ tag
-                        }}</button>
-                </li>
-            </ul>
-        </aside>
-        <main class="w-full md:w-4/5">
-            <header class="mb-6 text-center px-2">
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-                    <img src="https://avatars.githubusercontent.com/u/182288589?s=200&v=4" alt="MCP Logo"
-                        class="h-10" />
-                    <h1 class="text-4xl font-bold">Secure MCP Servers</h1>
-                </div>
-                <p class="text-2xl font-bold mt-2 mb-2 text-[#4e55fd]">
-                    <a href=" https://github.com/acuvity/minibridge/wiki/Overview#-built-in-security"
-                        title="See built-in security">
-                        Enterprise ready. Production ready.
-                    </a>
-                </p>
-                <p class="text-gray-600 mt-1 px-2">
-                    Discover a comprehensive suite of secure MCP Servers engineered for AI agents and
-                    agentic frameworks. Deploy them in any Cloud, any Kubernetes cluster or any Container platform.
-                </p>
-                <p class="mt-2">
-                    If a required server isn’t listed, <a
-                        href="https://github.com/acuvity/mcp-servers-registry/issues/new?template=add-mcp-server.yaml"
-                        title="Submit a request for a new Secure MCP Server" target="_blank"
-                        class="text-[#4e55fd]">submit
-                        a request</a> to have it added.
-                </p>
-            </header>
+    <div
+      id="app"
+      class="flex flex-col md:flex-row max-w-7xl mx-auto mt-10 px-4"
+    >
+      <aside class="hidden md:block md:w-1/5 mr-6 sticky top-24 self-start">
+        <h2 class="text-xl font-semibold mb-4">Categories</h2>
+        <ul class="space-y-2">
+          <li>
+            <button
+              @click="selectCategory(null)"
+              :class="category===null?activeClass:defaultClass"
+            >
+              All
+            </button>
+          </li>
+          <li v-for="tag in availableTags" :key="tag">
+            <button
+              @click="selectCategory(tag)"
+              :class="category===tag?activeClass:defaultClass"
+            >
+              {{ tag }}
+            </button>
+          </li>
+        </ul>
+      </aside>
+      <main class="w-full md:w-4/5">
+        <header class="mb-6 text-center px-2">
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-3"
+          >
+            <img
+              src="https://avatars.githubusercontent.com/u/182288589?s=200&v=4"
+              alt="MCP Logo"
+              class="h-10"
+            />
+            <h1 class="text-4xl font-bold">Secure MCP Servers</h1>
+          </div>
+          <p class="text-2xl font-bold mt-2 mb-2 text-[#4e55fd]">
+            <a
+              href=" https://github.com/acuvity/minibridge/wiki/Overview#-built-in-security"
+              title="See built-in security"
+            >
+              Enterprise ready. Production ready.
+            </a>
+          </p>
+          <p class="text-gray-600 mt-1 px-2">
+            Discover a comprehensive suite of secure MCP Servers engineered for
+            AI agents and agentic frameworks. Deploy them in any Cloud, any
+            Kubernetes cluster or any Container platform.
+          </p>
+          <p class="mt-2">
+            If a required server isn’t listed,
+            <a
+              href="https://github.com/acuvity/mcp-servers-registry/issues/new?template=add-mcp-server.yaml"
+              title="Submit a request for a new Secure MCP Server"
+              target="_blank"
+              class="text-[#4e55fd]"
+              >submit a request</a
+            >
+            to have it added.
+          </p>
+        </header>
 
-            <div class="px-2">
-                <input v-model="search" type="text" placeholder="Search by name or description..."
-                    class="w-full p-3 rounded border border-gray-300 mb-6 shadow-sm" />
-                <div class="text-sm mb-4">
-                    <span class="text-gray-600">Showing {{ filteredServers.length }} result(s)</span>
-                    <span v-if="category" class="text-[#4e55fd]">(filtered by “{{ category }}”)</span>
+        <div class="px-2">
+          <input
+            v-model="search"
+            type="text"
+            placeholder="Search by name or description..."
+            class="w-full p-3 rounded border border-gray-300 mb-6 shadow-sm"
+          />
+          <div class="text-sm mb-4">
+            <span class="text-gray-600"
+              >Showing {{ filteredServers.length }} result(s)</span
+            >
+            <span v-if="category" class="text-[#4e55fd]"
+              >(filtered by “{{ category }}”)</span
+            >
+          </div>
+        </div>
+
+        <div class="px-2 grid gap-6">
+          <div
+            v-for="(server,i) in paginatedServers"
+            :key="server.name"
+            class="flex flex-col justify-between bg-white border border-gray-200 rounded-lg shadow p-5"
+          >
+            <!-- Header -->
+            <div>
+              <div class="flex justify-between flex-wrap items-start">
+                <div class="flex items-center gap-2">
+                  <h2 class="text-2xl font-semibold">{{ server.name }}</h2>
+                  <span
+                    v-if="server.official"
+                    class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full"
+                    >Official</span
+                  >
                 </div>
+                <div class="hidden md:flex gap-4 text-gray-500 text-xs">
+                  <div v-if="server.scope" class="flex flex-col items-center">
+                    <span class="font-medium">Scope</span>
+                    <i
+                      v-if="server.scope==='remote'"
+                      class="fas fa-globe"
+                      :title="`Scope: ${server.scope}`"
+                    ></i>
+                    <i
+                      v-else-if="server.scope==='native'"
+                      class="fas fa-desktop"
+                      :title="`Scope: ${server.scope}`"
+                    ></i>
+                    <i
+                      v-else
+                      class="fas fa-box"
+                      :title="`Scope: ${server.scope}`"
+                    ></i>
+                  </div>
+                  <div v-if="server.runtime" class="flex flex-col items-center">
+                    <span class="font-medium">Runtime</span>
+                    <i
+                      v-if="server.runtime.toLowerCase()==='binary'"
+                      class="fas fa-toolbox"
+                      :title="`Runtime: ${server.runtime}`"
+                    ></i>
+                    <i
+                      v-else-if="server.runtime.toLowerCase()==='python'"
+                      class="fab fa-python"
+                      :title="`Runtime: ${server.runtime}`"
+                    ></i>
+                    <i
+                      v-else
+                      class="fas fa-file-code"
+                      :title="`Runtime: ${server.runtime}`"
+                    ></i>
+                  </div>
+                  <div
+                    v-if="server.mutitenant"
+                    class="flex flex-col items-center"
+                  >
+                    <span class="font-medium">Tenant</span>
+                    <i class="fas fa-users" title="Multitenant: Yes"></i>
+                  </div>
+                  <div
+                    v-if="server.requiresConfiguration"
+                    class="flex flex-col items-center"
+                  >
+                    <span class="font-medium">Config</span>
+                    <i class="fas fa-cog" title="Config Required: Yes"></i>
+                  </div>
+                  <div
+                    v-if="server.requiresStorage"
+                    class="flex flex-col items-center"
+                  >
+                    <span class="font-medium">Storage</span>
+                    <i
+                      class="fas fa-database"
+                      title="Storage Required: Yes"
+                    ></i>
+                  </div>
+
+                  <div v-if="server.rating" class="flex flex-col items-center">
+                    <span class="font-medium">Rating</span>
+                    <span
+                      v-if="server.rating === 'A'"
+                      class="w-3.5 h-3.5 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
+                      style="background-color: #2ecc71"
+                      title="Tool quality rating based on MCP server tools best practices.&#10;Excellent: Fully documented with clear purpose, usage, and detailed inputs."
+                    >
+                      <a
+                        href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >A</a
+                      >
+                    </span>
+                    <span
+                      v-else-if="server.rating === 'B'"
+                      class="w-3.5 h-3.5 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
+                      style="background-color: #27ae60"
+                      title="Tool quality rating based on MCP server tools best practices.&#10;Good: Mostly clear with only minor documentation gaps."
+                    >
+                      <a
+                        href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >B</a
+                      >
+                    </span>
+                    <span
+                      v-else-if="server.rating === 'C'"
+                      class="w-3.5 h-3.5 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
+                      style="background-color: #f1c40f"
+                      title="Tool quality rating based on MCP server tools best practices.&#10;Adequate: Basic explanation provided, but lacks depth."
+                    >
+                      <a
+                        href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >C</a
+                      >
+                    </span>
+                    <span
+                      v-else-if="server.rating === 'D'"
+                      class="w-3.5 h-3.5 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
+                      style="background-color: #e67e22"
+                      title="Tool quality rating based on MCP server tools best practices.&#10;Poor: Minimal detail; purpose and inputs are unclear."
+                    >
+                      <a
+                        href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >D</a
+                      >
+                    </span>
+                    <span
+                      v-else-if="server.rating === 'E'"
+                      class="w-3.5 h-3.5 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
+                      style="background-color: #e74c3c"
+                      title="Tool quality rating based on MCP server tools best practices.&#10;Very Poor: Key information missing or misleading."
+                    >
+                      <a
+                        href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >E</a
+                      >
+                    </span>
+                    <span
+                      v-else-if="server.rating === 'F'"
+                      class="w-3.5 h-3.5 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
+                      style="background-color: #c0392b"
+                      title="Tool quality rating based on MCP server tools best practices.&#10;Failing: No meaningful documentation available."
+                    >
+                      <a
+                        href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >F</a
+                      >
+                    </span>
+                    <span
+                      v-else
+                      class="w-3.5 h-3.5 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
+                      style="background-color: #7f8c8d"
+                      title="Tool quality rating based on MCP server tools best practices.&#10;Unknown: No rating data available."
+                    >
+                      ?
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-2 text-sm font-mono">
+                <a
+                  v-if="server.links?.application"
+                  :href="server.links.application"
+                  target="_blank"
+                  rel="noopener"
+                  class="flex items-center gap-1 text-black hover:text-gray-700"
+                  title="Opens in a new tab"
+                >
+                  Version: {{ server.version }}
+                  <i class="fas fa-up-right-from-square text-gray-500"></i>
+                </a>
+                <span v-else class="text-gray-500"
+                  >Version: {{ server.version }}</span
+                >
+              </div>
+              <div v-if="server.tags" class="mt-2 flex flex-wrap gap-1 text-xs">
+                <span
+                  v-for="tag in server.tags"
+                  :key="tag"
+                  class="bg-gray-200 rounded px-2 py-0.5"
+                  >{{ tag }}</span
+                >
+              </div>
+              <div
+                class="md:hidden flex flex-wrap gap-4 text-gray-500 text-xs mt-2"
+              >
+                <div v-if="server.scope" class="flex items-center gap-1">
+                  <i class="fas fa-globe" :title="`Scope: ${server.scope}`"></i
+                  ><span>Scope</span>
+                </div>
+                <div v-if="server.runtime" class="flex items-center gap-1">
+                  <i
+                    class="fas fa-toolbox"
+                    :title="`Runtime: ${server.runtime}`"
+                  ></i
+                  ><span>Runtime</span>
+                </div>
+                <div v-if="server.mutitenant" class="flex items-center gap-1">
+                  <i class="fas fa-users" title="Multitenant: Yes"></i
+                  ><span>Tenant</span>
+                </div>
+                <div
+                  v-if="server.requiresConfiguration"
+                  class="flex items-center gap-1"
+                >
+                  <i class="fas fa-cog" title="Config Required: Yes"></i
+                  ><span>Config</span>
+                </div>
+                <div
+                  v-if="server.requiresStorage"
+                  class="flex items-center gap-1"
+                >
+                  <i class="fas fa-database" title="Storage Required: Yes"></i
+                  ><span>Storage</span>
+                </div>
+
+                <div v-if="server.rating" class="flex items-center gap-1">
+                  <span
+                    v-if="server.rating === 'A'"
+                    class="w-3.5 h-3.5 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
+                    style="background-color: #2ecc71"
+                    title="Tool quality rating based on MCP server tools best practices.&#10;Excellent: Fully documented with clear purpose, usage, and detailed inputs."
+                  >
+                    <a
+                      href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >A</a
+                    >
+                  </span>
+                  <span
+                    v-else-if="server.rating === 'B'"
+                    class="w-3.5 h-3.5 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
+                    style="background-color: #27ae60"
+                    title="Tool quality rating based on MCP server tools best practices.&#10;Good: Mostly clear with only minor documentation gaps."
+                  >
+                    <a
+                      href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >B</a
+                    >
+                  </span>
+                  <span
+                    v-else-if="server.rating === 'C'"
+                    class="w-3.5 h-3.5 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
+                    style="background-color: #f1c40f"
+                    title="Tool quality rating based on MCP server tools best practices.&#10;Adequate: Basic explanation provided, but lacks depth."
+                  >
+                    <a
+                      href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >C</a
+                    >
+                  </span>
+                  <span
+                    v-else-if="server.rating === 'D'"
+                    class="w-3.5 h-3.5 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
+                    style="background-color: #e67e22"
+                    title="Tool quality rating based on MCP server tools best practices.&#10;Poor: Minimal detail; purpose and inputs are unclear."
+                  >
+                    <a
+                      href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >D</a
+                    >
+                  </span>
+                  <span
+                    v-else-if="server.rating === 'E'"
+                    class="w-3.5 h-3.5 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
+                    style="background-color: #e74c3c"
+                    title="Tool quality rating based on MCP server tools best practices.&#10;Very Poor: Key information missing or misleading."
+                  >
+                    <a
+                      href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >E</a
+                    >
+                  </span>
+                  <span
+                    v-else-if="server.rating === 'F'"
+                    class="w-3.5 h-3.5 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
+                    style="background-color: #c0392b"
+                    title="Tool quality rating based on MCP server tools best practices.&#10;Failing: No meaningful documentation available."
+                  >
+                    <a
+                      href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >F</a
+                    >
+                  </span>
+                  <span
+                    v-else
+                    class="w-3.5 h-3.5 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
+                    style="background-color: #7f8c8d"
+                    title="Tool quality rating based on MCP server tools best practices.&#10;Unknown: No rating data available."
+                  >
+                    ?
+                  </span>
+                  <span class="font-medium">Rating</span>
+                </div>
+              </div>
+              <div class="mt-4 text-gray-700">
+                <div v-if="expanded[i]||server.description.length<=300">
+                  {{ server.description }}
+                </div>
+                <div v-else>
+                  {{ server.description.substring(0,300) }}…<button
+                    @click="expanded[i]=true"
+                    class="text-[#4e55fd] hover:underline text-sm ml-1"
+                  >
+                    See more…
+                  </button>
+                </div>
+              </div>
             </div>
 
-            <div class="px-2 grid gap-6">
-                <div v-for="(server,i) in paginatedServers" :key="server.name"
-                    class="flex flex-col justify-between bg-white border border-gray-200 rounded-lg shadow p-5">
-                    <!-- Header -->
-                    <div>
-                        <div class="flex justify-between flex-wrap items-start">
-                            <div class="flex items-center gap-2">
-                                <h2 class="text-2xl font-semibold">{{ server.name }}</h2>
-                                <span v-if="server.official"
-                                    class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Official</span>
-                            </div>
-                            <div class="hidden md:flex gap-4 text-gray-500 text-xs">
-                                <div v-if="server.scope" class="flex flex-col items-center">
-                                    <span class="font-medium">Scope</span>
-                                    <i v-if="server.scope==='remote'" class="fas fa-globe"
-                                        :title="`Scope: ${server.scope}`"></i>
-                                    <i v-else-if="server.scope==='native'" class="fas fa-desktop"
-                                        :title="`Scope: ${server.scope}`"></i>
-                                    <i v-else class="fas fa-box" :title="`Scope: ${server.scope}`"></i>
-                                </div>
-                                <div v-if="server.runtime" class="flex flex-col items-center">
-                                    <span class="font-medium">Runtime</span>
-                                    <i v-if="server.runtime.toLowerCase()==='binary'" class="fas fa-toolbox"
-                                        :title="`Runtime: ${server.runtime}`"></i>
-                                    <i v-else-if="server.runtime.toLowerCase()==='python'" class="fab fa-python"
-                                        :title="`Runtime: ${server.runtime}`"></i>
-                                    <i v-else class="fas fa-file-code" :title="`Runtime: ${server.runtime}`"></i>
-                                </div>
-                                <div v-if="server.mutitenant" class="flex flex-col items-center">
-                                    <span class="font-medium">Tenant</span>
-                                    <i class="fas fa-users" title="Multitenant: Yes"></i>
-                                </div>
-                                <div v-if="server.requiresConfiguration" class="flex flex-col items-center">
-                                    <span class="font-medium">Config</span>
-                                    <i class="fas fa-cog" title="Config Required: Yes"></i>
-                                </div>
-                                <div v-if="server.requiresStorage" class="flex flex-col items-center">
-                                    <span class="font-medium">Storage</span>
-                                    <i class="fas fa-database" title="Storage Required: Yes"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-2 text-sm font-mono">
-                            <a v-if="server.links?.application" :href="server.links.application" target="_blank"
-                                rel="noopener" class="flex items-center gap-1 text-black hover:text-gray-700"
-                                title="Opens in a new tab">
-                                Version: {{ server.version }} <i class="fas fa-up-right-from-square text-gray-500"></i>
-                            </a>
-                            <span v-else class="text-gray-500">Version: {{ server.version }}</span>
-                        </div>
-                        <div v-if="server.tags" class="mt-2 flex flex-wrap gap-1 text-xs">
-                            <span v-for="tag in server.tags" :key="tag" class="bg-gray-200 rounded px-2 py-0.5">{{ tag
-                                }}</span>
-                        </div>
-                        <div class="md:hidden flex flex-wrap gap-4 text-gray-500 text-xs mt-2">
-                            <div v-if="server.scope" class="flex items-center gap-1">
-                                <i class="fas fa-globe" :title="`Scope: ${server.scope}`"></i><span>Scope</span>
-                            </div>
-                            <div v-if="server.runtime" class="flex items-center gap-1">
-                                <i class="fas fa-toolbox" :title="`Runtime: ${server.runtime}`"></i><span>Runtime</span>
-                            </div>
-                            <div v-if="server.mutitenant" class="flex items-center gap-1">
-                                <i class="fas fa-users" title="Multitenant: Yes"></i><span>Tenant</span>
-                            </div>
-                            <div v-if="server.requiresConfiguration" class="flex items-center gap-1">
-                                <i class="fas fa-cog" title="Config Required: Yes"></i><span>Config</span>
-                            </div>
-                            <div v-if="server.requiresStorage" class="flex items-center gap-1">
-                                <i class="fas fa-database" title="Storage Required: Yes"></i><span>Storage</span>
-                            </div>
-                        </div>
-                        <div class="mt-4 text-gray-700">
-                            <div v-if="expanded[i]||server.description.length<=300">{{ server.description }}</div>
-                            <div v-else>
-                                {{ server.description.substring(0,300) }}…<button @click="expanded[i]=true"
-                                    class="text-[#4e55fd] hover:underline text-sm ml-1">See more…</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Resources & Install -->
-                    <div class="mt-4 flex flex-col md:flex-row md:justify-between md:items-center">
-                        <div v-if="server.links?.artifacts" class="text-sm text-gray-700 mb-4 md:mb-0">
-                            <div class="font-semibold mb-1">Exposed resources</div>
-                            <div v-if="server.resources && (server.resources.tools!==undefined||server.resources.prompts!==undefined||server.resources.resources!==undefined||server.resources.resourcesTemplates!==undefined)"
-                                class="flex flex-wrap gap-4">
-                                <div v-if="server.resources.tools!==undefined" class="flex items-center gap-1"><i
-                                        class="fas fa-wrench" title="Tools"></i><span>{{ server.resources.tools
-                                        }}</span></div>
-                                <div v-if="server.resources.prompts!==undefined" class="flex items-center gap-1"><i
-                                        class="fas fa-comment-dots" title="Prompts"></i><span>{{
-                                        server.resources.prompts }}</span></div>
-                                <div v-if="server.resources.resources!==undefined" class="flex items-center gap-1"><i
-                                        class="fas fa-box-open" title="Resources"></i><span>{{
-                                        server.resources.resources }}</span></div>
-                                <div v-if="server.resources.resourcesTemplates!==undefined"
-                                    class="flex items-center gap-1"><i class="fas fa-puzzle-piece"
-                                        title="Templates"></i><span>{{ server.resources.resourcesTemplates }}</span>
-                                </div>
-                            </div>
-                            <div v-else class="text-gray-500">no SBOM verification</div>
-                        </div>
-                        <div class="self-end md:self-auto">
-                            <a v-if="server.links?.artifacts" :href="server.links.artifacts" target="_blank"
-                                class="bg-black hover:bg-gray-800 text-white text-xs font-semibold py-1 px-3 rounded inline-flex items-center gap-1">
-                                <i class="fas fa-download"></i>Install
-                            </a>
-                            <a v-else
-                                href="https://github.com/acuvity/mcp-servers-registry/issues/new?template=add-mcp-server.yaml"
-                                target="_blank"
-                                class="bg-black hover:bg-gray-800 text-white text-xs font-semibold py-1 px-3 rounded inline-flex items-center gap-1">
-                                <i class="fas fa-plus-circle"></i>Request
-                            </a>
-                        </div>
-                    </div>
+            <!-- Resources & Install -->
+            <div
+              class="mt-4 flex flex-col md:flex-row md:justify-between md:items-center"
+            >
+              <div
+                v-if="server.links?.artifacts"
+                class="text-sm text-gray-700 mb-4 md:mb-0"
+              >
+                <div class="font-semibold mb-1">Provided primitives:</div>
+                <div
+                  v-if="server.resources && (server.resources.tools!==undefined||server.resources.prompts!==undefined||server.resources.resources!==undefined||server.resources.resourcesTemplates!==undefined)"
+                  class="flex flex-wrap gap-4"
+                >
+                  <div
+                    v-if="server.resources.tools!==undefined"
+                    class="flex items-center gap-1"
+                  >
+                    <i class="fas fa-wrench" title="Tools"></i
+                    ><span>{{ server.resources.tools }}</span>
+                  </div>
+                  <div
+                    v-if="server.resources.prompts!==undefined"
+                    class="flex items-center gap-1"
+                  >
+                    <i class="fas fa-comment-dots" title="Prompts"></i
+                    ><span>{{ server.resources.prompts }}</span>
+                  </div>
+                  <div
+                    v-if="server.resources.resources!==undefined"
+                    class="flex items-center gap-1"
+                  >
+                    <i class="fas fa-box-open" title="Resources"></i
+                    ><span>{{ server.resources.resources }}</span>
+                  </div>
+                  <div
+                    v-if="server.resources.resourcesTemplates!==undefined"
+                    class="flex items-center gap-1"
+                  >
+                    <i class="fas fa-puzzle-piece" title="Templates"></i
+                    ><span>{{ server.resources.resourcesTemplates }}</span>
+                  </div>
                 </div>
+                <div v-else class="text-gray-500">no SBOM verification</div>
+              </div>
+              <div class="self-end md:self-auto">
+                <a
+                  v-if="server.links?.artifacts"
+                  :href="server.links.artifacts"
+                  target="_blank"
+                  class="bg-black hover:bg-gray-800 text-white text-xs font-semibold py-1 px-3 rounded inline-flex items-center gap-1"
+                >
+                  <i class="fas fa-download"></i>Install
+                </a>
+                <a
+                  v-else
+                  href="https://github.com/acuvity/mcp-servers-registry/issues/new?template=add-mcp-server.yaml"
+                  target="_blank"
+                  class="bg-black hover:bg-gray-800 text-white text-xs font-semibold py-1 px-3 rounded inline-flex items-center gap-1"
+                >
+                  <i class="fas fa-plus-circle"></i>Request
+                </a>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <div class="flex justify-center items-center space-x-4 mt-8 px-2">
-                <button @click="prevPage" :disabled="page===1"
-                    class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50">Previous</button>
-                <span class="text-gray-700">Page {{ page }} of {{ totalPages }}</span>
-                <button @click="nextPage" :disabled="page===totalPages"
-                    class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50">Next</button>
-            </div>
+        <div class="flex justify-center items-center space-x-4 mt-8 px-2">
+          <button
+            @click="prevPage"
+            :disabled="page===1"
+            class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50"
+          >
+            Previous
+          </button>
+          <span class="text-gray-700">Page {{ page }} of {{ totalPages }}</span>
+          <button
+            @click="nextPage"
+            :disabled="page===totalPages"
+            class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50"
+          >
+            Next
+          </button>
+        </div>
 
-            <footer class="bg-gray-50 border-t border-gray-200 text-center py-4 mt-10 text-xs text-gray-500">
-                &copy; 2025 <a href="https://acuvity.ai" class="text-gray-700 hover:underline">Acuvity</a> Inc.
-            </footer>
-        </main>
+        <footer
+          class="bg-gray-50 border-t border-gray-200 text-center py-4 mt-10 text-xs text-gray-500"
+        >
+          &copy; 2025
+          <a href="https://acuvity.ai" class="text-gray-700 hover:underline"
+            >Acuvity</a
+          >
+          Inc.
+        </footer>
+      </main>
     </div>
 
     <script>
-        const { createApp } = Vue;
-        createApp({
-            data() {
-                return {
-                    servers: [], search: '', page: 1, perPage: 50,
-                    category: null, availableTags: [], expanded: [],
-                    activeClass: "block w-full text-left text-white bg-black px-3 py-1.5 rounded",
-                    defaultClass: "block w-full text-left text-black hover:bg-gray-100 px-3 py-1.5 rounded"
-                }
-            },
-            computed: {
-                filteredServers() {
-                    let res = this.servers;
-                    if (this.category) res = res.filter(s => s.tags?.includes(this.category));
-                    if (this.search.trim()) {
-                        const f = new Fuse(res, { keys: ['name', 'description'], threshold: 0.4 });
-                        res = f.search(this.search).map(r => r.item);
-                    }
-                    res.sort((a, b) => { const aHas = Boolean(a.links?.artifacts), bHas = Boolean(b.links?.artifacts); if (aHas !== bHas) return aHas ? -1 : 1; return a.name.localeCompare(b.name) });
-                    return res;
-                },
-                totalPages() { return Math.ceil(this.filteredServers.length / this.perPage) },
-                paginatedServers() { const s = (this.page - 1) * this.perPage; return this.filteredServers.slice(s, s + this.perPage) }
-            },
-            methods: {
-                nextPage() { if (this.page < this.totalPages) this.page++ },
-                prevPage() { if (this.page > 1) this.page-- },
-                selectCategory(t) { this.category = t; this.page = 1 }
-            },
-            mounted() {
-                axios.get('mcp-servers.json').then(r => {
-                    this.servers = r.data;
-                    this.expanded = Array(this.servers.length).fill(false);
-                    const t = new Set(); this.servers.forEach(s => s.tags?.forEach(x => t.add(x)));
-                    this.availableTags = [...t].sort();
-                }).catch(e => console.error(e));
+      const { createApp } = Vue;
+      createApp({
+        data() {
+          return {
+            servers: [],
+            search: "",
+            page: 1,
+            perPage: 50,
+            category: null,
+            availableTags: [],
+            expanded: [],
+            activeClass:
+              "block w-full text-left text-white bg-black px-3 py-1.5 rounded",
+            defaultClass:
+              "block w-full text-left text-black hover:bg-gray-100 px-3 py-1.5 rounded",
+          };
+        },
+        computed: {
+          filteredServers() {
+            let res = this.servers;
+            if (this.category)
+              res = res.filter((s) => s.tags?.includes(this.category));
+            if (this.search.trim()) {
+              const f = new Fuse(res, {
+                keys: ["name", "description"],
+                threshold: 0.4,
+              });
+              res = f.search(this.search).map((r) => r.item);
             }
-        }).mount('#app');
+            res.sort((a, b) => {
+              const aHas = Boolean(a.links?.artifacts),
+                bHas = Boolean(b.links?.artifacts);
+              if (aHas !== bHas) return aHas ? -1 : 1;
+              return a.name.localeCompare(b.name);
+            });
+            return res;
+          },
+          totalPages() {
+            return Math.ceil(this.filteredServers.length / this.perPage);
+          },
+          paginatedServers() {
+            const s = (this.page - 1) * this.perPage;
+            return this.filteredServers.slice(s, s + this.perPage);
+          },
+        },
+        methods: {
+          nextPage() {
+            if (this.page < this.totalPages) this.page++;
+          },
+          prevPage() {
+            if (this.page > 1) this.page--;
+          },
+          selectCategory(t) {
+            this.category = t;
+            this.page = 1;
+          },
+        },
+        mounted() {
+          axios
+            .get("mcp-servers.json")
+            .then((r) => {
+              this.servers = r.data;
+              this.expanded = Array(this.servers.length).fill(false);
+              const t = new Set();
+              this.servers.forEach((s) => s.tags?.forEach((x) => t.add(x)));
+              this.availableTags = [...t].sort();
+            })
+            .catch((e) => console.error(e));
+        },
+      }).mount("#app");
     </script>
-</body>
-
+  </body>
 </html>
+

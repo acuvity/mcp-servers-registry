@@ -1,0 +1,41 @@
+{
+  "tools": [
+    {
+      "name": "download_figma_images",
+      "hash": "aa902929576aade3bb3925f3f859ffa51ae0a64e2e00ff0ddad160c3af6d9057",
+      "params": [
+        {
+          "name": "fileKey",
+          "hash": "bada6642b3e747ab666cc69099ad47d222e5e38b9fe01aa27cc53759440c04ab"
+        },
+        {
+          "name": "localPath",
+          "hash": "38caf61f071d7b1b7f34a5ea62123815806c82af4bdc36061595cce61aabf961"
+        },
+        {
+          "name": "nodes",
+          "hash": "0cdd95aa5c58cc9fb98a5998a33e0f66b55797c948e97d3a4fe0bab0f87cf2b6"
+        }
+      ]
+    },
+    {
+      "name": "get_figma_data",
+      "hash": "e4dd808189802bfc78338d224f953fc6f0dd4b1ec04656b1865f3161fb001e16",
+      "params": [
+        {
+          "name": "depth",
+          "hash": "3417b64857e7dbc156eb3e73164d81709835fb7088e753b38a1ca1e190cce52d"
+        },
+        {
+          "name": "fileKey",
+          "hash": "40c6b773426799bfacc6ce508e311fa5cddf0ab924212dc6d9114991b2379b1c"
+        },
+        {
+          "name": "nodeId",
+          "hash": "39d47012469baf84f5e9ce6f71c7554c6229bb3dafc2b45e39e5b32f9a9f775d"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

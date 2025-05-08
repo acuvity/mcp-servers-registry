@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-kubernetes"
+description: A Helm chart for Typescript implementation of Kubernetes cluster operations for pods, deployments, services.
+home: https://github.com/Flux159/mcp-server-kubernetes
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/Flux159/mcp-server-kubernetes
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 1.6.2
+keywords:
+  - mcp-server-kubernetes
+  - mcp-server
+  - native
+  - development
+  - integration
+  - cloud

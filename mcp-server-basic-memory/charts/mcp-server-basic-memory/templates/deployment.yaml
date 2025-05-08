@@ -110,5 +110,5 @@ spec:
           - "ReadWriteOnce"
         resources:
           requests:
-            storage: "{{ required ".Values.storage.memory.size is required" .Values.storage.memory.size }}"
+            storage: "{{ required "storage.memory.size is required" .Values.storage.memory.size }}"
 {{- end }}

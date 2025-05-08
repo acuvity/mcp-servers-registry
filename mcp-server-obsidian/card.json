@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-obsidian",
+  "name": "mcp-server-obsidian ",
+  "description": "Interacting with Obsidian via REST API.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-obsidian",
+      "application": "https://github.com/MarkusPfundstein/mcp-obsidian"
+    },
+  "tags": ["integration","web","research"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.2.2",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 12,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

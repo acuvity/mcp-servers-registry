@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@fe2187679e7835a22b9ec865d4d39a0ce6863460
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@24197b2f066b91986db7e600c72af3bf4c1701f0
 
 FROM node:23.11.0-alpine3.21
 
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="standalone"
 
 LABEL org.opencontainers.image.title="mcp-server-chart"
 LABEL org.opencontainers.image.description="A Model Context Protocol server for generating visual charts using AntV."
-LABEL org.opencontainers.image.version="0.2.2"
+LABEL org.opencontainers.image.version="0.2.4"
 LABEL org.opencontainers.image.source="https://github.com/antvis/mcp-server-chart"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="AntV"
@@ -37,7 +37,7 @@ RUN addgroup -g 1001 -S appuser && \
 
 USER appuser
 
-RUN npm i --omit-dev @antv/mcp-server-chart@0.2.2
+RUN npm i --omit-dev @antv/mcp-server-chart@0.2.4
 
 EXPOSE 8000/tcp
 

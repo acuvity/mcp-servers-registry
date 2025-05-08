@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-sentry",
+  "name": "mcp-server-sentry ",
+  "description": "Retrieving and analyzing issues from Sentry.io.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-sentry",
+      "application": "https://github.com/modelcontextprotocol/servers/tree/main/src/sentry"
+    },
+  "tags": ["monitoring","integration"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "2025.1.14",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "A",
+  "resources": {
+    "tools": 1,
+    "prompts": 1,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

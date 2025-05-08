@@ -1,3 +1,13 @@
+# This policy exposes the several guardrails that can be enbled with
+# REGO_POLICY_RUNTIME_GUARDRAILS="covert-instruction-detection schema-misuse-prevention secrets-redaction cross-origin-tool-access sensitive-pattern-detection shadowing-pattern-detection"
+#
+# This also exposes a simple way to do authentication using a shared secrets
+# by settting the following. it would expext a header Authorization header
+# with a token/password set to the same thing.
+# REGO_POLICY_RUNTIME_BASIC_AUTH_SECRET
+#
+# The are exposed in rego without the REGO_POLICY_RUNTIME_ prefix
+
 package main
 
 import rego.v1
@@ -37,7 +47,7 @@ _redaction_patterns := [
 	`(xapp-\d-[A-Za-z0-9]+-\d+-[a-z0-9]+)`,
 	`(xox[abrp]-\d{10,13}-\d{10,13}[A-Za-z0-9-]*)`,
 	`https://hooks\.slack\.com/(?:services|workflows)/([A-Z0-9]+/[A-Z0-9]+/[0-9A-Za-z]{17,25})`,
-	`(?i)(?:\\["']|['"])?[A-Za-z0-9_]*(?:TOKEN|API_KEY|SECRET|PASS)[A-Za-z0-9_]*(?:\\["']|['"])?(?:\\n|\s)*[:=](?:\\n|\s)*(?:\\["']|['"])?([A-Za-z0-9_/\-]{12,})(?:\\["']|['"])?`,
+	`(?i)(?:\\["']|['"])?[A-Za-z0-9_]*(?:TOKEN|API_KEY|SECRET|PASS)[A-Za-z0-9_]*(?:\\["']|['"])?(?:\\n|\s)*(?::=|:|=)(?:\\n|\s)*(?:\\["']|['"])?([\x20-\x21\x23-\x26\x28-\x7E]{12,})(?:\\["']|['"])?`,
 ]
 
 _sensitive_patterns := [
@@ -100,10 +110,30 @@ _cross_tool_exclude := [
 	"case",
 ]
 
+## Retrieve the env set by the runtime
+#
+
+env := opa.runtime().env
+
+## Get activated guardrails
+active_guardrails contains norm if {
+	some raw in split(env.GUARDRAILS, " ")
+	norm = lower(raw)
+}
+
+## Generic authentication block
+#
+
+reasons contains "invalid credentials" if {
+	env.BASIC_AUTH_SECRET != ""
+	input.agent.password != env.BASIC_AUTH_SECRET
+}
+
 ## Deny rules for tools/list response
 #
 
 reasons contains msg if {
+	"covert-instruction-detection" in active_guardrails
 	some tool in input.mcp.result.tools
 	some pattern in _covert_patterns
 	regex.match(pattern, tool.description)
@@ -111,6 +141,7 @@ reasons contains msg if {
 }
 
 reasons contains msg if {
+	"schema-misuse-prevention" in active_guardrails
 	some tool in input.mcp.result.tools
 	some prop in tool.inputSchema.properties
 	lower(prop) in _schema_keys
@@ -118,6 +149,7 @@ reasons contains msg if {
 }
 
 reasons contains msg if {
+	"sensitive-pattern-detection" in active_guardrails
 	some tool in input.mcp.result.tools
 	some pattern in _sensitive_patterns
 	regex.match(pattern, tool.description)
@@ -125,6 +157,7 @@ reasons contains msg if {
 }
 
 reasons contains msg if {
+	"shadowing-pattern-detection" in active_guardrails
 	some tool in input.mcp.result.tools
 	some pattern in _shadowing_patterns
 	regex.match(pattern, tool.description)
@@ -132,6 +165,7 @@ reasons contains msg if {
 }
 
 reasons contains msg if {
+	"cross-origin-tool-access" in active_guardrails
 	some tool in input.mcp.result.tools
 	some pattern in _cross_tool_patterns
 	some tool_match in regex.find_all_string_submatch_n(pattern, tool.description, -1)
@@ -144,6 +178,7 @@ reasons contains msg if {
 #
 
 reasons contains msg if {
+	"covert-instruction-detection" in active_guardrails
 	input.mcp.method == "tools/call"
 	some pattern in _covert_patterns
 	regex.match(pattern, sprintf("%v", [input.mcp.params.arguments]))
@@ -151,6 +186,7 @@ reasons contains msg if {
 }
 
 reasons contains msg if {
+	"schema-misuse-prevention" in active_guardrails
 	input.mcp.method == "tools/call"
 	some arg_name in input.mcp.params.arguments
 	lower(arg_name) in _schema_keys
@@ -158,6 +194,7 @@ reasons contains msg if {
 }
 
 reasons contains msg if {
+	"sensitive-pattern-detection" in active_guardrails
 	input.mcp.method == "tools/call"
 	some pattern in _sensitive_patterns
 	regex.match(pattern, sprintf("%v", [input.mcp.params.arguments]))
@@ -165,6 +202,7 @@ reasons contains msg if {
 }
 
 reasons contains msg if {
+	"shadowing-pattern-detection" in active_guardrails
 	input.mcp.method == "tools/call"
 	some pattern in _shadowing_patterns
 	regex.match(pattern, sprintf("%v", [input.mcp.params.arguments]))
@@ -175,6 +213,7 @@ reasons contains msg if {
 #
 
 reasons contains msg if {
+	"covert-instruction-detection" in active_guardrails
 	some element in input.mcp.result.content
 	element.type == "text"
 	some pattern in _covert_patterns
@@ -183,6 +222,7 @@ reasons contains msg if {
 }
 
 reasons contains msg if {
+	"schema-misuse-prevention" in active_guardrails
 	some element in input.mcp.result.content
 	some arg_name in element
 	lower(arg_name) in _schema_keys
@@ -190,6 +230,7 @@ reasons contains msg if {
 }
 
 reasons contains msg if {
+	"sensitive-pattern-detection" in active_guardrails
 	some element in input.mcp.result.content
 	element.type == "text"
 	some pattern in _sensitive_patterns
@@ -198,6 +239,7 @@ reasons contains msg if {
 }
 
 reasons contains msg if {
+	"shadowing-pattern-detection" in active_guardrails
 	some element in input.mcp.result.content
 	element.type == "text"
 	some pattern in _shadowing_patterns
@@ -206,6 +248,7 @@ reasons contains msg if {
 }
 
 reasons contains msg if {
+	"cross-origin-tool-access" in active_guardrails
 	some element in input.mcp.result.content
 	element.type == "text"
 	text := element.text
@@ -217,6 +260,7 @@ reasons contains msg if {
 }
 
 mcp := patched if {
+	"secrets-redaction" in active_guardrails
 	patches := [patch |
 		some idx, element in input.mcp.result.content
 		element.type == "text"

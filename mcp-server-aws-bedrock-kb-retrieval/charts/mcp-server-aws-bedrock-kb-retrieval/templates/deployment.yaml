@@ -40,9 +40,9 @@ spec:
           env:
           {{- include "minibridge.env" . | nindent 12}}
             - name: AWS_PROFILE
-              value: {{ required "AWS_PROFILE is required" .Values.env.AWS_PROFILE}}
+              value: {{ required "env.AWS_PROFILE is required" .Values.env.AWS_PROFILE}}
             - name: AWS_REGION
-              value: {{ required "AWS_REGION is required" .Values.env.AWS_REGION}}
+              value: {{ required "env.AWS_REGION is required" .Values.env.AWS_REGION}}
             - name: KB_INCLUSION_TAG_KEY
               value: {{ .Values.env.KB_INCLUSION_TAG_KEY}}
           securityContext:

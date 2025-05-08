@@ -1,0 +1,40 @@
+{
+  "tools": [
+    {
+      "name": "introspect_admin_schema",
+      "hash": "7e0d17045beec0028d5390dd12e016af8a50df6b96d7918f95c12bd7e3524fe9",
+      "params": [
+        {
+          "name": "filter",
+          "hash": "5a8cd6b941a24d852a3d04593d85b3ca28a7f85fb7ab1d55612e78fd1dbe7527"
+        },
+        {
+          "name": "query",
+          "hash": "df71bf519a32b0b8e76710c33d12a47d11c093bcc2bfecd1e7a04bb345c38f1d"
+        }
+      ]
+    },
+    {
+      "name": "search_dev_docs",
+      "hash": "43c133ea467ecbd2aeaa66c47a0cdcaeb1791b456d57973e5860afd5791121a8",
+      "params": [
+        {
+          "name": "prompt",
+          "hash": "eb7cfc554f21b5a2cb77a094dd923a7ce2b5a4d9428f607506615f7a252c9871"
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "name": "shopify_admin_graphql",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "params": [
+        {
+          "name": "query",
+          "hash": "98093c057eeae040401bc67ad3071116be498b22221a4151563759d2f43f2ced"
+        }
+      ]
+    }
+  ]
+}

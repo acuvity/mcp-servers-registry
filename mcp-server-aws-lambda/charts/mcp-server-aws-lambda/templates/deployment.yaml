@@ -40,20 +40,20 @@ spec:
           env:
           {{- include "minibridge.env" . | nindent 12}}
             - name: AWS_PROFILE
-              value: {{ required "AWS_PROFILE is required" .Values.env.AWS_PROFILE}}
+              value: {{ required "env.AWS_PROFILE is required" .Values.env.AWS_PROFILE}}
             - name: AWS_REGION
-              value: {{ required "AWS_REGION is required" .Values.env.AWS_REGION}}
+              value: {{ required "env.AWS_REGION is required" .Values.env.AWS_REGION}}
             - name: FUNCTION_LIST
-              value: {{ required "FUNCTION_LIST is required" .Values.env.FUNCTION_LIST}}
+              value: {{ required "env.FUNCTION_LIST is required" .Values.env.FUNCTION_LIST}}
             - name: FUNCTION_PREFIX
-              value: {{ required "FUNCTION_PREFIX is required" .Values.env.FUNCTION_PREFIX}}
+              value: {{ required "env.FUNCTION_PREFIX is required" .Values.env.FUNCTION_PREFIX}}
             - name: FUNCTION_TAG_KEY
               valueFrom:
                 secretKeyRef:
                   name: "{{ .Values.secrets.FUNCTION_TAG_KEY.valueFrom.name | default (printf "%s-secrets" (include "base.fullname" .) ) }}"
                   key: "{{ .Values.secrets.FUNCTION_TAG_KEY.valueFrom.key | default "FUNCTION_TAG_KEY" }}"
             - name: FUNCTION_TAG_VALUE
-              value: {{ required "FUNCTION_TAG_VALUE is required" .Values.env.FUNCTION_TAG_VALUE}}
+              value: {{ required "env.FUNCTION_TAG_VALUE is required" .Values.env.FUNCTION_TAG_VALUE}}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default (printf  "%s-%s" .Chart.Version .Chart.AppVersion) }}"

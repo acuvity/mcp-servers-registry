@@ -1,0 +1,4 @@
+env:
+  GDRIVE_CREDENTIALS_PATH: dummy_value
+
+secrets:

@@ -67,7 +67,7 @@ spec:
             - name: {{ include "base.fullname" . }}-sandbox
               mountPath: /tmp
             - name: {{ include "base.fullname" . }}-secrets
-              mountPath: /certs/
+              mountPath: /secrets/
           {{- with .Values.volumeMounts }}
             {{- toYaml . | nindent 12 }}
           {{- end }}

@@ -1,0 +1,21 @@
+{
+  "id": "mcp-server-jetbrains",
+  "name": "mcp-server-jetbrains ",
+  "description": "Connect to JetBrains IDE.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-jetbrains",
+      "application": "https://github.com/JetBrains/mcpProxy"
+    },
+  "tags": ["automation","integration","development"],
+  "official": false,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1.8.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "F",
+  "resources": {
+  }
+}

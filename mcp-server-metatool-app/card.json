@@ -1,0 +1,21 @@
+{
+  "id": "mcp-server-metatool-app",
+  "name": "mcp-server-metatool-app ",
+  "description": "MetaMCP is the one unified middleware MCP server that manages your MCP connections with GUI.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-metatool-app",
+      "application": "https://github.com/metatool-ai/metatool-app"
+    },
+  "tags": ["development","integration"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.5.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "F",
+  "resources": {
+  }
+}

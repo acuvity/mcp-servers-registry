@@ -12,9 +12,10 @@
   "scope": "remote",
   "mutitenant": false,
   "runtime": "python",
-  "version": "0.1.23",
+  "version": "0.1.24",
   "requiresConfiguration": false,
   "requiresStorage": false,
+  "rating": "C",
   "resources": {
     "tools": 37,
     "prompts": 1,

@@ -1,0 +1,159 @@
+{
+  "tools": [
+    {
+      "name": "obsidian_append_content",
+      "hash": "441d8ce7c4744dee9e60afe5ea684d37806eab144459bdb2bbbcf25b05d9eea4",
+      "params": [
+        {
+          "name": "content",
+          "hash": "af86a002896bd047f188864f96723c19eee92e4e6ec840207eaf9d211e96afb9"
+        },
+        {
+          "name": "filepath",
+          "hash": "c1e0a87dd03f5dfed770c2d77af79adfbe854333ab1daa7b808c4b04ea4ad3aa"
+        }
+      ]
+    },
+    {
+      "name": "obsidian_batch_get_file_contents",
+      "hash": "3eb385a80708f6f4f5f960e39d4649f568fd4f42f16d4fd34a0e6db922acd605",
+      "params": [
+        {
+          "name": "filepaths",
+          "hash": "59959338323ab4d07e7a46254128f48ee77bc8969ba3330ee0c1e0d25fbcbbad"
+        }
+      ]
+    },
+    {
+      "name": "obsidian_complex_search",
+      "hash": "b110ffe9d299a9282c25b3b794834fdec938cf7b5256ef49a70f98f7c80c5f84",
+      "params": [
+        {
+          "name": "query",
+          "hash": "343cebc224c0eb9ac883be06d61d7017760ee357221fab4c1f9cc121515b8adc"
+        }
+      ]
+    },
+    {
+      "name": "obsidian_delete_file",
+      "hash": "f6dae4e281c0991a9c9a0e632f228c3763a5e2797c8ac567042b29f55deeff61",
+      "params": [
+        {
+          "name": "confirm",
+          "hash": "31bc0e9840bde0ba53b84dfc91d579c62384fddb8bc88396ca869a06e6755de3"
+        },
+        {
+          "name": "filepath",
+          "hash": "4367cc3207ba601d9408d0830c3589fdd8bb5ddd2ea7f3c22105bc1fa499a595"
+        }
+      ]
+    },
+    {
+      "name": "obsidian_get_file_contents",
+      "hash": "b144b5305df6d2fb4001e9c20ae1b5df81ab73d58577e29c4ef70f43d40f9b38",
+      "params": [
+        {
+          "name": "filepath",
+          "hash": "d6444fd2311e466e0d8e8049819cf18f6dc87078605978c622aca72c75ad00e7"
+        }
+      ]
+    },
+    {
+      "name": "obsidian_get_periodic_note",
+      "hash": "18cc93fe5728d7a1f04bd06f33dcdc574865ee7ccbe37cda02a6e23b2c629905",
+      "params": [
+        {
+          "name": "period",
+          "hash": "2c78b403d8de3bd859a9a308d8a049d5dc9a76253aee6dbe34c9a37e98ef3c0f"
+        }
+      ]
+    },
+    {
+      "name": "obsidian_get_recent_changes",
+      "hash": "67031ea0334572668909ede8c3d4471b3e251f428061c8a84b6d460abf850983",
+      "params": [
+        {
+          "name": "days",
+          "hash": "096a5e3c567dc2cfdab81fcf395976852b19674ba2b558fe2243d26e1ff57053"
+        },
+        {
+          "name": "limit",
+          "hash": "5c3905fb6770f150a79cce00805499615a09b45eec8d771e81c1f5112d362291"
+        }
+      ]
+    },
+    {
+      "name": "obsidian_get_recent_periodic_notes",
+      "hash": "b1da54b315ff6390fa4fc858befc3fb560f62c25e8eac1a08bc4bd1a1431ac70",
+      "params": [
+        {
+          "name": "include_content",
+          "hash": "fcc2646d21b5a5477107a5fa2c9bcfb02eb0fca95f8496273d2fe0ebbd1e7a43"
+        },
+        {
+          "name": "limit",
+          "hash": "15f9da0c969f9ba5f9529bad9355e38e3b124075d9ffb787bea317375e851784"
+        },
+        {
+          "name": "period",
+          "hash": "2c78b403d8de3bd859a9a308d8a049d5dc9a76253aee6dbe34c9a37e98ef3c0f"
+        }
+      ]
+    },
+    {
+      "name": "obsidian_list_files_in_dir",
+      "hash": "e4e1172e332ba65647a70aef60d3ad6abedc6d446565cbf9a011016801ab88f7",
+      "params": [
+        {
+          "name": "dirpath",
+          "hash": "4dff8e9d5f94d6cba23cc7ea1c2eb949695ddc582e9d3d6b5fdd1173d64acaf3"
+        }
+      ]
+    },
+    {
+      "name": "obsidian_list_files_in_vault",
+      "hash": "909e66b2454aed00ef4fb0a41b18fd0b57c72195e769e11a22d3ce13dc6d8e56"
+    },
+    {
+      "name": "obsidian_patch_content",
+      "hash": "f4b396c531ce3e93495cff36b93e90564aac2e6233a6959e4b33d72c2da6c49d",
+      "params": [
+        {
+          "name": "content",
+          "hash": "5b25459a4c9ce938dcde5717cc5eb1bfe2db08703128a51adb09211c12a68c5b"
+        },
+        {
+          "name": "filepath",
+          "hash": "c1e0a87dd03f5dfed770c2d77af79adfbe854333ab1daa7b808c4b04ea4ad3aa"
+        },
+        {
+          "name": "operation",
+          "hash": "9cb954994dc09a6ed42188ac3177679a1e21831141b92e615173982230862a2a"
+        },
+        {
+          "name": "target",
+          "hash": "0bec861ab8b37473c204a66e188f5fac95eeba8c84e533de115c80d111e76178"
+        },
+        {
+          "name": "target_type",
+          "hash": "3e807fb37e8635c81f50e15294156e523e0c2dd2394bcc208b987e0edeae1375"
+        }
+      ]
+    },
+    {
+      "name": "obsidian_simple_search",
+      "hash": "6dfa62c7e5361a04b450fbc672793a703963b9110c99d5108a713aa6bdb8af3f",
+      "params": [
+        {
+          "name": "context_length",
+          "hash": "1c0d9d772bf38d8d7bfd45f59c5209b8718ed02396157c2e0303f58ad7b61bfa"
+        },
+        {
+          "name": "query",
+          "hash": "7c0544d793c4cab69699cb84eded66c1cce85b060cf030f513d4f3b7dc7e1424"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

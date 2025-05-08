@@ -15,6 +15,7 @@
   "version": "2025.4.25",
   "requiresConfiguration": false,
   "requiresStorage": true,
+  "rating": "B",
   "resources": {
     "tools": 9,
     "prompts": 0,

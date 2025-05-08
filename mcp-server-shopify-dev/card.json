@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-shopify-dev",
+  "name": "mcp-server-shopify-dev ",
+  "description": "Model Context Protocol (MCP) server that interacts with Shopify Dev.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-shopify-dev",
+      "application": "https://github.com/Shopify/dev-mcp"
+    },
+  "tags": ["integration","research","integration"],
+  "official": false,
+  "scope": "standalone",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1.0.2",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 2,
+    "prompts": 1,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

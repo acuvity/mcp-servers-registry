@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@fe2187679e7835a22b9ec865d4d39a0ce6863460
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@24197b2f066b91986db7e600c72af3bf4c1701f0
 
 FROM ghcr.io/astral-sh/uv:python3.12-alpine
 
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-aws-bedrock-kb-retrieval"
 LABEL org.opencontainers.image.description="Query Amazon Bedrock Knowledge Bases using natural language to retrieve relevant information."
-LABEL org.opencontainers.image.version="0.1.7"
+LABEL org.opencontainers.image.version="0.1.8"
 LABEL org.opencontainers.image.source="https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server"
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 LABEL org.opencontainers.image.author="AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com>"
@@ -43,7 +43,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uname -sm &&  uv venv && uv pip install awslabs.bedrock-kb-retrieval-mcp-server==0.1.7
+RUN uname -sm &&  uv venv && uv pip install awslabs.bedrock-kb-retrieval-mcp-server==0.1.8
 
 EXPOSE 8000/tcp
 

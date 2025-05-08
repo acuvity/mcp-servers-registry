@@ -65,7 +65,7 @@ spec:
             - name: {{ include "base.fullname" . }}-sandbox
               mountPath: /tmp
             - name: {{ include "base.fullname" . }}-secrets
-              mountPath: /certs/
+              mountPath: /secrets/
           {{- with .Values.volumeMounts }}
             {{- toYaml . | nindent 12 }}
           {{- end }}
@@ -108,5 +108,5 @@ spec:
           - "ReadWriteOnce"
         resources:
           requests:
-            storage: "{{ required ".Values.storage.memory.size is required" .Values.storage.memory.size }}"
+            storage: "{{ required "storage.memory.size is required" .Values.storage.memory.size }}"
 {{- end }}

@@ -12,9 +12,10 @@
   "scope": "standalone",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.2.2",
+  "version": "0.2.4",
   "requiresConfiguration": false,
   "requiresStorage": false,
+  "rating": "B",
   "resources": {
     "tools": 15,
     "prompts": 0,

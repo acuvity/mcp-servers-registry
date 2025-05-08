@@ -1,0 +1,26 @@
+{
+  "tools": [
+    {
+      "name": "get_sentry_issue",
+      "hash": "f75a3585be16c0827c51484a037a93941db01750c49fe92951add4e40d469dc7",
+      "params": [
+        {
+          "name": "issue_id_or_url",
+          "hash": "21a838773e6b4a87cd73060687b4d928969a60d408e2342884270f9768ce534b"
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "name": "sentry-issue",
+      "hash": "b0fe6ab5076b899d9be56d5de9c36b78cb552a0ea29cf9756a973846ae38d48b",
+      "params": [
+        {
+          "name": "issue_id_or_url",
+          "hash": "c1589d9e9a2a834795ff8930536b644106ee89acff7f7dba4e4d3e2bcd81bf3c"
+        }
+      ]
+    }
+  ]
+}

@@ -14,21 +14,22 @@
   </a>
 <a href="https://bsky.app/profile/acuvity.bsky.social">
     <img src="https://img.shields.io/badge/Bluesky-Follow-7289DA"?logo=bluesky&logoColor=fff" alt="Follow us on Bluesky" />
+  </a>
 </p>
 
 
 # What is mcp-server-brightdata?
 
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-brightdata/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-brightdata/1.8.0?logo=docker&logoColor=fff&label=1.8.0)](https://hub.docker.com/r/acuvity/mcp-server-brightdata)
-[![PyPI](https://img.shields.io/badge/1.8.0-3775A9?logo=pypi&logoColor=fff&label=@brightdata/mcp)](https://github.com/luminati-io/brightdata-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-brightdata/1.8.1?logo=docker&logoColor=fff&label=1.8.1)](https://hub.docker.com/r/acuvity/mcp-server-brightdata)
+[![PyPI](https://img.shields.io/badge/1.8.1-3775A9?logo=pypi&logoColor=fff&label=@brightdata/mcp)](https://github.com/luminati-io/brightdata-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-brightdata&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_TOKEN%22%2C%22-e%22%2C%22BROWSER_AUTH%22%2C%22docker.io%2Facuvity%2Fmcp-server-brightdata%3A1.8.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-brightdata&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_TOKEN%22%2C%22-e%22%2C%22BROWSER_AUTH%22%2C%22docker.io%2Facuvity%2Fmcp-server-brightdata%3A1.8.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Discover, extract, and interact with the web - automated access across the public internet.
 
 > [!NOTE]
-> `@brightdata/mcp` has been repackaged by Acuvity from Bright Data original sources.
+> `mcp-server-brightdata` has been packaged by Acuvity from @brightdata/mcp original [sources](https://github.com/luminati-io/brightdata-mcp).
 
 # Why We Built This
 
@@ -49,23 +50,76 @@ To address this need, we've created a secure and robust Docker image designed to
 </details>
 
 <details>
-<summary>🛡️ Runtime Security</summary>
+<summary>🛡️ Runtime Security and Guardrails</summary>
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-Minibridge includes built-in guardrails that protect MCP server integrity and detect suspicious behaviors in real-time.:
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a built-in Rego policy that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
-- **Integrity Checks**: Ensures authenticity with runtime component hashing.
-- **Threat Detection & Prevention with built-in Rego Policy**:
-  - Covert‐instruction screening: Blocks any tool description or call arguments that match a wide list of "hidden prompt" phrases (e.g., "do not tell", "ignore previous instructions", Unicode steganography).
-  - Schema-key misuse guard: Rejects tools or call arguments that expose internal-reasoning fields such as note, debug, context, etc., preventing jailbreaks that try to surface private metadata.
-  - Sensitive-resource exposure check: Denies tools whose descriptions - or call arguments - reference paths, files, or patterns typically associated with secrets (e.g., .env, /etc/passwd, SSH keys).
-  - Tool-shadowing detector: Flags wording like "instead of using" that might instruct an assistant to replace or override an existing tool with a different behavior.
-  - Cross-tool ex-filtration filter: Scans responses and tool descriptions for instructions to invoke external tools not belonging to this server.
-  - Credential / secret redaction mutator: Automatically replaces recognised tokens formats with `[REDACTED]` in outbound content.
+### 🔒 Resource Integrity
+
+**Mitigates MCP Rug Pull Attacks**
+
+* **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
+* **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
+
+### 🛡️ Gardrails
+
+### Covert Instruction Detection
+
+Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
+
+* **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
+* **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
+
+### Sensitive Pattern Detection
+
+Block user-defined sensitive data patterns (credential paths, filesystem references).
+
+* **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
+* **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
+
+### Shadowing Pattern Detection
+
+Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
+
+* **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
+* **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
+
+### Schema Misuse Prevention
+
+Enforces strict adherence to MCP input schemas.
+
+* **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
+* **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
+
+### Cross-Origin Tool Access
+
+Controls whether tools may invoke tools or services from external origins.
+
+* **Goal:** Prevent untrusted or out-of-scope services from being called.
+* **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
+
+### Secrets Redaction
+
+Automatically masks sensitive values so they never appear in logs or responses.
+
+* **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
+* **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
+
+## Basic Authentication via Shared Secret
+
+Provides a lightweight auth layer using a single shared token.
+
+* **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
+* **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+
 </details>
+
+> [!NOTE]
+> All guardrails start disabled. You can switch each one on or off individually, so you only activate the protections your environment requires.
 
 
 # Quick reference
@@ -92,7 +146,7 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-1.8.0`
+  - container: `1.0.0-1.8.1`
 
 ---
 
@@ -135,7 +189,7 @@ This chart requires some mandatory information to be installed.
 Install will helm
 
 ```console
-helm install helm install mcp-server-brightdata oci://docker.io/acuvity/mcp-server-brightdata --version 1.0.0
+helm install mcp-server-brightdata oci://docker.io/acuvity/mcp-server-brightdata --version 1.0.0
 ```
 
 You can inspect the chart:
@@ -149,6 +203,19 @@ You can inpect the values that you can configure:
 ```console
 helm show values oci://docker.io/acuvity/mcp-server-brightdata --version 1.0.0
 ````
+
+Upgrade will helm
+
+```console
+helm upgrade mcp-server-brightdata oci://docker.io/acuvity/mcp-server-brightdata --version 1.0.0
+```
+
+Uninstall with helm
+
+```console
+helm uninstall mcp-server-brightdata
+```
+
 From there your MCP server mcp-server-brightdata will be reachable by default through `http/sse` from inside the cluster using the Kubernetes Service `mcp-server-brightdata` on port `8000` by default.
 
 
@@ -203,10 +270,10 @@ List of Kubernetes Secret names for authenticating to private image registries. 
 ## Container Arguments
 
 ```yaml
-args:
+args: []
 ```
 
-Passes arbitrary command‑line arguments into the container.
+Passes arbitrary command‑line arguments into the container. This will override the default arguments set in the container.
 
 
 ## Service Account
@@ -419,12 +486,33 @@ minibridge:
   # SBOM, to disable set it to false
   sbom: true
 
+  # guardrails to enable (list)
+  # default none
+  guardrails: []
+  # - covert-instruction-detection
+  # - sensitive-pattern-detection
+  # - shadowing-pattern-detection
+  # - schema-misuse-prevention
+  # - cross-origin-tool-access
+  # - secrets-redaction
+
+
+  # basic auth from the default policy
+  # if not set no auth will be enforced
+  basicAuth:
+    # raw value, will be stored as secret
+    value:
+    # value form an existing secret
+    valueFrom:
+      name:
+      key:
+
   # Policier configuration
   policer:
     # Instruct to enforce policies if enabled
     # otherwise it will jsut log the verdict as a warning
     # message in logs
-    enforce: false
+    enforce: true
     # Use the rego policer (Default)
     rego:
       # To enabled the rego policer
@@ -456,9 +544,60 @@ minibridge:
       # insecure: true
 ```
 
+To enable guardrails you can set `minibridge.guardrails` list as:
+
+```console
+helm upgrade mcp-server-brightdata oci://docker.io/acuvity/mcp-server-brightdata --version 1.0.0 --set 'minibridge.guardrails={secrets-redaction}'
+```
+
+or from a `values.yaml` file:
+
+```yaml
+minibridge:
+  guardrails:
+  - covert-instruction-detection
+  - sensitive-pattern-detection
+  - shadowing-pattern-detection
+  - schema-misuse-prevention
+  - cross-origin-tool-access
+  - secrets-redaction
+```
+
+Then upgrade with:
+
+```console
+helm upgrade mcp-server-brightdata oci://docker.io/acuvity/mcp-server-brightdata --version 1.0.0 -f values.yaml
+```
+
+To enable basic auth:
+
+```console
+helm upgrade mcp-server-brightdata oci://docker.io/acuvity/mcp-server-brightdata --version 1.0.0 --set minibridge.basicAuth.value="supersecret"
+```
+
+or from a `values.yaml` file:
+
+```yaml
+minibridge:
+  basicAuth:
+    value: "supersecret"
+```
+
+Then upgrade with:
+
+```console
+helm upgrade mcp-server-brightdata oci://docker.io/acuvity/mcp-server-brightdata --version 1.0.0 -f values.yaml
+```
+
+Then you can connect through `http/sse` as usual given that you pass an `Authorization` header with your secret as Bearer token.
+
+> [!CAUTION]
+> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
+> rotate credentials frequently and **always** use TLS.
+
 # 🧠 Server features
 
-## 🧰 Tools (18)
+## 🧰 Tools (30)
 <details>
 <summary>search_engine</summary>
 
@@ -576,6 +715,211 @@ This can be a cache lookup, so it can be more reliable than scraping
 
 ```
 Quickly read structured linkedin company profile data
+This can be a cache lookup, so it can be more reliable than scraping
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| url | string | not set | Yes
+</details>
+<details>
+<summary>web_data_zoominfo_company_profile</summary>
+
+**Description**:
+
+```
+Quickly read structured ZoomInfo company profile data.
+Requires a valid ZoomInfo company URL.
+This can be a cache lookup, so it can be more reliable than scraping
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| url | string | not set | Yes
+</details>
+<details>
+<summary>web_data_instagram_profiles</summary>
+
+**Description**:
+
+```
+Quickly read structured Instagram profile data.
+Requires a valid Instagram URL.
+This can be a cache lookup, so it can be more reliable than scraping
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| url | string | not set | Yes
+</details>
+<details>
+<summary>web_data_instagram_posts</summary>
+
+**Description**:
+
+```
+Quickly read structured Instagram post data.
+Requires a valid Instagram URL.
+This can be a cache lookup, so it can be more reliable than scraping
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| url | string | not set | Yes
+</details>
+<details>
+<summary>web_data_instagram_reels</summary>
+
+**Description**:
+
+```
+Quickly read structured Instagram reel data.
+Requires a valid Instagram URL.
+This can be a cache lookup, so it can be more reliable than scraping
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| url | string | not set | Yes
+</details>
+<details>
+<summary>web_data_instagram_comments</summary>
+
+**Description**:
+
+```
+Quickly read structured Instagram comments data.
+Requires a valid Instagram URL.
+This can be a cache lookup, so it can be more reliable than scraping
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| url | string | not set | Yes
+</details>
+<details>
+<summary>web_data_facebook_posts</summary>
+
+**Description**:
+
+```
+Quickly read structured Facebook post data.
+Requires a valid Facebook post URL.
+This can be a cache lookup, so it can be more reliable than scraping
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| url | string | not set | Yes
+</details>
+<details>
+<summary>web_data_facebook_marketplace_listings</summary>
+
+**Description**:
+
+```
+Quickly read structured Facebook marketplace listing data.
+Requires a valid Facebook marketplace listing URL.
+This can be a cache lookup, so it can be more reliable than scraping
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| url | string | not set | Yes
+</details>
+<details>
+<summary>web_data_facebook_company_reviews</summary>
+
+**Description**:
+
+```
+Quickly read structured Facebook company reviews data.
+Requires a valid Facebook company URL and number of reviews.
+This can be a cache lookup, so it can be more reliable than scraping
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| num_of_reviews | string | not set | Yes
+| url | string | not set | Yes
+</details>
+<details>
+<summary>web_data_x_posts</summary>
+
+**Description**:
+
+```
+Quickly read structured X post data.
+Requires a valid X post URL.
+This can be a cache lookup, so it can be more reliable than scraping
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| url | string | not set | Yes
+</details>
+<details>
+<summary>web_data_zillow_properties_listing</summary>
+
+**Description**:
+
+```
+Quickly read structured zillow properties listing data.
+Requires a valid zillow properties listing URL.
+This can be a cache lookup, so it can be more reliable than scraping
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| url | string | not set | Yes
+</details>
+<details>
+<summary>web_data_booking_hotel_listings</summary>
+
+**Description**:
+
+```
+Quickly read structured booking hotel listings data.
+Requires a valid booking hotel listing URL.
+This can be a cache lookup, so it can be more reliable than scraping
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| url | string | not set | Yes
+</details>
+<details>
+<summary>web_data_youtube_videos</summary>
+
+**Description**:
+
+```
+Quickly read structured YpuTube videos data.
+Requires a valid YouTube video URL.
 This can be a cache lookup, so it can be more reliable than scraping
 ```
 
@@ -771,8 +1115,20 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | session_stats | description | a361dcc45d17f9cad5e4b1872ef7ff26d4b355774d5be01159573e9616ac7c76 |
 | tools | web_data_amazon_product | description | 65fba1ff50443ee093a32d8301d918bf2b785e736dbb5cb0aadbc76cb889f599 |
 | tools | web_data_amazon_product_reviews | description | 8891e947fd3a6e9d47b6ef925dc5976566a78e8e1ede12b2f1e350fea32bbaac |
+| tools | web_data_booking_hotel_listings | description | 45efafdd1a85f8985481e45e09c96dd3ae729e5cf7fa467f2288d0ca0f068fde |
+| tools | web_data_facebook_company_reviews | description | 47afecccab5540c3e5f1505d4a3d66e5dfbd0c231b796be1d9c28db62b6968c6 |
+| tools | web_data_facebook_marketplace_listings | description | 887d03156bd3d324c2cec6bcba737c0d6ee5dd6305cfc86e1821c14cbceaacb4 |
+| tools | web_data_facebook_posts | description | 111981d475ce7965823736c78972c7d1d0b07a5bc057af4b1a4e2393719c96b0 |
+| tools | web_data_instagram_comments | description | a52e0e54c786ba9c11485ab321afe7e5105a734c7f4bfec3ebd1f708de3d43e5 |
+| tools | web_data_instagram_posts | description | 9b186d6fba3efb94bff3bbd0d03580f86c160b15c49aa4da5ee714ee4f675cad |
+| tools | web_data_instagram_profiles | description | 6e61b41570fd385d752770d973317ac34f25c655ea490e20ac2f64b0750e97af |
+| tools | web_data_instagram_reels | description | a8435edf89782be578fcc1cdecd65f754634f092e3d24bbf86290c265319d791 |
 | tools | web_data_linkedin_company_profile | description | ccffa642e9b1120c15f275650d1b685bb127c4a6ea8f6048ddc9061698c59f95 |
 | tools | web_data_linkedin_person_profile | description | 652f6bc070db40560b87b14c185a85ead84a45a05840122b0ec5c4e6775ea283 |
+| tools | web_data_x_posts | description | 29aae5cb1605b99c1fc5d29e6e8d1d00bccb99963ca7f3522fde9d8786174192 |
+| tools | web_data_youtube_videos | description | b55fbbdd0cc2f0dd25a91869e20cd94197422d56f23e41eef1fb968c5e3169e4 |
+| tools | web_data_zillow_properties_listing | description | 8e799a15b56be6999cc0634f6276f7c84079cf92e6aa09d62f9ec955e160e25f |
+| tools | web_data_zoominfo_company_profile | description | ee4d09fab58d64165808f582046d95685895bb920a2e86954ba0db0918963891 |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

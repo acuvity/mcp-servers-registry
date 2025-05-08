@@ -20,7 +20,9 @@ imagePullSecrets: []
 ## Container
 #
 # args, the args to pass to the container
-args:
+# this will override the default arguments
+# from the docker image
+args: []
 
 ## Service account
 #
@@ -33,7 +35,7 @@ serviceAccount:
   # Annotations to add to the service account
   annotations: {}
   # The name of the service account to use.
-  # If not set and create is true, a name is generated using the fullname template
+  # If not set and create i true, a name is generated using the fullname template
   name: ""
 
 ## Annotations and labels
@@ -224,12 +226,33 @@ minibridge:
   # SBOM, to disable set it to false
   sbom: true
 
+  # guardrails to enable (list)
+  # default none
+  guardrails: []
+  # - covert-instruction-detection
+  # - sensitive-pattern-detection
+  # - shadowing-pattern-detection
+  # - schema-misuse-prevention
+  # - cross-origin-tool-access
+  # - secrets-redaction
+
+
+  # basic auth from the default policy
+  # if not set no auth will be enforced
+  basicAuth:
+    # raw value, will be stored as secret
+    value:
+    # value form an existing secret
+    valueFrom:
+      name:
+      key:
+
   # Policier configuration
   policer:
     # Instruct to enforce policies if enabled
     # otherwise it will jsut log the verdict as a warning
     # message in logs
-    enforce: false
+    enforce: true
     # Use the rego policer (Default)
     rego:
       # To enable the rego policer

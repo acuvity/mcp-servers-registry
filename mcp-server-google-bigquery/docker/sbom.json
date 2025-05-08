@@ -1,0 +1,15 @@
+{
+  "tools": [
+    {
+      "name": "query",
+      "hash": "0c2ab1da5ae79d979246419eb6178acaafb25be198350c676c5961bcee3dac00",
+      "params": [
+        {
+          "name": "maximumBytesBilled",
+          "hash": "cd43886722fa8ab37c167f2b02e8e1f4873b0016829c2a3a24de95be6f1bdd41"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

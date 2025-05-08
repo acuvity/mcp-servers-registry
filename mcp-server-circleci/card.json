@@ -12,9 +12,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.4.0",
+  "version": "0.4.4",
   "requiresConfiguration": false,
   "requiresStorage": false,
+  "rating": "B",
   "resources": {
     "tools": 7,
     "prompts": 0,

@@ -40,7 +40,7 @@ spec:
           env:
           {{- include "minibridge.env" . | nindent 12}}
             - name: AIRFLOW_HOST
-              value: {{ required "AIRFLOW_HOST is required" .Values.env.AIRFLOW_HOST}}
+              value: {{ required "env.AIRFLOW_HOST is required" .Values.env.AIRFLOW_HOST}}
             - name: AIRFLOW_PASSWORD
               valueFrom:
                 secretKeyRef:

@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-jetbrains"
+description: A Helm chart for Connect to JetBrains IDE.
+home: https://github.com/JetBrains/mcpProxy
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/JetBrains/mcpProxy
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 1.8.0
+keywords:
+  - mcp-server-jetbrains
+  - mcp-server
+  - native
+  - automation
+  - integration
+  - development

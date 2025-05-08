@@ -1,0 +1,343 @@
+{
+  "tools": [
+    {
+      "name": "cleanup",
+      "hash": "8c2018f3780cafa2f853231f129562dc33c6a4571ac939e506f9aeb35665c5e2"
+    },
+    {
+      "name": "create_configmap",
+      "hash": "17a92ed33786a5559a002beff91a202c7bbd4e7991694d7a4cb0a15286bec822"
+    },
+    {
+      "name": "create_cronjob",
+      "hash": "33987caf6612dd74489e4a04142bc5cb47109ad68b14b86201daf0dfbf5764bf"
+    },
+    {
+      "name": "create_deployment",
+      "hash": "f6a9027d8b6d7ed1312df80d91b87baa6af470fe6fe8765eed88f38950c4d826"
+    },
+    {
+      "name": "create_namespace",
+      "hash": "c0ec1db7373c97f62ee698fff84c7588891231b8263c031c1c86370ba2f6ecce"
+    },
+    {
+      "name": "create_pod",
+      "hash": "f5c94c82f254fb69fa66ba466b3a36e25559be7ad69007d855998a829d5cf3eb"
+    },
+    {
+      "name": "create_service",
+      "hash": "98fcc1c883f7c640955771811ee73e9042d99d7c0512991ff0876a2b6a116c7b"
+    },
+    {
+      "name": "delete_cronjob",
+      "hash": "362b54e2d3574a19ac8c2bd8aab1a33e9a8b5fff3b3466ae4b8731a2961f4473"
+    },
+    {
+      "name": "delete_deployment",
+      "hash": "b53026b9a99dd859b688d91342ec70d485ef32edf46d06ebebfdcc4831f30bd1"
+    },
+    {
+      "name": "delete_namespace",
+      "hash": "2e8b2e974051051be5e181c7eefaa9ccf70777c9dbcb95a99df072add503a46c"
+    },
+    {
+      "name": "delete_pod",
+      "hash": "6fe4e7a7a9c31b0170292322c174e2f5847214f82eba0aa162ea8685bc06009e"
+    },
+    {
+      "name": "delete_service",
+      "hash": "46eaf7c56254ffc86968745e806629f091797d436eccbdbe41e5902c56489b7e"
+    },
+    {
+      "name": "describe_cronjob",
+      "hash": "4f14484541d560b00efea063f5630c12e537e9a9eb3044c0ef6285023e64483b"
+    },
+    {
+      "name": "describe_deployment",
+      "hash": "9a1eaff147f180c1f9e4b698e66dbe63a3457703c671d14e326dd1a0a1823c7a"
+    },
+    {
+      "name": "describe_node",
+      "hash": "02e95802d8c7de0fe4f01fb5ee0dffd609276032cdf7285d61686035b48a24c8"
+    },
+    {
+      "name": "describe_pod",
+      "hash": "11f020f91951c7a28d56962ca53e81c6fbce13dff6a43bcad775d4d062f8ebf5"
+    },
+    {
+      "name": "describe_service",
+      "hash": "5803dd1e703e5cd26afaf037b27b712924133a6203ef8c31e91d2d0d2ff1f9f8"
+    },
+    {
+      "name": "explain_resource",
+      "hash": "592bffdd3e4c0184fd9a22057d0a06b31a60732ac1d7a52de72367880af173f8",
+      "params": [
+        {
+          "name": "apiVersion",
+          "hash": "34419a5eb3629e5311644dd9147365296dcdbc65740ea1d235ab5d1cf8cc7add"
+        },
+        {
+          "name": "output",
+          "hash": "1c93f2d24fb810943e12f684698acc46b732d21f2f1c99c5c4bb85bd4e48560e"
+        },
+        {
+          "name": "recursive",
+          "hash": "db27ec72cc1154d1948550206b399586957968668bac95582a8635d103cc17fa"
+        },
+        {
+          "name": "resource",
+          "hash": "4ae1f5f38e1fd9e2087c6b08f33a3e9f44270af0a98f96af4264cf8ef277ae54"
+        }
+      ]
+    },
+    {
+      "name": "get_current_context",
+      "hash": "e48b08f2df2f2965a94841da05eb4084205700d5a42bcd7afb6cc08a2a1e3115",
+      "params": [
+        {
+          "name": "detailed",
+          "hash": "bb123e31ccbd055828b0a28916d1c96e6f3cbb788a4d173ff11827230806e6bb"
+        }
+      ]
+    },
+    {
+      "name": "get_events",
+      "hash": "e28be045db8d86214667a716b4b5c65130db0a8facc5c39aa044f8206abd43b9",
+      "params": [
+        {
+          "name": "fieldSelector",
+          "hash": "575d259237b66f1ac66e4ba1ab4a50f21841adfc105fe39a8688738255231b8f"
+        },
+        {
+          "name": "namespace",
+          "hash": "75f1f9a422bc123a28e58d6534f499ae896d1155847ef28b233f8eee078040be"
+        }
+      ]
+    },
+    {
+      "name": "get_job_logs",
+      "hash": "c0128e751e2b6ff6c261157e56b0f5eef5293a8c4b5ee97b61f58a3fe2e10d70",
+      "params": [
+        {
+          "name": "name",
+          "hash": "501336ec668f2926a8442c8ec92d2cfa6f1f2ccc12d3d8355aed477974ed73b3"
+        },
+        {
+          "name": "tail",
+          "hash": "3d395eab4baa71f75b3c8959b4b5ad01b11e2dddc2bfeaac56362a8ac4e00488"
+        },
+        {
+          "name": "timestamps",
+          "hash": "2e0f82291dcb078b3232e4c9d000ce29382869011f6b890b47bac80cb4df426e"
+        }
+      ]
+    },
+    {
+      "name": "get_logs",
+      "hash": "7d335581f475bbfc3a7ff8c2cee341548689d32d98b1118c92b842907647cc60",
+      "params": [
+        {
+          "name": "container",
+          "hash": "0f93342e4a7003f29000cd347ee9cffc603c8da3f5ea9a03145b4eca923c051e"
+        },
+        {
+          "name": "labelSelector",
+          "hash": "d9473439bc3c3b75bc1609e0cf357e3c9bd8269aadba53540dc4ae3d0e79f050"
+        },
+        {
+          "name": "name",
+          "hash": "dee870968d1591eaf65c3d9d1a017c2c6a44a852bc2d990458b7557c3ae95580"
+        },
+        {
+          "name": "namespace",
+          "hash": "833b97da46652f738fcf49f1ca6c1ec77724153f7d28c823406712d845265b3b"
+        },
+        {
+          "name": "resourceType",
+          "hash": "1cf99af1321700f2e92cc08578a50342f9a6442758ecead4c2e30ad4d2107b5b"
+        },
+        {
+          "name": "since",
+          "hash": "81ea9ce7a75d8468a154901e3c3861743e3434c2fa5157f706f6a0ff4894c032"
+        },
+        {
+          "name": "tail",
+          "hash": "9ce48481b1c58f4aa0984172c7717e04cc4c682444c66a003747d50b377e64c4"
+        },
+        {
+          "name": "timestamps",
+          "hash": "bed89b79d63742faca0091c32b57e3e60effe35201e3c42165489a963b7d701b"
+        }
+      ]
+    },
+    {
+      "name": "install_helm_chart",
+      "hash": "626fee4ec45bea4c946ed23014f3533b60a7f1cef73e0dd9ec68b8a16496feef",
+      "params": [
+        {
+          "name": "chart",
+          "hash": "b34d6b02df4598648d8c810655f76567962045de26a68a8211ab7b698c481663"
+        },
+        {
+          "name": "name",
+          "hash": "85f01282f3161086faed8766800c17b4c00472620c5d158e1657d13041a197ed"
+        },
+        {
+          "name": "namespace",
+          "hash": "af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33"
+        },
+        {
+          "name": "repo",
+          "hash": "e87393dcf00bdf5f518603adad35eaced2f5d9bbc4b438c45c014886fe89079d"
+        },
+        {
+          "name": "values",
+          "hash": "cce7f5207579dd6efd533d18288ae81090bd355d07a772b809d854851dfbd7ca"
+        }
+      ]
+    },
+    {
+      "name": "list_api_resources",
+      "hash": "d99de9c7cf60b9c8b686ebba4d04eed18da50f8df2b823b4854d00b3a339ccca",
+      "params": [
+        {
+          "name": "apiGroup",
+          "hash": "db958e31706b8813e758249505765b5aed5e31a5f674c658ce1e91d66769b05d"
+        },
+        {
+          "name": "namespaced",
+          "hash": "044ae41369d6760faf5d2316d246f0e8d4acc598c130ae468c541a796e60222a"
+        },
+        {
+          "name": "output",
+          "hash": "190426df5246d7950d8e9107d88947ebb5c0a47718ce4cd283d4619db4f71bc1"
+        },
+        {
+          "name": "verbs",
+          "hash": "082234f275654b2dc60aa5da636a7b22d621f90358449504699cafeff5c9c7a8"
+        }
+      ]
+    },
+    {
+      "name": "list_contexts",
+      "hash": "e38deca296a1d9adc29e1e9dbb50741b33fe457ff3c0c20372b5c808442ad884",
+      "params": [
+        {
+          "name": "showCurrent",
+          "hash": "8130768108ffa17735ec9148972d1880063b364e26a2aedd82bce3049a6c15bb"
+        }
+      ]
+    },
+    {
+      "name": "list_cronjobs",
+      "hash": "92cc99c1b4166b908a16aa9ea27059aed0ddea844cf9d1779da6d0fbd1e9ca46"
+    },
+    {
+      "name": "list_deployments",
+      "hash": "68b1b3d6ade3d6993406282100d515f27d4d5eb8ca05edf5d820ffdbb857b6da"
+    },
+    {
+      "name": "list_jobs",
+      "hash": "24c96c3247752c5293e86aa8d7615b99d610096e6944a1eb18544d2f2e874ce8",
+      "params": [
+        {
+          "name": "cronJobName",
+          "hash": "2d3bdc0ad09e71d26a7b658e7ba0858e9654960aed1ef49920079fc533c213d7"
+        }
+      ]
+    },
+    {
+      "name": "list_namespaces",
+      "hash": "3ffcb3cff6b97ab6d2fa1dd856c6117cb2c4a461f26bde68a78b6cebca899475"
+    },
+    {
+      "name": "list_nodes",
+      "hash": "dccd1cdf08f7fc95d3390175f41b1e3a49f2dcce32e1b3edc9f4c676d79ca09e"
+    },
+    {
+      "name": "list_pods",
+      "hash": "8362cffc6b700e74c4695d19e6a640b1efa3e328d3178d7c2f5af0a48dd9918f"
+    },
+    {
+      "name": "list_services",
+      "hash": "6f3de250c0b4988f97cc9ee5805ea9e3add0cde2650db6b1526c2fadffc8b583"
+    },
+    {
+      "name": "port_forward",
+      "hash": "931f8ee6f95ddbbb2d4cfed7c7ff1c92b59b4a26d98a1d6bbde906f11fcac0a9"
+    },
+    {
+      "name": "scale_deployment",
+      "hash": "7b74eb50b7e1e72453a34c04405fb6ee2bde818ff5a8244c7064ca061d19f89a"
+    },
+    {
+      "name": "set_current_context",
+      "hash": "c1def4853591c7d0360fb0e327eac14b01aee9a23d47b909128da560893732a4",
+      "params": [
+        {
+          "name": "name",
+          "hash": "a6bf0fd242d001f7a911aaaf9c5e26e52de32801a8ec8718dc1649251500ab5e"
+        }
+      ]
+    },
+    {
+      "name": "stop_port_forward",
+      "hash": "d6a519c2332736564873b93cb2fe3f3466fc094cc7af4be14c09a5d5b31bf246"
+    },
+    {
+      "name": "uninstall_helm_chart",
+      "hash": "49c8f3a48a65df33b4f80b6c23d6793c3f8d2f111dbc9aefbb93c6b066eefc2d",
+      "params": [
+        {
+          "name": "name",
+          "hash": "85f01282f3161086faed8766800c17b4c00472620c5d158e1657d13041a197ed"
+        },
+        {
+          "name": "namespace",
+          "hash": "af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33"
+        }
+      ]
+    },
+    {
+      "name": "update_deployment",
+      "hash": "5e3af7a7da3f3ca2a994c30f634ba336b1965e4dc10c47f98fcd9b7c2112eeca",
+      "params": [
+        {
+          "name": "containerName",
+          "hash": "689f4f4070144e4c6288aaf2d2242adc5f8b323ddfe869368713d7de0ba40244"
+        }
+      ]
+    },
+    {
+      "name": "update_service",
+      "hash": "32e8b91e6fb52757ea2dd964c35ce1c6a3867fec5163b1f1178f7589c8b2b2cb"
+    },
+    {
+      "name": "upgrade_helm_chart",
+      "hash": "e8c91747df6416edacd5b7483df523449010b3bdb8caae457892da1778498f31",
+      "params": [
+        {
+          "name": "chart",
+          "hash": "b34d6b02df4598648d8c810655f76567962045de26a68a8211ab7b698c481663"
+        },
+        {
+          "name": "name",
+          "hash": "85f01282f3161086faed8766800c17b4c00472620c5d158e1657d13041a197ed"
+        },
+        {
+          "name": "namespace",
+          "hash": "af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33"
+        },
+        {
+          "name": "repo",
+          "hash": "e87393dcf00bdf5f518603adad35eaced2f5d9bbc4b438c45c014886fe89079d"
+        },
+        {
+          "name": "values",
+          "hash": "cce7f5207579dd6efd533d18288ae81090bd355d07a772b809d854851dfbd7ca"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

@@ -15,6 +15,7 @@
   "version": "0.0.10",
   "requiresConfiguration": false,
   "requiresStorage": false,
+  "rating": "A",
   "resources": {
     "tools": 6,
     "prompts": 0,

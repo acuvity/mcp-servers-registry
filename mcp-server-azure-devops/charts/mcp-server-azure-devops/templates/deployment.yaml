@@ -40,11 +40,11 @@ spec:
           env:
           {{- include "minibridge.env" . | nindent 12}}
             - name: AZURE_DEVOPS_AUTH_METHOD
-              value: {{ required "AZURE_DEVOPS_AUTH_METHOD is required" .Values.env.AZURE_DEVOPS_AUTH_METHOD}}
+              value: {{ required "env.AZURE_DEVOPS_AUTH_METHOD is required" .Values.env.AZURE_DEVOPS_AUTH_METHOD}}
             - name: AZURE_DEVOPS_DEFAULT_PROJECT
-              value: {{ required "AZURE_DEVOPS_DEFAULT_PROJECT is required" .Values.env.AZURE_DEVOPS_DEFAULT_PROJECT}}
+              value: {{ required "env.AZURE_DEVOPS_DEFAULT_PROJECT is required" .Values.env.AZURE_DEVOPS_DEFAULT_PROJECT}}
             - name: AZURE_DEVOPS_ORG_URL
-              value: {{ required "AZURE_DEVOPS_ORG_URL is required" .Values.env.AZURE_DEVOPS_ORG_URL}}
+              value: {{ required "env.AZURE_DEVOPS_ORG_URL is required" .Values.env.AZURE_DEVOPS_ORG_URL}}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default (printf  "%s-%s" .Chart.Version .Chart.AppVersion) }}"

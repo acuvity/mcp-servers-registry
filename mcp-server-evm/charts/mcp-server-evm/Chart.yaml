@@ -1,0 +1,22 @@
+apiVersion: v2
+name: "mcp-server-evm"
+description: A Helm chart for Comprehensive blockchain services for 30+ networks, on native tokens, ERC20, NFTs, smart contracts.
+home: https://github.com/mcpdotdirect/evm-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/mcpdotdirect/evm-mcp-server
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 1.1.3
+keywords:
+  - mcp-server-evm
+  - mcp-server
+  - remote
+  - integration
+  - finance
+  - database
+  - development

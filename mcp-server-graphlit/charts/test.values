@@ -1,0 +1,10 @@
+env:
+  GRAPHLIT_ORGANIZATION_ID: dummy_value
+  GRAPHLIT_ENVIRONMENT_ID: dummy_value
+
+secrets:
+  GRAPHLIT_JWT_SECRET:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

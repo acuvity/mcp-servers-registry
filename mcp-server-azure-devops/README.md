@@ -14,21 +14,22 @@
   </a>
 <a href="https://bsky.app/profile/acuvity.bsky.social">
     <img src="https://img.shields.io/badge/Bluesky-Follow-7289DA"?logo=bluesky&logoColor=fff" alt="Follow us on Bluesky" />
+  </a>
 </p>
 
 
 # What is mcp-server-azure-devops?
 
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-azure-devops/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-azure-devops/0.1.34?logo=docker&logoColor=fff&label=0.1.34)](https://hub.docker.com/r/acuvity/mcp-server-azure-devops)
-[![PyPI](https://img.shields.io/badge/0.1.34-3775A9?logo=pypi&logoColor=fff&label=@tiberriver256/mcp-server-azure-devops)](https://github.com/Tiberriver256/mcp-server-azure-devops)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-azure-devops/0.1.36?logo=docker&logoColor=fff&label=0.1.36)](https://hub.docker.com/r/acuvity/mcp-server-azure-devops)
+[![PyPI](https://img.shields.io/badge/0.1.36-3775A9?logo=pypi&logoColor=fff&label=@tiberriver256/mcp-server-azure-devops)](https://github.com/Tiberriver256/mcp-server-azure-devops)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure-devops&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AZURE_DEVOPS_AUTH_METHOD%22%2C%22-e%22%2C%22AZURE_DEVOPS_DEFAULT_PROJECT%22%2C%22-e%22%2C%22AZURE_DEVOPS_ORG_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure-devops%3A0.1.34%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure-devops&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AZURE_DEVOPS_AUTH_METHOD%22%2C%22-e%22%2C%22AZURE_DEVOPS_DEFAULT_PROJECT%22%2C%22-e%22%2C%22AZURE_DEVOPS_ORG_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure-devops%3A0.1.36%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Azure DevOps integration for repository management, work items, and pipelines.
 
 > [!NOTE]
-> `@tiberriver256/mcp-server-azure-devops` has been repackaged by Acuvity from Author original sources.
+> `mcp-server-azure-devops` has been packaged by Acuvity from @tiberriver256/mcp-server-azure-devops original [sources](https://github.com/Tiberriver256/mcp-server-azure-devops).
 
 # Why We Built This
 
@@ -49,23 +50,76 @@ To address this need, we've created a secure and robust Docker image designed to
 </details>
 
 <details>
-<summary>🛡️ Runtime Security</summary>
+<summary>🛡️ Runtime Security and Guardrails</summary>
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-Minibridge includes built-in guardrails that protect MCP server integrity and detect suspicious behaviors in real-time.:
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a built-in Rego policy that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
-- **Integrity Checks**: Ensures authenticity with runtime component hashing.
-- **Threat Detection & Prevention with built-in Rego Policy**:
-  - Covert‐instruction screening: Blocks any tool description or call arguments that match a wide list of "hidden prompt" phrases (e.g., "do not tell", "ignore previous instructions", Unicode steganography).
-  - Schema-key misuse guard: Rejects tools or call arguments that expose internal-reasoning fields such as note, debug, context, etc., preventing jailbreaks that try to surface private metadata.
-  - Sensitive-resource exposure check: Denies tools whose descriptions - or call arguments - reference paths, files, or patterns typically associated with secrets (e.g., .env, /etc/passwd, SSH keys).
-  - Tool-shadowing detector: Flags wording like "instead of using" that might instruct an assistant to replace or override an existing tool with a different behavior.
-  - Cross-tool ex-filtration filter: Scans responses and tool descriptions for instructions to invoke external tools not belonging to this server.
-  - Credential / secret redaction mutator: Automatically replaces recognised tokens formats with `[REDACTED]` in outbound content.
+### 🔒 Resource Integrity
+
+**Mitigates MCP Rug Pull Attacks**
+
+* **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
+* **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
+
+### 🛡️ Gardrails
+
+### Covert Instruction Detection
+
+Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
+
+* **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
+* **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
+
+### Sensitive Pattern Detection
+
+Block user-defined sensitive data patterns (credential paths, filesystem references).
+
+* **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
+* **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
+
+### Shadowing Pattern Detection
+
+Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
+
+* **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
+* **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
+
+### Schema Misuse Prevention
+
+Enforces strict adherence to MCP input schemas.
+
+* **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
+* **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
+
+### Cross-Origin Tool Access
+
+Controls whether tools may invoke tools or services from external origins.
+
+* **Goal:** Prevent untrusted or out-of-scope services from being called.
+* **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
+
+### Secrets Redaction
+
+Automatically masks sensitive values so they never appear in logs or responses.
+
+* **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
+* **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
+
+## Basic Authentication via Shared Secret
+
+Provides a lightweight auth layer using a single shared token.
+
+* **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
+* **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+
 </details>
+
+> [!NOTE]
+> All guardrails start disabled. You can switch each one on or off individually, so you only activate the protections your environment requires.
 
 
 # 📦 How to Use
@@ -87,7 +141,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure-devops&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AZURE_DEVOPS_AUTH_METHOD%22%2C%22-e%22%2C%22AZURE_DEVOPS_DEFAULT_PROJECT%22%2C%22-e%22%2C%22AZURE_DEVOPS_ORG_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure-devops%3A0.1.34%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure-devops&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AZURE_DEVOPS_AUTH_METHOD%22%2C%22-e%22%2C%22AZURE_DEVOPS_DEFAULT_PROJECT%22%2C%22-e%22%2C%22AZURE_DEVOPS_ORG_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure-devops%3A0.1.36%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -115,7 +169,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "AZURE_DEVOPS_DEFAULT_PROJECT",
           "-e",
           "AZURE_DEVOPS_ORG_URL",
-          "docker.io/acuvity/mcp-server-azure-devops:0.1.34"
+          "docker.io/acuvity/mcp-server-azure-devops:0.1.36"
         ]
       }
     }
@@ -148,7 +202,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "AZURE_DEVOPS_DEFAULT_PROJECT",
         "-e",
         "AZURE_DEVOPS_ORG_URL",
-        "docker.io/acuvity/mcp-server-azure-devops:0.1.34"
+        "docker.io/acuvity/mcp-server-azure-devops:0.1.36"
       ]
     }
   }
@@ -185,7 +239,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "AZURE_DEVOPS_DEFAULT_PROJECT",
         "-e",
         "AZURE_DEVOPS_ORG_URL",
-        "docker.io/acuvity/mcp-server-azure-devops:0.1.34"
+        "docker.io/acuvity/mcp-server-azure-devops:0.1.36"
       ]
     }
   }
@@ -224,7 +278,7 @@ Add the following JSON block to your mcp configuration file:
         "AZURE_DEVOPS_DEFAULT_PROJECT",
         "-e",
         "AZURE_DEVOPS_ORG_URL",
-        "docker.io/acuvity/mcp-server-azure-devops:0.1.34"
+        "docker.io/acuvity/mcp-server-azure-devops:0.1.36"
       ]
     }
   }
@@ -261,7 +315,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "AZURE_DEVOPS_DEFAULT_PROJECT",
         "-e",
         "AZURE_DEVOPS_ORG_URL",
-        "docker.io/acuvity/mcp-server-azure-devops:0.1.34"
+        "docker.io/acuvity/mcp-server-azure-devops:0.1.36"
       ]
     }
   }
@@ -281,7 +335,7 @@ async with MCPServerStdio(
     params={
         "env": {"AZURE_DEVOPS_AUTH_METHOD":"TO_BE_SET","AZURE_DEVOPS_DEFAULT_PROJECT":"TO_BE_SET","AZURE_DEVOPS_ORG_URL":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","AZURE_DEVOPS_AUTH_METHOD","-e","AZURE_DEVOPS_DEFAULT_PROJECT","-e","AZURE_DEVOPS_ORG_URL","docker.io/acuvity/mcp-server-azure-devops:0.1.34"]
+        "args": ["run","-i","--rm","--read-only","-e","AZURE_DEVOPS_AUTH_METHOD","-e","AZURE_DEVOPS_DEFAULT_PROJECT","-e","AZURE_DEVOPS_ORG_URL","docker.io/acuvity/mcp-server-azure-devops:0.1.36"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -303,7 +357,8 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 </details>
 
 ## 🐳 Run it with Docker
-**Environment variables:**
+
+**Environment variables and secrets:**
   - `AZURE_DEVOPS_AUTH_METHOD` required to be set
   - `AZURE_DEVOPS_DEFAULT_PROJECT` required to be set
   - `AZURE_DEVOPS_ORG_URL` required to be set
@@ -315,7 +370,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e AZURE_DEVOPS_AUTH_METHOD -e AZURE_DEVOPS_DEFAULT_PROJECT -e AZURE_DEVOPS_ORG_URL docker.io/acuvity/mcp-server-azure-devops:0.1.34`
+- arguments: `run -i --rm --read-only -e AZURE_DEVOPS_AUTH_METHOD -e AZURE_DEVOPS_DEFAULT_PROJECT -e AZURE_DEVOPS_ORG_URL docker.io/acuvity/mcp-server-azure-devops:0.1.36`
 
 </details>
 
@@ -325,7 +380,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -i --rm --read-only -e AZURE_DEVOPS_AUTH_METHOD -e AZURE_DEVOPS_DEFAULT_PROJECT -e AZURE_DEVOPS_ORG_URL docker.io/acuvity/mcp-server-azure-devops:0.1.34
+docker run -i --rm --read-only -e AZURE_DEVOPS_AUTH_METHOD -e AZURE_DEVOPS_DEFAULT_PROJECT -e AZURE_DEVOPS_ORG_URL docker.io/acuvity/mcp-server-azure-devops:0.1.36
 ```
 
 Add `-p <localport>:8000` to expose the port.
@@ -382,11 +437,30 @@ Example for Claude Desktop:
 
 That's it.
 
-Of course there are plenty of other options that minibridge can provide.
-
-Don't be shy to ask question either.
+Minibridge offers a host of additional features. For step-by-step guidance, please visit the wiki. And if anything’s unclear, don’t hesitate to reach out!
 
 </details>
+
+## 🛡️ Runtime security
+
+To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
+- covert-instruction-detection
+- sensitive-pattern-detection
+- shadowing-pattern-detection
+- schema-misuse-prevention
+- cross-origin-tool-access
+- secrets-redaction
+
+for example, `-e GUARDRAILS="secrets-redaction covert-instruction-detection"` will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
+
+
+To turn on Basic Authentication, set BASIC_AUTH_SECRET like `- e BASIC_AUTH_SECRET="supersecret`
+
+Then you can connect through `http/sse` as usual given that you pass an `Authorization: Bearer supersecret` header with your secret as Bearer token.
+
+> [!CAUTION]
+> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
+> rotate credentials frequently and **always** use TLS.
 
 ## ☁️ Deploy On Kubernetes
 
@@ -404,10 +478,10 @@ This chart requires some mandatory information to be installed.
 
 ### How to install
 
-You can inspect the chart:
+You can inspect the chart `README`:
 
 ```console
-helm show chart oci://docker.io/acuvity/mcp-server-azure-devops --version 1.0.0-
+helm show readme oci://docker.io/acuvity/mcp-server-azure-devops --version 1.0.0
 ````
 
 You can inspect the values that you can configure:
@@ -428,7 +502,7 @@ From there your MCP server mcp-server-azure-devops will be reachable by default 
 
 The deployment will create a Kubernetes service with a `healthPort`, that is used for liveness probes and readiness probes. This health port can also be used by the monitoring stack of your choice and exposes metrics under the `/metrics` path.
 
-See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-azure-devops/charts/mcp-server-azure-devops/README.md) for more details about settings.
+See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-azure-devops/charts/mcp-server-azure-devops/README.md) for more details about settings and runtime security including guardrails activation.
 
 </details>
 
@@ -823,15 +897,16 @@ List pull requests in a repository
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| creatorId | string | Filter by creator ID or email | No
+| creatorId | string | Filter by creator ID (must be a UUID) | No
 | organizationId | string | The ID or name of the organization (Default: unknown-organization) | No
 | projectId | string | The ID or name of the project (Default: dummy) | No
 | repositoryId | string | The ID or name of the repository | Yes
-| reviewerId | string | Filter by reviewer ID or email | No
+| reviewerId | string | Filter by reviewer ID (must be a UUID) | No
+| skip | number | Number of pull requests to skip for pagination | No
 | sourceRefName | string | Filter by source branch name | No
 | status | string | Filter by pull request status | No
 | targetRefName | string | Filter by target branch name | No
-| top | number | Maximum number of pull requests to return | No
+| top | number | Maximum number of pull requests to return (default: 10) | No
 </details>
 <details>
 <summary>get_pull_request_comments</summary>
@@ -1155,15 +1230,16 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | list_projects | stateFilter | 50b2d3b52a3a35a1b0613d0921fd4942c13872a5995f4da8cab4458de3ec8eeb |
 | tools | list_projects | top | cf9a1abb12538d7c05deed0df3fe14249d5d1d41c634c6c788db9e5c5da45c15 |
 | tools | list_pull_requests | description | d195a17f9c9cd457b03cf72f3c3a5627b6916a8dfcca8db0242cd583f21f28b6 |
-| tools | list_pull_requests | creatorId | 21ccabc1b8b817a54a0af9afab59479dad8333114bf81c4cca3c761e0c2c74a9 |
+| tools | list_pull_requests | creatorId | 4517be9d497fa3af03f081d98b589779aa1d992fc6aa21ae4686a8adc7e9c563 |
 | tools | list_pull_requests | organizationId | 1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c |
 | tools | list_pull_requests | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
 | tools | list_pull_requests | repositoryId | 25d0eeb6f8988c62240119c72427edb9c77cf55278a72464848f34bab83dc50f |
-| tools | list_pull_requests | reviewerId | 3c0291706f56d05612c2891646e425559da29a3d0951c40fa643d153416dd99d |
+| tools | list_pull_requests | reviewerId | 96e07d9d7d038304b8033472dda27ba93431254156a961a9fdf4c06e2e831182 |
+| tools | list_pull_requests | skip | e6f769171fda17635735e3363f18a234318adc5eb5a057ce450751c93e04a0bd |
 | tools | list_pull_requests | sourceRefName | 415ff45abee7b8f4ee57a398dce864746496a2ecd56ee6936d765e99181e26b5 |
 | tools | list_pull_requests | status | 9cc75a02f8e797e1f3b556f49f8e3f9a9f385b10333008cde7738509f8a5b01c |
 | tools | list_pull_requests | targetRefName | 6108fd2f1cab32df6a40711ac52b918491997b5b084cb4ca223738e87a2d7753 |
-| tools | list_pull_requests | top | ee3baaaa112a50b181406b8a5e5d665e249aa10fa493e37e95063e3e45c0e349 |
+| tools | list_pull_requests | top | 6c2bcc7c0c55270ed00b2f81245c188c5a8772078b98ebb4e31ad921f9e43828 |
 | tools | list_repositories | description | 5ffc96e3b6a5471d1b480f319ef0d914601040611994e64718f794a1a1986daa |
 | tools | list_repositories | includeLinks | 3ad912e2c352994a166004d273a2bb1ee99f9ef0a9a39ff84754ae7449d4e292 |
 | tools | list_repositories | organizationId | 1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c |

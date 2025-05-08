@@ -15,6 +15,7 @@
   "version": "0.1.5",
   "requiresConfiguration": true,
   "requiresStorage": false,
+  "rating": "D",
   "resources": {
     "tools": 9,
     "prompts": 0,

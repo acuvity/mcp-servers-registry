@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-git",
+  "name": "mcp-server-git ",
+  "description": "Tools to read, search, and manipulate Git repositories.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-git",
+      "application": "https://github.com/modelcontextprotocol/servers/tree/main/src/git"
+    },
+  "tags": ["development","research"],
+  "official": false,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "2025.1.14",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": "D",
+  "resources": {
+    "tools": 11,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}
