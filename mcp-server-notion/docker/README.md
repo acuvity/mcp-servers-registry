@@ -20,21 +20,27 @@
 
 # What is mcp-server-notion?
 
+[![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-notion/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-notion/1.2.3?logo=docker&logoColor=fff&label=1.2.3)](https://hub.docker.com/r/acuvity/mcp-server-notion)
-[![PyPI](https://img.shields.io/badge/1.2.3-3775A9?logo=pypi&logoColor=fff&label=@suekou/mcp-notion-server)](https://github.com/suekou/mcp-notion-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-notion/1.6.0?logo=docker&logoColor=fff&label=1.6.0)](https://hub.docker.com/r/acuvity/mcp-server-notion)
+[![PyPI](https://img.shields.io/badge/1.6.0-3775A9?logo=pypi&logoColor=fff&label=@notionhq/notion-mcp-server)](https://github.com/makenotion/notion-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-notion&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22NOTION_API_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-notion%3A1.2.3%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-notion&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22OPENAPI_MCP_HEADERS%22%2C%22docker.io%2Facuvity%2Fmcp-server-notion%3A1.6.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Interacting with Notion API.
 
-> [!NOTE]
-> `mcp-server-notion` has been packaged by Acuvity from @suekou/mcp-notion-server original [sources](https://github.com/suekou/mcp-notion-server).
+Packaged by Acuvity from @notionhq/notion-mcp-server original [sources](https://github.com/makenotion/notion-mcp-server).
+
+**Quick links:**
+
+- [Integrate with your IDE](https://github.com/acuvity/mcp-servers-registry/blob/main/mcp-server-notion/docker/README.md#-clients-integrations)
+- [Install with Docker](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-notion/docker/README.md#-run-it-with-docker)
+- [Install with Helm](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-notion/charts/mcp-server-aws-kb-retrieval#how-to-install)
 
 # Why We Built This
 
 At [Acuvity](https://acuvity.ai), security is central to our mission—especially for critical systems like MCP servers and integration in agentic systems.
-To address this need, we've created a secure and robust Docker image designed to ensure @suekou/mcp-notion-server run reliably and safely.
+To address this need, we've created a secure and robust Docker image designed to ensure @notionhq/notion-mcp-server run reliably and safely.
 
 ## 🔐 Key Security Features
 
@@ -126,16 +132,16 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 
 **Maintained by**:
   - [Acuvity team](mailto:support@acuvity.ai) for packaging
-  - [ Kosuke Suenaga ](https://github.com/suekou/mcp-notion-server) for original source application
+  - [ @notionhq ](https://github.com/makenotion/notion-mcp-server) for original source application
 
 **Where to get help**:
   - [The Acuvity MCP Forge repository](https://github.com/acuvity/mcp-servers-registry)
   - [The Acuvity community Discord](https://discord.gg/BkU7fBkrNk)
-  - [ @suekou/mcp-notion-server ](https://github.com/suekou/mcp-notion-server)
+  - [ @notionhq/notion-mcp-server ](https://github.com/makenotion/notion-mcp-server)
 
 **Where to file issues**:
   - [Github issue tracker](https://github.com/acuvity/mcp-servers-registry/issues)
-  - [ @suekou/mcp-notion-server ](https://github.com/suekou/mcp-notion-server)
+  - [ @notionhq/notion-mcp-server ](https://github.com/makenotion/notion-mcp-server)
 
 **Supported architectures**:
   - `amd64`
@@ -149,13 +155,13 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
   - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-notion/docker/Dockerfile)
 
 **Latest tags:**
-  - `latest` -> `1.0.0-1.2.3` -> `1.2.3`
+  - `latest` -> `1.0.0-1.6.0` -> `1.6.0`
   - [older tags](https://hub.docker.com/r/acuvity/mcp-server-notion/tags)
 
-# 📦 How to Use
+# 📦 How to Install
 
 
-> [!NOTE]
+> [!TIP]
 > Given mcp-server-notion scope of operation it can be hosted anywhere.
 
 # 🧰 Clients Integrations
@@ -171,7 +177,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-notion&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22NOTION_API_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-notion%3A1.2.3%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-notion&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22OPENAPI_MCP_HEADERS%22%2C%22docker.io%2Facuvity%2Fmcp-server-notion%3A1.6.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -183,7 +189,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
     "servers": {
       "acuvity-mcp-server-notion": {
         "env": {
-          "NOTION_API_TOKEN": "TO_BE_SET"
+          "OPENAPI_MCP_HEADERS": "TO_BE_SET"
         },
         "command": "docker",
         "args": [
@@ -192,8 +198,8 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "--rm",
           "--read-only",
           "-e",
-          "NOTION_API_TOKEN",
-          "docker.io/acuvity/mcp-server-notion:1.2.3"
+          "OPENAPI_MCP_HEADERS",
+          "docker.io/acuvity/mcp-server-notion:1.6.0"
         ]
       }
     }
@@ -210,7 +216,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
   "servers": {
     "acuvity-mcp-server-notion": {
       "env": {
-        "NOTION_API_TOKEN": "TO_BE_SET"
+        "OPENAPI_MCP_HEADERS": "TO_BE_SET"
       },
       "command": "docker",
       "args": [
@@ -219,8 +225,8 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "--rm",
         "--read-only",
         "-e",
-        "NOTION_API_TOKEN",
-        "docker.io/acuvity/mcp-server-notion:1.2.3"
+        "OPENAPI_MCP_HEADERS",
+        "docker.io/acuvity/mcp-server-notion:1.6.0"
       ]
     }
   }
@@ -241,7 +247,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
   "mcpServers": {
     "acuvity-mcp-server-notion": {
       "env": {
-        "NOTION_API_TOKEN": "TO_BE_SET"
+        "OPENAPI_MCP_HEADERS": "TO_BE_SET"
       },
       "command": "docker",
       "args": [
@@ -250,8 +256,8 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "--rm",
         "--read-only",
         "-e",
-        "NOTION_API_TOKEN",
-        "docker.io/acuvity/mcp-server-notion:1.2.3"
+        "OPENAPI_MCP_HEADERS",
+        "docker.io/acuvity/mcp-server-notion:1.6.0"
       ]
     }
   }
@@ -274,7 +280,7 @@ Add the following JSON block to your mcp configuration file:
   "mcpServers": {
     "acuvity-mcp-server-notion": {
       "env": {
-        "NOTION_API_TOKEN": "TO_BE_SET"
+        "OPENAPI_MCP_HEADERS": "TO_BE_SET"
       },
       "command": "docker",
       "args": [
@@ -283,8 +289,8 @@ Add the following JSON block to your mcp configuration file:
         "--rm",
         "--read-only",
         "-e",
-        "NOTION_API_TOKEN",
-        "docker.io/acuvity/mcp-server-notion:1.2.3"
+        "OPENAPI_MCP_HEADERS",
+        "docker.io/acuvity/mcp-server-notion:1.6.0"
       ]
     }
   }
@@ -305,7 +311,7 @@ In the `claude_desktop_config.json` configuration file add the following section
   "mcpServers": {
     "acuvity-mcp-server-notion": {
       "env": {
-        "NOTION_API_TOKEN": "TO_BE_SET"
+        "OPENAPI_MCP_HEADERS": "TO_BE_SET"
       },
       "command": "docker",
       "args": [
@@ -314,8 +320,8 @@ In the `claude_desktop_config.json` configuration file add the following section
         "--rm",
         "--read-only",
         "-e",
-        "NOTION_API_TOKEN",
-        "docker.io/acuvity/mcp-server-notion:1.2.3"
+        "OPENAPI_MCP_HEADERS",
+        "docker.io/acuvity/mcp-server-notion:1.6.0"
       ]
     }
   }
@@ -333,9 +339,9 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 ```python
 async with MCPServerStdio(
     params={
-        "env": {"NOTION_API_TOKEN":"TO_BE_SET"},
+        "env": {"OPENAPI_MCP_HEADERS":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","NOTION_API_TOKEN","docker.io/acuvity/mcp-server-notion:1.2.3"]
+        "args": ["run","-i","--rm","--read-only","-e","OPENAPI_MCP_HEADERS","docker.io/acuvity/mcp-server-notion:1.6.0"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -359,7 +365,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 ## 🐳 Run it with Docker
 
 **Environment variables and secrets:**
-  - `NOTION_API_TOKEN` required to be set
+  - `OPENAPI_MCP_HEADERS` required to be set
 
 
 <details>
@@ -368,7 +374,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e NOTION_API_TOKEN docker.io/acuvity/mcp-server-notion:1.2.3`
+- arguments: `run -i --rm --read-only -e OPENAPI_MCP_HEADERS docker.io/acuvity/mcp-server-notion:1.6.0`
 
 </details>
 
@@ -378,7 +384,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -i --rm --read-only -e NOTION_API_TOKEN docker.io/acuvity/mcp-server-notion:1.2.3
+docker run -i --rm --read-only -e OPENAPI_MCP_HEADERS docker.io/acuvity/mcp-server-notion:1.6.0
 ```
 
 Add `-p <localport>:8000` to expose the port.
@@ -470,7 +476,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 This chart requires some mandatory information to be installed.
 
 **Mandatory Secrets**:
-  - `NOTION_API_TOKEN` secret to be set as secrets.NOTION_API_TOKEN either by `.value` or from existing with `.valueFrom`
+  - `OPENAPI_MCP_HEADERS` secret to be set as secrets.OPENAPI_MCP_HEADERS either by `.value` or from existing with `.valueFrom`
 
 ### How to install
 
@@ -506,7 +512,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 For detailed list of all features, tools, arguments and SBOM hashes provided by this server please consult the [readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-notion)
 
-## 🧰 Tools (18)
+## 🧰 Tools (19)
 
 
 💬 Questions? Open an issue or contact us [ support@acuvity.ai ](mailto:support@acuvity.ai).

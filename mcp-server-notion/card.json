@@ -5,19 +5,19 @@
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-notion",
-      "application": "https://github.com/suekou/mcp-notion-server"
+      "application": "https://github.com/makenotion/notion-mcp-server"
     },
   "tags": ["integration","research","development","database"],
   "official": false,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "1.2.3",
+  "version": "1.6.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": "D",
   "resources": {
-    "tools": 18,
+    "tools": 19,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

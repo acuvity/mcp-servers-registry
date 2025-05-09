@@ -59,6 +59,12 @@ _sensitive_patterns := [
 	"id_(rsa|ecdsa)\\b",
 	"\\.\\./",
 	`(\\xF3\\xA0[\\x80-\\x81][\\x80-\\xBF]){15,}`,
+	`http:\/\/169\.254\.169\.254\/latest\/meta-data\/iam\/security-credentials(?:\/[\w\-]+)?`,
+	`http:\/\/169\.254\.169\.254\/computeMetadata\/v1\/instance\/service-accounts\/(?:default|[\w\-]+)\/token`,
+	`http:\/\/169\.254\.169\.254\/metadata\/identity\/oauth2\/token\?[^ ]*`,
+	`http:\/\/100\.100\.100\.200\/latest\/meta-data\/ram\/security-credentials(?:\/[\w\-]+)?`,
+	`http:\/\/169\.254\.169\.254\/instance_identity\/v1\/token`,
+	`http:\/\/169\.254\.169\.254\/opc\/v1\/instance\/`,
 ]
 
 _shadowing_patterns := [
@@ -80,41 +86,43 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
-	"notion_append_block_children",
+	"API-get-user",
 	#
-	"notion_retrieve_block",
+	"API-get-users",
 	#
-	"notion_retrieve_block_children",
+	"API-get-self",
 	#
-	"notion_delete_block",
+	"API-post-database-query",
 	#
-	"notion_update_block",
+	"API-post-search",
 	#
-	"notion_retrieve_page",
+	"API-get-block-children",
 	#
-	"notion_update_page_properties",
+	"API-patch-block-children",
 	#
-	"notion_list_all_users",
+	"API-retrieve-a-block",
 	#
-	"notion_retrieve_user",
+	"API-update-a-block",
 	#
-	"notion_retrieve_bot_user",
+	"API-delete-a-block",
 	#
-	"notion_create_database",
+	"API-retrieve-a-page",
 	#
-	"notion_query_database",
+	"API-patch-page",
 	#
-	"notion_retrieve_database",
+	"API-post-page",
 	#
-	"notion_update_database",
+	"API-create-a-database",
 	#
-	"notion_create_database_item",
+	"API-update-a-database",
 	#
-	"notion_create_comment",
+	"API-retrieve-a-database",
 	#
-	"notion_retrieve_comments",
+	"API-retrieve-a-page-property",
 	#
-	"notion_search",
+	"API-retrieve-a-comment",
+	#
+	"API-create-a-comment",
 	#
 	# exclude word that might be misdetected
 	"to",
@@ -179,7 +187,7 @@ reasons contains msg if {
 reasons contains msg if {
 	"schema-misuse-prevention" in active_guardrails
 	some tool in input.mcp.result.tools
-	some prop in tool.inputSchema.properties
+	some prop, _ in tool.inputSchema.properties
 	lower(prop) in _schema_keys
 	msg = sprintf("schema parameter misuse in tool %v: %v", [tool.name, prop])
 }
@@ -224,7 +232,7 @@ reasons contains msg if {
 reasons contains msg if {
 	"schema-misuse-prevention" in active_guardrails
 	input.mcp.method == "tools/call"
-	some arg_name in input.mcp.params.arguments
+	some arg_name, _ in input.mcp.params.arguments
 	lower(arg_name) in _schema_keys
 	msg = sprintf("schema parameter misuse in call args: %v", [arg_name])
 }
@@ -260,7 +268,7 @@ reasons contains msg if {
 reasons contains msg if {
 	"schema-misuse-prevention" in active_guardrails
 	some element in input.mcp.result.content
-	some arg_name in element
+	some arg_name, _ in element
 	lower(arg_name) in _schema_keys
 	msg = sprintf("schema parameter misuse in call response: %v", [arg_name])
 }

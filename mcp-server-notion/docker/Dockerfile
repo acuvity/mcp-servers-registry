@@ -15,10 +15,10 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-notion"
 LABEL org.opencontainers.image.description="Interacting with Notion API."
-LABEL org.opencontainers.image.version="1.2.3"
-LABEL org.opencontainers.image.source="https://github.com/suekou/mcp-notion-server"
+LABEL org.opencontainers.image.version="1.6.0"
+LABEL org.opencontainers.image.source="https://github.com/makenotion/notion-mcp-server"
 LABEL org.opencontainers.image.licenses="MIT"
-LABEL org.opencontainers.image.author="Kosuke Suenaga"
+LABEL org.opencontainers.image.author="@notionhq"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 
 WORKDIR /app
@@ -37,7 +37,7 @@ RUN addgroup -g 1001 -S appuser && \
 
 USER appuser
 
-RUN npm i --omit-dev @suekou/mcp-notion-server@1.2.3
+RUN npm i --omit-dev @notionhq/notion-mcp-server@1.6.0
 
 EXPOSE 8000/tcp
 

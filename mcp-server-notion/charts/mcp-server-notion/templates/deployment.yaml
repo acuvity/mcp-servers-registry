@@ -39,11 +39,11 @@ spec:
           {{- end }}
           env:
           {{- include "minibridge.env" . | nindent 12}}
-            - name: NOTION_API_TOKEN
+            - name: OPENAPI_MCP_HEADERS
               valueFrom:
                 secretKeyRef:
-                  name: "{{ .Values.secrets.NOTION_API_TOKEN.valueFrom.name | default (printf "%s-secrets" (include "base.fullname" .) ) }}"
-                  key: "{{ .Values.secrets.NOTION_API_TOKEN.valueFrom.key | default "NOTION_API_TOKEN" }}"
+                  name: "{{ .Values.secrets.OPENAPI_MCP_HEADERS.valueFrom.name | default (printf "%s-secrets" (include "base.fullname" .) ) }}"
+                  key: "{{ .Values.secrets.OPENAPI_MCP_HEADERS.valueFrom.key | default "OPENAPI_MCP_HEADERS" }}"
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default (printf  "%s-%s" .Chart.Version .Chart.AppVersion) }}"

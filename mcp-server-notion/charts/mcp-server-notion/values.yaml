@@ -171,7 +171,7 @@ env:
 
 # This section handles secrets passed to the container.
 secrets:
-  NOTION_API_TOKEN:
+  OPENAPI_MCP_HEADERS:
     value:
     valueFrom:
       name:

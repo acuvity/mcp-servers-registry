@@ -20,21 +20,27 @@
 
 # What is mcp-server-notion?
 
+[![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-notion/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-notion/1.2.3?logo=docker&logoColor=fff&label=1.2.3)](https://hub.docker.com/r/acuvity/mcp-server-notion)
-[![PyPI](https://img.shields.io/badge/1.2.3-3775A9?logo=pypi&logoColor=fff&label=@suekou/mcp-notion-server)](https://github.com/suekou/mcp-notion-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-notion/1.6.0?logo=docker&logoColor=fff&label=1.6.0)](https://hub.docker.com/r/acuvity/mcp-server-notion)
+[![PyPI](https://img.shields.io/badge/1.6.0-3775A9?logo=pypi&logoColor=fff&label=@notionhq/notion-mcp-server)](https://github.com/makenotion/notion-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-notion&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22NOTION_API_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-notion%3A1.2.3%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-notion&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22OPENAPI_MCP_HEADERS%22%2C%22docker.io%2Facuvity%2Fmcp-server-notion%3A1.6.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Interacting with Notion API.
 
-> [!NOTE]
-> `mcp-server-notion` has been packaged by Acuvity from @suekou/mcp-notion-server original [sources](https://github.com/suekou/mcp-notion-server).
+Packaged by Acuvity from @notionhq/notion-mcp-server original [sources](https://github.com/makenotion/notion-mcp-server).
+
+**Quick links:**
+
+- [Integrate with your IDE](https://github.com/acuvity/mcp-servers-registry/blob/main/mcp-server-notion/docker/README.md#-clients-integrations)
+- [Install with Docker](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-notion/docker/README.md#-run-it-with-docker)
+- [Install with Helm](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-notion/charts/mcp-server-aws-kb-retrieval#how-to-install)
 
 # Why We Built This
 
 At [Acuvity](https://acuvity.ai), security is central to our mission—especially for critical systems like MCP servers and integration in agentic systems.
-To address this need, we've created a secure and robust Docker image designed to ensure @suekou/mcp-notion-server run reliably and safely.
+To address this need, we've created a secure and robust Docker image designed to ensure @notionhq/notion-mcp-server run reliably and safely.
 
 ## 🔐 Key Security Features
 
@@ -122,10 +128,10 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 > All guardrails start disabled. You can switch each one on or off individually, so you only activate the protections your environment requires.
 
 
-# 📦 How to Use
+# 📦 How to Install
 
 
-> [!NOTE]
+> [!TIP]
 > Given mcp-server-notion scope of operation it can be hosted anywhere.
 
 # 🧰 Clients Integrations
@@ -141,7 +147,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-notion&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22NOTION_API_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-notion%3A1.2.3%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-notion&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22OPENAPI_MCP_HEADERS%22%2C%22docker.io%2Facuvity%2Fmcp-server-notion%3A1.6.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -153,7 +159,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
     "servers": {
       "acuvity-mcp-server-notion": {
         "env": {
-          "NOTION_API_TOKEN": "TO_BE_SET"
+          "OPENAPI_MCP_HEADERS": "TO_BE_SET"
         },
         "command": "docker",
         "args": [
@@ -162,8 +168,8 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "--rm",
           "--read-only",
           "-e",
-          "NOTION_API_TOKEN",
-          "docker.io/acuvity/mcp-server-notion:1.2.3"
+          "OPENAPI_MCP_HEADERS",
+          "docker.io/acuvity/mcp-server-notion:1.6.0"
         ]
       }
     }
@@ -180,7 +186,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
   "servers": {
     "acuvity-mcp-server-notion": {
       "env": {
-        "NOTION_API_TOKEN": "TO_BE_SET"
+        "OPENAPI_MCP_HEADERS": "TO_BE_SET"
       },
       "command": "docker",
       "args": [
@@ -189,8 +195,8 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "--rm",
         "--read-only",
         "-e",
-        "NOTION_API_TOKEN",
-        "docker.io/acuvity/mcp-server-notion:1.2.3"
+        "OPENAPI_MCP_HEADERS",
+        "docker.io/acuvity/mcp-server-notion:1.6.0"
       ]
     }
   }
@@ -211,7 +217,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
   "mcpServers": {
     "acuvity-mcp-server-notion": {
       "env": {
-        "NOTION_API_TOKEN": "TO_BE_SET"
+        "OPENAPI_MCP_HEADERS": "TO_BE_SET"
       },
       "command": "docker",
       "args": [
@@ -220,8 +226,8 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "--rm",
         "--read-only",
         "-e",
-        "NOTION_API_TOKEN",
-        "docker.io/acuvity/mcp-server-notion:1.2.3"
+        "OPENAPI_MCP_HEADERS",
+        "docker.io/acuvity/mcp-server-notion:1.6.0"
       ]
     }
   }
@@ -244,7 +250,7 @@ Add the following JSON block to your mcp configuration file:
   "mcpServers": {
     "acuvity-mcp-server-notion": {
       "env": {
-        "NOTION_API_TOKEN": "TO_BE_SET"
+        "OPENAPI_MCP_HEADERS": "TO_BE_SET"
       },
       "command": "docker",
       "args": [
@@ -253,8 +259,8 @@ Add the following JSON block to your mcp configuration file:
         "--rm",
         "--read-only",
         "-e",
-        "NOTION_API_TOKEN",
-        "docker.io/acuvity/mcp-server-notion:1.2.3"
+        "OPENAPI_MCP_HEADERS",
+        "docker.io/acuvity/mcp-server-notion:1.6.0"
       ]
     }
   }
@@ -275,7 +281,7 @@ In the `claude_desktop_config.json` configuration file add the following section
   "mcpServers": {
     "acuvity-mcp-server-notion": {
       "env": {
-        "NOTION_API_TOKEN": "TO_BE_SET"
+        "OPENAPI_MCP_HEADERS": "TO_BE_SET"
       },
       "command": "docker",
       "args": [
@@ -284,8 +290,8 @@ In the `claude_desktop_config.json` configuration file add the following section
         "--rm",
         "--read-only",
         "-e",
-        "NOTION_API_TOKEN",
-        "docker.io/acuvity/mcp-server-notion:1.2.3"
+        "OPENAPI_MCP_HEADERS",
+        "docker.io/acuvity/mcp-server-notion:1.6.0"
       ]
     }
   }
@@ -303,9 +309,9 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 ```python
 async with MCPServerStdio(
     params={
-        "env": {"NOTION_API_TOKEN":"TO_BE_SET"},
+        "env": {"OPENAPI_MCP_HEADERS":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","NOTION_API_TOKEN","docker.io/acuvity/mcp-server-notion:1.2.3"]
+        "args": ["run","-i","--rm","--read-only","-e","OPENAPI_MCP_HEADERS","docker.io/acuvity/mcp-server-notion:1.6.0"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -329,7 +335,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 ## 🐳 Run it with Docker
 
 **Environment variables and secrets:**
-  - `NOTION_API_TOKEN` required to be set
+  - `OPENAPI_MCP_HEADERS` required to be set
 
 
 <details>
@@ -338,7 +344,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e NOTION_API_TOKEN docker.io/acuvity/mcp-server-notion:1.2.3`
+- arguments: `run -i --rm --read-only -e OPENAPI_MCP_HEADERS docker.io/acuvity/mcp-server-notion:1.6.0`
 
 </details>
 
@@ -348,7 +354,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -i --rm --read-only -e NOTION_API_TOKEN docker.io/acuvity/mcp-server-notion:1.2.3
+docker run -i --rm --read-only -e OPENAPI_MCP_HEADERS docker.io/acuvity/mcp-server-notion:1.6.0
 ```
 
 Add `-p <localport>:8000` to expose the port.
@@ -440,7 +446,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 This chart requires some mandatory information to be installed.
 
 **Mandatory Secrets**:
-  - `NOTION_API_TOKEN` secret to be set as secrets.NOTION_API_TOKEN either by `.value` or from existing with `.valueFrom`
+  - `OPENAPI_MCP_HEADERS` secret to be set as secrets.OPENAPI_MCP_HEADERS either by `.value` or from existing with `.valueFrom`
 
 ### How to install
 
@@ -474,319 +480,333 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (18)
+## 🧰 Tools (19)
 <details>
-<summary>notion_append_block_children</summary>
+<summary>API-get-user</summary>
 
 **Description**:
 
 ```
-Append new children blocks to a specified parent block in Notion. Requires insert content capabilities. You can optionally specify the 'after' parameter to append after a certain block.
+Retrieve a user
+Error Responses:
+400: 400
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| after | string | The ID of the existing block that the new block should be appended after.It should be a 32-character string (excluding hyphens) formatted as 8-4-4-4-12 with hyphens (-). | No
-| block_id | string | The ID of the parent block.It should be a 32-character string (excluding hyphens) formatted as 8-4-4-4-12 with hyphens (-). | Yes
-| children | array | Array of block objects to append. Each block must follow the Notion block schema. | Yes
-| format | string | Specify the response format. 'json' returns the original data structure, 'markdown' returns a more readable format. Use 'markdown' when the user only needs to read the page and isn't planning to write or modify it. Use 'json' when the user needs to read the page with the intention of writing to or modifying it. | No
+| user_id | string | not set | Yes
 </details>
 <details>
-<summary>notion_retrieve_block</summary>
+<summary>API-get-users</summary>
 
 **Description**:
 
 ```
-Retrieve a block from Notion
+List all users
+Error Responses:
+400: 400
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| block_id | string | The ID of the block to retrieve.It should be a 32-character string (excluding hyphens) formatted as 8-4-4-4-12 with hyphens (-). | Yes
-| format | string | Specify the response format. 'json' returns the original data structure, 'markdown' returns a more readable format. Use 'markdown' when the user only needs to read the page and isn't planning to write or modify it. Use 'json' when the user needs to read the page with the intention of writing to or modifying it. | No
+| page_size | integer | The number of items from the full list desired in the response. Maximum: 100 | No
+| start_cursor | string | If supplied, this endpoint will return a page of results starting after the cursor provided. If not supplied, this endpoint will return the first page of results. | No
 </details>
 <details>
-<summary>notion_retrieve_block_children</summary>
+<summary>API-get-self</summary>
 
 **Description**:
 
 ```
-Retrieve the children of a block
+Retrieve your token's bot user
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| block_id | string | The ID of the block.It should be a 32-character string (excluding hyphens) formatted as 8-4-4-4-12 with hyphens (-). | Yes
-| format | string | Specify the response format. 'json' returns the original data structure, 'markdown' returns a more readable format. Use 'markdown' when the user only needs to read the page and isn't planning to write or modify it. Use 'json' when the user needs to read the page with the intention of writing to or modifying it. | No
-| page_size | number | Number of results per page (max 100) | No
-| start_cursor | string | Pagination cursor for next page of results | No
 </details>
 <details>
-<summary>notion_delete_block</summary>
+<summary>API-post-database-query</summary>
 
 **Description**:
 
 ```
-Delete a block in Notion
+Query a database
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| block_id | string | The ID of the block to delete.It should be a 32-character string (excluding hyphens) formatted as 8-4-4-4-12 with hyphens (-). | Yes
-| format | string | Specify the response format. 'json' returns the original data structure, 'markdown' returns a more readable format. Use 'markdown' when the user only needs to read the page and isn't planning to write or modify it. Use 'json' when the user needs to read the page with the intention of writing to or modifying it. | No
+| archived | boolean | not set | No
+| database_id | string | Identifier for a Notion database. | Yes
+| filter | object | When supplied, limits which pages are returned based on the [filter conditions](ref:post-database-query-filter). | No
+| filter_properties | array | A list of page property value IDs associated with the database. Use this param to limit the response to a specific page property value or values for pages that meet the `filter` criteria. | No
+| in_trash | boolean | not set | No
+| page_size | integer | The number of items from the full list desired in the response. Maximum: 100 | No
+| sorts | array | When supplied, orders the results based on the provided [sort criteria](ref:post-database-query-sort). | No
+| start_cursor | string | When supplied, returns a page of results starting after the cursor provided. If not supplied, this endpoint will return the first page of results. | No
 </details>
 <details>
-<summary>notion_update_block</summary>
+<summary>API-post-search</summary>
 
 **Description**:
 
 ```
-Update the content of a block in Notion based on its type. The update replaces the entire value for a given field.
+Search by title
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| block | object | The updated content for the block. Must match the block's type schema. | Yes
-| block_id | string | The ID of the block to update.It should be a 32-character string (excluding hyphens) formatted as 8-4-4-4-12 with hyphens (-). | Yes
-| format | string | Specify the response format. 'json' returns the original data structure, 'markdown' returns a more readable format. Use 'markdown' when the user only needs to read the page and isn't planning to write or modify it. Use 'json' when the user needs to read the page with the intention of writing to or modifying it. | No
+| filter | object | A set of criteria, `value` and `property` keys, that limits the results to either only pages or only databases. Possible `value` values are `"page"` or `"database"`. The only supported `property` value is `"object"`. | No
+| page_size | integer | The number of items from the full list to include in the response. Maximum: `100`. | No
+| query | string | The text that the API compares page and database titles against. | No
+| sort | object | A set of criteria, `direction` and `timestamp` keys, that orders the results. The **only** supported timestamp value is `"last_edited_time"`. Supported `direction` values are `"ascending"` and `"descending"`. If `sort` is not provided, then the most recently edited results are returned first. | No
+| start_cursor | string | A `cursor` value returned in a previous response that If supplied, limits the response to results starting after the `cursor`. If not supplied, then the first page of results is returned. Refer to [pagination](https://developers.notion.com/reference/intro#pagination) for more details. | No
 </details>
 <details>
-<summary>notion_retrieve_page</summary>
+<summary>API-get-block-children</summary>
 
 **Description**:
 
 ```
-Retrieve a page from Notion
+Retrieve block children
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| format | string | Specify the response format. 'json' returns the original data structure, 'markdown' returns a more readable format. Use 'markdown' when the user only needs to read the page and isn't planning to write or modify it. Use 'json' when the user needs to read the page with the intention of writing to or modifying it. | No
-| page_id | string | The ID of the page to retrieve.It should be a 32-character string (excluding hyphens) formatted as 8-4-4-4-12 with hyphens (-). | Yes
+| block_id | string | Identifier for a [block](ref:block) | Yes
+| page_size | integer | The number of items from the full list desired in the response. Maximum: 100 | No
+| start_cursor | string | If supplied, this endpoint will return a page of results starting after the cursor provided. If not supplied, this endpoint will return the first page of results. | No
 </details>
 <details>
-<summary>notion_update_page_properties</summary>
+<summary>API-patch-block-children</summary>
 
 **Description**:
 
 ```
-Update properties of a page or an item in a Notion database
+Append block children
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| format | string | Specify the response format. 'json' returns the original data structure, 'markdown' returns a more readable format. Use 'markdown' when the user only needs to read the page and isn't planning to write or modify it. Use 'json' when the user needs to read the page with the intention of writing to or modifying it. | No
-| page_id | string | The ID of the page or database item to update.It should be a 32-character string (excluding hyphens) formatted as 8-4-4-4-12 with hyphens (-). | Yes
-| properties | object | Properties to update. These correspond to the columns or fields in the database. | Yes
+| after | string | The ID of the existing block that the new block should be appended after. | No
+| block_id | string | Identifier for a [block](ref:block). Also accepts a [page](ref:page) ID. | Yes
+| children | array | Child content to append to a container block as an array of [block objects](ref:block) | Yes
 </details>
 <details>
-<summary>notion_list_all_users</summary>
+<summary>API-retrieve-a-block</summary>
 
 **Description**:
 
 ```
-List all users in the Notion workspace. **Note:** This function requires upgrading to the Notion Enterprise plan and using an Organization API key to avoid permission errors.
+Retrieve a block
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| format | string | Specify the response format. 'json' returns the original data structure, 'markdown' returns a more readable format. Use 'markdown' when the user only needs to read the page and isn't planning to write or modify it. Use 'json' when the user needs to read the page with the intention of writing to or modifying it. | No
-| page_size | number | Number of users to retrieve (max 100) | No
-| start_cursor | string | Pagination start cursor for listing users | No
+| block_id | string | Identifier for a Notion block | Yes
 </details>
 <details>
-<summary>notion_retrieve_user</summary>
+<summary>API-update-a-block</summary>
 
 **Description**:
 
 ```
-Retrieve a specific user by user_id in Notion. **Note:** This function requires upgrading to the Notion Enterprise plan and using an Organization API key to avoid permission errors.
+Update a block
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| format | string | Specify the response format. 'json' returns the original data structure, 'markdown' returns a more readable format. Use 'markdown' when the user only needs to read the page and isn't planning to write or modify it. Use 'json' when the user needs to read the page with the intention of writing to or modifying it. | No
-| user_id | string | The ID of the user to retrieve.It should be a 32-character string (excluding hyphens) formatted as 8-4-4-4-12 with hyphens (-). | Yes
+| archived | boolean | Set to true to archive (delete) a block. Set to false to un-archive (restore) a block. | No
+| block_id | string | Identifier for a Notion block | Yes
+| type | object | The [block object `type`](ref:block#block-object-keys) value with the properties to be updated. Currently only `text` (for supported block types) and `checked` (for `to_do` blocks) fields can be updated. | No
 </details>
 <details>
-<summary>notion_retrieve_bot_user</summary>
+<summary>API-delete-a-block</summary>
 
 **Description**:
 
 ```
-Retrieve the bot user associated with the current token in Notion
+Delete a block
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| format | string | Specify the response format. 'json' returns the original data structure, 'markdown' returns a more readable format. Use 'markdown' when the user only needs to read the page and isn't planning to write or modify it. Use 'json' when the user needs to read the page with the intention of writing to or modifying it. | No
-| random_string | string | Dummy parameter for no-parameter tools | Yes
+| block_id | string | Identifier for a Notion block | Yes
 </details>
 <details>
-<summary>notion_create_database</summary>
+<summary>API-retrieve-a-page</summary>
 
 **Description**:
 
 ```
-Create a database in Notion
+Retrieve a page
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| format | string | Specify the response format. 'json' returns the original data structure, 'markdown' returns a more readable format. Use 'markdown' when the user only needs to read the page and isn't planning to write or modify it. Use 'json' when the user needs to read the page with the intention of writing to or modifying it. | No
-| parent | object | Parent object of the database | Yes
-| properties | object | Property schema of database. The keys are the names of properties as they appear in Notion and the values are property schema objects. | Yes
-| title | array | Title of database as it appears in Notion. An array of rich text objects. | No
+| filter_properties | string | A list of page property value IDs associated with the page. Use this param to limit the response to a specific page property value or values. To retrieve multiple properties, specify each page property ID. For example: `?filter_properties=iAk8&filter_properties=b7dh`. | No
+| page_id | string | Identifier for a Notion page | Yes
 </details>
 <details>
-<summary>notion_query_database</summary>
+<summary>API-patch-page</summary>
 
 **Description**:
 
 ```
-Query a database in Notion
+Update page properties
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| database_id | string | The ID of the database to query.It should be a 32-character string (excluding hyphens) formatted as 8-4-4-4-12 with hyphens (-). | Yes
-| filter | object | Filter conditions | No
-| format | string | Specify the response format. 'json' returns the original data structure, 'markdown' returns a more readable format. Use 'markdown' when the user only needs to read the page and isn't planning to write or modify it. Use 'json' when the user needs to read the page with the intention of writing to or modifying it. | No
-| page_size | number | Number of results per page (max 100) | No
-| sorts | array | Sort conditions | No
-| start_cursor | string | Pagination cursor for next page of results | No
+| archived | boolean | not set | No
+| cover | object | A cover image for the page. Only [external file objects](https://developers.notion.com/reference/file-object) are supported. | No
+| icon | object | A page icon for the page. Supported types are [external file object](https://developers.notion.com/reference/file-object) or [emoji object](https://developers.notion.com/reference/emoji-object). | No
+| in_trash | boolean | Set to true to delete a block. Set to false to restore a block. | No
+| page_id | string | The identifier for the Notion page to be updated. | Yes
+| properties | object | The property values to update for the page. The keys are the names or IDs of the property and the values are property values. If a page property ID is not included, then it is not changed. | No
 </details>
 <details>
-<summary>notion_retrieve_database</summary>
+<summary>API-post-page</summary>
 
 **Description**:
 
 ```
-Retrieve a database in Notion
+Create a page
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| database_id | string | The ID of the database to retrieve.It should be a 32-character string (excluding hyphens) formatted as 8-4-4-4-12 with hyphens (-). | Yes
-| format | string | Specify the response format. 'json' returns the original data structure, 'markdown' returns a more readable format. Use 'markdown' when the user only needs to read the page and isn't planning to write or modify it. Use 'json' when the user needs to read the page with the intention of writing to or modifying it. | No
+| children | array | The content to be rendered on the new page, represented as an array of [block objects](https://developers.notion.com/reference/block). | No
+| cover | string | The cover image of the new page, represented as a [file object](https://developers.notion.com/reference/file-object). | No
+| icon | string | The icon of the new page. Either an [emoji object](https://developers.notion.com/reference/emoji-object) or an [external file object](https://developers.notion.com/reference/file-object).. | No
+| parent | object | not set | Yes
+| properties | object | not set | Yes
 </details>
 <details>
-<summary>notion_update_database</summary>
+<summary>API-create-a-database</summary>
 
 **Description**:
 
 ```
-Update a database in Notion
+Create a database
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| database_id | string | The ID of the database to update.It should be a 32-character string (excluding hyphens) formatted as 8-4-4-4-12 with hyphens (-). | Yes
-| description | array | An array of rich text objects that represents the description of the database that is displayed in the Notion UI. | No
-| format | string | Specify the response format. 'json' returns the original data structure, 'markdown' returns a more readable format. Use 'markdown' when the user only needs to read the page and isn't planning to write or modify it. Use 'json' when the user needs to read the page with the intention of writing to or modifying it. | No
-| properties | object | The properties of a database to be changed in the request, in the form of a JSON object. | No
-| title | array | An array of rich text objects that represents the title of the database that is displayed in the Notion UI. | No
+| parent | object | not set | Yes
+| properties | object | Property schema of database. The keys are the names of properties as they appear in Notion and the values are [property schema objects](https://developers.notion.com/reference/property-schema-object). | Yes
+| title | array | not set | No
 </details>
 <details>
-<summary>notion_create_database_item</summary>
+<summary>API-update-a-database</summary>
 
 **Description**:
 
 ```
-Create a new item (page) in a Notion database
+Update a database
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| database_id | string | The ID of the database to add the item to.It should be a 32-character string (excluding hyphens) formatted as 8-4-4-4-12 with hyphens (-). | Yes
-| format | string | Specify the response format. 'json' returns the original data structure, 'markdown' returns a more readable format. Use 'markdown' when the user only needs to read the page and isn't planning to write or modify it. Use 'json' when the user needs to read the page with the intention of writing to or modifying it. | No
-| properties | object | Properties of the new database item. These should match the database schema. | Yes
+| database_id | string | identifier for a Notion database | Yes
+| description | array | An array of [rich text objects](https://developers.notion.com/reference/rich-text) that represents the description of the database that is displayed in the Notion UI. If omitted, then the database description remains unchanged. | No
+| properties | object | Property schema of database. The keys are the names of properties as they appear in Notion and the values are [property schema objects](https://developers.notion.com/reference/property-schema-object). | No
+| title | array | An array of [rich text objects](https://developers.notion.com/reference/rich-text) that represents the title of the database that is displayed in the Notion UI. If omitted, then the database title remains unchanged. | No
 </details>
 <details>
-<summary>notion_create_comment</summary>
+<summary>API-retrieve-a-database</summary>
 
 **Description**:
 
 ```
-Create a comment in Notion. This requires the integration to have 'insert comment' capabilities. You can either specify a page parent or a discussion_id, but not both.
+Retrieve a database
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| discussion_id | string | The ID of an existing discussion thread to add a comment to.It should be a 32-character string (excluding hyphens) formatted as 8-4-4-4-12 with hyphens (-). | No
-| format | string | Specify the response format. 'json' returns the original data structure, 'markdown' returns a more readable format. Use 'markdown' when the user only needs to read the page and isn't planning to write or modify it. Use 'json' when the user needs to read the page with the intention of writing to or modifying it. | No
-| parent | object | Parent object that specifies the page to comment on. Must include a page_id if used. | No
-| rich_text | array | Array of rich text objects representing the comment content. | Yes
+| database_id | string | An identifier for the Notion database. | Yes
 </details>
 <details>
-<summary>notion_retrieve_comments</summary>
+<summary>API-retrieve-a-page-property</summary>
 
 **Description**:
 
 ```
-Retrieve a list of unresolved comments from a Notion page or block. Requires the integration to have 'read comment' capabilities.
+Retrieve a page property item
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| block_id | string | The ID of the block or page whose comments you want to retrieve.It should be a 32-character string (excluding hyphens) formatted as 8-4-4-4-12 with hyphens (-). | Yes
-| format | string | Specify the response format. 'json' returns the original data structure, 'markdown' returns a more readable format. Use 'markdown' when the user only needs to read the page and isn't planning to write or modify it. Use 'json' when the user needs to read the page with the intention of writing to or modifying it. | No
-| page_size | number | Number of comments to retrieve (max 100). | No
-| start_cursor | string | If supplied, returns a page of results starting after the cursor. | No
+| page_id | string | Identifier for a Notion page | Yes
+| page_size | integer | For paginated properties. The max number of property item objects on a page. The default size is 100 | No
+| property_id | string | Identifier for a page [property](https://developers.notion.com/reference/page#all-property-values) | Yes
+| start_cursor | string | For paginated properties. | No
 </details>
 <details>
-<summary>notion_search</summary>
+<summary>API-retrieve-a-comment</summary>
 
 **Description**:
 
 ```
-Search pages or databases by title in Notion
+Retrieve comments
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| filter | object | Filter results by object type (page or database) | No
-| format | string | Specify the response format. 'json' returns the original data structure, 'markdown' returns a more readable format. Use 'markdown' when the user only needs to read the page and isn't planning to write or modify it. Use 'json' when the user needs to read the page with the intention of writing to or modifying it. | No
-| page_size | number | Number of results to return (max 100).  | No
-| query | string | Text to search for in page or database titles | No
-| sort | object | Sort order of results | No
-| start_cursor | string | Pagination start cursor | No
+| block_id | string | Identifier for a Notion block or page | Yes
+| page_size | integer | The number of items from the full list desired in the response. Maximum: 100 | No
+| start_cursor | string | If supplied, this endpoint will return a page of results starting after the cursor provided. If not supplied, this endpoint will return the first page of results. | No
+</details>
+<details>
+<summary>API-create-a-comment</summary>
+
+**Description**:
+
+```
+Create comment
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| parent | object | The page that contains the comment | Yes
+| rich_text | array | not set | Yes
 </details>
 
 
@@ -796,85 +816,73 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
-| tools | notion_append_block_children | description | 12321e958ea635cd5b18aa55541adfa74923ec6b9b8fa7445f71ae38ec8c94ad |
-| tools | notion_append_block_children | after | 906f6f3316057fe492966d7b3d1f8bd3d8faeedb5a20b417de20ffe0a9042090 |
-| tools | notion_append_block_children | block_id | 7bed4ad4bf9c3ba038de32f2c5586f8ddec1924f5f8a1a02addd12b5d2296b9e |
-| tools | notion_append_block_children | children | fe52bb3553357b05c787a49d600457ab983a55aba8a2023293bc2789ca9a25aa |
-| tools | notion_append_block_children | format | 3fe122c0e15d6c91bfab5bcbc133e3d496203080394a437c7f2b2bc48db1b4a8 |
-| tools | notion_create_comment | description | bdca981386debfe6444c598907ada9d63e8acb12541370fa9a0e856e487e0377 |
-| tools | notion_create_comment | discussion_id | 001d8a0550e16c385fc97ff2758676e22290815578df98e974fb58a1c46737fd |
-| tools | notion_create_comment | format | 3fe122c0e15d6c91bfab5bcbc133e3d496203080394a437c7f2b2bc48db1b4a8 |
-| tools | notion_create_comment | parent | 98d7a1607cf3c923ad73884d28fa9c23d5d236f498afee6e2ee8f8c470bdd9d5 |
-| tools | notion_create_comment | rich_text | f29bd88e7553fcee7e106363e02afef29e0f64f3c48761fe8b63c6118af6f717 |
-| tools | notion_create_database | description | 22c97e2d1e533b2a8cfdf2a4a86c589164c338281fc9fd768a785f342d830456 |
-| tools | notion_create_database | format | 3fe122c0e15d6c91bfab5bcbc133e3d496203080394a437c7f2b2bc48db1b4a8 |
-| tools | notion_create_database | parent | 3ade884bc68930b24ba889a3970dea49e30fe22260bad38158d3aaa4ca29c4f4 |
-| tools | notion_create_database | properties | 4c6e8bbe47ff2bb9f12c2660a165a06c025521d0c408f16f6803fd8da628bb1f |
-| tools | notion_create_database | title | 5fc90f86ecf25deb1adf9402a5cd1052f90f01f7bdc3c999886300ca148b297e |
-| tools | notion_create_database_item | description | 14ef3abb68041b0ef420bae5b9fd5865944dada379089cc837a794c0a4e61bb4 |
-| tools | notion_create_database_item | database_id | a62d1aff88b3ca3155a84e6f2e06af8b5b4344c2c58e6a02d1054910763c9870 |
-| tools | notion_create_database_item | format | 3fe122c0e15d6c91bfab5bcbc133e3d496203080394a437c7f2b2bc48db1b4a8 |
-| tools | notion_create_database_item | properties | 658fe42241762c24167929c66f7c5bdb52b7d3b51f11f78a63d6fef0772b60df |
-| tools | notion_delete_block | description | d8e6ae63e7c6ec7a3c4763bc83cdaf61103ce52ab6acaac9d31f5f2aef499f30 |
-| tools | notion_delete_block | block_id | 6a10908b39462662fe33dec1c4408f5009716692685ff2da9770cad12fcb15b1 |
-| tools | notion_delete_block | format | 3fe122c0e15d6c91bfab5bcbc133e3d496203080394a437c7f2b2bc48db1b4a8 |
-| tools | notion_list_all_users | description | e6d9f69de7d52ad82cfee8270cefcaaf465e7995bd0316ef8ca2a156f7a0ca10 |
-| tools | notion_list_all_users | format | 3fe122c0e15d6c91bfab5bcbc133e3d496203080394a437c7f2b2bc48db1b4a8 |
-| tools | notion_list_all_users | page_size | f22f56658ae22fd3a776523328580be6a4be69eb1eac0f78a3580f4cff0cbd45 |
-| tools | notion_list_all_users | start_cursor | bdc70c59fb190ece7f7be773a4facef934df083939c54cf9f23e32faa37846ee |
-| tools | notion_query_database | description | 97cedfc473bea5729b0ea165f19ab7db0fec6b0c847f8f627ef612f6ebe97eda |
-| tools | notion_query_database | database_id | d2b73aee8962d69b2f311cfd3bdc8a7776fe6c8790ce58ea01a2e5fc5a34a5fd |
-| tools | notion_query_database | filter | b4060a70d15041044d885205c53ad809cbbb885c89d03fe9aff62b7766be185b |
-| tools | notion_query_database | format | 3fe122c0e15d6c91bfab5bcbc133e3d496203080394a437c7f2b2bc48db1b4a8 |
-| tools | notion_query_database | page_size | 462903a69ac0e31e27ded9aa8a40dc2092720b36aa094a21a124a47aadbd1901 |
-| tools | notion_query_database | sorts | 7295aa2b6c9eb082c7b49b8b12bbb4eb074f3a785c8f9a08169c94ea1d786e80 |
-| tools | notion_query_database | start_cursor | af663f140c35780ea36be96fa602b310c84c5373bd95d8f7e98e2fdb474d5061 |
-| tools | notion_retrieve_block | description | 4399eb090a229fcc211c82842281b1368a483e349074733c48757822aae06b85 |
-| tools | notion_retrieve_block | block_id | b8aa6a3e62824694f976523f6498ec8f046d586f86d6bf586432f28c69fcfb4d |
-| tools | notion_retrieve_block | format | 3fe122c0e15d6c91bfab5bcbc133e3d496203080394a437c7f2b2bc48db1b4a8 |
-| tools | notion_retrieve_block_children | description | 74ff5388c92733c41a636cc773d86df45eda6a5f8243d0c3c0246d088e70a425 |
-| tools | notion_retrieve_block_children | block_id | cb56bb172b9fecc86a15858dbd0e4f0c2c80acb5e1e86402d3fcbde0bfbfca00 |
-| tools | notion_retrieve_block_children | format | 3fe122c0e15d6c91bfab5bcbc133e3d496203080394a437c7f2b2bc48db1b4a8 |
-| tools | notion_retrieve_block_children | page_size | 462903a69ac0e31e27ded9aa8a40dc2092720b36aa094a21a124a47aadbd1901 |
-| tools | notion_retrieve_block_children | start_cursor | af663f140c35780ea36be96fa602b310c84c5373bd95d8f7e98e2fdb474d5061 |
-| tools | notion_retrieve_bot_user | description | 7434b611dd5e6dea1ab4af7ab2505dd030681ca3024ee943c2e5038644b758ed |
-| tools | notion_retrieve_bot_user | format | 3fe122c0e15d6c91bfab5bcbc133e3d496203080394a437c7f2b2bc48db1b4a8 |
-| tools | notion_retrieve_bot_user | random_string | ad4e9f571a00a7ee3fc8a4d23732082c760747cb9c3006c24d8fbea85bb1c704 |
-| tools | notion_retrieve_comments | description | f2eab490252c0a5176b7d0113b6aca7f2ac655f7a63b99b10438c7e5b81caaae |
-| tools | notion_retrieve_comments | block_id | 85a9544b20528c7101672082074817e0531e5ee21a7b5559be5ec69015ad8004 |
-| tools | notion_retrieve_comments | format | 3fe122c0e15d6c91bfab5bcbc133e3d496203080394a437c7f2b2bc48db1b4a8 |
-| tools | notion_retrieve_comments | page_size | fed7a9cd82db1d3fe95b6b930cc37f0cd28fad78f99dc2b140ee13266287092c |
-| tools | notion_retrieve_comments | start_cursor | a8ff75992d55f4e0956503e21baf504ba8b053fc79b7ecf3dd0a947ea27e5dcf |
-| tools | notion_retrieve_database | description | 8f1ebf8d275a8bd57bd835dc347602ab818e05b7dddabb13293df80ecc00db7d |
-| tools | notion_retrieve_database | database_id | 426a5adbc31d41fc5f0fd64ff3dbb30f808e79c2fdd2e3e29725562f06b8f3e8 |
-| tools | notion_retrieve_database | format | 3fe122c0e15d6c91bfab5bcbc133e3d496203080394a437c7f2b2bc48db1b4a8 |
-| tools | notion_retrieve_page | description | 97305df3c32cbedc1137577cc02914e0131e5cd05d4da587095f3a8bdd5687b5 |
-| tools | notion_retrieve_page | format | 3fe122c0e15d6c91bfab5bcbc133e3d496203080394a437c7f2b2bc48db1b4a8 |
-| tools | notion_retrieve_page | page_id | bce3e8c0922393634a953830d8b7d7813641e43b6466a7f310cad2c197b75cca |
-| tools | notion_retrieve_user | description | eb17b24db944f0b3b200e2893ce59eb3458181540ae34765196efed8e19b776b |
-| tools | notion_retrieve_user | format | 3fe122c0e15d6c91bfab5bcbc133e3d496203080394a437c7f2b2bc48db1b4a8 |
-| tools | notion_retrieve_user | user_id | d52a436b7b3c40d48e377578255075a8193516688da879debad40f25a1ab258f |
-| tools | notion_search | description | 102f8bd041842e6f82b544a843ac24d35e9fd8b0615c69e16001186619e8aa21 |
-| tools | notion_search | filter | e0b27d45ea3aee29097aa4c78fd6205a133669c512c2f78f61ca87af0a6aa55c |
-| tools | notion_search | format | 3fe122c0e15d6c91bfab5bcbc133e3d496203080394a437c7f2b2bc48db1b4a8 |
-| tools | notion_search | page_size | 8dd46b11f3dfdaaec00c5f5d36e839eeac355984c2a095d2f23f89b8e138de47 |
-| tools | notion_search | query | f6be6000f0258828d868042812394564e520c11639ac51b8a2bd040d687c9f54 |
-| tools | notion_search | sort | 1745b12757e940ea45fe7f6c79a461eecbe279229fd6c7019e98aaae3017f952 |
-| tools | notion_search | start_cursor | c875a17576a4dad5ed92944746a0d824835bd6cc895cef1417f764df1569b941 |
-| tools | notion_update_block | description | 295617647b5a6942a2efd2c44278eb1dd4f000386e2c0e9701911dd87aff59e5 |
-| tools | notion_update_block | block | 697a01ddb097f68202bc17cfbb24e3038d6be9b1e5f22a18aca158655323fa53 |
-| tools | notion_update_block | block_id | 2ced97bbf8a137f37adddb68976e48e994dd2d24135c2482dbfd0b647ffd2415 |
-| tools | notion_update_block | format | 3fe122c0e15d6c91bfab5bcbc133e3d496203080394a437c7f2b2bc48db1b4a8 |
-| tools | notion_update_database | description | 3ff7cc8cab2a5fd7d8108678558128491bbcb08ffb021ee8b58a2ae26e052a8c |
-| tools | notion_update_database | database_id | 21b676d251107d05ed2af0b696c4d557158618a231e84049fc7975fd74992a87 |
-| tools | notion_update_database | description | bd7b0039f763cc16aec4b224fcef1179cf5edefc358db4bcb9d27c7a32557a5e |
-| tools | notion_update_database | format | 3fe122c0e15d6c91bfab5bcbc133e3d496203080394a437c7f2b2bc48db1b4a8 |
-| tools | notion_update_database | properties | 53476a4f6627be4102b9fe8aeb913d40a047c436bde7b00e9566539af5f6cdd7 |
-| tools | notion_update_database | title | 234c0aec250f87cdee884c3ba9f043191838b5cdfb10a889ab8e5f287cea58f4 |
-| tools | notion_update_page_properties | description | 88944b9c35849d6328bb5fc958ad03d850389b0733c9900c8558fc7a09686f19 |
-| tools | notion_update_page_properties | format | 3fe122c0e15d6c91bfab5bcbc133e3d496203080394a437c7f2b2bc48db1b4a8 |
-| tools | notion_update_page_properties | page_id | b45759c043357316c7fb264aab296b1b130250ac041b3b02eece1452b11ce049 |
-| tools | notion_update_page_properties | properties | 91269f926b9d13af03f765dfa94ed06d401e43de1c288cec5977b60d6ae3fb56 |
+| tools | API-create-a-comment | description | 1cf44abde6508ae75f3c866eba8a08eb24a74c5dad94f813c09415892844a9f1 |
+| tools | API-create-a-comment | parent | 80ad2857740577e2077ef3c462fe8409dbe228a6cdfbb8c9a4c9d25ca7f2965e |
+| tools | API-create-a-database | description | 0c4d32832f46802e297eafb102362f820aee2e6f0177fa9dc6d6ee757b9c0380 |
+| tools | API-create-a-database | properties | 4ae18f5cbb0402c238429b0a84c46840de281c628a8dbb587811f28cbfe1c321 |
+| tools | API-delete-a-block | description | ff8c9f2e015f6e739de171932d2524e290bc8ea79b5b1f654c2203569fd1db23 |
+| tools | API-delete-a-block | block_id | 4282659befb77e742b5cc853f28d0fba3c013371b1d5a7cd24a13568b31f7b37 |
+| tools | API-get-block-children | description | da3023fae08d3eeb47ca99d24d773168c09b2505b9eea9a33650cadd3c45f68c |
+| tools | API-get-block-children | block_id | 9bcbe2492facf78a4ee18c89806c40c35a87ad4b530c3170a1ff39a880906371 |
+| tools | API-get-block-children | page_size | c8d012f8541c3b71b11b5012afa60f8f495889a85bfbcee9cdbabde3531d743e |
+| tools | API-get-block-children | start_cursor | e5b52e5e2e4b1f29ff2ef0055327c55856d7f55609fe52f8b1f69eaa29530469 |
+| tools | API-get-self | description | f85e198803128737113544ba6f34b54ee768ac7efb522f84f42a3cc31aedcc37 |
+| tools | API-get-user | description | 727869918a2bb6ceed20bc01ba4fb145450664ff250ac9a0d260e83a69fc4bd2 |
+| tools | API-get-users | description | 7f8a2d0b73f3ce289a62c88574d19f11d293a676b3bbc8147a8111972108e7b7 |
+| tools | API-get-users | page_size | c8d012f8541c3b71b11b5012afa60f8f495889a85bfbcee9cdbabde3531d743e |
+| tools | API-get-users | start_cursor | e5b52e5e2e4b1f29ff2ef0055327c55856d7f55609fe52f8b1f69eaa29530469 |
+| tools | API-patch-block-children | description | 9bb75c455eec4f782777a8eb1d4ae66ff1405fc116075870ad15cf7d4142dcb1 |
+| tools | API-patch-block-children | after | c727e3b91d2dc39ec83c92b70bda36145409cdfac6fd8dfd73c53be124071343 |
+| tools | API-patch-block-children | block_id | 1ac2e0616787fd6470faf44a932a32dc5ae7ecfb910a07316ff2c1c7322ac23e |
+| tools | API-patch-block-children | children | 44d9344314eeef73a29c1b254f18b3b88a25123298f00a082863c6ff6c14cb47 |
+| tools | API-patch-page | description | 725ffb46cb4484d0b6db71d621c028e51ee043f97b2413299991fc40c4d61706 |
+| tools | API-patch-page | cover | b9815ef939d225a191cfc788e43ae4b549a433471b3fb166e5b20d2a497cdf14 |
+| tools | API-patch-page | icon | 58eb56d386c18050173f6394c736007572828633a894fe88e905e12aa6210d79 |
+| tools | API-patch-page | in_trash | ab3e9fe89322e3da72f39f596f2033bbec59a0098bf9f0aa672e5c5dddf2aaeb |
+| tools | API-patch-page | page_id | b5930097fd9390bac535ec99ebbfaa2927d17bcae8f871695278547f8e7cf346 |
+| tools | API-patch-page | properties | 8b7dfc8b81ca3f2eac312bf89b6eb8ef8dc60d95c91523b7f1c07057f1b861f4 |
+| tools | API-post-database-query | description | aa89e5751799ff61d77270aae00c6ef47fcd596d025126006c76e8a3d1bc9c4b |
+| tools | API-post-database-query | database_id | 5c72ef7b2808ccbea1aba31b1f3ab37a4e29cfe686640c1e2a24f26ffb12b37e |
+| tools | API-post-database-query | filter | ec833085bb176f402f35ee780c049727af1bc363ad3daaccf3949747d372b280 |
+| tools | API-post-database-query | filter_properties | d99874beb7ac9824a1c917e9d0d75414d40df7a9c39d1c07d23888dfdfdd4a31 |
+| tools | API-post-database-query | page_size | c8d012f8541c3b71b11b5012afa60f8f495889a85bfbcee9cdbabde3531d743e |
+| tools | API-post-database-query | sorts | f6657dbb20e7728c34cfb77ebabe93c11f4ebdb40b436d4d937079a3f95b3253 |
+| tools | API-post-database-query | start_cursor | f806e2c7f95944c3b62944aa634647138e5b0fac2ce899ae534b6443b186cb7f |
+| tools | API-post-page | description | b682233a5002907c4bc71179c53d6a8665ef446828d3b49cebc2295a1db3315b |
+| tools | API-post-page | children | dfef3332fc212d5de83488a378ef5f656620690071b9a4c1bf89224c47117eda |
+| tools | API-post-page | cover | b39fea223aa71d6c736f6bdc458887d85629de1450078a67e4f4708fe4407e97 |
+| tools | API-post-page | icon | 28975513a8ec2f9437200f6012de26619dc902c7133691c102cfe1c43956549c |
+| tools | API-post-search | description | 6b5b4c14c7630a2ab91fa1e874d92664c976b51469742d93591fd0b49bc2953c |
+| tools | API-post-search | filter | 32dd86a94fe9cf223fa7fe8f4a203ade4151ff9d914041d82e57f27c2625a3cc |
+| tools | API-post-search | page_size | ceafdaab204f34d7a79ce05c88b6d698aeee428066057f7512ad1d8c965c14aa |
+| tools | API-post-search | query | 4880cdf43451479ef98bf8b0ea9611ddc4c9db89d15387c01da46a2d3893095b |
+| tools | API-post-search | sort | 564929275340d84a24f9382adf6a7cf751fa71f4f38a814ce43dedd9f7713f97 |
+| tools | API-post-search | start_cursor | 9f0b7de41237ccb79a242da38187fe4acd22c3e69684ece5dad353404c6c62e1 |
+| tools | API-retrieve-a-block | description | 0eee5d7cbca7bb7d3af0e294f295a6aebf0a25cdd857388c662293238f73b2ce |
+| tools | API-retrieve-a-block | block_id | 4282659befb77e742b5cc853f28d0fba3c013371b1d5a7cd24a13568b31f7b37 |
+| tools | API-retrieve-a-comment | description | 338c62fbb4fe8309e148e93a54bde82311c970ecd81cb51ba17d52a748aa0d0a |
+| tools | API-retrieve-a-comment | block_id | 800e6bacf259e4f525e1c2e5cb8e67f361d1b5bc0c35a68d38d218e5645a889f |
+| tools | API-retrieve-a-comment | page_size | c8d012f8541c3b71b11b5012afa60f8f495889a85bfbcee9cdbabde3531d743e |
+| tools | API-retrieve-a-comment | start_cursor | e5b52e5e2e4b1f29ff2ef0055327c55856d7f55609fe52f8b1f69eaa29530469 |
+| tools | API-retrieve-a-database | description | 518ea41f01b56703f518c40cb76a88942803b6049734fcd23835c3614e10d4df |
+| tools | API-retrieve-a-database | database_id | c057256c3e7db65d8daced3de4624c82885902d6778442730f7db17690da6c08 |
+| tools | API-retrieve-a-page | description | a06af6b3d748466cd0ede9733c78709ffc04af5881d322c9547320c236b1318d |
+| tools | API-retrieve-a-page | filter_properties | aaa1e89cb9d79b8b24fed89244939f50bca965a928ccd3bd95fe18c7c483634b |
+| tools | API-retrieve-a-page | page_id | 28634ab8051c0c0b0b533b0830f92e6bea11a3d772ba30db5161f58ea95f68b4 |
+| tools | API-retrieve-a-page-property | description | 63709857408947091c44c5536e44267574ddebe6568b91debf9b5545f5101c70 |
+| tools | API-retrieve-a-page-property | page_id | 28634ab8051c0c0b0b533b0830f92e6bea11a3d772ba30db5161f58ea95f68b4 |
+| tools | API-retrieve-a-page-property | page_size | 231332689fcc3e6a74772c04121a1778539e4e7a54856a84b86bbeeb11b04fc6 |
+| tools | API-retrieve-a-page-property | property_id | 864a243ef35b8ea5e3d0db2712a8a7ade53550c732678977cc84697000695214 |
+| tools | API-retrieve-a-page-property | start_cursor | b274bf0ccad01fb37e4fc3ce317fd9d19e33f37f16349f2f61d246dbab289d14 |
+| tools | API-update-a-block | description | fa8813d7c2db87b4833d9583f764f50b810c24cfe7cd6a3931f82fda2d83b98c |
+| tools | API-update-a-block | archived | 9507894f6773eba55065ea07d3b4b65014523432442a3bbd5f11242764637bba |
+| tools | API-update-a-block | block_id | 4282659befb77e742b5cc853f28d0fba3c013371b1d5a7cd24a13568b31f7b37 |
+| tools | API-update-a-block | type | ed6d041bbe1c6569f88f0c4cab0b8021625770aa7651f19e04896ed880b89920 |
+| tools | API-update-a-database | description | 8fa57e069d31ba547c5d8d0da2867ffc414c672f042002bdc498777fb98afc59 |
+| tools | API-update-a-database | database_id | 2d152e5d3c566d4a653a5af8b8bcc554f46581fb025168a32a8f1515ef16663b |
+| tools | API-update-a-database | description | dc6c429d7ab536b920ff1e2d2286cc8272c8372a818cc07307a9c53fd44492e1 |
+| tools | API-update-a-database | properties | 4ae18f5cbb0402c238429b0a84c46840de281c628a8dbb587811f28cbfe1c321 |
+| tools | API-update-a-database | title | 71fa38328b1a805076688217254acab10f33be6346bdb01ca992d3472102ce5d |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

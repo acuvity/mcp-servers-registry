@@ -1,6 +1,6 @@
 #!/bin/sh
 export PATH="/app/node_modules/.bin:${PATH}"
-[ -z "$NOTION_API_TOKEN" ] && echo "!!! Error mcp-server-notion requires NOTION_API_TOKEN env var to be set." && exit 1
+[ -z "$OPENAPI_MCP_HEADERS" ] && echo "!!! Error mcp-server-notion requires OPENAPI_MCP_HEADERS env var to be set." && exit 1
 
 if [ -z "$MINIBRIDGE_MODE" ]; then
   # check if stdin in open
@@ -38,8 +38,8 @@ export REGO_POLICY_RUNTIME_GUARDRAILS="$GUARDRAILS"
 export REGO_POLICY_RUNTIME_BASIC_AUTH_SECRET="$BASIC_AUTH_SECRET"
 
 if [ "$#" -gt 0 ]; then
-  exec minibridge ${MINIBRIDGE_MODE} -- mcp-notion-server "$@"
+  exec minibridge ${MINIBRIDGE_MODE} -- notion-mcp-server "$@"
 else
-  exec minibridge ${MINIBRIDGE_MODE} -- mcp-notion-server
+  exec minibridge ${MINIBRIDGE_MODE} -- notion-mcp-server
 fi
 

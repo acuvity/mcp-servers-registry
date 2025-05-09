@@ -1,7 +1,7 @@
 env:
 
 secrets:
-  NOTION_API_TOKEN:
+  OPENAPI_MCP_HEADERS:
     value:
     valueFrom:
       name: dummy_path
