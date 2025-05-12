@@ -188,11 +188,11 @@
                 <div class="flex items-center gap-2">
                   <div class="flex items-center gap-1">
                     <img
-                      v-if="server.official && server.iconUrl && !iconError[i]"
+                      v-if="server.official && server.iconUrl && ! server._iconError"
                       :src="server.iconUrl"
                       alt=""
                       class="w-5 h-5"
-                      @error="iconError[i] = true"
+                      @error="server._iconError = true"
                     />
                     <div
                       v-else
@@ -631,7 +631,6 @@
             category: null,
             availableTags: [],
             expanded: [],
-            iconError: [],
             officialFilter: [],
             activeClass:
               "block w-full text-left text-white bg-black px-3 py-1.5 rounded",
@@ -706,7 +705,6 @@
             .then((r) => {
               this.servers = r.data;
               this.expanded = Array(this.servers.length).fill(false);
-              this.iconError = Array(this.servers.length).fill(false);
               const t = new Set();
               this.servers.forEach((s) => s.tags?.forEach((x) => t.add(x)));
               this.availableTags = [...t].sort();
@@ -726,6 +724,7 @@
                 return {
                   ...server,
                   iconUrl,
+                  _iconError: false,
                 };
               });
             })
