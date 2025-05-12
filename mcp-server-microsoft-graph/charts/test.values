@@ -1,0 +1,18 @@
+env:
+
+secrets:
+  MCP_SERVER_MICROSOFT_GRAPH_TENANT_ID:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  MCP_SERVER_MICROSOFT_GRAPH_CLIENT_ID:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  MCP_SERVER_MICROSOFT_GRAPH_CLIENT_SECRET:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

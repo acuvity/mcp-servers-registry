@@ -1,0 +1,22 @@
+apiVersion: v2
+name: "mcp-server-microsoft"
+description: A Helm chart for Connect to microsoft API to get applications, sites users and more.
+home: https://github.com/acuvity/mcp-server-microsoft-graph
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/acuvity/mcp-server-microsoft-graph
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 1.0.0
+keywords:
+  - mcp-server-microsoft
+  - mcp-server
+  - remote
+  - development
+  - automation
+  - integration
+  - cloud

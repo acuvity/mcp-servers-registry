@@ -1,0 +1,21 @@
+{
+  "id": "mcp-server-microsoft-graph",
+  "name": "mcp-server-microsoft-graph ",
+  "description": "Connect to microsoft API to get applications, sites users and more.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-microsoft-graph",
+      "application": "https://github.com/acuvity/mcp-server-microsoft-graph"
+    },
+  "tags": ["development","automation","integration","cloud"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": false,
+  "runtime": "binary",
+  "version": "1.0.1",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "nil",
+  "resources": {
+  }
+}
