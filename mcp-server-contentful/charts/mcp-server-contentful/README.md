@@ -20,16 +20,22 @@
 
 # What is mcp-server-contentful?
 
+[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-contentful/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-contentful/1.13.1?logo=docker&logoColor=fff&label=1.13.1)](https://hub.docker.com/r/acuvity/mcp-server-contentful)
-[![PyPI](https://img.shields.io/badge/1.13.1-3775A9?logo=pypi&logoColor=fff&label=@ivotoby/contentful-management-mcp-server)](https://github.com/ivo-toby/contentful-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-contentful/1.16.1?logo=docker&logoColor=fff&label=1.16.1)](https://hub.docker.com/r/acuvity/mcp-server-contentful)
+[![PyPI](https://img.shields.io/badge/1.16.1-3775A9?logo=pypi&logoColor=fff&label=@ivotoby/contentful-management-mcp-server)](https://github.com/ivo-toby/contentful-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-contentful&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CONTENTFUL_MANAGEMENT_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-contentful%3A1.13.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-contentful&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CONTENTFUL_MANAGEMENT_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-contentful%3A1.16.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Update, create, delete content, content-models and assets in your Contentful Space.
 
-> [!NOTE]
-> `mcp-server-contentful` has been packaged by Acuvity from @ivotoby/contentful-management-mcp-server original [sources](https://github.com/ivo-toby/contentful-mcp).
+Packaged by Acuvity from @ivotoby/contentful-management-mcp-server original [sources](https://github.com/ivo-toby/contentful-mcp).
+
+**Quick links:**
+
+- [Integrate with your IDE](https://github.com/acuvity/mcp-servers-registry/blob/main/mcp-server-contentful/docker/README.md#-clients-integrations)
+- [Install with Docker](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-contentful/docker/README.md#-run-it-with-docker)
+- [Install with Helm](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-contentful/charts/mcp-server-contentful/README.md#how-to-install)
 
 # Why We Built This
 
@@ -54,7 +60,7 @@ To address this need, we've created a secure and robust Docker image designed to
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a built-in Rego policy that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-contentful/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
 ### 🔒 Resource Integrity
 
@@ -119,7 +125,7 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 </details>
 
 > [!NOTE]
-> All guardrails start disabled. You can switch each one on or off individually, so you only activate the protections your environment requires.
+> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active. To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-contentful/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-contentful/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-contentful/charts/mcp-server-contentful#minibridge) for Helm charts).
 
 
 # Quick reference
@@ -146,7 +152,7 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-1.13.1`
+  - container: `1.0.0-1.16.1`
 
 ---
 
@@ -617,7 +623,7 @@ Search for entries using query parameters. Returns a maximum of 3 items per requ
 **Description**:
 
 ```
-Create a new entry in Contentful, before executing this function, you need to know the contentTypeId (not the content type NAME) and the fields of that contentType, you can get the fields definition by using the GET_CONTENT_TYPE tool. 
+Create a new entry in Contentful. Before executing this function, you need to know the contentTypeId (not the content type NAME) and the fields of that contentType. You can get the fields definition by using the GET_CONTENT_TYPE tool. IMPORTANT: All field values MUST include a locale key (e.g., 'en-US') for each value, like: { title: { 'en-US': 'My Title' } }. Every field in Contentful requires a locale even for single-language content.
 ```
 
 **Parameter**:
@@ -626,7 +632,7 @@ Create a new entry in Contentful, before executing this function, you need to kn
 |-----------|------|-------------|-----------|
 | contentTypeId | string | The ID of the content type for the new entry | Yes
 | environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
-| fields | object | The fields of the entry | Yes
+| fields | object | The fields of the entry with localized values. Example: { title: { 'en-US': 'My Title' }, description: { 'en-US': 'My Description' } } | Yes
 | spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
 </details>
 <details>
@@ -652,7 +658,7 @@ Retrieve an existing entry
 **Description**:
 
 ```
-Update an existing entry, very important: always send all field values and all values related to locales, also the fields values that have not been updated
+Update an existing entry. The handler will merge your field updates with the existing entry fields, so you only need to provide the fields and locales you want to change. IMPORTANT: All field values MUST include a locale key (e.g., 'en-US') for each value, like: { title: { 'en-US': 'My Updated Title' } }. Every field in Contentful requires a locale even for single-language content.
 ```
 
 **Parameter**:
@@ -661,7 +667,7 @@ Update an existing entry, very important: always send all field values and all v
 |-----------|------|-------------|-----------|
 | entryId | string | not set | Yes
 | environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
-| fields | object | not set | Yes
+| fields | object | The fields to update with localized values. Example: { title: { 'en-US': 'My Updated Title' } } | Yes
 | spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
 </details>
 <details>
@@ -901,7 +907,7 @@ Create a new content type
 **Description**:
 
 ```
-Update an existing content type
+Update an existing content type. The handler will merge your field updates with existing content type data, so you only need to provide the fields and properties you want to change.
 ```
 
 **Parameter**:
@@ -913,7 +919,7 @@ Update an existing content type
 | displayField | string | not set | No
 | environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
 | fields | array | not set | Yes
-| name | string | not set | Yes
+| name | string | not set | No
 | spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
 </details>
 <details>
@@ -1478,10 +1484,10 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | create_content_type | environmentId | 96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96 |
 | tools | create_content_type | fields | 7e77d1884050a7aa4e0929815065ae045983a263c6ead31e28a0b28f1f1b7eaa |
 | tools | create_content_type | spaceId | b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47 |
-| tools | create_entry | description | c1aae970359d9d305f7c2406cf750ab0a2ab8e175ed5f8b96c1e24eaff2c437d |
+| tools | create_entry | description | d1687108b7c99d63382fb9b55331150091da8baaa9d9763ec35d0d2c8ed998ea |
 | tools | create_entry | contentTypeId | 957e01d15b8b4bb3a68264cc2127b3cbcfd6da3ed8cb2d7a82a9d86834d2e592 |
 | tools | create_entry | environmentId | 96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96 |
-| tools | create_entry | fields | 992f0a1f879b5f76a0f218fc9c008340914f9d07ef29d35968ed952250d22338 |
+| tools | create_entry | fields | 33f63ffca8ba8a642db0188cf77a8ed907bb45c8a601d2325fa4cf01c9d3e057 |
 | tools | create_entry | spaceId | b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47 |
 | tools | create_environment | description | 82054b8ea3438535752e8a25bd56d0d23d304f8922bbcf9cd1905c0b5cd8cb12 |
 | tools | delete_ai_action | description | acecc366a1002d97e05ae5a4223a9cdff1fc5ca008c5b99df0deeb9ef15c403c |
@@ -1584,11 +1590,12 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | update_asset | description | 6e3aa72f38e0036da9795b34fb5fca4838d8fac910dbee7cb4560eddd1262825 |
 | tools | update_asset | environmentId | 96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96 |
 | tools | update_asset | spaceId | b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47 |
-| tools | update_content_type | description | dddc16016803deac06cd0b00cfb46199ec5bb4838e3a57dbdc317e367d801667 |
+| tools | update_content_type | description | dff46c3db47453975594cec480c7a7fa4c679f1951bedf413f43c1760b58a880 |
 | tools | update_content_type | environmentId | 96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96 |
 | tools | update_content_type | spaceId | b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47 |
-| tools | update_entry | description | c37726ed20c49012efeeeb182da909b70f80b1ec7dbf99d637988c55f8a4f1af |
+| tools | update_entry | description | 15617674da9c17fdf452373e15b9e42260a7d84b0779b0afc62d42534d2a13e0 |
 | tools | update_entry | environmentId | 96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96 |
+| tools | update_entry | fields | 9f28607eac1f0d0e703890346919c6a3a77606537131e5d9d52b78f95cf68d7f |
 | tools | update_entry | spaceId | b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47 |
 | tools | upload_asset | description | d74192920518f1dd41465b2fded572980e31c111e90879ceb5ec5d4453e617fe |
 | tools | upload_asset | environmentId | 96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96 |

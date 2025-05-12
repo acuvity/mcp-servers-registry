@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-circleci"
 LABEL org.opencontainers.image.description="Enable AI Agents to fix build failures from CircleCI."
-LABEL org.opencontainers.image.version="0.4.4"
+LABEL org.opencontainers.image.version="0.5.1"
 LABEL org.opencontainers.image.source="https://github.com/CircleCI-Public/mcp-server-circleci"
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 LABEL org.opencontainers.image.author="Author"
@@ -37,7 +37,7 @@ RUN addgroup -g 1001 -S appuser && \
 
 USER appuser
 
-RUN npm i --omit-dev @circleci/mcp-server-circleci@0.4.4
+RUN npm i --omit-dev @circleci/mcp-server-circleci@0.5.1
 
 EXPOSE 8000/tcp
 

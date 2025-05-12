@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-contentful"
 LABEL org.opencontainers.image.description="Update, create, delete content, content-models and assets in your Contentful Space."
-LABEL org.opencontainers.image.version="1.13.1"
+LABEL org.opencontainers.image.version="1.16.1"
 LABEL org.opencontainers.image.source="https://github.com/ivo-toby/contentful-mcp"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="Author"
@@ -37,7 +37,7 @@ RUN addgroup -g 1001 -S appuser && \
 
 USER appuser
 
-RUN npm i --omit-dev @ivotoby/contentful-management-mcp-server@1.13.1
+RUN npm i --omit-dev @ivotoby/contentful-management-mcp-server@1.16.1
 
 EXPOSE 8000/tcp
 

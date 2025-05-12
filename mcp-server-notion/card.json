@@ -8,11 +8,11 @@
       "application": "https://github.com/makenotion/notion-mcp-server"
     },
   "tags": ["integration","research","development","database"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "rating": "D",

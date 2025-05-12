@@ -8,16 +8,16 @@
       "application": "https://github.com/CircleCI-Public/mcp-server-circleci"
     },
   "tags": ["development"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.4.4",
+  "version": "0.5.1",
   "requiresConfiguration": false,
   "requiresStorage": false,
   "rating": "B",
   "resources": {
-    "tools": 7,
+    "tools": 8,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

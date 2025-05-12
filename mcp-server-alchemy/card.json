@@ -8,7 +8,7 @@
       "application": "https://github.com/alchemyplatform/alchemy-mcp-server"
     },
   "tags": ["web","integration","finance"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",

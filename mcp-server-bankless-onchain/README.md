@@ -20,6 +20,7 @@
 
 # What is mcp-server-bankless-onchain?
 
+[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-bankless-onchain/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-bankless-onchain/1.0.6?logo=docker&logoColor=fff&label=1.0.6)](https://hub.docker.com/r/acuvity/mcp-server-bankless-onchain)
 [![PyPI](https://img.shields.io/badge/1.0.6-3775A9?logo=pypi&logoColor=fff&label=@bankless/onchain-mcp)](https://bankless.com)
@@ -28,8 +29,13 @@
 
 **Description:** Query Onchain data, like ERC20 tokens, transaction history, smart contract state.
 
-> [!NOTE]
-> `mcp-server-bankless-onchain` has been packaged by Acuvity from @bankless/onchain-mcp original [sources](https://bankless.com).
+Packaged by Acuvity from @bankless/onchain-mcp original [sources](https://bankless.com).
+
+**Quick links:**
+
+- [Integrate with your IDE](https://github.com/acuvity/mcp-servers-registry/blob/main/mcp-server-bankless-onchain/docker/README.md#-clients-integrations)
+- [Install with Docker](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-bankless-onchain/docker/README.md#-run-it-with-docker)
+- [Install with Helm](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-bankless-onchain/charts/mcp-server-bankless-onchain/README.md#how-to-install)
 
 # Why We Built This
 
@@ -54,7 +60,7 @@ To address this need, we've created a secure and robust Docker image designed to
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a built-in Rego policy that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-bankless-onchain/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
 ### 🔒 Resource Integrity
 
@@ -119,13 +125,13 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 </details>
 
 > [!NOTE]
-> All guardrails start disabled. You can switch each one on or off individually, so you only activate the protections your environment requires.
+> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active. To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-bankless-onchain/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-bankless-onchain/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-bankless-onchain/charts/mcp-server-bankless-onchain#minibridge) for Helm charts).
 
 
-# 📦 How to Use
+# 📦 How to Install
 
 
-> [!NOTE]
+> [!TIP]
 > Given mcp-server-bankless-onchain scope of operation it can be hosted anywhere.
 
 # 🧰 Clients Integrations

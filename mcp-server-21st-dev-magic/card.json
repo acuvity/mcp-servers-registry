@@ -8,7 +8,7 @@
       "application": "https://github.com/21st-dev/magic-mcp"
     },
   "tags": ["development"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",

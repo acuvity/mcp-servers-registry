@@ -8,7 +8,7 @@
       "application": "https://github.com/graphlit/graphlit-mcp-server"
     },
   "tags": ["research","integration","web","cloud"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",

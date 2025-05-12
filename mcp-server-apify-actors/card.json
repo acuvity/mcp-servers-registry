@@ -8,7 +8,7 @@
       "application": "https://github.com/apify/actors-mcp-server"
     },
   "tags": ["integration","web","research","development"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",

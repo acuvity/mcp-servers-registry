@@ -17,7 +17,7 @@ LABEL org.opencontainers.image.title="mcp-server-chronulus-ai"
 LABEL org.opencontainers.image.description="Predict anything with Chronulus AI forecasting and prediction agents."
 LABEL org.opencontainers.image.version="0.0.3"
 LABEL org.opencontainers.image.source="https://github.com/ChronulusAI/chronulus-mcp"
-LABEL org.opencontainers.image.licenses="unknown"
+LABEL org.opencontainers.image.licenses="nil"
 LABEL org.opencontainers.image.author="Chronulus AI <jeremy@chronulus.com>"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 

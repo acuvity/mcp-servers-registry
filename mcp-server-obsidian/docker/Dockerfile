@@ -17,7 +17,7 @@ LABEL org.opencontainers.image.title="mcp-server-obsidian"
 LABEL org.opencontainers.image.description="Interacting with Obsidian via REST API."
 LABEL org.opencontainers.image.version="0.2.2"
 LABEL org.opencontainers.image.source="https://github.com/MarkusPfundstein/mcp-obsidian"
-LABEL org.opencontainers.image.licenses="unknown"
+LABEL org.opencontainers.image.licenses="nil"
 LABEL org.opencontainers.image.author="Markus Pfundstein <markus@life-electronic.nl>"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 

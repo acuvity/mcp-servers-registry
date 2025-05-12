@@ -59,6 +59,12 @@ _sensitive_patterns := [
 	"id_(rsa|ecdsa)\\b",
 	"\\.\\./",
 	`(\\xF3\\xA0[\\x80-\\x81][\\x80-\\xBF]){15,}`,
+	`http:\/\/169\.254\.169\.254\/latest\/meta-data\/iam\/security-credentials(?:\/[\w\-]+)?`,
+	`http:\/\/169\.254\.169\.254\/computeMetadata\/v1\/instance\/service-accounts\/(?:default|[\w\-]+)\/token`,
+	`http:\/\/169\.254\.169\.254\/metadata\/identity\/oauth2\/token\?[^ ]*`,
+	`http:\/\/100\.100\.100\.200\/latest\/meta-data\/ram\/security-credentials(?:\/[\w\-]+)?`,
+	`http:\/\/169\.254\.169\.254\/instance_identity\/v1\/token`,
+	`http:\/\/169\.254\.169\.254\/opc\/v1\/instance\/`,
 ]
 
 _shadowing_patterns := [
@@ -217,7 +223,7 @@ reasons contains msg if {
 reasons contains msg if {
 	"schema-misuse-prevention" in active_guardrails
 	some tool in input.mcp.result.tools
-	some prop in tool.inputSchema.properties
+	some prop, _ in tool.inputSchema.properties
 	lower(prop) in _schema_keys
 	msg = sprintf("schema parameter misuse in tool %v: %v", [tool.name, prop])
 }
@@ -262,7 +268,7 @@ reasons contains msg if {
 reasons contains msg if {
 	"schema-misuse-prevention" in active_guardrails
 	input.mcp.method == "tools/call"
-	some arg_name in input.mcp.params.arguments
+	some arg_name, _ in input.mcp.params.arguments
 	lower(arg_name) in _schema_keys
 	msg = sprintf("schema parameter misuse in call args: %v", [arg_name])
 }
@@ -298,7 +304,7 @@ reasons contains msg if {
 reasons contains msg if {
 	"schema-misuse-prevention" in active_guardrails
 	some element in input.mcp.result.content
-	some arg_name in element
+	some arg_name, _ in element
 	lower(arg_name) in _schema_keys
 	msg = sprintf("schema parameter misuse in call response: %v", [arg_name])
 }

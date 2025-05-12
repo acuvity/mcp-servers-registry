@@ -8,7 +8,7 @@
       "application": "https://github.com/awslabs/mcp/tree/main/src/lambda-mcp-server"
     },
   "tags": ["integration","cloud"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",

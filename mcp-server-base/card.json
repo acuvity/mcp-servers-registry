@@ -8,7 +8,7 @@
       "application": "https://github.com/base/base-mcp"
     },
   "tags": ["integration","finance"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": false,
   "runtime": "node",

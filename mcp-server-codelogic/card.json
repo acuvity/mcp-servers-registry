@@ -8,7 +8,7 @@
       "application": "https://github.com/CodeLogicIncEngineering/codelogic-mcp-server"
     },
   "tags": ["integration","development","database"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",

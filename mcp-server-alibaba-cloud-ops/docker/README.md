@@ -20,16 +20,22 @@
 
 # What is mcp-server-alibaba-cloud-ops?
 
+[![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-alibaba-cloud-ops/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-alibaba-cloud-ops/0.8.2?logo=docker&logoColor=fff&label=0.8.2)](https://hub.docker.com/r/acuvity/mcp-server-alibaba-cloud-ops)
-[![PyPI](https://img.shields.io/badge/0.8.2-3775A9?logo=pypi&logoColor=fff&label=alibaba-cloud-ops-mcp-server)](https://github.com/aliyun/alibaba-cloud-ops-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-alibaba-cloud-ops/0.8.3?logo=docker&logoColor=fff&label=0.8.3)](https://hub.docker.com/r/acuvity/mcp-server-alibaba-cloud-ops)
+[![PyPI](https://img.shields.io/badge/0.8.3-3775A9?logo=pypi&logoColor=fff&label=alibaba-cloud-ops-mcp-server)](https://github.com/aliyun/alibaba-cloud-ops-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-alibaba-cloud-ops&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22ALIBABA_CLOUD_ACCESS_KEY_ID%22%2C%22-e%22%2C%22ALIBABA_CLOUD_ACCESS_KEY_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-alibaba-cloud-ops%3A0.8.2%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-alibaba-cloud-ops&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22ALIBABA_CLOUD_ACCESS_KEY_ID%22%2C%22-e%22%2C%22ALIBABA_CLOUD_ACCESS_KEY_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-alibaba-cloud-ops%3A0.8.3%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Alibaba Cloud integration, supporting ECS, Cloud Monitor, OOS and widely used cloud products.
 
-> [!NOTE]
-> `mcp-server-alibaba-cloud-ops` has been packaged by Acuvity from alibaba-cloud-ops-mcp-server original [sources](https://github.com/aliyun/alibaba-cloud-ops-mcp-server).
+Packaged by Acuvity from alibaba-cloud-ops-mcp-server original [sources](https://github.com/aliyun/alibaba-cloud-ops-mcp-server).
+
+**Quick links:**
+
+- [Integrate with your IDE](https://github.com/acuvity/mcp-servers-registry/blob/main/mcp-server-alibaba-cloud-ops/docker/README.md#-clients-integrations)
+- [Install with Docker](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-alibaba-cloud-ops/docker/README.md#-run-it-with-docker)
+- [Install with Helm](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-alibaba-cloud-ops/charts/mcp-server-alibaba-cloud-ops/README.md#how-to-install)
 
 # Why We Built This
 
@@ -54,7 +60,7 @@ To address this need, we've created a secure and robust Docker image designed to
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a built-in Rego policy that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-alibaba-cloud-ops/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
 ### 🔒 Resource Integrity
 
@@ -119,7 +125,7 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 </details>
 
 > [!NOTE]
-> All guardrails start disabled. You can switch each one on or off individually, so you only activate the protections your environment requires.
+> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active. To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-alibaba-cloud-ops/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-alibaba-cloud-ops/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-alibaba-cloud-ops/charts/mcp-server-alibaba-cloud-ops#minibridge) for Helm charts).
 
 
 # Quick reference
@@ -149,13 +155,13 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
   - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-alibaba-cloud-ops/docker/Dockerfile)
 
 **Latest tags:**
-  - `latest` -> `1.0.0-0.8.2` -> `0.8.2`
+  - `latest` -> `1.0.0-0.8.3` -> `0.8.3`
   - [older tags](https://hub.docker.com/r/acuvity/mcp-server-alibaba-cloud-ops/tags)
 
-# 📦 How to Use
+# 📦 How to Install
 
 
-> [!NOTE]
+> [!TIP]
 > Given mcp-server-alibaba-cloud-ops scope of operation it can be hosted anywhere.
 
 # 🧰 Clients Integrations
@@ -171,7 +177,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-alibaba-cloud-ops&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22ALIBABA_CLOUD_ACCESS_KEY_ID%22%2C%22-e%22%2C%22ALIBABA_CLOUD_ACCESS_KEY_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-alibaba-cloud-ops%3A0.8.2%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-alibaba-cloud-ops&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22ALIBABA_CLOUD_ACCESS_KEY_ID%22%2C%22-e%22%2C%22ALIBABA_CLOUD_ACCESS_KEY_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-alibaba-cloud-ops%3A0.8.3%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -196,7 +202,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "ALIBABA_CLOUD_ACCESS_KEY_ID",
           "-e",
           "ALIBABA_CLOUD_ACCESS_KEY_SECRET",
-          "docker.io/acuvity/mcp-server-alibaba-cloud-ops:0.8.2"
+          "docker.io/acuvity/mcp-server-alibaba-cloud-ops:0.8.3"
         ]
       }
     }
@@ -226,7 +232,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "ALIBABA_CLOUD_ACCESS_KEY_ID",
         "-e",
         "ALIBABA_CLOUD_ACCESS_KEY_SECRET",
-        "docker.io/acuvity/mcp-server-alibaba-cloud-ops:0.8.2"
+        "docker.io/acuvity/mcp-server-alibaba-cloud-ops:0.8.3"
       ]
     }
   }
@@ -260,7 +266,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "ALIBABA_CLOUD_ACCESS_KEY_ID",
         "-e",
         "ALIBABA_CLOUD_ACCESS_KEY_SECRET",
-        "docker.io/acuvity/mcp-server-alibaba-cloud-ops:0.8.2"
+        "docker.io/acuvity/mcp-server-alibaba-cloud-ops:0.8.3"
       ]
     }
   }
@@ -296,7 +302,7 @@ Add the following JSON block to your mcp configuration file:
         "ALIBABA_CLOUD_ACCESS_KEY_ID",
         "-e",
         "ALIBABA_CLOUD_ACCESS_KEY_SECRET",
-        "docker.io/acuvity/mcp-server-alibaba-cloud-ops:0.8.2"
+        "docker.io/acuvity/mcp-server-alibaba-cloud-ops:0.8.3"
       ]
     }
   }
@@ -330,7 +336,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "ALIBABA_CLOUD_ACCESS_KEY_ID",
         "-e",
         "ALIBABA_CLOUD_ACCESS_KEY_SECRET",
-        "docker.io/acuvity/mcp-server-alibaba-cloud-ops:0.8.2"
+        "docker.io/acuvity/mcp-server-alibaba-cloud-ops:0.8.3"
       ]
     }
   }
@@ -350,7 +356,7 @@ async with MCPServerStdio(
     params={
         "env": {"ALIBABA_CLOUD_ACCESS_KEY_ID":"TO_BE_SET","ALIBABA_CLOUD_ACCESS_KEY_SECRET":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","ALIBABA_CLOUD_ACCESS_KEY_ID","-e","ALIBABA_CLOUD_ACCESS_KEY_SECRET","docker.io/acuvity/mcp-server-alibaba-cloud-ops:0.8.2"]
+        "args": ["run","-i","--rm","--read-only","-e","ALIBABA_CLOUD_ACCESS_KEY_ID","-e","ALIBABA_CLOUD_ACCESS_KEY_SECRET","docker.io/acuvity/mcp-server-alibaba-cloud-ops:0.8.3"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -384,7 +390,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e ALIBABA_CLOUD_ACCESS_KEY_ID -e ALIBABA_CLOUD_ACCESS_KEY_SECRET docker.io/acuvity/mcp-server-alibaba-cloud-ops:0.8.2`
+- arguments: `run -i --rm --read-only -e ALIBABA_CLOUD_ACCESS_KEY_ID -e ALIBABA_CLOUD_ACCESS_KEY_SECRET docker.io/acuvity/mcp-server-alibaba-cloud-ops:0.8.3`
 
 </details>
 
@@ -394,7 +400,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -i --rm --read-only -e ALIBABA_CLOUD_ACCESS_KEY_ID -e ALIBABA_CLOUD_ACCESS_KEY_SECRET docker.io/acuvity/mcp-server-alibaba-cloud-ops:0.8.2
+docker run -i --rm --read-only -e ALIBABA_CLOUD_ACCESS_KEY_ID -e ALIBABA_CLOUD_ACCESS_KEY_SECRET docker.io/acuvity/mcp-server-alibaba-cloud-ops:0.8.3
 ```
 
 Add `-p <localport>:8000` to expose the port.

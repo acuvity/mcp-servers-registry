@@ -8,7 +8,7 @@
       "application": "https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server"
     },
   "tags": ["research","cloud"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",

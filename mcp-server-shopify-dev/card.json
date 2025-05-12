@@ -8,7 +8,7 @@
       "application": "https://github.com/Shopify/dev-mcp"
     },
   "tags": ["integration","research","integration"],
-  "official": false,
+  "official": true,
   "scope": "standalone",
   "mutitenant": true,
   "runtime": "node",

@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-aws-cost-analysis"
 LABEL org.opencontainers.image.description="Analyze CDK projects to identify AWS services used and get pricing information."
-LABEL org.opencontainers.image.version="0.1.9"
+LABEL org.opencontainers.image.version="0.1.10"
 LABEL org.opencontainers.image.source="https://pypi.org/project/awslabs.cost-analysis-mcp-server/"
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 LABEL org.opencontainers.image.author="AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com>"
@@ -43,7 +43,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uname -sm &&  uv venv && uv pip install awslabs.cost-analysis-mcp-server==0.1.9
+RUN uname -sm &&  uv venv && uv pip install awslabs.cost-analysis-mcp-server==0.1.10
 
 EXPOSE 8000/tcp
 

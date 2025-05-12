@@ -38,8 +38,8 @@ export REGO_POLICY_RUNTIME_GUARDRAILS="$GUARDRAILS"
 export REGO_POLICY_RUNTIME_BASIC_AUTH_SECRET="$BASIC_AUTH_SECRET"
 
 if [ "$#" -gt 0 ]; then
-  exec minibridge ${MINIBRIDGE_MODE} -- mcp-server-contentful "$@"
+  exec minibridge ${MINIBRIDGE_MODE} -- contentful-mcp "$@"
 else
-  exec minibridge ${MINIBRIDGE_MODE} -- mcp-server-contentful
+  exec minibridge ${MINIBRIDGE_MODE} -- contentful-mcp
 fi
 

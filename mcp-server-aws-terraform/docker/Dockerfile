@@ -17,7 +17,7 @@ LABEL org.opencontainers.image.title="mcp-server-aws-terraform"
 LABEL org.opencontainers.image.description="Terraform AWS best practices, infrastructure as code patterns, and security compliance with Checkov."
 LABEL org.opencontainers.image.version="0.0.10"
 LABEL org.opencontainers.image.source="https://github.com/awslabs/mcp/tree/main/src/terraform-mcp-server"
-LABEL org.opencontainers.image.licenses="unknown"
+LABEL org.opencontainers.image.licenses="nil"
 LABEL org.opencontainers.image.author="Author"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 

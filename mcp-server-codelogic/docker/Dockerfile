@@ -17,7 +17,7 @@ LABEL org.opencontainers.image.title="mcp-server-codelogic"
 LABEL org.opencontainers.image.description="CodeLogic, provides access to code dependency analytics, risk analysis, and impact assessment."
 LABEL org.opencontainers.image.version="1.0.2"
 LABEL org.opencontainers.image.source="https://github.com/CodeLogicIncEngineering/codelogic-mcp-server"
-LABEL org.opencontainers.image.licenses="unknown"
+LABEL org.opencontainers.image.licenses="nil"
 LABEL org.opencontainers.image.author="garrmark <mgarrison@codelogic.com>"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 

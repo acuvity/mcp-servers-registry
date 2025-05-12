@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-aws-core"
 LABEL org.opencontainers.image.description="Core AWS MCP server providing prompt understanding and server management capabilities."
-LABEL org.opencontainers.image.version="0.2.3"
+LABEL org.opencontainers.image.version="0.2.4"
 LABEL org.opencontainers.image.source="https://pypi.org/project/awslabs.core-mcp-server/"
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 LABEL org.opencontainers.image.author="AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com>, Paul Vincent <44383239+PaulVincent707@users.noreply.github.com>"
@@ -43,7 +43,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uname -sm &&  uv venv && uv pip install awslabs.core-mcp-server==0.2.3
+RUN uname -sm &&  uv venv && uv pip install awslabs.core-mcp-server==0.2.4
 
 EXPOSE 8000/tcp
 

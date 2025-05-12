@@ -20,21 +20,27 @@
 
 # What is mcp-server-browserbase?
 
+[![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-browserbase/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-browserbase/0.5.1?logo=docker&logoColor=fff&label=0.5.1)](https://hub.docker.com/r/acuvity/mcp-server-browserbase)
-[![PyPI](https://img.shields.io/badge/0.5.1-3775A9?logo=pypi&logoColor=fff&label=@browserbasehq/mcp-browserbase)](https://github.com/browserbase/mcp-server-browserbase)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-browserbase/1.0.4?logo=docker&logoColor=fff&label=1.0.4)](https://hub.docker.com/r/acuvity/mcp-server-browserbase)
+[![PyPI](https://img.shields.io/badge/1.0.4-3775A9?logo=pypi&logoColor=fff&label=@browserbasehq/mcp)](https://github.com/browserbase/mcp-server-browserbase)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-browserbase&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22BROWSERBASE_API_KEY%22%2C%22-e%22%2C%22BROWSERBASE_PROJECT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-browserbase%3A0.5.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-browserbase&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22BROWSERBASE_API_KEY%22%2C%22-e%22%2C%22BROWSERBASE_PROJECT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-browserbase%3A1.0.4%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Automate browser interactions in the cloud (e.g. web navigation, data extraction, form filling).
 
-> [!NOTE]
-> `mcp-server-browserbase` has been packaged by Acuvity from @browserbasehq/mcp-browserbase original [sources](https://github.com/browserbase/mcp-server-browserbase).
+Packaged by Acuvity from @browserbasehq/mcp original [sources](https://github.com/browserbase/mcp-server-browserbase).
+
+**Quick links:**
+
+- [Integrate with your IDE](https://github.com/acuvity/mcp-servers-registry/blob/main/mcp-server-browserbase/docker/README.md#-clients-integrations)
+- [Install with Docker](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-browserbase/docker/README.md#-run-it-with-docker)
+- [Install with Helm](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-browserbase/charts/mcp-server-browserbase/README.md#how-to-install)
 
 # Why We Built This
 
 At [Acuvity](https://acuvity.ai), security is central to our mission—especially for critical systems like MCP servers and integration in agentic systems.
-To address this need, we've created a secure and robust Docker image designed to ensure @browserbasehq/mcp-browserbase run reliably and safely.
+To address this need, we've created a secure and robust Docker image designed to ensure @browserbasehq/mcp run reliably and safely.
 
 ## 🔐 Key Security Features
 
@@ -54,7 +60,7 @@ To address this need, we've created a secure and robust Docker image designed to
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a built-in Rego policy that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-browserbase/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
 ### 🔒 Resource Integrity
 
@@ -119,13 +125,13 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 </details>
 
 > [!NOTE]
-> All guardrails start disabled. You can switch each one on or off individually, so you only activate the protections your environment requires.
+> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active. To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-browserbase/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-browserbase/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-browserbase/charts/mcp-server-browserbase#minibridge) for Helm charts).
 
 
-# 📦 How to Use
+# 📦 How to Install
 
 
-> [!NOTE]
+> [!TIP]
 > Given mcp-server-browserbase scope of operation it can be hosted anywhere.
 
 # 🧰 Clients Integrations
@@ -141,7 +147,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-browserbase&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22BROWSERBASE_API_KEY%22%2C%22-e%22%2C%22BROWSERBASE_PROJECT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-browserbase%3A0.5.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-browserbase&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22BROWSERBASE_API_KEY%22%2C%22-e%22%2C%22BROWSERBASE_PROJECT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-browserbase%3A1.0.4%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -166,7 +172,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "BROWSERBASE_API_KEY",
           "-e",
           "BROWSERBASE_PROJECT_ID",
-          "docker.io/acuvity/mcp-server-browserbase:0.5.1"
+          "docker.io/acuvity/mcp-server-browserbase:1.0.4"
         ]
       }
     }
@@ -196,7 +202,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "BROWSERBASE_API_KEY",
         "-e",
         "BROWSERBASE_PROJECT_ID",
-        "docker.io/acuvity/mcp-server-browserbase:0.5.1"
+        "docker.io/acuvity/mcp-server-browserbase:1.0.4"
       ]
     }
   }
@@ -230,7 +236,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "BROWSERBASE_API_KEY",
         "-e",
         "BROWSERBASE_PROJECT_ID",
-        "docker.io/acuvity/mcp-server-browserbase:0.5.1"
+        "docker.io/acuvity/mcp-server-browserbase:1.0.4"
       ]
     }
   }
@@ -266,7 +272,7 @@ Add the following JSON block to your mcp configuration file:
         "BROWSERBASE_API_KEY",
         "-e",
         "BROWSERBASE_PROJECT_ID",
-        "docker.io/acuvity/mcp-server-browserbase:0.5.1"
+        "docker.io/acuvity/mcp-server-browserbase:1.0.4"
       ]
     }
   }
@@ -300,7 +306,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "BROWSERBASE_API_KEY",
         "-e",
         "BROWSERBASE_PROJECT_ID",
-        "docker.io/acuvity/mcp-server-browserbase:0.5.1"
+        "docker.io/acuvity/mcp-server-browserbase:1.0.4"
       ]
     }
   }
@@ -320,7 +326,7 @@ async with MCPServerStdio(
     params={
         "env": {"BROWSERBASE_API_KEY":"TO_BE_SET","BROWSERBASE_PROJECT_ID":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","BROWSERBASE_API_KEY","-e","BROWSERBASE_PROJECT_ID","docker.io/acuvity/mcp-server-browserbase:0.5.1"]
+        "args": ["run","-i","--rm","--read-only","-e","BROWSERBASE_API_KEY","-e","BROWSERBASE_PROJECT_ID","docker.io/acuvity/mcp-server-browserbase:1.0.4"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -354,7 +360,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e BROWSERBASE_API_KEY -e BROWSERBASE_PROJECT_ID docker.io/acuvity/mcp-server-browserbase:0.5.1`
+- arguments: `run -i --rm --read-only -e BROWSERBASE_API_KEY -e BROWSERBASE_PROJECT_ID docker.io/acuvity/mcp-server-browserbase:1.0.4`
 
 </details>
 
@@ -364,7 +370,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -i --rm --read-only -e BROWSERBASE_API_KEY -e BROWSERBASE_PROJECT_ID docker.io/acuvity/mcp-server-browserbase:0.5.1
+docker run -i --rm --read-only -e BROWSERBASE_API_KEY -e BROWSERBASE_PROJECT_ID docker.io/acuvity/mcp-server-browserbase:1.0.4
 ```
 
 Add `-p <localport>:8000` to expose the port.
@@ -491,14 +497,60 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (8)
+## 🧰 Tools (19)
 <details>
-<summary>browserbase_create_session</summary>
+<summary>browserbase_wait</summary>
 
 **Description**:
 
 ```
-Create a new cloud browser session using Browserbase
+Wait for a specified time in seconds
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| time | number | Time in seconds | Yes
+</details>
+<details>
+<summary>browserbase_close</summary>
+
+**Description**:
+
+```
+Close the current page...
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| random_string | string | Dummy parameter | No
+</details>
+<details>
+<summary>browserbase_resize</summary>
+
+**Description**:
+
+```
+Resize window...
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| height | number | not set | Yes
+| width | number | not set | Yes
+</details>
+<details>
+<summary>browserbase_snapshot</summary>
+
+**Description**:
+
+```
+Capture a new accessibility snapshot of the current page state. Use this if the page has changed to ensure subsequent actions use an up-to-date page representation.
 ```
 
 **Parameter**:
@@ -507,19 +559,138 @@ Create a new cloud browser session using Browserbase
 |-----------|------|-------------|-----------|
 </details>
 <details>
-<summary>browserbase_close_session</summary>
+<summary>browserbase_click</summary>
 
 **Description**:
 
 ```
-Close a browser session on Browserbase
+Perform click on a web page using ref
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| sessionId | string | not set | Yes
+| element | string | Human-readable element description | Yes
+| ref | string | Exact target element reference from the page snapshot | Yes
+</details>
+<details>
+<summary>browserbase_drag</summary>
+
+**Description**:
+
+```
+Perform drag and drop between two elements using ref.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| endElement | string | Target element description | Yes
+| endRef | string | Exact target element reference from the page snapshot | Yes
+| startElement | string | Source element description | Yes
+| startRef | string | Exact source element reference from the page snapshot | Yes
+</details>
+<details>
+<summary>browserbase_hover</summary>
+
+**Description**:
+
+```
+Hover over element on page using ref.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| element | string | Human-readable element description | Yes
+| ref | string | Exact target element reference from the page snapshot | Yes
+</details>
+<details>
+<summary>browserbase_type</summary>
+
+**Description**:
+
+```
+Type text into editable element using ref.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| element | string | Human-readable element description | Yes
+| ref | string | Exact target element reference from the page snapshot | Yes
+| slowly | boolean | Whether to type one character at a time. | No
+| submit | boolean | Whether to submit entered text (press Enter after) | No
+| text | string | Text to type into the element | Yes
+</details>
+<details>
+<summary>browserbase_select_option</summary>
+
+**Description**:
+
+```
+Select an option in a dropdown using ref.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| element | string | Human-readable element description | Yes
+| ref | string | Exact target element reference from the page snapshot | Yes
+| values | array | Array of values to select in the dropdown. | Yes
+</details>
+<details>
+<summary>browserbase_take_screenshot</summary>
+
+**Description**:
+
+```
+Take a screenshot of the current page or element using ref.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| element | string | Human-readable element description. | No
+| raw | boolean | Whether to return without compression (PNG). Default is false (JPEG). | No
+| ref | string | Exact target element reference from the page snapshot. | No
+</details>
+<details>
+<summary>browserbase_press_key</summary>
+
+**Description**:
+
+```
+Press a key on the keyboard
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| key | string | Name of the key to press or a character to generate, such as `ArrowLeft` or `a` | Yes
+</details>
+<details>
+<summary>browserbase_get_text</summary>
+
+**Description**:
+
+```
+Extract text content from the page or a specific element.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| selector | string | Optional CSS selector to get text from. If omitted, gets text from the whole body. | No
+| sessionId | string | not set | No
 </details>
 <details>
 <summary>browserbase_navigate</summary>
@@ -534,97 +705,96 @@ Navigate to a URL
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| url | string | not set | Yes
+| url | string | The URL to navigate to | Yes
 </details>
 <details>
-<summary>browserbase_screenshot</summary>
+<summary>browserbase_navigate_back</summary>
 
 **Description**:
 
 ```
-Take a screenshot of the current page or a specific element
+Go back to the previous page
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| height | number | Height in pixels (default: 600) | No
-| name | string | Name for the screenshot | Yes
-| selector | string | CSS selector for element to screenshot | No
-| width | number | Width in pixels (default: 800) | No
 </details>
 <details>
-<summary>browserbase_click</summary>
+<summary>browserbase_navigate_forward</summary>
 
 **Description**:
 
 ```
-Click an element on the page
+Go forward to the next page
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| selector | string | CSS selector for element to click | Yes
 </details>
 <details>
-<summary>browserbase_fill</summary>
+<summary>browserbase_session_create</summary>
 
 **Description**:
 
 ```
-Fill out an input field
+Create or reuse a cloud browser session using Browserbase. Updates the active session.
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| selector | string | CSS selector for input field | Yes
-| value | string | Value to fill | Yes
+| sessionId | string | Optional session ID to use/reuse. If not provided or invalid, a new session is created. | No
 </details>
 <details>
-<summary>browserbase_evaluate</summary>
+<summary>browserbase_session_close</summary>
 
 **Description**:
 
 ```
-Execute JavaScript in the browser console
+Closes the current Browserbase session by disconnecting the Playwright browser. This will terminate the recording for the session.
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| script | string | JavaScript code to execute | Yes
+| random_string | string | Dummy parameter to ensure consistent tool call format. | No
 </details>
 <details>
-<summary>browserbase_get_content</summary>
+<summary>browserbase_context_create</summary>
 
 **Description**:
 
 ```
-Extract all content from the current page
+Create a new Browserbase context for reusing cookies, authentication, and cached data across browser sessions
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| selector | string | Optional CSS selector to get content from specific elements (default: returns whole page) | No
+| name | string | Optional friendly name to reference this context later (otherwise, you'll need to use the returned ID) | No
 </details>
-
-## 📚 Resources (1)
-
 <details>
-<summary>Resources</summary>
+<summary>browserbase_context_delete</summary>
 
-| Name | Mime type | URI| Content |
+**Description**:
+
+```
+Delete a Browserbase context when you no longer need it
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| Browser console logs | text/plain | console://logs | - |
-
+| contextId | string | The context ID to delete (required if name not provided) | No
+| name | string | The friendly name of the context to delete (required if contextId not provided) | No
 </details>
 
 
@@ -634,23 +804,54 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
-| tools | browserbase_click | description | 0f5e4e9a2e49b9860eacc68a7dc5312c71ab2f83be1734dcddbc8ce31fc7d82b |
-| tools | browserbase_click | selector | a6922769712660b619584746585d94b11a460d199e2cb84957988b6f9f7cd3bf |
-| tools | browserbase_close_session | description | be033dac5747af43f17a5e254bd24af517866cab1af756a72549b19d9292a250 |
-| tools | browserbase_create_session | description | 56bdd0db0c370258b7b7ef2d4604f7602a46d68d3f7cdae47dcf8bb48305c774 |
-| tools | browserbase_evaluate | description | 0d3a0f5f637a3ca339c8c9bef048bb7db6e97e99b3e930af4f90036cf0ae0eac |
-| tools | browserbase_evaluate | script | 4b891a8ea8149f7f674a0058530d3027453331b59fdc8dd937f97530abe2917d |
-| tools | browserbase_fill | description | 9092ab55b68d8d48b44cd4637d7c45d295489784406d1d0b2811c64eb390c12e |
-| tools | browserbase_fill | selector | 9b2fd4f2a301cda1ab585f8de553e53bf5907a4b15ee68f56f075d6e57464d23 |
-| tools | browserbase_fill | value | 11d5ebd4e421f3e0f32524bf28a9c06bfce4a5f82b89ad49f4636dce92377c8f |
-| tools | browserbase_get_content | description | 6105d7f8013e0ad9af3aeaeb5638755ccc8337aeb2e402ea526aead14e030569 |
-| tools | browserbase_get_content | selector | cf9b6a9a4d253d7e4cbb921429945fcc70861aebf48bd8c8a0e6c61201352ade |
+| tools | browserbase_click | description | 23eabf817ed05424ae6a9283669e721356f0b04f708ca7d5d1f0a22fec953b4b |
+| tools | browserbase_click | element | 1694eb3252cb80b50f80fb3fb83ea61f19b1d85a30ebcc301029e13e9db6fd14 |
+| tools | browserbase_click | ref | e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b |
+| tools | browserbase_close | description | 12be13a02fb51d37444cf489f570063e5e15f5757adf279093397544d31f3de2 |
+| tools | browserbase_close | random_string | 518053fd1ac5b466071723b8a3088b525ba8f5f845cbdb4ef1e1a2963829c83c |
+| tools | browserbase_context_create | description | 14ad364f58dac27c45d5d27fdf3ce50f45c3b39493dca538dfe5b0b8fcdcfae1 |
+| tools | browserbase_context_create | name | e44527d80c80f069d86e60c41de4153bae112b0eefeb71932e04286a32363cfe |
+| tools | browserbase_context_delete | description | 9797327409bec66e012ed5d0e89632be545ef59d3b122a76de8a810be6c92900 |
+| tools | browserbase_context_delete | contextId | 4487437e618ff87bf006c67433745e99ec6c26920b615645197427404fa43f97 |
+| tools | browserbase_context_delete | name | 2cc1b27e3fcccf0515e2f94669bb1c2bd3980f4b75bcaff08143b686bcae3126 |
+| tools | browserbase_drag | description | 18a8d4a0d738d68b584ad5f5c8ee9c14d288f8017450381290ad748af47f4241 |
+| tools | browserbase_drag | endElement | 2e12fa379751d8c237bd0612b5dd42f36f1964c0a2e21509d2a6443ea8269719 |
+| tools | browserbase_drag | endRef | e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b |
+| tools | browserbase_drag | startElement | aa162e9620fa27b204c29e276143accc0a8411ff3c8b30e90d8e2625a6e888d9 |
+| tools | browserbase_drag | startRef | a2a0c2d0f7b7d8056a3aaaa53c71eba4f2bfeb35a02c5c6d860b52a9cccb9088 |
+| tools | browserbase_get_text | description | 136f0744a4eed0487a4bd382c21c369b0eb998de238e7d7fcd14037202047edf |
+| tools | browserbase_get_text | selector | f4be6318427b3b2a1c587d72c698b46ed5dac0806a7b22ca30913481827e6199 |
+| tools | browserbase_hover | description | e53cd3c44908e91d35f071d4a414e52082d8385f1483e1c731d187b39846645f |
+| tools | browserbase_hover | element | 1694eb3252cb80b50f80fb3fb83ea61f19b1d85a30ebcc301029e13e9db6fd14 |
+| tools | browserbase_hover | ref | e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b |
 | tools | browserbase_navigate | description | 5e517ac29796df4781d6e8f8b3be061cc694f0c8e027f40e42ce0739e887b1d5 |
-| tools | browserbase_screenshot | description | 5e3558916850d55baa3a9b5dfaec0755a8c16f6bcd03be7a78aadbc65745da85 |
-| tools | browserbase_screenshot | height | 0e240884937c1dc91c541aaeceb007bb3bb0994e396a1652edb748fa6198615d |
-| tools | browserbase_screenshot | name | 28c1b883362fcf9a1205e2015271212cbc322322343879408bd5b191917b3379 |
-| tools | browserbase_screenshot | selector | aa5efe3a86a6ab130c1c81e671113a8be57294dedf3bbde39fe0088fea2c14d5 |
-| tools | browserbase_screenshot | width | d10864eef69042788f00ea5522b84a05480ff9a1479b27cc6cdfa409a2304060 |
+| tools | browserbase_navigate | url | 63d749360d127f3c1d0d108336745c687aaa08760a306f0dadbbef4e9fadf27f |
+| tools | browserbase_navigate_back | description | 1070d603d3951f9282bc8e5111b7a6993fa05215c23ba5099429b567a9bdb467 |
+| tools | browserbase_navigate_forward | description | 4f74235e282e3cba526b98047b02c344c6bc32566bb325d5408e897eadfc6a7e |
+| tools | browserbase_press_key | description | aad8c3412d76c93e83c00bbe260068e5e2b988fb41080d148f31d49b5e7d2532 |
+| tools | browserbase_press_key | key | 99b4b6f2c8718d62ab46cca9b057177560c7ba358835bde04cebfdb9380036a2 |
+| tools | browserbase_resize | description | 8a048f66ca5985ffbe29b85a321269a7aa1d12663932dbb53ce37ddcf740d952 |
+| tools | browserbase_select_option | description | 3e7335503efca3ef2f22d38c51e6cd89447a4a0caca18e0d8a0ef2b2c38a6c26 |
+| tools | browserbase_select_option | element | 1694eb3252cb80b50f80fb3fb83ea61f19b1d85a30ebcc301029e13e9db6fd14 |
+| tools | browserbase_select_option | ref | e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b |
+| tools | browserbase_select_option | values | fc0448dc32f6a5e89d930fb447d5f4411e31253d3e9fa9841edec2cb4618f8fb |
+| tools | browserbase_session_close | description | c33af2ca6802a0e1c80d2430f86170b68c2e9ceb55621d8ca4b1b33ebd0f544e |
+| tools | browserbase_session_close | random_string | 6f65b1a9a0e92e0bc83edd0f63ff030db3acf3f02ab0ea9bba4938307e3c00c0 |
+| tools | browserbase_session_create | description | ea3a9035e2aa1743f77a76ef24175d7c66ad7a3afcdf080d004923acc19c5911 |
+| tools | browserbase_session_create | sessionId | 2600a83521995510adcd784134a362806fe33f662254834faf3921034d05d68d |
+| tools | browserbase_snapshot | description | 6dc78620771eccf0ab550879bb7ae6369de34114b673c111a4f7fbd8fab5076c |
+| tools | browserbase_take_screenshot | description | 7c87de0df69fe81dbbf340f7ba062a60a9c436540dcb7ef67bbd43a54837262e |
+| tools | browserbase_take_screenshot | element | fc545fc9093d9c26b52b0186745392d475ba2a517f5622bdff35a3d85c379fb6 |
+| tools | browserbase_take_screenshot | raw | 7cd65c9a870086f58183b0fbe7eb0794e3ce3cc3a62dca3b30168abf7f02015e |
+| tools | browserbase_take_screenshot | ref | 335ff2d7572b8831cdb68863866c4ba5f92c6436846295cf4e054eeb00b7edfe |
+| tools | browserbase_type | description | b9dfec63c6922f5935627751dc97ae4e3d80993bf414b844f36f80648584b8d4 |
+| tools | browserbase_type | element | 1694eb3252cb80b50f80fb3fb83ea61f19b1d85a30ebcc301029e13e9db6fd14 |
+| tools | browserbase_type | ref | e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b |
+| tools | browserbase_type | slowly | 4dc8586a22406a330c309da2e8c10f90ee599b990993f654408b0e13d9001093 |
+| tools | browserbase_type | submit | 2878d7dee713522a404fd189b76b7ce01b439e50b164a1e5c992b6ba2f577106 |
+| tools | browserbase_type | text | 42bc9d6777b527b20636d608e53bc2cb9dc43f74c263b701827645bcc369d438 |
+| tools | browserbase_wait | description | fb6ee71ce0454853bc08cbf2eb48241f4e3e8b1f29753fe13c72f91a563603ba |
+| tools | browserbase_wait | time | ae02dada7574b65a44313329c9439160f19f9aca36734146c44ce857bfe80790 |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

@@ -20,6 +20,7 @@
 
 # What is mcp-server-sentry?
 
+[![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-sentry/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-sentry/2025.1.14?logo=docker&logoColor=fff&label=2025.1.14)](https://hub.docker.com/r/acuvity/mcp-server-sentry)
 [![PyPI](https://img.shields.io/badge/2025.1.14-3775A9?logo=pypi&logoColor=fff&label=mcp-server-sentry)](https://github.com/modelcontextprotocol/servers/tree/main/src/sentry)
@@ -28,8 +29,13 @@
 
 **Description:** Retrieving and analyzing issues from Sentry.io.
 
-> [!NOTE]
-> `mcp-server-sentry` has been packaged by Acuvity from mcp-server-sentry original [sources](https://github.com/modelcontextprotocol/servers/tree/main/src/sentry).
+Packaged by Acuvity from mcp-server-sentry original [sources](https://github.com/modelcontextprotocol/servers/tree/main/src/sentry).
+
+**Quick links:**
+
+- [Integrate with your IDE](https://github.com/acuvity/mcp-servers-registry/blob/main/mcp-server-sentry/docker/README.md#-clients-integrations)
+- [Install with Docker](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-sentry/docker/README.md#-run-it-with-docker)
+- [Install with Helm](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-sentry/charts/mcp-server-sentry/README.md#how-to-install)
 
 # Why We Built This
 
@@ -54,7 +60,7 @@ To address this need, we've created a secure and robust Docker image designed to
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a built-in Rego policy that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-sentry/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
 ### 🔒 Resource Integrity
 
@@ -119,7 +125,7 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 </details>
 
 > [!NOTE]
-> All guardrails start disabled. You can switch each one on or off individually, so you only activate the protections your environment requires.
+> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active. To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-sentry/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-sentry/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-sentry/charts/mcp-server-sentry#minibridge) for Helm charts).
 
 
 # Quick reference

@@ -20,16 +20,22 @@
 
 # What is mcp-server-chart?
 
+[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-chart/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-chart/0.2.4?logo=docker&logoColor=fff&label=0.2.4)](https://hub.docker.com/r/acuvity/mcp-server-chart)
-[![PyPI](https://img.shields.io/badge/0.2.4-3775A9?logo=pypi&logoColor=fff&label=@antv/mcp-server-chart)](https://github.com/antvis/mcp-server-chart)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-chart/0.2.6?logo=docker&logoColor=fff&label=0.2.6)](https://hub.docker.com/r/acuvity/mcp-server-chart)
+[![PyPI](https://img.shields.io/badge/0.2.6-3775A9?logo=pypi&logoColor=fff&label=@antv/mcp-server-chart)](https://github.com/antvis/mcp-server-chart)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-chart&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-chart%3A0.2.4%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-chart&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-chart%3A0.2.6%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** A Model Context Protocol server for generating visual charts using AntV.
 
-> [!NOTE]
-> `mcp-server-chart` has been packaged by Acuvity from @antv/mcp-server-chart original [sources](https://github.com/antvis/mcp-server-chart).
+Packaged by Acuvity from @antv/mcp-server-chart original [sources](https://github.com/antvis/mcp-server-chart).
+
+**Quick links:**
+
+- [Integrate with your IDE](https://github.com/acuvity/mcp-servers-registry/blob/main/mcp-server-chart/docker/README.md#-clients-integrations)
+- [Install with Docker](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-chart/docker/README.md#-run-it-with-docker)
+- [Install with Helm](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-chart/charts/mcp-server-chart/README.md#how-to-install)
 
 # Why We Built This
 
@@ -54,7 +60,7 @@ To address this need, we've created a secure and robust Docker image designed to
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a built-in Rego policy that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-chart/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
 ### 🔒 Resource Integrity
 
@@ -119,7 +125,7 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 </details>
 
 > [!NOTE]
-> All guardrails start disabled. You can switch each one on or off individually, so you only activate the protections your environment requires.
+> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active. To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-chart/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-chart/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-chart/charts/mcp-server-chart#minibridge) for Helm charts).
 
 
 # Quick reference
@@ -146,7 +152,7 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.2.4`
+  - container: `1.0.0-0.2.6`
 
 ---
 
@@ -587,68 +593,6 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 ## 🧰 Tools (15)
 <details>
-<summary>generate_line_chart</summary>
-
-**Description**:
-
-```
-Generate a line chart to show trends over time, such as, the ratio of Apple computer sales to Apple's profits changed from 2000 to 2016.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| axisXTitle | string | Set the x-axis title of chart. | No
-| axisYTitle | string | Set the y-axis title of chart. | No
-| data | array | Data for line chart, such as, [{ time: '2015', value: 23 }]. | Yes
-| height | number | Set the height of chart, default is 400. | No
-| stack | boolean | Whether stacking is enabled. When enabled, line charts require a 'group' field in the data. | No
-| title | string | Set the title of chart. | No
-| width | number | Set the width of chart, default is 600. | No
-</details>
-<details>
-<summary>generate_column_chart</summary>
-
-**Description**:
-
-```
-Generate a column chart, which are best for comparing categorical data, such as, when values are close, column charts are preferable because our eyes are better at judging height than other visual elements like area or angles.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| axisXTitle | string | Set the x-axis title of chart. | No
-| axisYTitle | string | Set the y-axis title of chart. | No
-| data | array | Data for column chart, such as, [{ category: '北京' value: 825; group: '油车' }]. | Yes
-| group | boolean | Whether grouping is enabled. When enabled, column charts require a 'group' field in the data. | No
-| height | number | Set the height of chart, default is 400. | No
-| stack | boolean | Whether stacking is enabled. When enabled, column charts require a 'group' field in the data. | No
-| title | string | Set the title of chart. | No
-| width | number | Set the width of chart, default is 600. | No
-</details>
-<details>
-<summary>generate_pie_chart</summary>
-
-**Description**:
-
-```
-Generate a pie chart to show the proportion of parts, such as, market share and budget allocation.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| data | array | Data for pie chart, (such as, [{ category: '分类一', value: 27 }]) | Yes
-| height | number | Set the height of chart, default is 400. | No
-| innerRadius | number | Set the pie chart as a donut chart. Set the value to 0.6 to enable it. | No
-| title | string | Set the title of chart. | No
-| width | number | Set the width of chart, default is 600. | No
-</details>
-<details>
 <summary>generate_area_chart</summary>
 
 **Description**:
@@ -663,7 +607,7 @@ Generate a area chart to show data trends under continuous independent variables
 |-----------|------|-------------|-----------|
 | axisXTitle | string | Set the x-axis title of chart. | No
 | axisYTitle | string | Set the y-axis title of chart. | No
-| data | array | Data for pie chart, such as, [{ time: '2018', value: 99.9 }]. | Yes
+| data | array | Data for area chart, such as, [{ time: '2018', value: 99.9 }]. | Yes
 | height | number | Set the height of chart, default is 400. | No
 | stack | boolean | Whether stacking is enabled. When enabled, area charts require a 'group' field in the data. | No
 | title | string | Set the title of chart. | No
@@ -685,10 +629,86 @@ Generate a bar chart to show data for numerical comparisons among different cate
 | axisXTitle | string | Set the x-axis title of chart. | No
 | axisYTitle | string | Set the y-axis title of chart. | No
 | data | array | Data for bar chart, such as, [{ category: '分类一', value: 10 }]. | Yes
-| group | boolean | Whether grouping is enabled. When enabled, bar charts require a 'group' field in the data. | No
+| group | boolean | Whether grouping is enabled. When enabled, bar charts require a 'group' field in the data. When `group` is true, `stack` should be false. | No
 | height | number | Set the height of chart, default is 400. | No
-| stack | boolean | Whether stacking is enabled. When enabled, bar charts require a 'group' field in the data. | No
+| stack | boolean | Whether stacking is enabled. When enabled, bar charts require a 'group' field in the data. When `stack` is true, `group` should be false. | No
 | title | string | Set the title of chart. | No
+| width | number | Set the width of chart, default is 600. | No
+</details>
+<details>
+<summary>generate_column_chart</summary>
+
+**Description**:
+
+```
+Generate a column chart, which are best for comparing categorical data, such as, when values are close, column charts are preferable because our eyes are better at judging height than other visual elements like area or angles.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| axisXTitle | string | Set the x-axis title of chart. | No
+| axisYTitle | string | Set the y-axis title of chart. | No
+| data | array | Data for column chart, such as, [{ category: '北京' value: 825; group: '油车' }]. | Yes
+| group | boolean | Whether grouping is enabled. When enabled, column charts require a 'group' field in the data. When `group` is true, `stack` should be false. | No
+| height | number | Set the height of chart, default is 400. | No
+| stack | boolean | Whether stacking is enabled. When enabled, column charts require a 'group' field in the data. When `stack` is true, `group` should be false. | No
+| title | string | Set the title of chart. | No
+| width | number | Set the width of chart, default is 600. | No
+</details>
+<details>
+<summary>generate_dual_axes_chart</summary>
+
+**Description**:
+
+```
+Generate a dual axes chart which is a combination chart that integrates two different chart types, typically combining a bar chart with a line chart to display both the trend and comparison of data, such as, the trend of sales and profit over time.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| axisXTitle | string | Set the x-axis title of chart. | No
+| categories | array | Categories for dual axes chart, such as, ['2015', '2016', '2017']. | Yes
+| height | number | Set the height of chart, default is 400. | No
+| series | array | not set | Yes
+| title | string | Set the title of chart. | No
+| width | number | Set the width of chart, default is 600. | No
+</details>
+<details>
+<summary>generate_fishbone_diagram</summary>
+
+**Description**:
+
+```
+Generate a fishbone diagram chart to uses a fish skeleton, like structure to display the causes or effects of a core problem, with the problem as the fish head and the causes/effects as the fish bones. It suits problems that can be split into multiple related factors.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| data | object | Data for fishbone diagram chart, such as, { name: 'main topic', children: [{ name: 'topic 1', children: [{ name: 'subtopic 1-1' }] }. | Yes
+| height | number | Set the height of chart, default is 400. | No
+| width | number | Set the width of chart, default is 600. | No
+</details>
+<details>
+<summary>generate_flow_diagram</summary>
+
+**Description**:
+
+```
+Generate a flow diagram chart to show the steps and decision points of a process or system, such as, scenarios requiring linear process presentation.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| data | object | Data for flow diagram chart, such as, { nodes: [{ name: 'node1' }, { name: 'node2' }], edges: [{ source: 'node1', target: 'node2', name: 'edge1' }] }. | Yes
+| height | number | Set the height of chart, default is 400. | No
 | width | number | Set the width of chart, default is 600. | No
 </details>
 <details>
@@ -706,8 +726,100 @@ Generate a histogram chart to show the frequency of data points within a certain
 |-----------|------|-------------|-----------|
 | axisXTitle | string | Set the x-axis title of chart. | No
 | axisYTitle | string | Set the y-axis title of chart. | No
-| binNumber | number | Number of intervals to define the number of intervals in a histogram. | No
+| binNumber | any | Number of intervals to define the number of intervals in a histogram. | No
 | data | array | Data for histogram chart, such as, [78, 88, 60, 100, 95]. | Yes
+| height | number | Set the height of chart, default is 400. | No
+| title | string | Set the title of chart. | No
+| width | number | Set the width of chart, default is 600. | No
+</details>
+<details>
+<summary>generate_line_chart</summary>
+
+**Description**:
+
+```
+Generate a line chart to show trends over time, such as, the ratio of Apple computer sales to Apple's profits changed from 2000 to 2016.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| axisXTitle | string | Set the x-axis title of chart. | No
+| axisYTitle | string | Set the y-axis title of chart. | No
+| data | array | Data for line chart, such as, [{ time: '2015', value: 23 }]. | Yes
+| height | number | Set the height of chart, default is 400. | No
+| stack | boolean | Whether stacking is enabled. When enabled, line charts require a 'group' field in the data. | No
+| title | string | Set the title of chart. | No
+| width | number | Set the width of chart, default is 600. | No
+</details>
+<details>
+<summary>generate_mind_map</summary>
+
+**Description**:
+
+```
+Generate a mind map chart to organizes and presents information in a hierarchical structure with branches radiating from a central topic, such as, a diagram showing the relationship between a main topic and its subtopics.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| data | object | Data for mind map chart, such as, { name: 'main topic', children: [{ name: 'topic 1', children: [{ name:'subtopic 1-1' }] }. | Yes
+| height | number | Set the height of chart, default is 400. | No
+| width | number | Set the width of chart, default is 600. | No
+</details>
+<details>
+<summary>generate_network_graph</summary>
+
+**Description**:
+
+```
+Generate a network graph chart to show relationships (edges) between entities (nodes), such as, relationships between people in social networks.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| data | object | Data for network graph chart, such as, { nodes: [{ name: 'node1' }, { name: 'node2' }], edges: [{ source: 'node1', target: 'node2', name: 'edge1' }] } | Yes
+| height | number | Set the height of chart, default is 400. | No
+| width | number | Set the width of chart, default is 600. | No
+</details>
+<details>
+<summary>generate_pie_chart</summary>
+
+**Description**:
+
+```
+Generate a pie chart to show the proportion of parts, such as, market share and budget allocation.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| data | array | Data for pie chart, such as, [{ category: '分类一', value: 27 }]. | Yes
+| height | number | Set the height of chart, default is 400. | No
+| innerRadius | number | Set the innerRadius of pie chart, the value between 0 and 1. Set the pie chart as a donut chart. Set the value to 0.6 or number in [0 ,1] to enable it. | No
+| title | string | Set the title of chart. | No
+| width | number | Set the width of chart, default is 600. | No
+</details>
+<details>
+<summary>generate_radar_chart</summary>
+
+**Description**:
+
+```
+Generate a radar chart to display multidimensional data (four dimensions or more), such as, evaluate Huawei and Apple phones in terms of five dimensions: ease of use, functionality, camera, benchmark scores, and battery life.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| data | array | Data for radar chart, such as, [{ name: 'Design', value: 70 }]. | Yes
 | height | number | Set the height of chart, default is 400. | No
 | title | string | Set the title of chart. | No
 | width | number | Set the width of chart, default is 600. | No
@@ -733,42 +845,6 @@ Generate a scatter chart to show the relationship between two variables, helps d
 | width | number | Set the width of chart, default is 600. | No
 </details>
 <details>
-<summary>generate_word_cloud_chart</summary>
-
-**Description**:
-
-```
-Generate a word cloud chart to show word frequency or weight through text size variation, such as, analyzing common words in social media, reviews, or feedback.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| data | array | Data for word cloud chart, such as, [{ value: '4.272', text: '形成' }]. | Yes
-| height | number | Set the height of chart, default is 400. | No
-| title | string | Set the title of chart. | No
-| width | number | Set the width of chart, default is 600. | No
-</details>
-<details>
-<summary>generate_radar_chart</summary>
-
-**Description**:
-
-```
-Generate a radar chart to display multidimensional data (four dimensions or more), such as, evaluate Huawei and Apple phones in terms of five dimensions: ease of use, functionality, camera, benchmark scores, and battery life.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| data | array | Data for radar chart, such as, [{ name: 'Design', value: 70 }]. | Yes
-| height | number | Set the height of chart, default is 400. | No
-| title | string | Set the title of chart. | No
-| width | number | Set the width of chart, default is 600. | No
-</details>
-<details>
 <summary>generate_treemap_chart</summary>
 
 **Description**:
@@ -787,93 +863,19 @@ Generate a treemap chart to display hierarchical data and can intuitively show c
 | width | number | Set the width of chart, default is 600. | No
 </details>
 <details>
-<summary>generate_dual_axes_chart</summary>
+<summary>generate_word_cloud_chart</summary>
 
 **Description**:
 
 ```
-Generate a dual axes chart which is a combination chart that integrates two different chart types, typically combining a bar chart with a line chart to display both the trend and comparison of data, such as, the trend of sales and profit over time.
+Generate a word cloud chart to show word frequency or weight through text size variation, such as, analyzing common words in social media, reviews, or feedback.
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| axisXTitle | string | Set the x-axis title of chart. | No
-| categories | array | Categories for dual axes chart, such as, ['2015', '2016', '2017']. | Yes
-| height | number | Set the height of chart, default is 400. | No
-| series | array | not set | Yes
-| title | string | Set the title of chart. | No
-| width | number | Set the width of chart, default is 600. | No
-</details>
-<details>
-<summary>generate_mind_map</summary>
-
-**Description**:
-
-```
-Generate a mind map chart to organizes and presents information in a hierarchical structure with branches radiating from a central topic, such as, a diagram showing the relationship between a main topic and its subtopics.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| data | object | Data for mind map chart, such as, { name: 'main topic', children: [{ name: 'topic 1', children: [{ name:'subtopic 1-1' }] } | Yes
-| height | number | Set the height of chart, default is 400. | No
-| title | string | Set the title of chart. | No
-| width | number | Set the width of chart, default is 600. | No
-</details>
-<details>
-<summary>generate_network_graph</summary>
-
-**Description**:
-
-```
-Generate a network graph chart to show relationships (edges) between entities (nodes), such as, relationships between people in social networks.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| data | object | Data for network graph chart, such as, { nodes: [{ name: 'node1' }, { name: 'node2' }], edges: [{ source: 'node1', target: 'node2', name: 'edge1' }] } | Yes
-| height | number | Set the height of chart, default is 400. | No
-| title | string | Set the title of chart. | No
-| width | number | Set the width of chart, default is 600. | No
-</details>
-<details>
-<summary>generate_flow_diagram</summary>
-
-**Description**:
-
-```
-Generate a flow diagram chart to show the steps and decision points of a process or system, such as, scenarios requiring linear process presentation.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| data | object | Data for flow diagram chart, such as, { nodes: [{ name: 'node1' }, { name: 'node2' }], edges: [{ source: 'node1', target: 'node2', name: 'edge1' }] } | Yes
-| height | number | Set the height of chart, default is 400. | No
-| title | string | Set the title of chart. | No
-| width | number | Set the width of chart, default is 600. | No
-</details>
-<details>
-<summary>generate_fishbone_diagram</summary>
-
-**Description**:
-
-```
-Generate a fishbone diagram chart to uses a fish skeleton, like structure to display the causes or effects of a core problem, with the problem as the fish head and the causes/effects as the fish bones. It suits problems that can be split into multiple related factors.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| data | object | Data for fishbone diagram chart , such as, { name: 'main topic', children: [{ name: 'topic 1', children: [{ name: 'subtopic 1-1' }] } | Yes
+| data | array | Data for word cloud chart, such as, [{ value: '4.272', text: '形成' }]. | Yes
 | height | number | Set the height of chart, default is 400. | No
 | title | string | Set the title of chart. | No
 | width | number | Set the width of chart, default is 600. | No
@@ -889,7 +891,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | generate_area_chart | description | f96bc61c1cd1f2516048ff2311911a27ad3c51ee90e35535248a31ed719dc626 |
 | tools | generate_area_chart | axisXTitle | 29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a |
 | tools | generate_area_chart | axisYTitle | 66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77 |
-| tools | generate_area_chart | data | c78e91fc932ad5633c950a406c8490a3d93fdfbc22add00a04f83474886e38e2 |
+| tools | generate_area_chart | data | 11f7f679e2f6845cffb1445ee7fd7d5c7f167a29e991d7f50c7609234af52d81 |
 | tools | generate_area_chart | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
 | tools | generate_area_chart | stack | da57ecb43f91bd7f5d6eec67c321b2e0ae8a8714c3e0719902b2adedfb56e6d4 |
 | tools | generate_area_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
@@ -898,18 +900,18 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | generate_bar_chart | axisXTitle | 29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a |
 | tools | generate_bar_chart | axisYTitle | 66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77 |
 | tools | generate_bar_chart | data | b6f1bfd3a0b5ef1f273fef685cc47d125fe3cdab2ab989407eca2065e336408f |
-| tools | generate_bar_chart | group | 13c8f482326e26caf8e24a5109ac29dc9d86306b3cf024e1098cdef08da29075 |
+| tools | generate_bar_chart | group | 28c99d957f8cbf0ef9a17588214a037f24348e4600bc6a783404ae6cde52df93 |
 | tools | generate_bar_chart | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
-| tools | generate_bar_chart | stack | bdc8f95dd42a52fadbd07bc7720cbfa1e39107d93d9ff28df423bd8085beff5d |
+| tools | generate_bar_chart | stack | d37095b67bd434c0d79727cb8f0c8261dddb092008eeb538ace5a33047c4e000 |
 | tools | generate_bar_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_bar_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_column_chart | description | cb9505024eff95786bd632bbca3f11f798bd7826f25cdb56a52145ac52899d7f |
 | tools | generate_column_chart | axisXTitle | 29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a |
 | tools | generate_column_chart | axisYTitle | 66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77 |
 | tools | generate_column_chart | data | 6f35d87a83f01fa3193fc7aed5de24020fb5bf10c2d6c8f2abbab553775ff6ce |
-| tools | generate_column_chart | group | 3a8cab0ad6f017d5082ac4a41658f8f1bec9c5496777ce4c477f48c22e9f9462 |
+| tools | generate_column_chart | group | e9c5ca4b064abeb534b1990d67e0c526b8aeddda1f0350f76a0a15bc7b9e2d63 |
 | tools | generate_column_chart | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
-| tools | generate_column_chart | stack | 0d8e951b5339f93e9fcbdb4cd268790b5ab210bbfc67bd1d7e2f90bea3b7fac2 |
+| tools | generate_column_chart | stack | a3c00e77509d640c44a25a688a7a979e5806b9437976686bc59a26d2e0985a12 |
 | tools | generate_column_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_column_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_dual_axes_chart | description | ebb7a6509b51f64850dc552ca3e3f6f8e1f62dce81eb77f86b5d71f9f2f27706 |
@@ -919,14 +921,12 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | generate_dual_axes_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_dual_axes_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_fishbone_diagram | description | b4c25d22c4d78e4617ac92578a8979d41fa401ff31eee777bd54ae6c4bff38bb |
-| tools | generate_fishbone_diagram | data | 50fffcc2d6b4cd6dbb797703bc866d056a6d65944739bfa848b35ab11bc30d1b |
+| tools | generate_fishbone_diagram | data | 1671c924f3b8dc62b4fe72aefe34b1fa65d6258a04ccf440dbd075b64c898aa6 |
 | tools | generate_fishbone_diagram | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
-| tools | generate_fishbone_diagram | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_fishbone_diagram | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_flow_diagram | description | be9973fdcd389ee607dfd0dbd8472b1e343a83d126c1614ce35f686aa40cf40c |
-| tools | generate_flow_diagram | data | 0400dd85ec0609b1a2fe1b3e51edca6a495ca0d2975651f52c7f4e7b3b8ec3d1 |
+| tools | generate_flow_diagram | data | b447ba10d924a13155650d6643b8a7a20bd3c4e79a5a56a9b531d533fd5a7b75 |
 | tools | generate_flow_diagram | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
-| tools | generate_flow_diagram | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_flow_diagram | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_histogram_chart | description | 912a3265e2729b0a7c984e7604e4676200b6b37fd72d338ba939b79584cdeb9e |
 | tools | generate_histogram_chart | axisXTitle | 29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a |
@@ -945,19 +945,17 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | generate_line_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_line_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_mind_map | description | 69bf6897ec2bef7cc910002af1f7cf7d92502920473bae8ab6f9adefbc94a628 |
-| tools | generate_mind_map | data | dca09503b5c4788ff4f0747c4af9ad77dbfd0d46ba87f68a39ceef8e9977ecc9 |
+| tools | generate_mind_map | data | cca0ddf655078bcf4928cb016d35454fa6c0dcfe46d04490d03add67a9e8879a |
 | tools | generate_mind_map | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
-| tools | generate_mind_map | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_mind_map | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_network_graph | description | e9aa42fc72e3246243577e7be1f5c47ee4a10d74bcac5a0a140ff33719e18f44 |
 | tools | generate_network_graph | data | c79e86bb596a8000143c5580d53b59f9a9d3a751b78db2429740b39e610ee359 |
 | tools | generate_network_graph | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
-| tools | generate_network_graph | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_network_graph | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_pie_chart | description | 2dc22593f3f742f01a0862cca0c664c9021840501d3f83b27f73f40690a742c6 |
-| tools | generate_pie_chart | data | d56461d0cbeab155f94cc71c0f356cf961428327c26f8feeca8197d46191f701 |
+| tools | generate_pie_chart | data | ef5c746f17b2bd8a099aa0d34fe884dd7039bb83f1d96aefadd8bc709d5431e4 |
 | tools | generate_pie_chart | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
-| tools | generate_pie_chart | innerRadius | 2392b8b38214109309b04f3ece0b5d6883201cb67ab45c39e918d7be2341d561 |
+| tools | generate_pie_chart | innerRadius | 1c0986959a56de7933a38d7d8781a68e883cc6b31b1fa82d74a82c5ba07ff4c5 |
 | tools | generate_pie_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_pie_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_radar_chart | description | eadcd1d7352898155e8664e2c4ab360f4030c7c2f4f68eff86bbd984c4a891ab |

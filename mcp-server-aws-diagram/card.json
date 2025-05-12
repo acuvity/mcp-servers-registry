@@ -8,7 +8,7 @@
       "application": "https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server"
     },
   "tags": ["development","research"],
-  "official": false,
+  "official": true,
   "scope": "standalone",
   "mutitenant": true,
   "runtime": "python",

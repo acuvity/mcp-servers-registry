@@ -8,11 +8,11 @@
       "application": "https://github.com/upstash/context7#readme"
     },
   "tags": ["development","research","integration"],
-  "official": false,
+  "official": true,
   "scope": "standalone",
   "mutitenant": true,
   "runtime": "node",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "requiresConfiguration": false,
   "requiresStorage": false,
   "rating": "B",

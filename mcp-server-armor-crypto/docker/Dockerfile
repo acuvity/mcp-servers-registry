@@ -17,7 +17,7 @@ LABEL org.opencontainers.image.title="mcp-server-armor-crypto"
 LABEL org.opencontainers.image.description="Blockchain integration, staking, DeFi, swap, bridging, wallet, DCA, Orders, Coin Lookup, Tracking."
 LABEL org.opencontainers.image.version="0.1.24"
 LABEL org.opencontainers.image.source="https://github.com/armorwallet/armor-crypto-mcp"
-LABEL org.opencontainers.image.licenses="unknown"
+LABEL org.opencontainers.image.licenses="nil"
 LABEL org.opencontainers.image.author="Armor Wallet <info@armorwallet.ai>"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 

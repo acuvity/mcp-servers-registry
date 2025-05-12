@@ -8,7 +8,7 @@
       "application": "https://github.com/paypal/agent-toolkit"
     },
   "tags": ["development","integration","finance"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",

@@ -8,7 +8,7 @@
       "application": "https://github.com/JetBrains/mcpProxy"
     },
   "tags": ["automation","integration","development"],
-  "official": false,
+  "official": true,
   "scope": "native",
   "mutitenant": true,
   "runtime": "node",

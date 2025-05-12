@@ -8,11 +8,11 @@
       "application": "https://pypi.org/project/awslabs.cost-analysis-mcp-server/"
     },
   "tags": ["cloud","integration"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "rating": "B",

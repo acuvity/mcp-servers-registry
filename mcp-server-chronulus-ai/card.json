@@ -8,7 +8,7 @@
       "application": "https://github.com/ChronulusAI/chronulus-mcp"
     },
   "tags": ["integration","finance","automation"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",

@@ -8,7 +8,7 @@
       "application": "https://github.com/modelcontextprotocol/servers/tree/main/src/git"
     },
   "tags": ["development","research"],
-  "official": false,
+  "official": true,
   "scope": "native",
   "mutitenant": true,
   "runtime": "python",

@@ -15,9 +15,9 @@ LABEL "mcp-server-scope"="native"
 
 LABEL org.opencontainers.image.title="mcp-server-docker"
 LABEL org.opencontainers.image.description="Integrate with Docker to manage containers, images, volumes, and networks."
-LABEL org.opencontainers.image.version="0.1.0"
+LABEL org.opencontainers.image.version="0.2.0"
 LABEL org.opencontainers.image.source="https://github.com/ckreiling/mcp-server-docker"
-LABEL org.opencontainers.image.licenses="unknown"
+LABEL org.opencontainers.image.licenses="GNU GENERAL PUBLIC L"
 LABEL org.opencontainers.image.author="Christian Kreiling <kreiling@hey.com>"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 
@@ -44,7 +44,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uname -sm &&  uv venv && uv pip install mcp-server-docker==0.1.0
+RUN uname -sm &&  uv venv && uv pip install mcp-server-docker==0.2.0
 
 EXPOSE 8000/tcp
 

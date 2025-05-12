@@ -20,16 +20,22 @@
 
 # What is mcp-server-context-7?
 
+[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-context-7/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-context-7/1.0.7?logo=docker&logoColor=fff&label=1.0.7)](https://hub.docker.com/r/acuvity/mcp-server-context-7)
-[![PyPI](https://img.shields.io/badge/1.0.7-3775A9?logo=pypi&logoColor=fff&label=@upstash/context7-mcp)](https://github.com/upstash/context7#readme)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-context-7/1.0.8?logo=docker&logoColor=fff&label=1.0.8)](https://hub.docker.com/r/acuvity/mcp-server-context-7)
+[![PyPI](https://img.shields.io/badge/1.0.8-3775A9?logo=pypi&logoColor=fff&label=@upstash/context7-mcp)](https://github.com/upstash/context7#readme)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-context-7&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-context-7%3A1.0.7%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-context-7&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-context-7%3A1.0.8%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Context7 MCP - Up-to-date Docs For Any Cursor Prompt.
 
-> [!NOTE]
-> `mcp-server-context-7` has been packaged by Acuvity from @upstash/context7-mcp original [sources](https://github.com/upstash/context7#readme).
+Packaged by Acuvity from @upstash/context7-mcp original [sources](https://github.com/upstash/context7#readme).
+
+**Quick links:**
+
+- [Integrate with your IDE](https://github.com/acuvity/mcp-servers-registry/blob/main/mcp-server-context-7/docker/README.md#-clients-integrations)
+- [Install with Docker](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-context-7/docker/README.md#-run-it-with-docker)
+- [Install with Helm](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-context-7/charts/mcp-server-context-7/README.md#how-to-install)
 
 # Why We Built This
 
@@ -54,7 +60,7 @@ To address this need, we've created a secure and robust Docker image designed to
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a built-in Rego policy that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-context-7/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
 ### 🔒 Resource Integrity
 
@@ -119,13 +125,13 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 </details>
 
 > [!NOTE]
-> All guardrails start disabled. You can switch each one on or off individually, so you only activate the protections your environment requires.
+> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active. To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-context-7/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-context-7/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-context-7/charts/mcp-server-context-7#minibridge) for Helm charts).
 
 
-# 📦 How to Use
+# 📦 How to Install
 
 
-> [!NOTE]
+> [!TIP]
 > Given mcp-server-context-7 scope of operation it can be hosted anywhere.
 
 # 🧰 Clients Integrations
@@ -141,7 +147,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-context-7&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-context-7%3A1.0.7%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-context-7&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-context-7%3A1.0.8%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -158,7 +164,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "-i",
           "--rm",
           "--read-only",
-          "docker.io/acuvity/mcp-server-context-7:1.0.7"
+          "docker.io/acuvity/mcp-server-context-7:1.0.8"
         ]
       }
     }
@@ -180,7 +186,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-context-7:1.0.7"
+        "docker.io/acuvity/mcp-server-context-7:1.0.8"
       ]
     }
   }
@@ -206,7 +212,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-context-7:1.0.7"
+        "docker.io/acuvity/mcp-server-context-7:1.0.8"
       ]
     }
   }
@@ -234,7 +240,7 @@ Add the following JSON block to your mcp configuration file:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-context-7:1.0.7"
+        "docker.io/acuvity/mcp-server-context-7:1.0.8"
       ]
     }
   }
@@ -260,7 +266,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-context-7:1.0.7"
+        "docker.io/acuvity/mcp-server-context-7:1.0.8"
       ]
     }
   }
@@ -279,7 +285,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 async with MCPServerStdio(
     params={
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-context-7:1.0.7"]
+        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-context-7:1.0.8"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -309,7 +315,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-context-7:1.0.7`
+- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-context-7:1.0.8`
 
 </details>
 
@@ -319,7 +325,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -i --rm --read-only docker.io/acuvity/mcp-server-context-7:1.0.7
+docker run -i --rm --read-only docker.io/acuvity/mcp-server-context-7:1.0.8
 ```
 
 Add `-p <localport>:8000` to expose the port.

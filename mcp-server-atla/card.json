@@ -8,7 +8,7 @@
       "application": "https://github.com/atla-ai/atla-mcp-server"
     },
   "tags": ["integration","cloud","development"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",

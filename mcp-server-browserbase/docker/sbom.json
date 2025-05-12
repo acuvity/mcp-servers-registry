@@ -2,79 +2,223 @@
   "tools": [
     {
       "name": "browserbase_click",
-      "hash": "0f5e4e9a2e49b9860eacc68a7dc5312c71ab2f83be1734dcddbc8ce31fc7d82b",
+      "hash": "23eabf817ed05424ae6a9283669e721356f0b04f708ca7d5d1f0a22fec953b4b",
       "params": [
         {
-          "name": "selector",
-          "hash": "a6922769712660b619584746585d94b11a460d199e2cb84957988b6f9f7cd3bf"
-        }
-      ]
-    },
-    {
-      "name": "browserbase_close_session",
-      "hash": "be033dac5747af43f17a5e254bd24af517866cab1af756a72549b19d9292a250"
-    },
-    {
-      "name": "browserbase_create_session",
-      "hash": "56bdd0db0c370258b7b7ef2d4604f7602a46d68d3f7cdae47dcf8bb48305c774"
-    },
-    {
-      "name": "browserbase_evaluate",
-      "hash": "0d3a0f5f637a3ca339c8c9bef048bb7db6e97e99b3e930af4f90036cf0ae0eac",
-      "params": [
-        {
-          "name": "script",
-          "hash": "4b891a8ea8149f7f674a0058530d3027453331b59fdc8dd937f97530abe2917d"
-        }
-      ]
-    },
-    {
-      "name": "browserbase_fill",
-      "hash": "9092ab55b68d8d48b44cd4637d7c45d295489784406d1d0b2811c64eb390c12e",
-      "params": [
-        {
-          "name": "selector",
-          "hash": "9b2fd4f2a301cda1ab585f8de553e53bf5907a4b15ee68f56f075d6e57464d23"
+          "name": "element",
+          "hash": "1694eb3252cb80b50f80fb3fb83ea61f19b1d85a30ebcc301029e13e9db6fd14"
         },
         {
-          "name": "value",
-          "hash": "11d5ebd4e421f3e0f32524bf28a9c06bfce4a5f82b89ad49f4636dce92377c8f"
+          "name": "ref",
+          "hash": "e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b"
         }
       ]
     },
     {
-      "name": "browserbase_get_content",
-      "hash": "6105d7f8013e0ad9af3aeaeb5638755ccc8337aeb2e402ea526aead14e030569",
+      "name": "browserbase_close",
+      "hash": "12be13a02fb51d37444cf489f570063e5e15f5757adf279093397544d31f3de2",
+      "params": [
+        {
+          "name": "random_string",
+          "hash": "518053fd1ac5b466071723b8a3088b525ba8f5f845cbdb4ef1e1a2963829c83c"
+        }
+      ]
+    },
+    {
+      "name": "browserbase_context_create",
+      "hash": "14ad364f58dac27c45d5d27fdf3ce50f45c3b39493dca538dfe5b0b8fcdcfae1",
+      "params": [
+        {
+          "name": "name",
+          "hash": "e44527d80c80f069d86e60c41de4153bae112b0eefeb71932e04286a32363cfe"
+        }
+      ]
+    },
+    {
+      "name": "browserbase_context_delete",
+      "hash": "9797327409bec66e012ed5d0e89632be545ef59d3b122a76de8a810be6c92900",
+      "params": [
+        {
+          "name": "contextId",
+          "hash": "4487437e618ff87bf006c67433745e99ec6c26920b615645197427404fa43f97"
+        },
+        {
+          "name": "name",
+          "hash": "2cc1b27e3fcccf0515e2f94669bb1c2bd3980f4b75bcaff08143b686bcae3126"
+        }
+      ]
+    },
+    {
+      "name": "browserbase_drag",
+      "hash": "18a8d4a0d738d68b584ad5f5c8ee9c14d288f8017450381290ad748af47f4241",
+      "params": [
+        {
+          "name": "endElement",
+          "hash": "2e12fa379751d8c237bd0612b5dd42f36f1964c0a2e21509d2a6443ea8269719"
+        },
+        {
+          "name": "endRef",
+          "hash": "e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b"
+        },
+        {
+          "name": "startElement",
+          "hash": "aa162e9620fa27b204c29e276143accc0a8411ff3c8b30e90d8e2625a6e888d9"
+        },
+        {
+          "name": "startRef",
+          "hash": "a2a0c2d0f7b7d8056a3aaaa53c71eba4f2bfeb35a02c5c6d860b52a9cccb9088"
+        }
+      ]
+    },
+    {
+      "name": "browserbase_get_text",
+      "hash": "136f0744a4eed0487a4bd382c21c369b0eb998de238e7d7fcd14037202047edf",
       "params": [
         {
           "name": "selector",
-          "hash": "cf9b6a9a4d253d7e4cbb921429945fcc70861aebf48bd8c8a0e6c61201352ade"
+          "hash": "f4be6318427b3b2a1c587d72c698b46ed5dac0806a7b22ca30913481827e6199"
+        }
+      ]
+    },
+    {
+      "name": "browserbase_hover",
+      "hash": "e53cd3c44908e91d35f071d4a414e52082d8385f1483e1c731d187b39846645f",
+      "params": [
+        {
+          "name": "element",
+          "hash": "1694eb3252cb80b50f80fb3fb83ea61f19b1d85a30ebcc301029e13e9db6fd14"
+        },
+        {
+          "name": "ref",
+          "hash": "e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b"
         }
       ]
     },
     {
       "name": "browserbase_navigate",
-      "hash": "5e517ac29796df4781d6e8f8b3be061cc694f0c8e027f40e42ce0739e887b1d5"
-    },
-    {
-      "name": "browserbase_screenshot",
-      "hash": "5e3558916850d55baa3a9b5dfaec0755a8c16f6bcd03be7a78aadbc65745da85",
+      "hash": "5e517ac29796df4781d6e8f8b3be061cc694f0c8e027f40e42ce0739e887b1d5",
       "params": [
         {
-          "name": "height",
-          "hash": "0e240884937c1dc91c541aaeceb007bb3bb0994e396a1652edb748fa6198615d"
+          "name": "url",
+          "hash": "63d749360d127f3c1d0d108336745c687aaa08760a306f0dadbbef4e9fadf27f"
+        }
+      ]
+    },
+    {
+      "name": "browserbase_navigate_back",
+      "hash": "1070d603d3951f9282bc8e5111b7a6993fa05215c23ba5099429b567a9bdb467"
+    },
+    {
+      "name": "browserbase_navigate_forward",
+      "hash": "4f74235e282e3cba526b98047b02c344c6bc32566bb325d5408e897eadfc6a7e"
+    },
+    {
+      "name": "browserbase_press_key",
+      "hash": "aad8c3412d76c93e83c00bbe260068e5e2b988fb41080d148f31d49b5e7d2532",
+      "params": [
+        {
+          "name": "key",
+          "hash": "99b4b6f2c8718d62ab46cca9b057177560c7ba358835bde04cebfdb9380036a2"
+        }
+      ]
+    },
+    {
+      "name": "browserbase_resize",
+      "hash": "8a048f66ca5985ffbe29b85a321269a7aa1d12663932dbb53ce37ddcf740d952"
+    },
+    {
+      "name": "browserbase_select_option",
+      "hash": "3e7335503efca3ef2f22d38c51e6cd89447a4a0caca18e0d8a0ef2b2c38a6c26",
+      "params": [
+        {
+          "name": "element",
+          "hash": "1694eb3252cb80b50f80fb3fb83ea61f19b1d85a30ebcc301029e13e9db6fd14"
         },
         {
-          "name": "name",
-          "hash": "28c1b883362fcf9a1205e2015271212cbc322322343879408bd5b191917b3379"
+          "name": "ref",
+          "hash": "e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b"
         },
         {
-          "name": "selector",
-          "hash": "aa5efe3a86a6ab130c1c81e671113a8be57294dedf3bbde39fe0088fea2c14d5"
+          "name": "values",
+          "hash": "fc0448dc32f6a5e89d930fb447d5f4411e31253d3e9fa9841edec2cb4618f8fb"
+        }
+      ]
+    },
+    {
+      "name": "browserbase_session_close",
+      "hash": "c33af2ca6802a0e1c80d2430f86170b68c2e9ceb55621d8ca4b1b33ebd0f544e",
+      "params": [
+        {
+          "name": "random_string",
+          "hash": "6f65b1a9a0e92e0bc83edd0f63ff030db3acf3f02ab0ea9bba4938307e3c00c0"
+        }
+      ]
+    },
+    {
+      "name": "browserbase_session_create",
+      "hash": "ea3a9035e2aa1743f77a76ef24175d7c66ad7a3afcdf080d004923acc19c5911",
+      "params": [
+        {
+          "name": "sessionId",
+          "hash": "2600a83521995510adcd784134a362806fe33f662254834faf3921034d05d68d"
+        }
+      ]
+    },
+    {
+      "name": "browserbase_snapshot",
+      "hash": "6dc78620771eccf0ab550879bb7ae6369de34114b673c111a4f7fbd8fab5076c"
+    },
+    {
+      "name": "browserbase_take_screenshot",
+      "hash": "7c87de0df69fe81dbbf340f7ba062a60a9c436540dcb7ef67bbd43a54837262e",
+      "params": [
+        {
+          "name": "element",
+          "hash": "fc545fc9093d9c26b52b0186745392d475ba2a517f5622bdff35a3d85c379fb6"
         },
         {
-          "name": "width",
-          "hash": "d10864eef69042788f00ea5522b84a05480ff9a1479b27cc6cdfa409a2304060"
+          "name": "raw",
+          "hash": "7cd65c9a870086f58183b0fbe7eb0794e3ce3cc3a62dca3b30168abf7f02015e"
+        },
+        {
+          "name": "ref",
+          "hash": "335ff2d7572b8831cdb68863866c4ba5f92c6436846295cf4e054eeb00b7edfe"
+        }
+      ]
+    },
+    {
+      "name": "browserbase_type",
+      "hash": "b9dfec63c6922f5935627751dc97ae4e3d80993bf414b844f36f80648584b8d4",
+      "params": [
+        {
+          "name": "element",
+          "hash": "1694eb3252cb80b50f80fb3fb83ea61f19b1d85a30ebcc301029e13e9db6fd14"
+        },
+        {
+          "name": "ref",
+          "hash": "e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b"
+        },
+        {
+          "name": "slowly",
+          "hash": "4dc8586a22406a330c309da2e8c10f90ee599b990993f654408b0e13d9001093"
+        },
+        {
+          "name": "submit",
+          "hash": "2878d7dee713522a404fd189b76b7ce01b439e50b164a1e5c992b6ba2f577106"
+        },
+        {
+          "name": "text",
+          "hash": "42bc9d6777b527b20636d608e53bc2cb9dc43f74c263b701827645bcc369d438"
+        }
+      ]
+    },
+    {
+      "name": "browserbase_wait",
+      "hash": "fb6ee71ce0454853bc08cbf2eb48241f4e3e8b1f29753fe13c72f91a563603ba",
+      "params": [
+        {
+          "name": "time",
+          "hash": "ae02dada7574b65a44313329c9439160f19f9aca36734146c44ce857bfe80790"
         }
       ]
     }

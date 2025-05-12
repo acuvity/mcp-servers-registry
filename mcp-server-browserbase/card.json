@@ -8,18 +8,18 @@
       "application": "https://github.com/browserbase/mcp-server-browserbase"
     },
   "tags": ["web","cloud","automation"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.5.1",
+  "version": "1.0.4",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "nil",
+  "rating": "D",
   "resources": {
-    "tools": 8,
+    "tools": 19,
     "prompts": 0,
-    "resources": 1,
+    "resources": 0,
     "resourcesTemplates": 0
   }
 }

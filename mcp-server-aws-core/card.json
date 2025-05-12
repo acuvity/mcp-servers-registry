@@ -8,11 +8,11 @@
       "application": "https://pypi.org/project/awslabs.core-mcp-server/"
     },
   "tags": ["cloud"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "requiresConfiguration": false,
   "requiresStorage": false,
   "rating": "D",

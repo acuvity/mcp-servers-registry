@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="standalone"
 
 LABEL org.opencontainers.image.title="mcp-server-calculator"
 LABEL org.opencontainers.image.description="This server enables LLMs to use calculator for precise numerical calculations."
-LABEL org.opencontainers.image.version="0.1.2"
+LABEL org.opencontainers.image.version="0.2.0"
 LABEL org.opencontainers.image.source="https://github.com/githejie/mcp-server-calculator"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="He Jie <hejie6173@gmail.com>"
@@ -43,7 +43,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uname -sm &&  uv venv && uv pip install mcp-server-calculator==0.1.2
+RUN uname -sm &&  uv venv && uv pip install mcp-server-calculator==0.2.0
 
 EXPOSE 8000/tcp
 

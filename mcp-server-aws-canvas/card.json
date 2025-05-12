@@ -8,7 +8,7 @@
       "application": "https://pypi.org/project/awslabs.nova-canvas-mcp-server/"
     },
   "tags": ["marketing","integration"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",

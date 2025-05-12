@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="standalone"
 
 LABEL org.opencontainers.image.title="mcp-server-context-7"
 LABEL org.opencontainers.image.description="Context7 MCP - Up-to-date Docs For Any Cursor Prompt."
-LABEL org.opencontainers.image.version="1.0.7"
+LABEL org.opencontainers.image.version="1.0.8"
 LABEL org.opencontainers.image.source="https://github.com/upstash/context7#readme"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="abdush"
@@ -37,7 +37,7 @@ RUN addgroup -g 1001 -S appuser && \
 
 USER appuser
 
-RUN npm i --omit-dev @upstash/context7-mcp@1.0.7
+RUN npm i --omit-dev @upstash/context7-mcp@1.0.8
 
 EXPOSE 8000/tcp
 

@@ -15,9 +15,9 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-alibaba-cloud-ops"
 LABEL org.opencontainers.image.description="Alibaba Cloud integration, supporting ECS, Cloud Monitor, OOS and widely used cloud products."
-LABEL org.opencontainers.image.version="0.8.2"
+LABEL org.opencontainers.image.version="0.8.3"
 LABEL org.opencontainers.image.source="https://github.com/aliyun/alibaba-cloud-ops-mcp-server"
-LABEL org.opencontainers.image.licenses="unknown"
+LABEL org.opencontainers.image.licenses="nil"
 LABEL org.opencontainers.image.author="Zheng Dayu <dayu.zdy@alibaba-inc.com>"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 
@@ -43,7 +43,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uname -sm &&  uv venv && uv pip install alibaba-cloud-ops-mcp-server==0.8.2
+RUN uname -sm &&  uv venv && uv pip install alibaba-cloud-ops-mcp-server==0.8.3
 
 EXPOSE 8000/tcp
 

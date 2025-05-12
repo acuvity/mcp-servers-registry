@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="standalone"
 
 LABEL org.opencontainers.image.title="mcp-server-chart"
 LABEL org.opencontainers.image.description="A Model Context Protocol server for generating visual charts using AntV."
-LABEL org.opencontainers.image.version="0.2.4"
+LABEL org.opencontainers.image.version="0.2.6"
 LABEL org.opencontainers.image.source="https://github.com/antvis/mcp-server-chart"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="AntV"
@@ -37,7 +37,7 @@ RUN addgroup -g 1001 -S appuser && \
 
 USER appuser
 
-RUN npm i --omit-dev @antv/mcp-server-chart@0.2.4
+RUN npm i --omit-dev @antv/mcp-server-chart@0.2.6
 
 EXPOSE 8000/tcp
 

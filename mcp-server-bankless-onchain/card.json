@@ -8,7 +8,7 @@
       "application": "https://bankless.com"
     },
   "tags": ["research","finance"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",

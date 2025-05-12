@@ -72,7 +72,7 @@
     },
     {
       "name": "create_entry",
-      "hash": "c1aae970359d9d305f7c2406cf750ab0a2ab8e175ed5f8b96c1e24eaff2c437d",
+      "hash": "d1687108b7c99d63382fb9b55331150091da8baaa9d9763ec35d0d2c8ed998ea",
       "params": [
         {
           "name": "contentTypeId",
@@ -84,7 +84,7 @@
         },
         {
           "name": "fields",
-          "hash": "992f0a1f879b5f76a0f218fc9c008340914f9d07ef29d35968ed952250d22338"
+          "hash": "33f63ffca8ba8a642db0188cf77a8ed907bb45c8a601d2325fa4cf01c9d3e057"
         },
         {
           "name": "spaceId",
@@ -544,7 +544,7 @@
     },
     {
       "name": "update_content_type",
-      "hash": "dddc16016803deac06cd0b00cfb46199ec5bb4838e3a57dbdc317e367d801667",
+      "hash": "dff46c3db47453975594cec480c7a7fa4c679f1951bedf413f43c1760b58a880",
       "params": [
         {
           "name": "environmentId",
@@ -558,11 +558,15 @@
     },
     {
       "name": "update_entry",
-      "hash": "c37726ed20c49012efeeeb182da909b70f80b1ec7dbf99d637988c55f8a4f1af",
+      "hash": "15617674da9c17fdf452373e15b9e42260a7d84b0779b0afc62d42534d2a13e0",
       "params": [
         {
           "name": "environmentId",
           "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "fields",
+          "hash": "9f28607eac1f0d0e703890346919c6a3a77606537131e5d9d52b78f95cf68d7f"
         },
         {
           "name": "spaceId",

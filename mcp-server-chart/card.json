@@ -8,11 +8,11 @@
       "application": "https://github.com/antvis/mcp-server-chart"
     },
   "tags": ["integration","web","development"],
-  "official": false,
+  "official": true,
   "scope": "standalone",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.2.4",
+  "version": "0.2.6",
   "requiresConfiguration": false,
   "requiresStorage": false,
   "rating": "B",

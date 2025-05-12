@@ -8,11 +8,11 @@
       "application": "https://github.com/aliyun/alibaba-cloud-ops-mcp-server"
     },
   "tags": ["cloud","integration"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "rating": "D",

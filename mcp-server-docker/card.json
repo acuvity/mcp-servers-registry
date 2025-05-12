@@ -12,7 +12,7 @@
   "scope": "native",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "requiresConfiguration": false,
   "requiresStorage": false,
   "rating": "B",

@@ -8,7 +8,7 @@
       "application": "https://github.com/axiomhq/mcp-server-axiom"
     },
   "tags": ["monitoring","research","translation"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "binary",

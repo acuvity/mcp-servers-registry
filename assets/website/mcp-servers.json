@@ -46,7 +46,7 @@
     "tags": [
       "development"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
@@ -1283,7 +1283,7 @@
       "integration",
       "finance"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
@@ -1344,11 +1344,11 @@
       "cloud",
       "integration"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "python",
-    "version": "0.8.2",
+    "version": "0.8.3",
     "requiresConfiguration": true,
     "requiresStorage": false,
     "rating": "D",
@@ -1808,7 +1808,7 @@
       "research",
       "development"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
@@ -1831,7 +1831,7 @@
       "cloud",
       "marketing"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
@@ -2334,7 +2334,7 @@
       "cloud",
       "development"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "python",
@@ -2467,7 +2467,7 @@
       "cloud",
       "integration"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "python",
@@ -2489,7 +2489,7 @@
       "marketing",
       "integration"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "python",
@@ -2510,7 +2510,7 @@
     "tags": [
       "cloud"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "python",
@@ -2536,11 +2536,11 @@
     "tags": [
       "cloud"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "python",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "requiresConfiguration": false,
     "requiresStorage": false,
     "rating": "D",
@@ -2563,11 +2563,11 @@
       "cloud",
       "integration"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "python",
-    "version": "0.1.9",
+    "version": "0.1.10",
     "requiresConfiguration": true,
     "requiresStorage": false,
     "rating": "B",
@@ -2590,7 +2590,7 @@
       "development",
       "research"
     ],
-    "official": false,
+    "official": true,
     "scope": "standalone",
     "mutitenant": true,
     "runtime": "python",
@@ -2617,7 +2617,7 @@
       "research",
       "cloud"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "python",
@@ -2671,7 +2671,7 @@
       "integration",
       "cloud"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "python",
@@ -2758,7 +2758,7 @@
       "research",
       "cloud"
     ],
-    "official": false,
+    "official": true,
     "scope": "standalone",
     "mutitenant": true,
     "runtime": "python",
@@ -2786,7 +2786,7 @@
       "research",
       "translation"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "binary",
@@ -2917,7 +2917,7 @@
       "research",
       "finance"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
@@ -2944,7 +2944,7 @@
       "integration",
       "finance"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": false,
     "runtime": "node",
@@ -4053,7 +4053,7 @@
     "scope": "standalone",
     "mutitenant": true,
     "runtime": "python",
-    "version": "0.1.2",
+    "version": "0.2.0",
     "requiresConfiguration": false,
     "requiresStorage": false,
     "rating": "D",
@@ -4172,11 +4172,11 @@
       "web",
       "development"
     ],
-    "official": false,
+    "official": true,
     "scope": "standalone",
     "mutitenant": true,
     "runtime": "node",
-    "version": "0.2.4",
+    "version": "0.2.6",
     "requiresConfiguration": false,
     "requiresStorage": false,
     "rating": "B",
@@ -4284,7 +4284,7 @@
       "finance",
       "automation"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "python",
@@ -4359,16 +4359,16 @@
     "tags": [
       "development"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
-    "version": "0.4.3",
+    "version": "0.5.0",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": "A",
     "resources": {
-      "tools": 7,
+      "tools": 8,
       "prompts": 0,
       "resources": 0,
       "resourcesTemplates": 0
@@ -4616,7 +4616,7 @@
       "development",
       "database"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "python",
@@ -4740,7 +4740,7 @@
       "database",
       "development"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
@@ -5124,11 +5124,11 @@
       "research",
       "integration"
     ],
-    "official": false,
+    "official": true,
     "scope": "standalone",
     "mutitenant": true,
     "runtime": "node",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "requiresConfiguration": false,
     "requiresStorage": false,
     "rating": "B",
@@ -6258,7 +6258,7 @@
     "scope": "native",
     "mutitenant": true,
     "runtime": "python",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "requiresConfiguration": false,
     "requiresStorage": false,
     "rating": "B",
@@ -7799,7 +7799,7 @@
       "development",
       "research"
     ],
-    "official": false,
+    "official": true,
     "scope": "native",
     "mutitenant": true,
     "runtime": "python",
@@ -8522,11 +8522,11 @@
       "web",
       "cloud"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
-    "version": "1.0.20250508001",
+    "version": "1.0.20250508004",
     "requiresConfiguration": true,
     "requiresStorage": false,
     "rating": "A",
@@ -9522,7 +9522,7 @@
       "integration",
       "development"
     ],
-    "official": false,
+    "official": true,
     "scope": "native",
     "mutitenant": true,
     "runtime": "node",
@@ -14934,7 +14934,7 @@
       "development",
       "integration"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
@@ -15901,7 +15901,7 @@
     "description": "Interacting with Notion API.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-notion",
-      "application": "https://github.com/suekou/mcp-notion-server"
+      "application": "https://github.com/makenotion/notion-mcp-server"
     },
     "tags": [
       "integration",
@@ -15909,16 +15909,16 @@
       "development",
       "database"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
-    "version": "1.2.3",
+    "version": "1.7.0",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": "D",
     "resources": {
-      "tools": 18,
+      "tools": 19,
       "prompts": 0,
       "resources": 0,
       "resourcesTemplates": 0
@@ -16939,7 +16939,7 @@
       "integration",
       "finance"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
@@ -17525,7 +17525,7 @@
       "integration",
       "development"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
@@ -18841,7 +18841,7 @@
       "research",
       "integration"
     ],
-    "official": false,
+    "official": true,
     "scope": "standalone",
     "mutitenant": true,
     "runtime": "node",

@@ -22,11 +22,15 @@
     },
     {
       "name": "get_latest_pipeline_status",
-      "hash": "faa4267602cdfbd7aa6a7c5a79a2afaaa2ec7949dfce8f09d338234921ed8e0a"
+      "hash": "001776fe014c5d6888cec8a06ab7a9d13727a98039b382f4c93376de0a37549d"
     },
     {
       "name": "recommend_prompt_template_tests",
       "hash": "6be9c0e965a6a22ad8a28b40a5d83ab95fb532cbdb02ebffc46f5fe7f4df4888"
+    },
+    {
+      "name": "run_pipeline",
+      "hash": "174ffc75d1ac03d5824ae5b5cdf4f71edc85473c473b54ebc2f240883efedfca"
     }
   ],
   "prompts": []

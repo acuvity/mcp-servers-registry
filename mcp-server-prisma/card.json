@@ -8,7 +8,7 @@
       "application": "https://github.com/prisma/prisma"
     },
   "tags": ["database","integration","development"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
