@@ -368,7 +368,7 @@
                   target="_blank"
                   rel="noopener"
                   class="flex items-center gap-1 text-black hover:text-gray-700"
-                  title="Opens in a new tab"
+                  :title="server.links.application"
                 >
                   Version: {{ server.version }}
                   <i class="fas fa-up-right-from-square text-gray-500"></i>
@@ -660,6 +660,14 @@
                 threshold: 0.3,
               });
               res = f.search(this.search).map((r) => r.item);
+
+              res.sort((a, b) => {
+                // packaged first
+                const aHas = Boolean(a.links?.artifacts),
+                  bHas = Boolean(b.links?.artifacts);
+                if (aHas !== bHas) return aHas ? -1 : 1;
+              });
+              return res;
             }
             res.sort((a, b) => {
               // packaged first
