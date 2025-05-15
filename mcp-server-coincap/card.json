@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-coincap",
-  "name": "mcp-server-coincap ",
+  "name": "mcp-server-coincap",
   "description": "Real-time cryptocurrency market data integration using CoinCap's public API.",
   "links":
     {

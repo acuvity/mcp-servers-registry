@@ -20,16 +20,16 @@
 
 # What is mcp-server-coda?
 
-[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-coda/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-coda/1.1.2?logo=docker&logoColor=fff&label=1.1.2)](https://hub.docker.com/r/acuvity/mcp-server-coda)
-[![PyPI](https://img.shields.io/badge/1.1.2-3775A9?logo=pypi&logoColor=fff&label=coda-mcp)](https://github.com/orellazri/coda-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-coda/1.1.3?logo=docker&logoColor=fff&label=1.1.3)](https://hub.docker.com/r/acuvity/mcp-server-coda)
+[![PyPI](https://img.shields.io/badge/1.1.3-3775A9?logo=pypi&logoColor=fff&label=coda-mcp)](https://github.com/orellazri/coda-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-coda&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_KEY%22%2C%22-e%22%2C%22DOC_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-coda%3A1.1.2%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-coda&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_KEY%22%2C%22-e%22%2C%22DOC_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-coda%3A1.1.3%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** MCP server for Coda.
 
-Packaged by Acuvity from coda-mcp original [sources](https://github.com/orellazri/coda-mcp).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from coda-mcp original [sources](https://github.com/orellazri/coda-mcp).
 
 **Quick links:**
 
@@ -122,10 +122,13 @@ Provides a lightweight auth layer using a single shared token.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
+
+To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-coda/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-coda/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-coda/charts/mcp-server-coda#minibridge) for Helm charts).
+
 </details>
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active. To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-coda/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-coda/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-coda/charts/mcp-server-coda#minibridge) for Helm charts).
+> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # 📦 How to Install
@@ -148,7 +151,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-coda&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_KEY%22%2C%22-e%22%2C%22DOC_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-coda%3A1.1.2%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-coda&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_KEY%22%2C%22-e%22%2C%22DOC_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-coda%3A1.1.3%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -173,7 +176,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "API_KEY",
           "-e",
           "DOC_ID",
-          "docker.io/acuvity/mcp-server-coda:1.1.2"
+          "docker.io/acuvity/mcp-server-coda:1.1.3"
         ]
       }
     }
@@ -203,7 +206,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "API_KEY",
         "-e",
         "DOC_ID",
-        "docker.io/acuvity/mcp-server-coda:1.1.2"
+        "docker.io/acuvity/mcp-server-coda:1.1.3"
       ]
     }
   }
@@ -237,7 +240,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "API_KEY",
         "-e",
         "DOC_ID",
-        "docker.io/acuvity/mcp-server-coda:1.1.2"
+        "docker.io/acuvity/mcp-server-coda:1.1.3"
       ]
     }
   }
@@ -273,7 +276,7 @@ Add the following JSON block to your mcp configuration file:
         "API_KEY",
         "-e",
         "DOC_ID",
-        "docker.io/acuvity/mcp-server-coda:1.1.2"
+        "docker.io/acuvity/mcp-server-coda:1.1.3"
       ]
     }
   }
@@ -307,7 +310,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "API_KEY",
         "-e",
         "DOC_ID",
-        "docker.io/acuvity/mcp-server-coda:1.1.2"
+        "docker.io/acuvity/mcp-server-coda:1.1.3"
       ]
     }
   }
@@ -327,7 +330,7 @@ async with MCPServerStdio(
     params={
         "env": {"API_KEY":"TO_BE_SET","DOC_ID":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","API_KEY","-e","DOC_ID","docker.io/acuvity/mcp-server-coda:1.1.2"]
+        "args": ["run","-i","--rm","--read-only","-e","API_KEY","-e","DOC_ID","docker.io/acuvity/mcp-server-coda:1.1.3"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -361,7 +364,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e API_KEY -e DOC_ID docker.io/acuvity/mcp-server-coda:1.1.2`
+- arguments: `run -i --rm --read-only -e API_KEY -e DOC_ID docker.io/acuvity/mcp-server-coda:1.1.3`
 
 </details>
 
@@ -371,18 +374,16 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -i --rm --read-only -e API_KEY -e DOC_ID docker.io/acuvity/mcp-server-coda:1.1.2
+docker run -it -p 8000:8000 --rm --read-only -e API_KEY -e DOC_ID docker.io/acuvity/mcp-server-coda:1.1.3
 ```
 
-Add `-p <localport>:8000` to expose the port.
-
-Then on your application/client, you can configure to use something like:
+Then on your application/client, you can configure to use it like:
 
 ```json
 {
   "mcpServers": {
     "acuvity-mcp-server-coda": {
-      "url": "http://localhost:<localport>/sse",
+      "url": "http://localhost:8000/sse"
     }
   }
 }
@@ -434,6 +435,8 @@ Minibridge offers a host of additional features. For step-by-step guidance, plea
 
 ## 🛡️ Runtime security
 
+**Guardrails:**
+
 To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
 - covert-instruction-detection
 - sensitive-pattern-detection
@@ -442,10 +445,15 @@ To activate guardrails in your Docker containers, define the `GUARDRAILS` enviro
 - cross-origin-tool-access
 - secrets-redaction
 
-for example, `-e GUARDRAILS="secrets-redaction covert-instruction-detection"` will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
+For example adding:
+- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
+to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
 
+**Basic Authentication:**
 
-To turn on Basic Authentication, set BASIC_AUTH_SECRET like `- e BASIC_AUTH_SECRET="supersecret`
+To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
+- `-e BASIC_AUTH_SECRET="supersecret"`
+to your docker arguments. This will enable the Basic Authentication check.
 
 Then you can connect through `http/sse` as usual given that you pass an `Authorization: Bearer supersecret` header with your secret as Bearer token.
 
@@ -500,7 +508,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 ## 🧰 Tools (7)
 <details>
-<summary>list-pages</summary>
+<summary>coda_list_pages</summary>
 
 **Description**:
 
@@ -514,7 +522,7 @@ List pages in the current document
 |-----------|------|-------------|-----------|
 </details>
 <details>
-<summary>create-page</summary>
+<summary>coda_create_page</summary>
 
 **Description**:
 
@@ -530,7 +538,7 @@ Create a page in the current document
 | name | string | The name of the page to create | Yes
 </details>
 <details>
-<summary>get-page-content</summary>
+<summary>coda_get_page_content</summary>
 
 **Description**:
 
@@ -545,7 +553,7 @@ Get the content of a page as markdown
 | pageIdOrName | string | The ID or name of the page to get the content of | Yes
 </details>
 <details>
-<summary>replace-page-content</summary>
+<summary>coda_replace_page_content</summary>
 
 **Description**:
 
@@ -561,7 +569,7 @@ Replace the content of a page with new markdown content
 | pageIdOrName | string | The ID or name of the page to replace the content of | Yes
 </details>
 <details>
-<summary>append-page-content</summary>
+<summary>coda_append_page_content</summary>
 
 **Description**:
 
@@ -577,7 +585,7 @@ Append new markdown content to the end of a page
 | pageIdOrName | string | The ID or name of the page to append the content to | Yes
 </details>
 <details>
-<summary>duplicate-page</summary>
+<summary>coda_duplicate_page</summary>
 
 **Description**:
 
@@ -593,7 +601,7 @@ Duplicate a page in the current document
 | pageIdOrName | string | The ID or name of the page to duplicate | Yes
 </details>
 <details>
-<summary>rename-page</summary>
+<summary>coda_rename_page</summary>
 
 **Description**:
 
@@ -616,24 +624,24 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
-| tools | append-page-content | description | d6eb83d5da34ae32ee47e049bfde75b03ca3a7b48c59a3195bb611f69629728c |
-| tools | append-page-content | content | 5a10ac2f054a77da9b7959abb4bacdb04cb96dec1697272b5ac8dcd8fb270172 |
-| tools | append-page-content | pageIdOrName | 2953a62ac23fd91570996571f459640e50db43ba7acfb27295ce332f276a9205 |
-| tools | create-page | description | cc5fb25691258d75039b01e76e47c55ca99243a51ca0a1ca8316d5f9ecf4642e |
-| tools | create-page | content | 22bd8cb205205d5c8826180ff748095de56dad85b69aa7d9f3e425e6d7e8f0f8 |
-| tools | create-page | name | 9200c858ffe87b34c08415c39d7e1111124dc7fbbe8bf606365936cf08fabdb8 |
-| tools | duplicate-page | description | 4c2496f1d91db963e00ce499c6a64ce127e3e1789f51b7674d9053fc9f11c627 |
-| tools | duplicate-page | newName | 8cc9888bfa04926d724ebdfd4283bf915e056c54d7b9568b8c2c0409b00558d7 |
-| tools | duplicate-page | pageIdOrName | 23b139479cb7b4beb87d1d9833534d7c323f2db9feb871a75c81fb3abdb58ff4 |
-| tools | get-page-content | description | 6e954360c948036e80de20759d8e143ca665cdc6375a04d22b7fe7e79c411277 |
-| tools | get-page-content | pageIdOrName | 2660e996c27d04bf1e63551dcf2f49e3414bb72b0a97bf7fce8220bd324b64bf |
-| tools | list-pages | description | b70da335dd3f3b775908abe23d3fabc8d2e4c7228c8bb342fbee8c163ca48d45 |
-| tools | rename-page | description | 037a2e1ce43e2a3eb82f6b3aa83f5e9dafdce96ffaa5186702482bf458a194b6 |
-| tools | rename-page | newName | 47633c3d0d36d0564492d812ff19826f72d7b172b3eacad87b98f8246491662a |
-| tools | rename-page | pageIdOrName | ffb5e62092ae083458b493ad20c66b6f1277f4a3bf8d35715baf351163449b8f |
-| tools | replace-page-content | description | 159be8ca055b41aafbe9770117c4f1579a454f2baaba9b20f33682d5273bcc5c |
-| tools | replace-page-content | content | d18f6633054b57d9534e835c3be08e87ef9588cb7127e43e4f0b51449683b75c |
-| tools | replace-page-content | pageIdOrName | 54bbde434915298761a0e41ef26c250776e2129a4dc3e682586ca51f8bbc0c3b |
+| tools | coda_append_page_content | description | d6eb83d5da34ae32ee47e049bfde75b03ca3a7b48c59a3195bb611f69629728c |
+| tools | coda_append_page_content | content | 5a10ac2f054a77da9b7959abb4bacdb04cb96dec1697272b5ac8dcd8fb270172 |
+| tools | coda_append_page_content | pageIdOrName | 2953a62ac23fd91570996571f459640e50db43ba7acfb27295ce332f276a9205 |
+| tools | coda_create_page | description | cc5fb25691258d75039b01e76e47c55ca99243a51ca0a1ca8316d5f9ecf4642e |
+| tools | coda_create_page | content | 22bd8cb205205d5c8826180ff748095de56dad85b69aa7d9f3e425e6d7e8f0f8 |
+| tools | coda_create_page | name | 9200c858ffe87b34c08415c39d7e1111124dc7fbbe8bf606365936cf08fabdb8 |
+| tools | coda_duplicate_page | description | 4c2496f1d91db963e00ce499c6a64ce127e3e1789f51b7674d9053fc9f11c627 |
+| tools | coda_duplicate_page | newName | 8cc9888bfa04926d724ebdfd4283bf915e056c54d7b9568b8c2c0409b00558d7 |
+| tools | coda_duplicate_page | pageIdOrName | 23b139479cb7b4beb87d1d9833534d7c323f2db9feb871a75c81fb3abdb58ff4 |
+| tools | coda_get_page_content | description | 6e954360c948036e80de20759d8e143ca665cdc6375a04d22b7fe7e79c411277 |
+| tools | coda_get_page_content | pageIdOrName | 2660e996c27d04bf1e63551dcf2f49e3414bb72b0a97bf7fce8220bd324b64bf |
+| tools | coda_list_pages | description | b70da335dd3f3b775908abe23d3fabc8d2e4c7228c8bb342fbee8c163ca48d45 |
+| tools | coda_rename_page | description | 037a2e1ce43e2a3eb82f6b3aa83f5e9dafdce96ffaa5186702482bf458a194b6 |
+| tools | coda_rename_page | newName | 47633c3d0d36d0564492d812ff19826f72d7b172b3eacad87b98f8246491662a |
+| tools | coda_rename_page | pageIdOrName | ffb5e62092ae083458b493ad20c66b6f1277f4a3bf8d35715baf351163449b8f |
+| tools | coda_replace_page_content | description | 159be8ca055b41aafbe9770117c4f1579a454f2baaba9b20f33682d5273bcc5c |
+| tools | coda_replace_page_content | content | d18f6633054b57d9534e835c3be08e87ef9588cb7127e43e4f0b51449683b75c |
+| tools | coda_replace_page_content | pageIdOrName | 54bbde434915298761a0e41ef26c250776e2129a4dc3e682586ca51f8bbc0c3b |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

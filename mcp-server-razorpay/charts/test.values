@@ -1,0 +1,13 @@
+env:
+
+secrets:
+  RAZORPAY_KEY_ID:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  RAZORPAY_KEY_SECRET:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

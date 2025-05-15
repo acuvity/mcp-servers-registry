@@ -1,0 +1,17 @@
+env:
+  CONFLUENCE_URL: dummy_value
+  CONFLUENCE_USERNAME: dummy_value
+  JIRA_URL: dummy_value
+  JIRA_USERNAME: dummy_value
+
+secrets:
+  CONFLUENCE_API_TOKEN:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  JIRA_API_TOKEN:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

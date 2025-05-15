@@ -1,0 +1,603 @@
+{
+  "tools": [
+    {
+      "name": "add_activity_to_incident",
+      "hash": "610552ea63617a74fd015f4a67b3a5c8e1fe3c0979922a1c235ec2cc6a9de2aa",
+      "params": [
+        {
+          "name": "body",
+          "hash": "4f2ae7b4e5dbb0246bd049bc943119942ea2a8444e11af741d23c3455308e76f"
+        },
+        {
+          "name": "eventTime",
+          "hash": "c90be1aee29eac2cbe9efd8f0ce87246de26fd726ea69a93bfdc9cea7e4e1930"
+        },
+        {
+          "name": "incidentId",
+          "hash": "59a43b22ccdd6198f3a3c93a4c6434dd8f764ebbc906ac32b37c0f480bf313a8"
+        }
+      ]
+    },
+    {
+      "name": "create_incident",
+      "hash": "a2228ba3f1644395aa75ee218bc2baec8f9566e577b57edadda2ff95cc0c2e80",
+      "params": [
+        {
+          "name": "attachCaption",
+          "hash": "6ec6551fcfd6921f479963ca5f5fe0aea79a54e18f384dbeea9b730a8dc5c0ab"
+        },
+        {
+          "name": "attachUrl",
+          "hash": "46c8ed77659ce812078a18400b6e1a0c577344a1cbdcc4126646c4c47936bc23"
+        },
+        {
+          "name": "isDrill",
+          "hash": "2ac103f8fd1202e0d33f77b65610eaab778a6a5364d0aef510933b82758d6234"
+        },
+        {
+          "name": "labels",
+          "hash": "65fc74a7acdd9f44cf155dbff26a85f5738a1cbc5f4177857dab9cea779e84cd"
+        },
+        {
+          "name": "roomPrefix",
+          "hash": "e10bbd57589e4550f7c2e78c9c282472a8483d35aa0be3d576275892174277f5"
+        },
+        {
+          "name": "severity",
+          "hash": "20a6cddd98286182ed0f693abe5003aa11928afde75c775ff6744c65f2ba53ea"
+        },
+        {
+          "name": "status",
+          "hash": "879aecbbf80e7a0380b8a85c4597cb725247a67b36a53fb197e24ac3dcc32251"
+        },
+        {
+          "name": "title",
+          "hash": "90902805e58ea7f007150ed8ae10150fd92cc5996b6ad68abdbf145dd8fe0143"
+        }
+      ]
+    },
+    {
+      "name": "find_error_pattern_logs",
+      "hash": "fa47e666d5bb315bb4a3fc51d6e316b9d65b10e175be7d681bb73270c72a9c19",
+      "params": [
+        {
+          "name": "end",
+          "hash": "ccb76e275799b1078482ad33ba3199e103d60bfb527c293f59fbaa92e43b38f0"
+        },
+        {
+          "name": "labels",
+          "hash": "5d4e65048a0c8393cc5f32605e62a76cfd1fec46777f84c37b92bcda9c56023f"
+        },
+        {
+          "name": "name",
+          "hash": "c59b0f4f120e19db3b16052e1867319d8082cc9bfa4fa5702608c0075d7ca17f"
+        },
+        {
+          "name": "start",
+          "hash": "a64b2c75b4e69697ebdaf5e93fd27e58639d019cf5e5442dd3b0621ac4f56c3f"
+        }
+      ]
+    },
+    {
+      "name": "find_slow_requests",
+      "hash": "d2693a5b0198c7482fd27658f09afa284ea8ff1316d9b14f0f67b2fba97af7d5",
+      "params": [
+        {
+          "name": "end",
+          "hash": "ccb76e275799b1078482ad33ba3199e103d60bfb527c293f59fbaa92e43b38f0"
+        },
+        {
+          "name": "labels",
+          "hash": "5d4e65048a0c8393cc5f32605e62a76cfd1fec46777f84c37b92bcda9c56023f"
+        },
+        {
+          "name": "name",
+          "hash": "c59b0f4f120e19db3b16052e1867319d8082cc9bfa4fa5702608c0075d7ca17f"
+        },
+        {
+          "name": "start",
+          "hash": "a64b2c75b4e69697ebdaf5e93fd27e58639d019cf5e5442dd3b0621ac4f56c3f"
+        }
+      ]
+    },
+    {
+      "name": "get_alert_rule_by_uid",
+      "hash": "c69f515c7b9a915e35d99fc2bbb70d8f79da64a4fa7532c940402a2c2f321106",
+      "params": [
+        {
+          "name": "uid",
+          "hash": "2b20b8723d35fa58fa40a4ed72a4c5f8537437076a83fe964d6a59cb1626f2f8"
+        }
+      ]
+    },
+    {
+      "name": "get_assertions",
+      "hash": "5d4f98d1a0957d3341cbc8fdbf4ebb8d807f18a49aeb963ef1017c9bfd5f5a45",
+      "params": [
+        {
+          "name": "endTime",
+          "hash": "1fcf7dd086413698b6846e22b86c4693001d2ffcc7dfa89633a074a2d845c5a7"
+        },
+        {
+          "name": "entityName",
+          "hash": "3f63ab34f932e99286199604e4f5131542e0cb9037e3da211528f961f72c945a"
+        },
+        {
+          "name": "entityType",
+          "hash": "c9b0915ea38bf4edc68d24b91be9af46d50f942ce50fd2a425930a0ba0c0227e"
+        },
+        {
+          "name": "env",
+          "hash": "b59041eb0851ffb827fb6dc44d1787ed061bf5c817399060127debf181b3b6d4"
+        },
+        {
+          "name": "namespace",
+          "hash": "826901ccd29a9570b734e9fa20622cf174a72bed8e052d89fb2e88f864f88474"
+        },
+        {
+          "name": "site",
+          "hash": "3d387a2e827f859535e3d8fdc8ff24ebc5af781fe97a7aa8595712580315217f"
+        },
+        {
+          "name": "startTime",
+          "hash": "13ba7a11b929754ca04718ceb5017df289f55e690796da5a0fe151ad65f8e3a5"
+        }
+      ]
+    },
+    {
+      "name": "get_current_oncall_users",
+      "hash": "7f186ce2d78680fc622fb8d0817a0a83d3625aa8651fcf2c90688f5af583c9cf",
+      "params": [
+        {
+          "name": "scheduleId",
+          "hash": "e449393009af366a05b28c1e3a74927a385969308f419d68546a445fd4508631"
+        }
+      ]
+    },
+    {
+      "name": "get_dashboard_by_uid",
+      "hash": "2201877e137b554aaf6064acbf3a7fcc298b47b663b801d2d22256257914d9e4",
+      "params": [
+        {
+          "name": "uid",
+          "hash": "a5663f54c0d36ef714da821bb2097dd6808a8fd3e27d1d16af28f85b999a1d62"
+        }
+      ]
+    },
+    {
+      "name": "get_datasource_by_name",
+      "hash": "b0344ad3d9c9928ae54fedcbdd5c0745223b7bbdffdd302268fb3ab9b55f121c",
+      "params": [
+        {
+          "name": "name",
+          "hash": "a25821cfd50f370f8978c50e86779c8e3f5f85b0ac61048aa6faa5d63c46703b"
+        }
+      ]
+    },
+    {
+      "name": "get_datasource_by_uid",
+      "hash": "88461427672ce15e88a831f7edeeeb9712841baccde3a669b1345c49915d71f7",
+      "params": [
+        {
+          "name": "uid",
+          "hash": "1fb37ce58fc9ed3f190cb80d768b797637a69ad3df1d5a0a5b491a79d2c573fb"
+        }
+      ]
+    },
+    {
+      "name": "get_incident",
+      "hash": "1a0d1c1d0b9d4292f0dc54a358c03abf7c6aded92c8d86dbc64aa53d9d978145",
+      "params": [
+        {
+          "name": "id",
+          "hash": "2e366f8aaf4953c4ed902746a39abcb24750bccc27a3ca9cab790dd868c13bd5"
+        }
+      ]
+    },
+    {
+      "name": "get_oncall_shift",
+      "hash": "554ebc8791e077e334947b97d694ead30aa7d54a9d88175d77b7ecdf83fd9fab",
+      "params": [
+        {
+          "name": "shiftId",
+          "hash": "bf009f7f59eadbfa53cfacdbeba406a1807be39718e207204bf0d8fa87217df3"
+        }
+      ]
+    },
+    {
+      "name": "get_sift_analysis",
+      "hash": "3fb36a7a963fd6fe938ebfc25cbd8b8365ec970391db5c047cda85014594a38b",
+      "params": [
+        {
+          "name": "analysisId",
+          "hash": "d31cc9712d0e0fbe607df52f56b7b28672a33939f1df6466443dcdb41d192fa2"
+        },
+        {
+          "name": "investigationId",
+          "hash": "e93954e3229bb1f1e682080864dc442473cf498633e13f3a5190094da58723d0"
+        }
+      ]
+    },
+    {
+      "name": "get_sift_investigation",
+      "hash": "d12373019135e755340b1ce5d93f763c91ca1a67c6620239a5f939c029e3672c",
+      "params": [
+        {
+          "name": "id",
+          "hash": "e93954e3229bb1f1e682080864dc442473cf498633e13f3a5190094da58723d0"
+        }
+      ]
+    },
+    {
+      "name": "list_alert_rules",
+      "hash": "a86101b69d0f43e75498291d0b4c3bb6a509fe70aa4b5b7cc8e3f9354d51e1ea",
+      "params": [
+        {
+          "name": "label_selectors",
+          "hash": "0c742ac7a8ec5d4348e453d391442a3d4cd06d3a872a31a01391e6af8b62e911"
+        },
+        {
+          "name": "limit",
+          "hash": "5756eab87185a3d495e50c1a0912a3c24c71b8059a294b6eb296986bb1f3b53e"
+        },
+        {
+          "name": "page",
+          "hash": "66206a2e698ca8960cfda7d91b1a1bfc032149ff459c2520e14a7c2dd516903a"
+        }
+      ]
+    },
+    {
+      "name": "list_contact_points",
+      "hash": "5e7eb8b6bab772ccdcdd40415403eaf27fcaf7f37f4a944cac4c5f547f15f4ac",
+      "params": [
+        {
+          "name": "limit",
+          "hash": "5756eab87185a3d495e50c1a0912a3c24c71b8059a294b6eb296986bb1f3b53e"
+        },
+        {
+          "name": "name",
+          "hash": "4018f5ce5f101a9d5f497495a40c015323d21229aefe9c7e94536d8a4345c0dd"
+        }
+      ]
+    },
+    {
+      "name": "list_datasources",
+      "hash": "e703feda135105addad822509510a962593d6d5c84d42e1484a8f8b2a82ed97f",
+      "params": [
+        {
+          "name": "type",
+          "hash": "e3f724e5421f436c72b37570160f0ce2b8ef9a3d5ef6925e293569375ad4c146"
+        }
+      ]
+    },
+    {
+      "name": "list_incidents",
+      "hash": "352be4fcbd2e3540a452fc09e90a4fc866b287c8358f9377dca7e25280052abe",
+      "params": [
+        {
+          "name": "drill",
+          "hash": "36ad498cf69a59b6728eff37d823a14e5c0936b3a7dee3e414d0d70a9ab47e62"
+        },
+        {
+          "name": "limit",
+          "hash": "11e914016c6fca5c315ecca8c4db698c90a18721750a0723d2f9b8019b0fb7f3"
+        },
+        {
+          "name": "status",
+          "hash": "331729598e1faa2d15d370b680e7105b8c58db9d77092dfd62c6aab09e2c88ad"
+        }
+      ]
+    },
+    {
+      "name": "list_loki_label_names",
+      "hash": "d1f7d27a7bcd300febf5a6e0896a1d34ece0e11482b810468a8b8a182e62463a",
+      "params": [
+        {
+          "name": "datasourceUid",
+          "hash": "cdfa18054a432407c4dfe44b49781c6c2019c055bf589949ff66cdc974c5e5aa"
+        },
+        {
+          "name": "endRfc3339",
+          "hash": "5c050f729007ebdea18a414ed0fb9fdb31be9f2a63eb87f5bba9707273ed8df2"
+        },
+        {
+          "name": "startRfc3339",
+          "hash": "e93ead65fef426f987915ecb159e06412a589c2ce3b47fe5f58b105870172a5c"
+        }
+      ]
+    },
+    {
+      "name": "list_loki_label_values",
+      "hash": "b1bb4dfda78f17a23779d1ae8afa4b3900caa667690a7b634b4cbc7579fc6eda",
+      "params": [
+        {
+          "name": "datasourceUid",
+          "hash": "cdfa18054a432407c4dfe44b49781c6c2019c055bf589949ff66cdc974c5e5aa"
+        },
+        {
+          "name": "endRfc3339",
+          "hash": "5c050f729007ebdea18a414ed0fb9fdb31be9f2a63eb87f5bba9707273ed8df2"
+        },
+        {
+          "name": "labelName",
+          "hash": "7143291d7cbbf35431ffa3b925204dd4ebe834b8364437e36c64abaf443e3991"
+        },
+        {
+          "name": "startRfc3339",
+          "hash": "e93ead65fef426f987915ecb159e06412a589c2ce3b47fe5f58b105870172a5c"
+        }
+      ]
+    },
+    {
+      "name": "list_oncall_schedules",
+      "hash": "27f76080114a392e4d3481d5784af2f64765ae53b451ed3259eca0d0ddc23f1a",
+      "params": [
+        {
+          "name": "page",
+          "hash": "2f095f82ec9ab99ca733ddd28e1bf874e37c6333fd6129d69a8b45a902df4287"
+        },
+        {
+          "name": "scheduleId",
+          "hash": "18f447eef353aaca4e4425228569426fea36cd6bc437f80bac576c077392b74f"
+        },
+        {
+          "name": "teamId",
+          "hash": "4364dc3bce8751d810084f38c8b9df45e78d18ada174f641d6f679d3164f3722"
+        }
+      ]
+    },
+    {
+      "name": "list_oncall_teams",
+      "hash": "b632dee562d8c7bef5948ea77f77481e945f6a5c6942739150fc7b470722624a",
+      "params": [
+        {
+          "name": "page",
+          "hash": "f82cfd6308c98134db56e04c8630103359ebd9997c2942d1a108f76147496448"
+        }
+      ]
+    },
+    {
+      "name": "list_oncall_users",
+      "hash": "73b9e8b172eb83a0d265d00b61d08b8564651f83cd282ff81ea69de1359f154d",
+      "params": [
+        {
+          "name": "page",
+          "hash": "f82cfd6308c98134db56e04c8630103359ebd9997c2942d1a108f76147496448"
+        },
+        {
+          "name": "userId",
+          "hash": "9195168b4df085eb81ad0e96c6c5d8ab132f5d97553aa9b6eab4e326bc91cdcf"
+        },
+        {
+          "name": "username",
+          "hash": "518274a2b1d97b16d0a8bfbce16b060add4686a6a31aa2a0478786b36f75bfc7"
+        }
+      ]
+    },
+    {
+      "name": "list_prometheus_label_names",
+      "hash": "e144bdd60dfe65c06f669d0176071ad0ac01ec575224bf65cf130795cd60a757",
+      "params": [
+        {
+          "name": "datasourceUid",
+          "hash": "cdfa18054a432407c4dfe44b49781c6c2019c055bf589949ff66cdc974c5e5aa"
+        },
+        {
+          "name": "endRfc3339",
+          "hash": "4ff73901d75e1c98d74fdcb0d69a6417ec21169fe4732b020ecbe6c34784d18a"
+        },
+        {
+          "name": "limit",
+          "hash": "bf7ab671a64d774ddd8e15229452989617005505959fbc1199cfec907eb3e709"
+        },
+        {
+          "name": "matches",
+          "hash": "e34fe5e837fd833404b5f9e1622ad82ba202591942f7f45c6eb781508f508114"
+        },
+        {
+          "name": "startRfc3339",
+          "hash": "bdeb7bf4f8fe8bc64ad86ce2d9ccfdae22d3a3d7381c502c485faab5b6513c9f"
+        }
+      ]
+    },
+    {
+      "name": "list_prometheus_label_values",
+      "hash": "a299f523ed2190714983a7d8791064850b5b98cd496750b5baa134472cfae2ca",
+      "params": [
+        {
+          "name": "datasourceUid",
+          "hash": "cdfa18054a432407c4dfe44b49781c6c2019c055bf589949ff66cdc974c5e5aa"
+        },
+        {
+          "name": "endRfc3339",
+          "hash": "19067113d353feed2376680a52cdccd4402174bbab999f653ddca4fddd968e26"
+        },
+        {
+          "name": "labelName",
+          "hash": "0843450703790ae5bb4e2629d4d590e762205b46ac1826eecb6adbdc30cc3347"
+        },
+        {
+          "name": "limit",
+          "hash": "bf7ab671a64d774ddd8e15229452989617005505959fbc1199cfec907eb3e709"
+        },
+        {
+          "name": "matches",
+          "hash": "1613aab3408d8a2a5f03bec0b023427dc22127c6ec1e4724fcc46f3deb5715cf"
+        },
+        {
+          "name": "startRfc3339",
+          "hash": "e53b349be19e0d9742203bdea569ee40fb88f24366c16148b91621b57d3f0371"
+        }
+      ]
+    },
+    {
+      "name": "list_prometheus_metric_metadata",
+      "hash": "a18093f138529287b1f9a3f8d8dd58c70360513dab4de4e3e712869e04e4b2c9",
+      "params": [
+        {
+          "name": "datasourceUid",
+          "hash": "cdfa18054a432407c4dfe44b49781c6c2019c055bf589949ff66cdc974c5e5aa"
+        },
+        {
+          "name": "limit",
+          "hash": "20b490763580dc859e4db9bd5ce06058a4cab1a2ec12b841539fbbf10bf854cc"
+        },
+        {
+          "name": "limitPerMetric",
+          "hash": "5af27f4da1a6bc53e2ff5be96e2ad2fa6403d891553a7b1d110d4c89ed77d33e"
+        },
+        {
+          "name": "metric",
+          "hash": "eeac2b11308674bc8d5e82d61f8e3d2bf0e4ffeba246c8382413da0e6f8a68c9"
+        }
+      ]
+    },
+    {
+      "name": "list_prometheus_metric_names",
+      "hash": "2562177a03aaa63900f4b9f97bb3cff2835e5e33c08d17c4af78c2fafd4ac212",
+      "params": [
+        {
+          "name": "datasourceUid",
+          "hash": "cdfa18054a432407c4dfe44b49781c6c2019c055bf589949ff66cdc974c5e5aa"
+        },
+        {
+          "name": "limit",
+          "hash": "ef543377c9a76b66c089a4223caddede715c7a9863fda55aef8cfd2acb9efe30"
+        },
+        {
+          "name": "page",
+          "hash": "f82cfd6308c98134db56e04c8630103359ebd9997c2942d1a108f76147496448"
+        },
+        {
+          "name": "regex",
+          "hash": "9c607bf38cb3528eb6a5a470b0f555b270faabf59ec1cb5eb281611f5d21a0b9"
+        }
+      ]
+    },
+    {
+      "name": "list_sift_investigations",
+      "hash": "a0fc1bf7ceec12627b8a5b8d29bf4cd544097bfab33c540e9bf49c34c6171c73",
+      "params": [
+        {
+          "name": "limit",
+          "hash": "3a3b5d7cfe0f285d0140975abc8e2c3106a1d0acb757cb469aa597cee680b9ca"
+        }
+      ]
+    },
+    {
+      "name": "query_loki_logs",
+      "hash": "75b0101f4900d7a6abc2b3595d205681b518bdaa9803612a66a295fa1e3c90e6",
+      "params": [
+        {
+          "name": "datasourceUid",
+          "hash": "cdfa18054a432407c4dfe44b49781c6c2019c055bf589949ff66cdc974c5e5aa"
+        },
+        {
+          "name": "direction",
+          "hash": "8aae097b31b454059a9c719b8fa773652a562e3dbfeaa9d4d9b98c2d692590e9"
+        },
+        {
+          "name": "endRfc3339",
+          "hash": "b618361cdd496306c5cfbc4d384e44d2c6cd48d624b6d2fec78de761e56e5818"
+        },
+        {
+          "name": "limit",
+          "hash": "b93591d4048ec3b154e6da7358aedc5ef3e8d2feaff10d3df7d83ca59ca77ec5"
+        },
+        {
+          "name": "logql",
+          "hash": "ac3cedf35f2a8233b96e8d5aad2b5759810893f39ff956df3fd4c9a076ca1e53"
+        },
+        {
+          "name": "startRfc3339",
+          "hash": "ed7f8cb2448a6c576c7999f83de2785df5535248e84d6113db964774c9f75b59"
+        }
+      ]
+    },
+    {
+      "name": "query_loki_stats",
+      "hash": "37be653caef8277c823702266f05dc23869a11c0467c69f9e9b1892713a9a50a",
+      "params": [
+        {
+          "name": "datasourceUid",
+          "hash": "cdfa18054a432407c4dfe44b49781c6c2019c055bf589949ff66cdc974c5e5aa"
+        },
+        {
+          "name": "endRfc3339",
+          "hash": "b618361cdd496306c5cfbc4d384e44d2c6cd48d624b6d2fec78de761e56e5818"
+        },
+        {
+          "name": "logql",
+          "hash": "b1cb3a4200c20a0a08054e149ea9188b7f37c8d23608a6eac0e5bec2c6d28ce7"
+        },
+        {
+          "name": "startRfc3339",
+          "hash": "ed7f8cb2448a6c576c7999f83de2785df5535248e84d6113db964774c9f75b59"
+        }
+      ]
+    },
+    {
+      "name": "query_prometheus",
+      "hash": "05c0d365b03fd420ebea7ed035e84d64f6cb06ffeeee9441a23992751f6a59fb",
+      "params": [
+        {
+          "name": "datasourceUid",
+          "hash": "cdfa18054a432407c4dfe44b49781c6c2019c055bf589949ff66cdc974c5e5aa"
+        },
+        {
+          "name": "endRfc3339",
+          "hash": "a2154a6a8d6804bd21fd3532b4ac48fc04f526740efbfdebab4da5495b5be917"
+        },
+        {
+          "name": "expr",
+          "hash": "0fbbbd21644810e13385b56d28c235f33aab15e382cf55df948ea18dce96c9fb"
+        },
+        {
+          "name": "queryType",
+          "hash": "68992fcd7b78c539691ace13028afb104f600f51a1b38639d589cda4f798186a"
+        },
+        {
+          "name": "startRfc3339",
+          "hash": "13ba7a11b929754ca04718ceb5017df289f55e690796da5a0fe151ad65f8e3a5"
+        },
+        {
+          "name": "stepSeconds",
+          "hash": "1503b1866c552d1fcbf827adfc059026ca099ea8b76cc90e713fa99b311e7b16"
+        }
+      ]
+    },
+    {
+      "name": "search_dashboards",
+      "hash": "5caec921e743f522aff3d7890a1980ff92d350deb92204f9b157890890f5fac7",
+      "params": [
+        {
+          "name": "query",
+          "hash": "15d8dcc87d5f0e8cbf7ba4fe2425ce1e3b529f578238702762b120aa66050378"
+        }
+      ]
+    },
+    {
+      "name": "update_dashboard",
+      "hash": "5aef59c4fdeea6c603120b0530d2c76eb8197be85d40a95edb0baeb797579372",
+      "params": [
+        {
+          "name": "dashboard",
+          "hash": "83233ebe7a9cacc2054524bf1c4ed830d5994f6edecd8ca182ebd8ee918a79ed"
+        },
+        {
+          "name": "folderUid",
+          "hash": "377c80ad5e30c6d847c8a00a14e5c7161429b12e943833c9c45e9889453301aa"
+        },
+        {
+          "name": "message",
+          "hash": "5dd1b01491dc7de6c7bbc85d259f4377f2bc2414bc1169856bdf1dfc11389c15"
+        },
+        {
+          "name": "overwrite",
+          "hash": "84debefaefeb5cd688da186378b3efc1409999d8b79f3038ae75b6048938d44c"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-gyazo",
+  "name": "mcp-server-gyazo",
+  "description": "Integrates Gyazo images for AI assistants via Model Context Protocol.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-gyazo",
+      "application": "https://github.com/nota/gyazo-mcp-server"
+    },
+  "tags": ["web","integration"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.1.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 4,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

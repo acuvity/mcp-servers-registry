@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-google-drive",
-  "name": "mcp-server-google-drive ",
+  "name": "mcp-server-google-drive",
   "description": "File access and search capabilities for Google Drive.",
   "links":
     {

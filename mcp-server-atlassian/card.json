@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-atlassian",
+  "name": "mcp-server-atlassian",
+  "description": "Integrates AI tools for Jira and Confluence tasks and automation.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-atlassian",
+      "application": "https://github.com/sooperset/mcp-atlassian"
+    },
+  "tags": ["automation","integration"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.10.6",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "A",
+  "resources": {
+    "tools": 35,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

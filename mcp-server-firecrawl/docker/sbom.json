@@ -1,0 +1,265 @@
+{
+  "tools": [
+    {
+      "name": "firecrawl_check_crawl_status",
+      "hash": "fd958592fa7c0b7c879345ff20a17e5625fc3f63ff67b11043ba57e4da73f2c6",
+      "params": [
+        {
+          "name": "id",
+          "hash": "0c614ab04ca020c84254edf880b7833a0d62bff8bf9415ca47e49a42f777d9e9"
+        }
+      ]
+    },
+    {
+      "name": "firecrawl_crawl",
+      "hash": "f0d4336cf6abcddb3a85c5f0444a029709de263898d694f07b65032040a8962f",
+      "params": [
+        {
+          "name": "allowBackwardLinks",
+          "hash": "e89208c8514c445777f6f590b8028f79141b0e0f3f3b5760775a0b4bf24aa920"
+        },
+        {
+          "name": "allowExternalLinks",
+          "hash": "9121d3a4f83244b94a2e6f6cefb0482f1f2114ece5a36534ff80dc946649d18d"
+        },
+        {
+          "name": "deduplicateSimilarURLs",
+          "hash": "ade4fa12f79645e177a873522346a5a305a12009ee7087742b7ff0e6d9ae209a"
+        },
+        {
+          "name": "excludePaths",
+          "hash": "c463218e8a777fb19b5577ab6601667d8106944100bf36b7d303ef468fe83de9"
+        },
+        {
+          "name": "ignoreQueryParameters",
+          "hash": "1054aec6744e6004fe271a995078b368cd3532afb3d19c22b972a717628e3ba8"
+        },
+        {
+          "name": "ignoreSitemap",
+          "hash": "cbd443f5ef1c5188e36bfb02a1c0bb72eec39568e644bcd5de4eec5cee921cb6"
+        },
+        {
+          "name": "includePaths",
+          "hash": "8fb12f86d8a110106d8426774860061f765ef8a3fc712d98cc1eac30bc954b77"
+        },
+        {
+          "name": "limit",
+          "hash": "aa1a6788da008bc02d96360fd183aaf430a8b2bb57a219290bc8e4eedf63db27"
+        },
+        {
+          "name": "maxDepth",
+          "hash": "0a201647d57160b971527bbc0f0fde20fc39d78c9165a0c4bc2dff14ffb1926e"
+        },
+        {
+          "name": "scrapeOptions",
+          "hash": "38715999ad3ca8d678c0eae1d590c6ade0695cb88d98c51990a1b80c43aa6ce4"
+        },
+        {
+          "name": "url",
+          "hash": "e954315e5eaf72e34a80734a62b3b8274a01dcd01c68f3b57a1e7aea43785d18"
+        }
+      ]
+    },
+    {
+      "name": "firecrawl_deep_research",
+      "hash": "bf4dffc377bc1e2323c83ad3386f463773537bee8d39250722ee439d1443c3ff",
+      "params": [
+        {
+          "name": "maxDepth",
+          "hash": "eb98da0e742e5e82c6d99da220a8753c6d8e402102893b8173b3383cc6debf18"
+        },
+        {
+          "name": "maxUrls",
+          "hash": "7fecb4a145806af223a4bd609f5be8644fdbe6ae9a902e4cf14a436e08c2bcbb"
+        },
+        {
+          "name": "query",
+          "hash": "52aac1d933892ff9859ca8a3e87375c67fb60049e3842dd9cca0f7a0dd516454"
+        },
+        {
+          "name": "timeLimit",
+          "hash": "c704cf97a8cd413b1b6b7c1ed10220e8dc5eaa5805446f30b10e4f3e6df8a601"
+        }
+      ]
+    },
+    {
+      "name": "firecrawl_extract",
+      "hash": "af02ca4844f3fca5c8ad142685bfb767bbf1c42502047cf71f8e52096db7367f",
+      "params": [
+        {
+          "name": "allowExternalLinks",
+          "hash": "b69d79cf31c44e83b2358c09c5040266e0453e11758832a8c5c7fc5c9836343b"
+        },
+        {
+          "name": "enableWebSearch",
+          "hash": "19a678682b34d674fad1a87808578fadd5be524a0de91201a13f9ee761b5a81e"
+        },
+        {
+          "name": "includeSubdomains",
+          "hash": "369755ca36e6dec58e4c61040409951d8e3d2cfc16b961f8397ab9e70c9bd063"
+        },
+        {
+          "name": "prompt",
+          "hash": "2d919124fcdd222f16ae9e360b418908ee0ec6c0277d05dd848a5401e46117d2"
+        },
+        {
+          "name": "schema",
+          "hash": "2aee66dfa297cbe1272bee515825d7e903694a2dbb63935abbd259db0b117534"
+        },
+        {
+          "name": "systemPrompt",
+          "hash": "7830b76b75e88d2a7423a67248ba1dce76831d44c94d22a4e730fc8526f3d3a1"
+        },
+        {
+          "name": "urls",
+          "hash": "67f02a9592eb80b2cc81ef7ec464c3dfb0a1ad864f873e653b04abaa61f94e52"
+        }
+      ]
+    },
+    {
+      "name": "firecrawl_generate_llmstxt",
+      "hash": "56cfb20c853b6e8d572e5956f09df65c74f018231d272db6716e64ae5c1c1d3a",
+      "params": [
+        {
+          "name": "maxUrls",
+          "hash": "78a560eb7b4a212e8306330ec5044cd7a788851c96dcdcc49b2b8cce3068da43"
+        },
+        {
+          "name": "showFullText",
+          "hash": "304bfd7fa89649f2b0f2f1aef5f4a585c45af670dc2064ad93c262f4cbef5bf9"
+        },
+        {
+          "name": "url",
+          "hash": "b203738b7bf7f16621dccdc62803e29b482260f87faf724876f504efe8b507ac"
+        }
+      ]
+    },
+    {
+      "name": "firecrawl_map",
+      "hash": "1ed29cfb896ee1ddac62b07f7657feebc6e30b8fc24873d2aec98e25d0ba6ee3",
+      "params": [
+        {
+          "name": "ignoreSitemap",
+          "hash": "b5e4d4b0b5648ea5ad5257a2bbc45a0a3fa77087dce3fff059c909a5c42774ce"
+        },
+        {
+          "name": "includeSubdomains",
+          "hash": "04d8854c1155877b00d6cee63f59305e63cf6bedbcc63c0f00ad370d8787c05b"
+        },
+        {
+          "name": "limit",
+          "hash": "c26ef1fd854506c4ef24c973b30b67250582d20bb64ce6fd01ae4a67584391e8"
+        },
+        {
+          "name": "search",
+          "hash": "677570e0fd01ab38e9032dced8f373104dfc504191def1da7e1690fe03e8161c"
+        },
+        {
+          "name": "sitemapOnly",
+          "hash": "eb60fc4a14f435377b4ccd594de65f8844ffe92a237625ce9c6c357ff89f3e98"
+        },
+        {
+          "name": "url",
+          "hash": "80c10d0a28cd868a79e65511b1bf5118737130e3220d3057546b3c6b5bc32c76"
+        }
+      ]
+    },
+    {
+      "name": "firecrawl_scrape",
+      "hash": "9aab016594f2eca81fb99ed9d25a2a5e3e874dae627c1b3e12189f4a138b6bbd",
+      "params": [
+        {
+          "name": "actions",
+          "hash": "921bd53fca4eaef05096a1dfd6aee6f9cfb1824a4f56f4e6aca057a1935cf869"
+        },
+        {
+          "name": "excludeTags",
+          "hash": "bc4a10bce1fb2824dd57128af3760d2f375ccb559746491e7c4c186db80799cf"
+        },
+        {
+          "name": "extract",
+          "hash": "8eaadf6cdda39b59ae307cd19bc64516732388bb4975cd8049e615c64409671b"
+        },
+        {
+          "name": "formats",
+          "hash": "d7dc5348bb424a9fcaa52f6e8128d3d42c863d2cd5e2e98bd8e4de8012bf67d6"
+        },
+        {
+          "name": "includeTags",
+          "hash": "ec278ffa32508336e94cf9e8982c15209578dcb7789394260467591e2b1b16d9"
+        },
+        {
+          "name": "location",
+          "hash": "5dbc304ef00d86b6ae5638406dc60bdc2678771221b68c72bc064b870ba94ce6"
+        },
+        {
+          "name": "mobile",
+          "hash": "653500e2aa55eb8784f594ebbc9809d34d6cd76dc8cde38b0b09d16d1ccf8a47"
+        },
+        {
+          "name": "onlyMainContent",
+          "hash": "009120be8ac47ec00db7225366084af765798d75926e19e4deb89929e0f8022a"
+        },
+        {
+          "name": "removeBase64Images",
+          "hash": "7c6ab3ef581b1baed25a99329da83370665ea25b73745d58b3d475a9f2dbd6c7"
+        },
+        {
+          "name": "skipTlsVerification",
+          "hash": "c03ab9d1f3715be2d5f011b0b988ca756f241a2549173c4206203cccb53d569d"
+        },
+        {
+          "name": "timeout",
+          "hash": "9d44708ce68333fb1ef65746115d76e74d8a51b5286012c466850ba5e3d7919e"
+        },
+        {
+          "name": "url",
+          "hash": "411017ed7507e7e9879b327be68b92dd9bd90e63a4ce7f399e5cc2d792d90db3"
+        },
+        {
+          "name": "waitFor",
+          "hash": "7593fc914b1db5fbb9967c65b14e5ab548dbe5efa58f4022f1c20ee675c1fbb9"
+        }
+      ]
+    },
+    {
+      "name": "firecrawl_search",
+      "hash": "b0f634f112a7c6b27b86526196a4191dceb6da1f85695d71af2c0a9a857328b9",
+      "params": [
+        {
+          "name": "country",
+          "hash": "b45d0cf9d2cf66f30494405b46d2e5d58a507466b6e59397e9f7a06ac0c52083"
+        },
+        {
+          "name": "filter",
+          "hash": "a4018947ed66c967d492cec22784f1cac91a0613e8a63c2b4b3d16f151b3833b"
+        },
+        {
+          "name": "lang",
+          "hash": "cda9615ab0341ba35603a4116740d672e235ef4a2407d5389b60b77c11af52d8"
+        },
+        {
+          "name": "limit",
+          "hash": "67e0339f693dfed4c5829cff9c9bcbac919348c530d4ac6551ef09831c29f6b9"
+        },
+        {
+          "name": "location",
+          "hash": "38ed24ed60f2228927fd75310d36c807a8590bb5a5cf47503aa9216107178b54"
+        },
+        {
+          "name": "query",
+          "hash": "8e9ae34f3ab997644b536290b765a6cff69a69cfb1cf9e46595b7a8f9f41d93a"
+        },
+        {
+          "name": "scrapeOptions",
+          "hash": "a5957f45245d69d16d807a83ee89aa7f3627c87e6c4649202351dace4f1bf237"
+        },
+        {
+          "name": "tbs",
+          "hash": "639c9e8fef7415edd99c1090bfc30eaaf6801e1cede480f65be44f2ef58f592d"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

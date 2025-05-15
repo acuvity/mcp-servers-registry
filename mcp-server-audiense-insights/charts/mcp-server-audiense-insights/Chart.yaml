@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-audiense-insights"
+description: A Helm chart for Extracts marketing insights and audience analysis from Audiense reports.
+home: https://github.com/AudienseCo/mcp-audiense-insights
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/AudienseCo/mcp-audiense-insights
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.2.0
+keywords:
+  - mcp-server-audiense-insights
+  - mcp-server
+  - remote
+  - marketing

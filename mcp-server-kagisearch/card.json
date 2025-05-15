@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-kagisearch",
+  "name": "mcp-server-kagisearch",
+  "description": "MCP server for search queries and video summarization.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-kagisearch",
+      "application": "https://github.com/kagisearch/kagimcp"
+    },
+  "tags": ["research","integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.1.3",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 2,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

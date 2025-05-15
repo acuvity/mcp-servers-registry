@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-bing-search",
-  "name": "mcp-server-bing-search ",
+  "name": "mcp-server-bing-search",
   "description": "Web search capabilities using Microsoft Bing Search API.",
   "links":
     {

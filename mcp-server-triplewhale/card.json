@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-triplewhale",
+  "name": "mcp-server-triplewhale",
+  "description": "MCP server for managing context with Triplewhale through natural language.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-triplewhale",
+      "application": "https://github.com/Triple-Whale/mcp-server-triplewhale"
+    },
+  "tags": ["marketing","integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.0.6",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "C",
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 1.7.0
+appVersion: 1.8.0
 keywords:
   - mcp-server-notion
   - mcp-server

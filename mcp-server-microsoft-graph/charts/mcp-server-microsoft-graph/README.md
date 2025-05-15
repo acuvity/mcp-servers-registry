@@ -29,7 +29,7 @@
 
 **Description:** Connect to microsoft API to get applications, sites users and more.
 
-Packaged by Acuvity from acuvity/mcp-server-microsoft-graph original [sources](https://github.com/acuvity/mcp-server-microsoft-graph).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from acuvity/mcp-server-microsoft-graph original [sources](https://github.com/acuvity/mcp-server-microsoft-graph).
 
 **Quick links:**
 

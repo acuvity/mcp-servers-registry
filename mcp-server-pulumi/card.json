@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-pulumi",
+  "name": "mcp-server-pulumi",
+  "description": "Server for programmatic Pulumi operations via Model Context Protocol.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-pulumi",
+      "application": "https://github.com/pulumi/mcp-server"
+    },
+  "tags": ["automation","development"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.1.2",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 5,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

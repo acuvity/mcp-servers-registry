@@ -47,7 +47,7 @@ _redaction_patterns := [
 	`(xapp-\d-[A-Za-z0-9]+-\d+-[a-z0-9]+)`,
 	`(xox[abrp]-\d{10,13}-\d{10,13}[A-Za-z0-9-]*)`,
 	`https://hooks\.slack\.com/(?:services|workflows)/([A-Z0-9]+/[A-Z0-9]+/[0-9A-Za-z]{17,25})`,
-	`(?i)(?:\\["']|['"])?[A-Za-z0-9_]*(?:TOKEN|API_KEY|SECRET|PASS)[A-Za-z0-9_]*(?:\\["']|['"])?(?:\\n|\s)*(?::=|:|=)(?:\\n|\s)*(?:\\["']|['"])?([\x20-\x21\x23-\x26\x28-\x7E]{12,})(?:\\["']|['"])?`,
+	`(?i)(?:\\["']|['"])?[A-Za-z0-9_]*(?:TOKEN|API_KEY|SECRET|PASS)[A-Za-z0-9_]*(?:\\["']|['"])?(?:\\n|\s)*(?::=|:|=)(?:\\n|\s)*(?:\\["']|['"])?([\x20-\x21\x23-\x26\x28-\x7E]{8,})(?:\\["']|['"])?`,
 ]
 
 _sensitive_patterns := [
@@ -86,19 +86,19 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
-	"list-pages",
+	"coda_list_pages",
 	#
-	"create-page",
+	"coda_create_page",
 	#
-	"get-page-content",
+	"coda_get_page_content",
 	#
-	"replace-page-content",
+	"coda_replace_page_content",
 	#
-	"append-page-content",
+	"coda_append_page_content",
 	#
-	"duplicate-page",
+	"coda_duplicate_page",
 	#
-	"rename-page",
+	"coda_rename_page",
 	#
 	# exclude word that might be misdetected
 	"to",

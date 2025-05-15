@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-glif",
+  "name": "mcp-server-glif",
+  "description": "Run AI workflows and manage glifs through the Model Context Protocol.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-glif",
+      "application": "https://github.com/glifxyz/glif-mcp-server"
+    },
+  "tags": ["automation","integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.9.9",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 10,
+    "prompts": 1,
+    "resources": 3,
+    "resourcesTemplates": 0
+  }
+}

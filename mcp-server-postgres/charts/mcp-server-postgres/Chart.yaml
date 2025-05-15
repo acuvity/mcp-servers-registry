@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-postgres"
+description: A Helm chart for PostgreSQL database integration with schema inspection and query capabilities.
+home: https://github.com/crystaldba/postgres-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/crystaldba/postgres-mcp
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.2.1
+keywords:
+  - mcp-server-postgres
+  - mcp-server
+  - remote
+  - database
+  - integration
+  - development

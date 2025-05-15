@@ -1,0 +1,2345 @@
+{
+  "tools": [
+    {
+      "name": "azmcp-appconfig-account-list",
+      "hash": "5f8f6eb7269af95fffde5aa8b137b550d176c6fb9cec94e45f97f5afda7ea38b",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-appconfig-kv-delete",
+      "hash": "af2118f73b07ff4fb2371c00522eda1cf0c370b280c5673353ea48fb913cad8a",
+      "params": [
+        {
+          "name": "account-name",
+          "hash": "c10f3ab94cacd2abb4eb0c1ee63b40680a08ca041e8101522ea3ea61f90a5886"
+        },
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "key",
+          "hash": "8c4e074c54aff330e5352d671a8b7f2d8efcc9e19786eac13d9ec3e2b4fe4d1d"
+        },
+        {
+          "name": "label",
+          "hash": "c4590a051c6ae6039785458f1bf710f783677a21dba075d3b0f9dd06d7152768"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-appconfig-kv-list",
+      "hash": "8a8dd6367453dbe913a5f4debe8be119b42b2e130296e67ab91167e95e116920",
+      "params": [
+        {
+          "name": "account-name",
+          "hash": "c10f3ab94cacd2abb4eb0c1ee63b40680a08ca041e8101522ea3ea61f90a5886"
+        },
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "key",
+          "hash": "8955b0b11b3f70e0c44cbb6e2af04577fc32d55d36ffa1cf4721a59ad3ad8945"
+        },
+        {
+          "name": "label",
+          "hash": "5bc4107b9e33105ab57b8459605fede628646cc405f47fa166817beda4b0e5c1"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-appconfig-kv-lock",
+      "hash": "071167e01979fa1dcb577527b0ff619a29a526a08732bdc183cabf1129499967",
+      "params": [
+        {
+          "name": "account-name",
+          "hash": "c10f3ab94cacd2abb4eb0c1ee63b40680a08ca041e8101522ea3ea61f90a5886"
+        },
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "key",
+          "hash": "8c4e074c54aff330e5352d671a8b7f2d8efcc9e19786eac13d9ec3e2b4fe4d1d"
+        },
+        {
+          "name": "label",
+          "hash": "c4590a051c6ae6039785458f1bf710f783677a21dba075d3b0f9dd06d7152768"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-appconfig-kv-set",
+      "hash": "c8e93bc40c1c8f49421193ba40d2c2fa111f923d0e992716dfc12dd34205cfa3",
+      "params": [
+        {
+          "name": "account-name",
+          "hash": "c10f3ab94cacd2abb4eb0c1ee63b40680a08ca041e8101522ea3ea61f90a5886"
+        },
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "key",
+          "hash": "8c4e074c54aff330e5352d671a8b7f2d8efcc9e19786eac13d9ec3e2b4fe4d1d"
+        },
+        {
+          "name": "label",
+          "hash": "c4590a051c6ae6039785458f1bf710f783677a21dba075d3b0f9dd06d7152768"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        },
+        {
+          "name": "value",
+          "hash": "4201be1465e4500d603ebdf881197cd91fef48a731f1af056b2c5beee1e0cc55"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-appconfig-kv-show",
+      "hash": "c04b9c30bee4c17d6c92843404597d57b80910971e102db1b531f4913f8473ef",
+      "params": [
+        {
+          "name": "account-name",
+          "hash": "c10f3ab94cacd2abb4eb0c1ee63b40680a08ca041e8101522ea3ea61f90a5886"
+        },
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "key",
+          "hash": "8c4e074c54aff330e5352d671a8b7f2d8efcc9e19786eac13d9ec3e2b4fe4d1d"
+        },
+        {
+          "name": "label",
+          "hash": "c4590a051c6ae6039785458f1bf710f783677a21dba075d3b0f9dd06d7152768"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-appconfig-kv-unlock",
+      "hash": "228a49a38b019662d15a2836b5a59043be78a97393ff4accf87d397c2dcff501",
+      "params": [
+        {
+          "name": "account-name",
+          "hash": "c10f3ab94cacd2abb4eb0c1ee63b40680a08ca041e8101522ea3ea61f90a5886"
+        },
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "key",
+          "hash": "8c4e074c54aff330e5352d671a8b7f2d8efcc9e19786eac13d9ec3e2b4fe4d1d"
+        },
+        {
+          "name": "label",
+          "hash": "c4590a051c6ae6039785458f1bf710f783677a21dba075d3b0f9dd06d7152768"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-bestpractices-get",
+      "hash": "8c375b1789afca09a0dd90d83f21dc760b7b9cda9e109c4ad00e864ea3b5e53c"
+    },
+    {
+      "name": "azmcp-cosmos-account-list",
+      "hash": "078f8b26134fb25376825878f2aaed5522934d360ed4108501668ed1ba35a37c",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-cosmos-database-container-item-query",
+      "hash": "56ac1d8d04fb7718bdcb53b6024e6e8e17c13503fc722cc7b536834b6a6d7e96",
+      "params": [
+        {
+          "name": "account-name",
+          "hash": "ee01daf0f900466933de3b55c007c40858f12f572c2e278bb1970a80529aa897"
+        },
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "container-name",
+          "hash": "a8ec2b83415884acb1c120fbd246ad08edc7db2bcc31e2503f9184fcede7dffd"
+        },
+        {
+          "name": "database-name",
+          "hash": "c00ac9b4d0927427689175967c4902912c1f7b6b96fd88da3317316bff2b4486"
+        },
+        {
+          "name": "query",
+          "hash": "086c1864461e306444361ad09b3675bd6af90c94cc0e881bc531e2cbcef8de33"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-cosmos-database-container-list",
+      "hash": "9f814e4c92792974b9bfc3fca93b797925f9a346c36c59e5a94d908a145c7b1a",
+      "params": [
+        {
+          "name": "account-name",
+          "hash": "ee01daf0f900466933de3b55c007c40858f12f572c2e278bb1970a80529aa897"
+        },
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "database-name",
+          "hash": "c00ac9b4d0927427689175967c4902912c1f7b6b96fd88da3317316bff2b4486"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-cosmos-database-list",
+      "hash": "c48e521464c49397f195157c4471c5139e8410dd5a3167241fc860290aa39eda",
+      "params": [
+        {
+          "name": "account-name",
+          "hash": "ee01daf0f900466933de3b55c007c40858f12f572c2e278bb1970a80529aa897"
+        },
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-extension-az",
+      "hash": "8b00ef720e58b5666469e17955f1e2e3510ccbe1809e9160d8e605691851d799",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "command",
+          "hash": "a57f4665be1e3f0cad3b86d577bc21f18b6984e397dff4487f3e7f8642e396cc"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-extension-azd",
+      "hash": "e2f55fd22d31bb1e3a04b47b721602aaf34afbfce1d0a3b2ddf9c3a76cba61d0",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "command",
+          "hash": "d76e861ad8569e13cbad18fb8df548296d6b04e6e2b84e8e969569825f455db4"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-group-list",
+      "hash": "fb9dff1fafd90c64e21ae7271a59d3180b6a62957b28bbd32b1afb9500789336",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-keyvault-key-create",
+      "hash": "3da33cf67d4b3d6bd00ba187ededf13814379af7d9e56e6ce69dc4ac02954c61",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "key",
+          "hash": "a7007aaadef4878e33069c0f963339b30a2170f68dde188870026b89de2e1331"
+        },
+        {
+          "name": "key-type",
+          "hash": "86f4048ee2fec7d950f8f7aa35181ff127836bf48a16d23cb1b902f6ccc32353"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        },
+        {
+          "name": "vault",
+          "hash": "b0e45fcc1caca303050bca7eeff027862ebc772108b0cd7a3122b0c97ce0507e"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-keyvault-key-get",
+      "hash": "1f5e47221ee17056ee50ad95dd50e772bfaadc677d8c77eb2f49422346fe5354",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "key",
+          "hash": "a7007aaadef4878e33069c0f963339b30a2170f68dde188870026b89de2e1331"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        },
+        {
+          "name": "vault",
+          "hash": "b0e45fcc1caca303050bca7eeff027862ebc772108b0cd7a3122b0c97ce0507e"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-keyvault-key-list",
+      "hash": "0082f31968a4439dd1e670befd1178b6f9eb227d720c953a5293b6901f50dc87",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "include-managed",
+          "hash": "c71871a62f225669466656924c786dcbe4a0558452ea0b3395e5fe02d8c04e84"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        },
+        {
+          "name": "vault",
+          "hash": "b0e45fcc1caca303050bca7eeff027862ebc772108b0cd7a3122b0c97ce0507e"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-kusto-cluster-get",
+      "hash": "4c33c7dcfcfa8a0be517d20c5b46792589c5d5000f8bb22fd3b55b743d62f3d7",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "cluster-name",
+          "hash": "ef33dc7535b7c4c93e2f55a1df93d3847c3f130b627b5018b93cd34350a37c36"
+        },
+        {
+          "name": "cluster-uri",
+          "hash": "3efe174963e3404cd51803997d692e8abed8ba51a8e3a52b556434ee7908714f"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-kusto-cluster-list",
+      "hash": "ebbdf5c038531e638e82f849799208b889a7ea9f8abebe25d11aa5219a664b03",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-kusto-database-list",
+      "hash": "eecbffc4d5f9f9f17330b432dc0f9d8c9e4e7632a0d71b2001788fdc23b9a258",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "cluster-name",
+          "hash": "ef33dc7535b7c4c93e2f55a1df93d3847c3f130b627b5018b93cd34350a37c36"
+        },
+        {
+          "name": "cluster-uri",
+          "hash": "3efe174963e3404cd51803997d692e8abed8ba51a8e3a52b556434ee7908714f"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-kusto-query",
+      "hash": "f6d0a608fd7ce2cf4b6949ac0d872a5e912545cbd3980add446d4605aaf92d4b",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "cluster-name",
+          "hash": "ef33dc7535b7c4c93e2f55a1df93d3847c3f130b627b5018b93cd34350a37c36"
+        },
+        {
+          "name": "cluster-uri",
+          "hash": "3efe174963e3404cd51803997d692e8abed8ba51a8e3a52b556434ee7908714f"
+        },
+        {
+          "name": "database-name",
+          "hash": "ef3fbd057e23d656d3862fe1d38f0fbad6265eb32872ebe4337c4f9768994843"
+        },
+        {
+          "name": "query",
+          "hash": "de719dc7d7271030cb59a6c8f34c5a1946e55023a3a3c093499fd3a672486190"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-kusto-sample",
+      "hash": "74a06d1cd42f2d1807f670f7ffabc6813f4cfe58624beaaa06b6e98c48e8c26c",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "cluster-name",
+          "hash": "ef33dc7535b7c4c93e2f55a1df93d3847c3f130b627b5018b93cd34350a37c36"
+        },
+        {
+          "name": "cluster-uri",
+          "hash": "3efe174963e3404cd51803997d692e8abed8ba51a8e3a52b556434ee7908714f"
+        },
+        {
+          "name": "database-name",
+          "hash": "ef3fbd057e23d656d3862fe1d38f0fbad6265eb32872ebe4337c4f9768994843"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "table-name",
+          "hash": "4bf23992a9c1d9c26e97e4441e57657f402dcffdaa34480e41bfcc11dddd49d3"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-kusto-table-list",
+      "hash": "7879f144ac070405d7e295987129aa9d1294c84bfff2b3dfc6fe78c412d4112c",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "cluster-name",
+          "hash": "ef33dc7535b7c4c93e2f55a1df93d3847c3f130b627b5018b93cd34350a37c36"
+        },
+        {
+          "name": "cluster-uri",
+          "hash": "3efe174963e3404cd51803997d692e8abed8ba51a8e3a52b556434ee7908714f"
+        },
+        {
+          "name": "database-name",
+          "hash": "ef3fbd057e23d656d3862fe1d38f0fbad6265eb32872ebe4337c4f9768994843"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-kusto-table-schema",
+      "hash": "98f8a7b8db09f711c29e7fffdf9475c4b0b1efbec8de746b78f2f8e438e79296",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "cluster-name",
+          "hash": "ef33dc7535b7c4c93e2f55a1df93d3847c3f130b627b5018b93cd34350a37c36"
+        },
+        {
+          "name": "cluster-uri",
+          "hash": "3efe174963e3404cd51803997d692e8abed8ba51a8e3a52b556434ee7908714f"
+        },
+        {
+          "name": "database-name",
+          "hash": "ef3fbd057e23d656d3862fe1d38f0fbad6265eb32872ebe4337c4f9768994843"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "table-name",
+          "hash": "4bf23992a9c1d9c26e97e4441e57657f402dcffdaa34480e41bfcc11dddd49d3"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-monitor-log-query",
+      "hash": "cdd40f324ec6770f6ceb96b6fa6d5c0ecbc9cfacbb58a608ccbff2dbad1f05a5",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "hours",
+          "hash": "09b69ee451dd64b2f02cc15d47509f85290f8ceeec6073dbe297f4f604322b86"
+        },
+        {
+          "name": "limit",
+          "hash": "119ff216459c66197845afc04ac7935e7b3fc134c2a8df27cc7c4c1fbc488ce4"
+        },
+        {
+          "name": "query",
+          "hash": "1a400c0585b782111612ba20b92cc3df9dba0bc1f5f80d111261073d0b7a677c"
+        },
+        {
+          "name": "resource-group",
+          "hash": "b80f31cc79351fcd9d4d70aab6e22bf0246e86d2dedac99e75b3fb5caf29ce2e"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "table-name",
+          "hash": "0126205563b1de836e8d59041095335e12525b2734e503596c23e69192e507ce"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        },
+        {
+          "name": "workspace",
+          "hash": "c2ec8665ed83e1d84c6071ba65b62229e49afbed66ffa2a1203931a0f5352876"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-monitor-table-list",
+      "hash": "2b2bf2195e6eb5c952eb6f018d1a0c7bd001c3f51abb773ec8283634a531b96e",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "resource-group",
+          "hash": "b80f31cc79351fcd9d4d70aab6e22bf0246e86d2dedac99e75b3fb5caf29ce2e"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "table-type",
+          "hash": "daee9e4627a27061cbef42cdf53dfa6de8f462e0c9fabb5264b5812c19f0f962"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        },
+        {
+          "name": "workspace",
+          "hash": "c2ec8665ed83e1d84c6071ba65b62229e49afbed66ffa2a1203931a0f5352876"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-monitor-table-type-list",
+      "hash": "ec8b0b7fba17fdf046d59139bf7091b2dbe8133fd164c4e7a4810dfa91264322",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        },
+        {
+          "name": "workspace",
+          "hash": "c2ec8665ed83e1d84c6071ba65b62229e49afbed66ffa2a1203931a0f5352876"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-monitor-workspace-list",
+      "hash": "202b1586c7fe99593fab179ccd5ad95576642d4040e8f2a7ddcf761d4f025e86",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-postgres-database-list",
+      "hash": "b661612f557cf3cb5a2aa1d359392326e7d45cf72e2dfacec8f769b9905f8bb3",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "resource-group",
+          "hash": "b80f31cc79351fcd9d4d70aab6e22bf0246e86d2dedac99e75b3fb5caf29ce2e"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "server",
+          "hash": "081c83072e47b45f29a9b0e77df133cb573f20af85ff27ef67c285b69208b670"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        },
+        {
+          "name": "user-name",
+          "hash": "8558e70206f542938a570dbe039e84b65e3e3471e3273948e2b49c34cad565dc"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-postgres-database-query",
+      "hash": "f349fd43ef364db8de8d9d53449751516df9cba15950daa824346c2089610499",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "database",
+          "hash": "a7871320391eb0dfc8432fc9a6e13e20a68dedc844a031eb176629b567707d50"
+        },
+        {
+          "name": "query",
+          "hash": "6c4cb6565a1ccd820bb2fa5740510c1bd776f2443e065419c0c2028ac7ec921e"
+        },
+        {
+          "name": "resource-group",
+          "hash": "b80f31cc79351fcd9d4d70aab6e22bf0246e86d2dedac99e75b3fb5caf29ce2e"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "server",
+          "hash": "081c83072e47b45f29a9b0e77df133cb573f20af85ff27ef67c285b69208b670"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        },
+        {
+          "name": "user-name",
+          "hash": "8558e70206f542938a570dbe039e84b65e3e3471e3273948e2b49c34cad565dc"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-postgres-server-config",
+      "hash": "579f3ef3eea8704699c693b03160638e6b0458045fd079061158b511f4500d23",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "resource-group",
+          "hash": "b80f31cc79351fcd9d4d70aab6e22bf0246e86d2dedac99e75b3fb5caf29ce2e"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "server",
+          "hash": "081c83072e47b45f29a9b0e77df133cb573f20af85ff27ef67c285b69208b670"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        },
+        {
+          "name": "user-name",
+          "hash": "8558e70206f542938a570dbe039e84b65e3e3471e3273948e2b49c34cad565dc"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-postgres-server-list",
+      "hash": "f34c6a43d32417ca61724453eb823306a214245a75a193c762c25fca289ea5a8",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "resource-group",
+          "hash": "b80f31cc79351fcd9d4d70aab6e22bf0246e86d2dedac99e75b3fb5caf29ce2e"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        },
+        {
+          "name": "user-name",
+          "hash": "8558e70206f542938a570dbe039e84b65e3e3471e3273948e2b49c34cad565dc"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-postgres-server-param",
+      "hash": "31ea1afcff9e3d365301278cbffba59ec6fd6a9a6dad1beeacad16133366b944",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "param",
+          "hash": "9e14e190f6bb0abf464fbc35c7a01ce75b6fcce3f2b7b4acbe185c98f558e7e9"
+        },
+        {
+          "name": "resource-group",
+          "hash": "b80f31cc79351fcd9d4d70aab6e22bf0246e86d2dedac99e75b3fb5caf29ce2e"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "server",
+          "hash": "081c83072e47b45f29a9b0e77df133cb573f20af85ff27ef67c285b69208b670"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        },
+        {
+          "name": "user-name",
+          "hash": "8558e70206f542938a570dbe039e84b65e3e3471e3273948e2b49c34cad565dc"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-postgres-table-list",
+      "hash": "605ae72e63e4a013cb180527b10699754cd9550f4f224da6bf9f98e0098dfe5a",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "database",
+          "hash": "a7871320391eb0dfc8432fc9a6e13e20a68dedc844a031eb176629b567707d50"
+        },
+        {
+          "name": "resource-group",
+          "hash": "b80f31cc79351fcd9d4d70aab6e22bf0246e86d2dedac99e75b3fb5caf29ce2e"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "server",
+          "hash": "081c83072e47b45f29a9b0e77df133cb573f20af85ff27ef67c285b69208b670"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        },
+        {
+          "name": "user-name",
+          "hash": "8558e70206f542938a570dbe039e84b65e3e3471e3273948e2b49c34cad565dc"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-postgres-table-schema",
+      "hash": "8f2a7e8f55931d73c4d9fd227180257baec8eddc818a1f46f16731fc7fb68b45",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "database",
+          "hash": "a7871320391eb0dfc8432fc9a6e13e20a68dedc844a031eb176629b567707d50"
+        },
+        {
+          "name": "resource-group",
+          "hash": "b80f31cc79351fcd9d4d70aab6e22bf0246e86d2dedac99e75b3fb5caf29ce2e"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "server",
+          "hash": "081c83072e47b45f29a9b0e77df133cb573f20af85ff27ef67c285b69208b670"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "table",
+          "hash": "1e6cda74960bfc2ce3b47c67c4eb36b188eff89cda536e22317953a53cc151ab"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        },
+        {
+          "name": "user-name",
+          "hash": "8558e70206f542938a570dbe039e84b65e3e3471e3273948e2b49c34cad565dc"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-search-index-describe",
+      "hash": "614dfe19567ef5c94dd740657103cd1d154682c47a53dc4a64468306d4b49cf4",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "index-name",
+          "hash": "b3cab56347c95e9f6e008d626c011478aebe0a3fb5b26fe1f3049e3002b64dc0"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "service-name",
+          "hash": "a5fbfb7027a7a6361e0c450ff05d8ab73862a00b3283421e4f16059facaf33e1"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-search-index-list",
+      "hash": "c48c90095b03990a51306ae23eef338769fb0cd50433a06e8d47cc8ee2f884ff",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "service-name",
+          "hash": "a5fbfb7027a7a6361e0c450ff05d8ab73862a00b3283421e4f16059facaf33e1"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-search-index-query",
+      "hash": "d32e41dfc40af8386084da282d2facc51f2550f667fd412b80665090db863769",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "index-name",
+          "hash": "b3cab56347c95e9f6e008d626c011478aebe0a3fb5b26fe1f3049e3002b64dc0"
+        },
+        {
+          "name": "query",
+          "hash": "246cd351180c22b456f10534f60fe9a5fb3fcbb3afb7d90284d3953c415b67c8"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "service-name",
+          "hash": "a5fbfb7027a7a6361e0c450ff05d8ab73862a00b3283421e4f16059facaf33e1"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-search-service-list",
+      "hash": "c123790f5d7d84672a892b43fd66c931a4c7972b24df5d7154ad937c60417851",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-servicebus-queue-details",
+      "hash": "61fa105ebcb11e33a311ca360a49f1eef36192816277b863d1160d6d1a483feb",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "namespace",
+          "hash": "5d5560d1d1d721662123f483c033ecc429ede29d34e3c4132a5492fca041aa32"
+        },
+        {
+          "name": "queue-name",
+          "hash": "7723e1a7e6f47cd107d95fa68c5460ef9f3308649b0df676fd63bd131b95d606"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-servicebus-queue-peek",
+      "hash": "98aa8f36f3b08b87998627ba36e3a03d2457691b99e348313689ba6410c5c422",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "namespace",
+          "hash": "5d5560d1d1d721662123f483c033ecc429ede29d34e3c4132a5492fca041aa32"
+        },
+        {
+          "name": "queue-name",
+          "hash": "7723e1a7e6f47cd107d95fa68c5460ef9f3308649b0df676fd63bd131b95d606"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-servicebus-topic-details",
+      "hash": "2ca331e407a4acb82875744c2c8aecbf44c5bff3c43b2fbf9845c3746f4f8c1d",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "namespace",
+          "hash": "5d5560d1d1d721662123f483c033ecc429ede29d34e3c4132a5492fca041aa32"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        },
+        {
+          "name": "topic-name",
+          "hash": "6d7ee4a4a4aff9cb8e0c9f0f8e2d6813f3476d86d660705bce48dd2502d90098"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-servicebus-topic-subscription-details",
+      "hash": "9f0c3e6687b2f588fbd219529a30fa5591371424c3061ba27de9545736a54416",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "namespace",
+          "hash": "5d5560d1d1d721662123f483c033ecc429ede29d34e3c4132a5492fca041aa32"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "subscription-name",
+          "hash": "a2794883b5b896ad053147d1953e267649d6a9d12e0e213b29d8adc8f3367564"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        },
+        {
+          "name": "topic-name",
+          "hash": "6d7ee4a4a4aff9cb8e0c9f0f8e2d6813f3476d86d660705bce48dd2502d90098"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-servicebus-topic-subscription-peek",
+      "hash": "1cacb8f08eea5426fb63c7a8912cf2c494185ba66bdc265e97522e58fe0eccc9",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "max-messages",
+          "hash": "1457c570afb5326c4437152a1aa0b5a7bc1232559335f7d8e9cb7e5501815ffb"
+        },
+        {
+          "name": "namespace",
+          "hash": "5d5560d1d1d721662123f483c033ecc429ede29d34e3c4132a5492fca041aa32"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "subscription-name",
+          "hash": "a2794883b5b896ad053147d1953e267649d6a9d12e0e213b29d8adc8f3367564"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        },
+        {
+          "name": "topic-name",
+          "hash": "6d7ee4a4a4aff9cb8e0c9f0f8e2d6813f3476d86d660705bce48dd2502d90098"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-storage-account-list",
+      "hash": "9ebbc6b627a3f7f7a8f96351d9c90fdd5caa5271034f21c8edf5806f04955fa0",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-storage-blob-container-details",
+      "hash": "fa715ef87e2edaebcef6ddc424a4be7c154b775910eb5bbef3cb3da89d24925f",
+      "params": [
+        {
+          "name": "account-name",
+          "hash": "227b4ec8ed8a5bb8230433e7fced9e57d50cac1097d7695015fcc7673f020a88"
+        },
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "container-name",
+          "hash": "670e9f1cc408836d513409071e950a8f6f2f4717787060db6c0a050bf5426b15"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-storage-blob-container-list",
+      "hash": "e93bde2e0314bcae33ea775044973ad3d67757a7052611088a46579c04b20bad",
+      "params": [
+        {
+          "name": "account-name",
+          "hash": "227b4ec8ed8a5bb8230433e7fced9e57d50cac1097d7695015fcc7673f020a88"
+        },
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-storage-blob-list",
+      "hash": "1a316f60b9cbc74c13d0a5bb0c06a1b18d82082368eb4ab8d19a54efb22c18e4",
+      "params": [
+        {
+          "name": "account-name",
+          "hash": "227b4ec8ed8a5bb8230433e7fced9e57d50cac1097d7695015fcc7673f020a88"
+        },
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "container-name",
+          "hash": "670e9f1cc408836d513409071e950a8f6f2f4717787060db6c0a050bf5426b15"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-storage-table-list",
+      "hash": "7e3df660a698ce5dab5e6f7d9accfa22dabd494fbc7e4855345d58225f7983e0",
+      "params": [
+        {
+          "name": "account-name",
+          "hash": "227b4ec8ed8a5bb8230433e7fced9e57d50cac1097d7695015fcc7673f020a88"
+        },
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    },
+    {
+      "name": "azmcp-subscription-list",
+      "hash": "db43814263914f31564bf2956f13403c57f81f5eb424fb23dd32c25754495e16",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

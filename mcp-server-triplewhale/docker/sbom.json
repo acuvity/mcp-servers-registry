@@ -1,0 +1,9 @@
+{
+  "tools": [
+    {
+      "name": "moby",
+      "hash": "f0fe8ee60867c9b54378a407768ea77e90640f683bdc62f6e8980f024f5069ca"
+    }
+  ],
+  "prompts": []
+}

@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-astra-db-mcp",
+  "name": "mcp-server-astra-db-mcp",
+  "description": "MCP server for managing and interacting with Astra DB using language models.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-astra-db-mcp",
+      "application": "https://github.com/datastax/astra-db-mcp"
+    },
+  "tags": ["database","integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1.2.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 16,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

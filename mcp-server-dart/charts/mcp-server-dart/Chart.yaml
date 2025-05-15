@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-dart"
+description: A Helm chart for AI-powered project management server for task and document management.
+home: https://github.com/its-dart/dart-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/its-dart/dart-mcp-server
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.1.13
+keywords:
+  - mcp-server-dart
+  - mcp-server
+  - remote
+  - research
+  - development

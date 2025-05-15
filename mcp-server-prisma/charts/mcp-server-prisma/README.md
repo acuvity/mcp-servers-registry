@@ -22,14 +22,14 @@
 
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-prisma/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-prisma/6.7.0?logo=docker&logoColor=fff&label=6.7.0)](https://hub.docker.com/r/acuvity/mcp-server-prisma)
-[![PyPI](https://img.shields.io/badge/6.7.0-3775A9?logo=pypi&logoColor=fff&label=prisma)](https://github.com/prisma/prisma)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-prisma/6.8.1?logo=docker&logoColor=fff&label=6.8.1)](https://hub.docker.com/r/acuvity/mcp-server-prisma)
+[![PyPI](https://img.shields.io/badge/6.8.1-3775A9?logo=pypi&logoColor=fff&label=prisma)](https://github.com/prisma/prisma)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-prisma&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-prisma%3A6.7.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-prisma&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-prisma%3A6.8.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Gives LLMs the ability to manage Prisma Postgres databases.
 
-Packaged by Acuvity from prisma original [sources](https://github.com/prisma/prisma).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from prisma original [sources](https://github.com/prisma/prisma).
 
 **Quick links:**
 
@@ -122,10 +122,13 @@ Provides a lightweight auth layer using a single shared token.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
+
+To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-prisma/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-prisma/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-prisma/charts/mcp-server-prisma#minibridge) for Helm charts).
+
 </details>
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active. To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-prisma/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-prisma/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-prisma/charts/mcp-server-prisma#minibridge) for Helm charts).
+> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference
@@ -152,7 +155,7 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-6.7.0`
+  - container: `1.0.0-6.8.1`
 
 ---
 

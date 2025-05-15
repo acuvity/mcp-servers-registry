@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@24197b2f066b91986db7e600c72af3bf4c1701f0
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@8649bf59a9c0c0c63f73e4283224ea889c3a981c
 
 FROM ghcr.io/astral-sh/uv:python3.12-alpine
 
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="standalone"
 
 LABEL org.opencontainers.image.title="mcp-server-aws-diagram"
 LABEL org.opencontainers.image.description="Create diagrams using the Python diagrams package: sequence, flow, and class diagrams."
-LABEL org.opencontainers.image.version="0.9.3"
+LABEL org.opencontainers.image.version="0.9.5"
 LABEL org.opencontainers.image.source="https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server"
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 LABEL org.opencontainers.image.author="AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com>"
@@ -27,6 +27,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN apk update \
     && apk add --no-cache curl
+
 
 HEALTHCHECK CMD curl --fail http://localhost:8080 || exit 1
 
@@ -43,7 +44,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uname -sm &&  uv venv && uv pip install awslabs.aws-diagram-mcp-server==0.9.3
+RUN uv venv && uv pip install awslabs.aws-diagram-mcp-server==0.9.5
 
 EXPOSE 8000/tcp
 

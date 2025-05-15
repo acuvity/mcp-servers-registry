@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-kubernetes",
-  "name": "mcp-server-kubernetes ",
+  "name": "mcp-server-kubernetes",
   "description": "Typescript implementation of Kubernetes cluster operations for pods, deployments, services.",
   "links":
     {

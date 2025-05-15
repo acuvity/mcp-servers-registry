@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-oxylabs",
+  "name": "mcp-server-oxylabs",
+  "description": "Scrapes web data for AI applications using the Model Context Protocol.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-oxylabs",
+      "application": "https://github.com/oxylabs/oxylabs-mcp"
+    },
+  "tags": ["web","research","integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.2.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 4,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-aws-diagram",
-  "name": "mcp-server-aws-diagram ",
+  "name": "mcp-server-aws-diagram",
   "description": "Create diagrams using the Python diagrams package: sequence, flow, and class diagrams.",
   "links":
     {
@@ -12,7 +12,7 @@
   "scope": "standalone",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.9.3",
+  "version": "0.9.5",
   "requiresConfiguration": false,
   "requiresStorage": false,
   "rating": "A",

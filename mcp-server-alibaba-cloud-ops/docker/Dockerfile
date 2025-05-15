@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@24197b2f066b91986db7e600c72af3bf4c1701f0
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@8649bf59a9c0c0c63f73e4283224ea889c3a981c
 
 FROM ghcr.io/astral-sh/uv:python3.12-alpine
 
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-alibaba-cloud-ops"
 LABEL org.opencontainers.image.description="Alibaba Cloud integration, supporting ECS, Cloud Monitor, OOS and widely used cloud products."
-LABEL org.opencontainers.image.version="0.8.3"
+LABEL org.opencontainers.image.version="0.8.6"
 LABEL org.opencontainers.image.source="https://github.com/aliyun/alibaba-cloud-ops-mcp-server"
 LABEL org.opencontainers.image.licenses="nil"
 LABEL org.opencontainers.image.author="Zheng Dayu <dayu.zdy@alibaba-inc.com>"
@@ -27,6 +27,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN apk update \
     && apk add --no-cache curl
+
 
 HEALTHCHECK CMD curl --fail http://localhost:8080 || exit 1
 
@@ -43,7 +44,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uname -sm &&  uv venv && uv pip install alibaba-cloud-ops-mcp-server==0.8.3
+RUN uv venv && uv pip install alibaba-cloud-ops-mcp-server==0.8.6
 
 EXPOSE 8000/tcp
 

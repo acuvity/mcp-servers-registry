@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-docker",
-  "name": "mcp-server-docker ",
+  "name": "mcp-server-docker",
   "description": "Integrate with Docker to manage containers, images, volumes, and networks.",
   "links":
     {

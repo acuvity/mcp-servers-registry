@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-tavily",
+  "name": "mcp-server-tavily",
+  "description": "Integrates AI models with web search and data extraction tools.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-tavily",
+      "application": "https://github.com/tavily-ai/tavily-mcp"
+    },
+  "tags": ["research","web"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.2.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "A",
+  "resources": {
+    "tools": 4,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

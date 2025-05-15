@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-brightdata",
-  "name": "mcp-server-brightdata ",
+  "name": "mcp-server-brightdata",
   "description": "Discover, extract, and interact with the web - automated access across the public internet.",
   "links":
     {
@@ -12,7 +12,7 @@
   "scope": "native",
   "mutitenant": false,
   "runtime": "node",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "rating": "B",

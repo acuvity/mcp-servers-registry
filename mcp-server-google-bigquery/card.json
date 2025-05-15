@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-google-bigquery",
-  "name": "mcp-server-google-bigquery ",
+  "name": "mcp-server-google-bigquery",
   "description": "A server that lets your LLM securely query BigQuery.",
   "links":
     {

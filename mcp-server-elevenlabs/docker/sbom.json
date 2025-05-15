@@ -1,0 +1,81 @@
+{
+  "tools": [
+    {
+      "name": "add_knowledge_base_to_agent",
+      "hash": "91f9e1324f9247ab9d29e6fd2ae071e9178f243ecb15b906249414fc19bdc059"
+    },
+    {
+      "name": "check_subscription",
+      "hash": "944f896d7183752af29b2030d36de77589e7bd1e624042bc1d30de11cc7bea8b"
+    },
+    {
+      "name": "create_agent",
+      "hash": "c3b330160492f76db976c1ef738c49fc62da33968bf1df068b3eb71129138bcc"
+    },
+    {
+      "name": "create_voice_from_preview",
+      "hash": "ba761d6a2b112b520cf8463bedd5da0b841720a48149e4ab0ec93fa2cd5afefa"
+    },
+    {
+      "name": "get_agent",
+      "hash": "4607c36f84519b2172276551d4c64b55a326d4cd53cbff83d59f427a7c550c4c"
+    },
+    {
+      "name": "get_voice",
+      "hash": "511ba8e3f9550db8dadc8561cab48730d25684f72069faf2461596a29c60ed79"
+    },
+    {
+      "name": "isolate_audio",
+      "hash": "ecfd2b1b452ffd4492e23ff4680350ebe5ebed530e774ee25f9b8b5f20e71d04"
+    },
+    {
+      "name": "list_agents",
+      "hash": "c86fa37dac2e1f0c6d6ba4784faed7c330e907453c299a60992c8af4bef9b665"
+    },
+    {
+      "name": "list_phone_numbers",
+      "hash": "cced243ecf3b23b4b992847064779c30f844e6cb3f64618a53c72ce1f0ca1622"
+    },
+    {
+      "name": "make_outbound_call",
+      "hash": "d8e7480101ea19cfa95141215d12f5cdc5f87d75fc20c0869a18b3fb02f09cc8"
+    },
+    {
+      "name": "play_audio",
+      "hash": "ead1307454561355d22fb5546a6124de7899e129b244b565faac3072021fb3fa"
+    },
+    {
+      "name": "search_voice_library",
+      "hash": "4a3cfacd422e0dd663ef421e72ccc80afcec75279c13422e884d7c79114a2a6d"
+    },
+    {
+      "name": "search_voices",
+      "hash": "9546f9a40cc3db7af9115a8edb8afeda0fb34152df1be35b7906137627dc3af4"
+    },
+    {
+      "name": "speech_to_speech",
+      "hash": "2d83a2662e59f363cd80d7d75803c8c5a2eef9a91356afccb16db9b963bae4eb"
+    },
+    {
+      "name": "speech_to_text",
+      "hash": "aa8e90a21934f14abfc93728f02d72430eb266fe00889ad75a4ba4e989eb720d"
+    },
+    {
+      "name": "text_to_sound_effects",
+      "hash": "9fe63c424ebbf0133561c9bdb0ff941157b9b84b34680ce15764e4dccc45f931"
+    },
+    {
+      "name": "text_to_speech",
+      "hash": "e35a9e71722f2a738bba2d0db9d3d111de584a979157de39da236df40f47a1dd"
+    },
+    {
+      "name": "text_to_voice",
+      "hash": "5a7eb20b8fce7560f39b99ab64bfea14a409f8ed0c1afe9529eb11d903cab523"
+    },
+    {
+      "name": "voice_clone",
+      "hash": "7fe2970dc4ad4f9494d42122253c53f17114f8a0ee1015422892d785552cb48a"
+    }
+  ],
+  "prompts": []
+}

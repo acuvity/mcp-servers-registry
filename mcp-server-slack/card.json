@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-slack",
-  "name": "mcp-server-slack ",
+  "name": "mcp-server-slack",
   "description": "MCP server for interacting with Slack",
   "links":
     {

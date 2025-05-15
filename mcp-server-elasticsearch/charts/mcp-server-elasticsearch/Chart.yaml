@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-elasticsearch"
+description: A Helm chart for Connects to Elasticsearch for natural language data queries.
+home: https://github.com/elastic/mcp-server-elasticsearch
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/elastic/mcp-server-elasticsearch
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.1.1
+keywords:
+  - mcp-server-elasticsearch
+  - mcp-server
+  - remote
+  - database
+  - development

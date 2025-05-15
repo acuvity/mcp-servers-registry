@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-apache-airflow",
-  "name": "mcp-server-apache-airflow ",
+  "name": "mcp-server-apache-airflow",
   "description": "MCP server that connects to Apache Airflow using official client.",
   "links":
     {

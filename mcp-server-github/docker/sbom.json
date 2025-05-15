@@ -2,7 +2,7 @@
   "tools": [
     {
       "name": "add_issue_comment",
-      "hash": "86d43e20a27a7a50e9ebf6309a8f9b194fb4f4964f8a8d5c04037e23557efd05",
+      "hash": "a3210a0db80b6830285c353a98c4e7ae99af2fdce86c8bb0fc17a47dae866043",
       "params": [
         {
           "name": "body",
@@ -24,7 +24,7 @@
     },
     {
       "name": "add_pull_request_review_comment",
-      "hash": "be6d0820be1f2a517d8783198cb7234cb644690e90ace4d65b4143af39159fa2",
+      "hash": "43e4b5f7efea8e0669bb93ff2278759801be9587ddb04b15133870300684bac5",
       "params": [
         {
           "name": "body",
@@ -100,7 +100,7 @@
     },
     {
       "name": "create_issue",
-      "hash": "0fdca60b28749f86d062d711471bfc3c6670dad2e8a02c9be2caa40753f717e2",
+      "hash": "b66991fa483e01e4bf1f289c9c542b7c3002e27cc3e80970504a896ae5615160",
       "params": [
         {
           "name": "assignees",
@@ -134,7 +134,7 @@
     },
     {
       "name": "create_or_update_file",
-      "hash": "10268460cbe672f7ab7e9881678fb8ae50af83dcd8bec8f4115f6de03d565628",
+      "hash": "3cd2f9da0ba7a1abf23ebfb28dae1694615fa79bd4b6daadf3cf1774b5fc41f9",
       "params": [
         {
           "name": "branch",
@@ -168,7 +168,7 @@
     },
     {
       "name": "create_pull_request",
-      "hash": "fdced4e921543e06e2878514ba1ba1e4852e1f8118f98d3979eb812c8a27e773",
+      "hash": "b3ce1a8e1c8396e567b2df7957109ec2298ca873d8084f9a9c033f39657f3572",
       "params": [
         {
           "name": "base",
@@ -206,7 +206,7 @@
     },
     {
       "name": "create_pull_request_review",
-      "hash": "3c801d778b5fa0ec62aa4b1d0e830895c3cbde0cd0f75e931a2220331d598820",
+      "hash": "ac26ae3df0a104e274609e1af385e26be731c344cb5061a8420b2a1ca7231137",
       "params": [
         {
           "name": "body",
@@ -257,6 +257,32 @@
         {
           "name": "private",
           "hash": "d2180d4e67c48806764e44a9533344b63b6c05db56d6974818cb393c38e666e1"
+        }
+      ]
+    },
+    {
+      "name": "delete_file",
+      "hash": "a6706184f6656f1e0a1d8b6322d2c1c18bb3672a97cd2ac5bf71b0daf99e8900",
+      "params": [
+        {
+          "name": "branch",
+          "hash": "eed2c3cf92bd302596d7dd8c0d052f667e6d9d3e5debc46913ff50de8c370a59"
+        },
+        {
+          "name": "message",
+          "hash": "26306d203c4a6f1a77f32cd065d7d11593ba0c7a9b5c52c188b98f22b620941f"
+        },
+        {
+          "name": "owner",
+          "hash": "637f8af6d00297f7764a512ae2421160b429cfc1592dcf476db18f1f2d9521b6"
+        },
+        {
+          "name": "path",
+          "hash": "d4e57b1045d6bdf511b312f8574c99772b8c03cc0528da2604ebc5f7d6daa335"
+        },
+        {
+          "name": "repo",
+          "hash": "a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558"
         }
       ]
     },
@@ -346,7 +372,7 @@
     },
     {
       "name": "get_issue",
-      "hash": "b15f8cd84a7e4f6728f2588bebb5b40f611f2670439d552c23b804be2c7d1648",
+      "hash": "e0739745fb9853ee88c1f23196a40765b25dd4c425d93132efddc0975e66e049",
       "params": [
         {
           "name": "issue_number",
@@ -364,7 +390,7 @@
     },
     {
       "name": "get_issue_comments",
-      "hash": "b75abd5fc64cd3e969f79d8533fd1d0287d4d648944ab049d3f88cad2ccb41e0",
+      "hash": "53fa0ebd975991416f2920ec6a43587eefe7f81d8c78a331d86ccf3142a3cce8",
       "params": [
         {
           "name": "issue_number",
@@ -400,7 +426,7 @@
     },
     {
       "name": "get_pull_request",
-      "hash": "d650e84e528c6d4d67b779dce2e364ba32de2fb604c420c10812453de0fc788e",
+      "hash": "ee092d1809d130e6bca75b71d2147a78e1d0a20bb08535182b5e7f037eafccb7",
       "params": [
         {
           "name": "owner",
@@ -418,7 +444,7 @@
     },
     {
       "name": "get_pull_request_comments",
-      "hash": "cf753bbf730e4379cbf18f0d8220866c82a9ad3f8a7a88ab3edc017acf121622",
+      "hash": "3f4e80a03fad0cc5140e207224f2f5fda157d50a9b0e531016132b1613705dcd",
       "params": [
         {
           "name": "owner",
@@ -436,7 +462,7 @@
     },
     {
       "name": "get_pull_request_files",
-      "hash": "675aa3851f469f24f37f8d2370b10cb0229da05df7c0d7190587887c8e68560c",
+      "hash": "b1b26ff4305b4953a717913d7eec40389a6a2505544520107611a86a5a48f29f",
       "params": [
         {
           "name": "owner",
@@ -454,7 +480,7 @@
     },
     {
       "name": "get_pull_request_reviews",
-      "hash": "5a2a1781698aed24c7395cd640b044ea6d79a9d72c7fb5ce616ce1902f02c337",
+      "hash": "74424c9f5b5f967c46da1d93507e77c35ae6af0f2a5bfdf3cc5258354424d072",
       "params": [
         {
           "name": "owner",
@@ -472,7 +498,7 @@
     },
     {
       "name": "get_pull_request_status",
-      "hash": "f79f879dc44f92838788cef23f02cf6cdd4047677137c545228026f6f2e5cc3e",
+      "hash": "c2fa8b4cf2f1cf0f5fa2464041726dfed49ec56fe494fcba8c7b77e94366afe8",
       "params": [
         {
           "name": "owner",
@@ -503,6 +529,24 @@
         {
           "name": "repo",
           "hash": "077296c2d63a8df1f5032955887382a08bef79c0c8c9d5d5470ecb09dc10bb45"
+        }
+      ]
+    },
+    {
+      "name": "get_tag",
+      "hash": "e6d557e07eb01ac88760ac5a62bc68d3b795b61d4d7fa4be36758c0f7ce61eae",
+      "params": [
+        {
+          "name": "owner",
+          "hash": "f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a"
+        },
+        {
+          "name": "repo",
+          "hash": "a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558"
+        },
+        {
+          "name": "tag",
+          "hash": "1ace926bc7cdee5323e297d439d2d268286749252b1c7f5e332d5003681d092d"
         }
       ]
     },
@@ -586,7 +630,7 @@
     },
     {
       "name": "list_issues",
-      "hash": "21237fe6f68699ae824a400794c67f88eb8a2a047451f4d5f454da7e63172e15",
+      "hash": "64d775fc37887031520551399de4ef46513ad48a6624e52910b5f322c904f5c1",
       "params": [
         {
           "name": "direction",
@@ -628,7 +672,7 @@
     },
     {
       "name": "list_pull_requests",
-      "hash": "527c8cf6af2f7861b8afba445dededbf598ccd0283b23bed99a7a9968f8c1b96",
+      "hash": "f26161311922a22f509a5758def0b5736e9d57dab5a64de85cd6943ac3323cf9",
       "params": [
         {
           "name": "base",
@@ -695,8 +739,30 @@
       ]
     },
     {
+      "name": "list_tags",
+      "hash": "b45b57651e9a56b5d03befc9edb790d1c1d92742cc6e1cd9d56f6b41fc3dca92",
+      "params": [
+        {
+          "name": "owner",
+          "hash": "f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a"
+        },
+        {
+          "name": "page",
+          "hash": "b7c5240244916494e69b93a6fc0ad57b364a457e44ef68ed22739cb55ffb1359"
+        },
+        {
+          "name": "perPage",
+          "hash": "059dde8a01aac1a755c9e5efbbfaccb57fa34c3988494a154c873dfa7779a1d7"
+        },
+        {
+          "name": "repo",
+          "hash": "a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558"
+        }
+      ]
+    },
+    {
       "name": "merge_pull_request",
-      "hash": "66d8d76bded29183eecb5cd36d4d58f40a897cd9f0928a6fd18d9788d44b48ce",
+      "hash": "124cd641ce348386107609b1831084962d2198fa82fe58f7a040dd7e1cebb6b4",
       "params": [
         {
           "name": "commit_message",
@@ -751,6 +817,24 @@
       ]
     },
     {
+      "name": "request_copilot_review",
+      "hash": "0a31c498daefdb4310ae1335e16496ed8d238d01ebf12c04d45a1b215e4c7de3",
+      "params": [
+        {
+          "name": "owner",
+          "hash": "f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a"
+        },
+        {
+          "name": "pullNumber",
+          "hash": "c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338"
+        },
+        {
+          "name": "repo",
+          "hash": "a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558"
+        }
+      ]
+    },
+    {
       "name": "search_code",
       "hash": "c47330f5060c9cac8a1867a95cd93c42ab1e6e3b5e6aa7e7dd8b1dec1a8d1e79",
       "params": [
@@ -778,7 +862,7 @@
     },
     {
       "name": "search_issues",
-      "hash": "6b0eee260141d7c3b1a5ebd4a1be8754c249d5283b803f1f9bad160ee8869aa3",
+      "hash": "6c9613cebddafe9b57cfdbaf8cc66801954610fad9e51918ff4b014f1721bfe3",
       "params": [
         {
           "name": "order",
@@ -848,7 +932,7 @@
     },
     {
       "name": "update_issue",
-      "hash": "569ede23be8abcc963cbb9d6e11ecad0abbd818fa3c898c231d4e3c9dcc1b483",
+      "hash": "84a37c5e28746e6ff6c9ec1063d35d03b623e2124107697514916fcd04dd54ea",
       "params": [
         {
           "name": "assignees",
@@ -890,7 +974,7 @@
     },
     {
       "name": "update_pull_request",
-      "hash": "b3d321bc09628f9bfc1fafd575f09855d3e82ca9e582f8f09c1838f816014e3e",
+      "hash": "bed4d74cfd86d23ab02749d6b4fffa5ba43c3290bfa7c9810514cf821e0563eb",
       "params": [
         {
           "name": "base",
@@ -928,7 +1012,7 @@
     },
     {
       "name": "update_pull_request_branch",
-      "hash": "ba5c9de20ac5c30e61b9484d11c92936beb365e422118dd34afa8e80d9037037",
+      "hash": "bb1dacdad1b56b12c6b26f7833d5b189a7827f66ea3d04917632eed63277d80d",
       "params": [
         {
           "name": "expectedHeadSha",

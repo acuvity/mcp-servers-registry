@@ -1,0 +1,195 @@
+{
+  "tools": [
+    {
+      "name": "create-sft-nft-mesdt-tokens",
+      "hash": "41241a9154a5b42677f125605b4402bc6008a1243bfe47c882436bd30e104e6a",
+      "params": [
+        {
+          "name": "initialQuantity",
+          "hash": "b7867d762b70b6e5090d17102433ccd55cc6eb38d363295a11202d22f6f8805d"
+        },
+        {
+          "name": "name",
+          "hash": "3f1a788d734c6204ba8ec1f6c426a2abc853c6219124bf9bc332fc26b593cb09"
+        },
+        {
+          "name": "royalties",
+          "hash": "c43fd3b18d729908c3d345d9479bdae2e15ffdab2334c32e6ae8fd673022808f"
+        },
+        {
+          "name": "tokenIdentifier",
+          "hash": "e4b376a4d9a2237d893bb5ea16d81f6a2839af96f5101d3c897b984a82a056c4"
+        }
+      ]
+    },
+    {
+      "name": "create-wallet",
+      "hash": "a18a7336ed81d8b6c8a1b3263a842b7c3de1f262e3209cbfd299a980ee057dea"
+    },
+    {
+      "name": "get-balance-of-address",
+      "hash": "49a000f1ab084999c494f0040f9fa742ce1f9d6b5d2e7dd20327a7114edf4f31",
+      "params": [
+        {
+          "name": "address",
+          "hash": "40f22b2a85ff1c838635ea8c62210e354c7e811d8a32e9838e423c7b1b327f26"
+        }
+      ]
+    },
+    {
+      "name": "get-network",
+      "hash": "d1c38c77747f78bd8aa27088f0d025f3e5ef128e0921cf6f0464b269f5587a72"
+    },
+    {
+      "name": "get-tokens-of-address",
+      "hash": "c7d82d4bc5b4fd56e05f376d83db698b71dcfa898b593d1e2c13c364dcbe9166",
+      "params": [
+        {
+          "name": "address",
+          "hash": "6db278e039eef9baa29cef43dde4c312be4bf7382df1043de2db43815ea0bdae"
+        },
+        {
+          "name": "size",
+          "hash": "d25bcfdda3f70640a78f0728ab8655d5f9d4cc2aabef02ff249a4c1619c51118"
+        }
+      ]
+    },
+    {
+      "name": "get-wallet-address",
+      "hash": "6acc57730a7cd271f8f4f7fd59d69d4cfa26083421d4405f79b57af119a038b9"
+    },
+    {
+      "name": "issue-fungible-token",
+      "hash": "83dd1288fffd93d0ab09c6e912e6799ee6751bee3dc4be2dd8074599926f36e1",
+      "params": [
+        {
+          "name": "initialSupply",
+          "hash": "1d45951e94b0e5a8f45343ea1c6a756255046ba0f36a26476e2c9df79f515eb0"
+        },
+        {
+          "name": "numDecimals",
+          "hash": "41fec9f80ddb3f8d2372a69a90724f39286908e0b8ea6a7a447d077b8bf803f9"
+        },
+        {
+          "name": "tokenName",
+          "hash": "d1ad0a25564e75a210f396a96c3de0b7dc86b5b2fe75fc72287290bf331619a9"
+        },
+        {
+          "name": "tokenTicker",
+          "hash": "9a4326e7626bc0a005a965f384a99949e4e5d250f7902d556d702528c7d645d2"
+        }
+      ]
+    },
+    {
+      "name": "issue-meta-esdt-collection",
+      "hash": "24df50a71355aee148bac559582d1a2147a61d755e07b80737f5ec91d1fd67ec",
+      "params": [
+        {
+          "name": "numDecimals",
+          "hash": "1b9b512136bfd6cb31f14580f9f2ef362005c8c98582e66475ae2ba849138c5a"
+        },
+        {
+          "name": "tokenName",
+          "hash": "d1ad0a25564e75a210f396a96c3de0b7dc86b5b2fe75fc72287290bf331619a9"
+        },
+        {
+          "name": "tokenTicker",
+          "hash": "9a4326e7626bc0a005a965f384a99949e4e5d250f7902d556d702528c7d645d2"
+        }
+      ]
+    },
+    {
+      "name": "issue-nft-collection",
+      "hash": "d47e27058eecfde8f3f1a2eb76f6b8ceab18547903a586b7bf8f6b68dbc29bfb",
+      "params": [
+        {
+          "name": "tokenName",
+          "hash": "d1ad0a25564e75a210f396a96c3de0b7dc86b5b2fe75fc72287290bf331619a9"
+        },
+        {
+          "name": "tokenTicker",
+          "hash": "9a4326e7626bc0a005a965f384a99949e4e5d250f7902d556d702528c7d645d2"
+        }
+      ]
+    },
+    {
+      "name": "issue-semi-fungible-collection",
+      "hash": "a6703990de0da69fb09ede933de1ff7948e052553b611fc6aa1192de9be80099",
+      "params": [
+        {
+          "name": "tokenName",
+          "hash": "d1ad0a25564e75a210f396a96c3de0b7dc86b5b2fe75fc72287290bf331619a9"
+        },
+        {
+          "name": "tokenTicker",
+          "hash": "9a4326e7626bc0a005a965f384a99949e4e5d250f7902d556d702528c7d645d2"
+        }
+      ]
+    },
+    {
+      "name": "send-egld",
+      "hash": "6f9aa181a2d8a266aadfb01574856b816425c532c17c9bf511ee49631be43ef3",
+      "params": [
+        {
+          "name": "amount",
+          "hash": "32b6c4903e37048deb667907395ba2f68aeceaf76cf4246e8288ee98390134bb"
+        },
+        {
+          "name": "receiver",
+          "hash": "16cd2c0e8cd1bd5503e782f6280a755a6f8c87eb9a7b654250654409819ed127"
+        }
+      ]
+    },
+    {
+      "name": "send-egld-to-multiple-receivers",
+      "hash": "71ffd685ba5968d134b355b7bac4ff66643aed698c80272c8f2c599a001a577b",
+      "params": [
+        {
+          "name": "amount",
+          "hash": "32b6c4903e37048deb667907395ba2f68aeceaf76cf4246e8288ee98390134bb"
+        },
+        {
+          "name": "receivers",
+          "hash": "5c3b3fe7914a6e4595819d0a139c80f6c8ab2f7fe9c3c644a8e9e6d591b6a767"
+        }
+      ]
+    },
+    {
+      "name": "send-fungible-tokens",
+      "hash": "2da7410c06af60f8d40b001307a34fd52f359d6b44077e17ae825ee5532253ad",
+      "params": [
+        {
+          "name": "amount",
+          "hash": "d311e10bc69452c730e1831b8a1ecc0b962d23af1cf107612abed3ad83498e17"
+        },
+        {
+          "name": "receiver",
+          "hash": "16cd2c0e8cd1bd5503e782f6280a755a6f8c87eb9a7b654250654409819ed127"
+        },
+        {
+          "name": "token",
+          "hash": "18b79649ab3f40d9e998cafd96198fd5ac04fcc35944464ffbccff1e65aac01b"
+        }
+      ]
+    },
+    {
+      "name": "send-sft-nft-meta-tokens",
+      "hash": "f2125bab14d636100b780ac1f52197e6a8ef91e7ca5feec9e7b79663d9efe317",
+      "params": [
+        {
+          "name": "amount",
+          "hash": "ae32291808ecd9785438d3e517e7d96702982602db2ad60c5123d3f6b2a0bc39"
+        },
+        {
+          "name": "receiver",
+          "hash": "16cd2c0e8cd1bd5503e782f6280a755a6f8c87eb9a7b654250654409819ed127"
+        },
+        {
+          "name": "token",
+          "hash": "e7997734313ec176cbf44c186ab6c6319ffac39b70b79c2b4b63f4db86d901f8"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

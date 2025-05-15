@@ -1,0 +1,10 @@
+env:
+  NEO4J_URL: dummy_value
+  NEO4J_USERNAME: dummy_value
+
+secrets:
+  NEO4J_PASSWORD:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-firecrawl",
+  "name": "mcp-server-firecrawl",
+  "description": "Integrates Firecrawl for web scraping and data extraction.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-firecrawl",
+      "application": "https://github.com/mendableai/firecrawl-mcp-server"
+    },
+  "tags": ["web","automation"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1.10.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "A",
+  "resources": {
+    "tools": 8,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

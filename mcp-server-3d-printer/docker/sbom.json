@@ -1,0 +1,355 @@
+{
+  "tools": [
+    {
+      "name": "center_model",
+      "hash": "dafb5d93a8eca42ba429e5b739c02b5e5358667cb030589d8a979808eb4dfb08",
+      "params": [
+        {
+          "name": "stl_path",
+          "hash": "a1afac6b4541fe19d6db09a7a0a33159c99e7cd716c072254594af2155c1e6f0"
+        }
+      ]
+    },
+    {
+      "name": "confirm_temperatures",
+      "hash": "229590b7889062c06dccf56880d17a6ea2ab8c77eb5da059fcdc56942514e162",
+      "params": [
+        {
+          "name": "bed_temp",
+          "hash": "0a03213f24991732375d67c04dc4b2f2ba8f8eea27558c06baa6850c23f4094e"
+        },
+        {
+          "name": "extruder_temp",
+          "hash": "56b347004fff69ff10d422a03de0c28a9986069b954ffc51ae5cd97e463a4a9f"
+        },
+        {
+          "name": "gcode_path",
+          "hash": "4ab9f019cf5a10eb189f78251b1327d0d15ff07583bc358e63d384885d874ffc"
+        }
+      ]
+    },
+    {
+      "name": "extend_stl_base",
+      "hash": "46c4ba63dbec933bab20249309b0b52865a3d91337f27e29e56588a94afad5e6",
+      "params": [
+        {
+          "name": "extension_inches",
+          "hash": "fc2ee78563954015feed8836f2a2be68bffa55e7e24d42d9df2fa3e539dc1119"
+        },
+        {
+          "name": "stl_path",
+          "hash": "c7980f76d0c6381fb123e2fe23ff8b80c8f9b3db66900d91ef44778868fb93c8"
+        }
+      ]
+    },
+    {
+      "name": "generate_stl_visualization",
+      "hash": "c0c720b85a4ba18c4650d761581ea22950e54e99cd476674983d9e3d5a25dd4e",
+      "params": [
+        {
+          "name": "height",
+          "hash": "72a98c7d2c4e21481f80a90be7456e8824adcc40716ff34a539e6402e344cab9"
+        },
+        {
+          "name": "stl_path",
+          "hash": "6785f01a1abddbbc76bc0f8a9541c2d5f9c935daac8c833d6eeb487d72527c9c"
+        },
+        {
+          "name": "width",
+          "hash": "47434a77f1ac63ad8aac1ad0d6121ae85c3deb8fa6865ce5ce2576a22b2689ea"
+        }
+      ]
+    },
+    {
+      "name": "get_printer_status",
+      "hash": "5c43cf255975f3a92de8d22b3d891b7a9fa462a7e11a66fd5bd58594a4430a70",
+      "params": [
+        {
+          "name": "api_key",
+          "hash": "e37086e8614c87435c9b7125b35d054988ae55158f2312c587ce072a3d9fc810"
+        },
+        {
+          "name": "bambu_serial",
+          "hash": "4684ecb65a303176287b3eea9884742a290c01445a3f8ff7b080ea1e420f91a3"
+        },
+        {
+          "name": "bambu_token",
+          "hash": "baa357da38c6ff3a4df2f3f20d244e465c5bcd4614939ebc9eee8fb25f36dd7d"
+        },
+        {
+          "name": "host",
+          "hash": "4ed906b275207af3d89f8c690c40b5382d70a0ffb66f25171e01893e7d5fdf58"
+        },
+        {
+          "name": "port",
+          "hash": "9e2e3042fdb2f77449fc91b38cf7c96b67342285c84912afe44c68e2c4a35493"
+        },
+        {
+          "name": "type",
+          "hash": "b90438c026c0dbde857431132e669c5cc4ae470efdcde6343eac4e8aa7442fbf"
+        }
+      ]
+    },
+    {
+      "name": "get_stl_info",
+      "hash": "31d786b12bb7e7b8ed7bf74c59cf23300887fb95eab86c3ce56063a0b3834633",
+      "params": [
+        {
+          "name": "stl_path",
+          "hash": "6785f01a1abddbbc76bc0f8a9541c2d5f9c935daac8c833d6eeb487d72527c9c"
+        }
+      ]
+    },
+    {
+      "name": "lay_flat",
+      "hash": "e15dd0257299b1c194c0e59e1540165f890a5eeecf6ad08c016f7983d4596a04",
+      "params": [
+        {
+          "name": "stl_path",
+          "hash": "2fcf80af0a6015b0661b710ce78f18e076cfddb67c1f34725fc5d8f42081b3f6"
+        }
+      ]
+    },
+    {
+      "name": "merge_vertices",
+      "hash": "b366bb3bf4f3577a448bcc20c28a7aa484c7bc42088fc29f49c3c4fbd1e044b3",
+      "params": [
+        {
+          "name": "stl_path",
+          "hash": "b5aa901123129c77556b12bd624c2217e8c53760b64e2734c341bd763c94a5b6"
+        },
+        {
+          "name": "tolerance",
+          "hash": "fc585774cc4972c61772b2e5d7761daee6510906336f688e2b6d022737a7cc4d"
+        }
+      ]
+    },
+    {
+      "name": "modify_stl_section",
+      "hash": "b7024ed8514af82ad23f6a525aa0e4e6108e875ca1637b7092c07dae5fd84ea8",
+      "params": [
+        {
+          "name": "custom_max_x",
+          "hash": "d555a5d5a5865bc9483b4d2f0559be3cbdb0270c5c43cd92d4b0d09beb42ab68"
+        },
+        {
+          "name": "custom_max_y",
+          "hash": "7506e1d78333689b14cfe76e5f30a88895679d166b0d39d5f60433545e6fe2e1"
+        },
+        {
+          "name": "custom_max_z",
+          "hash": "7436d587313670993bf4057db756feedf4a37beccf4ececad7d0ac63ce38f647"
+        },
+        {
+          "name": "custom_min_x",
+          "hash": "acba0b714146ff290b8ebf800d71f6767b2a7e76bc577ffef940e3e14ecab9f9"
+        },
+        {
+          "name": "custom_min_y",
+          "hash": "33bb9619c85c0932f9945ce683cf7e5c32e416f4cbb171f4813c8ba67801539a"
+        },
+        {
+          "name": "custom_min_z",
+          "hash": "b20c107bd6538c02d2ace031ad1642bd40407cfa4c97cdefd4026b7133720d01"
+        },
+        {
+          "name": "section",
+          "hash": "a2e49b2cc6c656f21ecc3ce2834f5175458c8cee3444989461fa2d23d23cd655"
+        },
+        {
+          "name": "stl_path",
+          "hash": "6785f01a1abddbbc76bc0f8a9541c2d5f9c935daac8c833d6eeb487d72527c9c"
+        },
+        {
+          "name": "transformation_type",
+          "hash": "9aea0e4a5bfda5d367b3d872dc40f85ee757963543f47c42f3a78da46d266a89"
+        },
+        {
+          "name": "value_x",
+          "hash": "edb6ed222269d87dc02af2701668a6821982db6ab17a525fff04287660af90c3"
+        },
+        {
+          "name": "value_y",
+          "hash": "df93468fb2ee192fa3b1715012960197b26458e8775ab59d7f4de2d305ffb4d8"
+        },
+        {
+          "name": "value_z",
+          "hash": "4187e0d9caf1328ad747c1552e81ba62d9e026e160d747c06d2ad88e003425b6"
+        }
+      ]
+    },
+    {
+      "name": "print_3mf",
+      "hash": "317d9138286632d3265ca36512c042d6b164bbbd46a085c74a5b8b7ee70df3b0",
+      "params": [
+        {
+          "name": "ams_mapping",
+          "hash": "dac332670a1395b606a57296dd20db6511cea94c3c1d7d68eb62b018327c9ffa"
+        },
+        {
+          "name": "bambu_serial",
+          "hash": "de545581264cf974f2fde41aa88c00053faca66155d11f5a2af7ff56224ea566"
+        },
+        {
+          "name": "bambu_token",
+          "hash": "cc6db9eeab4c09669b08af3e093eef244ded66d9f761e08e7ed50c1411f90326"
+        },
+        {
+          "name": "bed_temperature",
+          "hash": "4650ff8155e799107c5ae69c60beb5bd33656bb8364fc422c81076718e265307"
+        },
+        {
+          "name": "host",
+          "hash": "2dff41681fa8e74072d88ff7d03650b8db256ee7babdb3973981afbe843611ee"
+        },
+        {
+          "name": "layer_height",
+          "hash": "10468dd24d82e3f53acb0507b2931059377b0e497ce7b34ff81581deade6daf9"
+        },
+        {
+          "name": "nozzle_temperature",
+          "hash": "43cb44d5110c69ee2ac3c598a465bb9b7c82914dc1f2f675edf2c3e56b185ebc"
+        },
+        {
+          "name": "support_enabled",
+          "hash": "06d630c50505617ddee7f0188e06e8989016fcbe03a43ceea4a3e809e45cc0b3"
+        },
+        {
+          "name": "three_mf_path",
+          "hash": "3f933d4432808bc8ffc9643929653aedb0eeffccda114b6747c45e43b9fc11ba"
+        }
+      ]
+    },
+    {
+      "name": "process_and_print_stl",
+      "hash": "725ca78b6091ca324e34e2cf5eb7e89dc38cac0d5ec4ee1034327e11d46af282",
+      "params": [
+        {
+          "name": "api_key",
+          "hash": "e37086e8614c87435c9b7125b35d054988ae55158f2312c587ce072a3d9fc810"
+        },
+        {
+          "name": "bed_temp",
+          "hash": "0a03213f24991732375d67c04dc4b2f2ba8f8eea27558c06baa6850c23f4094e"
+        },
+        {
+          "name": "extension_inches",
+          "hash": "fc2ee78563954015feed8836f2a2be68bffa55e7e24d42d9df2fa3e539dc1119"
+        },
+        {
+          "name": "extruder_temp",
+          "hash": "56b347004fff69ff10d422a03de0c28a9986069b954ffc51ae5cd97e463a4a9f"
+        },
+        {
+          "name": "host",
+          "hash": "4ed906b275207af3d89f8c690c40b5382d70a0ffb66f25171e01893e7d5fdf58"
+        },
+        {
+          "name": "port",
+          "hash": "9e2e3042fdb2f77449fc91b38cf7c96b67342285c84912afe44c68e2c4a35493"
+        },
+        {
+          "name": "stl_path",
+          "hash": "83e41b4375ea1e6120630d366b43911a61cb39e7e2807f73b912f32713227ac4"
+        },
+        {
+          "name": "type",
+          "hash": "4d832d2988b7ed5ab0c18b21980285b495ed2a4bbb28a4b15d8eb143ca096318"
+        }
+      ]
+    },
+    {
+      "name": "rotate_stl",
+      "hash": "b5f100daa2b3711ce46d4d62b2164189d54b70a1489a18bec5b57d134ff559ca",
+      "params": [
+        {
+          "name": "rotate_x",
+          "hash": "dac8c418a6dfad44ee57494191f5c09b95d8992f21b0269b3e3715e87b58cb0a"
+        },
+        {
+          "name": "rotate_y",
+          "hash": "e2368e0ea7083f900a7f0fd1d59918ff6dfaf12fb5825c5baaedafa04c80addb"
+        },
+        {
+          "name": "rotate_z",
+          "hash": "d655972045ebb9724fe6320adaff1b0467ea34c163428f479a3799a4c2e9af07"
+        },
+        {
+          "name": "stl_path",
+          "hash": "6785f01a1abddbbc76bc0f8a9541c2d5f9c935daac8c833d6eeb487d72527c9c"
+        }
+      ]
+    },
+    {
+      "name": "scale_stl",
+      "hash": "a9b4a9a34289a4b0d007a0c38a183f6a9205a14958bf3ce30ddb4d14f3d8f7d4",
+      "params": [
+        {
+          "name": "scale_factor",
+          "hash": "0f6106e39ff10384220f7ee52844f9c4c43cb32e09aa6e3bff7ad06d0b1e977c"
+        },
+        {
+          "name": "scale_x",
+          "hash": "c744551bef65ce63e5b0cbc8b181d23d8c60f1832e995078b0705a592f0493b6"
+        },
+        {
+          "name": "scale_y",
+          "hash": "84b707a53bc996a09397587aa360b138ef49b0c1be82324d6d7fc7f30bd354c8"
+        },
+        {
+          "name": "scale_z",
+          "hash": "fabef66a9023f876d1ee6e4ec7ddee6f891749deeb3839f853b8f58fac86ab12"
+        },
+        {
+          "name": "stl_path",
+          "hash": "6785f01a1abddbbc76bc0f8a9541c2d5f9c935daac8c833d6eeb487d72527c9c"
+        }
+      ]
+    },
+    {
+      "name": "slice_stl",
+      "hash": "2cceed482dd49913fc2e5c77c888eff0d521d2e49260ff990038c540d3193bcb",
+      "params": [
+        {
+          "name": "slicer_path",
+          "hash": "e11525b997e451f0e23902fc43fefdf67c2254e42ac6e885f406085b95b86be2"
+        },
+        {
+          "name": "slicer_profile",
+          "hash": "a2be24e7c8ffa0285dede6e87e2c7892464344a113246157769b5260e28d85f4"
+        },
+        {
+          "name": "slicer_type",
+          "hash": "ce61148d505dc1abaf2fe16e466f5562404aee3e331a5763b0fb3c3875c4c758"
+        },
+        {
+          "name": "stl_path",
+          "hash": "0975865279090abb86b219b6744d941cd62aa67492de64157b108247843cc941"
+        }
+      ]
+    },
+    {
+      "name": "translate_stl",
+      "hash": "99da2ddc27ea4deae5aa28cf86c55b15a66b5b24ac6b70c8e4eec1fe5650f69c",
+      "params": [
+        {
+          "name": "stl_path",
+          "hash": "6785f01a1abddbbc76bc0f8a9541c2d5f9c935daac8c833d6eeb487d72527c9c"
+        },
+        {
+          "name": "translate_x",
+          "hash": "461297929979d5b28ee301baa34c5c60ab3f84c7bac53bdb324769d5f8f55718"
+        },
+        {
+          "name": "translate_y",
+          "hash": "0640ae27aa5bc272e08e42833cc8d7c849eacf2f96f69e52350207b15b2f9d05"
+        },
+        {
+          "name": "translate_z",
+          "hash": "9747588f0f863d2e44eebe210e59512d24e055f4718108369db983575d0ac622"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

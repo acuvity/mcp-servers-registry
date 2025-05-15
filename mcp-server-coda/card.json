@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-coda",
-  "name": "mcp-server-coda ",
+  "name": "mcp-server-coda",
   "description": "MCP server for Coda.",
   "links":
     {
@@ -12,10 +12,10 @@
   "scope": "remote",
   "mutitenant": false,
   "runtime": "node",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "C",
+  "rating": "D",
   "resources": {
     "tools": 7,
     "prompts": 0,

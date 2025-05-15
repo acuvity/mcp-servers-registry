@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-mongodb"
+description: A Helm chart for MCP server for interacting with MongoDB and MongoDB Atlas.
+home: https://github.com/mongodb-js/mongodb-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/mongodb-js/mongodb-mcp-server
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.1.1
+keywords:
+  - mcp-server-mongodb
+  - mcp-server
+  - remote
+  - database
+  - integration
+  - development

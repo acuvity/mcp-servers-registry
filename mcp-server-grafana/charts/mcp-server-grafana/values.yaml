@@ -1,0 +1,289 @@
+# This will set the replicaset count more information can be found here: https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/
+replicaCount: 1
+
+# This is to override the chart name.
+nameOverride: ""
+fullnameOverride: ""
+
+## Image
+#
+# This sets the container image more information can be found here: https://kubernetes.io/docs/concepts/containers/images/
+image:
+  repository: docker.io/acuvity/mcp-server-grafana
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart version-appVersion.
+  tag: ""
+
+# This is for the secretes for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+imagePullSecrets: []
+
+## Container
+#
+# args, the args to pass to the container
+# this will override the default arguments
+# from the docker image
+args: []
+
+## Service account
+#
+# This section builds out the service account more information can be found here: https://kubernetes.io/docs/concepts/security/service-accounts/
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Automatically mount a ServiceAccount's API credentials?
+  automount: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create i true, a name is generated using the fullname template
+  name: ""
+
+## Annotations and labels
+#
+# This is for setting Kubernetes Annotations to a Pod.
+# For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
+podAnnotations: {}
+
+# This is for setting Kubernetes Labels to a Pod.
+# For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+podLabels:
+  app.kubernetes.io/component: mcp-server
+  mcp-server-scope: remote
+
+## Security
+#
+
+podSecurityContext: {}
+
+securityContext:
+  capabilities:
+    drop:
+    - ALL
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  runAsUser: 1001
+
+## Service and ingress
+#
+#
+# This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/
+service:
+  # This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
+  type: ClusterIP
+  # This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports
+  port: 8000
+  healthPort: 8080
+  # This sets the session affinity as http see is a long lived connextion we need to make sure we hit the same pod
+  # see https://kubernetes.io/docs/reference/networking/virtual-ips/#session-affinity
+  sessionAffinity:
+    sessionAffinity: ClientIP
+    sessionAffinityConfig:
+      clientIP:
+        timeoutSeconds: 600
+
+# This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+
+## Resources
+#
+
+# https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+## Probes
+#
+#
+# This is to setup the liveness and readiness probes more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
+livenessProbe:
+  httpGet:
+    path: /
+    port: health
+readinessProbe:
+  httpGet:
+    path: /
+    port: health
+
+## Autoscaling
+#
+
+# This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+## Volumes and storage
+#
+#
+
+# Additional volumes on the output Deployment definition.
+volumes: []
+# - name: foo
+#   secret:
+#     secretName: mysecret
+#     optional: false
+
+# Additional volumeMounts on the output Deployment definition.
+volumeMounts: []
+# - name: foo
+#   mountPath: "/etc/foo"
+#   readOnly: true
+
+
+# Section related to storage
+storage:
+
+## Placement, affinity and toleration
+#
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+## Environment variables and secrets
+#
+
+# This section handles environment variables passed to the container.
+env:
+  GRAFANA_URL: 
+
+# This section handles secrets passed to the container.
+secrets:
+  GRAFANA_API_KEY:
+    value:
+    valueFrom:
+      name:
+      key:
+
+## Minibridge section
+#
+#
+minibridge:
+  # minibridge mode
+  # set to http, is a brige http/see to sdio, compatible with MCP protocol 2025-03-26 and 2024-11-05
+  # set to websocket is websocket to stdio, you will need minibridge on the client side.
+  mode: http
+
+  # Log level
+  log:
+    level: info
+
+  # Tracing
+  tracing:
+    # Set your OTEL endpoint HOST:port to enable tracing
+    url:
+
+  # TLS configuration
+  tls:
+    # To enable TLS
+    enabled: false
+    # [Required] Path to the server certificate when TLS is enabled
+    cert:
+      # raw value of certificate b64 encoded
+      value:
+      # path from existing volume mount
+      path:
+    # [Required] Path to the private key for the certificate when TLS is enabled
+    key:
+      # raw value of certificate b64 encoded
+      value:
+      # path from existing volume mount
+      path:
+    # [Optional] Passphrase for the certificate private key
+    pass:
+      # raw value, will be stored as a secret
+      value:
+      # value from an existing secret
+      valueFrom:
+        name:
+        key:
+
+    # [Optional] MTLS configuration to verify client certificates when TLS is enabled
+    clientCA:
+      # raw value of certificate b64 encoded
+      value:
+      # path from existing volume mount
+      path:
+
+  # SBOM, to disable set it to false
+  sbom: true
+
+  # guardrails to enable (list)
+  # default none
+  guardrails: []
+  # - covert-instruction-detection
+  # - sensitive-pattern-detection
+  # - shadowing-pattern-detection
+  # - schema-misuse-prevention
+  # - cross-origin-tool-access
+  # - secrets-redaction
+
+
+  # basic auth from the default policy
+  # if not set no auth will be enforced
+  basicAuth:
+    # raw value, will be stored as secret
+    value:
+    # value form an existing secret
+    valueFrom:
+      name:
+      key:
+
+  # Policier configuration
+  policer:
+    # Instruct to enforce policies if enabled
+    # otherwise it will jsut log the verdict as a warning
+    # message in logs
+    enforce: true
+    # Use the rego policer (Default)
+    rego:
+      # To enable the rego policer
+      enabled: true
+      # path to the default policy
+      policy: /policy.rego
+
+    # Use the remote http policer
+    http:
+      # To enable the http policer
+      enabled: false
+      # Address of a Policer to send the traffic to for authentication and/or analysis
+      url:
+      # Token to use to authenticate against the Policer
+      token:
+        # raw value, will be stored as a secret
+        value:
+        # value from an existing secret
+        valueFrom:
+          name:
+          key:
+      # CA to trust Policer server certificates
+      ca:
+        # raw value of certificate b64 encoded
+        value:
+        # path from existing volume mount
+        path:
+      # Do not validate Policer CA. Do not do this in production
+      # insecure: true

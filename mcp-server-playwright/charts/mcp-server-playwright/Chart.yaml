@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-playwright"
+description: A Helm chart for Browser automation for LLMs using structured accessibility snapshots.
+home: https://github.com/microsoft/playwright-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/microsoft/playwright-mcp
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.0.25
+keywords:
+  - mcp-server-playwright
+  - mcp-server
+  - standalone
+  - automation
+  - web
+  - research

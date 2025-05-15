@@ -37,6 +37,12 @@ export MINIBRIDGE_HEALTH_LISTEN="${MINIBRIDGE_HEALTH_LISTEN:-":8080"}"
 export REGO_POLICY_RUNTIME_GUARDRAILS="$GUARDRAILS"
 export REGO_POLICY_RUNTIME_BASIC_AUTH_SECRET="$BASIC_AUTH_SECRET"
 
+if grep -qE 'tmpfs.* /tmp ' /proc/mounts; then
+  export  MINIBRIDGE_MCP_USE_TEMPDIR="true"
+fi
+
+export MINIBRIDGE_OAUTH_DISABLED="${MINIBRIDGE_OAUTH_DISABLED:-"true"}"
+
 if [ "$#" -gt 0 ]; then
   exec minibridge ${MINIBRIDGE_MODE} -- contentful-mcp "$@"
 else

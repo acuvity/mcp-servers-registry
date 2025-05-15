@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-bugsnag",
-  "name": "mcp-server-bugsnag ",
+  "name": "mcp-server-bugsnag",
   "description": "An MCP server for interacting with Bugsnag.",
   "links":
     {

@@ -1,0 +1,195 @@
+{
+  "tools": [
+    {
+      "name": "categories",
+      "hash": "35f9a019a9b11575a7e3eee76077ead49dd715d4ec8f809f183ab9cbcccc4e01"
+    },
+    {
+      "name": "create_invoice",
+      "hash": "3d42e993c49ba735c5d6e0c9d63f50123f1b31f3eb1d48f44cd26ec520389cd7",
+      "params": [
+        {
+          "name": "auto_pay",
+          "hash": "ca747c87c9cd5d58eab86bce067a7c5159801b6955aa867063048584d9c933bb"
+        },
+        {
+          "name": "payment_method",
+          "hash": "161c42cff3de3b31488fe78b93ef887106bff184bd8ebed23f7bdd099fb65e1e"
+        },
+        {
+          "name": "products",
+          "hash": "26c297a5cdcc08421d501fde8ae2e379933347fcd8cfb35819ade22c5ca6b6cb"
+        },
+        {
+          "name": "webhook_url",
+          "hash": "3617456ac56c265c448adb8549f5c40a07808b2c0d27a2cf2169b915271b1ea7"
+        }
+      ]
+    },
+    {
+      "name": "detail",
+      "hash": "e59f84ee5ad331ff1ad7975e6d9702af918442a3dab883490ad932a56c2a438f",
+      "params": [
+        {
+          "name": "id",
+          "hash": "9eb19521e2044f7d8e84838a9747a8f5921fed2d1de5ee08b6f32c8cd6244718"
+        }
+      ]
+    },
+    {
+      "name": "get_account_balance",
+      "hash": "7bae02ed305520bf876f16976c07cf051092e78140ea9b395ce8db74adfabdc2"
+    },
+    {
+      "name": "get_invoice",
+      "hash": "9625744ba65e15145694c64a0c0c23956eff00e40f77586aed853f71520f1725",
+      "params": [
+        {
+          "name": "id",
+          "hash": "e650d8abe39dae63313e2ce510e41a533b74e5b7335c0131290dd17be79ed345"
+        }
+      ]
+    },
+    {
+      "name": "get_invoices",
+      "hash": "7e0aaf77f5e5f899eaeb6ffc43048267fbbd1ebe92c323a022f098f1c2da18b2",
+      "params": [
+        {
+          "name": "after",
+          "hash": "c34e7dcf65d0439becb55c557a33d319740d21227857c1c3a36e950d03d4a7c9"
+        },
+        {
+          "name": "before",
+          "hash": "f17302de35cabf73d96df7eb50adccd294867ca6afdaee9db4e6507af0c6fcb6"
+        },
+        {
+          "name": "limit",
+          "hash": "4b335efa0a3151e9d25a6661287b9283396299477f440a09c67566105aa0b929"
+        },
+        {
+          "name": "start",
+          "hash": "26b6f6b10330ebc338645950585d700fc63ecd99692126fa9417c327fb2edf65"
+        }
+      ]
+    },
+    {
+      "name": "get_order",
+      "hash": "786a457b3cb4ff47c12f6d5336bacd89f7a084fa799f66f85ef139e0869da4ed",
+      "params": [
+        {
+          "name": "id",
+          "hash": "e66fc76d2d0586ff442141d8d63732cba2a012a9d1ed10a4b442bcdea745f281"
+        }
+      ]
+    },
+    {
+      "name": "get_orders",
+      "hash": "7fba44c003771e908458e5af00070f6927ccbc6a5bf4b9a823df5a13aae43566",
+      "params": [
+        {
+          "name": "after",
+          "hash": "c34e7dcf65d0439becb55c557a33d319740d21227857c1c3a36e950d03d4a7c9"
+        },
+        {
+          "name": "before",
+          "hash": "f17302de35cabf73d96df7eb50adccd294867ca6afdaee9db4e6507af0c6fcb6"
+        },
+        {
+          "name": "limit",
+          "hash": "4b335efa0a3151e9d25a6661287b9283396299477f440a09c67566105aa0b929"
+        },
+        {
+          "name": "start",
+          "hash": "26b6f6b10330ebc338645950585d700fc63ecd99692126fa9417c327fb2edf65"
+        }
+      ]
+    },
+    {
+      "name": "pay_invoice",
+      "hash": "c59e1725728024b42b90ef76d36adc1bf926f2e31489d605f4fd268d936f4429",
+      "params": [
+        {
+          "name": "id",
+          "hash": "e650d8abe39dae63313e2ce510e41a533b74e5b7335c0131290dd17be79ed345"
+        }
+      ]
+    },
+    {
+      "name": "ping",
+      "hash": "67662099e9b82f89e35a83f2d2d71b66a394d2d30fd765d7654aa57a861b24dc"
+    },
+    {
+      "name": "search",
+      "hash": "34e293fb5b41a57a2866e83bb66dd19925e4f032b3eccc78434ef3de8a7a927d",
+      "params": [
+        {
+          "name": "beta_flags",
+          "hash": "a6e6f1c39402c68dcd4e2b0728e8c96adfa4ecb32651f4546a7af3524bfc6896"
+        },
+        {
+          "name": "cart",
+          "hash": "cc16f0966b182d1391d3912386ae70620d6acd25c4b64ebf6ac5c495a3092a9c"
+        },
+        {
+          "name": "category",
+          "hash": "9ee90bb724141fe9d897f59feb21965609cbbe6578f796eb12ab43fec1a14bb2"
+        },
+        {
+          "name": "col",
+          "hash": "56f3ffdf61b41f318a6f550afa04a56387524a4af03bd2740cd07fb4451e7496"
+        },
+        {
+          "name": "country",
+          "hash": "914fd7e5d47f236c0a78ec2b0fc3c6e4074ae84a6f8bed53867e8f09445d0a74"
+        },
+        {
+          "name": "do_recommend",
+          "hash": "a7aafb08968960fcb5e1e21e1061c5134871a649da971a708cc6857c8189ea2f"
+        },
+        {
+          "name": "language",
+          "hash": "2e649bfa271e3ee43d563a0a17a2a14877968f5909e1732e4e2e35f0235915da"
+        },
+        {
+          "name": "limit",
+          "hash": "b04468046d2f2a5692b75e7d703a30fd2787b8f80972a3b07b618e4ca4b3fa70"
+        },
+        {
+          "name": "prefcc",
+          "hash": "b18bb9b9246041f55afcce561db5903f3f7b1de477d04b543009a3b170e4f4c5"
+        },
+        {
+          "name": "query",
+          "hash": "047b784c06acea87ecd0267f11aa8185f98cee671d7b21ef607319b26aaa049b"
+        },
+        {
+          "name": "rec",
+          "hash": "2ce087cb67108fb85fd430d7de59c968dec7107ebaab7cf6849802dbb06bf565"
+        },
+        {
+          "name": "sec",
+          "hash": "eba8b8d9cc1032b17f43c4a414829bf69b9197d4e641de2d12004deb37173a1b"
+        },
+        {
+          "name": "skip",
+          "hash": "56cf224e81d41d59cc76f600af712aacd613e67f9cf7489c15d711f860b25c0b"
+        },
+        {
+          "name": "src",
+          "hash": "dd45303f19eb9ab9fbd7f20dc6fb5497108b038e2718dd1a56d7834f9e30edaa"
+        }
+      ]
+    },
+    {
+      "name": "unseal_order",
+      "hash": "c6970927a67fd6eab6840f1a171592eb932d7c967f5bfd8030a01cab7d0307c0",
+      "params": [
+        {
+          "name": "id",
+          "hash": "e66fc76d2d0586ff442141d8d63732cba2a012a9d1ed10a4b442bcdea745f281"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

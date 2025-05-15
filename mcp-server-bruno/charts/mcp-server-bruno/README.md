@@ -29,7 +29,7 @@
 
 **Description:** An MCP server for interacting with Bruno API Client.
 
-Packaged by Acuvity from bruno-mcp original [sources](https://github.com/hungthai1401/bruno-mcp).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from bruno-mcp original [sources](https://github.com/hungthai1401/bruno-mcp).
 
 **Quick links:**
 
@@ -122,10 +122,13 @@ Provides a lightweight auth layer using a single shared token.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
+
+To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-bruno/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-bruno/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-bruno/charts/mcp-server-bruno#minibridge) for Helm charts).
+
 </details>
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active. To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-bruno/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-bruno/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-bruno/charts/mcp-server-bruno#minibridge) for Helm charts).
+> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference

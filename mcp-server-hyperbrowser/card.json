@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-hyperbrowser",
+  "name": "mcp-server-hyperbrowser",
+  "description": "Scrapes, extracts data, and automates web page interactions.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-hyperbrowser",
+      "application": "https://github.com/hyperbrowserai/mcp"
+    },
+  "tags": ["web","automation"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1.0.25",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 10,
+    "prompts": 0,
+    "resources": 54,
+    "resourcesTemplates": 0
+  }
+}

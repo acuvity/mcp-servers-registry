@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-multiversx",
+  "name": "mcp-server-multiversx",
+  "description": "Manage MultiversX blockchain wallets and perform token transactions.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-multiversx",
+      "application": "https://github.com/multiversx/mx-mcp"
+    },
+  "tags": ["finance","automation"],
+  "official": true,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1.0.3",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 14,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

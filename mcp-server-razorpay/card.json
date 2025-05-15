@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-razorpay",
+  "name": "mcp-server-razorpay",
+  "description": "Advanced payment processing with Razorpay APIs for devs and AI tools.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-razorpay",
+      "application": "https://github.com/razorpay/razorpay-mcp-server"
+    },
+  "tags": ["automation","finance"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "binary",
+  "version": "v1.1.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "A",
+  "resources": {
+    "tools": 37,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

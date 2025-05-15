@@ -1,0 +1,189 @@
+{
+  "tools": [
+    {
+      "name": "amazon_product_scraper",
+      "hash": "556ffee33f9b5f0f3da719d7b1b7c37fa398d92b63ad77bfbc024922468e2594",
+      "params": [
+        {
+          "name": "autoselect_variant",
+          "hash": "3578e27b85b918f331e2cb209a684c24839013acd3eaf037f6ba46680214118c"
+        },
+        {
+          "name": "currency",
+          "hash": "aa5edb7592bad79e700e4134bdfeb65bf2b6c96c81ac459cc1b8d9197101f1e4"
+        },
+        {
+          "name": "domain",
+          "hash": "dbd1f8b171d5449998fb7d55dbc8f3baf6867aec480ff864799d805a4563d142"
+        },
+        {
+          "name": "geo_location",
+          "hash": "19ebddb494a31c7282c038ff01533fb047842dc9f79528cbd6f4b29907123687"
+        },
+        {
+          "name": "locale",
+          "hash": "cdbb6d79df927f48d9866b4ac1d085c581cf4f1286fa9b2332be8650326d8079"
+        },
+        {
+          "name": "output_format",
+          "hash": "086107d164d549c1f6789d183fdf4a947b863e12bada384cf1819fb4c91fd2f8"
+        },
+        {
+          "name": "parse",
+          "hash": "c27cc9870b8d21da98e8a4a1efc1aeed03266a9adec16794037c90a0c4b25e97"
+        },
+        {
+          "name": "query",
+          "hash": "2b7bab00754c254fbe9efbf66ea830cb4573faeea75fdbd269801084ef67b584"
+        },
+        {
+          "name": "render",
+          "hash": "4a4de0e6cff4a37c08074c1904434178ed30ff04f47040761b5d9e7922ea63a8"
+        },
+        {
+          "name": "user_agent_type",
+          "hash": "b57f53f88bf2e36ea9538f3b7f97b49222a1bcae88afe7a6f08562115edf9ce1"
+        }
+      ]
+    },
+    {
+      "name": "amazon_search_scraper",
+      "hash": "b026096a4c93afe5c9ab78ec43196cc26c0325f5c7d36e637e4f09a1651e3dbf",
+      "params": [
+        {
+          "name": "category_id",
+          "hash": "384916ff38c65e7481cc6da4e72d0bb534aafd6b5d10246966301238ae8eb1ba"
+        },
+        {
+          "name": "currency",
+          "hash": "aa5edb7592bad79e700e4134bdfeb65bf2b6c96c81ac459cc1b8d9197101f1e4"
+        },
+        {
+          "name": "domain",
+          "hash": "dbd1f8b171d5449998fb7d55dbc8f3baf6867aec480ff864799d805a4563d142"
+        },
+        {
+          "name": "geo_location",
+          "hash": "19ebddb494a31c7282c038ff01533fb047842dc9f79528cbd6f4b29907123687"
+        },
+        {
+          "name": "locale",
+          "hash": "cdbb6d79df927f48d9866b4ac1d085c581cf4f1286fa9b2332be8650326d8079"
+        },
+        {
+          "name": "merchant_id",
+          "hash": "29666bfc6be92abb60838bfef609ea8f0a2841ad2121b9ae8033a1cc6544ff8a"
+        },
+        {
+          "name": "output_format",
+          "hash": "086107d164d549c1f6789d183fdf4a947b863e12bada384cf1819fb4c91fd2f8"
+        },
+        {
+          "name": "pages",
+          "hash": "6db2005db03ae818a014763c6edf9ca97bc018de88b4b7d0941dc0fb8b672946"
+        },
+        {
+          "name": "parse",
+          "hash": "c27cc9870b8d21da98e8a4a1efc1aeed03266a9adec16794037c90a0c4b25e97"
+        },
+        {
+          "name": "query",
+          "hash": "2b7bab00754c254fbe9efbf66ea830cb4573faeea75fdbd269801084ef67b584"
+        },
+        {
+          "name": "render",
+          "hash": "4a4de0e6cff4a37c08074c1904434178ed30ff04f47040761b5d9e7922ea63a8"
+        },
+        {
+          "name": "start_page",
+          "hash": "8d3ebdba8acecea8bc50bd6d0b07311cef7fe1ce5f009a0f1be75817c6d8eaef"
+        },
+        {
+          "name": "user_agent_type",
+          "hash": "b57f53f88bf2e36ea9538f3b7f97b49222a1bcae88afe7a6f08562115edf9ce1"
+        }
+      ]
+    },
+    {
+      "name": "google_search_scraper",
+      "hash": "29fbda527f73d022b8ce16fa2cefa7154cdef35b6facfb5d0ec8e274e72a8d82",
+      "params": [
+        {
+          "name": "ad_mode",
+          "hash": "b461196e920ee39fec41727d81c88bb9a88f0fd6457c506a7b77affe3908f294"
+        },
+        {
+          "name": "domain",
+          "hash": "dbd1f8b171d5449998fb7d55dbc8f3baf6867aec480ff864799d805a4563d142"
+        },
+        {
+          "name": "geo_location",
+          "hash": "19ebddb494a31c7282c038ff01533fb047842dc9f79528cbd6f4b29907123687"
+        },
+        {
+          "name": "limit",
+          "hash": "753cb86d3a3ce07de849c5bda9b324700c07e63071cd056a178c575496e0e268"
+        },
+        {
+          "name": "locale",
+          "hash": "cdbb6d79df927f48d9866b4ac1d085c581cf4f1286fa9b2332be8650326d8079"
+        },
+        {
+          "name": "output_format",
+          "hash": "086107d164d549c1f6789d183fdf4a947b863e12bada384cf1819fb4c91fd2f8"
+        },
+        {
+          "name": "pages",
+          "hash": "6db2005db03ae818a014763c6edf9ca97bc018de88b4b7d0941dc0fb8b672946"
+        },
+        {
+          "name": "parse",
+          "hash": "c27cc9870b8d21da98e8a4a1efc1aeed03266a9adec16794037c90a0c4b25e97"
+        },
+        {
+          "name": "query",
+          "hash": "86f841b07fc2d38c87a89cd644f2e5a3a1a640855ad46e2a1c57c2d4df7cb1d8"
+        },
+        {
+          "name": "render",
+          "hash": "4a4de0e6cff4a37c08074c1904434178ed30ff04f47040761b5d9e7922ea63a8"
+        },
+        {
+          "name": "start_page",
+          "hash": "8d3ebdba8acecea8bc50bd6d0b07311cef7fe1ce5f009a0f1be75817c6d8eaef"
+        },
+        {
+          "name": "user_agent_type",
+          "hash": "b57f53f88bf2e36ea9538f3b7f97b49222a1bcae88afe7a6f08562115edf9ce1"
+        }
+      ]
+    },
+    {
+      "name": "universal_scraper",
+      "hash": "f17aff38c8d58bd300f276435edd6230f7a92afb25aa1fcf5e5ba10dd0cb237b",
+      "params": [
+        {
+          "name": "geo_location",
+          "hash": "19ebddb494a31c7282c038ff01533fb047842dc9f79528cbd6f4b29907123687"
+        },
+        {
+          "name": "output_format",
+          "hash": "086107d164d549c1f6789d183fdf4a947b863e12bada384cf1819fb4c91fd2f8"
+        },
+        {
+          "name": "render",
+          "hash": "4a4de0e6cff4a37c08074c1904434178ed30ff04f47040761b5d9e7922ea63a8"
+        },
+        {
+          "name": "url",
+          "hash": "d0959362daefa321a0e2cac5ca3653682f65d5e25d22b5c30e9fd965f8b3d7e4"
+        },
+        {
+          "name": "user_agent_type",
+          "hash": "b57f53f88bf2e36ea9538f3b7f97b49222a1bcae88afe7a6f08562115edf9ce1"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

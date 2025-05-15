@@ -1,0 +1,5 @@
+env:
+  MVX_NETWORK: dummy_value
+  MVX_WALLET: dummy_value
+
+secrets:

@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@24197b2f066b91986db7e600c72af3bf4c1701f0
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@8649bf59a9c0c0c63f73e4283224ea889c3a981c
 
 FROM node:23.11.0-alpine3.21
 
@@ -27,6 +27,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN apk update \
     && apk add --no-cache curl
+
 
 HEALTHCHECK CMD curl --fail http://localhost:8080 || exit 1
 

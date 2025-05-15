@@ -1,0 +1,19 @@
+{
+  "tools": [
+    {
+      "name": "extract-structured-data",
+      "hash": "478f9af82f34b62cb3c9183831abbbe8844f90447b6ab837711491c6caf074ce",
+      "params": [
+        {
+          "name": "prompt",
+          "hash": "b803e5bb01ac02b74cad991e6e1c84fc959d66bfece4d5d2d2dfe3ca81bd6b38"
+        },
+        {
+          "name": "url",
+          "hash": "a8bb3c5e865191c9a3470a078c22497dc2824b6f88710a9708d47861fa3d8c8c"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

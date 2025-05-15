@@ -1,0 +1,117 @@
+{
+  "tools": [
+    {
+      "name": "analyze_db_health",
+      "hash": "f7148791d5b33e833b73cc3054bacaead5bba789cbb5d6583fceaa6cc4b9a662",
+      "params": [
+        {
+          "name": "health_type",
+          "hash": "14878b4180ed2ef8918d19c81733614b669c6037dc0f3b372c21dfd5b61781ae"
+        }
+      ]
+    },
+    {
+      "name": "analyze_query_indexes",
+      "hash": "bc0efac95f78a27c3c488baed465aab8af52c27dd4b8ad003cd710783aa772ed",
+      "params": [
+        {
+          "name": "max_index_size_mb",
+          "hash": "c20c4a8086531840f7b8613bb6a727ecf4df8e6ba1a583324dec1cce49557fab"
+        },
+        {
+          "name": "queries",
+          "hash": "ed6cddd1d2696378d5576f31ac8a7a5526c5770b1bd615e0e0591642763b7166"
+        }
+      ]
+    },
+    {
+      "name": "analyze_workload_indexes",
+      "hash": "df7be2f96040f337a8e05d24356d6aecd8a4e78710502bfae38eaccca4d6f4ac",
+      "params": [
+        {
+          "name": "max_index_size_mb",
+          "hash": "c20c4a8086531840f7b8613bb6a727ecf4df8e6ba1a583324dec1cce49557fab"
+        }
+      ]
+    },
+    {
+      "name": "execute_sql",
+      "hash": "c7226bd9d8c1f4c84cf1c5a8c57618e1dc85db2f8c40d0ed7f1624697b295d8c",
+      "params": [
+        {
+          "name": "sql",
+          "hash": "b8a5c519bdb14c5370438d5141feb96876cf5ac75e776518fd8b0f8b014c16a6"
+        }
+      ]
+    },
+    {
+      "name": "explain_query",
+      "hash": "f2dcf6ffa7460337d12bd9295951f033fe7b8267ea15e45f5666396eaf53722b",
+      "params": [
+        {
+          "name": "analyze",
+          "hash": "be4a5dfa6cee8f33d88df07750f50e4426b9669c82fc92ff79eed6ab4d4ff4ff"
+        },
+        {
+          "name": "hypothetical_indexes",
+          "hash": "3debb477ff31f4b115b6ce8887357b81579d127d790ddd8d4168d6119481835c"
+        },
+        {
+          "name": "sql",
+          "hash": "7109b79cc465d06a36d4854c4265bca435b052be4441707775878f937581ad4d"
+        }
+      ]
+    },
+    {
+      "name": "get_object_details",
+      "hash": "d2784c403d86048e9dd527aab41d68aa9048a07702c792bdfe7b2c9e736a1f94",
+      "params": [
+        {
+          "name": "object_name",
+          "hash": "a108c4391925fcd8cda31f797f34e7ba51924da254f2c0922fa816dc5ae21278"
+        },
+        {
+          "name": "object_type",
+          "hash": "9055770ac21ad8677c8ad4f627458157786b16893d736044be098bfbc9bf9d1e"
+        },
+        {
+          "name": "schema_name",
+          "hash": "1daa899b43c9984e852089fddb3624fa21b1c5c68a1fbb6ac87c74e6f75cfefd"
+        }
+      ]
+    },
+    {
+      "name": "get_top_queries",
+      "hash": "de410f40e6b1e6576e2b1d4b99277ffd130b35199755de8b2620bb0cabf421bd",
+      "params": [
+        {
+          "name": "limit",
+          "hash": "f92de7caff66ecdad81aa1101f396ffbdfe8bc66ddf181e325fc36d91bc92454"
+        },
+        {
+          "name": "sort_by",
+          "hash": "6846a1b1dc1dc3895a3689c173df4abe1675c95a4f72533bd7b4e1d939073db7"
+        }
+      ]
+    },
+    {
+      "name": "list_objects",
+      "hash": "ad81d46b1c075a113eb081ff16e16249d216d834f03516fd17db0c58565c0b1d",
+      "params": [
+        {
+          "name": "object_type",
+          "hash": "9055770ac21ad8677c8ad4f627458157786b16893d736044be098bfbc9bf9d1e"
+        },
+        {
+          "name": "schema_name",
+          "hash": "1daa899b43c9984e852089fddb3624fa21b1c5c68a1fbb6ac87c74e6f75cfefd"
+        }
+      ]
+    },
+    {
+      "name": "list_schemas",
+      "hash": "6d51dca49f95aa8b3e2eeffc443e63c2c858d018e915ff1dc10f7349c96fd65b"
+    }
+  ],
+  "prompts": []
+}

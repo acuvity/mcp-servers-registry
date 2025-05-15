@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-alibaba-cloud-ops",
-  "name": "mcp-server-alibaba-cloud-ops ",
+  "name": "mcp-server-alibaba-cloud-ops",
   "description": "Alibaba Cloud integration, supporting ECS, Cloud Monitor, OOS and widely used cloud products.",
   "links":
     {
@@ -12,7 +12,7 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.8.3",
+  "version": "0.8.6",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "rating": "D",

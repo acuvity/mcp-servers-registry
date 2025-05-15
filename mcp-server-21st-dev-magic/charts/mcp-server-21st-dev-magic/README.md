@@ -29,7 +29,7 @@
 
 **Description:** Create crafted UI components inspired by the best 21st.dev design engineers.
 
-Packaged by Acuvity from @21st-dev/magic original [sources](https://github.com/21st-dev/magic-mcp).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from @21st-dev/magic original [sources](https://github.com/21st-dev/magic-mcp).
 
 **Quick links:**
 
@@ -122,10 +122,13 @@ Provides a lightweight auth layer using a single shared token.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
+
+To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-21st-dev-magic/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-21st-dev-magic/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-21st-dev-magic/charts/mcp-server-21st-dev-magic#minibridge) for Helm charts).
+
 </details>
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active. To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-21st-dev-magic/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-21st-dev-magic/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-21st-dev-magic/charts/mcp-server-21st-dev-magic#minibridge) for Helm charts).
+> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference

@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-shopify-dev",
-  "name": "mcp-server-shopify-dev ",
+  "name": "mcp-server-shopify-dev",
   "description": "Model Context Protocol (MCP) server that interacts with Shopify Dev.",
   "links":
     {

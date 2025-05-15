@@ -1,0 +1,4 @@
+env:
+  SCHEMA_PATH: dummy_value
+
+secrets:

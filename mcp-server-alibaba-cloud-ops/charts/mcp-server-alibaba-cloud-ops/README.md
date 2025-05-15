@@ -22,14 +22,14 @@
 
 [![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-alibaba-cloud-ops/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-alibaba-cloud-ops/0.8.3?logo=docker&logoColor=fff&label=0.8.3)](https://hub.docker.com/r/acuvity/mcp-server-alibaba-cloud-ops)
-[![PyPI](https://img.shields.io/badge/0.8.3-3775A9?logo=pypi&logoColor=fff&label=alibaba-cloud-ops-mcp-server)](https://github.com/aliyun/alibaba-cloud-ops-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-alibaba-cloud-ops/0.8.6?logo=docker&logoColor=fff&label=0.8.6)](https://hub.docker.com/r/acuvity/mcp-server-alibaba-cloud-ops)
+[![PyPI](https://img.shields.io/badge/0.8.6-3775A9?logo=pypi&logoColor=fff&label=alibaba-cloud-ops-mcp-server)](https://github.com/aliyun/alibaba-cloud-ops-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-alibaba-cloud-ops&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22ALIBABA_CLOUD_ACCESS_KEY_ID%22%2C%22-e%22%2C%22ALIBABA_CLOUD_ACCESS_KEY_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-alibaba-cloud-ops%3A0.8.3%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-alibaba-cloud-ops&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22ALIBABA_CLOUD_ACCESS_KEY_ID%22%2C%22-e%22%2C%22ALIBABA_CLOUD_ACCESS_KEY_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-alibaba-cloud-ops%3A0.8.6%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Alibaba Cloud integration, supporting ECS, Cloud Monitor, OOS and widely used cloud products.
 
-Packaged by Acuvity from alibaba-cloud-ops-mcp-server original [sources](https://github.com/aliyun/alibaba-cloud-ops-mcp-server).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from alibaba-cloud-ops-mcp-server original [sources](https://github.com/aliyun/alibaba-cloud-ops-mcp-server).
 
 **Quick links:**
 
@@ -122,10 +122,13 @@ Provides a lightweight auth layer using a single shared token.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
+
+To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-alibaba-cloud-ops/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-alibaba-cloud-ops/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-alibaba-cloud-ops/charts/mcp-server-alibaba-cloud-ops#minibridge) for Helm charts).
+
 </details>
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active. To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-alibaba-cloud-ops/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-alibaba-cloud-ops/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-alibaba-cloud-ops/charts/mcp-server-alibaba-cloud-ops#minibridge) for Helm charts).
+> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference
@@ -152,7 +155,7 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.8.3`
+  - container: `1.0.0-0.8.6`
 
 ---
 

@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-scrapezy",
+  "name": "mcp-server-scrapezy",
+  "description": "Extracts structured data from websites using AI models.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-scrapezy",
+      "application": "https://github.com/Scrapezy/mcp"
+    },
+  "tags": ["web","integration","research"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.1.1",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "C",
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-oxylabs"
+description: A Helm chart for Scrapes web data for AI applications using the Model Context Protocol.
+home: https://github.com/oxylabs/oxylabs-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/oxylabs/oxylabs-mcp
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.2.0
+keywords:
+  - mcp-server-oxylabs
+  - mcp-server
+  - remote
+  - web
+  - research
+  - integration

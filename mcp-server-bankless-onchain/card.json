@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-bankless-onchain",
-  "name": "mcp-server-bankless-onchain ",
+  "name": "mcp-server-bankless-onchain",
   "description": "Query Onchain data, like ERC20 tokens, transaction history, smart contract state.",
   "links":
     {

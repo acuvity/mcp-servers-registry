@@ -1,0 +1,193 @@
+{
+  "tools": [
+    {
+      "name": "add_translation",
+      "hash": "2387171a256ac905ea9e959885ef7f3e461e8e6720205ad8006b76568312ad7e",
+      "params": [
+        {
+          "name": "id",
+          "hash": "41678a84a664297c91ac16514d6808b7eeb84d4b471acf73b94b7c6d6175607c"
+        },
+        {
+          "name": "sentence",
+          "hash": "8256317c90bc9c1584a05dad6f4e60c31b8dba5dc72480e5dd8475e42557889b"
+        },
+        {
+          "name": "sentence_after",
+          "hash": "87b1e5e35ca28a8aec8b0cd1de06eebe813ab81f8b1fde8ff5cb1d6cb90251b5"
+        },
+        {
+          "name": "sentence_before",
+          "hash": "5e8e3e37e6c98c9d78accc695c8b8200e30e7ec3135c2e4ba2ffa4d918368ee5"
+        },
+        {
+          "name": "source",
+          "hash": "74cac3b198877e76b01abac107c96b973331acb30f52c570bde49de47f339487"
+        },
+        {
+          "name": "target",
+          "hash": "7c24b1ef7e6f72fa55023940c041d18db61ebc0489d84247405c0b33ce91a184"
+        },
+        {
+          "name": "translation",
+          "hash": "4261fceaa98a52c89d6f04b34e1f023747f71849581ed9b8e47edd60290c75ef"
+        },
+        {
+          "name": "tuid",
+          "hash": "a04149f24d09a0a9724e2f452464b1f717237bc824d7dd1e484b1bed8154bde0"
+        }
+      ]
+    },
+    {
+      "name": "check_import_status",
+      "hash": "66c05830c1288b8a2340a79ce44586fe86c4543826b83f1f3bc65acfa9b71360",
+      "params": [
+        {
+          "name": "id",
+          "hash": "a6bac8140fc9463accb2718fc48c17cb93ca0ab9fceb417dd0f270ae5fb00240"
+        }
+      ]
+    },
+    {
+      "name": "create_memory",
+      "hash": "7a570a22fa815d92c8524683eb44d533583a5c8a7707f1453184cc29ec020253",
+      "params": [
+        {
+          "name": "external_id",
+          "hash": "941422d45e8e6f71ed842799d1643aba334bde277f7e147fe1f17c29c0c4e057"
+        },
+        {
+          "name": "name",
+          "hash": "15aa1f35f480fa69592891769346f7aa4021e5cb9551384e05732a8f08a6c46e"
+        }
+      ]
+    },
+    {
+      "name": "delete_memory",
+      "hash": "55a01ed697a6a2e2e6815aefd612bd3c7fd8f4cf8a7dc3450f33f6475090e7af",
+      "params": [
+        {
+          "name": "id",
+          "hash": "ffd44fc743d295ffac3258171d24997bd7ae32a235d85a7e656d8dd6db0943de"
+        }
+      ]
+    },
+    {
+      "name": "delete_translation",
+      "hash": "c960e0d50b8b4d1b655bb0e2f8596473d21f9cf0699e048a6689771335c14428",
+      "params": [
+        {
+          "name": "id",
+          "hash": "0cc8980895d3b837011933d4aa118599b7f40b2ff8c35c8da7e8cd87ce5a0b91"
+        },
+        {
+          "name": "sentence",
+          "hash": "8256317c90bc9c1584a05dad6f4e60c31b8dba5dc72480e5dd8475e42557889b"
+        },
+        {
+          "name": "sentence_after",
+          "hash": "87b1e5e35ca28a8aec8b0cd1de06eebe813ab81f8b1fde8ff5cb1d6cb90251b5"
+        },
+        {
+          "name": "sentence_before",
+          "hash": "5e8e3e37e6c98c9d78accc695c8b8200e30e7ec3135c2e4ba2ffa4d918368ee5"
+        },
+        {
+          "name": "source",
+          "hash": "488c5779de1629a6a66fab9531dfc9b7287711ff364797c0048e8af5bf4386b4"
+        },
+        {
+          "name": "target",
+          "hash": "e32961c10e6e3d15aea70d4512947afbaa5c3a2928b146a3534c07571bcc389c"
+        },
+        {
+          "name": "translation",
+          "hash": "4261fceaa98a52c89d6f04b34e1f023747f71849581ed9b8e47edd60290c75ef"
+        },
+        {
+          "name": "tuid",
+          "hash": "a04149f24d09a0a9724e2f452464b1f717237bc824d7dd1e484b1bed8154bde0"
+        }
+      ]
+    },
+    {
+      "name": "import_tmx",
+      "hash": "bc53fefa95defccc0371caf9426a14beba5a75a6ec6420a0f7067e827109f393",
+      "params": [
+        {
+          "name": "gzip",
+          "hash": "8b5335bd86641e96ebaa9dbe572bd79715b5489594fe49de99de4ea979bcbd70"
+        },
+        {
+          "name": "id",
+          "hash": "e6a3fe5204d2ae3d03d7e4bfc45a0bde4837fc3799ea1856ceda4c2555fa45c0"
+        },
+        {
+          "name": "tmx_content",
+          "hash": "c949bc1eda4b7a196edb4bd60c9615cbb9213da254c4e5a9e69fa5a385e608d8"
+        },
+        {
+          "name": "tmx_url",
+          "hash": "cd4c23aef7ecb0edbeebb2add30a44688999337dc85635f6dc5bfea57402b6de"
+        }
+      ]
+    },
+    {
+      "name": "list_languages",
+      "hash": "2ddf95e12cd539a3dee9872c4e5054d61dbd826e4ea7c2124226165dfe7ef64c"
+    },
+    {
+      "name": "list_memories",
+      "hash": "5928b92abea4b638a532de1c1a4698cf5874021e6570842a0917bd17e19b256a"
+    },
+    {
+      "name": "translate",
+      "hash": "49c7008373a693f08f6f234e69ca6a28e9f6dc9e4413a1f970422f49a69a3143",
+      "params": [
+        {
+          "name": "adapt_to",
+          "hash": "7effe21b9feea169e92b3b7d3728e68f4727a42128ad7c667953a485f05b9ab8"
+        },
+        {
+          "name": "context",
+          "hash": "4bac4c2dbcb9b9a5ad582df595d6899f8f7a20f817b49066be163113017be1ad"
+        },
+        {
+          "name": "instructions",
+          "hash": "aea7033796b9f586ba27c025eaf481e9e08e4d07e1b376f746ff7b91afe1fbdd"
+        },
+        {
+          "name": "source",
+          "hash": "a4dbf3adf61992842a4ed42416788bb8205f518b8778d0609557a7571388e084"
+        },
+        {
+          "name": "source_hint",
+          "hash": "02d619790a8df7a63e1cc9cf3dc20679d3f07ceab2913d5c24abef0ff47fac5b"
+        },
+        {
+          "name": "target",
+          "hash": "438ae4c5eb9dc7ac62a7079938e79403a3bbb74ca4bd372f2e22ab468e6ec2c7"
+        },
+        {
+          "name": "text",
+          "hash": "e90c9c7e1fab47e18f5fb434088ad160e904936c7d95e19c4e5e3c56d4544c32"
+        }
+      ]
+    },
+    {
+      "name": "update_memory",
+      "hash": "a9c1fe58ed1e1616238d756f69a4f99de5a3fa93de1621812659c0768127e325",
+      "params": [
+        {
+          "name": "id",
+          "hash": "ffd44fc743d295ffac3258171d24997bd7ae32a235d85a7e656d8dd6db0943de"
+        },
+        {
+          "name": "name",
+          "hash": "6b2f947d665ad51cb342dc4a2ca01cbd3a543c2934f81b3309f7af108028f4ed"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

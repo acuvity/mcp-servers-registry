@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-hackle-mcp",
+  "name": "mcp-server-hackle-mcp",
+  "description": "A/B test data query tools for Hackle API.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-hackle-mcp",
+      "application": "https://github.com/hackle-io/hackle-mcp"
+    },
+  "tags": ["automation","integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1.3.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 19,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

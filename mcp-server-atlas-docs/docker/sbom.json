@@ -1,0 +1,57 @@
+{
+  "tools": [
+    {
+      "name": "get_docs_full",
+      "hash": "1436ed934ac13d5ee3cd47a3b192810e50fcf6bcaf45e03f9c6a27842afeecec",
+      "params": [
+        {
+          "name": "docName",
+          "hash": "2615c5a000c56f014e7078f17ece40f26480c59979807c2762f0b3f481c7a0f9"
+        }
+      ]
+    },
+    {
+      "name": "get_docs_index",
+      "hash": "7f3806d673fa4e3475dfbec5e0b21593b0a70fccfe006eea7d1ad73e63b9f367",
+      "params": [
+        {
+          "name": "docName",
+          "hash": "2615c5a000c56f014e7078f17ece40f26480c59979807c2762f0b3f481c7a0f9"
+        }
+      ]
+    },
+    {
+      "name": "get_docs_page",
+      "hash": "5388eb2ed639b15de4cac2de8789e93a6fb9b6e7c676a352797a9f429c1b8e7c",
+      "params": [
+        {
+          "name": "docName",
+          "hash": "2615c5a000c56f014e7078f17ece40f26480c59979807c2762f0b3f481c7a0f9"
+        },
+        {
+          "name": "pagePath",
+          "hash": "7416b84beb9010b2b4bb8ebdfa016581bd7c11b184d62f06993756eacd1a3af3"
+        }
+      ]
+    },
+    {
+      "name": "list_docs",
+      "hash": "cb7640d9069fe046482c2dd37058d6ac1431ec0e45cbc0e8755a192227834449"
+    },
+    {
+      "name": "search_docs",
+      "hash": "b2f79f8acd175c0bde0052300cd094a8b4d5ca6c62f12db0970636331a6af16e",
+      "params": [
+        {
+          "name": "docName",
+          "hash": "2615c5a000c56f014e7078f17ece40f26480c59979807c2762f0b3f481c7a0f9"
+        },
+        {
+          "name": "query",
+          "hash": "6217e956d15475c8ed6ca80f3cf21ee646ece66a9e0428add200c1ec8b7a2482"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

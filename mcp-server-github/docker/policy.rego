@@ -47,7 +47,7 @@ _redaction_patterns := [
 	`(xapp-\d-[A-Za-z0-9]+-\d+-[a-z0-9]+)`,
 	`(xox[abrp]-\d{10,13}-\d{10,13}[A-Za-z0-9-]*)`,
 	`https://hooks\.slack\.com/(?:services|workflows)/([A-Z0-9]+/[A-Z0-9]+/[0-9A-Za-z]{17,25})`,
-	`(?i)(?:\\["']|['"])?[A-Za-z0-9_]*(?:TOKEN|API_KEY|SECRET|PASS)[A-Za-z0-9_]*(?:\\["']|['"])?(?:\\n|\s)*(?::=|:|=)(?:\\n|\s)*(?:\\["']|['"])?([\x20-\x21\x23-\x26\x28-\x7E]{12,})(?:\\["']|['"])?`,
+	`(?i)(?:\\["']|['"])?[A-Za-z0-9_]*(?:TOKEN|API_KEY|SECRET|PASS)[A-Za-z0-9_]*(?:\\["']|['"])?(?:\\n|\s)*(?::=|:|=)(?:\\n|\s)*(?:\\["']|['"])?([\x20-\x21\x23-\x26\x28-\x7E]{8,})(?:\\["']|['"])?`,
 ]
 
 _sensitive_patterns := [
@@ -102,6 +102,8 @@ _cross_tool_exclude := [
 	#
 	"create_repository",
 	#
+	"delete_file",
+	#
 	"fork_repository",
 	#
 	"get_code_scanning_alert",
@@ -128,6 +130,8 @@ _cross_tool_exclude := [
 	#
 	"get_secret_scanning_alert",
 	#
+	"get_tag",
+	#
 	"list_branches",
 	#
 	"list_code_scanning_alerts",
@@ -140,9 +144,13 @@ _cross_tool_exclude := [
 	#
 	"list_secret_scanning_alerts",
 	#
+	"list_tags",
+	#
 	"merge_pull_request",
 	#
 	"push_files",
+	#
+	"request_copilot_review",
 	#
 	"search_code",
 	#

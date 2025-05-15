@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@24197b2f066b91986db7e600c72af3bf4c1701f0
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@8649bf59a9c0c0c63f73e4283224ea889c3a981c
 
 FROM ghcr.io/astral-sh/uv:python3.12-alpine
 
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-armor-crypto"
 LABEL org.opencontainers.image.description="Blockchain integration, staking, DeFi, swap, bridging, wallet, DCA, Orders, Coin Lookup, Tracking."
-LABEL org.opencontainers.image.version="0.1.24"
+LABEL org.opencontainers.image.version="0.2.1"
 LABEL org.opencontainers.image.source="https://github.com/armorwallet/armor-crypto-mcp"
 LABEL org.opencontainers.image.licenses="nil"
 LABEL org.opencontainers.image.author="Armor Wallet <info@armorwallet.ai>"
@@ -27,6 +27,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN apk update \
     && apk add --no-cache curl
+
 
 HEALTHCHECK CMD curl --fail http://localhost:8080 || exit 1
 
@@ -43,7 +44,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uname -sm &&  uv venv && uv pip install armor-crypto-mcp==0.1.24
+RUN uv venv && uv pip install armor-crypto-mcp==0.2.1
 
 EXPOSE 8000/tcp
 

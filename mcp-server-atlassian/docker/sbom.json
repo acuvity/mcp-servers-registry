@@ -1,0 +1,681 @@
+{
+  "tools": [
+    {
+      "name": "confluence_add_label",
+      "hash": "59a4af221f89c70e53823a280fe5aa79b7e25269a1b87c1389739f9e513dbe24",
+      "params": [
+        {
+          "name": "name",
+          "hash": "83b624868488cf0fca8c1fe17f6c17e770456ad44bfad7df2d476315214a5677"
+        },
+        {
+          "name": "page_id",
+          "hash": "628f40cbdf75d0b2a88b54ab4b80a110c97055e424362411e7e7c300a08acf29"
+        }
+      ]
+    },
+    {
+      "name": "confluence_create_page",
+      "hash": "47c1b2bd72c94b2008a50d3ee7a3863d3a3fe9aac3b8cb7471eddc29211fe1a4",
+      "params": [
+        {
+          "name": "content",
+          "hash": "eb8256ea7313ea8f1c6ae16036602be69f22e26593b5354280deadf1e5c1f71c"
+        },
+        {
+          "name": "parent_id",
+          "hash": "ea7a393c543e725e927ca85661106a9d664e448e127f10a11c7bb4d5cef9dff9"
+        },
+        {
+          "name": "space_key",
+          "hash": "c43f5fd2a37f5582a919389b95c48764e771efd0e9d42b3475f84da37f62ae2c"
+        },
+        {
+          "name": "title",
+          "hash": "5e5f34e9ae8d16f123915d19ec7cb196a3168a410861b210f724d261b5918d63"
+        }
+      ]
+    },
+    {
+      "name": "confluence_delete_page",
+      "hash": "e5b7efd543c1a08de837ebd64e65b17ed308f68bf497e61cbe074c1c78083605",
+      "params": [
+        {
+          "name": "page_id",
+          "hash": "d0f5fcabd1d0d4c22f81c71c512528d98c7cd51c430db935418c6fd70d8abb2e"
+        }
+      ]
+    },
+    {
+      "name": "confluence_get_comments",
+      "hash": "d792ca1cea9ccedc998d41425627996025c43549c113eb48c47ad0679ee49590",
+      "params": [
+        {
+          "name": "page_id",
+          "hash": "4e8337cd080af0704ee50874ebf511a2066dfa3bedb20581c1833f144db65913"
+        }
+      ]
+    },
+    {
+      "name": "confluence_get_labels",
+      "hash": "f98ab4e849763c19220fe8a71553e2e884c3d5ef1c2f821686c17066c85b09c7",
+      "params": [
+        {
+          "name": "page_id",
+          "hash": "4e8337cd080af0704ee50874ebf511a2066dfa3bedb20581c1833f144db65913"
+        }
+      ]
+    },
+    {
+      "name": "confluence_get_page",
+      "hash": "af02e8953193594c05538f8bc95931f9452e7de17b9964cf9932e734f74022e0",
+      "params": [
+        {
+          "name": "convert_to_markdown",
+          "hash": "5e0310f6fd031e76ec1bb867d17c36ca451234566d65ee5a85bd4a8683093f1c"
+        },
+        {
+          "name": "include_metadata",
+          "hash": "385bb2b41af1163519be47ab53ead05ee0e5cc046f09789be7331357219b2227"
+        },
+        {
+          "name": "page_id",
+          "hash": "8cf2a05c4f67a2c7161dc93e7c4adb174b26a191e27623858f278496e760b096"
+        }
+      ]
+    },
+    {
+      "name": "confluence_get_page_children",
+      "hash": "ad254355e763cdc4d7fd01489d419634b417daf906982e8fdb149ec3d9c2f74b",
+      "params": [
+        {
+          "name": "convert_to_markdown",
+          "hash": "155584fd2c3ce92b8f65e4f67ac5d1b82d7b8fb05db3ef9229e4d41b7d10a976"
+        },
+        {
+          "name": "expand",
+          "hash": "0eee18d0119ee5918f7c0da3cf66cd527804215916c6731d7fa96be1ed1c5983"
+        },
+        {
+          "name": "include_content",
+          "hash": "99329bd3e096fdf00a432d23fc9e19aee930348d6c5b7e2e7d79dcb642377844"
+        },
+        {
+          "name": "limit",
+          "hash": "051f097854709e8766f69d64df4683643e827778f8f218b4cf44fb89c4a2887c"
+        },
+        {
+          "name": "parent_id",
+          "hash": "636a543a94d8b06ce3e9c05d183730cc19406ca19a0b099b6d425e2bd4a62f45"
+        },
+        {
+          "name": "start",
+          "hash": "a155000534e51a9045331d4a7494269871f0d79073ba94812965b3c1545fcc4a"
+        }
+      ]
+    },
+    {
+      "name": "confluence_search",
+      "hash": "580fa3db4b97e654385386a9eaf57fd9cce532c817e082970dadb2781c87e435",
+      "params": [
+        {
+          "name": "limit",
+          "hash": "d2f53210f2f0e66d63c3540c3b450f90770826326b68f40a055d79c38ec4440b"
+        },
+        {
+          "name": "query",
+          "hash": "509ec80b2a301105e24b1620fb16274ddeaf9b6a5399a1e4146dec158bbb8a66"
+        },
+        {
+          "name": "spaces_filter",
+          "hash": "b20ab5d153afc72bbebb650e0fdea0ddad0f596786901efea73b7bdf14390dea"
+        }
+      ]
+    },
+    {
+      "name": "confluence_update_page",
+      "hash": "c181331e15dcdf3707955228bdea5946e9567787aae3fa8ef85046df1be1fe1a",
+      "params": [
+        {
+          "name": "content",
+          "hash": "3debc2b26d6b001e65314bb0a25a7c2e71c81bc90004390f0668994f5e868ca9"
+        },
+        {
+          "name": "is_minor_edit",
+          "hash": "845eb97892e676d0197bb05161bd9a0a494dd8462057602bed796afe2816e9e5"
+        },
+        {
+          "name": "page_id",
+          "hash": "628f40cbdf75d0b2a88b54ab4b80a110c97055e424362411e7e7c300a08acf29"
+        },
+        {
+          "name": "parent_id",
+          "hash": "20ec0828aa357c716035d5dee2a27b1086dde5617017b20e99460d6443ad28ae"
+        },
+        {
+          "name": "title",
+          "hash": "24b82e455847b5c18117ed1bbcb3a7582767ce9309070b779d97305a1895b425"
+        },
+        {
+          "name": "version_comment",
+          "hash": "6ac3b24c7c2685cfc9fcf102fd9a18859fb350564fe68dc3b5624301ad2264d6"
+        }
+      ]
+    },
+    {
+      "name": "jira_add_comment",
+      "hash": "d33c5cb692ad5319058c36f309288cfbd49832b41585605025e2b52614d727e1",
+      "params": [
+        {
+          "name": "comment",
+          "hash": "feaaa62ac0325f7648e7427dc02b3d0a32e10387b619c88feee8b80eec6bf003"
+        },
+        {
+          "name": "issue_key",
+          "hash": "503242ce27877eab3bd3119ada2d73de27685ce83650f4cbf91aa58f95e5f050"
+        }
+      ]
+    },
+    {
+      "name": "jira_add_worklog",
+      "hash": "9ee6b0f8d2f61d273154c676a6987817dcbe93c8eae11c7dcd3ec38365594adf",
+      "params": [
+        {
+          "name": "comment",
+          "hash": "62eb737a8c31aab8cb4a02db3b349535ab1f310ce1ed69514a99dd8f6a81e3a8"
+        },
+        {
+          "name": "issue_key",
+          "hash": "503242ce27877eab3bd3119ada2d73de27685ce83650f4cbf91aa58f95e5f050"
+        },
+        {
+          "name": "original_estimate",
+          "hash": "f2b8bfea404e531fbfb707fc44e96153734ccf0477a8a0c48d8275472b3c0e1b"
+        },
+        {
+          "name": "remaining_estimate",
+          "hash": "395a8af590b32288adcbbc33068a5bca15cd7132387fdfb2dddccd56bdf44bf1"
+        },
+        {
+          "name": "started",
+          "hash": "0e8c988e138f92874c5bb74b1a9307c992f447651fd611d24cf505a76341e959"
+        },
+        {
+          "name": "time_spent",
+          "hash": "1dbeddece738456a2c5bc1c726981bf25dbd11c8f1137a80fa8e991eba43441f"
+        }
+      ]
+    },
+    {
+      "name": "jira_batch_create_issues",
+      "hash": "537c612f7c9abb2edaafa97be34c99aad16ad400658fb98e9a5cc3f100dabcd0",
+      "params": [
+        {
+          "name": "issues",
+          "hash": "20c57eb405139e2cd89f22da4e3c69c158b071757e07ae0048d2eebaa7ed4ef6"
+        },
+        {
+          "name": "validate_only",
+          "hash": "04cb567c3ea4b026ca81a3d5cd6ccdddd2f39fcf6dd14745d9b0beefe7eabbeb"
+        }
+      ]
+    },
+    {
+      "name": "jira_batch_get_changelogs",
+      "hash": "004a72ad8185f57a790b14c415580a16be27aa30734aa8c8143d54880fa91565",
+      "params": [
+        {
+          "name": "fields",
+          "hash": "3ca69ed37eb89d1eaa2fe48930ba433947cc422b90aaf13a4ae680dc8245bb57"
+        },
+        {
+          "name": "issue_ids_or_keys",
+          "hash": "0b82a55d40fc36a3c0b77623c7bc04667cdf7b79878791d6df8eb912a00ed36d"
+        },
+        {
+          "name": "limit",
+          "hash": "ddde08929127f5b25f815057acd9494af1adf1bd621a5513f6834663623ca7c2"
+        }
+      ]
+    },
+    {
+      "name": "jira_create_issue",
+      "hash": "5ff7367fb5bcb4623d2f668bc27302035d56e8613942026320764330cdfd2298",
+      "params": [
+        {
+          "name": "additional_fields",
+          "hash": "3da1a5be8aa3c4e875d914970ef71d169b087551d21fff48a1b155bc2b87ba05"
+        },
+        {
+          "name": "assignee",
+          "hash": "b685b296e3c7ea3b1f07de8e80307213ca945eca31a8f6709be50d8796512bb3"
+        },
+        {
+          "name": "components",
+          "hash": "b790821b382a406f963c428e50ec5a7c9df9419e35ce2584b25c76507f291de7"
+        },
+        {
+          "name": "description",
+          "hash": "6fdf4c7fb5a19e122d009b8deed663a56034d8170be9300906c4368c423da250"
+        },
+        {
+          "name": "issue_type",
+          "hash": "91e553985a8fed7d99c70aaa9461508621f3eab88e2ec2b0c8185782479a65b2"
+        },
+        {
+          "name": "project_key",
+          "hash": "da3101264495f5cdbab2461feafd7eb4806c8985d8d4d5d3e7cfd41920f60e29"
+        },
+        {
+          "name": "summary",
+          "hash": "a9d039cb72b5215c9b7845dc5e6bbba0dabad0549d6b477b07d4b24fb1132969"
+        }
+      ]
+    },
+    {
+      "name": "jira_create_issue_link",
+      "hash": "f40840bdf5df7a276b00a451295c36472068d949905881af5aa76e806ee8ec25",
+      "params": [
+        {
+          "name": "comment",
+          "hash": "a1491a2f9e3776646f9b498b7ce357946c5e45cfdd91faa8307ac03cfc5120b4"
+        },
+        {
+          "name": "comment_visibility",
+          "hash": "66e798a84889e96feb2133394841acee326c62aeb51cb46171e6e5fdf1c02299"
+        },
+        {
+          "name": "inward_issue_key",
+          "hash": "c2ee077a664e4bc77a9e0a9baeee9df27f4123ec3466ade841c52ba0b2c96fd8"
+        },
+        {
+          "name": "link_type",
+          "hash": "2dbfd8ea027e2016c0b342b19d4baef7b202cbc9210a30ea7a617f7374492a4a"
+        },
+        {
+          "name": "outward_issue_key",
+          "hash": "e876612f2e3b7dd6cff02c7d4c60d5791735cd91266efa1b650bbe08564fe840"
+        }
+      ]
+    },
+    {
+      "name": "jira_create_sprint",
+      "hash": "f94b63aa9395ebd54bcb4c7f346dabeefeef17e798bbf63845ead16fddd46298",
+      "params": [
+        {
+          "name": "board_id",
+          "hash": "3bceb81a0bed22704222cd1d3eec9d075513a5d6e5a3cc75c633328ccdfcd74d"
+        },
+        {
+          "name": "end_date",
+          "hash": "404919fdbefa9b32582c7d26defb199ece6f292e51a114031b3bcaa10b6532c8"
+        },
+        {
+          "name": "goal",
+          "hash": "87c9795a288b323bd5e1358af05a1a132f38dd9c5920ccc69cecbf695a3aa5c9"
+        },
+        {
+          "name": "sprint_name",
+          "hash": "da613f1ae8a7896e8a2964512b8b641d8382ae7c45280a5deb9ac2240e541471"
+        },
+        {
+          "name": "start_date",
+          "hash": "de5739e9fcf9465c8fa2440420bb9904ae87041f6e515e21222e0f343d3ab88f"
+        }
+      ]
+    },
+    {
+      "name": "jira_delete_issue",
+      "hash": "4f7e21e3603b565984c72f77017a8cbaa7d26a46ae738fb1b76322c147067e06",
+      "params": [
+        {
+          "name": "issue_key",
+          "hash": "cad37056ba72d245c7048c495c53595ee42bc44a837258d4a5157f6044592d8f"
+        }
+      ]
+    },
+    {
+      "name": "jira_download_attachments",
+      "hash": "5bd0b0c5194f29a50598e3cfeea1ea239be29610a6dc0d2393bb340ef459ce21",
+      "params": [
+        {
+          "name": "issue_key",
+          "hash": "503242ce27877eab3bd3119ada2d73de27685ce83650f4cbf91aa58f95e5f050"
+        },
+        {
+          "name": "target_dir",
+          "hash": "08ea6d792f026f897a8a326bbdb202c164ad0157fc01c07fe7902bd30e89eb43"
+        }
+      ]
+    },
+    {
+      "name": "jira_get_agile_boards",
+      "hash": "680d751c479b53cb00de406a56f5c7e8b845b16dfd005450c2a328e592f4e269",
+      "params": [
+        {
+          "name": "board_name",
+          "hash": "3ddf4ce62603681d9a725ade6d994638dfaf5ff3abee8c226114cdbf9a8e77d7"
+        },
+        {
+          "name": "board_type",
+          "hash": "4f057abd38735e33e9b41546fa20195f2caa1efa656f3fabe94a68f4e8be61e3"
+        },
+        {
+          "name": "limit",
+          "hash": "d2f53210f2f0e66d63c3540c3b450f90770826326b68f40a055d79c38ec4440b"
+        },
+        {
+          "name": "project_key",
+          "hash": "be010ba2811a3f96f5eccdc36d885e75dee23eb4222472d4859935809f286930"
+        },
+        {
+          "name": "start_at",
+          "hash": "a155000534e51a9045331d4a7494269871f0d79073ba94812965b3c1545fcc4a"
+        }
+      ]
+    },
+    {
+      "name": "jira_get_board_issues",
+      "hash": "c5e27f597e9fad1e22959e98bbeb5f79c1b5fd2a524df0e78ea3a93234e3878b",
+      "params": [
+        {
+          "name": "board_id",
+          "hash": "d5402e29c3290f72a75ac45cf94ae99d5e9b1b40ce03a9daa5354766251238dc"
+        },
+        {
+          "name": "expand",
+          "hash": "e718ce177f50a2d1e01af0062ccaca4183afac09e87d22d759eaa4fb006c20bf"
+        },
+        {
+          "name": "fields",
+          "hash": "8e427a5d6fe268c069fbb170c94dd766a7efe78abc6106f96791bb4f9c65c265"
+        },
+        {
+          "name": "jql",
+          "hash": "49a6be7752b8f41ec2116a95046fedf2411b2375320ac57d4e3da123c64a9e26"
+        },
+        {
+          "name": "limit",
+          "hash": "d2f53210f2f0e66d63c3540c3b450f90770826326b68f40a055d79c38ec4440b"
+        },
+        {
+          "name": "start_at",
+          "hash": "a155000534e51a9045331d4a7494269871f0d79073ba94812965b3c1545fcc4a"
+        }
+      ]
+    },
+    {
+      "name": "jira_get_issue",
+      "hash": "42077812f30dde2bbd68d3f5526b1235727ee889547d869ba87c45c3f6507f49",
+      "params": [
+        {
+          "name": "comment_limit",
+          "hash": "3a794a3ce020aef98296d75544aa44ef0ea0337e38d20abc30a0f2e210b1e17f"
+        },
+        {
+          "name": "expand",
+          "hash": "f8ca28a870f0fd13a1ac1c5e75dda085b713cf5616936e1da39c2c4177ad711f"
+        },
+        {
+          "name": "fields",
+          "hash": "e31b57652ba6fa247a30e500000acaaf8b08aa6d7604d18fd5d9fcb7aec55fda"
+        },
+        {
+          "name": "issue_key",
+          "hash": "503242ce27877eab3bd3119ada2d73de27685ce83650f4cbf91aa58f95e5f050"
+        },
+        {
+          "name": "properties",
+          "hash": "ad52f0636a494334e0d392441437422e29a3895ae505a0271dc7c42b29b5b3d2"
+        },
+        {
+          "name": "update_history",
+          "hash": "fde354c074efef28d0f9b919fc83f92bfa022feb63be1c974e0269610a0a1570"
+        }
+      ]
+    },
+    {
+      "name": "jira_get_link_types",
+      "hash": "4145ab63560afb68f9a46b2a3c4ae04304f25a8988bbcb7ad52ad60fc5ff3332"
+    },
+    {
+      "name": "jira_get_project_issues",
+      "hash": "2389fb4971155595d7f7a0d7894eaae77277f1a4b2aaba2fb454c978bf49c81d",
+      "params": [
+        {
+          "name": "limit",
+          "hash": "d2f53210f2f0e66d63c3540c3b450f90770826326b68f40a055d79c38ec4440b"
+        },
+        {
+          "name": "project_key",
+          "hash": "6c54057c36a116ca60a070dfebe6b0c142ad9091ef4af62d3cb7d0d9e8c8f557"
+        },
+        {
+          "name": "start_at",
+          "hash": "a155000534e51a9045331d4a7494269871f0d79073ba94812965b3c1545fcc4a"
+        }
+      ]
+    },
+    {
+      "name": "jira_get_sprint_issues",
+      "hash": "05be4697c57919a72b2c5934fd5a13466dfbfc9ba5a0f9fab3566673179be9a0",
+      "params": [
+        {
+          "name": "fields",
+          "hash": "8e427a5d6fe268c069fbb170c94dd766a7efe78abc6106f96791bb4f9c65c265"
+        },
+        {
+          "name": "limit",
+          "hash": "d2f53210f2f0e66d63c3540c3b450f90770826326b68f40a055d79c38ec4440b"
+        },
+        {
+          "name": "sprint_id",
+          "hash": "f56e64d821db2b7eecb421d317c1fe2cd3b26959d9f9d07e2a3ebafc7960ecdb"
+        },
+        {
+          "name": "start_at",
+          "hash": "a155000534e51a9045331d4a7494269871f0d79073ba94812965b3c1545fcc4a"
+        }
+      ]
+    },
+    {
+      "name": "jira_get_sprints_from_board",
+      "hash": "305385cd77bc07c6a7a34dacd9106680d8e6954322e966e6fa069cede10ec6c1",
+      "params": [
+        {
+          "name": "board_id",
+          "hash": "3bceb81a0bed22704222cd1d3eec9d075513a5d6e5a3cc75c633328ccdfcd74d"
+        },
+        {
+          "name": "limit",
+          "hash": "d2f53210f2f0e66d63c3540c3b450f90770826326b68f40a055d79c38ec4440b"
+        },
+        {
+          "name": "start_at",
+          "hash": "a155000534e51a9045331d4a7494269871f0d79073ba94812965b3c1545fcc4a"
+        },
+        {
+          "name": "state",
+          "hash": "88cb545cf23d3c563c9fd0e1def23ea0813da12608f1bef918ea382dd5518d45"
+        }
+      ]
+    },
+    {
+      "name": "jira_get_transitions",
+      "hash": "854909ed16191e10dc573ed8d907b5a6f81f20e2b7fe1c7b590bafc2ae839913",
+      "params": [
+        {
+          "name": "issue_key",
+          "hash": "503242ce27877eab3bd3119ada2d73de27685ce83650f4cbf91aa58f95e5f050"
+        }
+      ]
+    },
+    {
+      "name": "jira_get_user_profile",
+      "hash": "5e27c05302b66d031a8b9fb0ae78c1e1f1e78ea4fccafb4c4df5a5e8f3af2614",
+      "params": [
+        {
+          "name": "user_identifier",
+          "hash": "b29eae413c2a6d06dc9da359d93caf8ed7c1ebeb457e6f9a5870aa0b2cd23aa5"
+        }
+      ]
+    },
+    {
+      "name": "jira_get_worklog",
+      "hash": "a6305b2f43202b80cc0b7c3cbc3cf18cb10dbd5b2dde636aed22ad6102158332",
+      "params": [
+        {
+          "name": "issue_key",
+          "hash": "503242ce27877eab3bd3119ada2d73de27685ce83650f4cbf91aa58f95e5f050"
+        }
+      ]
+    },
+    {
+      "name": "jira_link_to_epic",
+      "hash": "dade460076b35b601baf12f802d2126c04d7f031e0a02dad2765442a7f3ec5dc",
+      "params": [
+        {
+          "name": "epic_key",
+          "hash": "2ae4e74939f8a1435727cc7b006eeab1f5d7eeefd46ea20d7f81ac3fef468b8b"
+        },
+        {
+          "name": "issue_key",
+          "hash": "fea213983a7c5e2d84b0416572d1aa9c2d899bfd45ba06f889a81e390414f7a1"
+        }
+      ]
+    },
+    {
+      "name": "jira_remove_issue_link",
+      "hash": "1cc0dbf26d64a5c4f889d66bbb988df462a87b25ed84a8994ad6b3c5f009f6f9",
+      "params": [
+        {
+          "name": "link_id",
+          "hash": "f94c86ced7a4bb0ecb26ee059e916ef780e7f2a744ab93a48b1ddf8b592bc993"
+        }
+      ]
+    },
+    {
+      "name": "jira_search",
+      "hash": "e6118bb13ef306a2ddb2832fda06282f4e5c1ba06a30acf7ea5ecb3be1f8f1f5",
+      "params": [
+        {
+          "name": "expand",
+          "hash": "005989f3f5516635e527d483afb0393fc9e374e244772c6407194279e35e414b"
+        },
+        {
+          "name": "fields",
+          "hash": "5cb63bd4a76cf94f8fba036084341be5a31de975cbd9d9f12eb13b3bd5985ea4"
+        },
+        {
+          "name": "jql",
+          "hash": "49a6be7752b8f41ec2116a95046fedf2411b2375320ac57d4e3da123c64a9e26"
+        },
+        {
+          "name": "limit",
+          "hash": "d2f53210f2f0e66d63c3540c3b450f90770826326b68f40a055d79c38ec4440b"
+        },
+        {
+          "name": "projects_filter",
+          "hash": "55775c002c791bde5d68ae41ea0a8262dc6b027911c7d1e15c8e010b630ab7ac"
+        },
+        {
+          "name": "start_at",
+          "hash": "a155000534e51a9045331d4a7494269871f0d79073ba94812965b3c1545fcc4a"
+        }
+      ]
+    },
+    {
+      "name": "jira_search_fields",
+      "hash": "5a4f3af7b4a9cab8dd013ca45c7dabb1cf5482cca7a44a9c113f8f7f3ba50a17",
+      "params": [
+        {
+          "name": "keyword",
+          "hash": "9f17a2ed65a0ef57f88dcf4ba31dc191f02fe11d78a36f8401cf5b5cd0a99e73"
+        },
+        {
+          "name": "limit",
+          "hash": "3e509177106b4e186205442ecef7ab2bce66e64a4376b73cc7627cc0e9a3adba"
+        },
+        {
+          "name": "refresh",
+          "hash": "6bb12240df30b8c9501b6ea49c9b5f1de99a216d0d4c7cc42e94a7bb9783a658"
+        }
+      ]
+    },
+    {
+      "name": "jira_transition_issue",
+      "hash": "d7372e2c33fda968bbfe889c0fd77bdb8beab194c5c8dc6dee6ecfe3f3ea5ddc",
+      "params": [
+        {
+          "name": "comment",
+          "hash": "2173f25be1356ebb1e0733d6c34dcf413d95e7daa2f83fdacb2ec386151239d4"
+        },
+        {
+          "name": "fields",
+          "hash": "d1b5351cb0ea67246f3387018055e2a44eadc2d827ad852c13b48dd76722a4ca"
+        },
+        {
+          "name": "issue_key",
+          "hash": "503242ce27877eab3bd3119ada2d73de27685ce83650f4cbf91aa58f95e5f050"
+        },
+        {
+          "name": "transition_id",
+          "hash": "76f0e261d6b43d78c236119a06ec0dfb60e80cb86843b484f3f3b4b7eb2ad528"
+        }
+      ]
+    },
+    {
+      "name": "jira_update_issue",
+      "hash": "cb88091f7adf2e290ac8fdf1974c58081fb92f5f1139dd76f6247882894f3dc6",
+      "params": [
+        {
+          "name": "additional_fields",
+          "hash": "5842962afbd51ecf06e1b676d53ecc889cd2f2d165486c8fa3c270b117339232"
+        },
+        {
+          "name": "attachments",
+          "hash": "83eb360df9574c57b2a5e1383db5701dd38f72bfde45f6e8606ef06cc3a95a17"
+        },
+        {
+          "name": "fields",
+          "hash": "7ce353e459d334ff1333e8c2b96300c8a7d9d59124ddffe852dfd94e9641b505"
+        },
+        {
+          "name": "issue_key",
+          "hash": "503242ce27877eab3bd3119ada2d73de27685ce83650f4cbf91aa58f95e5f050"
+        }
+      ]
+    },
+    {
+      "name": "jira_update_sprint",
+      "hash": "9c635de09dba73785c81711288afdae7c2e2ed7b75688fd836bb0691d86cd6ca",
+      "params": [
+        {
+          "name": "end_date",
+          "hash": "2cfb541595f4f53415c22296d82daa2911443c2dc765eac5ace2655e36d6ce91"
+        },
+        {
+          "name": "goal",
+          "hash": "bcb38f47914024fdc9abb1662844e02527f36eacf229be8a558acf167d8b7dff"
+        },
+        {
+          "name": "sprint_id",
+          "hash": "f56e64d821db2b7eecb421d317c1fe2cd3b26959d9f9d07e2a3ebafc7960ecdb"
+        },
+        {
+          "name": "sprint_name",
+          "hash": "4f7066d775e533a082b8d6e5e5c20f8c31349dd20f11619b417122057b2de572"
+        },
+        {
+          "name": "start_date",
+          "hash": "6682f0a15074c484e343fd015a563d6f7a66f5827a9618adb81bd41ed2a96d5c"
+        },
+        {
+          "name": "state",
+          "hash": "2689ffab5c471019b7e9752abae3b4d4d3c6d0b993e3a65c50c3627acef0a0b3"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

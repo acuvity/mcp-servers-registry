@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-circleci",
-  "name": "mcp-server-circleci ",
+  "name": "mcp-server-circleci",
   "description": "Enable AI Agents to fix build failures from CircleCI.",
   "links":
     {
@@ -12,12 +12,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.5.1",
+  "version": "0.7.1",
   "requiresConfiguration": false,
   "requiresStorage": false,
   "rating": "B",
   "resources": {
-    "tools": 8,
+    "tools": 9,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

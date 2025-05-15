@@ -1,0 +1,161 @@
+{
+  "tools": [
+    {
+      "name": "tavily-crawl",
+      "hash": "7c2d7aa75e8204e0a08a14e83ed9b12a4e6479f2636ceb88d713daf259879903",
+      "params": [
+        {
+          "name": "allow_external",
+          "hash": "5b6ea50394b51a7d712179459ab77efcf5a631bb38d8a47a48516f6d8e615aff"
+        },
+        {
+          "name": "categories",
+          "hash": "f7f9439251205a3658776b9db1db48c42f00303b2abcf1574d366cf915d24b93"
+        },
+        {
+          "name": "extract_depth",
+          "hash": "096630325177fc094ce66f458b58601638b5e38fd50f76ca9add282398d73334"
+        },
+        {
+          "name": "limit",
+          "hash": "ecbdbea1cc664963ec69474afb6c97c57f8ae2752e7128e5fe372b260d7bfbcf"
+        },
+        {
+          "name": "max_breadth",
+          "hash": "dcbf82b39474503318763a3c51cff9c45492d021c50fb9e778751ce3533b752c"
+        },
+        {
+          "name": "max_depth",
+          "hash": "467655797e4e5cb1690ae09eeebded8f2a40f80858c6a29f2085772f21bc43c0"
+        },
+        {
+          "name": "query",
+          "hash": "11e23a677507385405b5498887e41ac4c10e4c36a877e771b24e84fd08020058"
+        },
+        {
+          "name": "select_domains",
+          "hash": "fe6ef4a110db381eb61ff7715cde308a73be299daae35847216beb6ab7a5b975"
+        },
+        {
+          "name": "select_paths",
+          "hash": "9927be7ee8bc87bcd5363fc754d6b130585836614260a6ad12d88bc99b93fb15"
+        },
+        {
+          "name": "url",
+          "hash": "e18f3f89f38fb901b6e29a35b6138a6accbbfd93a66fc1f421e88cf23f93331e"
+        }
+      ]
+    },
+    {
+      "name": "tavily-extract",
+      "hash": "1345839a938b55e787c772bab510514157f729812c5be9a3165598745c336c76",
+      "params": [
+        {
+          "name": "extract_depth",
+          "hash": "aac7e32c9ba05a8437192cf699fffc5a5d83d6d1b3d4f9c4f05ed1faa1fca12e"
+        },
+        {
+          "name": "include_images",
+          "hash": "ad583d5fbb5404a91cb49e4192e39a9d26339fb5d68afceb0fc5e15654981bda"
+        },
+        {
+          "name": "urls",
+          "hash": "694f6f90aa7a13847bf9171b0dd5d9b71c63dbedcc07a9b5f4c204e800640577"
+        }
+      ]
+    },
+    {
+      "name": "tavily-map",
+      "hash": "42684fee294c35a65925358eb7a82a46be440ecb4cd7a5918f08a4ae7b863b97",
+      "params": [
+        {
+          "name": "allow_external",
+          "hash": "5b6ea50394b51a7d712179459ab77efcf5a631bb38d8a47a48516f6d8e615aff"
+        },
+        {
+          "name": "categories",
+          "hash": "f7f9439251205a3658776b9db1db48c42f00303b2abcf1574d366cf915d24b93"
+        },
+        {
+          "name": "limit",
+          "hash": "ecbdbea1cc664963ec69474afb6c97c57f8ae2752e7128e5fe372b260d7bfbcf"
+        },
+        {
+          "name": "max_breadth",
+          "hash": "dcbf82b39474503318763a3c51cff9c45492d021c50fb9e778751ce3533b752c"
+        },
+        {
+          "name": "max_depth",
+          "hash": "36ca50681fc627198c6c9606543eeb2e0775126143cb7458bfe211bc010a004c"
+        },
+        {
+          "name": "query",
+          "hash": "11e23a677507385405b5498887e41ac4c10e4c36a877e771b24e84fd08020058"
+        },
+        {
+          "name": "select_domains",
+          "hash": "fe6ef4a110db381eb61ff7715cde308a73be299daae35847216beb6ab7a5b975"
+        },
+        {
+          "name": "select_paths",
+          "hash": "9927be7ee8bc87bcd5363fc754d6b130585836614260a6ad12d88bc99b93fb15"
+        },
+        {
+          "name": "url",
+          "hash": "258310dad942c2b11c0d5b4701b441abd7613970b7a7f459f44fbc995e1dfa6a"
+        }
+      ]
+    },
+    {
+      "name": "tavily-search",
+      "hash": "9f47afceed35d18060a38ec7ec7287d2a805f1f52a8f257884c13672b1d5a572",
+      "params": [
+        {
+          "name": "days",
+          "hash": "a5166a9dc7b62d6c568b6a86b91e09c679a6fa43d83f2a3178abc5e398f37d22"
+        },
+        {
+          "name": "exclude_domains",
+          "hash": "52be69be6c9b81c02d0bc9e24c258ee132e9b0e25272d2e32978693e1cadf94d"
+        },
+        {
+          "name": "include_domains",
+          "hash": "73af97b9b4b062080f17117145d2c5914c6859636d6faad4c9cf4dbdb5af9b98"
+        },
+        {
+          "name": "include_image_descriptions",
+          "hash": "2d86753f90181581cd30756e1f4fdbf30390f83d7485fc09838fc729870ee4fc"
+        },
+        {
+          "name": "include_images",
+          "hash": "9f36dc8d6377860e782b659d76bfd533ab811329689291f52e2023d091e40e28"
+        },
+        {
+          "name": "include_raw_content",
+          "hash": "1826a0e2ecbc2f9ca37a59a85de7f1790344b7e868e5a574d0eaaee9344af2c1"
+        },
+        {
+          "name": "max_results",
+          "hash": "cfa10b88cdb3330162a8ace39416a69d6c6b39ceed8a521ade22bb77cc33c58c"
+        },
+        {
+          "name": "query",
+          "hash": "9eef05233ecfc1fbcfe756aa79bd497fa20e58144012561b562b8856040f5100"
+        },
+        {
+          "name": "search_depth",
+          "hash": "09738f4f04b8f023cdec623c20d07928a7e5f877faeecd3b0f9be1b73b6c5906"
+        },
+        {
+          "name": "time_range",
+          "hash": "83d9b8fd3353e59e36c6722f96bf9c010347d0df404ca8a0473925a02e7625a9"
+        },
+        {
+          "name": "topic",
+          "hash": "855a287cc86efc88b4371771009931d757ce54c794949c2e9d9e39db83d9c37c"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

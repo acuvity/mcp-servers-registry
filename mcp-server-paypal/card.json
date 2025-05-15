@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-paypal",
-  "name": "mcp-server-paypal ",
+  "name": "mcp-server-paypal",
   "description": "A Model Context Protocol (MCP) server that enables AI models to interact with PayPal Apis.",
   "links":
     {
@@ -12,10 +12,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": "A",
   "resources": {
     "tools": 26,
     "prompts": 0,

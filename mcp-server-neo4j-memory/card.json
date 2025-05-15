@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-neo4j-memory",
+  "name": "mcp-server-neo4j-memory",
+  "description": "Provides persistent memory capabilities through Neo4j graph database integration.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-neo4j-memory",
+      "application": "https://github.com/neo4j-contrib/mcp-neo4j"
+    },
+  "tags": ["database","integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.1.3",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 10,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

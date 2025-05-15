@@ -1,0 +1,8 @@
+env:
+
+secrets:
+  DATABASE_URI:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-neon",
+  "name": "mcp-server-neon",
+  "description": "Interact with Neon databases using natural language.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-neon",
+      "application": "https://github.com/neondatabase-labs/mcp-server-neon"
+    },
+  "tags": ["integration","database"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.4.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 20,
+    "prompts": 0,
+    "resources": 3,
+    "resourcesTemplates": 0
+  }
+}

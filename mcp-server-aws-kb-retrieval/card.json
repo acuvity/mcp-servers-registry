@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-aws-kb-retrieval",
-  "name": "mcp-server-aws-kb-retrieval ",
+  "name": "mcp-server-aws-kb-retrieval",
   "description": "MCP server for AWS Knowledge Base retrieval using Bedrock Agent Runtime",
   "links":
     {

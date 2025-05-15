@@ -1,0 +1,775 @@
+{
+  "tools": [
+    {
+      "name": "capture_payment",
+      "hash": "0cb558bcef3b24d63e6f89d58c79bb1dffb51998648220b701655782c51484af",
+      "params": [
+        {
+          "name": "amount",
+          "hash": "93f26fb41d005ad5a5933e5abe5b82888252eb480154ac2ec9c7f92c2623dd26"
+        },
+        {
+          "name": "currency",
+          "hash": "7d2ac31268c1b6f065da1d7dbf2ce2f37ae3d41210032f6c61e38f4d638730ae"
+        },
+        {
+          "name": "payment_id",
+          "hash": "57476462367db29c7770de483fa7e16b9491c06fd9f031a276cd3771d39a8d29"
+        }
+      ]
+    },
+    {
+      "name": "close_qr_code",
+      "hash": "4a9717845a3f505592b8653482d796f4f5b5061042c1c2897d57ee2d8fe29a74",
+      "params": [
+        {
+          "name": "qr_code_id",
+          "hash": "aa2c22c9da586a49253b195b892188cd65fef9a753ca440b1999723191837e35"
+        }
+      ]
+    },
+    {
+      "name": "create_instant_settlement",
+      "hash": "8937c0a002f7970ef197c7f8340be6b816089911db35faa4baa897e0d9739768",
+      "params": [
+        {
+          "name": "amount",
+          "hash": "0e3f1e4b7562e038c8c430504c833ee9778459720bece73cd264476588a72c1b"
+        },
+        {
+          "name": "description",
+          "hash": "05b18f0241d04d9118678908e5b6b7ca58d28c415feaf46578baddade4bb1dec"
+        },
+        {
+          "name": "notes",
+          "hash": "76998bdb949d7dfe5990d655b83144da1af6b5bdf0ef6666e21537f5eec162ea"
+        },
+        {
+          "name": "settle_full_balance",
+          "hash": "40354b1d1a842bd146847414e5a20da9231622dee3dc793d93d4a92bec458be0"
+        }
+      ]
+    },
+    {
+      "name": "create_order",
+      "hash": "7d82117fec42acecc41ba70b5e8cf726e307b655fa4551869ad11f9fd2aba940",
+      "params": [
+        {
+          "name": "amount",
+          "hash": "bb490265d75b06a8a5c82bf925b58e8d43bd6d33175797fc3bfa620c1155866d"
+        },
+        {
+          "name": "currency",
+          "hash": "6ae3295165b77a3e14cd3b9230d16e2900fae6c77d9660c9f1d6c16ae979accf"
+        },
+        {
+          "name": "first_payment_min_amount",
+          "hash": "9dbdbf0f5e0f69feaeebf039378b7b74009d619bbb75d9937608b90fcbe0f23d"
+        },
+        {
+          "name": "notes",
+          "hash": "658fd3000d06e20f80d3ab2d2db0669810d45fbe5749cfd516774ff3a705b50b"
+        },
+        {
+          "name": "partial_payment",
+          "hash": "8eb6e2e132177fdfef11e605d9ed60f336cbefe0eb2911f731128e11255be62a"
+        },
+        {
+          "name": "receipt",
+          "hash": "c82705f4e6b7ba32194af79440f25689eb8332ea2ae4d6d74954494b9dd75a56"
+        }
+      ]
+    },
+    {
+      "name": "create_payment_link",
+      "hash": "11eb719a763a137a870f9d996cf709ce786d4c00c3d69e0e10f4b2d2d2fd79bf",
+      "params": [
+        {
+          "name": "accept_partial",
+          "hash": "b923ec63e4ad67fe5547d265da298eae5469abac18720beac806ab1c5eef7ac5"
+        },
+        {
+          "name": "amount",
+          "hash": "da4f244698a76a7caa472773c9971b9cc29f00a5b301f2ab5af951a969beae1d"
+        },
+        {
+          "name": "callback_method",
+          "hash": "88b90ba487239c69ef2d2e8e34ed66d2dc22f6e9b115087f7a1e0e01c9448a9b"
+        },
+        {
+          "name": "callback_url",
+          "hash": "ecce69b9f2a9f746275764382bb4d936e2b88cd83ffd4384cb9eb256fd0d7704"
+        },
+        {
+          "name": "currency",
+          "hash": "d008aa386a19c1ea5a7e38e59ec6cd8f805274747ac84b80bdde9257b83bb0a1"
+        },
+        {
+          "name": "customer_contact",
+          "hash": "7407de16d0c40f06063946e98fd70e3012422ec51175063734345d9058fc91d6"
+        },
+        {
+          "name": "customer_email",
+          "hash": "b0721bb49af91271c856326da65a94cd2b2267eeb18d0d046af132c507d7cde9"
+        },
+        {
+          "name": "customer_name",
+          "hash": "32a39d7f6f048f018654a0d99228d508776b01ee73f52687f46cb122f98cfc74"
+        },
+        {
+          "name": "description",
+          "hash": "fbf4d0b4ace492db0ac88a472bd6287c64ddab1ace9fecbc7e474f491e61c2b1"
+        },
+        {
+          "name": "expire_by",
+          "hash": "abb9dec8c11662893ffa45ed15b1f20f839221a9d9cc33ad0a927ac57c122769"
+        },
+        {
+          "name": "first_min_partial_amount",
+          "hash": "c63b5260dbf6aa0554cf049207a8d85b256117aae07106ed0af22c80b86bc6b5"
+        },
+        {
+          "name": "notes",
+          "hash": "409ea3b80ab1f52ebf5f0e45db41122e3c705edf420a36991cf0a09e04221178"
+        },
+        {
+          "name": "notify_email",
+          "hash": "4d29b9ce54dd1a4a5c90889d96506345bc22a8efbb9f49eca04a754b0346438f"
+        },
+        {
+          "name": "notify_sms",
+          "hash": "061a3e92f96459592a103dd986350a396a36089f1e51b1432dfde297e1d3290b"
+        },
+        {
+          "name": "reference_id",
+          "hash": "5d451c50c3ac7b8c433665f791b608e80dbe8102649f52761b994ce6e1e89d1a"
+        },
+        {
+          "name": "reminder_enable",
+          "hash": "111bf5aeb9fb3c946179ddca4100d9385ea5e092bc5392e2a70aefa0f07bd215"
+        }
+      ]
+    },
+    {
+      "name": "create_qr_code",
+      "hash": "233a6b34d7439c90719085a4996464c298e1e96782f824b5685e907fb477bc5c",
+      "params": [
+        {
+          "name": "close_by",
+          "hash": "3bfc3c434f49388dacf1ce99bc7e65091c98fad480bbfae2b9a483068befe22d"
+        },
+        {
+          "name": "customer_id",
+          "hash": "3c8fbc691ad55c6a9418a76092f6fa71f7bd1951610152e208aad82dabed10cc"
+        },
+        {
+          "name": "description",
+          "hash": "30b16aa579481ee250fef376809b4ae4c40b62ba5e6c75cc433f0cdae323b55b"
+        },
+        {
+          "name": "fixed_amount",
+          "hash": "0dc53c9a83350ac97a4fb7329fd3f5b790c919cf364e78717fbab0501701be39"
+        },
+        {
+          "name": "name",
+          "hash": "d91ce95f9387fb7634c8800f1c148f7a2c9762840617198739efba3e59fe161b"
+        },
+        {
+          "name": "notes",
+          "hash": "658fd3000d06e20f80d3ab2d2db0669810d45fbe5749cfd516774ff3a705b50b"
+        },
+        {
+          "name": "payment_amount",
+          "hash": "1a5fc227bdcc289f5d74ac88775172e4319b455efe62453034586a49b73e4717"
+        },
+        {
+          "name": "type",
+          "hash": "b050a77c7ee65a52e0f097402d187ed5b8ae903ddcfec0f56e40a203d107a758"
+        },
+        {
+          "name": "usage",
+          "hash": "b3db5eb47af993d1697ede72007496d20f6c4feab5751b62632884ef9ebf5fd0"
+        }
+      ]
+    },
+    {
+      "name": "create_refund",
+      "hash": "d1f83aada1752be42abe47ceb4acd81251022a60b952ac6c779db4bff293eac7",
+      "params": [
+        {
+          "name": "amount",
+          "hash": "404ac7c223ab9d1e5e1991d328ccb6107456f2f67c7fc9bb936303649eb1dfa1"
+        },
+        {
+          "name": "notes",
+          "hash": "db315a3032f80d95a8f295d20b52068d16e4cf80dd9c6b23da06a4c438ece410"
+        },
+        {
+          "name": "payment_id",
+          "hash": "bc9f579768043358b4bb0a99786db04a463448277f282b22b69ba1f612be74d0"
+        },
+        {
+          "name": "receipt",
+          "hash": "89958bcc76b0a2cacb0032fd43fc790c3135401fb78a4679cc3a582c7b1a884e"
+        },
+        {
+          "name": "speed",
+          "hash": "82b949d7e122a853b1fcc92f4c8b8166d90a785d335c9a0dea5b353b5ae94dee"
+        }
+      ]
+    },
+    {
+      "name": "fetch_all_instant_settlements",
+      "hash": "568ace594d68215c98b189dfcfb55e95958388c1a7e9d081c19c46d62c1ead39",
+      "params": [
+        {
+          "name": "count",
+          "hash": "1107b74478dbd6748d6dc2734004e653b077afb5092593401a9e61a9b12a48aa"
+        },
+        {
+          "name": "expand",
+          "hash": "75f1ab4f35d9c52876cafdc8181e02b744e35d496b108a65a150927fe84a1f83"
+        },
+        {
+          "name": "from",
+          "hash": "ef59615b718e40574dfa844e3f142c72040ef03b34edf3b4c2e62bdcf2c411a3"
+        },
+        {
+          "name": "skip",
+          "hash": "4d4dd31b6fe69d2f03c2a17483a90ecb0a5dcd6bafc92c7a91214cef2f556062"
+        },
+        {
+          "name": "to",
+          "hash": "74d1a6d512645784ef628718df48749031744527b53668a10da7a0e03f34bdea"
+        }
+      ]
+    },
+    {
+      "name": "fetch_all_orders",
+      "hash": "9c54cb1ede656fe3fe47d0d8a3196d06a49889265c71f9b4b57c08b8f96081ab",
+      "params": [
+        {
+          "name": "authorized",
+          "hash": "371c0963fea312fdc5092aecce08b6e0fde59d4bf95e371a312d4fb39dd7c40e"
+        },
+        {
+          "name": "count",
+          "hash": "e5156df571337502ac17381ff8d1443242a351886aadd057077e3d5190f1d687"
+        },
+        {
+          "name": "expand",
+          "hash": "bf9fe967a7afe941e20ed0791396d4ac4b6ba28cdd657ed3f4dd06bdcd3b06a0"
+        },
+        {
+          "name": "from",
+          "hash": "0628ef666d191d809aa484857b68d379fa547725fcd55f07bc0cf8c2329fbf3d"
+        },
+        {
+          "name": "receipt",
+          "hash": "443307755064e50cb563987c1be6396ec3b7f25a0db66a35ee29de97b77372a3"
+        },
+        {
+          "name": "skip",
+          "hash": "017dc893215a37ed467aef60e193ee227185608a76acc46251ccdca1f24fe7f6"
+        },
+        {
+          "name": "to",
+          "hash": "d8c55e46b428a4708faf76e497ee745f3071bd834c13f5e26f3cb484f67f6447"
+        }
+      ]
+    },
+    {
+      "name": "fetch_all_payment_links",
+      "hash": "39de3696cf88abb7b51b64843425e6c74d1368442f55762a0b4da1992d10be1f",
+      "params": [
+        {
+          "name": "payment_id",
+          "hash": "ea770e865c75524ab43dbea4a8ad1ae31011a830496adbbfadad678044892c71"
+        },
+        {
+          "name": "reference_id",
+          "hash": "72555761921800ac1f362c78616e3b1921bc35203d786b5b7314c50a40562936"
+        },
+        {
+          "name": "upi_link",
+          "hash": "9f8297880d1df710c780e124ccb3fba113a2a8e22e29d5e5e9c6d460be5835e9"
+        }
+      ]
+    },
+    {
+      "name": "fetch_all_payments",
+      "hash": "4ec656525a24b902e9252808e66b01fc34f8a9acc5805a7f363bd4bb70def58a",
+      "params": [
+        {
+          "name": "count",
+          "hash": "512f6bc10d5244921ed495f98689ba12f4faf4725056a9db5b23724cd566e0d0"
+        },
+        {
+          "name": "from",
+          "hash": "f902137fc8894a29de6a2428be2fe8af6a0be015fd64ae5531f7523b7362d9c5"
+        },
+        {
+          "name": "skip",
+          "hash": "6d07e86ab57d86e8cda6fdac80631844485ff89a21d8f6c610a61dc68018bba0"
+        },
+        {
+          "name": "to",
+          "hash": "3a2bb24c9d70c2ce1e537088dc65e9212c171721111e6c06bbe7d24f4735391a"
+        }
+      ]
+    },
+    {
+      "name": "fetch_all_payouts",
+      "hash": "a85665b4eb3ca46e424c537a6ca20ae147f07654987a36f050cff8dddbf648a2",
+      "params": [
+        {
+          "name": "account_number",
+          "hash": "bc94902422005380d29253c467e3d28ce6927efa2fecf7766888338a48c82733"
+        },
+        {
+          "name": "count",
+          "hash": "1d86c38ffa3aed4fa2bef2da7a7c864c6bf172cf0be9dbabcbd35aa4c7e9acdc"
+        },
+        {
+          "name": "skip",
+          "hash": "b061a801baa5deeabac4377f0d496f01312bd9b1ce821d42e85e2f4507bb48a3"
+        }
+      ]
+    },
+    {
+      "name": "fetch_all_qr_codes",
+      "hash": "e421076cabf056a5dd5d9fd9b6a27eda26daebab361fdb773035ba38e39171bf",
+      "params": [
+        {
+          "name": "count",
+          "hash": "dddc5d2a82991f29cfeced2ba22ddd1904d234bdc740e17c749556e1d80301ae"
+        },
+        {
+          "name": "from",
+          "hash": "fe13479b730dcdb638ef6fe9f993a341efad3777c2a151f3ec68be79c63d9ddc"
+        },
+        {
+          "name": "skip",
+          "hash": "4f8c4e8e03e37c1e8393b4945c8296409ed28ca569bdc71360c6fbc4fe42e49a"
+        },
+        {
+          "name": "to",
+          "hash": "3ae02c3453c4c0f254b8e5ea4c79b3320d080509ffb13c082a208c4339d62abe"
+        }
+      ]
+    },
+    {
+      "name": "fetch_all_refunds",
+      "hash": "bdc13b1864b7a7452baedd48ca824b64512a93db710c788599e8523e388709fd",
+      "params": [
+        {
+          "name": "count",
+          "hash": "3464f54134e421bf0906aa2a735aa2170ebffd13e59b4f5584b7544999fe99e7"
+        },
+        {
+          "name": "from",
+          "hash": "240dabb93b882fabd9782813b10839e1e25ecfe98574e856ef1bdb28456b215f"
+        },
+        {
+          "name": "skip",
+          "hash": "29f827538cc780dcb72faf0d5d62e3a57ce61f879db1f76545b1ea89e356f523"
+        },
+        {
+          "name": "to",
+          "hash": "21c1b688ad0aee218a53a8c28cb7ed5b8917fe6d3547b605f9409fb301cd6b18"
+        }
+      ]
+    },
+    {
+      "name": "fetch_all_settlements",
+      "hash": "1c759c75a9731013411f61cff7e1abafff74ca8b2a1b3eb3e79dce12a252a2a9",
+      "params": [
+        {
+          "name": "count",
+          "hash": "ee90e2a5b4f7fa6c11407a53b4d37724eafbc675ee345e49c568a9df163980b9"
+        },
+        {
+          "name": "from",
+          "hash": "9b0c09a7a6cc52387c9eac2dc36cd09e2cf6424d92e02a100db75b69a131043e"
+        },
+        {
+          "name": "skip",
+          "hash": "ef3293e14df45090f4d04cbb64b66d1ab1d83c74f69c8180ee282068a778aedb"
+        },
+        {
+          "name": "to",
+          "hash": "5fbd556ef96cea0eb2a23c36bc9b159f93392d29b523683a44dec56eafe41155"
+        }
+      ]
+    },
+    {
+      "name": "fetch_instant_settlement_with_id",
+      "hash": "7d9e8a3414fc88fd9c1d3e614e4bc52ae6f4bb88f7a782d99933b87209988fba",
+      "params": [
+        {
+          "name": "settlement_id",
+          "hash": "a48a33b353129c2b838dcecab118e67490ad55166e4fd07eb82080de51872d90"
+        }
+      ]
+    },
+    {
+      "name": "fetch_multiple_refunds_for_payment",
+      "hash": "aa689a9b288720373d3cb67fc09513adbb8bd62c1b6f035a1610fedba1a43ce3",
+      "params": [
+        {
+          "name": "count",
+          "hash": "c0436ebc9ace24fb94d71f7752c01db38dfd4fd23e6b9b69564ae4f8fefce530"
+        },
+        {
+          "name": "from",
+          "hash": "cf7fcd25280c729be54ffbd95526f11039fb8e5a07f9856ccb3412edb6d2b4c4"
+        },
+        {
+          "name": "payment_id",
+          "hash": "0e35bad7dff1d7e3e3830751d3bb4ba33cc968c2ebef67412a3816952f225ecb"
+        },
+        {
+          "name": "skip",
+          "hash": "9d31f47f45aad4d0053521518cb4422d0ac105e4664711c1ac32f2ecf10a84c6"
+        },
+        {
+          "name": "to",
+          "hash": "6257771d1149388523203b29de9e1352c5c2d7b961a6714910bc723f19c5ce4e"
+        }
+      ]
+    },
+    {
+      "name": "fetch_order",
+      "hash": "757c62ebe885781501c412269401af0282e6bfde67df0b2333a655dc991c3e63",
+      "params": [
+        {
+          "name": "order_id",
+          "hash": "504ae8d38bada98cb4c10b6275f5435ebd7c4c5a5f8d236a366b13d5024f3474"
+        }
+      ]
+    },
+    {
+      "name": "fetch_order_payments",
+      "hash": "82f0c4cc00ffe5d61e10ea5e7d33b9a7434f4cda76105dfb4d674bb4441d169b",
+      "params": [
+        {
+          "name": "order_id",
+          "hash": "654578d668288e90ec1fce19790bcb8170e4af87456917f3868b3ba8eebe34e2"
+        }
+      ]
+    },
+    {
+      "name": "fetch_payment",
+      "hash": "a503bf7550a65a97b3fb3ced4d73d71310e33c90a1ed9c7b08550eaa5f7c7d28",
+      "params": [
+        {
+          "name": "payment_id",
+          "hash": "b52bc4aac8278fbf90c754659ce6576095506b49d40fd2e78ac4616483f68534"
+        }
+      ]
+    },
+    {
+      "name": "fetch_payment_card_details",
+      "hash": "c9b2bc41da44b73696c708cc0c3dadf26f086bdf37ed802ce5c3d51a28f53843",
+      "params": [
+        {
+          "name": "payment_id",
+          "hash": "19200f1105d62daf415a96014ae4f09a767f35dd05bef4f2bdd04a72a36f4034"
+        }
+      ]
+    },
+    {
+      "name": "fetch_payment_link",
+      "hash": "484eb124a41052c77252a225f1dbf7e410183f0de5a19e356773c149d43f1764",
+      "params": [
+        {
+          "name": "payment_link_id",
+          "hash": "79de6434b664ddc757cb1df74d299933f1f5a2cc6e36bc4180ab0e81333e76e9"
+        }
+      ]
+    },
+    {
+      "name": "fetch_payments_for_qr_code",
+      "hash": "5aa49f1afab776f40f4b51f49820ee261fb097e1a527be088878cde3ab80e4b1",
+      "params": [
+        {
+          "name": "count",
+          "hash": "27f3369c13e09b85b237a7c446fac8aa8194d8d255557aeb6baad76a46fd173e"
+        },
+        {
+          "name": "from",
+          "hash": "0bb0dbbf7e6a81e12828d083aed8fa48da4703ed49567029227c30ffb9668c09"
+        },
+        {
+          "name": "qr_code_id",
+          "hash": "8b437ea997a252e5e3a056ceb47d5096e69b16b0b52eb0f39c5c43c1680e8eef"
+        },
+        {
+          "name": "skip",
+          "hash": "9419f0756836e22b14639f8ebe28b983e0f0ad92cd420d5c1ee63eb74d1204f9"
+        },
+        {
+          "name": "to",
+          "hash": "92412a63c077e33ab40b026555c359ca1abbb6212ff2cbb6c570d2c517630287"
+        }
+      ]
+    },
+    {
+      "name": "fetch_payout_with_id",
+      "hash": "01b9833a6ecfe4230b4d52e95c0bddb9febd2324fbb2a12c38359743a68c3449",
+      "params": [
+        {
+          "name": "payout_id",
+          "hash": "42eb037ea89f35e0c93bfc9cf39d6a7aaac171dc28775c61d02f0e4ee569674e"
+        }
+      ]
+    },
+    {
+      "name": "fetch_qr_code",
+      "hash": "276b5cf457ce881c60828346f78d3ed036c91b09d4c46804edd2fd8d6ce2e9dd",
+      "params": [
+        {
+          "name": "qr_code_id",
+          "hash": "2e12e1c927c7a9a0edadd04a43485a84aa72d4eb848129e64db580c888bf911d"
+        }
+      ]
+    },
+    {
+      "name": "fetch_qr_codes_by_customer_id",
+      "hash": "7a051fb601e98ef852e57dbb0b605e459569a789e5293750395c0382018a9d2d",
+      "params": [
+        {
+          "name": "customer_id",
+          "hash": "be5c6d40b5e0dc7fc4757bf06345e13308f4ff33b5bc544bf63ba37de008a4c8"
+        }
+      ]
+    },
+    {
+      "name": "fetch_qr_codes_by_payment_id",
+      "hash": "11be879ca50fe9e0542320b91a39b359f2d7fb8f2ce2c6fd02cb4be16cac1f64",
+      "params": [
+        {
+          "name": "payment_id",
+          "hash": "6f4b55684f7d611ac5192cab0b9e79c9b6a0298d882343028a13c38d2fa5a8b8"
+        }
+      ]
+    },
+    {
+      "name": "fetch_refund",
+      "hash": "502a297a4e1ecb2b820fe62f0d2e33d05e82abfcd26b4fdec8de5f89e2c44eb9",
+      "params": [
+        {
+          "name": "refund_id",
+          "hash": "b0ac5145b6b32c6d6290c715c477f0b66b455d97807837c533e66ea43124f228"
+        }
+      ]
+    },
+    {
+      "name": "fetch_settlement_recon_details",
+      "hash": "42a4cad11689aaeab3c35a92adde5315a26f8249230ce8d51c31939e7399ad91",
+      "params": [
+        {
+          "name": "count",
+          "hash": "3b0b0a3a9282020b1fe2ab164913b8de60996e5d204c55794a2147bc6507cb20"
+        },
+        {
+          "name": "day",
+          "hash": "dad2a92a3f2beb934db14caf8abf05c55c0ce53eb77eef8ad8858096bfc66da2"
+        },
+        {
+          "name": "month",
+          "hash": "98274071eed703ea764dfb4bff89f9fcdea108ea3172eecb063679a11089d905"
+        },
+        {
+          "name": "skip",
+          "hash": "081f49f7a39a8f88b001c7fe319cac0f312acb267b1821f4d9865e6bdf079081"
+        },
+        {
+          "name": "year",
+          "hash": "239ff349b96d36c4231bb974934ce012c5bd8ee6d6b09a8f5f2186a2964ba29d"
+        }
+      ]
+    },
+    {
+      "name": "fetch_settlement_with_id",
+      "hash": "158da65697c474a3f7c8bfe5242a8af85fc8806aad271fa08bad0656c1c401a1",
+      "params": [
+        {
+          "name": "settlement_id",
+          "hash": "f1e2684044cc94600da84e0fa7abe3decf0c25f042b09055c03070896495e535"
+        }
+      ]
+    },
+    {
+      "name": "fetch_specific_refund_for_payment",
+      "hash": "2662c9506cd893264175c86a1e48b8150e3877e3ff94ee05cdf765df145b0bc1",
+      "params": [
+        {
+          "name": "payment_id",
+          "hash": "9b26fdbcbc57574ec6a4e30d1f2dfd8c8ffbc9f8535da54bb35bbcfebd8cec5f"
+        },
+        {
+          "name": "refund_id",
+          "hash": "7573be1d03d2052dc3873777c1f41c1e2968960dafcf1f725d7c7a859ef7cf48"
+        }
+      ]
+    },
+    {
+      "name": "payment_link_notify",
+      "hash": "a635457a624426b2d3991ab58673eeca77f91715661efd029a5ab7a3dc64db8c",
+      "params": [
+        {
+          "name": "medium",
+          "hash": "759fd06956d74b75ba97b5c0a6fca7fe070b823cf0048c238671c0e6ec1de5b6"
+        },
+        {
+          "name": "payment_link_id",
+          "hash": "a81943b1bcf5c056b287466206efbb23271639a9eca24a5a433eede63e5325b3"
+        }
+      ]
+    },
+    {
+      "name": "payment_link_upi.create",
+      "hash": "e35e601b97a50a3470a4e0eb23efa0062b2a1f0e1657f44d0dbd6fafb47e95b1",
+      "params": [
+        {
+          "name": "accept_partial",
+          "hash": "b923ec63e4ad67fe5547d265da298eae5469abac18720beac806ab1c5eef7ac5"
+        },
+        {
+          "name": "amount",
+          "hash": "aa1a2f87e61363b781cc3154c73701fd9079e90dce2db0a98fc819b7006e5506"
+        },
+        {
+          "name": "callback_method",
+          "hash": "88b90ba487239c69ef2d2e8e34ed66d2dc22f6e9b115087f7a1e0e01c9448a9b"
+        },
+        {
+          "name": "callback_url",
+          "hash": "ecce69b9f2a9f746275764382bb4d936e2b88cd83ffd4384cb9eb256fd0d7704"
+        },
+        {
+          "name": "currency",
+          "hash": "705ad3d157ff248e6036ce01f8a3558cf4e1af4b927293730f77b65816694c7e"
+        },
+        {
+          "name": "customer_contact",
+          "hash": "7407de16d0c40f06063946e98fd70e3012422ec51175063734345d9058fc91d6"
+        },
+        {
+          "name": "customer_email",
+          "hash": "b0721bb49af91271c856326da65a94cd2b2267eeb18d0d046af132c507d7cde9"
+        },
+        {
+          "name": "customer_name",
+          "hash": "32a39d7f6f048f018654a0d99228d508776b01ee73f52687f46cb122f98cfc74"
+        },
+        {
+          "name": "description",
+          "hash": "fbf4d0b4ace492db0ac88a472bd6287c64ddab1ace9fecbc7e474f491e61c2b1"
+        },
+        {
+          "name": "expire_by",
+          "hash": "abb9dec8c11662893ffa45ed15b1f20f839221a9d9cc33ad0a927ac57c122769"
+        },
+        {
+          "name": "first_min_partial_amount",
+          "hash": "c63b5260dbf6aa0554cf049207a8d85b256117aae07106ed0af22c80b86bc6b5"
+        },
+        {
+          "name": "notes",
+          "hash": "409ea3b80ab1f52ebf5f0e45db41122e3c705edf420a36991cf0a09e04221178"
+        },
+        {
+          "name": "notify_email",
+          "hash": "4d29b9ce54dd1a4a5c90889d96506345bc22a8efbb9f49eca04a754b0346438f"
+        },
+        {
+          "name": "notify_sms",
+          "hash": "061a3e92f96459592a103dd986350a396a36089f1e51b1432dfde297e1d3290b"
+        },
+        {
+          "name": "reference_id",
+          "hash": "5d451c50c3ac7b8c433665f791b608e80dbe8102649f52761b994ce6e1e89d1a"
+        },
+        {
+          "name": "reminder_enable",
+          "hash": "111bf5aeb9fb3c946179ddca4100d9385ea5e092bc5392e2a70aefa0f07bd215"
+        }
+      ]
+    },
+    {
+      "name": "update_order",
+      "hash": "2268a54ccb180030c66b33a78fc3bc302b4b8c9a9f12f662348f23dcbbcd4981",
+      "params": [
+        {
+          "name": "notes",
+          "hash": "07b087a1c2ce32ca37ae9850501d4750f1e0ee4ac442e5e6025c38113f405924"
+        },
+        {
+          "name": "order_id",
+          "hash": "bcba8145c15ca2e6d4637b153f03770aea34a05291133d2d34a8d8598f17d346"
+        }
+      ]
+    },
+    {
+      "name": "update_payment",
+      "hash": "a1c582ce74b49eec3e61c7e25a601247ec72f0aeab24d2c492abfdbba0cb8632",
+      "params": [
+        {
+          "name": "notes",
+          "hash": "20657c009890ca5d243d9f9af185db29e1f1da1c630bd6bed24c28d265b5e53d"
+        },
+        {
+          "name": "payment_id",
+          "hash": "2e727d3977244e2b51a611c974dc103b99e1c2cfc0d01efb22c1582ae7cd0e7f"
+        }
+      ]
+    },
+    {
+      "name": "update_payment_link",
+      "hash": "501514649d780f60c96434276e29018062e621631e3f60c3e2a3adf8725b7088",
+      "params": [
+        {
+          "name": "accept_partial",
+          "hash": "c65498877bbd18c3973e873dc150cfffbf8278bbbfa03ee713b287aed4031b9b"
+        },
+        {
+          "name": "expire_by",
+          "hash": "6344133a75cf7a87a159fd81cfc6ff2c9f707ac708db6e3503bd0fceef065d3d"
+        },
+        {
+          "name": "notes",
+          "hash": "c92c170559f58959a1be62c1cca623c6bbb44e87765b428938b97b31b0d47e11"
+        },
+        {
+          "name": "payment_link_id",
+          "hash": "8aab954b8c161fb73154635d1fec0d396aefd685596f80e767914a4c4d6cc89e"
+        },
+        {
+          "name": "reference_id",
+          "hash": "f25064195d5851262e6ec6c569071f6723757605f0ff17756fa0e5d13b6b29c8"
+        },
+        {
+          "name": "reminder_enable",
+          "hash": "906be771f4fe5bfb90cae15f95efbfd5c0c1d67524fe6aa81e6f2eee777bbb49"
+        }
+      ]
+    },
+    {
+      "name": "update_refund",
+      "hash": "1d12006957ea50f6afa8688a8ad1ebba676e65607f4748971994fdecea3e0175",
+      "params": [
+        {
+          "name": "notes",
+          "hash": "37f894a546ea538743c1e2953e5ba6d05d4bdc96447a4d60982d3621d39ca0d0"
+        },
+        {
+          "name": "refund_id",
+          "hash": "466da148a355997d47bc430e3e089e0f222f7117610a70e37fcab416354df300"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

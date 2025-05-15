@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-line-bot",
+  "name": "mcp-server-line-bot",
+  "description": "Connects AI Agent to LINE for messaging interactions.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-line-bot",
+      "application": "https://github.com/line/line-bot-mcp-server"
+    },
+  "tags": ["communication"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.2.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 6,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

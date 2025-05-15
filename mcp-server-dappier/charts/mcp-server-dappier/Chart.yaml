@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-dappier"
+description: A Helm chart for Real-time web search and access to premium media data.
+home: https://github.com/dappierai/dappier-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/dappierai/dappier-mcp
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.3.2
+keywords:
+  - mcp-server-dappier
+  - mcp-server
+  - remote
+  - web
+  - research
+  - finance

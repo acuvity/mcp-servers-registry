@@ -1,0 +1,5 @@
+env:
+  MDB_MCP_CONNECTION_STRING: 
+  MDB_MCP_LOG_PATH: 
+
+secrets:

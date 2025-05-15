@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-elevenlabs",
+  "name": "mcp-server-elevenlabs",
+  "description": "Enables voice synthesis and audio processing via APIs.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-elevenlabs",
+      "application": "https://github.com/elevenlabs/elevenlabs-mcp"
+    },
+  "tags": ["integration","communication"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.3.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 19,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

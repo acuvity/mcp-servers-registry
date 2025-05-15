@@ -20,16 +20,16 @@
 
 # What is mcp-server-paypal?
 
-[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-paypal/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-paypal/0.3.1?logo=docker&logoColor=fff&label=0.3.1)](https://hub.docker.com/r/acuvity/mcp-server-paypal)
-[![PyPI](https://img.shields.io/badge/0.3.1-3775A9?logo=pypi&logoColor=fff&label=@paypal/mcp)](https://github.com/paypal/agent-toolkit)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-paypal/0.3.2?logo=docker&logoColor=fff&label=0.3.2)](https://hub.docker.com/r/acuvity/mcp-server-paypal)
+[![PyPI](https://img.shields.io/badge/0.3.2-3775A9?logo=pypi&logoColor=fff&label=@paypal/mcp)](https://github.com/paypal/agent-toolkit)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-paypal&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22PAYPAL_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-paypal%3A0.3.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-paypal&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22PAYPAL_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-paypal%3A0.3.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** A Model Context Protocol (MCP) server that enables AI models to interact with PayPal Apis.
 
-Packaged by Acuvity from @paypal/mcp original [sources](https://github.com/paypal/agent-toolkit).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from @paypal/mcp original [sources](https://github.com/paypal/agent-toolkit).
 
 **Quick links:**
 
@@ -122,10 +122,13 @@ Provides a lightweight auth layer using a single shared token.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
+
+To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-paypal/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-paypal/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-paypal/charts/mcp-server-paypal#minibridge) for Helm charts).
+
 </details>
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active. To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-paypal/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-paypal/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-paypal/charts/mcp-server-paypal#minibridge) for Helm charts).
+> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference
@@ -155,7 +158,7 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
   - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-paypal/docker/Dockerfile)
 
 **Latest tags:**
-  - `latest` -> `1.0.0-0.3.1` -> `0.3.1`
+  - `latest` -> `1.0.0-0.3.2` -> `0.3.2`
   - [older tags](https://hub.docker.com/r/acuvity/mcp-server-paypal/tags)
 
 # 📦 How to Install
@@ -177,7 +180,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-paypal&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22PAYPAL_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-paypal%3A0.3.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-paypal&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22PAYPAL_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-paypal%3A0.3.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -199,7 +202,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "--read-only",
           "-e",
           "PAYPAL_ACCESS_TOKEN",
-          "docker.io/acuvity/mcp-server-paypal:0.3.1"
+          "docker.io/acuvity/mcp-server-paypal:0.3.2"
         ]
       }
     }
@@ -226,7 +229,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "--read-only",
         "-e",
         "PAYPAL_ACCESS_TOKEN",
-        "docker.io/acuvity/mcp-server-paypal:0.3.1"
+        "docker.io/acuvity/mcp-server-paypal:0.3.2"
       ]
     }
   }
@@ -257,7 +260,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "--read-only",
         "-e",
         "PAYPAL_ACCESS_TOKEN",
-        "docker.io/acuvity/mcp-server-paypal:0.3.1"
+        "docker.io/acuvity/mcp-server-paypal:0.3.2"
       ]
     }
   }
@@ -290,7 +293,7 @@ Add the following JSON block to your mcp configuration file:
         "--read-only",
         "-e",
         "PAYPAL_ACCESS_TOKEN",
-        "docker.io/acuvity/mcp-server-paypal:0.3.1"
+        "docker.io/acuvity/mcp-server-paypal:0.3.2"
       ]
     }
   }
@@ -321,7 +324,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "--read-only",
         "-e",
         "PAYPAL_ACCESS_TOKEN",
-        "docker.io/acuvity/mcp-server-paypal:0.3.1"
+        "docker.io/acuvity/mcp-server-paypal:0.3.2"
       ]
     }
   }
@@ -341,7 +344,7 @@ async with MCPServerStdio(
     params={
         "env": {"PAYPAL_ACCESS_TOKEN":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","PAYPAL_ACCESS_TOKEN","docker.io/acuvity/mcp-server-paypal:0.3.1"]
+        "args": ["run","-i","--rm","--read-only","-e","PAYPAL_ACCESS_TOKEN","docker.io/acuvity/mcp-server-paypal:0.3.2"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -375,7 +378,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e PAYPAL_ACCESS_TOKEN docker.io/acuvity/mcp-server-paypal:0.3.1`
+- arguments: `run -i --rm --read-only -e PAYPAL_ACCESS_TOKEN docker.io/acuvity/mcp-server-paypal:0.3.2`
 
 </details>
 
@@ -385,18 +388,16 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -i --rm --read-only -e PAYPAL_ACCESS_TOKEN docker.io/acuvity/mcp-server-paypal:0.3.1
+docker run -it -p 8000:8000 --rm --read-only -e PAYPAL_ACCESS_TOKEN docker.io/acuvity/mcp-server-paypal:0.3.2
 ```
 
-Add `-p <localport>:8000` to expose the port.
-
-Then on your application/client, you can configure to use something like:
+Then on your application/client, you can configure to use it like:
 
 ```json
 {
   "mcpServers": {
     "acuvity-mcp-server-paypal": {
-      "url": "http://localhost:<localport>/sse",
+      "url": "http://localhost:8000/sse"
     }
   }
 }
@@ -448,6 +449,8 @@ Minibridge offers a host of additional features. For step-by-step guidance, plea
 
 ## 🛡️ Runtime security
 
+**Guardrails:**
+
 To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
 - covert-instruction-detection
 - sensitive-pattern-detection
@@ -456,10 +459,15 @@ To activate guardrails in your Docker containers, define the `GUARDRAILS` enviro
 - cross-origin-tool-access
 - secrets-redaction
 
-for example, `-e GUARDRAILS="secrets-redaction covert-instruction-detection"` will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
+For example adding:
+- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
+to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
 
+**Basic Authentication:**
 
-To turn on Basic Authentication, set BASIC_AUTH_SECRET like `- e BASIC_AUTH_SECRET="supersecret`
+To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
+- `-e BASIC_AUTH_SECRET="supersecret"`
+to your docker arguments. This will enable the Basic Authentication check.
 
 Then you can connect through `http/sse` as usual given that you pass an `Authorization: Bearer supersecret` header with your secret as Bearer token.
 

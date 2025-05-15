@@ -1,0 +1,99 @@
+{
+  "tools": [
+    {
+      "name": "create_entities_batch",
+      "hash": "c6f857d3c26c430f3384b261e07c2ce8a40461d69c87ad70f68e2f1ce412400e",
+      "params": [
+        {
+          "name": "database",
+          "hash": "39755006c2083326d7be886a44b1b500f3d940d19045308865d79778927aa850"
+        },
+        {
+          "name": "entities",
+          "hash": "aec365d872c358a769b5ab1ff9296903a439acb867a79146472276537fb3f47c"
+        }
+      ]
+    },
+    {
+      "name": "create_entity",
+      "hash": "4f0d98b2969f712d23cfb26ea25a3cc57d5a469193d44ca549ec25ac88ddf258",
+      "params": [
+        {
+          "name": "database",
+          "hash": "1c63dc9e3bd2f976b1bfda7c3717f502630a6350e4aba4f50fc5dab2dde0de2a"
+        },
+        {
+          "name": "entity",
+          "hash": "fcabe74fe31032d7633f2dd334a10c65d58306c1dd4e180379c5deb42cc57781"
+        }
+      ]
+    },
+    {
+      "name": "current_date",
+      "hash": "9317cd62334b10a1e0fbd0c93e08392dfee2c80efeb713d9ae35f2f4acaabda4"
+    },
+    {
+      "name": "describe_database",
+      "hash": "dc90cb89fb73651dd904c01892c987de818b462e502d9bd7285a262b3e4bf47c",
+      "params": [
+        {
+          "name": "database_name",
+          "hash": "da77a6362dc6213860767ae59face55d4bb3a5daa170e1035c98a933c7c40597"
+        }
+      ]
+    },
+    {
+      "name": "list_databases",
+      "hash": "8651205b8fe64666d30925db3bd8b0cc41647b106c220aaa3de1dc7b7a893d20"
+    },
+    {
+      "name": "query_database",
+      "hash": "a5d75f5125a10f03de4ee4e8c275c2c5f451563ff21c0f2ef5d57404a390fe66",
+      "params": [
+        {
+          "name": "q_from",
+          "hash": "53a846dbac5b74f897204f60d0150e698c320b33651518eecf90a6bc2c36b8ef"
+        },
+        {
+          "name": "q_limit",
+          "hash": "1c9265f863e3f607bc79971e65107a114165dcfd66299a7b675d29b5c454d145"
+        },
+        {
+          "name": "q_offset",
+          "hash": "469a88dc989a485be5cb148dc492667da857259280084542915660d60fec02b3"
+        },
+        {
+          "name": "q_order_by",
+          "hash": "4076133f1c17635f9e2562f63d15eed0f67f437d6e73bb661aac31ea21497948"
+        },
+        {
+          "name": "q_params",
+          "hash": "eefc09ae29d168d8e72ce3d4b28178b0f57192caa17b86c4321bd781d0927290"
+        },
+        {
+          "name": "q_select",
+          "hash": "47ef35a67e17868154e6268c8c53f604ab594c1a63b646881cb8a0bce8d81ce7"
+        },
+        {
+          "name": "q_where",
+          "hash": "cc7a22d2d86cab4962b1dc336eaee161bf148749ad450e6137e53ce393c36146"
+        }
+      ]
+    },
+    {
+      "name": "update_entity",
+      "hash": "de2dbdcda08f5527eaa3226a59c7da409138d3c0dacee9e7907b5f1334f36f39",
+      "params": [
+        {
+          "name": "database",
+          "hash": "5f77c9ecd12602e71c8f30d3cf7c8ec3ec94cb6c107d08532b53e4b40ae5fe41"
+        },
+        {
+          "name": "entity",
+          "hash": "b7809c3e6e79f633abc36f03f943063c5390b870b0426b21795445aa9eea5d49"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

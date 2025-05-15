@@ -29,7 +29,7 @@
 
 **Description:** Connect to microsoft API to get applications, sites users and more.
 
-Packaged by Acuvity from acuvity/mcp-server-microsoft-graph original [sources](https://github.com/acuvity/mcp-server-microsoft-graph).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from acuvity/mcp-server-microsoft-graph original [sources](https://github.com/acuvity/mcp-server-microsoft-graph).
 
 **Quick links:**
 
@@ -420,18 +420,16 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -i --rm --read-only -e MCP_SERVER_MICROSOFT_GRAPH_TENANT_ID -e MCP_SERVER_MICROSOFT_GRAPH_CLIENT_ID -e MCP_SERVER_MICROSOFT_GRAPH_CLIENT_SECRET docker.io/acuvity/mcp-server-microsoft-graph:1.0.1
+docker run -it -p 8000:8000 --rm --read-only -e MCP_SERVER_MICROSOFT_GRAPH_TENANT_ID -e MCP_SERVER_MICROSOFT_GRAPH_CLIENT_ID -e MCP_SERVER_MICROSOFT_GRAPH_CLIENT_SECRET docker.io/acuvity/mcp-server-microsoft-graph:1.0.1
 ```
 
-Add `-p <localport>:8000` to expose the port.
-
-Then on your application/client, you can configure to use something like:
+Then on your application/client, you can configure to use it like:
 
 ```json
 {
   "mcpServers": {
     "acuvity-mcp-server-microsoft-graph": {
-      "url": "http://localhost:<localport>/sse",
+      "url": "http://localhost:8000/sse"
     }
   }
 }
@@ -500,7 +498,7 @@ to your docker arguments will enable the `secrets-redaction` and `covert-instruc
 **Basic Authentication:**
 
 To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
-- `-e BASIC_AUTH_SECRET="supersecret`
+- `-e BASIC_AUTH_SECRET="supersecret"`
 to your docker arguments. This will enable the Basic Authentication check.
 
 Then you can connect through `http/sse` as usual given that you pass an `Authorization: Bearer supersecret` header with your secret as Bearer token.

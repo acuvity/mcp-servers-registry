@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-atlas-docs",
+  "name": "mcp-server-atlas-docs",
+  "description": "Provides AI assistants with technical docs for libraries and frameworks.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-atlas-docs",
+      "application": "https://github.com/CartographAI/atlas-docs-mcp"
+    },
+  "tags": ["research","integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.2.0",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": "A",
+  "resources": {
+    "tools": 5,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

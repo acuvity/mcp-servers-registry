@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-aws-terraform",
-  "name": "mcp-server-aws-terraform ",
+  "name": "mcp-server-aws-terraform",
   "description": "Terraform AWS best practices, infrastructure as code patterns, and security compliance with Checkov.",
   "links":
     {

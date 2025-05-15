@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 6.7.0
+appVersion: 6.8.1
 keywords:
   - mcp-server-prisma
   - mcp-server

@@ -10,19 +10,23 @@
     },
     {
       "name": "find_flaky_tests",
-      "hash": "071518ede9eb2150402c8cc65bab719c6da6a737e05ad4368d33f65239dda823"
+      "hash": "d7791ab55054527245f4201e3f3e852a2260aabb35703b49b88f617f585ce931"
     },
     {
       "name": "get_build_failure_logs",
-      "hash": "7bdf20e9458756f919198a4b252114b938b9ae9ba1e0f17054d017f122fb8f6a"
+      "hash": "0a53cd10b05b19c22e09353276900b0eac42fae325a0a17f0404a38eb917a3da"
     },
     {
       "name": "get_job_test_results",
-      "hash": "35e3644736d55092c2440a22a149723aec580b67bb50dd2ca992cf730ef58950"
+      "hash": "f193e7ccd1d8695d7c7b830f6ad58ec602a544b679c1309bc6d19a7ec9d61b72"
     },
     {
       "name": "get_latest_pipeline_status",
-      "hash": "001776fe014c5d6888cec8a06ab7a9d13727a98039b382f4c93376de0a37549d"
+      "hash": "63b01e12f1d869921e612fd53bc8f010312aeec0af67a2a9fad71a73114bdb49"
+    },
+    {
+      "name": "list_followed_projects",
+      "hash": "505f69b885e2acbd4c3210dd5d405128bef0b85673ecbe797674ecb358410533"
     },
     {
       "name": "recommend_prompt_template_tests",
@@ -30,7 +34,7 @@
     },
     {
       "name": "run_pipeline",
-      "hash": "174ffc75d1ac03d5824ae5b5cdf4f71edc85473c473b54ebc2f240883efedfca"
+      "hash": "61a4e833d3f451f1e5677b7389e316d08daaf247f9fa25df5f1a59ac4ba3b128"
     }
   ],
   "prompts": []

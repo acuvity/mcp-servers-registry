@@ -1,0 +1,13 @@
+env:
+
+secrets:
+  CHANNEL_ACCESS_TOKEN:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  DESTINATION_USER_ID:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

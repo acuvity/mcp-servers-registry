@@ -1,0 +1,106 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "base.fullname" . }}
+  labels:
+    {{- include "base.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "base.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "base.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "base.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          args:
+          {{- range .Values.args }}
+            - {{ . }}
+          {{- end }}
+          env:
+          {{- include "minibridge.env" . | nindent 12}}
+            - name: CHROMA_API_KEY
+            - name: CHROMA_CLIENT_TYPE
+              value: {{ required "env.CHROMA_CLIENT_TYPE is required" .Values.env.CHROMA_CLIENT_TYPE}}
+            - name: CHROMA_CUSTOM_AUTH_CREDENTIALS
+              value: {{ .Values.env.CHROMA_CUSTOM_AUTH_CREDENTIALS}}
+            - name: CHROMA_DATABASE
+              value: {{ required "env.CHROMA_DATABASE is required" .Values.env.CHROMA_DATABASE}}
+            - name: CHROMA_DATA_DIR
+              value: {{ .Values.env.CHROMA_DATA_DIR}}
+            - name: CHROMA_HOST
+              value: {{ required "env.CHROMA_HOST is required" .Values.env.CHROMA_HOST}}
+            - name: CHROMA_PORT
+              value: {{ required "env.CHROMA_PORT is required" .Values.env.CHROMA_PORT}}
+            - name: CHROMA_SSL
+              value: {{ .Values.env.CHROMA_SSL}}
+            - name: CHROMA_TENANT
+              value: {{ required "env.CHROMA_TENANT is required" .Values.env.CHROMA_TENANT}}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default (printf  "%s-%s" .Chart.Version .Chart.AppVersion) }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP
+            - name: health
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            {{- toYaml .Values.livenessProbe | nindent 12 }}
+          readinessProbe:
+            {{- toYaml .Values.readinessProbe | nindent 12 }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: {{ include "base.fullname" . }}-sandbox
+              mountPath: /tmp
+            - name: {{ include "base.fullname" . }}-secrets
+              mountPath: /secrets/
+          {{- with .Values.volumeMounts }}
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+      volumes:
+        - name: {{ include "base.fullname" . }}-sandbox
+          emptyDir: {}
+        - name: {{ include "base.fullname" . }}-secrets
+          secret:
+            secretName: {{ include "base.fullname" . }}-secrets
+            items:
+              {{- include "minibridge.items" .  | nindent 14 }}
+      {{- with .Values.volumes }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

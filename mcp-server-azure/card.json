@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-azure",
+  "name": "mcp-server-azure",
+  "description": "Integrates AI agents with Azure services for enhanced functionality.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-azure",
+      "application": "https://github.com/Azure/azure-mcp"
+    },
+  "tags": ["cloud","development"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.0.18",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "A",
+  "resources": {
+    "tools": 51,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

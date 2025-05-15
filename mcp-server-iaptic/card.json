@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-iaptic",
+  "name": "mcp-server-iaptic",
+  "description": "Connect AIs to Iaptic data for customer and transaction insights.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-iaptic",
+      "application": "https://github.com/iaptic/mcp-server-iaptic"
+    },
+  "tags": ["integration","database"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1.0.1",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "A",
+  "resources": {
+    "tools": 16,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

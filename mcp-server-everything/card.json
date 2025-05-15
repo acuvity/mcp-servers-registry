@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-everything",
-  "name": "mcp-server-everything ",
+  "name": "mcp-server-everything",
   "description": "MCP server that exercises all the features of the MCP protocol",
   "links":
     {
@@ -12,7 +12,7 @@
   "scope": "standalone",
   "mutitenant": true,
   "runtime": "node",
-  "version": "2025.4.28",
+  "version": "2025.5.12",
   "requiresConfiguration": false,
   "requiresStorage": false,
   "rating": "C",

@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-browserbase",
-  "name": "mcp-server-browserbase ",
+  "name": "mcp-server-browserbase",
   "description": "Automate browser interactions in the cloud (e.g. web navigation, data extraction, form filling).",
   "links":
     {

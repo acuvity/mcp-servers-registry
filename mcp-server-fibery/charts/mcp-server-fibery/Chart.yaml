@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-fibery"
+description: A Helm chart for Integrates Fibery workspace with LLMs using natural language queries.
+home: https://github.com/Fibery-inc/fibery-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/Fibery-inc/fibery-mcp-server
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.1.3
+keywords:
+  - mcp-server-fibery
+  - mcp-server
+  - remote
+  - integration

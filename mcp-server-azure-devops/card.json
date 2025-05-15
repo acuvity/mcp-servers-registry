@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-azure-devops",
-  "name": "mcp-server-azure-devops ",
+  "name": "mcp-server-azure-devops",
   "description": "Azure DevOps integration for repository management, work items, and pipelines.",
   "links":
     {
@@ -12,7 +12,7 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.1.36",
+  "version": "0.1.37",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "rating": "C",

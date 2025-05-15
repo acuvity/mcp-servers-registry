@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-neo4j-cypher"
+description: A Helm chart for Manage Cypher graph queries between LLMs and Neo4j with natural language queries.
+home: https://github.com/neo4j-contrib/mcp-neo4j
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/neo4j-contrib/mcp-neo4j
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.2.1
+keywords:
+  - mcp-server-neo4j-cypher
+  - mcp-server
+  - remote
+  - database
+  - integration

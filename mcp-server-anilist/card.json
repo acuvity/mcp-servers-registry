@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-anilist",
-  "name": "mcp-server-anilist ",
+  "name": "mcp-server-anilist",
   "description": "An MCP server integrating AniList API for anime and manga information.",
   "links":
     {

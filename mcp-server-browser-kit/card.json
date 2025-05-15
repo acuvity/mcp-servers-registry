@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-browser-kit",
-  "name": "mcp-server-browser-kit ",
+  "name": "mcp-server-browser-kit",
   "description": "An MCP Server for interacting with manifest v2 compatible browsers.",
   "links":
     {

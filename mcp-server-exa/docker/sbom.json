@@ -1,0 +1,19 @@
+{
+  "tools": [
+    {
+      "name": "web_search_exa",
+      "hash": "aa95da9a6a92902ba01f3d04f7f6f409feaaf7413f222423030a6b787e7a52ea",
+      "params": [
+        {
+          "name": "numResults",
+          "hash": "5efcada65f753994e052c0dacd93213124520c6856dd2348a1604aee96a5ed69"
+        },
+        {
+          "name": "query",
+          "hash": "9eef05233ecfc1fbcfe756aa79bd497fa20e58144012561b562b8856040f5100"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

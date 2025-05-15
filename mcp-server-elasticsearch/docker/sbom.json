@@ -1,0 +1,33 @@
+{
+  "tools": [
+    {
+      "name": "get_mappings",
+      "hash": "9250939ebd53af6866bcd1c4f474ce862a54c6de58f2eaeef5f5264e9984aee6",
+      "params": [
+        {
+          "name": "index",
+          "hash": "0bbb8a48a088f25bac568841969164e9128c201e3673a6834fe394fd39e13948"
+        }
+      ]
+    },
+    {
+      "name": "list_indices",
+      "hash": "b8a9570272491ac3a8a50f6009acfbc97753f022318662f71c07d16e9b93304b"
+    },
+    {
+      "name": "search",
+      "hash": "4a3465c20f6a856aed825f0cd9a2b1c61f2df1538a893fba996e3d523ba3b1a7",
+      "params": [
+        {
+          "name": "index",
+          "hash": "6efea7c8a491d022de8e644b5952989153fa0ee52f6973f4613ea167d5ddec9c"
+        },
+        {
+          "name": "queryBody",
+          "hash": "4bbad88e58ece79cf1b74de26a51d0e39e02c53845153cb9d390e6382657431e"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

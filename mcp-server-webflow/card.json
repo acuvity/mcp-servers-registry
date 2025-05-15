@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-webflow",
+  "name": "mcp-server-webflow",
+  "description": "Enables AI agents to interact with Webflow APIs.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-webflow",
+      "application": "https://github.com/webflow/mcp-server"
+    },
+  "tags": ["web","integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.5.1",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "A",
+  "resources": {
+    "tools": 26,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

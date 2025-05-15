@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-alchemy",
-  "name": "mcp-server-alchemy ",
+  "name": "mcp-server-alchemy",
   "description": "Allow AI agents to interact with Alchemy's blockchain APIs.",
   "links":
     {

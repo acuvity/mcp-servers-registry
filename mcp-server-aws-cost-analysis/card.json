@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-aws-cost-analysis",
-  "name": "mcp-server-aws-cost-analysis ",
+  "name": "mcp-server-aws-cost-analysis",
   "description": "Analyze CDK projects to identify AWS services used and get pricing information.",
   "links":
     {
@@ -12,10 +12,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": "A",
   "resources": {
     "tools": 6,
     "prompts": 0,

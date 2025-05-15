@@ -1,0 +1,148 @@
+{
+  "tools": [
+    {
+      "name": "compare-audience-influencers",
+      "hash": "c75816db3b063857d0a1be18ea81eebf28c80c972700fcaea7471314a11fc05a",
+      "params": [
+        {
+          "name": "audience_influencers_id",
+          "hash": "6a182663654dbd32044ce7137d6059173650cf45f332a55b4939b889aa37a9b2"
+        },
+        {
+          "name": "baseline_audience_influencers_id",
+          "hash": "fe6b66e7d340edfbe5cc9a28b1c583d87a65874bb40c6fd2dfbd7062dd0bcf18"
+        },
+        {
+          "name": "bio_keyword",
+          "hash": "b277a92bf7daf1d81b95f37f44d051b27e5054e4954ac444d2d9276136c62ccc"
+        },
+        {
+          "name": "categories",
+          "hash": "16b80f11515361087542af6e4d202d4aed8e7d4e5c9ef5b9ec6804e04fa113bc"
+        },
+        {
+          "name": "count",
+          "hash": "90b3761c6274f71e1bf83dc8399db65d775510fe5be4ad439caeff7e168f4c8a"
+        },
+        {
+          "name": "countries",
+          "hash": "693fd227a244fa9e5c04e1ed03beab0357849504e4e9bcb3d987859471814d85"
+        },
+        {
+          "name": "cursor",
+          "hash": "76f7b7f4f1f3eeddedc1f7f8026751253a0d4050089636459f31ab297c14604c"
+        },
+        {
+          "name": "entity_type",
+          "hash": "00a30fe5b0c7e442cc474952e80c0d505ac5f265989235f29199763ed855f7b1"
+        },
+        {
+          "name": "followers_max",
+          "hash": "9e46adf0d9ab5c1f7accd877e39e2a99d9abc4bef14b78c8fc47d4c5b8841e36"
+        },
+        {
+          "name": "followers_min",
+          "hash": "60e38f5660b3522f0bc107da75c0620410cea959a5a4dd4a8f3972764cecd831"
+        }
+      ]
+    },
+    {
+      "name": "get-audience-content",
+      "hash": "1df83209e1715907fd786ec04830f159d18cd474ed2d18adb329c1f20988dd76",
+      "params": [
+        {
+          "name": "audience_content_id",
+          "hash": "aa09d5835896f5cae1da7454aa172cbba896adc28d01136beada3e37538a9873"
+        }
+      ]
+    },
+    {
+      "name": "get-audience-insights",
+      "hash": "6500098a020aaa1464aeba184121ed9459cce38194ec4c996214de9af5048d46",
+      "params": [
+        {
+          "name": "audience_insights_id",
+          "hash": "f4eb81ba76c43facec24c4a7e2a802247a835552c63e1b252a75ecffd8801117"
+        },
+        {
+          "name": "insights",
+          "hash": "dc947e232680d8e5e7e464f74d88f25cb2773654b6ad5c3ff394e0ccf6d1e610"
+        }
+      ]
+    },
+    {
+      "name": "get-baselines",
+      "hash": "db84b495243ab59a99b6c3729fd794ee9813c32062bb2bce7698673dd2f9a889",
+      "params": [
+        {
+          "name": "country",
+          "hash": "ece3252c19a249446d1f3797b3a85cadcde97492454f87c2e3bb1f9a9102d78e"
+        }
+      ]
+    },
+    {
+      "name": "get-categories",
+      "hash": "3440182ccc2168841de5bb024a4d077fa90b8159066c7c43e0db967d81eaf5b1"
+    },
+    {
+      "name": "get-report-info",
+      "hash": "1adba7e29e76da8c61f273ef4ae10e3b0f813b3082d1406029bc1d5fc3cc24eb",
+      "params": [
+        {
+          "name": "report_id",
+          "hash": "0847aac6ca19c3c9f96e268eb279f3607d58b76358f71a1069c2c36396990f5b"
+        }
+      ]
+    },
+    {
+      "name": "get-reports",
+      "hash": "d80396ec200a048aeb6ff9228027166c40d523337fd0d8bece3c9c6583a76f70"
+    },
+    {
+      "name": "report-summary",
+      "hash": "fde00c8859afb7cf357bf670411fb579213b05dbc4c325bec729975b2cf1a26c",
+      "params": [
+        {
+          "name": "report_id",
+          "hash": "5e571c91a4591b6f41c54f39370a77e1eb7d7237b6fc89c46e620021c1c47841"
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "name": "audiense-demo",
+      "hash": "40332d402fd30cba47b01f05854cd3ac4190f1ebd000a3e627944aa6106cc4cf",
+      "params": [
+        {
+          "name": "reportName",
+          "hash": "008df0ad49d0fb8b21990591531178f15c5e776f7610c955622aae994343a3d5"
+        }
+      ]
+    },
+    {
+      "name": "audiense-demo2",
+      "hash": "40332d402fd30cba47b01f05854cd3ac4190f1ebd000a3e627944aa6106cc4cf",
+      "params": [
+        {
+          "name": "reportName",
+          "hash": "008df0ad49d0fb8b21990591531178f15c5e776f7610c955622aae994343a3d5"
+        }
+      ]
+    },
+    {
+      "name": "segment-matching",
+      "hash": "75c417a3e9d24b21d54873676aecfe238336848fadba9e6a495b8fcefb48fb33",
+      "params": [
+        {
+          "name": "brand1",
+          "hash": "4f2dd26ed146c9a5875a6c46a69bef687be6347df077c521e568921b2cd45794"
+        },
+        {
+          "name": "brand2",
+          "hash": "15390d336c6cb0a03f341eae3cf943d8638ca54a0df54a9313269701fde9565d"
+        }
+      ]
+    }
+  ]
+}

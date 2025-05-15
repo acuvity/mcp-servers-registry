@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-aws-lambda",
-  "name": "mcp-server-aws-lambda ",
+  "name": "mcp-server-aws-lambda",
   "description": "AWS Lambda integration to select and run Lambda function as MCP tools without code changes.",
   "links":
     {
@@ -12,7 +12,7 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "rating": "nil",

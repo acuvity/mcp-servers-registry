@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-3d-printer",
+  "name": "mcp-server-3d-printer",
+  "description": "Connects to various 3D printers for management and STL manipulation.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-3d-printer",
+      "application": "https://github.com/DMontgomery40/mcp-3D-printer-server"
+    },
+  "tags": ["automation","development"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1.0.2",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 15,
+    "prompts": 0,
+    "resources": 2,
+    "resourcesTemplates": 0
+  }
+}

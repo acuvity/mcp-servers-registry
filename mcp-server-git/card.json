@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-git",
-  "name": "mcp-server-git ",
+  "name": "mcp-server-git",
   "description": "Tools to read, search, and manipulate Git repositories.",
   "links":
     {

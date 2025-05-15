@@ -1,0 +1,63 @@
+{
+  "tools": [
+    {
+      "name": "gyazo_image",
+      "hash": "3615b4dc537b75d625dfcd0ecf847b647ad9f42ecfc3e9c9774fc60556ad0111",
+      "params": [
+        {
+          "name": "id_or_url",
+          "hash": "c48c56514df9ead4426d207d3b87ae8abbbfc9ff1a48a9d909daac64d4c28fb5"
+        }
+      ]
+    },
+    {
+      "name": "gyazo_latest_image",
+      "hash": "9d4950b1c6846b0e37e6e9e31d41ce4a11b36af616589a62038a60a7777aebba"
+    },
+    {
+      "name": "gyazo_search",
+      "hash": "d410dbf5f47d41dd878b6f4d0d1fc8154b167da2fd74b30d8e258f0103057c99",
+      "params": [
+        {
+          "name": "page",
+          "hash": "f6889ee3bdc7faaf34e7880f8839b337fe2eebe475334f7f9704ecf9f1a518e0"
+        },
+        {
+          "name": "per",
+          "hash": "d1dc44ea8f3276ad41742357c07650aa5e6aa71f8040e8b1b5b2d35a50210f32"
+        },
+        {
+          "name": "query",
+          "hash": "3ebe2932751743d2b36d3df89a42f82a7cb20d16a6c3850730c87f3c9716797f"
+        }
+      ]
+    },
+    {
+      "name": "gyazo_upload",
+      "hash": "52fdae3600e9a904a07a79a3b792f2ed1bad6b2cb658e3450eed2f9e09c5173b",
+      "params": [
+        {
+          "name": "app",
+          "hash": "e7283a6c1e23f664577c046994b2b7fad9e5d93e57ff2762ed575053ccf6cbb3"
+        },
+        {
+          "name": "description",
+          "hash": "85c97e185b6d650099a5b050d65f11bcac40cb185f5ab030d7ad29881ce753e6"
+        },
+        {
+          "name": "imageData",
+          "hash": "23d8f4e3a4b856508bbbf225dab6b36883d863eedcffbe7fda1f70d1da70b552"
+        },
+        {
+          "name": "refererUrl",
+          "hash": "6aad4e22beaac8bcb56b65f25e199aac2f4a9b0af06c6fdf17a4fdd215c07478"
+        },
+        {
+          "name": "title",
+          "hash": "3abef38068033f912c794bc13c466c19345975892b815ed82e1b357bd1a6d160"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

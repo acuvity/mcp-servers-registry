@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-atla",
-  "name": "mcp-server-atla ",
+  "name": "mcp-server-atla",
   "description": "Enable AI agents to interact with the Atla API for state-of-the-art LLMJ evaluation.",
   "links":
     {

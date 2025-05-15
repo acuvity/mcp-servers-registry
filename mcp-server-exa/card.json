@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-exa",
+  "name": "mcp-server-exa",
+  "description": "MCP server enabling AI models to perform real-time web searches.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-exa",
+      "application": "https://github.com/exa-labs/exa-mcp-server"
+    },
+  "tags": ["web","research"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.3.9",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

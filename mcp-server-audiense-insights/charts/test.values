@@ -1,0 +1,18 @@
+env:
+
+secrets:
+  AUDIENSE_CLIENT_ID:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  AUDIENSE_CLIENT_SECRET:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  TWITTER_BEARER_TOKEN:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

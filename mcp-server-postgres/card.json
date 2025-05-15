@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-postgres",
+  "name": "mcp-server-postgres",
+  "description": "PostgreSQL database integration with schema inspection and query capabilities.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-postgres",
+      "application": "https://github.com/crystaldba/postgres-mcp"
+    },
+  "tags": ["database","integration","development"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.2.1",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "C",
+  "resources": {
+    "tools": 9,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

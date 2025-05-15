@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-benborla-mysql",
-  "name": "mcp-server-benborla-mysql ",
+  "name": "mcp-server-benborla-mysql",
   "description": "MySQL database integration in NodeJS with configurable access controls and schema inspection.",
   "links":
     {

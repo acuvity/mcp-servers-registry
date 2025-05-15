@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-openapi-schema",
+  "name": "mcp-server-openapi-schema",
+  "description": "Exposes OpenAPI schemas for LLMs to explore and understand APIs.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-openapi-schema",
+      "application": "https://github.com/hannesj/mcp-openapi-schema"
+    },
+  "tags": ["integration","development"],
+  "official": false,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.0.1",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 10,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

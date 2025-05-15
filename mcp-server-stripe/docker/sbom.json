@@ -1,0 +1,303 @@
+{
+  "tools": [
+    {
+      "name": "cancel_subscription",
+      "hash": "d5281016042105579ae2a20d2a396079fb439841ddc0f676ef3d27d83d17e958",
+      "params": [
+        {
+          "name": "subscription",
+          "hash": "42e215a7b67f6ae499397aaf15101d76be4df0d9febbd882689a9d5a9e994a38"
+        }
+      ]
+    },
+    {
+      "name": "create_coupon",
+      "hash": "5cf3de2f3f4ed527ed78b7856e96bca2f03cc3d0f50b7f779ea750613dd72f45",
+      "params": [
+        {
+          "name": "amount_off",
+          "hash": "662ab3bae58b4f78aa70f94897a17cc8bb196446a28edacdbff267b1b675b261"
+        },
+        {
+          "name": "currency",
+          "hash": "67f3cfd155e356aabe08688e2fc99aa8fd91f0f02cbd5befeacb2dfd818f03ca"
+        },
+        {
+          "name": "duration",
+          "hash": "e133b98bdc5958fa7b51bd462154eea63d67f898fa19f999385e1c814f9fad55"
+        },
+        {
+          "name": "duration_in_months",
+          "hash": "116f8855af22567351c3020c82ff0800253774ac67649d07d3de09dc1a39ebd4"
+        },
+        {
+          "name": "name",
+          "hash": "1efa27a394677fdc5bcf3b4268fbcd5e3446866dd46f845d2f008a60c704bfaf"
+        },
+        {
+          "name": "percent_off",
+          "hash": "1094c36561b031126d3ebeec5cad56b1c840567ace96bca2b62e9b32d8b31416"
+        }
+      ]
+    },
+    {
+      "name": "create_customer",
+      "hash": "cdb36e9003bdee45463ea4e037431b0d7eb7e9784393697088a7ff358439d07c",
+      "params": [
+        {
+          "name": "email",
+          "hash": "d99f7de004bba07590b37985b25aff5f5a6ba44c76e427eb2b438b5fb94aef33"
+        },
+        {
+          "name": "name",
+          "hash": "f7c1d74e50840e8c18f5bfe738a653242755b99893dfc118a9512391b0de33cb"
+        }
+      ]
+    },
+    {
+      "name": "create_invoice",
+      "hash": "58f4f1bf25184bdf480801b6207df7c4984df380982ee0a20bf694bc6f55b11c",
+      "params": [
+        {
+          "name": "customer",
+          "hash": "b35601d4b64cca25830fbde3acdcc09ffe201aace7db5afc8f2389977afed147"
+        },
+        {
+          "name": "days_until_due",
+          "hash": "1058c8c29ee0af000a7e54b13a210264226eb817cc544a494baa1c2b64243286"
+        }
+      ]
+    },
+    {
+      "name": "create_invoice_item",
+      "hash": "467fc2b816ac329789e6865f4d47175df8c3dd2b886cab156b2299cbaab583fd",
+      "params": [
+        {
+          "name": "customer",
+          "hash": "3c3fef960529e8c6b2fa71f3a43740103fd6d9bf35ad5cbc4e16ef2b03d15c62"
+        },
+        {
+          "name": "invoice",
+          "hash": "51c8ed0665f17d3b8c7caab19ae24998426670bfba0fdc21aeec6c49bf1ef5e3"
+        },
+        {
+          "name": "price",
+          "hash": "f8a3f965a97d74c6365019baede9a2ca2a3fecc3f355dbbed4ef4bce122056a0"
+        }
+      ]
+    },
+    {
+      "name": "create_payment_link",
+      "hash": "7ee22eb6a60c86051230fc7b96a8576f8528b883bb17658116bb7f0066561db3",
+      "params": [
+        {
+          "name": "price",
+          "hash": "1834560e20fba0615c43ff984736a2e457f2a4c3bcd257d8162a24be4711e284"
+        },
+        {
+          "name": "quantity",
+          "hash": "5ea512a9bfc715a014d96c1a5fa8373b16249bff70fe8e006c2abd7c8c947672"
+        }
+      ]
+    },
+    {
+      "name": "create_price",
+      "hash": "f34412f5f87a7c7f4b04b1e82c56b339f83ab88c2ad46a75ec07c8437bf5bc80",
+      "params": [
+        {
+          "name": "currency",
+          "hash": "6bf70be312491aea25785e8c8493a8499385cb847d6c9c92ce940e1938b67bf8"
+        },
+        {
+          "name": "product",
+          "hash": "1e7e6adb4a5eed36d1a299a36256283e48384b5f3e60b5c690b657b0eb81a74b"
+        },
+        {
+          "name": "unit_amount",
+          "hash": "b5104071601a65030e2346b9b82159b4b8fff925e48c0b51c52825a9ae0c0679"
+        }
+      ]
+    },
+    {
+      "name": "create_product",
+      "hash": "32b43c71827d6a88177c906bbd923c9d9eb8df042b851433e48d030fd8139c88",
+      "params": [
+        {
+          "name": "description",
+          "hash": "9ad594726497edd8cccdaa3f9355391c55f82c14bf8d4b2a38d67d89c84d8e8d"
+        },
+        {
+          "name": "name",
+          "hash": "10fb2d345d86f9a4ff66819a9c86da911e4279145cb8e38165344f25a6c8b885"
+        }
+      ]
+    },
+    {
+      "name": "create_refund",
+      "hash": "00248c92f357edb5c95becbb4c48ad80fc856a9671834fe08649539b16e2fea8",
+      "params": [
+        {
+          "name": "amount",
+          "hash": "411696a67aa2648bf2402d25aa027449bff6751b7c5d17138f597119fe757873"
+        },
+        {
+          "name": "payment_intent",
+          "hash": "2f4e95ca314084e590382769b935ee2967b889ae84ffe29bc02dc068a92f313e"
+        }
+      ]
+    },
+    {
+      "name": "finalize_invoice",
+      "hash": "3b1eb70ad88b54996fabe1eeb283b5de63f7c3f8784c045fba71dda5a9d022a7",
+      "params": [
+        {
+          "name": "invoice",
+          "hash": "99c68e1680159b1243962eafac81b37e098a216bb5877d03620d781d9b96191b"
+        }
+      ]
+    },
+    {
+      "name": "list_coupons",
+      "hash": "079483185ee0afd882046dc6c6116dd3d5bf8ecb8996126d2c0cd0ca6b128c6b",
+      "params": [
+        {
+          "name": "limit",
+          "hash": "405dd1ae7ab6f799c9c9986bf207e8a70fb9c28e5cb2e7d2a156376110adcb4f"
+        }
+      ]
+    },
+    {
+      "name": "list_customers",
+      "hash": "fc9b06c457fb3eb493b07ed356b206f5af23b639a7927fa1a825be345eb1acdd",
+      "params": [
+        {
+          "name": "email",
+          "hash": "f47c815e7de0eb1b22b8fbb8e45e361e740eef0f5424e493bfd008486157092a"
+        },
+        {
+          "name": "limit",
+          "hash": "405dd1ae7ab6f799c9c9986bf207e8a70fb9c28e5cb2e7d2a156376110adcb4f"
+        }
+      ]
+    },
+    {
+      "name": "list_disputes",
+      "hash": "428366597bd9e962d6d60137ace4f682d4d972ac26d535ef8fa1c2d4b2e0f028",
+      "params": [
+        {
+          "name": "charge",
+          "hash": "21d5f5856187b91973b747cc0082b1d42acd460e1590eca04166a65f67c93e6f"
+        },
+        {
+          "name": "limit",
+          "hash": "57d5fc0d10d76b72692dfbbdf55291b6b1cfbd91efcfaeb3cde0df383d144a27"
+        },
+        {
+          "name": "payment_intent",
+          "hash": "33646415f148b9d0d7d013a37e99e35d2b487b6dcfbd7baae8f884abdf7858b8"
+        }
+      ]
+    },
+    {
+      "name": "list_payment_intents",
+      "hash": "6f7b553eea744d425b376635973d57cdc1f09238dadffe2323ede06adc574a95",
+      "params": [
+        {
+          "name": "customer",
+          "hash": "bc0374954b25a175943a5945850bc71d6f79fe33cab1ca1acdc4b11017663cae"
+        },
+        {
+          "name": "limit",
+          "hash": "405dd1ae7ab6f799c9c9986bf207e8a70fb9c28e5cb2e7d2a156376110adcb4f"
+        }
+      ]
+    },
+    {
+      "name": "list_prices",
+      "hash": "7d812ea4358dd65dd48509fac27a63fa4300637bc38eb92d052dc8b66116e2ad",
+      "params": [
+        {
+          "name": "limit",
+          "hash": "57d5fc0d10d76b72692dfbbdf55291b6b1cfbd91efcfaeb3cde0df383d144a27"
+        },
+        {
+          "name": "product",
+          "hash": "4d665e81f834434730ae69a9775268b7c2a5244ff3fa8397367106b7a899819f"
+        }
+      ]
+    },
+    {
+      "name": "list_products",
+      "hash": "a55ba3daa31fbe9326d9faedfc0786b5221bcb9d3ace27cf6a0c1c39454f6044",
+      "params": [
+        {
+          "name": "limit",
+          "hash": "57d5fc0d10d76b72692dfbbdf55291b6b1cfbd91efcfaeb3cde0df383d144a27"
+        }
+      ]
+    },
+    {
+      "name": "list_subscriptions",
+      "hash": "52ad23c43d5e73fe19317cb349a057bacdaa98d5a2c697fded27e8008d1ef1aa",
+      "params": [
+        {
+          "name": "customer",
+          "hash": "db5ed475b5daffc615431940b1c2ad4591aeca70d3dd015d9bacbcaa1a5e7244"
+        },
+        {
+          "name": "limit",
+          "hash": "405dd1ae7ab6f799c9c9986bf207e8a70fb9c28e5cb2e7d2a156376110adcb4f"
+        },
+        {
+          "name": "price",
+          "hash": "640fe399e6d2c5d5f403be7b9245aba035edd21b89efbe7c38221fc8666404b1"
+        },
+        {
+          "name": "status",
+          "hash": "667b14ff3117138d9a12328076e00a8299eeb1948278fee5c6779307cacd9db4"
+        }
+      ]
+    },
+    {
+      "name": "retrieve_balance",
+      "hash": "9c8fb8707dc9e98c9757483f0aa2f977a038a71b68497f4c9ad53eaf645da603"
+    },
+    {
+      "name": "update_dispute",
+      "hash": "5e15c03bddac95ecc67e8cb9f7787892c2e01374cb503493c7cc37ee5ca26158",
+      "params": [
+        {
+          "name": "dispute",
+          "hash": "74fea5510e0aebdfeccc806d56d217925570a3e345dd1839fd8e6354e00e3d70"
+        },
+        {
+          "name": "evidence",
+          "hash": "671c39f2f893875fcfc38a784238f34e3adf49a73d925cf20d7c142cc918b305"
+        },
+        {
+          "name": "submit",
+          "hash": "cfb21f0558511ddd1a5dd845ff81906dccb4db0f8aa681d7433d6f0775267fe0"
+        }
+      ]
+    },
+    {
+      "name": "update_subscription",
+      "hash": "72580163c4f1e439e52b4b9eba9e0a7d46162a6e77c4781e001ce60f44077727",
+      "params": [
+        {
+          "name": "items",
+          "hash": "1ae3540c1a2f19b01acc532a404feb50b826328528ce72a340ff52b33f398e74"
+        },
+        {
+          "name": "proration_behavior",
+          "hash": "77e189a2197b1b43050008523be716c98970ff98b23c24c995b6d9896f5d1d8e"
+        },
+        {
+          "name": "subscription",
+          "hash": "37b9bbf503f3ec160f9ba6c7f283bc0cb155a5c6cd9ca5abaa094194110ea9f2"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

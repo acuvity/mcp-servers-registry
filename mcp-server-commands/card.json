@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-commands",
-  "name": "mcp-server-commands ",
+  "name": "mcp-server-commands",
   "description": "Run any command with `run_command` and `run_script` tools.",
   "links":
     {

@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-chart",
-  "name": "mcp-server-chart ",
+  "name": "mcp-server-chart",
   "description": "A Model Context Protocol server for generating visual charts using AntV.",
   "links":
     {

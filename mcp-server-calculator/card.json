@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-calculator",
-  "name": "mcp-server-calculator ",
+  "name": "mcp-server-calculator",
   "description": "This server enables LLMs to use calculator for precise numerical calculations.",
   "links":
     {

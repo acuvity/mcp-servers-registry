@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-fibery",
+  "name": "mcp-server-fibery",
+  "description": "Integrates Fibery workspace with LLMs using natural language queries.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-fibery",
+      "application": "https://github.com/Fibery-inc/fibery-mcp-server"
+    },
+  "tags": ["integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.1.3",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "D",
+  "resources": {
+    "tools": 7,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

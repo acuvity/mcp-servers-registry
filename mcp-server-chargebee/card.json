@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-chargebee",
-  "name": "mcp-server-chargebee ",
+  "name": "mcp-server-chargebee",
   "description": "MCP Server that connects AI agents to Chargebee platform.",
   "links":
     {

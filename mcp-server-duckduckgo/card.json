@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-duckduckgo",
+  "name": "mcp-server-duckduckgo",
+  "description": "Provides web search and content fetching using DuckDuckGo.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-duckduckgo",
+      "application": "https://github.com/nickclyde/duckduckgo-mcp-server"
+    },
+  "tags": ["web","research","integration"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.1.1",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": "D",
+  "resources": {
+    "tools": 2,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

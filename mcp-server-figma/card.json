@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-figma",
-  "name": "mcp-server-figma ",
+  "name": "mcp-server-figma",
   "description": "Provide coding agents direct access to Figma data to help them one-shot design implementation.",
   "links":
     {

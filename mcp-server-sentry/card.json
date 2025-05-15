@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-sentry",
-  "name": "mcp-server-sentry ",
+  "name": "mcp-server-sentry",
   "description": "Retrieving and analyzing issues from Sentry.io.",
   "links":
     {

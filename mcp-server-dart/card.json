@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-dart",
+  "name": "mcp-server-dart",
+  "description": "AI-powered project management server for task and document management.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-dart",
+      "application": "https://github.com/its-dart/dart-mcp-server"
+    },
+  "tags": ["research","development"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.1.13",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 11,
+    "prompts": 3,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

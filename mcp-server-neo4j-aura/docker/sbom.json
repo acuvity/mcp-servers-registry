@@ -1,0 +1,157 @@
+{
+  "tools": [
+    {
+      "name": "create_instance",
+      "hash": "80baa44396ebd55ced1067aedbe903b272b25cf774e4b8522abfffaa28e2c55a",
+      "params": [
+        {
+          "name": "cloud_provider",
+          "hash": "00d1bc80b1bfd822ea5c1f8841ba1bc8c11cb3872f4bc3a7089d58e2ebec92cd"
+        },
+        {
+          "name": "graph_analytics_plugin",
+          "hash": "8def195900bd8092ba29750fa754825d8732135258bef2f61da505919f012f7c"
+        },
+        {
+          "name": "memory",
+          "hash": "5b2ea7b2a454958e52b4bb1513010c83ff79c6eccc9180221ee33571caffafe5"
+        },
+        {
+          "name": "name",
+          "hash": "54081da08d575df2e4d41e44cee48e790231cd11f98d222f82bafe8e09408d8b"
+        },
+        {
+          "name": "region",
+          "hash": "fbdce11591760c8dd8f61f28d9342201ff2228bdf4258b81711683dac1ddff60"
+        },
+        {
+          "name": "source_instance_id",
+          "hash": "85223e99df4b3a9f2a230a517160a7be5c18f56032404876608554944507f8ca"
+        },
+        {
+          "name": "tenant_id",
+          "hash": "dfa994e46732ff6b54143e71270f8b57753caa63cd48764b7c7b4037f4212d61"
+        },
+        {
+          "name": "type",
+          "hash": "795b104c7fb6dc0e1bcba17197d90b30ca29a58da40b7dd18f6b154bddf15560"
+        },
+        {
+          "name": "vector_optimized",
+          "hash": "fb3d968e2e38bf593a1a0e1f1fb3371636a54c40e73ce27e76940c150bc82f88"
+        }
+      ]
+    },
+    {
+      "name": "delete_instance",
+      "hash": "3cba481e98eebe78fd76d167f88545b184dd1b4587c03cf6aa8baaa47bc23c48",
+      "params": [
+        {
+          "name": "instance_id",
+          "hash": "0a25da80c5a471e9002a0867d66b6a2621f0002680dff72739dc2ef142edb2fd"
+        }
+      ]
+    },
+    {
+      "name": "get_instance_by_name",
+      "hash": "7a7156771d31815248f8b0b7c3c68fceaab6ee42ebd83de066e2b48c5956915a",
+      "params": [
+        {
+          "name": "name",
+          "hash": "839fdf3f92f8f921b27c78e40b7fdfeef0d50d0939c7fc024c480735c5d9f847"
+        }
+      ]
+    },
+    {
+      "name": "get_instance_details",
+      "hash": "d1a9b3bb0746ae9983034431321f4dd6180d1539eb8f863fc7efd0c81c8a0440",
+      "params": [
+        {
+          "name": "instance_ids",
+          "hash": "dbed060556c31b6f6e11bca2713196252d25097e68ccd2213d3ea9781caa859e"
+        }
+      ]
+    },
+    {
+      "name": "get_tenant_details",
+      "hash": "c745e698b82622715bde20ba647ddcac1456a74562752256a1a48526e8bb5574",
+      "params": [
+        {
+          "name": "tenant_id",
+          "hash": "36fe884d113dbf24331cf2f9ab13a5c67cc9b2d48368c6c65d87f9ed790b39dc"
+        }
+      ]
+    },
+    {
+      "name": "list_instances",
+      "hash": "b5655f2bb53e2587f4d42e912b1d2a3665c8fccef971f85a1a11bfb33299f160"
+    },
+    {
+      "name": "list_tenants",
+      "hash": "2084e35eb28a90a1441cc16f8a7f26acc1dfacc2420f49057cbf761bfa0374af"
+    },
+    {
+      "name": "pause_instance",
+      "hash": "b201aabbdc3e9a711a967284c466b5a8ccc9fa6309eb315ad0b915fe6ff4a2be",
+      "params": [
+        {
+          "name": "instance_id",
+          "hash": "58e86331f004440a0318f214a1845953886336fd4cad8482b1e1d0aebe999749"
+        }
+      ]
+    },
+    {
+      "name": "resume_instance",
+      "hash": "35faffdd67b31d1072e17bdf868a59c8e429f46fc9b48bb39735fbbc45c7377c",
+      "params": [
+        {
+          "name": "instance_id",
+          "hash": "16b1860694e1aa570f5c17cf9868ad9d75edd91db8ca8aa5a115e439077a164a"
+        }
+      ]
+    },
+    {
+      "name": "update_instance_memory",
+      "hash": "0bed1112f1e4df8c5c45be867471ced8048d2b5b106e3d238cb719c28e6509c1",
+      "params": [
+        {
+          "name": "instance_id",
+          "hash": "03223ffbb84e345ef189a829eb628b38c4d8a3db1c4b80cb0dfe3edc79848b7a"
+        },
+        {
+          "name": "memory",
+          "hash": "0825a63f725396cae160b6955d5b5b8eb1cf1bd50b9404b0c1d0cb2b0b9dbb84"
+        }
+      ]
+    },
+    {
+      "name": "update_instance_name",
+      "hash": "11861fe155ebba028e5cdf44d3d5a834d9fe5c6b3b76fcc783fcb4cba78ea4e5",
+      "params": [
+        {
+          "name": "instance_id",
+          "hash": "03223ffbb84e345ef189a829eb628b38c4d8a3db1c4b80cb0dfe3edc79848b7a"
+        },
+        {
+          "name": "name",
+          "hash": "5af44d472513df51f72e4a2519e1c9edbcd6d9f83e9b3b8d93efa34c671684b5"
+        }
+      ]
+    },
+    {
+      "name": "update_instance_vector_optimization",
+      "hash": "5160aacb993f5adf974cb1301ff7519234e82bbe0517e497db02f1b3431f0045",
+      "params": [
+        {
+          "name": "instance_id",
+          "hash": "03223ffbb84e345ef189a829eb628b38c4d8a3db1c4b80cb0dfe3edc79848b7a"
+        },
+        {
+          "name": "vector_optimized",
+          "hash": "f1073ddf891723d499365366da70e89d16a6b7b6bd000a9e7c24eb49600e25fd"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

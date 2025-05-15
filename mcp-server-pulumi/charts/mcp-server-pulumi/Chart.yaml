@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-pulumi"
+description: A Helm chart for Server for programmatic Pulumi operations via Model Context Protocol.
+home: https://github.com/pulumi/mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/pulumi/mcp-server
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.1.2
+keywords:
+  - mcp-server-pulumi
+  - mcp-server
+  - remote
+  - automation
+  - development

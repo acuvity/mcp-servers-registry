@@ -1,0 +1,87 @@
+{
+  "tools": [
+    {
+      "name": "get-component",
+      "hash": "de5f1f4cc9a08536a8727ef26311cebd1802fc4a05a9f20a00786e64d982df10",
+      "params": [
+        {
+          "name": "name",
+          "hash": "f953ec3c72207ff39906c47776fea74871179cf482a4e66df52f946c660e9063"
+        },
+        {
+          "name": "type",
+          "hash": "c281fd18fa0a537f4827e26de07d8772619fcb4554a61d81699c9f57942acc01"
+        }
+      ]
+    },
+    {
+      "name": "get-endpoint",
+      "hash": "575735d4d397846e9a935f13813a52960d936f14b8c1c9a9f8a906008e5c5b1f"
+    },
+    {
+      "name": "get-examples",
+      "hash": "493b22116573c92e440ef22ccdbc630ec8a00e296ff753173bd31c9db2717407",
+      "params": [
+        {
+          "name": "componentName",
+          "hash": "98fc7fd684c284d0928364dabd1749d312e850062a1fd16bebd391384e2a9de6"
+        },
+        {
+          "name": "componentType",
+          "hash": "26469b14044022cd40ae9b2b6545596295a2fe323e192c4e27b55962ebdac5c2"
+        },
+        {
+          "name": "method",
+          "hash": "e0d6f9ccc1532c13b2edd9299b4c768cdf8deeba86f6a9012eb3b694f301a98e"
+        },
+        {
+          "name": "path",
+          "hash": "e4ba98fe5868bbf0638f1e3689d4e86e7821f7ddaa7180d36ae9c6cbbfc0fe74"
+        },
+        {
+          "name": "statusCode",
+          "hash": "63299ccee6e031fede9f4168cb004355c0d652046f30e0c67131fa5b74871ddf"
+        },
+        {
+          "name": "type",
+          "hash": "0a72f70f39a5fa6f9577ca5f9c12cfd7b32ca7febc246a37025e22af6888221e"
+        }
+      ]
+    },
+    {
+      "name": "get-path-parameters",
+      "hash": "128e00993eb20e9e81be36d25502a3e2afade0b1df81e0e29bc4299145ccb510"
+    },
+    {
+      "name": "get-request-body",
+      "hash": "3827a17430a19e595e85a67d8bf9b3a3f69178c80ce9243028e6955ee4fe5180"
+    },
+    {
+      "name": "get-response-schema",
+      "hash": "52b17641ff2092a9bc6f9324dbc48d8e6d76c4be1abec6765f782e5b67d1f643"
+    },
+    {
+      "name": "list-components",
+      "hash": "71c73446a0290795290e1d4f4ca88a6e3965136aad7567c2c36ad9c5bb3a4da3"
+    },
+    {
+      "name": "list-endpoints",
+      "hash": "00ad8ff0da02483b475a1080cbdfce8b5e4c3d3c56225085c5904243143bef59"
+    },
+    {
+      "name": "list-security-schemes",
+      "hash": "eaa419ff4f4f69d5d06c21d4e118d0bcd97c3754ac2f3e920cda1710ee48f9d5"
+    },
+    {
+      "name": "search-schema",
+      "hash": "debe4fe3e88326f30db34bbffa6ca2da45b1e744408809ace9274000d48a0d4d",
+      "params": [
+        {
+          "name": "pattern",
+          "hash": "2d1b094841bace6b9c645422bc157b2e8de381fe25b5eb95adac5922952972b7"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

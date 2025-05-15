@@ -29,7 +29,7 @@
 
 **Description:** Generate images using Amazon Nova Canvas with text prompts and color guidance.
 
-Packaged by Acuvity from awslabs.nova-canvas-mcp-server original [sources](https://pypi.org/project/awslabs.nova-canvas-mcp-server/).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from awslabs.nova-canvas-mcp-server original [sources](https://pypi.org/project/awslabs.nova-canvas-mcp-server/).
 
 **Quick links:**
 
@@ -122,10 +122,13 @@ Provides a lightweight auth layer using a single shared token.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
+
+To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-canvas/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-canvas/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-canvas/charts/mcp-server-aws-canvas#minibridge) for Helm charts).
+
 </details>
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active. To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-canvas/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-canvas/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-canvas/charts/mcp-server-aws-canvas#minibridge) for Helm charts).
+> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference

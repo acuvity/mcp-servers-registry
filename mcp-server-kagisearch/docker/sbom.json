@@ -1,0 +1,33 @@
+{
+  "tools": [
+    {
+      "name": "kagi_search_fetch",
+      "hash": "e326385debd1ac1af818083f18be642f67e46b832e6b3885d0cb85cc6d09254e",
+      "params": [
+        {
+          "name": "queries",
+          "hash": "13f9864a54a7a1097fe91b1bece7e73083377e86ff86b7193ebb5fe318793967"
+        }
+      ]
+    },
+    {
+      "name": "kagi_summarizer",
+      "hash": "61e7ed36b5de9358dbe776ebe0f844d7334fa7e4b5b055c23584551fbdf7bdb5",
+      "params": [
+        {
+          "name": "summary_type",
+          "hash": "878118f89b08ac289b43bb9e9cc3f4615349f96a5bce33bdc7ec6a6545677f24"
+        },
+        {
+          "name": "target_language",
+          "hash": "23c3f059096b7ea4fcf7b4c7935d53acbb1618520d108beae8d73772f9032d50"
+        },
+        {
+          "name": "url",
+          "hash": "a098d54ac24e66f7c4914f3ac45568bb1f0d0d0dfc773e5394298fe32f96c79d"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

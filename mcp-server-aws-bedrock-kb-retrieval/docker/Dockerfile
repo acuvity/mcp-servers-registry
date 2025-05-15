@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@24197b2f066b91986db7e600c72af3bf4c1701f0
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@8649bf59a9c0c0c63f73e4283224ea889c3a981c
 
 FROM ghcr.io/astral-sh/uv:python3.12-alpine
 
@@ -28,6 +28,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 RUN apk update \
     && apk add --no-cache curl
 
+
 HEALTHCHECK CMD curl --fail http://localhost:8080 || exit 1
 
 RUN addgroup -g 1001 -S appuser && \
@@ -43,7 +44,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uname -sm &&  uv venv && uv pip install awslabs.bedrock-kb-retrieval-mcp-server==0.1.8
+RUN uv venv && uv pip install awslabs.bedrock-kb-retrieval-mcp-server==0.1.8
 
 EXPOSE 8000/tcp
 

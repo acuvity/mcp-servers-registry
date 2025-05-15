@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-memory",
-  "name": "mcp-server-memory ",
+  "name": "mcp-server-memory",
   "description": "MCP server for enabling memory for Claude through a knowledge graph",
   "links":
     {

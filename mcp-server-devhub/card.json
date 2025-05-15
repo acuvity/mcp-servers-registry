@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-devhub",
+  "name": "mcp-server-devhub",
+  "description": "Manage content and operations in DevHub CMS using MCP.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-devhub",
+      "application": "https://github.com/devhub/devhub-cms-mcp"
+    },
+  "tags": ["automation","web","research"],
+  "official": true,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.3.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 10,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-elasticsearch",
+  "name": "mcp-server-elasticsearch",
+  "description": "Connects to Elasticsearch for natural language data queries.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-elasticsearch",
+      "application": "https://github.com/elastic/mcp-server-elasticsearch"
+    },
+  "tags": ["database","development"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.1.1",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "C",
+  "resources": {
+    "tools": 3,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

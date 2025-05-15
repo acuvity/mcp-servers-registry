@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-axiom",
-  "name": "mcp-server-axiom ",
+  "name": "mcp-server-axiom",
   "description": "Query and analyze your Axiom logs, traces, and all other event data in natural language.",
   "links":
     {

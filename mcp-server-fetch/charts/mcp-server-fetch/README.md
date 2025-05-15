@@ -29,7 +29,7 @@
 
 **Description:** A Model Context Protocol server providing tools to fetch and convert web content for usage by LLMs
 
-Packaged by Acuvity from mcp-server-fetch original [sources](https://pypi.org/project/mcp-server-fetch/).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from mcp-server-fetch original [sources](https://pypi.org/project/mcp-server-fetch/).
 
 **Quick links:**
 

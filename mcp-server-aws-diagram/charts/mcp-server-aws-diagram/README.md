@@ -22,14 +22,14 @@
 
 [![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-aws-diagram/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-diagram/0.9.3?logo=docker&logoColor=fff&label=0.9.3)](https://hub.docker.com/r/acuvity/mcp-server-aws-diagram)
-[![PyPI](https://img.shields.io/badge/0.9.3-3775A9?logo=pypi&logoColor=fff&label=awslabs.aws-diagram-mcp-server)](https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-diagram/0.9.5?logo=docker&logoColor=fff&label=0.9.5)](https://hub.docker.com/r/acuvity/mcp-server-aws-diagram)
+[![PyPI](https://img.shields.io/badge/0.9.5-3775A9?logo=pypi&logoColor=fff&label=awslabs.aws-diagram-mcp-server)](https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-diagram&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-diagram%3A0.9.3%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-diagram&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-diagram%3A0.9.5%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Create diagrams using the Python diagrams package: sequence, flow, and class diagrams.
 
-Packaged by Acuvity from awslabs.aws-diagram-mcp-server original [sources](https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from awslabs.aws-diagram-mcp-server original [sources](https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server).
 
 **Quick links:**
 
@@ -122,10 +122,13 @@ Provides a lightweight auth layer using a single shared token.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
+
+To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-diagram/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-diagram/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-diagram/charts/mcp-server-aws-diagram#minibridge) for Helm charts).
+
 </details>
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active. To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-diagram/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-diagram/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-diagram/charts/mcp-server-aws-diagram#minibridge) for Helm charts).
+> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference
@@ -152,7 +155,7 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.9.3`
+  - container: `1.0.0-0.9.5`
 
 ---
 
@@ -711,31 +714,26 @@ Get example code for different types of diagrams.
 **Description**:
 
 ```
-List all available icons from the diagrams package.
+List available icons from the diagrams package, with optional filtering.
 
-    This tool dynamically inspects the diagrams package to find all available
+    This tool dynamically inspects the diagrams package to find available
     providers, services, and icons that can be used in diagrams.
 
     USAGE INSTRUCTIONS:
-    1. Use this tool to discover all available icons in the diagrams package
-    2. The response is organized by provider (aws, on-premises, etc.)
-    3. Each provider contains services (compute, database, network, etc.)
-    4. Each service contains a list of available icons
+    1. Call without filters to get a list of available providers
+    2. Call with provider_filter to get all services and icons for that provider
+    3. Call with both provider_filter and service_filter to get icons for a specific service
 
-    Example:
-    If the response shows:
-    ```
-    {'aws': {'compute': ['EC2', 'Lambda', ...]}}
-    ```
+    Example workflow:
+    - First call: list_icons() → Returns all available providers
+    - Second call: list_icons(provider_filter="aws") → Returns all AWS services and icons
+    - Third call: list_icons(provider_filter="aws", service_filter="compute") → Returns AWS compute icons
 
-    You can use these icons in your code:
-    ```
-    with Diagram('AWS Example'):
-        EC2('web') >> Lambda('process')
-    ```
+    This approach is more efficient than loading all icons at once, especially when you only need
+    icons from specific providers or services.
 
     Returns:
-        Dictionary with all available providers, services, and icons organized hierarchically
+        Dictionary with available providers, services, and icons organized hierarchically
     
 ```
 
@@ -743,6 +741,8 @@ List all available icons from the diagrams package.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| provider_filter | any | Filter icons by provider name (e.g., "aws", "gcp", "k8s") | No
+| service_filter | any | Filter icons by service name (e.g., "compute", "database", "network") | No
 </details>
 
 
@@ -759,7 +759,9 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | generate_diagram | workspace_dir | 9c67dcd00125ed387e0c227a380de7ef09bf4436df7a7dd3431d2eb344539401 |
 | tools | get_diagram_examples | description | 77cd71a4aa7771c5e24ee9f1c5408097d6aeeeabf0f1d81111fd66866eff6247 |
 | tools | get_diagram_examples | diagram_type | 8312eac9e82e646c52570dd9c1cddef9bde26fbd6ed64417142f3997c577e373 |
-| tools | list_icons | description | 94cf469b391033f3d5a9386d5ceb0d08808cc06737c1cb18871e47310bc4e619 |
+| tools | list_icons | description | efde1637574dced2271967a96bcf9dd53209e0ae37cab741fe4e8127c6d777a4 |
+| tools | list_icons | provider_filter | 496c3f093ce7c6d6f70ecf40645eccc8f41f8d5fbb6ebeccfdc00b0d8e02d66a |
+| tools | list_icons | service_filter | dab014617a17e095c83e140162be63c24b379ef8b047fd8d8ed7ef5d13d5c60f |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-e2b",
+  "name": "mcp-server-e2b",
+  "description": "Adds code interpreting capabilities to the Claude Desktop app.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-e2b",
+      "application": "https://github.com/e2b-dev/mcp-server"
+    },
+  "tags": ["automation","development"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.2.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "C",
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

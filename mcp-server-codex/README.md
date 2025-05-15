@@ -29,7 +29,7 @@
 
 **Description:** Codex API integration for real-time enriched blockchain and market data on 60+ networks.
 
-Packaged by Acuvity from @codex-data/codex-mcp original [sources](https://github.com/Codex-Data/codex-mcp).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from @codex-data/codex-mcp original [sources](https://github.com/Codex-Data/codex-mcp).
 
 **Quick links:**
 
@@ -122,10 +122,13 @@ Provides a lightweight auth layer using a single shared token.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
+
+To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-codex/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-codex/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-codex/charts/mcp-server-codex#minibridge) for Helm charts).
+
 </details>
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active. To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-codex/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-codex/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-codex/charts/mcp-server-codex#minibridge) for Helm charts).
+> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # 📦 How to Install
@@ -354,18 +357,16 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -i --rm --read-only -e CODEX_API_KEY docker.io/acuvity/mcp-server-codex:0.1.3
+docker run -it -p 8000:8000 --rm --read-only -e CODEX_API_KEY docker.io/acuvity/mcp-server-codex:0.1.3
 ```
 
-Add `-p <localport>:8000` to expose the port.
-
-Then on your application/client, you can configure to use something like:
+Then on your application/client, you can configure to use it like:
 
 ```json
 {
   "mcpServers": {
     "acuvity-mcp-server-codex": {
-      "url": "http://localhost:<localport>/sse",
+      "url": "http://localhost:8000/sse"
     }
   }
 }
@@ -417,6 +418,8 @@ Minibridge offers a host of additional features. For step-by-step guidance, plea
 
 ## 🛡️ Runtime security
 
+**Guardrails:**
+
 To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
 - covert-instruction-detection
 - sensitive-pattern-detection
@@ -425,10 +428,15 @@ To activate guardrails in your Docker containers, define the `GUARDRAILS` enviro
 - cross-origin-tool-access
 - secrets-redaction
 
-for example, `-e GUARDRAILS="secrets-redaction covert-instruction-detection"` will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
+For example adding:
+- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
+to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
 
+**Basic Authentication:**
 
-To turn on Basic Authentication, set BASIC_AUTH_SECRET like `- e BASIC_AUTH_SECRET="supersecret`
+To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
+- `-e BASIC_AUTH_SECRET="supersecret"`
+to your docker arguments. This will enable the Basic Authentication check.
 
 Then you can connect through `http/sse` as usual given that you pass an `Authorization: Bearer supersecret` header with your secret as Bearer token.
 

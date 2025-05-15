@@ -1,0 +1,83 @@
+{
+  "tools": [
+    {
+      "name": "pulumi-cli-preview",
+      "hash": "77eebbe43ea5f25cc6c6afba4493876241cb4553c3c800fefa38414777f9001a",
+      "params": [
+        {
+          "name": "stackName",
+          "hash": "62db21bdc5f99aa735c5e247f7aa2b6a2df24ae221ab3bec8febd721ed361613"
+        },
+        {
+          "name": "workDir",
+          "hash": "197b126116a83a35d62f31f452c357c2b06c809cc9523c3ef31c02940ee17b98"
+        }
+      ]
+    },
+    {
+      "name": "pulumi-cli-stack-output",
+      "hash": "4b26ee5e37a27ae0158d38c55fe154141fe0068d75f5ef35a60f78ffab49ffd0",
+      "params": [
+        {
+          "name": "outputName",
+          "hash": "af5e3b5255274599dd681b448adaa308c2c9aa54bb3203fecb449b2fd2a4db2a"
+        },
+        {
+          "name": "stackName",
+          "hash": "62db21bdc5f99aa735c5e247f7aa2b6a2df24ae221ab3bec8febd721ed361613"
+        },
+        {
+          "name": "workDir",
+          "hash": "197b126116a83a35d62f31f452c357c2b06c809cc9523c3ef31c02940ee17b98"
+        }
+      ]
+    },
+    {
+      "name": "pulumi-cli-up",
+      "hash": "76e44523dd1858cf57baa3a7014a59eac6a8b8d352f0cfbb530c18ddbddf3336",
+      "params": [
+        {
+          "name": "stackName",
+          "hash": "62db21bdc5f99aa735c5e247f7aa2b6a2df24ae221ab3bec8febd721ed361613"
+        },
+        {
+          "name": "workDir",
+          "hash": "197b126116a83a35d62f31f452c357c2b06c809cc9523c3ef31c02940ee17b98"
+        }
+      ]
+    },
+    {
+      "name": "pulumi-registry-get-resource",
+      "hash": "8d2766376fa62799080b02c7916d4f482ac3be24fbe897e101384bb32258d9be",
+      "params": [
+        {
+          "name": "module",
+          "hash": "912e142e135630c83cb0e36edc94b26ef20354d5b8e38f3ec948dccfac468bca"
+        },
+        {
+          "name": "provider",
+          "hash": "10128898059af3093cf26e98c16097f70b2db1b2912ca6b498295c0e4f8a58b0"
+        },
+        {
+          "name": "resource",
+          "hash": "bd4be36001049fe09082abdb3eecc5b2a427e0d1fb0b0873bb28a897be45263b"
+        }
+      ]
+    },
+    {
+      "name": "pulumi-registry-list-resources",
+      "hash": "c020cf469c10b34c06eed648d7a647881a1b5b2ee1cd482b605f74afed6cce82",
+      "params": [
+        {
+          "name": "module",
+          "hash": "de9a6844786d8547d8e984bdb7c39b73da5ac3917ae7761d956471cc31160d18"
+        },
+        {
+          "name": "provider",
+          "hash": "10128898059af3093cf26e98c16097f70b2db1b2912ca6b498295c0e4f8a58b0"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

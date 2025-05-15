@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-github-chat",
+  "name": "mcp-server-github-chat",
+  "description": "Analyzes and queries GitHub repositories using the GitHub Chat API.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-github-chat",
+      "application": "https://github.com/AsyncFuncAI/github-chat-mcp"
+    },
+  "tags": ["automation","web"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.1.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 2,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

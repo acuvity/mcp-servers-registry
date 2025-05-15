@@ -1,0 +1,13 @@
+env:
+
+secrets:
+  LARA_ACCESS_KEY_ID:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  LARA_ACCESS_KEY_SECRET:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

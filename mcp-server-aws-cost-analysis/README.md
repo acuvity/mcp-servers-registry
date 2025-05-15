@@ -20,16 +20,16 @@
 
 # What is mcp-server-aws-cost-analysis?
 
-[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-aws-cost-analysis/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-cost-analysis/0.1.10?logo=docker&logoColor=fff&label=0.1.10)](https://hub.docker.com/r/acuvity/mcp-server-aws-cost-analysis)
-[![PyPI](https://img.shields.io/badge/0.1.10-3775A9?logo=pypi&logoColor=fff&label=awslabs.cost-analysis-mcp-server)](https://pypi.org/project/awslabs.cost-analysis-mcp-server/)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-cost-analysis/0.1.11?logo=docker&logoColor=fff&label=0.1.11)](https://hub.docker.com/r/acuvity/mcp-server-aws-cost-analysis)
+[![PyPI](https://img.shields.io/badge/0.1.11-3775A9?logo=pypi&logoColor=fff&label=awslabs.cost-analysis-mcp-server)](https://pypi.org/project/awslabs.cost-analysis-mcp-server/)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-cost-analysis&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AWS_PROFILE%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-cost-analysis%3A0.1.10%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-cost-analysis&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AWS_PROFILE%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-cost-analysis%3A0.1.11%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Analyze CDK projects to identify AWS services used and get pricing information.
 
-Packaged by Acuvity from awslabs.cost-analysis-mcp-server original [sources](https://pypi.org/project/awslabs.cost-analysis-mcp-server/).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from awslabs.cost-analysis-mcp-server original [sources](https://pypi.org/project/awslabs.cost-analysis-mcp-server/).
 
 **Quick links:**
 
@@ -122,10 +122,13 @@ Provides a lightweight auth layer using a single shared token.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
+
+To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-cost-analysis/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-cost-analysis/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-cost-analysis/charts/mcp-server-aws-cost-analysis#minibridge) for Helm charts).
+
 </details>
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active. To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-cost-analysis/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-cost-analysis/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-cost-analysis/charts/mcp-server-aws-cost-analysis#minibridge) for Helm charts).
+> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # 📦 How to Install
@@ -147,7 +150,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-cost-analysis&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AWS_PROFILE%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-cost-analysis%3A0.1.10%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-cost-analysis&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AWS_PROFILE%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-cost-analysis%3A0.1.11%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -169,7 +172,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "--read-only",
           "-e",
           "AWS_PROFILE",
-          "docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.10"
+          "docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.11"
         ]
       }
     }
@@ -196,7 +199,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "--read-only",
         "-e",
         "AWS_PROFILE",
-        "docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.10"
+        "docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.11"
       ]
     }
   }
@@ -227,7 +230,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "--read-only",
         "-e",
         "AWS_PROFILE",
-        "docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.10"
+        "docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.11"
       ]
     }
   }
@@ -260,7 +263,7 @@ Add the following JSON block to your mcp configuration file:
         "--read-only",
         "-e",
         "AWS_PROFILE",
-        "docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.10"
+        "docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.11"
       ]
     }
   }
@@ -291,7 +294,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "--read-only",
         "-e",
         "AWS_PROFILE",
-        "docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.10"
+        "docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.11"
       ]
     }
   }
@@ -311,7 +314,7 @@ async with MCPServerStdio(
     params={
         "env": {"AWS_PROFILE":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","AWS_PROFILE","docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.10"]
+        "args": ["run","-i","--rm","--read-only","-e","AWS_PROFILE","docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.11"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -344,7 +347,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e AWS_PROFILE docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.10`
+- arguments: `run -i --rm --read-only -e AWS_PROFILE docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.11`
 
 </details>
 
@@ -354,18 +357,16 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -i --rm --read-only -e AWS_PROFILE docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.10
+docker run -it -p 8000:8000 --rm --read-only -e AWS_PROFILE docker.io/acuvity/mcp-server-aws-cost-analysis:0.1.11
 ```
 
-Add `-p <localport>:8000` to expose the port.
-
-Then on your application/client, you can configure to use something like:
+Then on your application/client, you can configure to use it like:
 
 ```json
 {
   "mcpServers": {
     "acuvity-mcp-server-aws-cost-analysis": {
-      "url": "http://localhost:<localport>/sse",
+      "url": "http://localhost:8000/sse"
     }
   }
 }
@@ -417,6 +418,8 @@ Minibridge offers a host of additional features. For step-by-step guidance, plea
 
 ## 🛡️ Runtime security
 
+**Guardrails:**
+
 To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
 - covert-instruction-detection
 - sensitive-pattern-detection
@@ -425,10 +428,15 @@ To activate guardrails in your Docker containers, define the `GUARDRAILS` enviro
 - cross-origin-tool-access
 - secrets-redaction
 
-for example, `-e GUARDRAILS="secrets-redaction covert-instruction-detection"` will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
+For example adding:
+- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
+to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
 
+**Basic Authentication:**
 
-To turn on Basic Authentication, set BASIC_AUTH_SECRET like `- e BASIC_AUTH_SECRET="supersecret`
+To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
+- `-e BASIC_AUTH_SECRET="supersecret"`
+to your docker arguments. This will enable the Basic Authentication check.
 
 Then you can connect through `http/sse` as usual given that you pass an `Authorization: Bearer supersecret` header with your secret as Bearer token.
 
@@ -535,16 +543,34 @@ Get pricing information from AWS pricing webpage. Service codes typically use lo
 Get pricing information from AWS Price List API.
     Service codes for API often differ from web URLs.
     (e.g., use "AmazonES" for OpenSearch, not "AmazonOpenSearchService").
+    List of service codes can be found with `curl 'https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/index.json' | jq -r '.offers| .[] | .offerCode'`
     IMPORTANT GUIDELINES:
     - When retrieving foundation model pricing, always use the latest models for comparison
     - For database compatibility with services, only include confirmed supported databases
     - Providing less information is better than giving incorrect information
+
+    Filters should be provided in the format:
+    [
+        {
+            'Field': 'feeCode',
+            'Type': 'TERM_MATCH',
+            'Value': 'Glacier:EarlyDelete'
+        },
+        {
+            'Field': 'regionCode',
+            'Type': 'TERM_MATCH',
+            'Value': 'ap-southeast-1'
+        }
+    ]
+    Details of the filter can be found at https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_Filter.html
+    
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| filters | any | not set | No
 | region | string | not set | Yes
 | service_code | string | not set | Yes
 </details>
@@ -693,7 +719,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | analyze_terraform_project | description | a8ceeb0db4ad6ad0150cef1304093130bb62aef8cbc3f87bc9bad4ef9b11c865 |
 | tools | generate_cost_report | description | 06f4b7e6b649a5b590f75b53abb7a0ac52f98c4f8ea4eb94087da149dcfb3191 |
 | tools | get_bedrock_patterns | description | 24a3e539acdc6692395ef35f1b997e07afb0786c7baf7d894c865609791b9d00 |
-| tools | get_pricing_from_api | description | 26ebf13783337949a02727bb57b280b24713e6ddaf725cc7e040a56d80506c79 |
+| tools | get_pricing_from_api | description | d2a4a78b0f549948dd23f6afdf0f7666f230bbfcf07fc5512873d33bbf6df121 |
 | tools | get_pricing_from_web | description | 8e993e44283a59883ac8ca582f22deb90659d6f30af4f7e41aaa947a17dc9736 |
 
 

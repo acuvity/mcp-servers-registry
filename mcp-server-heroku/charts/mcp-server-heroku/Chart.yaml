@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-heroku"
+description: A Helm chart for Facilitate LLMs interaction with Heroku Platform resources.
+home: https://github.com/heroku/heroku-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/heroku/heroku-mcp-server
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 1.0.4
+keywords:
+  - mcp-server-heroku
+  - mcp-server
+  - remote
+  - integration
+  - cloud
+  - development

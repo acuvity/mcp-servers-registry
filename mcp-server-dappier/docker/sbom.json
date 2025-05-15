@@ -1,0 +1,49 @@
+{
+  "tools": [
+    {
+      "name": "dappier_ai_recommendations",
+      "hash": "0d1687726bd7c65a863a0f08a0798ccde70431794ee3b4393b893e1ce06a5aa9",
+      "params": [
+        {
+          "name": "data_model_id",
+          "hash": "9d6633872358b823058b63048693f55cae5e0646b59b0b3f67f52a292c38550e"
+        },
+        {
+          "name": "num_articles_ref",
+          "hash": "615b5281ca32d115c961e24a4232844d8cfc9276b0625271e23a71056c057046"
+        },
+        {
+          "name": "query",
+          "hash": "cf086c9b38301e723f21dc049a1cb8bdc2298aca02c23f0e47c650d853f30464"
+        },
+        {
+          "name": "ref",
+          "hash": "9d72b9c5fee7987a12b01f81f1ac50c75b1e2921003c6e7db73fdceefba95919"
+        },
+        {
+          "name": "search_algorithm",
+          "hash": "68f0227d926291d8d078db6d36a2bd69bb42c5ec021103b4168b3c7b163113de"
+        },
+        {
+          "name": "similarity_top_k",
+          "hash": "53771706fd4bf820d6bb604a02d65d370baec3167a3f76bcdcfc0b6f718b9328"
+        }
+      ]
+    },
+    {
+      "name": "dappier_real_time_search",
+      "hash": "1ec1530b5734b5814541e508ef74d0344e94ea477fdda801dbff46cfc95474a2",
+      "params": [
+        {
+          "name": "ai_model_id",
+          "hash": "34ff6a6a3c38577b4271e3df550c610a5907024cbe6764177d10997877533da3"
+        },
+        {
+          "name": "query",
+          "hash": "0c6a49a41224b9625be25ebda8d143877588c71e35e0f69a03d5c13e6a1bd246"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

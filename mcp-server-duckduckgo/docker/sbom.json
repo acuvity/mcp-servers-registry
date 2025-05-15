@@ -1,0 +1,13 @@
+{
+  "tools": [
+    {
+      "name": "fetch_content",
+      "hash": "899891630b4ec3d3e86cf1529e0810c37619a5b75c76d175f4ec0f5780dcc9c2"
+    },
+    {
+      "name": "search",
+      "hash": "94b54bbe5e5c87712e0e11a0b1adece65f8750536b0045273dc4a410eda87e0c"
+    }
+  ],
+  "prompts": []
+}

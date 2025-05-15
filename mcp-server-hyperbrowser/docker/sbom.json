@@ -1,0 +1,167 @@
+{
+  "tools": [
+    {
+      "name": "browser_use_agent",
+      "hash": "9f30643bbe130688e8b1486876b99ae3a126e1e947329a98e898917ce1b0775e",
+      "params": [
+        {
+          "name": "returnStepInfo",
+          "hash": "6fd77c54b1fd5707e5f1d561952e639dc2ce6af466b6c0d89457cc10f4b3d1c3"
+        },
+        {
+          "name": "sessionOptions",
+          "hash": "82e76186168e5618d6508918b298731490fd491ab45e733374096016fdc299f9"
+        },
+        {
+          "name": "task",
+          "hash": "d86b9390a14d28a895670d40d9282b52f19906dbeb1c6fbdd1be658cbd28ea1f"
+        }
+      ]
+    },
+    {
+      "name": "claude_computer_use_agent",
+      "hash": "aeb3065e3e9cf6acb7ed3bd38440f4ee9ec78abb68e786479c58c7f5477f3803",
+      "params": [
+        {
+          "name": "returnStepInfo",
+          "hash": "6fd77c54b1fd5707e5f1d561952e639dc2ce6af466b6c0d89457cc10f4b3d1c3"
+        },
+        {
+          "name": "sessionOptions",
+          "hash": "82e76186168e5618d6508918b298731490fd491ab45e733374096016fdc299f9"
+        },
+        {
+          "name": "task",
+          "hash": "d86b9390a14d28a895670d40d9282b52f19906dbeb1c6fbdd1be658cbd28ea1f"
+        }
+      ]
+    },
+    {
+      "name": "crawl_webpages",
+      "hash": "32153377a9aa1654b71dc94db9a0575b9b9ed318963dae7164b837aa959a46cd",
+      "params": [
+        {
+          "name": "followLinks",
+          "hash": "a808ee712212405e3a5282ac380908fc08233e9cafda90ba66e5d239674917aa"
+        },
+        {
+          "name": "outputFormat",
+          "hash": "b858159483d2693009577f2d363babd1adffaf3b2903ac1883cd69d447ee06a8"
+        },
+        {
+          "name": "sessionOptions",
+          "hash": "82e76186168e5618d6508918b298731490fd491ab45e733374096016fdc299f9"
+        },
+        {
+          "name": "url",
+          "hash": "8e9859796a12e9320af4f0d3de519ed3a7a3a41576fffeae6140fb25811a8dec"
+        }
+      ]
+    },
+    {
+      "name": "create_profile",
+      "hash": "f00a82ed7d28090b4f26d2a747ff963abcf13f96a0bfc1f312b6e75f3f8d23b9"
+    },
+    {
+      "name": "delete_profile",
+      "hash": "e265d2f6a5fb1f9d886510d8cea03dc3e136ad2ba80c242acacd9ecd1a827a5b",
+      "params": [
+        {
+          "name": "profileId",
+          "hash": "ec7d43f54152b25bfb4969ee2fe0a44be8439173cc85306e1cfc8ba29d030804"
+        }
+      ]
+    },
+    {
+      "name": "extract_structured_data",
+      "hash": "a203fe9c3d4703705e6bd6036692bc0816418032d184e5b5ba634aeddc90d8b5",
+      "params": [
+        {
+          "name": "prompt",
+          "hash": "00505f63b29ac07654374b391c5d44789b9b31500eef5b96b00ab4957531d12d"
+        },
+        {
+          "name": "schema",
+          "hash": "673fd9b74f26960f5e953e0ef6dfa4d77c3850d77231225394e7dae3eae7c309"
+        },
+        {
+          "name": "sessionOptions",
+          "hash": "82e76186168e5618d6508918b298731490fd491ab45e733374096016fdc299f9"
+        },
+        {
+          "name": "urls",
+          "hash": "d473451546d84ccf59c686e1a20e5627e681ba49723958779ec4d5cd370f7fe6"
+        }
+      ]
+    },
+    {
+      "name": "list_profiles",
+      "hash": "9a8ff3692145c0203085acba55c1ddb83a6fc4b936806e1d458f83ba0fba7b3b",
+      "params": [
+        {
+          "name": "limit",
+          "hash": "dcbdf1bfc9b42909f6bb487396cecc1ac1e66612765c0a8a42c7579651faf5aa"
+        },
+        {
+          "name": "page",
+          "hash": "98a0867b63c70eb1a310c104e968310b536e2c57b23f1a3e5c94c36a1268114f"
+        }
+      ]
+    },
+    {
+      "name": "openai_computer_use_agent",
+      "hash": "c0faf745449591f9443462181b05839c68f2ab81bcac457e7a970e423d07f71b",
+      "params": [
+        {
+          "name": "returnStepInfo",
+          "hash": "6fd77c54b1fd5707e5f1d561952e639dc2ce6af466b6c0d89457cc10f4b3d1c3"
+        },
+        {
+          "name": "sessionOptions",
+          "hash": "82e76186168e5618d6508918b298731490fd491ab45e733374096016fdc299f9"
+        },
+        {
+          "name": "task",
+          "hash": "d86b9390a14d28a895670d40d9282b52f19906dbeb1c6fbdd1be658cbd28ea1f"
+        }
+      ]
+    },
+    {
+      "name": "scrape_webpage",
+      "hash": "8e3fd9c57ed12338ff8c874ecc9395f7f3dfe56c0c9b456cd8824efb15223900",
+      "params": [
+        {
+          "name": "outputFormat",
+          "hash": "b858159483d2693009577f2d363babd1adffaf3b2903ac1883cd69d447ee06a8"
+        },
+        {
+          "name": "sessionOptions",
+          "hash": "82e76186168e5618d6508918b298731490fd491ab45e733374096016fdc299f9"
+        },
+        {
+          "name": "url",
+          "hash": "a8c70529a5a2fd4e637ec140b8ec2b3b75bc8bed6d0530018e88f677949d349a"
+        }
+      ]
+    },
+    {
+      "name": "search_with_bing",
+      "hash": "c718f6814bebc3d5ed5d237494839b7c94855caafafa92ecd9b1fb7c52d721d2",
+      "params": [
+        {
+          "name": "numResults",
+          "hash": "9f3b8de8323c5195866eaf4fe5fb6c5cfa1ec9025da54bb7ed4f1576f28e1abe"
+        },
+        {
+          "name": "query",
+          "hash": "2f5b6df977b54263575776c19cf2f402aa633b3b7e7b2dc8c56156d5a96deb9a"
+        },
+        {
+          "name": "sessionOptions",
+          "hash": "82e76186168e5618d6508918b298731490fd491ab45e733374096016fdc299f9"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

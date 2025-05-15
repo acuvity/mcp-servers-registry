@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-aws-bedrock-kb-retrieval",
-  "name": "mcp-server-aws-bedrock-kb-retrieval ",
+  "name": "mcp-server-aws-bedrock-kb-retrieval",
   "description": "Query Amazon Bedrock Knowledge Bases using natural language to retrieve relevant information.",
   "links":
     {

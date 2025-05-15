@@ -1,0 +1,33 @@
+{
+  "tools": [
+    {
+      "name": "index_repository",
+      "hash": "aa66d0bb34f53011c6b81500e23cda04c6f911c90b54a2dc88727c98b8a5588b",
+      "params": [
+        {
+          "name": "repo_url",
+          "hash": "6d2222cd42adae24f6039d954e17e8542ad53536da3164fc3a06a388b67cffd1"
+        }
+      ]
+    },
+    {
+      "name": "query_repository",
+      "hash": "e2ec9ce99eeb06d50c58dd457f25f20a0c2a878b6bd33893ef08411460a50413",
+      "params": [
+        {
+          "name": "conversation_history",
+          "hash": "cd8625f4ebe95640a94ae0a5167267b43c6741d42327b5735d8890f1e09c1e5e"
+        },
+        {
+          "name": "question",
+          "hash": "d3d24be3bd55258b73864a05ca867bb4e601ad6dcc8fc4b64169769ce6ceff5c"
+        },
+        {
+          "name": "repo_url",
+          "hash": "58046b2425e953e8e23e58fecd976ab505476feacfcc223966c04509b70690fa"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

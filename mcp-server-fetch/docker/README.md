@@ -29,7 +29,7 @@
 
 **Description:** A Model Context Protocol server providing tools to fetch and convert web content for usage by LLMs
 
-Packaged by Acuvity from mcp-server-fetch original [sources](https://pypi.org/project/mcp-server-fetch/).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from mcp-server-fetch original [sources](https://pypi.org/project/mcp-server-fetch/).
 
 **Quick links:**
 
@@ -358,18 +358,16 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -i --rm --read-only docker.io/acuvity/mcp-server-fetch:2025.4.7
+docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-fetch:2025.4.7
 ```
 
-Add `-p <localport>:8000` to expose the port.
-
-Then on your application/client, you can configure to use something like:
+Then on your application/client, you can configure to use it like:
 
 ```json
 {
   "mcpServers": {
     "acuvity-mcp-server-fetch": {
-      "url": "http://localhost:<localport>/sse",
+      "url": "http://localhost:8000/sse"
     }
   }
 }
@@ -438,7 +436,7 @@ to your docker arguments will enable the `secrets-redaction` and `covert-instruc
 **Basic Authentication:**
 
 To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
-- `-e BASIC_AUTH_SECRET="supersecret`
+- `-e BASIC_AUTH_SECRET="supersecret"`
 to your docker arguments. This will enable the Basic Authentication check.
 
 Then you can connect through `http/sse` as usual given that you pass an `Authorization: Bearer supersecret` header with your secret as Bearer token.

@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-obsidian",
-  "name": "mcp-server-obsidian ",
+  "name": "mcp-server-obsidian",
   "description": "Interacting with Obsidian via REST API.",
   "links":
     {

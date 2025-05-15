@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-dappier",
+  "name": "mcp-server-dappier",
+  "description": "Real-time web search and access to premium media data.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-dappier",
+      "application": "https://github.com/dappierai/dappier-mcp"
+    },
+  "tags": ["web","research","finance"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.3.2",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 2,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

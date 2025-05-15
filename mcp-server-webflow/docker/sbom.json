@@ -1,0 +1,343 @@
+{
+  "tools": [
+    {
+      "name": "add_inline_site_script",
+      "hash": "da4ad46026aff6c1441513d12afdfd7f0d735ac69b77f117abe1acaea4ac1a95",
+      "params": [
+        {
+          "name": "request",
+          "hash": "aa102df180b52825def499e4fe43678565faa9b5d49fb7f252c89e645f251e25"
+        },
+        {
+          "name": "site_id",
+          "hash": "c012e27d6f83f7433a656f22db20bee7dd830a37e94f37cc6378935ada9243a3"
+        }
+      ]
+    },
+    {
+      "name": "collection_fields_create_option",
+      "hash": "62a672e665513acde53ce1a510df12fc2e7f7689f9a3bb18fd1bd15f224fe285",
+      "params": [
+        {
+          "name": "collection_id",
+          "hash": "66d4114e3cddf0a95068c7be63e8966d91e952f972207e7a31beb949190c7a6b"
+        }
+      ]
+    },
+    {
+      "name": "collection_fields_create_reference",
+      "hash": "bef40d710120c44326c891a239d241cd71673f253f09f04272f442d865e80957",
+      "params": [
+        {
+          "name": "collection_id",
+          "hash": "66d4114e3cddf0a95068c7be63e8966d91e952f972207e7a31beb949190c7a6b"
+        }
+      ]
+    },
+    {
+      "name": "collection_fields_create_static",
+      "hash": "ba8c9655fc6d1fcdca20a3ccb99563c489f0926a60791c733e24085e50f8005c",
+      "params": [
+        {
+          "name": "collection_id",
+          "hash": "66d4114e3cddf0a95068c7be63e8966d91e952f972207e7a31beb949190c7a6b"
+        }
+      ]
+    },
+    {
+      "name": "collection_fields_update",
+      "hash": "9b2bd3f2e812c999d93db7c3a6fe04f90a5285e1d74144030b69deaf12270ae9",
+      "params": [
+        {
+          "name": "collection_id",
+          "hash": "66d4114e3cddf0a95068c7be63e8966d91e952f972207e7a31beb949190c7a6b"
+        },
+        {
+          "name": "field_id",
+          "hash": "ae4d9ca9be1202b3aa55e265518c58fe345fbb73d09b64ad2a02f91fd4a47bb4"
+        },
+        {
+          "name": "request",
+          "hash": "8c2ca159b99a3327d48f1a044b8a51d937b17363e29fddc22112f521bdf43648"
+        }
+      ]
+    },
+    {
+      "name": "collections_create",
+      "hash": "6f8c2d10f17e8b3bf111d0fa51c9965a11b554b0ca3ced2d5efc39b3e425d1e2",
+      "params": [
+        {
+          "name": "site_id",
+          "hash": "093137d76773f00522f69fe5d1d79d3f7189422258e583dd0fb7ddb13528f614"
+        }
+      ]
+    },
+    {
+      "name": "collections_get",
+      "hash": "8dc2b780368dc65efbc4a296c22a24e8574001aeb4ae3e24d7eef434ba11a615",
+      "params": [
+        {
+          "name": "collection_id",
+          "hash": "66d4114e3cddf0a95068c7be63e8966d91e952f972207e7a31beb949190c7a6b"
+        }
+      ]
+    },
+    {
+      "name": "collections_items_create_item",
+      "hash": "7e4ba46da466f9cbb3c98b14775d0aaa16bc699072bb5c6e1fe414137689a26c"
+    },
+    {
+      "name": "collections_items_create_item_live",
+      "hash": "c34348e4d6324531de00ad31fb0cd8853047260672eaa9af5f19a3c13af7d1af",
+      "params": [
+        {
+          "name": "collection_id",
+          "hash": "66d4114e3cddf0a95068c7be63e8966d91e952f972207e7a31beb949190c7a6b"
+        }
+      ]
+    },
+    {
+      "name": "collections_items_delete_item",
+      "hash": "1a0c3cf174193bce310f0aedfa97e5e361a05cd452634df04c590764842d21ba",
+      "params": [
+        {
+          "name": "cmsLocaleIds",
+          "hash": "2c80366881f730cbfdd6a5a84e297d080fb9b122f5d862e7d93907291ddf73c3"
+        },
+        {
+          "name": "collection_id",
+          "hash": "66d4114e3cddf0a95068c7be63e8966d91e952f972207e7a31beb949190c7a6b"
+        },
+        {
+          "name": "itemId",
+          "hash": "93b52bccace2b195765c4741576378311e1a6dc3a7e9d99a54eb3d2f38d4db83"
+        }
+      ]
+    },
+    {
+      "name": "collections_items_list_items",
+      "hash": "53f750ec5891295e8c14703fde1be5ef65153477a59d56e58d5affbb11cc98b3",
+      "params": [
+        {
+          "name": "cmsLocaleId",
+          "hash": "2c80366881f730cbfdd6a5a84e297d080fb9b122f5d862e7d93907291ddf73c3"
+        },
+        {
+          "name": "collection_id",
+          "hash": "66d4114e3cddf0a95068c7be63e8966d91e952f972207e7a31beb949190c7a6b"
+        },
+        {
+          "name": "limit",
+          "hash": "9146b99529c5390536212dc3047f99237c2a9402947460621fca401c975971f0"
+        },
+        {
+          "name": "name",
+          "hash": "7d2df8838eff32f65b6f7c489a378fa2cd3644d368476d0e47fc16ed5766e92c"
+        },
+        {
+          "name": "offset",
+          "hash": "013a5e06eec0d5bb7168a7e6e0bdc90458bd75b6b108a41e2e8ac255b60af65d"
+        },
+        {
+          "name": "slug",
+          "hash": "49d7fede96b1d9e1ba74f82ac8c8ba4042b748b58f164bc5c27108a4a416a1c4"
+        },
+        {
+          "name": "sortBy",
+          "hash": "5eaec853a1daebd92184126702156f4a18f7c2c5570b730ce0fef3e9f931ba98"
+        },
+        {
+          "name": "sortOrder",
+          "hash": "ba6d082117b479734c4dce7f7201f26a31aa5144bd51b840f64b45ade5ff95e9"
+        }
+      ]
+    },
+    {
+      "name": "collections_items_publish_items",
+      "hash": "770b23bbb398e3161554349f34af62684369a285f1cca171aaa54695a88019fd",
+      "params": [
+        {
+          "name": "collection_id",
+          "hash": "66d4114e3cddf0a95068c7be63e8966d91e952f972207e7a31beb949190c7a6b"
+        },
+        {
+          "name": "itemIds",
+          "hash": "41b108aec95f8e6903de0af0b611968f0b934721ad353e47297cc1d05a027074"
+        }
+      ]
+    },
+    {
+      "name": "collections_items_update_items",
+      "hash": "0c2b38b1977b3b0b275c9e3e7896c55b7061575e062f74843564711490ea9c62",
+      "params": [
+        {
+          "name": "collection_id",
+          "hash": "66d4114e3cddf0a95068c7be63e8966d91e952f972207e7a31beb949190c7a6b"
+        }
+      ]
+    },
+    {
+      "name": "collections_items_update_items_live",
+      "hash": "00f101eab1a826bbc3c594a42fae7948d4175cbbb8946dae7ea4111d7e439566",
+      "params": [
+        {
+          "name": "collection_id",
+          "hash": "66d4114e3cddf0a95068c7be63e8966d91e952f972207e7a31beb949190c7a6b"
+        }
+      ]
+    },
+    {
+      "name": "collections_list",
+      "hash": "180e254b26e6204a9c607ca35cd5b77bd5d0f3b2d6421e0cb1308a9628d3e032",
+      "params": [
+        {
+          "name": "site_id",
+          "hash": "093137d76773f00522f69fe5d1d79d3f7189422258e583dd0fb7ddb13528f614"
+        }
+      ]
+    },
+    {
+      "name": "delete_all_site_scripts",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "pages_get_content",
+      "hash": "effc85cda69758932ff15da05b2058f56f8c281d4ec570932e4e18e744ef8a46",
+      "params": [
+        {
+          "name": "limit",
+          "hash": "9146b99529c5390536212dc3047f99237c2a9402947460621fca401c975971f0"
+        },
+        {
+          "name": "localeId",
+          "hash": "d2d12c4615bc4314a64f68a62885839a4ec8340cede10c10e342f95fedf106f6"
+        },
+        {
+          "name": "offset",
+          "hash": "013a5e06eec0d5bb7168a7e6e0bdc90458bd75b6b108a41e2e8ac255b60af65d"
+        },
+        {
+          "name": "page_id",
+          "hash": "5b478ff3d1213d27fa9d28ca41910e9c282e9f54d3883d799532a1bf75275158"
+        }
+      ]
+    },
+    {
+      "name": "pages_get_metadata",
+      "hash": "fe6591dc6226af8c68550b3fa1fc33ca48aefe0a391030ccdfa42fd8e2e826c5",
+      "params": [
+        {
+          "name": "localeId",
+          "hash": "d2d12c4615bc4314a64f68a62885839a4ec8340cede10c10e342f95fedf106f6"
+        },
+        {
+          "name": "page_id",
+          "hash": "5b478ff3d1213d27fa9d28ca41910e9c282e9f54d3883d799532a1bf75275158"
+        }
+      ]
+    },
+    {
+      "name": "pages_list",
+      "hash": "acdb1a75cfe59d3c84d2d4fe37a0cf0d16d204b927253fd8a2039a4ec375424c",
+      "params": [
+        {
+          "name": "limit",
+          "hash": "9146b99529c5390536212dc3047f99237c2a9402947460621fca401c975971f0"
+        },
+        {
+          "name": "localeId",
+          "hash": "d2d12c4615bc4314a64f68a62885839a4ec8340cede10c10e342f95fedf106f6"
+        },
+        {
+          "name": "offset",
+          "hash": "013a5e06eec0d5bb7168a7e6e0bdc90458bd75b6b108a41e2e8ac255b60af65d"
+        },
+        {
+          "name": "site_id",
+          "hash": "1add0001e1327e44b502de21faf1f7d001ad50c2d3ac250ed54e83c650f66a27"
+        }
+      ]
+    },
+    {
+      "name": "pages_update_page_settings",
+      "hash": "cb85ebb21f2a2d5d3a0a85614f3095d8a3ea9cf88518004e1cfd4cc913962624",
+      "params": [
+        {
+          "name": "localeId",
+          "hash": "d2d12c4615bc4314a64f68a62885839a4ec8340cede10c10e342f95fedf106f6"
+        },
+        {
+          "name": "page_id",
+          "hash": "5b478ff3d1213d27fa9d28ca41910e9c282e9f54d3883d799532a1bf75275158"
+        }
+      ]
+    },
+    {
+      "name": "pages_update_static_content",
+      "hash": "b2acdb4ed19d91fb06e288f976ba927547715bdfc6dc30604cdb138f43ce5ee3",
+      "params": [
+        {
+          "name": "localeId",
+          "hash": "d2d12c4615bc4314a64f68a62885839a4ec8340cede10c10e342f95fedf106f6"
+        },
+        {
+          "name": "page_id",
+          "hash": "5b478ff3d1213d27fa9d28ca41910e9c282e9f54d3883d799532a1bf75275158"
+        }
+      ]
+    },
+    {
+      "name": "site_applied_scripts_list",
+      "hash": "7f84d7cba120774d342ab8f4cba857c2bfe0dd1c6be3ccd367abca9c159e810a",
+      "params": [
+        {
+          "name": "site_id",
+          "hash": "c012e27d6f83f7433a656f22db20bee7dd830a37e94f37cc6378935ada9243a3"
+        }
+      ]
+    },
+    {
+      "name": "site_registered_scripts_list",
+      "hash": "7ff87b19559b7c7f4977b7d9b0a368dd23d08f48adacd2b8093672bd4e6acc34",
+      "params": [
+        {
+          "name": "site_id",
+          "hash": "c012e27d6f83f7433a656f22db20bee7dd830a37e94f37cc6378935ada9243a3"
+        }
+      ]
+    },
+    {
+      "name": "sites_get",
+      "hash": "5b82168721ca142a8df5b4bca54e4f6447d518a729e62291e0d8bbd8a13a5cb6",
+      "params": [
+        {
+          "name": "site_id",
+          "hash": "c012e27d6f83f7433a656f22db20bee7dd830a37e94f37cc6378935ada9243a3"
+        }
+      ]
+    },
+    {
+      "name": "sites_list",
+      "hash": "35adeea1cc0ffb3caf7a994028ed2cd993f7a465721bd59263558b1475bc113f"
+    },
+    {
+      "name": "sites_publish",
+      "hash": "3d55371074f85622832e649d4e5c38b88ed2643f12ee1172d5116c3960faa4f1",
+      "params": [
+        {
+          "name": "customDomains",
+          "hash": "18fbd2084e46f0039226e64c99f75c9250c1f422135d86eb7f67a794d9de7ede"
+        },
+        {
+          "name": "publishToWebflowSubdomain",
+          "hash": "f5362553c613f1672e8cd06f80b846ce5c5c234243670b590fce486cea5d89c4"
+        },
+        {
+          "name": "site_id",
+          "hash": "c012e27d6f83f7433a656f22db20bee7dd830a37e94f37cc6378935ada9243a3"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

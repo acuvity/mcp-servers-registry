@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-doit"
+description: A Helm chart for Access DoiT API for analyzing cloud data and troubleshooting.
+home: https://github.com/doitintl/doit-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/doitintl/doit-mcp-server
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.1.22
+keywords:
+  - mcp-server-doit
+  - mcp-server
+  - remote
+  - research
+  - cloud
+  - web

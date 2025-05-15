@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-aws-core",
-  "name": "mcp-server-aws-core ",
+  "name": "mcp-server-aws-core",
   "description": "Core AWS MCP server providing prompt understanding and server management capabilities.",
   "links":
     {

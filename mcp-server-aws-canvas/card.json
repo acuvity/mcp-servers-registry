@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-aws-canvas",
-  "name": "mcp-server-aws-canvas ",
+  "name": "mcp-server-aws-canvas",
   "description": "Generate images using Amazon Nova Canvas with text prompts and color guidance.",
   "links":
     {

@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@24197b2f066b91986db7e600c72af3bf4c1701f0
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@8649bf59a9c0c0c63f73e4283224ea889c3a981c
 
 FROM node:23.11.0-alpine3.21
 
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-coda"
 LABEL org.opencontainers.image.description="MCP server for Coda."
-LABEL org.opencontainers.image.version="1.1.2"
+LABEL org.opencontainers.image.version="1.1.3"
 LABEL org.opencontainers.image.source="https://github.com/orellazri/coda-mcp"
 LABEL org.opencontainers.image.licenses="unknown"
 LABEL org.opencontainers.image.author="Author"
@@ -28,6 +28,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 RUN apk update \
     && apk add --no-cache curl
 
+
 HEALTHCHECK CMD curl --fail http://localhost:8080 || exit 1
 
 RUN addgroup -g 1001 -S appuser && \
@@ -37,7 +38,7 @@ RUN addgroup -g 1001 -S appuser && \
 
 USER appuser
 
-RUN npm i --omit-dev coda-mcp@1.1.2
+RUN npm i --omit-dev coda-mcp@1.1.3
 
 EXPOSE 8000/tcp
 

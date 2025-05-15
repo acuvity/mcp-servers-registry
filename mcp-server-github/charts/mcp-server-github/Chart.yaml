@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: v0.2.1
+appVersion: v0.3.0
 keywords:
   - mcp-server-github
   - mcp-server

@@ -1,0 +1,11 @@
+env:
+  CHROMA_CLIENT_TYPE: dummy_value
+  CHROMA_CUSTOM_AUTH_CREDENTIALS: 
+  CHROMA_DATABASE: dummy_value
+  CHROMA_DATA_DIR: 
+  CHROMA_HOST: dummy_value
+  CHROMA_PORT: dummy_value
+  CHROMA_SSL: 
+  CHROMA_TENANT: dummy_value
+
+secrets:

@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-github",
-  "name": "mcp-server-github ",
+  "name": "mcp-server-github",
   "description": "GitHub's official MCP Server",
   "links":
     {
@@ -8,16 +8,16 @@
       "application": "https://github.com/github/github-mcp-server"
     },
   "tags": ["development","automation","integration"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": false,
   "runtime": "binary",
-  "version": "v0.2.1",
+  "version": "v0.3.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": "A",
   "resources": {
-    "tools": 36,
+    "tools": 40,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

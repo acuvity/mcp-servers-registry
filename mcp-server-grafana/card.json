@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-grafana",
+  "name": "mcp-server-grafana",
+  "description": "Access and manage Grafana dashboards and datasources.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-grafana",
+      "application": "https://github.com/grafana/mcp-grafana"
+    },
+  "tags": ["web","monitoring"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "binary",
+  "version": "v0.3.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "A",
+  "resources": {
+    "tools": 33,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

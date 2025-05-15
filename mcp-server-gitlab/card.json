@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-gitlab",
-  "name": "mcp-server-gitlab ",
+  "name": "mcp-server-gitlab",
   "description": "MCP server for using the GitLab API",
   "links":
     {

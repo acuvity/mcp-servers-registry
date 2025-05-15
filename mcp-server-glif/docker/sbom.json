@@ -1,0 +1,96 @@
+{
+  "tools": [
+    {
+      "name": "glif_info",
+      "hash": "9c54f949a651c61264e9086033b501288e45b306622470c842cc450ae3d29987",
+      "params": [
+        {
+          "name": "id",
+          "hash": "e5403949274dcccacabbf3abf623d28fcccf5c7d892f74c77a20d3f12875f265"
+        }
+      ]
+    },
+    {
+      "name": "list_featured_glifs",
+      "hash": "c40fc397fa8fcabfdae6fc52cde09a788d6e34f080d147082a0b023dee93c049"
+    },
+    {
+      "name": "list_saved_glif_tools",
+      "hash": "569b88b4265d6b9658fed888e5f1cec809f3ecfea7f40c017a6feca16a4294ca"
+    },
+    {
+      "name": "my_glif_user_info",
+      "hash": "2125ca99a6b104ff5e03dddc6a12101b720fc113257291839485b1b6cbeaa994"
+    },
+    {
+      "name": "my_glifs",
+      "hash": "0bc37091edee334ac849a6b3f36d3e83a1e54353bd65802375766619404201db"
+    },
+    {
+      "name": "remove_all_glif_tools",
+      "hash": "7871ae16798d853d7eb3017a2622824a6307dfc64b021e6e564bd064e7443179"
+    },
+    {
+      "name": "remove_glif_tool",
+      "hash": "be8b0d67f82e6cda2a0c35ed48bbb237cae0ee878c60cf92c47cfb4e20687594",
+      "params": [
+        {
+          "name": "toolName",
+          "hash": "c596265b30032f51bf9eac4c59237a819e03bbdf79eb9d3382501723229596a7"
+        }
+      ]
+    },
+    {
+      "name": "run_glif",
+      "hash": "20de6ba43ea0992feb103cd1344a73b3ef93fd345ca7263acb6121fe043c8b8d",
+      "params": [
+        {
+          "name": "id",
+          "hash": "aeb3fd62f25f7156079228e06a1df07ba74f4d50b0a139d9f576b0859ba309cd"
+        },
+        {
+          "name": "inputs",
+          "hash": "38ea56cb0e6030c57604d2dc518f7c5c7db0e9a074d3666d64776d804e94adbf"
+        }
+      ]
+    },
+    {
+      "name": "save_glif_as_tool",
+      "hash": "db58e48b033946af3e1298c4d19accf2034704f0ac8506096612e09653762619",
+      "params": [
+        {
+          "name": "description",
+          "hash": "bcce41197c4081f3ae107a283280718d6bc5c3bab44e1fe3e332595a66a85ec5"
+        },
+        {
+          "name": "id",
+          "hash": "8926efc35990be678bf9c1cd2f7b3d55163abc42d0bbf6012ad31cebc5fdfb60"
+        },
+        {
+          "name": "name",
+          "hash": "974df86fdfdc651e09e448b08a04aebcb03a16918bc837f1c166ea55134cda31"
+        },
+        {
+          "name": "toolName",
+          "hash": "e183aa45a83700ecf371f0d3d06af6bfe321bd71b14aa3862c47d5f3dc5c95f5"
+        }
+      ]
+    },
+    {
+      "name": "search_glifs",
+      "hash": "8849b677f872c928b48204bc1eb8cae4e5a1b9efd9f3d48af6f5f1369856c864",
+      "params": [
+        {
+          "name": "query",
+          "hash": "8e9ae34f3ab997644b536290b765a6cff69a69cfb1cf9e46595b7a8f9f41d93a"
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "name": "showcase_featured_glif",
+      "hash": "7a2e95a005a7e9a295346af8f8826911884c275d81a098aef8ac9079a562208c"
+    }
+  ]
+}

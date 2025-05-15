@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-armor-crypto",
-  "name": "mcp-server-armor-crypto ",
+  "name": "mcp-server-armor-crypto",
   "description": "Blockchain integration, staking, DeFi, swap, bridging, wallet, DCA, Orders, Coin Lookup, Tracking.",
   "links":
     {
@@ -12,10 +12,10 @@
   "scope": "remote",
   "mutitenant": false,
   "runtime": "python",
-  "version": "0.1.24",
+  "version": "0.2.1",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "C",
+  "rating": "B",
   "resources": {
     "tools": 37,
     "prompts": 1,

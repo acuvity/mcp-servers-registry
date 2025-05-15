@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-contentful",
-  "name": "mcp-server-contentful ",
+  "name": "mcp-server-contentful",
   "description": "Update, create, delete content, content-models and assets in your Contentful Space.",
   "links":
     {

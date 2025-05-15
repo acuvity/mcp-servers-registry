@@ -1,0 +1,191 @@
+{
+  "tools": [
+    {
+      "name": "customer_add_purchase",
+      "hash": "f01df77ebf1fb3562d7326e8a9ab9ccdbb78cc8a47da7fcdf44bff8f1b62e936",
+      "params": [
+        {
+          "name": "customerId",
+          "hash": "7ccd7cb0783c5d697468fb22f0a17a3a47afafe5f1d5418a2b7a67c62cf72adf"
+        },
+        {
+          "name": "purchaseId",
+          "hash": "16164dc6057158f07e1afc722bda4f9ea34d532fec03e1d3c6483332c4c6c992"
+        }
+      ]
+    },
+    {
+      "name": "customer_get",
+      "hash": "a36f1fa858f52947787aae2ffab6669dbfd7dd7992c5d46e8430dd77e5ea2299",
+      "params": [
+        {
+          "name": "customerId",
+          "hash": "e00ded4e8ef763573ab231f6829d634374c65a51ef32b00ee3e56e20d6921fb4"
+        }
+      ]
+    },
+    {
+      "name": "customer_list",
+      "hash": "6c78853de46303eeb589496a8ad734f6262d0d13bb0b74e2a7ad6c6a27f6d6f0",
+      "params": [
+        {
+          "name": "limit",
+          "hash": "d548adf4bae21778c9ae3ad6ddcb98604602d64d2a0890110f927da7e4059bb4"
+        },
+        {
+          "name": "offset",
+          "hash": "a0c37c1ae0fb670e2da9a922adc47fda28a631599c371e4b91d1dc78712dea87"
+        }
+      ]
+    },
+    {
+      "name": "customer_subscription",
+      "hash": "5e09514c986683c2bf7d77f8d26dfc0dbba2879e8f0cb617e87ca17a83b4b881",
+      "params": [
+        {
+          "name": "customerId",
+          "hash": "7ccd7cb0783c5d697468fb22f0a17a3a47afafe5f1d5418a2b7a67c62cf72adf"
+        }
+      ]
+    },
+    {
+      "name": "customer_transactions",
+      "hash": "44d6bb1f960d3d4b714a0a6241327cc98edbf68ff7a99376db899213eb8a1cc4",
+      "params": [
+        {
+          "name": "customerId",
+          "hash": "7ccd7cb0783c5d697468fb22f0a17a3a47afafe5f1d5418a2b7a67c62cf72adf"
+        }
+      ]
+    },
+    {
+      "name": "event_list",
+      "hash": "1b0f0ed17e656c53317c07c06acb3dce6a37a35c9fe027f94f2fc931f3958076",
+      "params": [
+        {
+          "name": "enddate",
+          "hash": "ae5547a8c217fa66c16503805f12927f481d594bbbf252a373006dcd434c4f49"
+        },
+        {
+          "name": "limit",
+          "hash": "f6ab788255412b8faee8bc361ec05a06a5ed90708779d89d3e3d2a367442181d"
+        },
+        {
+          "name": "offset",
+          "hash": "720edc02115b8710ffce1028d2f01f169e21361dd33c7be6d16860214a09bf28"
+        },
+        {
+          "name": "startdate",
+          "hash": "21ee5b1371bbcd5f92c00b275f14dc7ee12d09afbb16d1645c42d92e3e72adc8"
+        }
+      ]
+    },
+    {
+      "name": "iaptic_current_app",
+      "hash": "327d1d940252298414397b4c203b405828d045f2103c0dc709bdb08bbddea030"
+    },
+    {
+      "name": "iaptic_reset_app",
+      "hash": "0809be869700bf292e53601f43d26fcc4c59ffebae50d7d84c641e1541ed2ee7"
+    },
+    {
+      "name": "iaptic_switch_app",
+      "hash": "f1f283221d9726eab50287cf595ba956867d47862880aa8b4ed5333f3a1d1f77",
+      "params": [
+        {
+          "name": "apiKey",
+          "hash": "f6c6c910bd40e0d620648f0eef25aa1843a41e12ff0c806ec50eac80cb27afc4"
+        },
+        {
+          "name": "appName",
+          "hash": "dd6450f3211e55064a228dcf3847b563588ecb28e63ed6082dc7dc92a79d4496"
+        }
+      ]
+    },
+    {
+      "name": "purchase_get",
+      "hash": "004f4769d124af57336c52c34817597269e664d786492be91f9686b59d200120",
+      "params": [
+        {
+          "name": "purchaseId",
+          "hash": "9f1d79a1bafe63f77629971db9e5ed4deeaf007b7f9e1167039485b72c1a19ad"
+        }
+      ]
+    },
+    {
+      "name": "purchase_list",
+      "hash": "193ecbbf1342905454ab9bf20ac33787e1acb3021d696485f37cde6feb6e3381",
+      "params": [
+        {
+          "name": "customerId",
+          "hash": "1df5a96d2e7a5f2513207850ce4a6065f76b5484163890018eb7a58e92902883"
+        },
+        {
+          "name": "enddate",
+          "hash": "03afabe664ac35cee9083044a97663bf119edc2faba15d0bb180c00195ee8e9f"
+        },
+        {
+          "name": "limit",
+          "hash": "a7d3e1fc7524714fd78564026a4c14c70e8615ea9db106a39764b5acf4667184"
+        },
+        {
+          "name": "offset",
+          "hash": "58bf8a0677b4ff543642d3926bba32faa23a817b8dd753664ce870ee7201ac82"
+        },
+        {
+          "name": "startdate",
+          "hash": "ec319c52791aa618d34a7fc4620bf996759677e7649c6a1033e9248c3933d87d"
+        }
+      ]
+    },
+    {
+      "name": "stats_app",
+      "hash": "49b4f3ac74deb1d85e8bd8bffdc8d05fcd39a16a99472e41ba0d673ab798534e"
+    },
+    {
+      "name": "stats_get",
+      "hash": "76d2e6c309a4f0402b76f2009b34806aae0c4e8bc0254a6fe06b46a3af9cf965"
+    },
+    {
+      "name": "stripe_prices",
+      "hash": "33107b481b1662f209ead75e63e7938a3bb7383257521a9d62ebde0a7f6c13c8"
+    },
+    {
+      "name": "transaction_get",
+      "hash": "57deb56932831e6275ea5eb2d4d475bf0c16f36bbd3e5f5a11b7e248aa2f1fe5",
+      "params": [
+        {
+          "name": "transactionId",
+          "hash": "4d93fbfb030372be546eb52533feb6e46328f66542fd375f3d4ac8116e06971b"
+        }
+      ]
+    },
+    {
+      "name": "transaction_list",
+      "hash": "bcdfe529318b1bc7960e73791e76fe704eb44534041a2ae67ef4bb003a2d1fd5",
+      "params": [
+        {
+          "name": "enddate",
+          "hash": "1c3ebcc7edf56a24e339c067959856a0aed34bc9d24e78dfb797651952f2ab90"
+        },
+        {
+          "name": "limit",
+          "hash": "433b4a6c3a74b603bee0d1a763f55de9321f113c6f05a94f70883c98b8288e60"
+        },
+        {
+          "name": "offset",
+          "hash": "ea864a453d182e3bee5799e748f3ca29182bb6283d3a3bbe9cf0a97b0c718794"
+        },
+        {
+          "name": "purchaseId",
+          "hash": "16d35d594e4083a6b418ac275790775ae5c0cde0511de3da78bf87cc908c129a"
+        },
+        {
+          "name": "startdate",
+          "hash": "e891d7059a1c66ed582e0aa37aef2b42bc31afe85f8d85121cc7caadf1a3160a"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

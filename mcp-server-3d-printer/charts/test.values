@@ -1,0 +1,7 @@
+env:
+  BAMBU_SERIAL: 
+  PRINTER_HOST: 
+  PRINTER_TYPE: 
+  TEMP_DIR: 
+
+secrets:

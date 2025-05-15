@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-lara-translate",
+  "name": "mcp-server-lara-translate",
+  "description": "MCP server enabling powerful language translation capabilities.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-lara-translate",
+      "application": "https://github.com/translated/lara-mcp"
+    },
+  "tags": ["translation","integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.0.10",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "A",
+  "resources": {
+    "tools": 10,
+    "prompts": 0,
+    "resources": 2,
+    "resourcesTemplates": 0
+  }
+}

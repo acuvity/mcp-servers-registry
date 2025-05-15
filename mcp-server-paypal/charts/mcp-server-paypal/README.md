@@ -20,16 +20,16 @@
 
 # What is mcp-server-paypal?
 
-[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-paypal/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-paypal/0.3.1?logo=docker&logoColor=fff&label=0.3.1)](https://hub.docker.com/r/acuvity/mcp-server-paypal)
-[![PyPI](https://img.shields.io/badge/0.3.1-3775A9?logo=pypi&logoColor=fff&label=@paypal/mcp)](https://github.com/paypal/agent-toolkit)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-paypal/0.3.2?logo=docker&logoColor=fff&label=0.3.2)](https://hub.docker.com/r/acuvity/mcp-server-paypal)
+[![PyPI](https://img.shields.io/badge/0.3.2-3775A9?logo=pypi&logoColor=fff&label=@paypal/mcp)](https://github.com/paypal/agent-toolkit)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-paypal&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22PAYPAL_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-paypal%3A0.3.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-paypal&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22PAYPAL_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-paypal%3A0.3.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** A Model Context Protocol (MCP) server that enables AI models to interact with PayPal Apis.
 
-Packaged by Acuvity from @paypal/mcp original [sources](https://github.com/paypal/agent-toolkit).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from @paypal/mcp original [sources](https://github.com/paypal/agent-toolkit).
 
 **Quick links:**
 
@@ -122,10 +122,13 @@ Provides a lightweight auth layer using a single shared token.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
+
+To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-paypal/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-paypal/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-paypal/charts/mcp-server-paypal#minibridge) for Helm charts).
+
 </details>
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active. To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-paypal/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-paypal/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-paypal/charts/mcp-server-paypal#minibridge) for Helm charts).
+> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference
@@ -152,7 +155,7 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.3.1`
+  - container: `1.0.0-0.3.2`
 
 ---
 

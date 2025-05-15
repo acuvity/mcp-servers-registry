@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-filesystem",
-  "name": "mcp-server-filesystem ",
+  "name": "mcp-server-filesystem",
   "description": "MCP server for filesystem access",
   "links":
     {

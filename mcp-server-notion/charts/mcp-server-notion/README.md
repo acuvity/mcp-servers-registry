@@ -22,14 +22,14 @@
 
 [![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-notion/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-notion/1.7.0?logo=docker&logoColor=fff&label=1.7.0)](https://hub.docker.com/r/acuvity/mcp-server-notion)
-[![PyPI](https://img.shields.io/badge/1.7.0-3775A9?logo=pypi&logoColor=fff&label=@notionhq/notion-mcp-server)](https://github.com/makenotion/notion-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-notion/1.8.0?logo=docker&logoColor=fff&label=1.8.0)](https://hub.docker.com/r/acuvity/mcp-server-notion)
+[![PyPI](https://img.shields.io/badge/1.8.0-3775A9?logo=pypi&logoColor=fff&label=@notionhq/notion-mcp-server)](https://github.com/makenotion/notion-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-notion&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22OPENAPI_MCP_HEADERS%22%2C%22docker.io%2Facuvity%2Fmcp-server-notion%3A1.7.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-notion&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22OPENAPI_MCP_HEADERS%22%2C%22docker.io%2Facuvity%2Fmcp-server-notion%3A1.8.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Interacting with Notion API.
 
-Packaged by Acuvity from @notionhq/notion-mcp-server original [sources](https://github.com/makenotion/notion-mcp-server).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from @notionhq/notion-mcp-server original [sources](https://github.com/makenotion/notion-mcp-server).
 
 **Quick links:**
 
@@ -122,10 +122,13 @@ Provides a lightweight auth layer using a single shared token.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
+
+To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-notion/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-notion/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-notion/charts/mcp-server-notion#minibridge) for Helm charts).
+
 </details>
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active. To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-notion/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-notion/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-notion/charts/mcp-server-notion#minibridge) for Helm charts).
+> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference
@@ -152,7 +155,7 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-1.7.0`
+  - container: `1.0.0-1.8.0`
 
 ---
 

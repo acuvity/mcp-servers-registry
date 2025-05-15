@@ -22,14 +22,14 @@
 
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-brightdata/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-brightdata/1.8.1?logo=docker&logoColor=fff&label=1.8.1)](https://hub.docker.com/r/acuvity/mcp-server-brightdata)
-[![PyPI](https://img.shields.io/badge/1.8.1-3775A9?logo=pypi&logoColor=fff&label=@brightdata/mcp)](https://github.com/luminati-io/brightdata-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-brightdata/1.8.2?logo=docker&logoColor=fff&label=1.8.2)](https://hub.docker.com/r/acuvity/mcp-server-brightdata)
+[![PyPI](https://img.shields.io/badge/1.8.2-3775A9?logo=pypi&logoColor=fff&label=@brightdata/mcp)](https://github.com/luminati-io/brightdata-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-brightdata&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_TOKEN%22%2C%22-e%22%2C%22BROWSER_AUTH%22%2C%22docker.io%2Facuvity%2Fmcp-server-brightdata%3A1.8.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-brightdata&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_TOKEN%22%2C%22-e%22%2C%22BROWSER_AUTH%22%2C%22docker.io%2Facuvity%2Fmcp-server-brightdata%3A1.8.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Discover, extract, and interact with the web - automated access across the public internet.
 
-Packaged by Acuvity from @brightdata/mcp original [sources](https://github.com/luminati-io/brightdata-mcp).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from @brightdata/mcp original [sources](https://github.com/luminati-io/brightdata-mcp).
 
 **Quick links:**
 
@@ -122,10 +122,13 @@ Provides a lightweight auth layer using a single shared token.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
+
+To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-brightdata/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-brightdata/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-brightdata/charts/mcp-server-brightdata#minibridge) for Helm charts).
+
 </details>
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active. To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-brightdata/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-brightdata/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-brightdata/charts/mcp-server-brightdata#minibridge) for Helm charts).
+> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference
@@ -152,7 +155,7 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-1.8.1`
+  - container: `1.0.0-1.8.2`
 
 ---
 
@@ -924,7 +927,7 @@ This can be a cache lookup, so it can be more reliable than scraping
 **Description**:
 
 ```
-Quickly read structured YpuTube videos data.
+Quickly read structured YouTube videos data.
 Requires a valid YouTube video URL.
 This can be a cache lookup, so it can be more reliable than scraping
 ```
@@ -1132,7 +1135,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | web_data_linkedin_company_profile | description | ccffa642e9b1120c15f275650d1b685bb127c4a6ea8f6048ddc9061698c59f95 |
 | tools | web_data_linkedin_person_profile | description | 652f6bc070db40560b87b14c185a85ead84a45a05840122b0ec5c4e6775ea283 |
 | tools | web_data_x_posts | description | 29aae5cb1605b99c1fc5d29e6e8d1d00bccb99963ca7f3522fde9d8786174192 |
-| tools | web_data_youtube_videos | description | b55fbbdd0cc2f0dd25a91869e20cd94197422d56f23e41eef1fb968c5e3169e4 |
+| tools | web_data_youtube_videos | description | 5a476fcf9bd1c5e69c720fbea400d151da16c8b265f0f237868a96d8994289b6 |
 | tools | web_data_zillow_properties_listing | description | 8e799a15b56be6999cc0634f6276f7c84079cf92e6aa09d62f9ec955e160e25f |
 | tools | web_data_zoominfo_company_profile | description | ee4d09fab58d64165808f582046d95685895bb920a2e86954ba0db0918963891 |
 

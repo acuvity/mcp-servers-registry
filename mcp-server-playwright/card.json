@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-playwright",
+  "name": "mcp-server-playwright",
+  "description": "Browser automation for LLMs using structured accessibility snapshots.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-playwright",
+      "application": "https://github.com/microsoft/playwright-mcp"
+    },
+  "tags": ["automation","web","research"],
+  "official": true,
+  "scope": "standalone",
+  "mutitenant": false,
+  "runtime": "node",
+  "version": "0.0.25",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": "C",
+  "resources": {
+    "tools": 25,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

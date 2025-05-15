@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-mongodb",
+  "name": "mcp-server-mongodb",
+  "description": "MCP server for interacting with MongoDB and MongoDB Atlas.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-mongodb",
+      "application": "https://github.com/mongodb-js/mongodb-mcp-server"
+    },
+  "tags": ["database","integration","development"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.1.1",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 20,
+    "prompts": 0,
+    "resources": 1,
+    "resourcesTemplates": 0
+  }
+}

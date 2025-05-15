@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-bitcoin",
-  "name": "mcp-server-bitcoin ",
+  "name": "mcp-server-bitcoin",
   "description": "A Model Context Protocol (MCP) server that enables AI models to interact with Bitcoin blockchain.",
   "links":
     {

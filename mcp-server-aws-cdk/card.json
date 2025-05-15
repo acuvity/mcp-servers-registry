@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-aws-cdk",
-  "name": "mcp-server-aws-cdk ",
+  "name": "mcp-server-aws-cdk",
   "description": "Explain CDK Nag rules, check suppressions, generate Bedrock schemas, find AWS patterns.",
   "links":
     {
