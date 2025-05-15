@@ -521,6 +521,14 @@
                   </button>
                 </div>
               </div>
+              <div v-if="server.links?.artifacts" class="text-gray-700 mt-4 w-100">
+                <div class="font-semibold text-gray-800 mb-1 w-100">Pull</div>
+                <div>
+                  <code @click="copy(server)" class="bg-gray-50 rounded-lg p-2 w-100 cursor-pointer">
+                    docker pull docker.io/acuvity/{{server.name.trim()}}:{{server.version}}
+                  </code>
+                </div>
+              </div>
             </div>
 
             <!-- Resources & Install -->
@@ -706,6 +714,9 @@
             this.category = t;
             this.page = 1;
           },
+          copy(server) {
+            navigator.clipboard.writeText(`docker pull docker.io/acuvity/${server.name.trim()}:${server.version}`);
+          }
         },
         mounted() {
           axios
