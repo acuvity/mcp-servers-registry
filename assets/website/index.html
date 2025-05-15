@@ -361,10 +361,20 @@
                   </div>
                 </div>
               </div>
+              <div v-if="server.tags" class="mt-2 flex flex-wrap gap-1 text-xs">
+                <span
+                  v-for="tag in server.tags"
+                  :key="tag"
+                  class="bg-gray-200 rounded px-2 py-0.5"
+                  >{{ tag }}</span
+                >
+              </div>
+
               <div class="mt-2 text-sm font-mono">
                 <a
+                  v-if="server.version"
+                  :href="server.links?.application"
                   v-if="server.links?.application"
-                  :href="server.links.application"
                   target="_blank"
                   rel="noopener"
                   class="flex items-center gap-1 text-black hover:text-gray-700"
@@ -373,17 +383,23 @@
                   Version: {{ server.version }}
                   <i class="fas fa-up-right-from-square text-gray-500"></i>
                 </a>
-                <span v-else class="text-gray-500"
-                  >Version: {{ server.version }}</span
+                <span v-else-if="server.version" class="text-gray-500">
+                  Version: {{ server.version }}
+                </span>
+
+                <a
+                  v-else-if="!server.version && server.links?.application"
+                  :href="server.links.application"
+                  target="_blank"
+                  rel="noopener"
+                  class="flex items-center gap-1 text-black hover:text-gray-700"
+                  :title="server.links.application"
                 >
-              </div>
-              <div v-if="server.tags" class="mt-2 flex flex-wrap gap-1 text-xs">
-                <span
-                  v-for="tag in server.tags"
-                  :key="tag"
-                  class="bg-gray-200 rounded px-2 py-0.5"
-                  >{{ tag }}</span
-                >
+                  Source
+                  <i class="fas fa-up-right-from-square text-gray-500"></i>
+                </a>
+
+                <span v-else class="text-gray-500"> Source unavailable </span>
               </div>
               <div
                 class="md:hidden flex flex-wrap gap-4 text-gray-500 text-xs mt-2"
@@ -556,39 +572,74 @@
               >
                 <div class="font-semibold mb-1">Provided primitives:</div>
                 <div
-                  v-if="server.resources && (server.resources.tools!==undefined||server.resources.prompts!==undefined||server.resources.resources!==undefined||server.resources.resourcesTemplates!==undefined)"
+                  v-if="
+      server.resources &&
+      (server.resources.tools !== undefined ||
+       server.resources.prompts !== undefined ||
+       server.resources.resources !== undefined ||
+       server.resources.resourcesTemplates !== undefined
+      )"
                   class="flex flex-wrap gap-4"
                 >
+                  <!-- Tools -->
                   <div
-                    v-if="server.resources.tools!==undefined"
+                    v-if="server.resources.tools !== undefined"
                     class="flex items-center gap-1"
                   >
-                    <i class="fas fa-wrench" title="Tools"></i
-                    ><span>{{ server.resources.tools }}</span>
+                    <template v-if="server.resources.tools > 0">
+                      <!-- green bubble when > 0 -->
+                      <span
+                        class="inline-flex items-center justify-center w-5 h-5 bg-green-200 rounded-full"
+                        title="Tools (hash verified)"
+                      >
+                        <i class="fas fa-wrench text-xs"></i>
+                      </span>
+                    </template>
+                    <template v-else>
+                      <!-- plain icon when 0 -->
+                      <i class="fas fa-wrench" title="Tools"></i>
+                    </template>
+                    <span>{{ server.resources.tools }}</span>
+                  </div>
+
+                  <!-- Prompts -->
+                  <div
+                    v-if="server.resources.prompts !== undefined"
+                    class="flex items-center gap-1"
+                  >
+                    <template v-if="server.resources.prompts > 0">
+                      <!-- green bubble when > 0 -->
+                      <span
+                        class="inline-flex items-center justify-center w-5 h-5 bg-green-200 rounded-full"
+                        title="Prompts (hash verified)"
+                      >
+                        <i class="fas fa-comment-dots text-xs"></i>
+                      </span>
+                    </template>
+                    <template v-else>
+                      <!-- plain icon when 0 -->
+                      <i class="fas fa-comment-dots" title="Prompts"></i>
+                    </template>
+                    <span>{{ server.resources.prompts }}</span>
+                  </div>
+
+                  <!-- Other primitives unchanged -->
+                  <div
+                    v-if="server.resources.resources !== undefined"
+                    class="flex items-center gap-1"
+                  >
+                    <i class="fas fa-box-open" title="Resources"></i>
+                    <span>{{ server.resources.resources }}</span>
                   </div>
                   <div
-                    v-if="server.resources.prompts!==undefined"
+                    v-if="server.resources.resourcesTemplates !== undefined"
                     class="flex items-center gap-1"
                   >
-                    <i class="fas fa-comment-dots" title="Prompts"></i
-                    ><span>{{ server.resources.prompts }}</span>
-                  </div>
-                  <div
-                    v-if="server.resources.resources!==undefined"
-                    class="flex items-center gap-1"
-                  >
-                    <i class="fas fa-box-open" title="Resources"></i
-                    ><span>{{ server.resources.resources }}</span>
-                  </div>
-                  <div
-                    v-if="server.resources.resourcesTemplates!==undefined"
-                    class="flex items-center gap-1"
-                  >
-                    <i class="fas fa-puzzle-piece" title="Templates"></i
-                    ><span>{{ server.resources.resourcesTemplates }}</span>
+                    <i class="fas fa-puzzle-piece" title="Templates"></i>
+                    <span>{{ server.resources.resourcesTemplates }}</span>
                   </div>
                 </div>
-                <div v-else class="text-gray-500">no SBOM verification</div>
+                <div v-else class="text-gray-500">dynamic requires login</div>
               </div>
               <div class="self-end md:self-auto">
                 <a
