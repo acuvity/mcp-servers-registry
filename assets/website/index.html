@@ -521,6 +521,29 @@
                   </button>
                 </div>
               </div>
+              <div v-if="server.links?.artifacts" class="mt-2">
+                <p
+                  class="flex items-center text-xs font-semibold text-gray-500 mb-1"
+                >
+                  <i class="fab fa-docker mr-1 text-gray-500"></i>
+                  Pull command
+                </p>
+                <div
+                  class="relative bg-gray-50 border border-gray-200 rounded-lg font-mono text-xs overflow-auto"
+                >
+                  <code class="block p-2">
+                    docker pull docker.io/acuvity/{{ server.name.trim() }}:{{
+                    server.version }}
+                  </code>
+                  <button
+                    @click="copy(server)"
+                    class="absolute inset-y-1 right-2 w-6 h-6 flex items-center justify-center hover:bg-gray-100 rounded"
+                    aria-label="Copy pull command"
+                  >
+                    <i class="fas fa-copy text-gray-500 text-xs"></i>
+                  </button>
+                </div>
+              </div>
             </div>
 
             <!-- Resources & Install -->
@@ -705,6 +728,11 @@
           selectCategory(t) {
             this.category = t;
             this.page = 1;
+          },
+          copy(server) {
+            navigator.clipboard.writeText(
+              `docker pull docker.io/acuvity/${server.name.trim()}:${server.version}`,
+            );
           },
         },
         mounted() {
