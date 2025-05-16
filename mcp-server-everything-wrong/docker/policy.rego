@@ -86,19 +86,19 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
-	"rug_pull",
+	"greet",
 	#
-	"cover_instruction",
+	"joke_teller",
 	#
 	"shadowing_attack",
 	#
 	"send_email",
 	#
-	"sentive_information",
+	"env_var",
 	#
-	"cross_origin",
+	"fetch",
 	#
-	"schema_misuse",
+	"echo",
 	#
 	"run_command",
 	#

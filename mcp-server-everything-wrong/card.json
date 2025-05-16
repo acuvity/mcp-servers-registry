@@ -12,10 +12,10 @@
   "scope": "native",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "F",
+  "rating": "D",
   "resources": {
     "tools": 8,
     "prompts": 0,

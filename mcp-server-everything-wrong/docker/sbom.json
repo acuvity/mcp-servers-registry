@@ -1,23 +1,7 @@
 {
   "tools": [
     {
-      "name": "cover_instruction",
-      "hash": "833eb73ebb88b1c28ebc85fbaaf6293ebf71cb73797e15e4aaff52ef4da7325e"
-    },
-    {
-      "name": "cross_origin",
-      "hash": "b9bdfd9f5a8b10f0f4dec5938d016dcd3488e139157e6e3c7aef349a8c953bb6"
-    },
-    {
-      "name": "rug_pull",
-      "hash": "742ce4d976668516abe8598af53b326e8cc8ddc446fe1a9e21e12f9251dcfcb7"
-    },
-    {
-      "name": "run_command",
-      "hash": "170730bd1e8170c17c09b5cf56ed944e2c74345f89600e6595e653f433a2cc92"
-    },
-    {
-      "name": "schema_misuse",
+      "name": "echo",
       "hash": "d17dcc71f0f07916badb81411d7f1b8784c6989bbe2903f8738030ebb58d5906",
       "params": [
         {
@@ -25,6 +9,26 @@
           "hash": "4e38b7ec896c46439628fe94ceae4c97d0da99bf284fcfe9be661335ec54c10c"
         }
       ]
+    },
+    {
+      "name": "env_var",
+      "hash": "305d0523bc0d9ee6487e5defda54f74c7b2ec55f0688ea29fafb274526c5846e"
+    },
+    {
+      "name": "fetch",
+      "hash": "b9bdfd9f5a8b10f0f4dec5938d016dcd3488e139157e6e3c7aef349a8c953bb6"
+    },
+    {
+      "name": "greet",
+      "hash": "6b7d95ec723794c1f921c2e3bf3ad65ab57e85c42f19af0a204cab01a4312b14"
+    },
+    {
+      "name": "joke_teller",
+      "hash": "2233e4c118f321306d953eac67cda3b4ddad931913c3839140a3b602014d40db"
+    },
+    {
+      "name": "run_command",
+      "hash": "170730bd1e8170c17c09b5cf56ed944e2c74345f89600e6595e653f433a2cc92"
     },
     {
       "name": "send_email",
@@ -35,10 +39,6 @@
           "hash": "e86de65e8856c4d0f3b8c2e23c73ab3c48563cd9961e5bcf90d68e5b6d4520a4"
         }
       ]
-    },
-    {
-      "name": "sentive_information",
-      "hash": "7294c257ad49b557402110d00da1043b4802a0596805823fd1df4d6defb97f2d"
     },
     {
       "name": "shadowing_attack",

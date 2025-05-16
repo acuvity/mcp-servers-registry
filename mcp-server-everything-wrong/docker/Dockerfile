@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="native"
 
 LABEL org.opencontainers.image.title="mcp-server-everything-wrong"
 LABEL org.opencontainers.image.description="Show case common MCP server security concerns"
-LABEL org.opencontainers.image.version="0.1.0"
+LABEL org.opencontainers.image.version="0.2.0"
 LABEL org.opencontainers.image.source="https://pypi.org/project/mcp-server-everything-wrong/"
 LABEL org.opencontainers.image.licenses="nil"
 LABEL org.opencontainers.image.author="Author"
@@ -44,7 +44,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uv venv && uv pip install mcp-server-everything-wrong==0.1.0
+RUN uv venv && uv pip install mcp-server-everything-wrong==0.2.0
 
 EXPOSE 8000/tcp
 
