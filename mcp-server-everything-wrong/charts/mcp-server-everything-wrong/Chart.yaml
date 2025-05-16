@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-everything-wrong"
+description: "A Helm chart for Show case common MCP server security concerns"
+home: https://pypi.org/project/mcp-server-everything-wrong/
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://pypi.org/project/mcp-server-everything-wrong/
+icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.1.0
+keywords:
+  - mcp-server-everything-wrong
+  - mcp-server
+  - native
+  - security

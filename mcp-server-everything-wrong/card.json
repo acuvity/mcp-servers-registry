@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-everything-wrong",
+  "name": "mcp-server-everything-wrong",
+  "description": "Show case common MCP server security concerns",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-everything-wrong",
+      "application": "https://pypi.org/project/mcp-server-everything-wrong/"
+    },
+  "tags": ["security"],
+  "official": false,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.1.0",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": "F",
+  "resources": {
+    "tools": 8,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}
