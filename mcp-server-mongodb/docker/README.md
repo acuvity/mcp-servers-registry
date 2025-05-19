@@ -508,14 +508,5 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 </details>
 
-# 🧠 Server features
-
-For detailed list of all features, tools, arguments and SBOM hashes provided by this server please consult the [readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-mongodb)
-
-## 🧰 Tools (20)
-
-## 📚 Resources (1)
-
-
 💬 Questions? Open an issue or contact us [ support@acuvity.ai ](mailto:support@acuvity.ai).
 📦 Contributions welcome!

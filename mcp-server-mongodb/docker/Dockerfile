@@ -36,6 +36,8 @@ RUN addgroup -g 1001 -S appuser && \
     mkdir -p /home/appuser/.config/minibridge && \
     chown appuser:appuser -R /app
 
+ENV NODE_ENV=production
+
 USER appuser
 
 RUN npm i --omit-dev mongodb-mcp-server@0.1.1

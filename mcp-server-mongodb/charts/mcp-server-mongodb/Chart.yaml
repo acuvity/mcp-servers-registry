@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-mongodb"
-description: A Helm chart for MCP server for interacting with MongoDB and MongoDB Atlas.
+description: "A Helm chart for MCP server for interacting with MongoDB and MongoDB Atlas."
 home: https://github.com/mongodb-js/mongodb-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

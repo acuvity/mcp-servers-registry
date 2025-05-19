@@ -86,46 +86,6 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
-	"connect",
-	#
-	"list-collections",
-	#
-	"list-databases",
-	#
-	"collection-indexes",
-	#
-	"create-index",
-	#
-	"collection-schema",
-	#
-	"find",
-	#
-	"insert-many",
-	#
-	"delete-many",
-	#
-	"collection-storage-size",
-	#
-	"count",
-	#
-	"db-stats",
-	#
-	"aggregate",
-	#
-	"update-many",
-	#
-	"rename-collection",
-	#
-	"drop-database",
-	#
-	"drop-collection",
-	#
-	"explain",
-	#
-	"create-collection",
-	#
-	"mongodb-logs",
-	#
 	# exclude word that might be misdetected
 	"to",
 	"this",
