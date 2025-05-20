@@ -1,0 +1,140 @@
+name: Build & Publish MCP Servers
+
+on:
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "mcp-server-*/**"
+  push:
+    branches: ["main"]
+    paths:
+      - "mcp-server-*/**"
+  workflow_dispatch:
+
+# only one run at a time. new push will cancel previous
+concurrency:
+  group: "build-and-release-${{ github.ref }}"
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+
+jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Determine changes
+        id: set
+        shell: bash
+        run: |
+          BASE="${{ github.event.before }}"
+          HEAD="${{ github.sha }}"
+          CHANGED_FILES=$(git diff --name-only "$BASE" "$HEAD" -- 'mcp-server*/*')
+
+          # Produce a JSON array such as
+          # [
+          #   {"server":"mcp-server-foo","build_image":true,"build_chart":false},
+          #   {"server":"mcp-server-bar","build_image":true,"build_chart":true}
+          # ]
+          MATRIX=$(echo "$CHANGED_FILES" \
+            | awk -F/ '/^mcp-server-/{print $1}' | sort -u \
+            | while read -r SRV; do
+                IMG=false
+                CHART=false
+                [[ "$CHANGED_FILES" =~ (^|$'\n')$SRV/docker/ ]]     && IMG=true
+                [[ "$CHANGED_FILES" =~ (^|$'\n')$SRV/version.env ]] && { IMG=true; CHART=true; }
+                [[ "$CHANGED_FILES" =~ (^|$'\n')$SRV/charts/ ]]     && CHART=true
+                printf '{"server":"%s","build_image":%s,"build_chart":%s}\n' \
+                       "${SRV#mcp-server-}" "$IMG" "$CHART"
+              done | jq -s)
+          if [[ -n "$MATRIX ]]; then
+            echo "Changed matrix: $MATRIX"
+            echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+          else
+            echo "No changes"
+            echo "matrix={}" >> "$GITHUB_OUTPUT"
+          fi
+
+  build:
+    needs: detect-changes
+    if: needs.detect-changes.outputs.matrix != '[]'
+    strategy:
+      # dont fail everything if one fail
+      fail-fast: false
+      matrix:
+        include: ${{ fromJson(needs.detect-changes.outputs.matrix) }}
+    concurrency:
+      group: ${{ matrix.server }}
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+
+    env:
+      PLATFORMS: linux/amd64,linux/arm64
+      OCI_REGISTRY: docker.io/acuvity
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Load version info
+        id: version
+        run: |
+          while IFS='=' read -r key value; do
+              echo "$key=$value" >> "$GITHUB_OUTPUT"
+          done < "mcp-server-${{ matrix.server }}/version.env"
+
+      - uses: docker/setup-qemu-action@v3
+        if: matrix.build_image == 'true'
+      - uses: docker/setup-buildx-action@v3
+        if: matrix.build_image == 'true'
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        if: matrix.build_image == 'true'
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build & push image
+        id: image
+        if: matrix.build_image == 'true'
+        uses: docker/build-push-action@v5
+        with:
+          context: mcp-server-${{ matrix.server }}/docker
+          push: true
+          platforms: ${{ env.PLATFORMS }}
+          sbom: true
+          provenance: true
+          tags: |
+            ${{ env.OCI_REGISTRY }}/${{ github.repository_owner }}/${{ matrix.server }}:${{ steps.version.outputs.CHARTS_VERSION}}-${{ steps.version.outputs.CONTAINER_TAG }}
+            ${{ env.OCI_REGISTRY }}/${{ github.repository_owner }}/${{ matrix.server }}:${{ steps.version.outputs.CONTAINER_TAG }}
+            ${{ env.OCI_REGISTRY }}/${{ github.repository_owner }}/${{ matrix.server }}:latest
+          cache-from: type=gha,scope=${{ matrix.server }}
+          cache-to: type=gha,scope=${{ matrix.server }},mode=max
+
+      - name: Push README to Docker Hub
+        if: matrix.build_image == 'true'
+        uses: christian-korneck/docker-pushrm-action@v1
+        env:
+          DOCKER_USER: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKER_PASS: ${{ secrets.DOCKERHUB_TOKEN }}
+        with:
+          destination_container_repo: ${{ github.repository_owner }}/${{ matrix.server }}
+          provider: dockerhub
+          short_description: ${{ steps.version.outputs.HUB_DESCRIPTION }}
+          readme_file: mcp-server-${{ matrix.server }}/docker/README.md
+
+      - name: Package & push Helm chart
+        if: matrix.build_chart == 'true'
+        env:
+          CHART_VERSION: ${{ steps.version.outputs.VERSION }}
+        run: |
+          cd mcp-server-${{ matrix.server }}/charts
+          helm package . --version "$CHART_VERSION"
+          helm push ./*.tgz oci://$OCI_REGISTRY
