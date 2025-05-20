@@ -6,6 +6,11 @@ on:
     paths:
       - "mcp-server-*/**"
   workflow_dispatch:
+    inputs:
+      name:
+        description: "Force-build a specific server (without the mcp-server- prefix)"
+        required: false
+        type: string
 
 # only one run at a time. Keep stacking
 concurrency:
@@ -30,6 +35,18 @@ jobs:
         id: set
         shell: bash
         run: |
+          # workflow dispatch trigger
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" && -n "${{ github.event.inputs.name }}" ]]; then
+            if [[ ! -d mcp-server-$src ]]; then
+              echo "$src is not a valid mcp-server name"
+              exit 1
+            fi
+            MATRIX=$(jq -nc --arg srv "${{ github.event.inputs.name }}" \
+                            '[{server:$srv,build_image:true,build_chart:true}]')
+            echo "matrix=$MATRIX" >>"$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # git driven matrix
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
             git fetch origin main --depth=1
             BASE=$(git rev-parse origin/main)
