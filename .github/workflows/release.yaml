@@ -125,12 +125,6 @@ jobs:
           build-args: |
             BUILDKIT_INLINE_CACHE=1
 
-      - name: Sign by digest
-        if: matrix.build_image
-        env:
-          COSIGN_EXPERIMENTAL: "true"
-        run: cosign sign --yes --keyless "${{ env.OCI_REGISTRY }}/mcp-server-${{ matrix.server }}@${{ steps.image.outputs.digest }}"
-
       - name: Export digest
         run: |
           mkdir -p ${{ runner.temp }}/digests
@@ -166,6 +160,11 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Install Cosign & Helm-sigstore
+        uses: sigstore/cosign-installer@v3
+
+      - run: helm plugin install https://github.com/sigstore/helm-sigstore || true
+
       - name: Download digests from both arch builds
         uses: actions/download-artifact@v4
         with:
@@ -186,14 +185,28 @@ jobs:
         run: |
           while IFS='=' read -r k v; do echo "$k=$v" >> "$GITHUB_OUTPUT"; done < "mcp-server-${{ matrix.server }}/version.env"
 
-      - name: Create multi-arch manifest w/ final tags
+      - name: Create manifest
+        id: manifest
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          provenance: false
+          sbom: false
+          platforms: linux/amd64,linux/arm64
+          tags: |
+            $OCI_REGISTRY/mcp-server-${{ matrix.server }}:${{ steps.version.outputs.CHARTS_VERSION }}-${{ steps.version.outputs.CONTAINER_TAG }}
+            $OCI_REGISTRY/mcp-server-${{ matrix.server }}:${{ steps.version.outputs.CONTAINER_TAG }}
+            $OCI_REGISTRY/mcp-server-${{ matrix.server }}:latest
+          inputs: |
+            name=$OCI_REGISTRY/mcp-server-${{ matrix.server }}@${{ steps.dig.outputs.amd64 }}
+            name=$OCI_REGISTRY/mcp-server-${{ matrix.server }}@${{ steps.dig.outputs.arm64 }}
+
+      - name: Sign multi-arch manifest
+        env:
+          COSIGN_EXPERIMENTAL: "true"
         run: |
-          docker buildx imagetools create \
-            --tag $OCI_REGISTRY/mcp-server-${{ matrix.server }}:${{ steps.version.outputs.CHARTS_VERSION }}-${{ steps.version.outputs.CONTAINER_TAG }} \
-            --tag $OCI_REGISTRY/mcp-server-${{ matrix.server }}:${{ steps.version.outputs.CONTAINER_TAG }} \
-            --tag $OCI_REGISTRY/mcp-server-${{ matrix.server }}:latest \
-            $OCI_REGISTRY/mcp-server-${{ matrix.server }}@${{ steps.dig.outputs.amd64 }} \
-            $OCI_REGISTRY/mcp-server-${{ matrix.server }}@${{ steps.dig.outputs.arm64 }}
+          cosign sign --recursive --yes --keyless $OCI_REGISTRY/mcp-server-${{ matrix.server }}@${{ steps.manifest.outputs.digest }}
 
       - name: Push README to Docker Hub
         if: matrix.build_image
