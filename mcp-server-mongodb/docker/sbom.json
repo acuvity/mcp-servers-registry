@@ -1,0 +1,479 @@
+{
+  "tools": [
+    {
+      "name": "aggregate",
+      "hash": "7c33e35f8e93a28e3f0fe43806a3ef8b3c7e954e45a9b503629949058b58da6d",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "922214922b48f09e732a98c94e2f91391f0e4782749b280d909ee4d726492883"
+        },
+        {
+          "name": "database",
+          "hash": "e97a0773fb7b656c174155270bd9ded70bc82caa0fc5d65b3ba24871577a5b08"
+        },
+        {
+          "name": "pipeline",
+          "hash": "27ad7ca763e787f6fec26d3a8787378ab6e2e07d35f578ec442d1fc97e05e79c"
+        }
+      ]
+    },
+    {
+      "name": "atlas-connect-cluster",
+      "hash": "73c911a3523663e40a7dd95287334349ff06c0d5d6281aeea2f51c573bdd1c4a",
+      "params": [
+        {
+          "name": "clusterName",
+          "hash": "84401bb0fee8476905c5b8abdedaec47d8b71fba3a2f51586359f529387ba1d6"
+        },
+        {
+          "name": "projectId",
+          "hash": "673b73641c1cc83069b5085bc0958432a2135e1d2046f08fafaabfdb6f5d8be7"
+        }
+      ]
+    },
+    {
+      "name": "atlas-create-access-list",
+      "hash": "1bb37ff96e17d2a063634d9078ddd9f94a649f02d8f1fc80e0423aa8b7d1f775",
+      "params": [
+        {
+          "name": "cidrBlocks",
+          "hash": "8c412a072a815f33e22120f904b0bdbc3d60a28d056c38599e11923f2869e6a0"
+        },
+        {
+          "name": "comment",
+          "hash": "df60393120daf122802df69e5121fbae4321ee2f772e3a306a612ab24cd8f35d"
+        },
+        {
+          "name": "currentIpAddress",
+          "hash": "010eabb4ddcf1e557fcc5688b94030be1c61ce58d0881a653efb97a719008f32"
+        },
+        {
+          "name": "ipAddresses",
+          "hash": "8e341a4438c2fa630a28c2c9db263785d910c81f51c806e19d2da7dc5c96793a"
+        },
+        {
+          "name": "projectId",
+          "hash": "673b73641c1cc83069b5085bc0958432a2135e1d2046f08fafaabfdb6f5d8be7"
+        }
+      ]
+    },
+    {
+      "name": "atlas-create-db-user",
+      "hash": "63e925d7d1af974b29a0a1859c040563cda048e78b4a022d360847b1954a9b2a",
+      "params": [
+        {
+          "name": "clusters",
+          "hash": "3e672f3305d216843193b9eca68b22281e82f95da0b546d055b3a42c1c6e751c"
+        },
+        {
+          "name": "password",
+          "hash": "59e7d907efee9ec1ff073c92e4aaaf84e14d57cda478f3417dba03c9bee9d516"
+        },
+        {
+          "name": "projectId",
+          "hash": "673b73641c1cc83069b5085bc0958432a2135e1d2046f08fafaabfdb6f5d8be7"
+        },
+        {
+          "name": "roles",
+          "hash": "5ecd49e3395921332d584a2014095d61b19cc6b1d1efd1e4dab57cccb1b0f758"
+        },
+        {
+          "name": "username",
+          "hash": "749f2783331f8f8b1ed47ca2efafb9f95fbf8e7cea1c6bbe7ddfb001b99b6ae1"
+        }
+      ]
+    },
+    {
+      "name": "atlas-create-free-cluster",
+      "hash": "96099ef302a60116026045630690331fb73d8e48dbcba63222593b7e2a35e1d5",
+      "params": [
+        {
+          "name": "name",
+          "hash": "e9cbbfe81ae8be7629ca2f2f0c24f6e8287cc32bb16190d7574fcfcea073b362"
+        },
+        {
+          "name": "projectId",
+          "hash": "3f511b8d632f34fcd87f2bf8ecc7e172f2f076c57a10c9a0130b60e204aa248f"
+        },
+        {
+          "name": "region",
+          "hash": "b445c439a972b11f49241cbe21832a2c049ca7ed2bf3f9c31a2204d15a01ce58"
+        }
+      ]
+    },
+    {
+      "name": "atlas-create-project",
+      "hash": "651632a71133e3763871452451d31ed072a84541b767990d8ec57e053db6ed77",
+      "params": [
+        {
+          "name": "organizationId",
+          "hash": "6a49f322852d78f290228ab041298c33e8576c5104ee1a293f5431477b51a104"
+        },
+        {
+          "name": "projectName",
+          "hash": "e3be152a7ce0095661fba852aa1cf0beaae95afc517a7fa6b370e6d08adde4bf"
+        }
+      ]
+    },
+    {
+      "name": "atlas-inspect-access-list",
+      "hash": "e0ba493bdd0e65272159df9d2658d5a07db54174cafb33ce77eed7265772e4d9",
+      "params": [
+        {
+          "name": "projectId",
+          "hash": "673b73641c1cc83069b5085bc0958432a2135e1d2046f08fafaabfdb6f5d8be7"
+        }
+      ]
+    },
+    {
+      "name": "atlas-inspect-cluster",
+      "hash": "96bf62bb54a98763c2cc9ff89dc1adf6b2606e61740d17443e3077c209e5bc4a",
+      "params": [
+        {
+          "name": "clusterName",
+          "hash": "84401bb0fee8476905c5b8abdedaec47d8b71fba3a2f51586359f529387ba1d6"
+        },
+        {
+          "name": "projectId",
+          "hash": "673b73641c1cc83069b5085bc0958432a2135e1d2046f08fafaabfdb6f5d8be7"
+        }
+      ]
+    },
+    {
+      "name": "atlas-list-clusters",
+      "hash": "933e808f45921106ae79ae39a7d14b271ceb9f17b1ee146bd6a157e3210e5a4e",
+      "params": [
+        {
+          "name": "projectId",
+          "hash": "4e0d80300fa127a05d4756f43b01c95d670686917640c9bd356ac706761d2aa0"
+        }
+      ]
+    },
+    {
+      "name": "atlas-list-db-users",
+      "hash": "a87af628f8b9dd78c39e782b9c0b329789fd5b8c40ead37293ac56435c6e7b9f",
+      "params": [
+        {
+          "name": "projectId",
+          "hash": "9d22c31d2fd1b62f7a29503999b9008babec4c5b650f93ca014ab7b91cfab9b2"
+        }
+      ]
+    },
+    {
+      "name": "atlas-list-orgs",
+      "hash": "2875dc9dc072ede4309236358ee1157b56d7844697f6fb0c97f47e901a4d3350"
+    },
+    {
+      "name": "atlas-list-projects",
+      "hash": "2aade686db4b68c563d4d92fd3ebbdec6182872d7cba0b2240b59499a76b6d0c",
+      "params": [
+        {
+          "name": "orgId",
+          "hash": "94334eae10c86525ac572b4a85af34234a8c6c8464f5ef679723e167f5984450"
+        }
+      ]
+    },
+    {
+      "name": "collection-indexes",
+      "hash": "e34678b2f5b471acef7d7a01c928ab5d845e62286b43d5e47cee658cd6458e50",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "922214922b48f09e732a98c94e2f91391f0e4782749b280d909ee4d726492883"
+        },
+        {
+          "name": "database",
+          "hash": "e97a0773fb7b656c174155270bd9ded70bc82caa0fc5d65b3ba24871577a5b08"
+        }
+      ]
+    },
+    {
+      "name": "collection-schema",
+      "hash": "4344ff2ecc4cc69c2d08beb2e2122c9ad2d3d2d97b42e94781bd0d556022dd19",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "922214922b48f09e732a98c94e2f91391f0e4782749b280d909ee4d726492883"
+        },
+        {
+          "name": "database",
+          "hash": "e97a0773fb7b656c174155270bd9ded70bc82caa0fc5d65b3ba24871577a5b08"
+        }
+      ]
+    },
+    {
+      "name": "collection-storage-size",
+      "hash": "04d5d714e34265b918b4e90d310c25bc8683772027386d46e3f60e6f6ed52c76",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "922214922b48f09e732a98c94e2f91391f0e4782749b280d909ee4d726492883"
+        },
+        {
+          "name": "database",
+          "hash": "e97a0773fb7b656c174155270bd9ded70bc82caa0fc5d65b3ba24871577a5b08"
+        }
+      ]
+    },
+    {
+      "name": "connect",
+      "hash": "c0302f33ba275defdb23f2ed6f0d7942191fac240321b74f72432ee5a3ffa38e",
+      "params": [
+        {
+          "name": "connectionString",
+          "hash": "fd7eb15e287b7ff1b7aba3cf0ce4d3c9dfa9148c550733abe061f6bda209d664"
+        }
+      ]
+    },
+    {
+      "name": "count",
+      "hash": "aec7af22beb8e177a4f065486874a8ef89f07c2c2a432886198c552592fb1331",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "922214922b48f09e732a98c94e2f91391f0e4782749b280d909ee4d726492883"
+        },
+        {
+          "name": "database",
+          "hash": "e97a0773fb7b656c174155270bd9ded70bc82caa0fc5d65b3ba24871577a5b08"
+        },
+        {
+          "name": "query",
+          "hash": "a2b23da54046b968f4a2f3f415c951c53306174788f60490324a31d865b38d62"
+        }
+      ]
+    },
+    {
+      "name": "create-collection",
+      "hash": "0b220de070e59dc89b5d6993189ff7ba37b80752979af5577d28a879a6c8a253",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "922214922b48f09e732a98c94e2f91391f0e4782749b280d909ee4d726492883"
+        },
+        {
+          "name": "database",
+          "hash": "e97a0773fb7b656c174155270bd9ded70bc82caa0fc5d65b3ba24871577a5b08"
+        }
+      ]
+    },
+    {
+      "name": "create-index",
+      "hash": "4dc4db5b4986bf794405ca28f87a156e8151da9580190a7f0ce9490225198088",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "922214922b48f09e732a98c94e2f91391f0e4782749b280d909ee4d726492883"
+        },
+        {
+          "name": "database",
+          "hash": "e97a0773fb7b656c174155270bd9ded70bc82caa0fc5d65b3ba24871577a5b08"
+        },
+        {
+          "name": "keys",
+          "hash": "9ea95393019f15541c12d92ae971ac8e77df2f306370ba8054ee544e07d33e9f"
+        },
+        {
+          "name": "name",
+          "hash": "e409895d5cae55916d29baf634d8914c4d798bdc0636f5b35ca143006a4e3611"
+        }
+      ]
+    },
+    {
+      "name": "db-stats",
+      "hash": "f31d0d52286936349c4e1a2933b15bd1a913f452fe954d3950d1c13cb6d95bd2",
+      "params": [
+        {
+          "name": "database",
+          "hash": "e97a0773fb7b656c174155270bd9ded70bc82caa0fc5d65b3ba24871577a5b08"
+        }
+      ]
+    },
+    {
+      "name": "delete-many",
+      "hash": "e56c0e98fe5d20c30ad5a63569227e74098e66275c8ae9d388ecf53cf0bb8084",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "922214922b48f09e732a98c94e2f91391f0e4782749b280d909ee4d726492883"
+        },
+        {
+          "name": "database",
+          "hash": "e97a0773fb7b656c174155270bd9ded70bc82caa0fc5d65b3ba24871577a5b08"
+        },
+        {
+          "name": "filter",
+          "hash": "98e24907fa4a4a21da97a19bb4bf3fee4b14f64383acb00deae2cfbcceacfe6c"
+        }
+      ]
+    },
+    {
+      "name": "drop-collection",
+      "hash": "e7ca8d90dfc95bfaf23a5ded7dd316bfce5165f92adbb7d29ba6ec5c5cdfb686",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "922214922b48f09e732a98c94e2f91391f0e4782749b280d909ee4d726492883"
+        },
+        {
+          "name": "database",
+          "hash": "e97a0773fb7b656c174155270bd9ded70bc82caa0fc5d65b3ba24871577a5b08"
+        }
+      ]
+    },
+    {
+      "name": "drop-database",
+      "hash": "54ce8023061b52d7f0b1d74eb6a8e8387d331978a8d7f27a131fb3e68814c677",
+      "params": [
+        {
+          "name": "database",
+          "hash": "e97a0773fb7b656c174155270bd9ded70bc82caa0fc5d65b3ba24871577a5b08"
+        }
+      ]
+    },
+    {
+      "name": "explain",
+      "hash": "b60101adbc07e7ba014cc046f6b35b145b5de53b886dfc0a4ce91bf65788ef9a",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "922214922b48f09e732a98c94e2f91391f0e4782749b280d909ee4d726492883"
+        },
+        {
+          "name": "database",
+          "hash": "e97a0773fb7b656c174155270bd9ded70bc82caa0fc5d65b3ba24871577a5b08"
+        },
+        {
+          "name": "method",
+          "hash": "700e30906f13235c995bc893d7096f03c11cbe235e06882ef3607d151da58a8d"
+        }
+      ]
+    },
+    {
+      "name": "find",
+      "hash": "1b1bfb95a87932ced499cd96d5774c0e5658fab3e71663a8ba28a2995e38a68e",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "922214922b48f09e732a98c94e2f91391f0e4782749b280d909ee4d726492883"
+        },
+        {
+          "name": "database",
+          "hash": "e97a0773fb7b656c174155270bd9ded70bc82caa0fc5d65b3ba24871577a5b08"
+        },
+        {
+          "name": "filter",
+          "hash": "4d7299ad9c6c13ba6874010101017ce04ea8722513cbb1757f5e09596110df7b"
+        },
+        {
+          "name": "limit",
+          "hash": "795258ccedc518ceb955d76cc21fe131da9668379b8aa5ce5e5b9f4a002a49fd"
+        },
+        {
+          "name": "projection",
+          "hash": "2a1cb62a18517e56d059a18cf5553b27fa1adc38b8fe553b57d8e95556c22445"
+        },
+        {
+          "name": "sort",
+          "hash": "82431ec7a4424a135fa564ec0a8c65677f037e501f43e415dd20d29e45f66783"
+        }
+      ]
+    },
+    {
+      "name": "insert-many",
+      "hash": "3998ae6353c8f21ae8ad473d68c48fa45e979b10e83a2e65e409c24ab58e0024",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "922214922b48f09e732a98c94e2f91391f0e4782749b280d909ee4d726492883"
+        },
+        {
+          "name": "database",
+          "hash": "e97a0773fb7b656c174155270bd9ded70bc82caa0fc5d65b3ba24871577a5b08"
+        },
+        {
+          "name": "documents",
+          "hash": "0de35e2bbb702fd1ce22806dfa1a3801d51278fd3d6f8f8c392785591fabaf81"
+        }
+      ]
+    },
+    {
+      "name": "list-collections",
+      "hash": "657eee50274204a7d197a0c94585ccf6efbedbba35b6d56345d4e5df2a6c9e92",
+      "params": [
+        {
+          "name": "database",
+          "hash": "e97a0773fb7b656c174155270bd9ded70bc82caa0fc5d65b3ba24871577a5b08"
+        }
+      ]
+    },
+    {
+      "name": "list-databases",
+      "hash": "d71fe372bc4b696845ebfb882f555593b7812582ce3d208e34c2abd68d1fddc8"
+    },
+    {
+      "name": "mongodb-logs",
+      "hash": "29da3b950d5f996c194287c87584aa72792605fb40ffe5598e4ae61809882c99",
+      "params": [
+        {
+          "name": "limit",
+          "hash": "c305174839ef8cc4ea03686bffe0010efcb67eba07cc84b64243671c47454947"
+        },
+        {
+          "name": "type",
+          "hash": "056b0738b88d46afc836af1a70177092adbcb044248c83dfe0ed210f265096df"
+        }
+      ]
+    },
+    {
+      "name": "rename-collection",
+      "hash": "eab70bf037ca73372d72442f176699a1084c5526b22ce2ce0058ab66d70e222a",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "922214922b48f09e732a98c94e2f91391f0e4782749b280d909ee4d726492883"
+        },
+        {
+          "name": "database",
+          "hash": "e97a0773fb7b656c174155270bd9ded70bc82caa0fc5d65b3ba24871577a5b08"
+        },
+        {
+          "name": "dropTarget",
+          "hash": "8c087c00650afe15fe38a1ea3e67b50caf73be0f1fe5e58d1795152a29ca893a"
+        },
+        {
+          "name": "newName",
+          "hash": "485aef2a149cb6edb4fc24296f0251655ee0159c11e40e8578feac45ac57a0c3"
+        }
+      ]
+    },
+    {
+      "name": "update-many",
+      "hash": "13dac4d056cdbf7e1bee7293950e8b8f3748e883e0ad609a8375581ca89df3ed",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "922214922b48f09e732a98c94e2f91391f0e4782749b280d909ee4d726492883"
+        },
+        {
+          "name": "database",
+          "hash": "e97a0773fb7b656c174155270bd9ded70bc82caa0fc5d65b3ba24871577a5b08"
+        },
+        {
+          "name": "filter",
+          "hash": "d2f2d3c206e3228942c2e8a532376af1d3301ed846f2e108efb28c9b11743b79"
+        },
+        {
+          "name": "update",
+          "hash": "50076f98d33cd1eee87157e40977786a349cf0834a58835f24d73b4d5e752fe0"
+        },
+        {
+          "name": "upsert",
+          "hash": "7c14ab6919eb180bb8ed1cb54db41179c42433cd0c5e9e864d7e68a2bc21670f"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}
