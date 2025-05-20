@@ -186,28 +186,19 @@ jobs:
         run: |
           while IFS='=' read -r k v; do echo "$k=$v" >> "$GITHUB_OUTPUT"; done < "mcp-server-${{ matrix.server }}/version.env"
 
-      - name: Create manifest
-        id: manifest
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          provenance: false
-          sbom: false
-          platforms: linux/amd64,linux/arm64
-          tags: |
-            ${{env.OCI_REGISTRY}}/mcp-server-${{ matrix.server }}:${{ steps.version.outputs.CHARTS_VERSION }}-${{ steps.version.outputs.CONTAINER_TAG }}
-            ${{env.OCI_REGISTRY}}/mcp-server-${{ matrix.server }}:${{ steps.version.outputs.CONTAINER_TAG }}
-            ${{env.OCI_REGISTRY}}/mcp-server-${{ matrix.server }}:latest
-          inputs: |
-            name=${{env.OCI_REGISTRY}}/mcp-server-${{ matrix.server }}@${{ steps.dig.outputs.amd64 }}
-            name=${{env.OCI_REGISTRY}}/mcp-server-${{ matrix.server }}@${{ steps.dig.outputs.arm64 }}
-
-      - name: Sign multi-arch manifest
+      - name: Create multi-arch manifest w/ final tags
         env:
           COSIGN_EXPERIMENTAL: "true"
         run: |
-          cosign sign --recursive --yes --keyless $OCI_REGISTRY/mcp-server-${{ matrix.server }}@${{ steps.manifest.outputs.digest }}
+          docker buildx imagetools create \
+            --tag $OCI_REGISTRY/mcp-server-${{ matrix.server }}:${{ steps.version.outputs.CHARTS_VERSION }}-${{ steps.version.outputs.CONTAINER_TAG }} \
+            --tag $OCI_REGISTRY/mcp-server-${{ matrix.server }}:${{ steps.version.outputs.CONTAINER_TAG }} \
+            --tag $OCI_REGISTRY/mcp-server-${{ matrix.server }}:latest \
+            $OCI_REGISTRY/mcp-server-${{ matrix.server }}@${{ steps.dig.outputs.amd64 }} \
+            $OCI_REGISTRY/mcp-server-${{ matrix.server }}@${{ steps.dig.outputs.arm64 }}
+
+          INDEX_DIGEST=$(docker buildx imagetools inspect --raw $OCI_REGISTRY/mcp-server-${{ matrix.server }}:latest | jq -r '.digest')
+          cosign sign --yes --keyless $OCI_REGISTRY/mcp-server-${{ matrix.server }}@$INDEX_DIGEST
 
       - name: Push README to Docker Hub
         if: matrix.build_image
