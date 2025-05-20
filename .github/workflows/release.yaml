@@ -37,8 +37,8 @@ jobs:
         run: |
           # workflow dispatch trigger
           if [[ "${{ github.event_name }}" == "workflow_dispatch" && -n "${{ github.event.inputs.name }}" ]]; then
-            if [[ ! -d mcp-server-$src ]]; then
-              echo "$src is not a valid mcp-server name"
+            if [[ ! -d mcp-server-${{ github.event.inputs.name }} ]]; then
+              echo "${{ github.event.inputs.name }} is not a valid mcp-server name"
               exit 1
             fi
             MATRIX=$(jq -nc --arg srv "${{ github.event.inputs.name }}" \
