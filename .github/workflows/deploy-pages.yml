@@ -5,12 +5,15 @@ on:
   push:
     branches:
       - main
+    paths:
+      - assets/website/*
+      - "mcp-server-*/**"
   workflow_dispatch:
 
 permissions:
-  contents: read       # for checkout / reading discovery.json
-  pages: write         # for publishing
-  id-token: write      # for authentication
+  contents: read # for checkout / reading discovery.json
+  pages: write # for publishing
+  id-token: write # for authentication
 
 jobs:
   build:
