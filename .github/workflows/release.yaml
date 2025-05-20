@@ -1,20 +1,15 @@
 name: Build & Publish MCP Servers
 
 on:
-  pull_request:
-    branches: ["main"]
-    paths:
-      - "mcp-server-*/**"
   push:
     branches: ["main"]
     paths:
       - "mcp-server-*/**"
   workflow_dispatch:
 
-# only one run at a time. new push will cancel previous
+# only one run at a time. Keep stacking
 concurrency:
   group: "build-and-release-${{ github.ref }}"
-  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -35,7 +30,12 @@ jobs:
         id: set
         shell: bash
         run: |
-          BASE="${{ github.event.before }}"
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            git fetch origin main --depth=1
+            BASE=$(git rev-parse origin/main)
+          else
+            BASE="${{ github.event.before }}"
+          fi
           HEAD="${{ github.sha }}"
           CHANGED_FILES=$(git diff --name-only "$BASE" "$HEAD" -- 'mcp-server*/*')
 
@@ -55,9 +55,9 @@ jobs:
                 printf '{"server":"%s","build_image":%s,"build_chart":%s}\n' \
                        "${SRV#mcp-server-}" "$IMG" "$CHART"
               done | jq -s)
-          if [[ -n "$MATRIX ]]; then
+          if [[ -n "$MATRIX" ]]; then
             echo "Changed matrix: $MATRIX"
-            echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+            echo "matrix=$(echo "$MATRIX" | jq -c)" >> "$GITHUB_OUTPUT"
           else
             echo "No changes"
             echo "matrix={}" >> "$GITHUB_OUTPUT"
@@ -91,13 +91,12 @@ jobs:
           done < "mcp-server-${{ matrix.server }}/version.env"
 
       - uses: docker/setup-qemu-action@v3
-        if: matrix.build_image == 'true'
+        if: matrix.build_image
       - uses: docker/setup-buildx-action@v3
-        if: matrix.build_image == 'true'
+        if: matrix.build_image
 
       - name: Login to Docker Hub
         uses: docker/login-action@v3
-        if: matrix.build_image == 'true'
         with:
           registry: docker.io
           username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -105,7 +104,7 @@ jobs:
 
       - name: Build & push image
         id: image
-        if: matrix.build_image == 'true'
+        if: matrix.build_image
         uses: docker/build-push-action@v5
         with:
           context: mcp-server-${{ matrix.server }}/docker
@@ -114,29 +113,35 @@ jobs:
           sbom: true
           provenance: true
           tags: |
-            ${{ env.OCI_REGISTRY }}/${{ github.repository_owner }}/${{ matrix.server }}:${{ steps.version.outputs.CHARTS_VERSION}}-${{ steps.version.outputs.CONTAINER_TAG }}
-            ${{ env.OCI_REGISTRY }}/${{ github.repository_owner }}/${{ matrix.server }}:${{ steps.version.outputs.CONTAINER_TAG }}
-            ${{ env.OCI_REGISTRY }}/${{ github.repository_owner }}/${{ matrix.server }}:latest
-          cache-from: type=gha,scope=${{ matrix.server }}
-          cache-to: type=gha,scope=${{ matrix.server }},mode=max
+            ${{ env.OCI_REGISTRY }}/mcp-server-${{ matrix.server }}:${{ steps.version.outputs.CHARTS_VERSION}}-${{ steps.version.outputs.CONTAINER_TAG }}
+            ${{ env.OCI_REGISTRY }}/mcp-server-${{ matrix.server }}:${{ steps.version.outputs.CONTAINER_TAG }}
+            ${{ env.OCI_REGISTRY }}/mcp-server-${{ matrix.server }}:latest
+          cache-from: |
+            type=registry,ref=${{ env.OCI_REGISTRY }}/mcp-server-${{ matrix.server }}:cache
+            type=gha,scope=${{ matrix.server }}
+          cache-to: |
+            type=registry,ref=${{ env.OCI_REGISTRY }}/mcp-server-${{ matrix.server }}:cache,mode=max
+            type=gha,scope=${{ matrix.server }},mode=max
+          build-args: |
+            BUILDKIT_INLINE_CACHE=1
 
       - name: Push README to Docker Hub
-        if: matrix.build_image == 'true'
-        uses: christian-korneck/docker-pushrm-action@v1
+        if: matrix.build_image
+        uses: christian-korneck/update-container-description-action@v1
         env:
-          DOCKER_USER: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKER_PASS: ${{ secrets.DOCKERHUB_TOKEN }}
+          DOCKER_USER: ${{ secrets.DOCKERHUB_API_USER }}
+          DOCKER_PASS: ${{ secrets.DOCKERHUB_API_PASSWORD }}
         with:
-          destination_container_repo: ${{ github.repository_owner }}/${{ matrix.server }}
+          destination_container_repo: ${{ github.repository_owner }}/mcp-server-${{ matrix.server }}
           provider: dockerhub
           short_description: ${{ steps.version.outputs.HUB_DESCRIPTION }}
           readme_file: mcp-server-${{ matrix.server }}/docker/README.md
 
       - name: Package & push Helm chart
-        if: matrix.build_chart == 'true'
+        if: matrix.build_chart
         env:
-          CHART_VERSION: ${{ steps.version.outputs.VERSION }}
+          CHARTS_VERSION: ${{ steps.version.outputs.CHARTS_VERSION }}
         run: |
           cd mcp-server-${{ matrix.server }}/charts
-          helm package . --version "$CHART_VERSION"
+          helm package mcp-server-${{ matrix.server }} --version "$CHARTS_VERSION"
           helm push ./*.tgz oci://$OCI_REGISTRY
