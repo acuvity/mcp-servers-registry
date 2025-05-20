@@ -163,8 +163,6 @@ jobs:
       - name: Install Cosign & Helm-sigstore
         uses: sigstore/cosign-installer@v3
 
-      - run: helm plugin install https://github.com/sigstore/helm-sigstore || true
-
       - name: Download digests from both arch builds
         uses: actions/download-artifact@v4
         with:
@@ -198,7 +196,7 @@ jobs:
             $OCI_REGISTRY/mcp-server-${{ matrix.server }}@${{ steps.dig.outputs.arm64 }}
 
           INDEX_DIGEST=$(docker buildx imagetools inspect --raw $OCI_REGISTRY/mcp-server-${{ matrix.server }}:latest | jq -r '.digest')
-          cosign sign --yes --keyless $OCI_REGISTRY/mcp-server-${{ matrix.server }}@$INDEX_DIGEST
+          cosign sign --yes $OCI_REGISTRY/mcp-server-${{ matrix.server }}@$INDEX_DIGEST
 
       - name: Push README to Docker Hub
         if: matrix.build_image
@@ -220,5 +218,5 @@ jobs:
         run: |
           cd mcp-server-${{ matrix.server }}/charts
           helm package mcp-server-${{ matrix.server }} --version "$CHARTS_VERSION"
-          helm push ./*.tgz oci://$OCI_REGISTRY
-          helm sigstore sign --yes --keyless "oci://$OCI_REGISTRY/mcp-server-${{ matrix.server }}:$CHARTS_VERSION"
+          DIGEST=$(helm push ./*.tgz oci://$OCI_REGISTRY 2>&1  |grep "Digest" | awk '{print $NF}')
+          cosign sign --yes $OCI_REGISTRY/mcp-server-${{ matrix.server }}:$CHARTS_VERSION@$DIGEST
