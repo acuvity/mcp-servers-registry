@@ -127,16 +127,15 @@ jobs:
 
       - name: Export digest
         run: |
-          mkdir -p ${{ runner.temp }}/digests
-          digest="${{ steps.image.outputs.digest }}"
-          touch "${{ runner.temp }}/digests/${digest#sha256:}"
+          mkdir -p "$RUNNER_TEMP/digests"
+          echo "${{ matrix.arch }}=${{ steps.image.outputs.digest }}" \
+            > "$RUNNER_TEMP/digests/${{ matrix.arch }}.env"
 
       - name: Upload digest
         uses: actions/upload-artifact@v4
         with:
-          name: digests-${{ matrix.server }}
+          name: digests-${{ matrix.server }}-${{ matrix.arch }}
           path: ${{ runner.temp }}/digests/*
-          if-no-files-found: error
           retention-days: 1
 
   manifest:
@@ -168,16 +167,17 @@ jobs:
       - name: Download digests from both arch builds
         uses: actions/download-artifact@v4
         with:
-          name: digests-${{ matrix.server }}
+          pattern: digests-${{ matrix.server }}-*
           path: digests
+          merge-multiple: true
 
       - name: Read digest variables
         id: dig
         shell: bash
         run: |
-          source digests/*
-          echo "amd64=$amd64" >> "$GITHUB_OUTPUT"
-          echo "arm64=$arm64" >> "$GITHUB_OUTPUT"
+          for f in digests/*.env; do source "$f"; done
+          echo "amd64=$amd64" >>"$GITHUB_OUTPUT"
+          echo "arm64=$arm64" >>"$GITHUB_OUTPUT"
 
       - uses: actions/checkout@v4
       - name: Load version info
