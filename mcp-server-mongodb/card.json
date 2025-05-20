@@ -17,5 +17,9 @@
   "requiresStorage": false,
   "rating": "B",
   "resources": {
+    "tools": 31,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
   }
 }

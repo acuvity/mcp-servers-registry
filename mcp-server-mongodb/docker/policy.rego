@@ -86,6 +86,68 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
+	"atlas-list-clusters",
+	#
+	"atlas-list-projects",
+	#
+	"atlas-inspect-cluster",
+	#
+	"atlas-create-free-cluster",
+	#
+	"atlas-create-access-list",
+	#
+	"atlas-inspect-access-list",
+	#
+	"atlas-list-db-users",
+	#
+	"atlas-create-db-user",
+	#
+	"atlas-create-project",
+	#
+	"atlas-list-orgs",
+	#
+	"atlas-connect-cluster",
+	#
+	"connect",
+	#
+	"list-collections",
+	#
+	"list-databases",
+	#
+	"collection-indexes",
+	#
+	"create-index",
+	#
+	"collection-schema",
+	#
+	"find",
+	#
+	"insert-many",
+	#
+	"delete-many",
+	#
+	"collection-storage-size",
+	#
+	"count",
+	#
+	"db-stats",
+	#
+	"aggregate",
+	#
+	"update-many",
+	#
+	"rename-collection",
+	#
+	"drop-database",
+	#
+	"drop-collection",
+	#
+	"explain",
+	#
+	"create-collection",
+	#
+	"mongodb-logs",
+	#
 	# exclude word that might be misdetected
 	"to",
 	"this",
