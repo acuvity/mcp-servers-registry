@@ -195,7 +195,7 @@ jobs:
             $OCI_REGISTRY/mcp-server-${{ matrix.server }}@${{ steps.dig.outputs.amd64 }} \
             $OCI_REGISTRY/mcp-server-${{ matrix.server }}@${{ steps.dig.outputs.arm64 }}
 
-          INDEX_DIGEST=$(docker buildx imagetools inspect --raw $OCI_REGISTRY/mcp-server-${{ matrix.server }}:latest | jq -r '.digest')
+          INDEX_DIGEST=$(docker buildx imagetools inspect $OCI_REGISTRY/mcp-server-${{ matrix.server }}:latest --format '{{.|json}}' | jq -r '.manifest.digest')
           cosign sign --yes $OCI_REGISTRY/mcp-server-${{ matrix.server }}@$INDEX_DIGEST
 
       - name: Push README to Docker Hub
