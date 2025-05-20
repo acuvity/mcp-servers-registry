@@ -196,12 +196,12 @@ jobs:
           sbom: false
           platforms: linux/amd64,linux/arm64
           tags: |
-            $OCI_REGISTRY/mcp-server-${{ matrix.server }}:${{ steps.version.outputs.CHARTS_VERSION }}-${{ steps.version.outputs.CONTAINER_TAG }}
-            $OCI_REGISTRY/mcp-server-${{ matrix.server }}:${{ steps.version.outputs.CONTAINER_TAG }}
-            $OCI_REGISTRY/mcp-server-${{ matrix.server }}:latest
+            ${{env.OCI_REGISTRY}}/mcp-server-${{ matrix.server }}:${{ steps.version.outputs.CHARTS_VERSION }}-${{ steps.version.outputs.CONTAINER_TAG }}
+            ${{env.OCI_REGISTRY}}/mcp-server-${{ matrix.server }}:${{ steps.version.outputs.CONTAINER_TAG }}
+            ${{env.OCI_REGISTRY}}/mcp-server-${{ matrix.server }}:latest
           inputs: |
-            name=$OCI_REGISTRY/mcp-server-${{ matrix.server }}@${{ steps.dig.outputs.amd64 }}
-            name=$OCI_REGISTRY/mcp-server-${{ matrix.server }}@${{ steps.dig.outputs.arm64 }}
+            name=${{env.OCI_REGISTRY}}/mcp-server-${{ matrix.server }}@${{ steps.dig.outputs.amd64 }}
+            name=${{env.OCI_REGISTRY}}/mcp-server-${{ matrix.server }}@${{ steps.dig.outputs.arm64 }}
 
       - name: Sign multi-arch manifest
         env:
