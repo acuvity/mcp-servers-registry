@@ -146,7 +146,7 @@ jobs:
 
   manifest:
     needs:
-      - build
+      - container
     if: needs.detect-changes.outputs.matrix != '[]'
     strategy:
       fail-fast: false
@@ -205,38 +205,6 @@ jobs:
           provider: dockerhub
           short_description: ${{ steps.version.outputs.HUB_DESCRIPTION }}
           readme_file: mcp-server-${{ matrix.server }}/docker/README.md
-
-  charts:
-    needs:
-      - manifest
-    if: needs.detect-changes.outputs.matrix != '[]'
-    strategy:
-      fail-fast: false
-      matrix:
-        include: ${{ fromJson(needs.detect-changes.outputs.matrix) }}
-    concurrency:
-      group: build-${{ matrix.server }}
-      cancel-in-progress: false
-    runs-on: ubuntu-latest
-
-    env:
-      OCI_REGISTRY: docker.io/acuvity
-
-    steps:
-      - uses: actions/checkout@v4
-      - name: Load version info
-        id: version
-        run: |
-          while IFS='=' read -r k v; do
-            echo "$k=$v" >> "$GITHUB_OUTPUT"
-          done < "mcp-server-${{ matrix.server }}/version.env"
-
-      - uses: docker/login-action@v3
-        if: matrix.build_image
-        with:
-          registry: docker.io
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Package, push & sign Helm chart
         if: matrix.build_chart
