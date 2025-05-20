@@ -116,6 +116,7 @@ jobs:
           platforms: linux/${{ matrix.arch }}
           sbom: true
           provenance: true
+          tags: ${{ env.OCI_REGISTRY}}/mcp-server-${{ matrix.server }}
           outputs: type=image,push-by-digest=true,name-canonical=true,push=true
           cache-from: |
             type=registry,ref=${{ env.OCI_REGISTRY }}/mcp-server-${{ matrix.server }}:cache-${{ matrix.arch }}
