@@ -141,6 +141,7 @@ jobs:
   manifest:
     needs:
       - container
+      - detect-changes
     if: needs.detect-changes.outputs.matrix != '[]'
     strategy:
       fail-fast: false
