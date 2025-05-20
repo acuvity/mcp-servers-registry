@@ -102,6 +102,10 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Install Cosign & Helm-sigstore
+        uses: sigstore/cosign-installer@v3
+      - run: helm plugin install https://github.com/sigstore/helm-sigstore || true
+
       - name: Build & push image
         id: image
         if: matrix.build_image
@@ -125,6 +129,16 @@ jobs:
           build-args: |
             BUILDKIT_INLINE_CACHE=1
 
+      - name: Sign OCI image
+        if: matrix.build_image
+        env:
+          COSIGN_EXPERIMENTAL: "true"
+        run: |
+          DIGEST=$(docker buildx imagetools inspect \
+                  ${{ steps.image.outputs.digest }})
+          IMAGE=${{ env.OCI_REGISTRY }}/mcp-server-${{ matrix.server }}@$DIGEST
+          cosign sign --yes --keyless "$IMAGE"
+
       - name: Push README to Docker Hub
         if: matrix.build_image
         uses: christian-korneck/update-container-description-action@v1
@@ -137,11 +151,13 @@ jobs:
           short_description: ${{ steps.version.outputs.HUB_DESCRIPTION }}
           readme_file: mcp-server-${{ matrix.server }}/docker/README.md
 
-      - name: Package & push Helm chart
+      - name: Package, push & sign Helm chart
         if: matrix.build_chart
         env:
           CHARTS_VERSION: ${{ steps.version.outputs.CHARTS_VERSION }}
+          COSIGN_EXPERIMENTAL: "true"
         run: |
           cd mcp-server-${{ matrix.server }}/charts
           helm package mcp-server-${{ matrix.server }} --version "$CHARTS_VERSION"
           helm push ./*.tgz oci://$OCI_REGISTRY
+          helm sigstore sign --yes --keyless "oci://$OCI_REGISTRY/mcp-server-${{ matrix.server }}:$CHARTS_VERSION
