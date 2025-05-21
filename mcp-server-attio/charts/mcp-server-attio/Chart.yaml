@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-attio"
-description: A Helm chart for Allows AI clients to manage records and notes in Attio CRM.
+description: "A Helm chart for Allows AI clients to manage records and notes in Attio CRM."
 home: https://github.com/hmk/attio-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

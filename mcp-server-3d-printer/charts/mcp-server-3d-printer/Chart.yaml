@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-3d-printer"
-description: A Helm chart for Connects to various 3D printers for management and STL manipulation.
+description: "A Helm chart for Connects to various 3D printers for management and STL manipulation."
 home: https://github.com/DMontgomery40/mcp-3D-printer-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

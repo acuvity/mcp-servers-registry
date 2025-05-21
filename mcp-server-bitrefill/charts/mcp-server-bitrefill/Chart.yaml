@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-bitrefill"
-description: A Helm chart for Provides Bitrefill services for AI assistants via the Model Context Protocol.
+description: "A Helm chart for Provides Bitrefill services for AI assistants via the Model Context Protocol."
 home: https://github.com/bitrefill/bitrefill-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-grafana"
-description: A Helm chart for Access and manage Grafana dashboards and datasources.
+description: "A Helm chart for Access and manage Grafana dashboards and datasources."
 home: https://github.com/grafana/mcp-grafana
 sources:
   - https://github.com/acuvity/mcp-servers-registry
@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: v0.3.0
+appVersion: v0.4.0
 keywords:
   - mcp-server-grafana
   - mcp-server

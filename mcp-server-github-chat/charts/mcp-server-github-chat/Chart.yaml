@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-github-chat"
-description: A Helm chart for Analyzes and queries GitHub repositories using the GitHub Chat API.
+description: "A Helm chart for Analyzes and queries GitHub repositories using the GitHub Chat API."
 home: https://github.com/AsyncFuncAI/github-chat-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

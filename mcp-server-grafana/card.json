@@ -12,12 +12,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "binary",
-  "version": "v0.3.0",
+  "version": "v0.4.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "rating": "A",
   "resources": {
-    "tools": 33,
+    "tools": 35,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

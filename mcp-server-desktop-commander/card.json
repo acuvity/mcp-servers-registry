@@ -12,7 +12,7 @@
   "scope": "native",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.1.39",
+  "version": "0.2.0",
   "requiresConfiguration": false,
   "requiresStorage": false,
   "rating": "B",

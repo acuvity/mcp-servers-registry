@@ -22,10 +22,10 @@
 
 [![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-playwright/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-playwright/0.0.25?logo=docker&logoColor=fff&label=0.0.25)](https://hub.docker.com/r/acuvity/mcp-server-playwright)
-[![PyPI](https://img.shields.io/badge/0.0.25-3775A9?logo=pypi&logoColor=fff&label=@playwright/mcp)](https://github.com/microsoft/playwright-mcp)
-[![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-playwright&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22docker.io%2Facuvity%2Fmcp-server-playwright%3A0.0.25%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-playwright/0.0.26?logo=docker&logoColor=fff&label=0.0.26)](https://hub.docker.com/r/acuvity/mcp-server-playwright)
+[![PyPI](https://img.shields.io/badge/0.0.26-3775A9?logo=pypi&logoColor=fff&label=@playwright/mcp)](https://github.com/microsoft/playwright-mcp)
+[![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-playwright/)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-playwright&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22docker.io%2Facuvity%2Fmcp-server-playwright%3A0.0.26%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Browser automation for LLMs using structured accessibility snapshots.
 
@@ -69,61 +69,80 @@ The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container i
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Gardrails
+### 🛡️ Guardrails
 
-### Covert Instruction Detection
+#### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-### Sensitive Pattern Detection
+#### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-### Shadowing Pattern Detection
+#### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-### Schema Misuse Prevention
+#### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-### Cross-Origin Tool Access
+#### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-### Secrets Redaction
+#### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
 * **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
 * **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
 
-## Basic Authentication via Shared Secret
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+
+### Enable guardrails
+
+To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
+- covert-instruction-detection
+- sensitive-pattern-detection
+- shadowing-pattern-detection
+- schema-misuse-prevention
+- cross-origin-tool-access
+- secrets-redaction
+
+For example adding:
+- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
+to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
+
+
+## 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
 * **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
 * **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
 
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
+- `-e BASIC_AUTH_SECRET="supersecret"`
+to your docker arguments. This will enable the Basic Authentication check.
 
-
-To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-playwright/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-playwright/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-playwright/charts/mcp-server-playwright#minibridge) for Helm charts).
+> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
+> rotate credentials frequently and **always** use TLS.
 
 </details>
 
@@ -138,6 +157,8 @@ To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-
 > Given mcp-server-playwright scope of operation it can be hosted anywhere.
 > But keep in mind that this requires a peristent storage and that is might not be capable of serving mulitple clients at the same time.
 
+For more information and extra configuration you can consult the [package](https://github.com/microsoft/playwright-mcp) documentation.
+
 # 🧰 Clients Integrations
 
 Below are the steps for configuring most clients that use MCP to elevate their Copilot experience.
@@ -151,7 +172,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-playwright&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22docker.io%2Facuvity%2Fmcp-server-playwright%3A0.0.25%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-playwright&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22docker.io%2Facuvity%2Fmcp-server-playwright%3A0.0.26%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -170,7 +191,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "--read-only",
           "--tmpfs",
           "/tmp:rw,nosuid,nodev",
-          "docker.io/acuvity/mcp-server-playwright:0.0.25"
+          "docker.io/acuvity/mcp-server-playwright:0.0.26"
         ]
       }
     }
@@ -194,7 +215,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "--read-only",
         "--tmpfs",
         "/tmp:rw,nosuid,nodev",
-        "docker.io/acuvity/mcp-server-playwright:0.0.25"
+        "docker.io/acuvity/mcp-server-playwright:0.0.26"
       ]
     }
   }
@@ -222,7 +243,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "--read-only",
         "--tmpfs",
         "/tmp:rw,nosuid,nodev",
-        "docker.io/acuvity/mcp-server-playwright:0.0.25"
+        "docker.io/acuvity/mcp-server-playwright:0.0.26"
       ]
     }
   }
@@ -252,7 +273,7 @@ Add the following JSON block to your mcp configuration file:
         "--read-only",
         "--tmpfs",
         "/tmp:rw,nosuid,nodev",
-        "docker.io/acuvity/mcp-server-playwright:0.0.25"
+        "docker.io/acuvity/mcp-server-playwright:0.0.26"
       ]
     }
   }
@@ -280,7 +301,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "--read-only",
         "--tmpfs",
         "/tmp:rw,nosuid,nodev",
-        "docker.io/acuvity/mcp-server-playwright:0.0.25"
+        "docker.io/acuvity/mcp-server-playwright:0.0.26"
       ]
     }
   }
@@ -299,7 +320,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 async with MCPServerStdio(
     params={
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","--tmpfs","/tmp:rw,nosuid,nodev","docker.io/acuvity/mcp-server-playwright:0.0.25"]
+        "args": ["run","-i","--rm","--read-only","--tmpfs","/tmp:rw,nosuid,nodev","docker.io/acuvity/mcp-server-playwright:0.0.26"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -322,14 +343,13 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 
 ## 🐳 Run it with Docker
 
-
 <details>
 <summary>Locally with STDIO</summary>
 
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only --tmpfs /tmp:rw,nosuid,nodev docker.io/acuvity/mcp-server-playwright:0.0.25`
+- arguments: `run -i --rm --read-only --tmpfs /tmp:rw,nosuid,nodev docker.io/acuvity/mcp-server-playwright:0.0.26`
 
 </details>
 
@@ -339,7 +359,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only --tmpfs /tmp:rw,nosuid,nodev docker.io/acuvity/mcp-server-playwright:0.0.25
+docker run -it -p 8000:8000 --rm --read-only --tmpfs /tmp:rw,nosuid,nodev docker.io/acuvity/mcp-server-playwright:0.0.26
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -397,34 +417,6 @@ That's it.
 Minibridge offers a host of additional features. For step-by-step guidance, please visit the wiki. And if anything’s unclear, don’t hesitate to reach out!
 
 </details>
-
-## 🛡️ Runtime security
-
-**Guardrails:**
-
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
-- covert-instruction-detection
-- sensitive-pattern-detection
-- shadowing-pattern-detection
-- schema-misuse-prevention
-- cross-origin-tool-access
-- secrets-redaction
-
-For example adding:
-- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
-to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
-
-**Basic Authentication:**
-
-To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
-- `-e BASIC_AUTH_SECRET="supersecret"`
-to your docker arguments. This will enable the Basic Authentication check.
-
-Then you can connect through `http/sse` as usual given that you pass an `Authorization: Bearer supersecret` header with your secret as Bearer token.
-
-> [!CAUTION]
-> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
-> rotate credentials frequently and **always** use TLS.
 
 ## ☁️ Deploy On Kubernetes
 
@@ -859,6 +851,68 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
+| tools | browser_click | description | 5bc7302b94469359a1d759df8be7523c927ea63e200d90a2a9360da1612e9d29 |
+| tools | browser_click | element | 8f7a4a92e8b1e44bcafaa5788842d15a674aef367878aa1707f321875208d02a |
+| tools | browser_click | ref | e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b |
+| tools | browser_close | description | c483523dc3bb5b05eb23920e124b65ee9dcba6d8e75d2052f785c3010c4cb960 |
+| tools | browser_console_messages | description | 2ce06ce1312ba7c5fe48cadccb19236fcf7b97a9998ef2454c8f67f3df8ecfb8 |
+| tools | browser_drag | description | 684f8531f973ebdaed04f74c1f8840f3c5dedbfacab923ce4d63a6960bce306d |
+| tools | browser_drag | endElement | 8316bc24736a8b1b3d499b84691448227959ff9dd2741b4d4f886300e2862c15 |
+| tools | browser_drag | endRef | e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b |
+| tools | browser_drag | startElement | ccb99ea06f1f4cfe6348216abc31d647899e1100f3a1a353af89afa578f2a2b4 |
+| tools | browser_drag | startRef | a2a0c2d0f7b7d8056a3aaaa53c71eba4f2bfeb35a02c5c6d860b52a9cccb9088 |
+| tools | browser_file_upload | description | d272f8f519d6502ebcbb90472ec6c6b23827101fc85aa46f63224bbe27b9c5e7 |
+| tools | browser_file_upload | paths | 114252d6f4c87e42b01029e4a945767779f1dba6b71350195073e744ac21320d |
+| tools | browser_generate_playwright_test | description | 77bc47dd670573a31a64ebfc2a3e1f6b392f952a83b15abcca3f38b52aa28440 |
+| tools | browser_generate_playwright_test | description | 14033953787179a60a79ca80987bcfd7d3dadbf0d331135489170bc3e71767d7 |
+| tools | browser_generate_playwright_test | name | d573ba5b27ecc36fe9dc995cd2617ce054fca9f45f118f1c52e7791c9ae7dcba |
+| tools | browser_generate_playwright_test | steps | c13696a7fdab2df534d249b9c78f731ab1d3dc8980d3ba32359b3c2a777fc4ba |
+| tools | browser_handle_dialog | description | 34a2837f16e0b3e9aff154f1df1db28a393f6715f106da3c4a1e7e54e2253d83 |
+| tools | browser_handle_dialog | accept | 0a86f27cbc233d22e1033a3257e24e2185897c0ab40c4b8452b40772af5e91f7 |
+| tools | browser_handle_dialog | promptText | 2e7f193e01947d6e2549c0043cb64cce077c32b98d8b799d3c9b3f861669f333 |
+| tools | browser_hover | description | 8513e4975a84cba22d8ffce77bca05b555ddb72cb31a6271907b345bb834fe45 |
+| tools | browser_hover | element | 8f7a4a92e8b1e44bcafaa5788842d15a674aef367878aa1707f321875208d02a |
+| tools | browser_hover | ref | e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b |
+| tools | browser_install | description | f260f51a276fc052742927c5457dea08462324d6dc955a35b8ba622189916ec2 |
+| tools | browser_navigate | description | 5e517ac29796df4781d6e8f8b3be061cc694f0c8e027f40e42ce0739e887b1d5 |
+| tools | browser_navigate | url | 63d749360d127f3c1d0d108336745c687aaa08760a306f0dadbbef4e9fadf27f |
+| tools | browser_navigate_back | description | 1070d603d3951f9282bc8e5111b7a6993fa05215c23ba5099429b567a9bdb467 |
+| tools | browser_navigate_forward | description | 4f74235e282e3cba526b98047b02c344c6bc32566bb325d5408e897eadfc6a7e |
+| tools | browser_network_requests | description | 62964542d2e6023a8136a0d8e72d15c1ddb70dd61a7885efe1244faffb99be11 |
+| tools | browser_pdf_save | description | 820479de946e42108093a8ac1bd073aecbc1e116b06ea2e4fc5d098bf1338d82 |
+| tools | browser_pdf_save | filename | a313904945da380efc515f0413650a5b0e5a9311478d66f91b69ce840d5cf93d |
+| tools | browser_press_key | description | aad8c3412d76c93e83c00bbe260068e5e2b988fb41080d148f31d49b5e7d2532 |
+| tools | browser_press_key | key | 99b4b6f2c8718d62ab46cca9b057177560c7ba358835bde04cebfdb9380036a2 |
+| tools | browser_resize | description | 562c4779388a2d66374bf8197abfc94572bd0ae1d09e9990f3c16a99111e7899 |
+| tools | browser_resize | height | 744a788ef6d6749b0fcfeda5184af52314f2bc859b082296cde9ef62ac933a59 |
+| tools | browser_resize | width | 98392dfba8217b86ac97bae43deb861684eb3b1e771bc8524c8a901d2f3f6d49 |
+| tools | browser_select_option | description | a085193341d59ac28092de80bbabb95a51012a6a85c011db3e1211fa2b80930a |
+| tools | browser_select_option | element | 8f7a4a92e8b1e44bcafaa5788842d15a674aef367878aa1707f321875208d02a |
+| tools | browser_select_option | ref | e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b |
+| tools | browser_select_option | values | 043660ef1e2bf819c47fee4ecba90c983b6598c8a881dd856100e336f001c748 |
+| tools | browser_snapshot | description | a3f68829ce29df3dbfa0e4e91dbf4564977b4f57a4b15ac977d894429e0ed08a |
+| tools | browser_tab_close | description | 157cf86ac9b6ef348ba6bd0d7cdfc02082050a8e65ce63f4b37b667c49b6fbcb |
+| tools | browser_tab_close | index | 081208626d185b11611053dbd8bdcf7b6865490a7ac24ebd84ffcac3274d0abc |
+| tools | browser_tab_list | description | 805df6a76329b8e13fcc02f50b976e6984fc73f0a1b97c30d5e1783ec9750dfa |
+| tools | browser_tab_new | description | 2b75279f7878c031956585a06d4e79f9ebd96f794b1a5d9aea2fff12d418e3be |
+| tools | browser_tab_new | url | 419d71c871ecc825855b86c2fbe611c44455826ae1c038ddfa7d6ba8e78524cc |
+| tools | browser_tab_select | description | a0b4c48c11a7ff313f2dab71924f00c0eeb8dd6d65e24b65f979582560ff1533 |
+| tools | browser_tab_select | index | cec04c7dc803cb8b380657da67a17ae530096f71d64aaf52d9c8e6b0dc33c628 |
+| tools | browser_take_screenshot | description | 14f147272c20299ea428abd9a08b576144fc06fe44968949e477b0ec490fc661 |
+| tools | browser_take_screenshot | element | 0a584a11c45269e0b00e83541abffa5294b5cbfd951d73916de962a7e8565184 |
+| tools | browser_take_screenshot | filename | e4fb983a7d3fda2528819a7f3f6f07b24d8eba868a52dab812141fbb8b961981 |
+| tools | browser_take_screenshot | raw | 6ef2e54d93f43a3d8ae510ea94a7c42892646fc9c8a73f766256377225e40f36 |
+| tools | browser_take_screenshot | ref | 6b63c0b921d6d1d6c6c5221e95f36488876b4d2d0c53e5a4eef0d8dd4d7e088f |
+| tools | browser_type | description | 390727daa0fdd31a5d9417f51fd818b1b6d6b934eb9b5b15be57dd9e7e0da2a9 |
+| tools | browser_type | element | 8f7a4a92e8b1e44bcafaa5788842d15a674aef367878aa1707f321875208d02a |
+| tools | browser_type | ref | e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b |
+| tools | browser_type | slowly | fbaa1f504a8fc996ebf95c85fe33b2d70f8291663b28707ca388673db5489dbd |
+| tools | browser_type | submit | 2878d7dee713522a404fd189b76b7ce01b439e50b164a1e5c992b6ba2f577106 |
+| tools | browser_type | text | 42bc9d6777b527b20636d608e53bc2cb9dc43f74c263b701827645bcc369d438 |
+| tools | browser_wait_for | description | 5b754f8f4ac481dae127cb350272c1e5b484b4a3cb819cc426b1bfac9747a372 |
+| tools | browser_wait_for | text | 4eb9b99a23f0994f4aa3a51152537abd4534da072acffe75fbee9c5cb93963cd |
+| tools | browser_wait_for | textGone | b3a67c647eb43e55e93a542d28475c534063b1277abbadf885839632f244c4ef |
+| tools | browser_wait_for | time | 0ed8e3c1f110ea73b266829774a105a70725d2360fb3464757d342a893e8f71d |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

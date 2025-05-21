@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-aws-kb-retrieval"
-description: A Helm chart for MCP server for AWS Knowledge Base retrieval using Bedrock Agent Runtime
+description: "A Helm chart for MCP server for AWS Knowledge Base retrieval using Bedrock Agent Runtime"
 home: https://modelcontextprotocol.io
 sources:
   - https://github.com/acuvity/mcp-servers-registry

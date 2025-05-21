@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-evm"
-description: A Helm chart for Comprehensive blockchain services for 30+ networks, on native tokens, ERC20, NFTs, smart contracts.
+description: "A Helm chart for Comprehensive blockchain services for 30+ networks, on native tokens, ERC20, NFTs, smart contracts."
 home: https://github.com/mcpdotdirect/evm-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

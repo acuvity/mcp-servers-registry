@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-hackle-mcp"
-description: A Helm chart for A/B test data query tools for Hackle API.
+description: "A Helm chart for A/B test data query tools for Hackle API."
 home: https://github.com/hackle-io/hackle-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

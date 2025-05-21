@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-desktop-commander"
-description: A Helm chart for A swiss-army-knife that can manage/execute programs and read/write/search/edit code and text files.
+description: "A Helm chart for A swiss-army-knife that can manage/execute programs and read/write/search/edit code and text files."
 home: https://github.com/wonderwhy-er/DesktopCommanderMCP
 sources:
   - https://github.com/acuvity/mcp-servers-registry
@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.1.39
+appVersion: 0.2.0
 keywords:
   - mcp-server-desktop-commander
   - mcp-server

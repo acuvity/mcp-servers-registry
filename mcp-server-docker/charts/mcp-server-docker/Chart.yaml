@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-docker"
-description: A Helm chart for Integrate with Docker to manage containers, images, volumes, and networks.
+description: "A Helm chart for Integrate with Docker to manage containers, images, volumes, and networks."
 home: https://github.com/ckreiling/mcp-server-docker
 sources:
   - https://github.com/acuvity/mcp-servers-registry

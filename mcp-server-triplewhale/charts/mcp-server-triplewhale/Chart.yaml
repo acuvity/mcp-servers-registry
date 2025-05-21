@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-triplewhale"
-description: A Helm chart for MCP server for managing context with Triplewhale through natural language.
+description: "A Helm chart for MCP server for managing context with Triplewhale through natural language."
 home: https://github.com/Triple-Whale/mcp-server-triplewhale
 sources:
   - https://github.com/acuvity/mcp-servers-registry

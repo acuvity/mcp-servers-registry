@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-glif"
-description: A Helm chart for Run AI workflows and manage glifs through the Model Context Protocol.
+description: "A Helm chart for Run AI workflows and manage glifs through the Model Context Protocol."
 home: https://github.com/glifxyz/glif-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

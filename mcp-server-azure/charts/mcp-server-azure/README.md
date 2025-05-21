@@ -22,10 +22,10 @@
 
 [![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-azure/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-azure/0.0.18?logo=docker&logoColor=fff&label=0.0.18)](https://hub.docker.com/r/acuvity/mcp-server-azure)
-[![PyPI](https://img.shields.io/badge/0.0.18-3775A9?logo=pypi&logoColor=fff&label=@azure/mcp)](https://github.com/Azure/azure-mcp)
-[![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22-e%22%2C%22AZURE_CLIENT_ID%22%2C%22-e%22%2C%22AZURE_CLIENT_SECRET%22%2C%22-e%22%2C%22AZURE_TENANT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure%3A0.0.18%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-azure/0.0.20?logo=docker&logoColor=fff&label=0.0.20)](https://hub.docker.com/r/acuvity/mcp-server-azure)
+[![PyPI](https://img.shields.io/badge/0.0.20-3775A9?logo=pypi&logoColor=fff&label=@azure/mcp)](https://github.com/Azure/azure-mcp)
+[![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-azure/)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22-e%22%2C%22AZURE_CLIENT_ID%22%2C%22-e%22%2C%22AZURE_CLIENT_SECRET%22%2C%22-e%22%2C%22AZURE_TENANT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure%3A0.0.20%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Integrates AI agents with Azure services for enhanced functionality.
 
@@ -69,61 +69,80 @@ The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container i
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Gardrails
+### 🛡️ Guardrails
 
-### Covert Instruction Detection
+#### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-### Sensitive Pattern Detection
+#### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-### Shadowing Pattern Detection
+#### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-### Schema Misuse Prevention
+#### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-### Cross-Origin Tool Access
+#### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-### Secrets Redaction
+#### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
 * **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
 * **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
 
-## Basic Authentication via Shared Secret
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+
+### Enable guardrails
+
+To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
+- covert-instruction-detection
+- sensitive-pattern-detection
+- shadowing-pattern-detection
+- schema-misuse-prevention
+- cross-origin-tool-access
+- secrets-redaction
+
+For example adding:
+- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
+to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
+
+
+## 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
 * **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
 * **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
 
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
+- `-e BASIC_AUTH_SECRET="supersecret"`
+to your docker arguments. This will enable the Basic Authentication check.
 
-
-To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-azure/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-azure/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-azure/charts/mcp-server-azure#minibridge) for Helm charts).
+> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
+> rotate credentials frequently and **always** use TLS.
 
 </details>
 
@@ -155,7 +174,11 @@ To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.0.18`
+  - container: `1.0.0-0.0.20`
+
+**Verify signature with [cosign](https://github.com/sigstore/cosign):**
+  - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-azure:1.0.0`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-azure:1.0.0-0.0.20`
 
 ---
 
@@ -604,7 +627,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (51)
+## 🧰 Tools (49)
 <details>
 <summary>azmcp-appconfig-account-list</summary>
 
@@ -805,6 +828,7 @@ Returns best practices for secure, production-grade Azure SDK usage. Call this c
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| _dummy | string | Placeholder argument to ensure OpenAPI schema is valid. | No
 </details>
 <details>
 <summary>azmcp-cosmos-account-list</summary>
@@ -1666,7 +1690,7 @@ Get details about a Service Bus queue. Returns queue properties and runtime info
 lock duration, max message size, queue size, creation date, status, current message counts, etc.
 
 Required arguments:
-- namespace: Service Bus namespace name. (This is usually in the form <namespace>.servicebus.windows.net)
+- namespace: The fully qualified Service Bus namespace host name. (This is usually in the form <namespace>.servicebus.windows.net)
 - queue-name: Queue name to get details and runtime information for.
 ```
 
@@ -1675,39 +1699,7 @@ Required arguments:
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
-| namespace | string | The Service Bus namespace name. | Yes
-| queue-name | string | The queue name to peek messages from. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
-| subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
-| tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
-</details>
-<details>
-<summary>azmcp-servicebus-queue-peek</summary>
-
-**Description**:
-
-```
-Peek messages from a Service Bus queue without removing them.  Message browsing, or peeking, enables a
-Service Bus client to enumerate all messages in a queue, for diagnostic and debugging purposes.
-The peek operation returns active, locked, deferred, and scheduled messages in the queue.
-
-Returns message content, properties, and metadata.  Messages remain in the queue after peeking.
-
-Required arguments:
-- namespace: Service Bus namespace name. (This is usually in the form <namespace>.servicebus.windows.net)
-- queue: Queue name to peek messages from
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
-| namespace | string | The Service Bus namespace name. | Yes
+| namespace | string | The fully qualified Service Bus namespace host name. (This is usually in the form <namespace>.servicebus.windows.net) | Yes
 | queue-name | string | The queue name to peek messages from. | Yes
 | retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
 | retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
@@ -1727,7 +1719,7 @@ Get details about a Service Bus topic. Returns topic properties and runtime info
 number of subscriptions, max message size, max topic size, number of scheduled messages, etc.
 
 Required arguments:
-- namespace: Service Bus namespace name. (This is usually in the form <namespace>.servicebus.windows.net)
+- namespace: The fully qualified Service Bus namespace host name. (This is usually in the form <namespace>.servicebus.windows.net)
 - topic-name: Topic name to get information about.
 ```
 
@@ -1736,7 +1728,7 @@ Required arguments:
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
-| namespace | string | The Service Bus namespace name. | Yes
+| namespace | string | The fully qualified Service Bus namespace host name. (This is usually in the form <namespace>.servicebus.windows.net) | Yes
 | retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
 | retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
 | retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
@@ -1755,7 +1747,7 @@ Required arguments:
 Get details about a Service Bus subscription. Returns subscription runtime properties including message counts, delivery settings, and other metadata.
 
 Required arguments:
-- namespace: Service Bus namespace name. (This is usually in the form <namespace>.servicebus.windows.net)
+- namespace: The fully qualified Service Bus namespace host name. (This is usually in the form <namespace>.servicebus.windows.net)
 - topic-name: Topic name containing the subscription
 - subscription-name: Name of the subscription to get details for
 ```
@@ -1765,42 +1757,7 @@ Required arguments:
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
-| namespace | string | The Service Bus namespace name. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
-| subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
-| subscription-name | string | The name of subscription to peek messages from. | Yes
-| tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
-| topic-name | string | The name of the topic containing the subscription. | Yes
-</details>
-<details>
-<summary>azmcp-servicebus-topic-subscription-peek</summary>
-
-**Description**:
-
-```
-Peek messages from a Service Bus subscription without removing them.  Message browsing, or peeking, enables a
-Service Bus client to enumerate all messages in a subscription, for diagnostic and debugging purposes.
-The peek operation returns active, locked, and deferred messages in the subscription.
-
-Returns message content, properties, and metadata.  Messages remain in the subscription after peeking.
-
-Required arguments:
-- namespace: Service Bus namespace name. (This is usually in the form <namespace>.servicebus.windows.net)
-- topic-name: Topic name containing the subscription
-- subscription-name: Subscription name to peek messages from
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
-| max-messages | string | The maximum number of messages to return. | No
-| namespace | string | The Service Bus namespace name. | Yes
+| namespace | string | The fully qualified Service Bus namespace host name. (This is usually in the form <namespace>.servicebus.windows.net) | Yes
 | retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
 | retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
 | retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
@@ -2050,6 +2007,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | azmcp-appconfig-kv-unlock | subscription | 373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986 |
 | tools | azmcp-appconfig-kv-unlock | tenant | 9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4 |
 | tools | azmcp-bestpractices-get | description | 8c375b1789afca09a0dd90d83f21dc760b7b9cda9e109c4ad00e864ea3b5e53c |
+| tools | azmcp-bestpractices-get | _dummy | 23fe1a767a7c77bff94b2f3452abd4a64ca83284b1400bb257a51bd380172578 |
 | tools | azmcp-cosmos-account-list | description | 078f8b26134fb25376825878f2aaed5522934d360ed4108501668ed1ba35a37c |
 | tools | azmcp-cosmos-account-list | auth-method | 6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29 |
 | tools | azmcp-cosmos-account-list | retry-delay | 503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce |
@@ -2410,9 +2368,9 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | azmcp-search-service-list | retry-network-timeout | 82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6 |
 | tools | azmcp-search-service-list | subscription | 373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986 |
 | tools | azmcp-search-service-list | tenant | 9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4 |
-| tools | azmcp-servicebus-queue-details | description | 61fa105ebcb11e33a311ca360a49f1eef36192816277b863d1160d6d1a483feb |
+| tools | azmcp-servicebus-queue-details | description | d1d5f5a9582b1ac0159ce295dbe9e7ebc85e63160e3b4aaaa174d2c463a7e69f |
 | tools | azmcp-servicebus-queue-details | auth-method | 6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29 |
-| tools | azmcp-servicebus-queue-details | namespace | 5d5560d1d1d721662123f483c033ecc429ede29d34e3c4132a5492fca041aa32 |
+| tools | azmcp-servicebus-queue-details | namespace | 86974d13ebb1ed18ea162ce156c6f7a857fd7c40ce1fdad75038c423be80f2a5 |
 | tools | azmcp-servicebus-queue-details | queue-name | 7723e1a7e6f47cd107d95fa68c5460ef9f3308649b0df676fd63bd131b95d606 |
 | tools | azmcp-servicebus-queue-details | retry-delay | 503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce |
 | tools | azmcp-servicebus-queue-details | retry-max-delay | edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88 |
@@ -2421,20 +2379,9 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | azmcp-servicebus-queue-details | retry-network-timeout | 82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6 |
 | tools | azmcp-servicebus-queue-details | subscription | 373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986 |
 | tools | azmcp-servicebus-queue-details | tenant | 9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4 |
-| tools | azmcp-servicebus-queue-peek | description | 98aa8f36f3b08b87998627ba36e3a03d2457691b99e348313689ba6410c5c422 |
-| tools | azmcp-servicebus-queue-peek | auth-method | 6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29 |
-| tools | azmcp-servicebus-queue-peek | namespace | 5d5560d1d1d721662123f483c033ecc429ede29d34e3c4132a5492fca041aa32 |
-| tools | azmcp-servicebus-queue-peek | queue-name | 7723e1a7e6f47cd107d95fa68c5460ef9f3308649b0df676fd63bd131b95d606 |
-| tools | azmcp-servicebus-queue-peek | retry-delay | 503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce |
-| tools | azmcp-servicebus-queue-peek | retry-max-delay | edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88 |
-| tools | azmcp-servicebus-queue-peek | retry-max-retries | b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2 |
-| tools | azmcp-servicebus-queue-peek | retry-mode | 0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084 |
-| tools | azmcp-servicebus-queue-peek | retry-network-timeout | 82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6 |
-| tools | azmcp-servicebus-queue-peek | subscription | 373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986 |
-| tools | azmcp-servicebus-queue-peek | tenant | 9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4 |
-| tools | azmcp-servicebus-topic-details | description | 2ca331e407a4acb82875744c2c8aecbf44c5bff3c43b2fbf9845c3746f4f8c1d |
+| tools | azmcp-servicebus-topic-details | description | 05dd5d926c4fcfa83c7a813805ff020f2ababeaaa28c7a69fb657361f764dc69 |
 | tools | azmcp-servicebus-topic-details | auth-method | 6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29 |
-| tools | azmcp-servicebus-topic-details | namespace | 5d5560d1d1d721662123f483c033ecc429ede29d34e3c4132a5492fca041aa32 |
+| tools | azmcp-servicebus-topic-details | namespace | 86974d13ebb1ed18ea162ce156c6f7a857fd7c40ce1fdad75038c423be80f2a5 |
 | tools | azmcp-servicebus-topic-details | retry-delay | 503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce |
 | tools | azmcp-servicebus-topic-details | retry-max-delay | edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88 |
 | tools | azmcp-servicebus-topic-details | retry-max-retries | b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2 |
@@ -2443,9 +2390,9 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | azmcp-servicebus-topic-details | subscription | 373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986 |
 | tools | azmcp-servicebus-topic-details | tenant | 9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4 |
 | tools | azmcp-servicebus-topic-details | topic-name | 6d7ee4a4a4aff9cb8e0c9f0f8e2d6813f3476d86d660705bce48dd2502d90098 |
-| tools | azmcp-servicebus-topic-subscription-details | description | 9f0c3e6687b2f588fbd219529a30fa5591371424c3061ba27de9545736a54416 |
+| tools | azmcp-servicebus-topic-subscription-details | description | d95b0398114741486c23cb9f436bca5d71b3261abafceee94c1582e247cfb3dd |
 | tools | azmcp-servicebus-topic-subscription-details | auth-method | 6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29 |
-| tools | azmcp-servicebus-topic-subscription-details | namespace | 5d5560d1d1d721662123f483c033ecc429ede29d34e3c4132a5492fca041aa32 |
+| tools | azmcp-servicebus-topic-subscription-details | namespace | 86974d13ebb1ed18ea162ce156c6f7a857fd7c40ce1fdad75038c423be80f2a5 |
 | tools | azmcp-servicebus-topic-subscription-details | retry-delay | 503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce |
 | tools | azmcp-servicebus-topic-subscription-details | retry-max-delay | edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88 |
 | tools | azmcp-servicebus-topic-subscription-details | retry-max-retries | b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2 |
@@ -2455,19 +2402,6 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | azmcp-servicebus-topic-subscription-details | subscription-name | a2794883b5b896ad053147d1953e267649d6a9d12e0e213b29d8adc8f3367564 |
 | tools | azmcp-servicebus-topic-subscription-details | tenant | 9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4 |
 | tools | azmcp-servicebus-topic-subscription-details | topic-name | 6d7ee4a4a4aff9cb8e0c9f0f8e2d6813f3476d86d660705bce48dd2502d90098 |
-| tools | azmcp-servicebus-topic-subscription-peek | description | 1cacb8f08eea5426fb63c7a8912cf2c494185ba66bdc265e97522e58fe0eccc9 |
-| tools | azmcp-servicebus-topic-subscription-peek | auth-method | 6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29 |
-| tools | azmcp-servicebus-topic-subscription-peek | max-messages | 1457c570afb5326c4437152a1aa0b5a7bc1232559335f7d8e9cb7e5501815ffb |
-| tools | azmcp-servicebus-topic-subscription-peek | namespace | 5d5560d1d1d721662123f483c033ecc429ede29d34e3c4132a5492fca041aa32 |
-| tools | azmcp-servicebus-topic-subscription-peek | retry-delay | 503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce |
-| tools | azmcp-servicebus-topic-subscription-peek | retry-max-delay | edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88 |
-| tools | azmcp-servicebus-topic-subscription-peek | retry-max-retries | b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2 |
-| tools | azmcp-servicebus-topic-subscription-peek | retry-mode | 0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084 |
-| tools | azmcp-servicebus-topic-subscription-peek | retry-network-timeout | 82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6 |
-| tools | azmcp-servicebus-topic-subscription-peek | subscription | 373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986 |
-| tools | azmcp-servicebus-topic-subscription-peek | subscription-name | a2794883b5b896ad053147d1953e267649d6a9d12e0e213b29d8adc8f3367564 |
-| tools | azmcp-servicebus-topic-subscription-peek | tenant | 9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4 |
-| tools | azmcp-servicebus-topic-subscription-peek | topic-name | 6d7ee4a4a4aff9cb8e0c9f0f8e2d6813f3476d86d660705bce48dd2502d90098 |
 | tools | azmcp-storage-account-list | description | 9ebbc6b627a3f7f7a8f96351d9c90fdd5caa5271034f21c8edf5806f04955fa0 |
 | tools | azmcp-storage-account-list | auth-method | 6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29 |
 | tools | azmcp-storage-account-list | retry-delay | 503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce |

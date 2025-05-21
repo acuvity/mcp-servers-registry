@@ -1,6 +1,26 @@
 {
   "tools": [
     {
+      "name": "fetch_docs_by_path",
+      "hash": "db5cc0087fb09ac06abae11e25c7255ec12f0a0a11a95c7bb0cf6807816e53e9",
+      "params": [
+        {
+          "name": "paths",
+          "hash": "e3117a5bba68651a746f09efd1e6aa60495e1a6171e87bb4ddc8a61cce11b581"
+        }
+      ]
+    },
+    {
+      "name": "get_started",
+      "hash": "0ddac321caa92d569c6b7768267fd474eb17d27509741fe9a6c5069ef4d957c8",
+      "params": [
+        {
+          "name": "api",
+          "hash": "020bba209b3e40636585ee28353121ec237df37f856c33d2f0da686466ad12b9"
+        }
+      ]
+    },
+    {
       "name": "introspect_admin_schema",
       "hash": "7e0d17045beec0028d5390dd12e016af8a50df6b96d7918f95c12bd7e3524fe9",
       "params": [
@@ -16,7 +36,7 @@
     },
     {
       "name": "search_dev_docs",
-      "hash": "43c133ea467ecbd2aeaa66c47a0cdcaeb1791b456d57973e5860afd5791121a8",
+      "hash": "92d1ee083486a6f57ec70b5a804fcde474dfb5a98c3e13dd8cebce6f8c37aca5",
       "params": [
         {
           "name": "prompt",

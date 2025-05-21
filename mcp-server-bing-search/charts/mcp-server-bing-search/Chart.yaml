@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-bing-search"
-description: A Helm chart for Web search capabilities using Microsoft Bing Search API.
+description: "A Helm chart for Web search capabilities using Microsoft Bing Search API."
 home: https://github.com/leehanchung/bing-search-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

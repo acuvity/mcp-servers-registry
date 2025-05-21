@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-atlassian"
-description: A Helm chart for Integrates AI tools for Jira and Confluence tasks and automation.
+description: "A Helm chart for Integrates AI tools for Jira and Confluence tasks and automation."
 home: https://github.com/sooperset/mcp-atlassian
 sources:
   - https://github.com/acuvity/mcp-servers-registry
@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.10.6
+appVersion: 0.11.1
 keywords:
   - mcp-server-atlassian
   - mcp-server

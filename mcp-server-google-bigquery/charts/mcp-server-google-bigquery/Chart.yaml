@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-google-bigquery"
-description: A Helm chart for A server that lets your LLM securely query BigQuery.
+description: "A Helm chart for A server that lets your LLM securely query BigQuery."
 home: https://github.com/ergut/mcp-bigquery-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

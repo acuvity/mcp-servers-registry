@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-apify-actors"
-description: A Helm chart for Use 3,000+ pre-built cloud tools, known as Actors, to extract data from websites.
+description: "A Helm chart for Use 3,000+ pre-built cloud tools, known as Actors, to extract data from websites."
 home: https://github.com/apify/actors-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

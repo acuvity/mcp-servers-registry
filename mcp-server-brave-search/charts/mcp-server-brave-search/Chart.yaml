@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-brave-search"
-description: A Helm chart for MCP server for Brave Search API integration
+description: "A Helm chart for MCP server for Brave Search API integration"
 home: https://modelcontextprotocol.io
 sources:
   - https://github.com/acuvity/mcp-servers-registry

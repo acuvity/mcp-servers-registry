@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-notion"
-description: A Helm chart for Interacting with Notion API.
+description: "A Helm chart for Interacting with Notion API."
 home: https://github.com/makenotion/notion-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry
@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 1.8.0
+appVersion: 1.8.1
 keywords:
   - mcp-server-notion
   - mcp-server

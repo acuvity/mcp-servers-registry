@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-microsoft-graph"
-description: A Helm chart for Connect to microsoft API to get applications, sites users and more.
+description: "A Helm chart for Connect to microsoft API to get applications, sites users and more."
 home: https://github.com/acuvity/mcp-server-microsoft-graph
 sources:
   - https://github.com/acuvity/mcp-servers-registry

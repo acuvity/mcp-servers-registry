@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-bruno"
-description: A Helm chart for An MCP server for interacting with Bruno API Client.
+description: "A Helm chart for An MCP server for interacting with Bruno API Client."
 home: https://github.com/hungthai1401/bruno-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

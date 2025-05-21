@@ -1,6 +1,20 @@
 {
   "tools": [
     {
+      "name": "confluence_add_comment",
+      "hash": "dae0502a4a7ba259bb6f141a1c3107d6ee2398998901308e1cabb111719beb0e",
+      "params": [
+        {
+          "name": "content",
+          "hash": "7c17579c8ed4668bfb1fede68f965a86d8d3c01ebe2b1973daa8661bc3ca1b48"
+        },
+        {
+          "name": "page_id",
+          "hash": "543df92d5561df462a69efd068e757a4acc43aa650b6ff274330eb3c09a60ebe"
+        }
+      ]
+    },
+    {
       "name": "confluence_add_label",
       "hash": "59a4af221f89c70e53823a280fe5aa79b7e25269a1b87c1389739f9e513dbe24",
       "params": [
@@ -38,7 +52,7 @@
     },
     {
       "name": "confluence_delete_page",
-      "hash": "e5b7efd543c1a08de837ebd64e65b17ed308f68bf497e61cbe074c1c78083605",
+      "hash": "bc22d86bfa7534f8ca23ebcefee8c3edaa567cdb20ba25ae70a0dd5228a77144",
       "params": [
         {
           "name": "page_id",
@@ -68,7 +82,7 @@
     },
     {
       "name": "confluence_get_page",
-      "hash": "af02e8953193594c05538f8bc95931f9452e7de17b9964cf9932e734f74022e0",
+      "hash": "91b410dc9e71017ffb56177633f50e89d82a198740743cdb16f889e443dad33f",
       "params": [
         {
           "name": "convert_to_markdown",
@@ -76,11 +90,19 @@
         },
         {
           "name": "include_metadata",
-          "hash": "385bb2b41af1163519be47ab53ead05ee0e5cc046f09789be7331357219b2227"
+          "hash": "3f9b30c4a1f2d49ab161c49f058909619c2908c3bc25e720cae71f06f7d83ff4"
         },
         {
           "name": "page_id",
-          "hash": "8cf2a05c4f67a2c7161dc93e7c4adb174b26a191e27623858f278496e760b096"
+          "hash": "00e40cf2940db9108b8feaadd6bbf68225215607f8e28137370e61b918cc1f47"
+        },
+        {
+          "name": "space_key",
+          "hash": "fd37c56e395d974efde7e244e4bc60cc77712a571b4602e56e85a843325a3413"
+        },
+        {
+          "name": "title",
+          "hash": "7cab7fa312acf7dc04caee58bbaac4ab31f1095aa72ac6c2632653dc6f007716"
         }
       ]
     },
@@ -134,7 +156,7 @@
     },
     {
       "name": "confluence_update_page",
-      "hash": "c181331e15dcdf3707955228bdea5946e9567787aae3fa8ef85046df1be1fe1a",
+      "hash": "f3062d3f667bf8fdb3650f86a4d255080ea50729741e94976b3a2fb22ac47d4c",
       "params": [
         {
           "name": "content",
@@ -626,7 +648,7 @@
     },
     {
       "name": "jira_update_issue",
-      "hash": "cb88091f7adf2e290ac8fdf1974c58081fb92f5f1139dd76f6247882894f3dc6",
+      "hash": "f68944f501db10158f69ea4faddd9137b444d22e0f6c52d482823a4fd21b4c31",
       "params": [
         {
           "name": "additional_fields",

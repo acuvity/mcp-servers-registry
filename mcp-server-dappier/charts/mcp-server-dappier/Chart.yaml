@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-dappier"
-description: A Helm chart for Real-time web search and access to premium media data.
+description: "A Helm chart for Real-time web search and access to premium media data."
 home: https://github.com/dappierai/dappier-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

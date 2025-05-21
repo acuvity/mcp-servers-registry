@@ -88,83 +88,43 @@ _cross_tool_exclude := [
 	#
 	"cleanup",
 	#
-	"create_deployment",
+	"kubectl_get",
 	#
-	"create_namespace",
+	"kubectl_describe",
 	#
-	"create_pod",
+	"kubectl_list",
 	#
-	"create_cronjob",
+	"kubectl_apply",
 	#
-	"create_service",
+	"kubectl_delete",
 	#
-	"delete_pod",
+	"kubectl_create",
 	#
-	"delete_deployment",
+	"kubectl_logs",
 	#
-	"delete_namespace",
+	"kubectl_scale",
 	#
-	"delete_service",
+	"kubectl_patch",
 	#
-	"describe_cronjob",
+	"kubectl_rollout",
 	#
-	"describe_pod",
-	#
-	"describe_node",
-	#
-	"describe_deployment",
-	#
-	"describe_service",
+	"kubectl_context",
 	#
 	"explain_resource",
 	#
-	"get_events",
-	#
-	"get_job_logs",
-	#
-	"get_logs",
-	#
 	"install_helm_chart",
 	#
-	"list_api_resources",
-	#
-	"list_cronjobs",
-	#
-	"list_contexts",
-	#
-	"get_current_context",
-	#
-	"set_current_context",
-	#
-	"list_deployments",
-	#
-	"list_jobs",
-	#
-	"list_namespaces",
-	#
-	"list_nodes",
-	#
-	"list_pods",
-	#
-	"list_services",
+	"upgrade_helm_chart",
 	#
 	"uninstall_helm_chart",
-	#
-	"update_deployment",
-	#
-	"upgrade_helm_chart",
 	#
 	"port_forward",
 	#
 	"stop_port_forward",
 	#
-	"scale_deployment",
+	"list_api_resources",
 	#
-	"delete_cronjob",
-	#
-	"create_configmap",
-	#
-	"update_service",
+	"kubectl_generic",
 	#
 	# exclude word that might be misdetected
 	"to",
@@ -262,15 +222,7 @@ reasons contains msg if {
 
 ## Deny rules for tools/call request
 #
-
-reasons contains msg if {
-	"covert-instruction-detection" in active_guardrails
-	input.mcp.method == "tools/call"
-	some pattern in _covert_patterns
-	regex.match(pattern, sprintf("%v", [input.mcp.params.arguments]))
-	msg = sprintf("covert content in call args: %v", [pattern])
-}
-
+#
 reasons contains msg if {
 	"schema-misuse-prevention" in active_guardrails
 	input.mcp.method == "tools/call"
@@ -287,14 +239,6 @@ reasons contains msg if {
 	msg = sprintf("sensitive content in call args: %v", [pattern])
 }
 
-reasons contains msg if {
-	"shadowing-pattern-detection" in active_guardrails
-	input.mcp.method == "tools/call"
-	some pattern in _shadowing_patterns
-	regex.match(pattern, sprintf("%v", [input.mcp.params.arguments]))
-	msg = sprintf("tool-shadowing in call args: %v", [pattern])
-}
-
 ## Deny rules for tools/call response
 #
 
@@ -305,23 +249,6 @@ reasons contains msg if {
 	some pattern in _covert_patterns
 	regex.match(pattern, sprintf("%v", [element.text]))
 	msg = sprintf("covert content in call response: %v", [pattern])
-}
-
-reasons contains msg if {
-	"schema-misuse-prevention" in active_guardrails
-	some element in input.mcp.result.content
-	some arg_name, _ in element
-	lower(arg_name) in _schema_keys
-	msg = sprintf("schema parameter misuse in call response: %v", [arg_name])
-}
-
-reasons contains msg if {
-	"sensitive-pattern-detection" in active_guardrails
-	some element in input.mcp.result.content
-	element.type == "text"
-	some pattern in _sensitive_patterns
-	regex.match(pattern, sprintf("%v", [element.text]))
-	msg = sprintf("sensitive content in call response: %v", [pattern])
 }
 
 reasons contains msg if {

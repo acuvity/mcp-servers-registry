@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-hyperbrowser"
-description: A Helm chart for Scrapes, extracts data, and automates web page interactions.
+description: "A Helm chart for Scrapes, extracts data, and automates web page interactions."
 home: https://github.com/hyperbrowserai/mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

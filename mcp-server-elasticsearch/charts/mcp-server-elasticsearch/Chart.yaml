@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-elasticsearch"
-description: A Helm chart for Connects to Elasticsearch for natural language data queries.
+description: "A Helm chart for Connects to Elasticsearch for natural language data queries."
 home: https://github.com/elastic/mcp-server-elasticsearch
 sources:
   - https://github.com/acuvity/mcp-servers-registry

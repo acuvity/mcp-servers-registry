@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-basic-memory"
-description: A Helm chart for Local-first knowledge management combining Zettelkasten with knowledge graphs
+description: "A Helm chart for Local-first knowledge management combining Zettelkasten with knowledge graphs"
 home: https://pypi.org/project/basic-memory/
 sources:
   - https://github.com/acuvity/mcp-servers-registry

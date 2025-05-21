@@ -22,10 +22,10 @@
 
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-shopify-dev/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-shopify-dev/1.0.2?logo=docker&logoColor=fff&label=1.0.2)](https://hub.docker.com/r/acuvity/mcp-server-shopify-dev)
-[![PyPI](https://img.shields.io/badge/1.0.2-3775A9?logo=pypi&logoColor=fff&label=@shopify/dev-mcp)](https://github.com/Shopify/dev-mcp)
-[![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-shopify-dev&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-shopify-dev%3A1.0.2%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-shopify-dev/1.1.0?logo=docker&logoColor=fff&label=1.1.0)](https://hub.docker.com/r/acuvity/mcp-server-shopify-dev)
+[![PyPI](https://img.shields.io/badge/1.1.0-3775A9?logo=pypi&logoColor=fff&label=@shopify/dev-mcp)](https://github.com/Shopify/dev-mcp)
+[![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-shopify-dev/)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-shopify-dev&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-shopify-dev%3A1.1.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Model Context Protocol (MCP) server that interacts with Shopify Dev.
 
@@ -69,61 +69,80 @@ The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container i
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Gardrails
+### 🛡️ Guardrails
 
-### Covert Instruction Detection
+#### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-### Sensitive Pattern Detection
+#### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-### Shadowing Pattern Detection
+#### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-### Schema Misuse Prevention
+#### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-### Cross-Origin Tool Access
+#### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-### Secrets Redaction
+#### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
 * **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
 * **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
 
-## Basic Authentication via Shared Secret
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+
+### Enable guardrails
+
+To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
+- covert-instruction-detection
+- sensitive-pattern-detection
+- shadowing-pattern-detection
+- schema-misuse-prevention
+- cross-origin-tool-access
+- secrets-redaction
+
+For example adding:
+- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
+to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
+
+
+## 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
 * **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
 * **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
 
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
+- `-e BASIC_AUTH_SECRET="supersecret"`
+to your docker arguments. This will enable the Basic Authentication check.
 
-
-To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-shopify-dev/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-shopify-dev/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-shopify-dev/charts/mcp-server-shopify-dev#minibridge) for Helm charts).
+> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
+> rotate credentials frequently and **always** use TLS.
 
 </details>
 
@@ -155,7 +174,11 @@ To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-1.0.2`
+  - container: `1.0.0-1.1.0`
+
+**Verify signature with [cosign](https://github.com/sigstore/cosign):**
+  - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-shopify-dev:1.0.0`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-shopify-dev:1.0.0-1.1.0`
 
 ---
 
@@ -594,7 +617,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (2)
+## 🧰 Tools (4)
 <details>
 <summary>introspect_admin_schema</summary>
 
@@ -619,7 +642,7 @@ This tool introspects and returns the portion of the Shopify Admin API GraphQL s
 **Description**:
 
 ```
-This tool will take in the user prompt, search shopify.dev, and return relevant documentation that will help answer the user's question.
+This tool will take in the user prompt, search shopify.dev, and return relevant documentation and code examples that will help answer the user's question.
 
     It takes one argument: prompt, which is the search query for Shopify documentation.
 ```
@@ -629,6 +652,50 @@ This tool will take in the user prompt, search shopify.dev, and return relevant 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | prompt | string | The search query for Shopify documentation | Yes
+</details>
+<details>
+<summary>fetch_docs_by_path</summary>
+
+**Description**:
+
+```
+Use this tool to retrieve a list of documents from shopify.dev.
+
+    Args:
+    paths: The paths to the documents to read, i.e. ["/docs/api/app-home", "/docs/api/functions"].
+    Paths should be relative to the root of the developer documentation site.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| paths | array | The paths to the documents to read | Yes
+</details>
+<details>
+<summary>get_started</summary>
+
+**Description**:
+
+```
+
+    YOU MUST CALL THIS TOOL FIRST WHENEVER YOU ARE IN A SHOPIFY APP AND THE USER WANTS TO LEARN OR INTERACT WITH ANY OF THESE APIS:
+
+    Valid arguments for `api` are:
+    - admin: The Admin GraphQL API lets you build apps and integrations that extend and enhance the Shopify admin
+    - functions: Shopify Functions allow developers to customize the backend logic that powers parts of Shopify. Here are all the available APIs: Discount, Cart and Checkout Validation, Cart Transform, Pickup Point Delivery Option Generator, Delivery Customization, Fulfillment Constraints, Local Pickup Delivery Option Generator, Order Routing Location Rule, Payment Customization
+    - hydrogen: Shopify Hydrogen store feature implementation guides. Here are all the available feature guides: Bundles, Subscriptions, Combined Listings, Markets. Always use this tool first when implementing one of these features in a Hydrogen store. Keywords: hydrogen, localization, markets, subscriptions, selling plans, combined listings, bundles. 
+
+    DON'T SEARCH THE WEB WHEN REFERENCING INFORMATION FROM THIS DOCUMENTATION. IT WILL NOT BE ACCURATE.
+    PREFER THE USE OF THE fetch_docs_by_path TOOL TO RETRIEVE INFORMATION FROM THE DEVELOPER DOCUMENTATION SITE.
+  
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| api | string | The Shopify API you are building for | Yes
 </details>
 
 ## 📝 Prompts (1)
@@ -658,10 +725,14 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 |-----------|------|------|------|
 | prompts | shopify_admin_graphql | description | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
 | prompts | shopify_admin_graphql | query | 98093c057eeae040401bc67ad3071116be498b22221a4151563759d2f43f2ced |
+| tools | fetch_docs_by_path | description | db5cc0087fb09ac06abae11e25c7255ec12f0a0a11a95c7bb0cf6807816e53e9 |
+| tools | fetch_docs_by_path | paths | e3117a5bba68651a746f09efd1e6aa60495e1a6171e87bb4ddc8a61cce11b581 |
+| tools | get_started | description | 0ddac321caa92d569c6b7768267fd474eb17d27509741fe9a6c5069ef4d957c8 |
+| tools | get_started | api | 020bba209b3e40636585ee28353121ec237df37f856c33d2f0da686466ad12b9 |
 | tools | introspect_admin_schema | description | 7e0d17045beec0028d5390dd12e016af8a50df6b96d7918f95c12bd7e3524fe9 |
 | tools | introspect_admin_schema | filter | 5a8cd6b941a24d852a3d04593d85b3ca28a7f85fb7ab1d55612e78fd1dbe7527 |
 | tools | introspect_admin_schema | query | df71bf519a32b0b8e76710c33d12a47d11c093bcc2bfecd1e7a04bb345c38f1d |
-| tools | search_dev_docs | description | 43c133ea467ecbd2aeaa66c47a0cdcaeb1791b456d57973e5860afd5791121a8 |
+| tools | search_dev_docs | description | 92d1ee083486a6f57ec70b5a804fcde474dfb5a98c3e13dd8cebce6f8c37aca5 |
 | tools | search_dev_docs | prompt | eb7cfc554f21b5a2cb77a094dd923a7ce2b5a4d9428f607506615f7a252c9871 |
 
 

@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-shopify-dev"
-description: A Helm chart for Model Context Protocol (MCP) server that interacts with Shopify Dev.
+description: "A Helm chart for Model Context Protocol (MCP) server that interacts with Shopify Dev."
 home: https://github.com/Shopify/dev-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry
@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 1.0.2
+appVersion: 1.1.0
 keywords:
   - mcp-server-shopify-dev
   - mcp-server

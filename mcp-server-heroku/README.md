@@ -22,10 +22,10 @@
 
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-heroku/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-heroku/1.0.4?logo=docker&logoColor=fff&label=1.0.4)](https://hub.docker.com/r/acuvity/mcp-server-heroku)
-[![PyPI](https://img.shields.io/badge/1.0.4-3775A9?logo=pypi&logoColor=fff&label=@heroku/mcp-server)](https://github.com/heroku/heroku-mcp-server)
-[![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-heroku&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22HEROKU_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-heroku%3A1.0.4%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-heroku/1.0.5?logo=docker&logoColor=fff&label=1.0.5)](https://hub.docker.com/r/acuvity/mcp-server-heroku)
+[![PyPI](https://img.shields.io/badge/1.0.5-3775A9?logo=pypi&logoColor=fff&label=@heroku/mcp-server)](https://github.com/heroku/heroku-mcp-server)
+[![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-heroku/)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-heroku&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22HEROKU_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-heroku%3A1.0.5%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Facilitate LLMs interaction with Heroku Platform resources.
 
@@ -69,61 +69,80 @@ The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container i
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Gardrails
+### 🛡️ Guardrails
 
-### Covert Instruction Detection
+#### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-### Sensitive Pattern Detection
+#### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-### Shadowing Pattern Detection
+#### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-### Schema Misuse Prevention
+#### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-### Cross-Origin Tool Access
+#### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-### Secrets Redaction
+#### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
 * **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
 * **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
 
-## Basic Authentication via Shared Secret
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+
+### Enable guardrails
+
+To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
+- covert-instruction-detection
+- sensitive-pattern-detection
+- shadowing-pattern-detection
+- schema-misuse-prevention
+- cross-origin-tool-access
+- secrets-redaction
+
+For example adding:
+- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
+to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
+
+
+## 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
 * **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
 * **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
 
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
+- `-e BASIC_AUTH_SECRET="supersecret"`
+to your docker arguments. This will enable the Basic Authentication check.
 
-
-To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-heroku/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-heroku/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-heroku/charts/mcp-server-heroku#minibridge) for Helm charts).
+> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
+> rotate credentials frequently and **always** use TLS.
 
 </details>
 
@@ -136,6 +155,11 @@ To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-
 
 > [!TIP]
 > Given mcp-server-heroku scope of operation it can be hosted anywhere.
+
+**Environment variables and secrets:**
+  - `HEROKU_API_KEY` required to be set
+
+For more information and extra configuration you can consult the [package](https://github.com/heroku/heroku-mcp-server) documentation.
 
 # 🧰 Clients Integrations
 
@@ -150,7 +174,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-heroku&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22HEROKU_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-heroku%3A1.0.4%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-heroku&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22HEROKU_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-heroku%3A1.0.5%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -172,7 +196,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "--read-only",
           "-e",
           "HEROKU_API_KEY",
-          "docker.io/acuvity/mcp-server-heroku:1.0.4"
+          "docker.io/acuvity/mcp-server-heroku:1.0.5"
         ]
       }
     }
@@ -199,7 +223,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "--read-only",
         "-e",
         "HEROKU_API_KEY",
-        "docker.io/acuvity/mcp-server-heroku:1.0.4"
+        "docker.io/acuvity/mcp-server-heroku:1.0.5"
       ]
     }
   }
@@ -230,7 +254,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "--read-only",
         "-e",
         "HEROKU_API_KEY",
-        "docker.io/acuvity/mcp-server-heroku:1.0.4"
+        "docker.io/acuvity/mcp-server-heroku:1.0.5"
       ]
     }
   }
@@ -263,7 +287,7 @@ Add the following JSON block to your mcp configuration file:
         "--read-only",
         "-e",
         "HEROKU_API_KEY",
-        "docker.io/acuvity/mcp-server-heroku:1.0.4"
+        "docker.io/acuvity/mcp-server-heroku:1.0.5"
       ]
     }
   }
@@ -294,7 +318,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "--read-only",
         "-e",
         "HEROKU_API_KEY",
-        "docker.io/acuvity/mcp-server-heroku:1.0.4"
+        "docker.io/acuvity/mcp-server-heroku:1.0.5"
       ]
     }
   }
@@ -314,7 +338,7 @@ async with MCPServerStdio(
     params={
         "env": {"HEROKU_API_KEY":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","HEROKU_API_KEY","docker.io/acuvity/mcp-server-heroku:1.0.4"]
+        "args": ["run","-i","--rm","--read-only","-e","HEROKU_API_KEY","docker.io/acuvity/mcp-server-heroku:1.0.5"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -337,17 +361,13 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 
 ## 🐳 Run it with Docker
 
-**Environment variables and secrets:**
-  - `HEROKU_API_KEY` required to be set
-
-
 <details>
 <summary>Locally with STDIO</summary>
 
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e HEROKU_API_KEY docker.io/acuvity/mcp-server-heroku:1.0.4`
+- arguments: `run -i --rm --read-only -e HEROKU_API_KEY docker.io/acuvity/mcp-server-heroku:1.0.5`
 
 </details>
 
@@ -357,7 +377,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e HEROKU_API_KEY docker.io/acuvity/mcp-server-heroku:1.0.4
+docker run -it -p 8000:8000 --rm --read-only -e HEROKU_API_KEY docker.io/acuvity/mcp-server-heroku:1.0.5
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -416,34 +436,6 @@ Minibridge offers a host of additional features. For step-by-step guidance, plea
 
 </details>
 
-## 🛡️ Runtime security
-
-**Guardrails:**
-
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
-- covert-instruction-detection
-- sensitive-pattern-detection
-- shadowing-pattern-detection
-- schema-misuse-prevention
-- cross-origin-tool-access
-- secrets-redaction
-
-For example adding:
-- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
-to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
-
-**Basic Authentication:**
-
-To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
-- `-e BASIC_AUTH_SECRET="supersecret"`
-to your docker arguments. This will enable the Basic Authentication check.
-
-Then you can connect through `http/sse` as usual given that you pass an `Authorization: Bearer supersecret` header with your secret as Bearer token.
-
-> [!CAUTION]
-> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
-> rotate credentials frequently and **always** use TLS.
-
 ## ☁️ Deploy On Kubernetes
 
 <details>
@@ -488,7 +480,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (34)
+## 🧰 Tools (37)
 <details>
 <summary>list_apps</summary>
 
@@ -1092,6 +1084,56 @@ Example package.json:
 | sources | array | Source files to include in dyno. | No
 | timeToLive | number | Dyno lifetime in seconds. | No
 </details>
+<details>
+<summary>list_ai_available_models</summary>
+
+**Description**:
+
+```
+List available AI inference models
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+</details>
+<details>
+<summary>provision_ai_model</summary>
+
+**Description**:
+
+```
+Provision AI model access for app
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| app | string | Target app name for AI model access provisioning | Yes
+| as | string | Alias for the model resource when attaching to the app. Randomly generated if not provided. | No
+| modelName | string | Name of the AI model to provision access for. Valid model names can be found with tool "list_ai_available_models" | Yes
+</details>
+<details>
+<summary>make_ai_inference</summary>
+
+**Description**:
+
+```
+Make inference request to Heroku AI API
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| app | string | App name/ID (required for alias) | Yes
+| json | boolean | Output as JSON | No
+| modelResource | string | Model resource ID/alias (requires --app for alias) | No
+| opts | string | JSON string with model, messages, and optional params (temp, tools, etc) | Yes
+| output | string | Output file path | No
+</details>
 
 
 # 🔐 Resource SBOM
@@ -1145,6 +1187,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | list_addons | description | 2c170ca104a962b6eba6daae6dd9894145d37c2ee9e78f295c7c1ff55fdf9d8d |
 | tools | list_addons | all | e55a0a219ebfc6ec3d5b8de0e79ead644e3a0a591ccf325893263c3a45417f78 |
 | tools | list_addons | app | cccdaa08fda82ffdbbb5297a7d159dca1ebde91ad27c8e38fc7b969637957ba4 |
+| tools | list_ai_available_models | description | 7452aaf0f4f03bfdb64d5cdddcd91c053a21d611f34c083e653870b6770c8a8c |
 | tools | list_apps | description | dec4d3ca08ca82d7dd75b6a070515bc23542b37e244e454766eac75217a2ea37 |
 | tools | list_apps | all | d33519328e93f43bbe579f126f927109d22a63f214edcc2d37fb5662f170cfa2 |
 | tools | list_apps | personal | 66c22b9d2e6dcc8c7a8651ca8d8cf728b8eb20bb0e8e5a2da6fa0007541bc0f3 |
@@ -1158,6 +1201,12 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | maintenance_off | app | d577197287449a19c7587d0155ffbf4f2647aa0f3daa402e8e6585ec6c6b935e |
 | tools | maintenance_on | description | 11f087707bd2ade4cdc552209b35885bf1d64665abe5c1e338f4aa70de73a9c4 |
 | tools | maintenance_on | app | d577197287449a19c7587d0155ffbf4f2647aa0f3daa402e8e6585ec6c6b935e |
+| tools | make_ai_inference | description | 731d0caec0a9d519eaa6f3066557fb5e7d3843ecb4dc1081049612e5656d03fa |
+| tools | make_ai_inference | app | e37cba2ed0141c23a2cd9fa1862143becef6ae3a5ce1170e114d0f404c047243 |
+| tools | make_ai_inference | json | e4b707ac734031dc0cec48982cda6b24aefce497d27b886df06510f94755e9c4 |
+| tools | make_ai_inference | modelResource | 8b2a4be07befbdf438ab99b34506de33fa41ceb67ab2e4473f2baf6564d6974e |
+| tools | make_ai_inference | opts | 18a0f50ad3ad400236790c3ded6965878b3765ed22b47587c56955d97a97d20c |
+| tools | make_ai_inference | output | 712cc0b9f5153cdb089d8e613e5e01ba205daafa646bd3425ffbf44b35723694 |
 | tools | pg_backups | description | 6a23071e3332bc34966aae79529da0c8b1fa0d3837aa92e31b65142b3c8e3acc |
 | tools | pg_backups | app | 9fdf0b1003c3eb81df3617f7a2cea05e141680c27d4bd2caf88df5134606fc5a |
 | tools | pg_credentials | description | 87db349c6b058ebc0ebe5cc2b04a8adf0d5c343af399374364faf362de776bba |
@@ -1212,6 +1261,10 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | pipelines_promote | description | a0b1721fb875b894e94d2c9c6a12cc79bca4589322521aa963046c9d3d3ad49f |
 | tools | pipelines_promote | app | a2e32fe7d01a8c9728de73b7d2d869305f6498132dea4c91c658a050e456cd23 |
 | tools | pipelines_promote | to | 5ece66f55d54764e751f5180a85c48f711e4b748500572d0600912eab4fc1d21 |
+| tools | provision_ai_model | description | 39e7fc80538a840309a36d3394ab99bb81afd07055f8c67d0a665cdfb1c95c84 |
+| tools | provision_ai_model | app | 2e4742a39dfd957a17a2b79382f9a8a6b76ddc2305ae926766d1bce34b69e82f |
+| tools | provision_ai_model | as | 10270c018bf2c1352b073c8cc01cc7ea3b59584ef6455267b5faa4f5cd7a52f2 |
+| tools | provision_ai_model | modelName | b99629853a49a7862d6e63fe7a30a06b8664653ad42a8f7b825e871374750500 |
 | tools | ps_list | description | 57d27a234c46f1ac7bcb2950c6aebeef6158c982ef18ce1350119c5663f0daad |
 | tools | ps_list | app | 1344ab3c7d098d6d85d86fa8e212fab098e3ecd21f26bd3bde43fded7495cd9c |
 | tools | ps_list | json | 6ab308f9b27116d50c9c0133af59b35b3a14756b7862e3b76e0e7f031ceb4e04 |

@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-everything"
-description: A Helm chart for MCP server that exercises all the features of the MCP protocol
+description: "A Helm chart for MCP server that exercises all the features of the MCP protocol"
 home: https://modelcontextprotocol.io
 sources:
   - https://github.com/acuvity/mcp-servers-registry

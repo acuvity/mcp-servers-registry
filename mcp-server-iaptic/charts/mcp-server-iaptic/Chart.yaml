@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-iaptic"
-description: A Helm chart for Connect AIs to Iaptic data for customer and transaction insights.
+description: "A Helm chart for Connect AIs to Iaptic data for customer and transaction insights."
 home: https://github.com/iaptic/mcp-server-iaptic
 sources:
   - https://github.com/acuvity/mcp-servers-registry

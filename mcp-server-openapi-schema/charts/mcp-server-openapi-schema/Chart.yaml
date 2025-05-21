@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-openapi-schema"
-description: A Helm chart for Exposes OpenAPI schemas for LLMs to explore and understand APIs.
+description: "A Helm chart for Exposes OpenAPI schemas for LLMs to explore and understand APIs."
 home: https://github.com/hannesj/mcp-openapi-schema
 sources:
   - https://github.com/acuvity/mcp-servers-registry

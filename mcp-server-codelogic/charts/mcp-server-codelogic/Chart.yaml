@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-codelogic"
-description: A Helm chart for CodeLogic, provides access to code dependency analytics, risk analysis, and impact assessment.
+description: "A Helm chart for CodeLogic, provides access to code dependency analytics, risk analysis, and impact assessment."
 home: https://github.com/CodeLogicIncEngineering/codelogic-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry
@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 1.0.2
+appVersion: 1.0.3
 keywords:
   - mcp-server-codelogic
   - mcp-server

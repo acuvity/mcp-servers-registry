@@ -19,6 +19,10 @@
           "hash": "c20c4a8086531840f7b8613bb6a727ecf4df8e6ba1a583324dec1cce49557fab"
         },
         {
+          "name": "method",
+          "hash": "139a66256b11bfa512f6a832dd53b6d753efcba3ffc470e8c766cf1c64a2a675"
+        },
+        {
           "name": "queries",
           "hash": "ed6cddd1d2696378d5576f31ac8a7a5526c5770b1bd615e0e0591642763b7166"
         }
@@ -31,6 +35,10 @@
         {
           "name": "max_index_size_mb",
           "hash": "c20c4a8086531840f7b8613bb6a727ecf4df8e6ba1a583324dec1cce49557fab"
+        },
+        {
+          "name": "method",
+          "hash": "139a66256b11bfa512f6a832dd53b6d753efcba3ffc470e8c766cf1c64a2a675"
         }
       ]
     },

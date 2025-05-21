@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-apple-shortcuts"
-description: A Helm chart for An MCP Server Integration with Apple Shortcuts.
+description: "A Helm chart for An MCP Server Integration with Apple Shortcuts."
 home: https://github.com/recursechat/mcp-server-apple-shortcuts
 sources:
   - https://github.com/acuvity/mcp-servers-registry

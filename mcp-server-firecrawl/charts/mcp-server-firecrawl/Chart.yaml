@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-firecrawl"
-description: A Helm chart for Integrates Firecrawl for web scraping and data extraction.
+description: "A Helm chart for Integrates Firecrawl for web scraping and data extraction."
 home: https://github.com/mendableai/firecrawl-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry
@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 1.10.0
+appVersion: 1.11.0
 keywords:
   - mcp-server-firecrawl
   - mcp-server

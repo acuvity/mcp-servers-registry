@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-contentful"
-description: A Helm chart for Update, create, delete content, content-models and assets in your Contentful Space.
+description: "A Helm chart for Update, create, delete content, content-models and assets in your Contentful Space."
 home: https://github.com/ivo-toby/contentful-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

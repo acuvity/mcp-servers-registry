@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-graphlit"
-description: A Helm chart for Integrates your MCP client with Graphlit to ingest and search content from dev tools.
+description: "A Helm chart for Integrates your MCP client with Graphlit to ingest and search content from dev tools."
 home: https://github.com/graphlit/graphlit-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry
@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 1.0.20250512001
+appVersion: 1.0.20250519001
 keywords:
   - mcp-server-graphlit
   - mcp-server

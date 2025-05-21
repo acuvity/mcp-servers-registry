@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-neon"
-description: A Helm chart for Interact with Neon databases using natural language.
+description: "A Helm chart for Interact with Neon databases using natural language."
 home: https://github.com/neondatabase-labs/mcp-server-neon
 sources:
   - https://github.com/acuvity/mcp-servers-registry
@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.4.0
+appVersion: 0.4.1
 keywords:
   - mcp-server-neon
   - mcp-server

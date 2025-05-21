@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-lara-translate"
-description: A Helm chart for MCP server enabling powerful language translation capabilities.
+description: "A Helm chart for MCP server enabling powerful language translation capabilities."
 home: https://github.com/translated/lara-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

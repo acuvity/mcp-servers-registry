@@ -15,6 +15,10 @@
         {
           "name": "nodes",
           "hash": "0cdd95aa5c58cc9fb98a5998a33e0f66b55797c948e97d3a4fe0bab0f87cf2b6"
+        },
+        {
+          "name": "scale",
+          "hash": "098d87418f9da681fe12517eb73011b3894edac4ca52fa00ea94d32715caaa45"
         }
       ]
     },
@@ -24,7 +28,7 @@
       "params": [
         {
           "name": "depth",
-          "hash": "3417b64857e7dbc156eb3e73164d81709835fb7088e753b38a1ca1e190cce52d"
+          "hash": "a43fe901521170c7b82cf3199eadbeaa83f9f09c443c06764bb84fe43627f964"
         },
         {
           "name": "fileKey",

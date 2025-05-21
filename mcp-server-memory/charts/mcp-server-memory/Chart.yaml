@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-memory"
-description: A Helm chart for MCP server for enabling memory for Claude through a knowledge graph
+description: "A Helm chart for MCP server for enabling memory for Claude through a knowledge graph"
 home: https://modelcontextprotocol.io
 sources:
   - https://github.com/acuvity/mcp-servers-registry

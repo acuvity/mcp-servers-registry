@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-chart"
-description: A Helm chart for A Model Context Protocol server for generating visual charts using AntV.
+description: "A Helm chart for A Model Context Protocol server for generating visual charts using AntV."
 home: https://github.com/antvis/mcp-server-chart
 sources:
   - https://github.com/acuvity/mcp-servers-registry
@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.2.6
+appVersion: 0.3.0
 keywords:
   - mcp-server-chart
   - mcp-server

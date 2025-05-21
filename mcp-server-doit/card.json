@@ -12,13 +12,13 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.1.22",
+  "version": "0.1.29",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": "D",
   "resources": {
-    "tools": 10,
-    "prompts": 5,
+    "tools": 14,
+    "prompts": 10,
     "resources": 0,
     "resourcesTemplates": 0
   }

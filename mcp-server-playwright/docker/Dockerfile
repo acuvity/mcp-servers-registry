@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@8649bf59a9c0c0c63f73e4283224ea889c3a981c
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
 
 FROM node:23-slim
 
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="standalone"
 
 LABEL org.opencontainers.image.title="mcp-server-playwright"
 LABEL org.opencontainers.image.description="Browser automation for LLMs using structured accessibility snapshots."
-LABEL org.opencontainers.image.version="0.0.25"
+LABEL org.opencontainers.image.version="0.0.26"
 LABEL org.opencontainers.image.source="https://github.com/microsoft/playwright-mcp"
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 LABEL org.opencontainers.image.author="Microsoft Corporation"
@@ -38,6 +38,8 @@ RUN groupadd -r -g 1001 appuser && \
     mkdir -p /home/appuser/.config/minibridge && \
     chown appuser:appuser -R /app
 
+ENV NODE_ENV=production
+
 ENV XDG_CACHE_HOME=/tmp
 
 ENV PLAYWRIGHT_BROWSERS_PATH=/app/ms-playwright
@@ -48,7 +50,7 @@ USER appuser
 
 RUN npx -y playwright-core install --no-shell chromium
 
-RUN npm i --omit-dev @playwright/mcp@0.0.25
+RUN npm i --omit-dev @playwright/mcp@0.0.26
 
 EXPOSE 8000/tcp
 

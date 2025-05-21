@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-armor-crypto"
-description: A Helm chart for Blockchain integration, staking, DeFi, swap, bridging, wallet, DCA, Orders, Coin Lookup, Tracking.
+description: "A Helm chart for Blockchain integration, staking, DeFi, swap, bridging, wallet, DCA, Orders, Coin Lookup, Tracking."
 home: https://github.com/armorwallet/armor-crypto-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

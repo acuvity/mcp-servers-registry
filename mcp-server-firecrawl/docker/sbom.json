@@ -2,7 +2,7 @@
   "tools": [
     {
       "name": "firecrawl_check_crawl_status",
-      "hash": "fd958592fa7c0b7c879345ff20a17e5625fc3f63ff67b11043ba57e4da73f2c6",
+      "hash": "b203ead94aae907fe82506e9a27415571fcdcfc37443f3e9139e675032de1ca7",
       "params": [
         {
           "name": "id",
@@ -12,7 +12,7 @@
     },
     {
       "name": "firecrawl_crawl",
-      "hash": "f0d4336cf6abcddb3a85c5f0444a029709de263898d694f07b65032040a8962f",
+      "hash": "d127af3df2e34883cb2956464a15236dbddcd6593ef8a861629ae2198eccc191",
       "params": [
         {
           "name": "allowBackwardLinks",
@@ -62,7 +62,7 @@
     },
     {
       "name": "firecrawl_deep_research",
-      "hash": "bf4dffc377bc1e2323c83ad3386f463773537bee8d39250722ee439d1443c3ff",
+      "hash": "0978da2a7827240e1e95b5cd59c3fce6f8ba70ade207171ba17865d66ed85b60",
       "params": [
         {
           "name": "maxDepth",
@@ -84,7 +84,7 @@
     },
     {
       "name": "firecrawl_extract",
-      "hash": "af02ca4844f3fca5c8ad142685bfb767bbf1c42502047cf71f8e52096db7367f",
+      "hash": "841bc590ec1aff1bf83635461fe0cdf5b584900a38babe79e09eaab7e6523396",
       "params": [
         {
           "name": "allowExternalLinks",
@@ -118,7 +118,7 @@
     },
     {
       "name": "firecrawl_generate_llmstxt",
-      "hash": "56cfb20c853b6e8d572e5956f09df65c74f018231d272db6716e64ae5c1c1d3a",
+      "hash": "965a8850787900d54d9367ff61d6e6a4149634466112333f36ddf5081e7d6148",
       "params": [
         {
           "name": "maxUrls",
@@ -136,7 +136,7 @@
     },
     {
       "name": "firecrawl_map",
-      "hash": "1ed29cfb896ee1ddac62b07f7657feebc6e30b8fc24873d2aec98e25d0ba6ee3",
+      "hash": "f1889673ef441a4485805204021eebd8d373c2ac49871d2ade46a7cd70c422ba",
       "params": [
         {
           "name": "ignoreSitemap",
@@ -166,7 +166,7 @@
     },
     {
       "name": "firecrawl_scrape",
-      "hash": "9aab016594f2eca81fb99ed9d25a2a5e3e874dae627c1b3e12189f4a138b6bbd",
+      "hash": "a63485489fb8477a1814c9b0c6e723d16a7984284c9a059533bb394792d0d79e",
       "params": [
         {
           "name": "actions",
@@ -224,7 +224,7 @@
     },
     {
       "name": "firecrawl_search",
-      "hash": "b0f634f112a7c6b27b86526196a4191dceb6da1f85695d71af2c0a9a857328b9",
+      "hash": "bd79d9be197005e98b938b94e94e5218607838fee434a7ad68abde61e66c4f69",
       "params": [
         {
           "name": "country",

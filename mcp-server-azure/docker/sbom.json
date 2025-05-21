@@ -344,7 +344,13 @@
     },
     {
       "name": "azmcp-bestpractices-get",
-      "hash": "8c375b1789afca09a0dd90d83f21dc760b7b9cda9e109c4ad00e864ea3b5e53c"
+      "hash": "8c375b1789afca09a0dd90d83f21dc760b7b9cda9e109c4ad00e864ea3b5e53c",
+      "params": [
+        {
+          "name": "_dummy",
+          "hash": "23fe1a767a7c77bff94b2f3452abd4a64ca83284b1400bb257a51bd380172578"
+        }
+      ]
     },
     {
       "name": "azmcp-cosmos-account-list",
@@ -1852,7 +1858,7 @@
     },
     {
       "name": "azmcp-servicebus-queue-details",
-      "hash": "61fa105ebcb11e33a311ca360a49f1eef36192816277b863d1160d6d1a483feb",
+      "hash": "d1d5f5a9582b1ac0159ce295dbe9e7ebc85e63160e3b4aaaa174d2c463a7e69f",
       "params": [
         {
           "name": "auth-method",
@@ -1860,53 +1866,7 @@
         },
         {
           "name": "namespace",
-          "hash": "5d5560d1d1d721662123f483c033ecc429ede29d34e3c4132a5492fca041aa32"
-        },
-        {
-          "name": "queue-name",
-          "hash": "7723e1a7e6f47cd107d95fa68c5460ef9f3308649b0df676fd63bd131b95d606"
-        },
-        {
-          "name": "retry-delay",
-          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
-        },
-        {
-          "name": "retry-max-delay",
-          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
-        },
-        {
-          "name": "retry-max-retries",
-          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
-        },
-        {
-          "name": "retry-mode",
-          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
-        },
-        {
-          "name": "retry-network-timeout",
-          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
-        },
-        {
-          "name": "subscription",
-          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
-        },
-        {
-          "name": "tenant",
-          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
-        }
-      ]
-    },
-    {
-      "name": "azmcp-servicebus-queue-peek",
-      "hash": "98aa8f36f3b08b87998627ba36e3a03d2457691b99e348313689ba6410c5c422",
-      "params": [
-        {
-          "name": "auth-method",
-          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
-        },
-        {
-          "name": "namespace",
-          "hash": "5d5560d1d1d721662123f483c033ecc429ede29d34e3c4132a5492fca041aa32"
+          "hash": "86974d13ebb1ed18ea162ce156c6f7a857fd7c40ce1fdad75038c423be80f2a5"
         },
         {
           "name": "queue-name",
@@ -1944,7 +1904,7 @@
     },
     {
       "name": "azmcp-servicebus-topic-details",
-      "hash": "2ca331e407a4acb82875744c2c8aecbf44c5bff3c43b2fbf9845c3746f4f8c1d",
+      "hash": "05dd5d926c4fcfa83c7a813805ff020f2ababeaaa28c7a69fb657361f764dc69",
       "params": [
         {
           "name": "auth-method",
@@ -1952,7 +1912,7 @@
         },
         {
           "name": "namespace",
-          "hash": "5d5560d1d1d721662123f483c033ecc429ede29d34e3c4132a5492fca041aa32"
+          "hash": "86974d13ebb1ed18ea162ce156c6f7a857fd7c40ce1fdad75038c423be80f2a5"
         },
         {
           "name": "retry-delay",
@@ -1990,7 +1950,7 @@
     },
     {
       "name": "azmcp-servicebus-topic-subscription-details",
-      "hash": "9f0c3e6687b2f588fbd219529a30fa5591371424c3061ba27de9545736a54416",
+      "hash": "d95b0398114741486c23cb9f436bca5d71b3261abafceee94c1582e247cfb3dd",
       "params": [
         {
           "name": "auth-method",
@@ -1998,61 +1958,7 @@
         },
         {
           "name": "namespace",
-          "hash": "5d5560d1d1d721662123f483c033ecc429ede29d34e3c4132a5492fca041aa32"
-        },
-        {
-          "name": "retry-delay",
-          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
-        },
-        {
-          "name": "retry-max-delay",
-          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
-        },
-        {
-          "name": "retry-max-retries",
-          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
-        },
-        {
-          "name": "retry-mode",
-          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
-        },
-        {
-          "name": "retry-network-timeout",
-          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
-        },
-        {
-          "name": "subscription",
-          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
-        },
-        {
-          "name": "subscription-name",
-          "hash": "a2794883b5b896ad053147d1953e267649d6a9d12e0e213b29d8adc8f3367564"
-        },
-        {
-          "name": "tenant",
-          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
-        },
-        {
-          "name": "topic-name",
-          "hash": "6d7ee4a4a4aff9cb8e0c9f0f8e2d6813f3476d86d660705bce48dd2502d90098"
-        }
-      ]
-    },
-    {
-      "name": "azmcp-servicebus-topic-subscription-peek",
-      "hash": "1cacb8f08eea5426fb63c7a8912cf2c494185ba66bdc265e97522e58fe0eccc9",
-      "params": [
-        {
-          "name": "auth-method",
-          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
-        },
-        {
-          "name": "max-messages",
-          "hash": "1457c570afb5326c4437152a1aa0b5a7bc1232559335f7d8e9cb7e5501815ffb"
-        },
-        {
-          "name": "namespace",
-          "hash": "5d5560d1d1d721662123f483c033ecc429ede29d34e3c4132a5492fca041aa32"
+          "hash": "86974d13ebb1ed18ea162ce156c6f7a857fd7c40ce1fdad75038c423be80f2a5"
         },
         {
           "name": "retry-delay",

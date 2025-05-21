@@ -12,12 +12,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.10.6",
+  "version": "0.11.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "A",
+  "rating": "B",
   "resources": {
-    "tools": 35,
+    "tools": 36,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

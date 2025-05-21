@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-multiversx"
-description: A Helm chart for Manage MultiversX blockchain wallets and perform token transactions.
+description: "A Helm chart for Manage MultiversX blockchain wallets and perform token transactions."
 home: https://github.com/multiversx/mx-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

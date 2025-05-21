@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-atlas-docs"
-description: A Helm chart for Provides AI assistants with technical docs for libraries and frameworks.
+description: "A Helm chart for Provides AI assistants with technical docs for libraries and frameworks."
 home: https://github.com/CartographAI/atlas-docs-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-gitlab"
-description: A Helm chart for MCP server for using the GitLab API
+description: "A Helm chart for MCP server for using the GitLab API"
 home: https://modelcontextprotocol.io
 sources:
   - https://github.com/acuvity/mcp-servers-registry

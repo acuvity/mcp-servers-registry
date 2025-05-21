@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-sequential-thinking"
-description: A Helm chart for MCP server for sequential thinking and problem solving
+description: "A Helm chart for MCP server for sequential thinking and problem solving"
 home: https://modelcontextprotocol.io
 sources:
   - https://github.com/acuvity/mcp-servers-registry

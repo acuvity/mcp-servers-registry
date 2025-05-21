@@ -168,13 +168,9 @@ _cross_tool_exclude := [
 	#
 	"azmcp-servicebus-queue-details",
 	#
-	"azmcp-servicebus-queue-peek",
-	#
 	"azmcp-servicebus-topic-details",
 	#
 	"azmcp-servicebus-topic-subscription-details",
-	#
-	"azmcp-servicebus-topic-subscription-peek",
 	#
 	"azmcp-storage-account-list",
 	#
@@ -284,15 +280,7 @@ reasons contains msg if {
 
 ## Deny rules for tools/call request
 #
-
-reasons contains msg if {
-	"covert-instruction-detection" in active_guardrails
-	input.mcp.method == "tools/call"
-	some pattern in _covert_patterns
-	regex.match(pattern, sprintf("%v", [input.mcp.params.arguments]))
-	msg = sprintf("covert content in call args: %v", [pattern])
-}
-
+#
 reasons contains msg if {
 	"schema-misuse-prevention" in active_guardrails
 	input.mcp.method == "tools/call"
@@ -309,14 +297,6 @@ reasons contains msg if {
 	msg = sprintf("sensitive content in call args: %v", [pattern])
 }
 
-reasons contains msg if {
-	"shadowing-pattern-detection" in active_guardrails
-	input.mcp.method == "tools/call"
-	some pattern in _shadowing_patterns
-	regex.match(pattern, sprintf("%v", [input.mcp.params.arguments]))
-	msg = sprintf("tool-shadowing in call args: %v", [pattern])
-}
-
 ## Deny rules for tools/call response
 #
 
@@ -327,23 +307,6 @@ reasons contains msg if {
 	some pattern in _covert_patterns
 	regex.match(pattern, sprintf("%v", [element.text]))
 	msg = sprintf("covert content in call response: %v", [pattern])
-}
-
-reasons contains msg if {
-	"schema-misuse-prevention" in active_guardrails
-	some element in input.mcp.result.content
-	some arg_name, _ in element
-	lower(arg_name) in _schema_keys
-	msg = sprintf("schema parameter misuse in call response: %v", [arg_name])
-}
-
-reasons contains msg if {
-	"sensitive-pattern-detection" in active_guardrails
-	some element in input.mcp.result.content
-	element.type == "text"
-	some pattern in _sensitive_patterns
-	regex.match(pattern, sprintf("%v", [element.text]))
-	msg = sprintf("sensitive content in call response: %v", [pattern])
 }
 
 reasons contains msg if {

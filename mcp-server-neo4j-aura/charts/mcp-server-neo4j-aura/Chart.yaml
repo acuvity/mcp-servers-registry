@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-neo4j-aura"
-description: A Helm chart for Managing Neo4j Aura database instances through the Neo4j Aura API.
+description: "A Helm chart for Managing Neo4j Aura database instances through the Neo4j Aura API."
 home: https://github.com/neo4j-contrib/mcp-neo4j
 sources:
   - https://github.com/acuvity/mcp-servers-registry

@@ -113,12 +113,40 @@
       "hash": "8891e947fd3a6e9d47b6ef925dc5976566a78e8e1ede12b2f1e350fea32bbaac"
     },
     {
+      "name": "web_data_amazon_product_search",
+      "hash": "75b2c12f7b2276e3cd007507ac0aebc798e2d9603c56466f37b58aba075aba20"
+    },
+    {
+      "name": "web_data_apple_app_store",
+      "hash": "c6b5f38ed097bfbfb48a0c0c2944ddeada32541838e9107b9a32ddd23c73a02b"
+    },
+    {
+      "name": "web_data_bestbuy_products",
+      "hash": "1abd8c341e69c436b8ed17456b49421a9c36506db5d9e05764eeed72e7c584c2"
+    },
+    {
       "name": "web_data_booking_hotel_listings",
       "hash": "45efafdd1a85f8985481e45e09c96dd3ae729e5cf7fa467f2288d0ca0f068fde"
     },
     {
+      "name": "web_data_crunchbase_company",
+      "hash": "4b82d216020c94341dc5440e8d36602cb556518dbe2c45cee21185885e5f0e83"
+    },
+    {
+      "name": "web_data_ebay_product",
+      "hash": "a2b46e418c6929e071e4597fc942456fa3eaed4ed4ab182345c8bf71aee31295"
+    },
+    {
+      "name": "web_data_etsy_products",
+      "hash": "1a6bfb31dcfae9ef65b9dc31fb54ca8ef762786d6046e36b3487b0e25ce58fc2"
+    },
+    {
       "name": "web_data_facebook_company_reviews",
       "hash": "47afecccab5540c3e5f1505d4a3d66e5dfbd0c231b796be1d9c28db62b6968c6"
+    },
+    {
+      "name": "web_data_facebook_events",
+      "hash": "04f5b8dee80970194cd67ca2614ef46108d1f7b18cc0631df20d4f6c9cc9b67f"
     },
     {
       "name": "web_data_facebook_marketplace_listings",
@@ -127,6 +155,26 @@
     {
       "name": "web_data_facebook_posts",
       "hash": "111981d475ce7965823736c78972c7d1d0b07a5bc057af4b1a4e2393719c96b0"
+    },
+    {
+      "name": "web_data_github_repository_file",
+      "hash": "e1fd87f0ffce9681225d3968cb04267112c32bed7f5ab738ca4baa850ad0bbdc"
+    },
+    {
+      "name": "web_data_google_maps_reviews",
+      "hash": "33e28117c37dc5a020419cbcab9c1141d873adff308e2e6ee08ca33c1990a5c5"
+    },
+    {
+      "name": "web_data_google_play_store",
+      "hash": "ed7b901fbade759336574df281112cc5f9604ddb6a0c0ef1d45bfb13c8f662aa"
+    },
+    {
+      "name": "web_data_google_shopping",
+      "hash": "daab2605d5868e6f9f43d6fe8c931759d04c7655df844d5f84fcc93fc987ea5e"
+    },
+    {
+      "name": "web_data_homedepot_products",
+      "hash": "8256ab0d8f331a059f8adf38abae23ab8cdaeef74fb7be77c5e2d043dc2ed96e"
     },
     {
       "name": "web_data_instagram_comments",
@@ -149,16 +197,80 @@
       "hash": "ccffa642e9b1120c15f275650d1b685bb127c4a6ea8f6048ddc9061698c59f95"
     },
     {
+      "name": "web_data_linkedin_job_listings",
+      "hash": "7251693f76663b11172489b17300e515584f3a3b7d28a1304a500a19571f332b"
+    },
+    {
+      "name": "web_data_linkedin_people_search",
+      "hash": "674374fa84fd31fc119f381578cb0577ec03c5942822de1379cb556fbea5a2ad"
+    },
+    {
       "name": "web_data_linkedin_person_profile",
       "hash": "652f6bc070db40560b87b14c185a85ead84a45a05840122b0ec5c4e6775ea283"
+    },
+    {
+      "name": "web_data_linkedin_posts",
+      "hash": "7288f592a6d320bde43378fa5cede5ec1fe75ea7b123fee464a66a93d7de97f8"
+    },
+    {
+      "name": "web_data_reddit_posts",
+      "hash": "94f3068708ab8c85180e0c86cb70cd087fee7f0f7f0c17fd823a00b3500b4b3c"
+    },
+    {
+      "name": "web_data_reuter_news",
+      "hash": "fc7f93076ce14b66b75206799dcc726d532448ee0be3358d40b5c6a06214cd19"
+    },
+    {
+      "name": "web_data_reuter_news",
+      "hash": "fc7f93076ce14b66b75206799dcc726d532448ee0be3358d40b5c6a06214cd19"
+    },
+    {
+      "name": "web_data_tiktok_comments",
+      "hash": "e52bae1795588292a8ce6834edf0595c871762947bb08312cd587e0b2653af75"
+    },
+    {
+      "name": "web_data_tiktok_posts",
+      "hash": "a6ad4a7d08ed3a2126d985f42112abde2896615cc855701d0dfd342cbefd8200"
+    },
+    {
+      "name": "web_data_tiktok_profiles",
+      "hash": "f5f18c34f6a123787032be62080fb7b76dd9778b0ab3d189eb4c65d4485528a0"
+    },
+    {
+      "name": "web_data_tiktok_shop",
+      "hash": "320d9c052688fb2a69ba599c0013aa0d76d86e1a2a8ae52d115b07e4fb604deb"
+    },
+    {
+      "name": "web_data_walmart_product",
+      "hash": "5c1e48d30bd30edf723aa15b9294f3961961702043a15f1d9ec4ad6cb1682190"
+    },
+    {
+      "name": "web_data_walmart_seller",
+      "hash": "e92907096da9cb73e633633adc3406a73fde690b8b326c861f8f875371c3400f"
     },
     {
       "name": "web_data_x_posts",
       "hash": "29aae5cb1605b99c1fc5d29e6e8d1d00bccb99963ca7f3522fde9d8786174192"
     },
     {
+      "name": "web_data_yahoo_finance_business",
+      "hash": "a852a1aab3c35a6e1d14fa2b76580f0b1452c6c1dcebcd1a0279245f90efbc2b"
+    },
+    {
+      "name": "web_data_youtube_comments",
+      "hash": "bc859783f917730b5ae496199fe4db140baf8e6e8dae6abc7ed02e11eca783d4"
+    },
+    {
+      "name": "web_data_youtube_profiles",
+      "hash": "500f96700a6fe0c88606828a5fee9418ad3c1d7bc0f15a1f28509b7997c1dd79"
+    },
+    {
       "name": "web_data_youtube_videos",
       "hash": "5a476fcf9bd1c5e69c720fbea400d151da16c8b265f0f237868a96d8994289b6"
+    },
+    {
+      "name": "web_data_zara_products",
+      "hash": "835f704e3d8b1c93c713eb394d05be67c2f89976ae596fe20f113277e47177f7"
     },
     {
       "name": "web_data_zillow_properties_listing",

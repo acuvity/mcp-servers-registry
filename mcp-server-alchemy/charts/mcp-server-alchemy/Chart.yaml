@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-alchemy"
-description: A Helm chart for Allow AI agents to interact with Alchemy's blockchain APIs.
+description: "A Helm chart for Allow AI agents to interact with Alchemy's blockchain APIs."
 home: https://github.com/alchemyplatform/alchemy-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

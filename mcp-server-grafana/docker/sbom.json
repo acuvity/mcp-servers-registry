@@ -165,6 +165,16 @@
       ]
     },
     {
+      "name": "get_dashboard_panel_queries",
+      "hash": "34108e120069387f96de176f102995828115d2887e8e6b6253545930b75c854a",
+      "params": [
+        {
+          "name": "uid",
+          "hash": "a5663f54c0d36ef714da821bb2097dd6808a8fd3e27d1d16af28f85b999a1d62"
+        }
+      ]
+    },
+    {
       "name": "get_datasource_by_name",
       "hash": "b0344ad3d9c9928ae54fedcbdd5c0745223b7bbdffdd302268fb3ab9b55f121c",
       "params": [
@@ -481,6 +491,16 @@
         {
           "name": "limit",
           "hash": "3a3b5d7cfe0f285d0140975abc8e2c3106a1d0acb757cb469aa597cee680b9ca"
+        }
+      ]
+    },
+    {
+      "name": "list_teams",
+      "hash": "cb20afbd38b81f349cf7b665effb6daf231df8ddfdd1aaa37ed22534eb9551b4",
+      "params": [
+        {
+          "name": "query",
+          "hash": "a5ea81fb1f75051f4a7e873b2cc939d05778e0e1898fbe186902fb41e220bd21"
         }
       ]
     },

@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-chroma"
-description: A Helm chart for Embedding database for LLM applications with advanced search capabilities.
+description: "A Helm chart for Embedding database for LLM applications with advanced search capabilities."
 home: https://github.com/chroma-core/chroma-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

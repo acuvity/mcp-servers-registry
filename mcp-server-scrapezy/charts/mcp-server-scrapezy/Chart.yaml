@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-scrapezy"
-description: A Helm chart for Extracts structured data from websites using AI models.
+description: "A Helm chart for Extracts structured data from websites using AI models."
 home: https://github.com/Scrapezy/mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

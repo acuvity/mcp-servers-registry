@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-chronulus-ai"
-description: A Helm chart for Predict anything with Chronulus AI forecasting and prediction agents.
+description: "A Helm chart for Predict anything with Chronulus AI forecasting and prediction agents."
 home: https://github.com/ChronulusAI/chronulus-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

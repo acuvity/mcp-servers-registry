@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-aws-cdk"
-description: A Helm chart for Explain CDK Nag rules, check suppressions, generate Bedrock schemas, find AWS patterns.
+description: "A Helm chart for Explain CDK Nag rules, check suppressions, generate Bedrock schemas, find AWS patterns."
 home: https://pypi.org/project/awslabs.cdk-mcp-server/
 sources:
   - https://github.com/acuvity/mcp-servers-registry
@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.1.3
+appVersion: 0.1.4
 keywords:
   - mcp-server-aws-cdk
   - mcp-server

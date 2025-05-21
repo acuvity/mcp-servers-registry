@@ -1,6 +1,10 @@
 {
   "tools": [
     {
+      "name": "create_ticket",
+      "hash": "b0990b45b3f312d4cf1c6756d7e9f8ed2f143385ba7130ec35fa83ab15be317c"
+    },
+    {
       "name": "get_anomalies",
       "hash": "5ddc31a7b26a361ee8d3772187396b1159bcbcf4414fd664182ad001a3f655e6",
       "params": [
@@ -67,6 +71,16 @@
       ]
     },
     {
+      "name": "get_invoice",
+      "hash": "dfabef5feba78c82057d06aa90e2683473266acd31f2425f920778a10ab5796e",
+      "params": [
+        {
+          "name": "id",
+          "hash": "d1619687a9b7811554b2b52a162c5db0636d6c1a69c1afa7159728979f6c0dc6"
+        }
+      ]
+    },
+    {
       "name": "get_report_results",
       "hash": "6924c4f21ff6a139b4bcdaf96ded8f1cfffea347515aa19c9860751d83c63746",
       "params": [
@@ -91,6 +105,16 @@
       ]
     },
     {
+      "name": "list_invoices",
+      "hash": "cb1a08ab2a5c036029c0e53bc8d0fcdb51d94f9f706b41e9f966dc74c4aa73f8",
+      "params": [
+        {
+          "name": "pageToken",
+          "hash": "13008295d9364bfd512878a26f7c86cc9ba7773ded8e66340fb6751b58e18800"
+        }
+      ]
+    },
+    {
       "name": "list_reports",
       "hash": "f96f214c9f0fef087c15df548a662993fabaf0763b2926c8f2f92b45f0f27e9e",
       "params": [
@@ -101,6 +125,20 @@
         {
           "name": "pageToken",
           "hash": "13008295d9364bfd512878a26f7c86cc9ba7773ded8e66340fb6751b58e18800"
+        }
+      ]
+    },
+    {
+      "name": "list_tickets",
+      "hash": "49781956cac6e31b3a74dba206b22151141bb2ee6a4bc71450f91e5732a889b8",
+      "params": [
+        {
+          "name": "pageSize",
+          "hash": "e05aad3d415e9d87a79b7110464ecd80fb864213d00a8ab7345d8cded3172b03"
+        },
+        {
+          "name": "pageToken",
+          "hash": "5296c3041da463734e7ae218bd23d6b450eb81963799837041d74cebdf48e4e5"
         }
       ]
     },
@@ -121,7 +159,11 @@
   ],
   "prompts": [
     {
-      "name": "Cost Report Example",
+      "name": "Create Ticket",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "Dimension Usage Guidance",
       "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
@@ -129,15 +171,31 @@
       "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
+      "name": "DoiT MCP Server tools output",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
       "name": "Filter Fields Reference",
       "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "name": "Query Best Practice",
+      "name": "Generate Anomalies Document",
       "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "name": "Report Display Instructions",
+      "name": "Generate Invoice Details Document",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "Generate Report Command",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "Generate Report Document",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "Query Best Practice",
       "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
   ]

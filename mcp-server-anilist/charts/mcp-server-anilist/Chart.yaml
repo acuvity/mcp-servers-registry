@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-anilist"
-description: A Helm chart for An MCP server integrating AniList API for anime and manga information.
+description: "A Helm chart for An MCP server integrating AniList API for anime and manga information."
 home: https://github.com/yuna0x0/anilist-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

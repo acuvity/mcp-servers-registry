@@ -20,12 +20,12 @@
 
 # What is mcp-server-coda?
 
-[![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-coda/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-coda/1.1.3?logo=docker&logoColor=fff&label=1.1.3)](https://hub.docker.com/r/acuvity/mcp-server-coda)
-[![PyPI](https://img.shields.io/badge/1.1.3-3775A9?logo=pypi&logoColor=fff&label=coda-mcp)](https://github.com/orellazri/coda-mcp)
-[![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-coda&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_KEY%22%2C%22-e%22%2C%22DOC_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-coda%3A1.1.3%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-coda/1.2.1?logo=docker&logoColor=fff&label=1.2.1)](https://hub.docker.com/r/acuvity/mcp-server-coda)
+[![PyPI](https://img.shields.io/badge/1.2.1-3775A9?logo=pypi&logoColor=fff&label=coda-mcp)](https://github.com/orellazri/coda-mcp)
+[![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-coda/)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-coda&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_KEY%22%2C%22-e%22%2C%22DOC_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-coda%3A1.2.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** MCP server for Coda.
 
@@ -69,61 +69,80 @@ The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container i
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Gardrails
+### 🛡️ Guardrails
 
-### Covert Instruction Detection
+#### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-### Sensitive Pattern Detection
+#### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-### Shadowing Pattern Detection
+#### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-### Schema Misuse Prevention
+#### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-### Cross-Origin Tool Access
+#### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-### Secrets Redaction
+#### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
 * **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
 * **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
 
-## Basic Authentication via Shared Secret
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+
+### Enable guardrails
+
+To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
+- covert-instruction-detection
+- sensitive-pattern-detection
+- shadowing-pattern-detection
+- schema-misuse-prevention
+- cross-origin-tool-access
+- secrets-redaction
+
+For example adding:
+- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
+to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
+
+
+## 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
 * **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
 * **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
 
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
+- `-e BASIC_AUTH_SECRET="supersecret"`
+to your docker arguments. This will enable the Basic Authentication check.
 
-
-To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-coda/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-coda/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-coda/charts/mcp-server-coda#minibridge) for Helm charts).
+> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
+> rotate credentials frequently and **always** use TLS.
 
 </details>
 
@@ -155,7 +174,11 @@ To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-1.1.3`
+  - container: `1.0.0-1.2.1`
+
+**Verify signature with [cosign](https://github.com/sigstore/cosign):**
+  - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-coda:1.0.0`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-coda:1.0.0-1.2.1`
 
 ---
 
@@ -603,7 +626,22 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (7)
+## 🧰 Tools (8)
+<details>
+<summary>coda_list_documents</summary>
+
+**Description**:
+
+```
+List available documents
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| query | string | The query to search for documents by - optional | No
+</details>
 <details>
 <summary>coda_list_pages</summary>
 
@@ -617,6 +655,7 @@ List pages in the current document
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| docId | string | The ID of the document to list pages from | Yes
 </details>
 <details>
 <summary>coda_create_page</summary>
@@ -632,6 +671,7 @@ Create a page in the current document
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | content | string | The markdown content of the page to create - optional | No
+| docId | string | The ID of the document to create the page in | Yes
 | name | string | The name of the page to create | Yes
 </details>
 <details>
@@ -647,6 +687,7 @@ Get the content of a page as markdown
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| docId | string | The ID of the document that contains the page to get the content of | Yes
 | pageIdOrName | string | The ID or name of the page to get the content of | Yes
 </details>
 <details>
@@ -663,6 +704,7 @@ Replace the content of a page with new markdown content
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | content | string | The markdown content to replace the page with | Yes
+| docId | string | The ID of the document that contains the page to replace the content of | Yes
 | pageIdOrName | string | The ID or name of the page to replace the content of | Yes
 </details>
 <details>
@@ -679,6 +721,7 @@ Append new markdown content to the end of a page
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | content | string | The markdown content to append to the page | Yes
+| docId | string | The ID of the document that contains the page to append the content to | Yes
 | pageIdOrName | string | The ID or name of the page to append the content to | Yes
 </details>
 <details>
@@ -694,6 +737,7 @@ Duplicate a page in the current document
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| docId | string | The ID of the document that contains the page to duplicate | Yes
 | newName | string | The name of the new page | Yes
 | pageIdOrName | string | The ID or name of the page to duplicate | Yes
 </details>
@@ -710,6 +754,7 @@ Rename a page in the current document
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| docId | string | The ID of the document that contains the page to rename | Yes
 | newName | string | The new name of the page | Yes
 | pageIdOrName | string | The ID or name of the page to rename | Yes
 </details>
@@ -723,21 +768,30 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 |-----------|------|------|------|
 | tools | coda_append_page_content | description | d6eb83d5da34ae32ee47e049bfde75b03ca3a7b48c59a3195bb611f69629728c |
 | tools | coda_append_page_content | content | 5a10ac2f054a77da9b7959abb4bacdb04cb96dec1697272b5ac8dcd8fb270172 |
+| tools | coda_append_page_content | docId | 1a07d4ed809f2c4aa63a55d5635be7ae2eb8c87f3125e6cbc118ba7029879b44 |
 | tools | coda_append_page_content | pageIdOrName | 2953a62ac23fd91570996571f459640e50db43ba7acfb27295ce332f276a9205 |
 | tools | coda_create_page | description | cc5fb25691258d75039b01e76e47c55ca99243a51ca0a1ca8316d5f9ecf4642e |
 | tools | coda_create_page | content | 22bd8cb205205d5c8826180ff748095de56dad85b69aa7d9f3e425e6d7e8f0f8 |
+| tools | coda_create_page | docId | 158955c02c5aa26b184216129353a385eedf2b9368448e0b1284ca8482ca5d6a |
 | tools | coda_create_page | name | 9200c858ffe87b34c08415c39d7e1111124dc7fbbe8bf606365936cf08fabdb8 |
 | tools | coda_duplicate_page | description | 4c2496f1d91db963e00ce499c6a64ce127e3e1789f51b7674d9053fc9f11c627 |
+| tools | coda_duplicate_page | docId | f0e631f8b92b861f822ef892433ac345f70335c69c96664ae274235830198794 |
 | tools | coda_duplicate_page | newName | 8cc9888bfa04926d724ebdfd4283bf915e056c54d7b9568b8c2c0409b00558d7 |
 | tools | coda_duplicate_page | pageIdOrName | 23b139479cb7b4beb87d1d9833534d7c323f2db9feb871a75c81fb3abdb58ff4 |
 | tools | coda_get_page_content | description | 6e954360c948036e80de20759d8e143ca665cdc6375a04d22b7fe7e79c411277 |
+| tools | coda_get_page_content | docId | 48184f2c0fe56bd400f727989f61e00d5d90719df619680dce19a97250cc6039 |
 | tools | coda_get_page_content | pageIdOrName | 2660e996c27d04bf1e63551dcf2f49e3414bb72b0a97bf7fce8220bd324b64bf |
+| tools | coda_list_documents | description | 01426c08db1c7ec2037e5fedbaf9acbc38adb086e337eb7a05c71fc3d3d70652 |
+| tools | coda_list_documents | query | 3327b3fff59e43d93c8a98177fb17ef6251f8317ed1678dfa0e4a71a89a0ddd4 |
 | tools | coda_list_pages | description | b70da335dd3f3b775908abe23d3fabc8d2e4c7228c8bb342fbee8c163ca48d45 |
+| tools | coda_list_pages | docId | 4b9ffcb8819b499cd57463e3e4924724e339c33e09512dcc9abde242099ae041 |
 | tools | coda_rename_page | description | 037a2e1ce43e2a3eb82f6b3aa83f5e9dafdce96ffaa5186702482bf458a194b6 |
+| tools | coda_rename_page | docId | 15a4d415486234c3dd1fda9950b465d5bc886abb98e870c59ada67d6e3e52d3c |
 | tools | coda_rename_page | newName | 47633c3d0d36d0564492d812ff19826f72d7b172b3eacad87b98f8246491662a |
 | tools | coda_rename_page | pageIdOrName | ffb5e62092ae083458b493ad20c66b6f1277f4a3bf8d35715baf351163449b8f |
 | tools | coda_replace_page_content | description | 159be8ca055b41aafbe9770117c4f1579a454f2baaba9b20f33682d5273bcc5c |
 | tools | coda_replace_page_content | content | d18f6633054b57d9534e835c3be08e87ef9588cb7127e43e4f0b51449683b75c |
+| tools | coda_replace_page_content | docId | 275717187e2b1e8c33652fd85af2b65b81bf4e22580e0a8b905bede2cff0eca1 |
 | tools | coda_replace_page_content | pageIdOrName | 54bbde434915298761a0e41ef26c250776e2129a4dc3e682586ca51f8bbc0c3b |
 
 

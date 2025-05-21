@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-duckduckgo"
-description: A Helm chart for Provides web search and content fetching using DuckDuckGo.
+description: "A Helm chart for Provides web search and content fetching using DuckDuckGo."
 home: https://github.com/nickclyde/duckduckgo-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

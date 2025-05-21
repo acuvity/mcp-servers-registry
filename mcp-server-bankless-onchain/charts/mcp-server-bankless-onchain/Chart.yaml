@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-bankless-onchain"
-description: A Helm chart for Query Onchain data, like ERC20 tokens, transaction history, smart contract state.
+description: "A Helm chart for Query Onchain data, like ERC20 tokens, transaction history, smart contract state."
 home: https://bankless.com
 sources:
   - https://github.com/acuvity/mcp-servers-registry

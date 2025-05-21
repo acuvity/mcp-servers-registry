@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-stripe"
-description: A Helm chart for Integrates Stripe APIs with agent frameworks for payments and custom actions.
+description: "A Helm chart for Integrates Stripe APIs with agent frameworks for payments and custom actions."
 home: https://github.com/stripe/agent-toolkit
 sources:
   - https://github.com/acuvity/mcp-servers-registry

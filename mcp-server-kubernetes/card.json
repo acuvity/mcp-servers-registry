@@ -12,12 +12,12 @@
   "scope": "native",
   "mutitenant": true,
   "runtime": "node",
-  "version": "1.6.2",
+  "version": "2.0.0",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "C",
+  "rating": "B",
   "resources": {
-    "tools": 40,
+    "tools": 20,
     "prompts": 0,
     "resources": 5,
     "resourcesTemplates": 0

@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@8649bf59a9c0c0c63f73e4283224ea889c3a981c
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
 
 FROM node:23.11.0-alpine3.21
 
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-doit"
 LABEL org.opencontainers.image.description="Access DoiT API for analyzing cloud data and troubleshooting."
-LABEL org.opencontainers.image.version="0.1.22"
+LABEL org.opencontainers.image.version="0.1.29"
 LABEL org.opencontainers.image.source="https://github.com/doitintl/doit-mcp-server"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="Author"
@@ -36,9 +36,11 @@ RUN addgroup -g 1001 -S appuser && \
     mkdir -p /home/appuser/.config/minibridge && \
     chown appuser:appuser -R /app
 
+ENV NODE_ENV=production
+
 USER appuser
 
-RUN npm i --omit-dev @doitintl/doit-mcp-server@0.1.22
+RUN npm i --omit-dev @doitintl/doit-mcp-server@0.1.29
 
 EXPOSE 8000/tcp
 

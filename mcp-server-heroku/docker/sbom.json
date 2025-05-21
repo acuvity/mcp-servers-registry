@@ -201,6 +201,10 @@
       ]
     },
     {
+      "name": "list_ai_available_models",
+      "hash": "7452aaf0f4f03bfdb64d5cdddcd91c053a21d611f34c083e653870b6770c8a8c"
+    },
+    {
       "name": "list_apps",
       "hash": "dec4d3ca08ca82d7dd75b6a070515bc23542b37e244e454766eac75217a2ea37",
       "params": [
@@ -259,6 +263,32 @@
         {
           "name": "app",
           "hash": "d577197287449a19c7587d0155ffbf4f2647aa0f3daa402e8e6585ec6c6b935e"
+        }
+      ]
+    },
+    {
+      "name": "make_ai_inference",
+      "hash": "731d0caec0a9d519eaa6f3066557fb5e7d3843ecb4dc1081049612e5656d03fa",
+      "params": [
+        {
+          "name": "app",
+          "hash": "e37cba2ed0141c23a2cd9fa1862143becef6ae3a5ce1170e114d0f404c047243"
+        },
+        {
+          "name": "json",
+          "hash": "e4b707ac734031dc0cec48982cda6b24aefce497d27b886df06510f94755e9c4"
+        },
+        {
+          "name": "modelResource",
+          "hash": "8b2a4be07befbdf438ab99b34506de33fa41ceb67ab2e4473f2baf6564d6974e"
+        },
+        {
+          "name": "opts",
+          "hash": "18a0f50ad3ad400236790c3ded6965878b3765ed22b47587c56955d97a97d20c"
+        },
+        {
+          "name": "output",
+          "hash": "712cc0b9f5153cdb089d8e613e5e01ba205daafa646bd3425ffbf44b35723694"
         }
       ]
     },
@@ -503,6 +533,24 @@
         {
           "name": "to",
           "hash": "5ece66f55d54764e751f5180a85c48f711e4b748500572d0600912eab4fc1d21"
+        }
+      ]
+    },
+    {
+      "name": "provision_ai_model",
+      "hash": "39e7fc80538a840309a36d3394ab99bb81afd07055f8c67d0a665cdfb1c95c84",
+      "params": [
+        {
+          "name": "app",
+          "hash": "2e4742a39dfd957a17a2b79382f9a8a6b76ddc2305ae926766d1bce34b69e82f"
+        },
+        {
+          "name": "as",
+          "hash": "10270c018bf2c1352b073c8cc01cc7ea3b59584ef6455267b5faa4f5cd7a52f2"
+        },
+        {
+          "name": "modelName",
+          "hash": "b99629853a49a7862d6e63fe7a30a06b8664653ad42a8f7b825e871374750500"
         }
       ]
     },

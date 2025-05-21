@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-asana"
-description: A Helm chart for Asana API integration.
+description: "A Helm chart for Asana API integration."
 home: https://github.com/roychri/mcp-server-asana
 sources:
   - https://github.com/acuvity/mcp-servers-registry

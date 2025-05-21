@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-astra-db-mcp"
-description: A Helm chart for MCP server for managing and interacting with Astra DB using language models.
+description: "A Helm chart for MCP server for managing and interacting with Astra DB using language models."
 home: https://github.com/datastax/astra-db-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

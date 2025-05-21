@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-azure"
-description: A Helm chart for Integrates AI agents with Azure services for enhanced functionality.
+description: "A Helm chart for Integrates AI agents with Azure services for enhanced functionality."
 home: https://github.com/Azure/azure-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry
@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.0.18
+appVersion: 0.0.20
 keywords:
   - mcp-server-azure
   - mcp-server

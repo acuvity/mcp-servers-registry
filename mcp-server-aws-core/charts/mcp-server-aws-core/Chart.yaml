@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-aws-core"
-description: A Helm chart for Core AWS MCP server providing prompt understanding and server management capabilities.
+description: "A Helm chart for Core AWS MCP server providing prompt understanding and server management capabilities."
 home: https://pypi.org/project/awslabs.core-mcp-server/
 sources:
   - https://github.com/acuvity/mcp-servers-registry
@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.2.4
+appVersion: 0.2.5
 keywords:
   - mcp-server-aws-core
   - mcp-server

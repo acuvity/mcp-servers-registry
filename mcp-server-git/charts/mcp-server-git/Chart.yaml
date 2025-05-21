@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-git"
-description: A Helm chart for Tools to read, search, and manipulate Git repositories.
+description: "A Helm chart for Tools to read, search, and manipulate Git repositories."
 home: https://github.com/modelcontextprotocol/servers/tree/main/src/git
 sources:
   - https://github.com/acuvity/mcp-servers-registry

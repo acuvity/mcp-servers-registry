@@ -98,9 +98,33 @@ _cross_tool_exclude := [
 	#
 	"web_data_amazon_product_reviews",
 	#
+	"web_data_amazon_product_search",
+	#
+	"web_data_walmart_product",
+	#
+	"web_data_walmart_seller",
+	#
+	"web_data_ebay_product",
+	#
+	"web_data_homedepot_products",
+	#
+	"web_data_zara_products",
+	#
+	"web_data_etsy_products",
+	#
+	"web_data_bestbuy_products",
+	#
 	"web_data_linkedin_person_profile",
 	#
 	"web_data_linkedin_company_profile",
+	#
+	"web_data_linkedin_job_listings",
+	#
+	"web_data_linkedin_posts",
+	#
+	"web_data_linkedin_people_search",
+	#
+	"web_data_crunchbase_company",
 	#
 	"web_data_zoominfo_company_profile",
 	#
@@ -118,11 +142,43 @@ _cross_tool_exclude := [
 	#
 	"web_data_facebook_company_reviews",
 	#
+	"web_data_facebook_events",
+	#
+	"web_data_tiktok_profiles",
+	#
+	"web_data_tiktok_posts",
+	#
+	"web_data_tiktok_shop",
+	#
+	"web_data_tiktok_comments",
+	#
+	"web_data_google_maps_reviews",
+	#
+	"web_data_google_shopping",
+	#
+	"web_data_google_play_store",
+	#
+	"web_data_apple_app_store",
+	#
+	"web_data_reuter_news",
+	#
+	"web_data_reuter_news",
+	#
+	"web_data_github_repository_file",
+	#
+	"web_data_yahoo_finance_business",
+	#
 	"web_data_x_posts",
 	#
 	"web_data_zillow_properties_listing",
 	#
 	"web_data_booking_hotel_listings",
+	#
+	"web_data_youtube_profiles",
+	#
+	"web_data_youtube_comments",
+	#
+	"web_data_reddit_posts",
 	#
 	"web_data_youtube_videos",
 	#
@@ -242,15 +298,7 @@ reasons contains msg if {
 
 ## Deny rules for tools/call request
 #
-
-reasons contains msg if {
-	"covert-instruction-detection" in active_guardrails
-	input.mcp.method == "tools/call"
-	some pattern in _covert_patterns
-	regex.match(pattern, sprintf("%v", [input.mcp.params.arguments]))
-	msg = sprintf("covert content in call args: %v", [pattern])
-}
-
+#
 reasons contains msg if {
 	"schema-misuse-prevention" in active_guardrails
 	input.mcp.method == "tools/call"
@@ -267,14 +315,6 @@ reasons contains msg if {
 	msg = sprintf("sensitive content in call args: %v", [pattern])
 }
 
-reasons contains msg if {
-	"shadowing-pattern-detection" in active_guardrails
-	input.mcp.method == "tools/call"
-	some pattern in _shadowing_patterns
-	regex.match(pattern, sprintf("%v", [input.mcp.params.arguments]))
-	msg = sprintf("tool-shadowing in call args: %v", [pattern])
-}
-
 ## Deny rules for tools/call response
 #
 
@@ -285,23 +325,6 @@ reasons contains msg if {
 	some pattern in _covert_patterns
 	regex.match(pattern, sprintf("%v", [element.text]))
 	msg = sprintf("covert content in call response: %v", [pattern])
-}
-
-reasons contains msg if {
-	"schema-misuse-prevention" in active_guardrails
-	some element in input.mcp.result.content
-	some arg_name, _ in element
-	lower(arg_name) in _schema_keys
-	msg = sprintf("schema parameter misuse in call response: %v", [arg_name])
-}
-
-reasons contains msg if {
-	"sensitive-pattern-detection" in active_guardrails
-	some element in input.mcp.result.content
-	element.type == "text"
-	some pattern in _sensitive_patterns
-	regex.match(pattern, sprintf("%v", [element.text]))
-	msg = sprintf("sensitive content in call response: %v", [pattern])
 }
 
 reasons contains msg if {

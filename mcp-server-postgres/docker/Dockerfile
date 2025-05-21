@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@8649bf59a9c0c0c63f73e4283224ea889c3a981c
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
 
 FROM ghcr.io/astral-sh/uv:python3.12-alpine
 
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-postgres"
 LABEL org.opencontainers.image.description="PostgreSQL database integration with schema inspection and query capabilities."
-LABEL org.opencontainers.image.version="0.2.1"
+LABEL org.opencontainers.image.version="0.3.0"
 LABEL org.opencontainers.image.source="https://github.com/crystaldba/postgres-mcp"
 LABEL org.opencontainers.image.licenses="nil"
 LABEL org.opencontainers.image.author="Johann Schleier-Smith <jssmith@crystal.cloud>"
@@ -44,7 +44,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uv venv && uv pip install postgres-mcp==0.2.1
+RUN uv venv && uv pip install postgres-mcp==0.3.0
 
 EXPOSE 8000/tcp
 

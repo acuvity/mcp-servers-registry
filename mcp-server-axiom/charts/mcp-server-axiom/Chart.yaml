@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-axiom"
-description: A Helm chart for Query and analyze your Axiom logs, traces, and all other event data in natural language.
+description: "A Helm chart for Query and analyze your Axiom logs, traces, and all other event data in natural language."
 home: https://github.com/axiomhq/mcp-server-axiom
 sources:
   - https://github.com/acuvity/mcp-servers-registry

@@ -20,12 +20,12 @@
 
 # What is mcp-server-atlassian?
 
-[![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-atlassian/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-atlassian/0.10.6?logo=docker&logoColor=fff&label=0.10.6)](https://hub.docker.com/r/acuvity/mcp-server-atlassian)
-[![PyPI](https://img.shields.io/badge/0.10.6-3775A9?logo=pypi&logoColor=fff&label=mcp-atlassian)](https://github.com/sooperset/mcp-atlassian)
-[![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-atlassian&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CONFLUENCE_API_TOKEN%22%2C%22-e%22%2C%22CONFLUENCE_URL%22%2C%22-e%22%2C%22CONFLUENCE_USERNAME%22%2C%22-e%22%2C%22JIRA_API_TOKEN%22%2C%22-e%22%2C%22JIRA_URL%22%2C%22-e%22%2C%22JIRA_USERNAME%22%2C%22docker.io%2Facuvity%2Fmcp-server-atlassian%3A0.10.6%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-atlassian/0.11.1?logo=docker&logoColor=fff&label=0.11.1)](https://hub.docker.com/r/acuvity/mcp-server-atlassian)
+[![PyPI](https://img.shields.io/badge/0.11.1-3775A9?logo=pypi&logoColor=fff&label=mcp-atlassian)](https://github.com/sooperset/mcp-atlassian)
+[![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-atlassian/)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-atlassian&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CONFLUENCE_API_TOKEN%22%2C%22-e%22%2C%22CONFLUENCE_URL%22%2C%22-e%22%2C%22CONFLUENCE_USERNAME%22%2C%22-e%22%2C%22JIRA_API_TOKEN%22%2C%22-e%22%2C%22JIRA_URL%22%2C%22-e%22%2C%22JIRA_USERNAME%22%2C%22docker.io%2Facuvity%2Fmcp-server-atlassian%3A0.11.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Integrates AI tools for Jira and Confluence tasks and automation.
 
@@ -69,61 +69,80 @@ The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container i
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Gardrails
+### 🛡️ Guardrails
 
-### Covert Instruction Detection
+#### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-### Sensitive Pattern Detection
+#### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-### Shadowing Pattern Detection
+#### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-### Schema Misuse Prevention
+#### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-### Cross-Origin Tool Access
+#### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-### Secrets Redaction
+#### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
 * **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
 * **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
 
-## Basic Authentication via Shared Secret
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+
+### Enable guardrails
+
+To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
+- covert-instruction-detection
+- sensitive-pattern-detection
+- shadowing-pattern-detection
+- schema-misuse-prevention
+- cross-origin-tool-access
+- secrets-redaction
+
+For example adding:
+- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
+to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
+
+
+## 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
 * **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
 * **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
 
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
+- `-e BASIC_AUTH_SECRET="supersecret"`
+to your docker arguments. This will enable the Basic Authentication check.
 
-
-To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-atlassian/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-atlassian/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-atlassian/charts/mcp-server-atlassian#minibridge) for Helm charts).
+> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
+> rotate credentials frequently and **always** use TLS.
 
 </details>
 
@@ -136,6 +155,16 @@ To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-
 
 > [!TIP]
 > Given mcp-server-atlassian scope of operation it can be hosted anywhere.
+
+**Environment variables and secrets:**
+  - `CONFLUENCE_API_TOKEN` required to be set
+  - `CONFLUENCE_URL` required to be set
+  - `CONFLUENCE_USERNAME` required to be set
+  - `JIRA_API_TOKEN` required to be set
+  - `JIRA_URL` required to be set
+  - `JIRA_USERNAME` required to be set
+
+For more information and extra configuration you can consult the [package](https://github.com/sooperset/mcp-atlassian) documentation.
 
 # 🧰 Clients Integrations
 
@@ -150,7 +179,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-atlassian&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CONFLUENCE_API_TOKEN%22%2C%22-e%22%2C%22CONFLUENCE_URL%22%2C%22-e%22%2C%22CONFLUENCE_USERNAME%22%2C%22-e%22%2C%22JIRA_API_TOKEN%22%2C%22-e%22%2C%22JIRA_URL%22%2C%22-e%22%2C%22JIRA_USERNAME%22%2C%22docker.io%2Facuvity%2Fmcp-server-atlassian%3A0.10.6%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-atlassian&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CONFLUENCE_API_TOKEN%22%2C%22-e%22%2C%22CONFLUENCE_URL%22%2C%22-e%22%2C%22CONFLUENCE_USERNAME%22%2C%22-e%22%2C%22JIRA_API_TOKEN%22%2C%22-e%22%2C%22JIRA_URL%22%2C%22-e%22%2C%22JIRA_USERNAME%22%2C%22docker.io%2Facuvity%2Fmcp-server-atlassian%3A0.11.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -187,7 +216,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "JIRA_URL",
           "-e",
           "JIRA_USERNAME",
-          "docker.io/acuvity/mcp-server-atlassian:0.10.6"
+          "docker.io/acuvity/mcp-server-atlassian:0.11.1"
         ]
       }
     }
@@ -229,7 +258,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "JIRA_URL",
         "-e",
         "JIRA_USERNAME",
-        "docker.io/acuvity/mcp-server-atlassian:0.10.6"
+        "docker.io/acuvity/mcp-server-atlassian:0.11.1"
       ]
     }
   }
@@ -275,7 +304,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "JIRA_URL",
         "-e",
         "JIRA_USERNAME",
-        "docker.io/acuvity/mcp-server-atlassian:0.10.6"
+        "docker.io/acuvity/mcp-server-atlassian:0.11.1"
       ]
     }
   }
@@ -323,7 +352,7 @@ Add the following JSON block to your mcp configuration file:
         "JIRA_URL",
         "-e",
         "JIRA_USERNAME",
-        "docker.io/acuvity/mcp-server-atlassian:0.10.6"
+        "docker.io/acuvity/mcp-server-atlassian:0.11.1"
       ]
     }
   }
@@ -369,7 +398,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "JIRA_URL",
         "-e",
         "JIRA_USERNAME",
-        "docker.io/acuvity/mcp-server-atlassian:0.10.6"
+        "docker.io/acuvity/mcp-server-atlassian:0.11.1"
       ]
     }
   }
@@ -389,7 +418,7 @@ async with MCPServerStdio(
     params={
         "env": {"CONFLUENCE_API_TOKEN":"TO_BE_SET","CONFLUENCE_URL":"TO_BE_SET","CONFLUENCE_USERNAME":"TO_BE_SET","JIRA_API_TOKEN":"TO_BE_SET","JIRA_URL":"TO_BE_SET","JIRA_USERNAME":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","CONFLUENCE_API_TOKEN","-e","CONFLUENCE_URL","-e","CONFLUENCE_USERNAME","-e","JIRA_API_TOKEN","-e","JIRA_URL","-e","JIRA_USERNAME","docker.io/acuvity/mcp-server-atlassian:0.10.6"]
+        "args": ["run","-i","--rm","--read-only","-e","CONFLUENCE_API_TOKEN","-e","CONFLUENCE_URL","-e","CONFLUENCE_USERNAME","-e","JIRA_API_TOKEN","-e","JIRA_URL","-e","JIRA_USERNAME","docker.io/acuvity/mcp-server-atlassian:0.11.1"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -412,22 +441,13 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 
 ## 🐳 Run it with Docker
 
-**Environment variables and secrets:**
-  - `CONFLUENCE_API_TOKEN` required to be set
-  - `CONFLUENCE_URL` required to be set
-  - `CONFLUENCE_USERNAME` required to be set
-  - `JIRA_API_TOKEN` required to be set
-  - `JIRA_URL` required to be set
-  - `JIRA_USERNAME` required to be set
-
-
 <details>
 <summary>Locally with STDIO</summary>
 
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e CONFLUENCE_API_TOKEN -e CONFLUENCE_URL -e CONFLUENCE_USERNAME -e JIRA_API_TOKEN -e JIRA_URL -e JIRA_USERNAME docker.io/acuvity/mcp-server-atlassian:0.10.6`
+- arguments: `run -i --rm --read-only -e CONFLUENCE_API_TOKEN -e CONFLUENCE_URL -e CONFLUENCE_USERNAME -e JIRA_API_TOKEN -e JIRA_URL -e JIRA_USERNAME docker.io/acuvity/mcp-server-atlassian:0.11.1`
 
 </details>
 
@@ -437,7 +457,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e CONFLUENCE_API_TOKEN -e CONFLUENCE_URL -e CONFLUENCE_USERNAME -e JIRA_API_TOKEN -e JIRA_URL -e JIRA_USERNAME docker.io/acuvity/mcp-server-atlassian:0.10.6
+docker run -it -p 8000:8000 --rm --read-only -e CONFLUENCE_API_TOKEN -e CONFLUENCE_URL -e CONFLUENCE_USERNAME -e JIRA_API_TOKEN -e JIRA_URL -e JIRA_USERNAME docker.io/acuvity/mcp-server-atlassian:0.11.1
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -496,34 +516,6 @@ Minibridge offers a host of additional features. For step-by-step guidance, plea
 
 </details>
 
-## 🛡️ Runtime security
-
-**Guardrails:**
-
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
-- covert-instruction-detection
-- sensitive-pattern-detection
-- shadowing-pattern-detection
-- schema-misuse-prevention
-- cross-origin-tool-access
-- secrets-redaction
-
-For example adding:
-- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
-to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
-
-**Basic Authentication:**
-
-To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
-- `-e BASIC_AUTH_SECRET="supersecret"`
-to your docker arguments. This will enable the Basic Authentication check.
-
-Then you can connect through `http/sse` as usual given that you pass an `Authorization: Bearer supersecret` header with your secret as Bearer token.
-
-> [!CAUTION]
-> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
-> rotate credentials frequently and **always** use TLS.
-
 ## ☁️ Deploy On Kubernetes
 
 <details>
@@ -575,7 +567,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (35)
+## 🧰 Tools (36)
 <details>
 <summary>jira_get_user_profile</summary>
 
@@ -1085,7 +1077,7 @@ Update an existing Jira issue including changing status, adding Epic links, upda
         JSON string representing the updated issue object and attachment results.
 
     Raises:
-        ValueError: If in read-only mode, Jira client unavailable, or invalid input.
+        ValueError: If in read-only mode or Jira client unavailable, or invalid input.
     
 ```
 
@@ -1426,16 +1418,18 @@ Note: Special identifiers need proper quoting in CQL: personal space keys (e.g.,
 **Description**:
 
 ```
-Get content of a specific Confluence page by ID.
+Get content of a specific Confluence page by its ID, or by its title and space key.
 
     Args:
         ctx: The FastMCP context.
-        page_id: Confluence page ID.
+        page_id: Confluence page ID. If provided, 'title' and 'space_key' are ignored.
+        title: The exact title of the page. Must be used with 'space_key'.
+        space_key: The key of the space. Must be used with 'title'.
         include_metadata: Whether to include page metadata.
         convert_to_markdown: Convert content to markdown (true) or keep raw HTML (false).
 
     Returns:
-        JSON string representing the page content and/or metadata.
+        JSON string representing the page content and/or metadata, or an error if not found or parameters are invalid.
     
 ```
 
@@ -1444,8 +1438,10 @@ Get content of a specific Confluence page by ID.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | convert_to_markdown | boolean | Whether to convert page to markdown (true) or keep it in raw HTML format (false). Raw HTML can reveal macros (like dates) not visible in markdown, but CAUTION: using HTML significantly increases token usage in AI responses. | No
-| include_metadata | boolean | Whether to include page metadata such as creation date, last update, version, and labels | No
-| page_id | string | Confluence page ID (numeric ID, can be found in the page URL). For example, in the URL 'https://example.atlassian.net/wiki/spaces/TEAM/pages/123456789/Page+Title', the page ID is '123456789' | Yes
+| include_metadata | boolean | Whether to include page metadata such as creation date, last update, version, and labels. | No
+| page_id | string | Confluence page ID (numeric ID, can be found in the page URL). For example, in the URL 'https://example.atlassian.net/wiki/spaces/TEAM/pages/123456789/Page+Title', the page ID is '123456789'. Provide this OR both 'title' and 'space_key'. If page_id is provided, title and space_key will be ignored. | No
+| space_key | string | The key of the Confluence space where the page resides (e.g., 'DEV', 'TEAM'). Required if using 'title'. | No
+| title | string | The exact title of the Confluence page. Use this with 'space_key' if 'page_id' is not known. | No
 </details>
 <details>
 <summary>confluence_get_page_children</summary>
@@ -1607,7 +1603,7 @@ Update an existing Confluence page.
         JSON string representing the updated page object.
 
     Raises:
-        ValueError: If in read-only mode or Confluence client is unavailable.
+        ValueError: If Confluence client is not configured or available.
     
 ```
 
@@ -1638,7 +1634,7 @@ Delete an existing Confluence page.
         JSON string indicating success or failure.
 
     Raises:
-        ValueError: If in read-only mode or Confluence client is unavailable.
+        ValueError: If Confluence client is not configured or available.
     
 ```
 
@@ -1648,6 +1644,34 @@ Delete an existing Confluence page.
 |-----------|------|-------------|-----------|
 | page_id | string | The ID of the page to delete | Yes
 </details>
+<details>
+<summary>confluence_add_comment</summary>
+
+**Description**:
+
+```
+Add a comment to a Confluence page.
+
+    Args:
+        ctx: The FastMCP context.
+        page_id: The ID of the page to add a comment to.
+        content: The comment content in Markdown format.
+
+    Returns:
+        JSON string representing the created comment.
+
+    Raises:
+        ValueError: If in read-only mode or Confluence client is unavailable.
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| content | string | The comment content in Markdown format | Yes
+| page_id | string | The ID of the page to add a comment to | Yes
+</details>
 
 
 # 🔐 Resource SBOM
@@ -1656,6 +1680,9 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
+| tools | confluence_add_comment | description | dae0502a4a7ba259bb6f141a1c3107d6ee2398998901308e1cabb111719beb0e |
+| tools | confluence_add_comment | content | 7c17579c8ed4668bfb1fede68f965a86d8d3c01ebe2b1973daa8661bc3ca1b48 |
+| tools | confluence_add_comment | page_id | 543df92d5561df462a69efd068e757a4acc43aa650b6ff274330eb3c09a60ebe |
 | tools | confluence_add_label | description | 59a4af221f89c70e53823a280fe5aa79b7e25269a1b87c1389739f9e513dbe24 |
 | tools | confluence_add_label | name | 83b624868488cf0fca8c1fe17f6c17e770456ad44bfad7df2d476315214a5677 |
 | tools | confluence_add_label | page_id | 628f40cbdf75d0b2a88b54ab4b80a110c97055e424362411e7e7c300a08acf29 |
@@ -1664,16 +1691,18 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | confluence_create_page | parent_id | ea7a393c543e725e927ca85661106a9d664e448e127f10a11c7bb4d5cef9dff9 |
 | tools | confluence_create_page | space_key | c43f5fd2a37f5582a919389b95c48764e771efd0e9d42b3475f84da37f62ae2c |
 | tools | confluence_create_page | title | 5e5f34e9ae8d16f123915d19ec7cb196a3168a410861b210f724d261b5918d63 |
-| tools | confluence_delete_page | description | e5b7efd543c1a08de837ebd64e65b17ed308f68bf497e61cbe074c1c78083605 |
+| tools | confluence_delete_page | description | bc22d86bfa7534f8ca23ebcefee8c3edaa567cdb20ba25ae70a0dd5228a77144 |
 | tools | confluence_delete_page | page_id | d0f5fcabd1d0d4c22f81c71c512528d98c7cd51c430db935418c6fd70d8abb2e |
 | tools | confluence_get_comments | description | d792ca1cea9ccedc998d41425627996025c43549c113eb48c47ad0679ee49590 |
 | tools | confluence_get_comments | page_id | 4e8337cd080af0704ee50874ebf511a2066dfa3bedb20581c1833f144db65913 |
 | tools | confluence_get_labels | description | f98ab4e849763c19220fe8a71553e2e884c3d5ef1c2f821686c17066c85b09c7 |
 | tools | confluence_get_labels | page_id | 4e8337cd080af0704ee50874ebf511a2066dfa3bedb20581c1833f144db65913 |
-| tools | confluence_get_page | description | af02e8953193594c05538f8bc95931f9452e7de17b9964cf9932e734f74022e0 |
+| tools | confluence_get_page | description | 91b410dc9e71017ffb56177633f50e89d82a198740743cdb16f889e443dad33f |
 | tools | confluence_get_page | convert_to_markdown | 5e0310f6fd031e76ec1bb867d17c36ca451234566d65ee5a85bd4a8683093f1c |
-| tools | confluence_get_page | include_metadata | 385bb2b41af1163519be47ab53ead05ee0e5cc046f09789be7331357219b2227 |
-| tools | confluence_get_page | page_id | 8cf2a05c4f67a2c7161dc93e7c4adb174b26a191e27623858f278496e760b096 |
+| tools | confluence_get_page | include_metadata | 3f9b30c4a1f2d49ab161c49f058909619c2908c3bc25e720cae71f06f7d83ff4 |
+| tools | confluence_get_page | page_id | 00e40cf2940db9108b8feaadd6bbf68225215607f8e28137370e61b918cc1f47 |
+| tools | confluence_get_page | space_key | fd37c56e395d974efde7e244e4bc60cc77712a571b4602e56e85a843325a3413 |
+| tools | confluence_get_page | title | 7cab7fa312acf7dc04caee58bbaac4ab31f1095aa72ac6c2632653dc6f007716 |
 | tools | confluence_get_page_children | description | ad254355e763cdc4d7fd01489d419634b417daf906982e8fdb149ec3d9c2f74b |
 | tools | confluence_get_page_children | convert_to_markdown | 155584fd2c3ce92b8f65e4f67ac5d1b82d7b8fb05db3ef9229e4d41b7d10a976 |
 | tools | confluence_get_page_children | expand | 0eee18d0119ee5918f7c0da3cf66cd527804215916c6731d7fa96be1ed1c5983 |
@@ -1685,7 +1714,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | confluence_search | limit | d2f53210f2f0e66d63c3540c3b450f90770826326b68f40a055d79c38ec4440b |
 | tools | confluence_search | query | 509ec80b2a301105e24b1620fb16274ddeaf9b6a5399a1e4146dec158bbb8a66 |
 | tools | confluence_search | spaces_filter | b20ab5d153afc72bbebb650e0fdea0ddad0f596786901efea73b7bdf14390dea |
-| tools | confluence_update_page | description | c181331e15dcdf3707955228bdea5946e9567787aae3fa8ef85046df1be1fe1a |
+| tools | confluence_update_page | description | f3062d3f667bf8fdb3650f86a4d255080ea50729741e94976b3a2fb22ac47d4c |
 | tools | confluence_update_page | content | 3debc2b26d6b001e65314bb0a25a7c2e71c81bc90004390f0668994f5e868ca9 |
 | tools | confluence_update_page | is_minor_edit | 845eb97892e676d0197bb05161bd9a0a494dd8462057602bed796afe2816e9e5 |
 | tools | confluence_update_page | page_id | 628f40cbdf75d0b2a88b54ab4b80a110c97055e424362411e7e7c300a08acf29 |
@@ -1796,7 +1825,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | jira_transition_issue | fields | d1b5351cb0ea67246f3387018055e2a44eadc2d827ad852c13b48dd76722a4ca |
 | tools | jira_transition_issue | issue_key | 503242ce27877eab3bd3119ada2d73de27685ce83650f4cbf91aa58f95e5f050 |
 | tools | jira_transition_issue | transition_id | 76f0e261d6b43d78c236119a06ec0dfb60e80cb86843b484f3f3b4b7eb2ad528 |
-| tools | jira_update_issue | description | cb88091f7adf2e290ac8fdf1974c58081fb92f5f1139dd76f6247882894f3dc6 |
+| tools | jira_update_issue | description | f68944f501db10158f69ea4faddd9137b444d22e0f6c52d482823a4fd21b4c31 |
 | tools | jira_update_issue | additional_fields | 5842962afbd51ecf06e1b676d53ecc889cd2f2d165486c8fa3c270b117339232 |
 | tools | jira_update_issue | attachments | 83eb360df9574c57b2a5e1383db5701dd38f72bfde45f6e8606ef06cc3a95a17 |
 | tools | jira_update_issue | fields | 7ce353e459d334ff1333e8c2b96300c8a7d9d59124ddffe852dfd94e9641b505 |

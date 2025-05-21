@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-razorpay"
-description: A Helm chart for Advanced payment processing with Razorpay APIs for devs and AI tools.
+description: "A Helm chart for Advanced payment processing with Razorpay APIs for devs and AI tools."
 home: https://github.com/razorpay/razorpay-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

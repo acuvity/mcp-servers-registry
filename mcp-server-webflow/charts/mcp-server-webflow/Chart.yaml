@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-webflow"
-description: A Helm chart for Enables AI agents to interact with Webflow APIs.
+description: "A Helm chart for Enables AI agents to interact with Webflow APIs."
 home: https://github.com/webflow/mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

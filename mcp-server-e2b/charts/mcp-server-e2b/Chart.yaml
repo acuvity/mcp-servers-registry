@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-e2b"
-description: A Helm chart for Adds code interpreting capabilities to the Claude Desktop app.
+description: "A Helm chart for Adds code interpreting capabilities to the Claude Desktop app."
 home: https://github.com/e2b-dev/mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-dart"
-description: A Helm chart for AI-powered project management server for task and document management.
+description: "A Helm chart for AI-powered project management server for task and document management."
 home: https://github.com/its-dart/dart-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-line-bot"
-description: A Helm chart for Connects AI Agent to LINE for messaging interactions.
+description: "A Helm chart for Connects AI Agent to LINE for messaging interactions."
 home: https://github.com/line/line-bot-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

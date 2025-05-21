@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-brightdata"
-description: A Helm chart for Discover, extract, and interact with the web - automated access across the public internet.
+description: "A Helm chart for Discover, extract, and interact with the web - automated access across the public internet."
 home: https://github.com/luminati-io/brightdata-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry
@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 1.8.2
+appVersion: 1.9.1
 keywords:
   - mcp-server-brightdata
   - mcp-server

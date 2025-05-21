@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-apache-airflow"
-description: A Helm chart for MCP server that connects to Apache Airflow using official client.
+description: "A Helm chart for MCP server that connects to Apache Airflow using official client."
 home: https://github.com/yangkyeongmo/mcp-server-apache-airflow
 sources:
   - https://github.com/acuvity/mcp-servers-registry

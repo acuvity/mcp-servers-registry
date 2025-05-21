@@ -1,5 +1,7 @@
 #!/bin/sh
 export PATH="/app/node_modules/.bin:${PATH}"
+unset HOME
+export HOME=${HOME:-"/tmp"}
 
 if [ -z "$MINIBRIDGE_MODE" ]; then
   # check if stdin in open

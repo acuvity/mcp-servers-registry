@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-bugsnag"
-description: A Helm chart for An MCP server for interacting with Bugsnag.
+description: "A Helm chart for An MCP server for interacting with Bugsnag."
 home: https://github.com/tgeselle/bugsnag-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

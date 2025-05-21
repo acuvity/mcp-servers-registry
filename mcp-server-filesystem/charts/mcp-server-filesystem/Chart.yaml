@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-filesystem"
-description: A Helm chart for MCP server for filesystem access
+description: "A Helm chart for MCP server for filesystem access"
 home: https://modelcontextprotocol.io
 sources:
   - https://github.com/acuvity/mcp-servers-registry

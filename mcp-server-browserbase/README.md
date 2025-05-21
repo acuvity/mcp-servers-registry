@@ -22,10 +22,10 @@
 
 [![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-browserbase/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-browserbase/1.0.4?logo=docker&logoColor=fff&label=1.0.4)](https://hub.docker.com/r/acuvity/mcp-server-browserbase)
-[![PyPI](https://img.shields.io/badge/1.0.4-3775A9?logo=pypi&logoColor=fff&label=@browserbasehq/mcp)](https://github.com/browserbase/mcp-server-browserbase)
-[![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-browserbase&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22BROWSERBASE_API_KEY%22%2C%22-e%22%2C%22BROWSERBASE_PROJECT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-browserbase%3A1.0.4%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-browserbase/1.0.5?logo=docker&logoColor=fff&label=1.0.5)](https://hub.docker.com/r/acuvity/mcp-server-browserbase)
+[![PyPI](https://img.shields.io/badge/1.0.5-3775A9?logo=pypi&logoColor=fff&label=@browserbasehq/mcp)](https://github.com/browserbase/mcp-server-browserbase)
+[![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-browserbase/)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-browserbase&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22BROWSERBASE_API_KEY%22%2C%22-e%22%2C%22BROWSERBASE_PROJECT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-browserbase%3A1.0.5%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Automate browser interactions in the cloud (e.g. web navigation, data extraction, form filling).
 
@@ -69,61 +69,80 @@ The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container i
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Gardrails
+### 🛡️ Guardrails
 
-### Covert Instruction Detection
+#### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-### Sensitive Pattern Detection
+#### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-### Shadowing Pattern Detection
+#### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-### Schema Misuse Prevention
+#### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-### Cross-Origin Tool Access
+#### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-### Secrets Redaction
+#### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
 * **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
 * **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
 
-## Basic Authentication via Shared Secret
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+
+### Enable guardrails
+
+To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
+- covert-instruction-detection
+- sensitive-pattern-detection
+- shadowing-pattern-detection
+- schema-misuse-prevention
+- cross-origin-tool-access
+- secrets-redaction
+
+For example adding:
+- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
+to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
+
+
+## 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
 * **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
 * **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
 
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
+- `-e BASIC_AUTH_SECRET="supersecret"`
+to your docker arguments. This will enable the Basic Authentication check.
 
-
-To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-browserbase/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-browserbase/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-browserbase/charts/mcp-server-browserbase#minibridge) for Helm charts).
+> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
+> rotate credentials frequently and **always** use TLS.
 
 </details>
 
@@ -136,6 +155,12 @@ To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-
 
 > [!TIP]
 > Given mcp-server-browserbase scope of operation it can be hosted anywhere.
+
+**Environment variables and secrets:**
+  - `BROWSERBASE_API_KEY` required to be set
+  - `BROWSERBASE_PROJECT_ID` required to be set
+
+For more information and extra configuration you can consult the [package](https://github.com/browserbase/mcp-server-browserbase) documentation.
 
 # 🧰 Clients Integrations
 
@@ -150,7 +175,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-browserbase&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22BROWSERBASE_API_KEY%22%2C%22-e%22%2C%22BROWSERBASE_PROJECT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-browserbase%3A1.0.4%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-browserbase&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22BROWSERBASE_API_KEY%22%2C%22-e%22%2C%22BROWSERBASE_PROJECT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-browserbase%3A1.0.5%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -175,7 +200,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "BROWSERBASE_API_KEY",
           "-e",
           "BROWSERBASE_PROJECT_ID",
-          "docker.io/acuvity/mcp-server-browserbase:1.0.4"
+          "docker.io/acuvity/mcp-server-browserbase:1.0.5"
         ]
       }
     }
@@ -205,7 +230,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "BROWSERBASE_API_KEY",
         "-e",
         "BROWSERBASE_PROJECT_ID",
-        "docker.io/acuvity/mcp-server-browserbase:1.0.4"
+        "docker.io/acuvity/mcp-server-browserbase:1.0.5"
       ]
     }
   }
@@ -239,7 +264,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "BROWSERBASE_API_KEY",
         "-e",
         "BROWSERBASE_PROJECT_ID",
-        "docker.io/acuvity/mcp-server-browserbase:1.0.4"
+        "docker.io/acuvity/mcp-server-browserbase:1.0.5"
       ]
     }
   }
@@ -275,7 +300,7 @@ Add the following JSON block to your mcp configuration file:
         "BROWSERBASE_API_KEY",
         "-e",
         "BROWSERBASE_PROJECT_ID",
-        "docker.io/acuvity/mcp-server-browserbase:1.0.4"
+        "docker.io/acuvity/mcp-server-browserbase:1.0.5"
       ]
     }
   }
@@ -309,7 +334,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "BROWSERBASE_API_KEY",
         "-e",
         "BROWSERBASE_PROJECT_ID",
-        "docker.io/acuvity/mcp-server-browserbase:1.0.4"
+        "docker.io/acuvity/mcp-server-browserbase:1.0.5"
       ]
     }
   }
@@ -329,7 +354,7 @@ async with MCPServerStdio(
     params={
         "env": {"BROWSERBASE_API_KEY":"TO_BE_SET","BROWSERBASE_PROJECT_ID":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","BROWSERBASE_API_KEY","-e","BROWSERBASE_PROJECT_ID","docker.io/acuvity/mcp-server-browserbase:1.0.4"]
+        "args": ["run","-i","--rm","--read-only","-e","BROWSERBASE_API_KEY","-e","BROWSERBASE_PROJECT_ID","docker.io/acuvity/mcp-server-browserbase:1.0.5"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -352,18 +377,13 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 
 ## 🐳 Run it with Docker
 
-**Environment variables and secrets:**
-  - `BROWSERBASE_API_KEY` required to be set
-  - `BROWSERBASE_PROJECT_ID` required to be set
-
-
 <details>
 <summary>Locally with STDIO</summary>
 
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e BROWSERBASE_API_KEY -e BROWSERBASE_PROJECT_ID docker.io/acuvity/mcp-server-browserbase:1.0.4`
+- arguments: `run -i --rm --read-only -e BROWSERBASE_API_KEY -e BROWSERBASE_PROJECT_ID docker.io/acuvity/mcp-server-browserbase:1.0.5`
 
 </details>
 
@@ -373,7 +393,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e BROWSERBASE_API_KEY -e BROWSERBASE_PROJECT_ID docker.io/acuvity/mcp-server-browserbase:1.0.4
+docker run -it -p 8000:8000 --rm --read-only -e BROWSERBASE_API_KEY -e BROWSERBASE_PROJECT_ID docker.io/acuvity/mcp-server-browserbase:1.0.5
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -431,34 +451,6 @@ That's it.
 Minibridge offers a host of additional features. For step-by-step guidance, please visit the wiki. And if anything’s unclear, don’t hesitate to reach out!
 
 </details>
-
-## 🛡️ Runtime security
-
-**Guardrails:**
-
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
-- covert-instruction-detection
-- sensitive-pattern-detection
-- shadowing-pattern-detection
-- schema-misuse-prevention
-- cross-origin-tool-access
-- secrets-redaction
-
-For example adding:
-- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
-to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
-
-**Basic Authentication:**
-
-To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
-- `-e BASIC_AUTH_SECRET="supersecret"`
-to your docker arguments. This will enable the Basic Authentication check.
-
-Then you can connect through `http/sse` as usual given that you pass an `Authorization: Bearer supersecret` header with your secret as Bearer token.
-
-> [!CAUTION]
-> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
-> rotate credentials frequently and **always** use TLS.
 
 ## ☁️ Deploy On Kubernetes
 

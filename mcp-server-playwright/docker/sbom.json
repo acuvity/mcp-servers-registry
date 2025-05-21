@@ -1,0 +1,287 @@
+{
+  "tools": [
+    {
+      "name": "browser_click",
+      "hash": "5bc7302b94469359a1d759df8be7523c927ea63e200d90a2a9360da1612e9d29",
+      "params": [
+        {
+          "name": "element",
+          "hash": "8f7a4a92e8b1e44bcafaa5788842d15a674aef367878aa1707f321875208d02a"
+        },
+        {
+          "name": "ref",
+          "hash": "e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b"
+        }
+      ]
+    },
+    {
+      "name": "browser_close",
+      "hash": "c483523dc3bb5b05eb23920e124b65ee9dcba6d8e75d2052f785c3010c4cb960"
+    },
+    {
+      "name": "browser_console_messages",
+      "hash": "2ce06ce1312ba7c5fe48cadccb19236fcf7b97a9998ef2454c8f67f3df8ecfb8"
+    },
+    {
+      "name": "browser_drag",
+      "hash": "684f8531f973ebdaed04f74c1f8840f3c5dedbfacab923ce4d63a6960bce306d",
+      "params": [
+        {
+          "name": "endElement",
+          "hash": "8316bc24736a8b1b3d499b84691448227959ff9dd2741b4d4f886300e2862c15"
+        },
+        {
+          "name": "endRef",
+          "hash": "e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b"
+        },
+        {
+          "name": "startElement",
+          "hash": "ccb99ea06f1f4cfe6348216abc31d647899e1100f3a1a353af89afa578f2a2b4"
+        },
+        {
+          "name": "startRef",
+          "hash": "a2a0c2d0f7b7d8056a3aaaa53c71eba4f2bfeb35a02c5c6d860b52a9cccb9088"
+        }
+      ]
+    },
+    {
+      "name": "browser_file_upload",
+      "hash": "d272f8f519d6502ebcbb90472ec6c6b23827101fc85aa46f63224bbe27b9c5e7",
+      "params": [
+        {
+          "name": "paths",
+          "hash": "114252d6f4c87e42b01029e4a945767779f1dba6b71350195073e744ac21320d"
+        }
+      ]
+    },
+    {
+      "name": "browser_generate_playwright_test",
+      "hash": "77bc47dd670573a31a64ebfc2a3e1f6b392f952a83b15abcca3f38b52aa28440",
+      "params": [
+        {
+          "name": "description",
+          "hash": "14033953787179a60a79ca80987bcfd7d3dadbf0d331135489170bc3e71767d7"
+        },
+        {
+          "name": "name",
+          "hash": "d573ba5b27ecc36fe9dc995cd2617ce054fca9f45f118f1c52e7791c9ae7dcba"
+        },
+        {
+          "name": "steps",
+          "hash": "c13696a7fdab2df534d249b9c78f731ab1d3dc8980d3ba32359b3c2a777fc4ba"
+        }
+      ]
+    },
+    {
+      "name": "browser_handle_dialog",
+      "hash": "34a2837f16e0b3e9aff154f1df1db28a393f6715f106da3c4a1e7e54e2253d83",
+      "params": [
+        {
+          "name": "accept",
+          "hash": "0a86f27cbc233d22e1033a3257e24e2185897c0ab40c4b8452b40772af5e91f7"
+        },
+        {
+          "name": "promptText",
+          "hash": "2e7f193e01947d6e2549c0043cb64cce077c32b98d8b799d3c9b3f861669f333"
+        }
+      ]
+    },
+    {
+      "name": "browser_hover",
+      "hash": "8513e4975a84cba22d8ffce77bca05b555ddb72cb31a6271907b345bb834fe45",
+      "params": [
+        {
+          "name": "element",
+          "hash": "8f7a4a92e8b1e44bcafaa5788842d15a674aef367878aa1707f321875208d02a"
+        },
+        {
+          "name": "ref",
+          "hash": "e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b"
+        }
+      ]
+    },
+    {
+      "name": "browser_install",
+      "hash": "f260f51a276fc052742927c5457dea08462324d6dc955a35b8ba622189916ec2"
+    },
+    {
+      "name": "browser_navigate",
+      "hash": "5e517ac29796df4781d6e8f8b3be061cc694f0c8e027f40e42ce0739e887b1d5",
+      "params": [
+        {
+          "name": "url",
+          "hash": "63d749360d127f3c1d0d108336745c687aaa08760a306f0dadbbef4e9fadf27f"
+        }
+      ]
+    },
+    {
+      "name": "browser_navigate_back",
+      "hash": "1070d603d3951f9282bc8e5111b7a6993fa05215c23ba5099429b567a9bdb467"
+    },
+    {
+      "name": "browser_navigate_forward",
+      "hash": "4f74235e282e3cba526b98047b02c344c6bc32566bb325d5408e897eadfc6a7e"
+    },
+    {
+      "name": "browser_network_requests",
+      "hash": "62964542d2e6023a8136a0d8e72d15c1ddb70dd61a7885efe1244faffb99be11"
+    },
+    {
+      "name": "browser_pdf_save",
+      "hash": "820479de946e42108093a8ac1bd073aecbc1e116b06ea2e4fc5d098bf1338d82",
+      "params": [
+        {
+          "name": "filename",
+          "hash": "a313904945da380efc515f0413650a5b0e5a9311478d66f91b69ce840d5cf93d"
+        }
+      ]
+    },
+    {
+      "name": "browser_press_key",
+      "hash": "aad8c3412d76c93e83c00bbe260068e5e2b988fb41080d148f31d49b5e7d2532",
+      "params": [
+        {
+          "name": "key",
+          "hash": "99b4b6f2c8718d62ab46cca9b057177560c7ba358835bde04cebfdb9380036a2"
+        }
+      ]
+    },
+    {
+      "name": "browser_resize",
+      "hash": "562c4779388a2d66374bf8197abfc94572bd0ae1d09e9990f3c16a99111e7899",
+      "params": [
+        {
+          "name": "height",
+          "hash": "744a788ef6d6749b0fcfeda5184af52314f2bc859b082296cde9ef62ac933a59"
+        },
+        {
+          "name": "width",
+          "hash": "98392dfba8217b86ac97bae43deb861684eb3b1e771bc8524c8a901d2f3f6d49"
+        }
+      ]
+    },
+    {
+      "name": "browser_select_option",
+      "hash": "a085193341d59ac28092de80bbabb95a51012a6a85c011db3e1211fa2b80930a",
+      "params": [
+        {
+          "name": "element",
+          "hash": "8f7a4a92e8b1e44bcafaa5788842d15a674aef367878aa1707f321875208d02a"
+        },
+        {
+          "name": "ref",
+          "hash": "e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b"
+        },
+        {
+          "name": "values",
+          "hash": "043660ef1e2bf819c47fee4ecba90c983b6598c8a881dd856100e336f001c748"
+        }
+      ]
+    },
+    {
+      "name": "browser_snapshot",
+      "hash": "a3f68829ce29df3dbfa0e4e91dbf4564977b4f57a4b15ac977d894429e0ed08a"
+    },
+    {
+      "name": "browser_tab_close",
+      "hash": "157cf86ac9b6ef348ba6bd0d7cdfc02082050a8e65ce63f4b37b667c49b6fbcb",
+      "params": [
+        {
+          "name": "index",
+          "hash": "081208626d185b11611053dbd8bdcf7b6865490a7ac24ebd84ffcac3274d0abc"
+        }
+      ]
+    },
+    {
+      "name": "browser_tab_list",
+      "hash": "805df6a76329b8e13fcc02f50b976e6984fc73f0a1b97c30d5e1783ec9750dfa"
+    },
+    {
+      "name": "browser_tab_new",
+      "hash": "2b75279f7878c031956585a06d4e79f9ebd96f794b1a5d9aea2fff12d418e3be",
+      "params": [
+        {
+          "name": "url",
+          "hash": "419d71c871ecc825855b86c2fbe611c44455826ae1c038ddfa7d6ba8e78524cc"
+        }
+      ]
+    },
+    {
+      "name": "browser_tab_select",
+      "hash": "a0b4c48c11a7ff313f2dab71924f00c0eeb8dd6d65e24b65f979582560ff1533",
+      "params": [
+        {
+          "name": "index",
+          "hash": "cec04c7dc803cb8b380657da67a17ae530096f71d64aaf52d9c8e6b0dc33c628"
+        }
+      ]
+    },
+    {
+      "name": "browser_take_screenshot",
+      "hash": "14f147272c20299ea428abd9a08b576144fc06fe44968949e477b0ec490fc661",
+      "params": [
+        {
+          "name": "element",
+          "hash": "0a584a11c45269e0b00e83541abffa5294b5cbfd951d73916de962a7e8565184"
+        },
+        {
+          "name": "filename",
+          "hash": "e4fb983a7d3fda2528819a7f3f6f07b24d8eba868a52dab812141fbb8b961981"
+        },
+        {
+          "name": "raw",
+          "hash": "6ef2e54d93f43a3d8ae510ea94a7c42892646fc9c8a73f766256377225e40f36"
+        },
+        {
+          "name": "ref",
+          "hash": "6b63c0b921d6d1d6c6c5221e95f36488876b4d2d0c53e5a4eef0d8dd4d7e088f"
+        }
+      ]
+    },
+    {
+      "name": "browser_type",
+      "hash": "390727daa0fdd31a5d9417f51fd818b1b6d6b934eb9b5b15be57dd9e7e0da2a9",
+      "params": [
+        {
+          "name": "element",
+          "hash": "8f7a4a92e8b1e44bcafaa5788842d15a674aef367878aa1707f321875208d02a"
+        },
+        {
+          "name": "ref",
+          "hash": "e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b"
+        },
+        {
+          "name": "slowly",
+          "hash": "fbaa1f504a8fc996ebf95c85fe33b2d70f8291663b28707ca388673db5489dbd"
+        },
+        {
+          "name": "submit",
+          "hash": "2878d7dee713522a404fd189b76b7ce01b439e50b164a1e5c992b6ba2f577106"
+        },
+        {
+          "name": "text",
+          "hash": "42bc9d6777b527b20636d608e53bc2cb9dc43f74c263b701827645bcc369d438"
+        }
+      ]
+    },
+    {
+      "name": "browser_wait_for",
+      "hash": "5b754f8f4ac481dae127cb350272c1e5b484b4a3cb819cc426b1bfac9747a372",
+      "params": [
+        {
+          "name": "text",
+          "hash": "4eb9b99a23f0994f4aa3a51152537abd4534da072acffe75fbee9c5cb93963cd"
+        },
+        {
+          "name": "textGone",
+          "hash": "b3a67c647eb43e55e93a542d28475c534063b1277abbadf885839632f244c4ef"
+        },
+        {
+          "name": "time",
+          "hash": "0ed8e3c1f110ea73b266829774a105a70725d2360fb3464757d342a893e8f71d"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

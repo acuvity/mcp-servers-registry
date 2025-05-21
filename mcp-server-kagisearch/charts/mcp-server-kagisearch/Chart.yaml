@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-kagisearch"
-description: A Helm chart for MCP server for search queries and video summarization.
+description: "A Helm chart for MCP server for search queries and video summarization."
 home: https://github.com/kagisearch/kagimcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

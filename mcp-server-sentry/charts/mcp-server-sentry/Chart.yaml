@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-sentry"
-description: A Helm chart for Retrieving and analyzing issues from Sentry.io.
+description: "A Helm chart for Retrieving and analyzing issues from Sentry.io."
 home: https://github.com/modelcontextprotocol/servers/tree/main/src/sentry
 sources:
   - https://github.com/acuvity/mcp-servers-registry

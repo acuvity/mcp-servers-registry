@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-google-drive"
-description: A Helm chart for File access and search capabilities for Google Drive.
+description: "A Helm chart for File access and search capabilities for Google Drive."
 home: https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive
 sources:
   - https://github.com/acuvity/mcp-servers-registry

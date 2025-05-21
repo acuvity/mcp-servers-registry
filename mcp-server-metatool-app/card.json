@@ -12,7 +12,7 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "rating": "F",

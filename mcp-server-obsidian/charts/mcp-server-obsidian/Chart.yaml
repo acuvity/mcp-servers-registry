@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-obsidian"
-description: A Helm chart for Interacting with Obsidian via REST API.
+description: "A Helm chart for Interacting with Obsidian via REST API."
 home: https://github.com/MarkusPfundstein/mcp-obsidian
 sources:
   - https://github.com/acuvity/mcp-servers-registry

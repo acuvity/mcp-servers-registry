@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-elevenlabs"
-description: A Helm chart for Enables voice synthesis and audio processing via APIs.
+description: "A Helm chart for Enables voice synthesis and audio processing via APIs."
 home: https://github.com/elevenlabs/elevenlabs-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

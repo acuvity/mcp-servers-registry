@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@8649bf59a9c0c0c63f73e4283224ea889c3a981c
+    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
 
 FROM node:23.11.0-alpine3.21
 
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-neon"
 LABEL org.opencontainers.image.description="Interact with Neon databases using natural language."
-LABEL org.opencontainers.image.version="0.4.0"
+LABEL org.opencontainers.image.version="0.4.1"
 LABEL org.opencontainers.image.source="https://github.com/neondatabase-labs/mcp-server-neon"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="Neon, Inc."
@@ -36,9 +36,11 @@ RUN addgroup -g 1001 -S appuser && \
     mkdir -p /home/appuser/.config/minibridge && \
     chown appuser:appuser -R /app
 
+ENV NODE_ENV=production
+
 USER appuser
 
-RUN npm i --omit-dev @neondatabase/mcp-server-neon@0.4.0
+RUN npm i --omit-dev @neondatabase/mcp-server-neon@0.4.1
 
 EXPOSE 8000/tcp
 

@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-coincap"
-description: A Helm chart for Real-time cryptocurrency market data integration using CoinCap's public API.
+description: "A Helm chart for Real-time cryptocurrency market data integration using CoinCap's public API."
 home: https://github.com/QuantGeekDev/coincap-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

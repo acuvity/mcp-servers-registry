@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-azure-devops"
-description: A Helm chart for Azure DevOps integration for repository management, work items, and pipelines.
+description: "A Helm chart for Azure DevOps integration for repository management, work items, and pipelines."
 home: https://github.com/Tiberriver256/mcp-server-azure-devops
 sources:
   - https://github.com/acuvity/mcp-servers-registry

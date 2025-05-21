@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-tavily"
-description: A Helm chart for Integrates AI models with web search and data extraction tools.
+description: "A Helm chart for Integrates AI models with web search and data extraction tools."
 home: https://github.com/tavily-ai/tavily-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry

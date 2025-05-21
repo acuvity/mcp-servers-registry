@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-prisma"
-description: A Helm chart for Gives LLMs the ability to manage Prisma Postgres databases.
+description: "A Helm chart for Gives LLMs the ability to manage Prisma Postgres databases."
 home: https://github.com/prisma/prisma
 sources:
   - https://github.com/acuvity/mcp-servers-registry
@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 6.8.1
+appVersion: 6.8.2
 keywords:
   - mcp-server-prisma
   - mcp-server

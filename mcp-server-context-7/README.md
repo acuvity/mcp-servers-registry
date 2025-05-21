@@ -22,10 +22,10 @@
 
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-context-7/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-context-7/1.0.8?logo=docker&logoColor=fff&label=1.0.8)](https://hub.docker.com/r/acuvity/mcp-server-context-7)
-[![PyPI](https://img.shields.io/badge/1.0.8-3775A9?logo=pypi&logoColor=fff&label=@upstash/context7-mcp)](https://github.com/upstash/context7#readme)
-[![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-context-7&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-context-7%3A1.0.8%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-context-7/1.0.9?logo=docker&logoColor=fff&label=1.0.9)](https://hub.docker.com/r/acuvity/mcp-server-context-7)
+[![PyPI](https://img.shields.io/badge/1.0.9-3775A9?logo=pypi&logoColor=fff&label=@upstash/context7-mcp)](https://github.com/upstash/context7#readme)
+[![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-context-7/)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-context-7&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-context-7%3A1.0.9%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Context7 MCP - Up-to-date Docs For Any Cursor Prompt.
 
@@ -69,61 +69,80 @@ The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container i
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Gardrails
+### 🛡️ Guardrails
 
-### Covert Instruction Detection
+#### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-### Sensitive Pattern Detection
+#### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-### Shadowing Pattern Detection
+#### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-### Schema Misuse Prevention
+#### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-### Cross-Origin Tool Access
+#### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-### Secrets Redaction
+#### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
 * **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
 * **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
 
-## Basic Authentication via Shared Secret
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+
+### Enable guardrails
+
+To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
+- covert-instruction-detection
+- sensitive-pattern-detection
+- shadowing-pattern-detection
+- schema-misuse-prevention
+- cross-origin-tool-access
+- secrets-redaction
+
+For example adding:
+- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
+to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
+
+
+## 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
 * **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
 * **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
 
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
+- `-e BASIC_AUTH_SECRET="supersecret"`
+to your docker arguments. This will enable the Basic Authentication check.
 
-
-To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-context-7/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-context-7/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-context-7/charts/mcp-server-context-7#minibridge) for Helm charts).
+> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
+> rotate credentials frequently and **always** use TLS.
 
 </details>
 
@@ -136,6 +155,8 @@ To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-
 
 > [!TIP]
 > Given mcp-server-context-7 scope of operation it can be hosted anywhere.
+
+For more information and extra configuration you can consult the [package](https://github.com/upstash/context7#readme) documentation.
 
 # 🧰 Clients Integrations
 
@@ -150,7 +171,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-context-7&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-context-7%3A1.0.8%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-context-7&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-context-7%3A1.0.9%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -167,7 +188,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "-i",
           "--rm",
           "--read-only",
-          "docker.io/acuvity/mcp-server-context-7:1.0.8"
+          "docker.io/acuvity/mcp-server-context-7:1.0.9"
         ]
       }
     }
@@ -189,7 +210,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-context-7:1.0.8"
+        "docker.io/acuvity/mcp-server-context-7:1.0.9"
       ]
     }
   }
@@ -215,7 +236,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-context-7:1.0.8"
+        "docker.io/acuvity/mcp-server-context-7:1.0.9"
       ]
     }
   }
@@ -243,7 +264,7 @@ Add the following JSON block to your mcp configuration file:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-context-7:1.0.8"
+        "docker.io/acuvity/mcp-server-context-7:1.0.9"
       ]
     }
   }
@@ -269,7 +290,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-context-7:1.0.8"
+        "docker.io/acuvity/mcp-server-context-7:1.0.9"
       ]
     }
   }
@@ -288,7 +309,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 async with MCPServerStdio(
     params={
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-context-7:1.0.8"]
+        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-context-7:1.0.9"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -311,14 +332,13 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 
 ## 🐳 Run it with Docker
 
-
 <details>
 <summary>Locally with STDIO</summary>
 
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-context-7:1.0.8`
+- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-context-7:1.0.9`
 
 </details>
 
@@ -328,7 +348,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-context-7:1.0.8
+docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-context-7:1.0.9
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -387,34 +407,6 @@ Minibridge offers a host of additional features. For step-by-step guidance, plea
 
 </details>
 
-## 🛡️ Runtime security
-
-**Guardrails:**
-
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
-- covert-instruction-detection
-- sensitive-pattern-detection
-- shadowing-pattern-detection
-- schema-misuse-prevention
-- cross-origin-tool-access
-- secrets-redaction
-
-For example adding:
-- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
-to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
-
-**Basic Authentication:**
-
-To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
-- `-e BASIC_AUTH_SECRET="supersecret"`
-to your docker arguments. This will enable the Basic Authentication check.
-
-Then you can connect through `http/sse` as usual given that you pass an `Authorization: Bearer supersecret` header with your secret as Bearer token.
-
-> [!CAUTION]
-> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
-> rotate credentials frequently and **always** use TLS.
-
 ## ☁️ Deploy On Kubernetes
 
 <details>
@@ -459,17 +451,25 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 **Description**:
 
 ```
-Resolves a package name to a Context7-compatible library ID and returns a list of matching libraries.
+Resolves a package/product name to a Context7-compatible library ID and returns a list of matching libraries.
 
 You MUST call this function before 'get-library-docs' to obtain a valid Context7-compatible library ID.
 
-When selecting the best match, consider:
-- Name similarity to the query
-- Description relevance
-- Code Snippet count (documentation coverage)
-- GitHub Stars (popularity)
+Selection Process:
+1. Analyze the query to understand what library/package the user is looking for
+2. Return the most relevant match based on:
+- Name similarity to the query (exact matches prioritized)
+- Description relevance to the query's intent
+- Documentation coverage (prioritize libraries with higher Code Snippet counts)
+- Trust score (consider libraries with scores of 7-10 more authoritative)
 
-Return the selected library ID and explain your choice. If there are multiple good matches, mention this but proceed with the most relevant one.
+Response Format:
+- Return the selected library ID in a clearly marked section
+- Provide a brief explanation for why this library was chosen
+- If multiple good matches exist, acknowledge this but proceed with the most relevant one
+- If no good matches exist, clearly state this and suggest query refinements
+
+For ambiguous queries, request clarification before proceeding with a best-guess match.
 ```
 
 **Parameter**:
@@ -507,7 +507,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | get-library-docs | context7CompatibleLibraryID | c906658ac565e1266a7e9641bb43392223f38082489258a83d03c4783fc93ab5 |
 | tools | get-library-docs | tokens | f540ae2f13fa0a62ed5bb41c4d1653aee29c1f1d46100e7509c4e3b73421ebb1 |
 | tools | get-library-docs | topic | e8e61edf96c395a9d80df978b4720045e91ed73580b6b699f932f2b86708bf2a |
-| tools | resolve-library-id | description | b79e9fe1715335829d79fdac6f414fbfa3ac36c35c198a4b1cc7d39afaec0359 |
+| tools | resolve-library-id | description | 9633f96294145104ee4354f7e70c937e355dc8c4fc09dbde86bf5e6177e1929c |
 | tools | resolve-library-id | libraryName | ea7e56753dac14ab7b06c226689b7db297b1bc9acd23fd68114da61e53f16743 |
 
 

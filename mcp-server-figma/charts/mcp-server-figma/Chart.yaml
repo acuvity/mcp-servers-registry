@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-figma"
-description: A Helm chart for Provide coding agents direct access to Figma data to help them one-shot design implementation.
+description: "A Helm chart for Provide coding agents direct access to Figma data to help them one-shot design implementation."
 home: https://github.com/GLips/Figma-Context-MCP
 sources:
   - https://github.com/acuvity/mcp-servers-registry
@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.2.2
+appVersion: 0.3.0
 keywords:
   - mcp-server-figma
   - mcp-server

@@ -22,10 +22,10 @@
 
 [![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-grafana/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-grafana/v0.3.0?logo=docker&logoColor=fff&label=v0.3.0)](https://hub.docker.com/r/acuvity/mcp-server-grafana)
-[![GitHUB](https://img.shields.io/badge/v0.3.0-3775A9?logo=github&logoColor=fff&label=grafana/mcp-grafana)](https://github.com/grafana/mcp-grafana)
-[![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-grafana&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22GRAFANA_API_KEY%22%2C%22-e%22%2C%22GRAFANA_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-grafana%3Av0.3.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-grafana/v0.4.0?logo=docker&logoColor=fff&label=v0.4.0)](https://hub.docker.com/r/acuvity/mcp-server-grafana)
+[![GitHUB](https://img.shields.io/badge/v0.4.0-3775A9?logo=github&logoColor=fff&label=grafana/mcp-grafana)](https://github.com/grafana/mcp-grafana)
+[![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-grafana/)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-grafana&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22GRAFANA_API_KEY%22%2C%22-e%22%2C%22GRAFANA_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-grafana%3Av0.4.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Access and manage Grafana dashboards and datasources.
 
@@ -69,61 +69,80 @@ The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container i
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Gardrails
+### 🛡️ Guardrails
 
-### Covert Instruction Detection
+#### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-### Sensitive Pattern Detection
+#### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-### Shadowing Pattern Detection
+#### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-### Schema Misuse Prevention
+#### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-### Cross-Origin Tool Access
+#### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-### Secrets Redaction
+#### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
 * **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
 * **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
 
-## Basic Authentication via Shared Secret
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+
+### Enable guardrails
+
+To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
+- covert-instruction-detection
+- sensitive-pattern-detection
+- shadowing-pattern-detection
+- schema-misuse-prevention
+- cross-origin-tool-access
+- secrets-redaction
+
+For example adding:
+- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
+to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
+
+
+## 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
 * **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
 * **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
 
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
+- `-e BASIC_AUTH_SECRET="supersecret"`
+to your docker arguments. This will enable the Basic Authentication check.
 
-
-To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-grafana/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-grafana/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-grafana/charts/mcp-server-grafana#minibridge) for Helm charts).
+> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
+> rotate credentials frequently and **always** use TLS.
 
 </details>
 
@@ -155,7 +174,11 @@ To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-v0.3.0`
+  - container: `1.0.0-v0.4.0`
+
+**Verify signature with [cosign](https://github.com/sigstore/cosign):**
+  - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-grafana:1.0.0`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-grafana:1.0.0-v0.4.0`
 
 ---
 
@@ -605,7 +628,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (33)
+## 🧰 Tools (35)
 <details>
 <summary>add_activity_to_incident</summary>
 
@@ -739,6 +762,21 @@ Get the list of users currently on-call for a specific Grafana OnCall schedule I
 
 ```
 Retrieves the complete dashboard, including panels, variables, and settings, for a specific dashboard identified by its UID.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| uid | string | The UID of the dashboard | Yes
+</details>
+<details>
+<summary>get_dashboard_panel_queries</summary>
+
+**Description**:
+
+```
+Get the title, query string, and datasource information for each panel in a dashboard. The datasource is an object with fields `uid` (which may be a concrete UID or a template variable like "$datasource") and `type`. If the datasource UID is a template variable, it won't be usable directly for queries. Returns an array of objects, each representing a panel, with fields: title, query, and datasource (an object with uid and type).
 ```
 
 **Parameter**:
@@ -1078,6 +1116,21 @@ Retrieves a list of Sift investigations with an optional limit. If no limit is s
 | limit | integer | Maximum number of investigations to return. Defaults to 10 if not specified. | No
 </details>
 <details>
+<summary>list_teams</summary>
+
+**Description**:
+
+```
+Search for Grafana teams by a query string. Returns a list of matching teams with details like name, ID, and URL.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| query | string | The query to search for teams. Can be left empty to fetch all teams | No
+</details>
+<details>
 <summary>query_loki_logs</summary>
 
 **Description**:
@@ -1214,6 +1267,8 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | get_current_oncall_users | scheduleId | e449393009af366a05b28c1e3a74927a385969308f419d68546a445fd4508631 |
 | tools | get_dashboard_by_uid | description | 2201877e137b554aaf6064acbf3a7fcc298b47b663b801d2d22256257914d9e4 |
 | tools | get_dashboard_by_uid | uid | a5663f54c0d36ef714da821bb2097dd6808a8fd3e27d1d16af28f85b999a1d62 |
+| tools | get_dashboard_panel_queries | description | 34108e120069387f96de176f102995828115d2887e8e6b6253545930b75c854a |
+| tools | get_dashboard_panel_queries | uid | a5663f54c0d36ef714da821bb2097dd6808a8fd3e27d1d16af28f85b999a1d62 |
 | tools | get_datasource_by_name | description | b0344ad3d9c9928ae54fedcbdd5c0745223b7bbdffdd302268fb3ab9b55f121c |
 | tools | get_datasource_by_name | name | a25821cfd50f370f8978c50e86779c8e3f5f85b0ac61048aa6faa5d63c46703b |
 | tools | get_datasource_by_uid | description | 88461427672ce15e88a831f7edeeeb9712841baccde3a669b1345c49915d71f7 |
@@ -1284,6 +1339,8 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | list_prometheus_metric_names | regex | 9c607bf38cb3528eb6a5a470b0f555b270faabf59ec1cb5eb281611f5d21a0b9 |
 | tools | list_sift_investigations | description | a0fc1bf7ceec12627b8a5b8d29bf4cd544097bfab33c540e9bf49c34c6171c73 |
 | tools | list_sift_investigations | limit | 3a3b5d7cfe0f285d0140975abc8e2c3106a1d0acb757cb469aa597cee680b9ca |
+| tools | list_teams | description | cb20afbd38b81f349cf7b665effb6daf231df8ddfdd1aaa37ed22534eb9551b4 |
+| tools | list_teams | query | a5ea81fb1f75051f4a7e873b2cc939d05778e0e1898fbe186902fb41e220bd21 |
 | tools | query_loki_logs | description | 75b0101f4900d7a6abc2b3595d205681b518bdaa9803612a66a295fa1e3c90e6 |
 | tools | query_loki_logs | datasourceUid | cdfa18054a432407c4dfe44b49781c6c2019c055bf589949ff66cdc974c5e5aa |
 | tools | query_loki_logs | direction | 8aae097b31b454059a9c719b8fa773652a562e3dbfeaa9d4d9b98c2d692590e9 |

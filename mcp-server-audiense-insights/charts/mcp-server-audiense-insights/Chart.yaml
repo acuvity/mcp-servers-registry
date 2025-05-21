@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-audiense-insights"
-description: A Helm chart for Extracts marketing insights and audience analysis from Audiense reports.
+description: "A Helm chart for Extracts marketing insights and audience analysis from Audiense reports."
 home: https://github.com/AudienseCo/mcp-audiense-insights
 sources:
   - https://github.com/acuvity/mcp-servers-registry

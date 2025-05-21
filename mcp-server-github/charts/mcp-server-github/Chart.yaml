@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-github"
-description: A Helm chart for GitHub's official MCP Server
+description: "A Helm chart for GitHub's official MCP Server"
 home: https://github.com/github/github-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry

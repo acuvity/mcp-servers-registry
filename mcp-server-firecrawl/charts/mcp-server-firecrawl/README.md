@@ -22,10 +22,10 @@
 
 [![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-firecrawl/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-firecrawl/1.10.0?logo=docker&logoColor=fff&label=1.10.0)](https://hub.docker.com/r/acuvity/mcp-server-firecrawl)
-[![PyPI](https://img.shields.io/badge/1.10.0-3775A9?logo=pypi&logoColor=fff&label=firecrawl-mcp)](https://github.com/mendableai/firecrawl-mcp-server)
-[![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fetch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-firecrawl&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22FIRECRAWL_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-firecrawl%3A1.10.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-firecrawl/1.11.0?logo=docker&logoColor=fff&label=1.11.0)](https://hub.docker.com/r/acuvity/mcp-server-firecrawl)
+[![PyPI](https://img.shields.io/badge/1.11.0-3775A9?logo=pypi&logoColor=fff&label=firecrawl-mcp)](https://github.com/mendableai/firecrawl-mcp-server)
+[![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-firecrawl/)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-firecrawl&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22FIRECRAWL_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-firecrawl%3A1.11.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Integrates Firecrawl for web scraping and data extraction.
 
@@ -69,61 +69,80 @@ The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container i
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Gardrails
+### 🛡️ Guardrails
 
-### Covert Instruction Detection
+#### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-### Sensitive Pattern Detection
+#### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-### Shadowing Pattern Detection
+#### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-### Schema Misuse Prevention
+#### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-### Cross-Origin Tool Access
+#### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-### Secrets Redaction
+#### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
 * **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
 * **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
 
-## Basic Authentication via Shared Secret
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+
+### Enable guardrails
+
+To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
+- covert-instruction-detection
+- sensitive-pattern-detection
+- shadowing-pattern-detection
+- schema-misuse-prevention
+- cross-origin-tool-access
+- secrets-redaction
+
+For example adding:
+- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
+to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
+
+
+## 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
 * **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
 * **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
 
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
+To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
+- `-e BASIC_AUTH_SECRET="supersecret"`
+to your docker arguments. This will enable the Basic Authentication check.
 
-
-To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-firecrawl/docker/policy.rego). Alternatively, you can override the default policy or supply your own policy file to use (see [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-firecrawl/docker/entrypoint.sh) for Docker, [here](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-firecrawl/charts/mcp-server-firecrawl#minibridge) for Helm charts).
+> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
+> rotate credentials frequently and **always** use TLS.
 
 </details>
 
@@ -155,7 +174,11 @@ To review the full policy, see it [here](https://github.com/acuvity/mcp-servers-
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-1.10.0`
+  - container: `1.0.0-1.11.0`
+
+**Verify signature with [cosign](https://github.com/sigstore/cosign):**
+  - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-firecrawl:1.0.0`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-firecrawl:1.0.0-1.11.0`
 
 ---
 
@@ -609,7 +632,25 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 **Description**:
 
 ```
-Scrape a single webpage with advanced options for content extraction. Supports various formats including markdown, HTML, and screenshots. Can execute custom actions like clicking or scrolling before scraping.
+
+Scrape content from a single URL with advanced options.
+
+**Best for:** Single page content extraction, when you know exactly which page contains the information.
+**Not recommended for:** Multiple pages (use batch_scrape), unknown page (use search), structured data (use extract).
+**Common mistakes:** Using scrape for a list of URLs (use batch_scrape instead).
+**Prompt Example:** "Get the content of the page at https://example.com."
+**Usage Example:**
+```json
+{
+  "name": "firecrawl_scrape",
+  "arguments": {
+    "url": "https://example.com",
+    "formats": ["markdown"]
+  }
+}
+```
+**Returns:** Markdown, HTML, or other formats as specified.
+
 ```
 
 **Parameter**:
@@ -636,7 +677,24 @@ Scrape a single webpage with advanced options for content extraction. Supports v
 **Description**:
 
 ```
-Discover URLs from a starting point. Can use both sitemap.xml and HTML link discovery.
+
+Map a website to discover all indexed URLs on the site.
+
+**Best for:** Discovering URLs on a website before deciding what to scrape; finding specific sections of a website.
+**Not recommended for:** When you already know which specific URL you need (use scrape or batch_scrape); when you need the content of the pages (use scrape after mapping).
+**Common mistakes:** Using crawl to discover URLs instead of map.
+**Prompt Example:** "List all URLs on example.com."
+**Usage Example:**
+```json
+{
+  "name": "firecrawl_map",
+  "arguments": {
+    "url": "https://example.com"
+  }
+}
+```
+**Returns:** Array of URLs found on the site.
+
 ```
 
 **Parameter**:
@@ -656,7 +714,29 @@ Discover URLs from a starting point. Can use both sitemap.xml and HTML link disc
 **Description**:
 
 ```
-Start an asynchronous crawl of multiple pages from a starting URL. Supports depth control, path filtering, and webhook notifications.
+
+Starts an asynchronous crawl job on a website and extracts content from all pages.
+
+**Best for:** Extracting content from multiple related pages, when you need comprehensive coverage.
+**Not recommended for:** Extracting content from a single page (use scrape); when token limits are a concern (use map + batch_scrape); when you need fast results (crawling can be slow).
+**Warning:** Crawl responses can be very large and may exceed token limits. Limit the crawl depth and number of pages, or use map + batch_scrape for better control.
+**Common mistakes:** Setting limit or maxDepth too high (causes token overflow); using crawl for a single page (use scrape instead).
+**Prompt Example:** "Get all blog posts from the first two levels of example.com/blog."
+**Usage Example:**
+```json
+{
+  "name": "firecrawl_crawl",
+  "arguments": {
+    "url": "https://example.com/blog/*",
+    "maxDepth": 2,
+    "limit": 100,
+    "allowExternalLinks": false,
+    "deduplicateSimilarURLs": true
+  }
+}
+```
+**Returns:** Operation ID for status checking; use firecrawl_check_crawl_status to check progress.
+
 ```
 
 **Parameter**:
@@ -682,7 +762,20 @@ Start an asynchronous crawl of multiple pages from a starting URL. Supports dept
 **Description**:
 
 ```
+
 Check the status of a crawl job.
+
+**Usage Example:**
+```json
+{
+  "name": "firecrawl_check_crawl_status",
+  "arguments": {
+    "id": "550e8400-e29b-41d4-a716-446655440000"
+  }
+}
+```
+**Returns:** Status and progress of the crawl job, including results if available.
+
 ```
 
 **Parameter**:
@@ -697,7 +790,31 @@ Check the status of a crawl job.
 **Description**:
 
 ```
-Search and retrieve content from web pages with optional scraping. Returns SERP results by default (url, title, description) or full page content when scrapeOptions are provided.
+
+Search the web and optionally extract content from search results.
+
+**Best for:** Finding specific information across multiple websites, when you don't know which website has the information; when you need the most relevant content for a query.
+**Not recommended for:** When you already know which website to scrape (use scrape); when you need comprehensive coverage of a single website (use map or crawl).
+**Common mistakes:** Using crawl or map for open-ended questions (use search instead).
+**Prompt Example:** "Find the latest research papers on AI published in 2023."
+**Usage Example:**
+```json
+{
+  "name": "firecrawl_search",
+  "arguments": {
+    "query": "latest AI research papers 2023",
+    "limit": 5,
+    "lang": "en",
+    "country": "us",
+    "scrapeOptions": {
+      "formats": ["markdown"],
+      "onlyMainContent": true
+    }
+  }
+}
+```
+**Returns:** Array of search results (with optional scraped content).
+
 ```
 
 **Parameter**:
@@ -719,7 +836,45 @@ Search and retrieve content from web pages with optional scraping. Returns SERP 
 **Description**:
 
 ```
-Extract structured information from web pages using LLM. Supports both cloud AI and self-hosted LLM extraction.
+
+Extract structured information from web pages using LLM capabilities. Supports both cloud AI and self-hosted LLM extraction.
+
+**Best for:** Extracting specific structured data like prices, names, details.
+**Not recommended for:** When you need the full content of a page (use scrape); when you're not looking for specific structured data.
+**Arguments:**
+- urls: Array of URLs to extract information from
+- prompt: Custom prompt for the LLM extraction
+- systemPrompt: System prompt to guide the LLM
+- schema: JSON schema for structured data extraction
+- allowExternalLinks: Allow extraction from external links
+- enableWebSearch: Enable web search for additional context
+- includeSubdomains: Include subdomains in extraction
+**Prompt Example:** "Extract the product name, price, and description from these product pages."
+**Usage Example:**
+```json
+{
+  "name": "firecrawl_extract",
+  "arguments": {
+    "urls": ["https://example.com/page1", "https://example.com/page2"],
+    "prompt": "Extract product information including name, price, and description",
+    "systemPrompt": "You are a helpful assistant that extracts product information",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "price": { "type": "number" },
+        "description": { "type": "string" }
+      },
+      "required": ["name", "price"]
+    },
+    "allowExternalLinks": false,
+    "enableWebSearch": false,
+    "includeSubdomains": false
+  }
+}
+```
+**Returns:** Extracted structured data as defined by your schema.
+
 ```
 
 **Parameter**:
@@ -740,7 +895,31 @@ Extract structured information from web pages using LLM. Supports both cloud AI 
 **Description**:
 
 ```
-Conduct deep research on a query using web crawling, search, and AI analysis.
+
+Conduct deep web research on a query using intelligent crawling, search, and LLM analysis.
+
+**Best for:** Complex research questions requiring multiple sources, in-depth analysis.
+**Not recommended for:** Simple questions that can be answered with a single search; when you need very specific information from a known page (use scrape); when you need results quickly (deep research can take time).
+**Arguments:**
+- query (string, required): The research question or topic to explore.
+- maxDepth (number, optional): Maximum recursive depth for crawling/search (default: 3).
+- timeLimit (number, optional): Time limit in seconds for the research session (default: 120).
+- maxUrls (number, optional): Maximum number of URLs to analyze (default: 50).
+**Prompt Example:** "Research the environmental impact of electric vehicles versus gasoline vehicles."
+**Usage Example:**
+```json
+{
+  "name": "firecrawl_deep_research",
+  "arguments": {
+    "query": "What are the environmental impacts of electric vehicles compared to gasoline vehicles?",
+    "maxDepth": 3,
+    "timeLimit": 120,
+    "maxUrls": 50
+  }
+}
+```
+**Returns:** Final analysis generated by an LLM based on research. (data.finalAnalysis); may also include structured activities and sources used in the research process.
+
 ```
 
 **Parameter**:
@@ -758,7 +937,29 @@ Conduct deep research on a query using web crawling, search, and AI analysis.
 **Description**:
 
 ```
-Generate standardized LLMs.txt file for a given URL, which provides context about how LLMs should interact with the website.
+
+Generate a standardized llms.txt (and optionally llms-full.txt) file for a given domain. This file defines how large language models should interact with the site.
+
+**Best for:** Creating machine-readable permission guidelines for AI models.
+**Not recommended for:** General content extraction or research.
+**Arguments:**
+- url (string, required): The base URL of the website to analyze.
+- maxUrls (number, optional): Max number of URLs to include (default: 10).
+- showFullText (boolean, optional): Whether to include llms-full.txt contents in the response.
+**Prompt Example:** "Generate an LLMs.txt file for example.com."
+**Usage Example:**
+```json
+{
+  "name": "firecrawl_generate_llmstxt",
+  "arguments": {
+    "url": "https://example.com",
+    "maxUrls": 20,
+    "showFullText": true
+  }
+}
+```
+**Returns:** LLMs.txt file contents (and optionally llms-full.txt).
+
 ```
 
 **Parameter**:
@@ -777,9 +978,9 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
-| tools | firecrawl_check_crawl_status | description | fd958592fa7c0b7c879345ff20a17e5625fc3f63ff67b11043ba57e4da73f2c6 |
+| tools | firecrawl_check_crawl_status | description | b203ead94aae907fe82506e9a27415571fcdcfc37443f3e9139e675032de1ca7 |
 | tools | firecrawl_check_crawl_status | id | 0c614ab04ca020c84254edf880b7833a0d62bff8bf9415ca47e49a42f777d9e9 |
-| tools | firecrawl_crawl | description | f0d4336cf6abcddb3a85c5f0444a029709de263898d694f07b65032040a8962f |
+| tools | firecrawl_crawl | description | d127af3df2e34883cb2956464a15236dbddcd6593ef8a861629ae2198eccc191 |
 | tools | firecrawl_crawl | allowBackwardLinks | e89208c8514c445777f6f590b8028f79141b0e0f3f3b5760775a0b4bf24aa920 |
 | tools | firecrawl_crawl | allowExternalLinks | 9121d3a4f83244b94a2e6f6cefb0482f1f2114ece5a36534ff80dc946649d18d |
 | tools | firecrawl_crawl | deduplicateSimilarURLs | ade4fa12f79645e177a873522346a5a305a12009ee7087742b7ff0e6d9ae209a |
@@ -791,12 +992,12 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | firecrawl_crawl | maxDepth | 0a201647d57160b971527bbc0f0fde20fc39d78c9165a0c4bc2dff14ffb1926e |
 | tools | firecrawl_crawl | scrapeOptions | 38715999ad3ca8d678c0eae1d590c6ade0695cb88d98c51990a1b80c43aa6ce4 |
 | tools | firecrawl_crawl | url | e954315e5eaf72e34a80734a62b3b8274a01dcd01c68f3b57a1e7aea43785d18 |
-| tools | firecrawl_deep_research | description | bf4dffc377bc1e2323c83ad3386f463773537bee8d39250722ee439d1443c3ff |
+| tools | firecrawl_deep_research | description | 0978da2a7827240e1e95b5cd59c3fce6f8ba70ade207171ba17865d66ed85b60 |
 | tools | firecrawl_deep_research | maxDepth | eb98da0e742e5e82c6d99da220a8753c6d8e402102893b8173b3383cc6debf18 |
 | tools | firecrawl_deep_research | maxUrls | 7fecb4a145806af223a4bd609f5be8644fdbe6ae9a902e4cf14a436e08c2bcbb |
 | tools | firecrawl_deep_research | query | 52aac1d933892ff9859ca8a3e87375c67fb60049e3842dd9cca0f7a0dd516454 |
 | tools | firecrawl_deep_research | timeLimit | c704cf97a8cd413b1b6b7c1ed10220e8dc5eaa5805446f30b10e4f3e6df8a601 |
-| tools | firecrawl_extract | description | af02ca4844f3fca5c8ad142685bfb767bbf1c42502047cf71f8e52096db7367f |
+| tools | firecrawl_extract | description | 841bc590ec1aff1bf83635461fe0cdf5b584900a38babe79e09eaab7e6523396 |
 | tools | firecrawl_extract | allowExternalLinks | b69d79cf31c44e83b2358c09c5040266e0453e11758832a8c5c7fc5c9836343b |
 | tools | firecrawl_extract | enableWebSearch | 19a678682b34d674fad1a87808578fadd5be524a0de91201a13f9ee761b5a81e |
 | tools | firecrawl_extract | includeSubdomains | 369755ca36e6dec58e4c61040409951d8e3d2cfc16b961f8397ab9e70c9bd063 |
@@ -804,18 +1005,18 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | firecrawl_extract | schema | 2aee66dfa297cbe1272bee515825d7e903694a2dbb63935abbd259db0b117534 |
 | tools | firecrawl_extract | systemPrompt | 7830b76b75e88d2a7423a67248ba1dce76831d44c94d22a4e730fc8526f3d3a1 |
 | tools | firecrawl_extract | urls | 67f02a9592eb80b2cc81ef7ec464c3dfb0a1ad864f873e653b04abaa61f94e52 |
-| tools | firecrawl_generate_llmstxt | description | 56cfb20c853b6e8d572e5956f09df65c74f018231d272db6716e64ae5c1c1d3a |
+| tools | firecrawl_generate_llmstxt | description | 965a8850787900d54d9367ff61d6e6a4149634466112333f36ddf5081e7d6148 |
 | tools | firecrawl_generate_llmstxt | maxUrls | 78a560eb7b4a212e8306330ec5044cd7a788851c96dcdcc49b2b8cce3068da43 |
 | tools | firecrawl_generate_llmstxt | showFullText | 304bfd7fa89649f2b0f2f1aef5f4a585c45af670dc2064ad93c262f4cbef5bf9 |
 | tools | firecrawl_generate_llmstxt | url | b203738b7bf7f16621dccdc62803e29b482260f87faf724876f504efe8b507ac |
-| tools | firecrawl_map | description | 1ed29cfb896ee1ddac62b07f7657feebc6e30b8fc24873d2aec98e25d0ba6ee3 |
+| tools | firecrawl_map | description | f1889673ef441a4485805204021eebd8d373c2ac49871d2ade46a7cd70c422ba |
 | tools | firecrawl_map | ignoreSitemap | b5e4d4b0b5648ea5ad5257a2bbc45a0a3fa77087dce3fff059c909a5c42774ce |
 | tools | firecrawl_map | includeSubdomains | 04d8854c1155877b00d6cee63f59305e63cf6bedbcc63c0f00ad370d8787c05b |
 | tools | firecrawl_map | limit | c26ef1fd854506c4ef24c973b30b67250582d20bb64ce6fd01ae4a67584391e8 |
 | tools | firecrawl_map | search | 677570e0fd01ab38e9032dced8f373104dfc504191def1da7e1690fe03e8161c |
 | tools | firecrawl_map | sitemapOnly | eb60fc4a14f435377b4ccd594de65f8844ffe92a237625ce9c6c357ff89f3e98 |
 | tools | firecrawl_map | url | 80c10d0a28cd868a79e65511b1bf5118737130e3220d3057546b3c6b5bc32c76 |
-| tools | firecrawl_scrape | description | 9aab016594f2eca81fb99ed9d25a2a5e3e874dae627c1b3e12189f4a138b6bbd |
+| tools | firecrawl_scrape | description | a63485489fb8477a1814c9b0c6e723d16a7984284c9a059533bb394792d0d79e |
 | tools | firecrawl_scrape | actions | 921bd53fca4eaef05096a1dfd6aee6f9cfb1824a4f56f4e6aca057a1935cf869 |
 | tools | firecrawl_scrape | excludeTags | bc4a10bce1fb2824dd57128af3760d2f375ccb559746491e7c4c186db80799cf |
 | tools | firecrawl_scrape | extract | 8eaadf6cdda39b59ae307cd19bc64516732388bb4975cd8049e615c64409671b |
@@ -829,7 +1030,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | firecrawl_scrape | timeout | 9d44708ce68333fb1ef65746115d76e74d8a51b5286012c466850ba5e3d7919e |
 | tools | firecrawl_scrape | url | 411017ed7507e7e9879b327be68b92dd9bd90e63a4ce7f399e5cc2d792d90db3 |
 | tools | firecrawl_scrape | waitFor | 7593fc914b1db5fbb9967c65b14e5ab548dbe5efa58f4022f1c20ee675c1fbb9 |
-| tools | firecrawl_search | description | b0f634f112a7c6b27b86526196a4191dceb6da1f85695d71af2c0a9a857328b9 |
+| tools | firecrawl_search | description | bd79d9be197005e98b938b94e94e5218607838fee434a7ad68abde61e66c4f69 |
 | tools | firecrawl_search | country | b45d0cf9d2cf66f30494405b46d2e5d58a507466b6e59397e9f7a06ac0c52083 |
 | tools | firecrawl_search | filter | a4018947ed66c967d492cec22784f1cac91a0613e8a63c2b4b3d16f151b3833b |
 | tools | firecrawl_search | lang | cda9615ab0341ba35603a4116740d672e235ef4a2407d5389b60b77c11af52d8 |

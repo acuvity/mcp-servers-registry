@@ -1,6 +1,6 @@
 apiVersion: v2
 name: "mcp-server-devhub"
-description: A Helm chart for Manage content and operations in DevHub CMS using MCP.
+description: "A Helm chart for Manage content and operations in DevHub CMS using MCP."
 home: https://github.com/devhub/devhub-cms-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry
