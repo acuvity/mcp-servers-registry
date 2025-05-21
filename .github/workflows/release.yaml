@@ -119,11 +119,9 @@ jobs:
           tags: ${{ env.OCI_REGISTRY}}/mcp-server-${{ matrix.server }}
           outputs: type=image,push-by-digest=true,name-canonical=true,push=true
           cache-from: |
-            type=registry,ref=${{ env.OCI_REGISTRY }}/mcp-server-${{ matrix.server }}:cache-${{ matrix.arch }}
+            type=registry,ref=${{ env.OCI_REGISTRY }}/mcp-servers-build-cache:${{ matrix.server }}-${{ matrix.arch }}
           cache-to: |
-            type=registry,ref=${{ env.OCI_REGISTRY }}/mcp-server-${{ matrix.server }}:cache-${{ matrix.arch }},mode=max
-          build-args: |
-            BUILDKIT_INLINE_CACHE=1
+            type=registry,ref=${{ env.OCI_REGISTRY }}/mcp-servers-build-cache:${{ matrix.server }}-${{ matrix.arch }},mode=max
 
       - name: Export digest
         run: |
