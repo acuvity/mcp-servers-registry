@@ -180,6 +180,11 @@ to your docker arguments. This will enable the Basic Authentication check.
   - `latest` -> `1.0.0-2025.4.7` -> `2025.4.7`
   - [older tags](https://hub.docker.com/r/acuvity/mcp-server-fetch/tags)
 
+**Verify signature with [cosign](https://github.com/sigstore/cosign):**
+  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-fetch:latest`
+  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-fetch:2025.4.7`
+  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-fetch:1.0.0-2025.4.7`
+
 # 📦 How to Install
 
 
