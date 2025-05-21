@@ -182,7 +182,11 @@ jobs:
       - name: Load version info
         id: version
         run: |
-          while IFS='=' read -r k v; do echo "$k=$v" >> "$GITHUB_OUTPUT"; done < "mcp-server-${{ matrix.server }}/version.env"
+          while IFS='=' read -r k v; do
+            v=${v#\"}
+            v=${v%\"}
+            echo "$k=$v" >> "$GITHUB_OUTPUT"
+          done < "mcp-server-${{ matrix.server }}/version.env"
 
       - name: Create multi-arch manifest w/ final tags
         env:
