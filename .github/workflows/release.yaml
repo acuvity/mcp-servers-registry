@@ -75,6 +75,7 @@ jobs:
     if: needs.detect-changes.outputs.matrix != '[]'
     strategy:
       fail-fast: false
+      max-parallel: 20
       matrix:
         include: ${{ fromJson(needs.detect-changes.outputs.matrix) }}
         arch: [amd64, arm64]
@@ -143,6 +144,7 @@ jobs:
     if: needs.detect-changes.outputs.matrix != '[]'
     strategy:
       fail-fast: false
+      max-parallel: 20
       matrix:
         include: ${{ fromJson(needs.detect-changes.outputs.matrix) }}
     runs-on: ubuntu-latest
