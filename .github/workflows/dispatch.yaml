@@ -32,6 +32,7 @@ jobs:
             IFS=',' read -ra SRVS <<< "${{ github.event.inputs.name }}"
             records=()
             for srv in "${SRVS[@]}"; do
+              srv="${srv// /}"
               if [[ ! -d  mcp-server-${srv} ]]; then
                 echo "$srv is not a valid mcp-server."
                 exit 1
