@@ -26,7 +26,7 @@ WORKDIR /app
 ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN apt-get update \
-    && apt-get install -y curl \
+    && apt-get install -y curl python3 g++ make \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -38,6 +38,8 @@ RUN groupadd -r -g 1001 appuser && \
     chown appuser:appuser -R /app
 
 ENV NODE_ENV=production
+
+RUN npm install -g node-gyp
 
 USER appuser
 
