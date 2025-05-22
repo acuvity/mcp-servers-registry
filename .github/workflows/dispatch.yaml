@@ -1,0 +1,97 @@
+name: Build & Publish MCP Servers
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "mcp-server-*/**"
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Force-build specific servers (comma separated, without the mcp-server- prefix)"
+        required: false
+        type: string
+
+jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine changes
+        id: set
+        shell: bash
+        run: |
+
+          # workflow dispatch trigger
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" && -n "${{ github.event.inputs.name }}" ]]; then
+            IFS=',' read -ra SRVS <<< "${{ github.event.inputs.name }}"
+            MATRIX=$(jq -nc '
+              [env.SRVS | split(",")[] |
+                . as $srv |
+                "mcp-server-\($srv)" |
+                if (inputs.servers[] | select(. == .)) then
+                  {server:$srv,build_image:true,build_chart:true,build_readme:true}
+                else
+                  error("\($srv) is not a valid mcp-server name")
+                end
+              ]' \
+              --arg SRVS "${{ github.event.inputs.name }}" \
+              --argjson inputs "$(jq -nc --argjson servers "$(find . -maxdepth 1 -type d -name 'mcp-server-*' | sed 's|./mcp-server-||' | jq -R . | jq -s .)" '{}')"
+            ) || exit 1
+
+            echo "matrix=$MATRIX" >>"$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # git driven matrix
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            git fetch origin main --depth=1
+            BASE=$(git rev-parse origin/main)
+          else
+            BASE="${{ github.event.before }}"
+          fi
+
+          HEAD="${{ github.sha }}"
+          CHANGED_FILES=$(git diff --name-only "$BASE" "$HEAD" -- 'mcp-server-*/**')
+          MATRIX=$(echo "$CHANGED_FILES" |
+            awk -F/ '/^mcp-server-/{print $1}' | sort -u |
+            while read -r SRV; do
+              IMG=false; CHART=false; README=false
+              # look for docker changes expect readme
+              if echo "$CHANGED_FILES" | grep -q "^${SRV}/docker/"; then
+                if ! echo "$CHANGED_FILES" | grep -q "^${SRV}/docker/README.md\$" \
+                  || echo "$CHANGED_FILES" | grep -q "^${SRV}/docker/[^R]"; then
+                  IMG=true
+                fi
+              fi
+              # look for chart changes
+              [[ "$CHANGED_FILES" =~ (^|$'\n')${SRV}/charts(/|$) ]] && CHART=true
+              # look for docke readme changes
+              [[ "$CHANGED_FILES" =~ (^|$'\n')${SRV}/docker/README.md$ ]] && README=true
+              printf '{"server":"%s","build_image":%s,"build_chart":%s,"build_readme":%s}\n' \
+                "${SRV#mcp-server-}" "$IMG" "$CHART" "$README"
+            done | jq -s)
+
+          [[ -z "$MATRIX" ]] && MATRIX="[]"
+          echo "matrix=$(echo "$MATRIX" | jq -c)" >>"$GITHUB_OUTPUT"
+
+  dispatch:
+    needs: detect-changes
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        changes: ${{ fromJson(needs.detect-changes.outputs.matrix) }}
+    steps:
+      - name: Release ${{ matrix.changes.server }}
+        uses: ./.github/workflows/release.yml
+        with:
+          server: ${{ matrix.changes.server }}
+          build_image: ${{ matrix.changes.build_image }}
+          build_chart: ${{ matrix.changes.build_chart }}
+          build_readme: ${{ matrix.changes.build_readme }}

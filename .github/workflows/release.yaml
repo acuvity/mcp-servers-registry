@@ -1,20 +1,16 @@
-name: Build & Publish MCP Servers
+name: Build & Publish MCP Server
 
 on:
-  push:
-    branches: ["main"]
-    paths:
-      - "mcp-server-*/**"
-  workflow_dispatch:
+  workflow_call:
     inputs:
-      name:
-        description: "Force-build a specific server (without the mcp-server- prefix)"
-        required: false
+      server:
         type: string
-
-# only one run at a time. Keep stacking
-concurrency:
-  group: build-and-release-${{ github.ref }}
+      build_image:
+        type: boolean
+      build_chart:
+        type: boolean
+      build_readme:
+        type: boolean
 
 permissions:
   contents: read
@@ -22,87 +18,34 @@ permissions:
   id-token: write
 
 jobs:
-  detect-changes:
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.set.outputs.matrix }}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Determine changes
-        id: set
-        shell: bash
-        run: |
-          # workflow dispatch trigger
-          if [[ "${{ github.event_name }}" == "workflow_dispatch" && -n "${{ github.event.inputs.name }}" ]]; then
-            if [[ ! -d mcp-server-${{ github.event.inputs.name }} ]]; then
-              echo "${{ github.event.inputs.name }} is not a valid mcp-server name"
-              exit 1
-            fi
-            MATRIX=$(jq -nc --arg srv "${{ github.event.inputs.name }}" \
-                            '[{server:$srv,build_image:true,build_chart:true}]')
-            echo "matrix=$MATRIX" >>"$GITHUB_OUTPUT"
-            exit 0
-          fi
-          # git driven matrix
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            git fetch origin main --depth=1
-            BASE=$(git rev-parse origin/main)
-          else
-            BASE="${{ github.event.before }}"
-          fi
-          HEAD="${{ github.sha }}"
-          CHANGED_FILES=$(git diff --name-only "$BASE" "$HEAD" -- 'mcp-server-*/*')
-
-          MATRIX=$(echo "$CHANGED_FILES" |
-            awk -F/ '/^mcp-server-/{print $1}' | sort -u |
-            while read -r SRV; do
-              IMG=false; CHART=false
-              [[ "$CHANGED_FILES" =~ (^|$'\n')$SRV/docker(/|$) ]]  && IMG=true
-              [[ "$CHANGED_FILES" =~ (^|$'\n')$SRV/version.env$ ]] && { IMG=true; CHART=true; }
-              [[ "$CHANGED_FILES" =~ (^|$'\n')$SRV/charts(/|$) ]]  && CHART=true
-              printf '{"server":"%s","build_image":%s,"build_chart":%s}\n' \
-                     "${SRV#mcp-server-}" "$IMG" "$CHART"
-            done | jq -s)
-
-          [[ -z "$MATRIX" ]] && MATRIX="[]"
-          echo "matrix=$(echo "$MATRIX" | jq -c)" >> "$GITHUB_OUTPUT"
-
   container:
-    needs: detect-changes
-    if: needs.detect-changes.outputs.matrix != '[]'
+    if: ${{ inputs.build_image }}
     strategy:
       fail-fast: false
-      max-parallel: 20
       matrix:
-        include: ${{ fromJson(needs.detect-changes.outputs.matrix) }}
         arch: [amd64, arm64]
-    concurrency:
-      group: build-${{ matrix.server }}-${{ matrix.arch }}
-      cancel-in-progress: false
-    runs-on: ubuntu-latest
+
+    runs-on: ${{ matrix.arch == 'arm64' && 'ubuntu-22.04-arm' || 'ubuntu-latest' }}
 
     env:
       OCI_REGISTRY: docker.io/acuvity
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Load version info
         id: version
         run: |
           while IFS='=' read -r k v; do
             echo "$k=$v" >> "$GITHUB_OUTPUT"
-          done < "mcp-server-${{ matrix.server }}/version.env"
+          done < "mcp-server-${{ inputs.server }}/version.env"
 
-      - uses: docker/setup-qemu-action@v3
-        if: matrix.build_image
-      - uses: docker/setup-buildx-action@v3
-        if: matrix.build_image
+      - name: Setup docker
+        uses: docker/setup-buildx-action@v3
 
-      - uses: docker/login-action@v3
-        if: matrix.build_image
+      - name: Loggin to registry
+        uses: docker/login-action@v3
         with:
           registry: docker.io
           username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -110,19 +53,18 @@ jobs:
 
       - name: Build & push ${{ matrix.arch }} image (digest‑only)
         id: image
-        if: matrix.build_image
         uses: docker/build-push-action@v5
         with:
-          context: mcp-server-${{ matrix.server }}/docker
+          context: mcp-server-${{ inputs.server }}/docker
           platforms: linux/${{ matrix.arch }}
           sbom: true
           provenance: true
-          tags: ${{ env.OCI_REGISTRY}}/mcp-server-${{ matrix.server }}
+          tags: ${{ env.OCI_REGISTRY}}/mcp-server-${{ inputs.server }}
           outputs: type=image,push-by-digest=true,name-canonical=true,push=true
           cache-from: |
-            type=registry,ref=${{ env.OCI_REGISTRY }}/mcp-servers-build-cache:${{ matrix.server }}-${{ matrix.arch }}
+            type=registry,ref=${{ env.OCI_REGISTRY }}/mcp-servers-build-cache:${{ inputs.server }}-${{ matrix.arch }}
           cache-to: |
-            type=registry,ref=${{ env.OCI_REGISTRY }}/mcp-servers-build-cache:${{ matrix.server }}-${{ matrix.arch }},mode=max
+            type=registry,ref=${{ env.OCI_REGISTRY }}/mcp-servers-build-cache:${{ inputs.server }}-${{ matrix.arch }},mode=max
 
       - name: Export digest
         run: |
@@ -133,40 +75,36 @@ jobs:
       - name: Upload digest
         uses: actions/upload-artifact@v4
         with:
-          name: digests-${{ matrix.server }}-${{ matrix.arch }}
+          name: digests-${{ inputs.server }}-${{ matrix.arch }}
           path: ${{ runner.temp }}/digests/*
           retention-days: 1
 
   manifest:
     needs:
       - container
-      - detect-changes
-    if: needs.detect-changes.outputs.matrix != '[]'
-    strategy:
-      fail-fast: false
-      max-parallel: 20
-      matrix:
-        include: ${{ fromJson(needs.detect-changes.outputs.matrix) }}
     runs-on: ubuntu-latest
 
     env:
       OCI_REGISTRY: docker.io/acuvity
 
     steps:
-      - uses: docker/setup-buildx-action@v3
-      - uses: docker/login-action@v3
+      - name: Setup docker
+        uses: docker/setup-buildx-action@v3
+
+      - name: Loggin to registry
+        uses: docker/login-action@v3
         with:
           registry: docker.io
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Install Cosign & Helm-sigstore
+      - name: Install Cosign
         uses: sigstore/cosign-installer@v3
 
       - name: Download digests from both arch builds
         uses: actions/download-artifact@v4
         with:
-          pattern: digests-${{ matrix.server }}-*
+          pattern: digests-${{ inputs.server }}-*
           path: digests
           merge-multiple: true
 
@@ -186,41 +124,97 @@ jobs:
             v=${v#\"}
             v=${v%\"}
             echo "$k=$v" >> "$GITHUB_OUTPUT"
-          done < "mcp-server-${{ matrix.server }}/version.env"
+          done < "mcp-server-${{ inputs.server }}/version.env"
 
       - name: Create multi-arch manifest w/ final tags
         env:
           COSIGN_EXPERIMENTAL: "true"
         run: |
           docker buildx imagetools create \
-            --tag $OCI_REGISTRY/mcp-server-${{ matrix.server }}:${{ steps.version.outputs.CHARTS_VERSION }}-${{ steps.version.outputs.CONTAINER_TAG }} \
-            --tag $OCI_REGISTRY/mcp-server-${{ matrix.server }}:${{ steps.version.outputs.CONTAINER_TAG }} \
-            --tag $OCI_REGISTRY/mcp-server-${{ matrix.server }}:latest \
-            $OCI_REGISTRY/mcp-server-${{ matrix.server }}@${{ steps.dig.outputs.amd64 }} \
-            $OCI_REGISTRY/mcp-server-${{ matrix.server }}@${{ steps.dig.outputs.arm64 }}
+            --tag $OCI_REGISTRY/mcp-server-${{ inputs.server }}:${{ steps.version.outputs.CHARTS_VERSION }}-${{ steps.version.outputs.CONTAINER_TAG }} \
+            --tag $OCI_REGISTRY/mcp-server-${{ inputs.server }}:${{ steps.version.outputs.CONTAINER_TAG }} \
+            --tag $OCI_REGISTRY/mcp-server-${{ inputs.server }}:latest \
+            $OCI_REGISTRY/mcp-server-${{ inputs.server }}@${{ steps.dig.outputs.amd64 }} \
+            $OCI_REGISTRY/mcp-server-${{ inputs.server }}@${{ steps.dig.outputs.arm64 }}
 
-          INDEX_DIGEST=$(docker buildx imagetools inspect $OCI_REGISTRY/mcp-server-${{ matrix.server }}:latest --format '{{.|json}}' | jq -r '.manifest.digest')
-          cosign sign --yes $OCI_REGISTRY/mcp-server-${{ matrix.server }}@$INDEX_DIGEST
+          INDEX_DIGEST=$(docker buildx imagetools inspect $OCI_REGISTRY/mcp-server-${{ inputs.server }}:latest --format '{{.|json}}' | jq -r '.manifest.digest')
+          cosign sign --yes $OCI_REGISTRY/mcp-server-${{ inputs.server }}@$INDEX_DIGEST
+
+  charts:
+    if: ${{ inputs.build_chart }}
+    runs-on: ubuntu-latest
+
+    env:
+      OCI_REGISTRY: docker.io/acuvity
+
+    steps:
+      - name: Setup docker
+        uses: docker/setup-buildx-action@v3
+
+      - name: Loggin to registry
+        uses: docker/login-action@v3
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Install Cosign
+        uses: sigstore/cosign-installer@v3
+
+      - uses: actions/checkout@v4
+      - name: Load version info
+        id: version
+        run: |
+          while IFS='=' read -r k v; do
+            v=${v#\"}
+            v=${v%\"}
+            echo "$k=$v" >> "$GITHUB_OUTPUT"
+          done < "mcp-server-${{ inputs.server }}/version.env"
+
+      - name: Package, push & sign Helm chart
+        env:
+          CHARTS_VERSION: ${{ steps.version.outputs.CHARTS_VERSION }}
+          COSIGN_EXPERIMENTAL: "true"
+        run: |
+          cd mcp-server-${{ inputs.server }}/charts
+          helm package mcp-server-${{ inputs.server }} --version "$CHARTS_VERSION"
+          DIGEST=$(helm push ./*.tgz oci://$OCI_REGISTRY 2>&1  |grep "Digest" | awk '{print $NF}')
+          cosign sign --yes $OCI_REGISTRY/mcp-server-${{ inputs.server }}:$CHARTS_VERSION@$DIGEST
+
+  readme:
+    if: ${{ inputs.build_readme }}
+    runs-on: ubuntu-latest
+
+    env:
+      OCI_REGISTRY: docker.io/acuvity
+
+    steps:
+      - name: Setup docker
+        uses: docker/setup-buildx-action@v3
+
+      - name: Loggin to registry
+        uses: docker/login-action@v3
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - uses: actions/checkout@v4
+      - name: Load version info
+        id: version
+        run: |
+          while IFS='=' read -r k v; do
+            v=${v#\"}
+            v=${v%\"}
+            echo "$k=$v" >> "$GITHUB_OUTPUT"
+          done < "mcp-server-${{ inputs.server }}/version.env"
 
       - name: Push README to Docker Hub
-        if: matrix.build_image
         uses: christian-korneck/update-container-description-action@v1
         env:
           DOCKER_USER: ${{ secrets.DOCKERHUB_API_USER }}
           DOCKER_PASS: ${{ secrets.DOCKERHUB_API_PASSWORD }}
         with:
-          destination_container_repo: ${{ github.repository_owner }}/mcp-server-${{ matrix.server }}
+          destination_container_repo: ${{ github.repository_owner }}/mcp-server-${{ inputs.server }}
           provider: dockerhub
           short_description: ${{ steps.version.outputs.HUB_DESCRIPTION }}
-          readme_file: mcp-server-${{ matrix.server }}/docker/README.md
-
-      - name: Package, push & sign Helm chart
-        if: matrix.build_chart
-        env:
-          CHARTS_VERSION: ${{ steps.version.outputs.CHARTS_VERSION }}
-          COSIGN_EXPERIMENTAL: "true"
-        run: |
-          cd mcp-server-${{ matrix.server }}/charts
-          helm package mcp-server-${{ matrix.server }} --version "$CHARTS_VERSION"
-          DIGEST=$(helm push ./*.tgz oci://$OCI_REGISTRY 2>&1  |grep "Digest" | awk '{print $NF}')
-          cosign sign --yes $OCI_REGISTRY/mcp-server-${{ matrix.server }}:$CHARTS_VERSION@$DIGEST
+          readme_file: mcp-server-${{ inputs.server }}/docker/README.md
