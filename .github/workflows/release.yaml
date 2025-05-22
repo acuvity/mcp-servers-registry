@@ -101,12 +101,17 @@ jobs:
       - name: Install Cosign
         uses: sigstore/cosign-installer@v3
 
-      - name: Download digests from both arch builds
+      - name: Download digest arm64
         uses: actions/download-artifact@v4
         with:
-          pattern: digests-${{ inputs.server }}-*
+          name: digests-${{ inputs.server }}-arm64
           path: digests
-          merge-multiple: true
+
+      - name: Download digest amd64
+        uses: actions/download-artifact@v4
+        with:
+          name: digests-${{ inputs.server }}-amd64
+          path: digests
 
       - name: Read digest variables
         id: dig
