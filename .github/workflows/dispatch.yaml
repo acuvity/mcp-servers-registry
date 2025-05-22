@@ -83,6 +83,7 @@ jobs:
       matrix:
         changes: ${{ fromJson(needs.detect-changes.outputs.matrix) }}
     steps:
+      - uses: actions/checkout@v4
       - name: Release ${{ matrix.changes.server }}
         uses: ./.github/workflows/release.yml
         with:
