@@ -75,19 +75,17 @@ jobs:
           [[ -z "$MATRIX" ]] && MATRIX="[]"
           echo "matrix=$(echo "$MATRIX" | jq -c)" >>"$GITHUB_OUTPUT"
 
-  dispatch:
+  release:
+    name: "Release ${{ matrix.changes.server }}"
     needs: detect-changes
-    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         changes: ${{ fromJson(needs.detect-changes.outputs.matrix) }}
-    steps:
-      - uses: actions/checkout@v4
-      - name: Release ${{ matrix.changes.server }}
-        uses: ./.github/workflows/release.yml
-        with:
-          server: ${{ matrix.changes.server }}
-          build_image: ${{ matrix.changes.build_image }}
-          build_chart: ${{ matrix.changes.build_chart }}
-          build_readme: ${{ matrix.changes.build_readme }}
+    uses: ./.github/workflows/release.yml
+    with:
+      server: ${{ matrix.changes.server }}
+      build_image: ${{ matrix.changes.build_image }}
+      build_chart: ${{ matrix.changes.build_chart }}
+      build_readme: ${{ matrix.changes.build_readme }}
+    secrets: inherit
