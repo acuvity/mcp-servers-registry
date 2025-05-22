@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="standalone"
 
 LABEL org.opencontainers.image.title="mcp-server-chart"
 LABEL org.opencontainers.image.description="A Model Context Protocol server for generating visual charts using AntV."
-LABEL org.opencontainers.image.version="0.3.0"
+LABEL org.opencontainers.image.version="0.4.0"
 LABEL org.opencontainers.image.source="https://github.com/antvis/mcp-server-chart"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="AntV"
@@ -28,7 +28,6 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 RUN apk update \
     && apk add --no-cache curl
 
-
 HEALTHCHECK CMD curl --fail http://localhost:8080 || exit 1
 
 RUN addgroup -g 1001 -S appuser && \
@@ -40,7 +39,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev @antv/mcp-server-chart@0.3.0
+RUN npm i --omit-dev @antv/mcp-server-chart@0.4.0
 
 EXPOSE 8000/tcp
 

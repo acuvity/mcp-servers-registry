@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="native"
 
 LABEL org.opencontainers.image.title="mcp-server-kubernetes"
 LABEL org.opencontainers.image.description="Typescript implementation of Kubernetes cluster operations for pods, deployments, services."
-LABEL org.opencontainers.image.version="2.0.0"
+LABEL org.opencontainers.image.version="2.1.0"
 LABEL org.opencontainers.image.source="https://github.com/Flux159/mcp-server-kubernetes"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="Flux159"
@@ -28,7 +28,6 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 RUN apk update \
     && apk add --no-cache curl
 
-
 HEALTHCHECK CMD curl --fail http://localhost:8080 || exit 1
 
 RUN addgroup -g 1001 -S appuser && \
@@ -40,7 +39,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev mcp-server-kubernetes@2.0.0
+RUN npm i --omit-dev mcp-server-kubernetes@2.1.0
 
 EXPOSE 8000/tcp
 

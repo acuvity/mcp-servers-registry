@@ -12,7 +12,7 @@
   "scope": "standalone",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "requiresConfiguration": false,
   "requiresStorage": false,
   "rating": "B",

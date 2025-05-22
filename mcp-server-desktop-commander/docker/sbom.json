@@ -2,75 +2,75 @@
   "tools": [
     {
       "name": "create_directory",
-      "hash": "5b5a70f4ee3d31bb9d3436ed52f344b43654820f57a6a67fc0c99761517a4d81"
+      "hash": "3e16e56ccad14565f3bc65b56938c6b68cbd32fc6d551eb7a7e550e5b7b304af"
     },
     {
       "name": "edit_block",
-      "hash": "e603db2f4c770533b9c0832c4640158bb56596bdb8132d7f67ee3e73ba948ba3"
+      "hash": "3ce36fcdbf191892c7c747905054a5d07f099e937cfd6b4d7febc5e1f32301bf"
     },
     {
       "name": "execute_command",
-      "hash": "fa01b0601c17006c15b3a09a14f33ff903dabf294d30b9fdb1d807d9910b8715"
+      "hash": "fc8b9e33ff1e44d77b6a4f4cda7f299d389898e094badc55308392875ef38ea2"
     },
     {
       "name": "force_terminate",
-      "hash": "2029aca6b7261164d9793bafb7bfb09d19bdf89cf1df99ecea62a2e21d73358e"
+      "hash": "9109012600d4a9a370367c4479fcae7092b5aaae0fb55f074e8eab0afb9c8306"
     },
     {
       "name": "get_config",
-      "hash": "837be3ebc66a024ada02ec2ee40ee1bdcb29d75273a8ee6295684af4325522f5"
+      "hash": "04f640303aa42b7852a6a2ac6ccebc0149b2a2f776b7993a32fc05f601e36ecb"
     },
     {
       "name": "get_file_info",
-      "hash": "ff3298ecab0f3e3cc0b721cf63aa81ba6c3dee3c96ecae08826daf3e94bc6622"
+      "hash": "496b04e9d6d766a7057babf6517dde178fc82d321fb0381f9f092493748ee5a3"
     },
     {
       "name": "kill_process",
-      "hash": "73742047a9517fb4af4b431db0b14805eb760bcf84396cec0e818594f7328cd6"
+      "hash": "5e7eb30c182e5f57a93094478b83e066868eb3cb8d331487071226c952092835"
     },
     {
       "name": "list_directory",
-      "hash": "2c635e3489e61a026e44245aa2a9b40f975567e3613eb243c2dd9e8d89aad741"
+      "hash": "96ce5a41302a1f01a26196645e2f93035630720958b21ef14a9f6d495b3e10c0"
     },
     {
       "name": "list_processes",
-      "hash": "4393993b155546018e42d72cd399332c734432192702699bcca998347383c32c"
+      "hash": "bccaf3bd87272c75e038e50077bca491355236be9fb99d131463c34553df9a2a"
     },
     {
       "name": "list_sessions",
-      "hash": "654fd40cfc9503eec338edcaa3f494ed57a9cec00d5cb5e082e1d7d4d7490337"
+      "hash": "efa60b39dc2cdcc845f5053cf2debd9e5c15b33dae15ce4001f2a8e1dffa2a16"
     },
     {
       "name": "move_file",
-      "hash": "7e04f27bca2a50d0a2131c6aedab9e9ef4a6c19ace1788e900154adf1d8377f6"
+      "hash": "ed4294c075e3f891f9980b6e3b458cb72967ae77d7b78b4fc2bc8330702b81ac"
     },
     {
       "name": "read_file",
-      "hash": "99cc815304c3f3c5eadc8f681bccec0f015471ceac7c44c0bd217e88341e3782"
+      "hash": "1cf5c80e1e4c660811ad42d6d501ff4305aec66e51ff41a55c473c53cf2567fc"
     },
     {
       "name": "read_multiple_files",
-      "hash": "324854dbeccbcccb0dd993a323e67f8b077f8d5bda5045284c84686b6dfc764a"
+      "hash": "a565fd247993616d89e9cd247c024346f76fd65d2a21c994a0128b335b1b8752"
     },
     {
       "name": "read_output",
-      "hash": "37fb0804d8fa450183a5c07318d0266626664a36c8a0b00d115328aa363420a9"
+      "hash": "8b6db9bf385727181092dcd3175db07d6af4db9eaf7dab894d284e8410959920"
     },
     {
       "name": "search_code",
-      "hash": "dca0fb3c246fc9677e46538f522cda87e832c09ec657d68d5901ef626bd933b4"
+      "hash": "9e69a945172aebff5fc61dbe9522e0e285ef1e581ec74e02c63e07d114821f75"
     },
     {
       "name": "search_files",
-      "hash": "f88fab9b0a5d27e1ad95b5799217bfab9738c764fd29d90b461751d5576b2516"
+      "hash": "f41652d2fd0f701958c382769c9a1dca4989b0f1eeb8fc83b32b7ef051e8aff5"
     },
     {
       "name": "set_config_value",
-      "hash": "af29ae6115372ac6c1a748991cd18365c4aa971af2c2d3a82cb8ca883da38f60"
+      "hash": "155afe1d85ebd07ac64f76703797548c8b48a1e2a3d63b14c2369633527df389"
     },
     {
       "name": "write_file",
-      "hash": "203b58a416592ad675510b702725da1d89c66fba9d724db3ebfb0913bf71fd42"
+      "hash": "8902cf681e5c3245e8a93570fa15e43e0b0670add8b34e1fa704504ad75cbe5c"
     }
   ],
   "prompts": []

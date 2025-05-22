@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-chroma"
 LABEL org.opencontainers.image.description="Embedding database for LLM applications with advanced search capabilities."
-LABEL org.opencontainers.image.version="0.2.2"
+LABEL org.opencontainers.image.version="0.2.4"
 LABEL org.opencontainers.image.source="https://github.com/chroma-core/chroma-mcp"
 LABEL org.opencontainers.image.licenses="nil"
 LABEL org.opencontainers.image.author="Author"
@@ -29,7 +29,6 @@ RUN apt-get update \
     && apt-get install -y curl \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
-
 
 HEALTHCHECK CMD curl --fail http://localhost:8080 || exit 1
 
@@ -46,7 +45,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uv venv && uv pip install chroma-mcp==0.2.2
+RUN uv venv && uv pip install chroma-mcp==0.2.4
 
 EXPOSE 8000/tcp
 

@@ -37,7 +37,6 @@ RUN apk update \
 
 COPY --from=artifacts /tmp/binaries /usr/local/bin
 
-
 HEALTHCHECK CMD curl --fail http://localhost:8080 || exit 1
 
 RUN addgroup -g 1001 -S appuser && \

@@ -22,10 +22,10 @@
 
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-chroma/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-chroma/0.2.2?logo=docker&logoColor=fff&label=0.2.2)](https://hub.docker.com/r/acuvity/mcp-server-chroma)
-[![PyPI](https://img.shields.io/badge/0.2.2-3775A9?logo=pypi&logoColor=fff&label=chroma-mcp)](https://github.com/chroma-core/chroma-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-chroma/0.2.4?logo=docker&logoColor=fff&label=0.2.4)](https://hub.docker.com/r/acuvity/mcp-server-chroma)
+[![PyPI](https://img.shields.io/badge/0.2.4-3775A9?logo=pypi&logoColor=fff&label=chroma-mcp)](https://github.com/chroma-core/chroma-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-chroma/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-chroma&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CHROMA_CLIENT_TYPE%22%2C%22-e%22%2C%22CHROMA_DATABASE%22%2C%22-e%22%2C%22CHROMA_HOST%22%2C%22-e%22%2C%22CHROMA_PORT%22%2C%22-e%22%2C%22CHROMA_TENANT%22%2C%22docker.io%2Facuvity%2Fmcp-server-chroma%3A0.2.2%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-chroma&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CHROMA_CLIENT_TYPE%22%2C%22-e%22%2C%22CHROMA_DATABASE%22%2C%22-e%22%2C%22CHROMA_HOST%22%2C%22-e%22%2C%22CHROMA_PORT%22%2C%22-e%22%2C%22CHROMA_TENANT%22%2C%22docker.io%2Facuvity%2Fmcp-server-chroma%3A0.2.4%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Embedding database for LLM applications with advanced search capabilities.
 
@@ -117,18 +117,18 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 
 ### Enable guardrails
 
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
-- covert-instruction-detection
-- sensitive-pattern-detection
-- shadowing-pattern-detection
-- schema-misuse-prevention
-- cross-origin-tool-access
-- secrets-redaction
+To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
-For example adding:
-- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
-to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
+| Guardrail                        | Summary                                                                 |
+|----------------------------------|-------------------------------------------------------------------------|
+| `covert-instruction-detection`   | Detects hidden or obfuscated directives in requests.                    |
+| `sensitive-pattern-detection`    | Flags patterns suggesting sensitive data or filesystem exposure.        |
+| `shadowing-pattern-detection`    | Identifies tool descriptions that override or influence others.         |
+| `schema-misuse-prevention`       | Enforces strict schema compliance on input data.                        |
+| `cross-origin-tool-access`       | Controls calls to external services or APIs.                            |
+| `secrets-redaction`              | Prevents exposure of credentials or sensitive values.                   |
 
+Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
 
 ## 🔒 Basic Authentication via Shared Secret
 
@@ -137,9 +137,9 @@ Provides a lightweight auth layer using a single shared token.
 * **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
 * **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
 
-To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
-- `-e BASIC_AUTH_SECRET="supersecret"`
-to your docker arguments. This will enable the Basic Authentication check.
+To turn on Basic Authentication, define `BASIC_AUTH_SECRET` environment variable with a shared secret.
+
+Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentication.
 
 > While basic auth will protect against unauthorized access, you should use it only in controlled environment,
 > rotate credentials frequently and **always** use TLS.
@@ -174,11 +174,11 @@ to your docker arguments. This will enable the Basic Authentication check.
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.2.2`
+  - container: `1.0.0-0.2.4`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-chroma:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-chroma:1.0.0-0.2.2`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-chroma:1.0.0-0.2.4`
 
 ---
 

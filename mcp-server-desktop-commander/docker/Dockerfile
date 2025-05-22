@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="native"
 
 LABEL org.opencontainers.image.title="mcp-server-desktop-commander"
 LABEL org.opencontainers.image.description="A swiss-army-knife that can manage/execute programs and read/write/search/edit code and text files."
-LABEL org.opencontainers.image.version="0.2.0"
+LABEL org.opencontainers.image.version="0.2.1"
 LABEL org.opencontainers.image.source="https://github.com/wonderwhy-er/DesktopCommanderMCP"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="Eduards Ruzga"
@@ -28,7 +28,6 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 RUN apk update \
     && apk add --no-cache curl
 
-
 HEALTHCHECK CMD curl --fail http://localhost:8080 || exit 1
 
 RUN addgroup -g 1001 -S appuser && \
@@ -40,7 +39,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev @wonderwhy-er/desktop-commander@0.2.0
+RUN npm i --omit-dev @wonderwhy-er/desktop-commander@0.2.1
 
 EXPOSE 8000/tcp
 

@@ -30,7 +30,6 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-
 HEALTHCHECK CMD curl --fail http://localhost:8080 || exit 1
 
 RUN groupadd -r -g 1001 appuser && \

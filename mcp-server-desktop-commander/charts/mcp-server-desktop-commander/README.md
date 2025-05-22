@@ -22,10 +22,10 @@
 
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-desktop-commander/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-desktop-commander/0.2.0?logo=docker&logoColor=fff&label=0.2.0)](https://hub.docker.com/r/acuvity/mcp-server-desktop-commander)
-[![PyPI](https://img.shields.io/badge/0.2.0-3775A9?logo=pypi&logoColor=fff&label=@wonderwhy-er/desktop-commander)](https://github.com/wonderwhy-er/DesktopCommanderMCP)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-desktop-commander/0.2.1?logo=docker&logoColor=fff&label=0.2.1)](https://hub.docker.com/r/acuvity/mcp-server-desktop-commander)
+[![PyPI](https://img.shields.io/badge/0.2.1-3775A9?logo=pypi&logoColor=fff&label=@wonderwhy-er/desktop-commander)](https://github.com/wonderwhy-er/DesktopCommanderMCP)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-desktop-commander/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-desktop-commander&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22docker.io%2Facuvity%2Fmcp-server-desktop-commander%3A0.2.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-desktop-commander&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22docker.io%2Facuvity%2Fmcp-server-desktop-commander%3A0.2.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** A swiss-army-knife that can manage/execute programs and read/write/search/edit code and text files.
 
@@ -117,18 +117,18 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 
 ### Enable guardrails
 
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
-- covert-instruction-detection
-- sensitive-pattern-detection
-- shadowing-pattern-detection
-- schema-misuse-prevention
-- cross-origin-tool-access
-- secrets-redaction
+To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
-For example adding:
-- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
-to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
+| Guardrail                        | Summary                                                                 |
+|----------------------------------|-------------------------------------------------------------------------|
+| `covert-instruction-detection`   | Detects hidden or obfuscated directives in requests.                    |
+| `sensitive-pattern-detection`    | Flags patterns suggesting sensitive data or filesystem exposure.        |
+| `shadowing-pattern-detection`    | Identifies tool descriptions that override or influence others.         |
+| `schema-misuse-prevention`       | Enforces strict schema compliance on input data.                        |
+| `cross-origin-tool-access`       | Controls calls to external services or APIs.                            |
+| `secrets-redaction`              | Prevents exposure of credentials or sensitive values.                   |
 
+Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
 
 ## 🔒 Basic Authentication via Shared Secret
 
@@ -137,9 +137,9 @@ Provides a lightweight auth layer using a single shared token.
 * **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
 * **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
 
-To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
-- `-e BASIC_AUTH_SECRET="supersecret"`
-to your docker arguments. This will enable the Basic Authentication check.
+To turn on Basic Authentication, define `BASIC_AUTH_SECRET` environment variable with a shared secret.
+
+Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentication.
 
 > While basic auth will protect against unauthorized access, you should use it only in controlled environment,
 > rotate credentials frequently and **always** use TLS.
@@ -174,11 +174,11 @@ to your docker arguments. This will enable the Basic Authentication check.
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.2.0`
+  - container: `1.0.0-0.2.1`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-desktop-commander:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-desktop-commander:1.0.0-0.2.0`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-desktop-commander:1.0.0-0.2.1`
 
 ---
 
@@ -632,7 +632,16 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 **Description**:
 
 ```
-Get the complete server configuration as JSON. Config includes fields for: blockedCommands (array of blocked shell commands), defaultShell (shell to use for commands), allowedDirectories (paths the server can access), fileReadLineLimit (max lines for read_file, default 1000), fileWriteLineLimit (max lines per write_file call, default 50), telemetryEnabled (boolean for telemetry opt-in/out). This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
+
+                        Get the complete server configuration as JSON. Config includes fields for:
+                        - blockedCommands (array of blocked shell commands)
+                        - defaultShell (shell to use for commands)
+                        - allowedDirectories (paths the server can access)
+                        - fileReadLineLimit (max lines for read_file, default 1000)
+                        - fileWriteLineLimit (max lines per write_file call, default 50)
+                        - telemetryEnabled (boolean for telemetry opt-in/out)
+                        -  version (version of the DesktopCommander)
+                        This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
 ```
 
 **Parameter**:
@@ -646,7 +655,24 @@ Get the complete server configuration as JSON. Config includes fields for: block
 **Description**:
 
 ```
-Set a specific configuration value by key. WARNING: Should be used in a separate chat from file operations and command execution to prevent security issues. Config keys include: blockedCommands (array), defaultShell (string), allowedDirectories (array of paths), fileReadLineLimit (number, max lines for read_file), fileWriteLineLimit (number, max lines per write_file call), telemetryEnabled (boolean). IMPORTANT: Setting allowedDirectories to an empty array ([]) allows full access to the entire file system, regardless of the operating system. This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
+
+                        Set a specific configuration value by key.
+                        
+                        WARNING: Should be used in a separate chat from file operations and 
+                        command execution to prevent security issues.
+                        
+                        Config keys include:
+                        - blockedCommands (array)
+                        - defaultShell (string)
+                        - allowedDirectories (array of paths)
+                        - fileReadLineLimit (number, max lines for read_file)
+                        - fileWriteLineLimit (number, max lines per write_file call)
+                        - telemetryEnabled (boolean)
+                        
+                        IMPORTANT: Setting allowedDirectories to an empty array ([]) allows full access 
+                        to the entire file system, regardless of the operating system.
+                        
+                        This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
 ```
 
 **Parameter**:
@@ -662,7 +688,24 @@ Set a specific configuration value by key. WARNING: Should be used in a separate
 **Description**:
 
 ```
-Read the contents of a file from the file system or a URL with optional offset and length parameters. Prefer this over 'execute_command' with cat/type for viewing files. Supports partial file reading with 'offset' (start line, default: 0) and 'length' (max lines to read, default: configurable via 'fileReadLineLimit' setting, initially 1000). When reading from the file system, only works within allowed directories. Can fetch content from URLs when isUrl parameter is set to true (URLs are always read in full regardless of offset/length). Handles text files normally and image files are returned as viewable images. Recognized image types: PNG, JPEG, GIF, WebP. IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths. This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
+
+                        Read the contents of a file from the file system or a URL with optional offset and length parameters.
+                        
+                        Prefer this over 'execute_command' with cat/type for viewing files.
+                        
+                        Supports partial file reading with:
+                        - 'offset' (start line, default: 0)
+                        - 'length' (max lines to read, default: configurable via 'fileReadLineLimit' setting, initially 1000)
+                        
+                        When reading from the file system, only works within allowed directories.
+                        Can fetch content from URLs when isUrl parameter is set to true
+                        (URLs are always read in full regardless of offset/length).
+                        
+                        Handles text files normally and image files are returned as viewable images.
+                        Recognized image types: PNG, JPEG, GIF, WebP.
+                        
+                        IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths.
+                        This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
 ```
 
 **Parameter**:
@@ -680,7 +723,18 @@ Read the contents of a file from the file system or a URL with optional offset a
 **Description**:
 
 ```
-Read the contents of multiple files simultaneously. Each file's content is returned with its path as a reference. Handles text files normally and renders images as viewable content. Recognized image types: PNG, JPEG, GIF, WebP. Failed reads for individual files won't stop the entire operation. Only works within allowed directories. IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths. This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
+
+                        Read the contents of multiple files simultaneously.
+                        
+                        Each file's content is returned with its path as a reference.
+                        Handles text files normally and renders images as viewable content.
+                        Recognized image types: PNG, JPEG, GIF, WebP.
+                        
+                        Failed reads for individual files won't stop the entire operation.
+                        Only works within allowed directories.
+                        
+                        IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths.
+                        This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
 ```
 
 **Parameter**:
@@ -695,20 +749,35 @@ Read the contents of multiple files simultaneously. Each file's content is retur
 **Description**:
 
 ```
-Write or append to file contents with a configurable line limit per call (default: 50 lines). THIS IS A STRICT REQUIREMENT. ANY file with more than the configured limit MUST BE written in chunks or IT WILL FAIL.
 
-                        NEVER attempt to write more than the configured line limit at once.
+                        Write or append to file contents with a configurable line limit per call (default: 50 lines).
+                        THIS IS A STRICT REQUIREMENT. ANY file with more than the configured limit MUST BE written in chunks or IT WILL FAIL.
 
-                        REQUIRED PROCESS FOR LARGE FILES:
+                        ⚠️ IMPORTANT: PREVENTATIVE CHUNKING REQUIRED in these scenarios:
+                        1. When content exceeds 2,000 words or 30 lines
+                        2. When writing MULTIPLE files one after another (each next file is more likely to be truncated)
+                        3. When the file is the LAST ONE in a series of operations in the same message
+                        
+                        ALWAYS split files writes in to multiple smaller writes PREEMPTIVELY without asking the user in these scenarios.
+                        
+                        REQUIRED PROCESS FOR LARGE NEW FILE WRITES OR REWRITES:
                         1. FIRST → write_file(filePath, firstChunk, {mode: 'rewrite'})
                         2. THEN → write_file(filePath, secondChunk, {mode: 'append'})
                         3. THEN → write_file(filePath, thirdChunk, {mode: 'append'})
                         ... and so on for each chunk
                         
-                        If asked to continue writing do not restart from beginning, read end of file to see where you stopped and continue from there
-
+                        HANDLING TRUNCATION ("Continue" prompts):
+                        If user asked to "Continue" after unfinished file write:
+                        1. First, read the file to find out what content was successfully written
+                        2. Identify exactly where the content was truncated
+                        3. Continue writing ONLY the remaining content using {mode: 'append'}
+                        4. Split the remaining content into smaller chunks (15-20 lines per chunk)
+                        
                         Files over the line limit (configurable via 'fileWriteLineLimit' setting) WILL BE REJECTED if not broken into chunks as described above.
-                        Only works within allowed directories. IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths. This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
+                        Only works within allowed directories.
+                        
+                        IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths.
+                        This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
 ```
 
 **Parameter**:
@@ -725,7 +794,14 @@ Write or append to file contents with a configurable line limit per call (defaul
 **Description**:
 
 ```
-Create a new directory or ensure a directory exists. Can create multiple nested directories in one operation. Only works within allowed directories. IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths. This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
+
+                        Create a new directory or ensure a directory exists.
+                        
+                        Can create multiple nested directories in one operation.
+                        Only works within allowed directories.
+                        
+                        IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths.
+                        This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
 ```
 
 **Parameter**:
@@ -740,7 +816,15 @@ Create a new directory or ensure a directory exists. Can create multiple nested 
 **Description**:
 
 ```
-Get a detailed listing of all files and directories in a specified path. Use this instead of 'execute_command' with ls/dir commands. Results distinguish between files and directories with [FILE] and [DIR] prefixes. Only works within allowed directories. IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths. This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
+
+                        Get a detailed listing of all files and directories in a specified path.
+                        
+                        Use this instead of 'execute_command' with ls/dir commands.
+                        Results distinguish between files and directories with [FILE] and [DIR] prefixes.
+                        Only works within allowed directories.
+                        
+                        IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths.
+                        This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
 ```
 
 **Parameter**:
@@ -755,9 +839,14 @@ Get a detailed listing of all files and directories in a specified path. Use thi
 **Description**:
 
 ```
-Move or rename files and directories. 
-                        Can move files between directories and rename them in a single operation. 
-                        Both source and destination must be within allowed directories. IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths. This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
+
+                        Move or rename files and directories.
+                        
+                        Can move files between directories and rename them in a single operation.
+                        Both source and destination must be within allowed directories.
+                        
+                        IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths.
+                        This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
 ```
 
 **Parameter**:
@@ -773,11 +862,17 @@ Move or rename files and directories.
 **Description**:
 
 ```
-Finds files by name using a case-insensitive substring matching. 
+
+                        Finds files by name using a case-insensitive substring matching.
+                        
                         Use this instead of 'execute_command' with find/dir/ls for locating files.
-                        Searches through all subdirectories from the starting path. 
-                        Has a default timeout of 30 seconds which can be customized using the timeoutMs parameter. 
-                        Only searches within allowed directories. IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths. This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
+                        Searches through all subdirectories from the starting path.
+                        
+                        Has a default timeout of 30 seconds which can be customized using the timeoutMs parameter.
+                        Only searches within allowed directories.
+                        
+                        IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths.
+                        This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
 ```
 
 **Parameter**:
@@ -794,13 +889,18 @@ Finds files by name using a case-insensitive substring matching.
 **Description**:
 
 ```
-Search for text/code patterns within file contents using ripgrep. 
+
+                        Search for text/code patterns within file contents using ripgrep.
+                        
                         Use this instead of 'execute_command' with grep/find for searching code content.
-                        Fast and powerful search similar to VS Code search functionality. 
-                        Supports regular expressions, file pattern filtering, and context lines. 
-                        Has a default timeout of 30 seconds which can be customized. 
-                        Only searches within allowed directories. 
-                        IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths. This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
+                        Fast and powerful search similar to VS Code search functionality.
+                        
+                        Supports regular expressions, file pattern filtering, and context lines.
+                        Has a default timeout of 30 seconds which can be customized.
+                        Only searches within allowed directories.
+                        
+                        IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths.
+                        This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
 ```
 
 **Parameter**:
@@ -822,9 +922,21 @@ Search for text/code patterns within file contents using ripgrep.
 **Description**:
 
 ```
-Retrieve detailed metadata about a file or directory including size, creation time, last modified time, 
-                        permissions, and type. 
-                        Only works within allowed directories. IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths. This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
+
+                        Retrieve detailed metadata about a file or directory including:
+                        - size
+                        - creation time
+                        - last modified time 
+                        - permissions
+                        - type
+                        - lineCount (for text files)
+                        - lastLine (zero-indexed number of last line, for text files)
+                        - appendPosition (line number for appending, for text files)
+                        
+                        Only works within allowed directories.
+                        
+                        IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths.
+                        This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
 ```
 
 **Parameter**:
@@ -839,17 +951,39 @@ Retrieve detailed metadata about a file or directory including size, creation ti
 **Description**:
 
 ```
-Apply surgical text replacements to files. 
-                        BEST PRACTICE: Make multiple small, focused edits rather than one large edit. 
-                        Each edit_block call should change only what needs to be changed - include just enough context to uniquely identify the text being modified. 
-                        Takes file_path, old_string (text to replace), new_string (replacement text), and optional expected_replacements parameter. 
-                        By default, replaces only ONE occurrence of the search text. 
-                        To replace multiple occurrences, provide the expected_replacements parameter with the exact number of matches expected. 
-                        UNIQUENESS REQUIREMENT: When expected_replacements=1 (default), include the minimal amount of context necessary (typically 1-3 lines) before and after the change point, with exact whitespace and indentation. 
-                        When editing multiple sections, make separate edit_block calls for each distinct change rather than one large replacement. 
-                        When a close but non-exact match is found, a character-level diff is shown in the format: common_prefix{-removed-}{+added+}common_suffix to help you identify what's different.
-                        Similar to write_file, there is a configurable line limit (fileWriteLineLimit) that warns if the edited file exceeds this limit. If this happens, consider breaking your edits into smaller, more focused changes.
-                        IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths. This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
+
+                        Apply surgical text replacements to files.
+                        
+                        BEST PRACTICE: Make multiple small, focused edits rather than one large edit.
+                        Each edit_block call should change only what needs to be changed - include just enough 
+                        context to uniquely identify the text being modified.
+                        
+                        Takes:
+                        - file_path: Path to the file to edit
+                        - old_string: Text to replace
+                        - new_string: Replacement text
+                        - expected_replacements: Optional parameter for number of replacements
+                        
+                        By default, replaces only ONE occurrence of the search text.
+                        To replace multiple occurrences, provide the expected_replacements parameter with
+                        the exact number of matches expected.
+                        
+                        UNIQUENESS REQUIREMENT: When expected_replacements=1 (default), include the minimal
+                        amount of context necessary (typically 1-3 lines) before and after the change point,
+                        with exact whitespace and indentation.
+                        
+                        When editing multiple sections, make separate edit_block calls for each distinct change
+                        rather than one large replacement.
+                        
+                        When a close but non-exact match is found, a character-level diff is shown in the format:
+                        common_prefix{-removed-}{+added+}common_suffix to help you identify what's different.
+                        
+                        Similar to write_file, there is a configurable line limit (fileWriteLineLimit) that warns
+                        if the edited file exceeds this limit. If this happens, consider breaking your edits into
+                        smaller, more focused changes.
+                        
+                        IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths.
+                        This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
 ```
 
 **Parameter**:
@@ -867,10 +1001,16 @@ Apply surgical text replacements to files.
 **Description**:
 
 ```
-Execute a terminal command with timeout. 
-                        Command will continue running in background if it doesn't complete within timeout. 
-                        NOTE: For file operations, prefer specialized tools like read_file, search_code, list_directory instead of cat, grep, or ls commands.
-                        IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths. This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
+
+                        Execute a terminal command with timeout.
+                        
+                        Command will continue running in background if it doesn't complete within timeout.
+                        
+                        NOTE: For file operations, prefer specialized tools like read_file, search_code, 
+                        list_directory instead of cat, grep, or ls commands.
+                        
+                        IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths.
+                        This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
 ```
 
 **Parameter**:
@@ -887,7 +1027,10 @@ Execute a terminal command with timeout.
 **Description**:
 
 ```
-Read new output from a running terminal session. This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
+
+                        Read new output from a running terminal session.
+                        
+                        This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
 ```
 
 **Parameter**:
@@ -902,7 +1045,10 @@ Read new output from a running terminal session. This command can be referenced 
 **Description**:
 
 ```
-Force terminate a running terminal session. This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
+
+                        Force terminate a running terminal session.
+                        
+                        This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
 ```
 
 **Parameter**:
@@ -917,7 +1063,10 @@ Force terminate a running terminal session. This command can be referenced as "D
 **Description**:
 
 ```
-List all active terminal sessions. This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
+
+                        List all active terminal sessions.
+                        
+                        This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
 ```
 
 **Parameter**:
@@ -931,7 +1080,12 @@ List all active terminal sessions. This command can be referenced as "DC: ..." o
 **Description**:
 
 ```
-List all running processes. Returns process information including PID, command name, CPU usage, and memory usage. This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
+
+                        List all running processes.
+                        
+                        Returns process information including PID, command name, CPU usage, and memory usage.
+                        
+                        This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
 ```
 
 **Parameter**:
@@ -945,7 +1099,12 @@ List all running processes. Returns process information including PID, command n
 **Description**:
 
 ```
-Terminate a running process by PID. Use with caution as this will forcefully terminate the specified process. This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
+
+                        Terminate a running process by PID.
+                        
+                        Use with caution as this will forcefully terminate the specified process.
+                        
+                        This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
 ```
 
 **Parameter**:
@@ -962,24 +1121,24 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
-| tools | create_directory | description | 5b5a70f4ee3d31bb9d3436ed52f344b43654820f57a6a67fc0c99761517a4d81 |
-| tools | edit_block | description | e603db2f4c770533b9c0832c4640158bb56596bdb8132d7f67ee3e73ba948ba3 |
-| tools | execute_command | description | fa01b0601c17006c15b3a09a14f33ff903dabf294d30b9fdb1d807d9910b8715 |
-| tools | force_terminate | description | 2029aca6b7261164d9793bafb7bfb09d19bdf89cf1df99ecea62a2e21d73358e |
-| tools | get_config | description | 837be3ebc66a024ada02ec2ee40ee1bdcb29d75273a8ee6295684af4325522f5 |
-| tools | get_file_info | description | ff3298ecab0f3e3cc0b721cf63aa81ba6c3dee3c96ecae08826daf3e94bc6622 |
-| tools | kill_process | description | 73742047a9517fb4af4b431db0b14805eb760bcf84396cec0e818594f7328cd6 |
-| tools | list_directory | description | 2c635e3489e61a026e44245aa2a9b40f975567e3613eb243c2dd9e8d89aad741 |
-| tools | list_processes | description | 4393993b155546018e42d72cd399332c734432192702699bcca998347383c32c |
-| tools | list_sessions | description | 654fd40cfc9503eec338edcaa3f494ed57a9cec00d5cb5e082e1d7d4d7490337 |
-| tools | move_file | description | 7e04f27bca2a50d0a2131c6aedab9e9ef4a6c19ace1788e900154adf1d8377f6 |
-| tools | read_file | description | 99cc815304c3f3c5eadc8f681bccec0f015471ceac7c44c0bd217e88341e3782 |
-| tools | read_multiple_files | description | 324854dbeccbcccb0dd993a323e67f8b077f8d5bda5045284c84686b6dfc764a |
-| tools | read_output | description | 37fb0804d8fa450183a5c07318d0266626664a36c8a0b00d115328aa363420a9 |
-| tools | search_code | description | dca0fb3c246fc9677e46538f522cda87e832c09ec657d68d5901ef626bd933b4 |
-| tools | search_files | description | f88fab9b0a5d27e1ad95b5799217bfab9738c764fd29d90b461751d5576b2516 |
-| tools | set_config_value | description | af29ae6115372ac6c1a748991cd18365c4aa971af2c2d3a82cb8ca883da38f60 |
-| tools | write_file | description | 203b58a416592ad675510b702725da1d89c66fba9d724db3ebfb0913bf71fd42 |
+| tools | create_directory | description | 3e16e56ccad14565f3bc65b56938c6b68cbd32fc6d551eb7a7e550e5b7b304af |
+| tools | edit_block | description | 3ce36fcdbf191892c7c747905054a5d07f099e937cfd6b4d7febc5e1f32301bf |
+| tools | execute_command | description | fc8b9e33ff1e44d77b6a4f4cda7f299d389898e094badc55308392875ef38ea2 |
+| tools | force_terminate | description | 9109012600d4a9a370367c4479fcae7092b5aaae0fb55f074e8eab0afb9c8306 |
+| tools | get_config | description | 04f640303aa42b7852a6a2ac6ccebc0149b2a2f776b7993a32fc05f601e36ecb |
+| tools | get_file_info | description | 496b04e9d6d766a7057babf6517dde178fc82d321fb0381f9f092493748ee5a3 |
+| tools | kill_process | description | 5e7eb30c182e5f57a93094478b83e066868eb3cb8d331487071226c952092835 |
+| tools | list_directory | description | 96ce5a41302a1f01a26196645e2f93035630720958b21ef14a9f6d495b3e10c0 |
+| tools | list_processes | description | bccaf3bd87272c75e038e50077bca491355236be9fb99d131463c34553df9a2a |
+| tools | list_sessions | description | efa60b39dc2cdcc845f5053cf2debd9e5c15b33dae15ce4001f2a8e1dffa2a16 |
+| tools | move_file | description | ed4294c075e3f891f9980b6e3b458cb72967ae77d7b78b4fc2bc8330702b81ac |
+| tools | read_file | description | 1cf5c80e1e4c660811ad42d6d501ff4305aec66e51ff41a55c473c53cf2567fc |
+| tools | read_multiple_files | description | a565fd247993616d89e9cd247c024346f76fd65d2a21c994a0128b335b1b8752 |
+| tools | read_output | description | 8b6db9bf385727181092dcd3175db07d6af4db9eaf7dab894d284e8410959920 |
+| tools | search_code | description | 9e69a945172aebff5fc61dbe9522e0e285ef1e581ec74e02c63e07d114821f75 |
+| tools | search_files | description | f41652d2fd0f701958c382769c9a1dca4989b0f1eeb8fc83b32b7ef051e8aff5 |
+| tools | set_config_value | description | 155afe1d85ebd07ac64f76703797548c8b48a1e2a3d63b14c2369633527df389 |
+| tools | write_file | description | 8902cf681e5c3245e8a93570fa15e43e0b0670add8b34e1fa704504ad75cbe5c |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

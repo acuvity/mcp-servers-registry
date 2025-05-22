@@ -22,10 +22,10 @@
 
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-chart/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-chart/0.3.0?logo=docker&logoColor=fff&label=0.3.0)](https://hub.docker.com/r/acuvity/mcp-server-chart)
-[![PyPI](https://img.shields.io/badge/0.3.0-3775A9?logo=pypi&logoColor=fff&label=@antv/mcp-server-chart)](https://github.com/antvis/mcp-server-chart)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-chart/0.4.0?logo=docker&logoColor=fff&label=0.4.0)](https://hub.docker.com/r/acuvity/mcp-server-chart)
+[![PyPI](https://img.shields.io/badge/0.4.0-3775A9?logo=pypi&logoColor=fff&label=@antv/mcp-server-chart)](https://github.com/antvis/mcp-server-chart)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-chart/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-chart&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-chart%3A0.3.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-chart&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-chart%3A0.4.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** A Model Context Protocol server for generating visual charts using AntV.
 
@@ -117,18 +117,18 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 
 ### Enable guardrails
 
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need. Available options:
-- covert-instruction-detection
-- sensitive-pattern-detection
-- shadowing-pattern-detection
-- schema-misuse-prevention
-- cross-origin-tool-access
-- secrets-redaction
+To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
-For example adding:
-- `-e GUARDRAILS="secrets-redaction covert-instruction-detection"`
-to your docker arguments will enable the `secrets-redaction` and `covert-instruction-detection` guardrails.
+| Guardrail                        | Summary                                                                 |
+|----------------------------------|-------------------------------------------------------------------------|
+| `covert-instruction-detection`   | Detects hidden or obfuscated directives in requests.                    |
+| `sensitive-pattern-detection`    | Flags patterns suggesting sensitive data or filesystem exposure.        |
+| `shadowing-pattern-detection`    | Identifies tool descriptions that override or influence others.         |
+| `schema-misuse-prevention`       | Enforces strict schema compliance on input data.                        |
+| `cross-origin-tool-access`       | Controls calls to external services or APIs.                            |
+| `secrets-redaction`              | Prevents exposure of credentials or sensitive values.                   |
 
+Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
 
 ## 🔒 Basic Authentication via Shared Secret
 
@@ -137,9 +137,9 @@ Provides a lightweight auth layer using a single shared token.
 * **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
 * **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
 
-To turn on Basic Authentication, add `BASIC_AUTH_SECRET` like:
-- `-e BASIC_AUTH_SECRET="supersecret"`
-to your docker arguments. This will enable the Basic Authentication check.
+To turn on Basic Authentication, define `BASIC_AUTH_SECRET` environment variable with a shared secret.
+
+Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentication.
 
 > While basic auth will protect against unauthorized access, you should use it only in controlled environment,
 > rotate credentials frequently and **always** use TLS.
@@ -177,13 +177,13 @@ to your docker arguments. This will enable the Basic Authentication check.
   - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-chart/docker/Dockerfile)
 
 **Latest tags:**
-  - `latest` -> `1.0.0-0.3.0` -> `0.3.0`
+  - `latest` -> `1.0.0-0.4.0` -> `0.4.0`
   - [older tags](https://hub.docker.com/r/acuvity/mcp-server-chart/tags)
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-chart:latest`
-  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-chart:0.3.0`
-  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-chart:1.0.0-0.3.0`
+  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-chart:0.4.0`
+  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-chart:1.0.0-0.4.0`
 
 # 📦 How to Install
 
@@ -206,7 +206,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-chart&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-chart%3A0.3.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-chart&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-chart%3A0.4.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -223,7 +223,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "-i",
           "--rm",
           "--read-only",
-          "docker.io/acuvity/mcp-server-chart:0.3.0"
+          "docker.io/acuvity/mcp-server-chart:0.4.0"
         ]
       }
     }
@@ -245,7 +245,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-chart:0.3.0"
+        "docker.io/acuvity/mcp-server-chart:0.4.0"
       ]
     }
   }
@@ -271,7 +271,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-chart:0.3.0"
+        "docker.io/acuvity/mcp-server-chart:0.4.0"
       ]
     }
   }
@@ -299,7 +299,7 @@ Add the following JSON block to your mcp configuration file:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-chart:0.3.0"
+        "docker.io/acuvity/mcp-server-chart:0.4.0"
       ]
     }
   }
@@ -325,7 +325,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-chart:0.3.0"
+        "docker.io/acuvity/mcp-server-chart:0.4.0"
       ]
     }
   }
@@ -344,7 +344,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 async with MCPServerStdio(
     params={
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-chart:0.3.0"]
+        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-chart:0.4.0"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -373,7 +373,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-chart:0.3.0`
+- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-chart:0.4.0`
 
 </details>
 
@@ -383,7 +383,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-chart:0.3.0
+docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-chart:0.4.0
 ```
 
 Then on your application/client, you can configure to use it like:
