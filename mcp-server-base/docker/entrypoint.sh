@@ -1,12 +1,5 @@
 #!/bin/sh
 export PATH="/app/node_modules/.bin:${PATH}"
-[ -z "$ALCHEMY_API_KEY" ] && echo "!!! Error mcp-server-base requires ALCHEMY_API_KEY env var to be set." && exit 1
-[ -z "$COINBASE_API_KEY_NAME" ] && echo "!!! Error mcp-server-base requires COINBASE_API_KEY_NAME env var to be set." && exit 1
-[ -z "$COINBASE_API_PRIVATE_KEY" ] && echo "!!! Error mcp-server-base requires COINBASE_API_PRIVATE_KEY env var to be set." && exit 1
-[ -z "$COINBASE_PROJECT_ID" ] && echo "!!! Error mcp-server-base requires COINBASE_PROJECT_ID env var to be set." && exit 1
-[ -z "$OPENROUTER_API_KEY" ] && echo "!!! Error mcp-server-base requires OPENROUTER_API_KEY env var to be set." && exit 1
-[ -z "$PINATA_JWT" ] && echo "!!! Error mcp-server-base requires PINATA_JWT env var to be set." && exit 1
-[ -z "$SEED_PHRASE" ] && echo "!!! Error mcp-server-base requires SEED_PHRASE env var to be set." && exit 1
 
 if [ -z "$MINIBRIDGE_MODE" ]; then
   # check if stdin in open

@@ -172,41 +172,41 @@ env:
 
 # This section handles secrets passed to the container.
 secrets:
-  ALCHEMY_API_KEY:
-    value:
-    valueFrom:
-      name:
-      key:
-  COINBASE_API_KEY_NAME:
-    value:
-    valueFrom:
-      name:
-      key:
-  COINBASE_API_PRIVATE_KEY:
-    value:
-    valueFrom:
-      name:
-      key:
-  COINBASE_PROJECT_ID:
-    value:
-    valueFrom:
-      name:
-      key:
-  OPENROUTER_API_KEY:
-    value:
-    valueFrom:
-      name:
-      key:
-  PINATA_JWT:
-    value:
-    valueFrom:
-      name:
-      key:
-  SEED_PHRASE:
-    value:
-    valueFrom:
-      name:
-      key:
+  #ALCHEMY_API_KEY:
+  #  value:
+  #  valueFrom:
+  #    name:
+  #    key:
+  #COINBASE_API_KEY_NAME:
+  #  value:
+  #  valueFrom:
+  #    name:
+  #    key:
+  #COINBASE_API_PRIVATE_KEY:
+  #  value:
+  #  valueFrom:
+  #    name:
+  #    key:
+  #COINBASE_PROJECT_ID:
+  #  value:
+  #  valueFrom:
+  #    name:
+  #    key:
+  #OPENROUTER_API_KEY:
+  #  value:
+  #  valueFrom:
+  #    name:
+  #    key:
+  #PINATA_JWT:
+  #  value:
+  #  valueFrom:
+  #    name:
+  #    key:
+  #SEED_PHRASE:
+  #  value:
+  #  valueFrom:
+  #    name:
+  #    key:
 
 ## Minibridge section
 #

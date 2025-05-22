@@ -25,7 +25,7 @@
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-base/1.0.13?logo=docker&logoColor=fff&label=1.0.13)](https://hub.docker.com/r/acuvity/mcp-server-base)
 [![PyPI](https://img.shields.io/badge/1.0.13-3775A9?logo=pypi&logoColor=fff&label=base-mcp)](https://github.com/base/base-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-base/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-base&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22ALCHEMY_API_KEY%22%2C%22-e%22%2C%22COINBASE_API_KEY_NAME%22%2C%22-e%22%2C%22COINBASE_API_PRIVATE_KEY%22%2C%22-e%22%2C%22COINBASE_PROJECT_ID%22%2C%22-e%22%2C%22OPENROUTER_API_KEY%22%2C%22-e%22%2C%22PINATA_JWT%22%2C%22-e%22%2C%22SEED_PHRASE%22%2C%22docker.io%2Facuvity%2Fmcp-server-base%3A1.0.13%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-base&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-base%3A1.0.13%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Onchain integration for Base Network and Coinbase API manage wallets, transfers, contracts and DeFi.
 
@@ -208,7 +208,7 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 This chart requires some mandatory information to be installed.
 
-**Mandatory Secrets**:
+**Optional Secrets**:
   - `ALCHEMY_API_KEY` secret to be set as secrets.ALCHEMY_API_KEY either by `.value` or from existing with `.valueFrom`
   - `COINBASE_API_KEY_NAME` secret to be set as secrets.COINBASE_API_KEY_NAME either by `.value` or from existing with `.valueFrom`
   - `COINBASE_API_PRIVATE_KEY` secret to be set as secrets.COINBASE_API_PRIVATE_KEY either by `.value` or from existing with `.valueFrom`

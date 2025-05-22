@@ -8,7 +8,7 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
     GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
 
-FROM node:23.11.0-alpine3.21
+FROM node:23-slim
 
 LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
@@ -25,13 +25,15 @@ WORKDIR /app
 
 ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
-RUN apk update \
-    && apk add --no-cache curl
+RUN apt-get update \
+    && apt-get install -y curl \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 HEALTHCHECK CMD curl --fail http://localhost:8080 || exit 1
 
-RUN addgroup -g 1001 -S appuser && \
-    adduser -S -u 1001 -G appuser appuser && \
+RUN groupadd -r -g 1001 appuser && \
+    useradd -r -u 1001 -g appuser -m appuser && \
     mkdir -p /home/appuser/.config/minibridge && \
     chown appuser:appuser -R /app
 
