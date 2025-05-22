@@ -1,4 +1,4 @@
-name: Build & Publish MCP Servers
+name: Dispatch MCP Servers
 
 on:
   push:

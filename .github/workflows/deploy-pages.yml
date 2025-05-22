@@ -1,5 +1,5 @@
 # .github/workflows/deploy-pages.yml
-name: Build & Deploy MCP Servers Site
+name: Update MCP registry
 
 on:
   push:
