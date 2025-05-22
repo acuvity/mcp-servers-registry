@@ -58,19 +58,28 @@ jobs:
             awk -F/ '/^mcp-server-/{print $1}' | sort -u |
             while read -r SRV; do
               IMG=false; CHART=false; README=false
-              # look for docker changes expect readme
+              # look for docker changes except README
               if echo "$CHANGED_FILES" | grep -q "^${SRV}/docker/"; then
-                if ! echo "$CHANGED_FILES" | grep -q "^${SRV}/docker/README.md\$" \
+                if ! echo "$CHANGED_FILES" | grep -q "^${SRV}/docker/README.md$" \
                   || echo "$CHANGED_FILES" | grep -q "^${SRV}/docker/[^R]"; then
                   IMG=true
                 fi
               fi
+
               # look for chart changes
-              [[ "$CHANGED_FILES" =~ (^|$'\n')${SRV}/charts(/|$) ]] && CHART=true
-              # look for docke readme changes
-              [[ "$CHANGED_FILES" =~ (^|$'\n')${SRV}/docker/README.md$ ]] && README=true
+              if echo "$CHANGED_FILES" | grep -q "^${SRV}/charts\(/.*\)\?$"; then
+                CHART=true
+              fi
+
+              # look for docker README.md changes
+              if echo "$CHANGED_FILES" | grep -q "^${SRV}/docker/README.md$"; then
+                README=true
+              fi
+
+              # build the json object
               printf '{"server":"%s","build_image":%s,"build_chart":%s,"build_readme":%s}\n' \
                 "${SRV#mcp-server-}" "$IMG" "$CHART" "$README"
+
             done | jq -s)
 
           [[ -z "$MATRIX" ]] && MATRIX="[]"
