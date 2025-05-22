@@ -28,22 +28,17 @@ jobs:
         run: |
 
           # workflow dispatch trigger
-          if [[ "${{ github.event_name }}" == "workflow_dispatch" && -n "${{ github.event.inputs.name }}" ]]; then
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" && -n "${{ github.event.inputs.name }}" ]]; then
             IFS=',' read -ra SRVS <<< "${{ github.event.inputs.name }}"
-            MATRIX=$(jq -nc '
-              [env.SRVS | split(",")[] |
-                . as $srv |
-                "mcp-server-\($srv)" |
-                if (inputs.servers[] | select(. == .)) then
-                  {server:$srv,build_image:true,build_chart:true,build_readme:true}
-                else
-                  error("\($srv) is not a valid mcp-server name")
-                end
-              ]' \
-              --arg SRVS "${{ github.event.inputs.name }}" \
-              --argjson inputs "$(jq -nc --argjson servers "$(find . -maxdepth 1 -type d -name 'mcp-server-*' | sed 's|./mcp-server-||' | jq -R . | jq -s .)" '{}')"
-            ) || exit 1
-
+            records=()
+            for srv in "${SRVS[@]}"; do
+              if [[ ! -d  mcp-server-${srv} ]]; then
+                echo "$srv is not a valid mcp-server."
+                exit 1
+              fi
+              records+=("{\"server\":\"$srv\",\"build_image\":true,\"build_chart\":true,\"build_readme\":true}")
+            done
+            MATRIX="[$(IFS=,; echo "${records[*]}")]"
             echo "matrix=$MATRIX" >>"$GITHUB_OUTPUT"
             exit 0
           fi
