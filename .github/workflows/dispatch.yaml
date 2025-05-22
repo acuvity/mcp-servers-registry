@@ -82,7 +82,7 @@ jobs:
       fail-fast: false
       matrix:
         changes: ${{ fromJson(needs.detect-changes.outputs.matrix) }}
-    uses: ./.github/workflows/release.yml
+    uses: ./.github/workflows/release.yaml
     with:
       server: ${{ matrix.changes.server }}
       build_image: ${{ matrix.changes.build_image }}
