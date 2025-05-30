@@ -1,0 +1,25 @@
+{
+  "id": "mcp-server-harness",
+  "name": "mcp-server-harness",
+  "description": "Provides seamless integration with Harness APIs.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-harness",
+      "application": "https://github.com/harness/mcp-server"
+    },
+  "tags": ["development","automation","integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "go",
+  "version": "1.0.0-beta",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": "B",
+  "resources": {
+    "tools": 17,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

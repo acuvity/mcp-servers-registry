@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-harness"
+description: "A Helm chart for Provides seamless integration with Harness APIs."
+home: https://github.com/harness/mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/harness/mcp-server
+icon: https://cdn.prod.website-files.com/6222ca42ea87e1bd1aa1d10c/67c1e03a825964d3fc83ba66_harness-logo.png
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 1.0.0-beta
+keywords:
+  - mcp-server-harness
+  - mcp-server
+  - remote
+  - development
+  - automation
+  - integration
