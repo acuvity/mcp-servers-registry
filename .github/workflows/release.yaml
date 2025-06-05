@@ -145,6 +145,83 @@ jobs:
           INDEX_DIGEST=$(docker buildx imagetools inspect $OCI_REGISTRY/mcp-server-${{ inputs.server }}:latest --format '{{.|json}}' | jq -r '.manifest.digest')
           cosign sign --yes $OCI_REGISTRY/mcp-server-${{ inputs.server }}@$INDEX_DIGEST
 
+      - name: Update Docker Hub metadata
+        run: |
+          set -e
+
+          echo "Authenticating with Docker Hub..."
+          IDENTIFIER=${{ secrets.DOCKERHUB_API_USER }}
+          SECRET=${{ secrets.DOCKERHUB_API_PASSWORD }}
+          TOKEN=$(curl -s -X POST https://hub.docker.com/v2/auth/token \
+            -H "Content-Type: application/json" \
+            -d "{\"identifier\": \"${IDENTIFIER}\", \"secret\": \"${SECRET}\"}" \
+            | jq -r .access_token)
+
+          if [ -z "$TOKEN" ] || [ "$TOKEN" == "null" ]; then
+            echo "Failed to authenticate with Docker Hub."
+            exit 1
+          fi
+
+          echo "Authentication successful."
+          REPO_NAME="acuvity/mcp-server-${{ inputs.server }}"
+
+          echo "Updating repository categories..."
+          CATEGORIES_RESPONSE=$(curl -s -w "%{http_code}" -X PATCH \
+            "https://hub.docker.com/v2/repositories/${REPO_NAME}/categories/" \
+            -H "Authorization: Bearer $TOKEN" \
+            -H 'Content-Type: application/json' \
+            --data-raw '[{"slug":"machine-learning-and-ai","name":"machine-learning-and-ai"},{"slug":"integration-and-delivery","name":"integration-and-delivery"}]')
+
+          HTTP_CODE="${CATEGORIES_RESPONSE: -3}"
+          if [[ "$HTTP_CODE" -ge 400 ]]; then
+            echo "Failed to update categories. HTTP code: $HTTP_CODE"
+            exit 1
+          fi
+          echo "Categories updated successfully."
+
+          LOGO_PATH="mcp-server-${{ inputs.server }}/logo.png"
+          if [ -f "$LOGO_PATH" ]; then
+            echo "Uploading logo..."
+            LOGO_RESPONSE=$(curl -s -w "%{http_code}" -X POST \
+              "https://hub.docker.com/api/media/repos_logo/v1/acuvity%2Fmcp-server-${{ inputs.server }}/upload" \
+              -H "Authorization: Bearer $TOKEN" \
+              --data-binary @"$LOGO_PATH")
+
+            HTTP_CODE="${LOGO_RESPONSE: -3}"
+            if [[ "$HTTP_CODE" -ge 400 ]]; then
+              echo "Failed to upload logo. HTTP code: $HTTP_CODE"
+              exit 1
+            fi
+            echo "Logo uploaded successfully."
+          else
+            echo "Warning: Logo file not found at $LOGO_PATH, skipping logo upload."
+          fi
+
+          if [ -f "mcp-server-${{ inputs.server }}/docker/README.md" ]; then
+            echo "Updating description from README.md..."
+            DESCRIPTION_JSON=$(jq -n \
+              --arg full_description "$(cat mcp-server-${{ inputs.server}}/docker/README.md)" \
+              --arg description "${{ steps.version.outputs.HUB_DESCRIPTION }}" \
+              '{full_description: $full_description, description: $description}')
+
+            DESC_RESPONSE=$(curl -s -w "%{http_code}" -X PATCH \
+              "https://hub.docker.com/v2/repositories/${REPO_NAME}/" \
+              -H "Authorization: Bearer $TOKEN" \
+              -H 'Content-Type: application/json' \
+              --data-raw "${DESCRIPTION_JSON}")
+
+            HTTP_CODE="${DESC_RESPONSE: -3}"
+            if [[ "$HTTP_CODE" -ge 400 ]]; then
+              echo "Failed to update description. HTTP code: $HTTP_CODE"
+              exit 1
+            fi
+            echo "Description updated successfully."
+          else
+            echo "Warning: README.md not found, skipping description update."
+          fi
+
+          echo "Docker Hub metadata update complete."
+
   charts:
     if: ${{ inputs.build_chart }}
     runs-on: ubuntu-latest
@@ -185,41 +262,3 @@ jobs:
           helm package mcp-server-${{ inputs.server }} --version "$CHARTS_VERSION"
           DIGEST=$(helm push ./*.tgz oci://$OCI_REGISTRY 2>&1  |grep "Digest" | awk '{print $NF}')
           cosign sign --yes $OCI_REGISTRY/mcp-server-${{ inputs.server }}:$CHARTS_VERSION@$DIGEST
-
-  readme:
-    if: ${{ inputs.build_readme }}
-    runs-on: ubuntu-latest
-
-    env:
-      OCI_REGISTRY: docker.io/acuvity
-
-    steps:
-      - name: Setup docker
-        uses: docker/setup-buildx-action@v3
-
-      - name: Loggin to registry
-        uses: docker/login-action@v3
-        with:
-          registry: docker.io
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - uses: actions/checkout@v4
-      - name: Load version info
-        id: version
-        run: |
-          while IFS='=' read -r k v; do
-            v=${v#\"}
-            v=${v%\"}
-            echo "$k=$v" >> "$GITHUB_OUTPUT"
-          done < "mcp-server-${{ inputs.server }}/version.env"
-
-      - name: Push README to Docker Hub
-        uses: christian-korneck/update-container-description-action@v1
-        env:
-          DOCKER_USER: ${{ secrets.DOCKERHUB_API_USER }}
-          DOCKER_PASS: ${{ secrets.DOCKERHUB_API_PASSWORD }}
-        with:
-          destination_container_repo: ${{ github.repository_owner }}/mcp-server-${{ inputs.server }}
-          provider: dockerhub
-          short_description: ${{ steps.version.outputs.HUB_DESCRIPTION }}
-          readme_file: mcp-server-${{ inputs.server }}/docker/README.md
