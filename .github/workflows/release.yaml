@@ -154,7 +154,7 @@ jobs:
           SECRET=${{ secrets.DOCKERHUB_API_PASSWORD }}
           TOKEN=$(curl -s -X POST https://hub.docker.com/v2/user/login \
             -H "Content-Type: application/json" \
-            -d "{\"identifier\": \"${IDENTIFIER}\", \"secret\": \"${SECRET}\"}" \
+            -d "{\"username\": \"${IDENTIFIER}\", \"password\": \"${SECRET}\"}" \
             | jq -r .token)
 
           if [ -z "$TOKEN" ] || [ "$TOKEN" == "null" ]; then
