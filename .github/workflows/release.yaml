@@ -155,7 +155,7 @@ jobs:
           TOKEN=$(curl -s -X POST https://hub.docker.com/v2/user/login \
             -H "Content-Type: application/json" \
             -d "{\"identifier\": \"${IDENTIFIER}\", \"secret\": \"${SECRET}\"}" \
-            | jq -r .access_token)
+            | jq -r .token)
 
           if [ -z "$TOKEN" ] || [ "$TOKEN" == "null" ]; then
             echo "Failed to authenticate with Docker Hub."
