@@ -162,8 +162,6 @@ _cross_tool_exclude := [
 	#
 	"web_data_reuter_news",
 	#
-	"web_data_reuter_news",
-	#
 	"web_data_github_repository_file",
 	#
 	"web_data_yahoo_finance_business",
@@ -182,25 +180,7 @@ _cross_tool_exclude := [
 	#
 	"web_data_youtube_videos",
 	#
-	"scraping_browser_navigate",
-	#
-	"scraping_browser_go_back",
-	#
-	"scraping_browser_go_forward",
-	#
-	"scraping_browser_links",
-	#
-	"scraping_browser_click",
-	#
-	"scraping_browser_type",
-	#
-	"scraping_browser_wait_for",
-	#
-	"scraping_browser_screenshot",
-	#
-	"scraping_browser_get_text",
-	#
-	"scraping_browser_get_html",
+	"scraping_browser_activation_instructions",
 	#
 	# exclude word that might be misdetected
 	"to",

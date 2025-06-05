@@ -19,8 +19,7 @@
 
 
 # What is mcp-server-openapi-schema?
-
-[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-openapi-schema/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-openapi-schema/0.0.1?logo=docker&logoColor=fff&label=0.0.1)](https://hub.docker.com/r/acuvity/mcp-server-openapi-schema)
 [![PyPI](https://img.shields.io/badge/0.0.1-3775A9?logo=pypi&logoColor=fff&label=mcp-openapi-schema)](https://github.com/hannesj/mcp-openapi-schema)

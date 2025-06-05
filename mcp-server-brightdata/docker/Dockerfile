@@ -1,4 +1,4 @@
-FROM golang:1.24.2-alpine3.21 AS minibridge
+FROM golang:1.24 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
+    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
 
 FROM node:23.11.0-alpine3.21
 
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="native"
 
 LABEL org.opencontainers.image.title="mcp-server-brightdata"
 LABEL org.opencontainers.image.description="Discover, extract, and interact with the web - automated access across the public internet."
-LABEL org.opencontainers.image.version="1.9.1"
+LABEL org.opencontainers.image.version="2.1.0"
 LABEL org.opencontainers.image.source="https://github.com/luminati-io/brightdata-mcp"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="Bright Data"
@@ -39,7 +39,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev @brightdata/mcp@1.9.1
+RUN npm i --omit-dev @brightdata/mcp@2.1.0
 
 EXPOSE 8000/tcp
 

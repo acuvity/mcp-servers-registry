@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-brave-search",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-brave-search",
   "description": "MCP server for Brave Search API integration",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.6.2",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "A",
+  "rating": {"hash":"8d72b2124439ca5ac8d884b157db2105f11127be34bbd35edbe2c340ee7cc6c9","reason":"Both tools have clear, specific names that indicate their distinct purposes. Descriptions are comprehensive, explaining functionality, use cases, return data, and when to use each tool. All parameters include clear descriptions with constraints (character limits, result counts, pagination limits) and practical examples. The documentation proactively addresses user scenarios like 'near me' queries and fallback behavior.","score":"A"},
   "resources": {
     "tools": 2,
     "prompts": 0,

@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-codex",
+  "icon": "https://avatars.githubusercontent.com/u/175457154?s=200&v=4",
   "name": "mcp-server-codex",
   "description": "Codex API integration for real-time enriched blockchain and market data on 60+ networks.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.1.3",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "D",
+  "rating": {"hash":"30e398e8fb04885fef01049793c974e7c0a29ccf921b8566200a79b1e361e56f","reason":"Tool names are clear and consistently structured, indicating purpose well. Most descriptions are concise (1-2 sentences) and explain core functionality adequately. Parameter descriptions are generally clear with good type information and constraints. However, descriptions could be more comprehensive - they lack guidance on when to use tools, what information is vs isn't provided, and important limitations. Some tools like 'filter_tokens' have very brief descriptions despite complex schemas. The extensive use of JSON Schema references shows good structure but some parameter descriptions rely heavily on references rather than standalone clarity.","score":"B"},
   "resources": {
     "tools": 25,
     "prompts": 0,

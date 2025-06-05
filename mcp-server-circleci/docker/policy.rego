@@ -104,6 +104,10 @@ _cross_tool_exclude := [
 	#
 	"list_followed_projects",
 	#
+	"run_evaluation_tests",
+	#
+	"rerun_workflow",
+	#
 	# exclude word that might be misdetected
 	"to",
 	"this",

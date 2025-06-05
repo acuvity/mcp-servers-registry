@@ -188,11 +188,10 @@
                 <div class="flex items-center gap-2">
                   <div class="flex items-center gap-1">
                     <img
-                      v-if="server.official && server.iconUrl && ! server._iconError"
-                      :src="server.iconUrl"
+                      v-if="server.icon"
+                      :src="server.icon"
                       alt=""
                       class="w-5 h-5"
-                      @error="server._iconError = true"
                     />
                     <div
                       v-else
@@ -269,92 +268,108 @@
                       title="Storage Required: Yes"
                     ></i>
                   </div>
-
-                  <div v-if="server.rating" class="flex flex-col items-center">
+                  <div
+                    v-if="server.rating?.score"
+                    class="flex flex-col items-center"
+                  >
                     <span class="font-medium">Rating</span>
+
+                    <!-- A -->
                     <span
-                      v-if="server.rating === 'A'"
+                      v-if="server.rating.score === 'A'"
                       class="w-3.5 h-3.5 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
                       style="background-color: #2ecc71"
-                      title="Tool quality rating based on MCP server tools best practices.&#10;Excellent: Fully documented with clear purpose, usage, and detailed inputs."
+                      :title="server.rating.reason"
                     >
                       <a
                         href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions"
                         target="_blank"
                         rel="noopener noreferrer"
-                        >A</a
+                        >{{ server.rating.score }}</a
                       >
                     </span>
+
+                    <!-- B -->
                     <span
-                      v-else-if="server.rating === 'B'"
+                      v-else-if="server.rating.score === 'B'"
                       class="w-3.5 h-3.5 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
                       style="background-color: #27ae60"
-                      title="Tool quality rating based on MCP server tools best practices.&#10;Good: Mostly clear with only minor documentation gaps."
+                      :title="server.rating.reason"
                     >
                       <a
                         href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions"
                         target="_blank"
                         rel="noopener noreferrer"
-                        >B</a
+                        >{{ server.rating.score }}</a
                       >
                     </span>
+
+                    <!-- C -->
                     <span
-                      v-else-if="server.rating === 'C'"
+                      v-else-if="server.rating.score === 'C'"
                       class="w-3.5 h-3.5 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
                       style="background-color: #f1c40f"
-                      title="Tool quality rating based on MCP server tools best practices.&#10;Adequate: Basic explanation provided, but lacks depth."
+                      :title="server.rating.reason"
                     >
                       <a
-                        href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions"
+                        href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-definitions#best-practices-for-tool-definitions"
                         target="_blank"
                         rel="noopener noreferrer"
-                        >C</a
+                        >{{ server.rating.score }}</a
                       >
                     </span>
+
+                    <!-- D -->
                     <span
-                      v-else-if="server.rating === 'D'"
+                      v-else-if="server.rating.score === 'D'"
                       class="w-3.5 h-3.5 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
                       style="background-color: #e67e22"
-                      title="Tool quality rating based on MCP server tools best practices.&#10;Poor: Minimal detail; purpose and inputs are unclear."
+                      :title="server.rating.reason"
                     >
                       <a
-                        href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions"
+                        href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-definitions#best-practices-for-tool-definitions"
                         target="_blank"
                         rel="noopener noreferrer"
-                        >D</a
+                        >{{ server.rating.score }}</a
                       >
                     </span>
+
+                    <!-- E -->
                     <span
-                      v-else-if="server.rating === 'E'"
+                      v-else-if="server.rating.score === 'E'"
                       class="w-3.5 h-3.5 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
                       style="background-color: #e74c3c"
-                      title="Tool quality rating based on MCP server tools best practices.&#10;Very Poor: Key information missing or misleading."
+                      :title="server.rating.reason"
                     >
                       <a
-                        href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions"
+                        href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-definitions#best-practices-for-tool-definitions"
                         target="_blank"
                         rel="noopener noreferrer"
-                        >E</a
+                        >{{ server.rating.score }}</a
                       >
                     </span>
+
+                    <!-- F -->
                     <span
-                      v-else-if="server.rating === 'F'"
+                      v-else-if="server.rating.score === 'F'"
                       class="w-3.5 h-3.5 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
                       style="background-color: #c0392b"
-                      title="Tool quality rating based on MCP server tools best practices.&#10;Failing: No meaningful documentation available."
+                      :title="server.rating.reason"
                     >
                       <a
-                        href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions"
+                        href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-definitions#best-practices-for-tool-definitions"
                         target="_blank"
                         rel="noopener noreferrer"
-                        >F</a
+                        >{{ server.rating.score }}</a
                       >
                     </span>
+
+                    <!-- Unknown / default -->
                     <span
                       v-else
                       class="w-3.5 h-3.5 flex items-center justify-center rounded-full text-white text-[9px] font-bold"
                       style="background-color: #7f8c8d"
-                      title="Tool quality rating based on MCP server tools best practices.&#10;Unknown: No rating data available."
+                      :title="server.rating.reason || 'No rating data available.'"
                     >
                       ?
                     </span>
@@ -750,8 +765,8 @@
               if (aHas !== bHas) return aHas ? -1 : 1;
               // then rating
               const ratingOrder = ["A", "B", "C", "D", "E", "F", "nil"];
-              const aRatingIndex = ratingOrder.indexOf(a.rating);
-              const bRatingIndex = ratingOrder.indexOf(b.rating);
+              const aRatingIndex = ratingOrder.indexOf(a.rating?.score);
+              const bRatingIndex = ratingOrder.indexOf(b.rating?.score);
               if (aRatingIndex !== bRatingIndex)
                 return aRatingIndex - bRatingIndex;
               // then official
@@ -795,25 +810,6 @@
               const t = new Set();
               this.servers.forEach((s) => s.tags?.forEach((x) => t.add(x)));
               this.availableTags = [...t].sort();
-
-              this.servers = r.data.map((server) => {
-                const parts = server.name.split("-");
-                const segment = parts.length >= 3 ? parts[2] : parts.pop();
-                const slugBase = segment
-                  .toLowerCase()
-                  .replace(/[^a-z0-9]/g, "")
-                  .trim();
-
-                const iconUrl = slugBase
-                  ? `https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/${slugBase}.svg`
-                  : null;
-
-                return {
-                  ...server,
-                  iconUrl,
-                  _iconError: false,
-                };
-              });
             })
             .catch((e) => console.error(e));
         },

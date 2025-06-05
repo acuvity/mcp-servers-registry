@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-chroma",
+  "icon": "https://trychroma.com/_next/static/media/chroma-logo.ae2d6e4b.svg",
   "name": "mcp-server-chroma",
   "description": "Embedding database for LLM applications with advanced search capabilities.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.2.4",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"e51bac8ccca2f1d4dd5e71986f26286e36e653c1b0911794f7eff253272b3993","reason":"Tool names are clear and intuitive with consistent 'chroma_' prefixes. Descriptions are generally comprehensive, explaining functionality and providing detailed parameter information. Most parameters have adequate descriptions, though some technical HNSW parameters could benefit from more context about their practical impact. The query filtering examples in descriptions are particularly helpful for understanding complex parameters.","score":"B"},
   "resources": {
     "tools": 12,
     "prompts": 0,

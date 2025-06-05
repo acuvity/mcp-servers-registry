@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-bilibili-js",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-bilibili-js",
   "description": "Search Bilibili content.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.1.2",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "D",
+  "rating": {"hash":"3a32785f84904eb4aedd266c73b40ae8a9ba7d274dae2b0d1bebd18e20cee2ed","reason":"Tool name is clear and specific, but the description is extremely brief (only 7 Chinese characters meaning 'search Bilibili video content') without explaining functionality, usage context, or what information is returned. Parameter descriptions are minimal - just basic labels without explaining how they affect behavior or providing usage guidance.","score":"D"},
   "resources": {
     "tools": 1,
     "prompts": 0,

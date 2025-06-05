@@ -17,6 +17,14 @@
           "hash": "096630325177fc094ce66f458b58601638b5e38fd50f76ca9add282398d73334"
         },
         {
+          "name": "format",
+          "hash": "f44d780fad2703f7c4493de46d426ef265ebb2d11e28ca79078f2105a434828d"
+        },
+        {
+          "name": "instructions",
+          "hash": "11e23a677507385405b5498887e41ac4c10e4c36a877e771b24e84fd08020058"
+        },
+        {
           "name": "limit",
           "hash": "ecbdbea1cc664963ec69474afb6c97c57f8ae2752e7128e5fe372b260d7bfbcf"
         },
@@ -27,10 +35,6 @@
         {
           "name": "max_depth",
           "hash": "467655797e4e5cb1690ae09eeebded8f2a40f80858c6a29f2085772f21bc43c0"
-        },
-        {
-          "name": "query",
-          "hash": "11e23a677507385405b5498887e41ac4c10e4c36a877e771b24e84fd08020058"
         },
         {
           "name": "select_domains",
@@ -55,6 +59,10 @@
           "hash": "aac7e32c9ba05a8437192cf699fffc5a5d83d6d1b3d4f9c4f05ed1faa1fca12e"
         },
         {
+          "name": "format",
+          "hash": "f44d780fad2703f7c4493de46d426ef265ebb2d11e28ca79078f2105a434828d"
+        },
+        {
           "name": "include_images",
           "hash": "ad583d5fbb5404a91cb49e4192e39a9d26339fb5d68afceb0fc5e15654981bda"
         },
@@ -77,6 +85,10 @@
           "hash": "f7f9439251205a3658776b9db1db48c42f00303b2abcf1574d366cf915d24b93"
         },
         {
+          "name": "instructions",
+          "hash": "11e23a677507385405b5498887e41ac4c10e4c36a877e771b24e84fd08020058"
+        },
+        {
           "name": "limit",
           "hash": "ecbdbea1cc664963ec69474afb6c97c57f8ae2752e7128e5fe372b260d7bfbcf"
         },
@@ -87,10 +99,6 @@
         {
           "name": "max_depth",
           "hash": "36ca50681fc627198c6c9606543eeb2e0775126143cb7458bfe211bc010a004c"
-        },
-        {
-          "name": "query",
-          "hash": "11e23a677507385405b5498887e41ac4c10e4c36a877e771b24e84fd08020058"
         },
         {
           "name": "select_domains",
@@ -110,6 +118,10 @@
       "name": "tavily-search",
       "hash": "9f47afceed35d18060a38ec7ec7287d2a805f1f52a8f257884c13672b1d5a572",
       "params": [
+        {
+          "name": "country",
+          "hash": "bcf3258a6e227c3f65a1ba9abc67d64a81ebd96af777c266676f72b045e96060"
+        },
         {
           "name": "days",
           "hash": "a5166a9dc7b62d6c568b6a86b91e09c679a6fa43d83f2a3178abc5e398f37d22"

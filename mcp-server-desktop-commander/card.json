@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-desktop-commander",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/desktop-commander/live/logo-1744790813733.png",
   "name": "mcp-server-desktop-commander",
   "description": "A swiss-army-knife that can manage/execute programs and read/write/search/edit code and text files.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "native",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"05e647e0fc1e67ef2a1f7acb79e1662d3fe56da9f243945e322bfaefb8ce442f","reason":"Tool names are highly specific and intuitive, clearly indicating purpose. Descriptions are comprehensive, explaining functionality, when to use tools, limitations, and important warnings. Most parameters have clear descriptions of purpose and expected values. Strong documentation includes practical guidance, security warnings, and cross-references between tools. Minor gaps include some parameters lacking detailed descriptions (e.g., 'timeoutMs', 'shell' parameter purposes), and a few overly verbose descriptions could be more concise while maintaining clarity.","score":"B"},
   "resources": {
     "tools": 18,
     "prompts": 0,

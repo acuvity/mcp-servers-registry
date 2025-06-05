@@ -1,0 +1,19 @@
+{
+  "tools": [
+    {
+      "name": "extract-web-data",
+      "hash": "6c8b709541cfcdac26561c5272fdf6fcb9f9f136169818304b7b13b78dcbbe73",
+      "params": [
+        {
+          "name": "prompt",
+          "hash": "52c5b5d5be1c7ed27396137ffdbe269a32ed3efbc2d34a9e4d8edf083d334347"
+        },
+        {
+          "name": "url",
+          "hash": "1023ff9aca30f19e2fcceab6c63aa1fc2d995772adf7fa596ff56cf4a1a07e7c"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

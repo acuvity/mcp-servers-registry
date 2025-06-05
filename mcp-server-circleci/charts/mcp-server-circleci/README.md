@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-circleci?
-
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-circleci/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-circleci/0.7.1?logo=docker&logoColor=fff&label=0.7.1)](https://hub.docker.com/r/acuvity/mcp-server-circleci)
-[![PyPI](https://img.shields.io/badge/0.7.1-3775A9?logo=pypi&logoColor=fff&label=@circleci/mcp-server-circleci)](https://github.com/CircleCI-Public/mcp-server-circleci)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-circleci/0.9.0?logo=docker&logoColor=fff&label=0.9.0)](https://hub.docker.com/r/acuvity/mcp-server-circleci)
+[![PyPI](https://img.shields.io/badge/0.9.0-3775A9?logo=pypi&logoColor=fff&label=@circleci/mcp-server-circleci)](https://github.com/CircleCI-Public/mcp-server-circleci)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-circleci/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-circleci&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-circleci%3A0.7.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-circleci&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-circleci%3A0.9.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Enable AI Agents to fix build failures from CircleCI.
 
@@ -174,11 +173,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.7.1`
+  - container: `1.0.0-0.9.0`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-circleci:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-circleci:1.0.0-0.7.1`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-circleci:1.0.0-0.9.0`
 
 ---
 
@@ -626,7 +625,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (9)
+## 🧰 Tools (11)
 <details>
 <summary>get_build_failure_logs</summary>
 
@@ -901,30 +900,49 @@ orbs:
 
 ```
 
-  About this tool:
-  - This tool is part of a tool chain that generates and provides test cases for a prompt template.
-  - This tool helps an AI assistant to generate a prompt template based on feature requirements defined by a user.
-  - This tool should be triggered whenever the user provides requirements for a new AI-enabled application or a new feature of an existing AI-enabled application (i.e. one that requires a prompt request to an LLM or any AI model).
-  - This tool will return a structured prompt template (e.g. `template`) along with a context schema (e.g. `contextSchema`) that defines the expected input parameters for the prompt template.
+  ABOUT THIS TOOL:
+  - This tool is part of a toolchain that generates and provides test cases for a prompt template.
+  - This tool helps an AI assistant to generate a prompt template based on one of the following:
+    1. feature requirements defined by a user - in which case the tool will generate a new prompt template based on the feature requirements.
+    2. a pre-existing prompt or prompt template that a user wants to test, evaluate, or modify - in which case the tool will convert it into a more structured and testable prompt template while leaving the original prompt language relatively unchanged.
+  - This tool will return a structured prompt template (e.g. `template`) along with a context schema (e.g. ``contextSchema``) that defines the expected input parameters for the prompt template.
+  - In some cases, a user will want to add test coverage for ALL of the prompts in a given application. In these cases, the AI agent should use this tool to generate a prompt template for each prompt in the application, and should check the entire application for AI prompts that are not already covered by a prompt template in the `./prompts` directory.
 
-  Parameters:
+  WHEN SHOULD THIS TOOL BE TRIGGERED?
+  - This tool should be triggered whenever the user provides requirements for a new AI-enabled application or a new AI-enabled feature of an existing  application (i.e. one that requires a prompt request to an LLM or any AI model).
+  - This tool should also be triggered if the user provides a pre-existing prompt or prompt template from their codebase that they want to test, evaluate, or modify.
+  - This tool should be triggered even if there are pre-existing files in the `./prompts` directory with the `<relevant-name>.prompt.yml` convention (e.g. `bedtime-story-generator.prompt.yml`, `plant-care-assistant.prompt.yml`, `customer-support-chatbot.prompt.yml`, etc.). Similar files should NEVER be generated directly by the AI agent. Instead, the AI agent should use this tool to first generate a new prompt template.
+
+  PARAMETERS:
   - params: object
-    - prompt: string (the feature requirements that will be used to generate a prompt template)
+    - prompt: string (the feature requirements or pre-existing prompt/prompt template that will be used to generate a prompt template. Can be a multi-line string.)
+    - promptOrigin: "codebase" | "requirements" (indicates whether the prompt comes from an existing codebase or from new requirements)
+    - model: string (the model that the prompt template will be tested against. Explicitly specify the model if it can be inferred from the codebase. Otherwise, defaults to `gpt-4o-mini`.)
 
-  Example usage:
+  EXAMPLE USAGE (from new requirements):
   {
     "params": {
-      "prompt": "Create an app that takes any topic and an age (in years), then renders a 1-minute bedtime story for a person of that age."
+      "prompt": "Create an app that takes any topic and an age (in years), then renders a 1-minute bedtime story for a person of that age.",
+      "promptOrigin": "requirements"
+      "model": "gpt-4o-mini"
     }
   }
 
-  The tool will return a structured prompt template that can be used to guide an AI assistant's response, along with a context schema that defines the expected input parameters.
+  EXAMPLE USAGE (from pre-existing prompt/prompt template in codebase):
+  {
+    "params": {
+      "prompt": "The user wants a bedtime story about {{topic}} for a person of age {{age}} years old. Please craft a captivating tale that captivates their imagination and provides a delightful bedtime experience.",
+      "promptOrigin": "codebase"
+      "model": "claude-3-5-sonnet-latest"
+    }
+  }
 
-  Tool output instructions:
+  TOOL OUTPUT INSTRUCTIONS:
   - The tool will return...
     - a `template` that reformulates the user's prompt into a more structured format.
-    - a `contextSchema` that defines the expected input parameters for the template.
-  - The tool output -- both the `template` and `contextSchema` -- will also be used as input to the `recommend_prompt_template_tests` tool to generate a list of recommended tests that can be used to test the prompt template.
+    - a ``contextSchema`` that defines the expected input parameters for the template.
+    - a `promptOrigin` that indicates whether the prompt comes from an existing prompt or prompt template in the user's codebase or from new requirements.
+  - The tool output -- the `template`, ``contextSchema``, and `promptOrigin` -- will also be used as input to the `recommend_prompt_template_tests` tool to generate a list of recommended tests that can be used to test the prompt template.
   
 ```
 
@@ -942,14 +960,16 @@ orbs:
 ```
 
   About this tool:
-  - This tool is part of a tool chain that generates and provides test cases for a prompt template.
+  - This tool is part of a toolchain that generates and provides test cases for a prompt template.
   - This tool generates an array of recommended tests for a given prompt template.
 
   Parameters:
   - params: object
     - promptTemplate: string (the prompt template to be tested)
     - contextSchema: object (the context schema that defines the expected input parameters for the prompt template)
-
+    - promptOrigin: "codebase" | "requirements" (indicates whether the prompt comes from an existing codebase or from new requirements)
+    - model: string (the model that the prompt template will be tested against)
+    
   Example usage:
   {
     "params": {
@@ -957,7 +977,8 @@ orbs:
       "contextSchema": {
         "topic": "string",
         "age": "number"
-      }
+      },
+      "promptOrigin": "codebase"
     }
   }
 
@@ -1000,6 +1021,9 @@ orbs:
     - workspaceRoot: The absolute path to the workspace root
     - gitRemoteURL: The URL of the git remote repository
     - branch: The name of the current branch
+
+    Configuration:
+    - an optional configContent parameter can be provided to override the default pipeline configuration
 
     Pipeline Selection:
     - If the project has multiple pipeline definitions, the tool will return a list of available pipelines
@@ -1061,6 +1085,100 @@ orbs:
 |-----------|------|-------------|-----------|
 | params | object | not set | Yes
 </details>
+<details>
+<summary>run_evaluation_tests</summary>
+
+**Description**:
+
+```
+
+    This tool allows the users to run evaluation tests on a circleci pipeline.
+    They can be referred to as "Prompt Tests" or "Evaluation Tests".
+
+    This tool triggers a new CircleCI pipeline and returns the URL to monitor its progress.
+    The tool will generate an appropriate circleci configuration file and trigger a pipeline using this temporary configuration.
+    The tool will return the project slug.
+
+    Input options (EXACTLY ONE of these THREE options must be used):
+
+    Option 1 - Project Slug and branch (BOTH required):
+    - projectSlug: The project slug obtained from listFollowedProjects tool (e.g., "gh/organization/project")
+    - branch: The name of the branch (required when using projectSlug)
+
+    Option 2 - Direct URL (provide ONE of these):
+    - projectURL: The URL of the CircleCI project in any of these formats:
+      * Project URL with branch: https://app.circleci.com/pipelines/gh/organization/project?branch=feature-branch
+      * Pipeline URL: https://app.circleci.com/pipelines/gh/organization/project/123
+      * Workflow URL: https://app.circleci.com/pipelines/gh/organization/project/123/workflows/abc-def
+      * Job URL: https://app.circleci.com/pipelines/gh/organization/project/123/workflows/abc-def/jobs/xyz
+
+    Option 3 - Project Detection (ALL of these must be provided together):
+    - workspaceRoot: The absolute path to the workspace root
+    - gitRemoteURL: The URL of the git remote repository
+    - branch: The name of the current branch
+
+    Test Files:
+    - promptFiles: Array of prompt template file objects from the ./prompts directory, each containing:
+      * fileName: The name of the prompt template file
+      * fileContent: The contents of the prompt template file
+
+    Pipeline Selection:
+    - If the project has multiple pipeline definitions, the tool will return a list of available pipelines
+    - You must then make another call with the chosen pipeline name using the pipelineChoiceName parameter
+    - The pipelineChoiceName must exactly match one of the pipeline names returned by the tool
+    - If the project has only one pipeline definition, pipelineChoiceName is not needed
+
+    Additional Requirements:
+    - Never call this tool with incomplete parameters
+    - If using Option 1, make sure to extract the projectSlug exactly as provided by listFollowedProjects
+    - If using Option 2, the URLs MUST be provided by the user - do not attempt to construct or guess URLs
+    - If using Option 3, ALL THREE parameters (workspaceRoot, gitRemoteURL, branch) must be provided
+    - If none of the options can be fully satisfied, ask the user for the missing information before making the tool call
+
+    Returns:
+    - A URL to the newly triggered pipeline that can be used to monitor its progress
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| params | object | not set | Yes
+</details>
+<details>
+<summary>rerun_workflow</summary>
+
+**Description**:
+
+```
+
+  This tool is used to rerun a workflow from start or from the failed job.
+
+  Common use cases:
+  - Rerun a workflow from a failed job
+  - Rerun a workflow from start
+
+Input options (EXACTLY ONE of these TWO options must be used):
+
+Option 1 - Workflow ID:
+- workflowId: The ID of the workflow to rerun
+- fromFailed: true to rerun from failed, false to rerun from start. If omitted, behavior is based on workflow status. (optional)
+
+Option 2 - Workflow URL:
+- workflowURL: The URL of the workflow to rerun
+  * Workflow URL: https://app.circleci.com/pipelines/:vcsType/:orgName/:projectName/:pipelineNumber/workflows/:workflowId
+  * Workflow Job URL: https://app.circleci.com/pipelines/:vcsType/:orgName/:projectName/:pipelineNumber/workflows/:workflowId/jobs/:buildNumber
+- fromFailed: true to rerun from failed, false to rerun from start. If omitted, behavior is based on workflow status. (optional)
+  
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| params | object | not set | Yes
+</details>
 
 
 # 🔐 Resource SBOM
@@ -1070,14 +1188,16 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
 | tools | config_helper | description | f02dd33f38a3495a590d901debe94a7d61f55b1c13aa49695ea04495280a6a81 |
-| tools | create_prompt_template | description | 17add6d850d6aa05605db4dff2f1d42f605ca8f7c8e8b0b5c0e1671e1fe615a1 |
+| tools | create_prompt_template | description | 1a0d5f49ed5ef89ab02439a0fc88d97c2623bd19082b8b8f307f513ba759313f |
 | tools | find_flaky_tests | description | d7791ab55054527245f4201e3f3e852a2260aabb35703b49b88f617f585ce931 |
 | tools | get_build_failure_logs | description | 0a53cd10b05b19c22e09353276900b0eac42fae325a0a17f0404a38eb917a3da |
 | tools | get_job_test_results | description | f193e7ccd1d8695d7c7b830f6ad58ec602a544b679c1309bc6d19a7ec9d61b72 |
 | tools | get_latest_pipeline_status | description | 63b01e12f1d869921e612fd53bc8f010312aeec0af67a2a9fad71a73114bdb49 |
 | tools | list_followed_projects | description | 505f69b885e2acbd4c3210dd5d405128bef0b85673ecbe797674ecb358410533 |
-| tools | recommend_prompt_template_tests | description | 6be9c0e965a6a22ad8a28b40a5d83ab95fb532cbdb02ebffc46f5fe7f4df4888 |
-| tools | run_pipeline | description | 61a4e833d3f451f1e5677b7389e316d08daaf247f9fa25df5f1a59ac4ba3b128 |
+| tools | recommend_prompt_template_tests | description | 7481bf74eda856271b8b6ae88d71d8aa8a64f031ee83b407c3362332386b1b39 |
+| tools | rerun_workflow | description | 37895cf96d7fd2ed226e0aa1e0c5c30652436fae285136016d3a30205bb29ee8 |
+| tools | run_evaluation_tests | description | f9b65c47dc2ab687a5d6e567fc28177ae5f5ca552f74a3cf1c30e68a761e0082 |
+| tools | run_pipeline | description | 27592345c42aec34546ce5d145ceab8ee313d902276bfea3d357ebd3c88126ae |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

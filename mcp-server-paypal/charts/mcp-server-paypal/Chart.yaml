@@ -5,13 +5,13 @@ home: https://github.com/paypal/agent-toolkit
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/paypal/agent-toolkit
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-paypal/logo.png"
 type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.3.2
+appVersion: 0.3.3
 keywords:
   - mcp-server-paypal
   - mcp-server

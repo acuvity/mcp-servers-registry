@@ -1,0 +1,9 @@
+env:
+  ADFIN_EMAIL: dummy_value
+
+secrets:
+  ADFIN_PASSWORD:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

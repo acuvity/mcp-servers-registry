@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-oxylabs",
+  "icon": "https://oxylabs.io/favicon.ico",
   "name": "mcp-server-oxylabs",
   "description": "Scrapes web data for AI applications using the Model Context Protocol.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"1547515e6be3e7c36250a470673eea40d8668ab59b172febe9d53c1a4872eabc","reason":"The toolset demonstrates good documentation quality with clear, descriptive tool names and comprehensive parameter descriptions. Tool descriptions provide adequate context about functionality and use cases, though they could be more specific about when to use each tool. Parameter documentation is thorough with helpful examples and clear explanations of purpose and constraints. The consistent documentation style across all tools and detailed coverage of complex parameters like output formats and geo-location elevate this above average, though some descriptions could be more concise and focused.","score":"B"},
   "resources": {
     "tools": 4,
     "prompts": 0,

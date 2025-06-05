@@ -200,7 +200,7 @@
     },
     {
       "name": "ingestBoxFiles",
-      "hash": "04a072aafebaa76587ae086f6aeba9094e708339caaa42d847437658c04aa44e",
+      "hash": "e26701ff634676f66a2763b0b67635d5fec2d1aa870f0504a401f6d7362af7f7",
       "params": [
         {
           "name": "folderId",
@@ -209,12 +209,20 @@
         {
           "name": "readLimit",
           "hash": "212f13a2013bf40f6409324f1cb6a7f08daeeb4c814f642d2e3360c3cc60506b"
+        },
+        {
+          "name": "recurring",
+          "hash": "f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c"
+        },
+        {
+          "name": "repeatInterval",
+          "hash": "20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287"
         }
       ]
     },
     {
       "name": "ingestDiscordMessages",
-      "hash": "61d997f24231b4ef42f91e4459121aa4f90f2c2e80d3bd0303400433bdb00adc",
+      "hash": "a901e45383f87c8049b73894478d47a8fa34c5bb56b92bdd7edec7e0d8bb35bb",
       "params": [
         {
           "name": "channelName",
@@ -223,12 +231,20 @@
         {
           "name": "readLimit",
           "hash": "c52515d77ec305b6e04c55e0f415ba5b3cadc805247ab7597bfe67f5d5466858"
+        },
+        {
+          "name": "recurring",
+          "hash": "f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c"
+        },
+        {
+          "name": "repeatInterval",
+          "hash": "20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287"
         }
       ]
     },
     {
       "name": "ingestDropboxFiles",
-      "hash": "fe97c0807b2e162665e232f7cd38711bc5fdec08aa6aec893adbcd3a2bad731d",
+      "hash": "5d666eaca0023423df8e382a615b3a9ab0d86e69a094aefeb076f520d5f92a4e",
       "params": [
         {
           "name": "path",
@@ -237,6 +253,14 @@
         {
           "name": "readLimit",
           "hash": "212f13a2013bf40f6409324f1cb6a7f08daeeb4c814f642d2e3360c3cc60506b"
+        },
+        {
+          "name": "recurring",
+          "hash": "f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c"
+        },
+        {
+          "name": "repeatInterval",
+          "hash": "20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287"
         }
       ]
     },
@@ -252,11 +276,19 @@
     },
     {
       "name": "ingestGitHubFiles",
-      "hash": "70bf7038e00c6ec12e79f4acd364c9c578151ff8c44368c872e6ae8f73e4ab6f",
+      "hash": "113c7340fd21e2fd585a1d5a4e65b8d12e6f6cf6f2b881d1ab03bba4620ab76c",
       "params": [
         {
           "name": "readLimit",
           "hash": "212f13a2013bf40f6409324f1cb6a7f08daeeb4c814f642d2e3360c3cc60506b"
+        },
+        {
+          "name": "recurring",
+          "hash": "f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c"
+        },
+        {
+          "name": "repeatInterval",
+          "hash": "20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287"
         },
         {
           "name": "repositoryName",
@@ -270,11 +302,19 @@
     },
     {
       "name": "ingestGitHubIssues",
-      "hash": "5d3ecbd72f5f7c0c8c3904a9505e4569dadf09edc55ffbd2a62552e87b1b7bee",
+      "hash": "f987c408c50adfa7f6f8288b37ea14f3ac099243aabd1edc6d968ef4b5ae7eae",
       "params": [
         {
           "name": "readLimit",
           "hash": "9159a1563d7f18209f3e6f5022aa1a8ec7175b80f8d5236fece099e060ec746c"
+        },
+        {
+          "name": "recurring",
+          "hash": "f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c"
+        },
+        {
+          "name": "repeatInterval",
+          "hash": "20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287"
         },
         {
           "name": "repositoryName",
@@ -288,7 +328,7 @@
     },
     {
       "name": "ingestGoogleDriveFiles",
-      "hash": "1139c892a798c359a4234714ade94884278b5470ac9c8abbc6329972fb633120",
+      "hash": "21e0f2671b6a3070c4c89bd7c85715350e0e22b7f12331758d09cd457a42b7e3",
       "params": [
         {
           "name": "folderId",
@@ -297,22 +337,38 @@
         {
           "name": "readLimit",
           "hash": "212f13a2013bf40f6409324f1cb6a7f08daeeb4c814f642d2e3360c3cc60506b"
+        },
+        {
+          "name": "recurring",
+          "hash": "f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c"
+        },
+        {
+          "name": "repeatInterval",
+          "hash": "20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287"
         }
       ]
     },
     {
       "name": "ingestGoogleEmail",
-      "hash": "d3c17afcdaf7858b27c2b8f9d12c054171f70ad0820aff3adc43ebf67eeefd86",
+      "hash": "b08acf6277b3d3898dbd407028df5ec84e7ac3e317b34c2b92edcf56d29b2058",
       "params": [
         {
           "name": "readLimit",
           "hash": "d6f01cc0227dfcc17c5179fe2b60cd5573ebbdaf5649d781e31ddbcf64ed3acf"
+        },
+        {
+          "name": "recurring",
+          "hash": "f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c"
+        },
+        {
+          "name": "repeatInterval",
+          "hash": "20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287"
         }
       ]
     },
     {
       "name": "ingestJiraIssues",
-      "hash": "0863869495cb718c570e3013c540c602ac91e71a8b9e043e6e8f9f33a5a1b99c",
+      "hash": "e8cc75ad592a3d8aaebf604cae4bfde80b76b31670bb9dae5859a815a10d4889",
       "params": [
         {
           "name": "projectName",
@@ -323,6 +379,14 @@
           "hash": "9159a1563d7f18209f3e6f5022aa1a8ec7175b80f8d5236fece099e060ec746c"
         },
         {
+          "name": "recurring",
+          "hash": "f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c"
+        },
+        {
+          "name": "repeatInterval",
+          "hash": "20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287"
+        },
+        {
           "name": "url",
           "hash": "5e1bc05ca19b919e8735d316921ab4f507cc32c1fb5e7b81ab6769857e92e2c4"
         }
@@ -330,7 +394,7 @@
     },
     {
       "name": "ingestLinearIssues",
-      "hash": "0040f47486e85a3eb29b3a9edd268e46baab5f8f77fb4f402da3eff7272238e8",
+      "hash": "3736c3ba8bda8db70555e3715991649333024658056b46f57c81aec96a4d954b",
       "params": [
         {
           "name": "projectName",
@@ -339,6 +403,14 @@
         {
           "name": "readLimit",
           "hash": "9159a1563d7f18209f3e6f5022aa1a8ec7175b80f8d5236fece099e060ec746c"
+        },
+        {
+          "name": "recurring",
+          "hash": "f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c"
+        },
+        {
+          "name": "repeatInterval",
+          "hash": "20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287"
         }
       ]
     },
@@ -366,17 +438,25 @@
     },
     {
       "name": "ingestMicrosoftEmail",
-      "hash": "a3503340ad800660f664ee841ed8a3d46b328d1dc8e85a4a3377e8c63ac9ca7b",
+      "hash": "0ed4735bc8889a21e5fbb4112df8a1e22a7021c7c6a549c8dcad7eab43b3bc2d",
       "params": [
         {
           "name": "readLimit",
           "hash": "d6f01cc0227dfcc17c5179fe2b60cd5573ebbdaf5649d781e31ddbcf64ed3acf"
+        },
+        {
+          "name": "recurring",
+          "hash": "f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c"
+        },
+        {
+          "name": "repeatInterval",
+          "hash": "20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287"
         }
       ]
     },
     {
       "name": "ingestMicrosoftTeamsMessages",
-      "hash": "b91a8c97cc75b812c8bc307985a5f38e9393ad0bf7cd3604309650a60bdf2ac2",
+      "hash": "08b9eb46d406a546062434cb622afe4a196d1df2e4496e05257f0596b0bb75ea",
       "params": [
         {
           "name": "channelId",
@@ -387,6 +467,14 @@
           "hash": "c52515d77ec305b6e04c55e0f415ba5b3cadc805247ab7597bfe67f5d5466858"
         },
         {
+          "name": "recurring",
+          "hash": "f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c"
+        },
+        {
+          "name": "repeatInterval",
+          "hash": "20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287"
+        },
+        {
           "name": "teamId",
           "hash": "5cf3e0d26b014ac3c7451d605e71515169bc6c81820d43ee88f3e33834cef57a"
         }
@@ -394,7 +482,7 @@
     },
     {
       "name": "ingestNotionPages",
-      "hash": "53a3a59440b7302b92aefdd3d1fe385e450aad0777b368f1a5b667fe71290365",
+      "hash": "bf5690562158381cbb995e8ee5f82a5c879e32c0a447858d2fba30f134b52648",
       "params": [
         {
           "name": "databaseId",
@@ -403,12 +491,20 @@
         {
           "name": "readLimit",
           "hash": "784a368c768d1f58e255dee912025626746aca4c7f3ea001854a63bc44929965"
+        },
+        {
+          "name": "recurring",
+          "hash": "f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c"
+        },
+        {
+          "name": "repeatInterval",
+          "hash": "20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287"
         }
       ]
     },
     {
       "name": "ingestOneDriveFiles",
-      "hash": "4bfcbd85d01b11c2bce54eca52d4c85d5da798e90d573b82eb1025fa401904a8",
+      "hash": "a830d0d86b822c5f3803dc6ba610adbc45f07a2734f0b6ebe66f0a2d03368f9b",
       "params": [
         {
           "name": "folderId",
@@ -417,16 +513,32 @@
         {
           "name": "readLimit",
           "hash": "212f13a2013bf40f6409324f1cb6a7f08daeeb4c814f642d2e3360c3cc60506b"
+        },
+        {
+          "name": "recurring",
+          "hash": "f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c"
+        },
+        {
+          "name": "repeatInterval",
+          "hash": "20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287"
         }
       ]
     },
     {
       "name": "ingestRSS",
-      "hash": "24d70c1e706c74fa9f047cb5d9e564a3ae0fd80f8b49c89048d37fd1fda57b76",
+      "hash": "a9dc00347f53fe130a671ddbf0bdf7662750a6271ec3ad836435de5266e13b06",
       "params": [
         {
           "name": "readLimit",
           "hash": "3d08185f639a1790566b01cbbfd751a8c545e3eb4db72adb474ceb99bca50325"
+        },
+        {
+          "name": "recurring",
+          "hash": "f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c"
+        },
+        {
+          "name": "repeatInterval",
+          "hash": "20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287"
         },
         {
           "name": "url",
@@ -436,11 +548,19 @@
     },
     {
       "name": "ingestRedditPosts",
-      "hash": "d641adad7aa8b75a9f00a4f67881285e0913400ba7906992739ab20d545ccfb4",
+      "hash": "a48f53dfaa7888506822a8d4395ce840f83c6eeaab4db13c2d2dedb2290da4c7",
       "params": [
         {
           "name": "readLimit",
           "hash": "2206b8145edd5b96f8f4879e7183e82903f08bb6c7a575157517fd756c2f5f57"
+        },
+        {
+          "name": "recurring",
+          "hash": "f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c"
+        },
+        {
+          "name": "repeatInterval",
+          "hash": "20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287"
         },
         {
           "name": "subredditName",
@@ -450,7 +570,7 @@
     },
     {
       "name": "ingestSharePointFiles",
-      "hash": "63339052712ef662ce9842723ef807aa1bb5161a9420f5707da47765e984f351",
+      "hash": "83205e177050a36f4408513c1bc7e952e0b6cd31a461ca4baee64be389caa18a",
       "params": [
         {
           "name": "folderId",
@@ -463,12 +583,20 @@
         {
           "name": "readLimit",
           "hash": "212f13a2013bf40f6409324f1cb6a7f08daeeb4c814f642d2e3360c3cc60506b"
+        },
+        {
+          "name": "recurring",
+          "hash": "5589ffdc9a5b15aabcd8d5bbe4bab0dae3cbebe7e798a431ec187c68989e4f30"
+        },
+        {
+          "name": "repeatInterval",
+          "hash": "20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287"
         }
       ]
     },
     {
       "name": "ingestSlackMessages",
-      "hash": "8d40117facef286225791fa1bf3aad22a32fcb91d00d6199b9a06e353561255b",
+      "hash": "0f6e4fd7dac0470c2f233ba62149877a13d60e200cbf06500038bca9bf0a00fc",
       "params": [
         {
           "name": "channelName",
@@ -477,6 +605,14 @@
         {
           "name": "readLimit",
           "hash": "c52515d77ec305b6e04c55e0f415ba5b3cadc805247ab7597bfe67f5d5466858"
+        },
+        {
+          "name": "recurring",
+          "hash": "f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c"
+        },
+        {
+          "name": "repeatInterval",
+          "hash": "20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287"
         }
       ]
     },
@@ -504,11 +640,19 @@
     },
     {
       "name": "ingestTwitterPosts",
-      "hash": "d000b0b74a3c3181520b697b1f862cff06a0e9acfa6010ffd9c311c4f5781f77",
+      "hash": "4a164ae0d9bce2554a0ec9baa9ba6cbd7b426ed0d45a2309d8cc8a56b85d6892",
       "params": [
         {
           "name": "readLimit",
           "hash": "2206b8145edd5b96f8f4879e7183e82903f08bb6c7a575157517fd756c2f5f57"
+        },
+        {
+          "name": "recurring",
+          "hash": "f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c"
+        },
+        {
+          "name": "repeatInterval",
+          "hash": "20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287"
         },
         {
           "name": "userName",
@@ -518,7 +662,7 @@
     },
     {
       "name": "ingestTwitterSearch",
-      "hash": "a867b478c98a108cbb5e58b55cefe7a9c24dc533632f3d3dc94efc6919e6064b",
+      "hash": "6a0d0a15ba0d9b82fdd96ef7c354cfbd4783c61dda1a68351de8c5d6e4a6a59b",
       "params": [
         {
           "name": "query",
@@ -527,6 +671,14 @@
         {
           "name": "readLimit",
           "hash": "2206b8145edd5b96f8f4879e7183e82903f08bb6c7a575157517fd756c2f5f57"
+        },
+        {
+          "name": "recurring",
+          "hash": "f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c"
+        },
+        {
+          "name": "repeatInterval",
+          "hash": "20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287"
         }
       ]
     },
@@ -896,11 +1048,19 @@
     },
     {
       "name": "webCrawl",
-      "hash": "eea1cb7951355dd38c9568a2a89b80788ba97663acc255270b249cb473808e15",
+      "hash": "ffe15286e3be143df93233b853a59fee41cb92a187b87f833a6b70a09e02329d",
       "params": [
         {
           "name": "readLimit",
           "hash": "c60a76969b312773ac25a22c406f550ed28f8ca588652d7de76b79e380a5b296"
+        },
+        {
+          "name": "recurring",
+          "hash": "f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c"
+        },
+        {
+          "name": "repeatInterval",
+          "hash": "20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287"
         },
         {
           "name": "url",

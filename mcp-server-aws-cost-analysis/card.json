@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-aws-cost-analysis",
+  "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
   "name": "mcp-server-aws-cost-analysis",
   "description": "Analyze CDK projects to identify AWS services used and get pricing information.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.1.12",
+  "version": "1.0.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "A",
+  "rating": {"hash":"558f502d5ef4bbe3aedddb658d85c6f789e37c577fd3d6ae3489d8f7a5a5f2bf","reason":"Tool names are clear and specific, indicating their purposes well. Most descriptions adequately explain functionality with 2-3 sentences covering what the tool does and when to use it. The get_pricing_from_api and generate_cost_report tools have comprehensive descriptions with detailed usage guidance and examples. However, several parameters lack descriptions (project_path, service_code, region) or have minimal descriptions, and some tools like get_bedrock_patterns have very brief descriptions that could be more informative about their specific functionality.","score":"B"},
   "resources": {
     "tools": 6,
     "prompts": 0,

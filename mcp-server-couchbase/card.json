@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-couchbase",
+  "icon": "https://avatars.githubusercontent.com/u/605755?s=200&v=4",
+  "name": "mcp-server-couchbase",
+  "description": "Interact with the data stored in Couchbase clusters using natural language.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-couchbase",
+      "application": "https://github.com/Couchbase-Ecosystem/mcp-server-couchbase"
+    },
+  "tags": ["translation"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.3.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"2b1c669fa6b74a709f2aeffaf24ec7e6441fe8d062105ea8540ddbd69e83c394","reason":"Tool names are clear and specific, indicating their database operations well. Descriptions provide basic functionality but lack important context like usage scenarios, limitations, or error conditions. Parameter documentation is minimal with only generic titles like 'Collection Name' and 'Document Id' without explaining their purpose or format requirements. The toolset covers essential Couchbase operations but needs more comprehensive documentation to guide proper usage.","score":"C"},
+  "resources": {
+    "tools": 6,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

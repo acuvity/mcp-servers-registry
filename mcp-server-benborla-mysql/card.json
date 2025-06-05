@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-benborla-mysql",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-benborla-mysql",
   "description": "MySQL database integration in NodeJS with configurable access controls and schema inspection.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "C",
+  "rating": {"hash":"b5f9b05ca59dee53e652c8065237f6599f258c54e43d1b815fe8e545a272e75b","reason":"Tool name is clear but description is poorly formatted with version placeholder '[vundefined]' and lacks essential details about connection requirements, supported MySQL features, or when to use it. The 'sql' parameter description is minimal, providing no guidance on query structure, constraints, or expected format.","score":"D"},
   "resources": {
     "tools": 1,
     "prompts": 0,

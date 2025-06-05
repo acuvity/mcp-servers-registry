@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-webflow?
-
-[![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-webflow/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-webflow/0.5.1?logo=docker&logoColor=fff&label=0.5.1)](https://hub.docker.com/r/acuvity/mcp-server-webflow)
-[![PyPI](https://img.shields.io/badge/0.5.1-3775A9?logo=pypi&logoColor=fff&label=webflow-mcp-server)](https://github.com/webflow/mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-webflow/0.6.0?logo=docker&logoColor=fff&label=0.6.0)](https://hub.docker.com/r/acuvity/mcp-server-webflow)
+[![PyPI](https://img.shields.io/badge/0.6.0-3775A9?logo=pypi&logoColor=fff&label=webflow-mcp-server)](https://github.com/webflow/mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-webflow/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-webflow&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22WEBFLOW_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-webflow%3A0.5.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-webflow&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22WEBFLOW_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-webflow%3A0.6.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Enables AI agents to interact with Webflow APIs.
 
@@ -174,7 +173,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-webflow&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22WEBFLOW_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-webflow%3A0.5.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-webflow&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22WEBFLOW_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-webflow%3A0.6.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -196,7 +195,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "--read-only",
           "-e",
           "WEBFLOW_TOKEN",
-          "docker.io/acuvity/mcp-server-webflow:0.5.1"
+          "docker.io/acuvity/mcp-server-webflow:0.6.0"
         ]
       }
     }
@@ -223,7 +222,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "--read-only",
         "-e",
         "WEBFLOW_TOKEN",
-        "docker.io/acuvity/mcp-server-webflow:0.5.1"
+        "docker.io/acuvity/mcp-server-webflow:0.6.0"
       ]
     }
   }
@@ -254,7 +253,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "--read-only",
         "-e",
         "WEBFLOW_TOKEN",
-        "docker.io/acuvity/mcp-server-webflow:0.5.1"
+        "docker.io/acuvity/mcp-server-webflow:0.6.0"
       ]
     }
   }
@@ -287,7 +286,7 @@ Add the following JSON block to your mcp configuration file:
         "--read-only",
         "-e",
         "WEBFLOW_TOKEN",
-        "docker.io/acuvity/mcp-server-webflow:0.5.1"
+        "docker.io/acuvity/mcp-server-webflow:0.6.0"
       ]
     }
   }
@@ -318,7 +317,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "--read-only",
         "-e",
         "WEBFLOW_TOKEN",
-        "docker.io/acuvity/mcp-server-webflow:0.5.1"
+        "docker.io/acuvity/mcp-server-webflow:0.6.0"
       ]
     }
   }
@@ -338,7 +337,7 @@ async with MCPServerStdio(
     params={
         "env": {"WEBFLOW_TOKEN":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","WEBFLOW_TOKEN","docker.io/acuvity/mcp-server-webflow:0.5.1"]
+        "args": ["run","-i","--rm","--read-only","-e","WEBFLOW_TOKEN","docker.io/acuvity/mcp-server-webflow:0.6.0"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -367,7 +366,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e WEBFLOW_TOKEN docker.io/acuvity/mcp-server-webflow:0.5.1`
+- arguments: `run -i --rm --read-only -e WEBFLOW_TOKEN docker.io/acuvity/mcp-server-webflow:0.6.0`
 
 </details>
 
@@ -377,7 +376,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e WEBFLOW_TOKEN docker.io/acuvity/mcp-server-webflow:0.5.1
+docker run -it -p 8000:8000 --rm --read-only -e WEBFLOW_TOKEN docker.io/acuvity/mcp-server-webflow:0.6.0
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -480,7 +479,22 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (26)
+## 🧰 Tools (32)
+<details>
+<summary>ask_webflow_ai</summary>
+
+**Description**:
+
+```
+Ask Webflow AI about anything related to Webflow API.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| message | string | not set | Yes
+</details>
 <details>
 <summary>collections_list</summary>
 
@@ -712,6 +726,97 @@ Delete an item in a CMS collection. Items will only be deleted in the primary lo
 | itemId | string | Item ID to be deleted. | Yes
 </details>
 <details>
+<summary>components_list</summary>
+
+**Description**:
+
+```
+List all components in a site. Returns component metadata including IDs, names, and versions.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| limit | number | Maximum number of records to be returned (max limit: 100) | No
+| offset | number | Offset used for pagination if the results have more than limit records. | No
+| site_id | string | Unique identifier for the Site. | Yes
+</details>
+<details>
+<summary>components_get_content</summary>
+
+**Description**:
+
+```
+Get the content structure and data for a specific component including text, images, and nested components.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| component_id | string | Unique identifier for the Component. | Yes
+| limit | number | Maximum number of records to be returned (max limit: 100) | No
+| localeId | string | Unique identifier for a specific locale. Applicable when using localization. | No
+| offset | number | Offset used for pagination if the results have more than limit records. | No
+| site_id | string | Unique identifier for the Site. | Yes
+</details>
+<details>
+<summary>components_update_content</summary>
+
+**Description**:
+
+```
+Update content on a component in secondary locales by modifying text nodes and property overrides.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| component_id | string | Unique identifier for the Component. | Yes
+| localeId | string | Unique identifier for a specific locale. Applicable when using localization. | Yes
+| nodes | array | not set | Yes
+| site_id | string | Unique identifier for the Site. | Yes
+</details>
+<details>
+<summary>components_get_properties</summary>
+
+**Description**:
+
+```
+Get component properties including default values and configuration for a specific component.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| component_id | string | Unique identifier for the Component. | Yes
+| limit | number | Maximum number of records to be returned (max limit: 100) | No
+| localeId | string | Unique identifier for a specific locale. Applicable when using localization. | No
+| offset | number | Offset used for pagination if the results have more than limit records. | No
+| site_id | string | Unique identifier for the Site. | Yes
+</details>
+<details>
+<summary>components_update_properties</summary>
+
+**Description**:
+
+```
+Update component properties for localization to customize behavior in different languages.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| component_id | string | Unique identifier for the Component. | Yes
+| localeId | string | Unique identifier for a specific locale. Applicable when using localization. | Yes
+| properties | array | Array of properties to update for this component. | Yes
+| site_id | string | Unique identifier for the Site. | Yes
+</details>
+<details>
 <summary>pages_list</summary>
 
 **Description**:
@@ -915,6 +1020,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | add_inline_site_script | description | da4ad46026aff6c1441513d12afdfd7f0d735ac69b77f117abe1acaea4ac1a95 |
 | tools | add_inline_site_script | request | aa102df180b52825def499e4fe43678565faa9b5d49fb7f252c89e645f251e25 |
 | tools | add_inline_site_script | site_id | c012e27d6f83f7433a656f22db20bee7dd830a37e94f37cc6378935ada9243a3 |
+| tools | ask_webflow_ai | description | 85f6b0e69c5883d64bb75e42ac2fe025397ba097e8fe5ab98066c4cf55f60d84 |
 | tools | collection_fields_create_option | description | 62a672e665513acde53ce1a510df12fc2e7f7689f9a3bb18fd1bd15f224fe285 |
 | tools | collection_fields_create_option | collection_id | 66d4114e3cddf0a95068c7be63e8966d91e952f972207e7a31beb949190c7a6b |
 | tools | collection_fields_create_reference | description | bef40d710120c44326c891a239d241cd71673f253f09f04272f442d865e80957 |
@@ -954,6 +1060,31 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | collections_items_update_items_live | collection_id | 66d4114e3cddf0a95068c7be63e8966d91e952f972207e7a31beb949190c7a6b |
 | tools | collections_list | description | 180e254b26e6204a9c607ca35cd5b77bd5d0f3b2d6421e0cb1308a9628d3e032 |
 | tools | collections_list | site_id | 093137d76773f00522f69fe5d1d79d3f7189422258e583dd0fb7ddb13528f614 |
+| tools | components_get_content | description | 1ef232c201a63dab696a5be177dfe94ebfbc5b452991e49ad7d0f88c127ab118 |
+| tools | components_get_content | component_id | 912431579ec24d5b2a47d973b48cd5f674b83aae0ca3bf5aa3fd0bb703813641 |
+| tools | components_get_content | limit | 9146b99529c5390536212dc3047f99237c2a9402947460621fca401c975971f0 |
+| tools | components_get_content | localeId | d2d12c4615bc4314a64f68a62885839a4ec8340cede10c10e342f95fedf106f6 |
+| tools | components_get_content | offset | 013a5e06eec0d5bb7168a7e6e0bdc90458bd75b6b108a41e2e8ac255b60af65d |
+| tools | components_get_content | site_id | 093137d76773f00522f69fe5d1d79d3f7189422258e583dd0fb7ddb13528f614 |
+| tools | components_get_properties | description | 1d9010a3cfb9570bf68181fb7f6239a4fe667948f34e1a64421732e04c66ea5b |
+| tools | components_get_properties | component_id | 912431579ec24d5b2a47d973b48cd5f674b83aae0ca3bf5aa3fd0bb703813641 |
+| tools | components_get_properties | limit | 9146b99529c5390536212dc3047f99237c2a9402947460621fca401c975971f0 |
+| tools | components_get_properties | localeId | d2d12c4615bc4314a64f68a62885839a4ec8340cede10c10e342f95fedf106f6 |
+| tools | components_get_properties | offset | 013a5e06eec0d5bb7168a7e6e0bdc90458bd75b6b108a41e2e8ac255b60af65d |
+| tools | components_get_properties | site_id | 093137d76773f00522f69fe5d1d79d3f7189422258e583dd0fb7ddb13528f614 |
+| tools | components_list | description | f7230c69688c0b8cc65a7d19bd4e1684d6acdf73a467d5ed1de55e5062b80d82 |
+| tools | components_list | limit | 9146b99529c5390536212dc3047f99237c2a9402947460621fca401c975971f0 |
+| tools | components_list | offset | 013a5e06eec0d5bb7168a7e6e0bdc90458bd75b6b108a41e2e8ac255b60af65d |
+| tools | components_list | site_id | 093137d76773f00522f69fe5d1d79d3f7189422258e583dd0fb7ddb13528f614 |
+| tools | components_update_content | description | b7b3a3fce9aeca852fd04da7cd67648baa646e735abbf48f130a563347d5b189 |
+| tools | components_update_content | component_id | 912431579ec24d5b2a47d973b48cd5f674b83aae0ca3bf5aa3fd0bb703813641 |
+| tools | components_update_content | localeId | d2d12c4615bc4314a64f68a62885839a4ec8340cede10c10e342f95fedf106f6 |
+| tools | components_update_content | site_id | 093137d76773f00522f69fe5d1d79d3f7189422258e583dd0fb7ddb13528f614 |
+| tools | components_update_properties | description | 6ff350bd9e89ade29efcdfa3c8567bf9a66f06dba09f4273ed9e21136856df78 |
+| tools | components_update_properties | component_id | 912431579ec24d5b2a47d973b48cd5f674b83aae0ca3bf5aa3fd0bb703813641 |
+| tools | components_update_properties | localeId | d2d12c4615bc4314a64f68a62885839a4ec8340cede10c10e342f95fedf106f6 |
+| tools | components_update_properties | properties | a80075dc14678a794348edfdde3d5f2d7d4ac154d385d30fc8806df501cd30ec |
+| tools | components_update_properties | site_id | 093137d76773f00522f69fe5d1d79d3f7189422258e583dd0fb7ddb13528f614 |
 | tools | delete_all_site_scripts | description | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
 | tools | pages_get_content | description | effc85cda69758932ff15da05b2058f56f8c281d4ec570932e4e18e744ef8a46 |
 | tools | pages_get_content | limit | 9146b99529c5390536212dc3047f99237c2a9402947460621fca401c975971f0 |

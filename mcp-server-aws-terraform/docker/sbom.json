@@ -27,6 +27,48 @@
       ]
     },
     {
+      "name": "ExecuteTerragruntCommand",
+      "hash": "f2c99bc47f44bcf9a2ea738e4352260d8758271a1ef769aae768c7bdeb2ec3ce",
+      "params": [
+        {
+          "name": "aws_region",
+          "hash": "0ccf66d2fc46cf203d8a16166cf11d5b869a7b6e0141a3bfd1af40af5a993db0"
+        },
+        {
+          "name": "command",
+          "hash": "c545767beb786dbad5a00c48168a9cf85786857d093dbb85f3cbf31f13b0ea2a"
+        },
+        {
+          "name": "exclude_dirs",
+          "hash": "07e52d7df95061ae2394adc309ffa860a8172b79f37e0c2bc423ffc8b9db85e0"
+        },
+        {
+          "name": "include_dirs",
+          "hash": "276838d7eabc574bd7d36a9d5ffff860e70155a0af378edba804e92ddbb39b54"
+        },
+        {
+          "name": "run_all",
+          "hash": "dca5c811290e7195d468fdc563bf8d57e19a9d5fd3c4f5a647ac07102df31cd2"
+        },
+        {
+          "name": "strip_ansi",
+          "hash": "4d24b273dd76107e594dee1d73736fb9e0dfd27a482acfa61217ec6b3bbd6e7f"
+        },
+        {
+          "name": "terragrunt_config",
+          "hash": "e5e1a01aed9a923ccb79fe4f73fde5ca2e5357b5c5982f91dcd2a50bd6230fcb"
+        },
+        {
+          "name": "variables",
+          "hash": "956119b45b8389c2b16285de0e326f5ac6cb69f738c4894c0fb3866922d61778"
+        },
+        {
+          "name": "working_directory",
+          "hash": "9f14e71b99500b01e574c27134fe1b834c0a174175835bac4dceea44b715aa25"
+        }
+      ]
+    },
+    {
       "name": "RunCheckovScan",
       "hash": "c58423fbe608d95358d585d232cd4cfcebd6ffda6c0251197c5c9efd2165765d",
       "params": [

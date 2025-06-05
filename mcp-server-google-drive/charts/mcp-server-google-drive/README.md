@@ -19,8 +19,6 @@
 
 
 # What is mcp-server-google-drive?
-
-[![Rating](https://img.shields.io/badge/<no value>-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-google-drive/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-google-drive/2025.1.14?logo=docker&logoColor=fff&label=2025.1.14)](https://hub.docker.com/r/acuvity/mcp-server-google-drive)
 [![PyPI](https://img.shields.io/badge/2025.1.14-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-gdrive)](https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive)

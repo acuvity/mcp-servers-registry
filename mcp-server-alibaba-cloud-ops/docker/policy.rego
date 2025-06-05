@@ -86,73 +86,73 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
-	"RunCommand",
+	"OOS_RunCommand",
 	#
-	"StartInstances",
+	"OOS_StartInstances",
 	#
-	"StopInstances",
+	"OOS_StopInstances",
 	#
-	"RebootInstances",
+	"OOS_RebootInstances",
 	#
-	"RunInstances",
+	"OOS_RunInstances",
 	#
-	"ResetPassword",
+	"OOS_ResetPassword",
 	#
-	"ReplaceSystemDisk",
+	"OOS_ReplaceSystemDisk",
 	#
-	"StartRDSInstances",
+	"OOS_StartRDSInstances",
 	#
-	"StopRDSInstances",
+	"OOS_StopRDSInstances",
 	#
-	"RebootRDSInstances",
+	"OOS_RebootRDSInstances",
 	#
-	"GetCpuUsageData",
+	"CMS_GetCpuUsageData",
 	#
-	"GetCpuLoadavgData",
+	"CMS_GetCpuLoadavgData",
 	#
-	"GetCpuloadavg5mData",
+	"CMS_GetCpuloadavg5mData",
 	#
-	"GetCpuloadavg15mData",
+	"CMS_GetCpuloadavg15mData",
 	#
-	"GetMemUsedData",
+	"CMS_GetMemUsedData",
 	#
-	"GetMemUsageData",
+	"CMS_GetMemUsageData",
 	#
-	"GetDiskUsageData",
+	"CMS_GetDiskUsageData",
 	#
-	"GetDiskTotalData",
+	"CMS_GetDiskTotalData",
 	#
-	"GetDiskUsedData",
+	"CMS_GetDiskUsedData",
 	#
-	"ListBuckets",
+	"OSS_ListBuckets",
 	#
-	"ListObjects",
+	"OSS_ListObjects",
 	#
-	"PutBucket",
+	"OSS_PutBucket",
 	#
-	"DeleteBucket",
+	"OSS_DeleteBucket",
 	#
-	"DescribeInstances",
+	"ECS_DescribeInstances",
 	#
-	"DescribeRegions",
+	"ECS_DescribeRegions",
 	#
-	"DescribeZones",
+	"ECS_DescribeZones",
 	#
-	"DescribeAccountAttributes",
+	"ECS_DescribeAccountAttributes",
 	#
-	"DescribeAvailableResource",
+	"ECS_DescribeAvailableResource",
 	#
-	"DescribeImages",
+	"ECS_DescribeImages",
 	#
-	"DescribeSecurityGroups",
+	"ECS_DescribeSecurityGroups",
 	#
-	"DeleteInstances",
+	"ECS_DeleteInstances",
 	#
-	"DescribeVpcs",
+	"VPC_DescribeVpcs",
 	#
-	"DescribeVSwitches",
+	"VPC_DescribeVSwitches",
 	#
-	"DescribeDBInstances",
+	"RDS_DescribeDBInstances",
 	#
 	# exclude word that might be misdetected
 	"to",

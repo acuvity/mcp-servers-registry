@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-brightdata",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-brightdata",
   "description": "Discover, extract, and interact with the web - automated access across the public internet.",
   "links":
@@ -12,12 +13,12 @@
   "scope": "native",
   "mutitenant": false,
   "runtime": "node",
-  "version": "1.9.1",
+  "version": "2.1.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"0fe77a22ce910ba578498e042eef70ebea6395a9ea5d180625006cb9b75e93cc","reason":"Mixed quality documentation. While some tools like 'search_engine' have adequate descriptions with clear functionality and parameter explanations, the majority suffer from minimal descriptions and poor parameter documentation. Many tools lack essential details about URL format requirements, and parameter descriptions are often missing (e.g., 'query' parameter has no description). The large number of specialized tools with repetitive, brief descriptions and inadequate parameter guidance brings the overall quality to adequate level.","score":"C"},
   "resources": {
-    "tools": 58,
+    "tools": 48,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

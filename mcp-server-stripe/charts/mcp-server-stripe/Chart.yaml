@@ -5,13 +5,13 @@ home: https://github.com/stripe/agent-toolkit
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/stripe/agent-toolkit
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-stripe/logo.png"
 type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.2.2
+appVersion: 0.2.3
 keywords:
   - mcp-server-stripe
   - mcp-server

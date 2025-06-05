@@ -19,8 +19,6 @@
 
 
 # What is mcp-server-microsoft-graph?
-
-[![Rating](https://img.shields.io/badge/<no value>-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-microsoft-graph/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-microsoft-graph/1.0.1?logo=docker&logoColor=fff&label=1.0.1)](https://hub.docker.com/r/acuvity/mcp-server-microsoft-graph)
 [![GitHUB](https://img.shields.io/badge/1.0.1-3775A9?logo=github&logoColor=fff&label=acuvity/mcp-server-microsoft-graph)](https://github.com/acuvity/mcp-server-microsoft-graph)

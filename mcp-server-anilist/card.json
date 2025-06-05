@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-anilist",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-anilist",
   "description": "An MCP server integrating AniList API for anime and manga information.",
   "links":
@@ -15,7 +16,7 @@
   "version": "1.2.4",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "D",
+  "rating": {"hash":"92d9cded9f369c049b8473c609e8353159793b3b95193560ed7d1e68a75aa0f6","reason":"Tool names are clear and descriptive, indicating specific AniList operations. Descriptions consistently explain functionality and include login requirements where applicable. Parameter descriptions are comprehensive with clear purposes, types, and constraints. Complex nested objects like filter parameters and options are well-documented with enum values and detailed explanations. The documentation thoroughly covers when to use tools and how parameters affect behavior.","score":"A"},
   "resources": {
     "tools": 44,
     "prompts": 0,

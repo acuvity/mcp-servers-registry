@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-razorpay",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/razorpay/live/logo-1745872254350.png",
   "name": "mcp-server-razorpay",
   "description": "Advanced payment processing with Razorpay APIs for devs and AI tools.",
   "links":
@@ -11,11 +12,11 @@
   "official": true,
   "scope": "remote",
   "mutitenant": true,
-  "runtime": "binary",
-  "version": "v1.1.0",
+  "runtime": "go",
+  "version": "v1.2.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "A",
+  "rating": {"hash":"4d1ba2ae23ede9dce849808f1b5553fb433e4c19e41b10860fba620703cca2dc","reason":"The toolset demonstrates good documentation quality overall. Tool names are clear and purposeful (e.g., 'capture_payment', 'create_order'), descriptions adequately explain functionality and usage context (1-3 sentences covering what, when, and key constraints), and parameter documentation is generally comprehensive with clear purposes, types, and constraints. However, there are some inconsistencies in description depth and minor formatting issues (like missing spaces in some parameter descriptions), preventing it from reaching excellent quality. The documentation successfully guides users without significant gaps.","score":"B"},
   "resources": {
     "tools": 37,
     "prompts": 0,

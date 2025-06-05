@@ -70,7 +70,7 @@
     },
     {
       "name": "create_invoice_item",
-      "hash": "467fc2b816ac329789e6865f4d47175df8c3dd2b886cab156b2299cbaab583fd",
+      "hash": "e4d1897bd8f791a1d8da33cb6ddae62473eaa6a69f1b5c6e4a0ca71af54a95b0",
       "params": [
         {
           "name": "customer",
@@ -261,6 +261,20 @@
     {
       "name": "retrieve_balance",
       "hash": "9c8fb8707dc9e98c9757483f0aa2f977a038a71b68497f4c9ad53eaf645da603"
+    },
+    {
+      "name": "search_stripe_documentation",
+      "hash": "27d8ca92f9679af20a22917b22fdcc57592dea3a97ed2b93ea6d688d0c948f10",
+      "params": [
+        {
+          "name": "language",
+          "hash": "070a252b9466e9ede7bcca9e61ddbebb9c52efab647e83adc0face1e09ab28b9"
+        },
+        {
+          "name": "question",
+          "hash": "2dc9d1dbb1ccc4224a7465970d83733c07b1210c4e280d6c04d853a10909eb2a"
+        }
+      ]
     },
     {
       "name": "update_dispute",

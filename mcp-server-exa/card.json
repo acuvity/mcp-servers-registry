@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-exa",
+  "icon": "https://exa.ai/images/favicon-32x32.png",
   "name": "mcp-server-exa",
   "description": "MCP server enabling AI models to perform real-time web searches.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.3.10",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"b84820f5de98f117043fc747185e8baca46d2d760ba56af75f37220bae1ee310","reason":"The tool name clearly indicates web search functionality with Exa AI. The description adequately explains what the tool does (web search and content scraping) and mentions key capabilities like configurable results and real-time search. Both parameters have clear descriptions with the query purpose obvious and numResults including default value. However, the description could be more specific about when to use it versus other search tools and what type of content/format is returned.","score":"B"},
   "resources": {
     "tools": 1,
     "prompts": 0,

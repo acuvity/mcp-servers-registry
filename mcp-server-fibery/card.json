@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-fibery",
+  "icon": "https://fibery.io/favicon.svg",
   "name": "mcp-server-fibery",
   "description": "Integrates Fibery workspace with LLMs using natural language queries.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.1.3",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "D",
+  "rating": {"hash":"e593528dac7972bd7436205c764a632647218bf7c2dda6d9a3da3c7264bbc69c","reason":"Tool names are clear and purposeful. Most descriptions adequately explain functionality with good context, especially the complex query_database tool which includes comprehensive examples. Parameter descriptions are generally clear with proper type information. However, some tools like current_date and list_databases have overly brief descriptions that could benefit from more detail about when to use them and what they return.","score":"B"},
   "resources": {
     "tools": 7,
     "prompts": 0,

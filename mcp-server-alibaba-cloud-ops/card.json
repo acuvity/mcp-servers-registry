@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-alibaba-cloud-ops",
+  "icon": "https://github.com/aliyun/alibaba-cloud-ops-mcp-server/blob/master/image/alibaba-cloud.png",
   "name": "mcp-server-alibaba-cloud-ops",
   "description": "Alibaba Cloud integration, supporting ECS, Cloud Monitor, OOS and widely used cloud products.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.8.6",
+  "version": "0.8.7",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "C",
+  "rating": {"hash":"3e2f394f559cef1367995ff227119c7fab08c981f48049c87415185a6b8a9172","reason":"Tools have clear names indicating their purpose but suffer from significant documentation issues. Most descriptions are in Chinese with minimal English translation, making them difficult for many users to understand. While parameter descriptions exist, they often lack clarity about purpose and usage. Many parameters have verbose, technical descriptions that don't clearly explain when or how to use them. The documentation would require significant effort for users to understand tool functionality and proper usage.","score":"D"},
   "resources": {
     "tools": 34,
     "prompts": 0,

@@ -5,13 +5,13 @@ home: https://github.com/microsoft/playwright-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/microsoft/playwright-mcp
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-playwright/logo.png"
 type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.0.26
+appVersion: 0.0.28
 keywords:
   - mcp-server-playwright
   - mcp-server

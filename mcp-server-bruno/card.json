@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-bruno",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-bruno",
   "description": "An MCP server for interacting with Bruno API Client.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.1.0",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "C",
+  "rating": {"hash":"267b80956558743858b9c539df1de8f46b9ced6de30a5112578f599e0d020459","reason":"Tool name is clear and indicates purpose. Description briefly explains functionality but lacks important details about what Bruno Collections are, when to use this tool, what output to expect, or any limitations. Parameter descriptions are basic but adequate - 'collection' and 'environment' are reasonably clear, though 'variables' could be more specific about format and usage.","score":"C"},
   "resources": {
     "tools": 1,
     "prompts": 0,

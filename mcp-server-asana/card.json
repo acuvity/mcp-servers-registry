@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-asana",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-asana",
   "description": "Asana API integration.",
   "links":
@@ -15,7 +16,7 @@
   "version": "1.7.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"37cd6c87b844f959df21d7166efeb2a9739e581b5938b74d5fe255557723fcfe","reason":"Tool names are clear and consistently prefixed with 'asana_', indicating their purpose well. Most descriptions adequately explain functionality in 1-2 sentences. Parameter descriptions are generally clear with good detail for complex parameters like custom_fields and search filters. However, some descriptions are quite brief (e.g., 'Get detailed information about a specific task') and could benefit from more context about when to use each tool and what specific information they provide versus what they don't.","score":"B"},
   "resources": {
     "tools": 22,
     "prompts": 3,

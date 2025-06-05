@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-metatool-app",
+  "icon": "https://avatars.githubusercontent.com/u/196043485?s=200&v=4",
   "name": "mcp-server-metatool-app",
   "description": "MetaMCP is the one unified middleware MCP server that manages your MCP connections with GUI.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.6.0",
+  "version": "0.6.5",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "F",
+  "rating": null,
   "resources": {
   }
 }

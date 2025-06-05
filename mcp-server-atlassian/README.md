@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-atlassian?
-
-[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-atlassian/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-atlassian/0.11.1?logo=docker&logoColor=fff&label=0.11.1)](https://hub.docker.com/r/acuvity/mcp-server-atlassian)
-[![PyPI](https://img.shields.io/badge/0.11.1-3775A9?logo=pypi&logoColor=fff&label=mcp-atlassian)](https://github.com/sooperset/mcp-atlassian)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-atlassian/0.11.2?logo=docker&logoColor=fff&label=0.11.2)](https://hub.docker.com/r/acuvity/mcp-server-atlassian)
+[![PyPI](https://img.shields.io/badge/0.11.2-3775A9?logo=pypi&logoColor=fff&label=mcp-atlassian)](https://github.com/sooperset/mcp-atlassian)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-atlassian/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-atlassian&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CONFLUENCE_API_TOKEN%22%2C%22-e%22%2C%22CONFLUENCE_URL%22%2C%22-e%22%2C%22CONFLUENCE_USERNAME%22%2C%22-e%22%2C%22JIRA_API_TOKEN%22%2C%22-e%22%2C%22JIRA_URL%22%2C%22-e%22%2C%22JIRA_USERNAME%22%2C%22docker.io%2Facuvity%2Fmcp-server-atlassian%3A0.11.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-atlassian&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CONFLUENCE_API_TOKEN%22%2C%22-e%22%2C%22CONFLUENCE_URL%22%2C%22-e%22%2C%22CONFLUENCE_USERNAME%22%2C%22-e%22%2C%22JIRA_API_TOKEN%22%2C%22-e%22%2C%22JIRA_URL%22%2C%22-e%22%2C%22JIRA_USERNAME%22%2C%22docker.io%2Facuvity%2Fmcp-server-atlassian%3A0.11.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Integrates AI tools for Jira and Confluence tasks and automation.
 
@@ -179,7 +178,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-atlassian&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CONFLUENCE_API_TOKEN%22%2C%22-e%22%2C%22CONFLUENCE_URL%22%2C%22-e%22%2C%22CONFLUENCE_USERNAME%22%2C%22-e%22%2C%22JIRA_API_TOKEN%22%2C%22-e%22%2C%22JIRA_URL%22%2C%22-e%22%2C%22JIRA_USERNAME%22%2C%22docker.io%2Facuvity%2Fmcp-server-atlassian%3A0.11.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-atlassian&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CONFLUENCE_API_TOKEN%22%2C%22-e%22%2C%22CONFLUENCE_URL%22%2C%22-e%22%2C%22CONFLUENCE_USERNAME%22%2C%22-e%22%2C%22JIRA_API_TOKEN%22%2C%22-e%22%2C%22JIRA_URL%22%2C%22-e%22%2C%22JIRA_USERNAME%22%2C%22docker.io%2Facuvity%2Fmcp-server-atlassian%3A0.11.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -216,7 +215,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "JIRA_URL",
           "-e",
           "JIRA_USERNAME",
-          "docker.io/acuvity/mcp-server-atlassian:0.11.1"
+          "docker.io/acuvity/mcp-server-atlassian:0.11.2"
         ]
       }
     }
@@ -258,7 +257,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "JIRA_URL",
         "-e",
         "JIRA_USERNAME",
-        "docker.io/acuvity/mcp-server-atlassian:0.11.1"
+        "docker.io/acuvity/mcp-server-atlassian:0.11.2"
       ]
     }
   }
@@ -304,7 +303,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "JIRA_URL",
         "-e",
         "JIRA_USERNAME",
-        "docker.io/acuvity/mcp-server-atlassian:0.11.1"
+        "docker.io/acuvity/mcp-server-atlassian:0.11.2"
       ]
     }
   }
@@ -352,7 +351,7 @@ Add the following JSON block to your mcp configuration file:
         "JIRA_URL",
         "-e",
         "JIRA_USERNAME",
-        "docker.io/acuvity/mcp-server-atlassian:0.11.1"
+        "docker.io/acuvity/mcp-server-atlassian:0.11.2"
       ]
     }
   }
@@ -398,7 +397,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "JIRA_URL",
         "-e",
         "JIRA_USERNAME",
-        "docker.io/acuvity/mcp-server-atlassian:0.11.1"
+        "docker.io/acuvity/mcp-server-atlassian:0.11.2"
       ]
     }
   }
@@ -418,7 +417,7 @@ async with MCPServerStdio(
     params={
         "env": {"CONFLUENCE_API_TOKEN":"TO_BE_SET","CONFLUENCE_URL":"TO_BE_SET","CONFLUENCE_USERNAME":"TO_BE_SET","JIRA_API_TOKEN":"TO_BE_SET","JIRA_URL":"TO_BE_SET","JIRA_USERNAME":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","CONFLUENCE_API_TOKEN","-e","CONFLUENCE_URL","-e","CONFLUENCE_USERNAME","-e","JIRA_API_TOKEN","-e","JIRA_URL","-e","JIRA_USERNAME","docker.io/acuvity/mcp-server-atlassian:0.11.1"]
+        "args": ["run","-i","--rm","--read-only","-e","CONFLUENCE_API_TOKEN","-e","CONFLUENCE_URL","-e","CONFLUENCE_USERNAME","-e","JIRA_API_TOKEN","-e","JIRA_URL","-e","JIRA_USERNAME","docker.io/acuvity/mcp-server-atlassian:0.11.2"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -447,7 +446,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e CONFLUENCE_API_TOKEN -e CONFLUENCE_URL -e CONFLUENCE_USERNAME -e JIRA_API_TOKEN -e JIRA_URL -e JIRA_USERNAME docker.io/acuvity/mcp-server-atlassian:0.11.1`
+- arguments: `run -i --rm --read-only -e CONFLUENCE_API_TOKEN -e CONFLUENCE_URL -e CONFLUENCE_USERNAME -e JIRA_API_TOKEN -e JIRA_URL -e JIRA_USERNAME docker.io/acuvity/mcp-server-atlassian:0.11.2`
 
 </details>
 
@@ -457,7 +456,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e CONFLUENCE_API_TOKEN -e CONFLUENCE_URL -e CONFLUENCE_USERNAME -e JIRA_API_TOKEN -e JIRA_URL -e JIRA_USERNAME docker.io/acuvity/mcp-server-atlassian:0.11.1
+docker run -it -p 8000:8000 --rm --read-only -e CONFLUENCE_API_TOKEN -e CONFLUENCE_URL -e CONFLUENCE_USERNAME -e JIRA_API_TOKEN -e JIRA_URL -e JIRA_USERNAME docker.io/acuvity/mcp-server-atlassian:0.11.2
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -567,7 +566,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (36)
+## 🧰 Tools (37)
 <details>
 <summary>jira_get_user_profile</summary>
 
@@ -1372,6 +1371,21 @@ Update jira sprint.
 | state | string | (Optional) New state for the sprint (future|active|closed) | No
 </details>
 <details>
+<summary>jira_get_project_versions</summary>
+
+**Description**:
+
+```
+Get all fix versions for a specific Jira project.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| project_key | string | Jira project key (e.g., 'PROJ') | Yes
+</details>
+<details>
 <summary>confluence_search</summary>
 
 **Description**:
@@ -1788,6 +1802,8 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | jira_get_project_issues | limit | d2f53210f2f0e66d63c3540c3b450f90770826326b68f40a055d79c38ec4440b |
 | tools | jira_get_project_issues | project_key | 6c54057c36a116ca60a070dfebe6b0c142ad9091ef4af62d3cb7d0d9e8c8f557 |
 | tools | jira_get_project_issues | start_at | a155000534e51a9045331d4a7494269871f0d79073ba94812965b3c1545fcc4a |
+| tools | jira_get_project_versions | description | 438aa4b1f6ce74efd36e12633fd614e45656b6e9a53df334e28ea8ff2aa6f80b |
+| tools | jira_get_project_versions | project_key | 37c11040956303aad07ac1ae16fcafa7ef61289a757e20fd988cc397a212fda9 |
 | tools | jira_get_sprint_issues | description | 05be4697c57919a72b2c5934fd5a13466dfbfc9ba5a0f9fab3566673179be9a0 |
 | tools | jira_get_sprint_issues | fields | 8e427a5d6fe268c069fbb170c94dd766a7efe78abc6106f96791bb4f9c65c265 |
 | tools | jira_get_sprint_issues | limit | d2f53210f2f0e66d63c3540c3b450f90770826326b68f40a055d79c38ec4440b |

@@ -19,8 +19,7 @@
 
 
 # What is mcp-server-gyazo?
-
-[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-gyazo/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-gyazo/0.1.0?logo=docker&logoColor=fff&label=0.1.0)](https://hub.docker.com/r/acuvity/mcp-server-gyazo)
 [![PyPI](https://img.shields.io/badge/0.1.0-3775A9?logo=pypi&logoColor=fff&label=@notainc/gyazo-mcp-server)](https://github.com/nota/gyazo-mcp-server)

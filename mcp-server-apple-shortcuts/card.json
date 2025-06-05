@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-apple-shortcuts",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-apple-shortcuts",
   "description": "An MCP Server Integration with Apple Shortcuts.",
   "links":
@@ -15,7 +16,7 @@
   "version": "1.0.1",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "D",
+  "rating": {"hash":"22958228c0200de5adea2821cf71c8c70e13bdd291b8602f341e9d1897a40d14","reason":"Tool names are clear and specific. Descriptions are brief but adequately convey basic functionality. Parameter descriptions are present and clear enough to understand purpose and expected input types, though they could be more detailed about constraints or usage scenarios.","score":"C"},
   "resources": {
     "tools": 2,
     "prompts": 0,

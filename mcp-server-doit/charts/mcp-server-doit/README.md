@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-doit?
-
 [![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-doit/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-doit/0.1.29?logo=docker&logoColor=fff&label=0.1.29)](https://hub.docker.com/r/acuvity/mcp-server-doit)
-[![PyPI](https://img.shields.io/badge/0.1.29-3775A9?logo=pypi&logoColor=fff&label=@doitintl/doit-mcp-server)](https://github.com/doitintl/doit-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-doit/0.1.33?logo=docker&logoColor=fff&label=0.1.33)](https://hub.docker.com/r/acuvity/mcp-server-doit)
+[![PyPI](https://img.shields.io/badge/0.1.33-3775A9?logo=pypi&logoColor=fff&label=@doitintl/doit-mcp-server)](https://github.com/doitintl/doit-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-doit/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-doit&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22DOIT_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-doit%3A0.1.29%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-doit&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22DOIT_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-doit%3A0.1.33%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Access DoiT API for analyzing cloud data and troubleshooting.
 
@@ -174,11 +173,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.1.29`
+  - container: `1.0.0-0.1.33`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-doit:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-doit:1.0.0-0.1.29`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-doit:1.0.0-0.1.33`
 
 ---
 
@@ -671,7 +670,6 @@ List anomalies detected in cloud costs
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| filter | string | Filter string in format 'key:value|key:value'. Multiple values for same key are treated as OR, different keys as AND. | No
 | pageToken | string | Token for pagination. Use this to get the next page of results. | No
 </details>
 <details>
@@ -959,7 +957,6 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | prompts | Query Best Practice | description | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
 | tools | create_ticket | description | b0990b45b3f312d4cf1c6756d7e9f8ed2f143385ba7130ec35fa83ab15be317c |
 | tools | get_anomalies | description | 5ddc31a7b26a361ee8d3772187396b1159bcbcf4414fd664182ad001a3f655e6 |
-| tools | get_anomalies | filter | 2852306a27eee8a8baae33a45b1c208a19e278ef4e5bae15daa3b97845ce8350 |
 | tools | get_anomalies | pageToken | 13008295d9364bfd512878a26f7c86cc9ba7773ded8e66340fb6751b58e18800 |
 | tools | get_anomaly | description | c715dacb2c5847b249ce2e14e62daaea3aba6f7d9c57d131470d5bcdcdae7aa7 |
 | tools | get_anomaly | id | b4c6965122bd1c23d7f2df9b95f082619385d826521a4b0949211080d9e972ef |

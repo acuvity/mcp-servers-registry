@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-apify-rag-web-browser",
+  "icon": "https://apify.com/favicon.ico",
   "name": "mcp-server-apify-rag-web-browser",
   "description": "Use 3,000+ pre-built cloud tools to extract data from websites.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.1.3",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"c5dd9c52bcaeaaa0e14031aeb2f8ad3f8b432ef28fa208ede5d203bb7bca2fbc","reason":"Tool name clearly indicates search functionality. Description adequately explains what the tool does (Google search + web crawling) and provides basic usage guidance with tool recommendations. All parameters have clear descriptions explaining their purpose and constraints, with good examples for the query parameter. Minor weakness: description could better explain when to use this tool versus alternatives, but overall documentation is comprehensive and usable.","score":"B"},
   "resources": {
     "tools": 1,
     "prompts": 0,

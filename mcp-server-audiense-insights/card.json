@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-audiense-insights",
+  "icon": "https://resources.audiense.com/hubfs/favicon-1.png",
   "name": "mcp-server-audiense-insights",
   "description": "Extracts marketing insights and audience analysis from Audiense reports.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.2.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"87e9764ad601783288fc9dda977823c7f7009eb5450bc3e896e60fb2e96b9dd4","reason":"Tool names are clear and descriptive, indicating their purpose well. Most descriptions adequately explain functionality with 2-3 sentences and provide context about what data is returned. Parameter descriptions are generally clear about purpose and expected values. Some tools like 'get-audience-content' and 'compare-audience-influencers' provide excellent detail about return data structure and business logic. Minor gaps include less detailed explanations for simpler tools like 'get-reports' and 'get-categories', but overall documentation is comprehensive enough for effective usage.","score":"B"},
   "resources": {
     "tools": 8,
     "prompts": 3,

@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-webflow",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/webflow/live/logo-1744809451659.png",
   "name": "mcp-server-webflow",
   "description": "Enables AI agents to interact with Webflow APIs.",
   "links":
@@ -12,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "A",
+  "rating": {"hash":"76c373c61d216fece89d8a343cc00bd12aab6a51d58afa953a5849707f20a1a1","reason":"The toolset shows good documentation quality overall with clear, descriptive tool names and comprehensive parameter descriptions. Tool descriptions adequately explain functionality and usage context, though some could benefit from more detail about limitations or constraints. Parameter documentation is generally thorough with clear descriptions of purpose and types. However, some tools have minimal descriptions (like 'delete_all_site_scripts' with no description) and inconsistent detail levels across similar tools, preventing an A grade.","score":"B"},
   "resources": {
-    "tools": 26,
+    "tools": 32,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

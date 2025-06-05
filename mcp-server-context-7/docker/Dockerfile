@@ -1,4 +1,4 @@
-FROM golang:1.24.2-alpine3.21 AS minibridge
+FROM golang:1.24 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
+    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
 
 FROM node:23.11.0-alpine3.21
 
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="standalone"
 
 LABEL org.opencontainers.image.title="mcp-server-context-7"
 LABEL org.opencontainers.image.description="Context7 MCP - Up-to-date Docs For Any Cursor Prompt."
-LABEL org.opencontainers.image.version="1.0.9"
+LABEL org.opencontainers.image.version="1.0.12"
 LABEL org.opencontainers.image.source="https://github.com/upstash/context7#readme"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="abdush"
@@ -39,7 +39,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev @upstash/context7-mcp@1.0.9
+RUN npm i --omit-dev @upstash/context7-mcp@1.0.12
 
 EXPOSE 8000/tcp
 

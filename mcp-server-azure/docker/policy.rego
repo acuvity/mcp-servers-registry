@@ -136,6 +136,8 @@ _cross_tool_exclude := [
 	#
 	"azmcp-kusto-table-schema",
 	#
+	"azmcp-monitor-healthmodels-entity-gethealth",
+	#
 	"azmcp-monitor-log-query",
 	#
 	"azmcp-monitor-table-list",
@@ -157,6 +159,14 @@ _cross_tool_exclude := [
 	"azmcp-postgres-table-list",
 	#
 	"azmcp-postgres-table-schema",
+	#
+	"azmcp-redis-cache-accesspolicy-list",
+	#
+	"azmcp-redis-cache-list",
+	#
+	"azmcp-redis-cluster-database-list",
+	#
+	"azmcp-redis-cluster-list",
 	#
 	"azmcp-search-index-describe",
 	#

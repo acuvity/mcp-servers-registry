@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-astra-db-mcp",
+  "icon": "https://www.datastax.com/favicon-32x32.png",
   "name": "mcp-server-astra-db-mcp",
   "description": "MCP server for managing and interacting with Astra DB using language models.",
   "links":
@@ -15,7 +16,7 @@
   "version": "1.2.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"8f01e8bab1802f3a5e24c8105a3fc820e00c99ae17149ba5f105104a75227cc2","reason":"Tool names are clear and intuitive for database operations. Most descriptions are brief (1-2 sentences) but adequately explain basic functionality. Parameter descriptions are clear and specify purpose, though they lack detailed usage guidance. Some tools like 'OpenBrowser' seem unrelated to the Astra DB theme. The documentation provides sufficient information for basic usage but leaves some gaps around constraints, error conditions, and when to use specific tools over others.","score":"C"},
   "resources": {
     "tools": 16,
     "prompts": 0,

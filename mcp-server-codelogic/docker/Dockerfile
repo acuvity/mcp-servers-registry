@@ -1,4 +1,4 @@
-FROM golang:1.24.2-alpine3.21 AS minibridge
+FROM golang:1.24 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
+    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
 
 FROM ghcr.io/astral-sh/uv:python3.13-alpine
 

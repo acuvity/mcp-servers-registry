@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-hyperbrowser",
+  "icon": "https://hyperbrowser-assets-bucket.s3.us-east-1.amazonaws.com/Hyperbrowser-logo.png",
   "name": "mcp-server-hyperbrowser",
   "description": "Scrapes, extracts data, and automates web page interactions.",
   "links":
@@ -15,7 +16,7 @@
   "version": "1.0.25",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"d3735b0592cf84256a9cecc9ce486264bc71aa0d63fd7f37b886d3aa06ee0251","reason":"The toolset demonstrates good documentation quality overall. Tool names are clear and purposeful, descriptions adequately explain functionality and use cases (though some could be more concise), and parameter documentation is comprehensive with proper constraints and defaults. The three agent tools have excellent detailed descriptions explaining their specific strengths and optimal use cases. However, some descriptions are verbose, a few parameters like 'ignoreSitemap' and 'schema' lack adequate explanation, and there's inconsistent detail across tools, preventing an A grade.","score":"B"},
   "resources": {
     "tools": 10,
     "prompts": 0,

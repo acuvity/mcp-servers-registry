@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-aws-cdk",
+  "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
   "name": "mcp-server-aws-cdk",
   "description": "Explain CDK Nag rules, check suppressions, generate Bedrock schemas, find AWS patterns.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.1.4",
+  "version": "1.0.1",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"fddb2ebfde25603af42e9e8980c30a8dfed7c449bde2ee0d9f91f274f5efd4b3","reason":"Tool names are clear and specific, indicating their AWS CDK purposes well. However, descriptions vary significantly in quality - some tools like 'ExplainCDKNagRule' provide comprehensive explanations with examples and context, while others like 'CDKGeneralGuidance' have minimal descriptions. Parameter descriptions are basic but adequate, though some lack clear purpose explanations (e.g., 'code' vs 'file_path' distinction in CheckCDKNagSuppressions). The inconsistent documentation quality across tools prevents a higher grade despite some individual tools being well-documented.","score":"C"},
   "resources": {
     "tools": 7,
     "prompts": 0,

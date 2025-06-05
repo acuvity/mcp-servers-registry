@@ -1,0 +1,22 @@
+{
+  "id": "mcp-server-agentrpc",
+  "icon": "https://agentrpc.com/favicon.ico",
+  "name": "mcp-server-agentrpc",
+  "description": "Connect to any function, any language, across network boundaries using AgentRPC.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-agentrpc",
+      "application": "https://github.com/agentrpc/agentrpc"
+    },
+  "tags": ["integration","development"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "0.0.16",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": null,
+  "resources": {
+  }
+}

@@ -9,10 +9,6 @@
       "hash": "5ddc31a7b26a361ee8d3772187396b1159bcbcf4414fd664182ad001a3f655e6",
       "params": [
         {
-          "name": "filter",
-          "hash": "2852306a27eee8a8baae33a45b1c208a19e278ef4e5bae15daa3b97845ce8350"
-        },
-        {
           "name": "pageToken",
           "hash": "13008295d9364bfd512878a26f7c86cc9ba7773ded8e66340fb6751b58e18800"
         }

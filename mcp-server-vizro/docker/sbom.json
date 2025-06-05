@@ -1,0 +1,58 @@
+{
+  "tools": [
+    {
+      "name": "get_model_json_schema",
+      "hash": "d92731687ece77aabb2be987d117b04338834e2e435dc119dadff687fa2a8c1e"
+    },
+    {
+      "name": "get_sample_data_info",
+      "hash": "d0c3654426c6e181a0471b992aaadd63c9e88281bed836343548eb2583a74f1d"
+    },
+    {
+      "name": "get_vizro_chart_or_dashboard_plan",
+      "hash": "6f05907ea3f3b663a47a6ee527504ddec4fc4ae17a1e726c832ae4a9f70e95da"
+    },
+    {
+      "name": "load_and_analyze_data",
+      "hash": "2c10343fd39c32e39b4c9c75ae8897bc8b8f6c4da8d72aa13e9305f0e0e100a8"
+    },
+    {
+      "name": "validate_chart_code",
+      "hash": "3b821a0e889495284b3583b66f47ad585811028ae26016e89f02e59e4ebf23c1"
+    },
+    {
+      "name": "validate_model_config",
+      "hash": "79865f63e5b29b8bb0fdec019a48c02acdad112893fe1dc5e37a6c36d35392f0"
+    }
+  ],
+  "prompts": [
+    {
+      "name": "create_eda_dashboard",
+      "hash": "f49688252b0e6994d4e5af8a373bb1f230daaa547a7715292f638d096b6f5d5e",
+      "params": [
+        {
+          "name": "file_path_or_url",
+          "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "create_starter_dashboard",
+      "hash": "3db6c73803667f67b738d9001648a03089d29457869df85b5f9d52d9549f994b"
+    },
+    {
+      "name": "create_vizro_chart",
+      "hash": "faa5f0d0a03c730d8b4d3cb0c684ffa46739ac0027b47aa54d9b3967e1f350b6",
+      "params": [
+        {
+          "name": "chart_type",
+          "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "file_path_or_url",
+          "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    }
+  ]
+}

@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-grafana?
-
-[![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-grafana/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-grafana/v0.4.1?logo=docker&logoColor=fff&label=v0.4.1)](https://hub.docker.com/r/acuvity/mcp-server-grafana)
-[![GitHUB](https://img.shields.io/badge/v0.4.1-3775A9?logo=github&logoColor=fff&label=grafana/mcp-grafana)](https://github.com/grafana/mcp-grafana)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-grafana/v0.4.2?logo=docker&logoColor=fff&label=v0.4.2)](https://hub.docker.com/r/acuvity/mcp-server-grafana)
+[![GitHUB](https://img.shields.io/badge/v0.4.2-3775A9?logo=github&logoColor=fff&label=grafana/mcp-grafana)](https://github.com/grafana/mcp-grafana)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-grafana/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-grafana&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22GRAFANA_API_KEY%22%2C%22-e%22%2C%22GRAFANA_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-grafana%3Av0.4.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-grafana&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22GRAFANA_API_KEY%22%2C%22-e%22%2C%22GRAFANA_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-grafana%3Av0.4.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Access and manage Grafana dashboards and datasources.
 
@@ -175,7 +174,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-grafana&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22GRAFANA_API_KEY%22%2C%22-e%22%2C%22GRAFANA_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-grafana%3Av0.4.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-grafana&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22GRAFANA_API_KEY%22%2C%22-e%22%2C%22GRAFANA_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-grafana%3Av0.4.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -200,7 +199,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "GRAFANA_API_KEY",
           "-e",
           "GRAFANA_URL",
-          "docker.io/acuvity/mcp-server-grafana:v0.4.1"
+          "docker.io/acuvity/mcp-server-grafana:v0.4.2"
         ]
       }
     }
@@ -230,7 +229,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "GRAFANA_API_KEY",
         "-e",
         "GRAFANA_URL",
-        "docker.io/acuvity/mcp-server-grafana:v0.4.1"
+        "docker.io/acuvity/mcp-server-grafana:v0.4.2"
       ]
     }
   }
@@ -264,7 +263,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "GRAFANA_API_KEY",
         "-e",
         "GRAFANA_URL",
-        "docker.io/acuvity/mcp-server-grafana:v0.4.1"
+        "docker.io/acuvity/mcp-server-grafana:v0.4.2"
       ]
     }
   }
@@ -300,7 +299,7 @@ Add the following JSON block to your mcp configuration file:
         "GRAFANA_API_KEY",
         "-e",
         "GRAFANA_URL",
-        "docker.io/acuvity/mcp-server-grafana:v0.4.1"
+        "docker.io/acuvity/mcp-server-grafana:v0.4.2"
       ]
     }
   }
@@ -334,7 +333,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "GRAFANA_API_KEY",
         "-e",
         "GRAFANA_URL",
-        "docker.io/acuvity/mcp-server-grafana:v0.4.1"
+        "docker.io/acuvity/mcp-server-grafana:v0.4.2"
       ]
     }
   }
@@ -354,7 +353,7 @@ async with MCPServerStdio(
     params={
         "env": {"GRAFANA_API_KEY":"TO_BE_SET","GRAFANA_URL":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","GRAFANA_API_KEY","-e","GRAFANA_URL","docker.io/acuvity/mcp-server-grafana:v0.4.1"]
+        "args": ["run","-i","--rm","--read-only","-e","GRAFANA_API_KEY","-e","GRAFANA_URL","docker.io/acuvity/mcp-server-grafana:v0.4.2"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -383,7 +382,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e GRAFANA_API_KEY -e GRAFANA_URL docker.io/acuvity/mcp-server-grafana:v0.4.1`
+- arguments: `run -i --rm --read-only -e GRAFANA_API_KEY -e GRAFANA_URL docker.io/acuvity/mcp-server-grafana:v0.4.2`
 
 </details>
 
@@ -393,7 +392,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e GRAFANA_API_KEY -e GRAFANA_URL docker.io/acuvity/mcp-server-grafana:v0.4.1
+docker run -it -p 8000:8000 --rm --read-only -e GRAFANA_API_KEY -e GRAFANA_URL docker.io/acuvity/mcp-server-grafana:v0.4.2
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -1045,7 +1044,7 @@ Retrieves statistics about log streams matching a given LogQL *selector* within 
 **Description**:
 
 ```
-Query Prometheus using a PromQL expression. Supports both instant queries (at a single point in time) and range queries (over a time range).
+Query Prometheus using a PromQL expression. Supports both instant queries (at a single point in time) and range queries (over a time range). Time can be specified either in RFC3339 format or as relative time expressions like 'now', 'now-1h', 'now-30m', etc.
 ```
 
 **Parameter**:
@@ -1053,10 +1052,10 @@ Query Prometheus using a PromQL expression. Supports both instant queries (at a 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | datasourceUid | string | The UID of the datasource to query | Yes
-| endRfc3339 | string | The end time in RFC3339 format. Required if queryType is 'range', ignored if queryType is 'instant' | No
+| endTime | string | The end time. Required if queryType is 'range', ignored if queryType is 'instant' Supported formats are RFC3339 or relative to now (e.g. 'now', 'now-1.5h', 'now-2h45m'). Valid time units are 'ns', 'us' (or 'µs'), 'ms', 's', 'm', 'h', 'd'. | No
 | expr | string | The PromQL expression to query | Yes
 | queryType | string | The type of query to use. Either 'range' or 'instant' | No
-| startRfc3339 | string | The start time in RFC3339 format | Yes
+| startTime | string | The start time. Supported formats are RFC3339 or relative to now (e.g. 'now', 'now-1.5h', 'now-2h45m'). Valid time units are 'ns', 'us' (or 'µs'), 'ms', 's', 'm', 'h', 'd'. | Yes
 | stepSeconds | integer | The time series step size in seconds. Required if queryType is 'range', ignored if queryType is 'instant' | No
 </details>
 <details>
@@ -1224,12 +1223,12 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | query_loki_stats | endRfc3339 | b618361cdd496306c5cfbc4d384e44d2c6cd48d624b6d2fec78de761e56e5818 |
 | tools | query_loki_stats | logql | b1cb3a4200c20a0a08054e149ea9188b7f37c8d23608a6eac0e5bec2c6d28ce7 |
 | tools | query_loki_stats | startRfc3339 | ed7f8cb2448a6c576c7999f83de2785df5535248e84d6113db964774c9f75b59 |
-| tools | query_prometheus | description | 05c0d365b03fd420ebea7ed035e84d64f6cb06ffeeee9441a23992751f6a59fb |
+| tools | query_prometheus | description | 0f299afb58bc160f93b1427d81a89825ee0ebef53ef13c9f9c998572b531fc71 |
 | tools | query_prometheus | datasourceUid | cdfa18054a432407c4dfe44b49781c6c2019c055bf589949ff66cdc974c5e5aa |
-| tools | query_prometheus | endRfc3339 | a2154a6a8d6804bd21fd3532b4ac48fc04f526740efbfdebab4da5495b5be917 |
+| tools | query_prometheus | endTime | 1206835ea56ae6132122e47a6f40d5d44dcbfbfd3a97272d7f0ab7c228c82787 |
 | tools | query_prometheus | expr | 0fbbbd21644810e13385b56d28c235f33aab15e382cf55df948ea18dce96c9fb |
 | tools | query_prometheus | queryType | 68992fcd7b78c539691ace13028afb104f600f51a1b38639d589cda4f798186a |
-| tools | query_prometheus | startRfc3339 | 13ba7a11b929754ca04718ceb5017df289f55e690796da5a0fe151ad65f8e3a5 |
+| tools | query_prometheus | startTime | 7a1f2accb25dffeee7dcab00e69763d0af9ce9053d8f3af8c6872836c301d40f |
 | tools | query_prometheus | stepSeconds | 1503b1866c552d1fcbf827adfc059026ca099ea8b76cc90e713fa99b311e7b16 |
 | tools | search_dashboards | description | 5caec921e743f522aff3d7890a1980ff92d350deb92204f9b157890890f5fac7 |
 | tools | search_dashboards | query | 15d8dcc87d5f0e8cbf7ba4fe2425ce1e3b529f578238702762b120aa66050378 |

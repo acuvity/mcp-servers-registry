@@ -48,6 +48,8 @@ spec:
               value: {{ required "env.NEO4J_URL is required" .Values.env.NEO4J_URL}}
             - name: NEO4J_USERNAME
               value: {{ required "env.NEO4J_USERNAME is required" .Values.env.NEO4J_USERNAME}}
+            - name: NEO4J_DATABASE
+              value: {{ .Values.env.NEO4J_DATABASE}}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default (printf  "%s-%s" .Chart.Version .Chart.AppVersion) }}"

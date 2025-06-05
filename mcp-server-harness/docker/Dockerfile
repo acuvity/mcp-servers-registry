@@ -14,6 +14,7 @@ ARG TARGETOS TARGETARCH
 ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN git clone https://github.com/harness/mcp-server sources
+RUN cd sources && git checkout v1.0.0-beta
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
@@ -26,10 +27,10 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-harness"
 LABEL org.opencontainers.image.description="Provides seamless integration with Harness APIs."
-LABEL org.opencontainers.image.version="1.0.0-beta"
+LABEL org.opencontainers.image.version="v1.0.0-beta"
 LABEL org.opencontainers.image.source="https://github.com/harness/mcp-server"
-LABEL org.opencontainers.image.licenses="Apache"
-LABEL org.opencontainers.image.author="Harness"
+LABEL org.opencontainers.image.licenses="Apache License 2.0"
+LABEL org.opencontainers.image.author="harness"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 
 WORKDIR /app

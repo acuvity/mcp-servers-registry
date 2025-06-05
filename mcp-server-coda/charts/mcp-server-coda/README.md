@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-coda?
-
 [![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-coda/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-coda/1.2.1?logo=docker&logoColor=fff&label=1.2.1)](https://hub.docker.com/r/acuvity/mcp-server-coda)
-[![PyPI](https://img.shields.io/badge/1.2.1-3775A9?logo=pypi&logoColor=fff&label=coda-mcp)](https://github.com/orellazri/coda-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-coda/1.2.3?logo=docker&logoColor=fff&label=1.2.3)](https://hub.docker.com/r/acuvity/mcp-server-coda)
+[![PyPI](https://img.shields.io/badge/1.2.3-3775A9?logo=pypi&logoColor=fff&label=coda-mcp)](https://github.com/orellazri/coda-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-coda/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-coda&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_KEY%22%2C%22-e%22%2C%22DOC_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-coda%3A1.2.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-coda&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_KEY%22%2C%22-e%22%2C%22DOC_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-coda%3A1.2.3%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** MCP server for Coda.
 
@@ -174,11 +173,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-1.2.1`
+  - container: `1.0.0-1.2.3`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-coda:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-coda:1.0.0-1.2.1`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-coda:1.0.0-1.2.3`
 
 ---
 
@@ -633,7 +632,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 **Description**:
 
 ```
-List available documents
+List or search available documents
 ```
 
 **Parameter**:
@@ -781,7 +780,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | coda_get_page_content | description | 6e954360c948036e80de20759d8e143ca665cdc6375a04d22b7fe7e79c411277 |
 | tools | coda_get_page_content | docId | 48184f2c0fe56bd400f727989f61e00d5d90719df619680dce19a97250cc6039 |
 | tools | coda_get_page_content | pageIdOrName | 2660e996c27d04bf1e63551dcf2f49e3414bb72b0a97bf7fce8220bd324b64bf |
-| tools | coda_list_documents | description | 01426c08db1c7ec2037e5fedbaf9acbc38adb086e337eb7a05c71fc3d3d70652 |
+| tools | coda_list_documents | description | 71001f60d122cd04f582806689df55db58e556c49e795cfe2006c2b06436ea07 |
 | tools | coda_list_documents | query | 3327b3fff59e43d93c8a98177fb17ef6251f8317ed1678dfa0e4a71a89a0ddd4 |
 | tools | coda_list_pages | description | b70da335dd3f3b775908abe23d3fabc8d2e4c7228c8bb342fbee8c163ca48d45 |
 | tools | coda_list_pages | docId | 4b9ffcb8819b499cd57463e3e4924724e339c33e09512dcc9abde242099ae041 |

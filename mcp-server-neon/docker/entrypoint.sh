@@ -46,6 +46,6 @@ export MINIBRIDGE_OAUTH_DISABLED="${MINIBRIDGE_OAUTH_DISABLED:-"true"}"
 if [ "$#" -gt 0 ]; then
   exec minibridge ${MINIBRIDGE_MODE} -- mcp-server-neon "$@"
 else
-  exec minibridge ${MINIBRIDGE_MODE} -- mcp-server-neon start $NEON_API_KEY
+  exec minibridge ${MINIBRIDGE_MODE} -- mcp-server-neon start $NEON_API_KEY --no-analytics
 fi
 

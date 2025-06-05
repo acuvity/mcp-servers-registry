@@ -19,8 +19,7 @@
 
 
 # What is mcp-server-apple-shortcuts?
-
-[![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-apple-shortcuts/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-apple-shortcuts/1.0.1?logo=docker&logoColor=fff&label=1.0.1)](https://hub.docker.com/r/acuvity/mcp-server-apple-shortcuts)
 [![PyPI](https://img.shields.io/badge/1.0.1-3775A9?logo=pypi&logoColor=fff&label=mcp-server-apple-shortcuts)](https://github.com/recursechat/mcp-server-apple-shortcuts)

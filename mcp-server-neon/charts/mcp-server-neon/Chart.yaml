@@ -5,13 +5,13 @@ home: https://github.com/neondatabase-labs/mcp-server-neon
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/neondatabase-labs/mcp-server-neon
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-neon/logo.png"
 type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.4.1
+appVersion: 0.5.0
 keywords:
   - mcp-server-neon
   - mcp-server

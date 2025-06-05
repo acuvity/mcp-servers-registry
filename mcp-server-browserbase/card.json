@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-browserbase",
+  "icon": "https://browserbase.com/favicon.ico",
   "name": "mcp-server-browserbase",
   "description": "Automate browser interactions in the cloud (e.g. web navigation, data extraction, form filling).",
   "links":
@@ -15,7 +16,7 @@
   "version": "1.0.5",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "D",
+  "rating": {"hash":"74750b7055916481b100580aa6163a15c9b0717a079c6c311ea6228467c78be3","reason":"While tool names are clear and indicate purpose, descriptions are inconsistent with many being overly brief (e.g., 'Close the current page...', 'Resize window...'). Critical parameter descriptions are missing or inadequate - width/height lack descriptions, sessionId appears without explanation, and dummy parameters suggest incomplete documentation. The toolset has significant gaps requiring users to infer functionality and usage details.","score":"D"},
   "resources": {
     "tools": 19,
     "prompts": 0,

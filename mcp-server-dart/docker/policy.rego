@@ -98,6 +98,8 @@ _cross_tool_exclude := [
 	#
 	"delete_task",
 	#
+	"add_task_comment",
+	#
 	"list_docs",
 	#
 	"create_doc",

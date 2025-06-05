@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-agentql",
+  "icon": "https://www.agentql.com/favicon/favicon.png",
+  "name": "mcp-server-agentql",
+  "description": "Enable AI agents to get structured data from unstructured web with AgentQL.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-agentql",
+      "application": "https://github.com/tinyfish-io/agentql-mcp"
+    },
+  "tags": ["web","development"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1.0.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"b8371d99698b079dea7e1faa75e0e01d094ba8c2ee0fe06c0a80eda24319423e","reason":"Tool name clearly indicates web data extraction purpose. Description adequately explains functionality and mentions JSON output format. Both parameters have clear descriptions explaining their purpose - URL for target webpage and prompt for natural language data description. However, the description could be more comprehensive about limitations, supported websites, or what constitutes valid natural language descriptions.","score":"B"},
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-google-drive",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-google-drive",
   "description": "File access and search capabilities for Google Drive.",
   "links":
@@ -15,7 +16,7 @@
   "version": "2025.1.14",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "nil",
+  "rating": null,
   "resources": {
   }
 }

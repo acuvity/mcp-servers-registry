@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-scrapezy",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/scrapezy/live/logo-1744789567776.png",
   "name": "mcp-server-scrapezy",
   "description": "Extracts structured data from websites using AI models.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.1.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "C",
+  "rating": {"hash":"fafecbd7b239acddf089e75f48e66a49e821b42a5503fb37258477d423f66cc8","reason":"The tool name is clear and specific, but the description is overly brief and lacks important context about what type of structured data can be extracted, how the prompt should be formatted, or what the tool's capabilities and limitations are. The parameter descriptions are minimal - 'prompt' lacks guidance on how to construct effective prompts, and while 'url' is adequately described with proper format constraints, overall documentation leaves significant gaps requiring users to guess implementation details.","score":"D"},
   "resources": {
     "tools": 1,
     "prompts": 0,

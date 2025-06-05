@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-microsoft-graph",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-microsoft-graph",
   "description": "Connect to microsoft API to get applications, sites users and more.",
   "links":
@@ -15,7 +16,7 @@
   "version": "1.0.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "nil",
+  "rating": null,
   "resources": {
   }
 }

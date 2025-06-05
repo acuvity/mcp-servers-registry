@@ -1,4 +1,4 @@
-FROM golang:1.24.2-alpine3.21 AS minibridge
+FROM golang:1.24 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
+    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
 
 FROM ghcr.io/astral-sh/uv:python3.12-alpine
 
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-elevenlabs"
 LABEL org.opencontainers.image.description="Enables voice synthesis and audio processing via APIs."
-LABEL org.opencontainers.image.version="0.3.0"
+LABEL org.opencontainers.image.version="0.4.0"
 LABEL org.opencontainers.image.source="https://github.com/elevenlabs/elevenlabs-mcp"
 LABEL org.opencontainers.image.licenses="MIT License"
 LABEL org.opencontainers.image.author="Jacek Duszenko <jacek@elevenlabs.io>, Paul Asjes <paul.asjes@elevenlabs.io>, Louis Jordan <louis@elevenlabs.io>, Luke Harries <luke@elevenlabs.io>"
@@ -43,7 +43,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uv venv && uv pip install elevenlabs-mcp==0.3.0
+RUN uv venv && uv pip install elevenlabs-mcp==0.4.0
 
 EXPOSE 8000/tcp
 

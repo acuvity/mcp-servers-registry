@@ -1,0 +1,22 @@
+{
+  "id": "mcp-server-adfin",
+  "icon": "https://invoxx-public-bucket.s3.eu-central-1.amazonaws.com/frontend-resources/adfin-logo-small.svg",
+  "name": "mcp-server-adfin",
+  "description": "All-in-one payment platform with invoicing and accounting reconciliations via Adfin.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-adfin",
+      "application": "https://github.com/Adfin-Engineering/mcp-server-adfin"
+    },
+  "tags": ["finance"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.1.1",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": null,
+  "resources": {
+  }
+}

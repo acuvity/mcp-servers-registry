@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-21st-dev-magic",
+  "icon": "https://www.21st.dev/favicon.ico",
   "name": "mcp-server-21st-dev-magic",
   "description": "Create crafted UI components inspired by the best 21st.dev design engineers.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.0.47",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "C",
+  "rating": {"hash":"fe3ec17aa8048729950763df84c89008ef87f888ead3292182cf05824bbcbbff","reason":"Tool names are descriptive and clearly indicate purpose within the 21st.dev ecosystem. Descriptions adequately explain functionality with 2-3 sentences covering what each tool does and when to use it. However, parameter descriptions vary in quality - some like 'searchQuery' have good constraints and guidance, while others like 'context' are verbose but unclear about expected input format. The overall documentation is functional but lacks the comprehensive clarity and consistent parameter descriptions needed for higher grades.","score":"C"},
   "resources": {
     "tools": 4,
     "prompts": 0,

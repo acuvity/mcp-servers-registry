@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-aws-core",
+  "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
   "name": "mcp-server-aws-core",
   "description": "Core AWS MCP server providing prompt understanding and server management capabilities.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.2.5",
+  "version": "1.0.1",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "D",
+  "rating": {"hash":"008247a131c22a9c3c2eb4f26f0efae9fde093050da4a04bb3950cb8abf6e632","reason":"Tool name is vague and non-descriptive, description is tautological ('Prompt Understanding' tool for 'Prompt Understanding'), contains no actual functionality explanation, and has empty input schema with no parameters or guidance on what the tool actually does or when to use it.","score":"F"},
   "resources": {
     "tools": 1,
     "prompts": 0,

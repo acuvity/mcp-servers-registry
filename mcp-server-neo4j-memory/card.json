@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-neo4j-memory",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/neo4j-cloud-aura-api/live/logo-1746435894823.png",
   "name": "mcp-server-neo4j-memory",
   "description": "Provides persistent memory capabilities through Neo4j graph database integration.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"a3e370b70defe5d73f1c147100c07f138ed548b6f6e7ae922212bd2ed3f236b0","reason":"The toolset provides adequate but minimal documentation. Tool names are clear and purposeful, indicating their Neo4j knowledge graph operations well. However, descriptions are consistently brief (1 sentence each) and lack important context about when to use each tool, what results to expect, or key limitations. Parameter descriptions are basic but functional, clearly indicating purpose and types. While usable, the documentation leaves users with questions about tool behavior, return formats, and usage patterns that would benefit from more comprehensive explanations.","score":"C"},
   "resources": {
     "tools": 10,
     "prompts": 0,

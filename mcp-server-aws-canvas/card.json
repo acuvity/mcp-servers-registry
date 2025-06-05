@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-aws-canvas",
+  "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
   "name": "mcp-server-aws-canvas",
   "description": "Generate images using Amazon Nova Canvas with text prompts and color guidance.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.2.8",
+  "version": "1.0.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "nil",
+  "rating": null,
   "resources": {
   }
 }

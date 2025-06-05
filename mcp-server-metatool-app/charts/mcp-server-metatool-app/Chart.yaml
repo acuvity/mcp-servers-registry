@@ -5,13 +5,13 @@ home: https://github.com/metatool-ai/metatool-app
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/metatool-ai/metatool-app
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-metatool-app/logo.png"
 type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.6.0
+appVersion: 0.6.5
 keywords:
   - mcp-server-metatool-app
   - mcp-server

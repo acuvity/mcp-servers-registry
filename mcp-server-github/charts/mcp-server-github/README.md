@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-github?
-
-[![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-github/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-github/v0.3.0?logo=docker&logoColor=fff&label=v0.3.0)](https://hub.docker.com/r/acuvity/mcp-server-github)
-[![GitHUB](https://img.shields.io/badge/v0.3.0-3775A9?logo=github&logoColor=fff&label=github/github-mcp-server)](https://github.com/github/github-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-github/v0.4.0?logo=docker&logoColor=fff&label=v0.4.0)](https://hub.docker.com/r/acuvity/mcp-server-github)
+[![GitHUB](https://img.shields.io/badge/v0.4.0-3775A9?logo=github&logoColor=fff&label=github/github-mcp-server)](https://github.com/github/github-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-github/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-github&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22GITHUB_PERSONAL_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-github%3Av0.3.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-github&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22GITHUB_PERSONAL_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-github%3Av0.4.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** GitHub's official MCP Server
 
@@ -174,11 +173,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-v0.3.0`
+  - container: `1.0.0-v0.4.0`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-github:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-github:1.0.0-v0.3.0`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-github:1.0.0-v0.4.0`
 
 ---
 
@@ -628,7 +627,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (40)
+## 🧰 Tools (51)
 <details>
 <summary>add_issue_comment</summary>
 
@@ -648,12 +647,12 @@ Add a comment to a specific issue in a GitHub repository.
 | repo | string | Repository name | Yes
 </details>
 <details>
-<summary>add_pull_request_review_comment</summary>
+<summary>add_pull_request_review_comment_to_pending_review</summary>
 
 **Description**:
 
 ```
-Add a review comment to a pull request.
+Add a comment to the requester's latest pending pull request review, a pending review needs to already exist to call this (check with the user if not sure). If you are using the LINE subjectType, use the get_line_number_in_pull_request_file tool to get an exact line number before commenting.
 ```
 
 **Parameter**:
@@ -661,17 +660,60 @@ Add a review comment to a pull request.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | body | string | The text of the review comment | Yes
-| commit_id | string | The SHA of the commit to comment on. Required unless in_reply_to is specified. | No
-| in_reply_to | number | The ID of the review comment to reply to. When specified, only body is required and all other parameters are ignored | No
 | line | number | The line of the blob in the pull request diff that the comment applies to. For multi-line comments, the last line of the range | No
 | owner | string | Repository owner | Yes
-| path | string | The relative path to the file that necessitates a comment. Required unless in_reply_to is specified. | No
-| pull_number | number | Pull request number | Yes
+| path | string | The relative path to the file that necessitates a comment | Yes
+| pullNumber | number | Pull request number | Yes
 | repo | string | Repository name | Yes
-| side | string | The side of the diff to comment on | No
-| start_line | number | For multi-line comments, the first line of the range that the comment applies to | No
-| start_side | string | For multi-line comments, the starting side of the diff that the comment applies to | No
-| subject_type | string | The level at which the comment is targeted | No
+| side | string | The side of the diff to comment on. LEFT indicates the previous state, RIGHT indicates the new state | No
+| startLine | number | For multi-line comments, the first line of the range that the comment applies to | No
+| startSide | string | For multi-line comments, the starting side of the diff that the comment applies to. LEFT indicates the previous state, RIGHT indicates the new state | No
+| subjectType | string | The level at which the comment is targeted | Yes
+</details>
+<details>
+<summary>assign_copilot_to_issue</summary>
+
+**Description**:
+
+```
+Assign Copilot to a specific issue in a GitHub repository.
+
+This tool can help with the following outcomes:
+- a Pull Request created with source code changes to resolve the issue
+
+
+More information can be found at:
+- https://docs.github.com/en/copilot/using-github-copilot/using-copilot-coding-agent-to-work-on-tasks/about-assigning-tasks-to-copilot
+
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| issueNumber | number | Issue number | Yes
+| owner | string | Repository owner | Yes
+| repo | string | Repository name | Yes
+</details>
+<details>
+<summary>create_and_submit_pull_request_review</summary>
+
+**Description**:
+
+```
+Create and submit a review for a pull request without review comments.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| body | string | Review comment text | Yes
+| commitID | string | SHA of commit to review | No
+| event | string | Review action to perform | Yes
+| owner | string | Repository owner | Yes
+| pullNumber | number | Pull request number | Yes
+| repo | string | Repository name | Yes
 </details>
 <details>
 <summary>create_branch</summary>
@@ -734,6 +776,24 @@ Create or update a single file in a GitHub repository. If updating, you must pro
 | sha | string | SHA of file being replaced (for updates) | No
 </details>
 <details>
+<summary>create_pending_pull_request_review</summary>
+
+**Description**:
+
+```
+Create a pending review for a pull request. Call this first before attempting to add comments to a pending review, and ultimately submitting it. A pending pull request review means a pull request review, it is pending because you create it first and submit it later, and the PR author will not see it until it is submitted.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| commitID | string | SHA of commit to review | No
+| owner | string | Repository owner | Yes
+| pullNumber | number | Pull request number | Yes
+| repo | string | Repository name | Yes
+</details>
+<details>
 <summary>create_pull_request</summary>
 
 **Description**:
@@ -754,27 +814,6 @@ Create a new pull request in a GitHub repository.
 | owner | string | Repository owner | Yes
 | repo | string | Repository name | Yes
 | title | string | PR title | Yes
-</details>
-<details>
-<summary>create_pull_request_review</summary>
-
-**Description**:
-
-```
-Create a review for a pull request.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| body | string | Review comment text | No
-| comments | array | Line-specific comments array of objects to place comments on pull request changes. Requires path and body. For line comments use line or position. For multi-line comments use start_line and line with optional side parameters. | No
-| commitId | string | SHA of commit to review | No
-| event | string | Review action to perform | Yes
-| owner | string | Repository owner | Yes
-| pullNumber | number | Pull request number | Yes
-| repo | string | Repository name | Yes
 </details>
 <details>
 <summary>create_repository</summary>
@@ -812,6 +851,39 @@ Delete a file from a GitHub repository
 | owner | string | Repository owner (username or organization) | Yes
 | path | string | Path to the file to delete | Yes
 | repo | string | Repository name | Yes
+</details>
+<details>
+<summary>delete_pending_pull_request_review</summary>
+
+**Description**:
+
+```
+Delete the requester's latest pending pull request review. Use this after the user decides not to submit a pending review, if you don't know if they already created one then check first.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| owner | string | Repository owner | Yes
+| pullNumber | number | Pull request number | Yes
+| repo | string | Repository name | Yes
+</details>
+<details>
+<summary>dismiss_notification</summary>
+
+**Description**:
+
+```
+Dismiss a notification by marking it as read or done
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| state | string | The new state of the notification (read/done) | No
+| threadID | string | The ID of the notification thread | Yes
 </details>
 <details>
 <summary>fork_repository</summary>
@@ -926,14 +998,29 @@ Get comments for a specific issue in a GitHub repository.
 **Description**:
 
 ```
-Get details of the authenticated GitHub user. Use this when a request include "me", "my"...
+Get details of the authenticated GitHub user. Use this when a request includes "me", "my". The output will not change unless the user changes their profile, so only call this once.
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| reason | string | Optional: reason the session was created | No
+| reason | string | Optional: the reason for requesting the user information | No
+</details>
+<details>
+<summary>get_notification_details</summary>
+
+**Description**:
+
+```
+Get detailed information for a specific GitHub notification, always call this tool when the user asks for details about a specific notification, if you don't know the ID list notifications first.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| notificationID | string | The ID of the notification | Yes
 </details>
 <details>
 <summary>get_pull_request</summary>
@@ -959,6 +1046,23 @@ Get details of a specific pull request in a GitHub repository.
 
 ```
 Get comments for a specific pull request.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| owner | string | Repository owner | Yes
+| pullNumber | number | Pull request number | Yes
+| repo | string | Repository name | Yes
+</details>
+<details>
+<summary>get_pull_request_diff</summary>
+
+**Description**:
+
+```
+Get the diff of a pull request.
 ```
 
 **Parameter**:
@@ -1135,6 +1239,27 @@ List issues in a GitHub repository.
 | state | string | Filter by state | No
 </details>
 <details>
+<summary>list_notifications</summary>
+
+**Description**:
+
+```
+Lists all GitHub notifications for the authenticated user, including unread notifications, mentions, review requests, assignments, and updates on issues or pull requests. Use this tool whenever the user asks what to work on next, requests a summary of their GitHub activity, wants to see pending reviews, or needs to check for new updates or tasks. This tool is the primary way to discover actionable items, reminders, and outstanding work on GitHub. Always call this tool when asked what to work on next, what is pending, or what needs attention in GitHub.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| before | string | Only show notifications updated before the given time (ISO 8601 format) | No
+| filter | string | Filter notifications to, use default unless specified. Read notifications are ones that have already been acknowledged by the user. Participating notifications are those that the user is directly involved in, such as issues or pull requests they have commented on or created. | No
+| owner | string | Optional repository owner. If provided with repo, only notifications for this repository are listed. | No
+| page | number | Page number for pagination (min 1) | No
+| perPage | number | Results per page for pagination (min 1, max 100) | No
+| repo | string | Optional repository name. If provided with owner, only notifications for this repository are listed. | No
+| since | string | Only show notifications updated after the given time (ISO 8601 format) | No
+</details>
+<details>
 <summary>list_pull_requests</summary>
 
 **Description**:
@@ -1193,6 +1318,56 @@ List git tags in a GitHub repository
 | page | number | Page number for pagination (min 1) | No
 | perPage | number | Results per page for pagination (min 1, max 100) | No
 | repo | string | Repository name | Yes
+</details>
+<details>
+<summary>manage_notification_subscription</summary>
+
+**Description**:
+
+```
+Manage a notification subscription: ignore, watch, or delete a notification thread subscription.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| action | string | Action to perform: ignore, watch, or delete the notification subscription. | Yes
+| notificationID | string | The ID of the notification thread. | Yes
+</details>
+<details>
+<summary>manage_repository_notification_subscription</summary>
+
+**Description**:
+
+```
+Manage a repository notification subscription: ignore, watch, or delete repository notifications subscription for the provided repository.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| action | string | Action to perform: ignore, watch, or delete the repository notification subscription. | Yes
+| owner | string | The account owner of the repository. | Yes
+| repo | string | The name of the repository. | Yes
+</details>
+<details>
+<summary>mark_all_notifications_read</summary>
+
+**Description**:
+
+```
+Mark all notifications as read
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| lastReadAt | string | Describes the last point that notifications were checked (optional). Default: Now | No
+| owner | string | Optional repository owner. If provided with repo, only notifications for this repository are marked as read. | No
+| repo | string | Optional repository name. If provided with owner, only notifications for this repository are marked as read. | No
 </details>
 <details>
 <summary>merge_pull_request</summary>
@@ -1325,6 +1500,25 @@ Search for GitHub users
 | sort | string | Sort field by category | No
 </details>
 <details>
+<summary>submit_pending_pull_request_review</summary>
+
+**Description**:
+
+```
+Submit the requester's latest pending pull request review, normally this is a final step after creating a pending review, adding comments first, unless you know that the user already did the first two steps, you should check before calling this.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| body | string | The text of the review comment | No
+| event | string | The event to perform | Yes
+| owner | string | Repository owner | Yes
+| pullNumber | number | Pull request number | Yes
+| repo | string | Repository name | Yes
+</details>
+<details>
 <summary>update_issue</summary>
 
 **Description**:
@@ -1400,19 +1594,28 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | add_issue_comment | issue_number | 55508553706f381501225c1367bc7f12548ab08da5ce677d10875fb316ee3ce4 |
 | tools | add_issue_comment | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
 | tools | add_issue_comment | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | add_pull_request_review_comment | description | 43e4b5f7efea8e0669bb93ff2278759801be9587ddb04b15133870300684bac5 |
-| tools | add_pull_request_review_comment | body | 150bf72e1256c35c56d58cce6912ae25bb0a02e2a048a422297a7eead2024635 |
-| tools | add_pull_request_review_comment | commit_id | 9069a6843465d00eccd533d78bed87ea5d4ceb313230c7cacc54755e79b98838 |
-| tools | add_pull_request_review_comment | in_reply_to | 516313212479077b2a058b8d792e88fd75d67d923e22f6160477be7276718913 |
-| tools | add_pull_request_review_comment | line | 819e79a56ebb1ecd61715def06ef3dda6306d32677da2d9c797a17ea0c2fe4bc |
-| tools | add_pull_request_review_comment | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
-| tools | add_pull_request_review_comment | path | 8c7c87f1a8b168380c995c8bf1610dbe0af9bb72bdcf770ac3ba4e37f70f76bd |
-| tools | add_pull_request_review_comment | pull_number | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
-| tools | add_pull_request_review_comment | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | add_pull_request_review_comment | side | 85e03845e1cd96ec3eaec2d871420dab0a2fd45267f4eaa0e3b7070854f3c094 |
-| tools | add_pull_request_review_comment | start_line | 19184c9e73d4d7fbb9661702c5af2054059047e4b6cfc56b0e66f31fe3c2ba16 |
-| tools | add_pull_request_review_comment | start_side | 4a49cb10f1305f775326b0b486cd9612333c13de063b30ac98262a7e091596cf |
-| tools | add_pull_request_review_comment | subject_type | 12fc508ce13c1c2a9607f35cb7add1b0335cddf96c243530df7db80cab254182 |
+| tools | add_pull_request_review_comment_to_pending_review | description | 3c66a3942bb4b6cee8360f6b05c41a0e4f371fe3bdbe3ed8cd319849bb44e3b6 |
+| tools | add_pull_request_review_comment_to_pending_review | body | 150bf72e1256c35c56d58cce6912ae25bb0a02e2a048a422297a7eead2024635 |
+| tools | add_pull_request_review_comment_to_pending_review | line | 819e79a56ebb1ecd61715def06ef3dda6306d32677da2d9c797a17ea0c2fe4bc |
+| tools | add_pull_request_review_comment_to_pending_review | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
+| tools | add_pull_request_review_comment_to_pending_review | path | ad65a27b6cdd3e833939b5c162ff0e5e105a2a0d8120a83907c1c286c6ce1c6b |
+| tools | add_pull_request_review_comment_to_pending_review | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
+| tools | add_pull_request_review_comment_to_pending_review | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
+| tools | add_pull_request_review_comment_to_pending_review | side | a8c682b21f75d5200a487c37af5d312ed2fe67abca69116aa93eb2a7ae228b5c |
+| tools | add_pull_request_review_comment_to_pending_review | startLine | 19184c9e73d4d7fbb9661702c5af2054059047e4b6cfc56b0e66f31fe3c2ba16 |
+| tools | add_pull_request_review_comment_to_pending_review | startSide | 6a4676ef00a54ce3692d9292bdd8dea138dceffd9d3a2bd7af22f2b776395448 |
+| tools | add_pull_request_review_comment_to_pending_review | subjectType | 12fc508ce13c1c2a9607f35cb7add1b0335cddf96c243530df7db80cab254182 |
+| tools | assign_copilot_to_issue | description | d9f189d6cd4dc4e14f648c16825a32209ecb55bc1528e8d7a5c5d47a936312f3 |
+| tools | assign_copilot_to_issue | issueNumber | b90458b6339c0e14f5cea20207035c8a316ca33c0fda5d372ab8c4fc51fdb075 |
+| tools | assign_copilot_to_issue | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
+| tools | assign_copilot_to_issue | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
+| tools | create_and_submit_pull_request_review | description | b65276bcbe2570c4078cdcdd9f341cd364e5d420264d94d7c95df01c6feb0040 |
+| tools | create_and_submit_pull_request_review | body | 305435be37ca49348dd59f76ed78d1d3db653263c87268f19e38edd8e9903f8a |
+| tools | create_and_submit_pull_request_review | commitID | 8edaee0cc39481736353ab6b261838e08ea25f5a48ff2235247349671fd2d092 |
+| tools | create_and_submit_pull_request_review | event | 91cce26ef9317542f329d7df06c21c3f7640f53bac235489e5537867c87b579e |
+| tools | create_and_submit_pull_request_review | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
+| tools | create_and_submit_pull_request_review | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
+| tools | create_and_submit_pull_request_review | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
 | tools | create_branch | description | 178c4aa2cad9c4dec2d6883eb0913ba5385f367e681e9d97cb751a2eb0983645 |
 | tools | create_branch | branch | 23431660a4982622d8107024b732941aab6327a832c6715c57299e716e175d88 |
 | tools | create_branch | from_branch | 5fa655e2e4b9da16f3de9e22d4d842abb6226464a2e91758242eacc4fec42dc9 |
@@ -1434,6 +1637,11 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | create_or_update_file | path | c57e5f48646295c4493f5d052c3ce4d46f88f8c963d162f44c187ff5defa6791 |
 | tools | create_or_update_file | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
 | tools | create_or_update_file | sha | aedc7ce1b7de89c1f0197052ccff35b4ed4f7836d9d93f2fc154b02d7ed67c75 |
+| tools | create_pending_pull_request_review | description | 81133c7429aaf6de4a3c1b39812a0e540bea242f847c4e635915b0fb372a0422 |
+| tools | create_pending_pull_request_review | commitID | 8edaee0cc39481736353ab6b261838e08ea25f5a48ff2235247349671fd2d092 |
+| tools | create_pending_pull_request_review | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
+| tools | create_pending_pull_request_review | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
+| tools | create_pending_pull_request_review | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
 | tools | create_pull_request | description | b3ce1a8e1c8396e567b2df7957109ec2298ca873d8084f9a9c033f39657f3572 |
 | tools | create_pull_request | base | 68d3d352a8e9b1b21daef0144ddbd5ebbfdfafa1c150afd9184f2889aeba0f54 |
 | tools | create_pull_request | body | 6b20fc28a2739e184ca6e00b2e894ed90a2213780fe67c05664a6917b26e1010 |
@@ -1443,14 +1651,6 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | create_pull_request | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
 | tools | create_pull_request | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
 | tools | create_pull_request | title | 878bfb1640ec1cecdf8cab8f3c62f5413e6b4084e0e1a4494df8f65a5a5eebf7 |
-| tools | create_pull_request_review | description | ac26ae3df0a104e274609e1af385e26be731c344cb5061a8420b2a1ca7231137 |
-| tools | create_pull_request_review | body | 305435be37ca49348dd59f76ed78d1d3db653263c87268f19e38edd8e9903f8a |
-| tools | create_pull_request_review | comments | 0112ff59985194d41ebb916c7c90ada3cff928b2d2d8b09e0f63034e89065185 |
-| tools | create_pull_request_review | commitId | 8edaee0cc39481736353ab6b261838e08ea25f5a48ff2235247349671fd2d092 |
-| tools | create_pull_request_review | event | 91cce26ef9317542f329d7df06c21c3f7640f53bac235489e5537867c87b579e |
-| tools | create_pull_request_review | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
-| tools | create_pull_request_review | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
-| tools | create_pull_request_review | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
 | tools | create_repository | description | f44928d7808fe825e9451518452be54abfa32929ece5256d2c96a8c91f7df5d1 |
 | tools | create_repository | autoInit | fb659aaef50b97ff2f1d0518139663caef0d38424fc1107a8bf1a0cd7d7a637b |
 | tools | create_repository | description | 2b96b72a003b28027236e3a9d7b66958233d752e92381122915202c3c00f6058 |
@@ -1462,6 +1662,13 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | delete_file | owner | 637f8af6d00297f7764a512ae2421160b429cfc1592dcf476db18f1f2d9521b6 |
 | tools | delete_file | path | d4e57b1045d6bdf511b312f8574c99772b8c03cc0528da2604ebc5f7d6daa335 |
 | tools | delete_file | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
+| tools | delete_pending_pull_request_review | description | a98af500cdc7ac540520f6a1927d0b9aec9d47abc7d7fca32cbcfc0d4c8e3968 |
+| tools | delete_pending_pull_request_review | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
+| tools | delete_pending_pull_request_review | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
+| tools | delete_pending_pull_request_review | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
+| tools | dismiss_notification | description | 72806460489c61ba45e9f10a43ff5b5f5cf5d43155b64b4d192cffe3979c0305 |
+| tools | dismiss_notification | state | 80c2b70a2d60321a56fcd4a56d6f2118f18ff42da296406b28f49283ae40d5e5 |
+| tools | dismiss_notification | threadID | 962f9d0f9e05ca7be087c4469fa646fa0736953d173654910e94a0d5f817a1c2 |
 | tools | fork_repository | description | b9c81712c56e48175df559052b73f7e28646208f961b6b61c3ac3f3545eef86f |
 | tools | fork_repository | organization | 715d8a3a0d64573efa8d492a5ac06ccf88e4ecb1db7a7b6cb0d30ee9369e6ccb |
 | tools | fork_repository | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
@@ -1491,8 +1698,10 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | get_issue_comments | page | 05fa2e3b0a10226acb6eb73c76977fe622ae5d2e1c11d1e00ea5e83da9321069 |
 | tools | get_issue_comments | per_page | 1da3c6e59c56c4f9ee1b4b0efd181852a0424750dc1dcce569d8a7fab419b678 |
 | tools | get_issue_comments | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | get_me | description | d77fb42681f3a5318efa4edfd0001c01fb63b8d4cfe1e6d5d9ba94a3f702b4c1 |
-| tools | get_me | reason | d73c654f9f80bd273b750233b6a38a9abc07756f3652b33c8f1c51ea83eac9dc |
+| tools | get_me | description | 9f897aa25f945c469a123122a5063c852f2660916835d4f3a310f809b4900c11 |
+| tools | get_me | reason | 67773473a042cb954c921a6bb447ad1fe2f4702a37cbebe7e00e88b3c35748b2 |
+| tools | get_notification_details | description | ec76845152fc49b3d76ac0087fe8752555ea3631b04d04d6a8d0f153cb0e1176 |
+| tools | get_notification_details | notificationID | 2a05833ca06d7a872d98001b3ac22be64ef6cfffa973772867b821b4ed5e421f |
 | tools | get_pull_request | description | ee092d1809d130e6bca75b71d2147a78e1d0a20bb08535182b5e7f037eafccb7 |
 | tools | get_pull_request | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
 | tools | get_pull_request | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
@@ -1501,6 +1710,10 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | get_pull_request_comments | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
 | tools | get_pull_request_comments | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
 | tools | get_pull_request_comments | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
+| tools | get_pull_request_diff | description | 3e6c9aeb744fcfd564c176afe15c2df8ce5dbfa7e034db9cd27704ce49dc4d7f |
+| tools | get_pull_request_diff | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
+| tools | get_pull_request_diff | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
+| tools | get_pull_request_diff | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
 | tools | get_pull_request_files | description | b1b26ff4305b4953a717913d7eec40389a6a2505544520107611a86a5a48f29f |
 | tools | get_pull_request_files | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
 | tools | get_pull_request_files | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
@@ -1549,6 +1762,14 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | list_issues | since | ea0dd87c74f5845692af7bc86972f1f210d984342fb26602fe35c0c04a3a49cd |
 | tools | list_issues | sort | 3c9b30285f90cf05528b2502044ec5c2b125b6c1885be9af8aeff0ba722fffbb |
 | tools | list_issues | state | 2b25d08228e3152d0b529fbf269381f1f000c2adf30f1186b7e9ac7eb2cba425 |
+| tools | list_notifications | description | d10e656b1bf56afd6198d99dfbacab9b89240e71050cb766e6fc4e1952e4cc1c |
+| tools | list_notifications | before | 8f3368c0cc20a07762d9ec5aedc6d3372c203d23d6a2e02c83941d4635cdf22d |
+| tools | list_notifications | filter | 6cff8ccd8331867367670666112d79969f23f7f39a92b0c292e4e24b1ec745ef |
+| tools | list_notifications | owner | 8e2cb4e3bf5d60a3aaac76a355e6de92a51d40a991243707ff5f7d8bae965ec0 |
+| tools | list_notifications | page | b7c5240244916494e69b93a6fc0ad57b364a457e44ef68ed22739cb55ffb1359 |
+| tools | list_notifications | perPage | 059dde8a01aac1a755c9e5efbbfaccb57fa34c3988494a154c873dfa7779a1d7 |
+| tools | list_notifications | repo | dca9d8fa52d40f94ac6413179eca8f64af79142cc78de65050c1e7c6931a5a65 |
+| tools | list_notifications | since | 2ec0b5bca09cc7fd1a3925f6fc0d35407e6bc1e95afcefeb3ed6f2eb0e5cf9c9 |
 | tools | list_pull_requests | description | f26161311922a22f509a5758def0b5736e9d57dab5a64de85cd6943ac3323cf9 |
 | tools | list_pull_requests | base | 3915eefd074b833c42fa1a78466ff3667210bb7cd9e867bce531f6d69b6b25f1 |
 | tools | list_pull_requests | direction | 29c8371d927b118d8d71544c8c8d336f340b0fe893a48faa5a746880f578f373 |
@@ -1570,6 +1791,17 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | list_tags | page | b7c5240244916494e69b93a6fc0ad57b364a457e44ef68ed22739cb55ffb1359 |
 | tools | list_tags | perPage | 059dde8a01aac1a755c9e5efbbfaccb57fa34c3988494a154c873dfa7779a1d7 |
 | tools | list_tags | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
+| tools | manage_notification_subscription | description | be32b04a7ce2d90c4cf1ba0bfe8674b5eeed86fdac39522df6afe856d12b0a06 |
+| tools | manage_notification_subscription | action | 87165d54f132e25027bff709b19d191159dd029cf91fa180622a068a711468fd |
+| tools | manage_notification_subscription | notificationID | 621468ca2aa0eb1aa72bca26d3013ae8c4d200a6e66c5acf1f19e14ea5cd6452 |
+| tools | manage_repository_notification_subscription | description | 97e8f7279d5f6b8b031b73e5ecc55d093571b3eb9d4e244a65bc9acd31e907a1 |
+| tools | manage_repository_notification_subscription | action | ef0feed55d6ab9d2fc3a525a0fd662f1171691fcb8117f898df7290d1262a84f |
+| tools | manage_repository_notification_subscription | owner | dbf176c46bfb0ed84c9b81bea412da323f5912c25c9f54639916cd97e696f291 |
+| tools | manage_repository_notification_subscription | repo | 077296c2d63a8df1f5032955887382a08bef79c0c8c9d5d5470ecb09dc10bb45 |
+| tools | mark_all_notifications_read | description | 87e6c2a922e258ce8d6383d847f1cb480037d95d9baa6d366cf10fbca63a4c0b |
+| tools | mark_all_notifications_read | lastReadAt | 5d6a1f0fd2976b4afa70352c96bbca354414a3e178d571da71a713fabbcd33ff |
+| tools | mark_all_notifications_read | owner | c9850214816046dfdfca79df5569362340c4017116b2277684c90884b342c894 |
+| tools | mark_all_notifications_read | repo | 91e6d20fc5b1f0b5e86911e5662348e757761b7e3e0f9ea3739cb1a37ba09304 |
 | tools | merge_pull_request | description | 124cd641ce348386107609b1831084962d2198fa82fe58f7a040dd7e1cebb6b4 |
 | tools | merge_pull_request | commit_message | 8b3fd7f52419bc6922db1546614fcd15e214033be38066ff4cd1cbb841ba27ce |
 | tools | merge_pull_request | commit_title | df303c95cc0cb2a4ceb92b29c47c9b965ec484d53b5fee6add5c9189e2f96342 |
@@ -1609,6 +1841,12 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | search_users | perPage | 059dde8a01aac1a755c9e5efbbfaccb57fa34c3988494a154c873dfa7779a1d7 |
 | tools | search_users | q | 411fdded1833c9660c80d3528c9fe3117d7fc0efd34b8f6756fd7dd82b6b16fd |
 | tools | search_users | sort | 7b4f03e0b12896994cd874649134fe440d505ae1eafaa19f7f330a8b2fa4b055 |
+| tools | submit_pending_pull_request_review | description | 61929abd9c3ecaf274c5ecabcf310474f023dc63a93f029ffb624704bf789061 |
+| tools | submit_pending_pull_request_review | body | 150bf72e1256c35c56d58cce6912ae25bb0a02e2a048a422297a7eead2024635 |
+| tools | submit_pending_pull_request_review | event | 9cebe2efbb82f53c7afe8547fddd42a8324b996564d9b38efc390d1d028e07cf |
+| tools | submit_pending_pull_request_review | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
+| tools | submit_pending_pull_request_review | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
+| tools | submit_pending_pull_request_review | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
 | tools | update_issue | description | 84a37c5e28746e6ff6c9ec1063d35d03b623e2124107697514916fcd04dd54ea |
 | tools | update_issue | assignees | 09ed592a172e1fab692d52395b578ddb80014f1348ab79b3685483856aecfbef |
 | tools | update_issue | body | 23b7ce65508de7bbfb013fd25a384491f896e839f62116c96813ec6f53945e98 |

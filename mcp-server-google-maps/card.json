@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-google-maps",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-google-maps",
   "description": "MCP server for using the Google Maps API",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.6.2",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "C",
+  "rating": {"hash":"503d6a386d17c4cb3fe803d3d8f8d1d41a6e67c9e24573e108088d0097f02aed","reason":"Tool names are clear and intuitive with 'maps_' prefix indicating purpose. Most descriptions are brief but adequate (1-2 sentences) explaining core functionality. Parameter descriptions are basic but sufficient to understand purpose and types. However, descriptions lack detail about when to use each tool, what specific information is returned, limitations, or constraints beyond basic enum values. Some tools like maps_search_places and maps_place_details could benefit from more context about their relationship and usage scenarios.","score":"C"},
   "resources": {
     "tools": 7,
     "prompts": 0,

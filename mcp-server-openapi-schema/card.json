@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-openapi-schema",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-openapi-schema",
   "description": "Exposes OpenAPI schemas for LLMs to explore and understand APIs.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.0.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"7fcf271e91718beddd2328535fcbeccb765d08a3eee584795dbca83b4f7b8af3","reason":"The toolset has clear, purposeful names and basic descriptions that outline main functionality, but lacks comprehensive context about usage scenarios and limitations. Parameter descriptions are minimal - most parameters only specify type without explaining their purpose or providing examples (e.g., 'method' and 'path' parameters lack descriptions in most tools). While the tools are functionally understandable, users would need to infer many details about proper usage and parameter formats.","score":"C"},
   "resources": {
     "tools": 10,
     "prompts": 0,

@@ -19,8 +19,6 @@
 
 
 # What is mcp-server-base?
-
-[![Rating](https://img.shields.io/badge/<no value>-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-base/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-base/1.0.13?logo=docker&logoColor=fff&label=1.0.13)](https://hub.docker.com/r/acuvity/mcp-server-base)
 [![PyPI](https://img.shields.io/badge/1.0.13-3775A9?logo=pypi&logoColor=fff&label=base-mcp)](https://github.com/base/base-mcp)

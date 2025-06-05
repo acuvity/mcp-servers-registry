@@ -5,7 +5,7 @@ home: https://github.com/neo4j-contrib/mcp-neo4j
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/neo4j-contrib/mcp-neo4j
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-neo4j-aura/logo.png"
 type: application
 maintainers:
   - name: Acuvity

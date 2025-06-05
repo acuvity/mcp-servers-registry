@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-aws-diagram?
-
 [![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-aws-diagram/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-diagram/0.9.6?logo=docker&logoColor=fff&label=0.9.6)](https://hub.docker.com/r/acuvity/mcp-server-aws-diagram)
-[![PyPI](https://img.shields.io/badge/0.9.6-3775A9?logo=pypi&logoColor=fff&label=awslabs.aws-diagram-mcp-server)](https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-diagram/1.0.1?logo=docker&logoColor=fff&label=1.0.1)](https://hub.docker.com/r/acuvity/mcp-server-aws-diagram)
+[![PyPI](https://img.shields.io/badge/1.0.1-3775A9?logo=pypi&logoColor=fff&label=awslabs.aws-diagram-mcp-server)](https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-aws-diagram/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-diagram&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-diagram%3A0.9.6%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-diagram&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-diagram%3A1.0.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Create diagrams using the Python diagrams package: sequence, flow, and class diagrams.
 
@@ -171,7 +170,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-diagram&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-diagram%3A0.9.6%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-diagram&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-diagram%3A1.0.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -188,7 +187,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "-i",
           "--rm",
           "--read-only",
-          "docker.io/acuvity/mcp-server-aws-diagram:0.9.6"
+          "docker.io/acuvity/mcp-server-aws-diagram:1.0.1"
         ]
       }
     }
@@ -210,7 +209,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-aws-diagram:0.9.6"
+        "docker.io/acuvity/mcp-server-aws-diagram:1.0.1"
       ]
     }
   }
@@ -236,7 +235,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-aws-diagram:0.9.6"
+        "docker.io/acuvity/mcp-server-aws-diagram:1.0.1"
       ]
     }
   }
@@ -264,7 +263,7 @@ Add the following JSON block to your mcp configuration file:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-aws-diagram:0.9.6"
+        "docker.io/acuvity/mcp-server-aws-diagram:1.0.1"
       ]
     }
   }
@@ -290,7 +289,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-aws-diagram:0.9.6"
+        "docker.io/acuvity/mcp-server-aws-diagram:1.0.1"
       ]
     }
   }
@@ -309,7 +308,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 async with MCPServerStdio(
     params={
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-aws-diagram:0.9.6"]
+        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-aws-diagram:1.0.1"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -338,7 +337,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-aws-diagram:0.9.6`
+- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-aws-diagram:1.0.1`
 
 </details>
 
@@ -348,7 +347,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-aws-diagram:0.9.6
+docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-aws-diagram:1.0.1
 ```
 
 Then on your application/client, you can configure to use it like:

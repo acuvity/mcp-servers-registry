@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-paypal",
+  "icon": "https://avatars.githubusercontent.com/u/476675?s=200&v=4",
   "name": "mcp-server-paypal",
   "description": "A Model Context Protocol (MCP) server that enables AI models to interact with PayPal Apis.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "A",
+  "rating": {"hash":"f09777d6c4b6e4b5e52690cb03db57ffeee16e6171796c4163e453946d056384","reason":"The toolset demonstrates good documentation quality overall. Tool names are clear and purposeful (e.g., 'create_invoice', 'list_transactions', 'cancel_subscription'). Most descriptions provide adequate context about functionality and usage, though some vary in completeness - some are concise and effective while others like 'create_product' include excessive implementation details. Parameter documentation is generally strong with clear descriptions of purpose, types, and constraints including proper enums and required fields. However, there are minor inconsistencies like 'show_product_details' having a misleading description that doesn't match its actual function, and some tools could benefit from clearer usage context. The documentation would enable effective usage despite these small gaps.","score":"B"},
   "resources": {
     "tools": 26,
     "prompts": 0,

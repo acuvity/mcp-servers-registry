@@ -1,6 +1,20 @@
 {
   "tools": [
     {
+      "name": "add_task_comment",
+      "hash": "f2a5001374ab87b88bfc8eab11e21d7db731623223d6a975945aa7f9d224460d",
+      "params": [
+        {
+          "name": "taskId",
+          "hash": "310575c03a01f518120c4b24c0e723828d57433eb1d1465c4b4357d4a2870a5d"
+        },
+        {
+          "name": "text",
+          "hash": "e22399fede3b192987e603c20f841b02659a68930a7e870d29b2278c9ed44c17"
+        }
+      ]
+    },
+    {
       "name": "create_doc",
       "hash": "b1099bc1c729560ace3a50fad194e64553b4c93e6a123c680526f77a54bb4093",
       "params": [

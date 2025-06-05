@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-base",
+  "icon": "https://avatars.githubusercontent.com/u/16627100?s=200&v=4",
   "name": "mcp-server-base",
   "description": "Onchain integration for Base Network and Coinbase API manage wallets, transfers, contracts and DeFi.",
   "links":
@@ -15,7 +16,7 @@
   "version": "1.0.13",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "nil",
+  "rating": null,
   "resources": {
   }
 }

@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-harness?
-
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-harness/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-harness/1.0.0-beta?logo=docker&logoColor=fff&label=1.0.0-beta)](https://hub.docker.com/r/acuvity/mcp-server-harness)
-[![GitHUB](https://img.shields.io/badge/1.0.0-beta-3775A9?logo=github&logoColor=fff&label=harness/mcp-server)](https://github.com/harness/mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-harness/v1.0.0-beta?logo=docker&logoColor=fff&label=v1.0.0-beta)](https://hub.docker.com/r/acuvity/mcp-server-harness)
+[![GitHUB](https://img.shields.io/badge/v1.0.0-beta-3775A9?logo=github&logoColor=fff&label=harness/mcp-server)](https://github.com/harness/mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-harness/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-harness&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22HARNESS_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-harness%3A1.0.0-beta%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-harness&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22HARNESS_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-harness%3Av1.0.0-beta%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Provides seamless integration with Harness APIs.
 
@@ -154,7 +153,7 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Maintained by**:
   - [Acuvity team](mailto:support@acuvity.ai) for packaging
-  - [ Harness ](https://github.com/harness/mcp-server) for original source application
+  - [ harness ](https://github.com/harness/mcp-server) for original source application
 
 **Where to get help**:
   - [The Acuvity MCP Forge repository](https://github.com/acuvity/mcp-servers-registry)
@@ -177,13 +176,13 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
   - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-harness/docker/Dockerfile)
 
 **Latest tags:**
-  - `latest` -> `1.0.0-1.0.0-beta` -> `1.0.0-beta`
+  - `latest` -> `1.0.0-v1.0.0-beta` -> `v1.0.0-beta`
   - [older tags](https://hub.docker.com/r/acuvity/mcp-server-harness/tags)
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-harness:latest`
-  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-harness:1.0.0-beta`
-  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-harness:1.0.0-1.0.0-beta`
+  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-harness:v1.0.0-beta`
+  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-harness:1.0.0-v1.0.0-beta`
 
 # 📦 How to Install
 
@@ -214,7 +213,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-harness&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22HARNESS_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-harness%3A1.0.0-beta%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-harness&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22HARNESS_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-harness%3Av1.0.0-beta%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -236,7 +235,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "--read-only",
           "-e",
           "HARNESS_API_KEY",
-          "docker.io/acuvity/mcp-server-harness:1.0.0-beta"
+          "docker.io/acuvity/mcp-server-harness:v1.0.0-beta"
         ]
       }
     }
@@ -263,7 +262,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "--read-only",
         "-e",
         "HARNESS_API_KEY",
-        "docker.io/acuvity/mcp-server-harness:1.0.0-beta"
+        "docker.io/acuvity/mcp-server-harness:v1.0.0-beta"
       ]
     }
   }
@@ -294,7 +293,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "--read-only",
         "-e",
         "HARNESS_API_KEY",
-        "docker.io/acuvity/mcp-server-harness:1.0.0-beta"
+        "docker.io/acuvity/mcp-server-harness:v1.0.0-beta"
       ]
     }
   }
@@ -327,7 +326,7 @@ Add the following JSON block to your mcp configuration file:
         "--read-only",
         "-e",
         "HARNESS_API_KEY",
-        "docker.io/acuvity/mcp-server-harness:1.0.0-beta"
+        "docker.io/acuvity/mcp-server-harness:v1.0.0-beta"
       ]
     }
   }
@@ -358,7 +357,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "--read-only",
         "-e",
         "HARNESS_API_KEY",
-        "docker.io/acuvity/mcp-server-harness:1.0.0-beta"
+        "docker.io/acuvity/mcp-server-harness:v1.0.0-beta"
       ]
     }
   }
@@ -378,7 +377,7 @@ async with MCPServerStdio(
     params={
         "env": {"HARNESS_API_KEY":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","HARNESS_API_KEY","docker.io/acuvity/mcp-server-harness:1.0.0-beta"]
+        "args": ["run","-i","--rm","--read-only","-e","HARNESS_API_KEY","docker.io/acuvity/mcp-server-harness:v1.0.0-beta"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -407,7 +406,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e HARNESS_API_KEY docker.io/acuvity/mcp-server-harness:1.0.0-beta`
+- arguments: `run -i --rm --read-only -e HARNESS_API_KEY docker.io/acuvity/mcp-server-harness:v1.0.0-beta`
 
 </details>
 
@@ -417,7 +416,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e HARNESS_API_KEY docker.io/acuvity/mcp-server-harness:1.0.0-beta
+docker run -it -p 8000:8000 --rm --read-only -e HARNESS_API_KEY docker.io/acuvity/mcp-server-harness:v1.0.0-beta
 ```
 
 Then on your application/client, you can configure to use it like:

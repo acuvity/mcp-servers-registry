@@ -146,6 +146,10 @@ _cross_tool_exclude := [
 	#
 	"update_wiki_page",
 	#
+	"list_wiki_pages",
+	#
+	"create_wiki_page",
+	#
 	# exclude word that might be misdetected
 	"to",
 	"this",

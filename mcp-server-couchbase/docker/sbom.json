@@ -1,0 +1,29 @@
+{
+  "tools": [
+    {
+      "name": "delete_document_by_id",
+      "hash": "9ded5fcf1b254398af7d7fb222d27e93d6e16ce898bdcda1f64bdaaa8d8fc314"
+    },
+    {
+      "name": "get_document_by_id",
+      "hash": "9dea2bd24d3030ebd73e6aba3c63de1b52120bdb6d1334dafe59fae00e293449"
+    },
+    {
+      "name": "get_schema_for_collection",
+      "hash": "1154beaebf7b28f8d59e0b1afaf848d712a21a49fabd8f2dc716a5d5b0d93f59"
+    },
+    {
+      "name": "get_scopes_and_collections_in_bucket",
+      "hash": "efe7d3d1be691820880f3b269b1ee990191191c778910669b6aa0d004f47c750"
+    },
+    {
+      "name": "run_sql_plus_plus_query",
+      "hash": "6e6ece7084d38e7d701c336df789314e7f4226f40945135b4402a039897f7741"
+    },
+    {
+      "name": "upsert_document_by_id",
+      "hash": "5a18d6395136ea4d1350da95edf6b17bb24b4c5fde07633ab2e74694a563abff"
+    }
+  ],
+  "prompts": []
+}

@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-basic-memory",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-basic-memory",
   "description": "Local-first knowledge management combining Zettelkasten with knowledge graphs",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.12.3",
   "requiresConfiguration": false,
   "requiresStorage": true,
-  "rating": "C",
+  "rating": {"hash":"b6188697e384bfa8beabec46ed8c36793664c58030b304cf26c034acab11ca6a","reason":"Tool names are clear and intuitive, indicating their purposes well. Most descriptions adequately explain functionality, with some tools like 'build_context' and 'recent_activity' providing good detail about usage. However, parameter descriptions are largely missing or inadequate - most parameters only have generic titles without explaining their purpose, constraints, or how they affect tool behavior. The documentation leaves users guessing about parameter usage despite having clear tool-level descriptions.","score":"C"},
   "resources": {
     "tools": 9,
     "prompts": 3,

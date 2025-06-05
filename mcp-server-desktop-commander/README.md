@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-desktop-commander?
-
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-desktop-commander/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-desktop-commander/0.2.1?logo=docker&logoColor=fff&label=0.2.1)](https://hub.docker.com/r/acuvity/mcp-server-desktop-commander)
-[![PyPI](https://img.shields.io/badge/0.2.1-3775A9?logo=pypi&logoColor=fff&label=@wonderwhy-er/desktop-commander)](https://github.com/wonderwhy-er/DesktopCommanderMCP)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-desktop-commander/0.2.2?logo=docker&logoColor=fff&label=0.2.2)](https://hub.docker.com/r/acuvity/mcp-server-desktop-commander)
+[![PyPI](https://img.shields.io/badge/0.2.2-3775A9?logo=pypi&logoColor=fff&label=@wonderwhy-er/desktop-commander)](https://github.com/wonderwhy-er/DesktopCommanderMCP)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-desktop-commander/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-desktop-commander&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22docker.io%2Facuvity%2Fmcp-server-desktop-commander%3A0.2.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-desktop-commander&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22docker.io%2Facuvity%2Fmcp-server-desktop-commander%3A0.2.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** A swiss-army-knife that can manage/execute programs and read/write/search/edit code and text files.
 
@@ -174,7 +173,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-desktop-commander&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22docker.io%2Facuvity%2Fmcp-server-desktop-commander%3A0.2.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-desktop-commander&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22docker.io%2Facuvity%2Fmcp-server-desktop-commander%3A0.2.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -193,7 +192,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "--read-only",
           "--tmpfs",
           "/tmp:rw,nosuid,nodev",
-          "docker.io/acuvity/mcp-server-desktop-commander:0.2.1"
+          "docker.io/acuvity/mcp-server-desktop-commander:0.2.2"
         ]
       }
     }
@@ -217,7 +216,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "--read-only",
         "--tmpfs",
         "/tmp:rw,nosuid,nodev",
-        "docker.io/acuvity/mcp-server-desktop-commander:0.2.1"
+        "docker.io/acuvity/mcp-server-desktop-commander:0.2.2"
       ]
     }
   }
@@ -245,7 +244,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "--read-only",
         "--tmpfs",
         "/tmp:rw,nosuid,nodev",
-        "docker.io/acuvity/mcp-server-desktop-commander:0.2.1"
+        "docker.io/acuvity/mcp-server-desktop-commander:0.2.2"
       ]
     }
   }
@@ -275,7 +274,7 @@ Add the following JSON block to your mcp configuration file:
         "--read-only",
         "--tmpfs",
         "/tmp:rw,nosuid,nodev",
-        "docker.io/acuvity/mcp-server-desktop-commander:0.2.1"
+        "docker.io/acuvity/mcp-server-desktop-commander:0.2.2"
       ]
     }
   }
@@ -303,7 +302,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "--read-only",
         "--tmpfs",
         "/tmp:rw,nosuid,nodev",
-        "docker.io/acuvity/mcp-server-desktop-commander:0.2.1"
+        "docker.io/acuvity/mcp-server-desktop-commander:0.2.2"
       ]
     }
   }
@@ -322,7 +321,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 async with MCPServerStdio(
     params={
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","--tmpfs","/tmp:rw,nosuid,nodev","docker.io/acuvity/mcp-server-desktop-commander:0.2.1"]
+        "args": ["run","-i","--rm","--read-only","--tmpfs","/tmp:rw,nosuid,nodev","docker.io/acuvity/mcp-server-desktop-commander:0.2.2"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -351,7 +350,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only --tmpfs /tmp:rw,nosuid,nodev docker.io/acuvity/mcp-server-desktop-commander:0.2.1`
+- arguments: `run -i --rm --read-only --tmpfs /tmp:rw,nosuid,nodev docker.io/acuvity/mcp-server-desktop-commander:0.2.2`
 
 </details>
 
@@ -361,7 +360,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only --tmpfs /tmp:rw,nosuid,nodev docker.io/acuvity/mcp-server-desktop-commander:0.2.1
+docker run -it -p 8000:8000 --rm --read-only --tmpfs /tmp:rw,nosuid,nodev docker.io/acuvity/mcp-server-desktop-commander:0.2.2
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -858,7 +857,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 |-----------|------|-------------|-----------|
 | command | string | not set | Yes
 | shell | string | not set | No
-| timeout_ms | number | not set | No
+| timeout_ms | number | not set | Yes
 </details>
 <details>
 <summary>read_output</summary>
@@ -868,6 +867,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 ```
 
                         Read new output from a running terminal session.
+                        Set timeout_ms for long running commands.
                         
                         This command can be referenced as "DC: ..." or "use Desktop Commander to ..." in your instructions.
 ```
@@ -877,6 +877,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | pid | number | not set | Yes
+| timeout_ms | number | not set | No
 </details>
 <details>
 <summary>force_terminate</summary>
@@ -973,7 +974,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | move_file | description | ed4294c075e3f891f9980b6e3b458cb72967ae77d7b78b4fc2bc8330702b81ac |
 | tools | read_file | description | 1cf5c80e1e4c660811ad42d6d501ff4305aec66e51ff41a55c473c53cf2567fc |
 | tools | read_multiple_files | description | a565fd247993616d89e9cd247c024346f76fd65d2a21c994a0128b335b1b8752 |
-| tools | read_output | description | 8b6db9bf385727181092dcd3175db07d6af4db9eaf7dab894d284e8410959920 |
+| tools | read_output | description | 01171776821f6acb671fd54c2e0b6d223c5f1a4765f2b9b7bba7f76e9fda79d2 |
 | tools | search_code | description | 9e69a945172aebff5fc61dbe9522e0e285ef1e581ec74e02c63e07d114821f75 |
 | tools | search_files | description | f41652d2fd0f701958c382769c9a1dca4989b0f1eeb8fc83b32b7ef051e8aff5 |
 | tools | set_config_value | description | 155afe1d85ebd07ac64f76703797548c8b48a1e2a3d63b14c2369633527df389 |

@@ -19,8 +19,6 @@
 
 
 # What is mcp-server-axiom?
-
-[![Rating](https://img.shields.io/badge/<no value>-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-axiom/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-axiom/v0.0.1?logo=docker&logoColor=fff&label=v0.0.1)](https://hub.docker.com/r/acuvity/mcp-server-axiom)
 [![GitHUB](https://img.shields.io/badge/v0.0.1-3775A9?logo=github&logoColor=fff&label=axiomhq/mcp-server-axiom)](https://github.com/axiomhq/mcp-server-axiom)

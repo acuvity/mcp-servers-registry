@@ -19,8 +19,7 @@
 
 
 # What is mcp-server-dappier?
-
-[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-dappier/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-dappier/0.3.2?logo=docker&logoColor=fff&label=0.3.2)](https://hub.docker.com/r/acuvity/mcp-server-dappier)
 [![PyPI](https://img.shields.io/badge/0.3.2-3775A9?logo=pypi&logoColor=fff&label=dappier-mcp)](https://github.com/dappierai/dappier-mcp)

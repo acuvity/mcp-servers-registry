@@ -5,13 +5,13 @@ home: https://github.com/benborla/mcp-server-mysql
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/benborla/mcp-server-mysql
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-benborla-mysql/logo.png"
 type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 2.0.0
+appVersion: 2.0.2
 keywords:
   - mcp-server-benborla-mysql
   - mcp-server

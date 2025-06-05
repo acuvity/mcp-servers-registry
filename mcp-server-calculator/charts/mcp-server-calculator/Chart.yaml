@@ -5,7 +5,7 @@ home: https://github.com/githejie/mcp-server-calculator
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/githejie/mcp-server-calculator
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-calculator/logo.png"
 type: application
 maintainers:
   - name: Acuvity

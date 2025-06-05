@@ -19,13 +19,11 @@
 
 
 # What is mcp-server-metatool-app?
-
-[![Rating](https://img.shields.io/badge/F-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-metatool-app/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-metatool-app/0.6.0?logo=docker&logoColor=fff&label=0.6.0)](https://hub.docker.com/r/acuvity/mcp-server-metatool-app)
-[![PyPI](https://img.shields.io/badge/0.6.0-3775A9?logo=pypi&logoColor=fff&label=@metamcp/mcp-server-metamcp)](https://github.com/metatool-ai/metatool-app)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-metatool-app/0.6.5?logo=docker&logoColor=fff&label=0.6.5)](https://hub.docker.com/r/acuvity/mcp-server-metatool-app)
+[![PyPI](https://img.shields.io/badge/0.6.5-3775A9?logo=pypi&logoColor=fff&label=@metamcp/mcp-server-metamcp)](https://github.com/metatool-ai/metatool-app)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-metatool-app/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-metatool-app&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22METAMCP_API_BASE_URL%22%2C%22-e%22%2C%22METAMCP_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-metatool-app%3A0.6.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-metatool-app&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22METAMCP_API_BASE_URL%22%2C%22-e%22%2C%22METAMCP_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-metatool-app%3A0.6.5%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** MetaMCP is the one unified middleware MCP server that manages your MCP connections with GUI.
 
@@ -177,13 +175,13 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
   - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-metatool-app/docker/Dockerfile)
 
 **Latest tags:**
-  - `latest` -> `1.0.0-0.6.0` -> `0.6.0`
+  - `latest` -> `1.0.0-0.6.5` -> `0.6.5`
   - [older tags](https://hub.docker.com/r/acuvity/mcp-server-metatool-app/tags)
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-metatool-app:latest`
-  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-metatool-app:0.6.0`
-  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-metatool-app:1.0.0-0.6.0`
+  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-metatool-app:0.6.5`
+  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-metatool-app:1.0.0-0.6.5`
 
 # 📦 How to Install
 
@@ -210,7 +208,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-metatool-app&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22METAMCP_API_BASE_URL%22%2C%22-e%22%2C%22METAMCP_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-metatool-app%3A0.6.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-metatool-app&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22METAMCP_API_BASE_URL%22%2C%22-e%22%2C%22METAMCP_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-metatool-app%3A0.6.5%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -235,7 +233,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "METAMCP_API_BASE_URL",
           "-e",
           "METAMCP_API_KEY",
-          "docker.io/acuvity/mcp-server-metatool-app:0.6.0"
+          "docker.io/acuvity/mcp-server-metatool-app:0.6.5"
         ]
       }
     }
@@ -265,7 +263,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "METAMCP_API_BASE_URL",
         "-e",
         "METAMCP_API_KEY",
-        "docker.io/acuvity/mcp-server-metatool-app:0.6.0"
+        "docker.io/acuvity/mcp-server-metatool-app:0.6.5"
       ]
     }
   }
@@ -299,7 +297,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "METAMCP_API_BASE_URL",
         "-e",
         "METAMCP_API_KEY",
-        "docker.io/acuvity/mcp-server-metatool-app:0.6.0"
+        "docker.io/acuvity/mcp-server-metatool-app:0.6.5"
       ]
     }
   }
@@ -335,7 +333,7 @@ Add the following JSON block to your mcp configuration file:
         "METAMCP_API_BASE_URL",
         "-e",
         "METAMCP_API_KEY",
-        "docker.io/acuvity/mcp-server-metatool-app:0.6.0"
+        "docker.io/acuvity/mcp-server-metatool-app:0.6.5"
       ]
     }
   }
@@ -369,7 +367,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "METAMCP_API_BASE_URL",
         "-e",
         "METAMCP_API_KEY",
-        "docker.io/acuvity/mcp-server-metatool-app:0.6.0"
+        "docker.io/acuvity/mcp-server-metatool-app:0.6.5"
       ]
     }
   }
@@ -389,7 +387,7 @@ async with MCPServerStdio(
     params={
         "env": {"METAMCP_API_BASE_URL":"TO_BE_SET","METAMCP_API_KEY":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","METAMCP_API_BASE_URL","-e","METAMCP_API_KEY","docker.io/acuvity/mcp-server-metatool-app:0.6.0"]
+        "args": ["run","-i","--rm","--read-only","-e","METAMCP_API_BASE_URL","-e","METAMCP_API_KEY","docker.io/acuvity/mcp-server-metatool-app:0.6.5"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -418,7 +416,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e METAMCP_API_BASE_URL -e METAMCP_API_KEY docker.io/acuvity/mcp-server-metatool-app:0.6.0`
+- arguments: `run -i --rm --read-only -e METAMCP_API_BASE_URL -e METAMCP_API_KEY docker.io/acuvity/mcp-server-metatool-app:0.6.5`
 
 </details>
 
@@ -428,7 +426,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e METAMCP_API_BASE_URL -e METAMCP_API_KEY docker.io/acuvity/mcp-server-metatool-app:0.6.0
+docker run -it -p 8000:8000 --rm --read-only -e METAMCP_API_BASE_URL -e METAMCP_API_KEY docker.io/acuvity/mcp-server-metatool-app:0.6.5
 ```
 
 Then on your application/client, you can configure to use it like:

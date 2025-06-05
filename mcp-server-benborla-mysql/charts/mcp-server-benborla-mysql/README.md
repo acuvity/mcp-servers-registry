@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-benborla-mysql?
-
-[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-benborla-mysql/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-benborla-mysql/2.0.0?logo=docker&logoColor=fff&label=2.0.0)](https://hub.docker.com/r/acuvity/mcp-server-benborla-mysql)
-[![PyPI](https://img.shields.io/badge/2.0.0-3775A9?logo=pypi&logoColor=fff&label=@benborla29/mcp-server-mysql)](https://github.com/benborla/mcp-server-mysql)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-benborla-mysql/2.0.2?logo=docker&logoColor=fff&label=2.0.2)](https://hub.docker.com/r/acuvity/mcp-server-benborla-mysql)
+[![PyPI](https://img.shields.io/badge/2.0.2-3775A9?logo=pypi&logoColor=fff&label=@benborla29/mcp-server-mysql)](https://github.com/benborla/mcp-server-mysql)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-benborla-mysql/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-benborla-mysql&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22MYSQL_HOST%22%2C%22-e%22%2C%22MYSQL_USER%22%2C%22-e%22%2C%22MYSQL_PASS%22%2C%22-e%22%2C%22MYSQL_DB%22%2C%22docker.io%2Facuvity%2Fmcp-server-benborla-mysql%3A2.0.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-benborla-mysql&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22MYSQL_HOST%22%2C%22-e%22%2C%22MYSQL_USER%22%2C%22-e%22%2C%22MYSQL_PASS%22%2C%22-e%22%2C%22MYSQL_DB%22%2C%22docker.io%2Facuvity%2Fmcp-server-benborla-mysql%3A2.0.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** MySQL database integration in NodeJS with configurable access controls and schema inspection.
 
@@ -174,11 +173,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-2.0.0`
+  - container: `1.0.0-2.0.2`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-benborla-mysql:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-benborla-mysql:1.0.0-2.0.0`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-benborla-mysql:1.0.0-2.0.2`
 
 ---
 
@@ -643,7 +642,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 **Description**:
 
 ```
-Run SQL queries against MySQL database with support for: INSERT, UPDATE, DELETE and READ operations
+[MySQL MCP Server [vundefined]] Run SQL queries against MySQL database with support for: INSERT, UPDATE, DELETE and READ operations
 ```
 
 **Parameter**:
@@ -660,7 +659,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
-| tools | mysql_query | description | bbf7a08e0f63e3039458951045f6f203c1f9d6cb95f4ee4817eac8dca6f18d48 |
+| tools | mysql_query | description | 0a73faebde1536c76227d8bb98021ae75480e186c0d0ded95b7a4f86fe52c994 |
 | tools | mysql_query | sql | 738307ab7126bafa0eec815bd5bbc403d34b383b361c819895575181aded847c |
 
 

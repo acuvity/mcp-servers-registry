@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-atlas-docs",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/atlas-docs/live/logo-1744788874628.png",
   "name": "mcp-server-atlas-docs",
   "description": "Provides AI assistants with technical docs for libraries and frameworks.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.2.0",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "A",
+  "rating": {"hash":"dff61ed395fdde10134ae91a7b89d887077fd7ae6009cb6564e3ba3176eb79e0","reason":"Tool names are clear and intuitive, indicating specific documentation operations. Descriptions are comprehensive (3-4 sentences each) explaining functionality, when to use each tool, what they return, and their relationships to other tools. Parameter descriptions clearly explain purpose and provide concrete examples (like pagePath format). The toolset effectively guides users through a logical workflow from discovery to detailed retrieval.","score":"A"},
   "resources": {
     "tools": 5,
     "prompts": 0,

@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-grafana",
+  "icon": "https://grafana.com/favicon.ico",
   "name": "mcp-server-grafana",
   "description": "Access and manage Grafana dashboards and datasources.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "binary",
-  "version": "v0.4.1",
+  "version": "v0.4.2",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "A",
+  "rating": {"hash":"3c936ef58d07747eb064cdd5148435e078e02eaaa08e0b80c4b27d69deb97d82","reason":"Tool names are clear and specific, consistently indicating their purpose. Most descriptions are comprehensive (2-3+ sentences) and explain functionality, usage context, and key behaviors. The majority of parameters have clear, detailed descriptions explaining their purpose and expected values. Minor gaps exist in some parameter descriptions (e.g., missing constraints for severity/status enums, some brief descriptions like 'userId'), but overall documentation quality is good with strong clarity and usability.","score":"B"},
   "resources": {
     "tools": 35,
     "prompts": 0,

@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-azure-devops",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-azure-devops",
   "description": "Azure DevOps integration for repository management, work items, and pipelines.",
   "links":
@@ -12,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.1.37",
+  "version": "0.1.39",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "C",
+  "rating": {"hash":"aff8d92e2f0861aafc94caf3f62be94b38ae36edd30479515d66d6c17b97f77a","reason":"Tool names are clear and specific, indicating their Azure DevOps purpose well. Most descriptions adequately explain functionality in 1-2 sentences with good context about what each tool does. Parameter descriptions are generally clear and complete, explaining purpose, types, and expected values effectively. Some tools like 'get_all_repositories_tree' and search functions have particularly thorough documentation. Minor gaps exist in a few areas where descriptions could be slightly more comprehensive, but overall the documentation provides sufficient guidance for proper tool usage.","score":"B"},
   "resources": {
-    "tools": 30,
+    "tools": 32,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

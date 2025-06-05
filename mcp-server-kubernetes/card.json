@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-kubernetes",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-kubernetes",
   "description": "Typescript implementation of Kubernetes cluster operations for pods, deployments, services.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "native",
   "mutitenant": true,
   "runtime": "node",
-  "version": "2.1.0",
+  "version": "2.2.1",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"e55e7e30e62793adeffc257f7d4f2c389efd2375ff58fadbb999ef2a03847943","reason":"The toolset provides good documentation with mostly clear tool names and adequate descriptions. Most tools have well-documented parameters with clear descriptions and appropriate constraints. However, some tools like 'cleanup' and 'port_forward' have minimal descriptions, and a few parameters lack sufficient detail about their purpose and usage context. The documentation is generally functional but could benefit from more comprehensive descriptions for complex operations.","score":"B"},
   "resources": {
     "tools": 20,
     "prompts": 0,

@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-commands",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-commands",
   "description": "Run any command with `run_command` and `run_script` tools.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.5.0",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "D",
+  "rating": {"hash":"c4b5cff78ae412ee2d0f5a35fcb3f60b6c111e6892aff7c9170bea56cdb0039c","reason":"Tool name clearly indicates purpose. Description is brief but adequately explains functionality. Parameter descriptions are clear and helpful, especially the stdin parameter with good examples. However, the main description lacks important details about security considerations, command output handling, and usage limitations that would be expected for a system command execution tool.","score":"C"},
   "resources": {
     "tools": 1,
     "prompts": 1,

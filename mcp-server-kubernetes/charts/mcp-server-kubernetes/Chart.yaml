@@ -5,13 +5,13 @@ home: https://github.com/Flux159/mcp-server-kubernetes
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/Flux159/mcp-server-kubernetes
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-kubernetes/logo.png"
 type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 2.1.0
+appVersion: 2.2.1
 keywords:
   - mcp-server-kubernetes
   - mcp-server

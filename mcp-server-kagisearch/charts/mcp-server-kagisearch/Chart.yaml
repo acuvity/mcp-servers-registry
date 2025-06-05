@@ -5,7 +5,7 @@ home: https://github.com/kagisearch/kagimcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/kagisearch/kagimcp
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-kagisearch/logo.png"
 type: application
 maintainers:
   - name: Acuvity

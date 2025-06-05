@@ -25,6 +25,10 @@
           "hash": "da57ecb43f91bd7f5d6eec67c321b2e0ae8a8714c3e0719902b2adedfb56e6d4"
         },
         {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
+        },
+        {
           "name": "title",
           "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
         },
@@ -63,6 +67,10 @@
           "hash": "d37095b67bd434c0d79727cb8f0c8261dddb092008eeb538ace5a33047c4e000"
         },
         {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
+        },
+        {
           "name": "title",
           "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
         },
@@ -86,7 +94,7 @@
         },
         {
           "name": "data",
-          "hash": "6f35d87a83f01fa3193fc7aed5de24020fb5bf10c2d6c8f2abbab553775ff6ce"
+          "hash": "e3fcfeb0b22c9163bdf59863d78ba7cdaa5c1840506c7c3e532b6a7d3ccddfc6"
         },
         {
           "name": "group",
@@ -99,6 +107,10 @@
         {
           "name": "stack",
           "hash": "a3c00e77509d640c44a25a688a7a979e5806b9437976686bc59a26d2e0985a12"
+        },
+        {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
         },
         {
           "name": "title",
@@ -127,6 +139,14 @@
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
         },
         {
+          "name": "series",
+          "hash": "369e0a4a71699a2b28958eaef6c42cc94b6ec5506406ee6f8e7e1d2dc0c3d989"
+        },
+        {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
+        },
+        {
           "name": "title",
           "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
         },
@@ -149,6 +169,10 @@
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
         },
         {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
+        },
+        {
           "name": "width",
           "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
         }
@@ -165,6 +189,10 @@
         {
           "name": "height",
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
         },
         {
           "name": "width",
@@ -195,6 +223,10 @@
         {
           "name": "height",
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
         },
         {
           "name": "title",
@@ -231,6 +263,10 @@
           "hash": "94ebe7342735fc11d93fead5b58d420f17706a780cfd3774c1d7169a9c1361af"
         },
         {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
+        },
+        {
           "name": "title",
           "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
         },
@@ -253,6 +289,10 @@
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
         },
         {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
+        },
+        {
           "name": "width",
           "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
         }
@@ -269,6 +309,10 @@
         {
           "name": "height",
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
         },
         {
           "name": "width",
@@ -293,6 +337,10 @@
           "hash": "1c0986959a56de7933a38d7d8781a68e883cc6b31b1fa82d74a82c5ba07ff4c5"
         },
         {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
+        },
+        {
           "name": "title",
           "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
         },
@@ -313,6 +361,10 @@
         {
           "name": "height",
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
         },
         {
           "name": "title",
@@ -345,6 +397,10 @@
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
         },
         {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
+        },
+        {
           "name": "title",
           "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
         },
@@ -367,6 +423,10 @@
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
         },
         {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
+        },
+        {
           "name": "title",
           "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
         },
@@ -382,11 +442,15 @@
       "params": [
         {
           "name": "data",
-          "hash": "2aeb67a1626ca271b2f9343fe7070a2023f722a7dd486e729d73ee92ffaaca14"
+          "hash": "96cefdd74b2a99e0ea12f31dd504b58d37f9111d393feb6e25642a1cfc0db0d4"
         },
         {
           "name": "height",
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
         },
         {
           "name": "title",

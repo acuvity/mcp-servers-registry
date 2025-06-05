@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-tavily",
+  "icon": "https://tavily.com/favicon.ico",
   "name": "mcp-server-tavily",
   "description": "Integrates AI models with web search and data extraction tools.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "A",
+  "rating": {"hash":"bef382d75e886606aeee86b9e2c11f3509bce50755428133dc115eb13639608f","reason":"The toolset demonstrates good documentation quality with clear, descriptive tool names and comprehensive descriptions that explain functionality and use cases. Parameter documentation is generally thorough with helpful details like constraints, defaults, and examples. Minor weaknesses include some inconsistent parameter descriptions (e.g., 'usrls' typo in tavily-extract, unclear country default value) and occasional verbosity, but overall the documentation effectively guides users through the tools' capabilities.","score":"B"},
   "resources": {
     "tools": 4,
     "prompts": 0,

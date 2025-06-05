@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-github",
+  "icon": "https://avatars.githubusercontent.com/u/9919?s=200&v=4",
   "name": "mcp-server-github",
   "description": "GitHub's official MCP Server",
   "links":
@@ -10,14 +11,14 @@
   "tags": ["development","automation","integration"],
   "official": true,
   "scope": "remote",
-  "mutitenant": false,
+  "mutitenant": true,
   "runtime": "binary",
-  "version": "v0.3.0",
+  "version": "v0.4.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "A",
+  "rating": {"hash":"b6cd535a065583de34feba6649a7a8de5f437ec884d51c7f6819d8cfe89a4410","reason":"Tool names are clear and specific indicating GitHub functionality. Most descriptions adequately explain what each tool does and when to use it, with some excellent examples like 'list_notifications' providing comprehensive context. Parameter descriptions are generally clear with good use of enums and constraints. However, some tools have minimal descriptions (e.g., 'get_tag', 'list_branches') and a few complex tools could benefit from more detailed usage guidance.","score":"B"},
   "resources": {
-    "tools": 40,
+    "tools": 51,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

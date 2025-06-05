@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-adfin"
+description: "A Helm chart for All-in-one payment platform with invoicing and accounting reconciliations via Adfin."
+home: https://github.com/Adfin-Engineering/mcp-server-adfin
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/Adfin-Engineering/mcp-server-adfin
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-adfin/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.1.1
+keywords:
+  - mcp-server-adfin
+  - mcp-server
+  - remote
+  - finance

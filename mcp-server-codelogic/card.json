@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-codelogic",
+  "icon": "https://codelogic.com/wp-content/themes/codelogic/assets/img/favicon.png",
   "name": "mcp-server-codelogic",
   "description": "CodeLogic, provides access to code dependency analytics, risk analysis, and impact assessment.",
   "links":
@@ -15,7 +16,7 @@
   "version": "1.0.3",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"6ec61b44eda16a1fcf261c99322fe3335be654e0df27882bb1d15481073e02af","reason":"Tool names are clear and specific, indicating their exact purpose (method impact analysis vs database impact analysis). Descriptions are comprehensive, explaining functionality, recommended workflows, and when to use each tool. Parameter descriptions are detailed with clear purposes, types, and constraints (enum values for entity_type). The documentation proactively addresses usage scenarios and provides step-by-step guidance.","score":"A"},
   "resources": {
     "tools": 2,
     "prompts": 0,

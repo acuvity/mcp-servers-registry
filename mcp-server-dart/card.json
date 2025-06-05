@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-dart",
+  "icon": "http://app.itsdart.com/static/img/favicon.png",
   "name": "mcp-server-dart",
   "description": "AI-powered project management server for task and document management.",
   "links":
@@ -12,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"f317a10e6a3d91f1bd47f233f56a5463dbadafc8a726148d65032b13c195156e","reason":"Tool names are clear and intuitive, indicating their purpose well. Descriptions adequately explain functionality and when to use each tool, though some could be more comprehensive. Parameter descriptions are generally clear and complete, with good use of constraints like regex patterns for IDs. The toolset provides solid documentation that would enable effective usage, with only minor gaps in detail that prevent it from reaching the highest grade.","score":"B"},
   "resources": {
-    "tools": 11,
+    "tools": 12,
     "prompts": 3,
     "resources": 0,
     "resourcesTemplates": 0

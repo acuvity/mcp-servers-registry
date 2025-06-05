@@ -5,13 +5,13 @@ home: https://github.com/Tiberriver256/mcp-server-azure-devops
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/Tiberriver256/mcp-server-azure-devops
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-azure-devops/logo.png"
 type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.1.37
+appVersion: 0.1.39
 keywords:
   - mcp-server-azure-devops
   - mcp-server

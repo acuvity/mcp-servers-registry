@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-aws-documentation",
+  "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
   "name": "mcp-server-aws-documentation",
   "description": "Fetch, convert, and search AWS documentation pages, with recommendations for related content.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.1.4",
+  "version": "1.0.1",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "A",
+  "rating": {"hash":"01405029d7e8f48cc67d2ae50f72c8e0f4cf91ab3244a55b38fd0db5134cd72b","reason":"Excellent documentation quality across all three tools. Tool names are clear and specific (read_documentation, search_documentation, recommend). Descriptions are comprehensive with detailed usage sections, clear examples, specific requirements, and practical guidance. Parameter descriptions are complete with purpose, constraints, and usage context clearly explained. Documentation proactively addresses common scenarios like handling long documents and finding new features.","score":"A"},
   "resources": {
     "tools": 3,
     "prompts": 0,

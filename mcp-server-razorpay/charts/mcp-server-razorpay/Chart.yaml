@@ -5,13 +5,13 @@ home: https://github.com/razorpay/razorpay-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/razorpay/razorpay-mcp-server
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-razorpay/logo.png"
 type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: v1.1.0
+appVersion: v1.2.0
 keywords:
   - mcp-server-razorpay
   - mcp-server

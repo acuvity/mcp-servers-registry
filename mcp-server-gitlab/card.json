@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-gitlab",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-gitlab",
   "description": "MCP server for using the GitLab API",
   "links":
@@ -15,7 +16,7 @@
   "version": "2025.4.25",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"af719205e4131aad812075e7b36ef8bd4b8b807cabbb6ffad444a5d2f0cc2f94","reason":"Tool names are clear and descriptive, indicating their GitLab-specific functionality well. However, descriptions are overly brief (1-2 words each) and fail to explain when to use each tool, what they return, or important limitations. Parameter descriptions are basic but adequate, clearly indicating purpose and expected input types. The documentation provides minimal functional context, leaving users to infer usage scenarios and behavior details.","score":"C"},
   "resources": {
     "tools": 9,
     "prompts": 0,

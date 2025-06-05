@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-vizro",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+  "name": "mcp-server-vizro",
+  "description": "provides tools and templates to create a functioning Vizro chart or dashboard step by step",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-vizro",
+      "application": "https://github.com/mckinsey/vizro"
+    },
+  "tags": ["development"],
+  "official": false,
+  "scope": "standalone",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.1.1",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"9ffff6e8e65726fa28e35f9e987dd76555818cb2fccc9f47621e0c021909c7d2","reason":"The toolset demonstrates good documentation quality overall. Names are clear and purposeful, descriptions adequately explain functionality and usage context (though some could be more concise), and parameter documentation is generally complete with helpful enums and constraints. The complex nested schemas for ChartPlan and DFMetaData are well-structured. However, some descriptions are verbose or contain formatting issues, and a few parameters lack sufficient detail about their purpose and usage.","score":"B"},
+  "resources": {
+    "tools": 6,
+    "prompts": 3,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

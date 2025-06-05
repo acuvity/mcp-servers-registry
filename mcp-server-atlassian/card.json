@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-atlassian",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-atlassian",
   "description": "Integrates AI tools for Jira and Confluence tasks and automation.",
   "links":
@@ -12,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.11.1",
+  "version": "0.11.2",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"d1e40bc1c920e8410ef13f8303c9c7acedb7c915fdc27ad64be90849ceca3d9a","reason":"Tool names are highly specific and intuitive, clearly indicating their purpose (e.g., 'jira_get_user_profile', 'confluence_create_page'). Descriptions are comprehensive and detailed, explaining functionality, when to use each tool, what they return, and important limitations. Parameter descriptions are exceptionally clear with extensive examples, format specifications, and usage guidance. Documentation proactively addresses user questions with concrete examples for complex parameters like JQL queries and field specifications.","score":"A"},
   "resources": {
-    "tools": 36,
+    "tools": 37,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

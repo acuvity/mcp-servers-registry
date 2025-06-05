@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-heroku",
+  "icon": "https://www.herokucdn.com/favicons/favicon.ico",
   "name": "mcp-server-heroku",
   "description": "Facilitate LLMs interaction with Heroku Platform resources.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"84d790d5da6432b387695a5ad45c3850aa61189cdd11fa950bb0793ba38a36fa","reason":"Tool names are clear and parameter documentation is generally adequate, but many tool descriptions are overly terse and cryptic, using shorthand notation instead of complete explanations. While functional, the documentation often lacks sufficient context about usage scenarios and expected outcomes, requiring users to infer details.","score":"C"},
   "resources": {
     "tools": 37,
     "prompts": 0,

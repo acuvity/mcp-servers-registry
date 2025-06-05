@@ -19,7 +19,6 @@
 
 
 # What is mcp-server-browser-kit?
-
 [![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-browser-kit/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-browser-kit/5.0.1?logo=docker&logoColor=fff&label=5.0.1)](https://hub.docker.com/r/acuvity/mcp-server-browser-kit)

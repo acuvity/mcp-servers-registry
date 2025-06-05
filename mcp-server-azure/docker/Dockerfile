@@ -1,4 +1,4 @@
-FROM golang:1.24.2-alpine3.21 AS minibridge
+FROM golang:1.24 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
+    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
 
 FROM node:23-slim
 
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-azure"
 LABEL org.opencontainers.image.description="Integrates AI agents with Azure services for enhanced functionality."
-LABEL org.opencontainers.image.version="0.0.20"
+LABEL org.opencontainers.image.version="0.1.2"
 LABEL org.opencontainers.image.source="https://github.com/Azure/azure-mcp"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="Microsoft Corporation"
@@ -41,7 +41,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev @azure/mcp@0.0.20
+RUN npm i --omit-dev @azure/mcp@0.1.2
 
 EXPOSE 8000/tcp
 

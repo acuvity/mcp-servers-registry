@@ -1,12 +1,12 @@
 {
   "tools": [
     {
-      "name": "DeleteBucket",
-      "hash": "34270d559b1de0ef3dded6c8a4db7089554367736c56dee5c01a26a4fa5a0efa",
+      "name": "CMS_GetCpuLoadavgData",
+      "hash": "41652de13b3c7c58e42e6a4492cf31b46e843206e322a9449abd05839b8c21a5",
       "params": [
         {
-          "name": "BucketName",
-          "hash": "c054f7f7409e381b13900fb120a8aa9f7e39ae8d3b6d8d9d198052e02714b895"
+          "name": "InstanceIds",
+          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
         },
         {
           "name": "RegionId",
@@ -15,7 +15,119 @@
       ]
     },
     {
-      "name": "DeleteInstances",
+      "name": "CMS_GetCpuUsageData",
+      "hash": "b48ee53ba21d5cda0a95da59872ad029104c842ce44ec4e82d762296f52d88e5",
+      "params": [
+        {
+          "name": "InstanceIds",
+          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        }
+      ]
+    },
+    {
+      "name": "CMS_GetCpuloadavg15mData",
+      "hash": "549b25638abfc79ee83bc07d5e7d903027d643dfa9ed9ccc6e58537021a5ddb0",
+      "params": [
+        {
+          "name": "InstanceIds",
+          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        }
+      ]
+    },
+    {
+      "name": "CMS_GetCpuloadavg5mData",
+      "hash": "e2d6689f38908f260e174db620ee5030dc422730708276a88d86fa56c84b49c8",
+      "params": [
+        {
+          "name": "InstanceIds",
+          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        }
+      ]
+    },
+    {
+      "name": "CMS_GetDiskTotalData",
+      "hash": "4db1ae50ede0649ad2cb38bec3320d2f075d15a9013d752eae81fd57166034a7",
+      "params": [
+        {
+          "name": "InstanceIds",
+          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        }
+      ]
+    },
+    {
+      "name": "CMS_GetDiskUsageData",
+      "hash": "78aa3a39be7ed21f5c18757b871394dfd4ef2f89d3e8a1c458b9d6361f429e71",
+      "params": [
+        {
+          "name": "InstanceIds",
+          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        }
+      ]
+    },
+    {
+      "name": "CMS_GetDiskUsedData",
+      "hash": "e226a9921aa9185b0e99598afebb8e4148b53cbfd23efe32a7b9a05f615298e6",
+      "params": [
+        {
+          "name": "InstanceIds",
+          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        }
+      ]
+    },
+    {
+      "name": "CMS_GetMemUsageData",
+      "hash": "5aac768c294daac21fdb877ee1a830914ad857c375f7145cd308cb4e493bc3dd",
+      "params": [
+        {
+          "name": "InstanceIds",
+          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        }
+      ]
+    },
+    {
+      "name": "CMS_GetMemUsedData",
+      "hash": "3deb761f34fcb36343a7bc86816c4fbece4268664fe6313c0ec5e27a9fdbcb61",
+      "params": [
+        {
+          "name": "InstanceIds",
+          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        }
+      ]
+    },
+    {
+      "name": "ECS_DeleteInstances",
       "hash": "1d4391135beaaf36967e0bcddd0a31bcf5927cb7a39c1bb062d6b2236e30d6c1",
       "params": [
         {
@@ -49,7 +161,7 @@
       ]
     },
     {
-      "name": "DescribeAccountAttributes",
+      "name": "ECS_DescribeAccountAttributes",
       "hash": "1778be5783909688e56baa9f09d33597f7c99ee1565170403be16241f30367a6",
       "params": [
         {
@@ -67,7 +179,7 @@
       ]
     },
     {
-      "name": "DescribeAvailableResource",
+      "name": "ECS_DescribeAvailableResource",
       "hash": "5fa70d9722cdb8a377252c9f5f08d6f3049ea97412349445b06a1df15c500e8e",
       "params": [
         {
@@ -137,129 +249,7 @@
       ]
     },
     {
-      "name": "DescribeDBInstances",
-      "hash": "e429f4c2b0f9c291b58360877af08e35f6f89cfa0c772de8fe92fbfbd2436919",
-      "params": [
-        {
-          "name": "Category",
-          "hash": "d9c3cff2737cd5f2840c4d5072e6c2580b7da8ec213ea8b80887eb99711cb90f"
-        },
-        {
-          "name": "ClientToken",
-          "hash": "fc7f6f4d49179a52e00631a0667140bc5f90ab18ad37b15ef4cd3b9999aa2249"
-        },
-        {
-          "name": "ConnectionMode",
-          "hash": "ae90af3493951595ffc0e913815359a8cecbd54bc3e68eaf1daab1766d8dff32"
-        },
-        {
-          "name": "ConnectionString",
-          "hash": "e0c0492d7d96516460ba190be394bdd477981aba39e233adad79139afc52c672"
-        },
-        {
-          "name": "DBInstanceClass",
-          "hash": "2fbb3bbccc67e49814b19021f2ec53246c6f96bf5f4e85a3f64487bb3394e963"
-        },
-        {
-          "name": "DBInstanceId",
-          "hash": "e668276910a085dbe1ee4a4a172a680897badf997eb20b4dd48f4df75a7be25b"
-        },
-        {
-          "name": "DBInstanceStatus",
-          "hash": "3411fc1289ca5c4850de8c47d78669b976d7397fc3062e2b5b500ce5f6730445"
-        },
-        {
-          "name": "DBInstanceType",
-          "hash": "7fa3855f720a52b5d40cda85613d7bd3b739e367e4b50110c73eaad780af594d"
-        },
-        {
-          "name": "DedicatedHostGroupId",
-          "hash": "ad8a8360ca95b0b375903b33ec892b5a00341600d27c1ca5a9cda00c6ba5427e"
-        },
-        {
-          "name": "DedicatedHostId",
-          "hash": "8158415b90c3d015f045818a5692ed03435a14427975bff9860caabafb6f899e"
-        },
-        {
-          "name": "Engine",
-          "hash": "a6806a270db56efb88e16e1a565f8bf6c385c04e1b2407c6b2da2042ce232d11"
-        },
-        {
-          "name": "EngineVersion",
-          "hash": "cdca0ab63c9b467e16367a8bbed80b57a1788926dd1d9c50d9cbe5850a61885a"
-        },
-        {
-          "name": "Expired",
-          "hash": "1a1a19e093a96d197582b7fb44363943e6107238148246ac45cbe4b9b4deab87"
-        },
-        {
-          "name": "Filter",
-          "hash": "34f0929c94e825b033233fc950f378511f6786715c4b00914f138736de5e3518"
-        },
-        {
-          "name": "InstanceLevel",
-          "hash": "e0c51464b5d1ee1f728f125f008e0ddc39552a41dd1297d760e89ba8e04c9b50"
-        },
-        {
-          "name": "InstanceNetworkType",
-          "hash": "f8ba450d5f434177f4f2fd5e399682727a8a880a31323a27e96beff4effcaa70"
-        },
-        {
-          "name": "MaxResults",
-          "hash": "96bed3cc2d5f6119339180e22ff66d72637d30856b25437be72c1723256858be"
-        },
-        {
-          "name": "NextToken",
-          "hash": "2cf930b801a4041a4dbc42662a810bfdb50f54c7b548d819c4d24f9331c65e28"
-        },
-        {
-          "name": "PageNumber",
-          "hash": "1dc34c832dfdabe8ab427be9358c7fd8a89f1031a14ed132e08ff24d9912b269"
-        },
-        {
-          "name": "PageSize",
-          "hash": "efb9cf1579cdad0b8159c32581575f7b0babdb893abb5179af09816f195865a1"
-        },
-        {
-          "name": "PayType",
-          "hash": "ceb2b1c3ad63418c000404552605345c63109c988aadca8a39caf9b8b9233f44"
-        },
-        {
-          "name": "RegionId",
-          "hash": "dd3e800c8aaedf9ba71f52d46715d387b1b80e32e804570f564d01cf3250bd0f"
-        },
-        {
-          "name": "ResourceGroupId",
-          "hash": "27c38b65f392c80286e253c9592db80a04b76af6d56a500b5ad0599466c9027a"
-        },
-        {
-          "name": "SearchKey",
-          "hash": "bbfb1b3c85a1092ae76ae840f83d09d08d93a556fe8abca1db749a5fa8f556b0"
-        },
-        {
-          "name": "Tags",
-          "hash": "4576d6ccb6bcad1278dc1536797c5835c5e627ac54ff70a0ccfd8170b307cc37"
-        },
-        {
-          "name": "VSwitchId",
-          "hash": "34d6fdff305663795bff9ce36a93cdcb8f62e073c06268cf676089f648dbcef4"
-        },
-        {
-          "name": "VpcId",
-          "hash": "9c999eacaba678f0279b7027c5b3c7b50a5e47c6b8a950b48e12b5d8c2587fe0"
-        },
-        {
-          "name": "ZoneId",
-          "hash": "b1d2ca48cb730ef3cdc40106ed9269b36baaf8526587395b4abfb31142293acc"
-        },
-        {
-          "name": "proxyId",
-          "hash": "684c843668b31ed0ab43715899a68f445e760196bf7a9556123292d9dadd245f"
-        }
-      ]
-    },
-    {
-      "name": "DescribeImages",
+      "name": "ECS_DescribeImages",
       "hash": "7b9e39af4a694e9e5d41d443d5629b647ce7fb947e0b2f2e9b6bd529a16a76a0",
       "params": [
         {
@@ -357,7 +347,7 @@
       ]
     },
     {
-      "name": "DescribeInstances",
+      "name": "ECS_DescribeInstances",
       "hash": "a28662a80361fdf89085f9d85fa5289ae7fd47ea0662ee8a203334b9128a198e",
       "params": [
         {
@@ -511,7 +501,7 @@
       ]
     },
     {
-      "name": "DescribeRegions",
+      "name": "ECS_DescribeRegions",
       "hash": "724439e22c78a85a56a968d31a6288b6f86c13e37436e2a27d1afc0934421cc3",
       "params": [
         {
@@ -533,7 +523,7 @@
       ]
     },
     {
-      "name": "DescribeSecurityGroups",
+      "name": "ECS_DescribeSecurityGroups",
       "hash": "974995f8def0cf8014a8e1a1271e3462a921755203768b6da8290db18eb45232",
       "params": [
         {
@@ -607,7 +597,407 @@
       ]
     },
     {
-      "name": "DescribeVSwitches",
+      "name": "ECS_DescribeZones",
+      "hash": "7bbc1a1726ba7c9cdb6530521edc66856017ca35a14fdd557bdae0095073b751",
+      "params": [
+        {
+          "name": "AcceptLanguage",
+          "hash": "33223edd940a496b900ea5299f06561c7e5df7a5471cdf1dcdb863788de9c623"
+        },
+        {
+          "name": "InstanceChargeType",
+          "hash": "b0c63aaddada54c165241b016e2761da1f2e96bdfecfb40c93492eae2aaff6d3"
+        },
+        {
+          "name": "RegionId",
+          "hash": "f606eeb3add8cf2cf17b62ab607075f0f061ff9651d09d100ea5db550366d5bb"
+        },
+        {
+          "name": "SpotStrategy",
+          "hash": "8b30c268f690fca14ffa7d913ce580a25529b8df2c0a1c300707ba6a97789432"
+        },
+        {
+          "name": "Verbose",
+          "hash": "f083ea656023a05e342abf105e2c2af32e579a1afb5f0bbf9b4a0ffe07b27929"
+        }
+      ]
+    },
+    {
+      "name": "OOS_RebootInstances",
+      "hash": "1636357802dfb1e363bd90bccb30de5558b17fea156d78d53ed5f8ceb78ac97e",
+      "params": [
+        {
+          "name": "ForeceStop",
+          "hash": "99976c8b00f8a26bad165f6035f444ed44c4283c542a33dc3120ebf2343ec92f"
+        },
+        {
+          "name": "InstanceIds",
+          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        }
+      ]
+    },
+    {
+      "name": "OOS_RebootRDSInstances",
+      "hash": "0db0233dcf7820dd57804634bce6be3e80e64bda482a14e6b92a8121f8c42bcc",
+      "params": [
+        {
+          "name": "InstanceIds",
+          "hash": "94c0de0e1dca546c1c7a4153d4726b0f364a642f25af1981723240e902643682"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        }
+      ]
+    },
+    {
+      "name": "OOS_ReplaceSystemDisk",
+      "hash": "d0d6d720f2d2b85b11cf4b8a06ab14a8dc6de15f3a1d39c12250e1e7dd1d660a",
+      "params": [
+        {
+          "name": "ImageId",
+          "hash": "e780d31fde4a9a7a36431d220963181ad11dbabc44726d4ad63575646248e1b9"
+        },
+        {
+          "name": "InstanceIds",
+          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        }
+      ]
+    },
+    {
+      "name": "OOS_ResetPassword",
+      "hash": "4a33b145e5b8d26e4c1c08e31a0b428bafb564d6eac35de3cbb2e477d039b827",
+      "params": [
+        {
+          "name": "InstanceIds",
+          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
+        },
+        {
+          "name": "Password",
+          "hash": "b7258dd07b9fbea8a9e69664eb9a298fc9aa37a8d5fff5fc0a2c62f70a8f711d"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        }
+      ]
+    },
+    {
+      "name": "OOS_RunCommand",
+      "hash": "24cff39b267e346b7083d22f58dd20b6f0c2d1c5ef110fdd561397320eac32b1",
+      "params": [
+        {
+          "name": "Command",
+          "hash": "b5a8cb191642b66b6c8d70c68080199c6e42397a2694cf3fdfe65c77ab9494cc"
+        },
+        {
+          "name": "CommandType",
+          "hash": "36b1638d62b2c428d109c7d361070dab3f8b88ac88e7c0d65f8cb1175a8ae556"
+        },
+        {
+          "name": "InstanceIds",
+          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        }
+      ]
+    },
+    {
+      "name": "OOS_RunInstances",
+      "hash": "9f242e6a3ef246a32b45c8a7b8f880823efed4773562d6f3bfa4dee58a7ba9c4",
+      "params": [
+        {
+          "name": "Amount",
+          "hash": "7cbf3f2f47038f065fd18a2ae3e3209f1b9b1464ed77b1706b1d682ecf30ecd3"
+        },
+        {
+          "name": "ImageId",
+          "hash": "e780d31fde4a9a7a36431d220963181ad11dbabc44726d4ad63575646248e1b9"
+        },
+        {
+          "name": "InstanceName",
+          "hash": "85d41dd35ffc946d8d382ee0c2c3b34c183e7c90eb44507d9c4b32ffb1364525"
+        },
+        {
+          "name": "InstanceType",
+          "hash": "894583b8fb98ecc1949d791e9581c5069ea4ee9257c8f1788aff5db4145518e5"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        },
+        {
+          "name": "SecurityGroupId",
+          "hash": "aaf4294581458c5e074f518dcca8c6a8e3d2499d9327fb54f2752b84b1e29e12"
+        },
+        {
+          "name": "VSwitchId",
+          "hash": "59e6707b70baeb8daa22e49efab46925019d41489da4d6d5239f88741022d0bd"
+        }
+      ]
+    },
+    {
+      "name": "OOS_StartInstances",
+      "hash": "2a9f08533d2ce509b6ed4af460a44cb475cbb4880bea5f20f298a8daa3949260",
+      "params": [
+        {
+          "name": "InstanceIds",
+          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        }
+      ]
+    },
+    {
+      "name": "OOS_StartRDSInstances",
+      "hash": "1b51fcfc50e0e2ace55caf73d80caa25e29890448385dd20ff7015765b841787",
+      "params": [
+        {
+          "name": "InstanceIds",
+          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        }
+      ]
+    },
+    {
+      "name": "OOS_StopInstances",
+      "hash": "d2ba4bde7d55993dc51809cfa260a1502278a850e1bab1413ba442c5b458cc7e",
+      "params": [
+        {
+          "name": "ForeceStop",
+          "hash": "99976c8b00f8a26bad165f6035f444ed44c4283c542a33dc3120ebf2343ec92f"
+        },
+        {
+          "name": "InstanceIds",
+          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        }
+      ]
+    },
+    {
+      "name": "OOS_StopRDSInstances",
+      "hash": "77ef2436fc623a21ff2cd4ed8c0aff898698e94b7264987d1b64dfba8257deaf",
+      "params": [
+        {
+          "name": "InstanceIds",
+          "hash": "94c0de0e1dca546c1c7a4153d4726b0f364a642f25af1981723240e902643682"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        }
+      ]
+    },
+    {
+      "name": "OSS_DeleteBucket",
+      "hash": "34270d559b1de0ef3dded6c8a4db7089554367736c56dee5c01a26a4fa5a0efa",
+      "params": [
+        {
+          "name": "BucketName",
+          "hash": "c054f7f7409e381b13900fb120a8aa9f7e39ae8d3b6d8d9d198052e02714b895"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        }
+      ]
+    },
+    {
+      "name": "OSS_ListBuckets",
+      "hash": "53ef8dcd87ffe37e106c8846b6cf1eb85d4d95a99694819369e2cb26afe3833f",
+      "params": [
+        {
+          "name": "Prefix",
+          "hash": "842acc0be5c86f318a10292fcd531e702d65dbbafd05f6d961975b084a9bed13"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        }
+      ]
+    },
+    {
+      "name": "OSS_ListObjects",
+      "hash": "a857f99b9e698e92ee186ea317028030123ffc567ad4c9c9850c340144af66cb",
+      "params": [
+        {
+          "name": "BucketName",
+          "hash": "c054f7f7409e381b13900fb120a8aa9f7e39ae8d3b6d8d9d198052e02714b895"
+        },
+        {
+          "name": "Prefix",
+          "hash": "842acc0be5c86f318a10292fcd531e702d65dbbafd05f6d961975b084a9bed13"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        }
+      ]
+    },
+    {
+      "name": "OSS_PutBucket",
+      "hash": "1b263bbe06cd2619edea488fe78f781f014ab161e8c4dc384d40ef6c62f98a6b",
+      "params": [
+        {
+          "name": "BucketName",
+          "hash": "c054f7f7409e381b13900fb120a8aa9f7e39ae8d3b6d8d9d198052e02714b895"
+        },
+        {
+          "name": "DataRedundancyType",
+          "hash": "1e5cd59109f4f1bc3f44a140f3b1008d946478ec731c2e6b041d8a082a671535"
+        },
+        {
+          "name": "RegionId",
+          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
+        },
+        {
+          "name": "StorageClass",
+          "hash": "d8694c5db8c8fdfc2bf7fb7d6580ab63fb715fd130ce78aaeeb86a453529ccc9"
+        }
+      ]
+    },
+    {
+      "name": "RDS_DescribeDBInstances",
+      "hash": "e429f4c2b0f9c291b58360877af08e35f6f89cfa0c772de8fe92fbfbd2436919",
+      "params": [
+        {
+          "name": "Category",
+          "hash": "d9c3cff2737cd5f2840c4d5072e6c2580b7da8ec213ea8b80887eb99711cb90f"
+        },
+        {
+          "name": "ClientToken",
+          "hash": "fc7f6f4d49179a52e00631a0667140bc5f90ab18ad37b15ef4cd3b9999aa2249"
+        },
+        {
+          "name": "ConnectionMode",
+          "hash": "ae90af3493951595ffc0e913815359a8cecbd54bc3e68eaf1daab1766d8dff32"
+        },
+        {
+          "name": "ConnectionString",
+          "hash": "e0c0492d7d96516460ba190be394bdd477981aba39e233adad79139afc52c672"
+        },
+        {
+          "name": "DBInstanceClass",
+          "hash": "2fbb3bbccc67e49814b19021f2ec53246c6f96bf5f4e85a3f64487bb3394e963"
+        },
+        {
+          "name": "DBInstanceId",
+          "hash": "e668276910a085dbe1ee4a4a172a680897badf997eb20b4dd48f4df75a7be25b"
+        },
+        {
+          "name": "DBInstanceStatus",
+          "hash": "3411fc1289ca5c4850de8c47d78669b976d7397fc3062e2b5b500ce5f6730445"
+        },
+        {
+          "name": "DBInstanceType",
+          "hash": "7fa3855f720a52b5d40cda85613d7bd3b739e367e4b50110c73eaad780af594d"
+        },
+        {
+          "name": "DedicatedHostGroupId",
+          "hash": "ad8a8360ca95b0b375903b33ec892b5a00341600d27c1ca5a9cda00c6ba5427e"
+        },
+        {
+          "name": "DedicatedHostId",
+          "hash": "8158415b90c3d015f045818a5692ed03435a14427975bff9860caabafb6f899e"
+        },
+        {
+          "name": "Engine",
+          "hash": "a6806a270db56efb88e16e1a565f8bf6c385c04e1b2407c6b2da2042ce232d11"
+        },
+        {
+          "name": "EngineVersion",
+          "hash": "cdca0ab63c9b467e16367a8bbed80b57a1788926dd1d9c50d9cbe5850a61885a"
+        },
+        {
+          "name": "Expired",
+          "hash": "1a1a19e093a96d197582b7fb44363943e6107238148246ac45cbe4b9b4deab87"
+        },
+        {
+          "name": "Filter",
+          "hash": "34f0929c94e825b033233fc950f378511f6786715c4b00914f138736de5e3518"
+        },
+        {
+          "name": "InstanceLevel",
+          "hash": "e0c51464b5d1ee1f728f125f008e0ddc39552a41dd1297d760e89ba8e04c9b50"
+        },
+        {
+          "name": "InstanceNetworkType",
+          "hash": "f8ba450d5f434177f4f2fd5e399682727a8a880a31323a27e96beff4effcaa70"
+        },
+        {
+          "name": "MaxResults",
+          "hash": "96bed3cc2d5f6119339180e22ff66d72637d30856b25437be72c1723256858be"
+        },
+        {
+          "name": "NextToken",
+          "hash": "2cf930b801a4041a4dbc42662a810bfdb50f54c7b548d819c4d24f9331c65e28"
+        },
+        {
+          "name": "PageNumber",
+          "hash": "1dc34c832dfdabe8ab427be9358c7fd8a89f1031a14ed132e08ff24d9912b269"
+        },
+        {
+          "name": "PageSize",
+          "hash": "efb9cf1579cdad0b8159c32581575f7b0babdb893abb5179af09816f195865a1"
+        },
+        {
+          "name": "PayType",
+          "hash": "ceb2b1c3ad63418c000404552605345c63109c988aadca8a39caf9b8b9233f44"
+        },
+        {
+          "name": "RegionId",
+          "hash": "dd3e800c8aaedf9ba71f52d46715d387b1b80e32e804570f564d01cf3250bd0f"
+        },
+        {
+          "name": "ResourceGroupId",
+          "hash": "27c38b65f392c80286e253c9592db80a04b76af6d56a500b5ad0599466c9027a"
+        },
+        {
+          "name": "SearchKey",
+          "hash": "bbfb1b3c85a1092ae76ae840f83d09d08d93a556fe8abca1db749a5fa8f556b0"
+        },
+        {
+          "name": "Tags",
+          "hash": "4576d6ccb6bcad1278dc1536797c5835c5e627ac54ff70a0ccfd8170b307cc37"
+        },
+        {
+          "name": "VSwitchId",
+          "hash": "34d6fdff305663795bff9ce36a93cdcb8f62e073c06268cf676089f648dbcef4"
+        },
+        {
+          "name": "VpcId",
+          "hash": "9c999eacaba678f0279b7027c5b3c7b50a5e47c6b8a950b48e12b5d8c2587fe0"
+        },
+        {
+          "name": "ZoneId",
+          "hash": "b1d2ca48cb730ef3cdc40106ed9269b36baaf8526587395b4abfb31142293acc"
+        },
+        {
+          "name": "proxyId",
+          "hash": "684c843668b31ed0ab43715899a68f445e760196bf7a9556123292d9dadd245f"
+        }
+      ]
+    },
+    {
+      "name": "VPC_DescribeVSwitches",
       "hash": "590bac0ac1ceadd90b4cc06f1d9ed4f51bd69ef683902965c7fe3e00367763aa",
       "params": [
         {
@@ -669,7 +1059,7 @@
       ]
     },
     {
-      "name": "DescribeVpcs",
+      "name": "VPC_DescribeVpcs",
       "hash": "f06a297508d84a303b32891ebe65ca9545423bac48e9ab95ac66fb9dd5d0b9b6",
       "params": [
         {
@@ -719,396 +1109,6 @@
         {
           "name": "VpcOwnerId",
           "hash": "a1c8d09ac3654d5a4d6d6fb2ef8f3229f5904241f6b8a3c852906b4922fc32c5"
-        }
-      ]
-    },
-    {
-      "name": "DescribeZones",
-      "hash": "7bbc1a1726ba7c9cdb6530521edc66856017ca35a14fdd557bdae0095073b751",
-      "params": [
-        {
-          "name": "AcceptLanguage",
-          "hash": "33223edd940a496b900ea5299f06561c7e5df7a5471cdf1dcdb863788de9c623"
-        },
-        {
-          "name": "InstanceChargeType",
-          "hash": "b0c63aaddada54c165241b016e2761da1f2e96bdfecfb40c93492eae2aaff6d3"
-        },
-        {
-          "name": "RegionId",
-          "hash": "f606eeb3add8cf2cf17b62ab607075f0f061ff9651d09d100ea5db550366d5bb"
-        },
-        {
-          "name": "SpotStrategy",
-          "hash": "8b30c268f690fca14ffa7d913ce580a25529b8df2c0a1c300707ba6a97789432"
-        },
-        {
-          "name": "Verbose",
-          "hash": "f083ea656023a05e342abf105e2c2af32e579a1afb5f0bbf9b4a0ffe07b27929"
-        }
-      ]
-    },
-    {
-      "name": "GetCpuLoadavgData",
-      "hash": "41652de13b3c7c58e42e6a4492cf31b46e843206e322a9449abd05839b8c21a5",
-      "params": [
-        {
-          "name": "InstanceIds",
-          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
-        }
-      ]
-    },
-    {
-      "name": "GetCpuUsageData",
-      "hash": "b48ee53ba21d5cda0a95da59872ad029104c842ce44ec4e82d762296f52d88e5",
-      "params": [
-        {
-          "name": "InstanceIds",
-          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
-        }
-      ]
-    },
-    {
-      "name": "GetCpuloadavg15mData",
-      "hash": "549b25638abfc79ee83bc07d5e7d903027d643dfa9ed9ccc6e58537021a5ddb0",
-      "params": [
-        {
-          "name": "InstanceIds",
-          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
-        }
-      ]
-    },
-    {
-      "name": "GetCpuloadavg5mData",
-      "hash": "e2d6689f38908f260e174db620ee5030dc422730708276a88d86fa56c84b49c8",
-      "params": [
-        {
-          "name": "InstanceIds",
-          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
-        }
-      ]
-    },
-    {
-      "name": "GetDiskTotalData",
-      "hash": "4db1ae50ede0649ad2cb38bec3320d2f075d15a9013d752eae81fd57166034a7",
-      "params": [
-        {
-          "name": "InstanceIds",
-          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
-        }
-      ]
-    },
-    {
-      "name": "GetDiskUsageData",
-      "hash": "78aa3a39be7ed21f5c18757b871394dfd4ef2f89d3e8a1c458b9d6361f429e71",
-      "params": [
-        {
-          "name": "InstanceIds",
-          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
-        }
-      ]
-    },
-    {
-      "name": "GetDiskUsedData",
-      "hash": "e226a9921aa9185b0e99598afebb8e4148b53cbfd23efe32a7b9a05f615298e6",
-      "params": [
-        {
-          "name": "InstanceIds",
-          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
-        }
-      ]
-    },
-    {
-      "name": "GetMemUsageData",
-      "hash": "5aac768c294daac21fdb877ee1a830914ad857c375f7145cd308cb4e493bc3dd",
-      "params": [
-        {
-          "name": "InstanceIds",
-          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
-        }
-      ]
-    },
-    {
-      "name": "GetMemUsedData",
-      "hash": "3deb761f34fcb36343a7bc86816c4fbece4268664fe6313c0ec5e27a9fdbcb61",
-      "params": [
-        {
-          "name": "InstanceIds",
-          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
-        }
-      ]
-    },
-    {
-      "name": "ListBuckets",
-      "hash": "53ef8dcd87ffe37e106c8846b6cf1eb85d4d95a99694819369e2cb26afe3833f",
-      "params": [
-        {
-          "name": "Prefix",
-          "hash": "842acc0be5c86f318a10292fcd531e702d65dbbafd05f6d961975b084a9bed13"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
-        }
-      ]
-    },
-    {
-      "name": "ListObjects",
-      "hash": "a857f99b9e698e92ee186ea317028030123ffc567ad4c9c9850c340144af66cb",
-      "params": [
-        {
-          "name": "BucketName",
-          "hash": "c054f7f7409e381b13900fb120a8aa9f7e39ae8d3b6d8d9d198052e02714b895"
-        },
-        {
-          "name": "Prefix",
-          "hash": "842acc0be5c86f318a10292fcd531e702d65dbbafd05f6d961975b084a9bed13"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
-        }
-      ]
-    },
-    {
-      "name": "PutBucket",
-      "hash": "1b263bbe06cd2619edea488fe78f781f014ab161e8c4dc384d40ef6c62f98a6b",
-      "params": [
-        {
-          "name": "BucketName",
-          "hash": "c054f7f7409e381b13900fb120a8aa9f7e39ae8d3b6d8d9d198052e02714b895"
-        },
-        {
-          "name": "DataRedundancyType",
-          "hash": "1e5cd59109f4f1bc3f44a140f3b1008d946478ec731c2e6b041d8a082a671535"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
-        },
-        {
-          "name": "StorageClass",
-          "hash": "d8694c5db8c8fdfc2bf7fb7d6580ab63fb715fd130ce78aaeeb86a453529ccc9"
-        }
-      ]
-    },
-    {
-      "name": "RebootInstances",
-      "hash": "1636357802dfb1e363bd90bccb30de5558b17fea156d78d53ed5f8ceb78ac97e",
-      "params": [
-        {
-          "name": "ForeceStop",
-          "hash": "99976c8b00f8a26bad165f6035f444ed44c4283c542a33dc3120ebf2343ec92f"
-        },
-        {
-          "name": "InstanceIds",
-          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
-        }
-      ]
-    },
-    {
-      "name": "RebootRDSInstances",
-      "hash": "0db0233dcf7820dd57804634bce6be3e80e64bda482a14e6b92a8121f8c42bcc",
-      "params": [
-        {
-          "name": "InstanceIds",
-          "hash": "94c0de0e1dca546c1c7a4153d4726b0f364a642f25af1981723240e902643682"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
-        }
-      ]
-    },
-    {
-      "name": "ReplaceSystemDisk",
-      "hash": "d0d6d720f2d2b85b11cf4b8a06ab14a8dc6de15f3a1d39c12250e1e7dd1d660a",
-      "params": [
-        {
-          "name": "ImageId",
-          "hash": "e780d31fde4a9a7a36431d220963181ad11dbabc44726d4ad63575646248e1b9"
-        },
-        {
-          "name": "InstanceIds",
-          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
-        }
-      ]
-    },
-    {
-      "name": "ResetPassword",
-      "hash": "4a33b145e5b8d26e4c1c08e31a0b428bafb564d6eac35de3cbb2e477d039b827",
-      "params": [
-        {
-          "name": "InstanceIds",
-          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
-        },
-        {
-          "name": "Password",
-          "hash": "b7258dd07b9fbea8a9e69664eb9a298fc9aa37a8d5fff5fc0a2c62f70a8f711d"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
-        }
-      ]
-    },
-    {
-      "name": "RunCommand",
-      "hash": "24cff39b267e346b7083d22f58dd20b6f0c2d1c5ef110fdd561397320eac32b1",
-      "params": [
-        {
-          "name": "Command",
-          "hash": "b5a8cb191642b66b6c8d70c68080199c6e42397a2694cf3fdfe65c77ab9494cc"
-        },
-        {
-          "name": "CommandType",
-          "hash": "36b1638d62b2c428d109c7d361070dab3f8b88ac88e7c0d65f8cb1175a8ae556"
-        },
-        {
-          "name": "InstanceIds",
-          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
-        }
-      ]
-    },
-    {
-      "name": "RunInstances",
-      "hash": "9f242e6a3ef246a32b45c8a7b8f880823efed4773562d6f3bfa4dee58a7ba9c4",
-      "params": [
-        {
-          "name": "Amount",
-          "hash": "7cbf3f2f47038f065fd18a2ae3e3209f1b9b1464ed77b1706b1d682ecf30ecd3"
-        },
-        {
-          "name": "ImageId",
-          "hash": "e780d31fde4a9a7a36431d220963181ad11dbabc44726d4ad63575646248e1b9"
-        },
-        {
-          "name": "InstanceName",
-          "hash": "85d41dd35ffc946d8d382ee0c2c3b34c183e7c90eb44507d9c4b32ffb1364525"
-        },
-        {
-          "name": "InstanceType",
-          "hash": "894583b8fb98ecc1949d791e9581c5069ea4ee9257c8f1788aff5db4145518e5"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
-        },
-        {
-          "name": "SecurityGroupId",
-          "hash": "aaf4294581458c5e074f518dcca8c6a8e3d2499d9327fb54f2752b84b1e29e12"
-        },
-        {
-          "name": "VSwitchId",
-          "hash": "59e6707b70baeb8daa22e49efab46925019d41489da4d6d5239f88741022d0bd"
-        }
-      ]
-    },
-    {
-      "name": "StartInstances",
-      "hash": "2a9f08533d2ce509b6ed4af460a44cb475cbb4880bea5f20f298a8daa3949260",
-      "params": [
-        {
-          "name": "InstanceIds",
-          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
-        }
-      ]
-    },
-    {
-      "name": "StartRDSInstances",
-      "hash": "1b51fcfc50e0e2ace55caf73d80caa25e29890448385dd20ff7015765b841787",
-      "params": [
-        {
-          "name": "InstanceIds",
-          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
-        }
-      ]
-    },
-    {
-      "name": "StopInstances",
-      "hash": "d2ba4bde7d55993dc51809cfa260a1502278a850e1bab1413ba442c5b458cc7e",
-      "params": [
-        {
-          "name": "ForeceStop",
-          "hash": "99976c8b00f8a26bad165f6035f444ed44c4283c542a33dc3120ebf2343ec92f"
-        },
-        {
-          "name": "InstanceIds",
-          "hash": "dc8d09727c649c62ceabec0598e3608c62a7c2cefc092192ecf0d7df9445aad2"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
-        }
-      ]
-    },
-    {
-      "name": "StopRDSInstances",
-      "hash": "77ef2436fc623a21ff2cd4ed8c0aff898698e94b7264987d1b64dfba8257deaf",
-      "params": [
-        {
-          "name": "InstanceIds",
-          "hash": "94c0de0e1dca546c1c7a4153d4726b0f364a642f25af1981723240e902643682"
-        },
-        {
-          "name": "RegionId",
-          "hash": "ba8b5c549e2a13baa46a390ad0fbe12b6eaccef404afca5fb51a063072048449"
         }
       ]
     }

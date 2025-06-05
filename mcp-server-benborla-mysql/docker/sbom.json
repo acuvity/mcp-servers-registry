@@ -2,7 +2,7 @@
   "tools": [
     {
       "name": "mysql_query",
-      "hash": "bbf7a08e0f63e3039458951045f6f203c1f9d6cb95f4ee4817eac8dca6f18d48",
+      "hash": "0a73faebde1536c76227d8bb98021ae75480e186c0d0ded95b7a4f86fe52c994",
       "params": [
         {
           "name": "sql",

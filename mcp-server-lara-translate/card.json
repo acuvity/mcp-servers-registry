@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-lara-translate",
+  "icon": "https://laratranslate.com/favicon.ico",
   "name": "mcp-server-lara-translate",
   "description": "MCP server enabling powerful language translation capabilities.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.0.10",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "A",
+  "rating": {"hash":"aae4a9143d093451b104509b4daf885b884a0009f8283b397c77fd0a29c25573","reason":"The toolset demonstrates good documentation quality with clear, descriptive tool names and comprehensive descriptions that explain functionality and usage context. Parameter documentation is generally thorough with helpful examples and format specifications. However, some descriptions could be more concise (particularly the translate tool), and a few parameters lack complete constraint details. The overall documentation provides sufficient guidance for effective tool usage with only minor gaps.","score":"B"},
   "resources": {
     "tools": 10,
     "prompts": 0,

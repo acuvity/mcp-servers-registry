@@ -5,13 +5,13 @@ home: https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-aws-diagram/logo.png"
 type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.9.6
+appVersion: 1.0.1
 keywords:
   - mcp-server-aws-diagram
   - mcp-server

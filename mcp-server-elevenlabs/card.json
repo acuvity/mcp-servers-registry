@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-elevenlabs",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/elevenlabs/live/logo-1744878539557.png",
   "name": "mcp-server-elevenlabs",
   "description": "Enables voice synthesis and audio processing via APIs.",
   "links":
@@ -12,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"68055298e6670c263f5f191436fcb64c8bca1b528117e7ac7d81521b8622256e","reason":"The toolset demonstrates good documentation quality overall. Most tools have clear, descriptive names that indicate their purpose, and the main functionality tools (text_to_speech, speech_to_text, text_to_sound_effects) feature comprehensive descriptions with detailed parameter explanations, ranges, and usage guidance. Cost warnings are consistently included for API-calling tools. However, some simpler tools like list_models, get_voice, and play_audio have minimal descriptions that could be more informative. Parameter descriptions in input schemas are often basic (just titles) rather than detailed explanations, though the main descriptions compensate for this in many cases.","score":"B"},
   "resources": {
-    "tools": 19,
+    "tools": 20,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

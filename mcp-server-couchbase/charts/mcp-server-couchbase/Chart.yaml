@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-couchbase"
+description: "A Helm chart for Interact with the data stored in Couchbase clusters using natural language."
+home: https://github.com/Couchbase-Ecosystem/mcp-server-couchbase
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/Couchbase-Ecosystem/mcp-server-couchbase
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-couchbase/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.3.0
+keywords:
+  - mcp-server-couchbase
+  - mcp-server
+  - remote
+  - translation

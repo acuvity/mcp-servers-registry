@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-aws-diagram",
+  "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
   "name": "mcp-server-aws-diagram",
   "description": "Create diagrams using the Python diagrams package: sequence, flow, and class diagrams.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "standalone",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.9.6",
+  "version": "1.0.1",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "A",
+  "rating": {"hash":"72b4e29f9a86ece7ef3d09c7fb195fb5edc7a41983e78a7f46292adecd152d2a","reason":"All three tools have excellent documentation quality. Tool names are clear and specific, descriptions are comprehensive (3-4+ sentences) explaining functionality, usage scenarios, and important limitations. Parameters have detailed descriptions with clear purpose and expected values. The generate_diagram tool particularly excels with extensive usage instructions, code requirements, and common patterns. All tools proactively address user questions and provide step-by-step guidance.","score":"A"},
   "resources": {
     "tools": 3,
     "prompts": 0,

@@ -5,7 +5,7 @@ home: https://github.com/21st-dev/magic-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/21st-dev/magic-mcp
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-21st-dev-magic/logo.png"
 type: application
 maintainers:
   - name: Acuvity

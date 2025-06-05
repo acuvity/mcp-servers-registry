@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-kagisearch",
+  "icon": "https://kagi.com/favicon.ico",
   "name": "mcp-server-kagisearch",
   "description": "MCP server for search queries and video summarization.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.1.3",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"6ceab26e129283972684cc6c697e0e9628e88eb880f2c4af387c9ee2fd9450ff","reason":"Good documentation overall with clear, descriptive names and comprehensive descriptions that explain functionality and usage context. The kagi_search_fetch tool provides excellent detail about result numbering and query handling. Parameter descriptions are clear with helpful examples and constraints specified (enums, defaults). Minor areas for improvement include more specific guidance on query optimization and target language format examples, but the documentation effectively communicates tool purposes and usage patterns.","score":"B"},
   "resources": {
     "tools": 2,
     "prompts": 0,

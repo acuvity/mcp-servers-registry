@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-figma?
-
 [![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-figma/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-figma/0.3.0?logo=docker&logoColor=fff&label=0.3.0)](https://hub.docker.com/r/acuvity/mcp-server-figma)
-[![PyPI](https://img.shields.io/badge/0.3.0-3775A9?logo=pypi&logoColor=fff&label=figma-developer-mcp)](https://github.com/GLips/Figma-Context-MCP)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-figma/0.4.0?logo=docker&logoColor=fff&label=0.4.0)](https://hub.docker.com/r/acuvity/mcp-server-figma)
+[![PyPI](https://img.shields.io/badge/0.4.0-3775A9?logo=pypi&logoColor=fff&label=figma-developer-mcp)](https://github.com/GLips/Figma-Context-MCP)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-figma/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-figma&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22FIGMA_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-figma%3A0.3.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-figma&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22FIGMA_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-figma%3A0.4.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Provide coding agents direct access to Figma data to help them one-shot design implementation.
 
@@ -174,11 +173,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.3.0`
+  - container: `1.0.0-0.4.0`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-figma:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-figma:1.0.0-0.3.0`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-figma:1.0.0-0.4.0`
 
 ---
 
@@ -659,7 +658,8 @@ Download SVG and PNG images used in a Figma file based on the IDs of image or ic
 | fileKey | string | The key of the Figma file containing the node | Yes
 | localPath | string | The absolute path to the directory where images are stored in the project. If the directory does not exist, it will be created. The format of this path should respect the directory format of the operating system you are running on. Don't use any special character escaping in the path name either. | Yes
 | nodes | array | The nodes to fetch as images | Yes
-| scale | number | Export scale for PNG images. Optional, generally 2 is best, though users may specify a different scale. | No
+| pngScale | number | Export scale for PNG images. Optional, defaults to 2 if not specified. Affects PNG images only. | No
+| svgOptions | object | Options for SVG export | No
 </details>
 
 
@@ -673,7 +673,8 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | download_figma_images | fileKey | bada6642b3e747ab666cc69099ad47d222e5e38b9fe01aa27cc53759440c04ab |
 | tools | download_figma_images | localPath | 38caf61f071d7b1b7f34a5ea62123815806c82af4bdc36061595cce61aabf961 |
 | tools | download_figma_images | nodes | 0cdd95aa5c58cc9fb98a5998a33e0f66b55797c948e97d3a4fe0bab0f87cf2b6 |
-| tools | download_figma_images | scale | 098d87418f9da681fe12517eb73011b3894edac4ca52fa00ea94d32715caaa45 |
+| tools | download_figma_images | pngScale | 88ed2938b9920f6d670ea64700afcebf35f7008bffb906ece808418c75bde6ba |
+| tools | download_figma_images | svgOptions | 1e6b6dbd42211cb4a25b706812c7dfac529870c1a7ea154cdf08f6ad90f7d0df |
 | tools | get_figma_data | description | e4dd808189802bfc78338d224f953fc6f0dd4b1ec04656b1865f3161fb001e16 |
 | tools | get_figma_data | depth | a43fe901521170c7b82cf3199eadbeaa83f9f09c443c06764bb84fe43627f964 |
 | tools | get_figma_data | fileKey | 40c6b773426799bfacc6ce508e311fa5cddf0ab924212dc6d9114991b2379b1c |

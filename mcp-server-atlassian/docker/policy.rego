@@ -138,6 +138,8 @@ _cross_tool_exclude := [
 	#
 	"jira_update_sprint",
 	#
+	"jira_get_project_versions",
+	#
 	"confluence_search",
 	#
 	"confluence_get_page",

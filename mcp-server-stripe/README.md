@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-stripe?
-
-[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-stripe/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-stripe/0.2.2?logo=docker&logoColor=fff&label=0.2.2)](https://hub.docker.com/r/acuvity/mcp-server-stripe)
-[![PyPI](https://img.shields.io/badge/0.2.2-3775A9?logo=pypi&logoColor=fff&label=@stripe/mcp)](https://github.com/stripe/agent-toolkit)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-stripe/0.2.3?logo=docker&logoColor=fff&label=0.2.3)](https://hub.docker.com/r/acuvity/mcp-server-stripe)
+[![PyPI](https://img.shields.io/badge/0.2.3-3775A9?logo=pypi&logoColor=fff&label=@stripe/mcp)](https://github.com/stripe/agent-toolkit)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-stripe/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-stripe&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22STRIPE_SECRET_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-stripe%3A0.2.2%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-stripe&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22STRIPE_SECRET_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-stripe%3A0.2.3%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Integrates Stripe APIs with agent frameworks for payments and custom actions.
 
@@ -174,7 +173,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-stripe&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22STRIPE_SECRET_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-stripe%3A0.2.2%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-stripe&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22STRIPE_SECRET_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-stripe%3A0.2.3%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -196,7 +195,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "--read-only",
           "-e",
           "STRIPE_SECRET_KEY",
-          "docker.io/acuvity/mcp-server-stripe:0.2.2"
+          "docker.io/acuvity/mcp-server-stripe:0.2.3"
         ]
       }
     }
@@ -223,7 +222,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "--read-only",
         "-e",
         "STRIPE_SECRET_KEY",
-        "docker.io/acuvity/mcp-server-stripe:0.2.2"
+        "docker.io/acuvity/mcp-server-stripe:0.2.3"
       ]
     }
   }
@@ -254,7 +253,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "--read-only",
         "-e",
         "STRIPE_SECRET_KEY",
-        "docker.io/acuvity/mcp-server-stripe:0.2.2"
+        "docker.io/acuvity/mcp-server-stripe:0.2.3"
       ]
     }
   }
@@ -287,7 +286,7 @@ Add the following JSON block to your mcp configuration file:
         "--read-only",
         "-e",
         "STRIPE_SECRET_KEY",
-        "docker.io/acuvity/mcp-server-stripe:0.2.2"
+        "docker.io/acuvity/mcp-server-stripe:0.2.3"
       ]
     }
   }
@@ -318,7 +317,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "--read-only",
         "-e",
         "STRIPE_SECRET_KEY",
-        "docker.io/acuvity/mcp-server-stripe:0.2.2"
+        "docker.io/acuvity/mcp-server-stripe:0.2.3"
       ]
     }
   }
@@ -338,7 +337,7 @@ async with MCPServerStdio(
     params={
         "env": {"STRIPE_SECRET_KEY":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","STRIPE_SECRET_KEY","docker.io/acuvity/mcp-server-stripe:0.2.2"]
+        "args": ["run","-i","--rm","--read-only","-e","STRIPE_SECRET_KEY","docker.io/acuvity/mcp-server-stripe:0.2.3"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -367,7 +366,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e STRIPE_SECRET_KEY docker.io/acuvity/mcp-server-stripe:0.2.2`
+- arguments: `run -i --rm --read-only -e STRIPE_SECRET_KEY docker.io/acuvity/mcp-server-stripe:0.2.3`
 
 </details>
 
@@ -377,7 +376,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e STRIPE_SECRET_KEY docker.io/acuvity/mcp-server-stripe:0.2.2
+docker run -it -p 8000:8000 --rm --read-only -e STRIPE_SECRET_KEY docker.io/acuvity/mcp-server-stripe:0.2.3
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -480,7 +479,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (20)
+## 🧰 Tools (21)
 <details>
 <summary>create_customer</summary>
 
@@ -667,7 +666,7 @@ It takes two arguments:
 
 This tool will create an invoice item in Stripe.
 
-It takes two arguments:
+It takes three arguments'}:
 - customer (str): The ID of the customer to create the invoice item for.
 
 - price (str): The ID of the price to create the invoice item for.
@@ -840,6 +839,28 @@ This tool will update an existing subscription in Stripe. If changing an existin
 | subscription | string | The ID of the subscription to update. | Yes
 </details>
 <details>
+<summary>search_stripe_documentation</summary>
+
+**Description**:
+
+```
+
+This tool will take in a user question about integrating with Stripe in their application, then search and retrieve relevant Stripe documentation to answer the question.
+
+It takes two arguments:
+- question (str): The user question to search an answer for in the Stripe documentation.
+- language (str, optional): The programming language to search for in the the documentation.
+
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| language | string | The programming language to search for in the the documentation. | No
+| question | string | The user question about integrating with Stripe will be used to search the documentation. | Yes
+</details>
+<details>
 <summary>list_coupons</summary>
 
 **Description**:
@@ -967,7 +988,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | create_invoice | description | 58f4f1bf25184bdf480801b6207df7c4984df380982ee0a20bf694bc6f55b11c |
 | tools | create_invoice | customer | b35601d4b64cca25830fbde3acdcc09ffe201aace7db5afc8f2389977afed147 |
 | tools | create_invoice | days_until_due | 1058c8c29ee0af000a7e54b13a210264226eb817cc544a494baa1c2b64243286 |
-| tools | create_invoice_item | description | 467fc2b816ac329789e6865f4d47175df8c3dd2b886cab156b2299cbaab583fd |
+| tools | create_invoice_item | description | e4d1897bd8f791a1d8da33cb6ddae62473eaa6a69f1b5c6e4a0ca71af54a95b0 |
 | tools | create_invoice_item | customer | 3c3fef960529e8c6b2fa71f3a43740103fd6d9bf35ad5cbc4e16ef2b03d15c62 |
 | tools | create_invoice_item | invoice | 51c8ed0665f17d3b8c7caab19ae24998426670bfba0fdc21aeec6c49bf1ef5e3 |
 | tools | create_invoice_item | price | f8a3f965a97d74c6365019baede9a2ca2a3fecc3f355dbbed4ef4bce122056a0 |
@@ -1009,6 +1030,9 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | list_subscriptions | price | 640fe399e6d2c5d5f403be7b9245aba035edd21b89efbe7c38221fc8666404b1 |
 | tools | list_subscriptions | status | 667b14ff3117138d9a12328076e00a8299eeb1948278fee5c6779307cacd9db4 |
 | tools | retrieve_balance | description | 9c8fb8707dc9e98c9757483f0aa2f977a038a71b68497f4c9ad53eaf645da603 |
+| tools | search_stripe_documentation | description | 27d8ca92f9679af20a22917b22fdcc57592dea3a97ed2b93ea6d688d0c948f10 |
+| tools | search_stripe_documentation | language | 070a252b9466e9ede7bcca9e61ddbebb9c52efab647e83adc0face1e09ab28b9 |
+| tools | search_stripe_documentation | question | 2dc9d1dbb1ccc4224a7465970d83733c07b1210c4e280d6c04d853a10909eb2a |
 | tools | update_dispute | description | 5e15c03bddac95ecc67e8cb9f7787892c2e01374cb503493c7cc37ee5ca26158 |
 | tools | update_dispute | dispute | 74fea5510e0aebdfeccc806d56d217925570a3e345dd1839fd8e6354e00e3d70 |
 | tools | update_dispute | evidence | 671c39f2f893875fcfc38a784238f34e3adf49a73d925cf20d7c142cc918b305 |

@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-bing-search",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-bing-search",
   "description": "Web search capabilities using Microsoft Bing Search API.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.1.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"0efd2d7bb0c106a19ddca16a48351deccf6cac548a542adfb60c522d8c1762d3","reason":"Tool names clearly indicate their purpose with the bing_ prefix showing the service provider. Descriptions adequately explain functionality and mention when to use each tool (general info, current events, visual content). However, parameter descriptions are completely missing from the input schema - all parameters only have title and type without descriptions explaining their purpose, constraints, or expected values like market codes or freshness options.","score":"C"},
   "resources": {
     "tools": 3,
     "prompts": 0,

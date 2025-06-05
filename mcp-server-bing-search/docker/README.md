@@ -19,8 +19,7 @@
 
 
 # What is mcp-server-bing-search?
-
-[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-bing-search/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-bing-search/0.1.0?logo=docker&logoColor=fff&label=0.1.0)](https://hub.docker.com/r/acuvity/mcp-server-bing-search)
 [![PyPI](https://img.shields.io/badge/0.1.0-3775A9?logo=pypi&logoColor=fff&label=bing-search-mcp)](https://github.com/leehanchung/bing-search-mcp)

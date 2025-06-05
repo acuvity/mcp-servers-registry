@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-razorpay?
-
-[![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-razorpay/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-razorpay/v1.1.0?logo=docker&logoColor=fff&label=v1.1.0)](https://hub.docker.com/r/acuvity/mcp-server-razorpay)
-[![GitHUB](https://img.shields.io/badge/v1.1.0-3775A9?logo=github&logoColor=fff&label=razorpay/razorpay-mcp-server)](https://github.com/razorpay/razorpay-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-razorpay/v1.2.0?logo=docker&logoColor=fff&label=v1.2.0)](https://hub.docker.com/r/acuvity/mcp-server-razorpay)
+[![GitHUB](https://img.shields.io/badge/v1.2.0-3775A9?logo=github&logoColor=fff&label=razorpay/razorpay-mcp-server)](https://github.com/razorpay/razorpay-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-razorpay/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-razorpay&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22RAZORPAY_KEY_ID%22%2C%22-e%22%2C%22RAZORPAY_KEY_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-razorpay%3Av1.1.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-razorpay&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22RAZORPAY_KEY_ID%22%2C%22-e%22%2C%22RAZORPAY_KEY_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-razorpay%3Av1.2.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Advanced payment processing with Razorpay APIs for devs and AI tools.
 
@@ -174,11 +173,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-v1.1.0`
+  - container: `1.0.0-v1.2.0`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-razorpay:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-razorpay:1.0.0-v1.1.0`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-razorpay:1.0.0-v1.2.0`
 
 ---
 

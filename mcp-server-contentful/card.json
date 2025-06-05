@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-contentful",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-contentful",
   "description": "Update, create, delete content, content-models and assets in your Contentful Space.",
   "links":
@@ -15,7 +16,7 @@
   "version": "1.16.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"b677f50cbc5926b3c92fd2f123831fdac21d54497c661782d22a2d0415de9dbf","reason":"Tool names are clear and intuitive, indicating their Contentful-specific purposes well. Most descriptions adequately explain functionality and usage context, with some providing excellent detail (like create_entry and update_entry with locale requirements). However, many tools have minimal descriptions that lack comprehensive guidance on when to use them or important limitations. Parameter descriptions are generally clear with good use of constraints and defaults, though some could benefit from more detailed explanations of their purpose and impact on tool behavior.","score":"B"},
   "resources": {
     "tools": 35,
     "prompts": 14,

@@ -19,8 +19,7 @@
 
 
 # What is mcp-server-coincap?
-
-[![Rating](https://img.shields.io/badge/F-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-coincap/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-coincap/0.9.3?logo=docker&logoColor=fff&label=0.9.3)](https://hub.docker.com/r/acuvity/mcp-server-coincap)
 [![PyPI](https://img.shields.io/badge/0.9.3-3775A9?logo=pypi&logoColor=fff&label=coincap-mcp)](https://github.com/QuantGeekDev/coincap-mcp)

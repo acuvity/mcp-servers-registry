@@ -5,13 +5,13 @@ home: https://pypi.org/project/awslabs.nova-canvas-mcp-server/
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://pypi.org/project/awslabs.nova-canvas-mcp-server/
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-aws-canvas/logo.png"
 type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.2.8
+appVersion: 1.0.1
 keywords:
   - mcp-server-aws-canvas
   - mcp-server

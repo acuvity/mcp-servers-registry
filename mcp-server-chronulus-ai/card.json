@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-chronulus-ai",
+  "icon": "https://www.chronulus.com/favicon/chronulus-logo-blue-on-alpha-square-128x128.ico",
   "name": "mcp-server-chronulus-ai",
   "description": "Predict anything with Chronulus AI forecasting and prediction agents.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.0.3",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "A",
+  "rating": {"hash":"36fa23de6a53390638623d5bbdfe08b29f02bda8878233e460f6c18f27ff0afa","reason":"All tool names are highly specific and clear, indicating their exact purpose. Descriptions are comprehensive (4-6 sentences each), thoroughly explaining functionality, when/how to use each tool, specific constraints, and expected inputs/outputs. Parameter descriptions are detailed and complete, with clear explanations of purpose, expected formats, and usage examples. The documentation proactively addresses common user scenarios and provides specific guidance for different input types and use cases.","score":"A"},
   "resources": {
     "tools": 9,
     "prompts": 0,

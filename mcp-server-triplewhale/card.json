@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-triplewhale",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/triplewhale/live/logo-1744789416714.jpeg",
   "name": "mcp-server-triplewhale",
   "description": "MCP server for managing context with Triplewhale through natural language.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.0.6",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "C",
+  "rating": {"hash":"b15fd122efff1246c0660cdcab831444718abbe8c3b674d6832df70456a4d097","reason":"The tool has significant documentation quality issues: the name 'moby' is completely non-descriptive and requires domain knowledge to understand; the description is extremely verbose with excessive implementation details, OpenAPI schemas, and examples unrelated to the tool's purpose (SQL migration examples); parameter descriptions are minimal and don't explain their purpose or provide helpful examples. While some information is present, it's buried in unnecessary complexity making the tool difficult to understand and use.","score":"D"},
   "resources": {
     "tools": 1,
     "prompts": 0,

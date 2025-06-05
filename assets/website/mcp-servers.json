@@ -37,7 +37,8 @@
   },
   {
     "id": "mcp-server-21st-dev-magic",
-    "name": "mcp-server-21st-dev-magic ",
+    "icon": "https://www.21st.dev/favicon.ico",
+    "name": "mcp-server-21st-dev-magic",
     "description": "Create crafted UI components inspired by the best 21st.dev design engineers.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-21st-dev-magic",
@@ -53,11 +54,47 @@
     "version": "0.0.47",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "C",
+    "rating": {
+      "hash": "fe3ec17aa8048729950763df84c89008ef87f888ead3292182cf05824bbcbbff",
+      "reason": "Tool names are descriptive and clearly indicate purpose within the 21st.dev ecosystem. Descriptions adequately explain functionality with 2-3 sentences covering what each tool does and when to use it. However, parameter descriptions vary in quality - some like 'searchQuery' have good constraints and guidance, while others like 'context' are verbose but unclear about expected input format. The overall documentation is functional but lacks the comprehensive clarity and consistent parameter descriptions needed for higher grades.",
+      "score": "C"
+    },
     "resources": {
       "tools": 4,
       "prompts": 0,
       "resources": 0,
+      "resourcesTemplates": 0
+    }
+  },
+  {
+    "id": "mcp-server-3d-printer",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/3d-printer/live/logo-1744820439923.png",
+    "name": "mcp-server-3d-printer",
+    "description": "Connects to various 3D printers for management and STL manipulation.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-3d-printer",
+      "application": "https://github.com/DMontgomery40/mcp-3D-printer-server"
+    },
+    "tags": [
+      "automation",
+      "development"
+    ],
+    "official": false,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "1.0.2",
+    "requiresConfiguration": false,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "7425a6126f8bf92ebadf12df3f7eff79cbfefd256c65273c48a4fa6e19e88525",
+      "reason": "Tool names are clear and specific for their purposes. Most descriptions are adequate but brief (1-2 sentences), covering basic functionality without detailed usage guidance or limitations. Parameter descriptions are generally clear and indicate purpose and type, though some lack context about constraints or expected values. The documentation is usable but leaves some user questions unanswered, particularly around when to use certain tools and their specific behaviors.",
+      "score": "C"
+    },
+    "resources": {
+      "tools": 15,
+      "prompts": 0,
+      "resources": 2,
       "resourcesTemplates": 0
     }
   },
@@ -903,32 +940,25 @@
   },
   {
     "id": "mcp-server-adfin",
+    "icon": "https://invoxx-public-bucket.s3.eu-central-1.amazonaws.com/frontend-resources/adfin-logo-small.svg",
     "name": "mcp-server-adfin",
-    "description": "The only platform you need to get paid - all payments in one place, invoicing and accounting reconciliations with Adfin.",
+    "description": "All-in-one payment platform with invoicing and accounting reconciliations via Adfin.",
     "links": {
-      "application": ""
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-adfin",
+      "application": "https://github.com/Adfin-Engineering/mcp-server-adfin"
     },
-    "official": false,
-    "runtime": "",
-    "scope": "",
     "tags": [
       "finance"
     ],
-    "provider": "uvx",
-    "stars": 0,
-    "config": [
-      {
-        "mcpServers": {
-          "adfin": {
-            "command": "uvx",
-            "args": [
-              "mcp-server-adfin"
-            ],
-            "env": {}
-          }
-        }
-      }
-    ]
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "python",
+    "version": "0.1.1",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": null,
+    "resources": {}
   },
   {
     "id": "mcp-server-adls-mcp-server",
@@ -1023,33 +1053,35 @@
   },
   {
     "id": "mcp-server-agentql",
-    "name": "mcp-server-unknown-agentql",
+    "icon": "https://www.agentql.com/favicon/favicon.png",
+    "name": "mcp-server-agentql",
     "description": "Enable AI agents to get structured data from unstructured web with AgentQL.",
     "links": {
-      "application": ""
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-agentql",
+      "application": "https://github.com/tinyfish-io/agentql-mcp"
     },
-    "official": false,
-    "runtime": "",
-    "scope": "",
     "tags": [
-      "research",
-      "web"
+      "web",
+      "development"
     ],
-    "provider": "uvx",
-    "stars": 0,
-    "config": [
-      {
-        "mcpServers": {
-          "agentql": {
-            "command": "uvx",
-            "args": [
-              "mcp-server-agentql"
-            ],
-            "env": {}
-          }
-        }
-      }
-    ]
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "1.0.0",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "b8371d99698b079dea7e1faa75e0e01d094ba8c2ee0fe06c0a80eda24319423e",
+      "reason": "Tool name clearly indicates web data extraction purpose. Description adequately explains functionality and mentions JSON output format. Both parameters have clear descriptions explaining their purpose - URL for target webpage and prompt for natural language data description. However, the description could be more comprehensive about limitations, supported websites, or what constitutes valid natural language descriptions.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 1,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-agentql-mcp",
@@ -1083,36 +1115,31 @@
   },
   {
     "id": "mcp-server-agentrpc",
+    "icon": "https://agentrpc.com/favicon.ico",
     "name": "mcp-server-agentrpc",
     "description": "Connect to any function, any language, across network boundaries using AgentRPC.",
     "links": {
-      "application": ""
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-agentrpc",
+      "application": "https://github.com/agentrpc/agentrpc"
     },
-    "official": false,
-    "runtime": "",
-    "scope": "",
     "tags": [
-      "translation"
+      "integration",
+      "development"
     ],
-    "provider": "uvx",
-    "stars": 0,
-    "config": [
-      {
-        "mcpServers": {
-          "agentrpc": {
-            "command": "uvx",
-            "args": [
-              "mcp-server-agentrpc"
-            ],
-            "env": {}
-          }
-        }
-      }
-    ]
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.0.16",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": null,
+    "resources": {}
   },
   {
     "id": "mcp-server-airbnb",
-    "name": "mcp-server-airbnb ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-airbnb",
     "description": "Provides tools to search Airbnb and get listing details.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-airbnb",
@@ -1130,7 +1157,11 @@
     "version": "0.1.1",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "C",
+    "rating": {
+      "hash": "10e64b6c16e3d3af2fbaab2241ad080970ed9b12d8465139ac36749b282d065d",
+      "reason": "Tool names clearly indicate purpose (airbnb_search, airbnb_listing_details). Descriptions are brief but functional, explaining core functionality and mentioning direct links. However, descriptions lack important details like what information is returned, usage constraints, or when to use each tool. Parameter descriptions are basic but clear enough to indicate purpose and expected input types, though some could benefit from more context (e.g., price currency, date format validation).",
+      "score": "C"
+    },
     "resources": {
       "tools": 2,
       "prompts": 0,
@@ -1272,7 +1303,8 @@
   },
   {
     "id": "mcp-server-alchemy",
-    "name": "mcp-server-alchemy ",
+    "icon": "https://avatars.githubusercontent.com/u/49798644?s=200&v=4",
+    "name": "mcp-server-alchemy",
     "description": "Allow AI agents to interact with Alchemy's blockchain APIs.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-alchemy",
@@ -1290,7 +1322,11 @@
     "version": "0.1.5",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "D",
+    "rating": {
+      "hash": "fada72b0f9b4641b2277a71abaf66a793a8f9a9fdeb92dc6aacdcb3004f0b6ae",
+      "reason": "Tool names are overly verbose and inconsistent in naming patterns. Most tools completely lack descriptions, making it impossible to understand their purpose, when to use them, or what they return. While parameter descriptions are generally adequate with good examples, the absence of tool-level descriptions creates significant gaps in usability. The documentation fails to explain basic functionality like what data sources are used or how tools differ from each other.",
+      "score": "D"
+    },
     "resources": {
       "tools": 9,
       "prompts": 0,
@@ -1334,7 +1370,8 @@
   },
   {
     "id": "mcp-server-alibaba-cloud-ops",
-    "name": "mcp-server-alibaba-cloud-ops ",
+    "icon": "https://github.com/aliyun/alibaba-cloud-ops-mcp-server/blob/master/image/alibaba-cloud.png",
+    "name": "mcp-server-alibaba-cloud-ops",
     "description": "Alibaba Cloud integration, supporting ECS, Cloud Monitor, OOS and widely used cloud products.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-alibaba-cloud-ops",
@@ -1348,10 +1385,14 @@
     "scope": "remote",
     "mutitenant": true,
     "runtime": "python",
-    "version": "0.8.3",
+    "version": "0.8.7",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "D",
+    "rating": {
+      "hash": "3e2f394f559cef1367995ff227119c7fab08c981f48049c87415185a6b8a9172",
+      "reason": "Tools have clear names indicating their purpose but suffer from significant documentation issues. Most descriptions are in Chinese with minimal English translation, making them difficult for many users to understand. While parameter descriptions exist, they often lack clarity about purpose and usage. Many parameters have verbose, technical descriptions that don't clearly explain when or how to use them. The documentation would require significant effort for users to understand tool functionality and proper usage.",
+      "score": "D"
+    },
     "resources": {
       "tools": 34,
       "prompts": 0,
@@ -1567,7 +1608,8 @@
   },
   {
     "id": "mcp-server-anilist",
-    "name": "mcp-server-anilist ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-anilist",
     "description": "An MCP server integrating AniList API for anime and manga information.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-anilist",
@@ -1585,7 +1627,11 @@
     "version": "1.2.4",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "D",
+    "rating": {
+      "hash": "92d9cded9f369c049b8473c609e8353159793b3b95193560ed7d1e68a75aa0f6",
+      "reason": "Tool names are clear and descriptive, indicating specific AniList operations. Descriptions consistently explain functionality and include login requirements where applicable. Parameter descriptions are comprehensive with clear purposes, types, and constraints. Complex nested objects like filter parameters and options are well-documented with enum values and detailed explanations. The documentation thoroughly covers when to use tools and how parameters affect behavior.",
+      "score": "A"
+    },
     "resources": {
       "tools": 44,
       "prompts": 0,
@@ -1738,7 +1784,7 @@
   },
   {
     "id": "mcp-server-apache-airflow",
-    "name": "mcp-server-apache-airflow ",
+    "name": "mcp-server-apache-airflow",
     "description": "MCP server that connects to Apache Airflow using official client.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-apache-airflow",
@@ -1796,7 +1842,8 @@
   },
   {
     "id": "mcp-server-apify-actors",
-    "name": "mcp-server-apify-actors ",
+    "icon": "https://apify.com/favicon.ico",
+    "name": "mcp-server-apify-actors",
     "description": "Use 3,000+ pre-built cloud tools, known as Actors, to extract data from websites.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-apify-actors",
@@ -1812,15 +1859,16 @@
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
-    "version": "0.1.30",
+    "version": "0.2.4",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "nil",
+    "rating": null,
     "resources": {}
   },
   {
     "id": "mcp-server-apify-rag-web-browser",
-    "name": "mcp-server-apify-rag-web-browser ",
+    "icon": "https://apify.com/favicon.ico",
+    "name": "mcp-server-apify-rag-web-browser",
     "description": "Use 3,000+ pre-built cloud tools to extract data from websites.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-apify-rag-web-browser",
@@ -1838,7 +1886,11 @@
     "version": "0.1.3",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "c5dd9c52bcaeaaa0e14031aeb2f8ad3f8b432ef28fa208ede5d203bb7bca2fbc",
+      "reason": "Tool name clearly indicates search functionality. Description adequately explains what the tool does (Google search + web crawling) and provides basic usage guidance with tool recommendations. All parameters have clear descriptions explaining their purpose and constraints, with good examples for the query parameter. Minor weakness: description could better explain when to use this tool versus alternatives, but overall documentation is comprehensive and usable.",
+      "score": "B"
+    },
     "resources": {
       "tools": 1,
       "prompts": 0,
@@ -2030,7 +2082,8 @@
   },
   {
     "id": "mcp-server-apple-shortcuts",
-    "name": "mcp-server-apple-shortcuts ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-apple-shortcuts",
     "description": "An MCP Server Integration with Apple Shortcuts.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-apple-shortcuts",
@@ -2047,7 +2100,11 @@
     "version": "1.0.1",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "D",
+    "rating": {
+      "hash": "22958228c0200de5adea2821cf71c8c70e13bdd291b8602f341e9d1897a40d14",
+      "reason": "Tool names are clear and specific. Descriptions are brief but adequately convey basic functionality. Parameter descriptions are present and clear enough to understand purpose and expected input types, though they could be more detailed about constraints or usage scenarios.",
+      "score": "C"
+    },
     "resources": {
       "tools": 2,
       "prompts": 0,
@@ -2057,7 +2114,8 @@
   },
   {
     "id": "mcp-server-armor-crypto",
-    "name": "mcp-server-armor-crypto ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-armor-crypto",
     "description": "Blockchain integration, staking, DeFi, swap, bridging, wallet, DCA, Orders, Coin Lookup, Tracking.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-armor-crypto",
@@ -2070,10 +2128,14 @@
     "scope": "remote",
     "mutitenant": false,
     "runtime": "python",
-    "version": "0.1.24",
+    "version": "0.2.1",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "C",
+    "rating": {
+      "hash": "ed81b78b4c9d6fb92ea11fb92134a204f1b2dbd49c40ffd3dd4de8b31bbe1543",
+      "reason": "Tool names are clear and descriptive, indicating their purpose well. Most descriptions adequately explain functionality with 2-3 sentences and provide basic usage context. Parameter descriptions are generally clear with good detail about expected values and cross-references to other tools. Some tools like 'calculator' have excellent comprehensive descriptions, while others like 'wait_a_moment' and 'get_current_time' are more basic but adequate. Overall good documentation quality with minor gaps in some areas.",
+      "score": "B"
+    },
     "resources": {
       "tools": 37,
       "prompts": 1,
@@ -2192,7 +2254,8 @@
   },
   {
     "id": "mcp-server-asana",
-    "name": "mcp-server-asana ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-asana",
     "description": "Asana API integration.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-asana",
@@ -2209,7 +2272,11 @@
     "version": "1.7.0",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "37cd6c87b844f959df21d7166efeb2a9739e581b5938b74d5fe255557723fcfe",
+      "reason": "Tool names are clear and consistently prefixed with 'asana_', indicating their purpose well. Most descriptions adequately explain functionality in 1-2 sentences. Parameter descriptions are generally clear with good detail for complex parameters like custom_fields and search filters. However, some descriptions are quite brief (e.g., 'Get detailed information about a specific task') and could benefit from more context about when to use each tool and what specific information they provide versus what they don't.",
+      "score": "B"
+    },
     "resources": {
       "tools": 22,
       "prompts": 3,
@@ -2322,8 +2389,41 @@
     "stars": 14
   },
   {
+    "id": "mcp-server-astra-db-mcp",
+    "icon": "https://www.datastax.com/favicon-32x32.png",
+    "name": "mcp-server-astra-db-mcp",
+    "description": "MCP server for managing and interacting with Astra DB using language models.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-astra-db-mcp",
+      "application": "https://github.com/datastax/astra-db-mcp"
+    },
+    "tags": [
+      "database",
+      "integration"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "1.2.0",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "8f01e8bab1802f3a5e24c8105a3fc820e00c99ae17149ba5f105104a75227cc2",
+      "reason": "Tool names are clear and intuitive for database operations. Most descriptions are brief (1-2 sentences) but adequately explain basic functionality. Parameter descriptions are clear and specify purpose, though they lack detailed usage guidance. Some tools like 'OpenBrowser' seem unrelated to the Astra DB theme. The documentation provides sufficient information for basic usage but leaves some gaps around constraints, error conditions, and when to use specific tools over others.",
+      "score": "C"
+    },
+    "resources": {
+      "tools": 16,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
+  },
+  {
     "id": "mcp-server-atla",
-    "name": "mcp-server-atla ",
+    "icon": "https://avatars.githubusercontent.com/u/145455090?s=200&v=5",
+    "name": "mcp-server-atla",
     "description": "Enable AI agents to interact with the Atla API for state-of-the-art LLMJ evaluation.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-atla",
@@ -2341,9 +2441,77 @@
     "version": "0.1.2",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "34cf5d2588a4cbbd8fc0f4fa2864906a4406c031065594b9fec6ee12bdcd564d",
+      "reason": "Tool names are highly specific and clearly indicate their evaluation purposes. Descriptions are comprehensive, explaining functionality, use cases, return formats, and underlying implementation details. All parameters have exceptionally detailed descriptions with clear guidance on proper usage, extensive examples, and specific formatting requirements. The evaluation_criteria parameter particularly excels with detailed rubric guidance and best practices. Documentation proactively addresses user questions about model selection, scoring formats, and proper criteria construction.",
+      "score": "A"
+    },
     "resources": {
       "tools": 2,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
+  },
+  {
+    "id": "mcp-server-atlas-docs",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/atlas-docs/live/logo-1744788874628.png",
+    "name": "mcp-server-atlas-docs",
+    "description": "Provides AI assistants with technical docs for libraries and frameworks.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-atlas-docs",
+      "application": "https://github.com/CartographAI/atlas-docs-mcp"
+    },
+    "tags": [
+      "research",
+      "integration"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.2.0",
+    "requiresConfiguration": false,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "dff61ed395fdde10134ae91a7b89d887077fd7ae6009cb6564e3ba3176eb79e0",
+      "reason": "Tool names are clear and intuitive, indicating specific documentation operations. Descriptions are comprehensive (3-4 sentences each) explaining functionality, when to use each tool, what they return, and their relationships to other tools. Parameter descriptions clearly explain purpose and provide concrete examples (like pagePath format). The toolset effectively guides users through a logical workflow from discovery to detailed retrieval.",
+      "score": "A"
+    },
+    "resources": {
+      "tools": 5,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
+  },
+  {
+    "id": "mcp-server-atlassian",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-atlassian",
+    "description": "Integrates AI tools for Jira and Confluence tasks and automation.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-atlassian",
+      "application": "https://github.com/sooperset/mcp-atlassian"
+    },
+    "tags": [
+      "automation",
+      "integration"
+    ],
+    "official": false,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "python",
+    "version": "0.11.2",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "d1e40bc1c920e8410ef13f8303c9c7acedb7c915fdc27ad64be90849ceca3d9a",
+      "reason": "Tool names are highly specific and intuitive, clearly indicating their purpose (e.g., 'jira_get_user_profile', 'confluence_create_page'). Descriptions are comprehensive and detailed, explaining functionality, when to use each tool, what they return, and important limitations. Parameter descriptions are exceptionally clear with extensive examples, format specifications, and usage guidance. Documentation proactively addresses user questions with concrete examples for complex parameters like JQL queries and field specifications.",
+      "score": "A"
+    },
+    "resources": {
+      "tools": 37,
       "prompts": 0,
       "resources": 0,
       "resourcesTemplates": 0
@@ -2370,7 +2538,8 @@
   },
   {
     "id": "mcp-server-attio",
-    "name": "mcp-server-attio ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-attio",
     "description": "Allows AI clients to manage records and notes in Attio CRM.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-attio",
@@ -2386,7 +2555,11 @@
     "version": "0.0.2",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "D",
+    "rating": {
+      "hash": "bfceb7a18de3c8e8d2d11a98ee338223cede3d1418be5f1220fa890c8b119197",
+      "reason": "Tool names are clear and specific, indicating their purpose well. Descriptions are brief but adequate, covering basic functionality in 1-2 sentences. Parameter descriptions are clear and indicate purpose and expected input types. However, descriptions lack comprehensive detail about when to use each tool, what specific information they return, limitations, or relationship between different identifier types (URI vs ID). Documentation is usable but leaves some questions about tool behavior and constraints unanswered.",
+      "score": "C"
+    },
     "resources": {
       "tools": 4,
       "prompts": 0,
@@ -2427,37 +2600,39 @@
   },
   {
     "id": "mcp-server-audiense-insights",
+    "icon": "https://resources.audiense.com/hubfs/favicon-1.png",
     "name": "mcp-server-audiense-insights",
-    "description": "Marketing insights and audience analysis from Audiense reports, covering demographic, cultural, influencer, and content engagement analysis.",
+    "description": "Extracts marketing insights and audience analysis from Audiense reports.",
     "links": {
-      "application": ""
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-audiense-insights",
+      "application": "https://github.com/AudienseCo/mcp-audiense-insights"
     },
-    "official": false,
-    "runtime": "",
-    "scope": "",
     "tags": [
       "marketing"
     ],
-    "provider": "npx",
-    "stars": 0,
-    "config": [
-      {
-        "mcpServers": {
-          "audiense-insights": {
-            "command": "npx",
-            "args": [
-              "-y",
-              "audiense-mcp-server"
-            ],
-            "env": {}
-          }
-        }
-      }
-    ]
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.2.0",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "87e9764ad601783288fc9dda977823c7f7009eb5450bc3e896e60fb2e96b9dd4",
+      "reason": "Tool names are clear and descriptive, indicating their purpose well. Most descriptions adequately explain functionality with 2-3 sentences and provide context about what data is returned. Parameter descriptions are generally clear about purpose and expected values. Some tools like 'get-audience-content' and 'compare-audience-influencers' provide excellent detail about return data structure and business logic. Minor gaps include less detailed explanations for simpler tools like 'get-reports' and 'get-categories', but overall documentation is comprehensive enough for effective usage.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 8,
+      "prompts": 3,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-aws-bedrock-kb-retrieval",
-    "name": "mcp-server-aws-bedrock-kb-retrieval ",
+    "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
+    "name": "mcp-server-aws-bedrock-kb-retrieval",
     "description": "Query Amazon Bedrock Knowledge Bases using natural language to retrieve relevant information.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-bedrock-kb-retrieval",
@@ -2471,15 +2646,16 @@
     "scope": "remote",
     "mutitenant": true,
     "runtime": "python",
-    "version": "0.1.8",
+    "version": "1.0.1",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "nil",
+    "rating": null,
     "resources": {}
   },
   {
     "id": "mcp-server-aws-canvas",
-    "name": "mcp-server-aws-canvas ",
+    "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
+    "name": "mcp-server-aws-canvas",
     "description": "Generate images using Amazon Nova Canvas with text prompts and color guidance.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-canvas",
@@ -2493,15 +2669,16 @@
     "scope": "remote",
     "mutitenant": true,
     "runtime": "python",
-    "version": "0.2.7",
+    "version": "1.0.1",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "nil",
+    "rating": null,
     "resources": {}
   },
   {
     "id": "mcp-server-aws-cdk",
-    "name": "mcp-server-aws-cdk ",
+    "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
+    "name": "mcp-server-aws-cdk",
     "description": "Explain CDK Nag rules, check suppressions, generate Bedrock schemas, find AWS patterns.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-cdk",
@@ -2514,10 +2691,14 @@
     "scope": "remote",
     "mutitenant": true,
     "runtime": "python",
-    "version": "0.1.3",
+    "version": "1.0.1",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "C",
+    "rating": {
+      "hash": "fddb2ebfde25603af42e9e8980c30a8dfed7c449bde2ee0d9f91f274f5efd4b3",
+      "reason": "Tool names are clear and specific, indicating their AWS CDK purposes well. However, descriptions vary significantly in quality - some tools like 'ExplainCDKNagRule' provide comprehensive explanations with examples and context, while others like 'CDKGeneralGuidance' have minimal descriptions. Parameter descriptions are basic but adequate, though some lack clear purpose explanations (e.g., 'code' vs 'file_path' distinction in CheckCDKNagSuppressions). The inconsistent documentation quality across tools prevents a higher grade despite some individual tools being well-documented.",
+      "score": "C"
+    },
     "resources": {
       "tools": 7,
       "prompts": 0,
@@ -2527,7 +2708,8 @@
   },
   {
     "id": "mcp-server-aws-core",
-    "name": "mcp-server-aws-core ",
+    "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
+    "name": "mcp-server-aws-core",
     "description": "Core AWS MCP server providing prompt understanding and server management capabilities.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-core",
@@ -2540,10 +2722,14 @@
     "scope": "remote",
     "mutitenant": true,
     "runtime": "python",
-    "version": "0.2.4",
+    "version": "1.0.1",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "D",
+    "rating": {
+      "hash": "008247a131c22a9c3c2eb4f26f0efae9fde093050da4a04bb3950cb8abf6e632",
+      "reason": "Tool name is vague and non-descriptive, description is tautological ('Prompt Understanding' tool for 'Prompt Understanding'), contains no actual functionality explanation, and has empty input schema with no parameters or guidance on what the tool actually does or when to use it.",
+      "score": "F"
+    },
     "resources": {
       "tools": 1,
       "prompts": 0,
@@ -2553,7 +2739,8 @@
   },
   {
     "id": "mcp-server-aws-cost-analysis",
-    "name": "mcp-server-aws-cost-analysis ",
+    "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
+    "name": "mcp-server-aws-cost-analysis",
     "description": "Analyze CDK projects to identify AWS services used and get pricing information.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-cost-analysis",
@@ -2567,10 +2754,14 @@
     "scope": "remote",
     "mutitenant": true,
     "runtime": "python",
-    "version": "0.1.10",
+    "version": "1.0.1",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "558f502d5ef4bbe3aedddb658d85c6f789e37c577fd3d6ae3489d8f7a5a5f2bf",
+      "reason": "Tool names are clear and specific, indicating their purposes well. Most descriptions adequately explain functionality with 2-3 sentences covering what the tool does and when to use it. The get_pricing_from_api and generate_cost_report tools have comprehensive descriptions with detailed usage guidance and examples. However, several parameters lack descriptions (project_path, service_code, region) or have minimal descriptions, and some tools like get_bedrock_patterns have very brief descriptions that could be more informative about their specific functionality.",
+      "score": "B"
+    },
     "resources": {
       "tools": 6,
       "prompts": 0,
@@ -2580,7 +2771,8 @@
   },
   {
     "id": "mcp-server-aws-diagram",
-    "name": "mcp-server-aws-diagram ",
+    "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
+    "name": "mcp-server-aws-diagram",
     "description": "Create diagrams using the Python diagrams package: sequence, flow, and class diagrams.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-diagram",
@@ -2594,10 +2786,14 @@
     "scope": "standalone",
     "mutitenant": true,
     "runtime": "python",
-    "version": "0.9.3",
+    "version": "1.0.1",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "A",
+    "rating": {
+      "hash": "72b4e29f9a86ece7ef3d09c7fb195fb5edc7a41983e78a7f46292adecd152d2a",
+      "reason": "All three tools have excellent documentation quality. Tool names are clear and specific, descriptions are comprehensive (3-4+ sentences) explaining functionality, usage scenarios, and important limitations. Parameters have detailed descriptions with clear purpose and expected values. The generate_diagram tool particularly excels with extensive usage instructions, code requirements, and common patterns. All tools proactively address user questions and provide step-by-step guidance.",
+      "score": "A"
+    },
     "resources": {
       "tools": 3,
       "prompts": 0,
@@ -2607,7 +2803,8 @@
   },
   {
     "id": "mcp-server-aws-documentation",
-    "name": "mcp-server-aws-documentation ",
+    "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
+    "name": "mcp-server-aws-documentation",
     "description": "Fetch, convert, and search AWS documentation pages, with recommendations for related content.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-documentation",
@@ -2621,10 +2818,14 @@
     "scope": "remote",
     "mutitenant": true,
     "runtime": "python",
-    "version": "0.1.2",
+    "version": "1.0.1",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "A",
+    "rating": {
+      "hash": "01405029d7e8f48cc67d2ae50f72c8e0f4cf91ab3244a55b38fd0db5134cd72b",
+      "reason": "Excellent documentation quality across all three tools. Tool names are clear and specific (read_documentation, search_documentation, recommend). Descriptions are comprehensive with detailed usage sections, clear examples, specific requirements, and practical guidance. Parameter descriptions are complete with purpose, constraints, and usage context clearly explained. Documentation proactively addresses common scenarios like handling long documents and finding new features.",
+      "score": "A"
+    },
     "resources": {
       "tools": 3,
       "prompts": 0,
@@ -2634,7 +2835,8 @@
   },
   {
     "id": "mcp-server-aws-kb-retrieval",
-    "name": "mcp-server-aws-kb-retrieval ",
+    "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
+    "name": "mcp-server-aws-kb-retrieval",
     "description": "MCP server for AWS Knowledge Base retrieval using Bedrock Agent Runtime",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-kb-retrieval",
@@ -2644,14 +2846,18 @@
       "research",
       "cloud"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
     "version": "0.6.2",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "754c8d0597af5e512ade47118a01d5b7f57a3298ee77c2ae243da04d7bfcec97",
+      "reason": "Tool name clearly indicates AWS Knowledge Base retrieval functionality. Description adequately explains what the tool does and its main parameters. Parameter descriptions are clear and specify their purpose. However, the description lacks detail about when to use it, what type of results it returns, or any limitations/constraints of the AWS KB service.",
+      "score": "B"
+    },
     "resources": {
       "tools": 1,
       "prompts": 0,
@@ -2661,7 +2867,8 @@
   },
   {
     "id": "mcp-server-aws-lambda",
-    "name": "mcp-server-aws-lambda ",
+    "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
+    "name": "mcp-server-aws-lambda",
     "description": "AWS Lambda integration to select and run Lambda function as MCP tools without code changes.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-lambda",
@@ -2675,10 +2882,10 @@
     "scope": "remote",
     "mutitenant": true,
     "runtime": "python",
-    "version": "0.1.3",
+    "version": "1.0.0",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "nil",
+    "rating": null,
     "resources": {}
   },
   {
@@ -2748,7 +2955,8 @@
   },
   {
     "id": "mcp-server-aws-terraform",
-    "name": "mcp-server-aws-terraform ",
+    "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
+    "name": "mcp-server-aws-terraform",
     "description": "Terraform AWS best practices, infrastructure as code patterns, and security compliance with Checkov.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-terraform",
@@ -2762,12 +2970,16 @@
     "scope": "standalone",
     "mutitenant": true,
     "runtime": "python",
-    "version": "0.0.10",
+    "version": "1.0.1",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "A",
+    "rating": {
+      "hash": "5752c7ab8a5be36544e2424f9be44b5daa664820a1a114ea33233b6a255e32fb",
+      "reason": "Excellent tool documentation with comprehensive descriptions that clearly explain functionality, usage context, and limitations. Tool names are highly specific and intuitive. Parameter descriptions are thorough with proper type constraints and clear purpose explanations. Each tool provides detailed examples, usage scenarios, and important contextual information like when to use specific parameters or constraints between options.",
+      "score": "A"
+    },
     "resources": {
-      "tools": 6,
+      "tools": 7,
       "prompts": 0,
       "resources": 4,
       "resourcesTemplates": 0
@@ -2775,7 +2987,8 @@
   },
   {
     "id": "mcp-server-axiom",
-    "name": "mcp-server-axiom ",
+    "icon": "https://axiom.co/favicon.ico",
+    "name": "mcp-server-axiom",
     "description": "Query and analyze your Axiom logs, traces, and all other event data in natural language.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-axiom",
@@ -2793,8 +3006,40 @@
     "version": "v0.0.1",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "nil",
+    "rating": null,
     "resources": {}
+  },
+  {
+    "id": "mcp-server-azure",
+    "icon": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/acom_social_icon_azure",
+    "name": "mcp-server-azure",
+    "description": "Integrates AI agents with Azure services for enhanced functionality.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-azure",
+      "application": "https://github.com/Azure/azure-mcp"
+    },
+    "tags": [
+      "cloud",
+      "development"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.1.2",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "cbdca83f971944ddfc647341560c29bdac2b2effdf5a3a97abcb840300ab7a95",
+      "reason": "Tool names are clear and follow consistent Azure service patterns with 'azmcp-' prefix. Descriptions adequately explain functionality and provide context for when to use each tool, though some could be more comprehensive. Most parameters have clear descriptions explaining their purpose and expected values. The toolset demonstrates good consistency across Azure services, but some descriptions lack detail about limitations or specific behaviors that would elevate them to excellent quality.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 54,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-azure-cli-mcp",
@@ -2828,7 +3073,8 @@
   },
   {
     "id": "mcp-server-azure-devops",
-    "name": "mcp-server-azure-devops ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-azure-devops",
     "description": "Azure DevOps integration for repository management, work items, and pipelines.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-azure-devops",
@@ -2843,12 +3089,16 @@
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
-    "version": "0.1.36",
+    "version": "0.1.39",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "C",
+    "rating": {
+      "hash": "aff8d92e2f0861aafc94caf3f62be94b38ae36edd30479515d66d6c17b97f77a",
+      "reason": "Tool names are clear and specific, indicating their Azure DevOps purpose well. Most descriptions adequately explain functionality in 1-2 sentences with good context about what each tool does. Parameter descriptions are generally clear and complete, explaining purpose, types, and expected values effectively. Some tools like 'get_all_repositories_tree' and search functions have particularly thorough documentation. Minor gaps exist in a few areas where descriptions could be slightly more comprehensive, but overall the documentation provides sufficient guidance for proper tool usage.",
+      "score": "B"
+    },
     "resources": {
-      "tools": 30,
+      "tools": 32,
       "prompts": 0,
       "resources": 0,
       "resourcesTemplates": 0
@@ -2907,7 +3157,8 @@
   },
   {
     "id": "mcp-server-bankless-onchain",
-    "name": "mcp-server-bankless-onchain ",
+    "icon": "https://avatars.githubusercontent.com/u/118560591?s=200&v=4",
+    "name": "mcp-server-bankless-onchain",
     "description": "Query Onchain data, like ERC20 tokens, transaction history, smart contract state.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-bankless-onchain",
@@ -2924,7 +3175,11 @@
     "version": "1.0.6",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "C",
+    "rating": {
+      "hash": "b7991cd4431d407b8d5c5ba5ba412802f05548709583887f5c7cdadb9231fb5e",
+      "reason": "Most tool names are clear and descriptive. Basic descriptions are provided for all tools (1-2 sentences each) explaining core functionality. Parameter descriptions are present and understandable, though somewhat sparse. However, descriptions lack comprehensive details about when to use each tool, limitations, or edge cases. The complex 'read_contract' tool has detailed tuple handling instructions but other tools could benefit from more context about their specific use cases and blockchain-specific considerations.",
+      "score": "C"
+    },
     "resources": {
       "tools": 10,
       "prompts": 0,
@@ -2934,7 +3189,8 @@
   },
   {
     "id": "mcp-server-base",
-    "name": "mcp-server-base ",
+    "icon": "https://avatars.githubusercontent.com/u/16627100?s=200&v=4",
+    "name": "mcp-server-base",
     "description": "Onchain integration for Base Network and Coinbase API manage wallets, transfers, contracts and DeFi.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-base",
@@ -2949,9 +3205,9 @@
     "mutitenant": false,
     "runtime": "node",
     "version": "1.0.13",
-    "requiresConfiguration": true,
+    "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "nil",
+    "rating": null,
     "resources": {}
   },
   {
@@ -3031,7 +3287,8 @@
   },
   {
     "id": "mcp-server-basic-memory",
-    "name": "mcp-server-basic-memory ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-basic-memory",
     "description": "Local-first knowledge management combining Zettelkasten with knowledge graphs",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-basic-memory",
@@ -3045,7 +3302,11 @@
     "version": "0.12.3",
     "requiresConfiguration": false,
     "requiresStorage": true,
-    "rating": "C",
+    "rating": {
+      "hash": "b6188697e384bfa8beabec46ed8c36793664c58030b304cf26c034acab11ca6a",
+      "reason": "Tool names are clear and intuitive, indicating their purposes well. Most descriptions adequately explain functionality, with some tools like 'build_context' and 'recent_activity' providing good detail about usage. However, parameter descriptions are largely missing or inadequate - most parameters only have generic titles without explaining their purpose, constraints, or how they affect tool behavior. The documentation leaves users guessing about parameter usage despite having clear tool-level descriptions.",
+      "score": "C"
+    },
     "resources": {
       "tools": 9,
       "prompts": 3,
@@ -3128,7 +3389,8 @@
   },
   {
     "id": "mcp-server-benborla-mysql",
-    "name": "mcp-server-benborla-mysql ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-benborla-mysql",
     "description": "MySQL database integration in NodeJS with configurable access controls and schema inspection.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-benborla-mysql",
@@ -3142,10 +3404,14 @@
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
-    "version": "2.0.0",
+    "version": "2.0.2",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "C",
+    "rating": {
+      "hash": "b5f9b05ca59dee53e652c8065237f6599f258c54e43d1b815fe8e545a272e75b",
+      "reason": "Tool name is clear but description is poorly formatted with version placeholder '[vundefined]' and lacks essential details about connection requirements, supported MySQL features, or when to use it. The 'sql' parameter description is minimal, providing no guidance on query structure, constraints, or expected format.",
+      "score": "D"
+    },
     "resources": {
       "tools": 1,
       "prompts": 0,
@@ -3228,7 +3494,8 @@
   },
   {
     "id": "mcp-server-bilibili-js",
-    "name": "mcp-server-bilibili-js ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-bilibili-js",
     "description": "Search Bilibili content.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-bilibili-js",
@@ -3246,7 +3513,11 @@
     "version": "0.1.2",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "D",
+    "rating": {
+      "hash": "3a32785f84904eb4aedd266c73b40ae8a9ba7d274dae2b0d1bebd18e20cee2ed",
+      "reason": "Tool name is clear and specific, but the description is extremely brief (only 7 Chinese characters meaning 'search Bilibili video content') without explaining functionality, usage context, or what information is returned. Parameter descriptions are minimal - just basic labels without explaining how they affect behavior or providing usage guidance.",
+      "score": "D"
+    },
     "resources": {
       "tools": 1,
       "prompts": 0,
@@ -3332,7 +3603,8 @@
   },
   {
     "id": "mcp-server-bing-search",
-    "name": "mcp-server-bing-search ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-bing-search",
     "description": "Web search capabilities using Microsoft Bing Search API.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-bing-search",
@@ -3349,7 +3621,11 @@
     "version": "0.1.0",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "0efd2d7bb0c106a19ddca16a48351deccf6cac548a542adfb60c522d8c1762d3",
+      "reason": "Tool names clearly indicate their purpose with the bing_ prefix showing the service provider. Descriptions adequately explain functionality and mention when to use each tool (general info, current events, visual content). However, parameter descriptions are completely missing from the input schema - all parameters only have title and type without descriptions explaining their purpose, constraints, or expected values like market codes or freshness options.",
+      "score": "C"
+    },
     "resources": {
       "tools": 3,
       "prompts": 0,
@@ -3425,7 +3701,8 @@
   },
   {
     "id": "mcp-server-bitcoin",
-    "name": "mcp-server-bitcoin ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-bitcoin",
     "description": "A Model Context Protocol (MCP) server that enables AI models to interact with Bitcoin blockchain.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-bitcoin",
@@ -3442,7 +3719,11 @@
     "version": "0.0.6",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "D",
+    "rating": {
+      "hash": "02d92f7e54c7aed65eb36f02d51b5e60dfa595390a8c83a6256fad2a4ac85476",
+      "reason": "Tool names are clear and specific, indicating Bitcoin/Lightning functionality well. However, descriptions are minimal one-liners that lack essential context about when to use each tool, what information they return, limitations, or usage scenarios. Parameter descriptions are basic but adequate. The documentation leaves significant gaps requiring users to infer tool purposes and behavior details.",
+      "score": "D"
+    },
     "resources": {
       "tools": 7,
       "prompts": 0,
@@ -3479,6 +3760,38 @@
       }
     ],
     "stars": 37
+  },
+  {
+    "id": "mcp-server-bitrefill",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/bitrefill/live/logo-1744790288436.png",
+    "name": "mcp-server-bitrefill",
+    "description": "Provides Bitrefill services for AI assistants via the Model Context Protocol.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-bitrefill",
+      "application": "https://github.com/bitrefill/bitrefill-mcp-server"
+    },
+    "tags": [
+      "integration",
+      "finance"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.3.0",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "79f90ee88d0f8c9984e8397e46d6d807e7f5955fe8cf261896b733056a013c0e",
+      "reason": "Tool names are clear and purpose-specific. Most descriptions adequately explain functionality with good guidance on when to use tools (like search suggesting to use categories first). Parameter descriptions are generally clear with good examples and constraints. However, some tools like 'detail' have minimal descriptions, and several parameters in 'search' lack sufficient explanation of their purpose or impact on behavior.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 12,
+      "prompts": 0,
+      "resources": 7,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-blockbeats-mcp",
@@ -3634,7 +3947,8 @@
   },
   {
     "id": "mcp-server-brave-search",
-    "name": "mcp-server-brave-search ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-brave-search",
     "description": "MCP server for Brave Search API integration",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-brave-search",
@@ -3652,7 +3966,11 @@
     "version": "0.6.2",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "A",
+    "rating": {
+      "hash": "8d72b2124439ca5ac8d884b157db2105f11127be34bbd35edbe2c340ee7cc6c9",
+      "reason": "Both tools have clear, specific names that indicate their distinct purposes. Descriptions are comprehensive, explaining functionality, use cases, return data, and when to use each tool. All parameters include clear descriptions with constraints (character limits, result counts, pagination limits) and practical examples. The documentation proactively addresses user scenarios like 'near me' queries and fallback behavior.",
+      "score": "A"
+    },
     "resources": {
       "tools": 2,
       "prompts": 0,
@@ -3710,7 +4028,8 @@
   },
   {
     "id": "mcp-server-brightdata",
-    "name": "mcp-server-brightdata ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-brightdata",
     "description": "Discover, extract, and interact with the web - automated access across the public internet.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-brightdata",
@@ -3724,12 +4043,16 @@
     "scope": "native",
     "mutitenant": false,
     "runtime": "node",
-    "version": "1.8.1",
+    "version": "2.1.0",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "0fe77a22ce910ba578498e042eef70ebea6395a9ea5d180625006cb9b75e93cc",
+      "reason": "Mixed quality documentation. While some tools like 'search_engine' have adequate descriptions with clear functionality and parameter explanations, the majority suffer from minimal descriptions and poor parameter documentation. Many tools lack essential details about URL format requirements, and parameter descriptions are often missing (e.g., 'query' parameter has no description). The large number of specialized tools with repetitive, brief descriptions and inadequate parameter guidance brings the overall quality to adequate level.",
+      "score": "C"
+    },
     "resources": {
-      "tools": 30,
+      "tools": 48,
       "prompts": 0,
       "resources": 0,
       "resourcesTemplates": 0
@@ -3769,7 +4092,8 @@
   },
   {
     "id": "mcp-server-browser-kit",
-    "name": "mcp-server-browser-kit ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-browser-kit",
     "description": "An MCP Server for interacting with manifest v2 compatible browsers.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-browser-kit",
@@ -3786,7 +4110,11 @@
     "version": "5.0.1",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "A",
+    "rating": {
+      "hash": "085d77ac7cb3f81bd64e94a0293733a58a6f24a3b70703dd19bf6c8626111587",
+      "reason": "Tool names are highly specific and intuitive with clear functional indicators. Descriptions are comprehensive (3-4+ sentences each) with detailed explanations of functionality, usage context, workflow guidance, and manifest version limitations. All parameters have clear, complete descriptions explaining purpose and expected values. Documentation proactively addresses workflow sequences, browser compatibility, and common usage patterns, making it exceptionally clear when and how to use each tool.",
+      "score": "A"
+    },
     "resources": {
       "tools": 11,
       "prompts": 0,
@@ -3843,7 +4171,8 @@
   },
   {
     "id": "mcp-server-browserbase",
-    "name": "mcp-server-browserbase ",
+    "icon": "https://browserbase.com/favicon.ico",
+    "name": "mcp-server-browserbase",
     "description": "Automate browser interactions in the cloud (e.g. web navigation, data extraction, form filling).",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-browserbase",
@@ -3854,24 +4183,29 @@
       "cloud",
       "automation"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
-    "version": "0.5.1",
+    "version": "1.0.5",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "nil",
+    "rating": {
+      "hash": "74750b7055916481b100580aa6163a15c9b0717a079c6c311ea6228467c78be3",
+      "reason": "While tool names are clear and indicate purpose, descriptions are inconsistent with many being overly brief (e.g., 'Close the current page...', 'Resize window...'). Critical parameter descriptions are missing or inadequate - width/height lack descriptions, sessionId appears without explanation, and dummy parameters suggest incomplete documentation. The toolset has significant gaps requiring users to infer functionality and usage details.",
+      "score": "D"
+    },
     "resources": {
-      "tools": 8,
+      "tools": 19,
       "prompts": 0,
-      "resources": 1,
+      "resources": 0,
       "resourcesTemplates": 0
     }
   },
   {
     "id": "mcp-server-bruno",
-    "name": "mcp-server-bruno ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-bruno",
     "description": "An MCP server for interacting with Bruno API Client.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-bruno",
@@ -3888,7 +4222,11 @@
     "version": "0.1.0",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "C",
+    "rating": {
+      "hash": "267b80956558743858b9c539df1de8f46b9ced6de30a5112578f599e0d020459",
+      "reason": "Tool name is clear and indicates purpose. Description briefly explains functionality but lacks important details about what Bruno Collections are, when to use this tool, what output to expect, or any limitations. Parameter descriptions are basic but adequate - 'collection' and 'environment' are reasonably clear, though 'variables' could be more specific about format and usage.",
+      "score": "C"
+    },
     "resources": {
       "tools": 1,
       "prompts": 0,
@@ -3958,7 +4296,8 @@
   },
   {
     "id": "mcp-server-bugsnag",
-    "name": "mcp-server-bugsnag ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-bugsnag",
     "description": "An MCP server for interacting with Bugsnag.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-bugsnag",
@@ -3976,7 +4315,11 @@
     "version": "1.1.0",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "C",
+    "rating": {
+      "hash": "67889fc67331c679d0ba1fa94be593902391b6470d6464992e761410b8b382a7",
+      "reason": "Tool names are clear and indicate their Bugsnag-specific functionality well. Descriptions are brief but adequately explain the main purpose of each tool in 1-2 sentences. Parameter descriptions consistently identify their purpose (e.g., 'Bugsnag project ID', 'Maximum number of errors to return') and types are clear. However, descriptions lack guidance on when to use each tool, what specific information they return, or any usage limitations, leaving some user questions unanswered.",
+      "score": "C"
+    },
     "resources": {
       "tools": 11,
       "prompts": 0,
@@ -4040,7 +4383,8 @@
   },
   {
     "id": "mcp-server-calculator",
-    "name": "mcp-server-calculator ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-calculator",
     "description": "This server enables LLMs to use calculator for precise numerical calculations.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-calculator",
@@ -4056,7 +4400,11 @@
     "version": "0.2.0",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "D",
+    "rating": {
+      "hash": "c783abc4af6a09e97cebbdd5f8c7ed8e5af641db63ee3e282d761fadfb77781a",
+      "reason": "The tool name 'calculate' is appropriately descriptive, but the description is minimal with only one brief sentence that doesn't explain what types of expressions are supported, when to use it, or any limitations. The parameter description is completely missing - 'expression' has no description field explaining what kind of input is expected or how it should be formatted.",
+      "score": "D"
+    },
     "resources": {
       "tools": 1,
       "prompts": 0,
@@ -4135,7 +4483,8 @@
   },
   {
     "id": "mcp-server-chargebee",
-    "name": "mcp-server-chargebee ",
+    "icon": "https://www.chargebee.com/static/resources/brand/favicon.png",
+    "name": "mcp-server-chargebee",
     "description": "MCP Server that connects AI agents to Chargebee platform.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-chargebee",
@@ -4144,14 +4493,18 @@
     "tags": [
       "finance"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "95187be9a453013a601f1ce6649cd1bbbe955ff8bdea813091988c108594bf91",
+      "reason": "Tool names are clear and specific, indicating their distinct purposes (documentation search vs code planning). Descriptions adequately explain functionality and when to use each tool, with good differentiation between the two. Parameter descriptions are clear and include helpful guidance like 'Check the user's application language.' The enum constraints for language are well-defined. Minor improvement could be made in describing what type of content/format each tool returns, but overall provides sufficient guidance for proper usage.",
+      "score": "B"
+    },
     "resources": {
       "tools": 2,
       "prompts": 0,
@@ -4161,7 +4514,8 @@
   },
   {
     "id": "mcp-server-chart",
-    "name": "mcp-server-chart ",
+    "icon": "https://avatars.githubusercontent.com/u/19199542?s=200&v=4",
+    "name": "mcp-server-chart",
     "description": "A Model Context Protocol server for generating visual charts using AntV.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-chart",
@@ -4176,10 +4530,14 @@
     "scope": "standalone",
     "mutitenant": true,
     "runtime": "node",
-    "version": "0.2.6",
+    "version": "0.4.1",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "3fefb72f84551967fee85457fc2de61fa51d592a5529d6ecc0277bd7ef030917",
+      "reason": "Tool names are clear and descriptive, indicating chart types effectively. Descriptions adequately explain functionality and use cases with good examples, though some could be more concise. Parameter descriptions are generally clear with helpful examples and proper type specifications. Minor issues include some verbose descriptions and inconsistent detail levels across tools, but overall documentation provides solid guidance for usage.",
+      "score": "B"
+    },
     "resources": {
       "tools": 15,
       "prompts": 0,
@@ -4223,34 +4581,35 @@
   },
   {
     "id": "mcp-server-chroma",
-    "name": "mcp-server-unknown-chroma",
-    "description": "Embeddings, vector search, document storage, and full-text search with the open-source AI application database.",
+    "icon": "https://trychroma.com/_next/static/media/chroma-logo.ae2d6e4b.svg",
+    "name": "mcp-server-chroma",
+    "description": "Embedding database for LLM applications with advanced search capabilities.",
     "links": {
-      "application": ""
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-chroma",
+      "application": "https://github.com/chroma-core/chroma-mcp"
     },
-    "official": false,
-    "runtime": "",
-    "scope": "",
     "tags": [
       "research",
       "database"
     ],
-    "provider": "npx",
-    "stars": 0,
-    "config": [
-      {
-        "mcpServers": {
-          "chroma": {
-            "command": "npx",
-            "args": [
-              "-y",
-              "chroma-mcp-server"
-            ],
-            "env": {}
-          }
-        }
-      }
-    ]
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "python",
+    "version": "0.2.4",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "e51bac8ccca2f1d4dd5e71986f26286e36e653c1b0911794f7eff253272b3993",
+      "reason": "Tool names are clear and intuitive with consistent 'chroma_' prefixes. Descriptions are generally comprehensive, explaining functionality and providing detailed parameter information. Most parameters have adequate descriptions, though some technical HNSW parameters could benefit from more context about their practical impact. The query filtering examples in descriptions are particularly helpful for understanding complex parameters.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 12,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-chroma-mcp",
@@ -4273,7 +4632,8 @@
   },
   {
     "id": "mcp-server-chronulus-ai",
-    "name": "mcp-server-chronulus-ai ",
+    "icon": "https://www.chronulus.com/favicon/chronulus-logo-blue-on-alpha-square-128x128.ico",
+    "name": "mcp-server-chronulus-ai",
     "description": "Predict anything with Chronulus AI forecasting and prediction agents.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-chronulus-ai",
@@ -4291,7 +4651,11 @@
     "version": "0.0.3",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "A",
+    "rating": {
+      "hash": "36fa23de6a53390638623d5bbdfe08b29f02bda8878233e460f6c18f27ff0afa",
+      "reason": "All tool names are highly specific and clear, indicating their exact purpose. Descriptions are comprehensive (4-6 sentences each), thoroughly explaining functionality, when/how to use each tool, specific constraints, and expected inputs/outputs. Parameter descriptions are detailed and complete, with clear explanations of purpose, expected formats, and usage examples. The documentation proactively addresses common user scenarios and provides specific guidance for different input types and use cases.",
+      "score": "A"
+    },
     "resources": {
       "tools": 9,
       "prompts": 0,
@@ -4350,7 +4714,8 @@
   },
   {
     "id": "mcp-server-circleci",
-    "name": "mcp-server-circleci ",
+    "icon": "https://circleci.com/favicon.ico",
+    "name": "mcp-server-circleci",
     "description": "Enable AI Agents to fix build failures from CircleCI.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-circleci",
@@ -4363,12 +4728,16 @@
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
-    "version": "0.5.0",
+    "version": "0.9.0",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "A",
+    "rating": {
+      "hash": "38b9f9bdb3c8717b967704343e7158863b8bac83b92a75a89697900696bd9975",
+      "reason": "The toolset provides clear, comprehensive descriptions with detailed usage scenarios and parameter explanations. Tool names are specific and intuitive (get_build_failure_logs, find_flaky_tests, etc.). Most descriptions thoroughly explain functionality, use cases, and constraints with good detail. Parameter descriptions are mostly clear with examples and format specifications. However, some descriptions are excessively verbose with repetitive warnings and instructions that could be more concise, and a few parameter descriptions lack complete clarity about their exact purpose or constraints.",
+      "score": "B"
+    },
     "resources": {
-      "tools": 8,
+      "tools": 11,
       "prompts": 0,
       "resources": 0,
       "resourcesTemplates": 0
@@ -4546,7 +4915,8 @@
   },
   {
     "id": "mcp-server-coda",
-    "name": "mcp-server-coda ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-coda",
     "description": "MCP server for Coda.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-coda",
@@ -4559,12 +4929,16 @@
     "scope": "remote",
     "mutitenant": false,
     "runtime": "node",
-    "version": "1.1.2",
+    "version": "1.2.3",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "C",
+    "rating": {
+      "hash": "9135e75217b21222213c6c2b96e7e854217323de74c56e15237fa9fb13c96503",
+      "reason": "Tool names are clear and specific with consistent 'coda_' prefix indicating purpose. Descriptions are brief (1 sentence each) but adequately explain basic functionality. Parameter descriptions are clear and indicate purpose and expected input types. However, descriptions lack context about when to use tools, what they return, limitations, or usage scenarios, requiring users to infer some details about tool behavior and appropriate usage contexts.",
+      "score": "C"
+    },
     "resources": {
-      "tools": 7,
+      "tools": 8,
       "prompts": 0,
       "resources": 0,
       "resourcesTemplates": 0
@@ -4605,7 +4979,8 @@
   },
   {
     "id": "mcp-server-codelogic",
-    "name": "mcp-server-codelogic ",
+    "icon": "https://codelogic.com/wp-content/themes/codelogic/assets/img/favicon.png",
+    "name": "mcp-server-codelogic",
     "description": "CodeLogic, provides access to code dependency analytics, risk analysis, and impact assessment.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-codelogic",
@@ -4620,10 +4995,14 @@
     "scope": "remote",
     "mutitenant": true,
     "runtime": "python",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "6ec61b44eda16a1fcf261c99322fe3335be654e0df27882bb1d15481073e02af",
+      "reason": "Tool names are clear and specific, indicating their exact purpose (method impact analysis vs database impact analysis). Descriptions are comprehensive, explaining functionality, recommended workflows, and when to use each tool. Parameter descriptions are detailed with clear purposes, types, and constraints (enum values for entity_type). The documentation proactively addresses usage scenarios and provides step-by-step guidance.",
+      "score": "A"
+    },
     "resources": {
       "tools": 2,
       "prompts": 0,
@@ -4728,7 +5107,8 @@
   },
   {
     "id": "mcp-server-codex",
-    "name": "mcp-server-codex ",
+    "icon": "https://avatars.githubusercontent.com/u/175457154?s=200&v=4",
+    "name": "mcp-server-codex",
     "description": "Codex API integration for real-time enriched blockchain and market data on 60+ networks.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-codex",
@@ -4747,7 +5127,11 @@
     "version": "0.1.3",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "D",
+    "rating": {
+      "hash": "30e398e8fb04885fef01049793c974e7c0a29ccf921b8566200a79b1e361e56f",
+      "reason": "Tool names are clear and consistently structured, indicating purpose well. Most descriptions are concise (1-2 sentences) and explain core functionality adequately. Parameter descriptions are generally clear with good type information and constraints. However, descriptions could be more comprehensive - they lack guidance on when to use tools, what information is vs isn't provided, and important limitations. Some tools like 'filter_tokens' have very brief descriptions despite complex schemas. The extensive use of JSON Schema references shows good structure but some parameter descriptions rely heavily on references rather than standalone clarity.",
+      "score": "B"
+    },
     "resources": {
       "tools": 25,
       "prompts": 0,
@@ -4845,7 +5229,8 @@
   },
   {
     "id": "mcp-server-coincap",
-    "name": "mcp-server-coincap ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-coincap",
     "description": "Real-time cryptocurrency market data integration using CoinCap's public API.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-coincap",
@@ -4863,7 +5248,11 @@
     "version": "0.9.3",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "F",
+    "rating": {
+      "hash": "b9971edf9e11ce9ecb326f0db6f9d04c4379cace5c0dfed18ae3f6c8184e92ac",
+      "reason": "Tool names are clear but descriptions are minimal (5-6 words each) providing insufficient context about functionality, limitations, or usage scenarios. The bitcoin_price tool lacks any parameters despite likely needing configuration options, and parameter descriptions are basic without explaining constraints or expected formats.",
+      "score": "D"
+    },
     "resources": {
       "tools": 3,
       "prompts": 0,
@@ -4989,7 +5378,8 @@
   },
   {
     "id": "mcp-server-commands",
-    "name": "mcp-server-commands ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-commands",
     "description": "Run any command with `run_command` and `run_script` tools.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-commands",
@@ -5006,7 +5396,11 @@
     "version": "0.5.0",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "D",
+    "rating": {
+      "hash": "c4b5cff78ae412ee2d0f5a35fcb3f60b6c111e6892aff7c9170bea56cdb0039c",
+      "reason": "Tool name clearly indicates purpose. Description is brief but adequately explains functionality. Parameter descriptions are clear and helpful, especially the stdin parameter with good examples. However, the main description lacks important details about security considerations, command output handling, and usage limitations that would be expected for a system command execution tool.",
+      "score": "C"
+    },
     "resources": {
       "tools": 1,
       "prompts": 1,
@@ -5051,7 +5445,8 @@
   },
   {
     "id": "mcp-server-contentful",
-    "name": "mcp-server-contentful ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-contentful",
     "description": "Update, create, delete content, content-models and assets in your Contentful Space.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-contentful",
@@ -5066,10 +5461,14 @@
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
-    "version": "1.13.1",
+    "version": "1.16.1",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "A",
+    "rating": {
+      "hash": "b677f50cbc5926b3c92fd2f123831fdac21d54497c661782d22a2d0415de9dbf",
+      "reason": "Tool names are clear and intuitive, indicating their Contentful-specific purposes well. Most descriptions adequately explain functionality and usage context, with some providing excellent detail (like create_entry and update_entry with locale requirements). However, many tools have minimal descriptions that lack comprehensive guidance on when to use them or important limitations. Parameter descriptions are generally clear with good use of constraints and defaults, though some could benefit from more detailed explanations of their purpose and impact on tool behavior.",
+      "score": "B"
+    },
     "resources": {
       "tools": 35,
       "prompts": 14,
@@ -5113,7 +5512,8 @@
   },
   {
     "id": "mcp-server-context-7",
-    "name": "mcp-server-context-7 ",
+    "icon": "https://avatars.githubusercontent.com/u/74989412?s=200&v=4",
+    "name": "mcp-server-context-7",
     "description": "Context7 MCP - Up-to-date Docs For Any Cursor Prompt.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-context-7",
@@ -5128,10 +5528,14 @@
     "scope": "standalone",
     "mutitenant": true,
     "runtime": "node",
-    "version": "1.0.8",
+    "version": "1.0.12",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "babc51d91a9965b5078e3c119f857456f8b920be2dc5f9b3c7c56087a1deb940",
+      "reason": "Tool names are clear and specific, indicating their purpose effectively. Descriptions are comprehensive and detailed, explaining not only what each tool does but also when and how to use them, including important workflow requirements and selection criteria. Parameter descriptions are complete with clear explanations of purpose, format requirements, and constraints. The documentation proactively addresses the relationship between tools and provides thorough guidance for proper usage.",
+      "score": "A"
+    },
     "resources": {
       "tools": 2,
       "prompts": 0,
@@ -5192,33 +5596,34 @@
   },
   {
     "id": "mcp-server-couchbase",
+    "icon": "https://avatars.githubusercontent.com/u/605755?s=200&v=4",
     "name": "mcp-server-couchbase",
     "description": "Interact with the data stored in Couchbase clusters using natural language.",
     "links": {
-      "application": ""
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-couchbase",
+      "application": "https://github.com/Couchbase-Ecosystem/mcp-server-couchbase"
     },
-    "official": false,
-    "runtime": "",
-    "scope": "",
     "tags": [
       "translation"
     ],
-    "provider": "npx",
-    "stars": 0,
-    "config": [
-      {
-        "mcpServers": {
-          "couchbase": {
-            "command": "npx",
-            "args": [
-              "-y",
-              "couchbase-mcp-server"
-            ],
-            "env": {}
-          }
-        }
-      }
-    ]
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "python",
+    "version": "0.3.0",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "2b1c669fa6b74a709f2aeffaf24ec7e6441fe8d062105ea8540ddbd69e83c394",
+      "reason": "Tool names are clear and specific, indicating their database operations well. Descriptions provide basic functionality but lack important context like usage scenarios, limitations, or error conditions. Parameter documentation is minimal with only generic titles like 'Collection Name' and 'Document Id' without explaining their purpose or format requirements. The toolset covers essential Couchbase operations but needs more comprehensive documentation to guide proper usage.",
+      "score": "C"
+    },
+    "resources": {
+      "tools": 6,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-cric-wuye-ai",
@@ -5660,32 +6065,69 @@
     "stars": 2
   },
   {
-    "id": "mcp-server-dart",
-    "name": "mcp-server-dart",
-    "description": "Interact with task, doc, and project data in Dart, an AI-native project management tool.",
+    "id": "mcp-server-dappier",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/dappier/live/logo-1744879375857.png",
+    "name": "mcp-server-dappier",
+    "description": "Real-time web search and access to premium media data.",
     "links": {
-      "application": ""
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-dappier",
+      "application": "https://github.com/dappierai/dappier-mcp"
     },
-    "official": false,
-    "runtime": "",
-    "scope": "",
-    "tags": [],
-    "provider": "npx",
-    "stars": 0,
-    "config": [
-      {
-        "mcpServers": {
-          "dart": {
-            "command": "npx",
-            "args": [
-              "-y",
-              "dart-mcp-server"
-            ],
-            "env": {}
-          }
-        }
-      }
-    ]
+    "tags": [
+      "web",
+      "research",
+      "finance"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "python",
+    "version": "0.3.2",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "46ba82ebda67426d8f7040ec189ee3edad3047c72df4deeecbf8a896d4ec72be",
+      "reason": "Both tools have excellent documentation quality. Tool names clearly indicate purpose ('real_time_search' and 'ai_recommendations'). Descriptions are comprehensive, explaining functionality, when to use each tool, and what they return. All parameters have detailed descriptions with clear guidance on usage, including enumerated values with explanations for model/algorithm selection. The documentation proactively addresses user scenarios and provides complete context for proper tool usage.",
+      "score": "A"
+    },
+    "resources": {
+      "tools": 2,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
+  },
+  {
+    "id": "mcp-server-dart",
+    "icon": "http://app.itsdart.com/static/img/favicon.png",
+    "name": "mcp-server-dart",
+    "description": "AI-powered project management server for task and document management.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-dart",
+      "application": "https://github.com/its-dart/dart-mcp-server"
+    },
+    "tags": [
+      "research",
+      "development"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.1.14",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "f317a10e6a3d91f1bd47f233f56a5463dbadafc8a726148d65032b13c195156e",
+      "reason": "Tool names are clear and intuitive, indicating their purpose well. Descriptions adequately explain functionality and when to use each tool, though some could be more comprehensive. Parameter descriptions are generally clear and complete, with good use of constraints like regex patterns for IDs. The toolset provides solid documentation that would enable effective usage, with only minor gaps in detail that prevent it from reaching the highest grade.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 12,
+      "prompts": 3,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-data-exploration",
@@ -5997,7 +6439,8 @@
   },
   {
     "id": "mcp-server-desktop-commander",
-    "name": "mcp-server-desktop-commander ",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/desktop-commander/live/logo-1744790813733.png",
+    "name": "mcp-server-desktop-commander",
     "description": "A swiss-army-knife that can manage/execute programs and read/write/search/edit code and text files.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-desktop-commander",
@@ -6012,10 +6455,14 @@
     "scope": "native",
     "mutitenant": true,
     "runtime": "node",
-    "version": "0.1.39",
+    "version": "0.2.2",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "05e647e0fc1e67ef2a1f7acb79e1662d3fe56da9f243945e322bfaefb8ce442f",
+      "reason": "Tool names are highly specific and intuitive, clearly indicating purpose. Descriptions are comprehensive, explaining functionality, when to use tools, limitations, and important warnings. Most parameters have clear descriptions of purpose and expected values. Strong documentation includes practical guidance, security warnings, and cross-references between tools. Minor gaps include some parameters lacking detailed descriptions (e.g., 'timeoutMs', 'shell' parameter purposes), and a few overly verbose descriptions could be more concise while maintaining clarity.",
+      "score": "B"
+    },
     "resources": {
       "tools": 18,
       "prompts": 0,
@@ -6055,33 +6502,36 @@
   },
   {
     "id": "mcp-server-devhub",
+    "icon": "https://www.devhub.com/img/upload/favicon-196x196-dh.png",
     "name": "mcp-server-devhub",
-    "description": "Manage and utilize website content within the DevHub CMS platform.",
+    "description": "Manage content and operations in DevHub CMS using MCP.",
     "links": {
-      "application": ""
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-devhub",
+      "application": "https://github.com/devhub/devhub-cms-mcp"
     },
-    "official": false,
-    "runtime": "",
-    "scope": "",
     "tags": [
-      "development"
+      "automation",
+      "web",
+      "research"
     ],
-    "provider": "npx",
-    "stars": 0,
-    "config": [
-      {
-        "mcpServers": {
-          "devhub": {
-            "command": "npx",
-            "args": [
-              "-y",
-              "devhub-mcp-server"
-            ],
-            "env": {}
-          }
-        }
-      }
-    ]
+    "official": true,
+    "scope": "native",
+    "mutitenant": true,
+    "runtime": "python",
+    "version": "0.3.0",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "b6f6c8ad0cdd10a3cf39532afb3fed7de95807e0079bd7867a432e09047c05e5",
+      "reason": "Tool names are clear and purpose-specific. Most descriptions adequately explain functionality with 2-3 sentences and provide context about when to use each tool. Parameter descriptions are generally clear about purpose and expected input types. Some tools like get_hours_of_operation and update_hours provide excellent detail with examples, while others like get_blog_post are more minimal but still adequate. A few parameters lack complete descriptions (e.g., hours_type enum values, new_hours structure details), preventing an A grade.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 10,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-dexpaprika",
@@ -6243,7 +6693,8 @@
   },
   {
     "id": "mcp-server-docker",
-    "name": "mcp-server-docker ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-docker",
     "description": "Integrate with Docker to manage containers, images, volumes, and networks.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-docker",
@@ -6258,10 +6709,14 @@
     "scope": "native",
     "mutitenant": true,
     "runtime": "python",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "ec78d2739c5353311b6780c8e0753a3cc09f08b27cf85ff90931c879db2ff754",
+      "reason": "Tool names are clear and Docker-specific, adequately indicating their functionality. Most descriptions are brief but functional, clearly stating what each tool does. However, many descriptions lack guidance on when to use tools or important limitations. Parameter descriptions are generally adequate with clear purposes, though some could benefit from more detail about constraints and usage patterns. The toolset provides basic usability but leaves some user questions unanswered, particularly around Docker-specific nuances and best practices.",
+      "score": "C"
+    },
     "resources": {
       "tools": 19,
       "prompts": 1,
@@ -6297,6 +6752,39 @@
       }
     ],
     "stars": 256
+  },
+  {
+    "id": "mcp-server-doit",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/doit/live/logo-1744869144771.png",
+    "name": "mcp-server-doit",
+    "description": "Access DoiT API for analyzing cloud data and troubleshooting.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-doit",
+      "application": "https://github.com/doitintl/doit-mcp-server"
+    },
+    "tags": [
+      "research",
+      "cloud",
+      "web"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.1.33",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "f1d919f5d09a2b26d9d7d2f1991861ac72990298df9725b0688688a42179e5c0",
+      "reason": "Most tool names are adequately descriptive, but descriptions are consistently brief and lack crucial detail about functionality, limitations, and when to use each tool. Many parameter descriptions are minimal (e.g., 'incident ID', 'anomaly ID') without explaining their purpose or expected format. The 'run_query' tool has extensive schema documentation but a confusing description that relies heavily on examples rather than clear explanation of core functionality.",
+      "score": "D"
+    },
+    "resources": {
+      "tools": 14,
+      "prompts": 10,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-dolphindb-mcp-server",
@@ -6382,6 +6870,39 @@
       }
     ],
     "stars": 102
+  },
+  {
+    "id": "mcp-server-duckduckgo",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/duckduckgo/live/logo-1745330531634.png",
+    "name": "mcp-server-duckduckgo",
+    "description": "Provides web search and content fetching using DuckDuckGo.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-duckduckgo",
+      "application": "https://github.com/nickclyde/duckduckgo-mcp-server"
+    },
+    "tags": [
+      "web",
+      "research",
+      "integration"
+    ],
+    "official": false,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "python",
+    "version": "0.1.1",
+    "requiresConfiguration": false,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "bc867e06b4c29a68dfd0bdfb62d85eaf1bcb4133c8ef516c7890e860dff6af5e",
+      "reason": "Tool names are clear and indicate purpose well. Descriptions briefly outline main functionality but lack important details like what 'formatted results' means for search, what content formats are supported for fetch_content, when to use each tool, and any limitations. Parameter descriptions are minimal with only basic titles, missing explanations of expected formats or constraints.",
+      "score": "C"
+    },
+    "resources": {
+      "tools": 2,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-duckduckgo-mcp-server",
@@ -6486,34 +7007,35 @@
   },
   {
     "id": "mcp-server-e2b",
+    "icon": "https://e2b.dev/favicon.ico",
     "name": "mcp-server-e2b",
-    "description": "Run code in secure sandboxes hosted by E2B.",
+    "description": "Adds code interpreting capabilities to the Claude Desktop app.",
     "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-e2b",
       "application": "https://github.com/e2b-dev/mcp-server"
     },
-    "official": false,
-    "runtime": "",
-    "scope": "",
     "tags": [
-      "security",
+      "automation",
       "development"
     ],
-    "provider": "npx",
-    "stars": 0,
-    "config": [
-      {
-        "mcpServers": {
-          "e2b": {
-            "command": "npx",
-            "args": [
-              "-y",
-              "mcp-server"
-            ],
-            "env": {}
-          }
-        }
-      }
-    ]
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.2.0",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "90a552bfe6c3f643bf7316f9acafd0c51d4cafd44194d5f90c2d25355ea9eb90",
+      "reason": "Tool name is clear but the description is minimal (one sentence) and lacks important details about when to use it, what outputs to expect, or limitations. The 'code' parameter has no description whatsoever, leaving users to guess what type of Python code is acceptable or how it should be formatted.",
+      "score": "D"
+    },
+    "resources": {
+      "tools": 1,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-edgeone-pages-mcp",
@@ -6574,6 +7096,38 @@
     ]
   },
   {
+    "id": "mcp-server-elasticsearch",
+    "icon": "https://www.elastic.co/favicon.ico",
+    "name": "mcp-server-elasticsearch",
+    "description": "Connects to Elasticsearch for natural language data queries.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-elasticsearch",
+      "application": "https://github.com/elastic/mcp-server-elasticsearch"
+    },
+    "tags": [
+      "database",
+      "development"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.1.1",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "0c98216b510fc637fba98eb6092ee1fd1c4b8662e1dcb2a3d8a69314c89d1aa9",
+      "reason": "Tool names are clear and indicate purpose well. Descriptions are brief but adequately explain basic functionality. Parameter descriptions are present and clear about their purpose, with good constraints like minLength. However, descriptions lack detail about when to use each tool, what specific information they return, and important usage context that would help an LLM make informed decisions about tool selection.",
+      "score": "C"
+    },
+    "resources": {
+      "tools": 3,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
+  },
+  {
     "id": "mcp-server-elasticsearch-mcp-server",
     "name": "mcp-server-elasticsearch",
     "description": "MCP Server implementation that provides Elasticsearch interaction.",
@@ -6624,31 +7178,35 @@
   },
   {
     "id": "mcp-server-elevenlabs",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/elevenlabs/live/logo-1744878539557.png",
     "name": "mcp-server-elevenlabs",
-    "description": "The official ElevenLabs MCP server.",
+    "description": "Enables voice synthesis and audio processing via APIs.",
     "links": {
-      "application": ""
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-elevenlabs",
+      "application": "https://github.com/elevenlabs/elevenlabs-mcp"
     },
-    "official": false,
-    "runtime": "",
-    "scope": "",
-    "tags": [],
-    "provider": "npx",
-    "stars": 0,
-    "config": [
-      {
-        "mcpServers": {
-          "elevenlabs": {
-            "command": "npx",
-            "args": [
-              "-y",
-              "elevenlabs-mcp-server"
-            ],
-            "env": {}
-          }
-        }
-      }
-    ]
+    "tags": [
+      "integration",
+      "communication"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "python",
+    "version": "0.4.0",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "68055298e6670c263f5f191436fcb64c8bca1b528117e7ac7d81521b8622256e",
+      "reason": "The toolset demonstrates good documentation quality overall. Most tools have clear, descriptive names that indicate their purpose, and the main functionality tools (text_to_speech, speech_to_text, text_to_sound_effects) feature comprehensive descriptions with detailed parameter explanations, ranges, and usage guidance. Cost warnings are consistently included for API-calling tools. However, some simpler tools like list_models, get_voice, and play_audio have minimal descriptions that could be more informative. Parameter descriptions in input schemas are often basic (just titles) rather than detailed explanations, though the main descriptions compensate for this in many cases.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 20,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-esignatures",
@@ -6779,7 +7337,8 @@
   },
   {
     "id": "mcp-server-everything",
-    "name": "mcp-server-everything ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-everything",
     "description": "MCP server that exercises all the features of the MCP protocol",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-everything",
@@ -6793,10 +7352,14 @@
     "scope": "standalone",
     "mutitenant": true,
     "runtime": "node",
-    "version": "2025.4.28",
+    "version": "2025.5.12",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "C",
+    "rating": {
+      "hash": "7858108bd191e9d83dcc2c11e0730298b1d4f5594cb70681efaaf9b084b3f8d4",
+      "reason": "Tool names are clear but descriptions are overly brief (mostly one sentence fragments). While parameter descriptions exist and indicate basic purpose, the tool descriptions lack context about when to use them, what they return, or their limitations. Most descriptions read like tautological statements rather than informative guidance.",
+      "score": "D"
+    },
     "resources": {
       "tools": 8,
       "prompts": 3,
@@ -6805,8 +7368,40 @@
     }
   },
   {
+    "id": "mcp-server-everything-wrong",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-everything-wrong",
+    "description": "Show case common MCP server security concerns",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-everything-wrong",
+      "application": "https://pypi.org/project/mcp-server-everything-wrong/"
+    },
+    "tags": [
+      "security"
+    ],
+    "official": false,
+    "scope": "native",
+    "mutitenant": true,
+    "runtime": "python",
+    "version": "0.2.1",
+    "requiresConfiguration": false,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "7a627caad4bcc93383f326102012da65cb531153d11e71556794137426ea3a52",
+      "reason": "Multiple tools have malicious instructions embedded in descriptions (shadowing_attack, joke_teller, echo), making them unsafe and misleading. Basic tools like greet, env_var lack any meaningful description of functionality. Parameter descriptions are minimal or missing entirely. The toolset appears designed to demonstrate security vulnerabilities rather than provide legitimate functionality.",
+      "score": "F"
+    },
+    "resources": {
+      "tools": 8,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
+  },
+  {
     "id": "mcp-server-evm",
-    "name": "mcp-server-evm ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-evm",
     "description": "Comprehensive blockchain services for 30+ networks, on native tokens, ERC20, NFTs, smart contracts.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-evm",
@@ -6822,10 +7417,14 @@
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
-    "version": "1.1.3",
+    "version": "1.2.0",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "4322faabc4e150b24a6091ec6e3861c5c1115e737c49b2fd39d26a8fcf1bc951",
+      "reason": "Tool names are clear and specific, indicating their purposes well. Most descriptions adequately explain functionality with 2-3 sentences covering what the tool does and when to use it. Parameter descriptions are comprehensive with good examples and context. However, some tools like 'get_transaction_receipt' and 'estimate_gas' have minimal descriptions, and there's some redundancy with similar tools (get_erc20_balance vs get_token_balance_erc20, transfer_erc20 vs transfer_token) that could confuse usage scenarios.",
+      "score": "B"
+    },
     "resources": {
       "tools": 28,
       "prompts": 7,
@@ -6876,33 +7475,35 @@
   },
   {
     "id": "mcp-server-exa",
+    "icon": "https://exa.ai/images/favicon-32x32.png",
     "name": "mcp-server-exa",
-    "description": "Search Engine made for AIs by Exa.",
+    "description": "MCP server enabling AI models to perform real-time web searches.",
     "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-exa",
       "application": "https://github.com/exa-labs/exa-mcp-server"
     },
-    "official": false,
-    "runtime": "",
-    "scope": "",
     "tags": [
+      "web",
       "research"
     ],
-    "provider": "npx",
-    "stars": 0,
-    "config": [
-      {
-        "mcpServers": {
-          "exa": {
-            "command": "npx",
-            "args": [
-              "-y",
-              "exa-mcp-server"
-            ],
-            "env": {}
-          }
-        }
-      }
-    ]
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.3.10",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "b84820f5de98f117043fc747185e8baca46d2d760ba56af75f37220bae1ee310",
+      "reason": "The tool name clearly indicates web search functionality with Exa AI. The description adequately explains what the tool does (web search and content scraping) and mentions key capabilities like configurable results and real-time search. Both parameters have clear descriptions with the query purpose obvious and numResults including default value. However, the description could be more specific about when to use it versus other search tools and what type of content/format is returned.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 1,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-excel-mcp-server",
@@ -7043,7 +7644,8 @@
   },
   {
     "id": "mcp-server-fetch",
-    "name": "mcp-server-fetch ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-fetch",
     "description": "A Model Context Protocol server providing tools to fetch and convert web content for usage by LLMs",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-fetch",
@@ -7061,7 +7663,11 @@
     "version": "2025.4.7",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "bbd373efacbbad1af86d75cd2fbc422c938d6b7e63b528f78aa0f56968022584",
+      "reason": "Tool name is clear and intuitive. Description adequately explains functionality and includes helpful context about internet access capabilities. All parameters have clear descriptions with proper constraints and defaults. The description could be more concise and focus less on historical context, but overall documentation is comprehensive and usable.",
+      "score": "B"
+    },
     "resources": {
       "tools": 1,
       "prompts": 1,
@@ -7175,35 +7781,39 @@
   },
   {
     "id": "mcp-server-fibery",
+    "icon": "https://fibery.io/favicon.svg",
     "name": "mcp-server-fibery",
-    "description": "Perform queries and entity operations in your Fibery workspace.",
+    "description": "Integrates Fibery workspace with LLMs using natural language queries.",
     "links": {
-      "application": ""
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-fibery",
+      "application": "https://github.com/Fibery-inc/fibery-mcp-server"
     },
-    "official": false,
-    "runtime": "",
-    "scope": "",
-    "tags": [],
-    "provider": "npx",
-    "stars": 0,
-    "config": [
-      {
-        "mcpServers": {
-          "fibery": {
-            "command": "npx",
-            "args": [
-              "-y",
-              "fibery-mcp-server"
-            ],
-            "env": {}
-          }
-        }
-      }
-    ]
+    "tags": [
+      "integration"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "python",
+    "version": "0.1.3",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "e593528dac7972bd7436205c764a632647218bf7c2dda6d9a3da3c7264bbc69c",
+      "reason": "Tool names are clear and purposeful. Most descriptions adequately explain functionality with good context, especially the complex query_database tool which includes comprehensive examples. Parameter descriptions are generally clear with proper type information. However, some tools like current_date and list_databases have overly brief descriptions that could benefit from more detail about when to use them and what they return.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 7,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-figma",
-    "name": "mcp-server-figma ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-figma",
     "description": "Provide coding agents direct access to Figma data to help them one-shot design implementation.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-figma",
@@ -7218,10 +7828,14 @@
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
-    "version": "0.2.2",
+    "version": "0.4.0",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "C",
+    "rating": {
+      "hash": "fd695653425bed661dfe970d4616bc1c01148ead230f531a91b976f4411e4973",
+      "reason": "The toolset provides adequate documentation with clear tool names and basic functionality descriptions. However, the descriptions are somewhat brief and could better explain usage context and limitations. Parameter documentation is generally clear but inconsistent in detail - some parameters like 'depth' have comprehensive descriptions while others like 'fileName' are minimal. The documentation is functional but leaves some questions unanswered about when to use each tool and their specific constraints.",
+      "score": "C"
+    },
     "resources": {
       "tools": 2,
       "prompts": 0,
@@ -7231,7 +7845,8 @@
   },
   {
     "id": "mcp-server-filesystem",
-    "name": "mcp-server-filesystem ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-filesystem",
     "description": "MCP server for filesystem access",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-filesystem",
@@ -7249,7 +7864,11 @@
     "version": "2025.3.28",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "A",
+    "rating": {
+      "hash": "b98c05ea2263fbb845157f6e94253a37661a8fe5edcc7c49210ed381d0683b1d",
+      "reason": "Tool names are clear and intuitive, indicating purpose immediately. Descriptions are comprehensive (3-4 sentences) explaining functionality, use cases, and limitations including security boundaries. Parameters have clear descriptions with explicit constraints and purpose. Documentation addresses common scenarios and proactively explains security limitations with 'allowed directories' throughout.",
+      "score": "A"
+    },
     "resources": {
       "tools": 11,
       "prompts": 0,
@@ -7326,33 +7945,35 @@
   },
   {
     "id": "mcp-server-firecrawl",
+    "icon": "https://firecrawl.dev/favicon.ico",
     "name": "mcp-server-firecrawl",
-    "description": "Extract web data with Firecrawl.",
+    "description": "Integrates Firecrawl for web scraping and data extraction.",
     "links": {
-      "application": "https://github.com/vrknetha/mcp-server-firecrawl"
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-firecrawl",
+      "application": "https://github.com/mendableai/firecrawl-mcp-server"
     },
-    "official": false,
-    "runtime": "",
-    "scope": "",
     "tags": [
-      "web"
+      "web",
+      "automation"
     ],
-    "provider": "npx",
-    "stars": 0,
-    "config": [
-      {
-        "mcpServers": {
-          "firecrawl": {
-            "command": "npx",
-            "args": [
-              "-y",
-              "firecrawl-mcp-server"
-            ],
-            "env": {}
-          }
-        }
-      }
-    ]
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "1.11.0",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "3b5c2fba1abf2c85157a670f90a560ddccdfae071f3ff8461ac463a07e426841",
+      "reason": "Excellent documentation across all tools. Each tool has a comprehensive description explaining what it does, when to use it, when not to use it, common mistakes, and detailed usage examples. Parameter descriptions are clear and complete, explaining purpose, constraints, and expected values. The documentation proactively addresses typical user questions and provides concrete guidance for proper tool selection and usage.",
+      "score": "A"
+    },
+    "resources": {
+      "tools": 8,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-firefly-mcp",
@@ -7789,7 +8410,8 @@
   },
   {
     "id": "mcp-server-git",
-    "name": "mcp-server-git ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-git",
     "description": "Tools to read, search, and manipulate Git repositories.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-git",
@@ -7806,7 +8428,11 @@
     "version": "2025.1.14",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "D",
+    "rating": {
+      "hash": "18b4c8497f11485b3f48fff007b4aa926308d8d90ca6a03bb18f098a67bd9eab",
+      "reason": "Tool names are clear and intuitive with consistent git_ prefix. However, descriptions are overly brief (mostly single short phrases) and lack essential context about when to use each tool, what information they provide, expected input formats, or limitations. Parameter descriptions are missing entirely - all parameters only have generic titles like 'Repo Path' without explaining their purpose, expected format, or constraints.",
+      "score": "D"
+    },
     "resources": {
       "tools": 11,
       "prompts": 0,
@@ -7898,7 +8524,8 @@
   },
   {
     "id": "mcp-server-github",
-    "name": "mcp-server-github ",
+    "icon": "https://avatars.githubusercontent.com/u/9919?s=200&v=4",
+    "name": "mcp-server-github",
     "description": "GitHub's official MCP Server",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-github",
@@ -7909,16 +8536,52 @@
       "automation",
       "integration"
     ],
-    "official": false,
+    "official": true,
     "scope": "remote",
-    "mutitenant": false,
+    "mutitenant": true,
     "runtime": "binary",
-    "version": "v0.2.1",
+    "version": "v0.4.0",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "b6cd535a065583de34feba6649a7a8de5f437ec884d51c7f6819d8cfe89a4410",
+      "reason": "Tool names are clear and specific indicating GitHub functionality. Most descriptions adequately explain what each tool does and when to use it, with some excellent examples like 'list_notifications' providing comprehensive context. Parameter descriptions are generally clear with good use of enums and constraints. However, some tools have minimal descriptions (e.g., 'get_tag', 'list_branches') and a few complex tools could benefit from more detailed usage guidance.",
+      "score": "B"
+    },
     "resources": {
-      "tools": 36,
+      "tools": 51,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
+  },
+  {
+    "id": "mcp-server-github-chat",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/github-chat/live/logo-1744789806714.png",
+    "name": "mcp-server-github-chat",
+    "description": "Analyzes and queries GitHub repositories using the GitHub Chat API.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-github-chat",
+      "application": "https://github.com/AsyncFuncAI/github-chat-mcp"
+    },
+    "tags": [
+      "automation",
+      "web"
+    ],
+    "official": false,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "python",
+    "version": "0.1.0",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "7e10c0fac6308fe0407363bb48548a3e81d3f3283adc598be5fae667128dc441",
+      "reason": "Tool names are clear and specific, indicating their purposes well. Descriptions adequately explain functionality and include important usage requirements (indexing prerequisite). Most parameters have clear descriptions with proper format specifications. The conversation_history parameter structure is complex but documented, though could benefit from clearer explanation of the object structure within the array.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 2,
       "prompts": 0,
       "resources": 0,
       "resourcesTemplates": 0
@@ -8075,7 +8738,8 @@
   },
   {
     "id": "mcp-server-gitlab",
-    "name": "mcp-server-gitlab ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-gitlab",
     "description": "MCP server for using the GitLab API",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-gitlab",
@@ -8093,7 +8757,11 @@
     "version": "2025.4.25",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "af719205e4131aad812075e7b36ef8bd4b8b807cabbb6ffad444a5d2f0cc2f94",
+      "reason": "Tool names are clear and descriptive, indicating their GitLab-specific functionality well. However, descriptions are overly brief (1-2 words each) and fail to explain when to use each tool, what they return, or important limitations. Parameter descriptions are basic but adequate, clearly indicating purpose and expected input types. The documentation provides minimal functional context, leaving users to infer usage scenarios and behavior details.",
+      "score": "C"
+    },
     "resources": {
       "tools": 9,
       "prompts": 0,
@@ -8118,6 +8786,38 @@
     "provider": "npx",
     "config": [],
     "stars": 25
+  },
+  {
+    "id": "mcp-server-glif",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/glif/live/logo-1744789771251.jpeg",
+    "name": "mcp-server-glif",
+    "description": "Run AI workflows and manage glifs through the Model Context Protocol.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-glif",
+      "application": "https://github.com/glifxyz/glif-mcp-server"
+    },
+    "tags": [
+      "automation",
+      "integration"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.9.9",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "a679b504f1df04eb06beb8427b9864fabfce3b21a20c5e0449dd8a2af964aa9a",
+      "reason": "Tool names are clear and indicate purpose well, but descriptions are consistently brief and lack important context. Most descriptions are single phrases that don't explain when to use the tools, what they return, or any limitations. Parameter descriptions are minimal - many just restate the parameter name without explaining purpose or expected format. The toolset would benefit from more comprehensive descriptions explaining functionality, usage scenarios, and parameter details.",
+      "score": "D"
+    },
+    "resources": {
+      "tools": 10,
+      "prompts": 1,
+      "resources": 3,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-gnuradioMCP",
@@ -8250,7 +8950,8 @@
   },
   {
     "id": "mcp-server-google-bigquery",
-    "name": "mcp-server-google-bigquery ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-google-bigquery",
     "description": "A server that lets your LLM securely query BigQuery.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-google-bigquery",
@@ -8268,7 +8969,11 @@
     "version": "1.0.3",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "D",
+    "rating": {
+      "hash": "188a377a02dad53ae7fdce175a00802fee0ca710bfa251d35ca863f0f9ad3dba",
+      "reason": "Tool name is too generic ('query' could apply to any database). Description is minimal, only stating it runs read-only queries without explaining when to use it, what data sources are available, or output format. The 'sql' parameter completely lacks description, and 'maximumBytesBilled' has minimal context about its purpose or format expectations.",
+      "score": "D"
+    },
     "resources": {
       "tools": 1,
       "prompts": 0,
@@ -8315,7 +9020,8 @@
   },
   {
     "id": "mcp-server-google-drive",
-    "name": "mcp-server-google-drive ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-google-drive",
     "description": "File access and search capabilities for Google Drive.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-google-drive",
@@ -8333,12 +9039,13 @@
     "version": "2025.1.14",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "nil",
+    "rating": null,
     "resources": {}
   },
   {
     "id": "mcp-server-google-maps",
-    "name": "mcp-server-google-maps ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-google-maps",
     "description": "MCP server for using the Google Maps API",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-google-maps",
@@ -8355,7 +9062,11 @@
     "version": "0.6.2",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "C",
+    "rating": {
+      "hash": "503d6a386d17c4cb3fe803d3d8f8d1d41a6e67c9e24573e108088d0097f02aed",
+      "reason": "Tool names are clear and intuitive with 'maps_' prefix indicating purpose. Most descriptions are brief but adequate (1-2 sentences) explaining core functionality. Parameter descriptions are basic but sufficient to understand purpose and types. However, descriptions lack detail about when to use each tool, what specific information is returned, limitations, or constraints beyond basic enum values. Some tools like maps_search_places and maps_place_details could benefit from more context about their relationship and usage scenarios.",
+      "score": "C"
+    },
     "resources": {
       "tools": 7,
       "prompts": 0,
@@ -8446,33 +9157,35 @@
   },
   {
     "id": "mcp-server-grafana",
-    "name": "mcp-server-unknown-grafana",
-    "description": "Search dashboards, investigate incidents and query datasources in your Grafana instance.",
+    "icon": "https://grafana.com/favicon.ico",
+    "name": "mcp-server-grafana",
+    "description": "Access and manage Grafana dashboards and datasources.",
     "links": {
-      "application": ""
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-grafana",
+      "application": "https://github.com/grafana/mcp-grafana"
     },
-    "official": false,
-    "runtime": "",
-    "scope": "",
     "tags": [
-      "research"
+      "web",
+      "monitoring"
     ],
-    "provider": "npx",
-    "stars": 0,
-    "config": [
-      {
-        "mcpServers": {
-          "grafana": {
-            "command": "npx",
-            "args": [
-              "-y",
-              "grafana-mcp-server"
-            ],
-            "env": {}
-          }
-        }
-      }
-    ]
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "binary",
+    "version": "v0.4.2",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "3c936ef58d07747eb064cdd5148435e078e02eaaa08e0b80c4b27d69deb97d82",
+      "reason": "Tool names are clear and specific, consistently indicating their purpose. Most descriptions are comprehensive (2-3+ sentences) and explain functionality, usage context, and key behaviors. The majority of parameters have clear, detailed descriptions explaining their purpose and expected values. Minor gaps exist in some parameter descriptions (e.g., missing constraints for severity/status enums, some brief descriptions like 'userId'), but overall documentation quality is good with strong clarity and usability.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 35,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-grafana-loki-mcp",
@@ -8510,7 +9223,8 @@
   },
   {
     "id": "mcp-server-graphlit",
-    "name": "mcp-server-graphlit ",
+    "icon": "https://framerusercontent.com/images/KCOWBYLKunDff1Dr452y6EfjiU.png",
+    "name": "mcp-server-graphlit",
     "description": "Integrates your MCP client with Graphlit to ingest and search content from dev tools.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-graphlit",
@@ -8526,10 +9240,14 @@
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
-    "version": "1.0.20250508004",
+    "version": "1.0.20250531001",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "A",
+    "rating": {
+      "hash": "bc195cbc073ce125068c44159ebda8b82a5d2e47b228ba31d33b4bbaaeb450d6",
+      "reason": "All tools have clear, specific names that indicate their purpose. Descriptions are comprehensive and detailed, explaining what each tool does, when to use it, required environment variables, and important limitations. Parameter descriptions are thorough with clear explanations of purpose, constraints, and expected formats (like ISO 8601). The documentation proactively addresses common usage scenarios and provides helpful context like URL format examples and authentication requirements.",
+      "score": "A"
+    },
     "resources": {
       "tools": 64,
       "prompts": 0,
@@ -8694,6 +9412,70 @@
     "stars": 37
   },
   {
+    "id": "mcp-server-gyazo",
+    "icon": "https://gyazo.com/favicon.ico",
+    "name": "mcp-server-gyazo",
+    "description": "Integrates Gyazo images for AI assistants via Model Context Protocol.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-gyazo",
+      "application": "https://github.com/nota/gyazo-mcp-server"
+    },
+    "tags": [
+      "web",
+      "integration"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.1.0",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "14e3a0e155b2ea859f142e5425e735d06205162516287eb1dcdefc6d4dd89396",
+      "reason": "Tool names are clear and specific to Gyazo functionality. Descriptions are brief but adequate, covering basic functionality in 1-2 sentences. Parameter descriptions are generally clear with good constraint specifications (min/max values, character limits). However, descriptions lack comprehensive details about when to use each tool, what specific information is returned, and important limitations. The gyazo_latest_image tool has an unusual required 'name' parameter that lacks clear justification in the documentation.",
+      "score": "C"
+    },
+    "resources": {
+      "tools": 4,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
+  },
+  {
+    "id": "mcp-server-hackle-mcp",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/hackle/live/logo-1745472701666.png",
+    "name": "mcp-server-hackle-mcp",
+    "description": "A/B test data query tools for Hackle API.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-hackle-mcp",
+      "application": "https://github.com/hackle-io/hackle-mcp"
+    },
+    "tags": [
+      "automation",
+      "integration"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "1.3.0",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "6a636b265ca991fe39260047e267fffaf91d28cec2b0dcd943ee425db67a44cb",
+      "reason": "Tool names are clear and follow consistent patterns, and most descriptions adequately explain basic functionality. However, descriptions are quite brief (1-2 sentences) and lack important context about when to use tools, what data they return, or usage limitations. Parameter descriptions are minimal with many missing entirely (pageNumber, pageSize, searchKeyword lack descriptions across multiple tools). While the schema constraints are well-defined, the overall documentation leaves users needing to infer many usage details.",
+      "score": "C"
+    },
+    "resources": {
+      "tools": 19,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
+  },
+  {
     "id": "mcp-server-hackmd-mcp",
     "name": "mcp-server-hackmd",
     "description": "Allows AI models to interact with HackMD.",
@@ -8727,6 +9509,72 @@
       }
     ],
     "stars": 19
+  },
+  {
+    "id": "mcp-server-harness",
+    "icon": "https://avatars.githubusercontent.com/u/34780278?s=200&v=4",
+    "name": "mcp-server-harness",
+    "description": "Provides seamless integration with Harness APIs.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-harness",
+      "application": "https://github.com/harness/mcp-server"
+    },
+    "tags": [
+      "development",
+      "automation",
+      "integration"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "go",
+    "version": "v1.0.0-beta",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "1a2b01f0d9583e19f120015d926bb67fa5adab77be1b02ebce6f13c705ab59bd",
+      "reason": "Tool names are clear and consistently indicate their purpose (create_, get_, list_, download_, fetch_). Descriptions are concise and adequately explain functionality, though they could be more comprehensive. Parameter descriptions are generally clear and specify purpose and expected values. Most tools properly indicate required vs optional parameters. However, descriptions lack detail about when to use tools, what specific information they provide, and potential limitations. Some inconsistencies exist in pagination parameter naming (page vs limit) and default values.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 17,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
+  },
+  {
+    "id": "mcp-server-heroku",
+    "icon": "https://www.herokucdn.com/favicons/favicon.ico",
+    "name": "mcp-server-heroku",
+    "description": "Facilitate LLMs interaction with Heroku Platform resources.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-heroku",
+      "application": "https://github.com/heroku/heroku-mcp-server"
+    },
+    "tags": [
+      "integration",
+      "cloud",
+      "development"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "1.0.6",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "84d790d5da6432b387695a5ad45c3850aa61189cdd11fa950bb0793ba38a36fa",
+      "reason": "Tool names are clear and parameter documentation is generally adequate, but many tool descriptions are overly terse and cryptic, using shorthand notation instead of complete explanations. While functional, the documentation often lacks sufficient context about usage scenarios and expected outcomes, requiring users to infer details.",
+      "score": "C"
+    },
+    "resources": {
+      "tools": 37,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-heurist-mesh-mcp-server",
@@ -8908,51 +9756,67 @@
   },
   {
     "id": "mcp-server-hyperbrowser",
+    "icon": "https://hyperbrowser-assets-bucket.s3.us-east-1.amazonaws.com/Hyperbrowser-logo.png",
     "name": "mcp-server-hyperbrowser",
-    "description": "Hyperbrowser is the next-generation platform empowering AI agents and enabling effortless, scalable browser automation.",
+    "description": "Scrapes, extracts data, and automates web page interactions.",
     "links": {
-      "application": ""
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-hyperbrowser",
+      "application": "https://github.com/hyperbrowserai/mcp"
     },
-    "official": false,
-    "runtime": "",
-    "scope": "",
     "tags": [
-      "web"
+      "web",
+      "automation"
     ],
-    "provider": "npx",
-    "stars": 0,
-    "config": [
-      {
-        "mcpServers": {
-          "hyperbrowser": {
-            "command": "npx",
-            "args": [
-              "-y",
-              "hyperbrowser-mcp-server"
-            ],
-            "env": {}
-          }
-        }
-      }
-    ]
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "1.0.25",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "d3735b0592cf84256a9cecc9ce486264bc71aa0d63fd7f37b886d3aa06ee0251",
+      "reason": "The toolset demonstrates good documentation quality overall. Tool names are clear and purposeful, descriptions adequately explain functionality and use cases (though some could be more concise), and parameter documentation is comprehensive with proper constraints and defaults. The three agent tools have excellent detailed descriptions explaining their specific strengths and optimal use cases. However, some descriptions are verbose, a few parameters like 'ignoreSitemap' and 'schema' lack adequate explanation, and there's inconsistent detail across tools, preventing an A grade.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 10,
+      "prompts": 0,
+      "resources": 54,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-iaptic",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/iaptic/live/logo-1744789672300.png",
     "name": "mcp-server-iaptic",
-    "description": "Connect with iaptic to ask about your Customer Purchases, Transaction data and App Revenue statistics.",
+    "description": "Connect AIs to Iaptic data for customer and transaction insights.",
     "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-iaptic",
       "application": "https://github.com/iaptic/mcp-server-iaptic"
     },
-    "official": true,
-    "runtime": "node",
-    "scope": "remote",
     "tags": [
       "integration",
-      "development"
+      "database"
     ],
-    "provider": "npx",
-    "config": [],
-    "stars": 3
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "1.0.1",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "3f43f4a003eaecc3b114d18bb132f4bf2f9477c0cf661eccb70cf1d3c8c0bda2",
+      "reason": "Excellent documentation quality across all tools. Names are clear and specific, descriptions are comprehensive (2-4 sentences) covering functionality, usage context, and key limitations, and parameters include detailed descriptions with examples and constraints. The toolset consistently provides complete information needed for effective usage, with proper bullet-point formatting and helpful details like default values, format examples, and important notes.",
+      "score": "A"
+    },
+    "resources": {
+      "tools": 16,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-ibm-wxflows",
@@ -9511,7 +10375,8 @@
   },
   {
     "id": "mcp-server-jetbrains",
-    "name": "mcp-server-jetbrains ",
+    "icon": "https://avatars.githubusercontent.com/u/878437?s=200&v=4",
+    "name": "mcp-server-jetbrains",
     "description": "Connect to JetBrains IDE.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-jetbrains",
@@ -9529,7 +10394,7 @@
     "version": "1.8.0",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "F",
+    "rating": null,
     "resources": {}
   },
   {
@@ -9959,6 +10824,38 @@
     ]
   },
   {
+    "id": "mcp-server-kagisearch",
+    "icon": "https://kagi.com/favicon.ico",
+    "name": "mcp-server-kagisearch",
+    "description": "MCP server for search queries and video summarization.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-kagisearch",
+      "application": "https://github.com/kagisearch/kagimcp"
+    },
+    "tags": [
+      "research",
+      "integration"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "python",
+    "version": "0.1.3",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "6ceab26e129283972684cc6c697e0e9628e88eb880f2c4af387c9ee2fd9450ff",
+      "reason": "Good documentation overall with clear, descriptive names and comprehensive descriptions that explain functionality and usage context. The kagi_search_fetch tool provides excellent detail about result numbering and query handling. Parameter descriptions are clear with helpful examples and constraints specified (enums, defaults). Minor areas for improvement include more specific guidance on query optimization and target language format examples, but the documentation effectively communicates tool purposes and usage patterns.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 2,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
+  },
+  {
     "id": "mcp-server-keboola",
     "name": "mcp-server-unknown-keboola",
     "description": "Build robust data workflows, integrations, and analytics on a single intuitive platform.",
@@ -10196,7 +11093,8 @@
   },
   {
     "id": "mcp-server-kubernetes",
-    "name": "mcp-server-kubernetes ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-kubernetes",
     "description": "Typescript implementation of Kubernetes cluster operations for pods, deployments, services.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-kubernetes",
@@ -10211,12 +11109,16 @@
     "scope": "native",
     "mutitenant": true,
     "runtime": "node",
-    "version": "1.6.2",
+    "version": "2.2.1",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "C",
+    "rating": {
+      "hash": "e55e7e30e62793adeffc257f7d4f2c389efd2375ff58fadbb999ef2a03847943",
+      "reason": "The toolset provides good documentation with mostly clear tool names and adequate descriptions. Most tools have well-documented parameters with clear descriptions and appropriate constraints. However, some tools like 'cleanup' and 'port_forward' have minimal descriptions, and a few parameters lack sufficient detail about their purpose and usage context. The documentation is generally functional but could benefit from more comprehensive descriptions for complex operations.",
+      "score": "B"
+    },
     "resources": {
-      "tools": 40,
+      "tools": 20,
       "prompts": 0,
       "resources": 5,
       "resourcesTemplates": 0
@@ -10337,6 +11239,38 @@
       }
     ],
     "stars": 47
+  },
+  {
+    "id": "mcp-server-lara-translate",
+    "icon": "https://laratranslate.com/favicon.ico",
+    "name": "mcp-server-lara-translate",
+    "description": "MCP server enabling powerful language translation capabilities.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-lara-translate",
+      "application": "https://github.com/translated/lara-mcp"
+    },
+    "tags": [
+      "translation",
+      "integration"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.0.10",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "aae4a9143d093451b104509b4daf885b884a0009f8283b397c77fd0a29c25573",
+      "reason": "The toolset demonstrates good documentation quality with clear, descriptive tool names and comprehensive descriptions that explain functionality and usage context. Parameter documentation is generally thorough with helpful examples and format specifications. However, some descriptions could be more concise (particularly the translate tool), and a few parameters lack complete constraint details. The overall documentation provides sufficient guidance for effective tool usage with only minor gaps.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 10,
+      "prompts": 0,
+      "resources": 2,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-last9",
@@ -10517,6 +11451,37 @@
     "provider": "npx",
     "config": [],
     "stars": 6
+  },
+  {
+    "id": "mcp-server-line-bot",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/line/live/logo-1745429370311.png",
+    "name": "mcp-server-line-bot",
+    "description": "Connects AI Agent to LINE for messaging interactions.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-line-bot",
+      "application": "https://github.com/line/line-bot-mcp-server"
+    },
+    "tags": [
+      "communication"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.2.0",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "6ce427c9c026e72c96981ac49f0110b7a34c874a08b0ca5337b18d2751c40c7f",
+      "reason": "Good documentation overall with clear, descriptive tool names and comprehensive descriptions that explain functionality, usage context, and important warnings. Parameter descriptions are mostly clear with proper constraints specified. Minor weaknesses include some repetitive descriptions across similar tools and the generic 'dummy' default for userId parameters could be better explained.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 6,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-line-bot-mcp-server",
@@ -14819,7 +15784,8 @@
   },
   {
     "id": "mcp-server-memory",
-    "name": "mcp-server-memory ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-memory",
     "description": "MCP server for enabling memory for Claude through a knowledge graph",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-memory",
@@ -14837,7 +15803,11 @@
     "version": "2025.4.25",
     "requiresConfiguration": false,
     "requiresStorage": true,
-    "rating": "B",
+    "rating": {
+      "hash": "07e83596758791b8eedbaea7448ff1a9e3a079985895627d825a4fa9092d1517",
+      "reason": "Tool names are clear and consistent. Descriptions provide basic functionality but lack important context about when to use each tool, what the knowledge graph structure represents, and key limitations. Parameter documentation is adequate with clear purposes and types, but could benefit from examples and more detailed explanations of complex nested structures like observations and relations.",
+      "score": "C"
+    },
     "resources": {
       "tools": 9,
       "prompts": 0,
@@ -14924,7 +15894,8 @@
   },
   {
     "id": "mcp-server-metatool-app",
-    "name": "mcp-server-metatool-app ",
+    "icon": "https://avatars.githubusercontent.com/u/196043485?s=200&v=4",
+    "name": "mcp-server-metatool-app",
     "description": "MetaMCP is the one unified middleware MCP server that manages your MCP connections with GUI.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-metatool-app",
@@ -14938,10 +15909,10 @@
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
-    "version": "0.5.0",
+    "version": "0.6.5",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "F",
+    "rating": null,
     "resources": {}
   },
   {
@@ -15059,6 +16030,31 @@
     "requiresConfiguration": true,
     "requiresStorage": false,
     "rating": "nil",
+    "resources": {}
+  },
+  {
+    "id": "mcp-server-microsoft-graph",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-microsoft-graph",
+    "description": "Connect to microsoft API to get applications, sites users and more.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-microsoft-graph",
+      "application": "https://github.com/acuvity/mcp-server-microsoft-graph"
+    },
+    "tags": [
+      "development",
+      "automation",
+      "integration",
+      "cloud"
+    ],
+    "official": false,
+    "scope": "remote",
+    "mutitenant": false,
+    "runtime": "binary",
+    "version": "1.0.1",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": null,
     "resources": {}
   },
   {
@@ -15260,6 +16256,39 @@
     "stars": 129
   },
   {
+    "id": "mcp-server-mongodb",
+    "icon": "https://www.mongodb.com/favicon.ico",
+    "name": "mcp-server-mongodb",
+    "description": "MCP server for interacting with MongoDB and MongoDB Atlas.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-mongodb",
+      "application": "https://github.com/mongodb-js/mongodb-mcp-server"
+    },
+    "tags": [
+      "database",
+      "integration",
+      "development"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.1.1",
+    "requiresConfiguration": false,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "56dabc5be6a6c28defacb57c91d98a6897040997889389d67706a4348a4918cf",
+      "reason": "The toolset shows adequate but inconsistent documentation quality. While parameter descriptions are generally clear and most tools have basic functional descriptions, many tool descriptions are too brief (1-2 words like 'List MongoDB Atlas clusters') and lack important context about usage, limitations, or expected outputs. Some tools like 'atlas-create-db-user' have comprehensive parameter documentation, but others like 'atlas-list-orgs' provide minimal guidance. The documentation is functional but leaves users with questions about when to use specific tools and what to expect from them.",
+      "score": "C"
+    },
+    "resources": {
+      "tools": 31,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
+  },
+  {
     "id": "mcp-server-mongodb-lens",
     "name": "mcp-server-mongodb-lens",
     "description": "MongoDB Lens: Full Featured MCP Server for MongoDB Databases.",
@@ -15444,6 +16473,38 @@
       }
     ],
     "stars": 48
+  },
+  {
+    "id": "mcp-server-multiversx",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/multiversx-mx/live/logo-1744789643222.jpeg",
+    "name": "mcp-server-multiversx",
+    "description": "Manage MultiversX blockchain wallets and perform token transactions.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-multiversx",
+      "application": "https://github.com/multiversx/mx-mcp"
+    },
+    "tags": [
+      "finance",
+      "automation"
+    ],
+    "official": true,
+    "scope": "native",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "1.0.3",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "620d63ea170a3b323360b59fe2ba4ef91a61b8667b3c1b310e73f06ea8cb8fef",
+      "reason": "The toolset provides adequate documentation with clear, specific tool names that indicate MultiversX blockchain functionality. Most descriptions are brief (1-2 sentences) covering basic functionality, and parameter descriptions are generally clear with appropriate technical detail like bech32 format specifications. However, many descriptions lack important context about when to use each tool, potential limitations, or prerequisites (like wallet setup requirements), keeping it at an adequate level rather than good.",
+      "score": "C"
+    },
+    "resources": {
+      "tools": 14,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-my-bear-mcp-server",
@@ -15713,34 +16774,123 @@
     ]
   },
   {
-    "id": "mcp-server-neon",
-    "name": "mcp-server-neon",
-    "description": "Interact with the Neon serverless Postgres platform.",
+    "id": "mcp-server-neo4j-aura",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/neo4j-cloud-aura-api/live/logo-1746435894823.png",
+    "name": "mcp-server-neo4j-aura",
+    "description": "Managing Neo4j Aura database instances through the Neo4j Aura API.",
     "links": {
-      "application": "https://github.com/neondatabase/mcp-server-neon"
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-neo4j-aura",
+      "application": "https://github.com/neo4j-contrib/mcp-neo4j"
     },
-    "official": false,
-    "runtime": "",
-    "scope": "",
     "tags": [
+      "database",
+      "integration"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "python",
+    "version": "0.2.2",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "2def507b780c09bdf1783091ae9ea2e9b1e96c8cb04acacbd7ba450d723c7e89",
+      "reason": "The toolset provides adequate documentation with clear, descriptive tool names and basic functionality descriptions. Parameter descriptions are clear and specify types/constraints appropriately. However, the tool descriptions are quite brief (mostly single sentences) and lack important context about usage scenarios, limitations, or behavioral details that would help users understand when and how to use each tool effectively.",
+      "score": "C"
+    },
+    "resources": {
+      "tools": 12,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
+  },
+  {
+    "id": "mcp-server-neo4j-cypher",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/neo4j-cloud-aura-api/live/logo-1746435894823.png",
+    "name": "mcp-server-neo4j-cypher",
+    "description": "Manage Cypher graph queries between LLMs and Neo4j with natural language queries.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-neo4j-cypher",
+      "application": "https://github.com/neo4j-contrib/mcp-neo4j"
+    },
+    "tags": [
+      "database",
+      "integration"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "python",
+    "version": "0.2.1",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "fb3aa800db5ce615560285057c5952a5cb3db160c97bf8a76a78aab38bf00907",
+      "reason": "Tool names are clear and appropriately prefixed. Descriptions provide basic functionality but lack important context like when to use each tool, what data they return, or key limitations. The get_neo4j_schema description includes helpful error handling guidance. Parameter documentation is adequate with clear purposes and types specified, though could benefit from examples. Overall provides functional guidance but leaves users to infer usage patterns and constraints.",
+      "score": "C"
+    },
+    "resources": {
+      "tools": 3,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
+  },
+  {
+    "id": "mcp-server-neo4j-memory",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/neo4j-cloud-aura-api/live/logo-1746435894823.png",
+    "name": "mcp-server-neo4j-memory",
+    "description": "Provides persistent memory capabilities through Neo4j graph database integration.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-neo4j-memory",
+      "application": "https://github.com/neo4j-contrib/mcp-neo4j"
+    },
+    "tags": [
+      "database",
+      "integration"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "python",
+    "version": "0.1.4",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "a3e370b70defe5d73f1c147100c07f138ed548b6f6e7ae922212bd2ed3f236b0",
+      "reason": "The toolset provides adequate but minimal documentation. Tool names are clear and purposeful, indicating their Neo4j knowledge graph operations well. However, descriptions are consistently brief (1 sentence each) and lack important context about when to use each tool, what results to expect, or key limitations. Parameter descriptions are basic but functional, clearly indicating purpose and types. While usable, the documentation leaves users with questions about tool behavior, return formats, and usage patterns that would benefit from more comprehensive explanations.",
+      "score": "C"
+    },
+    "resources": {
+      "tools": 10,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
+  },
+  {
+    "id": "mcp-server-neon",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/neon/live/logo-1744788729224.png",
+    "name": "mcp-server-neon",
+    "description": "Interact with Neon databases using natural language.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-neon",
+      "application": "https://github.com/neondatabase-labs/mcp-server-neon"
+    },
+    "tags": [
+      "integration",
       "database"
     ],
-    "provider": "npx",
-    "stars": 0,
-    "config": [
-      {
-        "mcpServers": {
-          "neon": {
-            "command": "npx",
-            "args": [
-              "-y",
-              "mcp-server-neon"
-            ],
-            "env": {}
-          }
-        }
-      }
-    ]
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.5.0",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": null,
+    "resources": {}
   },
   {
     "id": "mcp-server-netskope-mcp",
@@ -15897,7 +17047,8 @@
   },
   {
     "id": "mcp-server-notion",
-    "name": "mcp-server-notion ",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/notion/live/logo-1744809276376.png",
+    "name": "mcp-server-notion",
     "description": "Interacting with Notion API.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-notion",
@@ -15913,10 +17064,14 @@
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
-    "version": "1.7.0",
+    "version": "1.8.1",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "D",
+    "rating": {
+      "hash": "bf3ca516d32c70d64d18873c4e6f76235a047f62aa1aca8fde857619d7b98fea",
+      "reason": "Most tool descriptions are extremely brief (1-4 words) and lack context about functionality, usage, or limitations. While parameter descriptions are generally adequate with clear types and purposes, the tool descriptions fail to explain what the tools do, when to use them, or what they return. The consistent 'API-' prefix doesn't help distinguish between tools, and descriptions like 'Query a database' or 'Search by title' provide minimal guidance for proper usage.",
+      "score": "D"
+    },
     "resources": {
       "tools": 19,
       "prompts": 0,
@@ -16130,7 +17285,8 @@
   },
   {
     "id": "mcp-server-obsidian",
-    "name": "mcp-server-obsidian ",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/obsidian/live/logo-1745316735580.png",
+    "name": "mcp-server-obsidian",
     "description": "Interacting with Obsidian via REST API.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-obsidian",
@@ -16148,7 +17304,11 @@
     "version": "0.2.2",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "f89849960aeadba76f68b1c447ec320d44b58836b7295822c4ba72cb903cfc57",
+      "reason": "Tool names are clear and well-prefixed with 'obsidian_' indicating their domain. Most descriptions adequately explain functionality and usage context, with some providing good detail (like obsidian_complex_search). Parameter descriptions are generally clear with appropriate constraints and defaults specified. However, some descriptions are quite brief (obsidian_append_content, obsidian_delete_file) and could benefit from more context about when to use them or important limitations. The toolset is consistently good but lacks the comprehensive detail needed for an A grade.",
+      "score": "B"
+    },
     "resources": {
       "tools": 12,
       "prompts": 0,
@@ -16683,6 +17843,38 @@
     "stars": 562
   },
   {
+    "id": "mcp-server-openapi-schema",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-openapi-schema",
+    "description": "Exposes OpenAPI schemas for LLMs to explore and understand APIs.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-openapi-schema",
+      "application": "https://github.com/hannesj/mcp-openapi-schema"
+    },
+    "tags": [
+      "integration",
+      "development"
+    ],
+    "official": false,
+    "scope": "native",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.0.1",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "7fcf271e91718beddd2328535fcbeccb765d08a3eee584795dbca83b4f7b8af3",
+      "reason": "The toolset has clear, purposeful names and basic descriptions that outline main functionality, but lacks comprehensive context about usage scenarios and limitations. Parameter descriptions are minimal - most parameters only specify type without explaining their purpose or providing examples (e.g., 'method' and 'path' parameters lack descriptions in most tools). While the tools are functionally understandable, users would need to infer many details about proper usage and parameter formats.",
+      "score": "C"
+    },
+    "resources": {
+      "tools": 10,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
+  },
+  {
     "id": "mcp-server-opendal",
     "name": "mcp-server-opendal",
     "description": "Access any storage with Apache OpenDAL.",
@@ -16861,34 +18053,36 @@
   },
   {
     "id": "mcp-server-oxylabs",
+    "icon": "https://oxylabs.io/favicon.ico",
     "name": "mcp-server-oxylabs",
-    "description": "Scrape websites with Oxylabs Web API, supporting dynamic rendering and parsing for structured data extraction.",
+    "description": "Scrapes web data for AI applications using the Model Context Protocol.",
     "links": {
-      "application": ""
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-oxylabs",
+      "application": "https://github.com/oxylabs/oxylabs-mcp"
     },
-    "official": false,
-    "runtime": "",
-    "scope": "",
     "tags": [
       "web",
+      "research",
       "integration"
     ],
-    "provider": "npx",
-    "stars": 0,
-    "config": [
-      {
-        "mcpServers": {
-          "oxylabs": {
-            "command": "npx",
-            "args": [
-              "-y",
-              "oxylabs-mcp-server"
-            ],
-            "env": {}
-          }
-        }
-      }
-    ]
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "python",
+    "version": "0.3.0",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "1547515e6be3e7c36250a470673eea40d8668ab59b172febe9d53c1a4872eabc",
+      "reason": "The toolset demonstrates good documentation quality with clear, descriptive tool names and comprehensive parameter descriptions. Tool descriptions provide adequate context about functionality and use cases, though they could be more specific about when to use each tool. Parameter documentation is thorough with helpful examples and clear explanations of purpose and constraints. The consistent documentation style across all tools and detailed coverage of complex parameters like output formats and geo-location elevate this above average, though some descriptions could be more concise and focused.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 4,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-pancakeswap-poolspy-mcp",
@@ -16928,7 +18122,8 @@
   },
   {
     "id": "mcp-server-paypal",
-    "name": "mcp-server-paypal ",
+    "icon": "https://avatars.githubusercontent.com/u/476675?s=200&v=4",
+    "name": "mcp-server-paypal",
     "description": "A Model Context Protocol (MCP) server that enables AI models to interact with PayPal Apis.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-paypal",
@@ -16943,10 +18138,14 @@
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
-    "version": "0.3.1",
+    "version": "0.3.3",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "f09777d6c4b6e4b5e52690cb03db57ffeee16e6171796c4163e453946d056384",
+      "reason": "The toolset demonstrates good documentation quality overall. Tool names are clear and purposeful (e.g., 'create_invoice', 'list_transactions', 'cancel_subscription'). Most descriptions provide adequate context about functionality and usage, though some vary in completeness - some are concise and effective while others like 'create_product' include excessive implementation details. Parameter documentation is generally strong with clear descriptions of purpose, types, and constraints including proper enums and required fields. However, there are minor inconsistencies like 'show_product_details' having a misleading description that doesn't match its actual function, and some tools could benefit from clearer usage context. The documentation would enable effective usage despite these small gaps.",
+      "score": "B"
+    },
     "resources": {
       "tools": 26,
       "prompts": 0,
@@ -17081,6 +18280,39 @@
       }
     ],
     "stars": 21
+  },
+  {
+    "id": "mcp-server-playwright",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/playwright/live/logo-1745822820407.png",
+    "name": "mcp-server-playwright",
+    "description": "Browser automation for LLMs using structured accessibility snapshots.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-playwright",
+      "application": "https://github.com/microsoft/playwright-mcp"
+    },
+    "tags": [
+      "automation",
+      "web",
+      "research"
+    ],
+    "official": true,
+    "scope": "standalone",
+    "mutitenant": false,
+    "runtime": "node",
+    "version": "0.0.28",
+    "requiresConfiguration": false,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "08ddfbb5f28df62ede08f5f8e1c38a6c8282ff125ba681d209067ea903a0120f",
+      "reason": "Tool names are clear and well-structured with consistent 'browser_' prefixes. Descriptions are mostly adequate but often too brief (1 sentence), lacking context about when to use tools or their limitations. Parameter documentation is generally clear with good type specifications, though some could benefit from examples or format details. The toolset is functional but leaves users with questions about usage context and constraints.",
+      "score": "C"
+    },
+    "resources": {
+      "tools": 25,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-playwright-mcp",
@@ -17252,38 +18484,36 @@
   },
   {
     "id": "mcp-server-postgres",
-    "name": "mcp-server-modelcontextprotocol-postgres",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-postgres",
     "description": "PostgreSQL database integration with schema inspection and query capabilities.",
     "links": {
-      "application": "https://github.com/modelcontextprotocol/servers/tree/main/src/postgres"
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-postgres",
+      "application": "https://github.com/crystaldba/postgres-mcp"
     },
-    "official": false,
-    "runtime": "node",
-    "scope": "native",
     "tags": [
       "database",
-      "cloud",
-      "web",
       "integration",
-      "storage",
-      "research",
       "development"
     ],
-    "provider": "npx",
-    "config": [
-      {
-        "mcpServers": {
-          "memory": {
-            "command": "npx",
-            "args": [
-              "-y",
-              "@modelcontextprotocol/server-memory"
-            ]
-          }
-        }
-      }
-    ],
-    "stars": 42545
+    "official": false,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "python",
+    "version": "0.3.0",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "7a3b6bb47a7c7b618e0d49889b145f4e31c9075dfeed0f505d1be1d4afe7af52",
+      "reason": "The toolset demonstrates good documentation quality overall. Most tools have clear, descriptive names and adequate descriptions explaining their functionality. Parameter documentation is generally well-done with clear purposes and constraints specified. However, some descriptions are quite brief (like 'execute_sql' and basic schema tools) and could benefit from more context about usage scenarios and limitations. The complex tools like 'explain_query' and 'analyze_db_health' provide excellent detailed descriptions, while simpler tools are more minimal but still functional.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 9,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-postgres-mcp",
@@ -17514,7 +18744,8 @@
   },
   {
     "id": "mcp-server-prisma",
-    "name": "mcp-server-prisma ",
+    "icon": "https://avatars.githubusercontent.com/u/17219288?s=200&v=4",
+    "name": "mcp-server-prisma",
     "description": "Gives LLMs the ability to manage Prisma Postgres databases.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-prisma",
@@ -17529,10 +18760,14 @@
     "scope": "remote",
     "mutitenant": true,
     "runtime": "node",
-    "version": "6.7.0",
+    "version": "6.9.0",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "feb584e5d2fc1a67f3cac31b3c5705736d87d96f35424340f586e599e69a7698",
+      "reason": "Mixed quality documentation with inconsistent naming conventions and parameter descriptions. Tool descriptions range from comprehensive (migrate-status, migrate-dev) to basic (Prisma-Login). Most tools have adequate functional descriptions but parameter documentation is consistently weak - the ubiquitous 'projectCWD' parameter lacks any description across all tools, and other parameters like 'name' and 'region' have minimal or missing descriptions. Naming is inconsistent with some tools using kebab-case and others using PascalCase.",
+      "score": "C"
+    },
     "resources": {
       "tools": 7,
       "prompts": 0,
@@ -17610,6 +18845,38 @@
       }
     ],
     "stars": 47
+  },
+  {
+    "id": "mcp-server-pulumi",
+    "icon": "https://www.pulumi.com/images/favicon.ico",
+    "name": "mcp-server-pulumi",
+    "description": "Server for programmatic Pulumi operations via Model Context Protocol.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-pulumi",
+      "application": "https://github.com/pulumi/mcp-server"
+    },
+    "tags": [
+      "automation",
+      "development"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.1.2",
+    "requiresConfiguration": false,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "508cc9bb77963bc5dc1de540b7632b31cad9d448b053f36bef91c154398d3f5e",
+      "reason": "The toolset provides adequate documentation with clear tool names and basic functionality descriptions. However, the descriptions are quite brief (1-2 sentences) and lack important context about when to use each tool, potential limitations, or what outputs to expect. Parameter documentation is functional but minimal, with some helpful examples in the registry tools but missing key details like expected formats or constraints. The CLI tools especially lack clarity about their effects and risks.",
+      "score": "C"
+    },
+    "resources": {
+      "tools": 5,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-puppeteer",
@@ -18101,6 +19368,38 @@
     ]
   },
   {
+    "id": "mcp-server-razorpay",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/razorpay/live/logo-1745872254350.png",
+    "name": "mcp-server-razorpay",
+    "description": "Advanced payment processing with Razorpay APIs for devs and AI tools.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-razorpay",
+      "application": "https://github.com/razorpay/razorpay-mcp-server"
+    },
+    "tags": [
+      "automation",
+      "finance"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "go",
+    "version": "v1.2.0",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "4d1ba2ae23ede9dce849808f1b5553fb433e4c19e41b10860fba620703cca2dc",
+      "reason": "The toolset demonstrates good documentation quality overall. Tool names are clear and purposeful (e.g., 'capture_payment', 'create_order'), descriptions adequately explain functionality and usage context (1-3 sentences covering what, when, and key constraints), and parameter documentation is generally comprehensive with clear purposes, types, and constraints. However, there are some inconsistencies in description depth and minor formatting issues (like missing spaces in some parameter descriptions), preventing it from reaching excellent quality. The documentation successfully guides users without significant gaps.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 37,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
+  },
+  {
     "id": "mcp-server-react-analyzer-mcp",
     "name": "mcp-server-react-analyzer",
     "description": "Analyze React code locally, generate docs / llm.txt for whole project at once.",
@@ -18497,33 +19796,36 @@
   },
   {
     "id": "mcp-server-scrapezy",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/scrapezy/live/logo-1744789567776.png",
     "name": "mcp-server-scrapezy",
-    "description": "Turn websites into datasets with Scrapezy.",
+    "description": "Extracts structured data from websites using AI models.",
     "links": {
-      "application": ""
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-scrapezy",
+      "application": "https://github.com/Scrapezy/mcp"
     },
-    "official": false,
-    "runtime": "",
-    "scope": "",
     "tags": [
-      "web"
+      "web",
+      "integration",
+      "research"
     ],
-    "provider": "npx",
-    "stars": 0,
-    "config": [
-      {
-        "mcpServers": {
-          "scrapezy": {
-            "command": "npx",
-            "args": [
-              "-y",
-              "scrapezy-mcp-server"
-            ],
-            "env": {}
-          }
-        }
-      }
-    ]
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.1.1",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "fafecbd7b239acddf089e75f48e66a49e821b42a5503fb37258477d423f66cc8",
+      "reason": "The tool name is clear and specific, but the description is overly brief and lacks important context about what type of structured data can be extracted, how the prompt should be formatted, or what the tool's capabilities and limitations are. The parameter descriptions are minimal - 'prompt' lacks guidance on how to construct effective prompts, and while 'url' is adequately described with proper format constraints, overall documentation leaves significant gaps requiring users to guess implementation details.",
+      "score": "D"
+    },
+    "resources": {
+      "tools": 1,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-screenpipe",
@@ -18660,7 +19962,8 @@
   },
   {
     "id": "mcp-server-sentry",
-    "name": "mcp-server-sentry ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-sentry",
     "description": "Retrieving and analyzing issues from Sentry.io.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-sentry",
@@ -18677,7 +19980,11 @@
     "version": "2025.1.14",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "A",
+    "rating": {
+      "hash": "d522a4dd694c9898d9c74f213e3d63ceff8865d2cb4d6af7205214753b468f5b",
+      "reason": "The tool has a clear, specific name and an excellent description that comprehensively covers functionality, use cases, and what information it provides. The parameter documentation is adequate with a clear description of the expected input format, though it could benefit from examples of valid formats (e.g., 'SENTRY-123' vs full URL format).",
+      "score": "B"
+    },
     "resources": {
       "tools": 1,
       "prompts": 1,
@@ -18719,7 +20026,8 @@
   },
   {
     "id": "mcp-server-sequential-thinking",
-    "name": "mcp-server-sequential-thinking ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-sequential-thinking",
     "description": "MCP server for sequential thinking and problem solving",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-sequential-thinking",
@@ -18736,7 +20044,11 @@
     "version": "0.6.2",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "A",
+    "rating": {
+      "hash": "892d0f4a0ae6a2a5164e0f29f0158dc9acc90a847441ae028cd39f446bda326c",
+      "reason": "The tool has a clear, descriptive name and exceptionally comprehensive description covering functionality, use cases, and detailed usage guidance. However, parameter documentation is inconsistent - while some parameters have clear descriptions (thought, thoughtNumber), others are too brief (branchId, needsMoreThoughts) given the tool's complexity. The mismatch between parameter names in the description (snake_case) and schema (camelCase) also reduces clarity.",
+      "score": "B"
+    },
     "resources": {
       "tools": 1,
       "prompts": 0,
@@ -18830,7 +20142,8 @@
   },
   {
     "id": "mcp-server-shopify-dev",
-    "name": "mcp-server-shopify-dev ",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/shopify/live/logo-1744808475193.png",
+    "name": "mcp-server-shopify-dev",
     "description": "Model Context Protocol (MCP) server that interacts with Shopify Dev.",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-shopify-dev",
@@ -18845,12 +20158,16 @@
     "scope": "standalone",
     "mutitenant": true,
     "runtime": "node",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "requiresConfiguration": false,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "71f698342038a25613348729f53c896fdc491b3e60ba8b41ece3fb78992cb1ab",
+      "reason": "Mixed quality documentation with some tools having adequate descriptions while others fall short. The 'introspect_admin_schema' and 'get_started' tools provide reasonable context and usage guidance, but 'search_dev_docs' and 'fetch_docs_by_path' have overly brief descriptions that leave key details unclear. Parameter documentation is generally adequate but inconsistent, with some parameters well-explained and others lacking sufficient detail about expected formats or constraints.",
+      "score": "C"
+    },
     "resources": {
-      "tools": 2,
+      "tools": 4,
       "prompts": 1,
       "resources": 0,
       "resourcesTemplates": 0
@@ -18958,7 +20275,8 @@
   },
   {
     "id": "mcp-server-slack",
-    "name": "mcp-server-slack ",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-slack",
     "description": "MCP server for interacting with Slack",
     "links": {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-slack",
@@ -18975,7 +20293,11 @@
     "version": "2025.4.25",
     "requiresConfiguration": true,
     "requiresStorage": false,
-    "rating": "B",
+    "rating": {
+      "hash": "664f16e1f0b3b022db020185ebd9f15eb7a049f9fb40497a1389d2d749e66888",
+      "reason": "Tool names are clear and well-structured with consistent 'slack_' prefix. Descriptions provide basic functionality but lack important context like data formats, limitations, or usage scenarios. Parameter documentation is adequate with clear purposes and some helpful details (like timestamp format explanation), but missing constraints and examples that would improve usability.",
+      "score": "C"
+    },
     "resources": {
       "tools": 8,
       "prompts": 0,
@@ -19340,34 +20662,36 @@
   },
   {
     "id": "mcp-server-stripe",
+    "icon": "https://stripe.com/favicon.ico",
     "name": "mcp-server-stripe",
-    "description": "Interact with Stripe API.",
+    "description": "Integrates Stripe APIs with agent frameworks for payments and custom actions.",
     "links": {
-      "application": ""
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-stripe",
+      "application": "https://github.com/stripe/agent-toolkit"
     },
-    "official": false,
-    "runtime": "",
-    "scope": "",
     "tags": [
-      "finance",
-      "integration"
+      "automation",
+      "integration",
+      "finance"
     ],
-    "provider": "npx",
-    "stars": 0,
-    "config": [
-      {
-        "mcpServers": {
-          "stripe": {
-            "command": "npx",
-            "args": [
-              "-y",
-              "stripe-mcp-server"
-            ],
-            "env": {}
-          }
-        }
-      }
-    ]
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.2.3",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "f9c60d243ed5398b61c89ad5970995ed3e3924d90b038af472623f9523ee5f92",
+      "reason": "The toolset provides adequate documentation with clear tool names and basic functionality descriptions, but has inconsistent formatting, some unclear parameter descriptions, and missing contextual information. While most tools explain their core purpose, descriptions vary in quality from comprehensive (like update_subscription) to overly brief (like finalize_invoice), and several tools lack important usage context or constraints.",
+      "score": "C"
+    },
+    "resources": {
+      "tools": 21,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-supabase",
@@ -19559,33 +20883,35 @@
   },
   {
     "id": "mcp-server-tavily",
+    "icon": "https://tavily.com/favicon.ico",
     "name": "mcp-server-tavily",
-    "description": "Search engine for AI agents (search + extract) powered by Tavily.",
+    "description": "Integrates AI models with web search and data extraction tools.",
     "links": {
-      "application": ""
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-tavily",
+      "application": "https://github.com/tavily-ai/tavily-mcp"
     },
-    "official": false,
-    "runtime": "",
-    "scope": "",
     "tags": [
-      "research"
+      "research",
+      "web"
     ],
-    "provider": "npx",
-    "stars": 0,
-    "config": [
-      {
-        "mcpServers": {
-          "tavily": {
-            "command": "npx",
-            "args": [
-              "-y",
-              "tavily-mcp-server"
-            ],
-            "env": {}
-          }
-        }
-      }
-    ]
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.2.2",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "bef382d75e886606aeee86b9e2c11f3509bce50755428133dc115eb13639608f",
+      "reason": "The toolset demonstrates good documentation quality with clear, descriptive tool names and comprehensive descriptions that explain functionality and use cases. Parameter documentation is generally thorough with helpful details like constraints, defaults, and examples. Minor weaknesses include some inconsistent parameter descriptions (e.g., 'usrls' typo in tavily-extract, unclear country default value) and occasional verbosity, but overall the documentation effectively guides users through the tools' capabilities.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 4,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-telegram-mcp",
@@ -20059,6 +21385,38 @@
       }
     ],
     "stars": 21
+  },
+  {
+    "id": "mcp-server-triplewhale",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/triplewhale/live/logo-1744789416714.jpeg",
+    "name": "mcp-server-triplewhale",
+    "description": "MCP server for managing context with Triplewhale through natural language.",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-triplewhale",
+      "application": "https://github.com/Triple-Whale/mcp-server-triplewhale"
+    },
+    "tags": [
+      "marketing",
+      "integration"
+    ],
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.0.6",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "b15fd122efff1246c0660cdcab831444718abbe8c3b674d6832df70456a4d097",
+      "reason": "The tool has significant documentation quality issues: the name 'moby' is completely non-descriptive and requires domain knowledge to understand; the description is extremely verbose with excessive implementation details, OpenAPI schemas, and examples unrelated to the tool's purpose (SQL migration examples); parameter descriptions are minimal and don't explain their purpose or provide helpful examples. While some information is present, it's buried in unnecessary complexity making the tool difficult to understand and use.",
+      "score": "D"
+    },
+    "resources": {
+      "tools": 1,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-twilio",
@@ -20683,6 +22041,37 @@
     "stars": 2
   },
   {
+    "id": "mcp-server-vizro",
+    "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
+    "name": "mcp-server-vizro",
+    "description": "provides tools and templates to create a functioning Vizro chart or dashboard step by step",
+    "links": {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-vizro",
+      "application": "https://github.com/mckinsey/vizro"
+    },
+    "tags": [
+      "development"
+    ],
+    "official": false,
+    "scope": "standalone",
+    "mutitenant": true,
+    "runtime": "python",
+    "version": "0.1.1",
+    "requiresConfiguration": false,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "9ffff6e8e65726fa28e35f9e987dd76555818cb2fccc9f47621e0c021909c7d2",
+      "reason": "The toolset demonstrates good documentation quality overall. Names are clear and purposeful, descriptions adequately explain functionality and usage context (though some could be more concise), and parameter documentation is generally complete with helpful enums and constraints. The complex nested schemas for ChartPlan and DFMetaData are well-structured. However, some descriptions are verbose or contain formatting issues, and a few parameters lack sufficient detail about their purpose and usage.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 6,
+      "prompts": 3,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
+  },
+  {
     "id": "mcp-server-volatility-mcp",
     "name": "mcp-server-volatility",
     "description": "MCP server for Volatility 3.x, allowing you to perform memory forensics analysis with AI assistant. Experience memory forensics without barriers as plugins like pslist and netscan become accessible through clean REST APIs and LLMs.",
@@ -20966,33 +22355,35 @@
   },
   {
     "id": "mcp-server-webflow",
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/webflow/live/logo-1744809451659.png",
     "name": "mcp-server-webflow",
-    "description": "Interact with Webflow APIs to list and edit your site and CMS data.",
+    "description": "Enables AI agents to interact with Webflow APIs.",
     "links": {
-      "application": ""
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-webflow",
+      "application": "https://github.com/webflow/mcp-server"
     },
-    "official": false,
-    "runtime": "",
-    "scope": "",
     "tags": [
+      "web",
       "integration"
     ],
-    "provider": "npx",
-    "stars": 0,
-    "config": [
-      {
-        "mcpServers": {
-          "webflow": {
-            "command": "npx",
-            "args": [
-              "-y",
-              "webflow-mcp-server"
-            ],
-            "env": {}
-          }
-        }
-      }
-    ]
+    "official": true,
+    "scope": "remote",
+    "mutitenant": true,
+    "runtime": "node",
+    "version": "0.6.0",
+    "requiresConfiguration": true,
+    "requiresStorage": false,
+    "rating": {
+      "hash": "76c373c61d216fece89d8a343cc00bd12aab6a51d58afa953a5849707f20a1a1",
+      "reason": "The toolset shows good documentation quality overall with clear, descriptive tool names and comprehensive parameter descriptions. Tool descriptions adequately explain functionality and usage context, though some could benefit from more detail about limitations or constraints. Parameter documentation is generally thorough with clear descriptions of purpose and types. However, some tools have minimal descriptions (like 'delete_all_site_scripts' with no description) and inconsistent detail levels across similar tools, preventing an A grade.",
+      "score": "B"
+    },
+    "resources": {
+      "tools": 32,
+      "prompts": 0,
+      "resources": 0,
+      "resourcesTemplates": 0
+    }
   },
   {
     "id": "mcp-server-webscraping-ai",

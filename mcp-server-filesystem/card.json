@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-filesystem",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-filesystem",
   "description": "MCP server for filesystem access",
   "links":
@@ -15,7 +16,7 @@
   "version": "2025.3.28",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "A",
+  "rating": {"hash":"b98c05ea2263fbb845157f6e94253a37661a8fe5edcc7c49210ed381d0683b1d","reason":"Tool names are clear and intuitive, indicating purpose immediately. Descriptions are comprehensive (3-4 sentences) explaining functionality, use cases, and limitations including security boundaries. Parameters have clear descriptions with explicit constraints and purpose. Documentation addresses common scenarios and proactively explains security limitations with 'allowed directories' throughout.","score":"A"},
   "resources": {
     "tools": 11,
     "prompts": 0,

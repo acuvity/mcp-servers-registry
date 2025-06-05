@@ -118,6 +118,8 @@ _cross_tool_exclude := [
 	#
 	"update_subscription",
 	#
+	"search_stripe_documentation",
+	#
 	"list_coupons",
 	#
 	"create_coupon",

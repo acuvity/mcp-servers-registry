@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-pulumi",
+  "icon": "https://www.pulumi.com/images/favicon.ico",
   "name": "mcp-server-pulumi",
   "description": "Server for programmatic Pulumi operations via Model Context Protocol.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.1.2",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"508cc9bb77963bc5dc1de540b7632b31cad9d448b053f36bef91c154398d3f5e","reason":"The toolset provides adequate documentation with clear tool names and basic functionality descriptions. However, the descriptions are quite brief (1-2 sentences) and lack important context about when to use each tool, potential limitations, or what outputs to expect. Parameter documentation is functional but minimal, with some helpful examples in the registry tools but missing key details like expected formats or constraints. The CLI tools especially lack clarity about their effects and risks.","score":"C"},
   "resources": {
     "tools": 5,
     "prompts": 0,

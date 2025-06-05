@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-chart",
+  "icon": "https://avatars.githubusercontent.com/u/19199542?s=200&v=4",
   "name": "mcp-server-chart",
   "description": "A Model Context Protocol server for generating visual charts using AntV.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "standalone",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"3fefb72f84551967fee85457fc2de61fa51d592a5529d6ecc0277bd7ef030917","reason":"Tool names are clear and descriptive, indicating chart types effectively. Descriptions adequately explain functionality and use cases with good examples, though some could be more concise. Parameter descriptions are generally clear with helpful examples and proper type specifications. Minor issues include some verbose descriptions and inconsistent detail levels across tools, but overall documentation provides solid guidance for usage.","score":"B"},
   "resources": {
     "tools": 15,
     "prompts": 0,

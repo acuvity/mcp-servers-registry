@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-coda",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-coda",
   "description": "MCP server for Coda.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "remote",
   "mutitenant": false,
   "runtime": "node",
-  "version": "1.2.1",
+  "version": "1.2.3",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "C",
+  "rating": {"hash":"9135e75217b21222213c6c2b96e7e854217323de74c56e15237fa9fb13c96503","reason":"Tool names are clear and specific with consistent 'coda_' prefix indicating purpose. Descriptions are brief (1 sentence each) but adequately explain basic functionality. Parameter descriptions are clear and indicate purpose and expected input types. However, descriptions lack context about when to use tools, what they return, limitations, or usage scenarios, requiring users to infer some details about tool behavior and appropriate usage contexts.","score":"C"},
   "resources": {
     "tools": 8,
     "prompts": 0,

@@ -19,7 +19,6 @@
 
 
 # What is mcp-server-filesystem?
-
 [![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-filesystem/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-filesystem/2025.3.28?logo=docker&logoColor=fff&label=2025.3.28)](https://hub.docker.com/r/acuvity/mcp-server-filesystem)

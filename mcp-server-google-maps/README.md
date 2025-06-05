@@ -19,7 +19,6 @@
 
 
 # What is mcp-server-google-maps?
-
 [![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-google-maps/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-google-maps/0.6.2?logo=docker&logoColor=fff&label=0.6.2)](https://hub.docker.com/r/acuvity/mcp-server-google-maps)

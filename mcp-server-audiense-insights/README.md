@@ -19,7 +19,6 @@
 
 
 # What is mcp-server-audiense-insights?
-
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-audiense-insights/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-audiense-insights/0.2.0?logo=docker&logoColor=fff&label=0.2.0)](https://hub.docker.com/r/acuvity/mcp-server-audiense-insights)

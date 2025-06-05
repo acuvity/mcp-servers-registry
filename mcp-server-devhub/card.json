@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-devhub",
+  "icon": "https://www.devhub.com/img/upload/favicon-196x196-dh.png",
   "name": "mcp-server-devhub",
   "description": "Manage content and operations in DevHub CMS using MCP.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.3.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"b6f6c8ad0cdd10a3cf39532afb3fed7de95807e0079bd7867a432e09047c05e5","reason":"Tool names are clear and purpose-specific. Most descriptions adequately explain functionality with 2-3 sentences and provide context about when to use each tool. Parameter descriptions are generally clear about purpose and expected input types. Some tools like get_hours_of_operation and update_hours provide excellent detail with examples, while others like get_blog_post are more minimal but still adequate. A few parameters lack complete descriptions (e.g., hours_type enum values, new_hours structure details), preventing an A grade.","score":"B"},
   "resources": {
     "tools": 10,
     "prompts": 0,

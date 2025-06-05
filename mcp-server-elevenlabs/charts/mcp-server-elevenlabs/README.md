@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-elevenlabs?
-
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-elevenlabs/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-elevenlabs/0.3.0?logo=docker&logoColor=fff&label=0.3.0)](https://hub.docker.com/r/acuvity/mcp-server-elevenlabs)
-[![PyPI](https://img.shields.io/badge/0.3.0-3775A9?logo=pypi&logoColor=fff&label=elevenlabs-mcp)](https://github.com/elevenlabs/elevenlabs-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-elevenlabs/0.4.0?logo=docker&logoColor=fff&label=0.4.0)](https://hub.docker.com/r/acuvity/mcp-server-elevenlabs)
+[![PyPI](https://img.shields.io/badge/0.4.0-3775A9?logo=pypi&logoColor=fff&label=elevenlabs-mcp)](https://github.com/elevenlabs/elevenlabs-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-elevenlabs/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-elevenlabs&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22ELEVENLABS_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-elevenlabs%3A0.3.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-elevenlabs&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22ELEVENLABS_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-elevenlabs%3A0.4.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Enables voice synthesis and audio processing via APIs.
 
@@ -174,11 +173,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.3.0`
+  - container: `1.0.0-0.4.0`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-elevenlabs:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-elevenlabs:1.0.0-0.3.0`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-elevenlabs:1.0.0-0.4.0`
 
 ---
 
@@ -625,7 +624,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (19)
+## 🧰 Tools (20)
 <details>
 <summary>text_to_speech</summary>
 
@@ -804,6 +803,20 @@ Convert text description of a sound effect to sound effect with a given duration
 | sort_direction | string | not set | No
 </details>
 <details>
+<summary>list_models</summary>
+
+**Description**:
+
+```
+List all available models
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+</details>
+<details>
 <summary>get_voice</summary>
 
 **Description**:
@@ -824,7 +837,7 @@ Get details of a specific voice
 **Description**:
 
 ```
-Clone a voice using provided audio files.
+Create an instant voice clone of a voice using provided audio files.
 
     ⚠️ COST WARNING: This tool makes an API call to ElevenLabs which may incur costs. Only use when explicitly requested by the user.
     
@@ -892,7 +905,7 @@ Create a conversational AI agent with custom configuration.
         temperature: Temperature for the agent. The lower the temperature, the more deterministic the agent's responses will be. Range is 0 to 1.
         max_tokens: Maximum number of tokens to generate.
         asr_quality: Quality of the ASR. `high` or `low`.
-        model_id: ID of the ElevenLabsmodel to use for the agent.
+        model_id: ID of the ElevenLabs model to use for the agent.
         optimize_streaming_latency: Optimize streaming latency. Range is 0 to 4.
         stability: Stability for the agent. Range is 0 to 1.
         similarity_boost: Similarity boost for the agent. Range is 0 to 1.
@@ -1140,12 +1153,13 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 |-----------|------|------|------|
 | tools | add_knowledge_base_to_agent | description | 91f9e1324f9247ab9d29e6fd2ae071e9178f243ecb15b906249414fc19bdc059 |
 | tools | check_subscription | description | 944f896d7183752af29b2030d36de77589e7bd1e624042bc1d30de11cc7bea8b |
-| tools | create_agent | description | c3b330160492f76db976c1ef738c49fc62da33968bf1df068b3eb71129138bcc |
+| tools | create_agent | description | b564fd50f13b82724320fcca60b4a43b6f4342615f94cad25b22d3feacd2bee5 |
 | tools | create_voice_from_preview | description | ba761d6a2b112b520cf8463bedd5da0b841720a48149e4ab0ec93fa2cd5afefa |
 | tools | get_agent | description | 4607c36f84519b2172276551d4c64b55a326d4cd53cbff83d59f427a7c550c4c |
 | tools | get_voice | description | 511ba8e3f9550db8dadc8561cab48730d25684f72069faf2461596a29c60ed79 |
 | tools | isolate_audio | description | ecfd2b1b452ffd4492e23ff4680350ebe5ebed530e774ee25f9b8b5f20e71d04 |
 | tools | list_agents | description | c86fa37dac2e1f0c6d6ba4784faed7c330e907453c299a60992c8af4bef9b665 |
+| tools | list_models | description | a0ff65affde407f1cf84fe2a125e4d8632eaa1db8594889e246ef31e82b00bb5 |
 | tools | list_phone_numbers | description | cced243ecf3b23b4b992847064779c30f844e6cb3f64618a53c72ce1f0ca1622 |
 | tools | make_outbound_call | description | d8e7480101ea19cfa95141215d12f5cdc5f87d75fc20c0869a18b3fb02f09cc8 |
 | tools | play_audio | description | ead1307454561355d22fb5546a6124de7899e129b244b565faac3072021fb3fa |
@@ -1156,7 +1170,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | text_to_sound_effects | description | 9fe63c424ebbf0133561c9bdb0ff941157b9b84b34680ce15764e4dccc45f931 |
 | tools | text_to_speech | description | e35a9e71722f2a738bba2d0db9d3d111de584a979157de39da236df40f47a1dd |
 | tools | text_to_voice | description | 5a7eb20b8fce7560f39b99ab64bfea14a409f8ed0c1afe9529eb11d903cab523 |
-| tools | voice_clone | description | 7fe2970dc4ad4f9494d42122253c53f17114f8a0ee1015422892d785552cb48a |
+| tools | voice_clone | description | e81d355303d7ca9c566f571a7b7ff18ab155f1296ad57767025c7bbe90ff3a66 |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

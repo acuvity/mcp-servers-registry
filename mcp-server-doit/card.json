@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-doit",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/doit/live/logo-1744869144771.png",
   "name": "mcp-server-doit",
   "description": "Access DoiT API for analyzing cloud data and troubleshooting.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.1.29",
+  "version": "0.1.33",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "D",
+  "rating": {"hash":"f1d919f5d09a2b26d9d7d2f1991861ac72990298df9725b0688688a42179e5c0","reason":"Most tool names are adequately descriptive, but descriptions are consistently brief and lack crucial detail about functionality, limitations, and when to use each tool. Many parameter descriptions are minimal (e.g., 'incident ID', 'anomaly ID') without explaining their purpose or expected format. The 'run_query' tool has extensive schema documentation but a confusing description that relies heavily on examples rather than clear explanation of core functionality.","score":"D"},
   "resources": {
     "tools": 14,
     "prompts": 10,

@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-notion",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/notion/live/logo-1744809276376.png",
   "name": "mcp-server-notion",
   "description": "Interacting with Notion API.",
   "links":
@@ -15,7 +16,7 @@
   "version": "1.8.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "D",
+  "rating": {"hash":"bf3ca516d32c70d64d18873c4e6f76235a047f62aa1aca8fde857619d7b98fea","reason":"Most tool descriptions are extremely brief (1-4 words) and lack context about functionality, usage, or limitations. While parameter descriptions are generally adequate with clear types and purposes, the tool descriptions fail to explain what the tools do, when to use them, or what they return. The consistent 'API-' prefix doesn't help distinguish between tools, and descriptions like 'Query a database' or 'Search by title' provide minimal guidance for proper usage.","score":"D"},
   "resources": {
     "tools": 19,
     "prompts": 0,

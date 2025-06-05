@@ -19,7 +19,6 @@
 
 
 # What is mcp-server-browserbase?
-
 [![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-browserbase/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-browserbase/1.0.5?logo=docker&logoColor=fff&label=1.0.5)](https://hub.docker.com/r/acuvity/mcp-server-browserbase)

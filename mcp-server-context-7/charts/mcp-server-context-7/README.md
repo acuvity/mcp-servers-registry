@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-context-7?
-
-[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-context-7/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-context-7/1.0.9?logo=docker&logoColor=fff&label=1.0.9)](https://hub.docker.com/r/acuvity/mcp-server-context-7)
-[![PyPI](https://img.shields.io/badge/1.0.9-3775A9?logo=pypi&logoColor=fff&label=@upstash/context7-mcp)](https://github.com/upstash/context7#readme)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-context-7/1.0.12?logo=docker&logoColor=fff&label=1.0.12)](https://hub.docker.com/r/acuvity/mcp-server-context-7)
+[![PyPI](https://img.shields.io/badge/1.0.12-3775A9?logo=pypi&logoColor=fff&label=@upstash/context7-mcp)](https://github.com/upstash/context7#readme)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-context-7/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-context-7&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-context-7%3A1.0.9%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-context-7&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-context-7%3A1.0.12%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Context7 MCP - Up-to-date Docs For Any Cursor Prompt.
 
@@ -174,11 +173,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-1.0.9`
+  - container: `1.0.0-1.0.12`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-context-7:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-context-7:1.0.0-1.0.9`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-context-7:1.0.0-1.0.12`
 
 ---
 
@@ -626,7 +625,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 ```
 Resolves a package/product name to a Context7-compatible library ID and returns a list of matching libraries.
 
-You MUST call this function before 'get-library-docs' to obtain a valid Context7-compatible library ID.
+You MUST call this function before 'get-library-docs' to obtain a valid Context7-compatible library ID UNLESS the user explicitly provides a library ID in the format '/org/project' or '/org/project/version' in their query.
 
 Selection Process:
 1. Analyze the query to understand what library/package the user is looking for
@@ -657,14 +656,14 @@ For ambiguous queries, request clarification before proceeding with a best-guess
 **Description**:
 
 ```
-Fetches up-to-date documentation for a library. You must call 'resolve-library-id' first to obtain the exact Context7-compatible library ID required to use this tool.
+Fetches up-to-date documentation for a library. You must call 'resolve-library-id' first to obtain the exact Context7-compatible library ID required to use this tool, UNLESS the user explicitly provides a library ID in the format '/org/project' or '/org/project/version' in their query.
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| context7CompatibleLibraryID | string | Exact Context7-compatible library ID (e.g., 'mongodb/docs', 'vercel/nextjs') retrieved from 'resolve-library-id'. | Yes
+| context7CompatibleLibraryID | string | Exact Context7-compatible library ID (e.g., '/mongodb/docs', '/vercel/next.js', '/supabase/supabase', '/vercel/next.js/v14.3.0-canary.87') retrieved from 'resolve-library-id' or directly from user query in the format '/org/project' or '/org/project/version'. | Yes
 | tokens | number | Maximum number of tokens of documentation to retrieve (default: 10000). Higher values provide more context but consume more tokens. | No
 | topic | string | Topic to focus documentation on (e.g., 'hooks', 'routing'). | No
 </details>
@@ -676,11 +675,11 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
-| tools | get-library-docs | description | cddfbc0fa4f44e5e3373e8f6289e6d329685660cd75d562dcebe92dc9475c8e8 |
-| tools | get-library-docs | context7CompatibleLibraryID | c906658ac565e1266a7e9641bb43392223f38082489258a83d03c4783fc93ab5 |
+| tools | get-library-docs | description | eb2a9adf3b2282cc1ef397d685657a8ab3f3fccb0f8f64526f5b0af90ded97d7 |
+| tools | get-library-docs | context7CompatibleLibraryID | 6c34219525d407280dda56113382f386d34dcafd7b9e6c4e922218f7af6a73f7 |
 | tools | get-library-docs | tokens | f540ae2f13fa0a62ed5bb41c4d1653aee29c1f1d46100e7509c4e3b73421ebb1 |
 | tools | get-library-docs | topic | e8e61edf96c395a9d80df978b4720045e91ed73580b6b699f932f2b86708bf2a |
-| tools | resolve-library-id | description | 9633f96294145104ee4354f7e70c937e355dc8c4fc09dbde86bf5e6177e1929c |
+| tools | resolve-library-id | description | 000dc4f4254e96e2bad9603c8194a7247e598c76b007de661abf3a94028f1a1d |
 | tools | resolve-library-id | libraryName | ea7e56753dac14ab7b06c226689b7db297b1bc9acd23fd68114da61e53f16743 |
 
 

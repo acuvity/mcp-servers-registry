@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-e2b",
+  "icon": "https://e2b.dev/favicon.ico",
   "name": "mcp-server-e2b",
   "description": "Adds code interpreting capabilities to the Claude Desktop app.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.2.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "C",
+  "rating": {"hash":"90a552bfe6c3f643bf7316f9acafd0c51d4cafd44194d5f90c2d25355ea9eb90","reason":"Tool name is clear but the description is minimal (one sentence) and lacks important details about when to use it, what outputs to expect, or limitations. The 'code' parameter has no description whatsoever, leaving users to guess what type of Python code is acceptable or how it should be formatted.","score":"D"},
   "resources": {
     "tools": 1,
     "prompts": 0,

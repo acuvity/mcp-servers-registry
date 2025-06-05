@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-memory",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-memory",
   "description": "MCP server for enabling memory for Claude through a knowledge graph",
   "links":
@@ -15,7 +16,7 @@
   "version": "2025.4.25",
   "requiresConfiguration": false,
   "requiresStorage": true,
-  "rating": "B",
+  "rating": {"hash":"07e83596758791b8eedbaea7448ff1a9e3a079985895627d825a4fa9092d1517","reason":"Tool names are clear and consistent. Descriptions provide basic functionality but lack important context about when to use each tool, what the knowledge graph structure represents, and key limitations. Parameter documentation is adequate with clear purposes and types, but could benefit from examples and more detailed explanations of complex nested structures like observations and relations.","score":"C"},
   "resources": {
     "tools": 9,
     "prompts": 0,

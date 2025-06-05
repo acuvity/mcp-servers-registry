@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-bitrefill",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/bitrefill/live/logo-1744790288436.png",
   "name": "mcp-server-bitrefill",
   "description": "Provides Bitrefill services for AI assistants via the Model Context Protocol.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.3.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"79f90ee88d0f8c9984e8397e46d6d807e7f5955fe8cf261896b733056a013c0e","reason":"Tool names are clear and purpose-specific. Most descriptions adequately explain functionality with good guidance on when to use tools (like search suggesting to use categories first). Parameter descriptions are generally clear with good examples and constraints. However, some tools like 'detail' have minimal descriptions, and several parameters in 'search' lack sufficient explanation of their purpose or impact on behavior.","score":"B"},
   "resources": {
     "tools": 12,
     "prompts": 0,

@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-mongodb",
+  "icon": "https://www.mongodb.com/favicon.ico",
   "name": "mcp-server-mongodb",
   "description": "MCP server for interacting with MongoDB and MongoDB Atlas.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.1.1",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"56dabc5be6a6c28defacb57c91d98a6897040997889389d67706a4348a4918cf","reason":"The toolset shows adequate but inconsistent documentation quality. While parameter descriptions are generally clear and most tools have basic functional descriptions, many tool descriptions are too brief (1-2 words like 'List MongoDB Atlas clusters') and lack important context about usage, limitations, or expected outputs. Some tools like 'atlas-create-db-user' have comprehensive parameter documentation, but others like 'atlas-list-orgs' provide minimal guidance. The documentation is functional but leaves users with questions about when to use specific tools and what to expect from them.","score":"C"},
   "resources": {
     "tools": 31,
     "prompts": 0,

@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-tavily?
-
-[![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-tavily/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-tavily/0.2.0?logo=docker&logoColor=fff&label=0.2.0)](https://hub.docker.com/r/acuvity/mcp-server-tavily)
-[![PyPI](https://img.shields.io/badge/0.2.0-3775A9?logo=pypi&logoColor=fff&label=tavily-mcp)](https://github.com/tavily-ai/tavily-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-tavily/0.2.2?logo=docker&logoColor=fff&label=0.2.2)](https://hub.docker.com/r/acuvity/mcp-server-tavily)
+[![PyPI](https://img.shields.io/badge/0.2.2-3775A9?logo=pypi&logoColor=fff&label=tavily-mcp)](https://github.com/tavily-ai/tavily-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-tavily/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-tavily&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22TAVILY_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-tavily%3A0.2.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-tavily&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22TAVILY_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-tavily%3A0.2.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Integrates AI models with web search and data extraction tools.
 
@@ -174,11 +173,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.2.0`
+  - container: `1.0.0-0.2.2`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-tavily:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-tavily:1.0.0-0.2.0`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-tavily:1.0.0-0.2.2`
 
 ---
 
@@ -639,6 +638,7 @@ A powerful web search tool that provides comprehensive, real-time results using 
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| country | string | Boost search results from a specific country. This will prioritize content from the selected country in the search results. Available only if topic is general. | No
 | days | number | The number of days back from the current date to include in the search results. This specifies the time frame of data to be retrieved. Please note that this feature is only available when using the 'news' search topic | No
 | exclude_domains | array | List of domains to specifically exclude, if the user asks to exclude a domain set this to the domain of the site | No
 | include_domains | array | A list of domains to specifically include in the search results, if the user asks to search on specific sites set this to the domain of the site | No
@@ -665,6 +665,7 @@ A powerful web content extraction tool that retrieves and processes raw content 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | extract_depth | string | Depth of extraction - 'basic' or 'advanced', if usrls are linkedin use 'advanced' or if explicitly told to use advanced | No
+| format | string | The format of the extracted web page content. markdown returns content in markdown format. text returns plain text and may increase latency. | No
 | include_images | boolean | Include a list of images extracted from the urls in the response | No
 | urls | array | List of URLs to extract content from | Yes
 </details>
@@ -684,10 +685,11 @@ A powerful web crawler that initiates a structured web crawl starting from a spe
 | allow_external | boolean | Whether to allow following links that go to external domains | No
 | categories | array | Filter URLs using predefined categories like documentation, blog, api, etc | No
 | extract_depth | string | Advanced extraction retrieves more data, including tables and embedded content, with higher success but may increase latency | No
+| format | string | The format of the extracted web page content. markdown returns content in markdown format. text returns plain text and may increase latency. | No
+| instructions | string | Natural language instructions for the crawler | No
 | limit | integer | Total number of links the crawler will process before stopping | No
 | max_breadth | integer | Max number of links to follow per level of the tree (i.e., per page) | No
 | max_depth | integer | Max depth of the crawl. Defines how far from the base URL the crawler can explore. | No
-| query | string | Natural language instructions for the crawler | No
 | select_domains | array | Regex patterns to select crawling to specific domains or subdomains (e.g., ^docs\.example\.com$) | No
 | select_paths | array | Regex patterns to select only URLs with specific path patterns (e.g., /docs/.*, /api/v1.*) | No
 | url | string | The root URL to begin the crawl | Yes
@@ -707,10 +709,10 @@ A powerful web mapping tool that creates a structured map of website URLs, allow
 |-----------|------|-------------|-----------|
 | allow_external | boolean | Whether to allow following links that go to external domains | No
 | categories | array | Filter URLs using predefined categories like documentation, blog, api, etc | No
+| instructions | string | Natural language instructions for the crawler | No
 | limit | integer | Total number of links the crawler will process before stopping | No
 | max_breadth | integer | Max number of links to follow per level of the tree (i.e., per page) | No
 | max_depth | integer | Max depth of the mapping. Defines how far from the base URL the crawler can explore | No
-| query | string | Natural language instructions for the crawler | No
 | select_domains | array | Regex patterns to select crawling to specific domains or subdomains (e.g., ^docs\.example\.com$) | No
 | select_paths | array | Regex patterns to select only URLs with specific path patterns (e.g., /docs/.*, /api/v1.*) | No
 | url | string | The root URL to begin the mapping | Yes
@@ -727,28 +729,31 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | tavily-crawl | allow_external | 5b6ea50394b51a7d712179459ab77efcf5a631bb38d8a47a48516f6d8e615aff |
 | tools | tavily-crawl | categories | f7f9439251205a3658776b9db1db48c42f00303b2abcf1574d366cf915d24b93 |
 | tools | tavily-crawl | extract_depth | 096630325177fc094ce66f458b58601638b5e38fd50f76ca9add282398d73334 |
+| tools | tavily-crawl | format | f44d780fad2703f7c4493de46d426ef265ebb2d11e28ca79078f2105a434828d |
+| tools | tavily-crawl | instructions | 11e23a677507385405b5498887e41ac4c10e4c36a877e771b24e84fd08020058 |
 | tools | tavily-crawl | limit | ecbdbea1cc664963ec69474afb6c97c57f8ae2752e7128e5fe372b260d7bfbcf |
 | tools | tavily-crawl | max_breadth | dcbf82b39474503318763a3c51cff9c45492d021c50fb9e778751ce3533b752c |
 | tools | tavily-crawl | max_depth | 467655797e4e5cb1690ae09eeebded8f2a40f80858c6a29f2085772f21bc43c0 |
-| tools | tavily-crawl | query | 11e23a677507385405b5498887e41ac4c10e4c36a877e771b24e84fd08020058 |
 | tools | tavily-crawl | select_domains | fe6ef4a110db381eb61ff7715cde308a73be299daae35847216beb6ab7a5b975 |
 | tools | tavily-crawl | select_paths | 9927be7ee8bc87bcd5363fc754d6b130585836614260a6ad12d88bc99b93fb15 |
 | tools | tavily-crawl | url | e18f3f89f38fb901b6e29a35b6138a6accbbfd93a66fc1f421e88cf23f93331e |
 | tools | tavily-extract | description | 1345839a938b55e787c772bab510514157f729812c5be9a3165598745c336c76 |
 | tools | tavily-extract | extract_depth | aac7e32c9ba05a8437192cf699fffc5a5d83d6d1b3d4f9c4f05ed1faa1fca12e |
+| tools | tavily-extract | format | f44d780fad2703f7c4493de46d426ef265ebb2d11e28ca79078f2105a434828d |
 | tools | tavily-extract | include_images | ad583d5fbb5404a91cb49e4192e39a9d26339fb5d68afceb0fc5e15654981bda |
 | tools | tavily-extract | urls | 694f6f90aa7a13847bf9171b0dd5d9b71c63dbedcc07a9b5f4c204e800640577 |
 | tools | tavily-map | description | 42684fee294c35a65925358eb7a82a46be440ecb4cd7a5918f08a4ae7b863b97 |
 | tools | tavily-map | allow_external | 5b6ea50394b51a7d712179459ab77efcf5a631bb38d8a47a48516f6d8e615aff |
 | tools | tavily-map | categories | f7f9439251205a3658776b9db1db48c42f00303b2abcf1574d366cf915d24b93 |
+| tools | tavily-map | instructions | 11e23a677507385405b5498887e41ac4c10e4c36a877e771b24e84fd08020058 |
 | tools | tavily-map | limit | ecbdbea1cc664963ec69474afb6c97c57f8ae2752e7128e5fe372b260d7bfbcf |
 | tools | tavily-map | max_breadth | dcbf82b39474503318763a3c51cff9c45492d021c50fb9e778751ce3533b752c |
 | tools | tavily-map | max_depth | 36ca50681fc627198c6c9606543eeb2e0775126143cb7458bfe211bc010a004c |
-| tools | tavily-map | query | 11e23a677507385405b5498887e41ac4c10e4c36a877e771b24e84fd08020058 |
 | tools | tavily-map | select_domains | fe6ef4a110db381eb61ff7715cde308a73be299daae35847216beb6ab7a5b975 |
 | tools | tavily-map | select_paths | 9927be7ee8bc87bcd5363fc754d6b130585836614260a6ad12d88bc99b93fb15 |
 | tools | tavily-map | url | 258310dad942c2b11c0d5b4701b441abd7613970b7a7f459f44fbc995e1dfa6a |
 | tools | tavily-search | description | 9f47afceed35d18060a38ec7ec7287d2a805f1f52a8f257884c13672b1d5a572 |
+| tools | tavily-search | country | bcf3258a6e227c3f65a1ba9abc67d64a81ebd96af777c266676f72b045e96060 |
 | tools | tavily-search | days | a5166a9dc7b62d6c568b6a86b91e09c679a6fa43d83f2a3178abc5e398f37d22 |
 | tools | tavily-search | exclude_domains | 52be69be6c9b81c02d0bc9e24c258ee132e9b0e25272d2e32978693e1cadf94d |
 | tools | tavily-search | include_domains | 73af97b9b4b062080f17117145d2c5914c6859636d6faad4c9cf4dbdb5af9b98 |

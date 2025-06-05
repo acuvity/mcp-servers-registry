@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-playwright",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/playwright/live/logo-1745822820407.png",
   "name": "mcp-server-playwright",
   "description": "Browser automation for LLMs using structured accessibility snapshots.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "standalone",
   "mutitenant": false,
   "runtime": "node",
-  "version": "0.0.26",
+  "version": "0.0.28",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "C",
+  "rating": {"hash":"08ddfbb5f28df62ede08f5f8e1c38a6c8282ff125ba681d209067ea903a0120f","reason":"Tool names are clear and well-structured with consistent 'browser_' prefixes. Descriptions are mostly adequate but often too brief (1 sentence), lacking context about when to use tools or their limitations. Parameter documentation is generally clear with good type specifications, though some could benefit from examples or format details. The toolset is functional but leaves users with questions about usage context and constraints.","score":"C"},
   "resources": {
     "tools": 25,
     "prompts": 0,

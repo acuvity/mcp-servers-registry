@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-google-bigquery",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-google-bigquery",
   "description": "A server that lets your LLM securely query BigQuery.",
   "links":
@@ -15,7 +16,7 @@
   "version": "1.0.3",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "D",
+  "rating": {"hash":"188a377a02dad53ae7fdce175a00802fee0ca710bfa251d35ca863f0f9ad3dba","reason":"Tool name is too generic ('query' could apply to any database). Description is minimal, only stating it runs read-only queries without explaining when to use it, what data sources are available, or output format. The 'sql' parameter completely lacks description, and 'maximumBytesBilled' has minimal context about its purpose or format expectations.","score":"D"},
   "resources": {
     "tools": 1,
     "prompts": 0,

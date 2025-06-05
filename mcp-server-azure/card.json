@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-azure",
+  "icon": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/acom_social_icon_azure",
   "name": "mcp-server-azure",
   "description": "Integrates AI agents with Azure services for enhanced functionality.",
   "links":
@@ -12,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.0.20",
+  "version": "0.1.2",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "A",
+  "rating": {"hash":"cbdca83f971944ddfc647341560c29bdac2b2effdf5a3a97abcb840300ab7a95","reason":"Tool names are clear and follow consistent Azure service patterns with 'azmcp-' prefix. Descriptions adequately explain functionality and provide context for when to use each tool, though some could be more comprehensive. Most parameters have clear descriptions explaining their purpose and expected values. The toolset demonstrates good consistency across Azure services, but some descriptions lack detail about limitations or specific behaviors that would elevate them to excellent quality.","score":"B"},
   "resources": {
-    "tools": 49,
+    "tools": 54,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

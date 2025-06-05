@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-heroku?
-
-[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-heroku/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-heroku/1.0.5?logo=docker&logoColor=fff&label=1.0.5)](https://hub.docker.com/r/acuvity/mcp-server-heroku)
-[![PyPI](https://img.shields.io/badge/1.0.5-3775A9?logo=pypi&logoColor=fff&label=@heroku/mcp-server)](https://github.com/heroku/heroku-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-heroku/1.0.6?logo=docker&logoColor=fff&label=1.0.6)](https://hub.docker.com/r/acuvity/mcp-server-heroku)
+[![PyPI](https://img.shields.io/badge/1.0.6-3775A9?logo=pypi&logoColor=fff&label=@heroku/mcp-server)](https://github.com/heroku/heroku-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-heroku/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-heroku&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22HEROKU_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-heroku%3A1.0.5%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-heroku&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22HEROKU_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-heroku%3A1.0.6%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Facilitate LLMs interaction with Heroku Platform resources.
 
@@ -174,11 +173,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-1.0.5`
+  - container: `1.0.0-1.0.6`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-heroku:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-heroku:1.0.0-1.0.5`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-heroku:1.0.0-1.0.6`
 
 ---
 
@@ -1276,7 +1275,7 @@ Make inference request to Heroku AI API
 | app | string | App name/ID (required for alias) | Yes
 | json | boolean | Output as JSON | No
 | modelResource | string | Model resource ID/alias (requires --app for alias) | No
-| opts | string | JSON string with model, messages, and optional params (temp, tools, etc) | Yes
+| opts | object | not set | Yes
 | output | string | Output file path | No
 </details>
 
@@ -1350,7 +1349,6 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | make_ai_inference | app | e37cba2ed0141c23a2cd9fa1862143becef6ae3a5ce1170e114d0f404c047243 |
 | tools | make_ai_inference | json | e4b707ac734031dc0cec48982cda6b24aefce497d27b886df06510f94755e9c4 |
 | tools | make_ai_inference | modelResource | 8b2a4be07befbdf438ab99b34506de33fa41ceb67ab2e4473f2baf6564d6974e |
-| tools | make_ai_inference | opts | 18a0f50ad3ad400236790c3ded6965878b3765ed22b47587c56955d97a97d20c |
 | tools | make_ai_inference | output | 712cc0b9f5153cdb089d8e613e5e01ba205daafa646bd3425ffbf44b35723694 |
 | tools | pg_backups | description | 6a23071e3332bc34966aae79529da0c8b1fa0d3837aa92e31b65142b3c8e3acc |
 | tools | pg_backups | app | 9fdf0b1003c3eb81df3617f7a2cea05e141680c27d4bd2caf88df5134606fc5a |

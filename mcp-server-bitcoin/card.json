@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-bitcoin",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-bitcoin",
   "description": "A Model Context Protocol (MCP) server that enables AI models to interact with Bitcoin blockchain.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.0.6",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "D",
+  "rating": {"hash":"02d92f7e54c7aed65eb36f02d51b5e60dfa595390a8c83a6256fad2a4ac85476","reason":"Tool names are clear and specific, indicating Bitcoin/Lightning functionality well. However, descriptions are minimal one-liners that lack essential context about when to use each tool, what information they return, limitations, or usage scenarios. Parameter descriptions are basic but adequate. The documentation leaves significant gaps requiring users to infer tool purposes and behavior details.","score":"D"},
   "resources": {
     "tools": 7,
     "prompts": 0,

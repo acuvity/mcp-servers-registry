@@ -5,13 +5,13 @@ home: https://github.com/orellazri/coda-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/orellazri/coda-mcp
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-coda/logo.png"
 type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 1.2.1
+appVersion: 1.2.3
 keywords:
   - mcp-server-coda
   - mcp-server

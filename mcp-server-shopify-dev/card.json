@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-shopify-dev",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/shopify/live/logo-1744808475193.png",
   "name": "mcp-server-shopify-dev",
   "description": "Model Context Protocol (MCP) server that interacts with Shopify Dev.",
   "links":
@@ -15,7 +16,7 @@
   "version": "1.1.0",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"71f698342038a25613348729f53c896fdc491b3e60ba8b41ece3fb78992cb1ab","reason":"Mixed quality documentation with some tools having adequate descriptions while others fall short. The 'introspect_admin_schema' and 'get_started' tools provide reasonable context and usage guidance, but 'search_dev_docs' and 'fetch_docs_by_path' have overly brief descriptions that leave key details unclear. Parameter documentation is generally adequate but inconsistent, with some parameters well-explained and others lacking sufficient detail about expected formats or constraints.","score":"C"},
   "resources": {
     "tools": 4,
     "prompts": 1,

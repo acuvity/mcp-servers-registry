@@ -88,7 +88,11 @@ _cross_tool_exclude := [
 	#
 	"add_issue_comment",
 	#
-	"add_pull_request_review_comment",
+	"add_pull_request_review_comment_to_pending_review",
+	#
+	"assign_copilot_to_issue",
+	#
+	"create_and_submit_pull_request_review",
 	#
 	"create_branch",
 	#
@@ -96,13 +100,17 @@ _cross_tool_exclude := [
 	#
 	"create_or_update_file",
 	#
-	"create_pull_request",
+	"create_pending_pull_request_review",
 	#
-	"create_pull_request_review",
+	"create_pull_request",
 	#
 	"create_repository",
 	#
 	"delete_file",
+	#
+	"delete_pending_pull_request_review",
+	#
+	"dismiss_notification",
 	#
 	"fork_repository",
 	#
@@ -118,9 +126,13 @@ _cross_tool_exclude := [
 	#
 	"get_me",
 	#
+	"get_notification_details",
+	#
 	"get_pull_request",
 	#
 	"get_pull_request_comments",
+	#
+	"get_pull_request_diff",
 	#
 	"get_pull_request_files",
 	#
@@ -140,11 +152,19 @@ _cross_tool_exclude := [
 	#
 	"list_issues",
 	#
+	"list_notifications",
+	#
 	"list_pull_requests",
 	#
 	"list_secret_scanning_alerts",
 	#
 	"list_tags",
+	#
+	"manage_notification_subscription",
+	#
+	"manage_repository_notification_subscription",
+	#
+	"mark_all_notifications_read",
 	#
 	"merge_pull_request",
 	#
@@ -159,6 +179,8 @@ _cross_tool_exclude := [
 	"search_repositories",
 	#
 	"search_users",
+	#
+	"submit_pending_pull_request_review",
 	#
 	"update_issue",
 	#

@@ -19,8 +19,7 @@
 
 
 # What is mcp-server-sentry?
-
-[![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-sentry/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-sentry/2025.1.14?logo=docker&logoColor=fff&label=2025.1.14)](https://hub.docker.com/r/acuvity/mcp-server-sentry)
 [![PyPI](https://img.shields.io/badge/2025.1.14-3775A9?logo=pypi&logoColor=fff&label=mcp-server-sentry)](https://github.com/modelcontextprotocol/servers/tree/main/src/sentry)

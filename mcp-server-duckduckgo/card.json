@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-duckduckgo",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/duckduckgo/live/logo-1745330531634.png",
   "name": "mcp-server-duckduckgo",
   "description": "Provides web search and content fetching using DuckDuckGo.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.1.1",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "D",
+  "rating": {"hash":"bc867e06b4c29a68dfd0bdfb62d85eaf1bcb4133c8ef516c7890e860dff6af5e","reason":"Tool names are clear and indicate purpose well. Descriptions briefly outline main functionality but lack important details like what 'formatted results' means for search, what content formats are supported for fetch_content, when to use each tool, and any limitations. Parameter descriptions are minimal with only basic titles, missing explanations of expected formats or constraints.","score":"C"},
   "resources": {
     "tools": 2,
     "prompts": 0,

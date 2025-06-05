@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-attio",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-attio",
   "description": "Allows AI clients to manage records and notes in Attio CRM.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.0.2",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "D",
+  "rating": {"hash":"bfceb7a18de3c8e8d2d11a98ee338223cede3d1418be5f1220fa890c8b119197","reason":"Tool names are clear and specific, indicating their purpose well. Descriptions are brief but adequate, covering basic functionality in 1-2 sentences. Parameter descriptions are clear and indicate purpose and expected input types. However, descriptions lack comprehensive detail about when to use each tool, what specific information they return, limitations, or relationship between different identifier types (URI vs ID). Documentation is usable but leaves some questions about tool behavior and constraints unanswered.","score":"C"},
   "resources": {
     "tools": 4,
     "prompts": 0,

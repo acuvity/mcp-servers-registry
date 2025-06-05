@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-firecrawl",
+  "icon": "https://firecrawl.dev/favicon.ico",
   "name": "mcp-server-firecrawl",
   "description": "Integrates Firecrawl for web scraping and data extraction.",
   "links":
@@ -15,7 +16,7 @@
   "version": "1.11.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "A",
+  "rating": {"hash":"3b5c2fba1abf2c85157a670f90a560ddccdfae071f3ff8461ac463a07e426841","reason":"Excellent documentation across all tools. Each tool has a comprehensive description explaining what it does, when to use it, when not to use it, common mistakes, and detailed usage examples. Parameter descriptions are clear and complete, explaining purpose, constraints, and expected values. The documentation proactively addresses typical user questions and provides concrete guidance for proper tool selection and usage.","score":"A"},
   "resources": {
     "tools": 8,
     "prompts": 0,

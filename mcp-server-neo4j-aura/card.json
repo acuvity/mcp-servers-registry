@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-neo4j-aura",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/neo4j-cloud-aura-api/live/logo-1746435894823.png",
   "name": "mcp-server-neo4j-aura",
   "description": "Managing Neo4j Aura database instances through the Neo4j Aura API.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.2.2",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"2def507b780c09bdf1783091ae9ea2e9b1e96c8cb04acacbd7ba450d723c7e89","reason":"The toolset provides adequate documentation with clear, descriptive tool names and basic functionality descriptions. Parameter descriptions are clear and specify types/constraints appropriately. However, the tool descriptions are quite brief (mostly single sentences) and lack important context about usage scenarios, limitations, or behavioral details that would help users understand when and how to use each tool effectively.","score":"C"},
   "resources": {
     "tools": 12,
     "prompts": 0,

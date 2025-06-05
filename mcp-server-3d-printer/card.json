@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-3d-printer",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/3d-printer/live/logo-1744820439923.png",
   "name": "mcp-server-3d-printer",
   "description": "Connects to various 3D printers for management and STL manipulation.",
   "links":
@@ -15,7 +16,7 @@
   "version": "1.0.2",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"7425a6126f8bf92ebadf12df3f7eff79cbfefd256c65273c48a4fa6e19e88525","reason":"Tool names are clear and specific for their purposes. Most descriptions are adequate but brief (1-2 sentences), covering basic functionality without detailed usage guidance or limitations. Parameter descriptions are generally clear and indicate purpose and type, though some lack context about constraints or expected values. The documentation is usable but leaves some user questions unanswered, particularly around when to use certain tools and their specific behaviors.","score":"C"},
   "resources": {
     "tools": 15,
     "prompts": 0,

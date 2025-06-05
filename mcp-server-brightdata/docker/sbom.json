@@ -9,96 +9,18 @@
       "hash": "48946c5fc24b9fcf9fbadbd981dd26be62eb3f34f642e1950aa4f01e9db9d9bc"
     },
     {
-      "name": "scraping_browser_click",
-      "hash": "9e9459df10de555dc6aedcfcf83c6f24d93f16675d0a62b1150aa15e3c71a1d0",
-      "params": [
-        {
-          "name": "selector",
-          "hash": "b472eecbbc30b0cf10580e321a828b5b50472aac057c0712023b625869274969"
-        }
-      ]
-    },
-    {
-      "name": "scraping_browser_get_html",
-      "hash": "e9db1ed3982226fa5e634cefeaac3825200257fb26c11720068c9a5c3d28814d",
-      "params": [
-        {
-          "name": "full_page",
-          "hash": "227462f39892944bb89922121fd64f11432bf36046e72adcaaba2df6e402cb73"
-        }
-      ]
-    },
-    {
-      "name": "scraping_browser_get_text",
-      "hash": "da41b92ae44df5399a35b18908cd1ea1c2ccaf5eb058edc749767a9519eaca96"
-    },
-    {
-      "name": "scraping_browser_go_back",
-      "hash": "1070d603d3951f9282bc8e5111b7a6993fa05215c23ba5099429b567a9bdb467"
-    },
-    {
-      "name": "scraping_browser_go_forward",
-      "hash": "4f74235e282e3cba526b98047b02c344c6bc32566bb325d5408e897eadfc6a7e"
-    },
-    {
-      "name": "scraping_browser_links",
-      "hash": "ad9a62f8931d3317d6627e72de82f4606bab9357cd04d19b7133c81aa4816aa0"
-    },
-    {
-      "name": "scraping_browser_navigate",
-      "hash": "4dd63c7c00a6ccd7de8df8d4efa78821477c05dd0fe9fee4f9f530a8fbc78ddd",
-      "params": [
-        {
-          "name": "url",
-          "hash": "63d749360d127f3c1d0d108336745c687aaa08760a306f0dadbbef4e9fadf27f"
-        }
-      ]
-    },
-    {
-      "name": "scraping_browser_screenshot",
-      "hash": "769e18b9e5b78a944b15bd8342288959fd92d197631e87a9b6f293a8aa9c7caf",
-      "params": [
-        {
-          "name": "full_page",
-          "hash": "b8634cbc1491ba7afc92714a4c557a81e3ae93ef4cc4ee2568f9c15d1bb4ed22"
-        }
-      ]
-    },
-    {
-      "name": "scraping_browser_type",
-      "hash": "9cd8fb996ff445688e56e6c500ed27847e27b72c606d5c8174708d92fe8ec726",
-      "params": [
-        {
-          "name": "selector",
-          "hash": "8432a6c9577dcae09ef6bd2b0f59c8b350c5e6e0703169193a6639555168f976"
-        },
-        {
-          "name": "submit",
-          "hash": "9ad8eef45aadaffc2eceb18d4eded88374b264f66b08c3865109a3d96ba7acac"
-        },
-        {
-          "name": "text",
-          "hash": "2bf42268dbb30ce1452879e6fdf8c10a259316e899df9c4fb0405b1f0e42fe8c"
-        }
-      ]
-    },
-    {
-      "name": "scraping_browser_wait_for",
-      "hash": "dc6f8b68829f63f13684b67baf0e443da64f87e0e4af158f17f798531665b39a",
-      "params": [
-        {
-          "name": "selector",
-          "hash": "036462863c2f283ab491e0e7b27eaf9d692a530b555b7e805c8841d80ea2e2a3"
-        },
-        {
-          "name": "timeout",
-          "hash": "74f20c7f092d948e04cca44c284e61d1fdf8d1a9668dfa5a689ce55bcb15fb32"
-        }
-      ]
+      "name": "scraping_browser_activation_instructions",
+      "hash": "d0fa023a72ecd424cdaa1c99a9841fc96d4bb3ce5998e707ace5e45401f44056"
     },
     {
       "name": "search_engine",
-      "hash": "596a407954d04c093fd9ff3adec1ddab4bcdfe214b6c82189a2607c514f9ade5"
+      "hash": "596a407954d04c093fd9ff3adec1ddab4bcdfe214b6c82189a2607c514f9ade5",
+      "params": [
+        {
+          "name": "cursor",
+          "hash": "0221fb5bf5262fde4122dbb922c6fd4381a0382dd5ecc0448da97ee8aecc9ae0"
+        }
+      ]
     },
     {
       "name": "session_stats",
@@ -215,10 +137,6 @@
     {
       "name": "web_data_reddit_posts",
       "hash": "94f3068708ab8c85180e0c86cb70cd087fee7f0f7f0c17fd823a00b3500b4b3c"
-    },
-    {
-      "name": "web_data_reuter_news",
-      "hash": "fc7f93076ce14b66b75206799dcc726d532448ee0be3358d40b5c6a06214cd19"
     },
     {
       "name": "web_data_reuter_news",

@@ -1,4 +1,4 @@
-FROM golang:1.24.2-alpine3.21 AS minibridge
+FROM golang:1.24 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
+    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
 
 FROM ghcr.io/astral-sh/uv:python3.12-alpine
 
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-aws-core"
 LABEL org.opencontainers.image.description="Core AWS MCP server providing prompt understanding and server management capabilities."
-LABEL org.opencontainers.image.version="0.2.5"
+LABEL org.opencontainers.image.version="1.0.1"
 LABEL org.opencontainers.image.source="https://pypi.org/project/awslabs.core-mcp-server/"
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 LABEL org.opencontainers.image.author="AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com>, Paul Vincent <44383239+PaulVincent707@users.noreply.github.com>"
@@ -43,7 +43,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uv venv && uv pip install awslabs.core-mcp-server==0.2.5
+RUN uv venv && uv pip install awslabs.core-mcp-server==1.0.1
 
 EXPOSE 8000/tcp
 

@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-multiversx",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/multiversx-mx/live/logo-1744789643222.jpeg",
   "name": "mcp-server-multiversx",
   "description": "Manage MultiversX blockchain wallets and perform token transactions.",
   "links":
@@ -15,7 +16,7 @@
   "version": "1.0.3",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"620d63ea170a3b323360b59fe2ba4ef91a61b8667b3c1b310e73f06ea8cb8fef","reason":"The toolset provides adequate documentation with clear, specific tool names that indicate MultiversX blockchain functionality. Most descriptions are brief (1-2 sentences) covering basic functionality, and parameter descriptions are generally clear with appropriate technical detail like bech32 format specifications. However, many descriptions lack important context about when to use each tool, potential limitations, or prerequisites (like wallet setup requirements), keeping it at an adequate level rather than good.","score":"C"},
   "resources": {
     "tools": 14,
     "prompts": 0,

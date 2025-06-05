@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-harness",
+  "icon": "https://avatars.githubusercontent.com/u/34780278?s=200&v=4",
   "name": "mcp-server-harness",
   "description": "Provides seamless integration with Harness APIs.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "go",
-  "version": "1.0.0-beta",
+  "version": "v1.0.0-beta",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"1a2b01f0d9583e19f120015d926bb67fa5adab77be1b02ebce6f13c705ab59bd","reason":"Tool names are clear and consistently indicate their purpose (create_, get_, list_, download_, fetch_). Descriptions are concise and adequately explain functionality, though they could be more comprehensive. Parameter descriptions are generally clear and specify purpose and expected values. Most tools properly indicate required vs optional parameters. However, descriptions lack detail about when to use tools, what specific information they provide, and potential limitations. Some inconsistencies exist in pagination parameter naming (page vs limit) and default values.","score":"B"},
   "resources": {
     "tools": 17,
     "prompts": 0,

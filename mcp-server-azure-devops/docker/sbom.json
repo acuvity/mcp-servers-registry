@@ -127,6 +127,36 @@
       ]
     },
     {
+      "name": "create_wiki_page",
+      "hash": "29c6c9e53d803075c361c5b66377931f309096182548b9ed17882cb8c49e11cf",
+      "params": [
+        {
+          "name": "comment",
+          "hash": "0f5441e9ef75e3d773f02f1c5edd742c358f3ed62b76c337dcd090af21098032"
+        },
+        {
+          "name": "content",
+          "hash": "56cda341901186dd38bf582954088c1118749de2cdc530da4765f9dc8ecebda4"
+        },
+        {
+          "name": "organizationId",
+          "hash": "1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c"
+        },
+        {
+          "name": "pagePath",
+          "hash": "f960c8738038d524128e5511e4405b18be2bb8046998c935a8666cffb549c80f"
+        },
+        {
+          "name": "projectId",
+          "hash": "2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0"
+        },
+        {
+          "name": "wikiId",
+          "hash": "78550a0c4ca8efa5ee86b117ad438fdbd5060fbeed8d645d5dabd48b052eaf3e"
+        }
+      ]
+    },
+    {
       "name": "create_work_item",
       "hash": "438508a61955ee2e09252b89a5a72d22b458c5fc601c85ba5cbdd0b60369f1fe",
       "params": [
@@ -492,7 +522,7 @@
       "params": [
         {
           "name": "creatorId",
-          "hash": "4517be9d497fa3af03f081d98b589779aa1d992fc6aa21ae4686a8adc7e9c563"
+          "hash": "604bb366130e373e07329cc0a5c704221075c0b929a0fcccce0638cb9923c3d0"
         },
         {
           "name": "organizationId",
@@ -508,7 +538,7 @@
         },
         {
           "name": "reviewerId",
-          "hash": "96e07d9d7d038304b8033472dda27ba93431254156a961a9fdf4c06e2e831182"
+          "hash": "963cdfdf0fd27b3a230c616e41fce56b1b6e83904bf58bbd4d444cb27f33e2df"
         },
         {
           "name": "skip",
@@ -547,6 +577,32 @@
         {
           "name": "projectId",
           "hash": "2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0"
+        }
+      ]
+    },
+    {
+      "name": "list_wiki_pages",
+      "hash": "8ae746206428a0798645596459caddfcaf00e65c5d2990c4badf22439ec7f7e0",
+      "params": [
+        {
+          "name": "organizationId",
+          "hash": "1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c"
+        },
+        {
+          "name": "path",
+          "hash": "f363b4bb2431f300bc26fbc8f14e3f960d3382385cb5d153d0403f361f5d7570"
+        },
+        {
+          "name": "projectId",
+          "hash": "2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0"
+        },
+        {
+          "name": "recursionLevel",
+          "hash": "92a8672252fbe85ad6262eb9838d6855bad3e1f6b4286563190ab08e03918597"
+        },
+        {
+          "name": "wikiId",
+          "hash": "78550a0c4ca8efa5ee86b117ad438fdbd5060fbeed8d645d5dabd48b052eaf3e"
         }
       ]
     },

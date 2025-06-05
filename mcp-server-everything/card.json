@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-everything",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-everything",
   "description": "MCP server that exercises all the features of the MCP protocol",
   "links":
@@ -15,7 +16,7 @@
   "version": "2025.5.12",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "C",
+  "rating": {"hash":"7858108bd191e9d83dcc2c11e0730298b1d4f5594cb70681efaaf9b084b3f8d4","reason":"Tool names are clear but descriptions are overly brief (mostly one sentence fragments). While parameter descriptions exist and indicate basic purpose, the tool descriptions lack context about when to use them, what they return, or their limitations. Most descriptions read like tautological statements rather than informative guidance.","score":"D"},
   "resources": {
     "tools": 8,
     "prompts": 3,

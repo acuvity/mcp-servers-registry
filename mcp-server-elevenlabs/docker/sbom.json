@@ -10,7 +10,7 @@
     },
     {
       "name": "create_agent",
-      "hash": "c3b330160492f76db976c1ef738c49fc62da33968bf1df068b3eb71129138bcc"
+      "hash": "b564fd50f13b82724320fcca60b4a43b6f4342615f94cad25b22d3feacd2bee5"
     },
     {
       "name": "create_voice_from_preview",
@@ -31,6 +31,10 @@
     {
       "name": "list_agents",
       "hash": "c86fa37dac2e1f0c6d6ba4784faed7c330e907453c299a60992c8af4bef9b665"
+    },
+    {
+      "name": "list_models",
+      "hash": "a0ff65affde407f1cf84fe2a125e4d8632eaa1db8594889e246ef31e82b00bb5"
     },
     {
       "name": "list_phone_numbers",
@@ -74,7 +78,7 @@
     },
     {
       "name": "voice_clone",
-      "hash": "7fe2970dc4ad4f9494d42122253c53f17114f8a0ee1015422892d785552cb48a"
+      "hash": "e81d355303d7ca9c566f571a7b7ff18ab155f1296ad57767025c7bbe90ff3a66"
     }
   ],
   "prompts": []

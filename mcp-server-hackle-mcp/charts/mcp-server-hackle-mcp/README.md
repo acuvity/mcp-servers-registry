@@ -19,8 +19,7 @@
 
 
 # What is mcp-server-hackle-mcp?
-
-[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-hackle-mcp/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-hackle-mcp/1.3.0?logo=docker&logoColor=fff&label=1.3.0)](https://hub.docker.com/r/acuvity/mcp-server-hackle-mcp)
 [![PyPI](https://img.shields.io/badge/1.3.0-3775A9?logo=pypi&logoColor=fff&label=@hackle-io/hackle-mcp)](https://github.com/hackle-io/hackle-mcp)

@@ -19,8 +19,7 @@
 
 
 # What is mcp-server-codelogic?
-
-[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-codelogic/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-codelogic/1.0.3?logo=docker&logoColor=fff&label=1.0.3)](https://hub.docker.com/r/acuvity/mcp-server-codelogic)
 [![PyPI](https://img.shields.io/badge/1.0.3-3775A9?logo=pypi&logoColor=fff&label=codelogic-mcp-server)](https://github.com/CodeLogicIncEngineering/codelogic-mcp-server)

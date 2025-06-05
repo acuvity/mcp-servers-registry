@@ -5,13 +5,13 @@ home: https://github.com/apify/actors-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/apify/actors-mcp-server
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-apify-actors/logo.png"
 type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.1.30
+appVersion: 0.2.4
 keywords:
   - mcp-server-apify-actors
   - mcp-server

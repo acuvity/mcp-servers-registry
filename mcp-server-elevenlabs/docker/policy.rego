@@ -94,6 +94,8 @@ _cross_tool_exclude := [
 	#
 	"search_voices",
 	#
+	"list_models",
+	#
 	"get_voice",
 	#
 	"voice_clone",

@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-dappier",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/dappier/live/logo-1744879375857.png",
   "name": "mcp-server-dappier",
   "description": "Real-time web search and access to premium media data.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.3.2",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"46ba82ebda67426d8f7040ec189ee3edad3047c72df4deeecbf8a896d4ec72be","reason":"Both tools have excellent documentation quality. Tool names clearly indicate purpose ('real_time_search' and 'ai_recommendations'). Descriptions are comprehensive, explaining functionality, when to use each tool, and what they return. All parameters have detailed descriptions with clear guidance on usage, including enumerated values with explanations for model/algorithm selection. The documentation proactively addresses user scenarios and provides complete context for proper tool usage.","score":"A"},
   "resources": {
     "tools": 2,
     "prompts": 0,

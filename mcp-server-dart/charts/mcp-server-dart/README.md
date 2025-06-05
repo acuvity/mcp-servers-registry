@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-dart?
-
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-dart/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-dart/0.1.13?logo=docker&logoColor=fff&label=0.1.13)](https://hub.docker.com/r/acuvity/mcp-server-dart)
-[![PyPI](https://img.shields.io/badge/0.1.13-3775A9?logo=pypi&logoColor=fff&label=dart-mcp-server)](https://github.com/its-dart/dart-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-dart/0.1.14?logo=docker&logoColor=fff&label=0.1.14)](https://hub.docker.com/r/acuvity/mcp-server-dart)
+[![PyPI](https://img.shields.io/badge/0.1.14-3775A9?logo=pypi&logoColor=fff&label=dart-mcp-server)](https://github.com/its-dart/dart-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-dart/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-dart&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22DART_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-dart%3A0.1.13%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-dart&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22DART_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-dart%3A0.1.14%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** AI-powered project management server for task and document management.
 
@@ -174,11 +173,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.1.13`
+  - container: `1.0.0-0.1.14`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-dart:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-dart:1.0.0-0.1.13`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-dart:1.0.0-0.1.14`
 
 ---
 
@@ -625,7 +624,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (11)
+## 🧰 Tools (12)
 <details>
 <summary>get_config</summary>
 
@@ -758,6 +757,22 @@ Move an existing task to the trash, where it can be recovered if needed. Nothing
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | id | string | The 12-character alphanumeric ID of the task | Yes
+</details>
+<details>
+<summary>add_task_comment</summary>
+
+**Description**:
+
+```
+Add a comment to an existing task without modifying the task description. Comments support markdown formatting.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| taskId | string | The 12-character alphanumeric ID of the task | Yes
+| text | string | The full content of the comment, which can include markdown formatting. | Yes
 </details>
 <details>
 <summary>list_docs</summary>
@@ -922,6 +937,9 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | prompts | Summarize tasks | description | b2cf1ed67aae22ea872232332b99cff85e788c7d3fd546383827ff3e990f28b8 |
 | prompts | Summarize tasks | assignee | 36d720e703520c7f238aca38ba1d1f556f179650b47225460fbc8e37b4f4779a |
 | prompts | Summarize tasks | status | e68e8e219087225092436dc037c1a0e781acdd0f3dd96dc32d23a1b82934a9b0 |
+| tools | add_task_comment | description | f2a5001374ab87b88bfc8eab11e21d7db731623223d6a975945aa7f9d224460d |
+| tools | add_task_comment | taskId | 310575c03a01f518120c4b24c0e723828d57433eb1d1465c4b4357d4a2870a5d |
+| tools | add_task_comment | text | e22399fede3b192987e603c20f841b02659a68930a7e870d29b2278c9ed44c17 |
 | tools | create_doc | description | b1099bc1c729560ace3a50fad194e64553b4c93e6a123c680526f77a54bb4093 |
 | tools | create_doc | folder | e6970c521d4f1d5516d4e75a38ad71a41aae2a6c11cbbbe09b436d570df373a5 |
 | tools | create_doc | text | c06f2b86fc675d1e4d04c7b139162cc39222bdc83a04fa75130ad9a7d4a90e12 |

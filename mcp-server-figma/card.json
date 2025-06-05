@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-figma",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-figma",
   "description": "Provide coding agents direct access to Figma data to help them one-shot design implementation.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "C",
+  "rating": {"hash":"fd695653425bed661dfe970d4616bc1c01148ead230f531a91b976f4411e4973","reason":"The toolset provides adequate documentation with clear tool names and basic functionality descriptions. However, the descriptions are somewhat brief and could better explain usage context and limitations. Parameter documentation is generally clear but inconsistent in detail - some parameters like 'depth' have comprehensive descriptions while others like 'fileName' are minimal. The documentation is functional but leaves some questions unanswered about when to use each tool and their specific constraints.","score":"C"},
   "resources": {
     "tools": 2,
     "prompts": 0,

@@ -88,6 +88,8 @@ _cross_tool_exclude := [
 	#
 	"ExecuteTerraformCommand",
 	#
+	"ExecuteTerragruntCommand",
+	#
 	"SearchAwsProviderDocs",
 	#
 	"SearchAwsccProviderDocs",

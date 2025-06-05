@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-airbnb",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-airbnb",
   "description": "Provides tools to search Airbnb and get listing details.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.1.1",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "C",
+  "rating": {"hash":"10e64b6c16e3d3af2fbaab2241ad080970ed9b12d8465139ac36749b282d065d","reason":"Tool names clearly indicate purpose (airbnb_search, airbnb_listing_details). Descriptions are brief but functional, explaining core functionality and mentioning direct links. However, descriptions lack important details like what information is returned, usage constraints, or when to use each tool. Parameter descriptions are basic but clear enough to indicate purpose and expected input types, though some could benefit from more context (e.g., price currency, date format validation).","score":"C"},
   "resources": {
     "tools": 2,
     "prompts": 0,

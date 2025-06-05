@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-agentrpc"
+description: "A Helm chart for Connect to any function, any language, across network boundaries using AgentRPC."
+home: https://github.com/agentrpc/agentrpc
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/agentrpc/agentrpc
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-agentrpc/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.0.16
+keywords:
+  - mcp-server-agentrpc
+  - mcp-server
+  - remote
+  - integration
+  - development

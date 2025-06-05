@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-bugsnag",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-bugsnag",
   "description": "An MCP server for interacting with Bugsnag.",
   "links":
@@ -15,7 +16,7 @@
   "version": "1.1.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "C",
+  "rating": {"hash":"67889fc67331c679d0ba1fa94be593902391b6470d6464992e761410b8b382a7","reason":"Tool names are clear and indicate their Bugsnag-specific functionality well. Descriptions are brief but adequately explain the main purpose of each tool in 1-2 sentences. Parameter descriptions consistently identify their purpose (e.g., 'Bugsnag project ID', 'Maximum number of errors to return') and types are clear. However, descriptions lack guidance on when to use each tool, what specific information they return, or any usage limitations, leaving some user questions unanswered.","score":"C"},
   "resources": {
     "tools": 11,
     "prompts": 0,

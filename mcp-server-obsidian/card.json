@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-obsidian",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/obsidian/live/logo-1745316735580.png",
   "name": "mcp-server-obsidian",
   "description": "Interacting with Obsidian via REST API.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.2.2",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"f89849960aeadba76f68b1c447ec320d44b58836b7295822c4ba72cb903cfc57","reason":"Tool names are clear and well-prefixed with 'obsidian_' indicating their domain. Most descriptions adequately explain functionality and usage context, with some providing good detail (like obsidian_complex_search). Parameter descriptions are generally clear with appropriate constraints and defaults specified. However, some descriptions are quite brief (obsidian_append_content, obsidian_delete_file) and could benefit from more context about when to use them or important limitations. The toolset is consistently good but lacks the comprehensive detail needed for an A grade.","score":"B"},
   "resources": {
     "tools": 12,
     "prompts": 0,

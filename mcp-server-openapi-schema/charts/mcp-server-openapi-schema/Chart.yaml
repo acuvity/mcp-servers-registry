@@ -5,7 +5,7 @@ home: https://github.com/hannesj/mcp-openapi-schema
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/hannesj/mcp-openapi-schema
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-openapi-schema/logo.png"
 type: application
 maintainers:
   - name: Acuvity

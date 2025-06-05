@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-fetch",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-fetch",
   "description": "A Model Context Protocol server providing tools to fetch and convert web content for usage by LLMs",
   "links":
@@ -15,7 +16,7 @@
   "version": "2025.4.7",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"bbd373efacbbad1af86d75cd2fbc422c938d6b7e63b528f78aa0f56968022584","reason":"Tool name is clear and intuitive. Description adequately explains functionality and includes helpful context about internet access capabilities. All parameters have clear descriptions with proper constraints and defaults. The description could be more concise and focus less on historical context, but overall documentation is comprehensive and usable.","score":"B"},
   "resources": {
     "tools": 1,
     "prompts": 1,

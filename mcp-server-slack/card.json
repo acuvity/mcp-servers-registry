@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-slack",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-slack",
   "description": "MCP server for interacting with Slack",
   "links":
@@ -15,7 +16,7 @@
   "version": "2025.4.25",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"664f16e1f0b3b022db020185ebd9f15eb7a049f9fb40497a1389d2d749e66888","reason":"Tool names are clear and well-structured with consistent 'slack_' prefix. Descriptions provide basic functionality but lack important context like data formats, limitations, or usage scenarios. Parameter documentation is adequate with clear purposes and some helpful details (like timestamp format explanation), but missing constraints and examples that would improve usability.","score":"C"},
   "resources": {
     "tools": 8,
     "prompts": 0,

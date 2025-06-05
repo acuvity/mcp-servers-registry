@@ -86,6 +86,8 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
+	"ask_webflow_ai",
+	#
 	"collections_list",
 	#
 	"collections_get",
@@ -113,6 +115,16 @@ _cross_tool_exclude := [
 	"collections_items_publish_items",
 	#
 	"collections_items_delete_item",
+	#
+	"components_list",
+	#
+	"components_get_content",
+	#
+	"components_update_content",
+	#
+	"components_get_properties",
+	#
+	"components_update_properties",
 	#
 	"pages_list",
 	#

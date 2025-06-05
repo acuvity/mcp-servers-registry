@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-vizro"
+description: "A Helm chart for provides tools and templates to create a functioning Vizro chart or dashboard step by step"
+home: https://github.com/mckinsey/vizro
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/mckinsey/vizro
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-vizro/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.1.1
+keywords:
+  - mcp-server-vizro
+  - mcp-server
+  - standalone
+  - development

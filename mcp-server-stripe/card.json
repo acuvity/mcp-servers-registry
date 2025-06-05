@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-stripe",
+  "icon": "https://stripe.com/favicon.ico",
   "name": "mcp-server-stripe",
   "description": "Integrates Stripe APIs with agent frameworks for payments and custom actions.",
   "links":
@@ -12,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"f9c60d243ed5398b61c89ad5970995ed3e3924d90b038af472623f9523ee5f92","reason":"The toolset provides adequate documentation with clear tool names and basic functionality descriptions, but has inconsistent formatting, some unclear parameter descriptions, and missing contextual information. While most tools explain their core purpose, descriptions vary in quality from comprehensive (like update_subscription) to overly brief (like finalize_invoice), and several tools lack important usage context or constraints.","score":"C"},
   "resources": {
-    "tools": 20,
+    "tools": 21,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-apify-actors",
+  "icon": "https://apify.com/favicon.ico",
   "name": "mcp-server-apify-actors",
   "description": "Use 3,000+ pre-built cloud tools, known as Actors, to extract data from websites.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.1.30",
+  "version": "0.2.4",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "nil",
+  "rating": null,
   "resources": {
   }
 }

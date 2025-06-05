@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-git",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-git",
   "description": "Tools to read, search, and manipulate Git repositories.",
   "links":
@@ -15,7 +16,7 @@
   "version": "2025.1.14",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "D",
+  "rating": {"hash":"18b4c8497f11485b3f48fff007b4aa926308d8d90ca6a03bb18f098a67bd9eab","reason":"Tool names are clear and intuitive with consistent git_ prefix. However, descriptions are overly brief (mostly single short phrases) and lack essential context about when to use each tool, what information they provide, expected input formats, or limitations. Parameter descriptions are missing entirely - all parameters only have generic titles like 'Repo Path' without explaining their purpose, expected format, or constraints.","score":"D"},
   "resources": {
     "tools": 11,
     "prompts": 0,

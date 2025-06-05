@@ -479,6 +479,16 @@
       ]
     },
     {
+      "name": "jira_get_project_versions",
+      "hash": "438aa4b1f6ce74efd36e12633fd614e45656b6e9a53df334e28ea8ff2aa6f80b",
+      "params": [
+        {
+          "name": "project_key",
+          "hash": "37c11040956303aad07ac1ae16fcafa7ef61289a757e20fd988cc397a212fda9"
+        }
+      ]
+    },
+    {
       "name": "jira_get_sprint_issues",
       "hash": "05be4697c57919a72b2c5934fd5a13466dfbfc9ba5a0f9fab3566673179be9a0",
       "params": [

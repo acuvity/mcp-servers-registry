@@ -5,13 +5,13 @@ home: https://github.com/grafana/mcp-grafana
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/grafana/mcp-grafana
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-grafana/logo.png"
 type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: v0.4.1
+appVersion: v0.4.2
 keywords:
   - mcp-server-grafana
   - mcp-server

@@ -5,13 +5,13 @@ home: https://github.com/GLips/Figma-Context-MCP
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/GLips/Figma-Context-MCP
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-figma/logo.png"
 type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.3.0
+appVersion: 0.4.0
 keywords:
   - mcp-server-figma
   - mcp-server

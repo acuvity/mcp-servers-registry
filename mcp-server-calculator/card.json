@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-calculator",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-calculator",
   "description": "This server enables LLMs to use calculator for precise numerical calculations.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.2.0",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "D",
+  "rating": {"hash":"c783abc4af6a09e97cebbdd5f8c7ed8e5af641db63ee3e282d761fadfb77781a","reason":"The tool name 'calculate' is appropriately descriptive, but the description is minimal with only one brief sentence that doesn't explain what types of expressions are supported, when to use it, or any limitations. The parameter description is completely missing - 'expression' has no description field explaining what kind of input is expected or how it should be formatted.","score":"D"},
   "resources": {
     "tools": 1,
     "prompts": 0,

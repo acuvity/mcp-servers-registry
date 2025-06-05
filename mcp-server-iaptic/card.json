@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-iaptic",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/iaptic/live/logo-1744789672300.png",
   "name": "mcp-server-iaptic",
   "description": "Connect AIs to Iaptic data for customer and transaction insights.",
   "links":
@@ -15,7 +16,7 @@
   "version": "1.0.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "A",
+  "rating": {"hash":"3f43f4a003eaecc3b114d18bb132f4bf2f9477c0cf661eccb70cf1d3c8c0bda2","reason":"Excellent documentation quality across all tools. Names are clear and specific, descriptions are comprehensive (2-4 sentences) covering functionality, usage context, and key limitations, and parameters include detailed descriptions with examples and constraints. The toolset consistently provides complete information needed for effective usage, with proper bullet-point formatting and helpful details like default values, format examples, and important notes.","score":"A"},
   "resources": {
     "tools": 16,
     "prompts": 0,

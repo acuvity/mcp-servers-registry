@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-neo4j-cypher",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/neo4j-cloud-aura-api/live/logo-1746435894823.png",
   "name": "mcp-server-neo4j-cypher",
   "description": "Manage Cypher graph queries between LLMs and Neo4j with natural language queries.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.2.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "C",
+  "rating": {"hash":"fb3aa800db5ce615560285057c5952a5cb3db160c97bf8a76a78aab38bf00907","reason":"Tool names are clear and appropriately prefixed. Descriptions provide basic functionality but lack important context like when to use each tool, what data they return, or key limitations. The get_neo4j_schema description includes helpful error handling guidance. Parameter documentation is adequate with clear purposes and types specified, though could benefit from examples. Overall provides functional guidance but leaves users to infer usage patterns and constraints.","score":"C"},
   "resources": {
     "tools": 3,
     "prompts": 0,

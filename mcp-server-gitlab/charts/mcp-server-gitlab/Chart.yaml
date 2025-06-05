@@ -5,7 +5,7 @@ home: https://modelcontextprotocol.io
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://modelcontextprotocol.io
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-gitlab/logo.png"
 type: application
 maintainers:
   - name: Acuvity

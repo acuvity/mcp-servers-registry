@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-brightdata?
-
-[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-brightdata/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-brightdata/1.9.1?logo=docker&logoColor=fff&label=1.9.1)](https://hub.docker.com/r/acuvity/mcp-server-brightdata)
-[![PyPI](https://img.shields.io/badge/1.9.1-3775A9?logo=pypi&logoColor=fff&label=@brightdata/mcp)](https://github.com/luminati-io/brightdata-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-brightdata/2.1.0?logo=docker&logoColor=fff&label=2.1.0)](https://hub.docker.com/r/acuvity/mcp-server-brightdata)
+[![PyPI](https://img.shields.io/badge/2.1.0-3775A9?logo=pypi&logoColor=fff&label=@brightdata/mcp)](https://github.com/luminati-io/brightdata-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-brightdata/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-brightdata&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_TOKEN%22%2C%22-e%22%2C%22BROWSER_AUTH%22%2C%22docker.io%2Facuvity%2Fmcp-server-brightdata%3A1.9.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-brightdata&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_TOKEN%22%2C%22-e%22%2C%22BROWSER_AUTH%22%2C%22docker.io%2Facuvity%2Fmcp-server-brightdata%3A2.1.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Discover, extract, and interact with the web - automated access across the public internet.
 
@@ -176,7 +175,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-brightdata&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_TOKEN%22%2C%22-e%22%2C%22BROWSER_AUTH%22%2C%22docker.io%2Facuvity%2Fmcp-server-brightdata%3A1.9.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-brightdata&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_TOKEN%22%2C%22-e%22%2C%22BROWSER_AUTH%22%2C%22docker.io%2Facuvity%2Fmcp-server-brightdata%3A2.1.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -201,7 +200,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "API_TOKEN",
           "-e",
           "BROWSER_AUTH",
-          "docker.io/acuvity/mcp-server-brightdata:1.9.1"
+          "docker.io/acuvity/mcp-server-brightdata:2.1.0"
         ]
       }
     }
@@ -231,7 +230,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "API_TOKEN",
         "-e",
         "BROWSER_AUTH",
-        "docker.io/acuvity/mcp-server-brightdata:1.9.1"
+        "docker.io/acuvity/mcp-server-brightdata:2.1.0"
       ]
     }
   }
@@ -265,7 +264,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "API_TOKEN",
         "-e",
         "BROWSER_AUTH",
-        "docker.io/acuvity/mcp-server-brightdata:1.9.1"
+        "docker.io/acuvity/mcp-server-brightdata:2.1.0"
       ]
     }
   }
@@ -301,7 +300,7 @@ Add the following JSON block to your mcp configuration file:
         "API_TOKEN",
         "-e",
         "BROWSER_AUTH",
-        "docker.io/acuvity/mcp-server-brightdata:1.9.1"
+        "docker.io/acuvity/mcp-server-brightdata:2.1.0"
       ]
     }
   }
@@ -335,7 +334,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "API_TOKEN",
         "-e",
         "BROWSER_AUTH",
-        "docker.io/acuvity/mcp-server-brightdata:1.9.1"
+        "docker.io/acuvity/mcp-server-brightdata:2.1.0"
       ]
     }
   }
@@ -355,7 +354,7 @@ async with MCPServerStdio(
     params={
         "env": {"API_TOKEN":"TO_BE_SET","BROWSER_AUTH":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","API_TOKEN","-e","BROWSER_AUTH","docker.io/acuvity/mcp-server-brightdata:1.9.1"]
+        "args": ["run","-i","--rm","--read-only","-e","API_TOKEN","-e","BROWSER_AUTH","docker.io/acuvity/mcp-server-brightdata:2.1.0"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -384,7 +383,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e API_TOKEN -e BROWSER_AUTH docker.io/acuvity/mcp-server-brightdata:1.9.1`
+- arguments: `run -i --rm --read-only -e API_TOKEN -e BROWSER_AUTH docker.io/acuvity/mcp-server-brightdata:2.1.0`
 
 </details>
 
@@ -394,7 +393,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e API_TOKEN -e BROWSER_AUTH docker.io/acuvity/mcp-server-brightdata:1.9.1
+docker run -it -p 8000:8000 --rm --read-only -e API_TOKEN -e BROWSER_AUTH docker.io/acuvity/mcp-server-brightdata:2.1.0
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -501,7 +500,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (58)
+## 🧰 Tools (48)
 <details>
 <summary>search_engine</summary>
 
@@ -515,6 +514,7 @@ Scrape search results from Google, Bing or Yandex. Returns SERP results in markd
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| cursor | string | Pagination cursor for next page | No
 | engine | string | not set | No
 | query | string | not set | Yes
 </details>
@@ -1141,23 +1141,6 @@ This can be a cache lookup, so it can be more reliable than scraping
 | url | string | not set | Yes
 </details>
 <details>
-<summary>web_data_reuter_news</summary>
-
-**Description**:
-
-```
-Quickly read structured reuter news data.
-Requires a valid reuter news report URL.
-This can be a cache lookup, so it can be more reliable than scraping
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| url | string | not set | Yes
-</details>
-<details>
 <summary>web_data_github_repository_file</summary>
 
 **Description**:
@@ -1312,157 +1295,18 @@ This can be a cache lookup, so it can be more reliable than scraping
 | url | string | not set | Yes
 </details>
 <details>
-<summary>scraping_browser_navigate</summary>
+<summary>scraping_browser_activation_instructions</summary>
 
 **Description**:
 
 ```
-Navigate a scraping browser session to a new URL
+Instructions for activating the scraping browser
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| url | string | The URL to navigate to | Yes
-</details>
-<details>
-<summary>scraping_browser_go_back</summary>
-
-**Description**:
-
-```
-Go back to the previous page
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-</details>
-<details>
-<summary>scraping_browser_go_forward</summary>
-
-**Description**:
-
-```
-Go forward to the next page
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-</details>
-<details>
-<summary>scraping_browser_links</summary>
-
-**Description**:
-
-```
-Get all links on the current page, text and selectors
-It's strongly recommended that you call the links tool to check that your click target is valid
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-</details>
-<details>
-<summary>scraping_browser_click</summary>
-
-**Description**:
-
-```
-Click on an element.
-Avoid calling this unless you know the element selector (you can use other tools to find those)
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| selector | string | CSS selector for the element to click | Yes
-</details>
-<details>
-<summary>scraping_browser_type</summary>
-
-**Description**:
-
-```
-Type text into an element
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| selector | string | CSS selector for the element to type into | Yes
-| submit | boolean | Whether to submit the form after typing (press Enter) | No
-| text | string | Text to type | Yes
-</details>
-<details>
-<summary>scraping_browser_wait_for</summary>
-
-**Description**:
-
-```
-Wait for an element to be visible on the page
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| selector | string | CSS selector to wait for | Yes
-| timeout | number | Maximum time to wait in milliseconds (default: 30000) | No
-</details>
-<details>
-<summary>scraping_browser_screenshot</summary>
-
-**Description**:
-
-```
-Take a screenshot of the current page
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| full_page | boolean | Whether to screenshot the full page (default: false)
-You should avoid fullscreen if it's not important, since the images can be quite large | No
-</details>
-<details>
-<summary>scraping_browser_get_text</summary>
-
-**Description**:
-
-```
-Get the text content of the current page
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-</details>
-<details>
-<summary>scraping_browser_get_html</summary>
-
-**Description**:
-
-```
-Get the HTML content of the current page. Avoid using the full_page option unless it is important to see things like script tags since this can be large
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| full_page | boolean | Whether to get the full page HTML including head and script tags
-Avoid this if you only need the extra HTML, since it can be quite large | No
 </details>
 
 
@@ -1474,26 +1318,9 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 |-----------|------|------|------|
 | tools | scrape_as_html | description | ccb1fe327d30ca65f76fccdc0ce114d0a96d6769d5c08da818bee2aa0374e4ba |
 | tools | scrape_as_markdown | description | 48946c5fc24b9fcf9fbadbd981dd26be62eb3f34f642e1950aa4f01e9db9d9bc |
-| tools | scraping_browser_click | description | 9e9459df10de555dc6aedcfcf83c6f24d93f16675d0a62b1150aa15e3c71a1d0 |
-| tools | scraping_browser_click | selector | b472eecbbc30b0cf10580e321a828b5b50472aac057c0712023b625869274969 |
-| tools | scraping_browser_get_html | description | e9db1ed3982226fa5e634cefeaac3825200257fb26c11720068c9a5c3d28814d |
-| tools | scraping_browser_get_html | full_page | 227462f39892944bb89922121fd64f11432bf36046e72adcaaba2df6e402cb73 |
-| tools | scraping_browser_get_text | description | da41b92ae44df5399a35b18908cd1ea1c2ccaf5eb058edc749767a9519eaca96 |
-| tools | scraping_browser_go_back | description | 1070d603d3951f9282bc8e5111b7a6993fa05215c23ba5099429b567a9bdb467 |
-| tools | scraping_browser_go_forward | description | 4f74235e282e3cba526b98047b02c344c6bc32566bb325d5408e897eadfc6a7e |
-| tools | scraping_browser_links | description | ad9a62f8931d3317d6627e72de82f4606bab9357cd04d19b7133c81aa4816aa0 |
-| tools | scraping_browser_navigate | description | 4dd63c7c00a6ccd7de8df8d4efa78821477c05dd0fe9fee4f9f530a8fbc78ddd |
-| tools | scraping_browser_navigate | url | 63d749360d127f3c1d0d108336745c687aaa08760a306f0dadbbef4e9fadf27f |
-| tools | scraping_browser_screenshot | description | 769e18b9e5b78a944b15bd8342288959fd92d197631e87a9b6f293a8aa9c7caf |
-| tools | scraping_browser_screenshot | full_page | b8634cbc1491ba7afc92714a4c557a81e3ae93ef4cc4ee2568f9c15d1bb4ed22 |
-| tools | scraping_browser_type | description | 9cd8fb996ff445688e56e6c500ed27847e27b72c606d5c8174708d92fe8ec726 |
-| tools | scraping_browser_type | selector | 8432a6c9577dcae09ef6bd2b0f59c8b350c5e6e0703169193a6639555168f976 |
-| tools | scraping_browser_type | submit | 9ad8eef45aadaffc2eceb18d4eded88374b264f66b08c3865109a3d96ba7acac |
-| tools | scraping_browser_type | text | 2bf42268dbb30ce1452879e6fdf8c10a259316e899df9c4fb0405b1f0e42fe8c |
-| tools | scraping_browser_wait_for | description | dc6f8b68829f63f13684b67baf0e443da64f87e0e4af158f17f798531665b39a |
-| tools | scraping_browser_wait_for | selector | 036462863c2f283ab491e0e7b27eaf9d692a530b555b7e805c8841d80ea2e2a3 |
-| tools | scraping_browser_wait_for | timeout | 74f20c7f092d948e04cca44c284e61d1fdf8d1a9668dfa5a689ce55bcb15fb32 |
+| tools | scraping_browser_activation_instructions | description | d0fa023a72ecd424cdaa1c99a9841fc96d4bb3ce5998e707ace5e45401f44056 |
 | tools | search_engine | description | 596a407954d04c093fd9ff3adec1ddab4bcdfe214b6c82189a2607c514f9ade5 |
+| tools | search_engine | cursor | 0221fb5bf5262fde4122dbb922c6fd4381a0382dd5ecc0448da97ee8aecc9ae0 |
 | tools | session_stats | description | a361dcc45d17f9cad5e4b1872ef7ff26d4b355774d5be01159573e9616ac7c76 |
 | tools | web_data_amazon_product | description | 65fba1ff50443ee093a32d8301d918bf2b785e736dbb5cb0aadbc76cb889f599 |
 | tools | web_data_amazon_product_reviews | description | 8891e947fd3a6e9d47b6ef925dc5976566a78e8e1ede12b2f1e350fea32bbaac |
@@ -1523,7 +1350,6 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | web_data_linkedin_person_profile | description | 652f6bc070db40560b87b14c185a85ead84a45a05840122b0ec5c4e6775ea283 |
 | tools | web_data_linkedin_posts | description | 7288f592a6d320bde43378fa5cede5ec1fe75ea7b123fee464a66a93d7de97f8 |
 | tools | web_data_reddit_posts | description | 94f3068708ab8c85180e0c86cb70cd087fee7f0f7f0c17fd823a00b3500b4b3c |
-| tools | web_data_reuter_news | description | fc7f93076ce14b66b75206799dcc726d532448ee0be3358d40b5c6a06214cd19 |
 | tools | web_data_reuter_news | description | fc7f93076ce14b66b75206799dcc726d532448ee0be3358d40b5c6a06214cd19 |
 | tools | web_data_tiktok_comments | description | e52bae1795588292a8ce6834edf0595c871762947bb08312cd587e0b2653af75 |
 | tools | web_data_tiktok_posts | description | a6ad4a7d08ed3a2126d985f42112abde2896615cc855701d0dfd342cbefd8200 |

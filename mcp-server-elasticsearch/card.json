@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-elasticsearch",
+  "icon": "https://www.elastic.co/favicon.ico",
   "name": "mcp-server-elasticsearch",
   "description": "Connects to Elasticsearch for natural language data queries.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.1.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "C",
+  "rating": {"hash":"0c98216b510fc637fba98eb6092ee1fd1c4b8662e1dcb2a3d8a69314c89d1aa9","reason":"Tool names are clear and indicate purpose well. Descriptions are brief but adequately explain basic functionality. Parameter descriptions are present and clear about their purpose, with good constraints like minLength. However, descriptions lack detail about when to use each tool, what specific information they return, and important usage context that would help an LLM make informed decisions about tool selection.","score":"C"},
   "resources": {
     "tools": 3,
     "prompts": 0,

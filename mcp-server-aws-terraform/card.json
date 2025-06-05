@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-aws-terraform",
+  "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
   "name": "mcp-server-aws-terraform",
   "description": "Terraform AWS best practices, infrastructure as code patterns, and security compliance with Checkov.",
   "links":
@@ -12,12 +13,12 @@
   "scope": "standalone",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.0.11",
+  "version": "1.0.1",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "A",
+  "rating": {"hash":"5752c7ab8a5be36544e2424f9be44b5daa664820a1a114ea33233b6a255e32fb","reason":"Excellent tool documentation with comprehensive descriptions that clearly explain functionality, usage context, and limitations. Tool names are highly specific and intuitive. Parameter descriptions are thorough with proper type constraints and clear purpose explanations. Each tool provides detailed examples, usage scenarios, and important contextual information like when to use specific parameters or constraints between options.","score":"A"},
   "resources": {
-    "tools": 6,
+    "tools": 7,
     "prompts": 0,
     "resources": 4,
     "resourcesTemplates": 0

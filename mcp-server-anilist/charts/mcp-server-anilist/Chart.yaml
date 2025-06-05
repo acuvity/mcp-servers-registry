@@ -5,7 +5,7 @@ home: https://github.com/yuna0x0/anilist-mcp
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/yuna0x0/anilist-mcp
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-anilist/logo.png"
 type: application
 maintainers:
   - name: Acuvity

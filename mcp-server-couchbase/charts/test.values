@@ -1,0 +1,16 @@
+env:
+  CB_CONNECTION_STRING: dummy_value
+  CB_BUCKET_NAME: dummy_value
+  READ_ONLY_QUERY_MODE: 
+
+secrets:
+  CB_USERNAME:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  CB_PASSWORD:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-line-bot",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/line/live/logo-1745429370311.png",
   "name": "mcp-server-line-bot",
   "description": "Connects AI Agent to LINE for messaging interactions.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.2.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"6ce427c9c026e72c96981ac49f0110b7a34c874a08b0ca5337b18d2751c40c7f","reason":"Good documentation overall with clear, descriptive tool names and comprehensive descriptions that explain functionality, usage context, and important warnings. Parameter descriptions are mostly clear with proper constraints specified. Minor weaknesses include some repetitive descriptions across similar tools and the generic 'dummy' default for userId parameters could be better explained.","score":"B"},
   "resources": {
     "tools": 6,
     "prompts": 0,

@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-postgres",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-postgres",
   "description": "PostgreSQL database integration with schema inspection and query capabilities.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.3.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "D",
+  "rating": {"hash":"7a3b6bb47a7c7b618e0d49889b145f4e31c9075dfeed0f505d1be1d4afe7af52","reason":"The toolset demonstrates good documentation quality overall. Most tools have clear, descriptive names and adequate descriptions explaining their functionality. Parameter documentation is generally well-done with clear purposes and constraints specified. However, some descriptions are quite brief (like 'execute_sql' and basic schema tools) and could benefit from more context about usage scenarios and limitations. The complex tools like 'explain_query' and 'analyze_db_health' provide excellent detailed descriptions, while simpler tools are more minimal but still functional.","score":"B"},
   "resources": {
     "tools": 9,
     "prompts": 0,

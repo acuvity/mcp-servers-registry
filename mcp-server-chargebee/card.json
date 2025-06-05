@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-chargebee",
+  "icon": "https://www.chargebee.com/static/resources/brand/favicon.png",
   "name": "mcp-server-chargebee",
   "description": "MCP Server that connects AI agents to Chargebee platform.",
   "links":
@@ -8,14 +9,14 @@
       "application": "https://github.com/chargebee/agentkit/tree/main/modelcontextprotocol"
     },
   "tags": ["finance"],
-  "official": false,
+  "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"95187be9a453013a601f1ce6649cd1bbbe955ff8bdea813091988c108594bf91","reason":"Tool names are clear and specific, indicating their distinct purposes (documentation search vs code planning). Descriptions adequately explain functionality and when to use each tool, with good differentiation between the two. Parameter descriptions are clear and include helpful guidance like 'Check the user's application language.' The enum constraints for language are well-defined. Minor improvement could be made in describing what type of content/format each tool returns, but overall provides sufficient guidance for proper usage.","score":"B"},
   "resources": {
     "tools": 2,
     "prompts": 0,

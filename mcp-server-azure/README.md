@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-azure?
-
-[![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-azure/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-azure/0.0.20?logo=docker&logoColor=fff&label=0.0.20)](https://hub.docker.com/r/acuvity/mcp-server-azure)
-[![PyPI](https://img.shields.io/badge/0.0.20-3775A9?logo=pypi&logoColor=fff&label=@azure/mcp)](https://github.com/Azure/azure-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-azure/0.1.2?logo=docker&logoColor=fff&label=0.1.2)](https://hub.docker.com/r/acuvity/mcp-server-azure)
+[![PyPI](https://img.shields.io/badge/0.1.2-3775A9?logo=pypi&logoColor=fff&label=@azure/mcp)](https://github.com/Azure/azure-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-azure/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22-e%22%2C%22AZURE_CLIENT_ID%22%2C%22-e%22%2C%22AZURE_CLIENT_SECRET%22%2C%22-e%22%2C%22AZURE_TENANT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure%3A0.0.20%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22-e%22%2C%22AZURE_CLIENT_ID%22%2C%22-e%22%2C%22AZURE_CLIENT_SECRET%22%2C%22-e%22%2C%22AZURE_TENANT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure%3A0.1.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Integrates AI agents with Azure services for enhanced functionality.
 
@@ -176,7 +175,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22-e%22%2C%22AZURE_CLIENT_ID%22%2C%22-e%22%2C%22AZURE_CLIENT_SECRET%22%2C%22-e%22%2C%22AZURE_TENANT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure%3A0.0.20%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22-e%22%2C%22AZURE_CLIENT_ID%22%2C%22-e%22%2C%22AZURE_CLIENT_SECRET%22%2C%22-e%22%2C%22AZURE_TENANT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure%3A0.1.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -206,7 +205,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "AZURE_CLIENT_SECRET",
           "-e",
           "AZURE_TENANT_ID",
-          "docker.io/acuvity/mcp-server-azure:0.0.20"
+          "docker.io/acuvity/mcp-server-azure:0.1.2"
         ]
       }
     }
@@ -241,7 +240,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "AZURE_CLIENT_SECRET",
         "-e",
         "AZURE_TENANT_ID",
-        "docker.io/acuvity/mcp-server-azure:0.0.20"
+        "docker.io/acuvity/mcp-server-azure:0.1.2"
       ]
     }
   }
@@ -280,7 +279,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "AZURE_CLIENT_SECRET",
         "-e",
         "AZURE_TENANT_ID",
-        "docker.io/acuvity/mcp-server-azure:0.0.20"
+        "docker.io/acuvity/mcp-server-azure:0.1.2"
       ]
     }
   }
@@ -321,7 +320,7 @@ Add the following JSON block to your mcp configuration file:
         "AZURE_CLIENT_SECRET",
         "-e",
         "AZURE_TENANT_ID",
-        "docker.io/acuvity/mcp-server-azure:0.0.20"
+        "docker.io/acuvity/mcp-server-azure:0.1.2"
       ]
     }
   }
@@ -360,7 +359,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "AZURE_CLIENT_SECRET",
         "-e",
         "AZURE_TENANT_ID",
-        "docker.io/acuvity/mcp-server-azure:0.0.20"
+        "docker.io/acuvity/mcp-server-azure:0.1.2"
       ]
     }
   }
@@ -380,7 +379,7 @@ async with MCPServerStdio(
     params={
         "env": {"AZURE_CLIENT_ID":"TO_BE_SET","AZURE_CLIENT_SECRET":"TO_BE_SET","AZURE_TENANT_ID":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","--tmpfs","/tmp:rw,nosuid,nodev","-e","AZURE_CLIENT_ID","-e","AZURE_CLIENT_SECRET","-e","AZURE_TENANT_ID","docker.io/acuvity/mcp-server-azure:0.0.20"]
+        "args": ["run","-i","--rm","--read-only","--tmpfs","/tmp:rw,nosuid,nodev","-e","AZURE_CLIENT_ID","-e","AZURE_CLIENT_SECRET","-e","AZURE_TENANT_ID","docker.io/acuvity/mcp-server-azure:0.1.2"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -409,7 +408,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only --tmpfs /tmp:rw,nosuid,nodev -e AZURE_CLIENT_ID -e AZURE_CLIENT_SECRET -e AZURE_TENANT_ID docker.io/acuvity/mcp-server-azure:0.0.20`
+- arguments: `run -i --rm --read-only --tmpfs /tmp:rw,nosuid,nodev -e AZURE_CLIENT_ID -e AZURE_CLIENT_SECRET -e AZURE_TENANT_ID docker.io/acuvity/mcp-server-azure:0.1.2`
 
 </details>
 
@@ -419,7 +418,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only --tmpfs /tmp:rw,nosuid,nodev -e AZURE_CLIENT_ID -e AZURE_CLIENT_SECRET -e AZURE_TENANT_ID docker.io/acuvity/mcp-server-azure:0.0.20
+docker run -it -p 8000:8000 --rm --read-only --tmpfs /tmp:rw,nosuid,nodev -e AZURE_CLIENT_ID -e AZURE_CLIENT_SECRET -e AZURE_TENANT_ID docker.io/acuvity/mcp-server-azure:0.1.2
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -524,7 +523,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (49)
+## 🧰 Tools (54)
 <details>
 <summary>azmcp-appconfig-account-list</summary>
 
@@ -539,12 +538,12 @@ stores available in the specified subscription. Results include store names retu
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -564,14 +563,14 @@ key and the default label will be deleted.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | account-name | string | The name of the App Configuration store (e.g., my-appconfig). | Yes
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | key | string | The name of the key to access within the App Configuration store. | Yes
 | label | string | The label to apply to the configuration key. Labels are used to group and organize settings. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -591,14 +590,14 @@ time, and lock status.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | account-name | string | The name of the App Configuration store (e.g., my-appconfig). | Yes
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | key | string | Specifies the key filter, if any, to be used when retrieving key-values. The filter can be an exact match, for example a filter of "foo" would get all key-values with a key of "foo", or the filter can include a '*' character at the end of the string for wildcard searches (e.g., 'App*'). If omitted all keys will be retrieved. | No
 | label | string | Specifies the label filter, if any, to be used when retrieving key-values. The filter can be an exact match, for example a filter of "foo" would get all key-values with a label of "foo", or the filter can include a '*' character at the end of the string for wildcard searches (e.g., 'Prod*'). This filter is case-sensitive. If omitted, all labels will be retrieved. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -618,14 +617,14 @@ you can specify a label to lock a specific labeled version of the key-value.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | account-name | string | The name of the App Configuration store (e.g., my-appconfig). | Yes
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | key | string | The name of the key to access within the App Configuration store. | Yes
 | label | string | The label to apply to the configuration key. Labels are used to group and organize settings. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -645,14 +644,14 @@ label otherwise the default label will be used.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | account-name | string | The name of the App Configuration store (e.g., my-appconfig). | Yes
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | key | string | The name of the key to access within the App Configuration store. | Yes
 | label | string | The label to apply to the configuration key. Labels are used to group and organize settings. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 | value | string | The value to set for the configuration key. | Yes
@@ -673,14 +672,14 @@ account name and key. Optionally, you can specify a label otherwise the setting 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | account-name | string | The name of the App Configuration store (e.g., my-appconfig). | Yes
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | key | string | The name of the key to access within the App Configuration store. | Yes
 | label | string | The label to apply to the configuration key. Labels are used to group and organize settings. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -701,14 +700,14 @@ default label will be unlocked.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | account-name | string | The name of the App Configuration store (e.g., my-appconfig). | Yes
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | key | string | The name of the key to access within the App Configuration store. | Yes
 | label | string | The label to apply to the configuration key. Labels are used to group and organize settings. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -725,7 +724,6 @@ Returns best practices for secure, production-grade Azure SDK usage. Call this c
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| _dummy | string | Placeholder argument to ensure OpenAPI schema is valid. | No
 </details>
 <details>
 <summary>azmcp-cosmos-account-list</summary>
@@ -741,12 +739,12 @@ available in the specified subscription. Results include account names and are r
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -767,15 +765,15 @@ JSON array of documents.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | account-name | string | The name of the Cosmos DB account to query (e.g., my-cosmos-account). | Yes
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | container-name | string | The name of the container to query (e.g., my-container). | Yes
 | database-name | string | The name of the database to query (e.g., my-database). | Yes
 | query | string | SQL query to execute against the container. Uses Cosmos DB SQL syntax. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -795,13 +793,13 @@ JSON array. You must specify both an account name and a database name.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | account-name | string | The name of the Cosmos DB account to query (e.g., my-cosmos-account). | Yes
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | database-name | string | The name of the database to query (e.g., my-database). | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -820,12 +818,12 @@ in the specified Cosmos DB account. Results include database names and are retur
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | account-name | string | The name of the Cosmos DB account to query (e.g., my-cosmos-account). | Yes
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -851,13 +849,13 @@ Your job is to answer questions about an Azure environment by executing Azure CL
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | command | string | The Azure CLI command to execute (without the 'az' prefix). For example: 'group list'. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
 <details>
@@ -866,20 +864,47 @@ Your job is to answer questions about an Azure environment by executing Azure CL
 **Description**:
 
 ```
-Use this tool to always run all Azure Developer CLI (azd) commands. Most common activities will be helping users initialize projects, manage environments, provision and deploy infrastructure and apps to their Azure environment. If an azure.yaml file exists in the workspace, treat it as an existing azd project; otherwise, use init to create one. Always pass --cwd with the full workspace path, and use -e to specify the environment when required. Confirm with the user before performing destructive operations. After each command, suggest next steps if available, and ask before proceeding. On errors, prompt for missing info and retry. Be concise and contextual, using data from the user's environment and workspace to provide accurate, actionable responses. This tool can create, modify or delete resources in Azure. Always warn and confirm action with the user before performing destructive commands like 'up', 'down', 'provision' or 'deploy'.
+Runs Azure Developer CLI (azd) commands.
+Agents and LLM's must always run this tool with the 'learn' parameter and empty 'command' on first use to learn more about 'azd' best practices and usage patterns.
+
+This tool supports the following:
+- List, search and show templates to start your project
+- Create and initialize new projects and templates
+- Show and manage azd configuration
+- Show and manage environments and values
+- Provision Azure resources
+- Deploy applications
+- Bring the whole project up and online
+- Bring the whole project down and deallocate all Azure resources
+- Setup CI/CD pipelines
+- Monitor Azure applications
+- Show information about the project and its resources
+- Show and manage extensions and extension sources
+- Show and manage templates and template sources
+
+If unsure about available commands or their parameters, run azd help or azd <group> --help in the command to discover them.
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
-| command | string | The Azure Developer CLI command to execute (without the 'azd' prefix). For example: 'up'. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| command | string | The Azure Developer CLI command and arguments to execute (without the 'azd' prefix).
+Examples:
+- up
+- env list
+- env get-values | No
+| cwd | string | The current working directory for the command. This is the directory where the command will be executed. | Yes
+| environment | string | The name of the azd environment to use. This is typically the name of the Azure environment (e.g., 'prod', 'dev', 'test', 'staging').
+Always set environments for azd commands that support -e, --environment argument. | No
+| learn | boolean | Flag to indicate whether to learn best practices and usage patterns for azd tool.
+Always run this command with learn=true and empty command on first run. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
 <details>
@@ -897,12 +922,12 @@ returned as a JSON array.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -931,14 +956,14 @@ Key types:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | key | string | The name of the key to retrieve/modify from the Key Vault. | Yes
 | key-type | string | The type of key to create (RSA, EC). | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 | vault | string | The name of the Key Vault. | Yes
@@ -962,13 +987,13 @@ Required arguments:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | key | string | The name of the key to retrieve/modify from the Key Vault. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 | vault | string | The name of the Key Vault. | Yes
@@ -991,13 +1016,13 @@ Required arguments:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
-| include-managed | string | Whether or not to include managed keys in results. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| include-managed | boolean | Whether or not to include managed keys in results. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 | vault | string | The name of the Key Vault. | Yes
@@ -1016,14 +1041,14 @@ The response includes the `clusterUri` property for use in subsequent commands.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | cluster-name | string | Kusto Cluster name. | No
 | cluster-uri | string | Kusto Cluster URI. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -1042,12 +1067,12 @@ Result is a list of cluster names as a JSON array.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -1064,14 +1089,14 @@ List all databases in a Kusto cluster. Requires `cluster-uri` ( or `subscription
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | cluster-name | string | Kusto Cluster name. | No
 | cluster-uri | string | Kusto Cluster URI. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -1090,16 +1115,16 @@ Results are returned as a JSON array of documents, for example: `[{'Column1': va
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | cluster-name | string | Kusto Cluster name. | No
 | cluster-uri | string | Kusto Cluster URI. | No
 | database-name | string | Kusto Database name. | Yes
 | query | string | Kusto query to execute. Uses KQL syntax. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -1118,15 +1143,16 @@ Results are returned as a JSON array of documents, for example: `[{'Column1': va
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | cluster-name | string | Kusto Cluster name. | No
 | cluster-uri | string | Kusto Cluster URI. | No
 | database-name | string | Kusto Database name. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| limit | integer | The maximum number of results to return. | Yes
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | table-name | string | Kusto Table name. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
@@ -1144,15 +1170,15 @@ List all tables in a specific Kusto database. Required `cluster-uri` (or `subscr
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | cluster-name | string | Kusto Cluster name. | No
 | cluster-uri | string | Kusto Cluster URI. | No
 | database-name | string | Kusto Database name. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -1169,17 +1195,47 @@ Get the schema of a specific table in an Kusto database.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | cluster-name | string | Kusto Cluster name. | No
 | cluster-uri | string | Kusto Cluster URI. | No
 | database-name | string | Kusto Database name. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | table-name | string | Kusto Table name. | Yes
+| tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
+</details>
+<details>
+<summary>azmcp-monitor-healthmodels-entity-gethealth</summary>
+
+**Description**:
+
+```
+Gets the health of an entity from a specified Azure Monitor Health Model.
+Returns entity health information.
+
+Required arguments:
+- entity: The entity to get health for
+- model-name: The health model name
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| entity | string | The entity to get health for. | Yes
+| model-name | string | The name of the health model for which to get the health. | Yes
+| resource-group | string | The name of the Azure resource group. This is a logical container for Azure resources. | Yes
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
 <details>
@@ -1190,8 +1246,8 @@ Get the schema of a specific table in an Kusto database.
 ```
 Execute a KQL query against a Log Analytics workspace. Requires workspace
 and resource group. Optional hours
-(default: 24) and limit
-(default: 20) parameters.
+(default: 0) and limit
+(default: 0) parameters.
 The query parameter accepts KQL syntax.
 ```
 
@@ -1199,19 +1255,19 @@ The query parameter accepts KQL syntax.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
-| hours | string | The number of hours to query back from now. | No
-| limit | string | The maximum number of results to return. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| hours | integer | The number of hours to query back from now. | Yes
+| limit | integer | The maximum number of results to return. | Yes
 | query | string | The KQL query to execute against the Log Analytics workspace. You can use predefined queries by name:
 - 'recent': Shows most recent logs ordered by TimeGenerated
 - 'errors': Shows error-level logs ordered by TimeGenerated
 Otherwise, provide a custom KQL query. | Yes
 | resource-group | string | The name of the Azure resource group. This is a logical container for Azure resources. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | table-name | string | The name of the table to query. This is the specific table within the workspace. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
@@ -1231,13 +1287,13 @@ Returns table names and schemas that can be used for constructing KQL queries.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | resource-group | string | The name of the Azure resource group. This is a logical container for Azure resources. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | table-type | string | The type of table to query. Options: 'CustomLog', 'AzureMetrics', etc. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
@@ -1256,12 +1312,13 @@ List available table types in a Log Analytics workspace. Returns table type name
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| resource-group | string | The name of the Azure resource group. This is a logical container for Azure resources. | Yes
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 | workspace | string | The Log Analytics workspace ID or name. This can be either the unique identifier (GUID) or the display name of your workspace. | Yes
@@ -1281,12 +1338,12 @@ Use this command to identify workspaces before querying their logs or tables.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -1303,13 +1360,13 @@ Lists all databases in the PostgreSQL server.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | resource-group | string | The name of the Azure resource group. This is a logical container for Azure resources. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | server | string | The PostgreSQL server to be accessed. | Yes
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
@@ -1328,15 +1385,15 @@ Executes a query on the PostgreSQL database.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | database | string | The PostgreSQL database to be access. | Yes
 | query | string | Query to be executed against a PostgreSQL database. | Yes
 | resource-group | string | The name of the Azure resource group. This is a logical container for Azure resources. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | server | string | The PostgreSQL server to be accessed. | Yes
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
@@ -1355,13 +1412,13 @@ Retrieve the configuration of a PostgreSQL server.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | resource-group | string | The name of the Azure resource group. This is a logical container for Azure resources. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | server | string | The PostgreSQL server to be accessed. | Yes
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
@@ -1380,13 +1437,13 @@ Lists all PostgreSQL servers in the specified subscription.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | resource-group | string | The name of the Azure resource group. This is a logical container for Azure resources. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 | user-name | string | The user name to access PostgreSQL server. | Yes
@@ -1404,14 +1461,14 @@ Retrieves a specific parameter of a PostgreSQL server.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | param | string | The PostgreSQL parameter to be accessed. | Yes
 | resource-group | string | The name of the Azure resource group. This is a logical container for Azure resources. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | server | string | The PostgreSQL server to be accessed. | Yes
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
@@ -1430,14 +1487,14 @@ Lists all tables in the PostgreSQL database.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | database | string | The PostgreSQL database to be access. | Yes
 | resource-group | string | The name of the Azure resource group. This is a logical container for Azure resources. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | server | string | The PostgreSQL server to be accessed. | Yes
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
@@ -1456,19 +1513,115 @@ Retrieves the schema of a specified table in a PostgreSQL database.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | database | string | The PostgreSQL database to be access. | Yes
 | resource-group | string | The name of the Azure resource group. This is a logical container for Azure resources. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | server | string | The PostgreSQL server to be accessed. | Yes
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | table | string | The PostgreSQL table to be access. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 | user-name | string | The user name to access PostgreSQL server. | Yes
+</details>
+<details>
+<summary>azmcp-redis-cache-accesspolicy-list</summary>
+
+**Description**:
+
+```
+List the Access Policies and Assignments for the specified Redis cache. Returns an array of Redis Access Policy Assignment details.
+Use this command to explore which Access Policies have been assigned to which identities for your Redis cache.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| cache | string | The name of the Redis cache (e.g., my-redis-cache). | Yes
+| resource-group | string | The name of the Azure resource group. This is a logical container for Azure resources. | Yes
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
+| tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
+</details>
+<details>
+<summary>azmcp-redis-cache-list</summary>
+
+**Description**:
+
+```
+List all Redis Cache resources in a specified subscription. Returns an array of Redis Cache details.
+Use this command to explore which Redis Cache resources are available in your subscription.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
+| tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
+</details>
+<details>
+<summary>azmcp-redis-cluster-database-list</summary>
+
+**Description**:
+
+```
+List the databases in the specified Redis Cluster resource. Returns an array of Redis database details.
+Use this command to explore which databases are available in your Redis Cluster.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| cluster | string | The name of the Redis cluster (e.g., my-redis-cluster). | Yes
+| resource-group | string | The name of the Azure resource group. This is a logical container for Azure resources. | Yes
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
+| tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
+</details>
+<details>
+<summary>azmcp-redis-cluster-list</summary>
+
+**Description**:
+
+```
+List all Redis Cluster resources in a specified subscription. Returns an array of Redis Cluster details.
+Use this command to explore which Redis Cluster resources are available in your subscription.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
+| tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
 <details>
 <summary>azmcp-search-index-describe</summary>
@@ -1488,13 +1641,13 @@ Required arguments:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | index-name | string | The name of the search index within the Azure AI Search service. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | service-name | string | The name of the Azure AI Search service (e.g., my-search-service). | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -1514,12 +1667,12 @@ Required arguments:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | service-name | string | The name of the Azure AI Search service (e.g., my-search-service). | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -1541,14 +1694,14 @@ Required arguments:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | index-name | string | The name of the search index within the Azure AI Search service. | Yes
 | query | string | The search query to execute against the Azure AI Search index. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | service-name | string | The name of the Azure AI Search service (e.g., my-search-service). | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -1568,12 +1721,12 @@ Required arguments:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -1595,14 +1748,14 @@ Required arguments:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | namespace | string | The fully qualified Service Bus namespace host name. (This is usually in the form <namespace>.servicebus.windows.net) | Yes
 | queue-name | string | The queue name to peek messages from. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -1624,13 +1777,13 @@ Required arguments:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | namespace | string | The fully qualified Service Bus namespace host name. (This is usually in the form <namespace>.servicebus.windows.net) | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 | topic-name | string | The name of the topic containing the subscription. | Yes
@@ -1653,13 +1806,13 @@ Required arguments:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | namespace | string | The fully qualified Service Bus namespace host name. (This is usually in the form <namespace>.servicebus.windows.net) | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | subscription-name | string | The name of subscription to peek messages from. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
@@ -1680,12 +1833,12 @@ returned as a JSON array.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -1704,13 +1857,13 @@ Requires account-name and container-name.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | account-name | string | The name of the Azure Storage account. This is the unique name you chose for your storage account (e.g., 'mystorageaccount'). | Yes
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | container-name | string | The name of the container to access within the storage account. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -1730,12 +1883,12 @@ Requires account-name.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | account-name | string | The name of the Azure Storage account. This is the unique name you chose for your storage account (e.g., 'mystorageaccount'). | Yes
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -1756,13 +1909,13 @@ container-name.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | account-name | string | The name of the Azure Storage account. This is the unique name you chose for your storage account (e.g., 'mystorageaccount'). | Yes
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
 | container-name | string | The name of the container to access within the storage account. | Yes
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -1782,12 +1935,12 @@ Use this command to explore your Storage resources or to verify table existence 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | account-name | string | The name of the Azure Storage account. This is the unique name you chose for your storage account (e.g., 'mystorageaccount'). | Yes
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
@@ -1805,12 +1958,12 @@ and auth-method. Results include subscription names and IDs, returned as a JSON 
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auth-method | string | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
-| retry-delay | string | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
-| retry-max-delay | string | Maximum delay in seconds between retries, regardless of the retry strategy. | No
-| retry-max-retries | string | Maximum number of retry attempts for failed operations before giving up. | No
-| retry-mode | string | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
-| retry-network-timeout | string | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
 | tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
 </details>
 
@@ -1904,7 +2057,6 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | azmcp-appconfig-kv-unlock | subscription | 373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986 |
 | tools | azmcp-appconfig-kv-unlock | tenant | 9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4 |
 | tools | azmcp-bestpractices-get | description | 8c375b1789afca09a0dd90d83f21dc760b7b9cda9e109c4ad00e864ea3b5e53c |
-| tools | azmcp-bestpractices-get | _dummy | 23fe1a767a7c77bff94b2f3452abd4a64ca83284b1400bb257a51bd380172578 |
 | tools | azmcp-cosmos-account-list | description | 078f8b26134fb25376825878f2aaed5522934d360ed4108501668ed1ba35a37c |
 | tools | azmcp-cosmos-account-list | auth-method | 6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29 |
 | tools | azmcp-cosmos-account-list | retry-delay | 503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce |
@@ -1957,9 +2109,12 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | azmcp-extension-az | retry-mode | 0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084 |
 | tools | azmcp-extension-az | retry-network-timeout | 82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6 |
 | tools | azmcp-extension-az | tenant | 9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4 |
-| tools | azmcp-extension-azd | description | e2f55fd22d31bb1e3a04b47b721602aaf34afbfce1d0a3b2ddf9c3a76cba61d0 |
+| tools | azmcp-extension-azd | description | af969a7a09372f3b7949159bc0a6fd0ce108ca158bef0fdce8d883522e210e05 |
 | tools | azmcp-extension-azd | auth-method | 6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29 |
-| tools | azmcp-extension-azd | command | d76e861ad8569e13cbad18fb8df548296d6b04e6e2b84e8e969569825f455db4 |
+| tools | azmcp-extension-azd | command | dc39e38f17cbd88088e460e1b1a09e77f5f0fde176bcb2cae8cd8646f041c5e8 |
+| tools | azmcp-extension-azd | cwd | eaa7aec0d34ccbc548642b182091d63b76c46690482b1c2b57f56374620b45de |
+| tools | azmcp-extension-azd | environment | 5e1107f4653aca9ff9027f55c67762d937fad45a4b4f6abc482c57d44bb262ee |
+| tools | azmcp-extension-azd | learn | ba4683921970147a2c2d98a7a0162b25e2e492092a164928ea9c3ad518666a89 |
 | tools | azmcp-extension-azd | retry-delay | 503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce |
 | tools | azmcp-extension-azd | retry-max-delay | edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88 |
 | tools | azmcp-extension-azd | retry-max-retries | b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2 |
@@ -2058,6 +2213,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | azmcp-kusto-sample | cluster-name | ef33dc7535b7c4c93e2f55a1df93d3847c3f130b627b5018b93cd34350a37c36 |
 | tools | azmcp-kusto-sample | cluster-uri | 3efe174963e3404cd51803997d692e8abed8ba51a8e3a52b556434ee7908714f |
 | tools | azmcp-kusto-sample | database-name | ef3fbd057e23d656d3862fe1d38f0fbad6265eb32872ebe4337c4f9768994843 |
+| tools | azmcp-kusto-sample | limit | 119ff216459c66197845afc04ac7935e7b3fc134c2a8df27cc7c4c1fbc488ce4 |
 | tools | azmcp-kusto-sample | retry-delay | 503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce |
 | tools | azmcp-kusto-sample | retry-max-delay | edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88 |
 | tools | azmcp-kusto-sample | retry-max-retries | b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2 |
@@ -2091,7 +2247,19 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | azmcp-kusto-table-schema | subscription | 373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986 |
 | tools | azmcp-kusto-table-schema | table-name | 4bf23992a9c1d9c26e97e4441e57657f402dcffdaa34480e41bfcc11dddd49d3 |
 | tools | azmcp-kusto-table-schema | tenant | 9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4 |
-| tools | azmcp-monitor-log-query | description | cdd40f324ec6770f6ceb96b6fa6d5c0ecbc9cfacbb58a608ccbff2dbad1f05a5 |
+| tools | azmcp-monitor-healthmodels-entity-gethealth | description | 34d0e548c74762f4863f573fea2b823674a0af21e528603ecd7ec27084d35bcc |
+| tools | azmcp-monitor-healthmodels-entity-gethealth | auth-method | 6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29 |
+| tools | azmcp-monitor-healthmodels-entity-gethealth | entity | d292e515df3c4d72f5440e231d0a32acefc31918e459b4006ef140b8348c419a |
+| tools | azmcp-monitor-healthmodels-entity-gethealth | model-name | 7e3db765a059df28befce7abddfaabd9227ec8d4fd0fe035c4ad21c9085ba4fe |
+| tools | azmcp-monitor-healthmodels-entity-gethealth | resource-group | b80f31cc79351fcd9d4d70aab6e22bf0246e86d2dedac99e75b3fb5caf29ce2e |
+| tools | azmcp-monitor-healthmodels-entity-gethealth | retry-delay | 503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce |
+| tools | azmcp-monitor-healthmodels-entity-gethealth | retry-max-delay | edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88 |
+| tools | azmcp-monitor-healthmodels-entity-gethealth | retry-max-retries | b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2 |
+| tools | azmcp-monitor-healthmodels-entity-gethealth | retry-mode | 0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084 |
+| tools | azmcp-monitor-healthmodels-entity-gethealth | retry-network-timeout | 82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6 |
+| tools | azmcp-monitor-healthmodels-entity-gethealth | subscription | 373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986 |
+| tools | azmcp-monitor-healthmodels-entity-gethealth | tenant | 9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4 |
+| tools | azmcp-monitor-log-query | description | b0b709f15e3a5391cd4c2f302339316a0a195b1cbe68d5496e52b88feb639242 |
 | tools | azmcp-monitor-log-query | auth-method | 6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29 |
 | tools | azmcp-monitor-log-query | hours | 09b69ee451dd64b2f02cc15d47509f85290f8ceeec6073dbe297f4f604322b86 |
 | tools | azmcp-monitor-log-query | limit | 119ff216459c66197845afc04ac7935e7b3fc134c2a8df27cc7c4c1fbc488ce4 |
@@ -2120,6 +2288,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | azmcp-monitor-table-list | workspace | c2ec8665ed83e1d84c6071ba65b62229e49afbed66ffa2a1203931a0f5352876 |
 | tools | azmcp-monitor-table-type-list | description | ec8b0b7fba17fdf046d59139bf7091b2dbe8133fd164c4e7a4810dfa91264322 |
 | tools | azmcp-monitor-table-type-list | auth-method | 6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29 |
+| tools | azmcp-monitor-table-type-list | resource-group | b80f31cc79351fcd9d4d70aab6e22bf0246e86d2dedac99e75b3fb5caf29ce2e |
 | tools | azmcp-monitor-table-type-list | retry-delay | 503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce |
 | tools | azmcp-monitor-table-type-list | retry-max-delay | edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88 |
 | tools | azmcp-monitor-table-type-list | retry-max-retries | b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2 |
@@ -2226,6 +2395,46 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | azmcp-postgres-table-schema | table | 1e6cda74960bfc2ce3b47c67c4eb36b188eff89cda536e22317953a53cc151ab |
 | tools | azmcp-postgres-table-schema | tenant | 9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4 |
 | tools | azmcp-postgres-table-schema | user-name | 8558e70206f542938a570dbe039e84b65e3e3471e3273948e2b49c34cad565dc |
+| tools | azmcp-redis-cache-accesspolicy-list | description | 4872a3962906743ad0283ff7910bb02baffdb38f00102b5d859a968c9879cb5c |
+| tools | azmcp-redis-cache-accesspolicy-list | auth-method | 6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29 |
+| tools | azmcp-redis-cache-accesspolicy-list | cache | 088f0cb4ddb6cc669107fa1ec55c0b12fd4d1777d89cfb0081d133f0e3f1a6bc |
+| tools | azmcp-redis-cache-accesspolicy-list | resource-group | b80f31cc79351fcd9d4d70aab6e22bf0246e86d2dedac99e75b3fb5caf29ce2e |
+| tools | azmcp-redis-cache-accesspolicy-list | retry-delay | 503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce |
+| tools | azmcp-redis-cache-accesspolicy-list | retry-max-delay | edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88 |
+| tools | azmcp-redis-cache-accesspolicy-list | retry-max-retries | b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2 |
+| tools | azmcp-redis-cache-accesspolicy-list | retry-mode | 0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084 |
+| tools | azmcp-redis-cache-accesspolicy-list | retry-network-timeout | 82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6 |
+| tools | azmcp-redis-cache-accesspolicy-list | subscription | 373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986 |
+| tools | azmcp-redis-cache-accesspolicy-list | tenant | 9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4 |
+| tools | azmcp-redis-cache-list | description | ad115f45657fc96c9f8f17fd2e554375d7e6346ac7599b958738464cd7a2cc7e |
+| tools | azmcp-redis-cache-list | auth-method | 6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29 |
+| tools | azmcp-redis-cache-list | retry-delay | 503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce |
+| tools | azmcp-redis-cache-list | retry-max-delay | edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88 |
+| tools | azmcp-redis-cache-list | retry-max-retries | b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2 |
+| tools | azmcp-redis-cache-list | retry-mode | 0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084 |
+| tools | azmcp-redis-cache-list | retry-network-timeout | 82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6 |
+| tools | azmcp-redis-cache-list | subscription | 373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986 |
+| tools | azmcp-redis-cache-list | tenant | 9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4 |
+| tools | azmcp-redis-cluster-database-list | description | c403ee78fdba361211b473ddf5336148733be8bf1528400741e051799ae5f184 |
+| tools | azmcp-redis-cluster-database-list | auth-method | 6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29 |
+| tools | azmcp-redis-cluster-database-list | cluster | dc413fa4365acbb47099f0ec34217b0cb88058a1594c10168bcce4c6e8dd774b |
+| tools | azmcp-redis-cluster-database-list | resource-group | b80f31cc79351fcd9d4d70aab6e22bf0246e86d2dedac99e75b3fb5caf29ce2e |
+| tools | azmcp-redis-cluster-database-list | retry-delay | 503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce |
+| tools | azmcp-redis-cluster-database-list | retry-max-delay | edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88 |
+| tools | azmcp-redis-cluster-database-list | retry-max-retries | b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2 |
+| tools | azmcp-redis-cluster-database-list | retry-mode | 0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084 |
+| tools | azmcp-redis-cluster-database-list | retry-network-timeout | 82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6 |
+| tools | azmcp-redis-cluster-database-list | subscription | 373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986 |
+| tools | azmcp-redis-cluster-database-list | tenant | 9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4 |
+| tools | azmcp-redis-cluster-list | description | cfe953c3eae603845a06820e229b967f8f38b4b24ba3032aad4b85e95ee8684c |
+| tools | azmcp-redis-cluster-list | auth-method | 6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29 |
+| tools | azmcp-redis-cluster-list | retry-delay | 503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce |
+| tools | azmcp-redis-cluster-list | retry-max-delay | edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88 |
+| tools | azmcp-redis-cluster-list | retry-max-retries | b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2 |
+| tools | azmcp-redis-cluster-list | retry-mode | 0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084 |
+| tools | azmcp-redis-cluster-list | retry-network-timeout | 82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6 |
+| tools | azmcp-redis-cluster-list | subscription | 373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986 |
+| tools | azmcp-redis-cluster-list | tenant | 9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4 |
 | tools | azmcp-search-index-describe | description | 614dfe19567ef5c94dd740657103cd1d154682c47a53dc4a64468306d4b49cf4 |
 | tools | azmcp-search-index-describe | auth-method | 6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29 |
 | tools | azmcp-search-index-describe | index-name | b3cab56347c95e9f6e008d626c011478aebe0a3fb5b26fe1f3049e3002b64dc0 |

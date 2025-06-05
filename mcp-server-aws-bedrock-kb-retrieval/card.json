@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-aws-bedrock-kb-retrieval",
+  "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
   "name": "mcp-server-aws-bedrock-kb-retrieval",
   "description": "Query Amazon Bedrock Knowledge Bases using natural language to retrieve relevant information.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.1.9",
+  "version": "1.0.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "nil",
+  "rating": null,
   "resources": {
   }
 }

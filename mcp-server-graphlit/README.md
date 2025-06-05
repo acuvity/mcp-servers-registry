@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-graphlit?
-
 [![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-graphlit/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-graphlit/1.0.20250519001?logo=docker&logoColor=fff&label=1.0.20250519001)](https://hub.docker.com/r/acuvity/mcp-server-graphlit)
-[![PyPI](https://img.shields.io/badge/1.0.20250519001-3775A9?logo=pypi&logoColor=fff&label=graphlit-mcp-server)](https://github.com/graphlit/graphlit-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-graphlit/1.0.20250531001?logo=docker&logoColor=fff&label=1.0.20250531001)](https://hub.docker.com/r/acuvity/mcp-server-graphlit)
+[![PyPI](https://img.shields.io/badge/1.0.20250531001-3775A9?logo=pypi&logoColor=fff&label=graphlit-mcp-server)](https://github.com/graphlit/graphlit-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-graphlit/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-graphlit&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22GRAPHLIT_ORGANIZATION_ID%22%2C%22-e%22%2C%22GRAPHLIT_ENVIRONMENT_ID%22%2C%22-e%22%2C%22GRAPHLIT_JWT_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-graphlit%3A1.0.20250519001%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-graphlit&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22GRAPHLIT_ORGANIZATION_ID%22%2C%22-e%22%2C%22GRAPHLIT_ENVIRONMENT_ID%22%2C%22-e%22%2C%22GRAPHLIT_JWT_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-graphlit%3A1.0.20250531001%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Integrates your MCP client with Graphlit to ingest and search content from dev tools.
 
@@ -187,7 +186,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-graphlit&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22GRAPHLIT_ORGANIZATION_ID%22%2C%22-e%22%2C%22GRAPHLIT_ENVIRONMENT_ID%22%2C%22-e%22%2C%22GRAPHLIT_JWT_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-graphlit%3A1.0.20250519001%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-graphlit&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22GRAPHLIT_ORGANIZATION_ID%22%2C%22-e%22%2C%22GRAPHLIT_ENVIRONMENT_ID%22%2C%22-e%22%2C%22GRAPHLIT_JWT_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-graphlit%3A1.0.20250531001%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -215,7 +214,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "GRAPHLIT_ENVIRONMENT_ID",
           "-e",
           "GRAPHLIT_JWT_SECRET",
-          "docker.io/acuvity/mcp-server-graphlit:1.0.20250519001"
+          "docker.io/acuvity/mcp-server-graphlit:1.0.20250531001"
         ]
       }
     }
@@ -248,7 +247,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "GRAPHLIT_ENVIRONMENT_ID",
         "-e",
         "GRAPHLIT_JWT_SECRET",
-        "docker.io/acuvity/mcp-server-graphlit:1.0.20250519001"
+        "docker.io/acuvity/mcp-server-graphlit:1.0.20250531001"
       ]
     }
   }
@@ -285,7 +284,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "GRAPHLIT_ENVIRONMENT_ID",
         "-e",
         "GRAPHLIT_JWT_SECRET",
-        "docker.io/acuvity/mcp-server-graphlit:1.0.20250519001"
+        "docker.io/acuvity/mcp-server-graphlit:1.0.20250531001"
       ]
     }
   }
@@ -324,7 +323,7 @@ Add the following JSON block to your mcp configuration file:
         "GRAPHLIT_ENVIRONMENT_ID",
         "-e",
         "GRAPHLIT_JWT_SECRET",
-        "docker.io/acuvity/mcp-server-graphlit:1.0.20250519001"
+        "docker.io/acuvity/mcp-server-graphlit:1.0.20250531001"
       ]
     }
   }
@@ -361,7 +360,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "GRAPHLIT_ENVIRONMENT_ID",
         "-e",
         "GRAPHLIT_JWT_SECRET",
-        "docker.io/acuvity/mcp-server-graphlit:1.0.20250519001"
+        "docker.io/acuvity/mcp-server-graphlit:1.0.20250531001"
       ]
     }
   }
@@ -381,7 +380,7 @@ async with MCPServerStdio(
     params={
         "env": {"GRAPHLIT_ENVIRONMENT_ID":"TO_BE_SET","GRAPHLIT_JWT_SECRET":"TO_BE_SET","GRAPHLIT_ORGANIZATION_ID":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","GRAPHLIT_ORGANIZATION_ID","-e","GRAPHLIT_ENVIRONMENT_ID","-e","GRAPHLIT_JWT_SECRET","docker.io/acuvity/mcp-server-graphlit:1.0.20250519001"]
+        "args": ["run","-i","--rm","--read-only","-e","GRAPHLIT_ORGANIZATION_ID","-e","GRAPHLIT_ENVIRONMENT_ID","-e","GRAPHLIT_JWT_SECRET","docker.io/acuvity/mcp-server-graphlit:1.0.20250531001"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -410,7 +409,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e GRAPHLIT_ORGANIZATION_ID -e GRAPHLIT_ENVIRONMENT_ID -e GRAPHLIT_JWT_SECRET docker.io/acuvity/mcp-server-graphlit:1.0.20250519001`
+- arguments: `run -i --rm --read-only -e GRAPHLIT_ORGANIZATION_ID -e GRAPHLIT_ENVIRONMENT_ID -e GRAPHLIT_JWT_SECRET docker.io/acuvity/mcp-server-graphlit:1.0.20250531001`
 
 </details>
 
@@ -420,7 +419,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e GRAPHLIT_ORGANIZATION_ID -e GRAPHLIT_ENVIRONMENT_ID -e GRAPHLIT_JWT_SECRET docker.io/acuvity/mcp-server-graphlit:1.0.20250519001
+docker run -it -p 8000:8000 --rm --read-only -e GRAPHLIT_ORGANIZATION_ID -e GRAPHLIT_ENVIRONMENT_ID -e GRAPHLIT_JWT_SECRET docker.io/acuvity/mcp-server-graphlit:1.0.20250531001
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -1116,7 +1115,7 @@ Ingests files from SharePoint library into Graphlit knowledge base.
     Libraries can be enumerated with listSharePointLibraries and library folders with listSharePointFolders.
     Requires environment variables to be configured: SHAREPOINT_ACCOUNT_NAME, SHAREPOINT_CLIENT_ID, SHAREPOINT_CLIENT_SECRET, SHAREPOINT_REFRESH_TOKEN.
     Accepts an optional read limit for the number of files to ingest.
-    Executes asynchronously, creates SharePoint feed, and returns the feed identifier.
+    Executes asynchronously, creates SharePoint feed, and returns the feed identifier. Optionally creates a recurring feed that checks for new content every 15 minutes when 'recurring' is set to true.
 ```
 
 **Parameter**:
@@ -1126,6 +1125,8 @@ Ingests files from SharePoint library into Graphlit knowledge base.
 | folderId | string | SharePoint folder identifier, optional. | No
 | libraryId | string | SharePoint library identifier. | Yes
 | readLimit | number | Number of files to ingest, optional. Defaults to 100. | No
+| recurring | boolean | Whether to create a recurring feed that checks for new content. Defaults to false (one-time execution). When true, isFeedDone is not needed for completion polling. | No
+| repeatInterval | string | ISO 8601 duration for recurring interval (e.g., 'PT5M' for 5 minutes, 'PT15M' for 15 minutes, 'PT1H' for 1 hour). Must be at least PT5M. Only used when recurring is true. | No
 </details>
 <details>
 <summary>ingestOneDriveFiles</summary>
@@ -1137,7 +1138,7 @@ Ingests files from OneDrive into Graphlit knowledge base.
     Accepts optional OneDrive folder identifier, and an optional read limit for the number of files to ingest.
     If no folder identifier provided, ingests files from root OneDrive folder.
     Requires environment variables to be configured: ONEDRIVE_CLIENT_ID, ONEDRIVE_CLIENT_SECRET, ONEDRIVE_REFRESH_TOKEN.
-    Executes asynchronously, creates OneDrive feed, and returns the feed identifier.
+    Executes asynchronously, creates OneDrive feed, and returns the feed identifier. Optionally creates a recurring feed that checks for new content every 15 minutes when 'recurring' is set to true.
 ```
 
 **Parameter**:
@@ -1146,6 +1147,8 @@ Ingests files from OneDrive into Graphlit knowledge base.
 |-----------|------|-------------|-----------|
 | folderId | string | OneDrive folder identifier, optional. | No
 | readLimit | number | Number of files to ingest, optional. Defaults to 100. | No
+| recurring | boolean | Whether to create a recurring feed that checks for new content. Defaults to false (one-time execution). When true, isFeedDone is not needed. | No
+| repeatInterval | string | ISO 8601 duration for recurring interval (e.g., 'PT5M' for 5 minutes, 'PT15M' for 15 minutes, 'PT1H' for 1 hour). Must be at least PT5M. Only used when recurring is true. | No
 </details>
 <details>
 <summary>ingestGoogleDriveFiles</summary>
@@ -1159,7 +1162,7 @@ Ingests files from Google Drive into Graphlit knowledge base.
     If no folder identifier provided, ingests files from root Google Drive folder.
     Requires environment variables to be configured: GOOGLE_DRIVE_SERVICE_ACCOUNT_JSON -or- GOOGLE_DRIVE_CLIENT_ID, GOOGLE_DRIVE_CLIENT_SECRET, GOOGLE_DRIVE_REFRESH_TOKEN.
     If service account JSON is provided, uses service account authentication. Else, uses user authentication.
-    Executes asynchronously, creates Google Drive feed, and returns the feed identifier.
+    Executes asynchronously, creates Google Drive feed, and returns the feed identifier. Optionally creates a recurring feed that checks for new content every 15 minutes when 'recurring' is set to true.
 ```
 
 **Parameter**:
@@ -1168,6 +1171,8 @@ Ingests files from Google Drive into Graphlit knowledge base.
 |-----------|------|-------------|-----------|
 | folderId | string | Google Drive folder identifier, optional. | No
 | readLimit | number | Number of files to ingest, optional. Defaults to 100. | No
+| recurring | boolean | Whether to create a recurring feed that checks for new content. Defaults to false (one-time execution). When true, isFeedDone is not needed. | No
+| repeatInterval | string | ISO 8601 duration for recurring interval (e.g., 'PT5M' for 5 minutes, 'PT15M' for 15 minutes, 'PT1H' for 1 hour). Must be at least PT5M. Only used when recurring is true. | No
 </details>
 <details>
 <summary>ingestDropboxFiles</summary>
@@ -1179,7 +1184,7 @@ Ingests files from Dropbox into Graphlit knowledge base.
     Accepts optional relative path to Dropbox folder (i.e. /Pictures), and an optional read limit for the number of files to ingest.
     If no path provided, ingests files from root Dropbox folder.
     Requires environment variables to be configured: DROPBOX_APP_KEY, DROPBOX_APP_SECRET, DROPBOX_REDIRECT_URI, DROPBOX_REFRESH_TOKEN.
-    Executes asynchronously, creates Dropbox feed, and returns the feed identifier.
+    Executes asynchronously, creates Dropbox feed, and returns the feed identifier. Optionally creates a recurring feed that checks for new content every 15 minutes when 'recurring' is set to true.
 ```
 
 **Parameter**:
@@ -1188,6 +1193,8 @@ Ingests files from Dropbox into Graphlit knowledge base.
 |-----------|------|-------------|-----------|
 | path | string | Relative path to Dropbox folder, optional. | No
 | readLimit | number | Number of files to ingest, optional. Defaults to 100. | No
+| recurring | boolean | Whether to create a recurring feed that checks for new content. Defaults to false (one-time execution). When true, isFeedDone is not needed. | No
+| repeatInterval | string | ISO 8601 duration for recurring interval (e.g., 'PT5M' for 5 minutes, 'PT15M' for 15 minutes, 'PT1H' for 1 hour). Must be at least PT5M. Only used when recurring is true. | No
 </details>
 <details>
 <summary>ingestBoxFiles</summary>
@@ -1200,7 +1207,7 @@ Ingests files from Box into Graphlit knowledge base.
     If no folder identifier provided, ingests files from root Box folder (i.e. "0").
     Folder identifier can be inferred from Box URL. https://app.box.com/folder/123456 -> folder identifier is "123456".
     Requires environment variables to be configured: BOX_CLIENT_ID, BOX_CLIENT_SECRET, BOX_REDIRECT_URI, BOX_REFRESH_TOKEN.
-    Executes asynchronously, creates Box feed, and returns the feed identifier.
+    Executes asynchronously, creates Box feed, and returns the feed identifier. Optionally creates a recurring feed that checks for new content every 15 minutes when 'recurring' is set to true.
 ```
 
 **Parameter**:
@@ -1209,6 +1216,8 @@ Ingests files from Box into Graphlit knowledge base.
 |-----------|------|-------------|-----------|
 | folderId | string | Box folder identifier, optional. Defaults to root folder. | No
 | readLimit | number | Number of files to ingest, optional. Defaults to 100. | No
+| recurring | boolean | Whether to create a recurring feed that checks for new content. Defaults to false (one-time execution). When true, isFeedDone is not needed. | No
+| repeatInterval | string | ISO 8601 duration for recurring interval (e.g., 'PT5M' for 5 minutes, 'PT15M' for 15 minutes, 'PT1H' for 1 hour). Must be at least PT5M. Only used when recurring is true. | No
 </details>
 <details>
 <summary>ingestGitHubFiles</summary>
@@ -1220,7 +1229,7 @@ Ingests files from GitHub repository into Graphlit knowledge base.
     Accepts GitHub repository owner and repository name and an optional read limit for the number of files to ingest.
     For example, for GitHub repository (https://github.com/openai/tiktoken), 'openai' is the repository owner, and 'tiktoken' is the repository name.
     Requires environment variable to be configured: GITHUB_PERSONAL_ACCESS_TOKEN.
-    Executes asynchronously, creates GitHub feed, and returns the feed identifier.
+    Executes asynchronously, creates GitHub feed, and returns the feed identifier. Optionally creates a recurring feed that checks for new content every 15 minutes when 'recurring' is set to true.
 ```
 
 **Parameter**:
@@ -1228,6 +1237,8 @@ Ingests files from GitHub repository into Graphlit knowledge base.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | readLimit | number | Number of files to ingest, optional. Defaults to 100. | No
+| recurring | boolean | Whether to create a recurring feed that checks for new content. Defaults to false (one-time execution). When true, isFeedDone is not needed. | No
+| repeatInterval | string | ISO 8601 duration for recurring interval (e.g., 'PT5M' for 5 minutes, 'PT15M' for 15 minutes, 'PT1H' for 1 hour). Must be at least PT5M. Only used when recurring is true. | No
 | repositoryName | string | GitHub repository name. | Yes
 | repositoryOwner | string | GitHub repository owner. | Yes
 </details>
@@ -1242,7 +1253,7 @@ Ingests pages from Notion database into Graphlit knowledge base.
     You can list the available Notion database identifiers with listNotionDatabases.
     Or, for a Notion URL, https://www.notion.so/Example/Engineering-Wiki-114abc10cb38487e91ec906fc6c6f350, 'Engineering-Wiki-114abc10cb38487e91ec906fc6c6f350' is an example of a Notion database identifier.
     Requires environment variable to be configured: NOTION_API_KEY.
-    Executes asynchronously, creates Notion feed, and returns the feed identifier.
+    Executes asynchronously, creates Notion feed, and returns the feed identifier. Optionally creates a recurring feed that checks for new content every 15 minutes when 'recurring' is set to true.
 ```
 
 **Parameter**:
@@ -1251,6 +1262,8 @@ Ingests pages from Notion database into Graphlit knowledge base.
 |-----------|------|-------------|-----------|
 | databaseId | string | Notion database identifier. | Yes
 | readLimit | number | Number of pages to ingest, optional. Defaults to 100. | No
+| recurring | boolean | Whether to create a recurring feed that checks for new content. Defaults to false (one-time execution). When true, isFeedDone is not needed. | No
+| repeatInterval | string | ISO 8601 duration for recurring interval (e.g., 'PT5M' for 5 minutes, 'PT15M' for 15 minutes, 'PT1H' for 1 hour). Must be at least PT5M. Only used when recurring is true. | No
 </details>
 <details>
 <summary>ingestMicrosoftTeamsMessages</summary>
@@ -1261,7 +1274,7 @@ Ingests pages from Notion database into Graphlit knowledge base.
 Ingests messages from Microsoft Teams channel into Graphlit knowledge base.
     Accepts Microsoft Teams team identifier and channel identifier, and an optional read limit for the number of messages to ingest.
     Requires environment variables to be configured: MICROSOFT_TEAMS_CLIENT_ID, MICROSOFT_TEAMS_CLIENT_SECRET, MICROSOFT_TEAMS_REFRESH_TOKEN.
-    Executes asynchronously, creates Microsoft Teams feed, and returns the feed identifier.
+    Executes asynchronously, creates Microsoft Teams feed, and returns the feed identifier. Optionally creates a recurring feed that checks for new content every 15 minutes when 'recurring' is set to true.
 ```
 
 **Parameter**:
@@ -1270,6 +1283,8 @@ Ingests messages from Microsoft Teams channel into Graphlit knowledge base.
 |-----------|------|-------------|-----------|
 | channelId | string | Microsoft Teams channel identifier. | Yes
 | readLimit | number | Number of messages to ingest, optional. Defaults to 100. | No
+| recurring | boolean | Whether to create a recurring feed that checks for new content. Defaults to false (one-time execution). When true, isFeedDone is not needed. | No
+| repeatInterval | string | ISO 8601 duration for recurring interval (e.g., 'PT5M' for 5 minutes, 'PT15M' for 15 minutes, 'PT1H' for 1 hour). Must be at least PT5M. Only used when recurring is true. | No
 | teamId | string | Microsoft Teams team identifier. | Yes
 </details>
 <details>
@@ -1281,7 +1296,7 @@ Ingests messages from Microsoft Teams channel into Graphlit knowledge base.
 Ingests messages from Slack channel into Graphlit knowledge base.
     Accepts Slack channel name and an optional read limit for the number of messages to ingest.
     Requires environment variable to be configured: SLACK_BOT_TOKEN.
-    Executes asynchronously, creates Slack feed, and returns the feed identifier.
+    Executes asynchronously, creates Slack feed, and returns the feed identifier. Optionally creates a recurring feed that checks for new content every 15 minutes when 'recurring' is set to true.
 ```
 
 **Parameter**:
@@ -1290,6 +1305,8 @@ Ingests messages from Slack channel into Graphlit knowledge base.
 |-----------|------|-------------|-----------|
 | channelName | string | Slack channel name. | Yes
 | readLimit | number | Number of messages to ingest, optional. Defaults to 100. | No
+| recurring | boolean | Whether to create a recurring feed that checks for new content. Defaults to false (one-time execution). When true, isFeedDone is not needed. | No
+| repeatInterval | string | ISO 8601 duration for recurring interval (e.g., 'PT5M' for 5 minutes, 'PT15M' for 15 minutes, 'PT1H' for 1 hour). Must be at least PT5M. Only used when recurring is true. | No
 </details>
 <details>
 <summary>ingestDiscordMessages</summary>
@@ -1300,7 +1317,7 @@ Ingests messages from Slack channel into Graphlit knowledge base.
 Ingests messages from Discord channel into Graphlit knowledge base.
     Accepts Discord channel name and an optional read limit for the number of messages to ingest.
     Requires environment variable to be configured: DISCORD_BOT_TOKEN.
-    Executes asynchronously, creates Discord feed, and returns the feed identifier.
+    Executes asynchronously, creates Discord feed, and returns the feed identifier. Optionally creates a recurring feed that checks for new content every 15 minutes when 'recurring' is set to true.
 ```
 
 **Parameter**:
@@ -1309,6 +1326,8 @@ Ingests messages from Discord channel into Graphlit knowledge base.
 |-----------|------|-------------|-----------|
 | channelName | string | Discord channel name. | Yes
 | readLimit | number | Number of messages to ingest, optional. Defaults to 100. | No
+| recurring | boolean | Whether to create a recurring feed that checks for new content. Defaults to false (one-time execution). When true, isFeedDone is not needed. | No
+| repeatInterval | string | ISO 8601 duration for recurring interval (e.g., 'PT5M' for 5 minutes, 'PT15M' for 15 minutes, 'PT1H' for 1 hour). Must be at least PT5M. Only used when recurring is true. | No
 </details>
 <details>
 <summary>ingestTwitterPosts</summary>
@@ -1319,7 +1338,7 @@ Ingests messages from Discord channel into Graphlit knowledge base.
 Ingests posts by user from Twitter/X into Graphlit knowledge base.
     Accepts Twitter/X user name, without the leading @ symbol, and an optional read limit for the number of posts to ingest.
     Requires environment variable to be configured: TWITTER_TOKEN.
-    Executes asynchronously, creates Twitter feed, and returns the feed identifier.
+    Executes asynchronously, creates Twitter feed, and returns the feed identifier. Optionally creates a recurring feed that checks for new content every 15 minutes when 'recurring' is set to true.
 ```
 
 **Parameter**:
@@ -1327,6 +1346,8 @@ Ingests posts by user from Twitter/X into Graphlit knowledge base.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | readLimit | number | Number of posts to ingest, optional. Defaults to 100. | No
+| recurring | boolean | Whether to create a recurring feed that checks for new content. Defaults to false (one-time execution). When true, isFeedDone is not needed. | No
+| repeatInterval | string | ISO 8601 duration for recurring interval (e.g., 'PT5M' for 5 minutes, 'PT15M' for 15 minutes, 'PT1H' for 1 hour). Must be at least PT5M. Only used when recurring is true. | No
 | userName | string | Twitter/X user name, without the leading @ symbol, i.e. 'graphlit'. | Yes
 </details>
 <details>
@@ -1338,7 +1359,7 @@ Ingests posts by user from Twitter/X into Graphlit knowledge base.
 Searches for recent posts from Twitter/X, and ingests them into Graphlit knowledge base.
     Accepts search query, and an optional read limit for the number of posts to ingest.
     Requires environment variable to be configured: TWITTER_TOKEN.
-    Executes asynchronously, creates Twitter feed, and returns the feed identifier.
+    Executes asynchronously, creates Twitter feed, and returns the feed identifier. Optionally creates a recurring feed that checks for new content every 15 minutes when 'recurring' is set to true.
 ```
 
 **Parameter**:
@@ -1347,6 +1368,8 @@ Searches for recent posts from Twitter/X, and ingests them into Graphlit knowled
 |-----------|------|-------------|-----------|
 | query | string | Search query | Yes
 | readLimit | number | Number of posts to ingest, optional. Defaults to 100. | No
+| recurring | boolean | Whether to create a recurring feed that checks for new content. Defaults to false (one-time execution). When true, isFeedDone is not needed. | No
+| repeatInterval | string | ISO 8601 duration for recurring interval (e.g., 'PT5M' for 5 minutes, 'PT15M' for 15 minutes, 'PT1H' for 1 hour). Must be at least PT5M. Only used when recurring is true. | No
 </details>
 <details>
 <summary>ingestRedditPosts</summary>
@@ -1356,7 +1379,7 @@ Searches for recent posts from Twitter/X, and ingests them into Graphlit knowled
 ```
 Ingests posts from Reddit subreddit into Graphlit knowledge base.
     Accepts a subreddit name and an optional read limit for the number of posts to ingest.
-    Executes asynchronously, creates Reddit feed, and returns the feed identifier.
+    Executes asynchronously, creates Reddit feed, and returns the feed identifier. Optionally creates a recurring feed that checks for new content every 15 minutes when 'recurring' is set to true.
 ```
 
 **Parameter**:
@@ -1364,6 +1387,8 @@ Ingests posts from Reddit subreddit into Graphlit knowledge base.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | readLimit | number | Number of posts to ingest, optional. Defaults to 100. | No
+| recurring | boolean | Whether to create a recurring feed that checks for new content. Defaults to false (one-time execution). When true, isFeedDone is not needed. | No
+| repeatInterval | string | ISO 8601 duration for recurring interval (e.g., 'PT5M' for 5 minutes, 'PT15M' for 15 minutes, 'PT1H' for 1 hour). Must be at least PT5M. Only used when recurring is true. | No
 | subredditName | string | Subreddit name. | Yes
 </details>
 <details>
@@ -1375,7 +1400,7 @@ Ingests posts from Reddit subreddit into Graphlit knowledge base.
 Ingests emails from Google Email account into Graphlit knowledge base.
     Accepts an optional read limit for the number of emails to ingest.
     Requires environment variables to be configured: GOOGLE_EMAIL_CLIENT_ID, GOOGLE_EMAIL_CLIENT_SECRET, GOOGLE_EMAIL_REFRESH_TOKEN.
-    Executes asynchronously, creates Google Email feed, and returns the feed identifier.
+    Executes asynchronously, creates Google Email feed, and returns the feed identifier. Optionally creates a recurring feed that checks for new content every 15 minutes when 'recurring' is set to true.
 ```
 
 **Parameter**:
@@ -1383,6 +1408,8 @@ Ingests emails from Google Email account into Graphlit knowledge base.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | readLimit | number | Number of emails to ingest, optional. Defaults to 100. | No
+| recurring | boolean | Whether to create a recurring feed that checks for new content. Defaults to false (one-time execution). When true, isFeedDone is not needed. | No
+| repeatInterval | string | ISO 8601 duration for recurring interval (e.g., 'PT5M' for 5 minutes, 'PT15M' for 15 minutes, 'PT1H' for 1 hour). Must be at least PT5M. Only used when recurring is true. | No
 </details>
 <details>
 <summary>ingestMicrosoftEmail</summary>
@@ -1393,7 +1420,7 @@ Ingests emails from Google Email account into Graphlit knowledge base.
 Ingests emails from Microsoft Email account into Graphlit knowledge base.
     Accepts an optional read limit for the number of emails to ingest.
     Requires environment variables to be configured: MICROSOFT_EMAIL_CLIENT_ID, MICROSOFT_EMAIL_CLIENT_SECRET, MICROSOFT_EMAIL_REFRESH_TOKEN.
-    Executes asynchronously, creates Microsoft Email feed, and returns the feed identifier.
+    Executes asynchronously, creates Microsoft Email feed, and returns the feed identifier. Optionally creates a recurring feed that checks for new content every 15 minutes when 'recurring' is set to true.
 ```
 
 **Parameter**:
@@ -1401,6 +1428,8 @@ Ingests emails from Microsoft Email account into Graphlit knowledge base.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | readLimit | number | Number of emails to ingest, optional. Defaults to 100. | No
+| recurring | boolean | Whether to create a recurring feed that checks for new content. Defaults to false (one-time execution). When true, isFeedDone is not needed. | No
+| repeatInterval | string | ISO 8601 duration for recurring interval (e.g., 'PT5M' for 5 minutes, 'PT15M' for 15 minutes, 'PT1H' for 1 hour). Must be at least PT5M. Only used when recurring is true. | No
 </details>
 <details>
 <summary>ingestLinearIssues</summary>
@@ -1411,7 +1440,7 @@ Ingests emails from Microsoft Email account into Graphlit knowledge base.
 Ingests issues from Linear project into Graphlit knowledge base.
     Accepts Linear project name and an optional read limit for the number of issues to ingest.
     Requires environment variable to be configured: LINEAR_API_KEY.
-    Executes asynchronously, creates Linear issue feed, and returns the feed identifier.
+    Executes asynchronously, creates Linear issue feed, and returns the feed identifier. Optionally creates a recurring feed that checks for new content every 15 minutes when 'recurring' is set to true.
 ```
 
 **Parameter**:
@@ -1420,6 +1449,8 @@ Ingests issues from Linear project into Graphlit knowledge base.
 |-----------|------|-------------|-----------|
 | projectName | string | Linear project name. | Yes
 | readLimit | number | Number of issues to ingest, optional. Defaults to 100. | No
+| recurring | boolean | Whether to create a recurring feed that checks for new content. Defaults to false (one-time execution). When true, isFeedDone is not needed. | No
+| repeatInterval | string | ISO 8601 duration for recurring interval (e.g., 'PT5M' for 5 minutes, 'PT15M' for 15 minutes, 'PT1H' for 1 hour). Must be at least PT5M. Only used when recurring is true. | No
 </details>
 <details>
 <summary>ingestGitHubIssues</summary>
@@ -1431,7 +1462,7 @@ Ingests issues from GitHub repository into Graphlit knowledge base.
     Accepts GitHub repository owner and repository name and an optional read limit for the number of issues to ingest.
     For example, for GitHub repository (https://github.com/openai/tiktoken), 'openai' is the repository owner, and 'tiktoken' is the repository name.
     Requires environment variable to be configured: GITHUB_PERSONAL_ACCESS_TOKEN.
-    Executes asynchronously, creates GitHub issue feed, and returns the feed identifier.
+    Executes asynchronously, creates GitHub issue feed, and returns the feed identifier. Optionally creates a recurring feed that checks for new content every 15 minutes when 'recurring' is set to true.
 ```
 
 **Parameter**:
@@ -1439,6 +1470,8 @@ Ingests issues from GitHub repository into Graphlit knowledge base.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | readLimit | number | Number of issues to ingest, optional. Defaults to 100. | No
+| recurring | boolean | Whether to create a recurring feed that checks for new content. Defaults to false (one-time execution). When true, isFeedDone is not needed. | No
+| repeatInterval | string | ISO 8601 duration for recurring interval (e.g., 'PT5M' for 5 minutes, 'PT15M' for 15 minutes, 'PT1H' for 1 hour). Must be at least PT5M. Only used when recurring is true. | No
 | repositoryName | string | GitHub repository name. | Yes
 | repositoryOwner | string | GitHub repository owner. | Yes
 </details>
@@ -1451,7 +1484,7 @@ Ingests issues from GitHub repository into Graphlit knowledge base.
 Ingests issues from Atlassian Jira repository into Graphlit knowledge base.
     Accepts Atlassian Jira server URL and project name, and an optional read limit for the number of issues to ingest.
     Requires environment variables to be configured: JIRA_EMAIL, JIRA_TOKEN.
-    Executes asynchronously, creates Atlassian Jira issue feed, and returns the feed identifier.
+    Executes asynchronously, creates Atlassian Jira issue feed, and returns the feed identifier. Optionally creates a recurring feed that checks for new content every 15 minutes when 'recurring' is set to true.
 ```
 
 **Parameter**:
@@ -1460,6 +1493,8 @@ Ingests issues from Atlassian Jira repository into Graphlit knowledge base.
 |-----------|------|-------------|-----------|
 | projectName | string | Atlassian Jira project name. | Yes
 | readLimit | number | Number of issues to ingest, optional. Defaults to 100. | No
+| recurring | boolean | Whether to create a recurring feed that checks for new content. Defaults to false (one-time execution). When true, isFeedDone is not needed. | No
+| repeatInterval | string | ISO 8601 duration for recurring interval (e.g., 'PT5M' for 5 minutes, 'PT15M' for 15 minutes, 'PT1H' for 1 hour). Must be at least PT5M. Only used when recurring is true. | No
 | url | string | Atlassian Jira server URL. | Yes
 </details>
 <details>
@@ -1471,7 +1506,7 @@ Ingests issues from Atlassian Jira repository into Graphlit knowledge base.
 Crawls web pages from web site into Graphlit knowledge base.
     Accepts a URL and an optional read limit for the number of pages to crawl.
     Uses sitemap.xml to discover pages to be crawled from website.
-    Executes asynchronously and returns the feed identifier.
+    Executes asynchronously and returns the feed identifier. Optionally creates a recurring feed that checks for new content every 15 minutes when 'recurring' is set to true.
 ```
 
 **Parameter**:
@@ -1479,6 +1514,8 @@ Crawls web pages from web site into Graphlit knowledge base.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | readLimit | number | Number of web pages to ingest, optional. Defaults to 100. | No
+| recurring | boolean | Whether to create a recurring feed that checks for new content. Defaults to false (one-time execution). When true, isFeedDone is not needed. | No
+| repeatInterval | string | ISO 8601 duration for recurring interval (e.g., 'PT5M' for 5 minutes, 'PT15M' for 15 minutes, 'PT1H' for 1 hour). Must be at least PT5M. Only used when recurring is true. | No
 | url | string | Web site URL. | Yes
 </details>
 <details>
@@ -1533,7 +1570,7 @@ Performs web or podcast search based on search query. Can search for web pages o
 Ingests posts from RSS feed into Graphlit knowledge base.
     For podcast RSS feeds, audio will be downloaded, transcribed and ingested into Graphlit knowledge base.
     Accepts RSS URL and an optional read limit for the number of posts to read.
-    Executes asynchronously and returns the feed identifier.
+    Executes asynchronously and returns the feed identifier. Optionally creates a recurring feed that checks for new content every 15 minutes when 'recurring' is set to true.
 ```
 
 **Parameter**:
@@ -1541,6 +1578,8 @@ Ingests posts from RSS feed into Graphlit knowledge base.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | readLimit | number | Number of issues to posts, optional. Defaults to 25. | No
+| recurring | boolean | Whether to create a recurring feed that checks for new content. Defaults to false (one-time execution). When true, isFeedDone is not needed. | No
+| repeatInterval | string | ISO 8601 duration for recurring interval (e.g., 'PT5M' for 5 minutes, 'PT15M' for 15 minutes, 'PT1H' for 1 hour). Must be at least PT5M. Only used when recurring is true. | No
 | url | string | RSS URL. | Yes
 </details>
 <details>
@@ -1856,78 +1895,116 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | extractText | prompt | 6f09be606ce2d9c553b3ee149bb4a2e977bf9ad13d307a4a8709e97bebaf9b57 |
 | tools | extractText | schema | b6c77d8fde9358f408c2253f52c689b324b3a2e87433971da144f06bf7eb016d |
 | tools | extractText | text | 179a0f86ad3a9e9ac018a791544622733338cf4f86aa013b8012fecb4e647069 |
-| tools | ingestBoxFiles | description | 04a072aafebaa76587ae086f6aeba9094e708339caaa42d847437658c04aa44e |
+| tools | ingestBoxFiles | description | e26701ff634676f66a2763b0b67635d5fec2d1aa870f0504a401f6d7362af7f7 |
 | tools | ingestBoxFiles | folderId | 094968dfbb0728c3ace97295f7c89dee55c8c2b07c2c1ee59d1943ef9d7c7d5c |
 | tools | ingestBoxFiles | readLimit | 212f13a2013bf40f6409324f1cb6a7f08daeeb4c814f642d2e3360c3cc60506b |
-| tools | ingestDiscordMessages | description | 61d997f24231b4ef42f91e4459121aa4f90f2c2e80d3bd0303400433bdb00adc |
+| tools | ingestBoxFiles | recurring | f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c |
+| tools | ingestBoxFiles | repeatInterval | 20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287 |
+| tools | ingestDiscordMessages | description | a901e45383f87c8049b73894478d47a8fa34c5bb56b92bdd7edec7e0d8bb35bb |
 | tools | ingestDiscordMessages | channelName | 2e4ae90c53c9b78d4cf62199d671232208ecbead8c22cf64752da9d5a1c1efde |
 | tools | ingestDiscordMessages | readLimit | c52515d77ec305b6e04c55e0f415ba5b3cadc805247ab7597bfe67f5d5466858 |
-| tools | ingestDropboxFiles | description | fe97c0807b2e162665e232f7cd38711bc5fdec08aa6aec893adbcd3a2bad731d |
+| tools | ingestDiscordMessages | recurring | f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c |
+| tools | ingestDiscordMessages | repeatInterval | 20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287 |
+| tools | ingestDropboxFiles | description | 5d666eaca0023423df8e382a615b3a9ab0d86e69a094aefeb076f520d5f92a4e |
 | tools | ingestDropboxFiles | path | a885c25af1c8245b05e68ce70efc80b86f9d22ef71b0566e4b4ade5ec83e2d0b |
 | tools | ingestDropboxFiles | readLimit | 212f13a2013bf40f6409324f1cb6a7f08daeeb4c814f642d2e3360c3cc60506b |
+| tools | ingestDropboxFiles | recurring | f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c |
+| tools | ingestDropboxFiles | repeatInterval | 20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287 |
 | tools | ingestFile | description | 5a093d19e4207dd7a15402e4eaf4124b871b8011144150753f2a8fe80c9daca7 |
 | tools | ingestFile | filePath | c22e296edec032812a41e55fe0b3058661598c13a7f4f65e69fdc00224938b43 |
-| tools | ingestGitHubFiles | description | 70bf7038e00c6ec12e79f4acd364c9c578151ff8c44368c872e6ae8f73e4ab6f |
+| tools | ingestGitHubFiles | description | 113c7340fd21e2fd585a1d5a4e65b8d12e6f6cf6f2b881d1ab03bba4620ab76c |
 | tools | ingestGitHubFiles | readLimit | 212f13a2013bf40f6409324f1cb6a7f08daeeb4c814f642d2e3360c3cc60506b |
+| tools | ingestGitHubFiles | recurring | f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c |
+| tools | ingestGitHubFiles | repeatInterval | 20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287 |
 | tools | ingestGitHubFiles | repositoryName | a934c12f952e18238e7a132199211f4f10ec03ff8ac0f83ce8b32c4ee17a15d1 |
 | tools | ingestGitHubFiles | repositoryOwner | f6816683827a849aba02e792ace6351695c15d10ef7e6d806e305a652a289f66 |
-| tools | ingestGitHubIssues | description | 5d3ecbd72f5f7c0c8c3904a9505e4569dadf09edc55ffbd2a62552e87b1b7bee |
+| tools | ingestGitHubIssues | description | f987c408c50adfa7f6f8288b37ea14f3ac099243aabd1edc6d968ef4b5ae7eae |
 | tools | ingestGitHubIssues | readLimit | 9159a1563d7f18209f3e6f5022aa1a8ec7175b80f8d5236fece099e060ec746c |
+| tools | ingestGitHubIssues | recurring | f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c |
+| tools | ingestGitHubIssues | repeatInterval | 20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287 |
 | tools | ingestGitHubIssues | repositoryName | a934c12f952e18238e7a132199211f4f10ec03ff8ac0f83ce8b32c4ee17a15d1 |
 | tools | ingestGitHubIssues | repositoryOwner | f6816683827a849aba02e792ace6351695c15d10ef7e6d806e305a652a289f66 |
-| tools | ingestGoogleDriveFiles | description | 1139c892a798c359a4234714ade94884278b5470ac9c8abbc6329972fb633120 |
+| tools | ingestGoogleDriveFiles | description | 21e0f2671b6a3070c4c89bd7c85715350e0e22b7f12331758d09cd457a42b7e3 |
 | tools | ingestGoogleDriveFiles | folderId | b074bcf129d3cb0ad2970529929368e7193de9856ef6185124aec04c001ebc3e |
 | tools | ingestGoogleDriveFiles | readLimit | 212f13a2013bf40f6409324f1cb6a7f08daeeb4c814f642d2e3360c3cc60506b |
-| tools | ingestGoogleEmail | description | d3c17afcdaf7858b27c2b8f9d12c054171f70ad0820aff3adc43ebf67eeefd86 |
+| tools | ingestGoogleDriveFiles | recurring | f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c |
+| tools | ingestGoogleDriveFiles | repeatInterval | 20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287 |
+| tools | ingestGoogleEmail | description | b08acf6277b3d3898dbd407028df5ec84e7ac3e317b34c2b92edcf56d29b2058 |
 | tools | ingestGoogleEmail | readLimit | d6f01cc0227dfcc17c5179fe2b60cd5573ebbdaf5649d781e31ddbcf64ed3acf |
-| tools | ingestJiraIssues | description | 0863869495cb718c570e3013c540c602ac91e71a8b9e043e6e8f9f33a5a1b99c |
+| tools | ingestGoogleEmail | recurring | f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c |
+| tools | ingestGoogleEmail | repeatInterval | 20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287 |
+| tools | ingestJiraIssues | description | e8cc75ad592a3d8aaebf604cae4bfde80b76b31670bb9dae5859a815a10d4889 |
 | tools | ingestJiraIssues | projectName | 84e28cc9ba095a3a7177e4be058c154c7600457b3715958c6590ff089e4da0e7 |
 | tools | ingestJiraIssues | readLimit | 9159a1563d7f18209f3e6f5022aa1a8ec7175b80f8d5236fece099e060ec746c |
+| tools | ingestJiraIssues | recurring | f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c |
+| tools | ingestJiraIssues | repeatInterval | 20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287 |
 | tools | ingestJiraIssues | url | 5e1bc05ca19b919e8735d316921ab4f507cc32c1fb5e7b81ab6769857e92e2c4 |
-| tools | ingestLinearIssues | description | 0040f47486e85a3eb29b3a9edd268e46baab5f8f77fb4f402da3eff7272238e8 |
+| tools | ingestLinearIssues | description | 3736c3ba8bda8db70555e3715991649333024658056b46f57c81aec96a4d954b |
 | tools | ingestLinearIssues | projectName | 7edc3c55082fa51a774c411519b258110537de47dd74b0b523efcaee79095b7c |
 | tools | ingestLinearIssues | readLimit | 9159a1563d7f18209f3e6f5022aa1a8ec7175b80f8d5236fece099e060ec746c |
+| tools | ingestLinearIssues | recurring | f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c |
+| tools | ingestLinearIssues | repeatInterval | 20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287 |
 | tools | ingestMemory | description | f39379606fd104c90570706de13e41457103694d70bcc6793d382ed666fffd11 |
 | tools | ingestMemory | name | 7c9768be17e7479cbc86ff420c17434fba47f3c8c6781e73b68a1b8a33030a93 |
 | tools | ingestMemory | text | cee23ac3a13f2c412f8e095a1e045609bc1b983f757c54a0d0f5a5cbc60c5b4c |
 | tools | ingestMemory | textType | 58c576074e5e76a8e7baaf89b6cec57d53d611ae9d98964d33ac2882fb673e17 |
 | tools | ingestMemory | timeToLive | 636c3117cd6e0205c088c1041878c95d6f7d9ddcefab72b1d41796bae3dc7c3f |
-| tools | ingestMicrosoftEmail | description | a3503340ad800660f664ee841ed8a3d46b328d1dc8e85a4a3377e8c63ac9ca7b |
+| tools | ingestMicrosoftEmail | description | 0ed4735bc8889a21e5fbb4112df8a1e22a7021c7c6a549c8dcad7eab43b3bc2d |
 | tools | ingestMicrosoftEmail | readLimit | d6f01cc0227dfcc17c5179fe2b60cd5573ebbdaf5649d781e31ddbcf64ed3acf |
-| tools | ingestMicrosoftTeamsMessages | description | b91a8c97cc75b812c8bc307985a5f38e9393ad0bf7cd3604309650a60bdf2ac2 |
+| tools | ingestMicrosoftEmail | recurring | f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c |
+| tools | ingestMicrosoftEmail | repeatInterval | 20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287 |
+| tools | ingestMicrosoftTeamsMessages | description | 08b9eb46d406a546062434cb622afe4a196d1df2e4496e05257f0596b0bb75ea |
 | tools | ingestMicrosoftTeamsMessages | channelId | 269d68b1f9fe0d38fde367010af0553809aad2f9032b6736f6a4d714a5a8134e |
 | tools | ingestMicrosoftTeamsMessages | readLimit | c52515d77ec305b6e04c55e0f415ba5b3cadc805247ab7597bfe67f5d5466858 |
+| tools | ingestMicrosoftTeamsMessages | recurring | f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c |
+| tools | ingestMicrosoftTeamsMessages | repeatInterval | 20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287 |
 | tools | ingestMicrosoftTeamsMessages | teamId | 5cf3e0d26b014ac3c7451d605e71515169bc6c81820d43ee88f3e33834cef57a |
-| tools | ingestNotionPages | description | 53a3a59440b7302b92aefdd3d1fe385e450aad0777b368f1a5b667fe71290365 |
+| tools | ingestNotionPages | description | bf5690562158381cbb995e8ee5f82a5c879e32c0a447858d2fba30f134b52648 |
 | tools | ingestNotionPages | databaseId | d97fbd3fa68f2a7154d86fa9311ed0cc50291bc415192195eb8acfcf84537fd0 |
 | tools | ingestNotionPages | readLimit | 784a368c768d1f58e255dee912025626746aca4c7f3ea001854a63bc44929965 |
-| tools | ingestOneDriveFiles | description | 4bfcbd85d01b11c2bce54eca52d4c85d5da798e90d573b82eb1025fa401904a8 |
+| tools | ingestNotionPages | recurring | f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c |
+| tools | ingestNotionPages | repeatInterval | 20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287 |
+| tools | ingestOneDriveFiles | description | a830d0d86b822c5f3803dc6ba610adbc45f07a2734f0b6ebe66f0a2d03368f9b |
 | tools | ingestOneDriveFiles | folderId | ea7d2ca57e1e79d7a6338f1e2fadacba08aea188fb8990dea7da7ba174668fc6 |
 | tools | ingestOneDriveFiles | readLimit | 212f13a2013bf40f6409324f1cb6a7f08daeeb4c814f642d2e3360c3cc60506b |
-| tools | ingestRSS | description | 24d70c1e706c74fa9f047cb5d9e564a3ae0fd80f8b49c89048d37fd1fda57b76 |
+| tools | ingestOneDriveFiles | recurring | f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c |
+| tools | ingestOneDriveFiles | repeatInterval | 20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287 |
+| tools | ingestRSS | description | a9dc00347f53fe130a671ddbf0bdf7662750a6271ec3ad836435de5266e13b06 |
 | tools | ingestRSS | readLimit | 3d08185f639a1790566b01cbbfd751a8c545e3eb4db72adb474ceb99bca50325 |
+| tools | ingestRSS | recurring | f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c |
+| tools | ingestRSS | repeatInterval | 20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287 |
 | tools | ingestRSS | url | 8a5f21d8bbefc35b1eebc7e9e8a0eb8d7727ab0942e281fabfda5d7c6af3730f |
-| tools | ingestRedditPosts | description | d641adad7aa8b75a9f00a4f67881285e0913400ba7906992739ab20d545ccfb4 |
+| tools | ingestRedditPosts | description | a48f53dfaa7888506822a8d4395ce840f83c6eeaab4db13c2d2dedb2290da4c7 |
 | tools | ingestRedditPosts | readLimit | 2206b8145edd5b96f8f4879e7183e82903f08bb6c7a575157517fd756c2f5f57 |
+| tools | ingestRedditPosts | recurring | f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c |
+| tools | ingestRedditPosts | repeatInterval | 20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287 |
 | tools | ingestRedditPosts | subredditName | 91758c227fd413ba25adb7f7f0f53549df40e8b2d9b1df0ebf8b0fd1fafa0deb |
-| tools | ingestSharePointFiles | description | 63339052712ef662ce9842723ef807aa1bb5161a9420f5707da47765e984f351 |
+| tools | ingestSharePointFiles | description | 83205e177050a36f4408513c1bc7e952e0b6cd31a461ca4baee64be389caa18a |
 | tools | ingestSharePointFiles | folderId | bcadca5c610952d9b658c1de40b6591be2692c7d3adc2bc688253a6e49f34632 |
 | tools | ingestSharePointFiles | libraryId | d049f22aa3e44ff63b4f3566a6b69bde80bf75a7bb771eff5697967c1adc33cc |
 | tools | ingestSharePointFiles | readLimit | 212f13a2013bf40f6409324f1cb6a7f08daeeb4c814f642d2e3360c3cc60506b |
-| tools | ingestSlackMessages | description | 8d40117facef286225791fa1bf3aad22a32fcb91d00d6199b9a06e353561255b |
+| tools | ingestSharePointFiles | recurring | 5589ffdc9a5b15aabcd8d5bbe4bab0dae3cbebe7e798a431ec187c68989e4f30 |
+| tools | ingestSharePointFiles | repeatInterval | 20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287 |
+| tools | ingestSlackMessages | description | 0f6e4fd7dac0470c2f233ba62149877a13d60e200cbf06500038bca9bf0a00fc |
 | tools | ingestSlackMessages | channelName | f4469cc35b6b1888cf692786953c82fe76a96fc1b28e272c9b361a1fda107f23 |
 | tools | ingestSlackMessages | readLimit | c52515d77ec305b6e04c55e0f415ba5b3cadc805247ab7597bfe67f5d5466858 |
+| tools | ingestSlackMessages | recurring | f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c |
+| tools | ingestSlackMessages | repeatInterval | 20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287 |
 | tools | ingestText | description | 415b21307db54632195b66a43b470a68d9b7f8520ff1f2de70b3f07634dcd53f |
 | tools | ingestText | id | d000871bd6049889c5322233c6587868dfa978327d8753dd99d5cb6993fd0b6a |
 | tools | ingestText | name | ee62e733f4f067f6c5d8ac8e6acb309bc3a0412da22930f4e2bfdad9498a9b00 |
 | tools | ingestText | text | 65bf0627fa5876d8b9abac94e8c53d785e885d45e7a42ef504e9abee2da73149 |
 | tools | ingestText | textType | 58c576074e5e76a8e7baaf89b6cec57d53d611ae9d98964d33ac2882fb673e17 |
-| tools | ingestTwitterPosts | description | d000b0b74a3c3181520b697b1f862cff06a0e9acfa6010ffd9c311c4f5781f77 |
+| tools | ingestTwitterPosts | description | 4a164ae0d9bce2554a0ec9baa9ba6cbd7b426ed0d45a2309d8cc8a56b85d6892 |
 | tools | ingestTwitterPosts | readLimit | 2206b8145edd5b96f8f4879e7183e82903f08bb6c7a575157517fd756c2f5f57 |
+| tools | ingestTwitterPosts | recurring | f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c |
+| tools | ingestTwitterPosts | repeatInterval | 20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287 |
 | tools | ingestTwitterPosts | userName | 41fb80535425e6f0c2caf359fa4811a2ba857c59b8267f6d2bda1ca7b61d0986 |
-| tools | ingestTwitterSearch | description | a867b478c98a108cbb5e58b55cefe7a9c24dc533632f3d3dc94efc6919e6064b |
+| tools | ingestTwitterSearch | description | 6a0d0a15ba0d9b82fdd96ef7c354cfbd4783c61dda1a68351de8c5d6e4a6a59b |
 | tools | ingestTwitterSearch | query | 9eef05233ecfc1fbcfe756aa79bd497fa20e58144012561b562b8856040f5100 |
 | tools | ingestTwitterSearch | readLimit | 2206b8145edd5b96f8f4879e7183e82903f08bb6c7a575157517fd756c2f5f57 |
+| tools | ingestTwitterSearch | recurring | f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c |
+| tools | ingestTwitterSearch | repeatInterval | 20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287 |
 | tools | ingestUrl | description | 23801184d27b4e9aab1855c094aba5ae2f24d6b19b18c38b837f9b6bf0068216 |
 | tools | ingestUrl | url | 7a32d04a6fc737e51a6eebdd4dc364b23cd11fb53ba378d35f1b4498f5960e82 |
 | tools | isContentDone | description | b4ed97ed87460e87d5417392b2eab945d29b54eb18b5516f94110aa22f5a6f25 |
@@ -2009,8 +2086,10 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | sendWebHookNotification | text | 58994a663390b125a0603abab3a174668916435d78a8ee4237fec325944ec631 |
 | tools | sendWebHookNotification | textType | 58c576074e5e76a8e7baaf89b6cec57d53d611ae9d98964d33ac2882fb673e17 |
 | tools | sendWebHookNotification | url | 1f058130d701b83c622485416d52c88cace8a4fd618b917c057a90e7d32ff295 |
-| tools | webCrawl | description | eea1cb7951355dd38c9568a2a89b80788ba97663acc255270b249cb473808e15 |
+| tools | webCrawl | description | ffe15286e3be143df93233b853a59fee41cb92a187b87f833a6b70a09e02329d |
 | tools | webCrawl | readLimit | c60a76969b312773ac25a22c406f550ed28f8ca588652d7de76b79e380a5b296 |
+| tools | webCrawl | recurring | f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c |
+| tools | webCrawl | repeatInterval | 20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287 |
 | tools | webCrawl | url | 82301c9879a2bd12c6a7e14d17902d8ede45bbb19abe38907cefb0be69c78c52 |
 | tools | webMap | description | c4d940b54759c10cff5cc22375234c595cb2de9a786718c94139d51f33957f7a |
 | tools | webMap | url | 82301c9879a2bd12c6a7e14d17902d8ede45bbb19abe38907cefb0be69c78c52 |

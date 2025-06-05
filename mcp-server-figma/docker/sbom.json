@@ -17,8 +17,12 @@
           "hash": "0cdd95aa5c58cc9fb98a5998a33e0f66b55797c948e97d3a4fe0bab0f87cf2b6"
         },
         {
-          "name": "scale",
-          "hash": "098d87418f9da681fe12517eb73011b3894edac4ca52fa00ea94d32715caaa45"
+          "name": "pngScale",
+          "hash": "88ed2938b9920f6d670ea64700afcebf35f7008bffb906ece808418c75bde6ba"
+        },
+        {
+          "name": "svgOptions",
+          "hash": "1e6b6dbd42211cb4a25b706812c7dfac529870c1a7ea154cdf08f6ad90f7d0df"
         }
       ]
     },

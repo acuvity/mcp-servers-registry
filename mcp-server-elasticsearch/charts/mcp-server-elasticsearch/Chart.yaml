@@ -5,7 +5,7 @@ home: https://github.com/elastic/mcp-server-elasticsearch
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/elastic/mcp-server-elasticsearch
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-elasticsearch/logo.png"
 type: application
 maintainers:
   - name: Acuvity

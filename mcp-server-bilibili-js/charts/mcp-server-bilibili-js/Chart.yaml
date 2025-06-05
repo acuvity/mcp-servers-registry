@@ -5,7 +5,7 @@ home: https://github.com/34892002/bilibili-mcp-js
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/34892002/bilibili-mcp-js
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-bilibili-js/logo.png"
 type: application
 maintainers:
   - name: Acuvity

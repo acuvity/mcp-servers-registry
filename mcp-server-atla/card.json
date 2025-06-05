@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-atla",
+  "icon": "https://avatars.githubusercontent.com/u/145455090?s=200&v=5",
   "name": "mcp-server-atla",
   "description": "Enable AI agents to interact with the Atla API for state-of-the-art LLMJ evaluation.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.1.2",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"34cf5d2588a4cbbd8fc0f4fa2864906a4406c031065594b9fec6ee12bdcd564d","reason":"Tool names are highly specific and clearly indicate their evaluation purposes. Descriptions are comprehensive, explaining functionality, use cases, return formats, and underlying implementation details. All parameters have exceptionally detailed descriptions with clear guidance on proper usage, extensive examples, and specific formatting requirements. The evaluation_criteria parameter particularly excels with detailed rubric guidance and best practices. Documentation proactively addresses user questions about model selection, scoring formats, and proper criteria construction.","score":"A"},
   "resources": {
     "tools": 2,
     "prompts": 0,

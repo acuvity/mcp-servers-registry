@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-github-chat",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/github-chat/live/logo-1744789806714.png",
   "name": "mcp-server-github-chat",
   "description": "Analyzes and queries GitHub repositories using the GitHub Chat API.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.1.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"7e10c0fac6308fe0407363bb48548a3e81d3f3283adc598be5fae667128dc441","reason":"Tool names are clear and specific, indicating their purposes well. Descriptions adequately explain functionality and include important usage requirements (indexing prerequisite). Most parameters have clear descriptions with proper format specifications. The conversation_history parameter structure is complex but documented, though could benefit from clearer explanation of the object structure within the array.","score":"B"},
   "resources": {
     "tools": 2,
     "prompts": 0,

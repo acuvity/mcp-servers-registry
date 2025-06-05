@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-aws-terraform?
-
 [![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-aws-terraform/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-terraform/0.0.11?logo=docker&logoColor=fff&label=0.0.11)](https://hub.docker.com/r/acuvity/mcp-server-aws-terraform)
-[![PyPI](https://img.shields.io/badge/0.0.11-3775A9?logo=pypi&logoColor=fff&label=awslabs.terraform-mcp-server)](https://github.com/awslabs/mcp/tree/main/src/terraform-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-terraform/1.0.1?logo=docker&logoColor=fff&label=1.0.1)](https://hub.docker.com/r/acuvity/mcp-server-aws-terraform)
+[![PyPI](https://img.shields.io/badge/1.0.1-3775A9?logo=pypi&logoColor=fff&label=awslabs.terraform-mcp-server)](https://github.com/awslabs/mcp/tree/main/src/terraform-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-aws-terraform/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-terraform&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-terraform%3A0.0.11%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-terraform&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-terraform%3A1.0.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Terraform AWS best practices, infrastructure as code patterns, and security compliance with Checkov.
 
@@ -171,7 +170,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-terraform&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-terraform%3A0.0.11%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-terraform&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-terraform%3A1.0.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -188,7 +187,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "-i",
           "--rm",
           "--read-only",
-          "docker.io/acuvity/mcp-server-aws-terraform:0.0.11"
+          "docker.io/acuvity/mcp-server-aws-terraform:1.0.1"
         ]
       }
     }
@@ -210,7 +209,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-aws-terraform:0.0.11"
+        "docker.io/acuvity/mcp-server-aws-terraform:1.0.1"
       ]
     }
   }
@@ -236,7 +235,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-aws-terraform:0.0.11"
+        "docker.io/acuvity/mcp-server-aws-terraform:1.0.1"
       ]
     }
   }
@@ -264,7 +263,7 @@ Add the following JSON block to your mcp configuration file:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-aws-terraform:0.0.11"
+        "docker.io/acuvity/mcp-server-aws-terraform:1.0.1"
       ]
     }
   }
@@ -290,7 +289,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-aws-terraform:0.0.11"
+        "docker.io/acuvity/mcp-server-aws-terraform:1.0.1"
       ]
     }
   }
@@ -309,7 +308,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 async with MCPServerStdio(
     params={
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-aws-terraform:0.0.11"]
+        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-aws-terraform:1.0.1"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -338,7 +337,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-aws-terraform:0.0.11`
+- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-aws-terraform:1.0.1`
 
 </details>
 
@@ -348,7 +347,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-aws-terraform:0.0.11
+docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-aws-terraform:1.0.1
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -444,7 +443,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (6)
+## 🧰 Tools (7)
 <details>
 <summary>ExecuteTerraformCommand</summary>
 
@@ -477,6 +476,49 @@ Execute Terraform workflow commands against an AWS account.
 | strip_ansi | boolean | Whether to strip ANSI color codes from output | No
 | variables | any | Terraform variables to pass | No
 | working_directory | string | Directory containing Terraform files | Yes
+</details>
+<details>
+<summary>ExecuteTerragruntCommand</summary>
+
+**Description**:
+
+```
+Execute Terragrunt workflow commands against an AWS account.
+
+    This tool runs Terragrunt commands (init, plan, validate, apply, destroy, run-all) in the
+    specified working directory, with optional variables and region settings. Terragrunt extends
+    Terraform's functionality by providing features like remote state management, dependencies
+    between modules, and the ability to execute Terraform commands on multiple modules at once.
+
+    Parameters:
+        command: Terragrunt command to execute
+        working_directory: Directory containing Terragrunt files
+        variables: Terraform variables to pass
+        aws_region: AWS region to use
+        strip_ansi: Whether to strip ANSI color codes from output
+        include_dirs: Directories to include in a multi-module run
+        exclude_dirs: Directories to exclude from a multi-module run
+        run_all: Run command on all modules in subdirectories
+        terragrunt_config: Path to a custom terragrunt config file (not valid with run-all)
+
+    Returns:
+        A TerragruntExecutionResult object containing command output and status
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| aws_region | any | AWS region to use | No
+| command | string | Terragrunt command to execute | Yes
+| exclude_dirs | any | Directories to exclude from a multi-module run | No
+| include_dirs | any | Directories to include in a multi-module run | No
+| run_all | boolean | Run command on all modules in subdirectories | No
+| strip_ansi | boolean | Whether to strip ANSI color codes from output | No
+| terragrunt_config | any | Path to a custom terragrunt config file (not valid with run-all) | No
+| variables | any | Terraform variables to pass | No
+| working_directory | string | Directory containing Terragrunt files | Yes
 </details>
 <details>
 <summary>SearchAwsProviderDocs</summary>
@@ -740,6 +782,16 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | ExecuteTerraformCommand | strip_ansi | 4d24b273dd76107e594dee1d73736fb9e0dfd27a482acfa61217ec6b3bbd6e7f |
 | tools | ExecuteTerraformCommand | variables | 956119b45b8389c2b16285de0e326f5ac6cb69f738c4894c0fb3866922d61778 |
 | tools | ExecuteTerraformCommand | working_directory | b5bd542c9a74e4f7b692e0b7381f090f6d30c602eaed2b785cd88b549bb0b66c |
+| tools | ExecuteTerragruntCommand | description | f2c99bc47f44bcf9a2ea738e4352260d8758271a1ef769aae768c7bdeb2ec3ce |
+| tools | ExecuteTerragruntCommand | aws_region | 0ccf66d2fc46cf203d8a16166cf11d5b869a7b6e0141a3bfd1af40af5a993db0 |
+| tools | ExecuteTerragruntCommand | command | c545767beb786dbad5a00c48168a9cf85786857d093dbb85f3cbf31f13b0ea2a |
+| tools | ExecuteTerragruntCommand | exclude_dirs | 07e52d7df95061ae2394adc309ffa860a8172b79f37e0c2bc423ffc8b9db85e0 |
+| tools | ExecuteTerragruntCommand | include_dirs | 276838d7eabc574bd7d36a9d5ffff860e70155a0af378edba804e92ddbb39b54 |
+| tools | ExecuteTerragruntCommand | run_all | dca5c811290e7195d468fdc563bf8d57e19a9d5fd3c4f5a647ac07102df31cd2 |
+| tools | ExecuteTerragruntCommand | strip_ansi | 4d24b273dd76107e594dee1d73736fb9e0dfd27a482acfa61217ec6b3bbd6e7f |
+| tools | ExecuteTerragruntCommand | terragrunt_config | e5e1a01aed9a923ccb79fe4f73fde5ca2e5357b5c5982f91dcd2a50bd6230fcb |
+| tools | ExecuteTerragruntCommand | variables | 956119b45b8389c2b16285de0e326f5ac6cb69f738c4894c0fb3866922d61778 |
+| tools | ExecuteTerragruntCommand | working_directory | 9f14e71b99500b01e574c27134fe1b834c0a174175835bac4dceea44b715aa25 |
 | tools | RunCheckovScan | description | c58423fbe608d95358d585d232cd4cfcebd6ffda6c0251197c5c9efd2165765d |
 | tools | RunCheckovScan | check_ids | c49e44517c1f7c46d100e0d2295f6d3f464fcc4708f871b3c190ee9407097d5c |
 | tools | RunCheckovScan | framework | f51b152c5a92795f8fb904076dff58728ec2538c6ba82134d76804aac04b1e23 |

@@ -5,13 +5,13 @@ home: https://github.com/heroku/heroku-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry
   - https://github.com/heroku/heroku-mcp-server
-icon: https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-heroku/logo.png"
 type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 1.0.5
+appVersion: 1.0.6
 keywords:
   - mcp-server-heroku
   - mcp-server

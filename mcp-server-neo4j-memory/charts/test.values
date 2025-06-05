@@ -1,6 +1,7 @@
 env:
   NEO4J_URL: dummy_value
   NEO4J_USERNAME: dummy_value
+  NEO4J_DATABASE: 
 
 secrets:
   NEO4J_PASSWORD:

@@ -19,13 +19,12 @@
 
 
 # What is mcp-server-azure-devops?
-
-[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-azure-devops/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-azure-devops/0.1.37?logo=docker&logoColor=fff&label=0.1.37)](https://hub.docker.com/r/acuvity/mcp-server-azure-devops)
-[![PyPI](https://img.shields.io/badge/0.1.37-3775A9?logo=pypi&logoColor=fff&label=@tiberriver256/mcp-server-azure-devops)](https://github.com/Tiberriver256/mcp-server-azure-devops)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-azure-devops/0.1.39?logo=docker&logoColor=fff&label=0.1.39)](https://hub.docker.com/r/acuvity/mcp-server-azure-devops)
+[![PyPI](https://img.shields.io/badge/0.1.39-3775A9?logo=pypi&logoColor=fff&label=@tiberriver256/mcp-server-azure-devops)](https://github.com/Tiberriver256/mcp-server-azure-devops)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-azure-devops/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure-devops&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AZURE_DEVOPS_AUTH_METHOD%22%2C%22-e%22%2C%22AZURE_DEVOPS_DEFAULT_PROJECT%22%2C%22-e%22%2C%22AZURE_DEVOPS_ORG_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure-devops%3A0.1.37%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure-devops&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AZURE_DEVOPS_AUTH_METHOD%22%2C%22-e%22%2C%22AZURE_DEVOPS_DEFAULT_PROJECT%22%2C%22-e%22%2C%22AZURE_DEVOPS_ORG_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure-devops%3A0.1.39%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Azure DevOps integration for repository management, work items, and pipelines.
 
@@ -174,11 +173,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.1.37`
+  - container: `1.0.0-0.1.39`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-azure-devops:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-azure-devops:1.0.0-0.1.37`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-azure-devops:1.0.0-0.1.39`
 
 ---
 
@@ -627,7 +626,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (30)
+## 🧰 Tools (32)
 <details>
 <summary>get_me</summary>
 
@@ -1016,11 +1015,11 @@ List pull requests in a repository
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| creatorId | string | Filter by creator ID (must be a UUID) | No
+| creatorId | string | Filter by creator ID (must be a UUID string) | No
 | organizationId | string | The ID or name of the organization (Default: unknown-organization) | No
 | projectId | string | The ID or name of the project (Default: dummy) | No
 | repositoryId | string | The ID or name of the repository | Yes
-| reviewerId | string | Filter by reviewer ID (must be a UUID) | No
+| reviewerId | string | Filter by reviewer ID (must be a UUID string) | No
 | skip | number | Number of pull requests to skip for pagination | No
 | sourceRefName | string | Filter by source branch name | No
 | status | string | Filter by pull request status | No
@@ -1227,6 +1226,45 @@ Update content of a wiki page
 | projectId | any | The ID or name of the project (Default: dummy) | No
 | wikiId | string | The ID or name of the wiki | Yes
 </details>
+<details>
+<summary>list_wiki_pages</summary>
+
+**Description**:
+
+```
+List pages within an Azure DevOps wiki
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| organizationId | any | The ID or name of the organization (Default: unknown-organization) | No
+| path | string | Optional path within the wiki | No
+| projectId | any | The ID or name of the project (Default: dummy) | No
+| recursionLevel | integer | Optional recursion depth (1-50) | No
+| wikiId | string | The ID or name of the wiki | Yes
+</details>
+<details>
+<summary>create_wiki_page</summary>
+
+**Description**:
+
+```
+Create a new page in a wiki. If the page already exists at the specified path, it will be updated.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| comment | string | Optional comment for the creation or update | No
+| content | string | The content for the new wiki page in markdown format | Yes
+| organizationId | any | The ID or name of the organization (Default: unknown-organization) | No
+| pagePath | any | Path of the wiki page to create. If the path does not exist, it will be created. Defaults to the wiki root (/). Example: /ParentPage/NewPage | No
+| projectId | any | The ID or name of the project (Default: dummy) | No
+| wikiId | string | The ID or name of the wiki | Yes
+</details>
 
 
 # 🔐 Resource SBOM
@@ -1265,6 +1303,13 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | create_wiki | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
 | tools | create_wiki | repositoryId | da1440b528913e51eaa132c3e51e6a1f041942a9438a65c4489868c3b25e0940 |
 | tools | create_wiki | type | 383bce361fc08d5071e56a83e54f569ea1286d03fd6162b13880aa4e2ece74c4 |
+| tools | create_wiki_page | description | 29c6c9e53d803075c361c5b66377931f309096182548b9ed17882cb8c49e11cf |
+| tools | create_wiki_page | comment | 0f5441e9ef75e3d773f02f1c5edd742c358f3ed62b76c337dcd090af21098032 |
+| tools | create_wiki_page | content | 56cda341901186dd38bf582954088c1118749de2cdc530da4765f9dc8ecebda4 |
+| tools | create_wiki_page | organizationId | 1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c |
+| tools | create_wiki_page | pagePath | f960c8738038d524128e5511e4405b18be2bb8046998c935a8666cffb549c80f |
+| tools | create_wiki_page | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
+| tools | create_wiki_page | wikiId | 78550a0c4ca8efa5ee86b117ad438fdbd5060fbeed8d645d5dabd48b052eaf3e |
 | tools | create_work_item | description | 438508a61955ee2e09252b89a5a72d22b458c5fc601c85ba5cbdd0b60369f1fe |
 | tools | create_work_item | additionalFields | 079cb4e5ea2e193405d4000e4e7134b871f9ac0adb77c154817361f97edbeede |
 | tools | create_work_item | areaPath | 9757fac9cc1c35c5741ada321f5121ffa6c82a70bf82e2e4c77dfb6c4bfe2d64 |
@@ -1349,11 +1394,11 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | list_projects | stateFilter | 50b2d3b52a3a35a1b0613d0921fd4942c13872a5995f4da8cab4458de3ec8eeb |
 | tools | list_projects | top | cf9a1abb12538d7c05deed0df3fe14249d5d1d41c634c6c788db9e5c5da45c15 |
 | tools | list_pull_requests | description | d195a17f9c9cd457b03cf72f3c3a5627b6916a8dfcca8db0242cd583f21f28b6 |
-| tools | list_pull_requests | creatorId | 4517be9d497fa3af03f081d98b589779aa1d992fc6aa21ae4686a8adc7e9c563 |
+| tools | list_pull_requests | creatorId | 604bb366130e373e07329cc0a5c704221075c0b929a0fcccce0638cb9923c3d0 |
 | tools | list_pull_requests | organizationId | 1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c |
 | tools | list_pull_requests | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
 | tools | list_pull_requests | repositoryId | 25d0eeb6f8988c62240119c72427edb9c77cf55278a72464848f34bab83dc50f |
-| tools | list_pull_requests | reviewerId | 96e07d9d7d038304b8033472dda27ba93431254156a961a9fdf4c06e2e831182 |
+| tools | list_pull_requests | reviewerId | 963cdfdf0fd27b3a230c616e41fce56b1b6e83904bf58bbd4d444cb27f33e2df |
 | tools | list_pull_requests | skip | e6f769171fda17635735e3363f18a234318adc5eb5a057ce450751c93e04a0bd |
 | tools | list_pull_requests | sourceRefName | 415ff45abee7b8f4ee57a398dce864746496a2ecd56ee6936d765e99181e26b5 |
 | tools | list_pull_requests | status | 9cc75a02f8e797e1f3b556f49f8e3f9a9f385b10333008cde7738509f8a5b01c |
@@ -1363,6 +1408,12 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | list_repositories | includeLinks | 3ad912e2c352994a166004d273a2bb1ee99f9ef0a9a39ff84754ae7449d4e292 |
 | tools | list_repositories | organizationId | 1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c |
 | tools | list_repositories | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
+| tools | list_wiki_pages | description | 8ae746206428a0798645596459caddfcaf00e65c5d2990c4badf22439ec7f7e0 |
+| tools | list_wiki_pages | organizationId | 1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c |
+| tools | list_wiki_pages | path | f363b4bb2431f300bc26fbc8f14e3f960d3382385cb5d153d0403f361f5d7570 |
+| tools | list_wiki_pages | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
+| tools | list_wiki_pages | recursionLevel | 92a8672252fbe85ad6262eb9838d6855bad3e1f6b4286563190ab08e03918597 |
+| tools | list_wiki_pages | wikiId | 78550a0c4ca8efa5ee86b117ad438fdbd5060fbeed8d645d5dabd48b052eaf3e |
 | tools | list_work_items | description | 2661d95fe94e7baab4c9355f8bbc018769fb50cde6027fcf7e9b560170a77a29 |
 | tools | list_work_items | organizationId | 1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c |
 | tools | list_work_items | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |

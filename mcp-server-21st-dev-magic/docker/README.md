@@ -19,7 +19,6 @@
 
 
 # What is mcp-server-21st-dev-magic?
-
 [![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-21st-dev-magic/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-21st-dev-magic/0.0.47?logo=docker&logoColor=fff&label=0.0.47)](https://hub.docker.com/r/acuvity/mcp-server-21st-dev-magic)

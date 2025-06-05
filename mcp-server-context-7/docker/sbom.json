@@ -2,11 +2,11 @@
   "tools": [
     {
       "name": "get-library-docs",
-      "hash": "cddfbc0fa4f44e5e3373e8f6289e6d329685660cd75d562dcebe92dc9475c8e8",
+      "hash": "eb2a9adf3b2282cc1ef397d685657a8ab3f3fccb0f8f64526f5b0af90ded97d7",
       "params": [
         {
           "name": "context7CompatibleLibraryID",
-          "hash": "c906658ac565e1266a7e9641bb43392223f38082489258a83d03c4783fc93ab5"
+          "hash": "6c34219525d407280dda56113382f386d34dcafd7b9e6c4e922218f7af6a73f7"
         },
         {
           "name": "tokens",
@@ -20,7 +20,7 @@
     },
     {
       "name": "resolve-library-id",
-      "hash": "9633f96294145104ee4354f7e70c937e355dc8c4fc09dbde86bf5e6177e1929c",
+      "hash": "000dc4f4254e96e2bad9603c8194a7247e598c76b007de661abf3a94028f1a1d",
       "params": [
         {
           "name": "libraryName",

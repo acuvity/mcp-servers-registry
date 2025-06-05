@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-bankless-onchain",
+  "icon": "https://avatars.githubusercontent.com/u/118560591?s=200&v=4",
   "name": "mcp-server-bankless-onchain",
   "description": "Query Onchain data, like ERC20 tokens, transaction history, smart contract state.",
   "links":
@@ -15,7 +16,7 @@
   "version": "1.0.6",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "C",
+  "rating": {"hash":"b7991cd4431d407b8d5c5ba5ba412802f05548709583887f5c7cdadb9231fb5e","reason":"Most tool names are clear and descriptive. Basic descriptions are provided for all tools (1-2 sentences each) explaining core functionality. Parameter descriptions are present and understandable, though somewhat sparse. However, descriptions lack comprehensive details about when to use each tool, limitations, or edge cases. The complex 'read_contract' tool has detailed tuple handling instructions but other tools could benefit from more context about their specific use cases and blockchain-specific considerations.","score":"C"},
   "resources": {
     "tools": 10,
     "prompts": 0,

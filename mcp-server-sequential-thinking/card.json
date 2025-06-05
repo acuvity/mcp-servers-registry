@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-sequential-thinking",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-sequential-thinking",
   "description": "MCP server for sequential thinking and problem solving",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.6.2",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "A",
+  "rating": {"hash":"892d0f4a0ae6a2a5164e0f29f0158dc9acc90a847441ae028cd39f446bda326c","reason":"The tool has a clear, descriptive name and exceptionally comprehensive description covering functionality, use cases, and detailed usage guidance. However, parameter documentation is inconsistent - while some parameters have clear descriptions (thought, thoughtNumber), others are too brief (branchId, needsMoreThoughts) given the tool's complexity. The mismatch between parameter names in the description (snake_case) and schema (camelCase) also reduces clarity.","score":"B"},
   "resources": {
     "tools": 1,
     "prompts": 0,

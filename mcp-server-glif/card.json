@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-glif",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/glif/live/logo-1744789771251.jpeg",
   "name": "mcp-server-glif",
   "description": "Run AI workflows and manage glifs through the Model Context Protocol.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.9.9",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"a679b504f1df04eb06beb8427b9864fabfce3b21a20c5e0449dd8a2af964aa9a","reason":"Tool names are clear and indicate purpose well, but descriptions are consistently brief and lack important context. Most descriptions are single phrases that don't explain when to use the tools, what they return, or any limitations. Parameter descriptions are minimal - many just restate the parameter name without explaining purpose or expected format. The toolset would benefit from more comprehensive descriptions explaining functionality, usage scenarios, and parameter details.","score":"D"},
   "resources": {
     "tools": 10,
     "prompts": 1,

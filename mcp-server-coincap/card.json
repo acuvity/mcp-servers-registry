@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-coincap",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-coincap",
   "description": "Real-time cryptocurrency market data integration using CoinCap's public API.",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.9.3",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "F",
+  "rating": {"hash":"b9971edf9e11ce9ecb326f0db6f9d04c4379cace5c0dfed18ae3f6c8184e92ac","reason":"Tool names are clear but descriptions are minimal (5-6 words each) providing insufficient context about functionality, limitations, or usage scenarios. The bitcoin_price tool lacks any parameters despite likely needing configuration options, and parameter descriptions are basic without explaining constraints or expected formats.","score":"D"},
   "resources": {
     "tools": 3,
     "prompts": 0,

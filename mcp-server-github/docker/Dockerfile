@@ -1,4 +1,4 @@
-FROM golang:1.24.2-alpine3.21 AS minibridge
+FROM golang:1.24 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -6,14 +6,14 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
+    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
 
 FROM alpine:3.21 AS artifacts
 ARG TARGETOS TARGETARCH
 RUN apk update && apk add --no-cache curl file tar unzip
 COPY artifacts.sh /tmp/artifacts.sh
 RUN chmod a+x /tmp/artifacts.sh
-RUN sh /tmp/artifacts.sh https://github.com/github/github-mcp-server/releases/download/v0.3.0/github-mcp-server_0.3.0_checksums.txt https://github.com/github/github-mcp-server/releases/download/v0.3.0/github-mcp-server_Darwin_arm64.tar.gz https://github.com/github/github-mcp-server/releases/download/v0.3.0/github-mcp-server_Darwin_x86_64.tar.gz https://github.com/github/github-mcp-server/releases/download/v0.3.0/github-mcp-server_Linux_arm64.tar.gz https://github.com/github/github-mcp-server/releases/download/v0.3.0/github-mcp-server_Linux_i386.tar.gz https://github.com/github/github-mcp-server/releases/download/v0.3.0/github-mcp-server_Linux_x86_64.tar.gz https://github.com/github/github-mcp-server/releases/download/v0.3.0/github-mcp-server_Windows_arm64.zip https://github.com/github/github-mcp-server/releases/download/v0.3.0/github-mcp-server_Windows_i386.zip https://github.com/github/github-mcp-server/releases/download/v0.3.0/github-mcp-server_Windows_x86_64.zip
+RUN sh /tmp/artifacts.sh https://github.com/github/github-mcp-server/releases/download/v0.4.0/github-mcp-server_0.4.0_checksums.txt https://github.com/github/github-mcp-server/releases/download/v0.4.0/github-mcp-server_Darwin_arm64.tar.gz https://github.com/github/github-mcp-server/releases/download/v0.4.0/github-mcp-server_Darwin_x86_64.tar.gz https://github.com/github/github-mcp-server/releases/download/v0.4.0/github-mcp-server_Linux_arm64.tar.gz https://github.com/github/github-mcp-server/releases/download/v0.4.0/github-mcp-server_Linux_i386.tar.gz https://github.com/github/github-mcp-server/releases/download/v0.4.0/github-mcp-server_Linux_x86_64.tar.gz https://github.com/github/github-mcp-server/releases/download/v0.4.0/github-mcp-server_Windows_arm64.zip https://github.com/github/github-mcp-server/releases/download/v0.4.0/github-mcp-server_Windows_i386.zip https://github.com/github/github-mcp-server/releases/download/v0.4.0/github-mcp-server_Windows_x86_64.zip
 
 FROM alpine:3.21
 
@@ -22,7 +22,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-github"
 LABEL org.opencontainers.image.description="GitHub's official MCP Server"
-LABEL org.opencontainers.image.version="v0.3.0"
+LABEL org.opencontainers.image.version="v0.4.0"
 LABEL org.opencontainers.image.source="https://github.com/github/github-mcp-server"
 LABEL org.opencontainers.image.licenses="MIT License"
 LABEL org.opencontainers.image.author="github"

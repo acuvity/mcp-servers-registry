@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-sentry",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-sentry",
   "description": "Retrieving and analyzing issues from Sentry.io.",
   "links":
@@ -15,7 +16,7 @@
   "version": "2025.1.14",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "A",
+  "rating": {"hash":"d522a4dd694c9898d9c74f213e3d63ceff8865d2cb4d6af7205214753b468f5b","reason":"The tool has a clear, specific name and an excellent description that comprehensively covers functionality, use cases, and what information it provides. The parameter documentation is adequate with a clear description of the expected input format, though it could benefit from examples of valid formats (e.g., 'SENTRY-123' vs full URL format).","score":"B"},
   "resources": {
     "tools": 1,
     "prompts": 1,

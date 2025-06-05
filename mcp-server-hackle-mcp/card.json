@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-hackle-mcp",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/hackle/live/logo-1745472701666.png",
   "name": "mcp-server-hackle-mcp",
   "description": "A/B test data query tools for Hackle API.",
   "links":
@@ -15,7 +16,7 @@
   "version": "1.3.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"6a636b265ca991fe39260047e267fffaf91d28cec2b0dcd943ee425db67a44cb","reason":"Tool names are clear and follow consistent patterns, and most descriptions adequately explain basic functionality. However, descriptions are quite brief (1-2 sentences) and lack important context about when to use tools, what data they return, or usage limitations. Parameter descriptions are minimal with many missing entirely (pageNumber, pageSize, searchKeyword lack descriptions across multiple tools). While the schema constraints are well-defined, the overall documentation leaves users needing to infer many usage details.","score":"C"},
   "resources": {
     "tools": 19,
     "prompts": 0,

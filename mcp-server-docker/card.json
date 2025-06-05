@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-docker",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-docker",
   "description": "Integrate with Docker to manage containers, images, volumes, and networks.",
   "links":
@@ -12,10 +13,10 @@
   "scope": "native",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "B",
+  "rating": {"hash":"ec78d2739c5353311b6780c8e0753a3cc09f08b27cf85ff90931c879db2ff754","reason":"Tool names are clear and Docker-specific, adequately indicating their functionality. Most descriptions are brief but functional, clearly stating what each tool does. However, many descriptions lack guidance on when to use tools or important limitations. Parameter descriptions are generally adequate with clear purposes, though some could benefit from more detail about constraints and usage patterns. The toolset provides basic usability but leaves some user questions unanswered, particularly around Docker-specific nuances and best practices.","score":"C"},
   "resources": {
     "tools": 19,
     "prompts": 1,
