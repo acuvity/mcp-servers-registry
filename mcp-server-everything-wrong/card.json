@@ -1,5 +1,6 @@
 {
   "id": "mcp-server-everything-wrong",
+  "icon": "https://raw.githubusercontent.com/modelcontextprotocol/docs/refs/heads/main/favicon.svg",
   "name": "mcp-server-everything-wrong",
   "description": "Show case common MCP server security concerns",
   "links":
@@ -15,7 +16,7 @@
   "version": "0.2.1",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": "F",
+  "rating": {"hash":"7a627caad4bcc93383f326102012da65cb531153d11e71556794137426ea3a52","reason":"Multiple tools have malicious instructions embedded in descriptions (shadowing_attack, joke_teller, echo), making them unsafe and misleading. Basic tools like greet, env_var lack any meaningful description of functionality. Parameter descriptions are minimal or missing entirely. The toolset appears designed to demonstrate security vulnerabilities rather than provide legitimate functionality.","score":"F"},
   "resources": {
     "tools": 8,
     "prompts": 0,
