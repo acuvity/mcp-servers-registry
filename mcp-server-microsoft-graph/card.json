@@ -16,7 +16,11 @@
   "version": "1.0.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": null,
+  "rating": {"hash":"dd9fde51de66149fa1d673ac25bea16b12126688d50c0e8c3f3f6c4f6acf0d34","reason":"Tool names are overly generic ('applications', 'sites', 'users'), descriptions are vague and repetitive without explaining specific functionality or operations available, and parameter descriptions lack clarity about expected format (display name vs username vs ID). The documentation provides minimal guidance for actual usage.","score":"D"},
   "resources": {
+    "tools": 3,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
   }
 }

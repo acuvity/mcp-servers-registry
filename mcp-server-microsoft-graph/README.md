@@ -19,6 +19,7 @@
 
 
 # What is mcp-server-microsoft-graph?
+[![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-microsoft-graph/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-microsoft-graph/1.0.1?logo=docker&logoColor=fff&label=1.0.1)](https://hub.docker.com/r/acuvity/mcp-server-microsoft-graph)
 [![GitHUB](https://img.shields.io/badge/1.0.1-3775A9?logo=github&logoColor=fff&label=acuvity/mcp-server-microsoft-graph)](https://github.com/acuvity/mcp-server-microsoft-graph)
@@ -510,6 +511,70 @@ The deployment will create a Kubernetes service with a `healthPort`, that is use
 See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-microsoft-graph/charts/mcp-server-microsoft-graph/README.md) for more details about settings and runtime security including guardrails activation.
 
 </details>
+
+# 🧠 Server features
+
+## 🧰 Tools (3)
+<details>
+<summary>applications</summary>
+
+**Description**:
+
+```
+Interact with Microsoft Graph API for application operations
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| name | string | The name of the application. If not provided, all applications will be returned. | No
+</details>
+<details>
+<summary>sites</summary>
+
+**Description**:
+
+```
+Interact with Microsoft Graph API for site, subsites and pages operations
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| name | string | The name of the site. If not provided, all sites will be returned. | No
+</details>
+<details>
+<summary>users</summary>
+
+**Description**:
+
+```
+Interact with Microsoft Graph API for user operations
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| name | string | The name of the user. If not provided, all users will be returned. | No
+</details>
+
+
+# 🔐 Resource SBOM
+
+Minibridge will perform hash checks for the following resources. The hashes are given as references and are the sha256 sum of the description.
+
+| Resource | Name | Parameter | Hash |
+|-----------|------|------|------|
+| tools | applications | description | 052a8980ee9e771e1b7f47c5e9a8c43775229fffceece75a8bbddce9b249a4bd |
+| tools | applications | name | 86ab62542a4d09e45993dad9507af308ec0b4fd2f5d4cd1137276c626da2a836 |
+| tools | sites | description | b67aaf151be7608b29b0b925faa295bd9b0a89c60fcf612cd0f3b0c3437b57ba |
+| tools | sites | name | 3b6087ee2e0eb5b8e273ce240b60e69a64108c65dd85a05ab3d9f863c98d1753 |
+| tools | users | description | a722596e727f66fe1742399b93bd8a64a97dd3066b23b88fd48503385cc132bb |
+| tools | users | name | a5d145b723cfe3f7d90fbf5f0a055207d89409caeaf6c0d0606fec33f1cc4a7d |
+
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).
 📦 Contributions welcome!

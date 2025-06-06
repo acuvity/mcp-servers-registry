@@ -1,0 +1,35 @@
+{
+  "tools": [
+    {
+      "name": "applications",
+      "hash": "052a8980ee9e771e1b7f47c5e9a8c43775229fffceece75a8bbddce9b249a4bd",
+      "params": [
+        {
+          "name": "name",
+          "hash": "86ab62542a4d09e45993dad9507af308ec0b4fd2f5d4cd1137276c626da2a836"
+        }
+      ]
+    },
+    {
+      "name": "sites",
+      "hash": "b67aaf151be7608b29b0b925faa295bd9b0a89c60fcf612cd0f3b0c3437b57ba",
+      "params": [
+        {
+          "name": "name",
+          "hash": "3b6087ee2e0eb5b8e273ce240b60e69a64108c65dd85a05ab3d9f863c98d1753"
+        }
+      ]
+    },
+    {
+      "name": "users",
+      "hash": "a722596e727f66fe1742399b93bd8a64a97dd3066b23b88fd48503385cc132bb",
+      "params": [
+        {
+          "name": "name",
+          "hash": "a5d145b723cfe3f7d90fbf5f0a055207d89409caeaf6c0d0606fec33f1cc4a7d"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

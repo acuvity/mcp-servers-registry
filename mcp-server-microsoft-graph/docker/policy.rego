@@ -86,6 +86,12 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
+	"applications",
+	#
+	"sites",
+	#
+	"users",
+	#
 	# exclude word that might be misdetected
 	"to",
 	"this",
