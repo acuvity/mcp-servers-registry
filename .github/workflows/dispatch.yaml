@@ -58,9 +58,9 @@ jobs:
             awk -F/ '/^mcp-server-/{print $1}' | sort -u |
             while read -r SRV; do
               IMG=false; CHART=false; README=false
-              # look for docker changes except README
+              # look for docker changes except README and artifacts.sh
               if echo "$CHANGED_FILES" | grep -q "^${SRV}/docker/"; then
-                if ! echo "$CHANGED_FILES" | grep -q "^${SRV}/docker/README.md$" \
+                if ! echo "$CHANGED_FILES" | grep -q -E "^${SRV}/docker/(README.md|artifacts.sh)$" \
                   || echo "$CHANGED_FILES" | grep -q "^${SRV}/docker/[^R]"; then
                   IMG=true
                 fi
