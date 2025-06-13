@@ -1,22 +1,26 @@
 {
   "id": "mcp-server-aws-bedrock-kb-retrieval",
-  "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
   "name": "mcp-server-aws-bedrock-kb-retrieval",
-  "description": "Query Amazon Bedrock Knowledge Bases using natural language to retrieve relevant information.",
+  "description": "Access and query Amazon Bedrock Knowledge Bases with natural language retrieval",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-bedrock-kb-retrieval",
-      "application": "https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server"
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/bedrock-kb-retrieval-mcp-server"
     },
-  "tags": ["cloud","integration"],
+  "tags": ["research"],
   "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
   "version": "1.0.1",
-  "requiresConfiguration": true,
+  "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": null,
+  "rating": {"hash":"a041e55b25d80fda6f887c81b2b952c29675ae365ec1755962e5be8795b23186","reason":"Excellent documentation with comprehensive description covering functionality, usage requirements, query tips, output format, and best practices. All parameters have clear descriptions with purpose, constraints, and expected values. The tool name is specific and intuitive, clearly indicating its AWS Bedrock knowledge base querying purpose.","score":"A"},
   "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 1,
+    "resourcesTemplates": 0
   }
 }

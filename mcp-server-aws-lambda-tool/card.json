@@ -1,0 +1,22 @@
+{
+  "id": "mcp-server-aws-lambda-tool",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-lambda-tool",
+  "description": "Bridge between MCP clients and AWS Lambda functions enabling AI models to invoke Lambda as tools",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-lambda-tool",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/lambda-tool-mcp-server"
+    },
+  "tags": ["cloud","integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "2.0.2",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": null,
+  "resources": {
+  }
+}

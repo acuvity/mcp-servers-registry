@@ -1,0 +1,557 @@
+{
+  "tools": [
+    {
+      "name": "CreateDbCluster",
+      "hash": "a5563b63c69213815b7bfe80c2a62dbb076fa46709f570dbca0ddbb6000dc32c",
+      "params": [
+        {
+          "name": "allocated_storage_gb",
+          "hash": "fd0d1a266754ef1e1b59653849303d2aaadbf310b87960d892a14d4e28e2935c"
+        },
+        {
+          "name": "bucket",
+          "hash": "352740f2d92b9e79d84d1d3f10e5acdd7ec207b579f108728e9c3cdfe6422198"
+        },
+        {
+          "name": "db_instance_type",
+          "hash": "cede65351eb8b957b2376de6e487158687cf0498e00be0ccebdf51184a2c7f6c"
+        },
+        {
+          "name": "db_parameter_group_identifier",
+          "hash": "2dd7c9f2ee8c9d0f768afebd07a3377fc4e10da15a25091996c1d41bfc4927df"
+        },
+        {
+          "name": "db_storage_type",
+          "hash": "28009caa9a178e0ddfc62c9265bfd8fb082ff9d026c5b4d94c7327c91b09be82"
+        },
+        {
+          "name": "deployment_type",
+          "hash": "e92f1a36e7444e1d8596fce1b1cb9d011830b5c4891d6a5da43a3fc25a68e015"
+        },
+        {
+          "name": "failover_mode",
+          "hash": "8f406946eb44bbe297ebdef5563c335fcef6f06a881aa4b65126a74ac1640dd9"
+        },
+        {
+          "name": "log_delivery_configuration",
+          "hash": "bf20343694b4d14b8dc85910793929fc2288a40a3dce28a3c4868810f16dc5b5"
+        },
+        {
+          "name": "name",
+          "hash": "d5a83d33169c24d1a0557293d60447abd741d6fd5ed32378059fa7e0f623bb00"
+        },
+        {
+          "name": "networkType",
+          "hash": "c0967df8c1ebceaff9907eff47955b4a05e666734fbf20807e4a414e3167a3f8"
+        },
+        {
+          "name": "organization",
+          "hash": "e6fc5b673d53ccafd14b0e7a55db1508251f03c908031ad8687133f76cde002e"
+        },
+        {
+          "name": "password",
+          "hash": "f9e09fef7ad486613b67452bc498d7d0aaf9531299817720150768ff9c139e10"
+        },
+        {
+          "name": "port",
+          "hash": "219b1ba4672897f13942751b3a22d99f173d3c3916b9c926bd9fecb41ee0ebc2"
+        },
+        {
+          "name": "publicly_accessible",
+          "hash": "a242b330c0f9f46e618cf30e174c79ad96bd5a533ca1281c8e72bc757675e31d"
+        },
+        {
+          "name": "tags",
+          "hash": "4c9834f201371cfd315e516ead53d0044c1b511c6c508f986a393874c99dcfb6"
+        },
+        {
+          "name": "tool_write_mode",
+          "hash": "97f0f4f2790ef560cf79fe75b289b7eb9fd0e245bd8d85b2d6b103e600cdeb19"
+        },
+        {
+          "name": "username",
+          "hash": "cb290c2fdffc9170e870b496916298e1ec9b3b69d53f8cd805608cc70099efbf"
+        },
+        {
+          "name": "vpc_security_group_ids",
+          "hash": "479ee27f3455d53ad640b52a8c6e9987e13af3377ebe19b0a7d01450d55ea7c9"
+        },
+        {
+          "name": "vpc_subnet_ids",
+          "hash": "378b02f71f08135a026a8808e32338d5f5562d0b8ca1b8d36872a838cef5ae20"
+        }
+      ]
+    },
+    {
+      "name": "CreateDbInstance",
+      "hash": "2ac63c868608c8fb762eb69e86b0dbccf2f8b2178452f71e1c9017eaa5faacfd",
+      "params": [
+        {
+          "name": "allocated_storage_gb",
+          "hash": "fd0d1a266754ef1e1b59653849303d2aaadbf310b87960d892a14d4e28e2935c"
+        },
+        {
+          "name": "bucket",
+          "hash": "352740f2d92b9e79d84d1d3f10e5acdd7ec207b579f108728e9c3cdfe6422198"
+        },
+        {
+          "name": "db_instance_name",
+          "hash": "ce3d519eac4feb0c2986a22ec2064230926379b1982fce1b338a60aab53a2dca"
+        },
+        {
+          "name": "db_instance_type",
+          "hash": "cede65351eb8b957b2376de6e487158687cf0498e00be0ccebdf51184a2c7f6c"
+        },
+        {
+          "name": "db_parameter_group_id",
+          "hash": "2dd7c9f2ee8c9d0f768afebd07a3377fc4e10da15a25091996c1d41bfc4927df"
+        },
+        {
+          "name": "db_storage_type",
+          "hash": "28009caa9a178e0ddfc62c9265bfd8fb082ff9d026c5b4d94c7327c91b09be82"
+        },
+        {
+          "name": "deployment_type",
+          "hash": "e92f1a36e7444e1d8596fce1b1cb9d011830b5c4891d6a5da43a3fc25a68e015"
+        },
+        {
+          "name": "networkType",
+          "hash": "c0967df8c1ebceaff9907eff47955b4a05e666734fbf20807e4a414e3167a3f8"
+        },
+        {
+          "name": "organization",
+          "hash": "e6fc5b673d53ccafd14b0e7a55db1508251f03c908031ad8687133f76cde002e"
+        },
+        {
+          "name": "password",
+          "hash": "f9e09fef7ad486613b67452bc498d7d0aaf9531299817720150768ff9c139e10"
+        },
+        {
+          "name": "port",
+          "hash": "219b1ba4672897f13942751b3a22d99f173d3c3916b9c926bd9fecb41ee0ebc2"
+        },
+        {
+          "name": "publicly_accessible",
+          "hash": "a242b330c0f9f46e618cf30e174c79ad96bd5a533ca1281c8e72bc757675e31d"
+        },
+        {
+          "name": "tags",
+          "hash": "4c9834f201371cfd315e516ead53d0044c1b511c6c508f986a393874c99dcfb6"
+        },
+        {
+          "name": "tool_write_mode",
+          "hash": "97f0f4f2790ef560cf79fe75b289b7eb9fd0e245bd8d85b2d6b103e600cdeb19"
+        },
+        {
+          "name": "username",
+          "hash": "cb290c2fdffc9170e870b496916298e1ec9b3b69d53f8cd805608cc70099efbf"
+        },
+        {
+          "name": "vpc_security_group_ids",
+          "hash": "479ee27f3455d53ad640b52a8c6e9987e13af3377ebe19b0a7d01450d55ea7c9"
+        },
+        {
+          "name": "vpc_subnet_ids",
+          "hash": "378b02f71f08135a026a8808e32338d5f5562d0b8ca1b8d36872a838cef5ae20"
+        }
+      ]
+    },
+    {
+      "name": "CreateDbParamGroup",
+      "hash": "2513ed0ebeb2a2c329037488bd3120adde5944aa1d73ee20c053ba21e290d661",
+      "params": [
+        {
+          "name": "description",
+          "hash": "6b90473bb92de59c8c8fda80bb3a52db88abe83dd9071a1dd6497d38faa01d68"
+        },
+        {
+          "name": "name",
+          "hash": "d40a7cf76305b8b0b2f4974b8d741e195cd02d44ab7d64b8de76fa9a43656d13"
+        },
+        {
+          "name": "parameters",
+          "hash": "fb991d3627b75c40b95d1fa2da61c3f32d3eae7daa81016ac14eff222290da8c"
+        },
+        {
+          "name": "tags",
+          "hash": "4c9834f201371cfd315e516ead53d0044c1b511c6c508f986a393874c99dcfb6"
+        },
+        {
+          "name": "tool_write_mode",
+          "hash": "97f0f4f2790ef560cf79fe75b289b7eb9fd0e245bd8d85b2d6b103e600cdeb19"
+        }
+      ]
+    },
+    {
+      "name": "DeleteDbCluster",
+      "hash": "6b05b4946a4bddf98833260acc8df75f1000d675e75d8825b0f569ad273037fb",
+      "params": [
+        {
+          "name": "db_cluster_id",
+          "hash": "8f368411ea56feab48f10fc427d9617f1f6d1ddebf1aaa66871e4c5f6db30e2c"
+        },
+        {
+          "name": "tool_write_mode",
+          "hash": "97f0f4f2790ef560cf79fe75b289b7eb9fd0e245bd8d85b2d6b103e600cdeb19"
+        }
+      ]
+    },
+    {
+      "name": "DeleteDbInstance",
+      "hash": "93384232011eddc20e457cae7ac6f06fed12b7d6e677c79e2e8d4b2321e2a9ca",
+      "params": [
+        {
+          "name": "identifier",
+          "hash": "009832f652b3b487514a11820811f67db68fc43b82d8f6a282fb8b807af34703"
+        },
+        {
+          "name": "tool_write_mode",
+          "hash": "97f0f4f2790ef560cf79fe75b289b7eb9fd0e245bd8d85b2d6b103e600cdeb19"
+        }
+      ]
+    },
+    {
+      "name": "GetDbCluster",
+      "hash": "bfb84511a20b5f73050ff421794bacd920b9770e2456ba33c84114b12bea67fc",
+      "params": [
+        {
+          "name": "db_cluster_id",
+          "hash": "8f368411ea56feab48f10fc427d9617f1f6d1ddebf1aaa66871e4c5f6db30e2c"
+        }
+      ]
+    },
+    {
+      "name": "GetDbInstance",
+      "hash": "87a6fc06329ae2d4e01d6d56b954cf79e5e6f8bc21622a80006d5ba776f70c0a",
+      "params": [
+        {
+          "name": "identifier",
+          "hash": "009832f652b3b487514a11820811f67db68fc43b82d8f6a282fb8b807af34703"
+        }
+      ]
+    },
+    {
+      "name": "GetDbParameterGroup",
+      "hash": "47cc659df7164c7579591909378989a246321d4ff58ed7614d4785940f12bda0",
+      "params": [
+        {
+          "name": "identifier",
+          "hash": "62048ccd00fff3329ccd41804a819215e11cce8c2efb3d6bd4f988d305c20dfa"
+        }
+      ]
+    },
+    {
+      "name": "InfluxDBQuery",
+      "hash": "127bb10045e41c841b258bd8c5159841199b85450ba5e1498e68fc58db45dd59",
+      "params": [
+        {
+          "name": "org",
+          "hash": "c2ef1ad81e200eb6813b673ca9196a80b7c5865aafa1033350aeb17065b874f1"
+        },
+        {
+          "name": "query",
+          "hash": "8db6c86c71a264a94d0799f24af6095823a1dba81d0fa362f5c3e9941e9f9f7e"
+        },
+        {
+          "name": "token",
+          "hash": "2cda0df1bac11eb684a64911c39f5a7fff1d5ba7dfedeb0d829c507b97e30e80"
+        },
+        {
+          "name": "url",
+          "hash": "176572d6441b65e1892f5a571113b2dc5cd87e0da6b2fdca0580f79e9af285e0"
+        },
+        {
+          "name": "verify_ssl",
+          "hash": "0b0b938b0a9964f5f89bf3d7c512977e4052830e6d582a440479b09bce1476ea"
+        }
+      ]
+    },
+    {
+      "name": "InfluxDBWriteLP",
+      "hash": "4d2c71db449734290a8f1957dfbf59f08546a65a163720921a17e4e116e3f7b5",
+      "params": [
+        {
+          "name": "bucket",
+          "hash": "352740f2d92b9e79d84d1d3f10e5acdd7ec207b579f108728e9c3cdfe6422198"
+        },
+        {
+          "name": "data_line_protocol",
+          "hash": "60d8268b5d54ef1109d25345932dea05ae90bcddf1c7601d604f2d00a8008423"
+        },
+        {
+          "name": "org",
+          "hash": "c2ef1ad81e200eb6813b673ca9196a80b7c5865aafa1033350aeb17065b874f1"
+        },
+        {
+          "name": "sync_mode",
+          "hash": "7e48f89dafe829bb2d2166ca698d540f32d0eb28aceedf7ea867e734a76c606c"
+        },
+        {
+          "name": "time_precision",
+          "hash": "983049e635576a4c6aae7078177389369ab07b3491417b683b73aa45074abab2"
+        },
+        {
+          "name": "token",
+          "hash": "2cda0df1bac11eb684a64911c39f5a7fff1d5ba7dfedeb0d829c507b97e30e80"
+        },
+        {
+          "name": "tool_write_mode",
+          "hash": "97f0f4f2790ef560cf79fe75b289b7eb9fd0e245bd8d85b2d6b103e600cdeb19"
+        },
+        {
+          "name": "url",
+          "hash": "176572d6441b65e1892f5a571113b2dc5cd87e0da6b2fdca0580f79e9af285e0"
+        },
+        {
+          "name": "verify_ssl",
+          "hash": "0b0b938b0a9964f5f89bf3d7c512977e4052830e6d582a440479b09bce1476ea"
+        }
+      ]
+    },
+    {
+      "name": "InfluxDBWritePoints",
+      "hash": "a54692d1bb7a26942786a9752406d6a21a0a2967b3ca29ccf8c17bd750bedff6",
+      "params": [
+        {
+          "name": "bucket",
+          "hash": "352740f2d92b9e79d84d1d3f10e5acdd7ec207b579f108728e9c3cdfe6422198"
+        },
+        {
+          "name": "org",
+          "hash": "c2ef1ad81e200eb6813b673ca9196a80b7c5865aafa1033350aeb17065b874f1"
+        },
+        {
+          "name": "points",
+          "hash": "cf5881634a58c9b9f5730dfd0ec826a0c3927b77c67fff2be9068e68154b021a"
+        },
+        {
+          "name": "sync_mode",
+          "hash": "7e48f89dafe829bb2d2166ca698d540f32d0eb28aceedf7ea867e734a76c606c"
+        },
+        {
+          "name": "time_precision",
+          "hash": "983049e635576a4c6aae7078177389369ab07b3491417b683b73aa45074abab2"
+        },
+        {
+          "name": "token",
+          "hash": "2cda0df1bac11eb684a64911c39f5a7fff1d5ba7dfedeb0d829c507b97e30e80"
+        },
+        {
+          "name": "tool_write_mode",
+          "hash": "97f0f4f2790ef560cf79fe75b289b7eb9fd0e245bd8d85b2d6b103e600cdeb19"
+        },
+        {
+          "name": "url",
+          "hash": "176572d6441b65e1892f5a571113b2dc5cd87e0da6b2fdca0580f79e9af285e0"
+        },
+        {
+          "name": "verify_ssl",
+          "hash": "0b0b938b0a9964f5f89bf3d7c512977e4052830e6d582a440479b09bce1476ea"
+        }
+      ]
+    },
+    {
+      "name": "ListClustersByStatus",
+      "hash": "3efb45f46e69127a611989a5d2d942806b2c621668476216ec62142d0a730c3f",
+      "params": [
+        {
+          "name": "status",
+          "hash": "5ef9ba5742a34f7e982ab51094033b416df1eb304433c7ab3d0b68def2ab5f1d"
+        }
+      ]
+    },
+    {
+      "name": "ListDbClusters",
+      "hash": "d0542271dd8291930a3f011dcf9541dfdb5280591fdbdcfcd8ea2c2326dbb0cc",
+      "params": [
+        {
+          "name": "max_results",
+          "hash": "e4ff96a9e0cd58f24a90970f666b3dec789d6cd7227ed2755bc219a902946e7f"
+        },
+        {
+          "name": "next_token",
+          "hash": "ce20a3a3ac2a5ed58156cb9a73d478a4817f236a743cb0811712d6ca0db4a16a"
+        }
+      ]
+    },
+    {
+      "name": "ListDbInstances",
+      "hash": "0dd9730b7e8eee0a187e9a4aecc78cbd34e3352c01714fa65de63d0ae067c218",
+      "params": [
+        {
+          "name": "max_results",
+          "hash": "e4ff96a9e0cd58f24a90970f666b3dec789d6cd7227ed2755bc219a902946e7f"
+        },
+        {
+          "name": "next_token",
+          "hash": "ce20a3a3ac2a5ed58156cb9a73d478a4817f236a743cb0811712d6ca0db4a16a"
+        }
+      ]
+    },
+    {
+      "name": "ListDbParamGroups",
+      "hash": "fc37e95c6c41362172ab5fab829101c2c7e3fe8831f74f3412b5c8d770716f7d",
+      "params": [
+        {
+          "name": "max_results",
+          "hash": "e4ff96a9e0cd58f24a90970f666b3dec789d6cd7227ed2755bc219a902946e7f"
+        },
+        {
+          "name": "next_token",
+          "hash": "ce20a3a3ac2a5ed58156cb9a73d478a4817f236a743cb0811712d6ca0db4a16a"
+        }
+      ]
+    },
+    {
+      "name": "ListTagsForResource",
+      "hash": "0fcaee43e4c7aca588f0d73267ec579fe4cc5b96dad0a52c1eb3db010895cef0",
+      "params": [
+        {
+          "name": "resource_arn",
+          "hash": "c19b9c1e8e4b825d4ae3bf1b01a534523e89216c31f07ed16c54014597bfab0e"
+        }
+      ]
+    },
+    {
+      "name": "LsInstancesByStatus",
+      "hash": "023b16f58c7dfd000559e6dbd44ade636172c5583cb903ad4ade7a601055895b",
+      "params": [
+        {
+          "name": "status",
+          "hash": "db2422d9129dde28b42ad5526e423432fde838977de21a08e255dbcfada52e8c"
+        }
+      ]
+    },
+    {
+      "name": "LsInstancesOfCluster",
+      "hash": "c4869aab106dce9a286f5fe5ba1b4076050a15a59876df4a4a8df6aff4d6e51a",
+      "params": [
+        {
+          "name": "db_cluster_id",
+          "hash": "8f368411ea56feab48f10fc427d9617f1f6d1ddebf1aaa66871e4c5f6db30e2c"
+        },
+        {
+          "name": "max_results",
+          "hash": "e4ff96a9e0cd58f24a90970f666b3dec789d6cd7227ed2755bc219a902946e7f"
+        },
+        {
+          "name": "next_token",
+          "hash": "ce20a3a3ac2a5ed58156cb9a73d478a4817f236a743cb0811712d6ca0db4a16a"
+        }
+      ]
+    },
+    {
+      "name": "TagResource",
+      "hash": "ae141101c6ea35db28c14c73bf8bf0d9d5de4eae22688b0ca651361ca1451e57",
+      "params": [
+        {
+          "name": "resource_arn",
+          "hash": "c19b9c1e8e4b825d4ae3bf1b01a534523e89216c31f07ed16c54014597bfab0e"
+        },
+        {
+          "name": "tags",
+          "hash": "c75a87e9e56c97f6b4ef5833a514acda6a835bfe629c46ebde4f64834e2d9a2f"
+        },
+        {
+          "name": "tool_write_mode",
+          "hash": "97f0f4f2790ef560cf79fe75b289b7eb9fd0e245bd8d85b2d6b103e600cdeb19"
+        }
+      ]
+    },
+    {
+      "name": "UntagResource",
+      "hash": "359418dd40a9e5158d723b9b2470dcda4ffa54721082d98e04ec27830fe175b9",
+      "params": [
+        {
+          "name": "resource_arn",
+          "hash": "c19b9c1e8e4b825d4ae3bf1b01a534523e89216c31f07ed16c54014597bfab0e"
+        },
+        {
+          "name": "tag_keys",
+          "hash": "7ab7219f24c8a6af1b70ae73cd5c3089d574068a05d60b67fe1b2e6ed38604c7"
+        },
+        {
+          "name": "tool_write_mode",
+          "hash": "97f0f4f2790ef560cf79fe75b289b7eb9fd0e245bd8d85b2d6b103e600cdeb19"
+        }
+      ]
+    },
+    {
+      "name": "UpdateDbCluster",
+      "hash": "58cf0cea7e6fc4d7e58f7f9be0fa6f555be604a5cce6ec85625ee02d11ccab73",
+      "params": [
+        {
+          "name": "db_cluster_id",
+          "hash": "8f368411ea56feab48f10fc427d9617f1f6d1ddebf1aaa66871e4c5f6db30e2c"
+        },
+        {
+          "name": "db_instance_type",
+          "hash": "36638bd1981dbc74f507e3977f9d600c8ab0dae84d113a56f1e16fed11ad3d74"
+        },
+        {
+          "name": "db_parameter_group_identifier",
+          "hash": "7a02dff3af8fa3f71e2000e3bd69d2647be92572c5dfaaacf88127165a39a90a"
+        },
+        {
+          "name": "failover_mode",
+          "hash": "8384e9999a3884e242adb0a59af3e75ad4967220647642a603ad6e29e0730e6f"
+        },
+        {
+          "name": "log_delivery_configuration",
+          "hash": "69a92a77873e1c778730dc186d6fb1be2ee2cd8b5caa78ae95a945c8a3b340d2"
+        },
+        {
+          "name": "port",
+          "hash": "33f55657fd3c726470d4b5535a1d84bf66824a8a24d4ecb73d98cb4c787d48a9"
+        },
+        {
+          "name": "tool_write_mode",
+          "hash": "97f0f4f2790ef560cf79fe75b289b7eb9fd0e245bd8d85b2d6b103e600cdeb19"
+        }
+      ]
+    },
+    {
+      "name": "UpdateDbInstance",
+      "hash": "ce091d29bf54a31160ef32c5cc87609f6078da94e7b34671269fd6cf44e37cb5",
+      "params": [
+        {
+          "name": "allocated_storage_gb",
+          "hash": "e1cd3cb571f72bc2004326a431c53ed96648fe7329db021c321164301adf3888"
+        },
+        {
+          "name": "db_instance_type",
+          "hash": "36638bd1981dbc74f507e3977f9d600c8ab0dae84d113a56f1e16fed11ad3d74"
+        },
+        {
+          "name": "db_parameter_group_identifier",
+          "hash": "2dd7c9f2ee8c9d0f768afebd07a3377fc4e10da15a25091996c1d41bfc4927df"
+        },
+        {
+          "name": "db_storage_type",
+          "hash": "28009caa9a178e0ddfc62c9265bfd8fb082ff9d026c5b4d94c7327c91b09be82"
+        },
+        {
+          "name": "deployment_type",
+          "hash": "e92f1a36e7444e1d8596fce1b1cb9d011830b5c4891d6a5da43a3fc25a68e015"
+        },
+        {
+          "name": "identifier",
+          "hash": "009832f652b3b487514a11820811f67db68fc43b82d8f6a282fb8b807af34703"
+        },
+        {
+          "name": "log_delivery_configuration",
+          "hash": "bf20343694b4d14b8dc85910793929fc2288a40a3dce28a3c4868810f16dc5b5"
+        },
+        {
+          "name": "port",
+          "hash": "219b1ba4672897f13942751b3a22d99f173d3c3916b9c926bd9fecb41ee0ebc2"
+        },
+        {
+          "name": "tool_write_mode",
+          "hash": "97f0f4f2790ef560cf79fe75b289b7eb9fd0e245bd8d85b2d6b103e600cdeb19"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

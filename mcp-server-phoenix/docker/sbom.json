@@ -1,0 +1,69 @@
+{
+  "tools": [
+    {
+      "name": "add-dataset-examples",
+      "hash": "e155da7f8230fe5b1bade7bb57b5a4bc07e900fc79ca68494744930fb1d5b819"
+    },
+    {
+      "name": "add-prompt-version-tag",
+      "hash": "5d04bf6a283ba42bfc6ac36f1d3da4ee143e236c56a303c7b9d20de4136bffd4"
+    },
+    {
+      "name": "get-dataset-examples",
+      "hash": "d4152fd8d561e6fa1d1751cf8826aede27e1673a456c220405339aceefa9b536"
+    },
+    {
+      "name": "get-dataset-experiments",
+      "hash": "a085efadd710053c90b9d5799f11121c70e293338c9f2480d3ad89f06e30c669"
+    },
+    {
+      "name": "get-experiment-by-id",
+      "hash": "abbb9c44646c3e37c530486d4b2fff7dbe79540136bbaa3feba7251cc578c9d1"
+    },
+    {
+      "name": "get-latest-prompt",
+      "hash": "5d55c6403be695217770fb621b2adf4478a6d4daa6087ed00138a1afc6312253"
+    },
+    {
+      "name": "get-prompt-by-identifier",
+      "hash": "1a0323812d5c03b3354e35c6a268edbf17cc915cd37a0592f34c53f77b0c8e5d"
+    },
+    {
+      "name": "get-prompt-version",
+      "hash": "41310657a5adff08eebf484525733aaf62bf1954977bb8dbaef41d54db7c2d9b"
+    },
+    {
+      "name": "get-prompt-version-by-tag",
+      "hash": "425133c04c59768f6f21421781fb706057bf59dc2270ad24654334328083712a"
+    },
+    {
+      "name": "list-datasets",
+      "hash": "08059e461d7a8d15235ecd8a680443fa05750a4ff4afe83eda532a413121334f"
+    },
+    {
+      "name": "list-experiments-for-dataset",
+      "hash": "8d25f7a21bcfd8f2ce6dd1d5d8bc29065cd7eb8e1afb6084a51a09c58469cc42"
+    },
+    {
+      "name": "list-projects",
+      "hash": "13c5d94123bdffa6f6acaeb17412fef1ef9494cd0d0e1ec318250b7cd36dd9f1"
+    },
+    {
+      "name": "list-prompt-version-tags",
+      "hash": "58d24038d7140bcbfd6e693f6b53ead1cfb21e0c7d3ff1112a4faf9bb4e3e69a"
+    },
+    {
+      "name": "list-prompt-versions",
+      "hash": "39c60f1f54d4f7f7286485ac6515d1aaaa81bc84eb901abc574e8e21d99e3f05"
+    },
+    {
+      "name": "list-prompts",
+      "hash": "999cd435fea53746496c6e325a943cadbfc797633226f801738897c11d6eacdc"
+    },
+    {
+      "name": "upsert-prompt",
+      "hash": "bb147c1de19cb25c7f6aea4fccd60de50a6b3d730c4329b3f8b61c2486e19ac0"
+    }
+  ],
+  "prompts": []
+}

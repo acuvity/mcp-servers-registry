@@ -1,0 +1,15 @@
+{
+  "tools": [
+    {
+      "name": "analyze-http-header",
+      "hash": "fa6f41434bbdd952b104fba3bca7592c1c31274ee0f7146456fd499ad83a8a4b",
+      "params": [
+        {
+          "name": "target",
+          "hash": "e5c18fdb571e6a7f6e6f7c9f2e21ca20ecfc0a77d0aa3ffbfa499c275744373e"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

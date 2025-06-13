@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-asgardeo",
+  "icon": "https://console.asgardeo.io/app/libs/themes/wso2is/assets/images/branding/favicon.ico",
+  "name": "mcp-server-asgardeo",
+  "description": "MCP server to interact with your Asgardeo organization through LLM tools.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-asgardeo",
+      "application": "https://github.com/asgardeo/asgardeo-mcp-server"
+    },
+  "tags": ["security","integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "binary",
+  "version": "v0.1.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"cae64fcdf2ce263ef315c64b94c8ad77882dec91f8cd9b53a792f7ebb8fd48ee","reason":"The toolset provides adequate documentation with clear naming conventions and basic parameter descriptions, but lacks comprehensive tool descriptions. Most tools have minimal 1-sentence descriptions that don't explain usage context, limitations, or when to use each tool. Parameter documentation is generally clear but inconsistent in detail level, with some providing helpful examples while others are quite sparse. The naming is consistent and purposeful, clearly indicating Asgardeo API operations.","score":"C"},
+  "resources": {
+    "tools": 19,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

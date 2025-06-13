@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-bitrise",
+  "icon": "https://web-cdn.bitrise.io/favicon.ico",
+  "name": "mcp-server-bitrise",
+  "description": "Chat with your builds, CI, and more via the Bitrise API.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-bitrise",
+      "application": "https://github.com/bitrise-io/bitrise-mcp"
+    },
+  "tags": ["development","automation","integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "v1.1.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"ff7804e9a870a0650f05da2c597447b2ebeb9eee58803f65f5c30382b3a709f4","reason":"This toolset shows adequate documentation with clear tool names and basic functionality descriptions, but lacks detail in many areas. While most tools have appropriate names that indicate their purpose (e.g., 'list_apps', 'trigger_bitrise_build'), the descriptions are often too brief and miss important context about when to use them or what they return. Parameter documentation is generally clear but inconsistent - some tools like 'register_app' provide good context and usage guidance, while others like 'update_app' or 'get_cache_item_download_url' (which lacks a description entirely) provide minimal information. The toolset would benefit from more comprehensive descriptions explaining usage context, return expectations, and important limitations across all tools.","score":"C"},
+  "resources": {
+    "tools": 56,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

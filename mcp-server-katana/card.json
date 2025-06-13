@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-katana",
+  "icon": "https://avatars.githubusercontent.com/u/89649708?s=200&v=4",
+  "name": "mcp-server-katana",
+  "description": "Fast web crawler with JS parsing and hybrid crawling for endpoint discovery",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-katana",
+      "application": "https://github.com/cyproxio/mcp-for-security/tree/HEAD/katana-mcp"
+    },
+  "tags": ["security","web"],
+  "official": true,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "6190e55",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"07196a7c0d3fc7bab7e705ce2945d6b0ae6d2ba3da3bbe956dd88303651a4c2c","reason":"The tool has a clear, descriptive name and good overall functionality description. Parameter documentation is comprehensive with clear purposes and constraints specified. However, the description could benefit from more context about when to use this tool and what specific outputs to expect. There's also a minor typo in 'show_brwoser' parameter name, but parameter descriptions are otherwise well-detailed.","score":"B"},
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

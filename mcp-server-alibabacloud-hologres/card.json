@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-alibabacloud-hologres",
+  "icon": "https://img.alicdn.com/imgextra/i3/O1CN01d9qrry1i6lTNa2BRa_!!6000000004364-2-tps-218-200.png",
+  "name": "mcp-server-alibabacloud-hologres",
+  "description": "Connect to Hologres instance, get table metadata, query and analyze data.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-alibabacloud-hologres",
+      "application": "https://github.com/aliyun/alibabacloud-hologres-mcp-server"
+    },
+  "tags": ["database","cloud"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.1.9",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"40b4834cd19dd75a176d0829941609ce0e47fdabd1841838b3bf0c21b8c7566f","reason":"The toolset demonstrates good documentation quality with clear, specific names and adequate descriptions. Tool names are intuitive with consistent 'hg_' prefixes indicating Hologres operations. Most descriptions effectively explain functionality and usage context (e.g., the serverless tool explains when to use it for memory limitations). Parameter descriptions are clear and specify expected values. While some descriptions could be more comprehensive (especially regarding constraints and limitations), the overall documentation provides sufficient guidance for effective tool usage.","score":"B"},
+  "resources": {
+    "tools": 12,
+    "prompts": 0,
+    "resources": 1,
+    "resourcesTemplates": 0
+  }
+}

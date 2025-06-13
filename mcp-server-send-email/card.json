@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-send-email",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/resend/live/logo-1744790641195.png",
+  "name": "mcp-server-send-email",
+  "description": "Send and schedule emails using Resend's API.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-send-email",
+      "application": "https://github.com/resend/mcp-send-email"
+    },
+  "tags": ["communication","integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1e1e235",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"28fe7217df0d493c326a80193f9d3a41e7f963849a728a4619368caf1ef6a6b3","reason":"The tool has a clear, specific name and comprehensive parameter documentation with good type constraints and format specifications. Most parameters include helpful descriptions with usage guidance (e.g., natural language scheduling examples). However, the main description is too brief for a complex email tool - it only states 'Send an email using Resend' without explaining key functionality, usage context, or important limitations like the Resend service dependency.","score":"B"},
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

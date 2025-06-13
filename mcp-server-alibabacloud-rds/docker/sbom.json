@@ -1,0 +1,117 @@
+{
+  "tools": [
+    {
+      "name": "add_tags_to_db_instance",
+      "hash": "7f8a0420d622c00bad8d485b7526480056da275d92e2877596f396f5b0457bd5"
+    },
+    {
+      "name": "allocate_instance_public_connection",
+      "hash": "d3cae770341b0882e26a7f797471aa7bb3e04a85e7c05228d137964fb97dd9a5"
+    },
+    {
+      "name": "attach_whitelist_template_to_instance",
+      "hash": "3dbb46ad89524a339ea33ae291c75345d85fc474a5cec8d3df7ad9fb27725c84"
+    },
+    {
+      "name": "create_db_instance",
+      "hash": "1c349c036449c6ab7cf9029a1541446ee2f1f361cc82d5f5b32d4d12a2dd1852"
+    },
+    {
+      "name": "create_db_instance_account",
+      "hash": "76f4f70b2e6416932668e7b91d8dbebcfe67b35b039ec2b5fc8dfd79ff0663d7"
+    },
+    {
+      "name": "describe_all_whitelist_template",
+      "hash": "6972050edee7101279350e137121c3428a301030b6ca6d9e6b979514feb01524"
+    },
+    {
+      "name": "describe_available_classes",
+      "hash": "60ca915c92983f2f509aed5fb41b1711763c90db4a30c0f6e8e8b35852796122"
+    },
+    {
+      "name": "describe_available_zones",
+      "hash": "3cb07333029a5dc83cf03fde8e185d0eda1027a6931df1679353b74c0b1f2b20"
+    },
+    {
+      "name": "describe_bills",
+      "hash": "21b70e30ba551b7782c9468bcac7fc8e5968e1adc0621bf8f1f2163114179346"
+    },
+    {
+      "name": "describe_db_instance_accounts",
+      "hash": "78ffad5abc4d8d10bcbec21103e4be7345d18cb92040d84a9aacfe1d1ff66cb9"
+    },
+    {
+      "name": "describe_db_instance_attribute",
+      "hash": "e8c1d322c6b8542974d85292b5fb129c1d28aee5025a001c39716ea6f31397f7"
+    },
+    {
+      "name": "describe_db_instance_databases",
+      "hash": "5efeaebdcb5715be0fe3fbf3c29074f406f214b44c1e90ecd271f948cf435506"
+    },
+    {
+      "name": "describe_db_instance_ip_allowlist",
+      "hash": "c9678a8b66b424b1dac9c2ed9ca5734268a28c37e1f493e9f63e01cfbfdc3a47"
+    },
+    {
+      "name": "describe_db_instance_net_info",
+      "hash": "803a80a75812b6ad0330bc3ff87f880d1a0078514b094d389532fcafde924733"
+    },
+    {
+      "name": "describe_db_instance_parameters",
+      "hash": "18473454bf2b1f4f62da53a0456678ddda30cd64042a47b977eca71bbf263da0"
+    },
+    {
+      "name": "describe_db_instance_performance",
+      "hash": "a9879f780ffe599d8002075bcbf61f7a6151eb2b77941d9d3cdb00b076dc12dc"
+    },
+    {
+      "name": "describe_db_instances",
+      "hash": "11d137565a39eae46eb545c175e01e3f80a8c87b41746ab00f7582929b14835a"
+    },
+    {
+      "name": "describe_error_logs",
+      "hash": "40ed367c3771f4408bde70bb405e184dc8387b9f3f60c1e4d0ac389dc02ac983"
+    },
+    {
+      "name": "describe_instance_linked_whitelist_template",
+      "hash": "7e288fb481d226ce4671af69e9397da4aab8811f7e881cbfad0a1c54cb489d86"
+    },
+    {
+      "name": "describe_slow_log_records",
+      "hash": "428ae59a731cb803fe90a0327b1c44d1a88fc5948d571f55ff5894e0cb6271e1"
+    },
+    {
+      "name": "describe_vpcs",
+      "hash": "36f230af9297747024f73ee70cd5ad59fbf6fe903feb345051b344701b4309d2"
+    },
+    {
+      "name": "describe_vswitches",
+      "hash": "abc11a7354d9f15ccda4373c03c4210c6126e3c3f8ba90ccf727da7387ebb08d"
+    },
+    {
+      "name": "get_current_time",
+      "hash": "c62d1661d0d638ed6b689471c8449d41e6641bac39e4d4353719e7a07901af7a"
+    },
+    {
+      "name": "modify_db_instance_description",
+      "hash": "fe584046327e0bbba0f51ed0afb33d437fe3c0fd8ec81d8feced14ee8b08cb0d"
+    },
+    {
+      "name": "modify_db_instance_spec",
+      "hash": "fd2047a56dfb562f438a910d1553bc6e9c3b8d6f6fd2359a1235b9ea3241d0be"
+    },
+    {
+      "name": "modify_parameter",
+      "hash": "59dd0072dfb97d68a151120b51f38517b7eb22b122792fbc4e6b0ac8701ef22c"
+    },
+    {
+      "name": "modify_security_ips",
+      "hash": "cbfa4976349483b841ce78dbe0500b9d679942eefb19511784e0727f1814eb75"
+    },
+    {
+      "name": "restart_db_instance",
+      "hash": "7e85cf0f719d26c5ae57806ae4a44ef3e43f7386019c54f1a4617002d536bbd4"
+    }
+  ],
+  "prompts": []
+}

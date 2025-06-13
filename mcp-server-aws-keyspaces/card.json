@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-aws-keyspaces",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-keyspaces",
+  "description": "Amazon Keyspaces MCP server for interacting with Keyspaces and Apache Cassandra databases",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-keyspaces",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/amazon-keyspaces-mcp-server"
+    },
+  "tags": ["database","cloud"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.0.1",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"08fdd0203e5f61cef1f7bbcb697eb3786b7187159ed5920fc16b0f6db3de2349","reason":"Tool names are clear and purposeful, but descriptions are extremely brief (single sentence with minimal context) and fail to explain what information is returned, when to use each tool, or important limitations like read-only restrictions. Parameter descriptions are basic but adequate. The toolset lacks sufficient detail for users to understand capabilities and constraints.","score":"D"},
+  "resources": {
+    "tools": 6,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

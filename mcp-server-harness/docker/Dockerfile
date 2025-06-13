@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -8,17 +8,13 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
     CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
 
-FROM golang:1.24 AS builder
-ENV GO111MODULE=on
+FROM alpine:3.21 AS artifacts
+
 ARG TARGETOS TARGETARCH
-ARG BUILDKIT_SBOM_SCAN_STAGE=true
-
-RUN git clone https://github.com/harness/mcp-server sources
-RUN cd sources && git checkout v1.0.0-beta
-
-RUN --mount=type=cache,target=/root/.cache/go-build \
-    --mount=type=cache,target=/go/pkg \
-    cd sources && CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go build -o bin/harness-mcp-server ./cmd/harness-mcp-server
+RUN apk update && apk add --no-cache curl file tar unzip go
+COPY artifacts.sh /tmp/artifacts.sh
+RUN chmod a+x /tmp/artifacts.sh
+RUN sh /tmp/artifacts.sh https://github.com/harness/mcp-server/releases/download/v1.0.0-beta/harness-mcp-server-darwin-arm64 https://github.com/harness/mcp-server/releases/download/v1.0.0-beta/harness-mcp-server-linux-amd64 https://github.com/harness/mcp-server/releases/download/v1.0.0-beta/harness-mcp-server-linux-arm64 https://github.com/harness/mcp-server/releases/download/v1.0.0-beta/harness-mcp-server-windows-amd64 https://github.com/harness/mcp-server/releases/download/v1.0.0-beta/harness-mcp-server-windows-arm64
 
 FROM alpine:3.21
 
@@ -40,7 +36,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 RUN apk update \
     && apk add --no-cache curl
 
-COPY --from=builder /go/sources/bin/harness-mcp-server /usr/bin/harness-mcp-server
+COPY --from=artifacts /tmp/binaries /usr/local/bin
 
 HEALTHCHECK CMD curl --fail http://localhost:8080 || exit 1
 

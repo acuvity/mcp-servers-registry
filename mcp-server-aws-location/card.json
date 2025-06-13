@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-aws-location",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-location",
+  "description": "AWS Location Service MCP server for place search, geocoding, and route calculation",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-location",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/aws-location-mcp-server"
+    },
+  "tags": ["cloud"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "2.0.1",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"5ca904c08386d2cdca078645e9aa811b22983c6818536cd78cf41e9257da1887","reason":"The toolset demonstrates good documentation quality with clear, descriptive names and adequate parameter documentation. Most descriptions explain functionality and include helpful context about AWS Location Service integration. However, descriptions vary in completeness - some are comprehensive while others are brief. The calculate_route tool stands out with detailed parameter explanations in both description and schema, while others like get_place could benefit from more context about when to use them versus alternatives.","score":"B"},
+  "resources": {
+    "tools": 7,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-aws-finch"
+description: "A Helm chart for Build and push container images using Finch, with ECR repository management and AWS integration"
+home: https://github.com/awslabs/mcp/tree/HEAD/src/finch-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/awslabs/mcp/tree/HEAD/src/finch-mcp-server
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-aws-finch/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "0.1.2"
+keywords:
+  - mcp-server-aws-finch
+  - mcp-server
+  - native
+  - automation
+  - cloud
+  - development

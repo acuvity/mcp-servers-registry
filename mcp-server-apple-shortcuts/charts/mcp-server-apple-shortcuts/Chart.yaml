@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 1.0.1
+appVersion: "1.0.1"
 keywords:
   - mcp-server-apple-shortcuts
   - mcp-server

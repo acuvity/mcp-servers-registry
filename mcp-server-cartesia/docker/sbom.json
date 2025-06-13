@@ -1,0 +1,41 @@
+{
+  "tools": [
+    {
+      "name": "clone_voice",
+      "hash": "d000d5874fa1f3b8525a42b7e66ab7e38560e8ced5361814b7fdc3904ae3e7ed"
+    },
+    {
+      "name": "delete_voice",
+      "hash": "a0ddee9cbee01aa10047230f4d6944514cfad67ad4d11d3aadac25320ca6fd90"
+    },
+    {
+      "name": "get_voice",
+      "hash": "94488dca63e5587cd286beea05f0be145d141300c655b1b58f9d239951b0984b"
+    },
+    {
+      "name": "infill",
+      "hash": "6db8e92e803cc4c1a4ffda8329225ad8be2ec02b64997a5353985245eeac1974"
+    },
+    {
+      "name": "list_voices",
+      "hash": "89485b7982e58bca0d0f9bd7a4049d676ac8c96ca769c4ca7a5c059740793e76"
+    },
+    {
+      "name": "localize_voice",
+      "hash": "89aba570ca1e43fc663065e5f595e55c8050e9e18ea5606f65d2b224c9fbf1c1"
+    },
+    {
+      "name": "text_to_speech",
+      "hash": "dbe87dd215d9e19724d4fc94a30b872aed0251a7968c4585c82a9ed3be9393f6"
+    },
+    {
+      "name": "update_voice",
+      "hash": "e31c18bb843c2924b82319aec98f631aca027d7c16d29ca311d65f034d6b6d2f"
+    },
+    {
+      "name": "voice_change",
+      "hash": "81dada3df7b8aa51eb3ba974ebed8fc71d329f22158bb27346963c8333036d33"
+    }
+  ],
+  "prompts": []
+}

@@ -1,14 +1,14 @@
 {
   "id": "mcp-server-aws-core",
-  "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
   "name": "mcp-server-aws-core",
-  "description": "Core AWS MCP server providing prompt understanding and server management capabilities.",
+  "description": "Starting point for AWS MCP servers providing planning and orchestration tools",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-core",
-      "application": "https://pypi.org/project/awslabs.core-mcp-server/"
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/core-mcp-server"
     },
-  "tags": ["cloud"],
+  "tags": ["cloud","automation","integration"],
   "official": true,
   "scope": "remote",
   "mutitenant": true,
@@ -16,7 +16,7 @@
   "version": "1.0.1",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"008247a131c22a9c3c2eb4f26f0efae9fde093050da4a04bb3950cb8abf6e632","reason":"Tool name is vague and non-descriptive, description is tautological ('Prompt Understanding' tool for 'Prompt Understanding'), contains no actual functionality explanation, and has empty input schema with no parameters or guidance on what the tool actually does or when to use it.","score":"F"},
+  "rating": {"hash":"62dc73d39d3726543b1cbc40e016612d7f13373d8112ea38cf231f6118b707b9","reason":"The tool name is vague and doesn't clearly indicate its AWS-specific purpose. The description is confusing with conflicting information - it claims to be for 'prompt understanding' but then mentions 'AWS expert advice' without explaining the connection. The input schema has no parameters but no explanation of how the tool works without inputs. The description lacks clarity about what the tool actually does or returns.","score":"D"},
   "resources": {
     "tools": 1,
     "prompts": 0,

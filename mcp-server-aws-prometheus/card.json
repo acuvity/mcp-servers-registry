@@ -1,0 +1,22 @@
+{
+  "id": "mcp-server-aws-prometheus",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-prometheus",
+  "description": "Interface for AWS Managed Prometheus with PromQL queries and metrics listing",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-prometheus",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/prometheus-mcp-server"
+    },
+  "tags": ["monitoring","cloud"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.1.1",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": null,
+  "resources": {
+  }
+}

@@ -22,13 +22,13 @@
 [![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-neo4j-memory/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-neo4j-memory/0.1.4?logo=docker&logoColor=fff&label=0.1.4)](https://hub.docker.com/r/acuvity/mcp-server-neo4j-memory)
-[![PyPI](https://img.shields.io/badge/0.1.4-3775A9?logo=pypi&logoColor=fff&label=mcp-neo4j-memory)](https://github.com/neo4j-contrib/mcp-neo4j)
+[![PyPI](https://img.shields.io/badge/0.1.4-3775A9?logo=pypi&logoColor=fff&label=mcp-neo4j-memory)](https://github.com/neo4j-contrib/mcp-neo4j/tree/HEAD/servers/mcp-neo4j-memory)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-neo4j-memory/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-neo4j-memory&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22NEO4J_PASSWORD%22%2C%22-e%22%2C%22NEO4J_URL%22%2C%22-e%22%2C%22NEO4J_USERNAME%22%2C%22docker.io%2Facuvity%2Fmcp-server-neo4j-memory%3A0.1.4%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Provides persistent memory capabilities through Neo4j graph database integration.
 
-Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from mcp-neo4j-memory original [sources](https://github.com/neo4j-contrib/mcp-neo4j).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from mcp-neo4j-memory original [sources](https://github.com/neo4j-contrib/mcp-neo4j/tree/HEAD/servers/mcp-neo4j-memory).
 
 **Quick links:**
 
@@ -161,7 +161,7 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
   - `NEO4J_USERNAME` required to be set
   - `NEO4J_DATABASE` optional (not set)
 
-For more information and extra configuration you can consult the [package](https://github.com/neo4j-contrib/mcp-neo4j) documentation.
+For more information and extra configuration you can consult the [package](https://github.com/neo4j-contrib/mcp-neo4j/tree/HEAD/servers/mcp-neo4j-memory) documentation.
 
 # 🧰 Clients Integrations
 

@@ -1,0 +1,51 @@
+{
+  "tools": [
+    {
+      "name": "do-katana",
+      "hash": "8f9e287fa85b0cd107fa2529ca07c246190b33c5f4e24ef2fbed648afe4bb7ec",
+      "params": [
+        {
+          "name": "depth",
+          "hash": "4bbdc484f78fc61f7b6c8fdbcdf37d50767f4b5aa2bef9d4cb19ed9fb9d95a4b"
+        },
+        {
+          "name": "exclude",
+          "hash": "455d5bb514bbf003109df2250aad90b89568ae19bb90156e3533f4e0a6c24858"
+        },
+        {
+          "name": "headers",
+          "hash": "ba6f6f5da13ce792c698bca6f3b51dfe6567dd4fac11854f3908bf44e8f6ad60"
+        },
+        {
+          "name": "headless",
+          "hash": "1ffe70b6dc409553a7eb978f0dba7153416b57d264aab8806cf9fa22552c7e2a"
+        },
+        {
+          "name": "js_crawl",
+          "hash": "dae1d83be391522bcda9ab7ddcf3a8fe5276b4f7700b1099ba2d532cacc717d4"
+        },
+        {
+          "name": "jsluice",
+          "hash": "b2ad83daceee524e3eeeb8a5b1c0c74dab6ff2ada1b485b57967ebfbdf01b07d"
+        },
+        {
+          "name": "show_brwoser",
+          "hash": "8d993ed534c9efcb98520108106fa3cd47ab35fb8bfff618054c062d37eb2973"
+        },
+        {
+          "name": "strategy",
+          "hash": "7bf25838156d6931dba192161c0e6507e6ca4a9cae144ca8d7ca21427999cfe0"
+        },
+        {
+          "name": "system_chrome",
+          "hash": "7d6723897b93dbb538f225059b499ac14f3a58d6a81e3cdef8cfb3d47815986d"
+        },
+        {
+          "name": "target",
+          "hash": "e151c42c0d9583aea7cd97d08df444d262b7f4ff698f9d4eb2fbd5cb55870f64"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

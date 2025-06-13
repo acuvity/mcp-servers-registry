@@ -1,0 +1,357 @@
+{
+  "tools": [
+    {
+      "name": "add_inline_policy",
+      "hash": "da301ba8e5cf8d21adcea91395101bbd4eb375dfdfee6715e2f97a94071cb9d2",
+      "params": [
+        {
+          "name": "permissions",
+          "hash": "5991ad79e60e52e84251ae238c1045ac71a583c3e19214f29fa8c93a70286d14"
+        },
+        {
+          "name": "policy_name",
+          "hash": "e439b46fe7ad5c9f14f955a3ce6c6eb525f96dfb4e4588ebdaf479e2f6da63c7"
+        },
+        {
+          "name": "role_name",
+          "hash": "6d2533203d55a5c35206e85536961c8bd5f0f5f0eaec86b2295f81531ec4b484"
+        }
+      ]
+    },
+    {
+      "name": "apply_yaml",
+      "hash": "7f558ba822c62a0fdb907a7a3439f31ac7bce441a74782cdf9105954e72f4a17",
+      "params": [
+        {
+          "name": "cluster_name",
+          "hash": "d5507a2b38304fe0e14eae0cdf061160de2efdd55a9a8d99fb8d5621e25f4787"
+        },
+        {
+          "name": "force",
+          "hash": "a9f2994011def415d247fb229cd30da862968d424821b3a67f9a1b0b26a88fa8"
+        },
+        {
+          "name": "namespace",
+          "hash": "5783d9eae3ff18f88eec6ed8886f9f901bcd1658f81a4c9e20be34b9166f9c57"
+        },
+        {
+          "name": "yaml_path",
+          "hash": "5b7687cc13ceee58b6534f3b4ec127896f06ae1a938b6c086dafe4c7671941d3"
+        }
+      ]
+    },
+    {
+      "name": "generate_app_manifest",
+      "hash": "f9e5c84f28f5532d2dbf89046f12eaa98f55da1bc14132fea7ee7a21d2790aeb",
+      "params": [
+        {
+          "name": "app_name",
+          "hash": "ab9ba39d6c303a51de07261968965a664b75118dd1681cf03430f77f715b839a"
+        },
+        {
+          "name": "cpu",
+          "hash": "d3fd2ca58c0334f145d6723a6469d53dba86378bdbc22d53ff1d45108f62fdbb"
+        },
+        {
+          "name": "image_uri",
+          "hash": "329e1d1d84012d68c4d84fce8645e8c7bc23a86ddc3196a21087b3889061f879"
+        },
+        {
+          "name": "load_balancer_scheme",
+          "hash": "a737d7fb36ada0bbe2445309f85d7996e1e00f5f1866bacc4b20a7c8adc41672"
+        },
+        {
+          "name": "memory",
+          "hash": "5cf5901274ed7d15d281ea6d53dfd4d2e87c199d9aca21395be04a21e460b9ca"
+        },
+        {
+          "name": "namespace",
+          "hash": "107365ffda6a6879b1e09d416069500a80ce2da172f0183ae7cc5f9dde4ccb75"
+        },
+        {
+          "name": "output_dir",
+          "hash": "3412476fdbcf9e8516e23b3a112ab74982e795cd0bcfb9d1977187a53bbdf07a"
+        },
+        {
+          "name": "port",
+          "hash": "c24928999b45d2f8f97607766f7a37a69a50632257b44d258c49005bb1bad695"
+        },
+        {
+          "name": "replicas",
+          "hash": "770f11c27aaff3be62bb85c2eb260061153f72f7c2f76faa923011cb6d1266fb"
+        }
+      ]
+    },
+    {
+      "name": "get_cloudwatch_logs",
+      "hash": "702890a983ea63a5ce02c90bd8d65c33786df1793caba2d11ffa8d0f76878aff",
+      "params": [
+        {
+          "name": "cluster_name",
+          "hash": "9d72c09b08c2a972875f333cba5fc3cb447d7a7131260ec477c45c8b1e28867b"
+        },
+        {
+          "name": "end_time",
+          "hash": "effd1b3e99eb0dbf853c7594b23b3440813162e1ebab136985f0ae883ee5f88a"
+        },
+        {
+          "name": "fields",
+          "hash": "851a15a27e44cd182e1df844aa1173f127932100b683f96c94138d074babf536"
+        },
+        {
+          "name": "filter_pattern",
+          "hash": "6f2ec9f67bc2e446d02675fb7acd7a83eebd9434edb5e667547912425457a192"
+        },
+        {
+          "name": "limit",
+          "hash": "ef5f8b6e3e506d9b67d07bf7a09a2bb66ef9210f50448c423fdfec1ee0385038"
+        },
+        {
+          "name": "log_type",
+          "hash": "90989b45919b18deaca293cb8cb327b1df338b2c96439950fa302d70920497e2"
+        },
+        {
+          "name": "minutes",
+          "hash": "7ad7d066c23a2b1c3450b73c5890ad2ef10c86ea8ac45dae32e8e42453254824"
+        },
+        {
+          "name": "resource_name",
+          "hash": "177563c456dd2371f4242416a62f293104646adb4f1fa9d405b16a8df3c148d7"
+        },
+        {
+          "name": "resource_type",
+          "hash": "ac07f6f25eb833efed1bf9edf686efe3e11a7630813bfbf15bf1e45de7a47a49"
+        },
+        {
+          "name": "start_time",
+          "hash": "345cfc9928d8a8780033abfdc8220a059b588bdcae47c0d00fc5fd147ce4658d"
+        }
+      ]
+    },
+    {
+      "name": "get_cloudwatch_metrics",
+      "hash": "d4621c2b3978b2adac4e727c8069683cae3c61e7f2b057e8bca7fc56db251626",
+      "params": [
+        {
+          "name": "cluster_name",
+          "hash": "3166f584348fa12e0b4237fc7ce2989ddb0efcc7d5cefe8fe4ca3061c5187537"
+        },
+        {
+          "name": "dimensions",
+          "hash": "9c321f359fbb5296f86c7e87f5e1f4de0c260fa4c64baafba45a88ad5fd677a8"
+        },
+        {
+          "name": "end_time",
+          "hash": "effd1b3e99eb0dbf853c7594b23b3440813162e1ebab136985f0ae883ee5f88a"
+        },
+        {
+          "name": "limit",
+          "hash": "5350af31a9088d70cc05a888aedc8506d99839bb8b710ea144a8689d672ba788"
+        },
+        {
+          "name": "metric_name",
+          "hash": "db8520cd92449acebf12920bfd6708c80da6eed404501c6a870fdf2a8babb85d"
+        },
+        {
+          "name": "minutes",
+          "hash": "3dff7ac2fc3d232c2c078e1b9ee4bdfae7015d40c7c1180ed151d2a749841612"
+        },
+        {
+          "name": "namespace",
+          "hash": "c05631850d5f59ec2f1671f1e97850cc47a0765e1135b60db6993a6506d95550"
+        },
+        {
+          "name": "period",
+          "hash": "13798fa2b1a88309998e76bb87430b64d58831d83f928963802574f7c39a88f5"
+        },
+        {
+          "name": "start_time",
+          "hash": "47c6a9e8190fbee525143ea669453f4fd142196aec9850849b490ad6f1618829"
+        },
+        {
+          "name": "stat",
+          "hash": "b9c6313701361449a4d2d71ab2648aa0cfdcf66491c43455858c5663db522440"
+        }
+      ]
+    },
+    {
+      "name": "get_eks_metrics_guidance",
+      "hash": "be908f414c3d7faad3cd7ced2e4dc837dcaeee787b5aa154fa593fe209c7e02d",
+      "params": [
+        {
+          "name": "resource_type",
+          "hash": "57984c9a8a28106bf794031d55de11469651a2989fc231666b1650c6c5309b08"
+        }
+      ]
+    },
+    {
+      "name": "get_k8s_events",
+      "hash": "0331d84aaa95c5711eb31e20b6eb1ee0c99f4ffcf77908565c5f778c5065c587",
+      "params": [
+        {
+          "name": "cluster_name",
+          "hash": "132c6b41e0f5decbccbfdf54615ab707d4cd9044e647f48452438ba0cb78c15f"
+        },
+        {
+          "name": "kind",
+          "hash": "8d65e384bcfb5153af1e3b951ef24a691aee5046be7e1752ad91ac4e1408a19d"
+        },
+        {
+          "name": "name",
+          "hash": "eef9c3e70fa1cb6481789d2ff0bf66da5dcee1cce960ff641d28dcb2c3956326"
+        },
+        {
+          "name": "namespace",
+          "hash": "a59ce840425069d4821a59c1aadabd6808fdebe36154ebb11520d95d88618410"
+        }
+      ]
+    },
+    {
+      "name": "get_pod_logs",
+      "hash": "cfc4efa5109d5cd3d560f0b7567a692a76dd56ad77122fb962c837ac36a00fdf",
+      "params": [
+        {
+          "name": "cluster_name",
+          "hash": "edf1e441cc205c94bb847047f8be4de4c4a16d668a2e2068cc688e0185819bba"
+        },
+        {
+          "name": "container_name",
+          "hash": "3f5b2d3222b8e69be54079d23aa61b115b398959564aed4a23573eff654e7c4f"
+        },
+        {
+          "name": "limit_bytes",
+          "hash": "11abfe011f8a74c61597c3ecc5d74a8e8c2d4952efca310f9fc1a1a97d0899fd"
+        },
+        {
+          "name": "namespace",
+          "hash": "294f6735992dbaf16cb3a48987de09fa0ffa343dcbf4ab69ee258cfccb1bf075"
+        },
+        {
+          "name": "pod_name",
+          "hash": "a3b2839c8810075aeea411347cf78ee5fcd62e20fd80d2f365a8779e109b47cb"
+        },
+        {
+          "name": "since_seconds",
+          "hash": "25ec0c4a85cb524d081847671ba412674b60c1d51c0ff27605a2b9d7fdc016fc"
+        },
+        {
+          "name": "tail_lines",
+          "hash": "7faaf53e8fbf0051835a8ddb16684995b240e384d6baa7517a8a625ceb35a163"
+        }
+      ]
+    },
+    {
+      "name": "get_policies_for_role",
+      "hash": "8f5390680772e7ea94a62676161e2634b488816c3b47f1930b27acaf6b7f7f79",
+      "params": [
+        {
+          "name": "role_name",
+          "hash": "3bcc4b6d25cce08a96c158a72a7d69f961ffc45829446254e292fcceced0fbd8"
+        }
+      ]
+    },
+    {
+      "name": "list_api_versions",
+      "hash": "c844a4fb2aa027810089f19027080f200162cbca65fe1de8b42b8cdbbc4c04c7",
+      "params": [
+        {
+          "name": "cluster_name",
+          "hash": "caa90278c0b2429f8f24c310127eb0028fdd04f8887e856eb3f6a2e4cd6e6202"
+        }
+      ]
+    },
+    {
+      "name": "list_k8s_resources",
+      "hash": "35bec1e42d19c1c2250280c2e0960cba482c078835ca22ee70b4010c8b75a607",
+      "params": [
+        {
+          "name": "api_version",
+          "hash": "cb0583b775e01b5cfa1868ae3f0f3c5409d3fd11e4b8df48a75075e44310090e"
+        },
+        {
+          "name": "cluster_name",
+          "hash": "00039a6eed6c1187db0ed695492ac1d611561ee6d94a4a9907a9004e38dabf5d"
+        },
+        {
+          "name": "field_selector",
+          "hash": "615cfbf7e9dc3373a10672728d666a58d7cb0053513cf543c4c0d0697d2e6ecb"
+        },
+        {
+          "name": "kind",
+          "hash": "631781e78c2f65cd36de4469c4238685064f073650068111c0b682caca0cde94"
+        },
+        {
+          "name": "label_selector",
+          "hash": "13ba5c6be3d704e9859ac149b6caa81f4979cdd8a871a833f5aaee321ba8089c"
+        },
+        {
+          "name": "namespace",
+          "hash": "22597b36142f07ca97ac1c63885cec38d91f332d4a338f15186399bbb82608bc"
+        }
+      ]
+    },
+    {
+      "name": "manage_eks_stacks",
+      "hash": "70c921830c7962d51e0508cdeac5bc878096b6022d3505ac10b89d9488eedd9a",
+      "params": [
+        {
+          "name": "cluster_name",
+          "hash": "839d6e3dd8e60d59ef76b3aac725e54d7866062f45b427655cb0cf9346e49901"
+        },
+        {
+          "name": "operation",
+          "hash": "6a7fcd59f70a803aee7688460cd79bdf34f321c811f3c543c2999e1c917f9a30"
+        },
+        {
+          "name": "template_file",
+          "hash": "b97aabe3467f13a3d6f9f4d75bc12772bf927812cde2ce9fde50dec2b55220ed"
+        }
+      ]
+    },
+    {
+      "name": "manage_k8s_resource",
+      "hash": "c3b7532c502e8a2fb413cb7d3de7a597d559619f95e76803dc287203e664c9e9",
+      "params": [
+        {
+          "name": "api_version",
+          "hash": "7b26ceb1c6e4965d5969a7e22acbce57abc7965b4019719144a2f22f4184af92"
+        },
+        {
+          "name": "body",
+          "hash": "eb44cd308ddb282a31b787115b78112d683f73b961a905ac16b9f051aaf4eb62"
+        },
+        {
+          "name": "cluster_name",
+          "hash": "ff269ba252c8048b14aee42e8cf6eb70eb487b0d315fe60c677cabc595e2e78f"
+        },
+        {
+          "name": "kind",
+          "hash": "a3b8057fe42f10b3b9662a5def704dbfd5210ee5cedee941ea983ad8555dcc4d"
+        },
+        {
+          "name": "name",
+          "hash": "1e70eacb39e755f02a74852d9abd12cf54ad6101f589eef563163c9b87a6a3d5"
+        },
+        {
+          "name": "namespace",
+          "hash": "1192416f48f5d6b86471078cbbf9056dc199ad77b12abbab9c2c6120e7335fd5"
+        },
+        {
+          "name": "operation",
+          "hash": "e850aec68a701cec81de606694a536382986c45cfbcfb396d4ac4010dc75f709"
+        }
+      ]
+    },
+    {
+      "name": "search_eks_troubleshoot_guide",
+      "hash": "78fbc16014e6bd9090aaa6a60cae72fbc8ffbc79e12be34af197d08818b7c6e5",
+      "params": [
+        {
+          "name": "query",
+          "hash": "c2ff234f78e9325c8908cc3a6e6203474ee6c26669cae552313d6bfbcac7dad2"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

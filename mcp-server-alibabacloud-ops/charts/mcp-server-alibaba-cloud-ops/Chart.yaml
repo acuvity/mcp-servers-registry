@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-alibaba-cloud-ops"
+description: "A Helm chart for Alibaba Cloud integration, supporting ECS, Cloud Monitor, OOS and widely used cloud products."
+home: https://github.com/aliyun/alibaba-cloud-ops-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/aliyun/alibaba-cloud-ops-mcp-server
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-alibaba-cloud-ops/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.8.7
+keywords:
+  - mcp-server-alibaba-cloud-ops
+  - mcp-server
+  - remote
+  - cloud
+  - integration

@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": false,
   "runtime": "node",
-  "version": "1.2.3",
+  "version": "1.4.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"9135e75217b21222213c6c2b96e7e854217323de74c56e15237fa9fb13c96503","reason":"Tool names are clear and specific with consistent 'coda_' prefix indicating purpose. Descriptions are brief (1 sentence each) but adequately explain basic functionality. Parameter descriptions are clear and indicate purpose and expected input types. However, descriptions lack context about when to use tools, what they return, limitations, or usage scenarios, requiring users to infer some details about tool behavior and appropriate usage contexts.","score":"C"},
+  "rating": {"hash":"63b18d6e94d5f10891a6428ebd2ff5549874f4afeb2f89912122010c813b8e52","reason":"The toolset provides adequate documentation with clear, consistent naming and basic functionality descriptions. Parameter descriptions are generally clear and include helpful details like constraints and optional indicators. However, the tool descriptions are quite brief (mostly single sentences) and lack important context about usage scenarios, limitations, or what information is returned. While functional, the documentation leaves users with questions about when to use each tool and what to expect from them.","score":"C"},
   "resources": {
-    "tools": 8,
+    "tools": 9,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

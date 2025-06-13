@@ -1,0 +1,15 @@
+{
+  "tools": [
+    {
+      "name": "do-assetfinder",
+      "hash": "680cfb937be57575135c085a578e7d73b3e9efdd4ddbd5e0e2a46229e92defb5",
+      "params": [
+        {
+          "name": "target",
+          "hash": "e3131658f9af1bbfff9119727ceee8ff4befb43a541e91788100124ae53d2313"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-aws-finch",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-finch",
+  "description": "Build and push container images using Finch, with ECR repository management and AWS integration",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-finch",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/finch-mcp-server"
+    },
+  "tags": ["automation","cloud","development"],
+  "official": true,
+  "scope": "native",
+  "mutitenant": false,
+  "runtime": "python",
+  "version": "0.1.2",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"182e49cf35d0f587f2cc24f5aec348ffb84551d2291622fc68aa787510bd995f","reason":"Good documentation overall with comprehensive descriptions and clear parameter documentation. Tool names are specific and intuitive. Descriptions effectively explain functionality, usage context, and limitations including ECR integration details and read-only mode behavior. Parameter descriptions are clear with helpful examples. Minor areas for improvement include some verbose descriptions and a few parameters that could benefit from more specific constraint details (e.g., valid platform formats, progress output types).","score":"B"},
+  "resources": {
+    "tools": 3,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

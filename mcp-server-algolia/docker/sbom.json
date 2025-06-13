@@ -1,0 +1,191 @@
+{
+  "tools": [
+    {
+      "name": "batch",
+      "hash": "3c7f23a7866bc943eb18644e58c94b56a3bf62628bc7e4e64534d97a1302129e",
+      "params": [
+        {
+          "name": "requestBody",
+          "hash": "ef8518e4d7b3bb72bb98db311d122c4725ad42b42e53967141cc75119ae48618"
+        }
+      ]
+    },
+    {
+      "name": "createQuerySuggestionsConfig",
+      "hash": "3519a33e483b77e98be4896cbd32f50c98126ab4ae3bcb2cd03294a349100a5c",
+      "params": [
+        {
+          "name": "requestBody",
+          "hash": "d0a08c405baea209b2090eff628a18fb9c310753947ae039ab15d1035c0a1016"
+        }
+      ]
+    },
+    {
+      "name": "getClustersStatus",
+      "hash": "9f08baeabedbfc60111dbacea2ede2d0bfe564644f40d06e1bb27635319c9f77"
+    },
+    {
+      "name": "getCollection",
+      "hash": "01ce2a597726c70408e04db545e0d6b8222040fa0095e90f948cf5c1627c5e9b"
+    },
+    {
+      "name": "getIncidents",
+      "hash": "bce0803ed14e11e72bb27eae422e62b4c95e02a95354da6fc34b9d504a5d574b"
+    },
+    {
+      "name": "getNoResultsRate",
+      "hash": "46f8da9b62dbfac7f93f1173b19813e50e09b5d86375d8c3cb08ae7af0f585f5"
+    },
+    {
+      "name": "getQuerySuggestionConfigStatus",
+      "hash": "476a9f97294d878fe96cb210831fd57a538cf9a415ef4913c04d5fa3644ee0be"
+    },
+    {
+      "name": "getQuerySuggestionLogFile",
+      "hash": "2e296e7cb8a2a8bfd0e5112b97ac39433e2e0c83a72955f9ba92a9af2e569ae5"
+    },
+    {
+      "name": "getQuerySuggestionsConfig",
+      "hash": "c44ce26b42e2d43d7c0a21635e9a0aa9deba006b1f2170e3898bbbc855d55e34"
+    },
+    {
+      "name": "getSettings",
+      "hash": "80e04f471ceae682acbd784dc967992a7fd8d7f296b5f739c79d389597c6f367"
+    },
+    {
+      "name": "getTopHits",
+      "hash": "10da0aad9b5af9cb53784ab8796621fa8144b51b13d36cdf4a14adaf9650da66"
+    },
+    {
+      "name": "getTopSearches",
+      "hash": "6392f6a088fa2308bd0f2c73112ae7eb5901c012f36b7c12efd2055e9ab1322e"
+    },
+    {
+      "name": "listABTests",
+      "hash": "a90fc52df3f0c77d19185cb131d22cc71ce0a985231d0ca7180e17bd461b47ee"
+    },
+    {
+      "name": "listCollections",
+      "hash": "cb248fb3bb4a4a1f25d99eb96850361297754543e8b09bf3edcc82db56f9654e"
+    },
+    {
+      "name": "listDestinations",
+      "hash": "74c3a4d884aa8692b9025bb925d57212f06073d0a044656b8ac42a677e119767",
+      "params": [
+        {
+          "name": "region",
+          "hash": "bb3b265cb4ecb2b5cf6e2f8dd2235f9605113bd1167244a9efe31239380c2bae"
+        }
+      ]
+    },
+    {
+      "name": "listIndices",
+      "hash": "2898ec0539434abe83b7b867fe5af2a2cc90a23e056118e6400185ee9fbe98a3"
+    },
+    {
+      "name": "listQuerySuggestionsConfigs",
+      "hash": "e9318ee1d86c403b1b922acc90c4a471da2e731a9409bd258caa271023a883c1"
+    },
+    {
+      "name": "listSources",
+      "hash": "97ed65f3096d648cb208a0561cbf7c34f96cde82e8a445512361fe0f322869d9",
+      "params": [
+        {
+          "name": "region",
+          "hash": "bb3b265cb4ecb2b5cf6e2f8dd2235f9605113bd1167244a9efe31239380c2bae"
+        }
+      ]
+    },
+    {
+      "name": "listTasks",
+      "hash": "99f58e5022f2041d97663ee19f754bbca2e542983c4cad82223be43ecac93a4b",
+      "params": [
+        {
+          "name": "action",
+          "hash": "d28d228bf3f5190b991ce884c2566939c75a8e88c55bc72b7d44e4f79352aa7d"
+        },
+        {
+          "name": "region",
+          "hash": "bb3b265cb4ecb2b5cf6e2f8dd2235f9605113bd1167244a9efe31239380c2bae"
+        }
+      ]
+    },
+    {
+      "name": "listTransformations",
+      "hash": "fa23fec0f59a66036256228e711174f26317dc8fc2094184babee914e0bd8920",
+      "params": [
+        {
+          "name": "region",
+          "hash": "bb3b265cb4ecb2b5cf6e2f8dd2235f9605113bd1167244a9efe31239380c2bae"
+        }
+      ]
+    },
+    {
+      "name": "multipleBatch",
+      "hash": "717ba396a06a7bf7185214c389ec858965aac7d7f8ba0dad48ad1f603f3c92f7",
+      "params": [
+        {
+          "name": "requestBody",
+          "hash": "ef8518e4d7b3bb72bb98db311d122c4725ad42b42e53967141cc75119ae48618"
+        }
+      ]
+    },
+    {
+      "name": "partialUpdateObject",
+      "hash": "43323953b44172aed477e24e99b398371f1fc2c6ca583d41a8af47d7d8298ba0",
+      "params": [
+        {
+          "name": "requestBody",
+          "hash": "37a38f48dc952a1ae91577e10827a6fea9ae031a18bc8489dd3dde7e31698d2e"
+        }
+      ]
+    },
+    {
+      "name": "retrieveApplicationMetricsHourly",
+      "hash": "10ccdfc387ba08da72fc15ccc9bf4967f004356a9fcea175443af0f1826bd054"
+    },
+    {
+      "name": "retrieveMetricsDaily",
+      "hash": "3114c7ab255e7f45cf0e0077de80bcb6067109db78f321e556fd634f11edd2f9"
+    },
+    {
+      "name": "retrieveMetricsRegistry",
+      "hash": "b73eb0805ad8bee9197ffc8d880460c0f906dbd0248f94a81b6f09d1b31d717f"
+    },
+    {
+      "name": "saveObject",
+      "hash": "01faa3091eee8d3919ec6e3e93cd114589e900e6f5eb3ea16a8402cd468fd1bd",
+      "params": [
+        {
+          "name": "requestBody",
+          "hash": "37b07922d1570e44d5abacbb5db414a026b2f141a236f0bd12996dfe67a7502c"
+        }
+      ]
+    },
+    {
+      "name": "searchRules",
+      "hash": "6d847bfa9acf15a6e6a051a1523f9ee9c101da8c80c78f523a8daf5516d7bef8",
+      "params": [
+        {
+          "name": "requestBody",
+          "hash": "6097abf0d9320124087364d5d716fcb998f48cd92e420d69addcaaac17801c33"
+        }
+      ]
+    },
+    {
+      "name": "searchSingleIndex",
+      "hash": "84b48593501028564d85719d21b46fef13d4f19967077bfb74b2c9b234cd6e23"
+    },
+    {
+      "name": "searchSynonyms",
+      "hash": "91f2cc53f20a92fb894000428aee4f54f00605f255380dd82135a59005742168",
+      "params": [
+        {
+          "name": "requestBody",
+          "hash": "cb9abc1984db46da0f3cd058594b573869425b6e2c5d984cd01d762a12326d80"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

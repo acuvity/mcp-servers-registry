@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 1.0.12
+appVersion: "1.0.14"
 keywords:
   - mcp-server-context-7
   - mcp-server

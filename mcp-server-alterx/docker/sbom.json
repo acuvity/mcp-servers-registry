@@ -1,0 +1,23 @@
+{
+  "tools": [
+    {
+      "name": "do-alterx",
+      "hash": "54af50bebaa6c6819360b1140803745eb4a84fe04a6c75bd316ddb0caec5859c",
+      "params": [
+        {
+          "name": "domain",
+          "hash": "a3ee89d6cadc081d8d2ef8625440597c263bd25d1e0987aaabf720ef8ae19e9f"
+        },
+        {
+          "name": "outputFilePath",
+          "hash": "04f5185a61cf88d5a9ba1c29084ebfb03dfe934266e09fa222295aed8ab93fc6"
+        },
+        {
+          "name": "pattern",
+          "hash": "f07681dd5d7916f90ceccc16048c790cb4523b9b8be39fb8d6a00ccc06adb7ef"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

@@ -1,0 +1,9 @@
+env:
+  HYPERSPELL_USE_RESOURCES: 
+
+secrets:
+  HYPERSPELL_TOKEN:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

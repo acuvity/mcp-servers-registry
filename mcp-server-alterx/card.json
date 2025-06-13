@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-alterx",
+  "icon": "https://avatars.githubusercontent.com/u/89649708?s=200&v=4",
+  "name": "mcp-server-alterx",
+  "description": "Pattern-based wordlist generator for subdomain discovery using Alterx permutation tool",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-alterx",
+      "application": "https://github.com/cyproxio/mcp-for-security/tree/HEAD/alterx-mcp"
+    },
+  "tags": ["security"],
+  "official": true,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "6190e55",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"18420dc9d7d07ac20b757e3feb2eae47611942fb98a96a4607c9e14aca2c5bda","reason":"The tool has a clear, specific name and comprehensive description explaining its purpose for subdomain discovery. The pattern parameter documentation is exceptionally detailed with multiple examples. However, the domain parameter description is somewhat ambiguous about input formats, and having outputFilePath as required but nullable creates confusion about its actual necessity.","score":"B"},
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

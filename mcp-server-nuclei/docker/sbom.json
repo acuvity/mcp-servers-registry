@@ -1,0 +1,23 @@
+{
+  "tools": [
+    {
+      "name": "do-nuclei",
+      "hash": "1fffde3d6d4b328b5215b13950a38ba0b3e1ba9ca19cba7e7db0e3265b036634",
+      "params": [
+        {
+          "name": "tags",
+          "hash": "bdf220c208f7cd9d5df65c32f0783ff404dac64f8f0f5d4d51e5221d0d9a5e6c"
+        },
+        {
+          "name": "url",
+          "hash": "85de563b3329eb1d0d8af24694cb493eac9428752445a1cff49e854b09d67f60"
+        }
+      ]
+    },
+    {
+      "name": "get-nuclei-tags",
+      "hash": "eb0887754a4f272544db9f83fff19557ccb3afd0d001334eb5e19c2f401110df"
+    }
+  ],
+  "prompts": []
+}

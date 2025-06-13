@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-tavily"
 LABEL org.opencontainers.image.description="Integrates AI models with web search and data extraction tools."
-LABEL org.opencontainers.image.version="0.2.2"
+LABEL org.opencontainers.image.version="0.2.4"
 LABEL org.opencontainers.image.source="https://github.com/tavily-ai/tavily-mcp"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="Tavily"
@@ -39,7 +39,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev tavily-mcp@0.2.2
+RUN npm i --omit-dev tavily-mcp@0.2.4
 
 EXPOSE 8000/tcp
 

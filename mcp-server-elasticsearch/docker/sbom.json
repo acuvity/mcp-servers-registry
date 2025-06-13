@@ -11,8 +11,24 @@
       ]
     },
     {
+      "name": "get_shards",
+      "hash": "59f5bf494ffeea6a524f2c8a8a5c2b35b86f77b6da5372026f290f2eb4aa1a92",
+      "params": [
+        {
+          "name": "index",
+          "hash": "1ab70defc67e3bda904e43cfb0bb5eccd4de889768373185184a6b2a7f6e9262"
+        }
+      ]
+    },
+    {
       "name": "list_indices",
-      "hash": "b8a9570272491ac3a8a50f6009acfbc97753f022318662f71c07d16e9b93304b"
+      "hash": "b8a9570272491ac3a8a50f6009acfbc97753f022318662f71c07d16e9b93304b",
+      "params": [
+        {
+          "name": "indexPattern",
+          "hash": "1e0ab961e458d2945554600fe740c2420ed3cd5906554f8ff74e7dbc09b64e3e"
+        }
+      ]
     },
     {
       "name": "search",

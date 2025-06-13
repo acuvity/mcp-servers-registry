@@ -21,10 +21,10 @@
 # What is mcp-server-chart?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-chart/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-chart/0.4.1?logo=docker&logoColor=fff&label=0.4.1)](https://hub.docker.com/r/acuvity/mcp-server-chart)
-[![PyPI](https://img.shields.io/badge/0.4.1-3775A9?logo=pypi&logoColor=fff&label=@antv/mcp-server-chart)](https://github.com/antvis/mcp-server-chart)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-chart/0.6.1?logo=docker&logoColor=fff&label=0.6.1)](https://hub.docker.com/r/acuvity/mcp-server-chart)
+[![PyPI](https://img.shields.io/badge/0.6.1-3775A9?logo=pypi&logoColor=fff&label=@antv/mcp-server-chart)](https://github.com/antvis/mcp-server-chart)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-chart/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-chart&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-chart%3A0.4.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-chart&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-chart%3A0.6.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** A Model Context Protocol server for generating visual charts using AntV.
 
@@ -170,7 +170,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-chart&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-chart%3A0.4.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-chart&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-chart%3A0.6.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -187,7 +187,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "-i",
           "--rm",
           "--read-only",
-          "docker.io/acuvity/mcp-server-chart:0.4.1"
+          "docker.io/acuvity/mcp-server-chart:0.6.1"
         ]
       }
     }
@@ -209,7 +209,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-chart:0.4.1"
+        "docker.io/acuvity/mcp-server-chart:0.6.1"
       ]
     }
   }
@@ -235,7 +235,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-chart:0.4.1"
+        "docker.io/acuvity/mcp-server-chart:0.6.1"
       ]
     }
   }
@@ -263,7 +263,7 @@ Add the following JSON block to your mcp configuration file:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-chart:0.4.1"
+        "docker.io/acuvity/mcp-server-chart:0.6.1"
       ]
     }
   }
@@ -289,7 +289,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-chart:0.4.1"
+        "docker.io/acuvity/mcp-server-chart:0.6.1"
       ]
     }
   }
@@ -308,7 +308,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 async with MCPServerStdio(
     params={
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-chart:0.4.1"]
+        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-chart:0.6.1"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -337,7 +337,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-chart:0.4.1`
+- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-chart:0.6.1`
 
 </details>
 
@@ -347,7 +347,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-chart:0.4.1
+docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-chart:0.6.1
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -443,7 +443,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (15)
+## 🧰 Tools (22)
 <details>
 <summary>generate_area_chart</summary>
 
@@ -490,6 +490,27 @@ Generate a bar chart to show data for numerical comparisons among different cate
 | width | number | Set the width of chart, default is 600. | No
 </details>
 <details>
+<summary>generate_boxplot_chart</summary>
+
+**Description**:
+
+```
+Generate a boxplot chart to show data for statistical summaries among different categories, such as, comparing the distribution of data points across categories.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| axisXTitle | string | Set the x-axis title of chart. | No
+| axisYTitle | string | Set the y-axis title of chart. | No
+| data | array | Data for boxplot chart, such as, [{ category: '分类一', value: 10 }] or [{ category: '分类二', value: 20, group: '组别一' }]. | Yes
+| height | number | Set the height of chart, default is 400. | No
+| theme | string | Set the theme for the chart, optional, default is 'default'. | No
+| title | string | Set the title of chart. | No
+| width | number | Set the width of chart, default is 600. | No
+</details>
+<details>
 <summary>generate_column_chart</summary>
 
 **Description**:
@@ -528,7 +549,7 @@ Generate a dual axes chart which is a combination chart that integrates two diff
 | axisXTitle | string | Set the x-axis title of chart. | No
 | categories | array | Categories for dual axes chart, such as, ['2015', '2016', '2017']. | Yes
 | height | number | Set the height of chart, default is 400. | No
-| series | array | Series for dual axes chart, such as, [{ type: 'column', data: [91.9, 99.1, 101.6, 114.4, 121],axisYTitle: '销售额' }, { type: 'line', data: [0.055, 0.06, 0.062, 0.07, 0.075], 'axisYTitle': '利润率' }]. | Yes
+| series | array | Series for dual axes chart, such as, [{ type: 'column', data: [91.9, 99.1, 101.6, 114.4, 121], axisYTitle: '销售额' }, { type: 'line', data: [0.055, 0.06, 0.062, 0.07, 0.075], 'axisYTitle': '利润率' }]. | Yes
 | theme | string | Set the theme for the chart, optional, default is 'default'. | No
 | title | string | Set the title of chart. | No
 | width | number | Set the width of chart, default is 600. | No
@@ -567,6 +588,25 @@ Generate a flow diagram chart to show the steps and decision points of a process
 | data | object | Data for flow diagram chart, such as, { nodes: [{ name: 'node1' }, { name: 'node2' }], edges: [{ source: 'node1', target: 'node2', name: 'edge1' }] }. | Yes
 | height | number | Set the height of chart, default is 400. | No
 | theme | string | Set the theme for the chart, optional, default is 'default'. | No
+| width | number | Set the width of chart, default is 600. | No
+</details>
+<details>
+<summary>generate_funnel_chart</summary>
+
+**Description**:
+
+```
+Generate a funnel chart to visualize the progressive reduction of data as it passes through stages, such as, the conversion rates of users from visiting a website to completing a purchase.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| data | array | Data for funnel chart, such as, [{ category: '浏览网站', value: 50000 }, { category: '放入购物车', value: 35000 }, { category: '生成订单', value: 25000 }, { category: '支付订单', value: 15000 }, { category: '完成交易', value: 8000 }]. | Yes
+| height | number | Set the height of chart, default is 400. | No
+| theme | string | Set the theme for the chart, optional, default is 'default'. | No
+| title | string | Set the title of chart. | No
 | width | number | Set the width of chart, default is 600. | No
 </details>
 <details>
@@ -614,6 +654,26 @@ Generate a line chart to show trends over time, such as, the ratio of Apple comp
 | width | number | Set the width of chart, default is 600. | No
 </details>
 <details>
+<summary>generate_liquid_chart</summary>
+
+**Description**:
+
+```
+Generate a liquid chart to visualize a single value as a percentage, such as, the current occupancy rate of a reservoir or the completion percentage of a project.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| height | number | Set the height of chart, default is 400. | No
+| percent | number | The percentage value to display in the liquid chart, should be a number between 0 and 1, where 1 represents 100%. For example, 0.75 represents 75%. | Yes
+| shape | string | The shape of the liquid chart, can be 'circle', 'rect', 'pin', or 'triangle'. Default is 'circle'. | No
+| theme | string | Set the theme for the chart, optional, default is 'default'. | No
+| title | string | Set the title of chart. | No
+| width | number | Set the width of chart, default is 600. | No
+</details>
+<details>
 <summary>generate_mind_map</summary>
 
 **Description**:
@@ -646,6 +706,25 @@ Generate a network graph chart to show relationships (edges) between entities (n
 |-----------|------|-------------|-----------|
 | data | object | Data for network graph chart, such as, { nodes: [{ name: 'node1' }, { name: 'node2' }], edges: [{ source: 'node1', target: 'node2', name: 'edge1' }] } | Yes
 | height | number | Set the height of chart, default is 400. | No
+| theme | string | Set the theme for the chart, optional, default is 'default'. | No
+| width | number | Set the width of chart, default is 600. | No
+</details>
+<details>
+<summary>generate_organization_chart</summary>
+
+**Description**:
+
+```
+Generate an organization chart to visualize the hierarchical structure of an organization, such as, a diagram showing the relationship between a CEO and their direct reports.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| data | object | Data for organization chart, such as, { name: 'CEO', description: 'Chief Executive Officer', children: [{ name: 'CTO', description: 'Chief Technology Officer', children: [{ name: 'Dev Manager', description: 'Development Manager' }] }] }. | Yes
+| height | number | Set the height of chart, default is 400. | No
+| orient | string | Orientation of the organization chart, either horizontal or vertical. Default is vertical, when the level of the chart is more than 3, it is recommended to use horizontal orientation. | No
 | theme | string | Set the theme for the chart, optional, default is 'default'. | No
 | width | number | Set the width of chart, default is 600. | No
 </details>
@@ -689,6 +768,26 @@ Generate a radar chart to display multidimensional data (four dimensions or more
 | width | number | Set the width of chart, default is 600. | No
 </details>
 <details>
+<summary>generate_sankey_chart</summary>
+
+**Description**:
+
+```
+Generate a sankey chart to visualize the flow of data between different stages or categories, such as, the user journey from landing on a page to completing a purchase.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| data | array | Date for sankey chart, such as, [{ source: 'Landing Page', target: 'Product Page', value: 50000 }, { source: 'Product Page', target: 'Add to Cart', value: 35000 }, { source: 'Add to Cart', target: 'Checkout', value: 25000 }, { source: 'Checkout', target: 'Payment', value: 15000 }, { source: 'Payment', target: 'Purchase Completed', value: 8000 }]. | Yes
+| height | number | Set the height of chart, default is 400. | No
+| nodeAlign | string | Alignment of nodes in the sankey chart, such as, 'left', 'right', 'justify', or 'center'. | No
+| theme | string | Set the theme for the chart, optional, default is 'default'. | No
+| title | string | Set the title of chart. | No
+| width | number | Set the width of chart, default is 600. | No
+</details>
+<details>
 <summary>generate_scatter_chart</summary>
 
 **Description**:
@@ -723,6 +822,46 @@ Generate a treemap chart to display hierarchical data and can intuitively show c
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | data | array | Data for treemap chart, such as, [{ name: 'Design', value: 70, children: [{ name: 'Tech', value: 20 }] }]. | Yes
+| height | number | Set the height of chart, default is 400. | No
+| theme | string | Set the theme for the chart, optional, default is 'default'. | No
+| title | string | Set the title of chart. | No
+| width | number | Set the width of chart, default is 600. | No
+</details>
+<details>
+<summary>generate_venn_chart</summary>
+
+**Description**:
+
+```
+Generate a Venn diagram to visualize the relationships between different sets, showing how they intersect and overlap, such as the commonalities and differences between various groups.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| data | array | Data for venn chart, such as, [{ label: 'A', value: 10, sets: ['A'] }, { label: 'B', value: 20, sets: ['B'] }, { label: 'C', value: 30, sets: ['C'] }, { label: 'AB', value: 5, sets: ['A', 'B'] }]. | Yes
+| height | number | Set the height of chart, default is 400. | No
+| theme | string | Set the theme for the chart, optional, default is 'default'. | No
+| title | string | Set the title of chart. | No
+| width | number | Set the width of chart, default is 600. | No
+</details>
+<details>
+<summary>generate_violin_chart</summary>
+
+**Description**:
+
+```
+Generate a violin chart to show data for statistical summaries among different categories, such as, comparing the distribution of data points across categories.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| axisXTitle | string | Set the x-axis title of chart. | No
+| axisYTitle | string | Set the y-axis title of chart. | No
+| data | array | Data for violin chart, such as, [{ category: '分类一', value: 10 }] or [{ category: '分类二', value: 20, group: '组别一' }]. | Yes
 | height | number | Set the height of chart, default is 400. | No
 | theme | string | Set the theme for the chart, optional, default is 'default'. | No
 | title | string | Set the title of chart. | No
@@ -774,6 +913,14 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | generate_bar_chart | theme | d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985 |
 | tools | generate_bar_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_bar_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
+| tools | generate_boxplot_chart | description | 07995874c0d1f1cd79b52f95bf250e12cb052a2cb7c4aecbd2a34a4098637189 |
+| tools | generate_boxplot_chart | axisXTitle | 29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a |
+| tools | generate_boxplot_chart | axisYTitle | 66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77 |
+| tools | generate_boxplot_chart | data | 600db11fd569238599ce8d88b2710ae6647172de207b3b9bf8051187c8635988 |
+| tools | generate_boxplot_chart | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
+| tools | generate_boxplot_chart | theme | d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985 |
+| tools | generate_boxplot_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
+| tools | generate_boxplot_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_column_chart | description | cb9505024eff95786bd632bbca3f11f798bd7826f25cdb56a52145ac52899d7f |
 | tools | generate_column_chart | axisXTitle | 29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a |
 | tools | generate_column_chart | axisYTitle | 66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77 |
@@ -788,7 +935,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | generate_dual_axes_chart | axisXTitle | 29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a |
 | tools | generate_dual_axes_chart | categories | 9a3a8ed51be4fe1fbb4bd4a0c55d31489fe24aad87972ad88902a46b0e1198fe |
 | tools | generate_dual_axes_chart | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
-| tools | generate_dual_axes_chart | series | 369e0a4a71699a2b28958eaef6c42cc94b6ec5506406ee6f8e7e1d2dc0c3d989 |
+| tools | generate_dual_axes_chart | series | cb4d9c990dccaa254b9661138fb7392d301dd6ad5a0f4cb1a39b6f498eee9c98 |
 | tools | generate_dual_axes_chart | theme | d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985 |
 | tools | generate_dual_axes_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_dual_axes_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
@@ -802,6 +949,12 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | generate_flow_diagram | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
 | tools | generate_flow_diagram | theme | d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985 |
 | tools | generate_flow_diagram | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
+| tools | generate_funnel_chart | description | be676a3685d3a918573a39e733e9f9b849184d3bd37e370c64c1346bf577d4d2 |
+| tools | generate_funnel_chart | data | edbce43e3a8a256f518dec7ed37c74b39cfa74e73acf897a5bb1f704af6e6694 |
+| tools | generate_funnel_chart | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
+| tools | generate_funnel_chart | theme | d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985 |
+| tools | generate_funnel_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
+| tools | generate_funnel_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_histogram_chart | description | 912a3265e2729b0a7c984e7604e4676200b6b37fd72d338ba939b79584cdeb9e |
 | tools | generate_histogram_chart | axisXTitle | 29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a |
 | tools | generate_histogram_chart | axisYTitle | 66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77 |
@@ -820,6 +973,13 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | generate_line_chart | theme | d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985 |
 | tools | generate_line_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_line_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
+| tools | generate_liquid_chart | description | 3c347b33afb200989bdd91ade58dd3541a0c3bb29227289f3b721f5e4401ca2d |
+| tools | generate_liquid_chart | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
+| tools | generate_liquid_chart | percent | 74d77eec8a15a3b9bc9f3429317a3fbfac1ace5ff3e2503612d41442b96654fc |
+| tools | generate_liquid_chart | shape | 45442be6c731955de95c299b160029b7b02179bd90f6c204f3295a375b3bd7b4 |
+| tools | generate_liquid_chart | theme | d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985 |
+| tools | generate_liquid_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
+| tools | generate_liquid_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_mind_map | description | 69bf6897ec2bef7cc910002af1f7cf7d92502920473bae8ab6f9adefbc94a628 |
 | tools | generate_mind_map | data | cca0ddf655078bcf4928cb016d35454fa6c0dcfe46d04490d03add67a9e8879a |
 | tools | generate_mind_map | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
@@ -830,6 +990,12 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | generate_network_graph | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
 | tools | generate_network_graph | theme | d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985 |
 | tools | generate_network_graph | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
+| tools | generate_organization_chart | description | 289dd34ffc7324f7ed60f6792c72af43f3d32889ea72eaf497d591a5a105d61e |
+| tools | generate_organization_chart | data | ef239d04adec0211c07d0fec477515ac5786c2399c5a645a3abc10b251a061ec |
+| tools | generate_organization_chart | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
+| tools | generate_organization_chart | orient | 28e240ab627fc10bcb0890ce59af27af9c275772c92d636b13b3c9a8d0c14bb1 |
+| tools | generate_organization_chart | theme | d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985 |
+| tools | generate_organization_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_pie_chart | description | 2dc22593f3f742f01a0862cca0c664c9021840501d3f83b27f73f40690a742c6 |
 | tools | generate_pie_chart | data | ef5c746f17b2bd8a099aa0d34fe884dd7039bb83f1d96aefadd8bc709d5431e4 |
 | tools | generate_pie_chart | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
@@ -843,6 +1009,13 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | generate_radar_chart | theme | d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985 |
 | tools | generate_radar_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_radar_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
+| tools | generate_sankey_chart | description | 5f9a8142686a1debb1b325fb0cc6059df3ba37eecda11e2c79f0f94258ee5df9 |
+| tools | generate_sankey_chart | data | 3f95d75e7c51d046f862eb2c4433b0e1a3b340347f48cd75cc8962aa0b8750e7 |
+| tools | generate_sankey_chart | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
+| tools | generate_sankey_chart | nodeAlign | a5452b2f630749f107e6e32924971733c463ec2a8ecec5a8c21e7b4a36469c8b |
+| tools | generate_sankey_chart | theme | d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985 |
+| tools | generate_sankey_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
+| tools | generate_sankey_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_scatter_chart | description | d75c8ea04f633bdc1f2c1b7a74d9bc24ea7ca1d14138ed75a3b6096321e529cf |
 | tools | generate_scatter_chart | axisXTitle | 29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a |
 | tools | generate_scatter_chart | axisYTitle | 66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77 |
@@ -857,6 +1030,20 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | generate_treemap_chart | theme | d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985 |
 | tools | generate_treemap_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
 | tools | generate_treemap_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
+| tools | generate_venn_chart | description | bcaaf72c3b69af041b609746d42c91b224af686b96f8dfe1f7806dd8e020747d |
+| tools | generate_venn_chart | data | c9fad0039556dd92eeb7e750505054c5580b830f7cce615e9f3338ac304a52c7 |
+| tools | generate_venn_chart | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
+| tools | generate_venn_chart | theme | d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985 |
+| tools | generate_venn_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
+| tools | generate_venn_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
+| tools | generate_violin_chart | description | f5d77608a39c3e8aede033a230595a09c63fe5e253d077625da08d436ec99080 |
+| tools | generate_violin_chart | axisXTitle | 29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a |
+| tools | generate_violin_chart | axisYTitle | 66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77 |
+| tools | generate_violin_chart | data | ad7ad5687541d6b89fab722f074db1ea69a13e1b0f670d0b0ca786ace7fbd8bc |
+| tools | generate_violin_chart | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |
+| tools | generate_violin_chart | theme | d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985 |
+| tools | generate_violin_chart | title | dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a |
+| tools | generate_violin_chart | width | 7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59 |
 | tools | generate_word_cloud_chart | description | e1661a55c9801f53cd0c3683458fc3dd1b78b0f8bc3e331550603262e2e02a8a |
 | tools | generate_word_cloud_chart | data | 96cefdd74b2a99e0ea12f31dd504b58d37f9111d393feb6e25642a1cfc0db0d4 |
 | tools | generate_word_cloud_chart | height | 8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338 |

@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="standalone"
 
 LABEL org.opencontainers.image.title="mcp-server-basic-memory"
 LABEL org.opencontainers.image.description="Local-first knowledge management combining Zettelkasten with knowledge graphs"
-LABEL org.opencontainers.image.version="0.12.3"
+LABEL org.opencontainers.image.version="0.13.5"
 LABEL org.opencontainers.image.source="https://pypi.org/project/basic-memory/"
 LABEL org.opencontainers.image.licenses="AGPL-3.0-or-later"
 LABEL org.opencontainers.image.author="Basic Machines <hello@basic-machines.co>"
@@ -43,7 +43,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uv venv && uv pip install basic-memory==0.12.3
+RUN uv venv && uv pip install basic-memory==0.13.5
 
 EXPOSE 8000/tcp
 

@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-shuffledns",
+  "icon": "https://avatars.githubusercontent.com/u/89649708?s=200&v=4",
+  "name": "mcp-server-shuffledns",
+  "description": "DNS brute-forcing and subdomain enumeration tool for reconnaissance and security testing",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-shuffledns",
+      "application": "https://github.com/cyproxio/mcp-for-security/tree/HEAD/shuffledns-mcp"
+    },
+  "tags": ["security"],
+  "official": true,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "6190e55",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"4e68a3edcbf3bbbe996b152801bd55c0d2f296733c6545db6e87f88a36b8dceb","reason":"The tool documentation has significant deficiencies: the name 'shuffledns' is not descriptive, the description 'DNS Brute force' is too brief and lacks context about when to use it or what it returns, and most parameter descriptions are minimal or inconsistent (e.g., 'ratelimit', 'wordlist' lack proper capitalization and detail, while 'target' description mentions HTTP/HTTPS services which doesn't match DNS brute forcing). Only the mode parameter with enum values provides adequate clarity.","score":"D"},
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

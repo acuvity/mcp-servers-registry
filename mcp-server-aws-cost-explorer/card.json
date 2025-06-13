@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-aws-cost-explorer",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-cost-explorer",
+  "description": "MCP server for analyzing AWS costs and usage data through the AWS Cost Explorer API",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-cost-explorer",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/cost-explorer-mcp-server"
+    },
+  "tags": ["cloud","finance"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.0.4",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"be35d6799cf8e78bd007158dd8c3ca54039c16cda0feb0c5d75f8262ca5d5e86","reason":"Good documentation with comprehensive descriptions and clear parameter definitions. Tool names are specific and intuitive. The main tool 'get_cost_and_usage' provides excellent detail including usage examples and important behavioral notes. Parameter descriptions are thorough with examples and constraints clearly specified. Minor deductions for some repetitive boilerplate (Args/Returns sections from docstrings) and the 'get_today_date' tool having a somewhat generic name, but overall the toolset provides strong guidance for users.","score":"B"},
+  "resources": {
+    "tools": 4,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

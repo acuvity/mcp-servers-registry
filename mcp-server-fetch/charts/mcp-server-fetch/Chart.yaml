@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 2025.4.7
+appVersion: "2025.4.7"
 keywords:
   - mcp-server-fetch
   - mcp-server

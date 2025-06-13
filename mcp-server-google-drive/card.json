@@ -6,7 +6,7 @@
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-google-drive",
-      "application": "https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive"
+      "application": "https://github.com/modelcontextprotocol/servers/tree/HEAD/src/gdrive"
     },
   "tags": ["research","web","cloud"],
   "official": false,

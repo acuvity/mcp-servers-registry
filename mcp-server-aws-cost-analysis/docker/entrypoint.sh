@@ -1,6 +1,5 @@
 #!/bin/sh
 . .venv/bin/activate
-[ -z "$AWS_PROFILE" ] && echo "!!! Error mcp-server-aws-cost-analysis requires AWS_PROFILE env var to be set." && exit 1
 
 if [ -z "$MINIBRIDGE_MODE" ]; then
   # check if stdin in open

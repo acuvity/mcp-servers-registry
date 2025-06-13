@@ -13,12 +13,12 @@
   "scope": "standalone",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.4.1",
+  "version": "0.6.1",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"3fefb72f84551967fee85457fc2de61fa51d592a5529d6ecc0277bd7ef030917","reason":"Tool names are clear and descriptive, indicating chart types effectively. Descriptions adequately explain functionality and use cases with good examples, though some could be more concise. Parameter descriptions are generally clear with helpful examples and proper type specifications. Minor issues include some verbose descriptions and inconsistent detail levels across tools, but overall documentation provides solid guidance for usage.","score":"B"},
+  "rating": {"hash":"4aa1b09a5cf2089e50ac759a171b9aa1807eca1750c14b3e27983406c8937b3c","reason":"The toolset demonstrates good documentation overall with clear naming conventions and comprehensive parameter descriptions. Tool names are descriptive and intuitive (generate_area_chart, generate_bar_chart, etc.). Most descriptions effectively explain what each chart type does and provide usage context with examples. Parameter documentation is thorough with clear descriptions, types, constraints, and examples. However, some descriptions are overly verbose or contain awkward phrasing, and a few tools lack clarity about when to use them versus similar alternatives. The consistent structure and detailed examples elevate this above adequate, but the occasional verbosity and minor clarity issues prevent it from reaching excellent.","score":"B"},
   "resources": {
-    "tools": 15,
+    "tools": 22,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

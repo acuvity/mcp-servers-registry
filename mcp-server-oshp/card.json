@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-oshp",
+  "icon": "https://avatars.githubusercontent.com/u/89649708?s=200&v=4",
+  "name": "mcp-server-oshp",
+  "description": "Analyzes HTTP response headers against OWASP security standards with recommendations",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-oshp",
+      "application": "https://github.com/cyproxio/mcp-for-security/tree/HEAD/http-headers-security-mcp"
+    },
+  "tags": ["security"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "6190e55",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"d0d862f0e60175febe175bff44aaa70d136414cc8254f2eebfa73ef4025e268d","reason":"Excellent documentation quality with a clear, descriptive tool name that immediately indicates its purpose. The description is comprehensive, explaining what the tool does (HTTP header security analysis), the methodology (OWASP best practices), what it identifies (dangerous and missing headers), and what users can expect (specific recommendations). The parameter documentation is thorough, clearly explaining the target parameter's purpose, format expectations, and how it will be used by the tool.","score":"A"},
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

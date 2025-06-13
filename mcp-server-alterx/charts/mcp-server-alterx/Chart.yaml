@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-alterx"
+description: "A Helm chart for Pattern-based wordlist generator for subdomain discovery using Alterx permutation tool"
+home: https://github.com/cyproxio/mcp-for-security/tree/HEAD/alterx-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/cyproxio/mcp-for-security/tree/HEAD/alterx-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-alterx/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "6190e55"
+keywords:
+  - mcp-server-alterx
+  - mcp-server
+  - native
+  - security

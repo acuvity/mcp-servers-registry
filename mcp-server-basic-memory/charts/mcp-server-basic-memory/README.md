@@ -21,10 +21,10 @@
 # What is mcp-server-basic-memory?
 [![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-basic-memory/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-basic-memory/0.12.3?logo=docker&logoColor=fff&label=0.12.3)](https://hub.docker.com/r/acuvity/mcp-server-basic-memory)
-[![PyPI](https://img.shields.io/badge/0.12.3-3775A9?logo=pypi&logoColor=fff&label=basic-memory)](https://pypi.org/project/basic-memory/)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-basic-memory/0.13.5?logo=docker&logoColor=fff&label=0.13.5)](https://hub.docker.com/r/acuvity/mcp-server-basic-memory)
+[![PyPI](https://img.shields.io/badge/0.13.5-3775A9?logo=pypi&logoColor=fff&label=basic-memory)](https://pypi.org/project/basic-memory/)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-basic-memory/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-basic-memory&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-v%22%2C%22memory%3A%2Fdata%22%2C%22docker.io%2Facuvity%2Fmcp-server-basic-memory%3A0.12.3%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-basic-memory&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-v%22%2C%22memory%3A%2Fdata%22%2C%22docker.io%2Facuvity%2Fmcp-server-basic-memory%3A0.13.5%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Local-first knowledge management combining Zettelkasten with knowledge graphs
 
@@ -173,11 +173,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.12.3`
+  - container: `1.0.0-0.13.5`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-basic-memory:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-basic-memory:1.0.0-0.12.3`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-basic-memory:1.0.0-0.13.5`
 
 ---
 
@@ -637,7 +637,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (9)
+## 🧰 Tools (19)
 <details>
 <summary>delete_note</summary>
 
@@ -652,6 +652,7 @@ Delete a note by title or permalink
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | identifier | string | not set | Yes
+| project | any | not set | No
 </details>
 <details>
 <summary>read_content</summary>
@@ -667,6 +668,7 @@ Read a file's raw content by path or permalink
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | path | string | not set | Yes
+| project | any | not set | No
 </details>
 <details>
 <summary>build_context</summary>
@@ -677,12 +679,17 @@ Read a file's raw content by path or permalink
 Build context from a memory:// URI to continue conversations naturally.
     
     Use this to follow up on previous discussions or explore related topics.
+    
+    Memory URL Format:
+    - Use paths like "folder/note" or "memory://folder/note" 
+    - Pattern matching: "folder/*" matches all notes in folder
+    - Valid characters: letters, numbers, hyphens, underscores, forward slashes
+    - Avoid: double slashes (//), angle brackets (<>), quotes, pipes (|)
+    - Examples: "specs/search", "projects/basic-memory", "notes/*"
+    
     Timeframes support natural language like:
-    - "2 days ago"
-    - "last week" 
-    - "today"
-    - "3 months ago"
-    Or standard formats like "7d", "24h"
+    - "2 days ago", "last week", "today", "3 months ago"
+    - Or standard formats like "7d", "24h"
     
 ```
 
@@ -694,6 +701,7 @@ Build context from a memory:// URI to continue conversations naturally.
 | max_related | integer | not set | No
 | page | integer | not set | No
 | page_size | integer | not set | No
+| project | any | not set | No
 | timeframe | any | not set | No
 | url | string | not set | Yes
 </details>
@@ -723,6 +731,7 @@ Get recent activity from across the knowledge base.
 | max_related | integer | not set | No
 | page | integer | not set | No
 | page_size | integer | not set | No
+| project | any | not set | No
 | timeframe | string | not set | No
 | type | any | not set | No
 </details>
@@ -743,6 +752,7 @@ Search across all content in the knowledge base.
 | entity_types | any | not set | No
 | page | integer | not set | No
 | page_size | integer | not set | No
+| project | any | not set | No
 | query | string | not set | Yes
 | search_type | string | not set | No
 | types | any | not set | No
@@ -763,6 +773,25 @@ Read a markdown note by title or permalink.
 | identifier | string | not set | Yes
 | page | integer | not set | No
 | page_size | integer | not set | No
+| project | any | not set | No
+</details>
+<details>
+<summary>view_note</summary>
+
+**Description**:
+
+```
+View a note as a formatted artifact for better readability.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| identifier | string | not set | Yes
+| page | integer | not set | No
+| page_size | integer | not set | No
+| project | any | not set | No
 </details>
 <details>
 <summary>write_note</summary>
@@ -779,7 +808,8 @@ Create or update a markdown note. Returns a markdown formatted summary of the se
 |-----------|------|-------------|-----------|
 | content | string | not set | Yes
 | folder | string | not set | Yes
-| tags | string | not set | No
+| project | any | not set | No
+| tags | any | not set | No
 | title | string | not set | Yes
 </details>
 <details>
@@ -798,15 +828,111 @@ Create an Obsidian canvas file to visualize concepts and connections.
 | edges | array | not set | Yes
 | folder | string | not set | Yes
 | nodes | array | not set | Yes
+| project | any | not set | No
 | title | string | not set | Yes
 </details>
 <details>
-<summary>project_info</summary>
+<summary>list_directory</summary>
 
 **Description**:
 
 ```
-Get information and statistics about the current Basic Memory project.
+List directory contents with filtering and depth control.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| depth | integer | not set | No
+| dir_name | string | not set | No
+| file_name_glob | any | not set | No
+| project | any | not set | No
+</details>
+<details>
+<summary>edit_note</summary>
+
+**Description**:
+
+```
+Edit an existing markdown note using various operations like append, prepend, find_replace, or replace_section.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| content | string | not set | Yes
+| expected_replacements | integer | not set | No
+| find_text | any | not set | No
+| identifier | string | not set | Yes
+| operation | string | not set | Yes
+| project | any | not set | No
+| section | any | not set | No
+</details>
+<details>
+<summary>move_note</summary>
+
+**Description**:
+
+```
+Move a note to a new location, updating database and maintaining links.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| destination_path | string | not set | Yes
+| identifier | string | not set | Yes
+| project | any | not set | No
+</details>
+<details>
+<summary>sync_status</summary>
+
+**Description**:
+
+```
+Check the status of file synchronization and background operations.
+    
+    Use this tool to:
+    - Check if file sync is in progress or completed
+    - Get detailed sync progress information  
+    - Understand if your files are fully indexed
+    - Get specific error details if sync operations failed
+    - Monitor initial project setup and legacy migration
+    
+    This covers all sync operations including:
+    - Initial project setup and file indexing
+    - Legacy project migration to unified database
+    - Ongoing file monitoring and updates
+    - Background processing of knowledge graphs
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| project | any | not set | No
+</details>
+<details>
+<summary>list_memory_projects</summary>
+
+**Description**:
+
+```
+List all available projects with their status.
+
+    Shows all Basic Memory projects that are available, indicating which one
+    is currently active and which is the default.
+
+    Returns:
+        Formatted list of projects with status indicators
+
+    Example:
+        list_projects()
+    
 ```
 
 **Parameter**:
@@ -814,8 +940,155 @@ Get information and statistics about the current Basic Memory project.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 </details>
+<details>
+<summary>switch_project</summary>
 
-## 📚 Resources (1)
+**Description**:
+
+```
+Switch to a different project context.
+
+    Changes the active project context for all subsequent tool calls.
+    Shows a project summary after switching successfully.
+
+    Args:
+        project_name: Name of the project to switch to
+
+    Returns:
+        Confirmation message with project summary
+
+    Example:
+        switch_project("work-notes")
+        switch_project("personal-journal")
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| project_name | string | not set | Yes
+</details>
+<details>
+<summary>get_current_project</summary>
+
+**Description**:
+
+```
+Show the currently active project and basic stats.
+
+    Displays which project is currently active and provides basic information
+    about it.
+
+    Returns:
+        Current project name and basic statistics
+
+    Example:
+        get_current_project()
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+</details>
+<details>
+<summary>set_default_project</summary>
+
+**Description**:
+
+```
+Set default project in config. Requires restart to take effect.
+
+    Updates the configuration to use a different default project. This change
+    only takes effect after restarting the Basic Memory server.
+
+    Args:
+        project_name: Name of the project to set as default
+
+    Returns:
+        Confirmation message about config update
+
+    Example:
+        set_default_project("work-notes")
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| project_name | string | not set | Yes
+</details>
+<details>
+<summary>create_memory_project</summary>
+
+**Description**:
+
+```
+Create a new Basic Memory project.
+
+    Creates a new project with the specified name and path. The project directory
+    will be created if it doesn't exist. Optionally sets the new project as default.
+
+    Args:
+        project_name: Name for the new project (must be unique)
+        project_path: File system path where the project will be stored
+        set_default: Whether to set this project as the default (optional, defaults to False)
+
+    Returns:
+        Confirmation message with project details
+
+    Example:
+        create_project("my-research", "~/Documents/research")
+        create_project("work-notes", "/home/user/work", set_default=True)
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| project_name | string | not set | Yes
+| project_path | string | not set | Yes
+| set_default | boolean | not set | No
+</details>
+<details>
+<summary>delete_project</summary>
+
+**Description**:
+
+```
+Delete a Basic Memory project.
+
+    Removes a project from the configuration and database. This does NOT delete
+    the actual files on disk - only removes the project from Basic Memory's
+    configuration and database records.
+
+    Args:
+        project_name: Name of the project to delete
+
+    Returns:
+        Confirmation message about project deletion
+
+    Example:
+        delete_project("old-project")
+
+    Warning:
+        This action cannot be undone. The project will need to be re-added
+        to access its content through Basic Memory again.
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| project_name | string | not set | Yes
+</details>
+
+## 📚 Resources (2)
 
 <details>
 <summary>Resources</summary>
@@ -823,10 +1096,11 @@ Get information and statistics about the current Basic Memory project.
 | Name | Mime type | URI| Content |
 |-----------|------|-------------|-----------|
 | ai assistant guide | text/plain | memory://ai_assistant_guide | - |
+| project_info | text/plain | memory://project_info | - |
 
 </details>
 
-## 📝 Prompts (3)
+## 📝 Prompts (4)
 <details>
 <summary>Continue Conversation</summary>
 
@@ -871,6 +1145,18 @@ Search across all content in basic-memory
 |-----------|------|-------------|
 | query | not set |Yes |
 | timeframe | How far back to search (e.g. '1d', '1 week') |No |
+<details>
+<summary>sync_status_prompt</summary>
+
+**Description**:
+
+```
+Get sync status with recommendations for AI assistants.
+    
+    This prompt provides both current sync status and guidance on how
+    AI assistants should respond when sync operations are in progress or completed.
+    
+```
 
 </details>
 
@@ -889,14 +1175,25 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | prompts | Search Knowledge Base | timeframe | ac891e951bb4167b6fafdd14fdac08a1dcf761aacef7f3add86de2000a8223fb |
 | prompts | Share Recent Activity | description | acaf99888843d7d2c0243f8bf67259929179ab71579a4af5a16571f3485475f7 |
 | prompts | Share Recent Activity | timeframe | cd9af00423b977d8f501edaeef3d43f42a323778bbbcc0900c4d88b6a4f9354e |
-| tools | build_context | description | 5e8820de852b3082413d3bd44c6d0b5764cea766cadfcac66876f4b49e604614 |
+| prompts | sync_status_prompt | description | da4cc0a9c0044eef836c0023b8a9c33d53ac046beba62f756a3587f3da1ac1bc |
+| tools | build_context | description | 8864f9648ebb192186da87418b06d8d7a200eedfb7762ecd67e4a29fa85a8867 |
 | tools | canvas | description | c739f799c4f54a0beebbbba387862e5370f4e715f36b65d0e523b3fe664d759c |
+| tools | create_memory_project | description | d3cbed6ef409f038824079681857e09fc92573440b22b618f6393bfc01f3824d |
 | tools | delete_note | description | b92bd108ffa7b65b4ac92c9f75167080771a08e3e9a78dd6ec3fabde085802b7 |
-| tools | project_info | description | 80e50af2790edd8a0228a515f76a18d540cb04542b3f5fa91037917a6ae13847 |
+| tools | delete_project | description | e684a0bd482c60d1ba3ee7bc935cf30436d56ad267f9b20d9b257e9c3722912a |
+| tools | edit_note | description | 7e70b1ab505a2e06e8da48ad7b4368890e8d86778fd9465d88e02bc0c43fc556 |
+| tools | get_current_project | description | ec25ce3bd6c3f91340b4761b2976bbf17caa41d64f5660fd40edd781c07a86a5 |
+| tools | list_directory | description | 8eaf254f8c67f5e7396f90b2a2942e9d47c64860e8b0261bca07de9c5b118d64 |
+| tools | list_memory_projects | description | 944ac1e2c55826b72ca7fd53fc1c16dfe77ef71945500ecebc9756bf723c7c52 |
+| tools | move_note | description | cdc522815f6900fadbdd8fa11ded0afde844bca74753141970fb06972f2beead |
 | tools | read_content | description | 5b184094eabd23821254f0608ad35de1570fd776906e9ff822020cd68d129921 |
 | tools | read_note | description | 5d503b64dafb1601312dd1780eb5fbdb5d7988f7d1ce090545c3fb033c0bec77 |
 | tools | recent_activity | description | 8b43acabdd7bc9e4ab6398f1f27b28203fb5df0314d7f0888946136d40f548d5 |
 | tools | search_notes | description | fcaec1323a397ec1b89c8d50efb4cf4af054f0574d569452599c927231594adc |
+| tools | set_default_project | description | 25c20445c664c4a3459c6188cd63e33b69219d984641f916d4c118ddd9a2877f |
+| tools | switch_project | description | 096b246c8d498cf080f5c936ffc13d14d21cea89e6f768b82d81aea3071ab5b4 |
+| tools | sync_status | description | 00b145ea43da92d1e768bbdcb203a9104369d88d55314c30a0970c3edd03499c |
+| tools | view_note | description | 7cb3581bfc58d06d48b06d0e5ff77a8528b44729996ae403a134cfc8b1316303 |
 | tools | write_note | description | 3fb632ad40400235da2eae016e76b13f699cd2206aca615729e8ee85653ec98f |
 
 

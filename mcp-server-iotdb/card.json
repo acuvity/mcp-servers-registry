@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-iotdb",
+  "icon": "https://iotdb.apache.org/img/logo.svg",
+  "name": "mcp-server-iotdb",
+  "description": "MCP Server for Apache IoTDB database and its tools",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-iotdb",
+      "application": "https://github.com/apache/iotdb-mcp-server"
+    },
+  "tags": ["database"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "cf77711",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"0e7888413a2ef82db5825532003a7c34013db8addcdc1cc9c7875de030ec2ed7","reason":"Adequate documentation with clear tool names that indicate database operations. Descriptions provide basic functionality but lack important context about IoTDB-specific features, error handling, and usage constraints. Parameter descriptions are minimal - 'query_sql' and 'table_name' lack examples or format specifications that would help users understand expected input formats for IoTDB.","score":"C"},
+  "resources": {
+    "tools": 3,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

@@ -21,10 +21,10 @@
 # What is mcp-server-paypal?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-paypal/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-paypal/0.3.3?logo=docker&logoColor=fff&label=0.3.3)](https://hub.docker.com/r/acuvity/mcp-server-paypal)
-[![PyPI](https://img.shields.io/badge/0.3.3-3775A9?logo=pypi&logoColor=fff&label=@paypal/mcp)](https://github.com/paypal/agent-toolkit)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-paypal/0.3.4?logo=docker&logoColor=fff&label=0.3.4)](https://hub.docker.com/r/acuvity/mcp-server-paypal)
+[![PyPI](https://img.shields.io/badge/0.3.4-3775A9?logo=pypi&logoColor=fff&label=@paypal/mcp)](https://github.com/paypal/agent-toolkit)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-paypal/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-paypal&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22PAYPAL_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-paypal%3A0.3.3%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-paypal&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22PAYPAL_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-paypal%3A0.3.4%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** A Model Context Protocol (MCP) server that enables AI models to interact with PayPal Apis.
 
@@ -174,7 +174,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-paypal&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22PAYPAL_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-paypal%3A0.3.3%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-paypal&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22PAYPAL_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-paypal%3A0.3.4%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -196,7 +196,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "--read-only",
           "-e",
           "PAYPAL_ACCESS_TOKEN",
-          "docker.io/acuvity/mcp-server-paypal:0.3.3"
+          "docker.io/acuvity/mcp-server-paypal:0.3.4"
         ]
       }
     }
@@ -223,7 +223,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "--read-only",
         "-e",
         "PAYPAL_ACCESS_TOKEN",
-        "docker.io/acuvity/mcp-server-paypal:0.3.3"
+        "docker.io/acuvity/mcp-server-paypal:0.3.4"
       ]
     }
   }
@@ -254,7 +254,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "--read-only",
         "-e",
         "PAYPAL_ACCESS_TOKEN",
-        "docker.io/acuvity/mcp-server-paypal:0.3.3"
+        "docker.io/acuvity/mcp-server-paypal:0.3.4"
       ]
     }
   }
@@ -287,7 +287,7 @@ Add the following JSON block to your mcp configuration file:
         "--read-only",
         "-e",
         "PAYPAL_ACCESS_TOKEN",
-        "docker.io/acuvity/mcp-server-paypal:0.3.3"
+        "docker.io/acuvity/mcp-server-paypal:0.3.4"
       ]
     }
   }
@@ -318,7 +318,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "--read-only",
         "-e",
         "PAYPAL_ACCESS_TOKEN",
-        "docker.io/acuvity/mcp-server-paypal:0.3.3"
+        "docker.io/acuvity/mcp-server-paypal:0.3.4"
       ]
     }
   }
@@ -338,7 +338,7 @@ async with MCPServerStdio(
     params={
         "env": {"PAYPAL_ACCESS_TOKEN":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","PAYPAL_ACCESS_TOKEN","docker.io/acuvity/mcp-server-paypal:0.3.3"]
+        "args": ["run","-i","--rm","--read-only","-e","PAYPAL_ACCESS_TOKEN","docker.io/acuvity/mcp-server-paypal:0.3.4"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -367,7 +367,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e PAYPAL_ACCESS_TOKEN docker.io/acuvity/mcp-server-paypal:0.3.3`
+- arguments: `run -i --rm --read-only -e PAYPAL_ACCESS_TOKEN docker.io/acuvity/mcp-server-paypal:0.3.4`
 
 </details>
 
@@ -377,7 +377,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e PAYPAL_ACCESS_TOKEN docker.io/acuvity/mcp-server-paypal:0.3.3
+docker run -it -p 8000:8000 --rm --read-only -e PAYPAL_ACCESS_TOKEN docker.io/acuvity/mcp-server-paypal:0.3.4
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -483,7 +483,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (26)
+## 🧰 Tools (28)
 <details>
 <summary>create_invoice</summary>
 
@@ -847,6 +847,7 @@ Required parameters are: subscription_id (the ID of the subscription).
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| get_additional_details | boolean | Get all detailed information for the subscription. | No
 | subscription_id | string | The ID of the subscription to show details. | Yes
 </details>
 <details>
@@ -1090,6 +1091,60 @@ This tool is used to list transactions with optional filtering parameters within
 | transaction_id | any | The ID of the transaction to retrieve. | No
 | transaction_status | string | not set | No
 </details>
+<details>
+<summary>create_refund</summary>
+
+**Description**:
+
+```
+
+Initiate a refund for a PayPal payment capture.
+If you have an order ID instead of a capture ID, first use the get order tool to obtain the capture ID from the order details.
+This function allows you to return funds to a customer by refunding a previously captured payment. You can issue a full refund or specify a partial amount. If multiple captures exist for an order, request clarification on which specific capture to refund.
+Required parameters:
+- Capture ID: The ID of the capture to refund
+- Amount (optional): For partial refunds, specify the amount to refund (must be less than or equal to the captured amount)
+- Note to Payer (optional): Additional explanation visible to the customer
+Response details include:
+- Refund ID and status
+- Refunded amount and currency
+
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| amount | object | The amount to refund. If not specified, the full captured amount is refunded. | No
+| capture_id | string | The ID of the capture to refund. | Yes
+| invoice_id | string | The invoice ID that is used to track this payment. | No
+| note_to_payer | string | A note to the payer. | No
+</details>
+<details>
+<summary>get_refund</summary>
+
+**Description**:
+
+```
+
+Retrieve detailed information about a PayPal payment refund.
+If you have an order ID instead of a refund ID, first use the get order tool to obtain the refund ID from the order details. 
+This function returns comprehensive details about a refund, including its current status (completed, pending, cancelled), refunded amount, and processing information.
+When multiple refunds exist for an order or capture, request clarification on which specific refund to retrieve. 
+Response details include:
+- Refund status and ID
+- Refunded amount and currency
+- Reason for refund (if provided)
+- Source transaction details
+
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| refund_id | string | The ID of the refund to get details for. | Yes
+</details>
 
 
 # 🔐 Resource SBOM
@@ -1125,6 +1180,11 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | create_product | image_url | 608ba1af8b48ae826cee6810dc5cb5a124084808ab74a62f016c20ce4af2c915 |
 | tools | create_product | name | 49f35cafedd1db605bc9d090593eb8a4489980fd332c801affe05ee55be2a248 |
 | tools | create_product | type | f97abc519a2e60f2ac24f444eee89eee9a3cbac4a63fc25d79ce72c210cda5d5 |
+| tools | create_refund | description | 54ea4b27fc2085f4cce6c51a4f03cda3b3150a0e1f65001eabea43bfd89d35c9 |
+| tools | create_refund | amount | 1b3923ddce7ccffe0bb99679c8671b3f20b800df0b01569fa9b9ba743f90d262 |
+| tools | create_refund | capture_id | e039519918409665a05c5167791d2bf03fc11db5af971050253f512d4d8ebab3 |
+| tools | create_refund | invoice_id | 83ae50028e6c6e191925f1d9b94417a3bea8fc785ca820ce312380af9c7cf51a |
+| tools | create_refund | note_to_payer | 8f47905ab699047ea22bdb103846754512f3f32f297bc904efc55b876b894a1a |
 | tools | create_shipment_tracking | description | 027bd7dc3b6b68f7c75083374afaeb9347cbca835dd6ff2b0f5b0a2b491769b3 |
 | tools | create_shipment_tracking | carrier | 5b72ad316fd7e749dfb5eae97f148c7c4ff256894f9cdbed89c9e7b5ea4771fe |
 | tools | create_shipment_tracking | order_id | 718a5cd2bb51958ee35d8d799e50e81ed4c69eeb7a0cc082a3a144a74bfb742d |
@@ -1154,6 +1214,8 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | get_invoice | invoice_id | d1619687a9b7811554b2b52a162c5db0636d6c1a69c1afa7159728979f6c0dc6 |
 | tools | get_order | description | 5a776b6ca17bbf0f8bcf4d15e092aca1af56647b164073fdcf80b634e4c89aac |
 | tools | get_order | id | 0d4b68361bc934c4f57f9c06dc86425396ecfaed39b650659dcba40d3462c9cf |
+| tools | get_refund | description | 617f39fadcdad002e9134446b5d2f5d4ee28c21f29d603bd59522f8e9f8b9552 |
+| tools | get_refund | refund_id | d8430966f6fb850423a4da63a3b8ac0ad86b8a0b445561ed2454ac0091f54412 |
 | tools | get_shipment_tracking | description | 4ee15334126f6265f48a944b47fd6ae1ca2fe868efc935d023f5e50c2d9be1d8 |
 | tools | get_shipment_tracking | order_id | 1ea99bceeb25186893d9db55005f766b609de07a99e200ce98aff2a1a876e92f |
 | tools | get_shipment_tracking | transaction_id | cb85245c59d5f94cdfecb537375f1b05ac7644811ab5c6e473402ca64d8f1f30 |
@@ -1192,6 +1254,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | show_product_details | description | 58cd51a5e3673a1597f9b0097b7b45077ac3301355e516470f9646cb09462403 |
 | tools | show_product_details | product_id | 6a82a49e8519288550e18431e0bd9de45cf82de94b5b147e90d0b0d463ed55f7 |
 | tools | show_subscription_details | description | 3d1116fb3df592fb7445420439472ae55cb15a590988c2ca01d0af37467e14a6 |
+| tools | show_subscription_details | get_additional_details | 8ee38e33223088f75cc1bbb2f7cc7445167bf2cc63b4f102ffd4d46e99d58de0 |
 | tools | show_subscription_details | subscription_id | 22de63bd2395e148b9cb8fe8cf3a9880fa934e91645fcaaaed95a94a1ee9d534 |
 | tools | show_subscription_plan_details | description | 4481df90ef55fd0532176b86535f305d185da32500e1663fcc66287395f37724 |
 | tools | show_subscription_plan_details | plan_id | a6f4adc6ec92e33cbb9be4bd5c4ffddbd5ad41e6edc75697c3fc5f3b25ed70fd |

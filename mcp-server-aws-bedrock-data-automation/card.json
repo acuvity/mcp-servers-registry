@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-aws-bedrock-data-automation",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-bedrock-data-automation",
+  "description": "Amazon Bedrock Data Automation server for analyzing documents, images, videos, and audio files",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-bedrock-data-automation",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/aws-bedrock-data-automation-mcp-server"
+    },
+  "tags": ["cloud","automation"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.0.2",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"711cbf9ab085a5a95d6cca097f36fed3cad84549a143575742602f78109b8391","reason":"Excellent documentation quality across all tools. Names are clear and specific, descriptions are comprehensive with detailed usage sections, examples, and output format explanations. Parameter documentation is complete with clear purposes and constraints. The multi-section format with usage examples and output descriptions provides exceptional clarity for users.","score":"A"},
+  "resources": {
+    "tools": 3,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

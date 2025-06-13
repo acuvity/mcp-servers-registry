@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-bicscan"
+description: "A Helm chart for Risk score / asset holdings of EVM blockchain address (EOA, CA, ENS) and even domain names."
+home: https://github.com/ahnlabio/bicscan-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/ahnlabio/bicscan-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-bicscan/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "072c48e"
+keywords:
+  - mcp-server-bicscan
+  - mcp-server
+  - remote
+  - security
+  - finance

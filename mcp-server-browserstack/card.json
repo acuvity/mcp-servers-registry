@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-browserstack",
+  "icon": "https://browserstack.wpenginepowered.com/wp-content/themes/browserstack/img/favicons/favicon.ico",
+  "name": "mcp-server-browserstack",
+  "description": "Access BrowserStack's Test Platform to debug, write and fix tests, do accessibility testing.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-browserstack",
+      "application": "https://github.com/browserstack/mcp-server"
+    },
+  "tags": ["automation","development"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1.1.6",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"8801ed12d9b0302f6d8840dc63840247794cdca3c347af24371595eb3debb8d0","reason":"The toolset demonstrates good documentation quality overall. Tool names are clear and purposeful, descriptions adequately explain functionality and usage context (typically 1-2 sentences), and parameter documentation is generally comprehensive with clear purposes and constraints. However, some tools have overly brief descriptions that could benefit from more context about limitations or specific use cases, and a few parameter descriptions could be more detailed about expected formats or behavior.","score":"B"},
+  "resources": {
+    "tools": 18,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

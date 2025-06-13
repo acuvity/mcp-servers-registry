@@ -40,11 +40,13 @@ spec:
           env:
           {{- include "minibridge.env" . | nindent 12}}
             - name: AWS_PROFILE
-              value: {{ required "env.AWS_PROFILE is required" .Values.env.AWS_PROFILE}}
+              value: {{ .Values.env.AWS_PROFILE}}
             - name: AWS_REGION
-              value: {{ required "env.AWS_REGION is required" .Values.env.AWS_REGION}}
+              value: {{ .Values.env.AWS_REGION}}
             - name: KB_INCLUSION_TAG_KEY
               value: {{ .Values.env.KB_INCLUSION_TAG_KEY}}
+            - name: BEDROCK_KB_RERANKING_ENABLED
+              value: {{ .Values.env.BEDROCK_KB_RERANKING_ENABLED}}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default (printf  "%s-%s" .Chart.Version .Chart.AppVersion) }}"

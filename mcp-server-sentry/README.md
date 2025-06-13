@@ -22,13 +22,13 @@
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-sentry/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-sentry/2025.1.14?logo=docker&logoColor=fff&label=2025.1.14)](https://hub.docker.com/r/acuvity/mcp-server-sentry)
-[![PyPI](https://img.shields.io/badge/2025.1.14-3775A9?logo=pypi&logoColor=fff&label=mcp-server-sentry)](https://github.com/modelcontextprotocol/servers/tree/main/src/sentry)
+[![PyPI](https://img.shields.io/badge/2025.1.14-3775A9?logo=pypi&logoColor=fff&label=mcp-server-sentry)](https://github.com/modelcontextprotocol/servers/tree/HEAD/src/sentry)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-sentry/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-sentry&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22SENTRY_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-sentry%3A2025.1.14%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Retrieving and analyzing issues from Sentry.io.
 
-Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from mcp-server-sentry original [sources](https://github.com/modelcontextprotocol/servers/tree/main/src/sentry).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from mcp-server-sentry original [sources](https://github.com/modelcontextprotocol/servers/tree/HEAD/src/sentry).
 
 **Quick links:**
 
@@ -159,7 +159,7 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
   - `SENTRY_TOKEN` required to be set
   - `SENTRY_API_BASE` optional (https://sentry.io/api/0/)
 
-For more information and extra configuration you can consult the [package](https://github.com/modelcontextprotocol/servers/tree/main/src/sentry) documentation.
+For more information and extra configuration you can consult the [package](https://github.com/modelcontextprotocol/servers/tree/HEAD/src/sentry) documentation.
 
 # 🧰 Clients Integrations
 

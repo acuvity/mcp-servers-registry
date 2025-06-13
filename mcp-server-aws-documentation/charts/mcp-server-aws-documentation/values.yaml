@@ -168,6 +168,7 @@ affinity: {}
 
 # This section handles environment variables passed to the container.
 env:
+  AWS_DOCUMENTATION_PARTITION: aws
 
 # This section handles secrets passed to the container.
 secrets:

@@ -13,7 +13,7 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "rating": {"hash":"6ec61b44eda16a1fcf261c99322fe3335be654e0df27882bb1d15481073e02af","reason":"Tool names are clear and specific, indicating their exact purpose (method impact analysis vs database impact analysis). Descriptions are comprehensive, explaining functionality, recommended workflows, and when to use each tool. Parameter descriptions are detailed with clear purposes, types, and constraints (enum values for entity_type). The documentation proactively addresses usage scenarios and provides step-by-step guidance.","score":"A"},

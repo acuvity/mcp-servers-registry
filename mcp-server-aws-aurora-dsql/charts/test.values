@@ -1,0 +1,8 @@
+env:
+  AWS_PROFILE: 
+  AWS_REGION: 
+  CLUSTER_ENDPOINT: dummy_value
+  CLUSTER_REGION: dummy_value
+  DATABASE_USER: dummy_value
+
+secrets:

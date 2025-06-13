@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="native"
 
 LABEL org.opencontainers.image.title="mcp-server-kubernetes"
 LABEL org.opencontainers.image.description="Typescript implementation of Kubernetes cluster operations for pods, deployments, services."
-LABEL org.opencontainers.image.version="2.2.1"
+LABEL org.opencontainers.image.version="2.3.1"
 LABEL org.opencontainers.image.source="https://github.com/Flux159/mcp-server-kubernetes"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="Flux159"
@@ -39,7 +39,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev mcp-server-kubernetes@2.2.1
+RUN npm i --omit-dev mcp-server-kubernetes@2.3.1
 
 EXPOSE 8000/tcp
 

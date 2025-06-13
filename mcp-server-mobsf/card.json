@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-mobsf",
+  "icon": "https://avatars.githubusercontent.com/u/89649708?s=200&v=4",
+  "name": "mcp-server-mobsf",
+  "description": "Mobile application security testing framework for Android, iOS, and Windows applications",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-mobsf",
+      "application": "https://github.com/cyproxio/mcp-for-security/tree/HEAD/mobsf-mcp"
+    },
+  "tags": ["security"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "1.0.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"138acdbd3674156790d3129085af3069343716820ded2ef0dea3f189b885f25a","reason":"The toolset shows mixed documentation quality. Core tools like uploadFile and getJsonReport have good descriptions explaining functionality and context. However, many section-specific tools (getJsonSection_*) lack meaningful descriptions beyond basic templates, and parameter descriptions are often minimal or contain errors (e.g., 'Hash file to getting scan logs'). While the overall functionality is understandable, the repetitive nature and lack of detail in many tools prevents a higher grade.","score":"C"},
+  "resources": {
+    "tools": 71,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

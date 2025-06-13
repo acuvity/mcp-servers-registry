@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-github",
-  "icon": "https://avatars.githubusercontent.com/u/9919?s=200&v=4",
+  "icon": "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png",
   "name": "mcp-server-github",
   "description": "GitHub's official MCP Server",
   "links":
@@ -13,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "binary",
-  "version": "v0.4.0",
+  "version": "v0.5.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"b6cd535a065583de34feba6649a7a8de5f437ec884d51c7f6819d8cfe89a4410","reason":"Tool names are clear and specific indicating GitHub functionality. Most descriptions adequately explain what each tool does and when to use it, with some excellent examples like 'list_notifications' providing comprehensive context. Parameter descriptions are generally clear with good use of enums and constraints. However, some tools have minimal descriptions (e.g., 'get_tag', 'list_branches') and a few complex tools could benefit from more detailed usage guidance.","score":"B"},
+  "rating": {"hash":"d3ec2f305456c3565b56be01c1d53e6b35e90bcd2b36d6adb9914b798c407a11","reason":"Good overall documentation quality with clear tool names and adequate parameter descriptions. Most tools have meaningful descriptions that explain their purpose, though some lack important context like usage scenarios or limitations. Parameter documentation is generally clear with proper types and constraints. Some complex tools like pull request review management could benefit from more detailed workflow guidance, and a few descriptions are quite brief. The toolset demonstrates consistent structure and organization across GitHub API operations.","score":"B"},
   "resources": {
     "tools": 51,
     "prompts": 0,

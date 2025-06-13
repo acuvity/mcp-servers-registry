@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -16,7 +16,7 @@ LABEL "mcp-server-scope"="remote"
 LABEL org.opencontainers.image.title="mcp-server-bankless-onchain"
 LABEL org.opencontainers.image.description="Query Onchain data, like ERC20 tokens, transaction history, smart contract state."
 LABEL org.opencontainers.image.version="1.0.6"
-LABEL org.opencontainers.image.source="https://bankless.com"
+LABEL org.opencontainers.image.source="https://github.com/bankless/onchain-mcp"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="Bankless Engineering"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"

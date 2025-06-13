@@ -1,0 +1,39 @@
+{
+  "tools": [
+    {
+      "name": "amass",
+      "hash": "17cae185853fc2a396c2a9477a3ae32fe7dc61e30ef871b3d4d17bb7bd33fea1",
+      "params": [
+        {
+          "name": "domain",
+          "hash": "0c566b47afe0c54c30831ba7323e50fc7cbfb0ad98686f46502361ec66036214"
+        },
+        {
+          "name": "enum_brute",
+          "hash": "8a707d4b1c889ffacf2ae7fda24a5cc094cc9e360cfa7d59013c760280df1227"
+        },
+        {
+          "name": "enum_brute_wordlist",
+          "hash": "9a775116ae3574b4b193c90e5a62b0a88caa1a88c0bfdb5750497a6e8187d3ad"
+        },
+        {
+          "name": "enum_type",
+          "hash": "b668356803ff1ab23b088ade811987a300ceaed9d3edc578b0f39ad8a3396e8f"
+        },
+        {
+          "name": "intel_organization",
+          "hash": "aec63b62912169255ef5ada3d46a8ccf6ca5353a941f148d2578803c5e336173"
+        },
+        {
+          "name": "intel_whois",
+          "hash": "e9fa5e8a051ddb80f565d265ea1102436e733f298ecadf20414290c20e794d7b"
+        },
+        {
+          "name": "subcommand",
+          "hash": "8eaad8be10544848a2c23f8a8996b2a93862f678bc92ffe9b611868fac616098"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

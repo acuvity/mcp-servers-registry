@@ -1,22 +1,22 @@
 {
   "id": "mcp-server-aws-documentation",
-  "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
   "name": "mcp-server-aws-documentation",
-  "description": "Fetch, convert, and search AWS documentation pages, with recommendations for related content.",
+  "description": "AWS documentation access with search, content recommendations, and markdown conversion",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-documentation",
-      "application": "https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server"
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/aws-documentation-mcp-server"
     },
-  "tags": ["research","cloud"],
+  "tags": ["research","integration"],
   "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"01405029d7e8f48cc67d2ae50f72c8e0f4cf91ab3244a55b38fd0db5134cd72b","reason":"Excellent documentation quality across all three tools. Tool names are clear and specific (read_documentation, search_documentation, recommend). Descriptions are comprehensive with detailed usage sections, clear examples, specific requirements, and practical guidance. Parameter descriptions are complete with purpose, constraints, and usage context clearly explained. Documentation proactively addresses common scenarios like handling long documents and finding new features.","score":"A"},
+  "rating": {"hash":"01405029d7e8f48cc67d2ae50f72c8e0f4cf91ab3244a55b38fd0db5134cd72b","reason":"All three tools demonstrate excellent documentation quality. The tool names are specific and clear ('read_documentation', 'search_documentation', 'recommend'). Each description is comprehensive with 3-4 detailed sections covering functionality, usage context, and practical guidance. The parameter documentation is thorough, including clear descriptions, appropriate constraints, and helpful context. The tools go beyond basic functionality to provide usage tips, examples, and detailed explanations of how to interpret results. This level of detail proactively addresses user questions and demonstrates exceptional documentation standards.","score":"A"},
   "resources": {
     "tools": 3,
     "prompts": 0,

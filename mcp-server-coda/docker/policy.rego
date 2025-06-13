@@ -94,6 +94,8 @@ _cross_tool_exclude := [
 	#
 	"coda_get_page_content",
 	#
+	"coda_peek_page",
+	#
 	"coda_replace_page_content",
 	#
 	"coda_append_page_content",

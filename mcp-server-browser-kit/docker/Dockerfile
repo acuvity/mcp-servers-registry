@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="native"
 
 LABEL org.opencontainers.image.title="mcp-server-browser-kit"
 LABEL org.opencontainers.image.description="An MCP Server for interacting with manifest v2 compatible browsers."
-LABEL org.opencontainers.image.version="5.0.1"
+LABEL org.opencontainers.image.version="5.0.2"
 LABEL org.opencontainers.image.source="https://github.com/ndthanhdev/mcp-browser-kit"
 LABEL org.opencontainers.image.licenses="unknown"
 LABEL org.opencontainers.image.author="Author"
@@ -39,7 +39,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev @mcp-browser-kit/server@5.0.1
+RUN npm i --omit-dev @mcp-browser-kit/server@5.0.2
 
 EXPOSE 8000/tcp
 

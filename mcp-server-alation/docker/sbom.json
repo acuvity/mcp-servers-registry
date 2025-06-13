@@ -1,0 +1,13 @@
+{
+  "tools": [
+    {
+      "name": "alation_context",
+      "hash": "a1ef735c1088d15efbc4ae034f24d2fcd478708ccd9cc8c725114a2a61e225ae"
+    },
+    {
+      "name": "get_data_products",
+      "hash": "34f085ec67d883241891992e2379518e2ea1b18220bc33bd6738c1e6721f045b"
+    }
+  ],
+  "prompts": []
+}

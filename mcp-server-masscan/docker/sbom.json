@@ -1,0 +1,23 @@
+{
+  "tools": [
+    {
+      "name": "do-masscan",
+      "hash": "16d9c7c692ba7c7532c9a938aa9decd4b95b489f1f9460ea8b5dff02414bd548",
+      "params": [
+        {
+          "name": "masscan_args",
+          "hash": "50d31bde89915837fc735515ca3ae04246671ebc12a05fcf269ab1228e858cba"
+        },
+        {
+          "name": "port",
+          "hash": "0ef1d2f5d255a081c252227afe7d461e422c3cbc58419a414fe0ac8f0f6151e9"
+        },
+        {
+          "name": "target",
+          "hash": "816301ee5fa0ba248534008b8fcf42e45b5520568821fdda761806ebfc4ebfb7"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

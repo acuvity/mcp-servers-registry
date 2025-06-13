@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: v0.4.2
+appVersion: "v0.4.2"
 keywords:
   - mcp-server-grafana
   - mcp-server

@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-elasticsearch"
 LABEL org.opencontainers.image.description="Connects to Elasticsearch for natural language data queries."
-LABEL org.opencontainers.image.version="0.1.1"
+LABEL org.opencontainers.image.version="0.2.0"
 LABEL org.opencontainers.image.source="https://github.com/elastic/mcp-server-elasticsearch"
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 LABEL org.opencontainers.image.author="Elastic"
@@ -39,7 +39,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev @elastic/mcp-server-elasticsearch@0.1.1
+RUN npm i --omit-dev @elastic/mcp-server-elasticsearch@0.2.0
 
 EXPOSE 8000/tcp
 

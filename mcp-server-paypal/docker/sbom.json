@@ -121,6 +121,28 @@
       ]
     },
     {
+      "name": "create_refund",
+      "hash": "54ea4b27fc2085f4cce6c51a4f03cda3b3150a0e1f65001eabea43bfd89d35c9",
+      "params": [
+        {
+          "name": "amount",
+          "hash": "1b3923ddce7ccffe0bb99679c8671b3f20b800df0b01569fa9b9ba743f90d262"
+        },
+        {
+          "name": "capture_id",
+          "hash": "e039519918409665a05c5167791d2bf03fc11db5af971050253f512d4d8ebab3"
+        },
+        {
+          "name": "invoice_id",
+          "hash": "83ae50028e6c6e191925f1d9b94417a3bea8fc785ca820ce312380af9c7cf51a"
+        },
+        {
+          "name": "note_to_payer",
+          "hash": "8f47905ab699047ea22bdb103846754512f3f32f297bc904efc55b876b894a1a"
+        }
+      ]
+    },
+    {
       "name": "create_shipment_tracking",
       "hash": "027bd7dc3b6b68f7c75083374afaeb9347cbca835dd6ff2b0f5b0a2b491769b3",
       "params": [
@@ -247,6 +269,16 @@
         {
           "name": "id",
           "hash": "0d4b68361bc934c4f57f9c06dc86425396ecfaed39b650659dcba40d3462c9cf"
+        }
+      ]
+    },
+    {
+      "name": "get_refund",
+      "hash": "617f39fadcdad002e9134446b5d2f5d4ee28c21f29d603bd59522f8e9f8b9552",
+      "params": [
+        {
+          "name": "refund_id",
+          "hash": "d8430966f6fb850423a4da63a3b8ac0ad86b8a0b445561ed2454ac0091f54412"
         }
       ]
     },
@@ -422,6 +454,10 @@
       "name": "show_subscription_details",
       "hash": "3d1116fb3df592fb7445420439472ae55cb15a590988c2ca01d0af37467e14a6",
       "params": [
+        {
+          "name": "get_additional_details",
+          "hash": "8ee38e33223088f75cc1bbb2f7cc7445167bf2cc63b4f102ffd4d46e99d58de0"
+        },
         {
           "name": "subscription_id",
           "hash": "22de63bd2395e148b9cb8fe8cf3a9880fa934e91645fcaaaed95a94a1ee9d534"

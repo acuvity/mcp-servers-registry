@@ -33,6 +33,10 @@
         {
           "name": "name",
           "hash": "9200c858ffe87b34c08415c39d7e1111124dc7fbbe8bf606365936cf08fabdb8"
+        },
+        {
+          "name": "parentPageId",
+          "hash": "23e66e983618974de73266d5421c75eedfbbd1884d0a89592ac5b383e1f03031"
         }
       ]
     },
@@ -80,11 +84,37 @@
     },
     {
       "name": "coda_list_pages",
-      "hash": "b70da335dd3f3b775908abe23d3fabc8d2e4c7228c8bb342fbee8c163ca48d45",
+      "hash": "1a8a31861ee35219e4f5f8c8e509efd7987d5a01634fe30c4e33a8a15e534e5a",
       "params": [
         {
           "name": "docId",
           "hash": "4b9ffcb8819b499cd57463e3e4924724e339c33e09512dcc9abde242099ae041"
+        },
+        {
+          "name": "limit",
+          "hash": "dae9aac415696897b6bf809a8667827bd19d2f208cbcf2604edbfbd76a008efd"
+        },
+        {
+          "name": "nextPageToken",
+          "hash": "5e0ac137194647315f21041aa4015dcac246f338c92938f77b01f8b6b5a80e6c"
+        }
+      ]
+    },
+    {
+      "name": "coda_peek_page",
+      "hash": "7a20ab6508a28ca5ba7008abf98d712e28169db94ff7316f0c2b4b0920d2d2cc",
+      "params": [
+        {
+          "name": "docId",
+          "hash": "88dfaff1fc79e5925d00d140af6bea4710522da7c4a3552f9cabf6742d540031"
+        },
+        {
+          "name": "numLines",
+          "hash": "8ea4b7fa145c6b5c9f1fda9a7799f76910e69e71212b3f437176093668262ac7"
+        },
+        {
+          "name": "pageIdOrName",
+          "hash": "50a796ac4b6752c9ec6570e9ca6062a15ec7428a0af9baa93fa2c6f2deceada0"
         }
       ]
     },

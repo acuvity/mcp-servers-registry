@@ -22,13 +22,13 @@
 [![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-bankless-onchain/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-bankless-onchain/1.0.6?logo=docker&logoColor=fff&label=1.0.6)](https://hub.docker.com/r/acuvity/mcp-server-bankless-onchain)
-[![PyPI](https://img.shields.io/badge/1.0.6-3775A9?logo=pypi&logoColor=fff&label=@bankless/onchain-mcp)](https://bankless.com)
+[![PyPI](https://img.shields.io/badge/1.0.6-3775A9?logo=pypi&logoColor=fff&label=@bankless/onchain-mcp)](https://github.com/bankless/onchain-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-bankless-onchain/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-bankless-onchain&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22BANKLESS_API_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-bankless-onchain%3A1.0.6%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Query Onchain data, like ERC20 tokens, transaction history, smart contract state.
 
-Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from @bankless/onchain-mcp original [sources](https://bankless.com).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from @bankless/onchain-mcp original [sources](https://github.com/bankless/onchain-mcp).
 
 **Quick links:**
 
@@ -158,7 +158,7 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 **Environment variables and secrets:**
   - `BANKLESS_API_TOKEN` required to be set
 
-For more information and extra configuration you can consult the [package](https://bankless.com) documentation.
+For more information and extra configuration you can consult the [package](https://github.com/bankless/onchain-mcp) documentation.
 
 # 🧰 Clients Integrations
 

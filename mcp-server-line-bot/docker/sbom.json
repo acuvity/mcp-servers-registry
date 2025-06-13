@@ -9,6 +9,20 @@
       "hash": "6a7cee7032cbb044108c51358ff821abf09938c87a00c6f9ef9df70f848fdc91"
     },
     {
+      "name": "cancel_rich_menu_default",
+      "hash": "5665fffb4bd328740228f593ceaa04b8838575e8489c1b9db3eebf27eefa9993"
+    },
+    {
+      "name": "delete_rich_menu",
+      "hash": "9354a24cd221401fe051d2738db054192319efb3b6d293f348cf5e9a27a3e434",
+      "params": [
+        {
+          "name": "richMenuId",
+          "hash": "2d411290063b03c03efe1a704b011a2391040b3f116a1acde421819cb9327c8e"
+        }
+      ]
+    },
+    {
       "name": "get_message_quota",
       "hash": "9edfcab24cb244f0063332ca4117ffed55fb8de1b61c2735079b8bd5bfad0634"
     },
@@ -18,9 +32,13 @@
       "params": [
         {
           "name": "userId",
-          "hash": "ae3ba3776baad8eeb0f3eb9d13eaecf069294ebbff803dd13f7a7f1557cb04e4"
+          "hash": "ab51e75da45824d3fdaf17ed8b9a48dd5790587d762fafabfb91d93b7e28fb45"
         }
       ]
+    },
+    {
+      "name": "get_rich_menu_list",
+      "hash": "615b67d830bc1ad3702a55c10fbf5317854b49be42b7dcf7d6ff0860bd8b950f"
     },
     {
       "name": "push_flex_message",
@@ -39,6 +57,16 @@
         {
           "name": "userId",
           "hash": "ae3ba3776baad8eeb0f3eb9d13eaecf069294ebbff803dd13f7a7f1557cb04e4"
+        }
+      ]
+    },
+    {
+      "name": "set_rich_menu_default",
+      "hash": "0b133223247370c03fbd51ef4881660aa52ce6326e76bb2d689b123a12df36d5",
+      "params": [
+        {
+          "name": "richMenuId",
+          "hash": "f42e7823d6c9a7c04afafce460535cca4bbd2912680aefb43095a669105b99df"
         }
       ]
     }

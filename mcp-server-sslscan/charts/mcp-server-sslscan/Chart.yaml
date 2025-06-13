@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-sslscan"
+description: "A Helm chart for SSL/TLS configuration analyzer for security assessment through MCP"
+home: https://github.com/cyproxio/mcp-for-security/tree/HEAD/sslscan-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/cyproxio/mcp-for-security/tree/HEAD/sslscan-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-sslscan/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "6190e55"
+keywords:
+  - mcp-server-sslscan
+  - mcp-server
+  - native
+  - security

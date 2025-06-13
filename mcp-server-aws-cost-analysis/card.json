@@ -1,22 +1,22 @@
 {
   "id": "mcp-server-aws-cost-analysis",
-  "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
   "name": "mcp-server-aws-cost-analysis",
-  "description": "Analyze CDK projects to identify AWS services used and get pricing information.",
+  "description": "AWS service cost estimates and insights for infrastructure planning and optimization",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-cost-analysis",
-      "application": "https://pypi.org/project/awslabs.cost-analysis-mcp-server/"
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/cost-analysis-mcp-server"
     },
-  "tags": ["cloud","integration"],
+  "tags": ["cloud","finance"],
   "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "1.0.1",
-  "requiresConfiguration": true,
+  "version": "1.0.2",
+  "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"558f502d5ef4bbe3aedddb658d85c6f789e37c577fd3d6ae3489d8f7a5a5f2bf","reason":"Tool names are clear and specific, indicating their purposes well. Most descriptions adequately explain functionality with 2-3 sentences covering what the tool does and when to use it. The get_pricing_from_api and generate_cost_report tools have comprehensive descriptions with detailed usage guidance and examples. However, several parameters lack descriptions (project_path, service_code, region) or have minimal descriptions, and some tools like get_bedrock_patterns have very brief descriptions that could be more informative about their specific functionality.","score":"B"},
+  "rating": {"hash":"12f43a8f1e9ab242eaa3303399c48b4ff045fef1b19b1a12e58e1f82c87fd6c1","reason":"Good overall documentation with comprehensive descriptions and detailed parameter guidance. Tool descriptions effectively explain functionality and usage context, with some tools providing extensive implementation details. Parameter descriptions are generally clear with appropriate examples. Minor weaknesses include some overly verbose descriptions and inconsistent parameter documentation depth across tools.","score":"B"},
   "resources": {
     "tools": 6,
     "prompts": 0,

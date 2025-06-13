@@ -92,6 +92,8 @@ _cross_tool_exclude := [
 	#
 	"search",
 	#
+	"get_shards",
+	#
 	# exclude word that might be misdetected
 	"to",
 	"this",

@@ -21,10 +21,10 @@
 # What is mcp-server-codelogic?
 [![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-codelogic/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-codelogic/1.0.3?logo=docker&logoColor=fff&label=1.0.3)](https://hub.docker.com/r/acuvity/mcp-server-codelogic)
-[![PyPI](https://img.shields.io/badge/1.0.3-3775A9?logo=pypi&logoColor=fff&label=codelogic-mcp-server)](https://github.com/CodeLogicIncEngineering/codelogic-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-codelogic/1.0.4?logo=docker&logoColor=fff&label=1.0.4)](https://hub.docker.com/r/acuvity/mcp-server-codelogic)
+[![PyPI](https://img.shields.io/badge/1.0.4-3775A9?logo=pypi&logoColor=fff&label=codelogic-mcp-server)](https://github.com/CodeLogicIncEngineering/codelogic-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-codelogic/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-codelogic&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CODELOGIC_PASSWORD%22%2C%22-e%22%2C%22CODELOGIC_SERVER_HOST%22%2C%22-e%22%2C%22CODELOGIC_USERNAME%22%2C%22-e%22%2C%22CODELOGIC_WORKSPACE_NAME%22%2C%22docker.io%2Facuvity%2Fmcp-server-codelogic%3A1.0.3%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-codelogic&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22-e%22%2C%22CODELOGIC_PASSWORD%22%2C%22-e%22%2C%22CODELOGIC_SERVER_HOST%22%2C%22-e%22%2C%22CODELOGIC_USERNAME%22%2C%22-e%22%2C%22CODELOGIC_WORKSPACE_NAME%22%2C%22docker.io%2Facuvity%2Fmcp-server-codelogic%3A1.0.4%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** CodeLogic, provides access to code dependency analytics, risk analysis, and impact assessment.
 
@@ -173,11 +173,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-1.0.3`
+  - container: `1.0.0-1.0.4`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-codelogic:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-codelogic:1.0.0-1.0.3`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-codelogic:1.0.0-1.0.4`
 
 ---
 

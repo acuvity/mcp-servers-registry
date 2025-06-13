@@ -1,0 +1,13 @@
+{
+  "tools": [
+    {
+      "name": "get_assets",
+      "hash": "d497b0b7e1afbacfa730a38d334014ce20e569548f34ec1ad65d64462ba8a589"
+    },
+    {
+      "name": "get_risk_score",
+      "hash": "4ee73afd02b0dcf6a0360792ff375d0a09ce1ba4c3fbdbed67eac647cdfe0d8a"
+    }
+  ],
+  "prompts": []
+}

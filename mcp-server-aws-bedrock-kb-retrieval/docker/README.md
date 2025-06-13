@@ -19,15 +19,16 @@
 
 
 # What is mcp-server-aws-bedrock-kb-retrieval?
+[![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-aws-bedrock-kb-retrieval/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-bedrock-kb-retrieval/1.0.1?logo=docker&logoColor=fff&label=1.0.1)](https://hub.docker.com/r/acuvity/mcp-server-aws-bedrock-kb-retrieval)
-[![PyPI](https://img.shields.io/badge/1.0.1-3775A9?logo=pypi&logoColor=fff&label=awslabs.bedrock-kb-retrieval-mcp-server)](https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server)
+[![PyPI](https://img.shields.io/badge/1.0.1-3775A9?logo=pypi&logoColor=fff&label=awslabs.bedrock-kb-retrieval-mcp-server)](https://github.com/awslabs/mcp/tree/HEAD/src/bedrock-kb-retrieval-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-aws-bedrock-kb-retrieval/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-bedrock-kb-retrieval&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AWS_PROFILE%22%2C%22-e%22%2C%22AWS_REGION%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-bedrock-kb-retrieval%3A1.0.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-bedrock-kb-retrieval&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-bedrock-kb-retrieval%3A1.0.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** Query Amazon Bedrock Knowledge Bases using natural language to retrieve relevant information.
+**Description:** Access and query Amazon Bedrock Knowledge Bases with natural language retrieval
 
-Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from awslabs.bedrock-kb-retrieval-mcp-server original [sources](https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from awslabs.bedrock-kb-retrieval-mcp-server original [sources](https://github.com/awslabs/mcp/tree/HEAD/src/bedrock-kb-retrieval-mcp-server).
 
 **Quick links:**
 
@@ -152,16 +153,16 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Maintained by**:
   - [Acuvity team](mailto:support@acuvity.ai) for packaging
-  - [ AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com> ](https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server) for original source application
+  - [ AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com> ](https://github.com/awslabs/mcp/tree/HEAD/src/bedrock-kb-retrieval-mcp-server) for original source application
 
 **Where to get help**:
   - [The Acuvity MCP Forge repository](https://github.com/acuvity/mcp-servers-registry)
   - [The Acuvity community Discord](https://discord.gg/BkU7fBkrNk)
-  - [ awslabs.bedrock-kb-retrieval-mcp-server ](https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server)
+  - [ awslabs.bedrock-kb-retrieval-mcp-server ](https://github.com/awslabs/mcp/tree/HEAD/src/bedrock-kb-retrieval-mcp-server)
 
 **Where to file issues**:
   - [Github issue tracker](https://github.com/acuvity/mcp-servers-registry/issues)
-  - [ awslabs.bedrock-kb-retrieval-mcp-server ](https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server)
+  - [ awslabs.bedrock-kb-retrieval-mcp-server ](https://github.com/awslabs/mcp/tree/HEAD/src/bedrock-kb-retrieval-mcp-server)
 
 **Supported architectures**:
   - `amd64`
@@ -190,11 +191,12 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 > Given mcp-server-aws-bedrock-kb-retrieval scope of operation it can be hosted anywhere.
 
 **Environment variables and secrets:**
-  - `AWS_PROFILE` required to be set
-  - `AWS_REGION` required to be set
+  - `AWS_PROFILE` optional (not set)
+  - `AWS_REGION` optional (not set)
   - `KB_INCLUSION_TAG_KEY` optional (not set)
+  - `BEDROCK_KB_RERANKING_ENABLED` optional (false)
 
-For more information and extra configuration you can consult the [package](https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server) documentation.
+For more information and extra configuration you can consult the [package](https://github.com/awslabs/mcp/tree/HEAD/src/bedrock-kb-retrieval-mcp-server) documentation.
 
 # 🧰 Clients Integrations
 
@@ -209,7 +211,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-bedrock-kb-retrieval&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AWS_PROFILE%22%2C%22-e%22%2C%22AWS_REGION%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-bedrock-kb-retrieval%3A1.0.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-bedrock-kb-retrieval&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-bedrock-kb-retrieval%3A1.0.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -220,20 +222,12 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
   "mcp": {
     "servers": {
       "acuvity-mcp-server-aws-bedrock-kb-retrieval": {
-        "env": {
-          "AWS_PROFILE": "TO_BE_SET",
-          "AWS_REGION": "TO_BE_SET"
-        },
         "command": "docker",
         "args": [
           "run",
           "-i",
           "--rm",
           "--read-only",
-          "-e",
-          "AWS_PROFILE",
-          "-e",
-          "AWS_REGION",
           "docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.1"
         ]
       }
@@ -250,20 +244,12 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
 {
   "servers": {
     "acuvity-mcp-server-aws-bedrock-kb-retrieval": {
-      "env": {
-        "AWS_PROFILE": "TO_BE_SET",
-        "AWS_REGION": "TO_BE_SET"
-      },
       "command": "docker",
       "args": [
         "run",
         "-i",
         "--rm",
         "--read-only",
-        "-e",
-        "AWS_PROFILE",
-        "-e",
-        "AWS_REGION",
         "docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.1"
       ]
     }
@@ -284,20 +270,12 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
 {
   "mcpServers": {
     "acuvity-mcp-server-aws-bedrock-kb-retrieval": {
-      "env": {
-        "AWS_PROFILE": "TO_BE_SET",
-        "AWS_REGION": "TO_BE_SET"
-      },
       "command": "docker",
       "args": [
         "run",
         "-i",
         "--rm",
         "--read-only",
-        "-e",
-        "AWS_PROFILE",
-        "-e",
-        "AWS_REGION",
         "docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.1"
       ]
     }
@@ -320,20 +298,12 @@ Add the following JSON block to your mcp configuration file:
 {
   "mcpServers": {
     "acuvity-mcp-server-aws-bedrock-kb-retrieval": {
-      "env": {
-        "AWS_PROFILE": "TO_BE_SET",
-        "AWS_REGION": "TO_BE_SET"
-      },
       "command": "docker",
       "args": [
         "run",
         "-i",
         "--rm",
         "--read-only",
-        "-e",
-        "AWS_PROFILE",
-        "-e",
-        "AWS_REGION",
         "docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.1"
       ]
     }
@@ -354,20 +324,12 @@ In the `claude_desktop_config.json` configuration file add the following section
 {
   "mcpServers": {
     "acuvity-mcp-server-aws-bedrock-kb-retrieval": {
-      "env": {
-        "AWS_PROFILE": "TO_BE_SET",
-        "AWS_REGION": "TO_BE_SET"
-      },
       "command": "docker",
       "args": [
         "run",
         "-i",
         "--rm",
         "--read-only",
-        "-e",
-        "AWS_PROFILE",
-        "-e",
-        "AWS_REGION",
         "docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.1"
       ]
     }
@@ -386,9 +348,8 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 ```python
 async with MCPServerStdio(
     params={
-        "env": {"AWS_PROFILE":"TO_BE_SET","AWS_REGION":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","AWS_PROFILE","-e","AWS_REGION","docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.1"]
+        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.1"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -417,7 +378,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e AWS_PROFILE -e AWS_REGION docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.1`
+- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.1`
 
 </details>
 
@@ -427,7 +388,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e AWS_PROFILE -e AWS_REGION docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.1
+docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.1
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -495,12 +456,11 @@ Minibridge offers a host of additional features. For step-by-step guidance, plea
 
 This chart requires some mandatory information to be installed.
 
-**Mandatory Environment variables**:
-  - `AWS_PROFILE` environment variable to be set by env.AWS_PROFILE
-  - `AWS_REGION` environment variable to be set by env.AWS_REGION
-
 **Optional Environment variables**:
+  - `AWS_PROFILE=""` environment variable can be changed with env.AWS_PROFILE=""
+  - `AWS_REGION=""` environment variable can be changed with env.AWS_REGION=""
   - `KB_INCLUSION_TAG_KEY=""` environment variable can be changed with env.KB_INCLUSION_TAG_KEY=""
+  - `BEDROCK_KB_RERANKING_ENABLED="false"` environment variable can be changed with env.BEDROCK_KB_RERANKING_ENABLED="false"
 
 ### How to install
 
@@ -531,6 +491,15 @@ The deployment will create a Kubernetes service with a `healthPort`, that is use
 See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-bedrock-kb-retrieval/charts/mcp-server-aws-bedrock-kb-retrieval/README.md) for more details about settings and runtime security including guardrails activation.
 
 </details>
+
+# 🧠 Server features
+
+For detailed list of all features, tools, arguments and SBOM hashes provided by this server please consult the [readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-bedrock-kb-retrieval)
+
+## 🧰 Tools (1)
+
+## 📚 Resources (1)
+
 
 💬 Questions? Open an issue or contact us [ support@acuvity.ai ](mailto:support@acuvity.ai).
 📦 Contributions welcome!

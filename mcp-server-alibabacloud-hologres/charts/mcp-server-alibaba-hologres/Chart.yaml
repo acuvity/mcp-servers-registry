@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-alibaba-hologres"
+description: "A Helm chart for Connect to Hologres instance, get table metadata, query and analyze data."
+home: https://github.com/aliyun/alibabacloud-hologres-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/aliyun/alibabacloud-hologres-mcp-server
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-alibaba-hologres/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: 0.1.9
+keywords:
+  - mcp-server-alibaba-hologres
+  - mcp-server
+  - remote
+  - database
+  - cloud

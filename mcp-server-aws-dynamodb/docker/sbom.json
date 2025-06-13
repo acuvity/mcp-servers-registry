@@ -1,0 +1,663 @@
+{
+  "tools": [
+    {
+      "name": "create_backup",
+      "hash": "aa1b0226f0ac7076e9288e1f1d8193ad195f948d15efe921ea7ca7be9d3a12f3",
+      "params": [
+        {
+          "name": "backup_name",
+          "hash": "ae1307ea0ca79dabbf4bb87301afe36f9b8f4fc2963b0e564d8b7226417dc51e"
+        },
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "table_name",
+          "hash": "d39d22b659b17bfff25f5d34308e461fb02bd321fbc90e9185edb300c32c6c34"
+        }
+      ]
+    },
+    {
+      "name": "create_table",
+      "hash": "aa721162b973bf06e076046f926e3fbde2abb3db97978cda074c16fbe64058ad",
+      "params": [
+        {
+          "name": "attribute_definitions",
+          "hash": "d7e96a467c0c389f4cdf7967898c8d20b50cf8f7f6a337f927411e04c9f505c0"
+        },
+        {
+          "name": "billing_mode",
+          "hash": "3eee37a7eff74393a33b596e1f2a34be612c6ef07e521a292accde964d558d68"
+        },
+        {
+          "name": "global_secondary_indexes",
+          "hash": "7d4cefed1904e0a3ae4f61f250d532a29354d2472fbe8783fab143ca7cf5389a"
+        },
+        {
+          "name": "key_schema",
+          "hash": "8910b52595396fbcf2724e20b4b3c1f2ad3f8abdacc1023bfd8a6de220ee9219"
+        },
+        {
+          "name": "provisioned_throughput",
+          "hash": "25e8a49f7dab7dec5c96993c97d49218a62ecc88ea75a3d67e26e00d97749a62"
+        },
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "table_name",
+          "hash": "1cad5729788dce2942a0a8cc3405928fbb6f2ffaab092919d1a80a3a35750ca5"
+        }
+      ]
+    },
+    {
+      "name": "delete_item",
+      "hash": "7b17cdeac116a5f9f4f79147426ab60009ce03f8c2cf4f37fa8fa4ac5a659eb9",
+      "params": [
+        {
+          "name": "condition_expression",
+          "hash": "f1d5ddfdac764e2059a108b3e4790a46e46784769f99a157ffb805b6ce7b457b"
+        },
+        {
+          "name": "expression_attribute_names",
+          "hash": "fbfc9a05a270eb29a9e22207f880b89d1b22e78f98d101ca2ce6847bd4543877"
+        },
+        {
+          "name": "expression_attribute_values",
+          "hash": "e693ddffde63e2c2669aacfaadfd2b4bd9dd492545b5c0fff3f6a6194fb38ef8"
+        },
+        {
+          "name": "key",
+          "hash": "bdc9322df1680079c038356e8d7f795c3c4c7fd76da5613d108db681fe8062cb"
+        },
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "table_name",
+          "hash": "d39d22b659b17bfff25f5d34308e461fb02bd321fbc90e9185edb300c32c6c34"
+        }
+      ]
+    },
+    {
+      "name": "delete_table",
+      "hash": "cd25679bd2dd87d70a8d5ee9f6e57dbdb5038836ece6a690b9dc8698aa70ef0f",
+      "params": [
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "table_name",
+          "hash": "d39d22b659b17bfff25f5d34308e461fb02bd321fbc90e9185edb300c32c6c34"
+        }
+      ]
+    },
+    {
+      "name": "describe_backup",
+      "hash": "491a390d5296ac9b317e5957d8f5454a1557a09dbe89ae54fb871ce3f1519334",
+      "params": [
+        {
+          "name": "backup_arn",
+          "hash": "769e2aba68da0baa0cf2c798bd6d6ef3e96fdc150f3a889fbabe7ac06b2a4f39"
+        },
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        }
+      ]
+    },
+    {
+      "name": "describe_continuous_backups",
+      "hash": "e2a94423b82cd186fff74ebb405e721b498421e84a7073496db13f633f4895c9",
+      "params": [
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "table_name",
+          "hash": "d39d22b659b17bfff25f5d34308e461fb02bd321fbc90e9185edb300c32c6c34"
+        }
+      ]
+    },
+    {
+      "name": "describe_endpoints",
+      "hash": "dbcf49469586bd0b919f101c057f70230cb522d6f720df121a1f9b4e9f05b8a6",
+      "params": [
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        }
+      ]
+    },
+    {
+      "name": "describe_export",
+      "hash": "df48fde481ebf8fecc617d0fc5eb37a48ebadac51a90dcd6b60a817486c5f1a8",
+      "params": [
+        {
+          "name": "export_arn",
+          "hash": "de9856bd774aafa5cb92a23b0280545fc74d07750d12ba1fcb035e232cb9ba29"
+        },
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        }
+      ]
+    },
+    {
+      "name": "describe_limits",
+      "hash": "b90ecabb109a064e46609ac9437a386b0731a11d0e4fcd67e685c868b37e67ae",
+      "params": [
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        }
+      ]
+    },
+    {
+      "name": "describe_table",
+      "hash": "05844ece187a9ece59a229c4c19eba72f6b34ee7797750c9ad04e78d44bc9321",
+      "params": [
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "table_name",
+          "hash": "d39d22b659b17bfff25f5d34308e461fb02bd321fbc90e9185edb300c32c6c34"
+        }
+      ]
+    },
+    {
+      "name": "describe_time_to_live",
+      "hash": "a4125da23691b56b73d05b98c06bad54bad41c708913ba9fe2064339d4b1383f",
+      "params": [
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "table_name",
+          "hash": "d39d22b659b17bfff25f5d34308e461fb02bd321fbc90e9185edb300c32c6c34"
+        }
+      ]
+    },
+    {
+      "name": "get_item",
+      "hash": "ca35e40d82689c7a65459b2100615e5b20e61f68aea046201213087ba3f33520",
+      "params": [
+        {
+          "name": "expression_attribute_names",
+          "hash": "fbfc9a05a270eb29a9e22207f880b89d1b22e78f98d101ca2ce6847bd4543877"
+        },
+        {
+          "name": "key",
+          "hash": "bdc9322df1680079c038356e8d7f795c3c4c7fd76da5613d108db681fe8062cb"
+        },
+        {
+          "name": "projection_expression",
+          "hash": "cf916bb5e3ad8bfb286cbf55f4f91ded7b7f9b371e1e63463c678688214722a4"
+        },
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "table_name",
+          "hash": "d39d22b659b17bfff25f5d34308e461fb02bd321fbc90e9185edb300c32c6c34"
+        }
+      ]
+    },
+    {
+      "name": "get_resource_policy",
+      "hash": "e1d831f985fa2b69c9d5a204a56a10bc8afed96e7fe8e63ca44cf3532359599e",
+      "params": [
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "resource_arn",
+          "hash": "663e093f078e4591588706b8e11f343b89687ba94d79ff380e71056e3554a1d2"
+        }
+      ]
+    },
+    {
+      "name": "list_backups",
+      "hash": "1e5e9a84a1ef4abd025e4c19e045f2403a76bc1f0fb28673718ca9e1f4b73649",
+      "params": [
+        {
+          "name": "backup_type",
+          "hash": "5bd4ffc8dffe3cb62e3e0940ec9e1649818267802b71099a2b21dd16f29870e6"
+        },
+        {
+          "name": "exclusive_start_backup_arn",
+          "hash": "e7e194ef5b2da64867bdd96a4522ef404e63c3a719bbbef91a344095b67afaba"
+        },
+        {
+          "name": "limit",
+          "hash": "bf461d1511032a651f377cad2da242a04ea076335e27d6c8c61548a74964d907"
+        },
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "table_name",
+          "hash": "d39d22b659b17bfff25f5d34308e461fb02bd321fbc90e9185edb300c32c6c34"
+        }
+      ]
+    },
+    {
+      "name": "list_exports",
+      "hash": "cffac4868cb0e46f7f751b3dd691a765f8389073daa07c8bb341abe3d333521f",
+      "params": [
+        {
+          "name": "max_results",
+          "hash": "62e0397a9fa5c7bc73261b6e258cf7a5534d7681a1613abf5a83500e538dc8d7"
+        },
+        {
+          "name": "next_token",
+          "hash": "57757ac7f0ce4d56f493ebc78aa116bfefd2a939d71717f8be8660f671b46247"
+        },
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "table_arn",
+          "hash": "9483b90cfbc6c39fb0dd01b9a694fa08f6a4a7cd48443ce2162b0fbb7124a4d6"
+        }
+      ]
+    },
+    {
+      "name": "list_imports",
+      "hash": "54ada86c79e7f3dccacd29715b9bca2c70705395e60280956b6c6bce37fdf423",
+      "params": [
+        {
+          "name": "next_token",
+          "hash": "57757ac7f0ce4d56f493ebc78aa116bfefd2a939d71717f8be8660f671b46247"
+        },
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        }
+      ]
+    },
+    {
+      "name": "list_tables",
+      "hash": "b1e951a564fc8a9cafc19201f8cafcffd3b730e1204d4a8887931eae489d84ec",
+      "params": [
+        {
+          "name": "exclusive_start_table_name",
+          "hash": "6641da9977d2b381b95610b3addf2c6a169354f9f5795863f72a863539555dfc"
+        },
+        {
+          "name": "limit",
+          "hash": "2d71a837894de9017b7ecb644539d9066b82ab6e60e14b2176596850a36b6a48"
+        },
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        }
+      ]
+    },
+    {
+      "name": "list_tags_of_resource",
+      "hash": "8be3befdacc9351fa04d6628c1347a6d6318a26164f134071355a5208ef39826",
+      "params": [
+        {
+          "name": "next_token",
+          "hash": "ebd212ea806e1aa57822383ec73acf5153f8162c515457f2c7f7b6eaba6beea5"
+        },
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "resource_arn",
+          "hash": "663e093f078e4591588706b8e11f343b89687ba94d79ff380e71056e3554a1d2"
+        }
+      ]
+    },
+    {
+      "name": "put_item",
+      "hash": "e65e45b7bbac3b1df5c8ca499cc6c95466b8c1da1150ba14aecc607ac70c8b39",
+      "params": [
+        {
+          "name": "condition_expression",
+          "hash": "52adcec0cf5ea4c97e589b6020c369107a79ddf1302cfc8699026031cde78bf3"
+        },
+        {
+          "name": "expression_attribute_names",
+          "hash": "fbfc9a05a270eb29a9e22207f880b89d1b22e78f98d101ca2ce6847bd4543877"
+        },
+        {
+          "name": "expression_attribute_values",
+          "hash": "e693ddffde63e2c2669aacfaadfd2b4bd9dd492545b5c0fff3f6a6194fb38ef8"
+        },
+        {
+          "name": "item",
+          "hash": "feacbc59bf505a1092686758ff8a8fee7b82eab7a00f2202814bceeec9297dc3"
+        },
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "table_name",
+          "hash": "d39d22b659b17bfff25f5d34308e461fb02bd321fbc90e9185edb300c32c6c34"
+        }
+      ]
+    },
+    {
+      "name": "put_resource_policy",
+      "hash": "355310950d2e9a3a1cfe19d0f2eca4aabef4cb6864b0fcade19c3b3ec7d68e86",
+      "params": [
+        {
+          "name": "policy",
+          "hash": "c9d0860c8fe5cd40a761269ce43ddf11ff4a17c11776be90e88add40bfc514e5"
+        },
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "resource_arn",
+          "hash": "663e093f078e4591588706b8e11f343b89687ba94d79ff380e71056e3554a1d2"
+        }
+      ]
+    },
+    {
+      "name": "query",
+      "hash": "9c530ec3f2d652a2215e80e89c3cd74772eeb856954d8544bb7c51a81e465856",
+      "params": [
+        {
+          "name": "exclusive_start_key",
+          "hash": "70965f59e5531e3901579436d6e106fb0d113a25d56e94a04fb4cf8199e0e2bf"
+        },
+        {
+          "name": "expression_attribute_names",
+          "hash": "fbfc9a05a270eb29a9e22207f880b89d1b22e78f98d101ca2ce6847bd4543877"
+        },
+        {
+          "name": "expression_attribute_values",
+          "hash": "e693ddffde63e2c2669aacfaadfd2b4bd9dd492545b5c0fff3f6a6194fb38ef8"
+        },
+        {
+          "name": "filter_expression",
+          "hash": "fc1aeae9a60c7a4a74973625695b822ecaf304993ffce3d6575974269e57c808"
+        },
+        {
+          "name": "index_name",
+          "hash": "0bb4129c170fd7bac512c85d7148c36f677f3b0031b7c9814cdb288bbd793622"
+        },
+        {
+          "name": "key_condition_expression",
+          "hash": "d5af709a64040543adee03512dc61d64c78469c85bdcf27331fdcef6694d74dd"
+        },
+        {
+          "name": "limit",
+          "hash": "786cb1b73ceb35acbeb9dc369020a4e588976f50e466e06e1aa4cfd8cadcedeb"
+        },
+        {
+          "name": "projection_expression",
+          "hash": "cf916bb5e3ad8bfb286cbf55f4f91ded7b7f9b371e1e63463c678688214722a4"
+        },
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "scan_index_forward",
+          "hash": "8e051b291ceddb0b08afbeff787643b3869bd6a6477872afe12aed8b32728bca"
+        },
+        {
+          "name": "select",
+          "hash": "c21d183115e115342ef49499edb1d2eab4add7befda4a175634f32b03f16e23a"
+        },
+        {
+          "name": "table_name",
+          "hash": "d39d22b659b17bfff25f5d34308e461fb02bd321fbc90e9185edb300c32c6c34"
+        }
+      ]
+    },
+    {
+      "name": "restore_table_from_backup",
+      "hash": "1134e708923498f967a0d8a95fb567220bdbd083b28bb5afd9c45f05a5f3710e",
+      "params": [
+        {
+          "name": "backup_arn",
+          "hash": "769e2aba68da0baa0cf2c798bd6d6ef3e96fdc150f3a889fbabe7ac06b2a4f39"
+        },
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "target_table_name",
+          "hash": "629073d9aa8eb823ab721d2611153f273376809007ec877e1e4eb1ee5bde29a4"
+        }
+      ]
+    },
+    {
+      "name": "scan",
+      "hash": "35fa3bff11499defa77db7eb59669eb23359664f48f345076d978bf6db41689a",
+      "params": [
+        {
+          "name": "exclusive_start_key",
+          "hash": "70965f59e5531e3901579436d6e106fb0d113a25d56e94a04fb4cf8199e0e2bf"
+        },
+        {
+          "name": "expression_attribute_names",
+          "hash": "fbfc9a05a270eb29a9e22207f880b89d1b22e78f98d101ca2ce6847bd4543877"
+        },
+        {
+          "name": "expression_attribute_values",
+          "hash": "e693ddffde63e2c2669aacfaadfd2b4bd9dd492545b5c0fff3f6a6194fb38ef8"
+        },
+        {
+          "name": "filter_expression",
+          "hash": "fc1aeae9a60c7a4a74973625695b822ecaf304993ffce3d6575974269e57c808"
+        },
+        {
+          "name": "index_name",
+          "hash": "0bb4129c170fd7bac512c85d7148c36f677f3b0031b7c9814cdb288bbd793622"
+        },
+        {
+          "name": "limit",
+          "hash": "786cb1b73ceb35acbeb9dc369020a4e588976f50e466e06e1aa4cfd8cadcedeb"
+        },
+        {
+          "name": "projection_expression",
+          "hash": "cf916bb5e3ad8bfb286cbf55f4f91ded7b7f9b371e1e63463c678688214722a4"
+        },
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "select",
+          "hash": "c21d183115e115342ef49499edb1d2eab4add7befda4a175634f32b03f16e23a"
+        },
+        {
+          "name": "table_name",
+          "hash": "d39d22b659b17bfff25f5d34308e461fb02bd321fbc90e9185edb300c32c6c34"
+        }
+      ]
+    },
+    {
+      "name": "tag_resource",
+      "hash": "f49d96b828384ce532b4fc081f6df7f2e9d58a59d49721c5ed147a555dc88214",
+      "params": [
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "resource_arn",
+          "hash": "663e093f078e4591588706b8e11f343b89687ba94d79ff380e71056e3554a1d2"
+        },
+        {
+          "name": "tags",
+          "hash": "2d16335ac2e1897be3f56965b1c4ddca4c0dd9fc1cf7a3e40d0a60b9015cac47"
+        }
+      ]
+    },
+    {
+      "name": "untag_resource",
+      "hash": "324a144e52ade7c3f915aec8b7fe21b09aa9ed3b3ca1ff14499bc00d5934874b",
+      "params": [
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "resource_arn",
+          "hash": "663e093f078e4591588706b8e11f343b89687ba94d79ff380e71056e3554a1d2"
+        },
+        {
+          "name": "tag_keys",
+          "hash": "6cbfc2d4e74bf941d846318fa33d92cbe3db109cc48ef4cd9c685e7333d51741"
+        }
+      ]
+    },
+    {
+      "name": "update_continuous_backups",
+      "hash": "a139bc23a59445a92d7f692c01efad5ed5289e359b322daa42189bfa7eda05bd",
+      "params": [
+        {
+          "name": "point_in_time_recovery_enabled",
+          "hash": "335ad2a33da25763b6df0ec2dd0f60cc977c742deef00e069bf675ed55d46f05"
+        },
+        {
+          "name": "recovery_period_in_days",
+          "hash": "bdd70c400553b0d77373e745f9e2b9c5e058455ecb6a0d114aeae709bbfa8f99"
+        },
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "table_name",
+          "hash": "d39d22b659b17bfff25f5d34308e461fb02bd321fbc90e9185edb300c32c6c34"
+        }
+      ]
+    },
+    {
+      "name": "update_item",
+      "hash": "31be0041c581722a17ad4137a7184a3cff10009408f3985e3900a4171ff1d7b6",
+      "params": [
+        {
+          "name": "condition_expression",
+          "hash": "811990c865c1d49f9dccd6a17400defa622e433ed301d5f2c2eeec9efce89a60"
+        },
+        {
+          "name": "expression_attribute_names",
+          "hash": "fbfc9a05a270eb29a9e22207f880b89d1b22e78f98d101ca2ce6847bd4543877"
+        },
+        {
+          "name": "expression_attribute_values",
+          "hash": "e693ddffde63e2c2669aacfaadfd2b4bd9dd492545b5c0fff3f6a6194fb38ef8"
+        },
+        {
+          "name": "key",
+          "hash": "bdc9322df1680079c038356e8d7f795c3c4c7fd76da5613d108db681fe8062cb"
+        },
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "table_name",
+          "hash": "d39d22b659b17bfff25f5d34308e461fb02bd321fbc90e9185edb300c32c6c34"
+        },
+        {
+          "name": "update_expression",
+          "hash": "ee62f61d432f2821f214092156ae57634dd54982fcf202a5bb3fa082956c4c0d"
+        }
+      ]
+    },
+    {
+      "name": "update_table",
+      "hash": "79c8c188db8f404a297222055a04f51b527549dda6c2c2a27e226f3c999972f6",
+      "params": [
+        {
+          "name": "attribute_definitions",
+          "hash": "0ed8d2c5b22adba789ffb133679427a33d1d81a0f7647bd05b44c5c5138ec8a7"
+        },
+        {
+          "name": "billing_mode",
+          "hash": "3eee37a7eff74393a33b596e1f2a34be612c6ef07e521a292accde964d558d68"
+        },
+        {
+          "name": "deletion_protection_enabled",
+          "hash": "cb8658af12a9252f17e3c681987ce36745f86a9b62d986658067cd52af1a53af"
+        },
+        {
+          "name": "global_secondary_index_updates",
+          "hash": "73ba5e1b01c737dadad2cbf8082ac0e4b982b692b94a8ab485f9fcbbd7d12644"
+        },
+        {
+          "name": "on_demand_throughput",
+          "hash": "be3218b91b93d425721fd6c5c4ffb2520712f17baad2bd8b3ff9da1639f07cd8"
+        },
+        {
+          "name": "provisioned_throughput",
+          "hash": "534168f175700cb2bbece454c21051377fad16d86284a1ffd4d695d7acc83bc0"
+        },
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "replica_updates",
+          "hash": "51d0075240bdc432878fcf02bb807c5dfde79c4edc5ad52822ae77aa5ae58172"
+        },
+        {
+          "name": "sse_specification",
+          "hash": "21bed35c691580ffbf13e6dfa2123a712ed4aae20f3ccee5325df8101c70ade5"
+        },
+        {
+          "name": "stream_specification",
+          "hash": "484f10b1ff08a300e3ba77ca7df343cbd8799aaa6b4c8811f0efe5586eeab2b8"
+        },
+        {
+          "name": "table_class",
+          "hash": "99a5a4444f712f37fd1e97444b21deb30103da4ad0c055717da7676af8dbb590"
+        },
+        {
+          "name": "table_name",
+          "hash": "d39d22b659b17bfff25f5d34308e461fb02bd321fbc90e9185edb300c32c6c34"
+        },
+        {
+          "name": "warm_throughput",
+          "hash": "c61502b1a6a2f40a7cb0401e9c9a7b134e692bf63299079fafd54f467ed90eee"
+        }
+      ]
+    },
+    {
+      "name": "update_time_to_live",
+      "hash": "bcf3ba7bbebb1e77b8b2fbc06b79ccc3688289c2fd6da287037ac738282f8686",
+      "params": [
+        {
+          "name": "region_name",
+          "hash": "ebd1e457dcbfdd50170e3180b475bc4fd801cc15e159298d4aba38a9ebcd6370"
+        },
+        {
+          "name": "table_name",
+          "hash": "d39d22b659b17bfff25f5d34308e461fb02bd321fbc90e9185edb300c32c6c34"
+        },
+        {
+          "name": "time_to_live_specification",
+          "hash": "6078074b7a8f0c6cb3cf67e1c34808558872206e6f72b1311f85d1a5ef5f8ad2"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

@@ -1,0 +1,761 @@
+{
+  "tools": [
+    {
+      "name": "compareApps",
+      "hash": "1881000ad1e0959631b483811b8b07e98e2b89f37ed517fc50c4c1a42409413f",
+      "params": [
+        {
+          "name": "hash1",
+          "hash": "982ee25bd0c3debe635e6332950d3cfc1d90f6bf37fdbe54238060df20c68594"
+        },
+        {
+          "name": "hash2",
+          "hash": "e40c193fe8256bbf3e2c03d495efaba912a3e0ed863447eb2eff108cef1a4fa4"
+        }
+      ]
+    },
+    {
+      "name": "deleteScan",
+      "hash": "70debd6cb8fff3159bc587868e4e14231324e34393ec26d030898bff0e1406f1",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "2157e189f33b789ae7c02387f294919c25f3a8c7064865e57e1b4c6f27eea913"
+        }
+      ]
+    },
+    {
+      "name": "deleteSuppression",
+      "hash": "04f3661dff1ed5383aaeee96e78657617987d2592b3fb0f12b7f7830c71ecf1a",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        },
+        {
+          "name": "kind",
+          "hash": "ee3bf862063eedf10b743ef5f1686b5b4067b36507c27e7bb6f0ee4e9e1019fe"
+        },
+        {
+          "name": "rule",
+          "hash": "579427be0c7c82df83e316ea70819adec8380edd13cdeec057c1de5291edf621"
+        },
+        {
+          "name": "type",
+          "hash": "b19b8ceb18354df775bb6180e81afaee7339e15c26c80b1f98c0bf192b3b6b96"
+        }
+      ]
+    },
+    {
+      "name": "generatePdfReport",
+      "hash": "b5367a526b066d60d423ecb9311038cf9a3b779949b2e3f113dfb6bbf3525c95",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "bf5cdad0a7d0b7749451a6bbdd422c1a0ac27f086c3577633e6f850d5817b9bc"
+        }
+      ]
+    },
+    {
+      "name": "getJsonReport",
+      "hash": "d6894375b60e2ff9ea93d97d6cfec9781dc2c7eb652f8943e127f7124ae4551a",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "35034ab692aef253d19c321ec8542b3c5e1f2a9ec0a6610dddf6909bd9c5c024"
+        }
+      ]
+    },
+    {
+      "name": "getJsonReportSection",
+      "hash": "cb249f3f4fa676b6ef765c43388c91f2bd1ee77b126b923b8ea4e531bd556a9f",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        },
+        {
+          "name": "section",
+          "hash": "070700b3968cbc0387ea45337636664d5f822e2fa363c6d271c62dcda6c5a184"
+        }
+      ]
+    },
+    {
+      "name": "getJsonReportSections",
+      "hash": "d7b01213798d15df0cc7e541f9c1b4ebd2b3bf677f52db37567a1006f9062fc1",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_activities",
+      "hash": "7a86474527246a2eb2010cdcd75f1792b6f04f5ad0635a2bef138549c200cc03",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_android_api",
+      "hash": "0c3ee7a2b36b6d52baa57050186681f512df9f76acb86db56ab7749fa7828340",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_apkid",
+      "hash": "049c3f76fc3debe0cc5e32977e51c1ff129a30b0101a74c7f2f405235f76f206",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_app_name",
+      "hash": "5bc286d687f1f72e7d4e4118a5a5436a1bc2e836ee1d2f731fc5628684955dc4",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_app_type",
+      "hash": "650d09492c37144e8cccb29e7e0599ad1b8ed6d81e874510a8f92dafd335eaed",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_appsec",
+      "hash": "3e2921eb450a6b7ffb1b7364387df28de748e340a6a9c7c0d7f7159280effa9b",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_average_cvss",
+      "hash": "75b26e2b4d40d2e5c515d074c53cc4b0bf993e3e6f2dd460212471a52506d5f2",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_base_url",
+      "hash": "8c2a1fcc24de8c39aa1ae9bfe5d51b6ea1913da61baf7cdfadd32af49aa7dc0a",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_behaviour",
+      "hash": "5f450421468480a8ab84707e5945d5b1744c2e4f37c08fa250c77cebb7f1b215",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_binary_analysis",
+      "hash": "424dc04eea086e2922a0fc8a73ce817be4bcad0fa1cc574a509aa62063bb5baf",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_browsable_activities",
+      "hash": "cbced8f3f582c1d168a78f367df6a5b342d906d9abcaf89a48d2c37b86111beb",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_certificate_analysis",
+      "hash": "a089543b6bc88058d767a1e9eff2ac1a354f72751335c706e4b1e6ebd2f252e9",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_code_analysis",
+      "hash": "caea20ab5a2bab01ea6b6b0e4ccb525b1ab025187708cc80409c435d7e7251b5",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_domains",
+      "hash": "13bb5ffb87fed0cded4bfe1f0d9d60452f73551f061fd99dea2e277a9e6a7e67",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_dwd_dir",
+      "hash": "c6700b4da4449f58cbf428595f219516a2c697bc0e99518ef81586f77b91dff8",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_emails",
+      "hash": "c398d8c0fad284c514340bce288c43abd49dfed2b0d7bde0ec90befa276a7114",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_exported_activities",
+      "hash": "95a1a1f68a75acd2353a4467bba415074a780fdbed5813b3627be99d84005944",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_exported_count",
+      "hash": "233c664dc54a8e8652be34b3643d127cfb4924bb3df7c24fbe695578a4457f17",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_file_analysis",
+      "hash": "3c6221a3bf3ae1f7f8901e359e45067fbfbf22d1671080767b22a2c418d411c9",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_file_name",
+      "hash": "f54a1eebffe971348693e87d7c8028ae682fb870302164b8effb73f99a3d282b",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_firebase_urls",
+      "hash": "72bdf580d5a42a9b2ca9ccc11062e9f107b0e3180289b78ca6881745d85594d9",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_host_os",
+      "hash": "db69ab4903dc4920d253b633e272bfaedeb481352330e793c09ea78482e54eae",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_libraries",
+      "hash": "16eff0a474011fc8bb37cbf9ad038499f52e5904d2c9c5533205334f3697cb88",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_logs",
+      "hash": "f999a3d635533d91fd44da34eceb1e09a2bfe85b17832523d35d6e95056bc196",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_main_activity",
+      "hash": "176bbacda2aeb52cdbcb40a03b46f2850eacf79bb540e9b474cb643145d19dde",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_malware_permissions",
+      "hash": "029e010742b6d24cada728447abedff27c908c2339b54a43257fbd121abdf4af",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_manifest_analysis",
+      "hash": "21d5276af6984920bfef118f0d4fe25b812244744443c15f330a1e7d0a02740d",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_max_sdk",
+      "hash": "60c4d56b900128e626cef777095122b63bcf8276d065d463ec429e23745240c4",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_md5",
+      "hash": "33261ece7fe98406364e843a50c559a747fb3f6e0845f445fa2582e301c3191f",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_min_sdk",
+      "hash": "066be3ed9b63d6a2ff19c521a63a8531d94228c3e7d90b315bcaa06590212b11",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_network_security",
+      "hash": "05a25a24a527b9d62c3218a3f8085d4e6bdb5a0d62e56819bae7af1ba9b09d26",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_niap_analysis",
+      "hash": "fc6c33fef7a6555e9a96ec8d985d86e8b79fd044734fbbdc22ef1d51c74695cf",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_package_name",
+      "hash": "c9450c1dc05a003e8c70e02d2ebc014ad3e231491ffc2a1b76f869f67c38330c",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_permission_mapping",
+      "hash": "50eef434ae221361ac00d4f01f299ff1052268457398f484e4b54198a85cbb0a",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_permissions",
+      "hash": "4612e174653f4f766a94c19b1fdb722b8f8dbd8f8ddc2ca44e9ddb341ac3c41f",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_playstore_details",
+      "hash": "223a06795395d320d52def589a69838998b2decaae54b0de0179cf3a4700ddbf",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_providers",
+      "hash": "3059b3a82b1d6f127a45c55286a2ee930769a9de226cf88b1e1ae0906dab3a18",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_receivers",
+      "hash": "d1a48c1e41495253e6add670683011aa9467a61e8249d8c3cc2e40dbb8d72372",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_sbom",
+      "hash": "79f076e13eb8c7ffde24881c8e29256321818fb072dbd81306c88bc7bf90deb3",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_secrets",
+      "hash": "f7fff2340b56fcdd0f978b7facfc0d9af6022214eab100005907e384aa0fe55c",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_services",
+      "hash": "bfdaf659be74188711ce201fe7af0ba1dbbef71d85c127aeda0a1d5081185a9f",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_sha1",
+      "hash": "417baa7f58bb6a91015f1682a38bddba45d818133ffc2fe75dc5bc4cfb85c302",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_sha256",
+      "hash": "2a11343447933daceb28d5ac13111d1681baf4952d24482b4070f2c679db3007",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_size",
+      "hash": "e7c12cc711b2b186d69d415a6418daf65c7b9444718665a01dec84093e25a855",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_strings",
+      "hash": "d9d5cd480531ab3407699e49f9836cb8c33e6897278359693be0ec174dac3894",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_target_sdk",
+      "hash": "a8dc898117e952eee74ff4db5639b88dc7303e1a61caec22b18941c4770da322",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_title",
+      "hash": "97d208b7306deb8f643e21255ed2e5506362e2c5da7dc20d6f9412591d4945d0",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_trackers",
+      "hash": "6d592bb36b1759d84ba99d059a7f67fd70411b9ed50c75a3686054156e814691",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_urls",
+      "hash": "d62b37c55df2530017841329fd1977dc763c00a346ac564bfd7101d518fc9a28",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_version",
+      "hash": "48601fcd0469bf6c79dca8a067471058ae1bc1dbd24eb2f959b455258baf590d",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_version_code",
+      "hash": "32de2642d7cbdc11a427fdbaa1f0227f8ccd856d85b596cd7477a2cdd84d167a",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_version_name",
+      "hash": "37c8894c42b93b0eb1dfa09b42c2575eb2078efcfb755ced233fe0fed9e31370",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getJsonSection_virus_total",
+      "hash": "1d7cdf6bb4c1cedc6a572ceea5adbf1f8a0d342e453a553f93fa8a6cb7d3b073",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "getRecentScans",
+      "hash": "95a72752c27850e168b4ceca0a4365de7b9e9fd9515e6309a20898bd32519351",
+      "params": [
+        {
+          "name": "page",
+          "hash": "dae274736d7cb4800c5b61f0eda4e950367d2b0ac45164cffe3b393dc8306a97"
+        },
+        {
+          "name": "pageSize",
+          "hash": "1b7ed5a105ddb0f72ecd4baf4d7723302d3eac584e1b4ac970894471e9d3fa60"
+        }
+      ]
+    },
+    {
+      "name": "getScanLogs",
+      "hash": "55a7eff11f81061c353ff6a7e0618bd2a144eebe81da8fff989e6322f921e298",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "35034ab692aef253d19c321ec8542b3c5e1f2a9ec0a6610dddf6909bd9c5c024"
+        }
+      ]
+    },
+    {
+      "name": "getScanTasks",
+      "hash": "f9fde44d1a0810b3b096b57263ab43e6b2f7984c9c3451ae115b9e684e72ff6a"
+    },
+    {
+      "name": "getScorecard",
+      "hash": "135e0778dd05e7df3cee6102a7884aafb1601b51b3719ab9a5b8d02d0beb9a79",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "400076ec61d8dabfb9b5eaae19401b10d2a2c6d5bca4284d63080732c4b10a57"
+        }
+      ]
+    },
+    {
+      "name": "listAllHashes",
+      "hash": "ea97a8d6ae79a2d56f777e92369144845a66e5989685b807d188e91308acc735",
+      "params": [
+        {
+          "name": "page",
+          "hash": "dae274736d7cb4800c5b61f0eda4e950367d2b0ac45164cffe3b393dc8306a97"
+        },
+        {
+          "name": "pageSize",
+          "hash": "1b7ed5a105ddb0f72ecd4baf4d7723302d3eac584e1b4ac970894471e9d3fa60"
+        }
+      ]
+    },
+    {
+      "name": "listSuppressions",
+      "hash": "0b2b7eca29fb241e26699874965a6c8fcdd0b7b42146acc4ece2a66d45b444a1",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        }
+      ]
+    },
+    {
+      "name": "searchScanResult",
+      "hash": "ec7cadcc140c5be45297b3e70f584a1537f89ad0d091717b898ba2f21efd3b07",
+      "params": [
+        {
+          "name": "query",
+          "hash": "d9aa3cd54756924f8f140c71544d3483c20e4389a2121501e646fef7790f8dc4"
+        }
+      ]
+    },
+    {
+      "name": "suppressByFiles",
+      "hash": "7e6abda267b2f4200e6d715f22f716883565cb2087b7a10438d0eb7501946207",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        },
+        {
+          "name": "rule",
+          "hash": "579427be0c7c82df83e316ea70819adec8380edd13cdeec057c1de5291edf621"
+        },
+        {
+          "name": "type",
+          "hash": "5694d08a2e53ffcae0c3103e5ad6f6076abd960eb1f8a56577040bc1028f702b"
+        }
+      ]
+    },
+    {
+      "name": "suppressByRule",
+      "hash": "5b1a14242f5af30f828634cca3fc9251ffbda7b880ecf708a46fddc1d23e3e94",
+      "params": [
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        },
+        {
+          "name": "rule",
+          "hash": "579427be0c7c82df83e316ea70819adec8380edd13cdeec057c1de5291edf621"
+        },
+        {
+          "name": "type",
+          "hash": "b19b8ceb18354df775bb6180e81afaee7339e15c26c80b1f98c0bf192b3b6b96"
+        }
+      ]
+    },
+    {
+      "name": "uploadFile",
+      "hash": "6dbb1e547d9639fbac2f49305cd83a1f5e1c73c5662a45e55fdb7777c3debd4a",
+      "params": [
+        {
+          "name": "file",
+          "hash": "0b27ab5da5c155bb3098e1657b0f1038c33a695ca347baeb8f6b2b8ba7e30d41"
+        }
+      ]
+    },
+    {
+      "name": "viewSource",
+      "hash": "f60268e4dcf1bef5100761e4285c69addb53f5fce5d01e0670251de1d97a18fe",
+      "params": [
+        {
+          "name": "file",
+          "hash": "fe3af7d48c219c5cbb977b178e21b27d7da1dda09a5b74e1e3e001198c820aeb"
+        },
+        {
+          "name": "hash",
+          "hash": "daa51bf873c05fda27e61a3e6da55d4fb86b21b9b53053f24c30b290f06c85e8"
+        },
+        {
+          "name": "type",
+          "hash": "7e78dc2f41d4f83a369b64c10b602f75b76649aec106f20184d450212346599d"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

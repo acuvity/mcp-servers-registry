@@ -1,0 +1,19 @@
+env:
+  DB_USE_KEYSPACES: 
+  DB_KEYSPACES_ENDPOINT: 
+  DB_KEYSPACES_REGION: 
+  DB_CASSANDRA_CONTACT_POINTS: 
+  DB_CASSANDRA_PORT: 
+  DB_CASSANDRA_LOCAL_DATACENTER: 
+
+secrets:
+  DB_CASSANDRA_USERNAME:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key
+  DB_CASSANDRA_PASSWORD:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

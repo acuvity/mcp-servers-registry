@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-shuffledns"
+description: "A Helm chart for DNS brute-forcing and subdomain enumeration tool for reconnaissance and security testing"
+home: https://github.com/cyproxio/mcp-for-security/tree/HEAD/shuffledns-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/cyproxio/mcp-for-security/tree/HEAD/shuffledns-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-shuffledns/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "6190e55"
+keywords:
+  - mcp-server-shuffledns
+  - mcp-server
+  - native
+  - security

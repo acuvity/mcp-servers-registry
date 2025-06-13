@@ -169,9 +169,25 @@ affinity: {}
 # This section handles environment variables passed to the container.
 env:
   AWS_PROFILE: 
+  AWS_REGION: 
 
 # This section handles secrets passed to the container.
 secrets:
+  #AWS_ACCESS_KEY_ID:
+  #  value:
+  #  valueFrom:
+  #    name:
+  #    key:
+  #AWS_SECRET_ACCESS_KEY:
+  #  value:
+  #  valueFrom:
+  #    name:
+  #    key:
+  #AWS_SESSION_TOKEN:
+  #  value:
+  #  valueFrom:
+  #    name:
+  #    key:
 
 ## Minibridge section
 #

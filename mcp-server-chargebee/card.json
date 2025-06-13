@@ -6,7 +6,7 @@
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-chargebee",
-      "application": "https://github.com/chargebee/agentkit/tree/main/modelcontextprotocol"
+      "application": "https://github.com/chargebee/agentkit/tree/HEAD/modelcontextprotocol"
     },
   "tags": ["finance"],
   "official": true,

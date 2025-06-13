@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-21st-dev-magic"
 LABEL org.opencontainers.image.description="Create crafted UI components inspired by the best 21st.dev design engineers."
-LABEL org.opencontainers.image.version="0.0.47"
+LABEL org.opencontainers.image.version="0.1.0"
 LABEL org.opencontainers.image.source="https://github.com/21st-dev/magic-mcp"
 LABEL org.opencontainers.image.licenses="ISC"
 LABEL org.opencontainers.image.author="serafim@21st.dev"
@@ -39,7 +39,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev @21st-dev/magic@0.0.47
+RUN npm i --omit-dev @21st-dev/magic@0.1.0
 
 EXPOSE 8000/tcp
 

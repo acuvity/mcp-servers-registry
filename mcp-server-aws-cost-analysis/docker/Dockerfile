@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -14,9 +14,9 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-aws-cost-analysis"
-LABEL org.opencontainers.image.description="Analyze CDK projects to identify AWS services used and get pricing information."
-LABEL org.opencontainers.image.version="1.0.1"
-LABEL org.opencontainers.image.source="https://pypi.org/project/awslabs.cost-analysis-mcp-server/"
+LABEL org.opencontainers.image.description="AWS service cost estimates and insights for infrastructure planning and optimization"
+LABEL org.opencontainers.image.version="1.0.2"
+LABEL org.opencontainers.image.source="https://github.com/awslabs/mcp/tree/HEAD/src/cost-analysis-mcp-server"
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 LABEL org.opencontainers.image.author="AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com>"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
@@ -43,7 +43,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uv venv && uv pip install awslabs.cost-analysis-mcp-server==1.0.1
+RUN uv venv && uv pip install awslabs.cost-analysis-mcp-server==1.0.2
 
 EXPOSE 8000/tcp
 

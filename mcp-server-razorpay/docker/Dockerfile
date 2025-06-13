@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -8,17 +8,20 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
     CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
 
-FROM golang:1.24 AS builder
-ENV GO111MODULE=on
-ARG TARGETOS TARGETARCH
+FROM golang:1.24-alpine3.21 as builder
+
 ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
-RUN git clone https://github.com/razorpay/razorpay-mcp-server sources
-RUN cd sources && git checkout v1.2.0
+WORKDIR /app
+RUN apk update && apk add --no-cache git curl
+RUN git clone https://github.com/razorpay/razorpay-mcp-server .
+RUN git checkout v1.2.0
 
+ENV GO111MODULE=on
+ARG TARGETOS TARGETARCH
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    cd sources && CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go build -o bin/razorpay-mcp-server ./cmd/razorpay-mcp-server
+    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go build -o bin/razorpay-mcp-server ./cmd/razorpay-mcp-server
 
 FROM alpine:3.21
 
@@ -40,7 +43,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 RUN apk update \
     && apk add --no-cache curl
 
-COPY --from=builder /go/sources/bin/razorpay-mcp-server /usr/bin/razorpay-mcp-server
+COPY --from=builder /app/bin/razorpay-mcp-server /usr/bin/razorpay-mcp-server
 
 HEALTHCHECK CMD curl --fail http://localhost:8080 || exit 1
 

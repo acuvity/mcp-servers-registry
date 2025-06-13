@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-atlan",
+  "icon": "https://assets.atlan.com/assets/atlan-a-logo-blue-background.png",
+  "name": "mcp-server-atlan",
+  "description": "The Atlan MCP server allows you to interact with Atlan services through multiple tools.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-atlan",
+      "application": "https://github.com/atlanhq/agent-toolkit/tree/HEAD/modelcontextprotocol"
+    },
+  "tags": ["database","integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.2.1",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"dfc3f7ed6a027992c88ee38a21039e13481bc3c3db386642d1c80e5666b70718","reason":"The toolset shows mixed documentation quality. While the search_assets_tool has exceptionally detailed documentation with comprehensive examples, the other tools have minimal descriptions and lack proper parameter documentation. The input schemas are mostly empty of descriptions, and tools like get_assets_by_dsl_tool and traverse_lineage_tool provide only basic functional descriptions without explaining key constraints or usage contexts.","score":"C"},
+  "resources": {
+    "tools": 4,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

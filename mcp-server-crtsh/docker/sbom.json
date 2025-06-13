@@ -1,0 +1,15 @@
+{
+  "tools": [
+    {
+      "name": "crtsh",
+      "hash": "45b905617c32329b8b63947b3b71f6199e5f7dc434da12418651cc0b0e763225",
+      "params": [
+        {
+          "name": "target",
+          "hash": "9eb8e99c477f59ba657b17600cccc77ecd6874eb402cd994b55351ce887cd937"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

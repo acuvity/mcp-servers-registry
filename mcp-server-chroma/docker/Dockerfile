@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -8,7 +8,7 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
     CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
 
-FROM ghcr.io/astral-sh/uv:python3.10-bookworm
+FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
 
 LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"

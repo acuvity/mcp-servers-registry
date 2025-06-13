@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-datahub"
+description: "A Helm chart for Search your data assets, traverse data lineage, write SQL queries, and more using DataHub metadata."
+home: https://github.com/acryldata/mcp-server-datahub
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/acryldata/mcp-server-datahub
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-datahub/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "0.2.5"
+keywords:
+  - mcp-server-datahub
+  - mcp-server
+  - remote
+  - database
+  - integration

@@ -1,0 +1,121 @@
+{
+  "tools": [
+    {
+      "name": "inference_query",
+      "hash": "46ec7dbe526f2f38d4f0be6e52d31e7b2088caff963b759de349dc04957087f1",
+      "params": [
+        {
+          "name": "content",
+          "hash": "3a9e67b7734e83063d056290633ca6d9f7d7bf6070fae6cbfb279a75fda5e099"
+        },
+        {
+          "name": "namespace",
+          "hash": "c5f3f8aeea4f98fedfdf82f13463d9a1a2fd9645a94baeabaa30b9c9b74f5609"
+        },
+        {
+          "name": "table_name",
+          "hash": "89446506972d8f2c1e548380df335b1b47b68db871fef473d70b85cfa1d36601"
+        }
+      ]
+    },
+    {
+      "name": "mix_query_with_sparse_vector",
+      "hash": "90c71900bc568809689f449dcc3a8449fc3847d0e196ca237cf9dd5eaa465bc0",
+      "params": [
+        {
+          "name": "sparse_ids",
+          "hash": "594a9f49a20a1647000229942298b16c09a49b1940c47377a8474a78dd77c022"
+        },
+        {
+          "name": "sparse_values",
+          "hash": "196cc8b6c9d410285838c3f480cfb363900e6011533dfe20b9bc76603df36938"
+        },
+        {
+          "name": "table_name",
+          "hash": "89446506972d8f2c1e548380df335b1b47b68db871fef473d70b85cfa1d36601"
+        },
+        {
+          "name": "vector",
+          "hash": "9f4908a3cd51420bae5215d7be70280bc232f8de18a4c299bf9ae47595619dc1"
+        }
+      ]
+    },
+    {
+      "name": "mix_query_with_text",
+      "hash": "ecdc3576c1e7744051bee3604ca3c778a8150c4a9bc8f43a78c41ccb3bb231f9",
+      "params": [
+        {
+          "name": "content",
+          "hash": "7a662e4676b262d0e259a679a08b7fc35144f28ae8db9408d294ae5e7ae32ae4"
+        },
+        {
+          "name": "table_name",
+          "hash": "89446506972d8f2c1e548380df335b1b47b68db871fef473d70b85cfa1d36601"
+        },
+        {
+          "name": "vector",
+          "hash": "02ceae19226395b6f4bddc8b96143a651c3a93b4e69e70bdd8c52c4fab7941e2"
+        }
+      ]
+    },
+    {
+      "name": "multi_query",
+      "hash": "68186a60caa990bc5efb1987e03545258b5405983ca7e0f804ec31d9ab8bc6bb",
+      "params": [
+        {
+          "name": "table_name",
+          "hash": "89446506972d8f2c1e548380df335b1b47b68db871fef473d70b85cfa1d36601"
+        },
+        {
+          "name": "vector_list",
+          "hash": "c12b44c7640b8394d36b0f0a042d06b9500e5a9562796b45f4303ef43042325d"
+        }
+      ]
+    },
+    {
+      "name": "query_by_ids",
+      "hash": "64d3cd22f258ce2fd3fe7fb09213bbf61b79f100c12142dbab8ac496b3423cfc",
+      "params": [
+        {
+          "name": "ids",
+          "hash": "ee8044588b3879214257c2302e201c3a61b83f1401a4df9e8bc7d8d7375d03db"
+        },
+        {
+          "name": "table_name",
+          "hash": "89446506972d8f2c1e548380df335b1b47b68db871fef473d70b85cfa1d36601"
+        }
+      ]
+    },
+    {
+      "name": "simple_search",
+      "hash": "5107a7b75309bd2218d85484bf5ae384ba5127a09ddbb27cda056687d3ca8eff",
+      "params": [
+        {
+          "name": "embedding_model",
+          "hash": "17cecb6e7d5767adb8025db25cc2be514b88e144654b7a7b643d7ca2be9e4e5c"
+        },
+        {
+          "name": "filter",
+          "hash": "699dbab22e9da5f117ac730b2bfb2aab3ce65c6e4a495b7d6adef3acbc2f631f"
+        },
+        {
+          "name": "namespace",
+          "hash": "a2735052645d07d9e3daac15c818c027ed5c487789ad2eda55b83382a79f7890"
+        },
+        {
+          "name": "need_sparse_vector",
+          "hash": "ece41e6b7a00b1ddd535724f039408e9db21d57eacba26a37f720df3fcc38c8b"
+        },
+        {
+          "name": "query",
+          "hash": "7e0534f864ebd7b073fe3c37ea3b3f59daaf5ad7a9cd6cf3afc266bc4cd71983"
+        },
+        {
+          "name": "table_name",
+          "hash": "89446506972d8f2c1e548380df335b1b47b68db871fef473d70b85cfa1d36601"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

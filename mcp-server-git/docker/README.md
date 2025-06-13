@@ -22,13 +22,13 @@
 [![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-git/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-git/2025.1.14?logo=docker&logoColor=fff&label=2025.1.14)](https://hub.docker.com/r/acuvity/mcp-server-git)
-[![PyPI](https://img.shields.io/badge/2025.1.14-3775A9?logo=pypi&logoColor=fff&label=mcp-server-git)](https://github.com/modelcontextprotocol/servers/tree/main/src/git)
+[![PyPI](https://img.shields.io/badge/2025.1.14-3775A9?logo=pypi&logoColor=fff&label=mcp-server-git)](https://github.com/modelcontextprotocol/servers/tree/HEAD/src/git)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-git/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-git&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-git%3A2025.1.14%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Tools to read, search, and manipulate Git repositories.
 
-Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from mcp-server-git original [sources](https://github.com/modelcontextprotocol/servers/tree/main/src/git).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from mcp-server-git original [sources](https://github.com/modelcontextprotocol/servers/tree/HEAD/src/git).
 
 **Quick links:**
 
@@ -153,16 +153,16 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Maintained by**:
   - [Acuvity team](mailto:support@acuvity.ai) for packaging
-  - [ Anthropic, PBC. ](https://github.com/modelcontextprotocol/servers/tree/main/src/git) for original source application
+  - [ Anthropic, PBC. ](https://github.com/modelcontextprotocol/servers/tree/HEAD/src/git) for original source application
 
 **Where to get help**:
   - [The Acuvity MCP Forge repository](https://github.com/acuvity/mcp-servers-registry)
   - [The Acuvity community Discord](https://discord.gg/BkU7fBkrNk)
-  - [ mcp-server-git ](https://github.com/modelcontextprotocol/servers/tree/main/src/git)
+  - [ mcp-server-git ](https://github.com/modelcontextprotocol/servers/tree/HEAD/src/git)
 
 **Where to file issues**:
   - [Github issue tracker](https://github.com/acuvity/mcp-servers-registry/issues)
-  - [ mcp-server-git ](https://github.com/modelcontextprotocol/servers/tree/main/src/git)
+  - [ mcp-server-git ](https://github.com/modelcontextprotocol/servers/tree/HEAD/src/git)
 
 **Supported architectures**:
   - `amd64`
@@ -190,7 +190,7 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 > [!TIP]
 > Given mcp-server-git scope of operation the intended usage is to run natively on the targeted machine to access local resources.
 
-For more information and extra configuration you can consult the [package](https://github.com/modelcontextprotocol/servers/tree/main/src/git) documentation.
+For more information and extra configuration you can consult the [package](https://github.com/modelcontextprotocol/servers/tree/HEAD/src/git) documentation.
 
 # 🧰 Clients Integrations
 

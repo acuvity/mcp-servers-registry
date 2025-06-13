@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-aws-kendra-index",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-kendra-index",
+  "description": "Provides AI assistants with access to Amazon Kendra search indexes for enhanced RAG context",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-kendra-index",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/amazon-kendra-index-mcp-server"
+    },
+  "tags": ["research"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "1.0.1",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"e6d7da8e7cd829b118dbb2b90468e3371b029629e80b565f3c30b6435d9e1a35","reason":"The tools have adequate documentation with clear names and comprehensive descriptions covering functionality and usage context. However, parameter documentation is weak - most parameters lack meaningful descriptions (just titles like 'Region', 'Query'), missing explanations of purpose, expected formats, or constraints. The descriptions also contain formatting inconsistencies and minor errors that detract from overall clarity.","score":"C"},
+  "resources": {
+    "tools": 2,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

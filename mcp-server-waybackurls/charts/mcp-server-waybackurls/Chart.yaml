@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-waybackurls"
+description: "A Helm chart for Retrieves historical URLs from the Wayback Machine for reconnaissance and security testing"
+home: https://github.com/cyproxio/mcp-for-security/tree/HEAD/waybackurls-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/cyproxio/mcp-for-security/tree/HEAD/waybackurls-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-waybackurls/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "6190e55"
+keywords:
+  - mcp-server-waybackurls
+  - mcp-server
+  - remote
+  - security

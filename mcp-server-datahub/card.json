@@ -1,0 +1,22 @@
+{
+  "id": "mcp-server-datahub",
+  "icon": "https://datahub.com/wp-content/uploads/2025/04/cropped-Artboard-1-32x32.png",
+  "name": "mcp-server-datahub",
+  "description": "Search your data assets, traverse data lineage, write SQL queries, and more using DataHub metadata.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-datahub",
+      "application": "https://github.com/acryldata/mcp-server-datahub"
+    },
+  "tags": ["database","integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.2.5",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": null,
+  "resources": {
+  }
+}

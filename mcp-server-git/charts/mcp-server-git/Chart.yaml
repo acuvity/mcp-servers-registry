@@ -1,17 +1,17 @@
 apiVersion: v2
 name: "mcp-server-git"
 description: "A Helm chart for Tools to read, search, and manipulate Git repositories."
-home: https://github.com/modelcontextprotocol/servers/tree/main/src/git
+home: https://github.com/modelcontextprotocol/servers/tree/HEAD/src/git
 sources:
   - https://github.com/acuvity/mcp-servers-registry
-  - https://github.com/modelcontextprotocol/servers/tree/main/src/git
+  - https://github.com/modelcontextprotocol/servers/tree/HEAD/src/git
 icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-git/logo.png"
 type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 2025.1.14
+appVersion: "2025.1.14"
 keywords:
   - mcp-server-git
   - mcp-server

@@ -19,12 +19,12 @@
 
 
 # What is mcp-server-circleci?
-[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-circleci/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-circleci/0.9.0?logo=docker&logoColor=fff&label=0.9.0)](https://hub.docker.com/r/acuvity/mcp-server-circleci)
-[![PyPI](https://img.shields.io/badge/0.9.0-3775A9?logo=pypi&logoColor=fff&label=@circleci/mcp-server-circleci)](https://github.com/CircleCI-Public/mcp-server-circleci)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-circleci/0.9.1?logo=docker&logoColor=fff&label=0.9.1)](https://hub.docker.com/r/acuvity/mcp-server-circleci)
+[![PyPI](https://img.shields.io/badge/0.9.1-3775A9?logo=pypi&logoColor=fff&label=@circleci/mcp-server-circleci)](https://github.com/CircleCI-Public/mcp-server-circleci)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-circleci/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-circleci&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-circleci%3A0.9.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-circleci&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-circleci%3A0.9.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Enable AI Agents to fix build failures from CircleCI.
 
@@ -174,7 +174,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-circleci&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-circleci%3A0.9.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-circleci&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-circleci%3A0.9.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -191,7 +191,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "-i",
           "--rm",
           "--read-only",
-          "docker.io/acuvity/mcp-server-circleci:0.9.0"
+          "docker.io/acuvity/mcp-server-circleci:0.9.1"
         ]
       }
     }
@@ -213,7 +213,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-circleci:0.9.0"
+        "docker.io/acuvity/mcp-server-circleci:0.9.1"
       ]
     }
   }
@@ -239,7 +239,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-circleci:0.9.0"
+        "docker.io/acuvity/mcp-server-circleci:0.9.1"
       ]
     }
   }
@@ -267,7 +267,7 @@ Add the following JSON block to your mcp configuration file:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-circleci:0.9.0"
+        "docker.io/acuvity/mcp-server-circleci:0.9.1"
       ]
     }
   }
@@ -293,7 +293,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-circleci:0.9.0"
+        "docker.io/acuvity/mcp-server-circleci:0.9.1"
       ]
     }
   }
@@ -312,7 +312,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 async with MCPServerStdio(
     params={
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-circleci:0.9.0"]
+        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-circleci:0.9.1"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -341,7 +341,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-circleci:0.9.0`
+- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-circleci:0.9.1`
 
 </details>
 
@@ -351,7 +351,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-circleci:0.9.0
+docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-circleci:0.9.1
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -455,7 +455,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (11)
+## 🧰 Tools (12)
 <details>
 <summary>get_build_failure_logs</summary>
 
@@ -1009,6 +1009,32 @@ Option 2 - Workflow URL:
 |-----------|------|-------------|-----------|
 | params | object | not set | Yes
 </details>
+<details>
+<summary>analyze_diff</summary>
+
+**Description**:
+
+```
+
+  This tool is used to analyze a git diff (unstaged, staged, or all changes) against cursor rules to check for rule violations.
+  By default, the tool will use the staged changes if the user does not explicitly ask for unstaged changes or all changes.
+
+  Parameters:
+  - params: An object containing:
+    - diff: string - A git diff string.
+    - rules: string - Rules to use for analysis. Rule from .cursorrules or rules in .cursor/rules directory. Combine all rules from multiple files by separating them with ---
+
+  Returns:
+  - A list of violations found in the git diff.
+  
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| params | object | not set | Yes
+</details>
 
 
 # 🔐 Resource SBOM
@@ -1017,6 +1043,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
+| tools | analyze_diff | description | 3a6df735f38d4674c7151a2b9cef9c4be414cc5c0fd1e3421f8f345a6a54b7cb |
 | tools | config_helper | description | f02dd33f38a3495a590d901debe94a7d61f55b1c13aa49695ea04495280a6a81 |
 | tools | create_prompt_template | description | 1a0d5f49ed5ef89ab02439a0fc88d97c2623bd19082b8b8f307f513ba759313f |
 | tools | find_flaky_tests | description | d7791ab55054527245f4201e3f3e852a2260aabb35703b49b88f617f585ce931 |

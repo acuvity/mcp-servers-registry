@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-aws-postgres"
+description: "A Helm chart for Natural language to PostgreSQL queries for AWS Aurora Postgres via RDS Data API"
+home: https://github.com/awslabs/mcp/tree/HEAD/src/postgres-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/awslabs/mcp/tree/HEAD/src/postgres-mcp-server
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-aws-postgres/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "1.0.1"
+keywords:
+  - mcp-server-aws-postgres
+  - mcp-server
+  - remote
+  - database
+  - cloud

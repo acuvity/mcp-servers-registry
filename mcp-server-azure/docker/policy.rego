@@ -156,6 +156,8 @@ _cross_tool_exclude := [
 	#
 	"azmcp-postgres-server-param",
 	#
+	"azmcp-postgres-server-setparam",
+	#
 	"azmcp-postgres-table-list",
 	#
 	"azmcp-postgres-table-schema",

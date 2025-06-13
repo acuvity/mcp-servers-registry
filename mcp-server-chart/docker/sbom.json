@@ -81,6 +81,40 @@
       ]
     },
     {
+      "name": "generate_boxplot_chart",
+      "hash": "07995874c0d1f1cd79b52f95bf250e12cb052a2cb7c4aecbd2a34a4098637189",
+      "params": [
+        {
+          "name": "axisXTitle",
+          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
+        },
+        {
+          "name": "axisYTitle",
+          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
+        },
+        {
+          "name": "data",
+          "hash": "600db11fd569238599ce8d88b2710ae6647172de207b3b9bf8051187c8635988"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
       "name": "generate_column_chart",
       "hash": "cb9505024eff95786bd632bbca3f11f798bd7826f25cdb56a52145ac52899d7f",
       "params": [
@@ -140,7 +174,7 @@
         },
         {
           "name": "series",
-          "hash": "369e0a4a71699a2b28958eaef6c42cc94b6ec5506406ee6f8e7e1d2dc0c3d989"
+          "hash": "cb4d9c990dccaa254b9661138fb7392d301dd6ad5a0f4cb1a39b6f498eee9c98"
         },
         {
           "name": "theme",
@@ -193,6 +227,32 @@
         {
           "name": "theme",
           "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
+      "name": "generate_funnel_chart",
+      "hash": "be676a3685d3a918573a39e733e9f9b849184d3bd37e370c64c1346bf577d4d2",
+      "params": [
+        {
+          "name": "data",
+          "hash": "edbce43e3a8a256f518dec7ed37c74b39cfa74e73acf897a5bb1f704af6e6694"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
         },
         {
           "name": "width",
@@ -277,6 +337,36 @@
       ]
     },
     {
+      "name": "generate_liquid_chart",
+      "hash": "3c347b33afb200989bdd91ade58dd3541a0c3bb29227289f3b721f5e4401ca2d",
+      "params": [
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "percent",
+          "hash": "74d77eec8a15a3b9bc9f3429317a3fbfac1ace5ff3e2503612d41442b96654fc"
+        },
+        {
+          "name": "shape",
+          "hash": "45442be6c731955de95c299b160029b7b02179bd90f6c204f3295a375b3bd7b4"
+        },
+        {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
       "name": "generate_mind_map",
       "hash": "69bf6897ec2bef7cc910002af1f7cf7d92502920473bae8ab6f9adefbc94a628",
       "params": [
@@ -309,6 +399,32 @@
         {
           "name": "height",
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
+      "name": "generate_organization_chart",
+      "hash": "289dd34ffc7324f7ed60f6792c72af43f3d32889ea72eaf497d591a5a105d61e",
+      "params": [
+        {
+          "name": "data",
+          "hash": "ef239d04adec0211c07d0fec477515ac5786c2399c5a645a3abc10b251a061ec"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "orient",
+          "hash": "28e240ab627fc10bcb0890ce59af27af9c275772c92d636b13b3c9a8d0c14bb1"
         },
         {
           "name": "theme",
@@ -377,6 +493,36 @@
       ]
     },
     {
+      "name": "generate_sankey_chart",
+      "hash": "5f9a8142686a1debb1b325fb0cc6059df3ba37eecda11e2c79f0f94258ee5df9",
+      "params": [
+        {
+          "name": "data",
+          "hash": "3f95d75e7c51d046f862eb2c4433b0e1a3b340347f48cd75cc8962aa0b8750e7"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "nodeAlign",
+          "hash": "a5452b2f630749f107e6e32924971733c463ec2a8ecec5a8c21e7b4a36469c8b"
+        },
+        {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
       "name": "generate_scatter_chart",
       "hash": "d75c8ea04f633bdc1f2c1b7a74d9bc24ea7ca1d14138ed75a3b6096321e529cf",
       "params": [
@@ -417,6 +563,66 @@
         {
           "name": "data",
           "hash": "46418098a4acbdde40f7809faae1b5c912d4834c99f098f8d6fa57eb1876a0d1"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
+      "name": "generate_venn_chart",
+      "hash": "bcaaf72c3b69af041b609746d42c91b224af686b96f8dfe1f7806dd8e020747d",
+      "params": [
+        {
+          "name": "data",
+          "hash": "c9fad0039556dd92eeb7e750505054c5580b830f7cce615e9f3338ac304a52c7"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
+      "name": "generate_violin_chart",
+      "hash": "f5d77608a39c3e8aede033a230595a09c63fe5e253d077625da08d436ec99080",
+      "params": [
+        {
+          "name": "axisXTitle",
+          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
+        },
+        {
+          "name": "axisYTitle",
+          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
+        },
+        {
+          "name": "data",
+          "hash": "ad7ad5687541d6b89fab722f074db1ea69a13e1b0f670d0b0ca786ace7fbd8bc"
         },
         {
           "name": "height",

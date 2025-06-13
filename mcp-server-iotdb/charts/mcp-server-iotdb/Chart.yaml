@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-iotdb"
+description: "A Helm chart for MCP Server for Apache IoTDB database and its tools"
+home: https://github.com/apache/iotdb-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/apache/iotdb-mcp-server
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-iotdb/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "cf77711"
+keywords:
+  - mcp-server-iotdb
+  - mcp-server
+  - remote
+  - database

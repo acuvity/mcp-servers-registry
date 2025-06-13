@@ -90,6 +90,8 @@ _cross_tool_exclude := [
 	#
 	"generate_bar_chart",
 	#
+	"generate_boxplot_chart",
+	#
 	"generate_column_chart",
 	#
 	"generate_dual_axes_chart",
@@ -98,21 +100,33 @@ _cross_tool_exclude := [
 	#
 	"generate_flow_diagram",
 	#
+	"generate_funnel_chart",
+	#
 	"generate_histogram_chart",
 	#
 	"generate_line_chart",
+	#
+	"generate_liquid_chart",
 	#
 	"generate_mind_map",
 	#
 	"generate_network_graph",
 	#
+	"generate_organization_chart",
+	#
 	"generate_pie_chart",
 	#
 	"generate_radar_chart",
 	#
+	"generate_sankey_chart",
+	#
 	"generate_scatter_chart",
 	#
 	"generate_treemap_chart",
+	#
+	"generate_venn_chart",
+	#
+	"generate_violin_chart",
 	#
 	"generate_word_cloud_chart",
 	#

@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-aws-valkey",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-valkey",
+  "description": "AWS MCP server for Valkey datastores with ElastiCache/MemoryDB support and data operations",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-valkey",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/valkey-mcp-server"
+    },
+  "tags": ["database","cloud"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "1.0.2",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"8e813b27933e46e471a7b5c1c5bc7cdc1599a5d26c2b272197296ea5b6bf61b6","reason":"The toolset provides adequate basic documentation with clear tool names and concise descriptions covering main functionality. Parameter descriptions are minimal but functional, indicating purpose and type. However, descriptions lack important usage context, constraints, and examples that would help users understand when and how to use these Redis/Valkey operations effectively. The documentation is consistent but leaves users to infer details about data types, error conditions, and best practices.","score":"C"},
+  "resources": {
+    "tools": 105,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

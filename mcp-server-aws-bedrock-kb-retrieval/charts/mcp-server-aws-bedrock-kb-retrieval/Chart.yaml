@@ -1,20 +1,19 @@
 apiVersion: v2
 name: "mcp-server-aws-bedrock-kb-retrieval"
-description: "A Helm chart for Query Amazon Bedrock Knowledge Bases using natural language to retrieve relevant information."
-home: https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server
+description: "A Helm chart for Access and query Amazon Bedrock Knowledge Bases with natural language retrieval"
+home: https://github.com/awslabs/mcp/tree/HEAD/src/bedrock-kb-retrieval-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry
-  - https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server
+  - https://github.com/awslabs/mcp/tree/HEAD/src/bedrock-kb-retrieval-mcp-server
 icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-aws-bedrock-kb-retrieval/logo.png"
 type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 1.0.1
+appVersion: "1.0.1"
 keywords:
   - mcp-server-aws-bedrock-kb-retrieval
   - mcp-server
   - remote
-  - cloud
-  - integration
+  - research

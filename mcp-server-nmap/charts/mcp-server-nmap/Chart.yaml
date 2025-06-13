@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-nmap"
+description: "A Helm chart for MCP bridge connecting Nmap network scanner with standardized interface for security testing"
+home: https://github.com/cyproxio/mcp-for-security/tree/HEAD/nmap-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/cyproxio/mcp-for-security/tree/HEAD/nmap-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-nmap/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "6190e55"
+keywords:
+  - mcp-server-nmap
+  - mcp-server
+  - native
+  - security

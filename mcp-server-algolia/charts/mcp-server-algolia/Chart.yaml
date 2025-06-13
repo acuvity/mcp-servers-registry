@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-algolia"
+description: "A Helm chart for MCP server for interacting with Algolia APIs - search, analytics, monitoring, and data management"
+home: https://github.com/algolia/mcp-node
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/algolia/mcp-node
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-algolia/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "v0.0.8"
+keywords:
+  - mcp-server-algolia
+  - mcp-server
+  - remote
+  - integration
+  - development

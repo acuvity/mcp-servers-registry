@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-aws-kendra-index"
+description: "A Helm chart for Provides AI assistants with access to Amazon Kendra search indexes for enhanced RAG context"
+home: https://github.com/awslabs/mcp/tree/HEAD/src/amazon-kendra-index-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/awslabs/mcp/tree/HEAD/src/amazon-kendra-index-mcp-server
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-aws-kendra-index/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "1.0.1"
+keywords:
+  - mcp-server-aws-kendra-index
+  - mcp-server
+  - remote
+  - research

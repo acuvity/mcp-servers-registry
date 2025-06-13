@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-apimatic-validator"
+description: "A Helm chart for APIMatic MCP Server validates OpenAPI specifications using APIMatic's validation API."
+home: https://github.com/apimatic/apimatic-validator-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/apimatic/apimatic-validator-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-apimatic-validator/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "8e762bb"
+keywords:
+  - mcp-server-apimatic-validator
+  - mcp-server
+  - remote
+  - development

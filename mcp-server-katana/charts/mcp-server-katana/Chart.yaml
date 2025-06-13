@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-katana"
+description: "A Helm chart for Fast web crawler with JS parsing and hybrid crawling for endpoint discovery"
+home: https://github.com/cyproxio/mcp-for-security/tree/HEAD/katana-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/cyproxio/mcp-for-security/tree/HEAD/katana-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-katana/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "6190e55"
+keywords:
+  - mcp-server-katana
+  - mcp-server
+  - native
+  - security
+  - web

@@ -1,0 +1,18 @@
+env:
+  VALKEY_HOST: 
+  VALKEY_PORT: 
+  VALKEY_USERNAME: 
+  VALKEY_USE_SSL: 
+  VALKEY_CERT_REQS: 
+  VALKEY_CA_PATH: 
+  VALKEY_SSL_KEYFILE: 
+  VALKEY_SSL_CERTFILE: 
+  VALKEY_CA_CERTS: 
+  VALKEY_CLUSTER_MODE: 
+
+secrets:
+  VALKEY_PWD:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

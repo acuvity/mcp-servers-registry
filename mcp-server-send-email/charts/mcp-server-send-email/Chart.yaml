@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-send-email"
+description: "A Helm chart for Send and schedule emails using Resend's API."
+home: https://github.com/resend/mcp-send-email
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/resend/mcp-send-email
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-send-email/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "1e1e235"
+keywords:
+  - mcp-server-send-email
+  - mcp-server
+  - remote
+  - communication
+  - integration

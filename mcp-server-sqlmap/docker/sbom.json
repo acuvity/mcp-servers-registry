@@ -1,0 +1,19 @@
+{
+  "tools": [
+    {
+      "name": "do-sqlmap",
+      "hash": "0e8bbf2669bff714dcee71aaff0fc31cb9ed86b218eeecb15b7461e829e46cdb",
+      "params": [
+        {
+          "name": "sqlmap_args",
+          "hash": "31b7958af76a6b3e53a660a8f192f43aaacc91affb3f327dd94fe083ec108a22"
+        },
+        {
+          "name": "url",
+          "hash": "28f03618297d90d303281a5d9f656f114b216c680b4338de33ee4730c1012ba7"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

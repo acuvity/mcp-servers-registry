@@ -21,10 +21,10 @@
 # What is mcp-server-figma?
 [![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-figma/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-figma/0.4.0?logo=docker&logoColor=fff&label=0.4.0)](https://hub.docker.com/r/acuvity/mcp-server-figma)
-[![PyPI](https://img.shields.io/badge/0.4.0-3775A9?logo=pypi&logoColor=fff&label=figma-developer-mcp)](https://github.com/GLips/Figma-Context-MCP)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-figma/0.4.2?logo=docker&logoColor=fff&label=0.4.2)](https://hub.docker.com/r/acuvity/mcp-server-figma)
+[![PyPI](https://img.shields.io/badge/0.4.2-3775A9?logo=pypi&logoColor=fff&label=figma-developer-mcp)](https://github.com/GLips/Figma-Context-MCP)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-figma/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-figma&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22FIGMA_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-figma%3A0.4.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-figma&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22FIGMA_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-figma%3A0.4.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Provide coding agents direct access to Figma data to help them one-shot design implementation.
 
@@ -173,11 +173,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.4.0`
+  - container: `1.0.0-0.4.2`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-figma:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-figma:1.0.0-0.4.0`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-figma:1.0.0-0.4.2`
 
 ---
 

@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-phoenix",
+  "icon": "https://phoenix.arize.com/wp-content/uploads/2023/04/cropped-Favicon-32x32.png",
+  "name": "mcp-server-phoenix",
+  "description": "Inspect traces, manage prompts, curate datasets, and run experiments using Arize Phoenix.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-phoenix",
+      "application": "https://github.com/Arize-ai/phoenix/tree/HEAD/js/packages/phoenix-mcp"
+    },
+  "tags": ["development","monitoring"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "2.1.10",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"ea0894d20ec0ff24e6bb2b5833feb8b0685916a11abc7d204d48fc093bf689b4","reason":"The toolset demonstrates good documentation quality with comprehensive descriptions that include functionality, usage context, and detailed examples with expected returns. Tool names are clear and purposeful. Parameter documentation is adequate with clear types and constraints. However, some inconsistencies in parameter naming conventions (camelCase vs snake_case) and occasional verbosity in descriptions prevent it from reaching excellence.","score":"B"},
+  "resources": {
+    "tools": 16,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-assetfinder",
+  "icon": "https://avatars.githubusercontent.com/u/89649708?s=200&v=4",
+  "name": "mcp-server-assetfinder",
+  "description": "Passive subdomain discovery tool using Assetfinder for reconnaissance and domain enumeration",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-assetfinder",
+      "application": "https://github.com/cyproxio/mcp-for-security/tree/HEAD/assetfinder-mcp"
+    },
+  "tags": ["security"],
+  "official": true,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "6190e55",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"1b358fe15edfe8f2b68f5318218a10aada9622974c3b6864c8cf64d952dc8ddf","reason":"The tool has an adequate but brief description that explains the basic functionality and mentions discovering subdomains and related domains. The parameter description is clear and includes a helpful example. However, the tool description lacks important details about what assetfinder is, how comprehensive the discovery process is, potential limitations, or what sources are used for domain discovery.","score":"C"},
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

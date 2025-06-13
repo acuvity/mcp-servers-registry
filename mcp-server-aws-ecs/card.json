@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-aws-ecs",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-ecs",
+  "description": "AWS ECS containerization, deployment, troubleshooting, and infrastructure management",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-ecs",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/ecs-mcp-server"
+    },
+  "tags": ["cloud","automation","development"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": false,
+  "runtime": "python",
+  "version": "0.1.3",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"9ce74cc98b7bc637bbad63d6c538568b076a831f32ae039a55a9d77a194e8372","reason":"Good overall documentation with comprehensive descriptions covering functionality, usage instructions, and infrastructure details. Tool names are clear and specific. Parameter documentation is generally thorough with most having clear descriptions and constraints. Some minor areas for improvement include: the route_table_ids parameter lacks a description, the filters parameter could be more specific about expected filter keys, and a few parameters could benefit from example values or format specifications.","score":"B"},
+  "resources": {
+    "tools": 6,
+    "prompts": 82,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

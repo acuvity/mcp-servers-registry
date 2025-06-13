@@ -168,7 +168,7 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
   - `arm64`
 
 **Base image**:
-  - `node:23-slim`
+  - `node:23.11.0-slim`
 
 **Resources**:
   - [Charts](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-base/charts/mcp-server-base)

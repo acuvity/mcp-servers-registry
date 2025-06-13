@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-algolia",
+  "icon": "https://www.algolia.com/files/live/sites/algolia-assets/files/icons/algolia-logo-for-favicon.svg",
+  "name": "mcp-server-algolia",
+  "description": "MCP server for interacting with Algolia APIs - search, analytics, monitoring, and data management",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-algolia",
+      "application": "https://github.com/algolia/mcp-node"
+    },
+  "tags": ["integration","development"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "v0.0.8",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"2fd759473b5ea9abfa5043daa1bd59ab3b6ac4705d10b5ea2393ad9f8766ddeb","reason":"The toolset shows adequate documentation with clear but generic tool names and basic descriptions that outline main functionality. Most tools have minimal 1-2 sentence descriptions covering what they do, and parameters include basic type information and examples. However, descriptions lack important context about when to use each tool, expected behavior, and constraints. The complex schema definitions are well-structured but the tool-level documentation doesn't provide sufficient guidance for practical usage without requiring users to infer details from parameter schemas.","score":"C"},
+  "resources": {
+    "tools": 29,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

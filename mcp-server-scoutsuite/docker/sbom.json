@@ -1,0 +1,59 @@
+{
+  "tools": [
+    {
+      "name": "do-scoutsuite-aws",
+      "hash": "10c5f71104e982b1c39f33bf5ab079ef484c7b57406eeb33f3b9b2365704c783",
+      "params": [
+        {
+          "name": "acces_keys",
+          "hash": "cda809426e800fd13d9a0c37d447c397505581cb57b5936ac4757d82749cd21d"
+        },
+        {
+          "name": "access_key_id",
+          "hash": "2f58a29aeb40a5f3ef906290a3704059736f475c84aacd00db644d641ed3ee4c"
+        },
+        {
+          "name": "exclude_regions",
+          "hash": "7f62cf05a96b24499cb6eada23cca08f8741aa892d45dfe6b2796f3e7308c9b4"
+        },
+        {
+          "name": "ip_ranges",
+          "hash": "53b0f0e45cc42bb8468a92e9ac9d1105c93aed064209abf41c2559aa1c6121ad"
+        },
+        {
+          "name": "ip_ranges_name_key",
+          "hash": "2e08dbe2d1997d4c1f6534cd6cd75bd31e6529f637a9b624b279993363606c40"
+        },
+        {
+          "name": "max_workers",
+          "hash": "c8bc12153e29a01bce81e780a55a9d6d07e40df02b77a57f3850ec00db91ebd1"
+        },
+        {
+          "name": "profile",
+          "hash": "b497b9d3697f6f22bae1d84dd9a00fb5ff32ccbb13201a31f78be10d19bcaa1b"
+        },
+        {
+          "name": "regions",
+          "hash": "f2677ef272da308a25e63427922dbfe454f29041734df173d69c178e56405601"
+        },
+        {
+          "name": "secret_acces_key",
+          "hash": "ce3056946df5bf1e2a9b529a11854ea12e72885f88b90b8f34b2674f819cae05"
+        },
+        {
+          "name": "services",
+          "hash": "fd0e20a99327b0e6a4f18ac4aeb88630a8578af8801a5080e58167ccf09add2b"
+        },
+        {
+          "name": "session_token",
+          "hash": "7569eaf00e23cb4c6741edd9c2f3b46cf3363c6491dd72b440274b670545f17c"
+        },
+        {
+          "name": "skip_services",
+          "hash": "6af0ac07400a0b2d641cd6fc01e828c1c37f3184237e54e9930154d2ea979f1d"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

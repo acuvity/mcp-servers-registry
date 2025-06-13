@@ -6,7 +6,7 @@
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-neo4j-memory",
-      "application": "https://github.com/neo4j-contrib/mcp-neo4j"
+      "application": "https://github.com/neo4j-contrib/mcp-neo4j/tree/HEAD/servers/mcp-neo4j-memory"
     },
   "tags": ["database","integration"],
   "official": true,

@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.9.9
+appVersion: "0.9.9"
 keywords:
   - mcp-server-glif
   - mcp-server

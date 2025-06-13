@@ -1,0 +1,12 @@
+env:
+  HOLOGRES_HOST: dummy_value
+  HOLOGRES_PORT: 
+  HOLOGRES_USER: 
+  HOLOGRES_DATABASE: dummy_value
+
+secrets:
+  HOLOGRES_PASSWORD:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

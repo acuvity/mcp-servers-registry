@@ -1645,6 +1645,64 @@
       ]
     },
     {
+      "name": "azmcp-postgres-server-setparam",
+      "hash": "ac895680e37526700599aeda16ae8e9629101aa940eeda509ce0db7fb8a1fe19",
+      "params": [
+        {
+          "name": "auth-method",
+          "hash": "6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29"
+        },
+        {
+          "name": "param",
+          "hash": "9e14e190f6bb0abf464fbc35c7a01ce75b6fcce3f2b7b4acbe185c98f558e7e9"
+        },
+        {
+          "name": "resource-group",
+          "hash": "b80f31cc79351fcd9d4d70aab6e22bf0246e86d2dedac99e75b3fb5caf29ce2e"
+        },
+        {
+          "name": "retry-delay",
+          "hash": "503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce"
+        },
+        {
+          "name": "retry-max-delay",
+          "hash": "edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88"
+        },
+        {
+          "name": "retry-max-retries",
+          "hash": "b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2"
+        },
+        {
+          "name": "retry-mode",
+          "hash": "0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084"
+        },
+        {
+          "name": "retry-network-timeout",
+          "hash": "82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6"
+        },
+        {
+          "name": "server",
+          "hash": "081c83072e47b45f29a9b0e77df133cb573f20af85ff27ef67c285b69208b670"
+        },
+        {
+          "name": "subscription",
+          "hash": "373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986"
+        },
+        {
+          "name": "tenant",
+          "hash": "9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4"
+        },
+        {
+          "name": "user-name",
+          "hash": "8558e70206f542938a570dbe039e84b65e3e3471e3273948e2b49c34cad565dc"
+        },
+        {
+          "name": "value",
+          "hash": "3664efc21c15f8c048a86718970f6a8f24846a6bcf81cf9c19e24d14086a8737"
+        }
+      ]
+    },
+    {
       "name": "azmcp-postgres-table-list",
       "hash": "605ae72e63e4a013cb180527b10699754cd9550f4f224da6bf9f98e0098dfe5a",
       "params": [

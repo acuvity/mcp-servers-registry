@@ -13,7 +13,7 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "1.0.20250531001",
+  "version": "1.0.20250613001",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "rating": {"hash":"bc195cbc073ce125068c44159ebda8b82a5d2e47b228ba31d33b4bbaaeb450d6","reason":"All tools have clear, specific names that indicate their purpose. Descriptions are comprehensive and detailed, explaining what each tool does, when to use it, required environment variables, and important limitations. Parameter descriptions are thorough with clear explanations of purpose, constraints, and expected formats (like ISO 8601). The documentation proactively addresses common usage scenarios and provides helpful context like URL format examples and authentication requirements.","score":"A"},

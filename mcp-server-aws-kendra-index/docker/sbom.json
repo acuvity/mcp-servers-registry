@@ -1,0 +1,13 @@
+{
+  "tools": [
+    {
+      "name": "KendraListIndexesTool",
+      "hash": "059cbdcf0dd919c716b4adea120a07777b095e06fb64bb71694caab72a15512b"
+    },
+    {
+      "name": "KendraQueryTool",
+      "hash": "6900fe5a7efd14b17086a9ddc9f6c679fb4835aa0f2285c9d80fb312f9b25595"
+    }
+  ],
+  "prompts": []
+}

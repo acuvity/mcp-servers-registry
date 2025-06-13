@@ -21,10 +21,10 @@
 # What is mcp-server-azure?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-azure/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-azure/0.1.2?logo=docker&logoColor=fff&label=0.1.2)](https://hub.docker.com/r/acuvity/mcp-server-azure)
-[![PyPI](https://img.shields.io/badge/0.1.2-3775A9?logo=pypi&logoColor=fff&label=@azure/mcp)](https://github.com/Azure/azure-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-azure/0.2.1?logo=docker&logoColor=fff&label=0.2.1)](https://hub.docker.com/r/acuvity/mcp-server-azure)
+[![PyPI](https://img.shields.io/badge/0.2.1-3775A9?logo=pypi&logoColor=fff&label=@azure/mcp)](https://github.com/Azure/azure-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-azure/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22-e%22%2C%22AZURE_CLIENT_ID%22%2C%22-e%22%2C%22AZURE_CLIENT_SECRET%22%2C%22-e%22%2C%22AZURE_TENANT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure%3A0.1.2%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22-e%22%2C%22AZURE_CLIENT_ID%22%2C%22-e%22%2C%22AZURE_CLIENT_SECRET%22%2C%22-e%22%2C%22AZURE_TENANT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure%3A0.2.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Integrates AI agents with Azure services for enhanced functionality.
 
@@ -173,11 +173,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.1.2`
+  - container: `1.0.0-0.2.1`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-azure:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-azure:1.0.0-0.1.2`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-azure:1.0.0-0.2.1`
 
 ---
 
@@ -626,7 +626,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (54)
+## 🧰 Tools (55)
 <details>
 <summary>azmcp-appconfig-account-list</summary>
 
@@ -1578,6 +1578,33 @@ Retrieves a specific parameter of a PostgreSQL server.
 | user-name | string | The user name to access PostgreSQL server. | Yes
 </details>
 <details>
+<summary>azmcp-postgres-server-setparam</summary>
+
+**Description**:
+
+```
+Sets a specific parameter of a PostgreSQL server to a certain value.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| auth-method | integer | Authentication method to use. Options: 'credential' (Azure CLI/managed identity), 'key' (access key), or 'connectionString'. | No
+| param | string | The PostgreSQL parameter to be accessed. | Yes
+| resource-group | string | The name of the Azure resource group. This is a logical container for Azure resources. | Yes
+| retry-delay | number | Initial delay in seconds between retry attempts. For exponential backoff, this value is used as the base. | No
+| retry-max-delay | number | Maximum delay in seconds between retries, regardless of the retry strategy. | No
+| retry-max-retries | integer | Maximum number of retry attempts for failed operations before giving up. | No
+| retry-mode | integer | Retry strategy to use. 'fixed' uses consistent delays, 'exponential' increases delay between attempts. | No
+| retry-network-timeout | number | Network operation timeout in seconds. Operations taking longer than this will be cancelled. | No
+| server | string | The PostgreSQL server to be accessed. | Yes
+| subscription | string | The Azure subscription ID or name. This can be either the GUID identifier or the display name of the Azure subscription to use. | Yes
+| tenant | string | The Azure Active Directory tenant ID or name. This can be either the GUID identifier or the display name of your Azure AD tenant. | No
+| user-name | string | The user name to access PostgreSQL server. | Yes
+| value | string | The value to set for the PostgreSQL parameter. | Yes
+</details>
+<details>
 <summary>azmcp-postgres-table-list</summary>
 
 **Description**:
@@ -2471,6 +2498,20 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | azmcp-postgres-server-param | subscription | 373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986 |
 | tools | azmcp-postgres-server-param | tenant | 9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4 |
 | tools | azmcp-postgres-server-param | user-name | 8558e70206f542938a570dbe039e84b65e3e3471e3273948e2b49c34cad565dc |
+| tools | azmcp-postgres-server-setparam | description | ac895680e37526700599aeda16ae8e9629101aa940eeda509ce0db7fb8a1fe19 |
+| tools | azmcp-postgres-server-setparam | auth-method | 6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29 |
+| tools | azmcp-postgres-server-setparam | param | 9e14e190f6bb0abf464fbc35c7a01ce75b6fcce3f2b7b4acbe185c98f558e7e9 |
+| tools | azmcp-postgres-server-setparam | resource-group | b80f31cc79351fcd9d4d70aab6e22bf0246e86d2dedac99e75b3fb5caf29ce2e |
+| tools | azmcp-postgres-server-setparam | retry-delay | 503778449ebee4a1d55543ce84adb81f114a74c4b884c52ab5cad8c37a16b5ce |
+| tools | azmcp-postgres-server-setparam | retry-max-delay | edc1d5b43a081ef10441939db6ebf81e75959ed6caf20ef4667ee444a344cb88 |
+| tools | azmcp-postgres-server-setparam | retry-max-retries | b3a426c91bf8196b69cbf27fd2f9d142f69a98ce22c161f836085155abd50bc2 |
+| tools | azmcp-postgres-server-setparam | retry-mode | 0c0abe1418f822a219e2eda99dfb831e6c4646b6798f76f6b922ff4c71fa1084 |
+| tools | azmcp-postgres-server-setparam | retry-network-timeout | 82fc44f55f68a744172de35fc9f8901090bf8bf16382265f67471bd7779344d6 |
+| tools | azmcp-postgres-server-setparam | server | 081c83072e47b45f29a9b0e77df133cb573f20af85ff27ef67c285b69208b670 |
+| tools | azmcp-postgres-server-setparam | subscription | 373a04236ef3ba7a3a3adae9df8843caaa3407acb9b4082c8c50df63ab250986 |
+| tools | azmcp-postgres-server-setparam | tenant | 9c091a9ea4a24c1d92a0cb2eeede1152286798ea53cc94ddff128a261dbe9df4 |
+| tools | azmcp-postgres-server-setparam | user-name | 8558e70206f542938a570dbe039e84b65e3e3471e3273948e2b49c34cad565dc |
+| tools | azmcp-postgres-server-setparam | value | 3664efc21c15f8c048a86718970f6a8f24846a6bcf81cf9c19e24d14086a8737 |
 | tools | azmcp-postgres-table-list | description | 605ae72e63e4a013cb180527b10699754cd9550f4f224da6bf9f98e0098dfe5a |
 | tools | azmcp-postgres-table-list | auth-method | 6b38a9b5aa2d956f3122318e595da1b40032a4e8a608bec803a4a7708de94a29 |
 | tools | azmcp-postgres-table-list | database | a7871320391eb0dfc8432fc9a6e13e20a68dedc844a031eb176629b567707d50 |

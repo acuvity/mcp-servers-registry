@@ -13,7 +13,7 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.2.4",
+  "version": "0.2.6",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "rating": null,

@@ -21,10 +21,10 @@
 # What is mcp-server-coda?
 [![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-coda/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-coda/1.2.3?logo=docker&logoColor=fff&label=1.2.3)](https://hub.docker.com/r/acuvity/mcp-server-coda)
-[![PyPI](https://img.shields.io/badge/1.2.3-3775A9?logo=pypi&logoColor=fff&label=coda-mcp)](https://github.com/orellazri/coda-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-coda/1.4.1?logo=docker&logoColor=fff&label=1.4.1)](https://hub.docker.com/r/acuvity/mcp-server-coda)
+[![PyPI](https://img.shields.io/badge/1.4.1-3775A9?logo=pypi&logoColor=fff&label=coda-mcp)](https://github.com/orellazri/coda-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-coda/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-coda&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_KEY%22%2C%22-e%22%2C%22DOC_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-coda%3A1.2.3%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-coda&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_KEY%22%2C%22-e%22%2C%22DOC_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-coda%3A1.4.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** MCP server for Coda.
 
@@ -176,13 +176,13 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
   - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-coda/docker/Dockerfile)
 
 **Latest tags:**
-  - `latest` -> `1.0.0-1.2.3` -> `1.2.3`
+  - `latest` -> `1.0.0-1.4.1` -> `1.4.1`
   - [older tags](https://hub.docker.com/r/acuvity/mcp-server-coda/tags)
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-coda:latest`
-  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-coda:1.2.3`
-  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-coda:1.0.0-1.2.3`
+  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-coda:1.4.1`
+  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-coda:1.0.0-1.4.1`
 
 # 📦 How to Install
 
@@ -210,7 +210,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-coda&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_KEY%22%2C%22-e%22%2C%22DOC_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-coda%3A1.2.3%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-coda&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_KEY%22%2C%22-e%22%2C%22DOC_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-coda%3A1.4.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -235,7 +235,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "API_KEY",
           "-e",
           "DOC_ID",
-          "docker.io/acuvity/mcp-server-coda:1.2.3"
+          "docker.io/acuvity/mcp-server-coda:1.4.1"
         ]
       }
     }
@@ -265,7 +265,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "API_KEY",
         "-e",
         "DOC_ID",
-        "docker.io/acuvity/mcp-server-coda:1.2.3"
+        "docker.io/acuvity/mcp-server-coda:1.4.1"
       ]
     }
   }
@@ -299,7 +299,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "API_KEY",
         "-e",
         "DOC_ID",
-        "docker.io/acuvity/mcp-server-coda:1.2.3"
+        "docker.io/acuvity/mcp-server-coda:1.4.1"
       ]
     }
   }
@@ -335,7 +335,7 @@ Add the following JSON block to your mcp configuration file:
         "API_KEY",
         "-e",
         "DOC_ID",
-        "docker.io/acuvity/mcp-server-coda:1.2.3"
+        "docker.io/acuvity/mcp-server-coda:1.4.1"
       ]
     }
   }
@@ -369,7 +369,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "API_KEY",
         "-e",
         "DOC_ID",
-        "docker.io/acuvity/mcp-server-coda:1.2.3"
+        "docker.io/acuvity/mcp-server-coda:1.4.1"
       ]
     }
   }
@@ -389,7 +389,7 @@ async with MCPServerStdio(
     params={
         "env": {"API_KEY":"TO_BE_SET","DOC_ID":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","API_KEY","-e","DOC_ID","docker.io/acuvity/mcp-server-coda:1.2.3"]
+        "args": ["run","-i","--rm","--read-only","-e","API_KEY","-e","DOC_ID","docker.io/acuvity/mcp-server-coda:1.4.1"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -418,7 +418,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e API_KEY -e DOC_ID docker.io/acuvity/mcp-server-coda:1.2.3`
+- arguments: `run -i --rm --read-only -e API_KEY -e DOC_ID docker.io/acuvity/mcp-server-coda:1.4.1`
 
 </details>
 
@@ -428,7 +428,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e API_KEY -e DOC_ID docker.io/acuvity/mcp-server-coda:1.2.3
+docker run -it -p 8000:8000 --rm --read-only -e API_KEY -e DOC_ID docker.io/acuvity/mcp-server-coda:1.4.1
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -534,7 +534,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 For detailed list of all features, tools, arguments and SBOM hashes provided by this server please consult the [readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-coda)
 
-## 🧰 Tools (8)
+## 🧰 Tools (9)
 
 
 💬 Questions? Open an issue or contact us [ support@acuvity.ai ](mailto:support@acuvity.ai).

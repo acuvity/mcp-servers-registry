@@ -1,6 +1,10 @@
 {
   "tools": [
     {
+      "name": "analyze_diff",
+      "hash": "3a6df735f38d4674c7151a2b9cef9c4be414cc5c0fd1e3421f8f345a6a54b7cb"
+    },
+    {
       "name": "config_helper",
       "hash": "f02dd33f38a3495a590d901debe94a7d61f55b1c13aa49695ea04495280a6a81"
     },

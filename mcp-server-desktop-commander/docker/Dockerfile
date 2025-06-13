@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="native"
 
 LABEL org.opencontainers.image.title="mcp-server-desktop-commander"
 LABEL org.opencontainers.image.description="A swiss-army-knife that can manage/execute programs and read/write/search/edit code and text files."
-LABEL org.opencontainers.image.version="0.2.2"
+LABEL org.opencontainers.image.version="0.2.3"
 LABEL org.opencontainers.image.source="https://github.com/wonderwhy-er/DesktopCommanderMCP"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="Eduards Ruzga"
@@ -39,7 +39,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev @wonderwhy-er/desktop-commander@0.2.2
+RUN npm i --omit-dev @wonderwhy-er/desktop-commander@0.2.3
 
 EXPOSE 8000/tcp
 

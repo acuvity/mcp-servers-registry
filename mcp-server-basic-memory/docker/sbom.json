@@ -2,19 +2,43 @@
   "tools": [
     {
       "name": "build_context",
-      "hash": "5e8820de852b3082413d3bd44c6d0b5764cea766cadfcac66876f4b49e604614"
+      "hash": "8864f9648ebb192186da87418b06d8d7a200eedfb7762ecd67e4a29fa85a8867"
     },
     {
       "name": "canvas",
       "hash": "c739f799c4f54a0beebbbba387862e5370f4e715f36b65d0e523b3fe664d759c"
     },
     {
+      "name": "create_memory_project",
+      "hash": "d3cbed6ef409f038824079681857e09fc92573440b22b618f6393bfc01f3824d"
+    },
+    {
       "name": "delete_note",
       "hash": "b92bd108ffa7b65b4ac92c9f75167080771a08e3e9a78dd6ec3fabde085802b7"
     },
     {
-      "name": "project_info",
-      "hash": "80e50af2790edd8a0228a515f76a18d540cb04542b3f5fa91037917a6ae13847"
+      "name": "delete_project",
+      "hash": "e684a0bd482c60d1ba3ee7bc935cf30436d56ad267f9b20d9b257e9c3722912a"
+    },
+    {
+      "name": "edit_note",
+      "hash": "7e70b1ab505a2e06e8da48ad7b4368890e8d86778fd9465d88e02bc0c43fc556"
+    },
+    {
+      "name": "get_current_project",
+      "hash": "ec25ce3bd6c3f91340b4761b2976bbf17caa41d64f5660fd40edd781c07a86a5"
+    },
+    {
+      "name": "list_directory",
+      "hash": "8eaf254f8c67f5e7396f90b2a2942e9d47c64860e8b0261bca07de9c5b118d64"
+    },
+    {
+      "name": "list_memory_projects",
+      "hash": "944ac1e2c55826b72ca7fd53fc1c16dfe77ef71945500ecebc9756bf723c7c52"
+    },
+    {
+      "name": "move_note",
+      "hash": "cdc522815f6900fadbdd8fa11ded0afde844bca74753141970fb06972f2beead"
     },
     {
       "name": "read_content",
@@ -31,6 +55,22 @@
     {
       "name": "search_notes",
       "hash": "fcaec1323a397ec1b89c8d50efb4cf4af054f0574d569452599c927231594adc"
+    },
+    {
+      "name": "set_default_project",
+      "hash": "25c20445c664c4a3459c6188cd63e33b69219d984641f916d4c118ddd9a2877f"
+    },
+    {
+      "name": "switch_project",
+      "hash": "096b246c8d498cf080f5c936ffc13d14d21cea89e6f768b82d81aea3071ab5b4"
+    },
+    {
+      "name": "sync_status",
+      "hash": "00b145ea43da92d1e768bbdcb203a9104369d88d55314c30a0970c3edd03499c"
+    },
+    {
+      "name": "view_note",
+      "hash": "7cb3581bfc58d06d48b06d0e5ff77a8528b44729996ae403a134cfc8b1316303"
     },
     {
       "name": "write_note",
@@ -75,6 +115,10 @@
           "hash": "cd9af00423b977d8f501edaeef3d43f42a323778bbbcc0900c4d88b6a4f9354e"
         }
       ]
+    },
+    {
+      "name": "sync_status_prompt",
+      "hash": "da4cc0a9c0044eef836c0023b8a9c33d53ac046beba62f756a3587f3da1ac1bc"
     }
   ]
 }

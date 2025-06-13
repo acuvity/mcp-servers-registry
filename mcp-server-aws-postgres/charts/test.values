@@ -1,0 +1,10 @@
+env:
+  AWS_PROFILE: 
+  AWS_REGION: 
+  READ_ONLY: 
+  RESOURCE_ARN: dummy_value
+  SECRET_ARN: dummy_value
+  DATABASE_NAME: dummy_value
+  DATABASE_REGION: dummy_value
+
+secrets:

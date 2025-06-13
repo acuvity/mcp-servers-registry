@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="standalone"
 
 LABEL org.opencontainers.image.title="mcp-server-chart"
 LABEL org.opencontainers.image.description="A Model Context Protocol server for generating visual charts using AntV."
-LABEL org.opencontainers.image.version="0.4.1"
+LABEL org.opencontainers.image.version="0.6.1"
 LABEL org.opencontainers.image.source="https://github.com/antvis/mcp-server-chart"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="AntV"
@@ -39,7 +39,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev @antv/mcp-server-chart@0.4.1
+RUN npm i --omit-dev @antv/mcp-server-chart@0.6.1
 
 EXPOSE 8000/tcp
 

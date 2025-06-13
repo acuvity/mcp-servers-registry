@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-risken",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/risken/live/logo-1744879957153.png",
+  "name": "mcp-server-risken",
+  "description": "RISKEN's official MCP Server",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-risken",
+      "application": "https://github.com/ca-risken/risken-mcp-server"
+    },
+  "tags": ["security","monitoring"],
+  "official": false,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "go",
+  "version": "10363da",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"82116c9394c6e63617b520bf9b68e459a056f55d147a5dc6e70b524182df424f","reason":"The toolset provides adequate documentation with clear tool names and basic functionality descriptions. However, descriptions are brief and lack important context about when to use each tool, what information they return, and their limitations. Parameter documentation is generally clear with good use of enums and constraints, but some parameters like 'data_source' as an array type lack clarity on expected format. The mixed language approach (English/Japanese) in descriptions may cause confusion for some users.","score":"C"},
+  "resources": {
+    "tools": 4,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

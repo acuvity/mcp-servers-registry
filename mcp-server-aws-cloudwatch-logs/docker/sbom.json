@@ -1,0 +1,103 @@
+{
+  "tools": [
+    {
+      "name": "analyze_log_group",
+      "hash": "9f1db4e26a7b2d0ae4e0ab61b66a946772641c1e8cd020d6347699003e4f64fd",
+      "params": [
+        {
+          "name": "end_time",
+          "hash": "3997ade440faa04356dfb3f7c0a1a0cccbe568a338ec31bdd5fd091035266abc"
+        },
+        {
+          "name": "log_group_arn",
+          "hash": "44892253f50f07a601e9583bf9502367b3034501dbc08a1cc1d2eed74e501959"
+        },
+        {
+          "name": "start_time",
+          "hash": "49bf533ca10effa3f21b09eec50ebb963dbc52aca8dafc2c1d2aeb7ce34906fc"
+        }
+      ]
+    },
+    {
+      "name": "cancel_query",
+      "hash": "a1319f825f9b8c1e6271cd67421d97b5ccdb5fdb0907b12a238c7f6ea418d8f7",
+      "params": [
+        {
+          "name": "query_id",
+          "hash": "79fad18616ddd05c6a9560772663bbf763bf65335452fdb4c999a946aa179539"
+        }
+      ]
+    },
+    {
+      "name": "describe_log_groups",
+      "hash": "5934185a413253077acb8ccd064686809174d7428ea60b622d8fb5a17e01d34c",
+      "params": [
+        {
+          "name": "account_identifiers",
+          "hash": "0616284372483ee4ad11aba76ff4c8f46b0736a1b6fbf31574ccba79b2362dee"
+        },
+        {
+          "name": "include_linked_accounts",
+          "hash": "5fdf06d5ffd7e43e181ecaf2099f8c710c27f1b0a3f9d3a1c1b38f706c90cad6"
+        },
+        {
+          "name": "log_group_class",
+          "hash": "752ca49ce2fadc956614dd8c95c6aff96c3e6c64bb4b2243d840989d9fa231c7"
+        },
+        {
+          "name": "log_group_name_prefix",
+          "hash": "bd8ff3a5c657d796931b6d5a31f42aa36c670fc268df9407d3da84dff3632747"
+        },
+        {
+          "name": "max_items",
+          "hash": "c569f53a761c02f086964d52af16c9696a4f81db5bfc309fe10b478741de9b60"
+        }
+      ]
+    },
+    {
+      "name": "execute_log_insights_query",
+      "hash": "d23d320d6029fa0b212d4a63d7274a0e57aabe2ca9967ac4bd6e33eb7fd5598a",
+      "params": [
+        {
+          "name": "end_time",
+          "hash": "3997ade440faa04356dfb3f7c0a1a0cccbe568a338ec31bdd5fd091035266abc"
+        },
+        {
+          "name": "limit",
+          "hash": "d940667b4b08ab5a35d2ec445e53694c4959be7d25aa4760670c364902c2b8e9"
+        },
+        {
+          "name": "log_group_identifiers",
+          "hash": "af232cda048f555aa016db2522c8f8f6e97c9a4952fde5943324d661875a2acf"
+        },
+        {
+          "name": "log_group_names",
+          "hash": "a43c603e8310b5c4bc3cbd5111c13d0ba838e34f5291471a2a1974d8c417f9c6"
+        },
+        {
+          "name": "max_timeout",
+          "hash": "b45b4133d5bba05b49f313454c665de0bee4d795a7b7918ac2a11ca2b955cb2b"
+        },
+        {
+          "name": "query_string",
+          "hash": "43ff19874e958b4856b0b5e86a00f7aa31d2dae93ce8d753ad59cec09df533e6"
+        },
+        {
+          "name": "start_time",
+          "hash": "49bf533ca10effa3f21b09eec50ebb963dbc52aca8dafc2c1d2aeb7ce34906fc"
+        }
+      ]
+    },
+    {
+      "name": "get_query_results",
+      "hash": "f768653b64a79745bbdccaf386f47b38312826e6f79671173e407c1def162c46",
+      "params": [
+        {
+          "name": "query_id",
+          "hash": "7aebb7c77b5a50a722a34d7658ea6de80d1a7c5f4e6103c9d679fbb6e19ea443"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

@@ -1,0 +1,6 @@
+env:
+  KENDRA_INDEX_ID: dummy_value
+  AWS_PROFILE: 
+  AWS_REGION: 
+
+secrets:

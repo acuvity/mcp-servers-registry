@@ -508,9 +508,10 @@ Use this tool to retrieve a list of documents from shopify.dev.
     YOU MUST CALL THIS TOOL FIRST WHENEVER YOU ARE IN A SHOPIFY APP AND THE USER WANTS TO LEARN OR INTERACT WITH ANY OF THESE APIS:
 
     Valid arguments for `api` are:
-    - admin: The Admin GraphQL API lets you build apps and integrations that extend and enhance the Shopify admin
+    - admin: The Admin GraphQL API lets you build apps and integrations that extend and enhance the Shopify admin.
     - functions: Shopify Functions allow developers to customize the backend logic that powers parts of Shopify. Here are all the available APIs: Discount, Cart and Checkout Validation, Cart Transform, Pickup Point Delivery Option Generator, Delivery Customization, Fulfillment Constraints, Local Pickup Delivery Option Generator, Order Routing Location Rule, Payment Customization
     - hydrogen: Shopify Hydrogen store feature implementation guides. Here are all the available feature guides: Bundles, Subscriptions, Combined Listings, Markets. Always use this tool first when implementing one of these features in a Hydrogen store. Keywords: hydrogen, localization, markets, subscriptions, selling plans, combined listings, bundles. 
+    - storefront-web-components: How to create storefronts using Storefront Web Components. Storefront Web Components let you bring Shopify-powered commerce capabilities to any website. Shopify Storefront Web Components are a set of web components that enable developers to build customizable storefronts using only HTML and Shopify's APIs. Keywords: web components, html, shopify-store, shopify-context, shopify-list-context, shopify-data, shopify-media, shopify-money, shopify-cart, shopify-variant-selector
 
     DON'T SEARCH THE WEB WHEN REFERENCING INFORMATION FROM THIS DOCUMENTATION. IT WILL NOT BE ACCURATE.
     PREFER THE USE OF THE fetch_docs_by_path TOOL TO RETRIEVE INFORMATION FROM THE DEVELOPER DOCUMENTATION SITE.
@@ -553,7 +554,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | prompts | shopify_admin_graphql | query | 98093c057eeae040401bc67ad3071116be498b22221a4151563759d2f43f2ced |
 | tools | fetch_docs_by_path | description | db5cc0087fb09ac06abae11e25c7255ec12f0a0a11a95c7bb0cf6807816e53e9 |
 | tools | fetch_docs_by_path | paths | e3117a5bba68651a746f09efd1e6aa60495e1a6171e87bb4ddc8a61cce11b581 |
-| tools | get_started | description | 0ddac321caa92d569c6b7768267fd474eb17d27509741fe9a6c5069ef4d957c8 |
+| tools | get_started | description | ef14b1a9d911ec56777f7496d027a2efd6fb5734f4337065a1ceabb604c7bfe0 |
 | tools | get_started | api | 020bba209b3e40636585ee28353121ec237df37f856c33d2f0da686466ad12b9 |
 | tools | introspect_admin_schema | description | 7e0d17045beec0028d5390dd12e016af8a50df6b96d7918f95c12bd7e3524fe9 |
 | tools | introspect_admin_schema | filter | 5a8cd6b941a24d852a3d04593d85b3ca28a7f85fb7ab1d55612e78fd1dbe7527 |

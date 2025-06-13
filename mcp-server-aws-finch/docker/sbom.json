@@ -1,0 +1,83 @@
+{
+  "tools": [
+    {
+      "name": "finch_build_container_image",
+      "hash": "a032f46f885c822b40c6853da6dd32c4870d6026a6fba3ba498ee39b68ee9681",
+      "params": [
+        {
+          "name": "build_contexts",
+          "hash": "3003cba93599b7ced31728b00c4f071a54240c873f2de077fde5a3fb246ff703"
+        },
+        {
+          "name": "cache_from",
+          "hash": "691e87558f13ad0fdcd83cfaa20b1ac0152d7fcdbaa4858a5574514075c62ae8"
+        },
+        {
+          "name": "context_path",
+          "hash": "ff6b60a5652f3e8258dedfab91d335e5e70d727d81f995fa8e0d9889ff8971b5"
+        },
+        {
+          "name": "dockerfile_path",
+          "hash": "ccea18d639a297331d4ccdc3cbfa4962fa49c0f19951b46bd8514eda61b367da"
+        },
+        {
+          "name": "no_cache",
+          "hash": "ea7c3dfbde5681832955711cfd6d40d080e829f1b6120e3162732dc0b6a6ed7c"
+        },
+        {
+          "name": "outputs",
+          "hash": "238e482fa8a9ada09dde3d3a216ff4665ddd16b990e1cfb4a3db5455c134f7e5"
+        },
+        {
+          "name": "platforms",
+          "hash": "081b5e92cc0551779218aa433a705a8e965bf5e20f7792bb62004ead6020cf82"
+        },
+        {
+          "name": "progress",
+          "hash": "dc052a04cc5163bf66c7991f91383c2fb141e52404d6f1ebb7c49e3769f743fd"
+        },
+        {
+          "name": "pull",
+          "hash": "d8f4251c9fc88910202d4376765d6559451cfcdf9f427ffdb8d57827050d4027"
+        },
+        {
+          "name": "quiet",
+          "hash": "a771b790968d55af35427669f0e4b5e0b7691b0d4c9bc08c68721cc9840f014e"
+        },
+        {
+          "name": "tags",
+          "hash": "1c8ef65d829ca32e3571f823fc8f8182cb9aac1882bb93bcf1d1af5c3bd0face"
+        },
+        {
+          "name": "target",
+          "hash": "1252f7c1edfdf03a6db515d33fa7e6a2f248ea37baeefc8f9de107afda1a52db"
+        }
+      ]
+    },
+    {
+      "name": "finch_create_ecr_repo",
+      "hash": "04a058152bd7c311fbf05b9933f0769b148c7da6631191f96e5bbb0c60eeb535",
+      "params": [
+        {
+          "name": "region",
+          "hash": "210797ec27d445b89e77aaa1095010a6ac14a3ce19b23c18902c4a3cf3651598"
+        },
+        {
+          "name": "repository_name",
+          "hash": "095b059da052e981c9f0e869c632ad4387dbb9375ff97e0660f2b9ab37568901"
+        }
+      ]
+    },
+    {
+      "name": "finch_push_image",
+      "hash": "eec837afa9d233bd13eab38c4c8f45c937c75c6a897efe32b2ec15d54fcac703",
+      "params": [
+        {
+          "name": "image",
+          "hash": "02b24e4a2501f9c57fa9653f62b93df9bb837e5dfbc47df06f63de021cca19fa"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

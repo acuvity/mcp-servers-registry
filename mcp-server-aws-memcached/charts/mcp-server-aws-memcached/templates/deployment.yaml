@@ -1,0 +1,111 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "base.fullname" . }}
+  labels:
+    {{- include "base.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "base.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "base.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "base.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          args:
+          {{- range .Values.args }}
+            - {{ . }}
+          {{- end }}
+          env:
+          {{- include "minibridge.env" . | nindent 12}}
+            - name: MEMCACHED_HOST
+              value: {{ required "env.MEMCACHED_HOST is required" .Values.env.MEMCACHED_HOST}}
+            - name: MEMCACHED_PORT
+              value: {{ .Values.env.MEMCACHED_PORT}}
+            - name: MEMCACHED_TIMEOUT
+              value: {{ .Values.env.MEMCACHED_TIMEOUT}}
+            - name: MEMCACHED_CONNECT_TIMEOUT
+              value: {{ .Values.env.MEMCACHED_CONNECT_TIMEOUT}}
+            - name: MEMCACHED_RETRY_TIMEOUT
+              value: {{ .Values.env.MEMCACHED_RETRY_TIMEOUT}}
+            - name: MEMCACHED_MAX_RETRIES
+              value: {{ .Values.env.MEMCACHED_MAX_RETRIES}}
+            - name: MEMCACHED_USE_TLS
+              value: {{ .Values.env.MEMCACHED_USE_TLS}}
+            - name: MEMCACHED_TLS_CERT_PATH
+              value: {{ .Values.env.MEMCACHED_TLS_CERT_PATH}}
+            - name: MEMCACHED_TLS_KEY_PATH
+              value: {{ .Values.env.MEMCACHED_TLS_KEY_PATH}}
+            - name: MEMCACHED_TLS_CA_CERT_PATH
+              value: {{ .Values.env.MEMCACHED_TLS_CA_CERT_PATH}}
+            - name: MEMCACHED_TLS_VERIFY
+              value: {{ .Values.env.MEMCACHED_TLS_VERIFY}}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default (printf  "%s-%s" .Chart.Version .Chart.AppVersion) }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP
+            - name: health
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            {{- toYaml .Values.livenessProbe | nindent 12 }}
+          readinessProbe:
+            {{- toYaml .Values.readinessProbe | nindent 12 }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: {{ include "base.fullname" . }}-sandbox
+              mountPath: /tmp
+            - name: {{ include "base.fullname" . }}-secrets
+              mountPath: /secrets/
+          {{- with .Values.volumeMounts }}
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+      volumes:
+        - name: {{ include "base.fullname" . }}-sandbox
+          emptyDir: {}
+        - name: {{ include "base.fullname" . }}-secrets
+          secret:
+            secretName: {{ include "base.fullname" . }}-secrets
+            items:
+              {{- include "minibridge.items" .  | nindent 14 }}
+      {{- with .Values.volumes }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

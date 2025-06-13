@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"f09777d6c4b6e4b5e52690cb03db57ffeee16e6171796c4163e453946d056384","reason":"The toolset demonstrates good documentation quality overall. Tool names are clear and purposeful (e.g., 'create_invoice', 'list_transactions', 'cancel_subscription'). Most descriptions provide adequate context about functionality and usage, though some vary in completeness - some are concise and effective while others like 'create_product' include excessive implementation details. Parameter documentation is generally strong with clear descriptions of purpose, types, and constraints including proper enums and required fields. However, there are minor inconsistencies like 'show_product_details' having a misleading description that doesn't match its actual function, and some tools could benefit from clearer usage context. The documentation would enable effective usage despite these small gaps.","score":"B"},
+  "rating": {"hash":"5105ea3a447f329b77604482cfe765ec4b92158d1d160ff7f99f0ce3e16ecb82","reason":"The toolset demonstrates good documentation quality overall. Tool names are clear and specific (e.g., 'create_invoice', 'send_invoice_reminder', 'generate_invoice_qr_code'). Most descriptions adequately explain functionality and usage context in 1-3 sentences. Parameter documentation is generally comprehensive with clear types, constraints, and purposes. However, some tools have inconsistencies: 'show_product_details' has a misleading description that doesn't match its function, several tools have overly verbose descriptions with unnecessary implementation details, and some parameter descriptions could be clearer. The overall quality is solid but falls short of excellence due to these inconsistencies and minor clarity issues.","score":"B"},
   "resources": {
-    "tools": 26,
+    "tools": 28,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-alibabacloud-ops",
+  "icon": "https://github.com/aliyun/alibaba-cloud-ops-mcp-server/blob/master/image/alibaba-cloud.png",
+  "name": "mcp-server-alibabacloud-ops",
+  "description": "Alibaba Cloud integration, supporting ECS, Cloud Monitor, OOS and widely used cloud products.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-alibabacloud-ops",
+      "application": "https://github.com/aliyun/alibaba-cloud-ops-mcp-server"
+    },
+  "tags": ["cloud","integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.8.9",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"f6fdbe71027e00dacc92415f89b5b53d7c5ff813f7a87af9beabb166a3df220b","reason":"The toolset has mixed quality documentation. While tool names are generally clear and indicate functionality (e.g., OOS_RunCommand, ECS_DescribeInstances), the descriptions are inconsistent - some are in Chinese which may not be accessible to all users, and many are quite brief. Parameter documentation varies significantly in quality, with some tools having comprehensive parameter descriptions while others lack detail. The documentation is functional but would benefit from consistent language, more comprehensive descriptions, and better parameter explanations.","score":"C"},
+  "resources": {
+    "tools": 34,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

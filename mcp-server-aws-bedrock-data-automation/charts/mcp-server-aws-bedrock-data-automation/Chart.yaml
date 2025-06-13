@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-aws-bedrock-data-automation"
+description: "A Helm chart for Amazon Bedrock Data Automation server for analyzing documents, images, videos, and audio files"
+home: https://github.com/awslabs/mcp/tree/HEAD/src/aws-bedrock-data-automation-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/awslabs/mcp/tree/HEAD/src/aws-bedrock-data-automation-mcp-server
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-aws-bedrock-data-automation/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "0.0.2"
+keywords:
+  - mcp-server-aws-bedrock-data-automation
+  - mcp-server
+  - remote
+  - cloud
+  - automation

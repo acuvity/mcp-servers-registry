@@ -21,14 +21,14 @@
 # What is mcp-server-aws-cost-analysis?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-aws-cost-analysis/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-cost-analysis/1.0.1?logo=docker&logoColor=fff&label=1.0.1)](https://hub.docker.com/r/acuvity/mcp-server-aws-cost-analysis)
-[![PyPI](https://img.shields.io/badge/1.0.1-3775A9?logo=pypi&logoColor=fff&label=awslabs.cost-analysis-mcp-server)](https://pypi.org/project/awslabs.cost-analysis-mcp-server/)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-cost-analysis/1.0.2?logo=docker&logoColor=fff&label=1.0.2)](https://hub.docker.com/r/acuvity/mcp-server-aws-cost-analysis)
+[![PyPI](https://img.shields.io/badge/1.0.2-3775A9?logo=pypi&logoColor=fff&label=awslabs.cost-analysis-mcp-server)](https://github.com/awslabs/mcp/tree/HEAD/src/cost-analysis-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-aws-cost-analysis/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-cost-analysis&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AWS_PROFILE%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-cost-analysis%3A1.0.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-cost-analysis&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-cost-analysis%3A1.0.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** Analyze CDK projects to identify AWS services used and get pricing information.
+**Description:** AWS service cost estimates and insights for infrastructure planning and optimization
 
-Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from awslabs.cost-analysis-mcp-server original [sources](https://pypi.org/project/awslabs.cost-analysis-mcp-server/).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from awslabs.cost-analysis-mcp-server original [sources](https://github.com/awslabs/mcp/tree/HEAD/src/cost-analysis-mcp-server).
 
 **Quick links:**
 
@@ -153,15 +153,15 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Maintained by**:
   - [the Acuvity team](support@acuvity.ai) for packaging
-  - [ AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com> ](https://pypi.org/project/awslabs.cost-analysis-mcp-server/) for application
+  - [ AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com> ](https://github.com/awslabs/mcp/tree/HEAD/src/cost-analysis-mcp-server) for application
 
 **Where to get help**:
   - [The Acuvity MCP Forge repository](https://github.com/acuvity/mcp-servers-registry)
-  - [ awslabs.cost-analysis-mcp-server ](https://pypi.org/project/awslabs.cost-analysis-mcp-server/)
+  - [ awslabs.cost-analysis-mcp-server ](https://github.com/awslabs/mcp/tree/HEAD/src/cost-analysis-mcp-server)
 
 **Where to file issues**:
   - [Github issue tracker](https://github.com/acuvity/mcp-servers-registry/issues)
-  - [ awslabs.cost-analysis-mcp-server ](https://pypi.org/project/awslabs.cost-analysis-mcp-server/)
+  - [ awslabs.cost-analysis-mcp-server ](https://github.com/awslabs/mcp/tree/HEAD/src/cost-analysis-mcp-server)
 
 **Supported architectures**:
   - `amd64`
@@ -173,11 +173,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-1.0.1`
+  - container: `1.0.0-1.0.2`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-aws-cost-analysis:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-aws-cost-analysis:1.0.0-1.0.1`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-aws-cost-analysis:1.0.0-1.0.2`
 
 ---
 
@@ -207,8 +207,14 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 This chart requires some mandatory information to be installed.
 
-**Mandatory Environment variables**:
-  - `AWS_PROFILE` environment variable to be set by env.AWS_PROFILE
+**Optional Secrets**:
+  - `AWS_ACCESS_KEY_ID` secret to be set as secrets.AWS_ACCESS_KEY_ID either by `.value` or from existing with `.valueFrom`
+  - `AWS_SECRET_ACCESS_KEY` secret to be set as secrets.AWS_SECRET_ACCESS_KEY either by `.value` or from existing with `.valueFrom`
+  - `AWS_SESSION_TOKEN` secret to be set as secrets.AWS_SESSION_TOKEN either by `.value` or from existing with `.valueFrom`
+
+**Optional Environment variables**:
+  - `AWS_PROFILE=""` environment variable can be changed with `env.AWS_PROFILE=""`
+  - `AWS_REGION=""` environment variable can be changed with `env.AWS_REGION=""`
 
 # How to install
 

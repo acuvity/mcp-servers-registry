@@ -21,10 +21,10 @@
 # What is mcp-server-line-bot?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-line-bot/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-line-bot/0.2.0?logo=docker&logoColor=fff&label=0.2.0)](https://hub.docker.com/r/acuvity/mcp-server-line-bot)
-[![PyPI](https://img.shields.io/badge/0.2.0-3775A9?logo=pypi&logoColor=fff&label=@line/line-bot-mcp-server)](https://github.com/line/line-bot-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-line-bot/0.3.0?logo=docker&logoColor=fff&label=0.3.0)](https://hub.docker.com/r/acuvity/mcp-server-line-bot)
+[![PyPI](https://img.shields.io/badge/0.3.0-3775A9?logo=pypi&logoColor=fff&label=@line/line-bot-mcp-server)](https://github.com/line/line-bot-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-line-bot/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-line-bot&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CHANNEL_ACCESS_TOKEN%22%2C%22-e%22%2C%22DESTINATION_USER_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-line-bot%3A0.2.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-line-bot&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CHANNEL_ACCESS_TOKEN%22%2C%22-e%22%2C%22DESTINATION_USER_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-line-bot%3A0.3.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Connects AI Agent to LINE for messaging interactions.
 
@@ -174,7 +174,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-line-bot&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CHANNEL_ACCESS_TOKEN%22%2C%22-e%22%2C%22DESTINATION_USER_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-line-bot%3A0.2.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-line-bot&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CHANNEL_ACCESS_TOKEN%22%2C%22-e%22%2C%22DESTINATION_USER_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-line-bot%3A0.3.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -199,7 +199,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "CHANNEL_ACCESS_TOKEN",
           "-e",
           "DESTINATION_USER_ID",
-          "docker.io/acuvity/mcp-server-line-bot:0.2.0"
+          "docker.io/acuvity/mcp-server-line-bot:0.3.0"
         ]
       }
     }
@@ -229,7 +229,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "CHANNEL_ACCESS_TOKEN",
         "-e",
         "DESTINATION_USER_ID",
-        "docker.io/acuvity/mcp-server-line-bot:0.2.0"
+        "docker.io/acuvity/mcp-server-line-bot:0.3.0"
       ]
     }
   }
@@ -263,7 +263,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "CHANNEL_ACCESS_TOKEN",
         "-e",
         "DESTINATION_USER_ID",
-        "docker.io/acuvity/mcp-server-line-bot:0.2.0"
+        "docker.io/acuvity/mcp-server-line-bot:0.3.0"
       ]
     }
   }
@@ -299,7 +299,7 @@ Add the following JSON block to your mcp configuration file:
         "CHANNEL_ACCESS_TOKEN",
         "-e",
         "DESTINATION_USER_ID",
-        "docker.io/acuvity/mcp-server-line-bot:0.2.0"
+        "docker.io/acuvity/mcp-server-line-bot:0.3.0"
       ]
     }
   }
@@ -333,7 +333,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "CHANNEL_ACCESS_TOKEN",
         "-e",
         "DESTINATION_USER_ID",
-        "docker.io/acuvity/mcp-server-line-bot:0.2.0"
+        "docker.io/acuvity/mcp-server-line-bot:0.3.0"
       ]
     }
   }
@@ -353,7 +353,7 @@ async with MCPServerStdio(
     params={
         "env": {"CHANNEL_ACCESS_TOKEN":"TO_BE_SET","DESTINATION_USER_ID":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","CHANNEL_ACCESS_TOKEN","-e","DESTINATION_USER_ID","docker.io/acuvity/mcp-server-line-bot:0.2.0"]
+        "args": ["run","-i","--rm","--read-only","-e","CHANNEL_ACCESS_TOKEN","-e","DESTINATION_USER_ID","docker.io/acuvity/mcp-server-line-bot:0.3.0"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -382,7 +382,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e CHANNEL_ACCESS_TOKEN -e DESTINATION_USER_ID docker.io/acuvity/mcp-server-line-bot:0.2.0`
+- arguments: `run -i --rm --read-only -e CHANNEL_ACCESS_TOKEN -e DESTINATION_USER_ID docker.io/acuvity/mcp-server-line-bot:0.3.0`
 
 </details>
 
@@ -392,7 +392,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e CHANNEL_ACCESS_TOKEN -e DESTINATION_USER_ID docker.io/acuvity/mcp-server-line-bot:0.2.0
+docker run -it -p 8000:8000 --rm --read-only -e CHANNEL_ACCESS_TOKEN -e DESTINATION_USER_ID docker.io/acuvity/mcp-server-line-bot:0.3.0
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -496,7 +496,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (6)
+## 🧰 Tools (10)
 <details>
 <summary>push_text_message</summary>
 
@@ -572,7 +572,7 @@ Get detailed profile information of a LINE user including display name, profile 
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| userId | string | The user ID to receive a message. Defaults to DESTINATION_USER_ID. | No
+| userId | string | The user ID to get a profile. Defaults to DESTINATION_USER_ID. | No
 </details>
 <details>
 <summary>get_message_quota</summary>
@@ -581,6 +581,64 @@ Get detailed profile information of a LINE user including display name, profile 
 
 ```
 Get the message quota and consumption of the LINE Official Account. This shows the monthly message limit and current usage.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+</details>
+<details>
+<summary>get_rich_menu_list</summary>
+
+**Description**:
+
+```
+Get the list of rich menus associated with your LINE Official Account.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+</details>
+<details>
+<summary>delete_rich_menu</summary>
+
+**Description**:
+
+```
+Delete a rich menu from your LINE Official Account.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| richMenuId | string | The ID of the rich menu to delete. | Yes
+</details>
+<details>
+<summary>set_rich_menu_default</summary>
+
+**Description**:
+
+```
+Set a rich menu as the default rich menu.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| richMenuId | string | The ID of the rich menu to set as default. | Yes
+</details>
+<details>
+<summary>cancel_rich_menu_default</summary>
+
+**Description**:
+
+```
+Cancel the default rich menu.
 ```
 
 **Parameter**:
@@ -598,13 +656,19 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 |-----------|------|------|------|
 | tools | broadcast_flex_message | description | 375ffde87d672553fec772b66a897b10465d90cd26fa546489090ccc3ba88c74 |
 | tools | broadcast_text_message | description | 6a7cee7032cbb044108c51358ff821abf09938c87a00c6f9ef9df70f848fdc91 |
+| tools | cancel_rich_menu_default | description | 5665fffb4bd328740228f593ceaa04b8838575e8489c1b9db3eebf27eefa9993 |
+| tools | delete_rich_menu | description | 9354a24cd221401fe051d2738db054192319efb3b6d293f348cf5e9a27a3e434 |
+| tools | delete_rich_menu | richMenuId | 2d411290063b03c03efe1a704b011a2391040b3f116a1acde421819cb9327c8e |
 | tools | get_message_quota | description | 9edfcab24cb244f0063332ca4117ffed55fb8de1b61c2735079b8bd5bfad0634 |
 | tools | get_profile | description | 35f893ef7edcac5026b3bd2f7d5b9953827b7ad6484a2ec2d63e94dd5872625a |
-| tools | get_profile | userId | ae3ba3776baad8eeb0f3eb9d13eaecf069294ebbff803dd13f7a7f1557cb04e4 |
+| tools | get_profile | userId | ab51e75da45824d3fdaf17ed8b9a48dd5790587d762fafabfb91d93b7e28fb45 |
+| tools | get_rich_menu_list | description | 615b67d830bc1ad3702a55c10fbf5317854b49be42b7dcf7d6ff0860bd8b950f |
 | tools | push_flex_message | description | 3f7f8a97ee448ca4c7467dfb44ce2476225ae1d5e66dce76a1dd5e1591cc77ae |
 | tools | push_flex_message | userId | ae3ba3776baad8eeb0f3eb9d13eaecf069294ebbff803dd13f7a7f1557cb04e4 |
 | tools | push_text_message | description | 65e328795468a461ca52572caddd9320ef1afb238961594dcc04a122e73a5d1c |
 | tools | push_text_message | userId | ae3ba3776baad8eeb0f3eb9d13eaecf069294ebbff803dd13f7a7f1557cb04e4 |
+| tools | set_rich_menu_default | description | 0b133223247370c03fbd51ef4881660aa52ce6326e76bb2d689b123a12df36d5 |
+| tools | set_rich_menu_default | richMenuId | f42e7823d6c9a7c04afafce460535cca4bbd2912680aefb43095a669105b99df |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

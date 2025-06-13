@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-arjun"
+description: "A Helm chart for Discovers hidden HTTP parameters on web applications through MCP bridge to Arjun scanner"
+home: https://github.com/cyproxio/mcp-for-security/tree/HEAD/arjun-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/cyproxio/mcp-for-security/tree/HEAD/arjun-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-arjun/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "6190e55"
+keywords:
+  - mcp-server-arjun
+  - mcp-server
+  - remote
+  - security

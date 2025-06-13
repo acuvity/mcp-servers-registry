@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-aws-prometheus"
+description: "A Helm chart for Interface for AWS Managed Prometheus with PromQL queries and metrics listing"
+home: https://github.com/awslabs/mcp/tree/HEAD/src/prometheus-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/awslabs/mcp/tree/HEAD/src/prometheus-mcp-server
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-aws-prometheus/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "0.1.1"
+keywords:
+  - mcp-server-aws-prometheus
+  - mcp-server
+  - remote
+  - monitoring
+  - cloud

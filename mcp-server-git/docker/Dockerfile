@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -16,7 +16,7 @@ LABEL "mcp-server-scope"="native"
 LABEL org.opencontainers.image.title="mcp-server-git"
 LABEL org.opencontainers.image.description="Tools to read, search, and manipulate Git repositories."
 LABEL org.opencontainers.image.version="2025.1.14"
-LABEL org.opencontainers.image.source="https://github.com/modelcontextprotocol/servers/tree/main/src/git"
+LABEL org.opencontainers.image.source="https://github.com/modelcontextprotocol/servers/tree/HEAD/src/git"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="Anthropic, PBC."
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"

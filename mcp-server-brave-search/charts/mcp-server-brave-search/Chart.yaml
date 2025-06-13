@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.6.2
+appVersion: "0.6.2"
 keywords:
   - mcp-server-brave-search
   - mcp-server

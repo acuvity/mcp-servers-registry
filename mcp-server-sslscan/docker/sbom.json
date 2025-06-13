@@ -1,0 +1,19 @@
+{
+  "tools": [
+    {
+      "name": "do-sslscan",
+      "hash": "b30d1af0c9c91d9b3dbdaa9db9557ce027fceac1a3430055ee03a63d370fb9e4",
+      "params": [
+        {
+          "name": "sslscan_args",
+          "hash": "c7680c4773055c85aaa5ce74864b7e1e302f118b931d6d4aef0b9dd61247d33e"
+        },
+        {
+          "name": "target",
+          "hash": "4143f938c9682da3ef6d6a4819f255d9016f14b07d39cc385eff5b4a319b884c"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-sqlmap"
+description: "A Helm chart for SQLMap SQL injection detection and exploitation tool bridge for MCP ecosystem"
+home: https://github.com/cyproxio/mcp-for-security/tree/HEAD/sqlmap-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/cyproxio/mcp-for-security/tree/HEAD/sqlmap-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-sqlmap/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "6190e55"
+keywords:
+  - mcp-server-sqlmap
+  - mcp-server
+  - native
+  - security

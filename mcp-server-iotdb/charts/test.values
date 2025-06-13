@@ -1,0 +1,13 @@
+env:
+  IOTDB_HOST: dummy_value
+  IOTDB_PORT: 
+  IOTDB_USER: dummy_value
+  IOTDB_DATABASE: dummy_value
+  IOTDB_SQL_DIALECT: 
+
+secrets:
+  IOTDB_PASSWORD:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

@@ -1,0 +1,7 @@
+env:
+  AWS_PROFILE: 
+  AWS_REGION: 
+  AWS_BUCKET_NAME: dummy_value
+  BASE_DIR: 
+
+secrets:

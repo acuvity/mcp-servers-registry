@@ -1,12 +1,12 @@
 {
   "id": "mcp-server-bankless-onchain",
-  "icon": "https://avatars.githubusercontent.com/u/118560591?s=200&v=4",
+  "icon": "https://www.bankless.com/favicon.ico",
   "name": "mcp-server-bankless-onchain",
   "description": "Query Onchain data, like ERC20 tokens, transaction history, smart contract state.",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-bankless-onchain",
-      "application": "https://bankless.com"
+      "application": "https://github.com/bankless/onchain-mcp"
     },
   "tags": ["research","finance"],
   "official": true,

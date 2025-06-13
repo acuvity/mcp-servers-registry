@@ -1,0 +1,333 @@
+{
+  "tools": [
+    {
+      "name": "aggregate",
+      "hash": "a004fe3233938501fd8f90de8811e7fed89bbb41a2ac1b6b431851f02f49c44e",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "59df3d6da9335ffa9c708c1a21998514ac491ce6542c1646e2143ccb27cdb26e"
+        },
+        {
+          "name": "connection_id",
+          "hash": "d48af74d3053e2064b1d1d4fad975affa713f0e879450edf3fe83dc56b582a92"
+        },
+        {
+          "name": "database",
+          "hash": "e694428633ff95f45853dc235e0201b12329ffa0d3c24ac627f89bf89b83a721"
+        },
+        {
+          "name": "limit",
+          "hash": "44175ec2d168abaf933abbe6d9f9f0c3d943034b9e78bae0674c9644e229bf59"
+        },
+        {
+          "name": "pipeline",
+          "hash": "6608b3c5289015f7fc604710c27758824ce2fc5182cf2d2e15a6812c790fc6ea"
+        }
+      ]
+    },
+    {
+      "name": "analyzeSchema",
+      "hash": "bd7b4a73145546946c360a918bd63904e0b6833a3c9ae007c633f163bf48b043",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "928a109de20b6654da34df92cb7ab676730365d8785145b84b2afec8018cd3e6"
+        },
+        {
+          "name": "connection_id",
+          "hash": "d48af74d3053e2064b1d1d4fad975affa713f0e879450edf3fe83dc56b582a92"
+        },
+        {
+          "name": "database",
+          "hash": "e694428633ff95f45853dc235e0201b12329ffa0d3c24ac627f89bf89b83a721"
+        },
+        {
+          "name": "sample_size",
+          "hash": "a9cc0b277c8d581a97791763d4290f187fa5c2203228fc202bfb2b8613e29eb8"
+        }
+      ]
+    },
+    {
+      "name": "connect",
+      "hash": "e210c06849f01f862ee6d7f145f908e6fe8db0be11a54491648bc4c35859ba8f",
+      "params": [
+        {
+          "name": "connection_string",
+          "hash": "959a678145be0fad2e996832efa15ac51cfbdda4c5b93f0e8f9d0736bea28250"
+        }
+      ]
+    },
+    {
+      "name": "countDocuments",
+      "hash": "02fde3b6d0d650f5d5adfdc2742183e6d518eee8b9e7bc5b057425c79464eab6",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "59df3d6da9335ffa9c708c1a21998514ac491ce6542c1646e2143ccb27cdb26e"
+        },
+        {
+          "name": "connection_id",
+          "hash": "d48af74d3053e2064b1d1d4fad975affa713f0e879450edf3fe83dc56b582a92"
+        },
+        {
+          "name": "database",
+          "hash": "e694428633ff95f45853dc235e0201b12329ffa0d3c24ac627f89bf89b83a721"
+        },
+        {
+          "name": "filter",
+          "hash": "50726b82890ef3010156d2006c454e761b20220b638832b8fe2ce5d41c0964f5"
+        }
+      ]
+    },
+    {
+      "name": "createCollection",
+      "hash": "4ae39b0415eac202e4ac5eb760b04c54b8cc43ed7dd202c40ee842dbd18293f7",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "a1d94d7b1c2c5fa14a726ec29730c117643114d03b0eb8c8b1fdc8f00d383826"
+        },
+        {
+          "name": "connection_id",
+          "hash": "d48af74d3053e2064b1d1d4fad975affa713f0e879450edf3fe83dc56b582a92"
+        },
+        {
+          "name": "database",
+          "hash": "e694428633ff95f45853dc235e0201b12329ffa0d3c24ac627f89bf89b83a721"
+        }
+      ]
+    },
+    {
+      "name": "delete",
+      "hash": "0aeb8c7a2b5c0c01902653e3cf98dea6d74c6a2674866734eb26224be46554fd",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "59df3d6da9335ffa9c708c1a21998514ac491ce6542c1646e2143ccb27cdb26e"
+        },
+        {
+          "name": "connection_id",
+          "hash": "d48af74d3053e2064b1d1d4fad975affa713f0e879450edf3fe83dc56b582a92"
+        },
+        {
+          "name": "database",
+          "hash": "e694428633ff95f45853dc235e0201b12329ffa0d3c24ac627f89bf89b83a721"
+        },
+        {
+          "name": "filter",
+          "hash": "13cd190bccae66d5c62e69f4780560b01120486a1bf9298850d64b2348ddc8af"
+        },
+        {
+          "name": "many",
+          "hash": "382032a68d90f5e675bd813a595f74a95e5698b4787a806d6c63cd2fc00255f5"
+        }
+      ]
+    },
+    {
+      "name": "disconnect",
+      "hash": "bb71283b2ce36a8f4634e8f6760d7f1d0b30c3bbb2c7e1bc0919182cdf9bf94d",
+      "params": [
+        {
+          "name": "connection_id",
+          "hash": "d48af74d3053e2064b1d1d4fad975affa713f0e879450edf3fe83dc56b582a92"
+        }
+      ]
+    },
+    {
+      "name": "dropCollection",
+      "hash": "3e07a777be342cdc852ee40ecf9111efd2b2da8c51912102689e34dfd4561bfe",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "9c20403363e5c6d8dd8389dcbeb4c35efb34e5636100118290c6daaf4f1db53d"
+        },
+        {
+          "name": "connection_id",
+          "hash": "d48af74d3053e2064b1d1d4fad975affa713f0e879450edf3fe83dc56b582a92"
+        },
+        {
+          "name": "database",
+          "hash": "e694428633ff95f45853dc235e0201b12329ffa0d3c24ac627f89bf89b83a721"
+        }
+      ]
+    },
+    {
+      "name": "explainOperation",
+      "hash": "547e31c1b8e769c96ad8f0b1c09c8b86351b1964584ae87236f55a69b4f52022",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "59df3d6da9335ffa9c708c1a21998514ac491ce6542c1646e2143ccb27cdb26e"
+        },
+        {
+          "name": "connection_id",
+          "hash": "d48af74d3053e2064b1d1d4fad975affa713f0e879450edf3fe83dc56b582a92"
+        },
+        {
+          "name": "database",
+          "hash": "e694428633ff95f45853dc235e0201b12329ffa0d3c24ac627f89bf89b83a721"
+        },
+        {
+          "name": "operation_type",
+          "hash": "2657b46b6c9e62fc1bd4b20fdfce53b84a96963ea3a9ce1139299a8c201d5402"
+        },
+        {
+          "name": "pipeline",
+          "hash": "eac2de24da323a8d7c3b21923813bfa7b3c5e1b00c991e8edb1f12f7eb0a20a3"
+        },
+        {
+          "name": "query",
+          "hash": "2d5e3012a03c12bede1e826903400e8e89dc6b771e87548d44358647232377e0"
+        },
+        {
+          "name": "verbosity",
+          "hash": "a460eec8b965febd44bf25ab6166d052adc7d12fc69c37aed992eede604de5f6"
+        }
+      ]
+    },
+    {
+      "name": "find",
+      "hash": "6a20196b0bb50f444289c5f26427fbc99a017e3e5294d47b781cdf9e22076b66",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "59df3d6da9335ffa9c708c1a21998514ac491ce6542c1646e2143ccb27cdb26e"
+        },
+        {
+          "name": "connection_id",
+          "hash": "d48af74d3053e2064b1d1d4fad975affa713f0e879450edf3fe83dc56b582a92"
+        },
+        {
+          "name": "database",
+          "hash": "e694428633ff95f45853dc235e0201b12329ffa0d3c24ac627f89bf89b83a721"
+        },
+        {
+          "name": "limit",
+          "hash": "44175ec2d168abaf933abbe6d9f9f0c3d943034b9e78bae0674c9644e229bf59"
+        },
+        {
+          "name": "projection",
+          "hash": "18a3480f03dd0bf13af02c7e2260e2e60b2619ec8d72e5c6bbb1c9331f95b967"
+        },
+        {
+          "name": "query",
+          "hash": "96b0ff697237235cb80c62698418802956a77ea650fe0b78f78bbbe81a3fa84c"
+        }
+      ]
+    },
+    {
+      "name": "getCollectionStats",
+      "hash": "da7923c6cdb69c354b4d1f716f989ffe1c5e38ebe160714fc076a2ef35263d03",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "59df3d6da9335ffa9c708c1a21998514ac491ce6542c1646e2143ccb27cdb26e"
+        },
+        {
+          "name": "connection_id",
+          "hash": "d48af74d3053e2064b1d1d4fad975affa713f0e879450edf3fe83dc56b582a92"
+        },
+        {
+          "name": "database",
+          "hash": "e694428633ff95f45853dc235e0201b12329ffa0d3c24ac627f89bf89b83a721"
+        }
+      ]
+    },
+    {
+      "name": "getDatabaseStats",
+      "hash": "2f005bf2d1ef3ed30b87589837768ea7e36b1813d24cadc6241e77ec257b087f",
+      "params": [
+        {
+          "name": "connection_id",
+          "hash": "d48af74d3053e2064b1d1d4fad975affa713f0e879450edf3fe83dc56b582a92"
+        },
+        {
+          "name": "database",
+          "hash": "e694428633ff95f45853dc235e0201b12329ffa0d3c24ac627f89bf89b83a721"
+        }
+      ]
+    },
+    {
+      "name": "insert",
+      "hash": "f71d4d5eaf31508d8489c635d18d722219b4b3dc8539a23efc5b73457b5ffa4b",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "59df3d6da9335ffa9c708c1a21998514ac491ce6542c1646e2143ccb27cdb26e"
+        },
+        {
+          "name": "connection_id",
+          "hash": "d48af74d3053e2064b1d1d4fad975affa713f0e879450edf3fe83dc56b582a92"
+        },
+        {
+          "name": "database",
+          "hash": "e694428633ff95f45853dc235e0201b12329ffa0d3c24ac627f89bf89b83a721"
+        },
+        {
+          "name": "documents",
+          "hash": "4e03f690f6f8ca97fee1cc6f2e9291cf8e687694be36aab4914cc2e214400008"
+        }
+      ]
+    },
+    {
+      "name": "listCollections",
+      "hash": "3426de4fad17865cdae9c55c47c7ebbc283cffaf5d58351c8e91d8f287827cea",
+      "params": [
+        {
+          "name": "connection_id",
+          "hash": "d48af74d3053e2064b1d1d4fad975affa713f0e879450edf3fe83dc56b582a92"
+        },
+        {
+          "name": "database",
+          "hash": "e694428633ff95f45853dc235e0201b12329ffa0d3c24ac627f89bf89b83a721"
+        }
+      ]
+    },
+    {
+      "name": "listDatabases",
+      "hash": "003b37dc3c6589a51907e4c64d63082f7811b70f029b6dc6c344e5c5b891db82",
+      "params": [
+        {
+          "name": "connection_id",
+          "hash": "d48af74d3053e2064b1d1d4fad975affa713f0e879450edf3fe83dc56b582a92"
+        }
+      ]
+    },
+    {
+      "name": "update",
+      "hash": "6c06a4956503fb531ff8a06b2455e8cc9cc1701a1de6916c8cbf0f28ac33476b",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "59df3d6da9335ffa9c708c1a21998514ac491ce6542c1646e2143ccb27cdb26e"
+        },
+        {
+          "name": "connection_id",
+          "hash": "d48af74d3053e2064b1d1d4fad975affa713f0e879450edf3fe83dc56b582a92"
+        },
+        {
+          "name": "database",
+          "hash": "e694428633ff95f45853dc235e0201b12329ffa0d3c24ac627f89bf89b83a721"
+        },
+        {
+          "name": "filter",
+          "hash": "64a12adc239bec4a9a7cef0389a080f9303e0f8ab1294fbadc0a30345b9d693a"
+        },
+        {
+          "name": "many",
+          "hash": "c51c2af62d3169bb24e7b0d38a851481f1f790a690f8d97d32cb1606c09843b9"
+        },
+        {
+          "name": "update",
+          "hash": "95a140f5fac828e4916880cf1165d9d726b8efcd61e0737c294436f6f20ab74c"
+        },
+        {
+          "name": "upsert",
+          "hash": "094fe1799dfe944d9598f2a9e2cce566327f246559d8a1ec0dcc351a4bfc48bf"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

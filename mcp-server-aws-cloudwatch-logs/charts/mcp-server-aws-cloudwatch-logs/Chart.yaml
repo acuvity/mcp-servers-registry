@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-aws-cloudwatch-logs"
+description: "A Helm chart for AWS CloudWatch Logs MCP server for querying and analyzing log data with CloudWatch Logs Insights"
+home: https://github.com/awslabs/mcp/tree/HEAD/src/cloudwatch-logs-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/awslabs/mcp/tree/HEAD/src/cloudwatch-logs-mcp-server
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-aws-cloudwatch-logs/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "0.0.2"
+keywords:
+  - mcp-server-aws-cloudwatch-logs
+  - mcp-server
+  - remote
+  - cloud
+  - monitoring

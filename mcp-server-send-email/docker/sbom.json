@@ -1,0 +1,47 @@
+{
+  "tools": [
+    {
+      "name": "send-email",
+      "hash": "ac89e0cbdc99c26eba6eae67a2399377fbfaa8b40dcd9d905e1b1d5c0ad464f8",
+      "params": [
+        {
+          "name": "bcc",
+          "hash": "e18ed03be8f03e33440ac4c8e680251e2095128e1ea202485f05f110f84d4b22"
+        },
+        {
+          "name": "cc",
+          "hash": "e31f10fc42e90352bb76d3c27afa2714786eaeb04829692b1b438efebf79b23f"
+        },
+        {
+          "name": "from",
+          "hash": "fc2a16114dd7e45d1bf30b987e99f26f3e9feda242d7ad476001d246ad86eaa5"
+        },
+        {
+          "name": "html",
+          "hash": "fb547b9183be9c10b24925b592c10a570a8b39677fd15fa48c52d47c6bfe21d7"
+        },
+        {
+          "name": "replyTo",
+          "hash": "b79aa40c61d45b0b21e74972d11dbd1d7662e3ec18ddfc3d8afce5d300ded2a3"
+        },
+        {
+          "name": "scheduledAt",
+          "hash": "ce1e6698371b0db1d5050b8a8388ea20732ef761be4944e5b539ae1d21d2afae"
+        },
+        {
+          "name": "subject",
+          "hash": "bf42e357b09d20078c54880507952a7f6a8a49896d260fef28d2b21c1db4fd4f"
+        },
+        {
+          "name": "text",
+          "hash": "d07256d598cc2f2b6c7ed7258ea9c7369d843d85aaf3761a5961c3ef64eb6695"
+        },
+        {
+          "name": "to",
+          "hash": "08652dc96c440d4b33c17299a4b40231fdcd468174fff5f12e624b069f0c35ad"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

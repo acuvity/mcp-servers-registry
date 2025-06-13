@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-scoutsuite",
+  "icon": "https://avatars.githubusercontent.com/u/89649708?s=200&v=4",
+  "name": "mcp-server-scoutsuite",
+  "description": "Scout Suite cloud security auditing tool for assessing configurations across services",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-scoutsuite",
+      "application": "https://github.com/cyproxio/mcp-for-security/tree/HEAD/scoutsuite-mcp"
+    },
+  "tags": ["security","cloud"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "6190e55",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"311af1b97d0fd8dc4fe89dcf37461ee79499e147b3551cfa6bc25675c83754bb","reason":"The tool name is adequately descriptive and the main description provides good coverage of functionality and key features. However, the documentation is significantly undermined by multiple typos in parameter names ('acces_keys', 'secret_acces_key') and several parameters lack sufficient detail about expected formats, valid values, or usage context. The 'full_report' parameter completely lacks a description, which is a notable gap.","score":"C"},
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

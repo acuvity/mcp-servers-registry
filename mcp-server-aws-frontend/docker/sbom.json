@@ -1,0 +1,15 @@
+{
+  "tools": [
+    {
+      "name": "GetReactDocsByTopic",
+      "hash": "60b43a44cf66f9ad8ed1ca2d94e8ba29535e34f93976eba5332c9ce1c1cbf184",
+      "params": [
+        {
+          "name": "topic",
+          "hash": "68d6626ebd1db5b8e09f8ffc168eca0ba56e7f664aa888f3fe196956b3f0894b"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

@@ -19,15 +19,16 @@
 
 
 # What is mcp-server-aws-bedrock-kb-retrieval?
+[![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-aws-bedrock-kb-retrieval/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-bedrock-kb-retrieval/1.0.1?logo=docker&logoColor=fff&label=1.0.1)](https://hub.docker.com/r/acuvity/mcp-server-aws-bedrock-kb-retrieval)
-[![PyPI](https://img.shields.io/badge/1.0.1-3775A9?logo=pypi&logoColor=fff&label=awslabs.bedrock-kb-retrieval-mcp-server)](https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server)
+[![PyPI](https://img.shields.io/badge/1.0.1-3775A9?logo=pypi&logoColor=fff&label=awslabs.bedrock-kb-retrieval-mcp-server)](https://github.com/awslabs/mcp/tree/HEAD/src/bedrock-kb-retrieval-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-aws-bedrock-kb-retrieval/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-bedrock-kb-retrieval&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AWS_PROFILE%22%2C%22-e%22%2C%22AWS_REGION%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-bedrock-kb-retrieval%3A1.0.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-bedrock-kb-retrieval&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-bedrock-kb-retrieval%3A1.0.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** Query Amazon Bedrock Knowledge Bases using natural language to retrieve relevant information.
+**Description:** Access and query Amazon Bedrock Knowledge Bases with natural language retrieval
 
-Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from awslabs.bedrock-kb-retrieval-mcp-server original [sources](https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from awslabs.bedrock-kb-retrieval-mcp-server original [sources](https://github.com/awslabs/mcp/tree/HEAD/src/bedrock-kb-retrieval-mcp-server).
 
 **Quick links:**
 
@@ -152,15 +153,15 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Maintained by**:
   - [the Acuvity team](support@acuvity.ai) for packaging
-  - [ AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com> ](https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server) for application
+  - [ AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com> ](https://github.com/awslabs/mcp/tree/HEAD/src/bedrock-kb-retrieval-mcp-server) for application
 
 **Where to get help**:
   - [The Acuvity MCP Forge repository](https://github.com/acuvity/mcp-servers-registry)
-  - [ awslabs.bedrock-kb-retrieval-mcp-server ](https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server)
+  - [ awslabs.bedrock-kb-retrieval-mcp-server ](https://github.com/awslabs/mcp/tree/HEAD/src/bedrock-kb-retrieval-mcp-server)
 
 **Where to file issues**:
   - [Github issue tracker](https://github.com/acuvity/mcp-servers-registry/issues)
-  - [ awslabs.bedrock-kb-retrieval-mcp-server ](https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server)
+  - [ awslabs.bedrock-kb-retrieval-mcp-server ](https://github.com/awslabs/mcp/tree/HEAD/src/bedrock-kb-retrieval-mcp-server)
 
 **Supported architectures**:
   - `amd64`
@@ -206,12 +207,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 This chart requires some mandatory information to be installed.
 
-**Mandatory Environment variables**:
-  - `AWS_PROFILE` environment variable to be set by env.AWS_PROFILE
-  - `AWS_REGION` environment variable to be set by env.AWS_REGION
-
 **Optional Environment variables**:
+  - `AWS_PROFILE=""` environment variable can be changed with `env.AWS_PROFILE=""`
+  - `AWS_REGION=""` environment variable can be changed with `env.AWS_REGION=""`
   - `KB_INCLUSION_TAG_KEY=""` environment variable can be changed with `env.KB_INCLUSION_TAG_KEY=""`
+  - `BEDROCK_KB_RERANKING_ENABLED="false"` environment variable can be changed with `env.BEDROCK_KB_RERANKING_ENABLED="false"`
 
 # How to install
 
@@ -624,6 +624,82 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 > [!CAUTION]
 > While basic auth will protect against unauthorized access, you should use it only in controlled environment,
 > rotate credentials frequently and **always** use TLS.
+
+# 🧠 Server features
+
+## 🧰 Tools (1)
+<details>
+<summary>QueryKnowledgeBases</summary>
+
+**Description**:
+
+```
+Query an Amazon Bedrock Knowledge Base using natural language.
+
+    ## Usage Requirements
+    - You MUST first use the `resource://knowledgebases` resource to get valid knowledge base IDs
+    - You can query different knowledge bases or make multiple queries to the same knowledge base
+
+    ## Query Tips
+    - Use clear, specific natural language queries for best results
+    - You can use this tool MULTIPLE TIMES with different queries to gather comprehensive information
+    - Break complex questions into multiple focused queries
+    - Consider querying for factual information and explanations separately
+
+    ## Tool output format
+    The response contains multiple JSON objects (one per line), each representing a retrieved document with:
+    - content: The text content of the document
+    - location: The source location of the document
+    - score: The relevance score of the document
+
+
+    ## Interpretation Best Practices
+    1. Extract and combine key information from multiple results
+    2. Consider the source and relevance score when evaluating information
+    3. Use follow-up queries to clarify ambiguous or incomplete information
+    4. If the response is not relevant, try a different query, knowledge base, and/or data source
+    5. After a few attempts, ask the user for clarification or a different query.
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| data_source_ids | any | The data source IDs to filter the knowledge base by. It must be a list of valid data source IDs from the resource://knowledgebases MCP resource | No
+| knowledge_base_id | string | The knowledge base ID to query. It must be a valid ID from the resource://knowledgebases MCP resource | Yes
+| number_of_results | integer | The number of results to return. Use smaller values for focused results and larger values for broader coverage. | No
+| query | string | A natural language query to search the knowledge base with | Yes
+| reranking | boolean | Whether to rerank the results. Useful for improving relevance and sorting. Can be globally configured with BEDROCK_KB_RERANKING_ENABLED environment variable. | No
+| reranking_model_name | string | The name of the reranking model to use. Options: 'COHERE', 'AMAZON' | No
+</details>
+
+## 📚 Resources (1)
+
+<details>
+<summary>Resources</summary>
+
+| Name | Mime type | URI| Content |
+|-----------|------|-------------|-----------|
+| KnowledgeBases | application/json | resource://knowledgebases | - |
+
+</details>
+
+
+# 🔐 Resource SBOM
+
+Minibridge will perform hash checks for the following resources. The hashes are given as references and are the sha256 sum of the description.
+
+| Resource | Name | Parameter | Hash |
+|-----------|------|------|------|
+| tools | QueryKnowledgeBases | description | 2bdad1de95ec1f65e58b1f469d93f944bdfbeb969fefaadcaebc4246a1948c1c |
+| tools | QueryKnowledgeBases | data_source_ids | 017edfd8213c7fb5e32a0e84308c2d5b487668eb92541f242c4687110c64739c |
+| tools | QueryKnowledgeBases | knowledge_base_id | f42cf0550fc4ac1ac6cc6d560c082ba50cdc6c8238978e7fbc8b1f6908353b28 |
+| tools | QueryKnowledgeBases | number_of_results | 889e9094d8a2827686ef6052ac08669485b636189cd2e887e35a5ad8b9948a72 |
+| tools | QueryKnowledgeBases | query | b17532082b0bf4c97e87d7598efd15a602dea8fd61e5114b1f328a3f1cb243e7 |
+| tools | QueryKnowledgeBases | reranking | e789e297fc2aff6e08744c0ddfbc63ca4a42411af88945b449db7d47f3de73a4 |
+| tools | QueryKnowledgeBases | reranking_model_name | 0b7df14acd534f8b96c19c2ca59e86da9d930f6a59b2a182f8be158fcb5a2b41 |
+
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).
 📦 Contributions welcome!

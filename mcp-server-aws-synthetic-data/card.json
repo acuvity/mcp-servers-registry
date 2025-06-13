@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-aws-synthetic-data",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-synthetic-data",
+  "description": "Generate, validate, and manage synthetic data with pandas code execution and S3 integration",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-synthetic-data",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/syntheticdata-mcp-server"
+    },
+  "tags": ["development","storage"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "1.0.1",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"487dabc2201393c46d7b70b1dc2f12bec7eb78900a3575e12dd446dd4936a77d","reason":"The toolset demonstrates good documentation quality with clear, descriptive tool names and comprehensive descriptions that explain functionality, usage context, and key features. Parameter documentation is detailed with clear purposes and constraints. However, some descriptions are verbose and could be more concise, and the complex nested input schema structure reduces clarity slightly. The tools consistently provide good guidance for usage but fall short of the exceptional clarity expected for an A grade.","score":"B"},
+  "resources": {
+    "tools": 4,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

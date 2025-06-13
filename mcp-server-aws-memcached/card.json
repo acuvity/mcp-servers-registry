@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-aws-memcached",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-memcached",
+  "description": "MCP server for interacting with Amazon ElastiCache Memcached through secure connections",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-memcached",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/memcached-mcp-server"
+    },
+  "tags": ["cloud","database"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "1.0.2",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"2c2a3d10d608bd989c05cc97d727f6a8e58bdf6d7cff35d833cc6d8dfb752a47","reason":"The toolset provides adequate documentation with clear naming conventions (cache_ prefix) and basic functionality descriptions. However, the descriptions are overly brief and lack important context about Memcached-specific behavior, constraints, and usage patterns. Parameter documentation is minimal with generic titles like 'Key' and 'Value' without explaining expected formats or limitations. While the tools are generally understandable, they leave significant questions unanswered about cache behavior, error conditions, and parameter constraints.","score":"C"},
+  "resources": {
+    "tools": 22,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

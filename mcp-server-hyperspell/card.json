@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-hyperspell",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/hyperspell/live/logo-1744789704771.png",
+  "name": "mcp-server-hyperspell",
+  "description": "Execute tasks and manage collections with Hyperspell MCP server.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-hyperspell",
+      "application": "https://github.com/hyperspell/hyperspell-mcp"
+    },
+  "tags": ["automation","integration"],
+  "official": true,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "6fbf999",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"5d0684235cb3513b9375e1d3c4e601394baf799aec384706fd8075fc32c72513","reason":"Tool names are somewhat clear but descriptions are minimal and vague. 'Search Hyperspell for documents and data' doesn't explain what Hyperspell is or what kind of results to expect. Parameter descriptions are severely lacking - 'query', 'url', 'text', and 'title' have no descriptions beyond their titles, leaving users to guess their purpose and expected formats. The toolset provides basic functionality outline but lacks essential context and parameter guidance.","score":"D"},
+  "resources": {
+    "tools": 3,
+    "prompts": 0,
+    "resources": 1,
+    "resourcesTemplates": 0
+  }
+}

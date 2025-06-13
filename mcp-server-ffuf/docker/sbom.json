@@ -1,0 +1,19 @@
+{
+  "tools": [
+    {
+      "name": "do-ffuf",
+      "hash": "900d5f9a0e5e4684027c774ba99f243bbbdec265ab0c454369bebb036686f0a6",
+      "params": [
+        {
+          "name": "ffuf_args",
+          "hash": "d06eb6e268b647807f43580e60753f31644c30dd8be7ddd47906f36293f6f55b"
+        },
+        {
+          "name": "url",
+          "hash": "59db44b4c12caaf1dbd3631ce653774f8e635437c307dccec473a4c626772a84"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

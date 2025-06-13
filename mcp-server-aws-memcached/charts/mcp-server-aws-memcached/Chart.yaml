@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-aws-memcached"
+description: "A Helm chart for MCP server for interacting with Amazon ElastiCache Memcached through secure connections"
+home: https://github.com/awslabs/mcp/tree/HEAD/src/memcached-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/awslabs/mcp/tree/HEAD/src/memcached-mcp-server
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-aws-memcached/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "1.0.2"
+keywords:
+  - mcp-server-aws-memcached
+  - mcp-server
+  - remote
+  - cloud
+  - database

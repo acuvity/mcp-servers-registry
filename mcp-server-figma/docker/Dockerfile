@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-figma"
 LABEL org.opencontainers.image.description="Provide coding agents direct access to Figma data to help them one-shot design implementation."
-LABEL org.opencontainers.image.version="0.4.0"
+LABEL org.opencontainers.image.version="0.4.2"
 LABEL org.opencontainers.image.source="https://github.com/GLips/Figma-Context-MCP"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="Author"
@@ -39,7 +39,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev figma-developer-mcp@0.4.0
+RUN npm i --omit-dev figma-developer-mcp@0.4.2
 
 EXPOSE 8000/tcp
 

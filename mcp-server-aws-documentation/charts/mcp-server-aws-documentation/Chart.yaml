@@ -1,20 +1,20 @@
 apiVersion: v2
 name: "mcp-server-aws-documentation"
-description: "A Helm chart for Fetch, convert, and search AWS documentation pages, with recommendations for related content."
-home: https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server
+description: "A Helm chart for AWS documentation access with search, content recommendations, and markdown conversion"
+home: https://github.com/awslabs/mcp/tree/HEAD/src/aws-documentation-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry
-  - https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server
+  - https://github.com/awslabs/mcp/tree/HEAD/src/aws-documentation-mcp-server
 icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-aws-documentation/logo.png"
 type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 1.0.1
+appVersion: "1.0.2"
 keywords:
   - mcp-server-aws-documentation
   - mcp-server
   - remote
   - research
-  - cloud
+  - integration

@@ -21,10 +21,10 @@
 # What is mcp-server-desktop-commander?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-desktop-commander/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-desktop-commander/0.2.2?logo=docker&logoColor=fff&label=0.2.2)](https://hub.docker.com/r/acuvity/mcp-server-desktop-commander)
-[![PyPI](https://img.shields.io/badge/0.2.2-3775A9?logo=pypi&logoColor=fff&label=@wonderwhy-er/desktop-commander)](https://github.com/wonderwhy-er/DesktopCommanderMCP)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-desktop-commander/0.2.3?logo=docker&logoColor=fff&label=0.2.3)](https://hub.docker.com/r/acuvity/mcp-server-desktop-commander)
+[![PyPI](https://img.shields.io/badge/0.2.3-3775A9?logo=pypi&logoColor=fff&label=@wonderwhy-er/desktop-commander)](https://github.com/wonderwhy-er/DesktopCommanderMCP)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-desktop-commander/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-desktop-commander&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22docker.io%2Facuvity%2Fmcp-server-desktop-commander%3A0.2.2%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-desktop-commander&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22docker.io%2Facuvity%2Fmcp-server-desktop-commander%3A0.2.3%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** A swiss-army-knife that can manage/execute programs and read/write/search/edit code and text files.
 
@@ -173,7 +173,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-desktop-commander&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22docker.io%2Facuvity%2Fmcp-server-desktop-commander%3A0.2.2%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-desktop-commander&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22docker.io%2Facuvity%2Fmcp-server-desktop-commander%3A0.2.3%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -192,7 +192,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "--read-only",
           "--tmpfs",
           "/tmp:rw,nosuid,nodev",
-          "docker.io/acuvity/mcp-server-desktop-commander:0.2.2"
+          "docker.io/acuvity/mcp-server-desktop-commander:0.2.3"
         ]
       }
     }
@@ -216,7 +216,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "--read-only",
         "--tmpfs",
         "/tmp:rw,nosuid,nodev",
-        "docker.io/acuvity/mcp-server-desktop-commander:0.2.2"
+        "docker.io/acuvity/mcp-server-desktop-commander:0.2.3"
       ]
     }
   }
@@ -244,7 +244,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "--read-only",
         "--tmpfs",
         "/tmp:rw,nosuid,nodev",
-        "docker.io/acuvity/mcp-server-desktop-commander:0.2.2"
+        "docker.io/acuvity/mcp-server-desktop-commander:0.2.3"
       ]
     }
   }
@@ -274,7 +274,7 @@ Add the following JSON block to your mcp configuration file:
         "--read-only",
         "--tmpfs",
         "/tmp:rw,nosuid,nodev",
-        "docker.io/acuvity/mcp-server-desktop-commander:0.2.2"
+        "docker.io/acuvity/mcp-server-desktop-commander:0.2.3"
       ]
     }
   }
@@ -302,7 +302,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "--read-only",
         "--tmpfs",
         "/tmp:rw,nosuid,nodev",
-        "docker.io/acuvity/mcp-server-desktop-commander:0.2.2"
+        "docker.io/acuvity/mcp-server-desktop-commander:0.2.3"
       ]
     }
   }
@@ -321,7 +321,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 async with MCPServerStdio(
     params={
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","--tmpfs","/tmp:rw,nosuid,nodev","docker.io/acuvity/mcp-server-desktop-commander:0.2.2"]
+        "args": ["run","-i","--rm","--read-only","--tmpfs","/tmp:rw,nosuid,nodev","docker.io/acuvity/mcp-server-desktop-commander:0.2.3"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -350,7 +350,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only --tmpfs /tmp:rw,nosuid,nodev docker.io/acuvity/mcp-server-desktop-commander:0.2.2`
+- arguments: `run -i --rm --read-only --tmpfs /tmp:rw,nosuid,nodev docker.io/acuvity/mcp-server-desktop-commander:0.2.3`
 
 </details>
 
@@ -360,7 +360,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only --tmpfs /tmp:rw,nosuid,nodev docker.io/acuvity/mcp-server-desktop-commander:0.2.2
+docker run -it -p 8000:8000 --rm --read-only --tmpfs /tmp:rw,nosuid,nodev docker.io/acuvity/mcp-server-desktop-commander:0.2.3
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -533,7 +533,22 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
                         
                         Supports partial file reading with:
                         - 'offset' (start line, default: 0)
+                          * Positive: Start from line N (0-based indexing)
+                          * Negative: Read last N lines from end (tail behavior)
                         - 'length' (max lines to read, default: configurable via 'fileReadLineLimit' setting, initially 1000)
+                          * Used with positive offsets for range reading
+                          * Ignored when offset is negative (reads all requested tail lines)
+                        
+                        Examples:
+                        - offset: 0, length: 10     → First 10 lines
+                        - offset: 100, length: 5    → Lines 100-104
+                        - offset: -20               → Last 20 lines  
+                        - offset: -5, length: 10    → Last 5 lines (length ignored)
+                        
+                        Performance optimizations:
+                        - Large files with negative offsets use reverse reading for efficiency
+                        - Large files with deep positive offsets use byte estimation
+                        - Small files use fast readline streaming
                         
                         When reading from the file system, only works within allowed directories.
                         Can fetch content from URLs when isUrl parameter is set to true
@@ -588,30 +603,30 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 ```
 
-                        Write or append to file contents with a configurable line limit per call (default: 50 lines).
-                        THIS IS A STRICT REQUIREMENT. ANY file with more than the configured limit MUST BE written in chunks or IT WILL FAIL.
+                        Write or append to file contents. 
 
-                        ⚠️ IMPORTANT: PREVENTATIVE CHUNKING REQUIRED in these scenarios:
-                        1. When content exceeds 2,000 words or 30 lines
-                        2. When writing MULTIPLE files one after another (each next file is more likely to be truncated)
-                        3. When the file is the LAST ONE in a series of operations in the same message
+                        🎯 CHUNKING IS STANDARD PRACTICE: Always write files in chunks of 25-30 lines maximum.
+                        This is the normal, recommended way to write files - not an emergency measure.
+
+                        STANDARD PROCESS FOR ANY FILE:
+                        1. FIRST → write_file(filePath, firstChunk, {mode: 'rewrite'})  [≤30 lines]
+                        2. THEN → write_file(filePath, secondChunk, {mode: 'append'})   [≤30 lines]
+                        3. CONTINUE → write_file(filePath, nextChunk, {mode: 'append'}) [≤30 lines]
+
+                        ⚠️ ALWAYS CHUNK PROACTIVELY - don't wait for performance warnings!
+
+                        WHEN TO CHUNK (always be proactive):
+                        1. Any file expected to be longer than 25-30 lines
+                        2. When writing multiple files in sequence
+                        3. When creating documentation, code files, or configuration files
                         
-                        ALWAYS split files writes in to multiple smaller writes PREEMPTIVELY without asking the user in these scenarios.
+                        HANDLING CONTINUATION ("Continue" prompts):
+                        If user asks to "Continue" after an incomplete operation:
+                        1. Read the file to see what was successfully written
+                        2. Continue writing ONLY the remaining content using {mode: 'append'}
+                        3. Keep chunks to 25-30 lines each
                         
-                        REQUIRED PROCESS FOR LARGE NEW FILE WRITES OR REWRITES:
-                        1. FIRST → write_file(filePath, firstChunk, {mode: 'rewrite'})
-                        2. THEN → write_file(filePath, secondChunk, {mode: 'append'})
-                        3. THEN → write_file(filePath, thirdChunk, {mode: 'append'})
-                        ... and so on for each chunk
-                        
-                        HANDLING TRUNCATION ("Continue" prompts):
-                        If user asked to "Continue" after unfinished file write:
-                        1. First, read the file to find out what content was successfully written
-                        2. Identify exactly where the content was truncated
-                        3. Continue writing ONLY the remaining content using {mode: 'append'}
-                        4. Split the remaining content into smaller chunks (15-20 lines per chunk)
-                        
-                        Files over the line limit (configurable via 'fileWriteLineLimit' setting) WILL BE REJECTED if not broken into chunks as described above.
+                        Files over 50 lines will generate performance notes but are still written successfully.
                         Only works within allowed directories.
                         
                         IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths.
@@ -972,13 +987,13 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | list_processes | description | bccaf3bd87272c75e038e50077bca491355236be9fb99d131463c34553df9a2a |
 | tools | list_sessions | description | efa60b39dc2cdcc845f5053cf2debd9e5c15b33dae15ce4001f2a8e1dffa2a16 |
 | tools | move_file | description | ed4294c075e3f891f9980b6e3b458cb72967ae77d7b78b4fc2bc8330702b81ac |
-| tools | read_file | description | 1cf5c80e1e4c660811ad42d6d501ff4305aec66e51ff41a55c473c53cf2567fc |
+| tools | read_file | description | 96dcf541bed39a4887900164f1c62acbf87a1c112ce425db3c5904fef971af08 |
 | tools | read_multiple_files | description | a565fd247993616d89e9cd247c024346f76fd65d2a21c994a0128b335b1b8752 |
 | tools | read_output | description | 01171776821f6acb671fd54c2e0b6d223c5f1a4765f2b9b7bba7f76e9fda79d2 |
 | tools | search_code | description | 9e69a945172aebff5fc61dbe9522e0e285ef1e581ec74e02c63e07d114821f75 |
 | tools | search_files | description | f41652d2fd0f701958c382769c9a1dca4989b0f1eeb8fc83b32b7ef051e8aff5 |
 | tools | set_config_value | description | 155afe1d85ebd07ac64f76703797548c8b48a1e2a3d63b14c2369633527df389 |
-| tools | write_file | description | 8902cf681e5c3245e8a93570fa15e43e0b0670add8b34e1fa704504ad75cbe5c |
+| tools | write_file | description | 1c329b37aecef0e273658fe15b59ad432a182c904d9a14d8d8a6e2101e843a85 |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

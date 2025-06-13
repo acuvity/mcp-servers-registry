@@ -1,0 +1,35 @@
+{
+  "tools": [
+    {
+      "name": "execute_sql",
+      "hash": "c3379bc72ed9b57a3f486e3b7ebd2fc6dd75f2220d1fb36a9d4b3325ab777e2d",
+      "params": [
+        {
+          "name": "query",
+          "hash": "738307ab7126bafa0eec815bd5bbc403d34b383b361c819895575181aded847c"
+        }
+      ]
+    },
+    {
+      "name": "get_execution_plan",
+      "hash": "ba28686a47e6c8f7c8fcc30f76b8d27dbfa9ae708171e97aa5fbf9297d54f6c3",
+      "params": [
+        {
+          "name": "query",
+          "hash": "df6f0f3f81df515349c75e34afabd5ddd17c5a26f0ae55c3e570f84be6cfde76"
+        }
+      ]
+    },
+    {
+      "name": "get_query_plan",
+      "hash": "4ebc441e44d10d5c7f6fd5750ddee92901c7feaeffd4b44b36bba6caf1230892",
+      "params": [
+        {
+          "name": "query",
+          "hash": "df6f0f3f81df515349c75e34afabd5ddd17c5a26f0ae55c3e570f84be6cfde76"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

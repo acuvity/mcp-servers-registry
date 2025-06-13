@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-clickhouse"
+description: "A Helm chart for Query your ClickHouse database server."
+home: https://github.com/ClickHouse/mcp-clickhouse
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/ClickHouse/mcp-clickhouse
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-clickhouse/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "0.1.7"
+keywords:
+  - mcp-server-clickhouse
+  - mcp-server
+  - remote
+  - database

@@ -1,0 +1,22 @@
+{
+  "id": "mcp-server-aws-sns-sqs",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-sns-sqs",
+  "description": "MCP server for Amazon SNS/SQS messaging services with secure resource management",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-sns-sqs",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/amazon-sns-sqs-mcp-server"
+    },
+  "tags": ["cloud","communication"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "2.0.3",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": null,
+  "resources": {
+  }
+}

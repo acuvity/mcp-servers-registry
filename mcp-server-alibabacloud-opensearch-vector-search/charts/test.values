@@ -1,0 +1,12 @@
+env:
+  OPENSEARCH_VECTOR_USERNAME: dummy_value
+  OPENSEARCH_VECTOR_INSTANCE_ID: dummy_value
+  OPENSEARCH_VECTOR_INDEX_NAME: 
+  AISEARCH_ENDPOINT: 
+
+secrets:
+  OPENSEARCH_VECTOR_PASSWORD:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

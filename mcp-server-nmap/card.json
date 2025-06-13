@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-nmap",
+  "icon": "https://avatars.githubusercontent.com/u/89649708?s=200&v=4",
+  "name": "mcp-server-nmap",
+  "description": "MCP bridge connecting Nmap network scanner with standardized interface for security testing",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-nmap",
+      "application": "https://github.com/cyproxio/mcp-for-security/tree/HEAD/nmap-mcp"
+    },
+  "tags": ["security"],
+  "official": true,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "6190e55",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"61f0a6c50d7c8e723d38f064e20cef950fda4a216265dc48bd7a9e15413a8745","reason":"Tool name is vague ('do-nmap' doesn't indicate specific purpose), description has a typo ('taget' instead of 'target') and is too brief for a complex security tool. While the nmap_args parameter includes extensive documentation, it's overwhelming and lacks context about which arguments are relevant. The target parameter description is minimal. The tool lacks crucial information about security implications, required permissions, and appropriate use cases for a network scanning tool.","score":"D"},
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

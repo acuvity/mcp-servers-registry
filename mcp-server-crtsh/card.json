@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-crtsh",
+  "icon": "https://avatars.githubusercontent.com/u/89649708?s=200&v=4",
+  "name": "mcp-server-crtsh",
+  "description": "Subdomain discovery tool using SSL certificate transparency logs via crt.sh",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-crtsh",
+      "application": "https://github.com/cyproxio/mcp-for-security/tree/HEAD/crtsh-mcp"
+    },
+  "tags": ["security"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "6190e55",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"03e40585f956d9a23ed209ef042de652b2b66239a1520e98fe9b9c210aa7696c","reason":"The tool has a clear, specific name that indicates its purpose. The description is adequate but brief, explaining what it does (discovers subdomains) and the data source (SSL certificate logs). The parameter documentation is basic but clear, with a good example. However, the description lacks important details about usage context, limitations, and what specific information is returned, which would elevate it to a higher grade.","score":"C"},
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

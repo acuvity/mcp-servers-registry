@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -9,8 +9,9 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
     CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
 
 FROM alpine:3.21 AS artifacts
+
 ARG TARGETOS TARGETARCH
-RUN apk update && apk add --no-cache curl file tar unzip
+RUN apk update && apk add --no-cache curl file tar unzip go
 COPY artifacts.sh /tmp/artifacts.sh
 RUN chmod a+x /tmp/artifacts.sh
 RUN sh /tmp/artifacts.sh https://github.com/axiomhq/mcp-server-axiom/releases/download/v0.0.1/axiom-mcp_Darwin_arm64.tar.gz https://github.com/axiomhq/mcp-server-axiom/releases/download/v0.0.1/axiom-mcp_Darwin_x86_64.tar.gz https://github.com/axiomhq/mcp-server-axiom/releases/download/v0.0.1/axiom-mcp_Linux_arm64.tar.gz https://github.com/axiomhq/mcp-server-axiom/releases/download/v0.0.1/axiom-mcp_Linux_x86_64.tar.gz https://github.com/axiomhq/mcp-server-axiom/releases/download/v0.0.1/axiom-mcp_Windows_arm64.zip https://github.com/axiomhq/mcp-server-axiom/releases/download/v0.0.1/axiom-mcp_Windows_x86_64.zip https://github.com/axiomhq/mcp-server-axiom/releases/download/v0.0.1/checksums.txt

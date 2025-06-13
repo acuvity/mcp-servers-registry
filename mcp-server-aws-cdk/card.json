@@ -1,22 +1,22 @@
 {
   "id": "mcp-server-aws-cdk",
-  "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
   "name": "mcp-server-aws-cdk",
-  "description": "Explain CDK Nag rules, check suppressions, generate Bedrock schemas, find AWS patterns.",
+  "description": "AWS CDK best practices, infrastructure patterns, and security compliance with CDK Nag",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-cdk",
-      "application": "https://pypi.org/project/awslabs.cdk-mcp-server/"
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/cdk-mcp-server"
     },
-  "tags": ["cloud"],
+  "tags": ["cloud","development","security"],
   "official": true,
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"fddb2ebfde25603af42e9e8980c30a8dfed7c449bde2ee0d9f91f274f5efd4b3","reason":"Tool names are clear and specific, indicating their AWS CDK purposes well. However, descriptions vary significantly in quality - some tools like 'ExplainCDKNagRule' provide comprehensive explanations with examples and context, while others like 'CDKGeneralGuidance' have minimal descriptions. Parameter descriptions are basic but adequate, though some lack clear purpose explanations (e.g., 'code' vs 'file_path' distinction in CheckCDKNagSuppressions). The inconsistent documentation quality across tools prevents a higher grade despite some individual tools being well-documented.","score":"C"},
+  "rating": {"hash":"fddb2ebfde25603af42e9e8980c30a8dfed7c449bde2ee0d9f91f274f5efd4b3","reason":"Mixed documentation quality with adequate to good descriptions but inconsistent detail levels and some unclear parameter documentation. Tool names are mostly clear, and most descriptions provide basic functionality coverage, but several tools lack sufficient detail about usage context and constraints. Parameter descriptions vary from adequate to minimal.","score":"C"},
   "resources": {
     "tools": 7,
     "prompts": 0,

@@ -138,6 +138,10 @@ _cross_tool_exclude := [
 	#
 	"list_transactions",
 	#
+	"create_refund",
+	#
+	"get_refund",
+	#
 	# exclude word that might be misdetected
 	"to",
 	"this",

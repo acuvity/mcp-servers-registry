@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -16,7 +16,7 @@ LABEL "mcp-server-scope"="remote"
 LABEL org.opencontainers.image.title="mcp-server-sentry"
 LABEL org.opencontainers.image.description="Retrieving and analyzing issues from Sentry.io."
 LABEL org.opencontainers.image.version="2025.1.14"
-LABEL org.opencontainers.image.source="https://github.com/modelcontextprotocol/servers/tree/main/src/sentry"
+LABEL org.opencontainers.image.source="https://github.com/modelcontextprotocol/servers/tree/HEAD/src/sentry"
 LABEL org.opencontainers.image.licenses="nil"
 LABEL org.opencontainers.image.author="Author"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"

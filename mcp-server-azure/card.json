@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.1.2",
+  "version": "0.2.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"cbdca83f971944ddfc647341560c29bdac2b2effdf5a3a97abcb840300ab7a95","reason":"Tool names are clear and follow consistent Azure service patterns with 'azmcp-' prefix. Descriptions adequately explain functionality and provide context for when to use each tool, though some could be more comprehensive. Most parameters have clear descriptions explaining their purpose and expected values. The toolset demonstrates good consistency across Azure services, but some descriptions lack detail about limitations or specific behaviors that would elevate them to excellent quality.","score":"B"},
+  "rating": {"hash":"985cac0e3ec2b1611cfd9e3d416dbe029bf31666958e8994dcb45b19a629f8ed","reason":"The toolset demonstrates good overall documentation quality with comprehensive tool descriptions (2-4 sentences covering functionality, usage context, and return types) and clear parameter documentation. Tool names effectively use the 'azmcp-' prefix convention and are descriptive. However, there are some inconsistencies: several parameters like 'auth-method' and retry parameters use integer types without enum constraints despite having specific option lists, and some tools have overly verbose descriptions that could be more concise. The parameter descriptions are generally clear and include examples where helpful, though type constraints could be better specified for enumerated values.","score":"B"},
   "resources": {
-    "tools": 54,
+    "tools": 55,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

@@ -1,0 +1,19 @@
+{
+  "tools": [
+    {
+      "name": "validate-openapi-using-apimatic",
+      "hash": "0b96eb84f2fe7190582e0a9083dcbc181c69a866078be7abc6cf4f1dd239581d",
+      "params": [
+        {
+          "name": "isYaml",
+          "hash": "e3a1b2c6fee8a18cbfcfe6c75f6d4dd6c40304c8b3cec5cca0ca9c2e6fc8145b"
+        },
+        {
+          "name": "openApiFile",
+          "hash": "3512ee32cf391c5fdafac0e529e947c6f420108e0acd5b822f0c6a909bffd667"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

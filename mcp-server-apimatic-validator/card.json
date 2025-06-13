@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-apimatic-validator",
+  "icon": "https://2052727.fs1.hubspotusercontent-na1.net/hubfs/2052727/cropped-cropped-apimaticio-favicon-1-32x32.png",
+  "name": "mcp-server-apimatic-validator",
+  "description": "APIMatic MCP Server validates OpenAPI specifications using APIMatic's validation API.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-apimatic-validator",
+      "application": "https://github.com/apimatic/apimatic-validator-mcp"
+    },
+  "tags": ["development"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "8e762bb",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"3efff482f4d3082a5d55520c299d9c7bbd92be51fc4614a2d8be86c670f9a59d","reason":"The tool name is clear and specific, indicating both the validation purpose and the service used. The description is adequate but minimal, providing basic functionality without explaining what validation summary includes or when to use it. Parameter documentation is clear with appropriate boolean and string types, though it could benefit from examples or format specifications for the OpenAPI content.","score":"C"},
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

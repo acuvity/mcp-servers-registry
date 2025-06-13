@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-bicscan",
+  "icon": "https://bicscan.io/favicon.png",
+  "name": "mcp-server-bicscan",
+  "description": "Risk score / asset holdings of EVM blockchain address (EOA, CA, ENS) and even domain names.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-bicscan",
+      "application": "https://github.com/ahnlabio/bicscan-mcp"
+    },
+  "tags": ["security","finance"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "072c48e",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"ffa91d9ced90b7bc4c77f01cdb4197698928985ab3478b0e9152368a0dc10abf","reason":"The toolset provides adequate documentation with clear names and basic functionality descriptions. However, the descriptions use technical jargon (EOA, CA, ENS, CNS, KNS) without explanation, and parameter documentation is minimal with just 'Address' as the title. The risk score range (0-100, 100=high risk) is helpful context, but overall the documentation leaves users guessing about address format requirements and domain-specific terminology.","score":"C"},
+  "resources": {
+    "tools": 2,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

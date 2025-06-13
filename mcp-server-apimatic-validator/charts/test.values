@@ -1,0 +1,8 @@
+env:
+
+secrets:
+  APIMATIC_API_KEY:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

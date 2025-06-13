@@ -1,0 +1,45 @@
+{
+  "tools": [
+    {
+      "name": "get_cost_and_usage",
+      "hash": "5d28e7ad6d3e4e706fabc18fa5b392b1ee09489d492f745bdec9058e9254e2e0",
+      "params": [
+        {
+          "name": "filter_expression",
+          "hash": "c83646dbd6572cfe1e5f3682c0a30b797579c18c6637149ed133999a3277b4c7"
+        },
+        {
+          "name": "granularity",
+          "hash": "743020d46cb2e66e0fb5479674668b5cc5417e8bdfd9c3ec8f83a1c147f94b7a"
+        },
+        {
+          "name": "group_by",
+          "hash": "10182d8f10afc788cbb5f04435b9a169356b3f3cb0410d2ccf77da60086572d3"
+        },
+        {
+          "name": "metric",
+          "hash": "9ff5fbad4a1f690ec6fd6fbea971552c4b73ea926317a55cc43114de58b8b85a"
+        }
+      ]
+    },
+    {
+      "name": "get_dimension_values",
+      "hash": "1be5397051af32c525e10b8985efe42d736251910382a21718657a532ee63a7e"
+    },
+    {
+      "name": "get_tag_values",
+      "hash": "5951afd9c670a535cdd4b1981ab84beed4134d11a99524094c74bc77125e9213",
+      "params": [
+        {
+          "name": "tag_key",
+          "hash": "b6935e9483122325db4f517fe5fcbfcb0d2d6430d00546669dc4d47f61e3ea33"
+        }
+      ]
+    },
+    {
+      "name": "get_today_date",
+      "hash": "bcb5a5d61c5a650f37397af52569fec9aea9d7aea467b6b2f4ebed2be0cd8eeb"
+    }
+  ],
+  "prompts": []
+}

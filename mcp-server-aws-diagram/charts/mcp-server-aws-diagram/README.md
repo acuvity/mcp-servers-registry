@@ -19,16 +19,16 @@
 
 
 # What is mcp-server-aws-diagram?
-[![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-aws-diagram/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-diagram/1.0.1?logo=docker&logoColor=fff&label=1.0.1)](https://hub.docker.com/r/acuvity/mcp-server-aws-diagram)
-[![PyPI](https://img.shields.io/badge/1.0.1-3775A9?logo=pypi&logoColor=fff&label=awslabs.aws-diagram-mcp-server)](https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server)
+[![PyPI](https://img.shields.io/badge/1.0.1-3775A9?logo=pypi&logoColor=fff&label=awslabs.aws-diagram-mcp-server)](https://github.com/awslabs/mcp/tree/HEAD/src/aws-diagram-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-aws-diagram/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-diagram&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-diagram%3A1.0.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** Create diagrams using the Python diagrams package: sequence, flow, and class diagrams.
+**Description:** Creates AWS architecture diagrams using Python diagrams package DSL
 
-Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from awslabs.aws-diagram-mcp-server original [sources](https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from awslabs.aws-diagram-mcp-server original [sources](https://github.com/awslabs/mcp/tree/HEAD/src/aws-diagram-mcp-server).
 
 **Quick links:**
 
@@ -153,15 +153,15 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Maintained by**:
   - [the Acuvity team](support@acuvity.ai) for packaging
-  - [ AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com> ](https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server) for application
+  - [ AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com> ](https://github.com/awslabs/mcp/tree/HEAD/src/aws-diagram-mcp-server) for application
 
 **Where to get help**:
   - [The Acuvity MCP Forge repository](https://github.com/acuvity/mcp-servers-registry)
-  - [ awslabs.aws-diagram-mcp-server ](https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server)
+  - [ awslabs.aws-diagram-mcp-server ](https://github.com/awslabs/mcp/tree/HEAD/src/aws-diagram-mcp-server)
 
 **Where to file issues**:
   - [Github issue tracker](https://github.com/acuvity/mcp-servers-registry/issues)
-  - [ awslabs.aws-diagram-mcp-server ](https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server)
+  - [ awslabs.aws-diagram-mcp-server ](https://github.com/awslabs/mcp/tree/HEAD/src/aws-diagram-mcp-server)
 
 **Supported architectures**:
   - `amd64`

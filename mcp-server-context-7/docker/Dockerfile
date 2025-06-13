@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="standalone"
 
 LABEL org.opencontainers.image.title="mcp-server-context-7"
 LABEL org.opencontainers.image.description="Context7 MCP - Up-to-date Docs For Any Cursor Prompt."
-LABEL org.opencontainers.image.version="1.0.12"
+LABEL org.opencontainers.image.version="1.0.14"
 LABEL org.opencontainers.image.source="https://github.com/upstash/context7#readme"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="abdush"
@@ -39,7 +39,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev @upstash/context7-mcp@1.0.12
+RUN npm i --omit-dev @upstash/context7-mcp@1.0.14
 
 EXPOSE 8000/tcp
 

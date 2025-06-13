@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-apify-actors"
 LABEL org.opencontainers.image.description="Use 3,000+ pre-built cloud tools, known as Actors, to extract data from websites."
-LABEL org.opencontainers.image.version="0.2.4"
+LABEL org.opencontainers.image.version="0.2.6"
 LABEL org.opencontainers.image.source="https://github.com/apify/actors-mcp-server"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="Apify"
@@ -39,7 +39,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev @apify/actors-mcp-server@0.2.4
+RUN npm i --omit-dev @apify/actors-mcp-server@0.2.6
 
 EXPOSE 8000/tcp
 

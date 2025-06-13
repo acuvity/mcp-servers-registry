@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-smuggler",
+  "icon": "https://avatars.githubusercontent.com/u/89649708?s=200&v=4",
+  "name": "mcp-server-smuggler",
+  "description": "HTTP Request Smuggling detection tool for identifying desynchronization vulnerabilities",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-smuggler",
+      "application": "https://github.com/cyproxio/mcp-for-security/tree/HEAD/smuggler-mcp"
+    },
+  "tags": ["security"],
+  "official": true,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "6190e55",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"0a1fbe3b144c4cf2c8e0cb9ac02fa3d9f3f54e2e16b3c59d6e00b26d6aa0d13a","reason":"The tool has a clear name and basic functionality description, but lacks important context about what HTTP Request Smuggling is, when to use this tool, and what the output provides. The URL parameter is well-documented with proper format specification, but the smuggler_args parameter description is essentially a copy-paste of command-line help text that doesn't explain how these arguments affect the tool's behavior or provide usage guidance.","score":"C"},
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

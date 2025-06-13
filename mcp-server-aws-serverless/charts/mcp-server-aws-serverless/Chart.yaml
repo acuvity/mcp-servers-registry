@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-aws-serverless"
+description: "A Helm chart for AI-powered tool for serverless development with AWS best practices and deployment guidance"
+home: https://github.com/awslabs/mcp/tree/HEAD/src/aws-serverless-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/awslabs/mcp/tree/HEAD/src/aws-serverless-mcp-server
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-aws-serverless/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "0.1.4"
+keywords:
+  - mcp-server-aws-serverless
+  - mcp-server
+  - remote
+  - cloud
+  - development
+  - automation

@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-cartesia"
+description: "A Helm chart for Connect to Cartesia voice platform for text-to-speech and voice cloning"
+home: https://github.com/cartesia-ai/cartesia-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/cartesia-ai/cartesia-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-cartesia/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "0.1.6"
+keywords:
+  - mcp-server-cartesia
+  - mcp-server
+  - remote
+  - integration

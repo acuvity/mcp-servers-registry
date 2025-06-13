@@ -1,0 +1,12 @@
+env:
+  ADB_MYSQL_HOST: dummy_value
+  ADB_MYSQL_PORT: 
+  ADB_MYSQL_USER: dummy_value
+  ADB_MYSQL_DATABASE: dummy_value
+
+secrets:
+  ADB_MYSQL_PASSWORD:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

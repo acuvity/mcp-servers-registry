@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-aws-documentdb",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-documentdb",
+  "description": "AWS DocumentDB MCP server for querying and managing MongoDB-compatible document databases",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-documentdb",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/documentdb-mcp-server"
+    },
+  "tags": ["database","cloud"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "1.0.1",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"61e789af0d3463241726101eb7936bebdaacef34ebde412ea143906c5e32af49","reason":"Good documentation overall with clear tool names, adequate descriptions explaining purpose and context, and well-documented parameters with examples. Most tools provide 2-3 sentences covering functionality and usage context. Parameter descriptions are clear with helpful examples (e.g., connection string format, query filters). Minor areas for improvement include some descriptions being slightly brief and missing certain constraints or behavioral details, but the toolset is generally well-documented and usable.","score":"B"},
+  "resources": {
+    "tools": 16,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-alibabacloud-adb-mysql",
+  "icon": "https://img.alicdn.com/imgextra/i4/O1CN01epkXwH1WLAXkZfV6N_!!6000000002771-2-tps-200-200.png",
+  "name": "mcp-server-alibabacloud-adb-mysql",
+  "description": "Connect to AnalyticDB for MySQL cluster for database metadata, querying and data analysis.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-alibabacloud-adb-mysql",
+      "application": "https://github.com/aliyun/alibabacloud-adb-mysql-mcp-server"
+    },
+  "tags": ["database","cloud"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "1.0.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"dc5f6d0687165387cee73e9645f116ee41eb0442c745aca7dc207d16d4b89ab5","reason":"The toolset provides adequate but minimal documentation. Tool names are clear and purposeful, indicating database operations. Descriptions are basic (1 sentence each) covering main functionality but lack important context about usage scenarios, return formats, and limitations. Parameter descriptions are minimal but understandable. Missing details about query types supported, error handling expectations, and differences between query_plan vs execution_plan tools.","score":"C"},
+  "resources": {
+    "tools": 3,
+    "prompts": 0,
+    "resources": 1,
+    "resourcesTemplates": 0
+  }
+}

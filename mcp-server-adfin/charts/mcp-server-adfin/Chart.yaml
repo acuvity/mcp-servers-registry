@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.1.1
+appVersion: "0.1.1"
 keywords:
   - mcp-server-adfin
   - mcp-server

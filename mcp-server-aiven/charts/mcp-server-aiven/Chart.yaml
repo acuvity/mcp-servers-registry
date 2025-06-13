@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-aiven"
+description: "A Helm chart for Navigate your Aiven projects and interact with PostgreSQL, Kafka, ClickHouse and OpenSearch services"
+home: https://github.com/Aiven-Open/mcp-aiven
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/Aiven-Open/mcp-aiven
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-aiven/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "297e5bd"
+keywords:
+  - mcp-server-aiven
+  - mcp-server
+  - remote
+  - cloud
+  - database

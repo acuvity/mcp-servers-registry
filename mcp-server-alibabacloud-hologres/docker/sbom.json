@@ -1,0 +1,143 @@
+{
+  "tools": [
+    {
+      "name": "call_hg_procedure",
+      "hash": "3532b7af326cdae8c98d2abe2a28227c2f2861bebf84ab714b44c14d1051043c",
+      "params": [
+        {
+          "name": "arguments",
+          "hash": "5ce2cdf29c62437f8435b591841ccf621a5c05a01aec99e12dfc79f15643f8ac"
+        },
+        {
+          "name": "procedure_name",
+          "hash": "8d5abcaa1cf231502c0ef0a793777a37bf864df70828e8ad94ed7d6ba2f49b42"
+        }
+      ]
+    },
+    {
+      "name": "create_hg_maxcompute_foreign_table",
+      "hash": "1f01c718d67cae7f97a81e323f5281714d914dcdca47153280683ef3df451318",
+      "params": [
+        {
+          "name": "local_schema",
+          "hash": "de2fc22827aedb95ce3151b3d586ee1ab8997608be485f6dfacae52b76de1165"
+        },
+        {
+          "name": "maxcompute_project",
+          "hash": "70a4a86561d6edce22167db9d761758ad9d1f1e2ee09ddc7d4a8472f56ffe56c"
+        },
+        {
+          "name": "maxcompute_schema",
+          "hash": "088e608ce3b094fcf6902167f5423a010542217c449f5f2fab3bd73e921d5efd"
+        },
+        {
+          "name": "maxcompute_tables",
+          "hash": "a094b5b203e31a1c3511e98e7f88980fac15299151f050fd841fc1de4edb2ad7"
+        }
+      ]
+    },
+    {
+      "name": "execute_hg_ddl_sql",
+      "hash": "250d5e586addcef2f2ca418fd2d215d2234a1689c1995e6619841431efae0a6a",
+      "params": [
+        {
+          "name": "query",
+          "hash": "ace55a62d7b8815e33664a775bef93c2252853c09c726495bef3e89746b7a265"
+        }
+      ]
+    },
+    {
+      "name": "execute_hg_dml_sql",
+      "hash": "8de513edebc0c298ef7f1569d9d253fb3fa5f5492d5fa357acf89028227e261c",
+      "params": [
+        {
+          "name": "query",
+          "hash": "52b8f4c0d943289b7408b197401a5896df2bb38dfc0aa7b22feff263494119b6"
+        }
+      ]
+    },
+    {
+      "name": "execute_hg_select_sql",
+      "hash": "c0509b31c58bfb5e90210f18c927651fd69be1182830a16f4aaedfa94e0634b4",
+      "params": [
+        {
+          "name": "query",
+          "hash": "e575f6f5705df0a9e37391cc9bd63516c85ab88aa53d304331a373e87aa343bf"
+        }
+      ]
+    },
+    {
+      "name": "execute_hg_select_sql_with_serverless",
+      "hash": "838b25b1e858ad7d7774fa9aa5ef67996cb918f2e87df26c20d4daa7ad6edf41",
+      "params": [
+        {
+          "name": "query",
+          "hash": "c2ea0c50cb3540e469811ac16b063f6b0cb837df481d0012b4f82cdbac2c33cf"
+        }
+      ]
+    },
+    {
+      "name": "gather_hg_table_statistics",
+      "hash": "afa02a2783ce69fdc6652a02ae4f955adc4446845f67e0f7c78fe9d25f0e4f42",
+      "params": [
+        {
+          "name": "schema",
+          "hash": "96a3fd04397c0fa26c7f3c8179c36a28e7ba2f486fc721a4e89d9dcc6c67c9d0"
+        },
+        {
+          "name": "table",
+          "hash": "5d827bf8b563fe50ac06f838a4e03f03389f9037252c0ac90dbfb67cdf96354a"
+        }
+      ]
+    },
+    {
+      "name": "get_hg_execution_plan",
+      "hash": "5b44540e5d9d0d42be0eef651147b01b198b06adb628f05ba406f88c357c7895",
+      "params": [
+        {
+          "name": "query",
+          "hash": "bc60df86b9a9084eccbbd5d50fb6257aab40741f4a9472e177c2ae9b76766bc0"
+        }
+      ]
+    },
+    {
+      "name": "get_hg_query_plan",
+      "hash": "fd8604103b131ca3321e1b9c550c7701b35e10102eb64c3b82a8a0c4b2a54d6f",
+      "params": [
+        {
+          "name": "query",
+          "hash": "bc60df86b9a9084eccbbd5d50fb6257aab40741f4a9472e177c2ae9b76766bc0"
+        }
+      ]
+    },
+    {
+      "name": "list_hg_schemas",
+      "hash": "5154d8cb06eb333e610327873a64d75e4c2bc2f320c95539a68397cac3a16059"
+    },
+    {
+      "name": "list_hg_tables_in_a_schema",
+      "hash": "85e29b1e49479a5d1e682c204023fdd16aa0644bf34fb7849ad5c27ed22049b0",
+      "params": [
+        {
+          "name": "schema",
+          "hash": "5fa567de4deabd66cd57f8cba3d1d4473f5a0f2ece0fd88622e299ed324367c7"
+        }
+      ]
+    },
+    {
+      "name": "show_hg_table_ddl",
+      "hash": "da8dffb878c11791a50ed0f6187b27ae2327da8f7623c4a0b7b102edfb398ae9",
+      "params": [
+        {
+          "name": "schema",
+          "hash": "96a3fd04397c0fa26c7f3c8179c36a28e7ba2f486fc721a4e89d9dcc6c67c9d0"
+        },
+        {
+          "name": "table",
+          "hash": "5d827bf8b563fe50ac06f838a4e03f03389f9037252c0ac90dbfb67cdf96354a"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

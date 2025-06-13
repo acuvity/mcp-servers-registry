@@ -21,10 +21,10 @@
 # What is mcp-server-azure?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-azure/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-azure/0.1.2?logo=docker&logoColor=fff&label=0.1.2)](https://hub.docker.com/r/acuvity/mcp-server-azure)
-[![PyPI](https://img.shields.io/badge/0.1.2-3775A9?logo=pypi&logoColor=fff&label=@azure/mcp)](https://github.com/Azure/azure-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-azure/0.2.1?logo=docker&logoColor=fff&label=0.2.1)](https://hub.docker.com/r/acuvity/mcp-server-azure)
+[![PyPI](https://img.shields.io/badge/0.2.1-3775A9?logo=pypi&logoColor=fff&label=@azure/mcp)](https://github.com/Azure/azure-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-azure/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22-e%22%2C%22AZURE_CLIENT_ID%22%2C%22-e%22%2C%22AZURE_CLIENT_SECRET%22%2C%22-e%22%2C%22AZURE_TENANT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure%3A0.1.2%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22-e%22%2C%22AZURE_CLIENT_ID%22%2C%22-e%22%2C%22AZURE_CLIENT_SECRET%22%2C%22-e%22%2C%22AZURE_TENANT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure%3A0.2.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Integrates AI agents with Azure services for enhanced functionality.
 
@@ -169,20 +169,20 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
   - `arm64`
 
 **Base image**:
-  - `node:23-slim`
+  - `node:23.11.0-slim`
 
 **Resources**:
   - [Charts](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-azure/charts/mcp-server-azure)
   - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-azure/docker/Dockerfile)
 
 **Latest tags:**
-  - `latest` -> `1.0.0-0.1.2` -> `0.1.2`
+  - `latest` -> `1.0.0-0.2.1` -> `0.2.1`
   - [older tags](https://hub.docker.com/r/acuvity/mcp-server-azure/tags)
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-azure:latest`
-  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-azure:0.1.2`
-  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-azure:1.0.0-0.1.2`
+  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-azure:0.2.1`
+  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-azure:1.0.0-0.2.1`
 
 # 📦 How to Install
 
@@ -210,7 +210,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22-e%22%2C%22AZURE_CLIENT_ID%22%2C%22-e%22%2C%22AZURE_CLIENT_SECRET%22%2C%22-e%22%2C%22AZURE_TENANT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure%3A0.1.2%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22-e%22%2C%22AZURE_CLIENT_ID%22%2C%22-e%22%2C%22AZURE_CLIENT_SECRET%22%2C%22-e%22%2C%22AZURE_TENANT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure%3A0.2.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -240,7 +240,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "AZURE_CLIENT_SECRET",
           "-e",
           "AZURE_TENANT_ID",
-          "docker.io/acuvity/mcp-server-azure:0.1.2"
+          "docker.io/acuvity/mcp-server-azure:0.2.1"
         ]
       }
     }
@@ -275,7 +275,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "AZURE_CLIENT_SECRET",
         "-e",
         "AZURE_TENANT_ID",
-        "docker.io/acuvity/mcp-server-azure:0.1.2"
+        "docker.io/acuvity/mcp-server-azure:0.2.1"
       ]
     }
   }
@@ -314,7 +314,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "AZURE_CLIENT_SECRET",
         "-e",
         "AZURE_TENANT_ID",
-        "docker.io/acuvity/mcp-server-azure:0.1.2"
+        "docker.io/acuvity/mcp-server-azure:0.2.1"
       ]
     }
   }
@@ -355,7 +355,7 @@ Add the following JSON block to your mcp configuration file:
         "AZURE_CLIENT_SECRET",
         "-e",
         "AZURE_TENANT_ID",
-        "docker.io/acuvity/mcp-server-azure:0.1.2"
+        "docker.io/acuvity/mcp-server-azure:0.2.1"
       ]
     }
   }
@@ -394,7 +394,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "AZURE_CLIENT_SECRET",
         "-e",
         "AZURE_TENANT_ID",
-        "docker.io/acuvity/mcp-server-azure:0.1.2"
+        "docker.io/acuvity/mcp-server-azure:0.2.1"
       ]
     }
   }
@@ -414,7 +414,7 @@ async with MCPServerStdio(
     params={
         "env": {"AZURE_CLIENT_ID":"TO_BE_SET","AZURE_CLIENT_SECRET":"TO_BE_SET","AZURE_TENANT_ID":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","--tmpfs","/tmp:rw,nosuid,nodev","-e","AZURE_CLIENT_ID","-e","AZURE_CLIENT_SECRET","-e","AZURE_TENANT_ID","docker.io/acuvity/mcp-server-azure:0.1.2"]
+        "args": ["run","-i","--rm","--read-only","--tmpfs","/tmp:rw,nosuid,nodev","-e","AZURE_CLIENT_ID","-e","AZURE_CLIENT_SECRET","-e","AZURE_TENANT_ID","docker.io/acuvity/mcp-server-azure:0.2.1"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -443,7 +443,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only --tmpfs /tmp:rw,nosuid,nodev -e AZURE_CLIENT_ID -e AZURE_CLIENT_SECRET -e AZURE_TENANT_ID docker.io/acuvity/mcp-server-azure:0.1.2`
+- arguments: `run -i --rm --read-only --tmpfs /tmp:rw,nosuid,nodev -e AZURE_CLIENT_ID -e AZURE_CLIENT_SECRET -e AZURE_TENANT_ID docker.io/acuvity/mcp-server-azure:0.2.1`
 
 </details>
 
@@ -453,7 +453,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only --tmpfs /tmp:rw,nosuid,nodev -e AZURE_CLIENT_ID -e AZURE_CLIENT_SECRET -e AZURE_TENANT_ID docker.io/acuvity/mcp-server-azure:0.1.2
+docker run -it -p 8000:8000 --rm --read-only --tmpfs /tmp:rw,nosuid,nodev -e AZURE_CLIENT_ID -e AZURE_CLIENT_SECRET -e AZURE_TENANT_ID docker.io/acuvity/mcp-server-azure:0.2.1
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -560,7 +560,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 For detailed list of all features, tools, arguments and SBOM hashes provided by this server please consult the [readme](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-azure)
 
-## 🧰 Tools (54)
+## 🧰 Tools (55)
 
 
 💬 Questions? Open an issue or contact us [ support@acuvity.ai ](mailto:support@acuvity.ai).

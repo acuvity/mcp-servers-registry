@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-alibabacloud-opensearch-vector-search",
+  "icon": "https://opensearch-shanghai.oss-cn-shanghai.aliyuncs.com/ouhuang/aliyun-icon.png",
+  "name": "mcp-server-alibabacloud-opensearch-vector-search",
+  "description": "Universal interface between AI Agents and OpenSearch Vector.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-alibabacloud-opensearch-vector-search",
+      "application": "https://github.com/aliyun/alibabacloud-opensearch-mcp-server/tree/HEAD/opensearch-vector-mcp-server"
+    },
+  "tags": ["cloud","integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "545d264",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"4397a5f8a825c0d55fb4ffaed0734c03c5294d4066fb37b6f89d5e0a48b0ef7f","reason":"The toolset provides adequate documentation with clear naming and basic functionality descriptions, but lacks important contextual information. Tool names are intuitive and descriptive. Descriptions cover basic functionality but miss key details like when to use each tool, result format expectations, and usage limitations. Parameter documentation is generally clear with appropriate types and constraints, though some parameters like 'filter' and complex vector relationships could benefit from more detailed explanations or examples.","score":"C"},
+  "resources": {
+    "tools": 6,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

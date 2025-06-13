@@ -13,10 +13,10 @@
   "scope": "native",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"05e647e0fc1e67ef2a1f7acb79e1662d3fe56da9f243945e322bfaefb8ce442f","reason":"Tool names are highly specific and intuitive, clearly indicating purpose. Descriptions are comprehensive, explaining functionality, when to use tools, limitations, and important warnings. Most parameters have clear descriptions of purpose and expected values. Strong documentation includes practical guidance, security warnings, and cross-references between tools. Minor gaps include some parameters lacking detailed descriptions (e.g., 'timeoutMs', 'shell' parameter purposes), and a few overly verbose descriptions could be more concise while maintaining clarity.","score":"B"},
+  "rating": {"hash":"7eba86391c488fc5792215e1e404bc81524c9344505a3e8be1fd21b761e096ea","reason":"The toolset demonstrates good documentation quality overall. Tool names are clear and descriptive, indicating their purpose well. Descriptions are comprehensive (2-4 sentences) covering functionality, usage context, and important limitations. Most parameters have adequate descriptions with types and constraints specified. However, some parameter descriptions could be more detailed (e.g., 'shell' parameter lacks explanation of valid values), and a few tools have overly verbose descriptions that could be more concise. The consistent inclusion of usage notes and security warnings shows good attention to detail.","score":"B"},
   "resources": {
     "tools": 18,
     "prompts": 0,

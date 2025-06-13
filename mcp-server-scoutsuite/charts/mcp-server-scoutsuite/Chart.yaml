@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-scoutsuite"
+description: "A Helm chart for Scout Suite cloud security auditing tool for assessing configurations across services"
+home: https://github.com/cyproxio/mcp-for-security/tree/HEAD/scoutsuite-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/cyproxio/mcp-for-security/tree/HEAD/scoutsuite-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-scoutsuite/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "6190e55"
+keywords:
+  - mcp-server-scoutsuite
+  - mcp-server
+  - remote
+  - security
+  - cloud

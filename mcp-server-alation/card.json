@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-alation",
+  "icon": "https://www.alation.com/resource-center/download/7p3vnbbznfiw/34FMtBTex5ppvs2hNYa9Fc/c877c37e88e5339878658697c46d2d58/Alation-Logo-Bug-Primary.svg",
+  "name": "mcp-server-alation",
+  "description": "Access Alation Data Catalog metadata and context for AI agents via MCP server.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-alation",
+      "application": "https://github.com/Alation/alation-ai-agent-sdk"
+    },
+  "tags": ["database","research"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.3.0",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"a893f7c651b46bfd7c2f6e44edd4ef836a8c3fbec203ab0c55ed35b394cafccc","reason":"Good documentation overall with comprehensive descriptions for both tools. The 'alation_context' tool provides excellent detail about functionality, usage context, and examples, though the signature parameter documentation could be clearer. The 'get_data_products' tool has clear descriptions and good examples but lacks parameter descriptions in the schema itself. Both tools have intuitive names and adequate parameter specifications, representing solid B-level documentation.","score":"B"},
+  "resources": {
+    "tools": 2,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

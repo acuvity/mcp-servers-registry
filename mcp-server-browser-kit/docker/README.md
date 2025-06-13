@@ -21,10 +21,10 @@
 # What is mcp-server-browser-kit?
 [![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-browser-kit/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-browser-kit/5.0.1?logo=docker&logoColor=fff&label=5.0.1)](https://hub.docker.com/r/acuvity/mcp-server-browser-kit)
-[![PyPI](https://img.shields.io/badge/5.0.1-3775A9?logo=pypi&logoColor=fff&label=@mcp-browser-kit/server)](https://github.com/ndthanhdev/mcp-browser-kit)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-browser-kit/5.0.2?logo=docker&logoColor=fff&label=5.0.2)](https://hub.docker.com/r/acuvity/mcp-server-browser-kit)
+[![PyPI](https://img.shields.io/badge/5.0.2-3775A9?logo=pypi&logoColor=fff&label=@mcp-browser-kit/server)](https://github.com/ndthanhdev/mcp-browser-kit)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-browser-kit/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-browser-kit&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-browser-kit%3A5.0.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-browser-kit&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-browser-kit%3A5.0.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** An MCP Server for interacting with manifest v2 compatible browsers.
 
@@ -176,13 +176,13 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
   - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-browser-kit/docker/Dockerfile)
 
 **Latest tags:**
-  - `latest` -> `1.0.0-5.0.1` -> `5.0.1`
+  - `latest` -> `1.0.0-5.0.2` -> `5.0.2`
   - [older tags](https://hub.docker.com/r/acuvity/mcp-server-browser-kit/tags)
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-browser-kit:latest`
-  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-browser-kit:5.0.1`
-  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-browser-kit:1.0.0-5.0.1`
+  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-browser-kit:5.0.2`
+  - `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-browser-kit:1.0.0-5.0.2`
 
 # 📦 How to Install
 
@@ -205,7 +205,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-browser-kit&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-browser-kit%3A5.0.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-browser-kit&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-browser-kit%3A5.0.2%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -222,7 +222,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "-i",
           "--rm",
           "--read-only",
-          "docker.io/acuvity/mcp-server-browser-kit:5.0.1"
+          "docker.io/acuvity/mcp-server-browser-kit:5.0.2"
         ]
       }
     }
@@ -244,7 +244,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-browser-kit:5.0.1"
+        "docker.io/acuvity/mcp-server-browser-kit:5.0.2"
       ]
     }
   }
@@ -270,7 +270,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-browser-kit:5.0.1"
+        "docker.io/acuvity/mcp-server-browser-kit:5.0.2"
       ]
     }
   }
@@ -298,7 +298,7 @@ Add the following JSON block to your mcp configuration file:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-browser-kit:5.0.1"
+        "docker.io/acuvity/mcp-server-browser-kit:5.0.2"
       ]
     }
   }
@@ -324,7 +324,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-browser-kit:5.0.1"
+        "docker.io/acuvity/mcp-server-browser-kit:5.0.2"
       ]
     }
   }
@@ -343,7 +343,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 async with MCPServerStdio(
     params={
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-browser-kit:5.0.1"]
+        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-browser-kit:5.0.2"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -372,7 +372,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-browser-kit:5.0.1`
+- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-browser-kit:5.0.2`
 
 </details>
 
@@ -382,7 +382,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-browser-kit:5.0.1
+docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-browser-kit:5.0.2
 ```
 
 Then on your application/client, you can configure to use it like:

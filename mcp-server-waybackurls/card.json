@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-waybackurls",
+  "icon": "https://avatars.githubusercontent.com/u/89649708?s=200&v=4",
+  "name": "mcp-server-waybackurls",
+  "description": "Retrieves historical URLs from the Wayback Machine for reconnaissance and security testing",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-waybackurls",
+      "application": "https://github.com/cyproxio/mcp-for-security/tree/HEAD/waybackurls-mcp"
+    },
+  "tags": ["security"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "6190e55",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"48cd52719f103d6b9786aa61c77e3ccb510b8eaa498c1bee10b61bb9967aa7c1","reason":"The tool has a clear, descriptive name and excellent description that explains functionality, use cases, and benefits. Parameter documentation is good with clear purposes and appropriate constraints. However, the 'noSub' parameter being required but nullable is confusing, and the 'target' parameter could benefit from clearer examples since it uses URI format but expects domain names.","score":"B"},
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

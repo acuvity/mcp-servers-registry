@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-asgardeo"
+description: "A Helm chart for MCP server to interact with your Asgardeo organization through LLM tools."
+home: https://github.com/asgardeo/asgardeo-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/asgardeo/asgardeo-mcp-server
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-asgardeo/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "v0.1.0"
+keywords:
+  - mcp-server-asgardeo
+  - mcp-server
+  - remote
+  - security
+  - integration

@@ -108,6 +108,8 @@ _cross_tool_exclude := [
 	#
 	"rerun_workflow",
 	#
+	"analyze_diff",
+	#
 	# exclude word that might be misdetected
 	"to",
 	"this",

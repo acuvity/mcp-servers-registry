@@ -1,0 +1,17 @@
+{
+  "tools": [
+    {
+      "name": "Add File",
+      "hash": "98544217b224eb2b086872863c8532a2560f981dc3b6da0bce6034c5b29bd213"
+    },
+    {
+      "name": "Add Memory",
+      "hash": "48dec2601fd515a7b4b0a8b22a04df1c6675b26a01db1013f1a3a27ffa714fe1"
+    },
+    {
+      "name": "Search Hyperspell",
+      "hash": "090b04965f2b6eb6212271bff4367a5f3215d7ecdf3b1b57b7d58d512ed8b5ad"
+    }
+  ],
+  "prompts": []
+}

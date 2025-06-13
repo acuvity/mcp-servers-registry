@@ -1,22 +1,22 @@
 {
   "id": "mcp-server-aws-terraform",
-  "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
   "name": "mcp-server-aws-terraform",
-  "description": "Terraform AWS best practices, infrastructure as code patterns, and security compliance with Checkov.",
+  "description": "Terraform on AWS best practices, infrastructure as code patterns, and security compliance",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-terraform",
-      "application": "https://github.com/awslabs/mcp/tree/main/src/terraform-mcp-server"
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/terraform-mcp-server"
     },
-  "tags": ["research","cloud"],
+  "tags": ["cloud","development","security"],
   "official": true,
-  "scope": "standalone",
+  "scope": "native",
   "mutitenant": true,
   "runtime": "python",
   "version": "1.0.1",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"5752c7ab8a5be36544e2424f9be44b5daa664820a1a114ea33233b6a255e32fb","reason":"Excellent tool documentation with comprehensive descriptions that clearly explain functionality, usage context, and limitations. Tool names are highly specific and intuitive. Parameter descriptions are thorough with proper type constraints and clear purpose explanations. Each tool provides detailed examples, usage scenarios, and important contextual information like when to use specific parameters or constraints between options.","score":"A"},
+  "rating": {"hash":"5752c7ab8a5be36544e2424f9be44b5daa664820a1a114ea33233b6a255e32fb","reason":"The toolset demonstrates solid documentation quality with comprehensive descriptions that clearly explain functionality, usage contexts, and parameters. Tool names are descriptive and purposeful, though some could be more concise (e.g., 'SearchSpecificAwsIaModules' vs 'SearchAwsIaModules'). The descriptions are detailed with good coverage of what each tool does, when to use it, and key limitations. Parameter documentation is thorough with clear explanations of purpose, types, and constraints. The extensive use of examples enhances usability. Minor deductions for occasional verbosity in descriptions and some parameter descriptions that could be more concise, but overall the documentation provides strong guidance for users.","score":"B"},
   "resources": {
     "tools": 7,
     "prompts": 0,

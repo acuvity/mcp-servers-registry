@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-httpx",
+  "icon": "https://avatars.githubusercontent.com/u/89649708?s=200&v=4",
+  "name": "mcp-server-httpx",
+  "description": "Fast HTTP toolkit for probing web servers and analyzing technologies via MCP protocol",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-httpx",
+      "application": "https://github.com/cyproxio/mcp-for-security/tree/HEAD/httpx-mcp"
+    },
+  "tags": ["security"],
+  "official": true,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "6190e55",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"31df1fb7bed4eae0dc1ea99d892399ee4e3fc808bd7449b7c069a52e9eeae23e","reason":"The tool has an adequate but somewhat generic name and a basic description that covers main functionality. The target parameter is well-documented, but the ports parameter lacks any description, and the probes parameter, while containing detailed options, is formatted as a large block of text that's difficult to parse rather than clear, structured documentation.","score":"C"},
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

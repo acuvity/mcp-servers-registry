@@ -21,10 +21,10 @@
 # What is mcp-server-github?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-github/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-github/v0.4.0?logo=docker&logoColor=fff&label=v0.4.0)](https://hub.docker.com/r/acuvity/mcp-server-github)
-[![GitHUB](https://img.shields.io/badge/v0.4.0-3775A9?logo=github&logoColor=fff&label=github/github-mcp-server)](https://github.com/github/github-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-github/v0.5.0?logo=docker&logoColor=fff&label=v0.5.0)](https://hub.docker.com/r/acuvity/mcp-server-github)
+[![GitHUB](https://img.shields.io/badge/v0.5.0-3775A9?logo=github&logoColor=fff&label=github/github-mcp-server)](https://github.com/github/github-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-github/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-github&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22GITHUB_PERSONAL_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-github%3Av0.4.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-github&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22GITHUB_PERSONAL_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-github%3Av0.5.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** GitHub's official MCP Server
 
@@ -173,11 +173,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-v0.4.0`
+  - container: `1.0.0-v0.5.0`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-github:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-github:1.0.0-v0.4.0`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-github:1.0.0-v0.5.0`
 
 ---
 
@@ -652,7 +652,7 @@ Add a comment to a specific issue in a GitHub repository.
 **Description**:
 
 ```
-Add a comment to the requester's latest pending pull request review, a pending review needs to already exist to call this (check with the user if not sure). If you are using the LINE subjectType, use the get_line_number_in_pull_request_file tool to get an exact line number before commenting.
+Add a comment to the requester's latest pending pull request review, a pending review needs to already exist to call this (check with the user if not sure).
 ```
 
 **Parameter**:
@@ -953,7 +953,7 @@ Get the contents of a file or directory from a GitHub repository
 |-----------|------|-------------|-----------|
 | branch | string | Branch to get contents from | No
 | owner | string | Repository owner (username or organization) | Yes
-| path | string | Path to file/directory | Yes
+| path | string | Path to file/directory (directories must end with a slash '/') | Yes
 | repo | string | Repository name | Yes
 </details>
 <details>
@@ -1594,7 +1594,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | add_issue_comment | issue_number | 55508553706f381501225c1367bc7f12548ab08da5ce677d10875fb316ee3ce4 |
 | tools | add_issue_comment | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
 | tools | add_issue_comment | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | add_pull_request_review_comment_to_pending_review | description | 3c66a3942bb4b6cee8360f6b05c41a0e4f371fe3bdbe3ed8cd319849bb44e3b6 |
+| tools | add_pull_request_review_comment_to_pending_review | description | 539c30ff7a06d5bca9d3fb808257ce3619326f2b0c58c96aff0095430a7d5883 |
 | tools | add_pull_request_review_comment_to_pending_review | body | 150bf72e1256c35c56d58cce6912ae25bb0a02e2a048a422297a7eead2024635 |
 | tools | add_pull_request_review_comment_to_pending_review | line | 819e79a56ebb1ecd61715def06ef3dda6306d32677da2d9c797a17ea0c2fe4bc |
 | tools | add_pull_request_review_comment_to_pending_review | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
@@ -1686,7 +1686,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | get_file_contents | description | 54de6216aa12cd8da08e335b6955e2261b4241359f184959829407d0e40dcdc0 |
 | tools | get_file_contents | branch | 845c6e38397f1251842f78808bd433f2656d160a31e29109bae6088fba5037b4 |
 | tools | get_file_contents | owner | 637f8af6d00297f7764a512ae2421160b429cfc1592dcf476db18f1f2d9521b6 |
-| tools | get_file_contents | path | 2957637372ff4e19e270a582b546db31597054befcac8ee9aa597018697273be |
+| tools | get_file_contents | path | 7feb0806ae965d2a00bf345a3f17897e9547100bfbb88544cce35312e9b9f27e |
 | tools | get_file_contents | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
 | tools | get_issue | description | e0739745fb9853ee88c1f23196a40765b25dd4c425d93132efddc0975e66e049 |
 | tools | get_issue | issue_number | 792880d24307a7c2e3ccb34d164888a960335024892f6faa8729fe06657409fe |

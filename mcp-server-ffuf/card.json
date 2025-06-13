@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-ffuf",
+  "icon": "https://avatars.githubusercontent.com/u/89649708?s=200&v=4",
+  "name": "mcp-server-ffuf",
+  "description": "Web content fuzzing tool for discovering hidden files and directories through MCP",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-ffuf",
+      "application": "https://github.com/cyproxio/mcp-for-security/tree/HEAD/ffuf-mcp"
+    },
+  "tags": ["security","web"],
+  "official": true,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "6190e55",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"a7b7621b1460365c985f979f633ffeb9579d62b00b17a1a337e3297255b83584","reason":"The tool name 'do-ffuf' is vague and doesn't clearly indicate its purpose. The description is extremely minimal (one sentence) and fails to explain what ffuf is, when to use it, or what it accomplishes. While the ffuf_args parameter includes extensive technical documentation, this appears to be copy-pasted help text rather than contextual parameter guidance. The documentation lacks essential context about the tool's security testing purpose and provides no guidance on appropriate usage scenarios.","score":"D"},
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

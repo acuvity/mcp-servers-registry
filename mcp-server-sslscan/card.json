@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-sslscan",
+  "icon": "https://avatars.githubusercontent.com/u/89649708?s=200&v=4",
+  "name": "mcp-server-sslscan",
+  "description": "SSL/TLS configuration analyzer for security assessment through MCP",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-sslscan",
+      "application": "https://github.com/cyproxio/mcp-for-security/tree/HEAD/sslscan-mcp"
+    },
+  "tags": ["security"],
+  "official": true,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "6190e55",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"f7f3fcaca61d60f29d2ca861ca551f69e1af25292a0c0180491fdefc1226eb70","reason":"While the tool name and description are clear and comprehensive, the parameter documentation is severely lacking. The 'sslscan_args' parameter contains raw command-line help text instead of structured documentation, making it difficult to understand how to use the array of strings. The 'target' parameter description is adequate but could be clearer about URL format requirements. The poor parameter documentation significantly undermines the overall quality.","score":"D"},
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

@@ -1,5 +1,6 @@
 #!/bin/sh
 . .venv/bin/activate
+export AWS_DOCUMENTATION_PARTITION=${AWS_DOCUMENTATION_PARTITION:-"aws"}
 
 if [ -z "$MINIBRIDGE_MODE" ]; then
   # check if stdin in open

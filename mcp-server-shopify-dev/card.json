@@ -16,7 +16,7 @@
   "version": "1.1.0",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"71f698342038a25613348729f53c896fdc491b3e60ba8b41ece3fb78992cb1ab","reason":"Mixed quality documentation with some tools having adequate descriptions while others fall short. The 'introspect_admin_schema' and 'get_started' tools provide reasonable context and usage guidance, but 'search_dev_docs' and 'fetch_docs_by_path' have overly brief descriptions that leave key details unclear. Parameter documentation is generally adequate but inconsistent, with some parameters well-explained and others lacking sufficient detail about expected formats or constraints.","score":"C"},
+  "rating": {"hash":"9b428284531628c60d7c682b6de992bffd42ea7da2b21faf5ffccebb65ac29db","reason":"Mixed quality documentation with some tools having adequate descriptions while others suffer from significant issues. The introspect_admin_schema and search_dev_docs tools have clear purposes and reasonable parameter documentation. However, fetch_docs_by_path has a vague description that doesn't clearly explain its purpose or when to use it. The get_started tool has an overly verbose description with excessive capitalization and formatting issues that detract from clarity, plus unclear usage instructions. Parameter documentation is generally adequate but could be more detailed in some cases.","score":"C"},
   "resources": {
     "tools": 4,
     "prompts": 1,

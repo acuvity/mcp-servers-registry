@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-phoenix"
+description: "A Helm chart for Inspect traces, manage prompts, curate datasets, and run experiments using Arize Phoenix."
+home: https://github.com/Arize-ai/phoenix/tree/HEAD/js/packages/phoenix-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/Arize-ai/phoenix/tree/HEAD/js/packages/phoenix-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-phoenix/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "2.1.10"
+keywords:
+  - mcp-server-phoenix
+  - mcp-server
+  - remote
+  - development
+  - monitoring

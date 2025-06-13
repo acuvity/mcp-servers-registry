@@ -1,0 +1,21 @@
+apiVersion: v2
+name: "mcp-server-bitrise"
+description: "A Helm chart for Chat with your builds, CI, and more via the Bitrise API."
+home: https://github.com/bitrise-io/bitrise-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/bitrise-io/bitrise-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-bitrise/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "v1.1.0"
+keywords:
+  - mcp-server-bitrise
+  - mcp-server
+  - remote
+  - development
+  - automation
+  - integration

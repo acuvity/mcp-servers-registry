@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-aws-code-documentation",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-code-documentation",
+  "description": "Analyzes repository structure and generates comprehensive documentation for code projects",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-code-documentation",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/code-doc-gen-mcp-server"
+    },
+  "tags": ["development"],
+  "official": true,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "1.0.1",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"ccc628127b6c5a9cf58a1a5d87963a3d9637530d627bbaf2f83390dfa9e73995","reason":"The toolset provides adequate documentation with clear workflow steps and comprehensive parameter descriptions, but suffers from inconsistent naming (prepare_repository vs create_context), overly verbose descriptions that mix implementation details with usage guidance, and complex nested schemas that could be more accessible. While functional, it requires significant mental effort to understand the workflow and could benefit from more concise, user-focused descriptions.","score":"C"},
+  "resources": {
+    "tools": 4,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

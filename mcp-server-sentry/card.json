@@ -6,7 +6,7 @@
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-sentry",
-      "application": "https://github.com/modelcontextprotocol/servers/tree/main/src/sentry"
+      "application": "https://github.com/modelcontextprotocol/servers/tree/HEAD/src/sentry"
     },
   "tags": ["monitoring","integration"],
   "official": false,

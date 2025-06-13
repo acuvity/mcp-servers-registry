@@ -21,10 +21,10 @@
 # What is mcp-server-coda?
 [![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-coda/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-coda/1.2.3?logo=docker&logoColor=fff&label=1.2.3)](https://hub.docker.com/r/acuvity/mcp-server-coda)
-[![PyPI](https://img.shields.io/badge/1.2.3-3775A9?logo=pypi&logoColor=fff&label=coda-mcp)](https://github.com/orellazri/coda-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-coda/1.4.1?logo=docker&logoColor=fff&label=1.4.1)](https://hub.docker.com/r/acuvity/mcp-server-coda)
+[![PyPI](https://img.shields.io/badge/1.4.1-3775A9?logo=pypi&logoColor=fff&label=coda-mcp)](https://github.com/orellazri/coda-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-coda/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-coda&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_KEY%22%2C%22-e%22%2C%22DOC_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-coda%3A1.2.3%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-coda&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_KEY%22%2C%22-e%22%2C%22DOC_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-coda%3A1.4.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** MCP server for Coda.
 
@@ -175,7 +175,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-coda&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_KEY%22%2C%22-e%22%2C%22DOC_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-coda%3A1.2.3%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-coda&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22API_KEY%22%2C%22-e%22%2C%22DOC_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-coda%3A1.4.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -200,7 +200,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "API_KEY",
           "-e",
           "DOC_ID",
-          "docker.io/acuvity/mcp-server-coda:1.2.3"
+          "docker.io/acuvity/mcp-server-coda:1.4.1"
         ]
       }
     }
@@ -230,7 +230,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "API_KEY",
         "-e",
         "DOC_ID",
-        "docker.io/acuvity/mcp-server-coda:1.2.3"
+        "docker.io/acuvity/mcp-server-coda:1.4.1"
       ]
     }
   }
@@ -264,7 +264,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "API_KEY",
         "-e",
         "DOC_ID",
-        "docker.io/acuvity/mcp-server-coda:1.2.3"
+        "docker.io/acuvity/mcp-server-coda:1.4.1"
       ]
     }
   }
@@ -300,7 +300,7 @@ Add the following JSON block to your mcp configuration file:
         "API_KEY",
         "-e",
         "DOC_ID",
-        "docker.io/acuvity/mcp-server-coda:1.2.3"
+        "docker.io/acuvity/mcp-server-coda:1.4.1"
       ]
     }
   }
@@ -334,7 +334,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "API_KEY",
         "-e",
         "DOC_ID",
-        "docker.io/acuvity/mcp-server-coda:1.2.3"
+        "docker.io/acuvity/mcp-server-coda:1.4.1"
       ]
     }
   }
@@ -354,7 +354,7 @@ async with MCPServerStdio(
     params={
         "env": {"API_KEY":"TO_BE_SET","DOC_ID":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","API_KEY","-e","DOC_ID","docker.io/acuvity/mcp-server-coda:1.2.3"]
+        "args": ["run","-i","--rm","--read-only","-e","API_KEY","-e","DOC_ID","docker.io/acuvity/mcp-server-coda:1.4.1"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -383,7 +383,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e API_KEY -e DOC_ID docker.io/acuvity/mcp-server-coda:1.2.3`
+- arguments: `run -i --rm --read-only -e API_KEY -e DOC_ID docker.io/acuvity/mcp-server-coda:1.4.1`
 
 </details>
 
@@ -393,7 +393,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e API_KEY -e DOC_ID docker.io/acuvity/mcp-server-coda:1.2.3
+docker run -it -p 8000:8000 --rm --read-only -e API_KEY -e DOC_ID docker.io/acuvity/mcp-server-coda:1.4.1
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -497,7 +497,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (8)
+## 🧰 Tools (9)
 <details>
 <summary>coda_list_documents</summary>
 
@@ -519,7 +519,7 @@ List or search available documents
 **Description**:
 
 ```
-List pages in the current document
+List pages in the current document with pagination
 ```
 
 **Parameter**:
@@ -527,6 +527,8 @@ List pages in the current document
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | docId | string | The ID of the document to list pages from | Yes
+| limit | integer | The number of pages to return - optional, defaults to 25 | No
+| nextPageToken | string | The token need to get the next page of results, returned from a previous call to this tool - optional | No
 </details>
 <details>
 <summary>coda_create_page</summary>
@@ -544,6 +546,7 @@ Create a page in the current document
 | content | string | The markdown content of the page to create - optional | No
 | docId | string | The ID of the document to create the page in | Yes
 | name | string | The name of the page to create | Yes
+| parentPageId | string | The ID of the parent page to create this page under - optional | No
 </details>
 <details>
 <summary>coda_get_page_content</summary>
@@ -560,6 +563,23 @@ Get the content of a page as markdown
 |-----------|------|-------------|-----------|
 | docId | string | The ID of the document that contains the page to get the content of | Yes
 | pageIdOrName | string | The ID or name of the page to get the content of | Yes
+</details>
+<details>
+<summary>coda_peek_page</summary>
+
+**Description**:
+
+```
+Peek into the beginning of a page and return a limited number of lines
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| docId | string | The ID of the document that contains the page to peek into | Yes
+| numLines | integer | The number of lines to return from the start of the page - usually 30 lines is enough | Yes
+| pageIdOrName | string | The ID or name of the page to peek into | Yes
 </details>
 <details>
 <summary>coda_replace_page_content</summary>
@@ -645,6 +665,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | coda_create_page | content | 22bd8cb205205d5c8826180ff748095de56dad85b69aa7d9f3e425e6d7e8f0f8 |
 | tools | coda_create_page | docId | 158955c02c5aa26b184216129353a385eedf2b9368448e0b1284ca8482ca5d6a |
 | tools | coda_create_page | name | 9200c858ffe87b34c08415c39d7e1111124dc7fbbe8bf606365936cf08fabdb8 |
+| tools | coda_create_page | parentPageId | 23e66e983618974de73266d5421c75eedfbbd1884d0a89592ac5b383e1f03031 |
 | tools | coda_duplicate_page | description | 4c2496f1d91db963e00ce499c6a64ce127e3e1789f51b7674d9053fc9f11c627 |
 | tools | coda_duplicate_page | docId | f0e631f8b92b861f822ef892433ac345f70335c69c96664ae274235830198794 |
 | tools | coda_duplicate_page | newName | 8cc9888bfa04926d724ebdfd4283bf915e056c54d7b9568b8c2c0409b00558d7 |
@@ -654,8 +675,14 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | coda_get_page_content | pageIdOrName | 2660e996c27d04bf1e63551dcf2f49e3414bb72b0a97bf7fce8220bd324b64bf |
 | tools | coda_list_documents | description | 71001f60d122cd04f582806689df55db58e556c49e795cfe2006c2b06436ea07 |
 | tools | coda_list_documents | query | 3327b3fff59e43d93c8a98177fb17ef6251f8317ed1678dfa0e4a71a89a0ddd4 |
-| tools | coda_list_pages | description | b70da335dd3f3b775908abe23d3fabc8d2e4c7228c8bb342fbee8c163ca48d45 |
+| tools | coda_list_pages | description | 1a8a31861ee35219e4f5f8c8e509efd7987d5a01634fe30c4e33a8a15e534e5a |
 | tools | coda_list_pages | docId | 4b9ffcb8819b499cd57463e3e4924724e339c33e09512dcc9abde242099ae041 |
+| tools | coda_list_pages | limit | dae9aac415696897b6bf809a8667827bd19d2f208cbcf2604edbfbd76a008efd |
+| tools | coda_list_pages | nextPageToken | 5e0ac137194647315f21041aa4015dcac246f338c92938f77b01f8b6b5a80e6c |
+| tools | coda_peek_page | description | 7a20ab6508a28ca5ba7008abf98d712e28169db94ff7316f0c2b4b0920d2d2cc |
+| tools | coda_peek_page | docId | 88dfaff1fc79e5925d00d140af6bea4710522da7c4a3552f9cabf6742d540031 |
+| tools | coda_peek_page | numLines | 8ea4b7fa145c6b5c9f1fda9a7799f76910e69e71212b3f437176093668262ac7 |
+| tools | coda_peek_page | pageIdOrName | 50a796ac4b6752c9ec6570e9ca6062a15ec7428a0af9baa93fa2c6f2deceada0 |
 | tools | coda_rename_page | description | 037a2e1ce43e2a3eb82f6b3aa83f5e9dafdce96ffaa5186702482bf458a194b6 |
 | tools | coda_rename_page | docId | 15a4d415486234c3dd1fda9950b465d5bc886abb98e870c59ada67d6e3e52d3c |
 | tools | coda_rename_page | newName | 47633c3d0d36d0564492d812ff19826f72d7b172b3eacad87b98f8246491662a |

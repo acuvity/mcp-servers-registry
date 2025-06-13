@@ -1,0 +1,31 @@
+{
+  "tools": [
+    {
+      "name": "shuffledns",
+      "hash": "ba014c91581e6556d046e754855756544f473fe684020a3d82f84d566a91c9a1",
+      "params": [
+        {
+          "name": "mode",
+          "hash": "5e23ec6a300dc60a79641769017e16e9bf042cbd8fd0a54586a048ab9da972ff"
+        },
+        {
+          "name": "rateLimit",
+          "hash": "e109acee44c104eb4cafeedcf8bb2e750bdb12fa1ed8dfaf8965144f632fc2cc"
+        },
+        {
+          "name": "resolver",
+          "hash": "a7d50ec61a4e05c3c87f753a93b64dcae481f27541ca84f2e434f209b0874336"
+        },
+        {
+          "name": "target",
+          "hash": "e6938dcc96909cf2276e4436c1120e7b5335b16a623ca810ba03141c95fee5ee"
+        },
+        {
+          "name": "wordlist",
+          "hash": "3d1a82560169c2bbcd369a8c3c8a9207d59c7a8c3b7670a78dceb3d678380d15"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

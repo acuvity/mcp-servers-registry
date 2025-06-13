@@ -1,0 +1,33 @@
+{
+  "tools": [
+    {
+      "name": "analyzeasset",
+      "hash": "8e85d7c3a38cb220501bb88b3ef09b3319163c728af625466d6dd4397acfee54",
+      "params": [
+        {
+          "name": "assetPath",
+          "hash": "cb04d73b9e06b35d2cd0d0643d35facf25cbd413e9fa069bcf8a2d569e8c20d5"
+        },
+        {
+          "name": "projectArn",
+          "hash": "54ec702463a13cf3b5c3e46d92fdba5af7c4acb5b483b30a612f54230bae649b"
+        }
+      ]
+    },
+    {
+      "name": "getprojectdetails",
+      "hash": "1070dbc8d13b0c25488bf6ee25aeb45b22e6ee93e304045a85ca6e7f2d9b4f31",
+      "params": [
+        {
+          "name": "projectArn",
+          "hash": "092c42c0e2e1efe15b7974504fceea8e42916844f31e5853ce72b654b8718ef3"
+        }
+      ]
+    },
+    {
+      "name": "getprojects",
+      "hash": "07542f1e635e748d5298f66fabdf2d6cb219e43002ad0a0b2e34915b71c147ee"
+    }
+  ],
+  "prompts": []
+}

@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-aws-neptune",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-neptune",
+  "description": "Amazon Neptune graph database server for openCypher and Gremlin queries",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-neptune",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/amazon-neptune-mcp-server"
+    },
+  "tags": ["database","cloud"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "1.0.1",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"8b65724a44b940df2b1e1f14c46fa63e3795a69c494f644d94fbd3d274396f5f","reason":"Tool names are clear and specific, indicating their purpose well. Descriptions provide basic functionality but lack important context like usage scenarios, limitations, or data format details. Query parameters have minimal descriptions - just 'Query' and 'Parameters' without explaining query syntax, constraints, or expected formats. While functional, the documentation leaves users to infer many implementation details.","score":"C"},
+  "resources": {
+    "tools": 4,
+    "prompts": 0,
+    "resources": 2,
+    "resourcesTemplates": 0
+  }
+}

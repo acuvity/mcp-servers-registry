@@ -1,0 +1,6 @@
+env:
+  PROMETHEUS_URL: dummy_value
+  AWS_REGION: dummy_value
+  AWS_PROFILE: 
+
+secrets:

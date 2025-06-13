@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.1.0
+appVersion: "0.1.0"
 keywords:
   - mcp-server-bing-search
   - mcp-server

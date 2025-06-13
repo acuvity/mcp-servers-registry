@@ -1,0 +1,393 @@
+{
+  "tools": [
+    {
+      "name": "addTestResult",
+      "hash": "cc2109318c2f2f439c042097bd218c02441beaba6763a50f777b45ff1f9ee532",
+      "params": [
+        {
+          "name": "project_identifier",
+          "hash": "6c62157d98f3a3579f77d8d19b65b8566108202987b5120eb459dc7319bbc86b"
+        },
+        {
+          "name": "test_case_id",
+          "hash": "a0bf11cfea84003e21cf57d8e5a471b50f6cfe1bf5fd67277ad3371d3d0479fc"
+        },
+        {
+          "name": "test_run_id",
+          "hash": "dd6796e0611b2656380232abc144a619b1b74bf20bf3b22fb68f235335dfdbf0"
+        }
+      ]
+    },
+    {
+      "name": "createLCASteps",
+      "hash": "3ab042e167faacf57685147c666092ef03afc65cce6455acbe3dbecea9e8df66",
+      "params": [
+        {
+          "name": "base_url",
+          "hash": "4c5c642f1b70dc39ffe77d1ff4f903802e7ad4ae5c745223e7d8adf159bb685e"
+        },
+        {
+          "name": "credentials",
+          "hash": "87b52bc90c9e6098cfa860d99603f9accf589b41839c1ce331cec252c4df0da1"
+        },
+        {
+          "name": "local_enabled",
+          "hash": "72ae8ded36dc31c6da9f1be9871fe67a4ce4767445f45185a2fb4861840978c4"
+        },
+        {
+          "name": "project_identifier",
+          "hash": "26c8444cca04215f8340f893afc14c7c808bff9b881341c42e724b506a104db7"
+        },
+        {
+          "name": "test_case_details",
+          "hash": "eb4b90368e172f31e2dd69a93a80235568e0f0f6e5eafce7d40c15133e20b5e5"
+        },
+        {
+          "name": "test_case_identifier",
+          "hash": "40532c4b1b9e68fb66279c2c5e06193bcd3f18ca45fcdadcd4897cec61510f32"
+        },
+        {
+          "name": "test_name",
+          "hash": "35a63342426914953ce6b18c0b896a975ae546642bb25ee9bd5818bf938111ef"
+        },
+        {
+          "name": "wait_for_completion",
+          "hash": "4513ed516d341581480e189e81c47994b7ec23f4de6669537dcd7932c4d3af58"
+        }
+      ]
+    },
+    {
+      "name": "createProjectOrFolder",
+      "hash": "b3e3165694a6aabfb78167fe03a224a0088fbe3dfdfc2bab6478618d2dc4cde1",
+      "params": [
+        {
+          "name": "folder_description",
+          "hash": "efbe2753d3d1783e698cc3c5b1c770b5b721645b91d5200aa05af31bdd87942a"
+        },
+        {
+          "name": "folder_name",
+          "hash": "1fce48673414a3b22395d547a7e50ac225a819b36c63c91d117be6f3a2208d5b"
+        },
+        {
+          "name": "parent_id",
+          "hash": "de57230349700c0b401e5aa7981ae08b72e9de2435c39b21618c5018f3b07f0e"
+        },
+        {
+          "name": "project_description",
+          "hash": "507f3ff1b6a036de2a0b311b1ea9d392b050f14639d9d6e4d7ac7fc4b02b593e"
+        },
+        {
+          "name": "project_identifier",
+          "hash": "bf678e9cd7bbe3bfd864e0ea804a12d70d509e66be1a51d2ce56d21936db79c8"
+        },
+        {
+          "name": "project_name",
+          "hash": "c071c9fbe7923c941268d56c79fb0ac12e37edf18c7b68099b9c3490dbb291ef"
+        }
+      ]
+    },
+    {
+      "name": "createTestCase",
+      "hash": "f79753f1cbee77f8ec15ef0b0772234e89d65c986bd6b82be0d5333d6ec5388e",
+      "params": [
+        {
+          "name": "custom_fields",
+          "hash": "427a06f888b38e7210021bc459b99e7d5604fd42aa1b7ed81a99c4b7750510fb"
+        },
+        {
+          "name": "description",
+          "hash": "abf1b1eee12721a67b652f322487678db003d4bdf031cb0bad27b9deb94725b0"
+        },
+        {
+          "name": "folder_id",
+          "hash": "a4ba636aa7f77cf6f2c0be168e1902bd0e2ba5645d4292f5ce3e96acca72cb2d"
+        },
+        {
+          "name": "issues",
+          "hash": "f618b3a688e1acfcfc72f7039e6293a82d3827f2bccd0007ebe28fc87d0bee62"
+        },
+        {
+          "name": "name",
+          "hash": "1ac73c91df75b429d366d02ba589f8912ab3a4fd6bdf1713a20d305e1017a7a7"
+        },
+        {
+          "name": "owner",
+          "hash": "c60877252d5b1105e70647d2787af274ba801f51a0878b547b5fc9e2e53d0042"
+        },
+        {
+          "name": "preconditions",
+          "hash": "5e7d050fee674a09daeb0382bd426da764d6abbfbf8397a4d7332f4ead5a5d7f"
+        },
+        {
+          "name": "project_identifier",
+          "hash": "60f040a16f19c3ebe8151ded87b86b7b6df17cd58f7eae9cf86d0e99ae86a451"
+        },
+        {
+          "name": "tags",
+          "hash": "5129ca1d1104d94f1052e948d9de68d4f647ba0162d4002d8564a6d3a71f5351"
+        },
+        {
+          "name": "test_case_steps",
+          "hash": "4a3f566047517e2e251aeb01cf987444bde104c20afa9d7f4ece89cd844717d1"
+        }
+      ]
+    },
+    {
+      "name": "createTestCasesFromFile",
+      "hash": "0df41168f9e6612d4cafff96da9deb7b5aba5359fe9af65f93f5e340bad4fe33",
+      "params": [
+        {
+          "name": "documentId",
+          "hash": "6bc6f69713ac4766430d61e7c818a20347c9c754e1c45eef8344768cf9221fa2"
+        },
+        {
+          "name": "folderId",
+          "hash": "16c1037533e9511a8e361f5f362aa06d5313f5456d295d90363fed5522422ac1"
+        },
+        {
+          "name": "projectReferenceId",
+          "hash": "6feb12c1b9b037157845cb6137b840d5da4eeb31ef3521aa5a66cb205a97a86f"
+        }
+      ]
+    },
+    {
+      "name": "createTestRun",
+      "hash": "1b5b97bcc39017fa094f26eb56806082d82f687b7a1efa49aad565ba42df580f",
+      "params": [
+        {
+          "name": "project_identifier",
+          "hash": "958319b90d7375b48dde33224fa823fd5b91d21ba1e2a8adc2437fcc15650186"
+        }
+      ]
+    },
+    {
+      "name": "fetchAutomationScreenshots",
+      "hash": "077697d1de82318656d57ab7020073e07d0483261ef18c23d0eb8dd90b93c43e",
+      "params": [
+        {
+          "name": "sessionId",
+          "hash": "4a1a35e557a51bbcc1ee1da90be86fe09b2049104723f90c8c5ccc33940da414"
+        },
+        {
+          "name": "sessionType",
+          "hash": "7db47afe5cb3150197365c91b30448e31eaa6b95a2ba9ae4a28fcdc553b44a10"
+        }
+      ]
+    },
+    {
+      "name": "fetchSelfHealedSelectors",
+      "hash": "90260e3fb5a7f53c23ffd7718635ccc4d2b12f173fb2855c730087ab40a4a768",
+      "params": [
+        {
+          "name": "sessionId",
+          "hash": "faf61902787c70137dfbc121511ed7d9b7e27502bfdf5d1125f6efd5d3031a58"
+        }
+      ]
+    },
+    {
+      "name": "getFailureLogs",
+      "hash": "8c144b60db6fac766d3330c216f56f6c893adfd32841a14f2412b25367d0758c",
+      "params": [
+        {
+          "name": "buildId",
+          "hash": "ebc09c81c8f54829422701526f8ada1e09682f4026bc3ea12d7641541e8f7035"
+        },
+        {
+          "name": "logTypes",
+          "hash": "0051404276165eb04388eee6d8b28f4e97dc5e08af7b0ce1481388311c2a13c1"
+        },
+        {
+          "name": "sessionId",
+          "hash": "9c2bf31f67fa9193f1b87daa076709c6568a01fca182d2b3e92f6c04f9535655"
+        },
+        {
+          "name": "sessionType",
+          "hash": "76cbd444d004d58836eee26668d37d1e460ea90afb29b691bdb92e1017820b9a"
+        }
+      ]
+    },
+    {
+      "name": "listTestCases",
+      "hash": "3d88760fe6762812c4279aa496a673bf02cb3ff4664b555362e5d0890ba5520a",
+      "params": [
+        {
+          "name": "case_type",
+          "hash": "aa032f5d744848a7b7347bd0c53259f585994a7f1c7988702a37bbb95aad16bb"
+        },
+        {
+          "name": "folder_id",
+          "hash": "f53650e6ad50a57020553beb3db2c0d5671c8bddfcee542c5ba684eab7ee8f93"
+        },
+        {
+          "name": "p",
+          "hash": "a745ce57e9292ff9dbb392ddadbf3bf815e25da6d2402079cc6cde192ff1df19"
+        },
+        {
+          "name": "priority",
+          "hash": "8ac604f4c95f6ad728d7bf47873d8ce4c68d939b05d487e352d991231fdb5d2a"
+        },
+        {
+          "name": "project_identifier",
+          "hash": "3ecb09b3a6128c8d676b805165762527ed12a633d5175b6c2fba8a2be293d3b5"
+        }
+      ]
+    },
+    {
+      "name": "listTestRuns",
+      "hash": "9deada7b36628686538fab266b3955e84eb3f95c2cadb7b84641510d2f985c40",
+      "params": [
+        {
+          "name": "project_identifier",
+          "hash": "6dd0a1641a0f0a8d1e3470f5fe14389a314d648ef4ac828c82eacf1f311819a8"
+        },
+        {
+          "name": "run_state",
+          "hash": "2b4c984fc93afed3efceb0b41af2429aa7cd9d4e2baba18bdd57310f870eeb98"
+        }
+      ]
+    },
+    {
+      "name": "runAppLiveSession",
+      "hash": "ae3d94db08fe1cd4697ec588ee8e5961460bb62a91f7be76313a33f526996895",
+      "params": [
+        {
+          "name": "appPath",
+          "hash": "4fbc294738a75df01476e73e83ac97ae2e66f3d4470e5d04196cded374e674c7"
+        },
+        {
+          "name": "desiredPhone",
+          "hash": "c7be751f195a60a46fc6831fdb6c2291d1f418385121310479140ee45d287b25"
+        },
+        {
+          "name": "desiredPlatform",
+          "hash": "bf34e3e4a3d9557a0c4c8365c4d84c3dae56a69d2633e09a4c73bf2ceefaab69"
+        },
+        {
+          "name": "desiredPlatformVersion",
+          "hash": "a6ec6d3f7fb930f84566a347db05834ccfb042d0275afbffe67740880f448a1a"
+        }
+      ]
+    },
+    {
+      "name": "runBrowserLiveSession",
+      "hash": "15d7be2d1e8aadf64d968aa1badd1000879f571e236d3dddb6ed1e5f2bc5e33b",
+      "params": [
+        {
+          "name": "desiredBrowser",
+          "hash": "d089ac36240f5ff99b74e8f423a09a4a1d8cba042aaa1863bb1757eef775d26e"
+        },
+        {
+          "name": "desiredBrowserVersion",
+          "hash": "45106d6349643b6fde55bb0a47da6621906c0483e7e999079744b60fb2fbbc93"
+        },
+        {
+          "name": "desiredDevice",
+          "hash": "f5a0aff6efde9298b7d97134f88decc76ced12643074ef2799346e49e14832b7"
+        },
+        {
+          "name": "desiredOS",
+          "hash": "03c7fb4ad446d553a5938aded0ebcceded249d2b3513c2628928f30642113de9"
+        },
+        {
+          "name": "desiredOSVersion",
+          "hash": "2cb723b7a5534fa4dbf8768d0875779d688735b25779d95bd674d174cd328ec1"
+        },
+        {
+          "name": "desiredURL",
+          "hash": "b85465cef9c8da1546ccd5e2e962887a60ade65e35e5be82ca6d4c6ae63884f3"
+        },
+        {
+          "name": "platformType",
+          "hash": "77536906f9cb2b3e6ab78109451efddb605ac051931011ad0db2004bf5320539"
+        }
+      ]
+    },
+    {
+      "name": "runTestsOnBrowserStack",
+      "hash": "475f62c3969e1060fb936f8398b780cb5f713e9de99bca9cb00b24488f418c30",
+      "params": [
+        {
+          "name": "desiredPlatforms",
+          "hash": "681270cbcac1cce333e6026103a2042b90987f3227c648cb180afcfa5b360f8f"
+        },
+        {
+          "name": "detectedBrowserAutomationFramework",
+          "hash": "d608ae51766a4ab0852a8a0526a5ae7ecd1f2df6c3017052d51875f9d6cd1c96"
+        },
+        {
+          "name": "detectedLanguage",
+          "hash": "bbc97bcd2aa36a106b9043a873898777cf56428e0ba5a40b53f4275a06a1c6ed"
+        },
+        {
+          "name": "detectedTestingFramework",
+          "hash": "b8e44a5be64633d381132cf247b0504defe89a8aa724f58f7b92b2e9220e14fc"
+        }
+      ]
+    },
+    {
+      "name": "startAccessibilityScan",
+      "hash": "5c3a401cff7df900c2acc02fbb949568de1a52ba74e808767f896860fd47bbc2",
+      "params": [
+        {
+          "name": "name",
+          "hash": "097628d59fa3cd14c2579fd01f92e133fab7e8f6ba709753610c19c22285a434"
+        },
+        {
+          "name": "pageURL",
+          "hash": "06094cfdd3276e53fb4b6d5ea609f635218b8ee5d458a2fdba645acac5b3dce3"
+        }
+      ]
+    },
+    {
+      "name": "takeAppScreenshot",
+      "hash": "687870513f1c9e1627fc5c9cc4babe9d75b6388ef9e0554431378d09922ea90e",
+      "params": [
+        {
+          "name": "appPath",
+          "hash": "4f244b2c83f0c036b1e9e8e0a7b826e8c7ca36e15dd1abcdd227d1c1743c670b"
+        },
+        {
+          "name": "desiredPhone",
+          "hash": "24f7659c53a043411bea6f4dd8b36e444e3808dc87183bf69e04d99952c28bef"
+        },
+        {
+          "name": "desiredPlatform",
+          "hash": "ac7dc0b131ce083fad560491bb400a57390ad1dda8ceab9b6338fdb80eca9859"
+        },
+        {
+          "name": "desiredPlatformVersion",
+          "hash": "c985a19675f103fa387b9d6018be0ba68a7353a278381aa15ba7a136a57d0d0a"
+        }
+      ]
+    },
+    {
+      "name": "updateTestRun",
+      "hash": "06db6fa0b90d2ed6c5fc138cbdb6180b87a4b65295a9bbed275f00d8e8e7df57",
+      "params": [
+        {
+          "name": "project_identifier",
+          "hash": "6c62157d98f3a3579f77d8d19b65b8566108202987b5120eb459dc7319bbc86b"
+        },
+        {
+          "name": "test_run_id",
+          "hash": "a4407ffe7486e68f2a54c7d5d9dd09272b8b5d391b2752a7253a17a27566f0bc"
+        }
+      ]
+    },
+    {
+      "name": "uploadProductRequirementFile",
+      "hash": "c0e8abbdabcf86d9bec13d3dd7dcebda09971e966ace78dcb953addcc67fdda7",
+      "params": [
+        {
+          "name": "file_path",
+          "hash": "cf3b49711d7d77df068e036bd1e21dc8c2affd35eba4c7c6a40cbdcb9da52225"
+        },
+        {
+          "name": "project_identifier",
+          "hash": "44c537cceb4e4c13b69082b4bee57b363930d6bcaca13b4fc17de4502a268cc8"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

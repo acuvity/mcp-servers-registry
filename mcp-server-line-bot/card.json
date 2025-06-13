@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"6ce427c9c026e72c96981ac49f0110b7a34c874a08b0ca5337b18d2751c40c7f","reason":"Good documentation overall with clear, descriptive tool names and comprehensive descriptions that explain functionality, usage context, and important warnings. Parameter descriptions are mostly clear with proper constraints specified. Minor weaknesses include some repetitive descriptions across similar tools and the generic 'dummy' default for userId parameters could be better explained.","score":"B"},
+  "rating": {"hash":"6436cfc8769aa395ea98c443ebc13f3a5d5278e6d20473be6266bc788b125bd9","reason":"The toolset demonstrates good documentation quality with clear, descriptive names and comprehensive descriptions that explain functionality, usage context, and important warnings (like broadcast warnings). Parameter documentation is generally thorough with clear descriptions, types, and constraints. However, some complex parameters like the flex message 'contents' structure could benefit from more detailed explanation of the LINE Flex Message format requirements, and a few simpler tools have minimal but adequate descriptions.","score":"B"},
   "resources": {
-    "tools": 6,
+    "tools": 10,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

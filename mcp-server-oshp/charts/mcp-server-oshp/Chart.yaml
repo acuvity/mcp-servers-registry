@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-oshp"
+description: "A Helm chart for Analyzes HTTP response headers against OWASP security standards with recommendations"
+home: https://github.com/cyproxio/mcp-for-security/tree/HEAD/http-headers-security-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/cyproxio/mcp-for-security/tree/HEAD/http-headers-security-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-oshp/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "6190e55"
+keywords:
+  - mcp-server-oshp
+  - mcp-server
+  - remote
+  - security

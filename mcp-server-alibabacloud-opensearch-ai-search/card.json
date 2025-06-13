@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-alibabacloud-opensearch-ai-search",
+  "icon": "https://opensearch-shanghai.oss-cn-shanghai.aliyuncs.com/ouhuang/aliyun-icon.png",
+  "name": "mcp-server-alibabacloud-opensearch-ai-search",
+  "description": "Universal interface between AI Agents and OpenSearch AI Search Platform.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-alibabacloud-opensearch-ai-search",
+      "application": "https://github.com/aliyun/alibabacloud-opensearch-mcp-server/tree/HEAD/aisearch-mcp-server"
+    },
+  "tags": ["cloud","integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "545d264",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"4bcc48a301a7ebf071f057afbe482597a7b5810c4d5704921f7a0d9a741b6b29","reason":"The toolset has clear, functional names that indicate purpose, but documentation is entirely in Chinese which severely limits accessibility. Descriptions adequately cover functionality but lack specificity on constraints and error conditions. Parameter documentation is basic with minimal examples or detailed constraints. While technically adequate for Chinese speakers, the language barrier and missing technical details prevent higher scoring.","score":"C"},
+  "resources": {
+    "tools": 8,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

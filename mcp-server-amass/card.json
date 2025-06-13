@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-amass",
+  "icon": "https://avatars.githubusercontent.com/u/89649708?s=200&v=4",
+  "name": "mcp-server-amass",
+  "description": "Advanced subdomain enumeration and reconnaissance tool with MCP interface",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-amass",
+      "application": "https://github.com/cyproxio/mcp-for-security/tree/HEAD/amass-mcp"
+    },
+  "tags": ["security"],
+  "official": true,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "6190e55",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"6b2aff0945ad4f537c9604cb247e874aa5a2656fe4f3a31bafc3ca2626cfe284","reason":"Good documentation overall with clear tool name and comprehensive parameter descriptions. The tool description is somewhat brief for a complex reconnaissance tool, lacking context about when to use it and potential limitations. Parameter documentation is strong with detailed explanations and examples, though some boolean parameters could be more descriptive about their impact.","score":"B"},
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

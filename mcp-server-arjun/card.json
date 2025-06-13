@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-arjun",
+  "icon": "https://avatars.githubusercontent.com/u/89649708?s=200&v=4",
+  "name": "mcp-server-arjun",
+  "description": "Discovers hidden HTTP parameters on web applications through MCP bridge to Arjun scanner",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-arjun",
+      "application": "https://github.com/cyproxio/mcp-for-security/tree/HEAD/arjun-mcp"
+    },
+  "tags": ["security"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "6190e55",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"4609cfbb726ef8ef4447d5c71864f7de4764d63fdb88619bf7f8b6474ef826bd","reason":"The tool has an adequate but brief description that covers basic functionality. Parameter documentation is clear with appropriate types and constraints, including useful enums and format specifications. However, the description lacks important context about what Arjun is, when to use this tool, what constitutes 'hidden parameters', and any limitations or security considerations for this security scanning tool.","score":"C"},
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

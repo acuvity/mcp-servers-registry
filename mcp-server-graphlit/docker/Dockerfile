@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-graphlit"
 LABEL org.opencontainers.image.description="Integrates your MCP client with Graphlit to ingest and search content from dev tools."
-LABEL org.opencontainers.image.version="1.0.20250531001"
+LABEL org.opencontainers.image.version="1.0.20250613001"
 LABEL org.opencontainers.image.source="https://github.com/graphlit/graphlit-mcp-server"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="Unstruk Data Inc."
@@ -39,7 +39,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev graphlit-mcp-server@1.0.20250531001
+RUN npm i --omit-dev graphlit-mcp-server@1.0.20250613001
 
 EXPOSE 8000/tcp
 

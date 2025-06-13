@@ -1,14 +1,14 @@
 {
   "id": "mcp-server-aws-diagram",
-  "icon": "https://avatars.githubusercontent.com/u/3299148?s=200&v=4",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
   "name": "mcp-server-aws-diagram",
-  "description": "Create diagrams using the Python diagrams package: sequence, flow, and class diagrams.",
+  "description": "Creates AWS architecture diagrams using Python diagrams package DSL",
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-diagram",
-      "application": "https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server"
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/aws-diagram-mcp-server"
     },
-  "tags": ["development","research"],
+  "tags": ["development","automation"],
   "official": true,
   "scope": "standalone",
   "mutitenant": true,
@@ -16,7 +16,7 @@
   "version": "1.0.1",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"72b4e29f9a86ece7ef3d09c7fb195fb5edc7a41983e78a7f46292adecd152d2a","reason":"All three tools have excellent documentation quality. Tool names are clear and specific, descriptions are comprehensive (3-4+ sentences) explaining functionality, usage scenarios, and important limitations. Parameters have detailed descriptions with clear purpose and expected values. The generate_diagram tool particularly excels with extensive usage instructions, code requirements, and common patterns. All tools proactively address user questions and provide step-by-step guidance.","score":"A"},
+  "rating": {"hash":"72b4e29f9a86ece7ef3d09c7fb195fb5edc7a41983e78a7f46292adecd152d2a","reason":"The toolset demonstrates good documentation quality with comprehensive descriptions that explain functionality, usage context, and workflow. The generate_diagram tool excels with detailed usage instructions and code requirements. However, some parameter descriptions are verbose without adding clarity (workspace_dir's 'CRITICAL' emphasis), and the list_icons tool could better explain the hierarchical filtering approach. Overall, the documentation provides sufficient detail for effective usage with minor areas for improvement in conciseness and parameter clarity.","score":"B"},
   "resources": {
     "tools": 3,
     "prompts": 0,

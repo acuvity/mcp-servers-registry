@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -16,7 +16,7 @@ LABEL "mcp-server-scope"="remote"
 LABEL org.opencontainers.image.title="mcp-server-chargebee"
 LABEL org.opencontainers.image.description="MCP Server that connects AI agents to Chargebee platform."
 LABEL org.opencontainers.image.version="0.0.3"
-LABEL org.opencontainers.image.source="https://github.com/chargebee/agentkit/tree/main/modelcontextprotocol"
+LABEL org.opencontainers.image.source="https://github.com/chargebee/agentkit/tree/HEAD/modelcontextprotocol"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="Chargebee, Inc."
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"

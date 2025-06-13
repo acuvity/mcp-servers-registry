@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-nuclei"
+description: "A Helm chart for Template-based vulnerability scanner using Nuclei's extensive library of security checks"
+home: https://github.com/cyproxio/mcp-for-security/tree/HEAD/nuclei-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/cyproxio/mcp-for-security/tree/HEAD/nuclei-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-nuclei/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "6190e55"
+keywords:
+  - mcp-server-nuclei
+  - mcp-server
+  - native
+  - security

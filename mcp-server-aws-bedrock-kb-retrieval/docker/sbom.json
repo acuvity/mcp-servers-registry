@@ -1,0 +1,35 @@
+{
+  "tools": [
+    {
+      "name": "QueryKnowledgeBases",
+      "hash": "2bdad1de95ec1f65e58b1f469d93f944bdfbeb969fefaadcaebc4246a1948c1c",
+      "params": [
+        {
+          "name": "data_source_ids",
+          "hash": "017edfd8213c7fb5e32a0e84308c2d5b487668eb92541f242c4687110c64739c"
+        },
+        {
+          "name": "knowledge_base_id",
+          "hash": "f42cf0550fc4ac1ac6cc6d560c082ba50cdc6c8238978e7fbc8b1f6908353b28"
+        },
+        {
+          "name": "number_of_results",
+          "hash": "889e9094d8a2827686ef6052ac08669485b636189cd2e887e35a5ad8b9948a72"
+        },
+        {
+          "name": "query",
+          "hash": "b17532082b0bf4c97e87d7598efd15a602dea8fd61e5114b1f328a3f1cb243e7"
+        },
+        {
+          "name": "reranking",
+          "hash": "e789e297fc2aff6e08744c0ddfbc63ca4a42411af88945b449db7d47f3de73a4"
+        },
+        {
+          "name": "reranking_model_name",
+          "hash": "0b7df14acd534f8b96c19c2ca59e86da9d930f6a59b2a182f8be158fcb5a2b41"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

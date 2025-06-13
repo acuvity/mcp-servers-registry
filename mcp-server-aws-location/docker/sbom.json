@@ -1,0 +1,139 @@
+{
+  "tools": [
+    {
+      "name": "calculate_route",
+      "hash": "6aa07c891095443e82a2ded61040e0f3ab77191fe4b71cecfbbcd6255dc8d1d6",
+      "params": [
+        {
+          "name": "departure_position",
+          "hash": "02d3c3e194d934d0b0518863597ceb75523c8ea623861bd053a5e8b44d031a51"
+        },
+        {
+          "name": "destination_position",
+          "hash": "1692a571ac9e29bc0a11f1e16f6c1b1ed42f988b539df04d64b76056b75fb92d"
+        },
+        {
+          "name": "optimize_for",
+          "hash": "5d1bc0ca69b9ae39c3b279950e65373a82795958d9aca5d46712c647383d6d1d"
+        },
+        {
+          "name": "travel_mode",
+          "hash": "e70c6762ede4716c33f0882fddf60e4164858a3d1d8cecbf1d0054d26a533caa"
+        }
+      ]
+    },
+    {
+      "name": "get_place",
+      "hash": "fa018740b159a255a8fe8c69d299dc9f719a718c5fa95ce4634a3b57ecfa0012",
+      "params": [
+        {
+          "name": "mode",
+          "hash": "6b85486d21f4ca331a47387a47bf7ab1214bb4fec0f8c706254fd8e888a09254"
+        },
+        {
+          "name": "place_id",
+          "hash": "d065778edb9c66f96c79fa8ce71eb92bfb7a158e8e920200e79b5afe0a3df157"
+        }
+      ]
+    },
+    {
+      "name": "optimize_waypoints",
+      "hash": "ed7253d2ac6c813927ff96a951286a5385e06ade518105767565281367f2b1f3",
+      "params": [
+        {
+          "name": "destination_position",
+          "hash": "1692a571ac9e29bc0a11f1e16f6c1b1ed42f988b539df04d64b76056b75fb92d"
+        },
+        {
+          "name": "mode",
+          "hash": "6b85486d21f4ca331a47387a47bf7ab1214bb4fec0f8c706254fd8e888a09254"
+        },
+        {
+          "name": "origin_position",
+          "hash": "1ed360dce1b9da752d5f9a96acf98bd89434668abb62dac5d4345e860aa813d9"
+        },
+        {
+          "name": "travel_mode",
+          "hash": "e70c6762ede4716c33f0882fddf60e4164858a3d1d8cecbf1d0054d26a533caa"
+        },
+        {
+          "name": "waypoints",
+          "hash": "e86d10cb3b4a0451beb3fbb62704a1a758a30f9f755f3f4845a42f1b29f60aa6"
+        }
+      ]
+    },
+    {
+      "name": "reverse_geocode",
+      "hash": "1256dba252fa448f207a15a7ac3a199b288a1e65811dfcb7b9c1b464f50f2fa9",
+      "params": [
+        {
+          "name": "latitude",
+          "hash": "29f9df79b499e307fda27c69f976f89e328f88b5efa54679324a44c9c17b1e22"
+        },
+        {
+          "name": "longitude",
+          "hash": "b6fbdac19067f2a638aaff2aa2f778ff9ece63ecf5ad15b833cd652ad5bd22bf"
+        }
+      ]
+    },
+    {
+      "name": "search_nearby",
+      "hash": "1a439190ee8f266dddce69961802f5f270ad14ff81fc872e095c3eb3875a0059",
+      "params": [
+        {
+          "name": "latitude",
+          "hash": "db286667a8763ab81c4ef01f76d473415856f74b8f07a61408aea669febf0e56"
+        },
+        {
+          "name": "longitude",
+          "hash": "f9961110c3ed862dbdc8f016bb7746bf45eb78eafd01c1ac2b8d1d4e0fa78526"
+        },
+        {
+          "name": "max_results",
+          "hash": "b04468046d2f2a5692b75e7d703a30fd2787b8f80972a3b07b618e4ca4b3fa70"
+        },
+        {
+          "name": "query",
+          "hash": "1db0ca55a8b4c6d39f157b5a149e63d3362ccbd4f9a1471ca2d39df3932d1eba"
+        },
+        {
+          "name": "radius",
+          "hash": "6cb997bc2ace62eb134ca415b9201307e7bab593925550bdcdc9fca22f0a9d90"
+        }
+      ]
+    },
+    {
+      "name": "search_places",
+      "hash": "b6f879fe76c07430684eacd548492fe5241f79d72e8d862cb3db2baad3b512cd",
+      "params": [
+        {
+          "name": "max_results",
+          "hash": "b04468046d2f2a5692b75e7d703a30fd2787b8f80972a3b07b618e4ca4b3fa70"
+        },
+        {
+          "name": "mode",
+          "hash": "6b85486d21f4ca331a47387a47bf7ab1214bb4fec0f8c706254fd8e888a09254"
+        },
+        {
+          "name": "query",
+          "hash": "f9bb417383fa30c0469210f6828d12dea88ed17b3084d2eac8ab27dac20c6742"
+        }
+      ]
+    },
+    {
+      "name": "search_places_open_now",
+      "hash": "c0f32b1b0a7bda367e8957fa4672fe35933ec44aaab364c9728581a1eda07919",
+      "params": [
+        {
+          "name": "initial_radius",
+          "hash": "04b08399046e0b2b0e5496385e48cd7ccae7e3513c21782c097d0053d278754d"
+        },
+        {
+          "name": "query",
+          "hash": "f9bb417383fa30c0469210f6828d12dea88ed17b3084d2eac8ab27dac20c6742"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

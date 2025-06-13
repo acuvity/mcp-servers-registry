@@ -21,13 +21,13 @@
 # What is mcp-server-google-drive?
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-google-drive/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-google-drive/2025.1.14?logo=docker&logoColor=fff&label=2025.1.14)](https://hub.docker.com/r/acuvity/mcp-server-google-drive)
-[![PyPI](https://img.shields.io/badge/2025.1.14-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-gdrive)](https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive)
+[![PyPI](https://img.shields.io/badge/2025.1.14-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-gdrive)](https://github.com/modelcontextprotocol/servers/tree/HEAD/src/gdrive)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-google-drive/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-google-drive&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22GDRIVE_CREDENTIALS_PATH%22%2C%22docker.io%2Facuvity%2Fmcp-server-google-drive%3A2025.1.14%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** File access and search capabilities for Google Drive.
 
-Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from @modelcontextprotocol/server-gdrive original [sources](https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from @modelcontextprotocol/server-gdrive original [sources](https://github.com/modelcontextprotocol/servers/tree/HEAD/src/gdrive).
 
 **Quick links:**
 
@@ -157,7 +157,7 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 **Environment variables and secrets:**
   - `GDRIVE_CREDENTIALS_PATH` required to be set
 
-For more information and extra configuration you can consult the [package](https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive) documentation.
+For more information and extra configuration you can consult the [package](https://github.com/modelcontextprotocol/servers/tree/HEAD/src/gdrive) documentation.
 
 # 🧰 Clients Integrations
 

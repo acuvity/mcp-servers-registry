@@ -19,16 +19,16 @@
 
 
 # What is mcp-server-aws-core?
-[![Rating](https://img.shields.io/badge/F-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-aws-core/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-core/1.0.1?logo=docker&logoColor=fff&label=1.0.1)](https://hub.docker.com/r/acuvity/mcp-server-aws-core)
-[![PyPI](https://img.shields.io/badge/1.0.1-3775A9?logo=pypi&logoColor=fff&label=awslabs.core-mcp-server)](https://pypi.org/project/awslabs.core-mcp-server/)
+[![PyPI](https://img.shields.io/badge/1.0.1-3775A9?logo=pypi&logoColor=fff&label=awslabs.core-mcp-server)](https://github.com/awslabs/mcp/tree/HEAD/src/core-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-aws-core/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-core&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-core%3A1.0.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** Core AWS MCP server providing prompt understanding and server management capabilities.
+**Description:** Starting point for AWS MCP servers providing planning and orchestration tools
 
-Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from awslabs.core-mcp-server original [sources](https://pypi.org/project/awslabs.core-mcp-server/).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from awslabs.core-mcp-server original [sources](https://github.com/awslabs/mcp/tree/HEAD/src/core-mcp-server).
 
 **Quick links:**
 
@@ -153,23 +153,23 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Maintained by**:
   - [Acuvity team](mailto:support@acuvity.ai) for packaging
-  - [ AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com>, Paul Vincent <44383239+PaulVincent707@users.noreply.github.com> ](https://pypi.org/project/awslabs.core-mcp-server/) for original source application
+  - [ AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com>, Paul Vincent <44383239+PaulVincent707@users.noreply.github.com> ](https://github.com/awslabs/mcp/tree/HEAD/src/core-mcp-server) for original source application
 
 **Where to get help**:
   - [The Acuvity MCP Forge repository](https://github.com/acuvity/mcp-servers-registry)
   - [The Acuvity community Discord](https://discord.gg/BkU7fBkrNk)
-  - [ awslabs.core-mcp-server ](https://pypi.org/project/awslabs.core-mcp-server/)
+  - [ awslabs.core-mcp-server ](https://github.com/awslabs/mcp/tree/HEAD/src/core-mcp-server)
 
 **Where to file issues**:
   - [Github issue tracker](https://github.com/acuvity/mcp-servers-registry/issues)
-  - [ awslabs.core-mcp-server ](https://pypi.org/project/awslabs.core-mcp-server/)
+  - [ awslabs.core-mcp-server ](https://github.com/awslabs/mcp/tree/HEAD/src/core-mcp-server)
 
 **Supported architectures**:
   - `amd64`
   - `arm64`
 
 **Base image**:
-  - `ghcr.io/astral-sh/uv:python3.12-alpine`
+  - `ghcr.io/astral-sh/uv:python3.12-bookworm-slim`
 
 **Resources**:
   - [Charts](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-core/charts/mcp-server-aws-core)
@@ -190,7 +190,14 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 > [!TIP]
 > Given mcp-server-aws-core scope of operation it can be hosted anywhere.
 
-For more information and extra configuration you can consult the [package](https://pypi.org/project/awslabs.core-mcp-server/) documentation.
+**Environment variables and secrets:**
+  - `AWS_REGION` optional (not set)
+  - `AWS_PROFILE` optional (not set)
+  - `AWS_ACCESS_KEY_ID` optional (not set)
+  - `AWS_SECRET_ACCESS_KEY` optional (not set)
+  - `AWS_SESSION_TOKEN` optional (not set)
+
+For more information and extra configuration you can consult the [package](https://github.com/awslabs/mcp/tree/HEAD/src/core-mcp-server) documentation.
 
 # 🧰 Clients Integrations
 
@@ -445,6 +452,19 @@ Minibridge offers a host of additional features. For step-by-step guidance, plea
 
 <details>
 <summary>Deploy using Helm Charts</summary>
+
+### Chart settings requirements
+
+This chart requires some mandatory information to be installed.
+
+**Optional Secrets**:
+  - `AWS_ACCESS_KEY_ID` secret to be set as secrets.AWS_ACCESS_KEY_ID either by `.value` or from existing with `.valueFrom`
+  - `AWS_SECRET_ACCESS_KEY` secret to be set as secrets.AWS_SECRET_ACCESS_KEY either by `.value` or from existing with `.valueFrom`
+  - `AWS_SESSION_TOKEN` secret to be set as secrets.AWS_SESSION_TOKEN either by `.value` or from existing with `.valueFrom`
+
+**Optional Environment variables**:
+  - `AWS_REGION=""` environment variable can be changed with env.AWS_REGION=""
+  - `AWS_PROFILE=""` environment variable can be changed with env.AWS_PROFILE=""
 
 ### How to install
 

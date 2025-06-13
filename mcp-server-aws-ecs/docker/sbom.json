@@ -1,0 +1,452 @@
+{
+  "tools": [
+    {
+      "name": "containerize_app",
+      "hash": "1a74b55bc00de9667e8787e7bf07faaf31f8123e5f97a40c3e25b8d65eb078a0",
+      "params": [
+        {
+          "name": "app_path",
+          "hash": "991a3ebc1e0d5c019f0e13bc75e03597e2f308c6c5e4248935f2a1259c32cf68"
+        },
+        {
+          "name": "port",
+          "hash": "21a97d5899ad4e28bb02bdd42de1a36459a77b75c4b6dbb84bedb9c5d6f75bb7"
+        }
+      ]
+    },
+    {
+      "name": "create_ecs_infrastructure",
+      "hash": "4544f0e794481e25fe7bd0dd32bbbf53c8d26660591ca028dd5221c17708d4e5",
+      "params": [
+        {
+          "name": "app_name",
+          "hash": "8683f3f7c6b1c2b761f455d6aedfda0c6769028ec5b8047bf2cace524866e21c"
+        },
+        {
+          "name": "app_path",
+          "hash": "991a3ebc1e0d5c019f0e13bc75e03597e2f308c6c5e4248935f2a1259c32cf68"
+        },
+        {
+          "name": "container_port",
+          "hash": "449455aab20d2e3c11a9a539ea356f110aa7597aaf7f356fb24e80d553a224e0"
+        },
+        {
+          "name": "cpu",
+          "hash": "9216971c2d432760f097c89ba17e408ecfaff3ea02c37c5a85929a1022c7ef48"
+        },
+        {
+          "name": "deployment_step",
+          "hash": "bd45c0595c2d60e459cc75c413f8bdd86581da4d1b345f4bcfb9eeaa392905c0"
+        },
+        {
+          "name": "desired_count",
+          "hash": "c3ed70eabf8c5aaf771e5580fbf164f13bc2441501b1137471f57a32d7511db7"
+        },
+        {
+          "name": "force_deploy",
+          "hash": "1f180931fbdac7db25a3b3b86f4a2e4d14843b5f14a30b3ddb4080a7da2c17e9"
+        },
+        {
+          "name": "health_check_path",
+          "hash": "d6f7b6447b521862f76823017f4a8e03ca0a94c8fcdf4dd7e9938050c90aee75"
+        },
+        {
+          "name": "memory",
+          "hash": "93c3d58426f5b3f77594c81fcf85914a9e6870514334fea641926a7acb47af92"
+        },
+        {
+          "name": "vpc_id",
+          "hash": "6ad09bec5420b20bd585287c65949489a3fc8a37842e5b9863740c1947bb0732"
+        }
+      ]
+    },
+    {
+      "name": "delete_ecs_infrastructure",
+      "hash": "bd08eaa199ebb5406d91d5c229c124ead3725256966622e9b0c9f9efa7680cc4",
+      "params": [
+        {
+          "name": "app_name",
+          "hash": "8683f3f7c6b1c2b761f455d6aedfda0c6769028ec5b8047bf2cace524866e21c"
+        },
+        {
+          "name": "ecr_template_path",
+          "hash": "fcbeb3eb3e2b24250b6b46b568949ac91025c86ce9af6ecad59a46fd33f7be7c"
+        },
+        {
+          "name": "ecs_template_path",
+          "hash": "2e203cd163e0c36cdb55740996d91c9432793dfd6ea3443f8435d1926de7263b"
+        }
+      ]
+    },
+    {
+      "name": "ecs_resource_management",
+      "hash": "9fe8fc3d1fb347b62bf7b2b9b9abe4af1551925ac91daa2fa9d2f498021667d4",
+      "params": [
+        {
+          "name": "action",
+          "hash": "5f035549da23ec95e9d31b8853b7ddc2b00cef9538e96bbde10dca6cd7f4bfa8"
+        },
+        {
+          "name": "resource_type",
+          "hash": "47ee9e7e88f3a9220103cbb91c32ba1d2ea5b916eff70e07bb0ff3d0b7397b69"
+        }
+      ]
+    },
+    {
+      "name": "ecs_troubleshooting_tool",
+      "hash": "4f06fa93abd2e80a3094672cea5c5e48fdd15faca70712a346bb0641377fdb93"
+    },
+    {
+      "name": "get_deployment_status",
+      "hash": "acc8925b2df8853fc2ae89e706c55b6a158d7e3cebbca82570b6d53d8e0ead88",
+      "params": [
+        {
+          "name": "app_name",
+          "hash": "8683f3f7c6b1c2b761f455d6aedfda0c6769028ec5b8047bf2cace524866e21c"
+        },
+        {
+          "name": "cluster_name",
+          "hash": "8e2dd7b1c9a70c0173b34cf3834ed43938f843d4b4feda01c2298c5e86e6d613"
+        },
+        {
+          "name": "service_name",
+          "hash": "d1b94d733903d0dd3aa973b87ea01f350d7b5f29720c34aa5e80b81e0280c2f0"
+        },
+        {
+          "name": "stack_name",
+          "hash": "5720ac7b47a7118008a5d8ab8c062b32d85ae93a596f3ec09eb8fcbc43d877bb"
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "name": ".*-stack.* failed",
+      "hash": "dd725c4bc9de9a7d9d73d79ad350aceb0e2509f059a98aff2506b80b818a3ee6"
+    },
+    {
+      "name": ".*-stack.* is broken",
+      "hash": "dd725c4bc9de9a7d9d73d79ad350aceb0e2509f059a98aff2506b80b818a3ee6"
+    },
+    {
+      "name": "404 not found",
+      "hash": "1aceeddc529f0a46a272848144d1290539b12c1327693845cb573abd8daaccdc"
+    },
+    {
+      "name": "alb not working",
+      "hash": "1aceeddc529f0a46a272848144d1290539b12c1327693845cb573abd8daaccdc"
+    },
+    {
+      "name": "alb url not working",
+      "hash": "1aceeddc529f0a46a272848144d1290539b12c1327693845cb573abd8daaccdc"
+    },
+    {
+      "name": "app won't deploy",
+      "hash": "9f15725552f2feae1e1b9bf00821b8d48b729651b164f16ec312972c83fa2cac"
+    },
+    {
+      "name": "can people access this",
+      "hash": "81ff4948b0cce5f488f22b33835aad6b52c3e221177aa9bc69ffa042664010a0"
+    },
+    {
+      "name": "can't pull image",
+      "hash": "cef0baeb16e138e76c1f73b5099f35d4119e2ba350b3522e0143222d7e009a60"
+    },
+    {
+      "name": "check ecs logs",
+      "hash": "72fdfe28113f3e81047e188026823f35e6920706914948b367edfd795e23a829"
+    },
+    {
+      "name": "check ecs status",
+      "hash": "2d50a6cba97069d288b19b538f055fd2c2893009a6532222b2611404029a658a"
+    },
+    {
+      "name": "check task definitions",
+      "hash": "88e93d02a8108757653c728933d6e637e678470b74981a16a148708d6dc8af31"
+    },
+    {
+      "name": "clean up resources",
+      "hash": "56e580282c804ac316910d39cee5c92185293d994c89ca0e55003f78f610391b"
+    },
+    {
+      "name": "cloudformation stack failed",
+      "hash": "dd725c4bc9de9a7d9d73d79ad350aceb0e2509f059a98aff2506b80b818a3ee6"
+    },
+    {
+      "name": "connectivity issues",
+      "hash": "6ecbfbc96c82fd900545006586dd697b334c12a19e0216a90d23d1b7e22fe54f"
+    },
+    {
+      "name": "container image not found",
+      "hash": "cef0baeb16e138e76c1f73b5099f35d4119e2ba350b3522e0143222d7e009a60"
+    },
+    {
+      "name": "container is failing",
+      "hash": "7e9bb5995853bb071e24f679cdcea399946d28a4310af262c21360bd87929e6a"
+    },
+    {
+      "name": "containerize",
+      "hash": "a03d09027d5ef42564851708b2f9269045a34a46abf6642f4abb8c2df9b399e3"
+    },
+    {
+      "name": "containerize and deploy",
+      "hash": "cb69d96c13a9f9a567972b926364b616c11255c6a0ed94f8134acd8b98043e8d"
+    },
+    {
+      "name": "delete infrastructure",
+      "hash": "622b3cf659a29ffe7edfb69b80300316a24f9b9a6f645b5ae274c6d6fdd368e1"
+    },
+    {
+      "name": "deploy django",
+      "hash": "906366a045d5e9b9f097c8fcd8430493c83b98c2ae7683d97a3931150510b67c"
+    },
+    {
+      "name": "deploy express",
+      "hash": "96c7136cead6baf5ca5631deba59a37be28b7829233eec6bf106b307644882a8"
+    },
+    {
+      "name": "deploy flask",
+      "hash": "e3d20dd75b2234877c2fe79e6ba03dc49a2448500e9433d11c92d1f1b67aff0c"
+    },
+    {
+      "name": "deploy node",
+      "hash": "daf6ce09ed310758cabafe71d97762416f3e14d06e100b354371f1319f42092d"
+    },
+    {
+      "name": "deploy react",
+      "hash": "bf4d082206c91a42fc02f833b4b566debbf40ce33cd0e87fdd5656fb4a323424"
+    },
+    {
+      "name": "deploy to aws",
+      "hash": "112384f2d0a7dc6723560c0b2ddfd9f9fefbf0bad2f41de679b4089636c08615"
+    },
+    {
+      "name": "deploy to cloud",
+      "hash": "7d87b1717bb21ccd0cd9ca725d3be94f8408a76086801ef3621fdf1c4a20d47c"
+    },
+    {
+      "name": "deploy to ecs",
+      "hash": "0f6e7c2ac59690322aae219188b270efb5bef9863d4d97e03c24694b546a4d1f"
+    },
+    {
+      "name": "deployment is broken",
+      "hash": "9f15725552f2feae1e1b9bf00821b8d48b729651b164f16ec312972c83fa2cac"
+    },
+    {
+      "name": "deployment issues",
+      "hash": "9f15725552f2feae1e1b9bf00821b8d48b729651b164f16ec312972c83fa2cac"
+    },
+    {
+      "name": "describe ecs service",
+      "hash": "2965ce2311cb119c91bea49b346dc7b39a4bce041b5dadc79cc9bed395bc0e31"
+    },
+    {
+      "name": "diagnose ecs",
+      "hash": "9bcbb65f757c4ba46c2bc54ede7b35843ffb9ca11649ed8fac155b05ecdc5113"
+    },
+    {
+      "name": "docker and deploy",
+      "hash": "cb69d96c13a9f9a567972b926364b616c11255c6a0ed94f8134acd8b98043e8d"
+    },
+    {
+      "name": "docker container",
+      "hash": "9a0df1a402671d529a3f61e788549fee140fc94ce9077384bc5353d0dd735d9f"
+    },
+    {
+      "name": "dockerize",
+      "hash": "a03d09027d5ef42564851708b2f9269045a34a46abf6642f4abb8c2df9b399e3"
+    },
+    {
+      "name": "ecs deployment failed",
+      "hash": "9bcbb65f757c4ba46c2bc54ede7b35843ffb9ca11649ed8fac155b05ecdc5113"
+    },
+    {
+      "name": "ecs service events",
+      "hash": "72fdfe28113f3e81047e188026823f35e6920706914948b367edfd795e23a829"
+    },
+    {
+      "name": "ecs tasks failing",
+      "hash": "7e9bb5995853bb071e24f679cdcea399946d28a4310af262c21360bd87929e6a"
+    },
+    {
+      "name": "failed stack .*",
+      "hash": "dd725c4bc9de9a7d9d73d79ad350aceb0e2509f059a98aff2506b80b818a3ee6"
+    },
+    {
+      "name": "fix .* stack",
+      "hash": "dd725c4bc9de9a7d9d73d79ad350aceb0e2509f059a98aff2506b80b818a3ee6"
+    },
+    {
+      "name": "fix ecs deployment",
+      "hash": "9bcbb65f757c4ba46c2bc54ede7b35843ffb9ca11649ed8fac155b05ecdc5113"
+    },
+    {
+      "name": "fix my deployment",
+      "hash": "9f15725552f2feae1e1b9bf00821b8d48b729651b164f16ec312972c83fa2cac"
+    },
+    {
+      "name": "get running on the web",
+      "hash": "a0b6d4fddf8c2763ab45af9c5a02afeb359b5d97047a31aff4fd1e2d16a3cee6"
+    },
+    {
+      "name": "get this online",
+      "hash": "74eb6883990e4441541c9282385a30924c3ea9d1a739d53f15f1f2e3fc753f68"
+    },
+    {
+      "name": "healthcheck failing",
+      "hash": "1aceeddc529f0a46a272848144d1290539b12c1327693845cb573abd8daaccdc"
+    },
+    {
+      "name": "help debug ecs",
+      "hash": "9bcbb65f757c4ba46c2bc54ede7b35843ffb9ca11649ed8fac155b05ecdc5113"
+    },
+    {
+      "name": "help me fix .*-stack.*",
+      "hash": "dd725c4bc9de9a7d9d73d79ad350aceb0e2509f059a98aff2506b80b818a3ee6"
+    },
+    {
+      "name": "host online",
+      "hash": "cf8fe4efbbaf65a8353632eca62d92fccf5ed2ed2cf01029457b6c8e9405a95a"
+    },
+    {
+      "name": "how do i share this app",
+      "hash": "81ff4948b0cce5f488f22b33835aad6b52c3e221177aa9bc69ffa042664010a0"
+    },
+    {
+      "name": "image pull failure",
+      "hash": "cef0baeb16e138e76c1f73b5099f35d4119e2ba350b3522e0143222d7e009a60"
+    },
+    {
+      "name": "imagepullbackoff",
+      "hash": "cef0baeb16e138e76c1f73b5099f35d4119e2ba350b3522e0143222d7e009a60"
+    },
+    {
+      "name": "inspect ecs",
+      "hash": "9b75d1fb0df4fdd4ff60fe28c5a5dd034404cf6f47428cc7293d28643c242fb5"
+    },
+    {
+      "name": "invalid container image",
+      "hash": "cef0baeb16e138e76c1f73b5099f35d4119e2ba350b3522e0143222d7e009a60"
+    },
+    {
+      "name": "launch online",
+      "hash": "ad16ec4b2de83757817199dbca20f6541d6e2139ddb6158be66db1aa786c9c59"
+    },
+    {
+      "name": "list ecs resources",
+      "hash": "3b41f15cf09abe76e368449ce4fbdc29c8371a79c2b727e11b49848d5e86f9e9"
+    },
+    {
+      "name": "load balancer not working",
+      "hash": "1aceeddc529f0a46a272848144d1290539b12c1327693845cb573abd8daaccdc"
+    },
+    {
+      "name": "make accessible",
+      "hash": "74eb6883990e4441541c9282385a30924c3ea9d1a739d53f15f1f2e3fc753f68"
+    },
+    {
+      "name": "make accessible online",
+      "hash": "74eb6883990e4441541c9282385a30924c3ea9d1a739d53f15f1f2e3fc753f68"
+    },
+    {
+      "name": "make live",
+      "hash": "7755eca68e4713a2c46074ec8245c769ee94396a2016cbe53085cabb3d9abae6"
+    },
+    {
+      "name": "make this public",
+      "hash": "abf744498929feff47b3cbaa37523a75eba991d520001f089ad392ea94c7e716"
+    },
+    {
+      "name": "network issues",
+      "hash": "6ecbfbc96c82fd900545006586dd697b334c12a19e0216a90d23d1b7e22fe54f"
+    },
+    {
+      "name": "push to prod",
+      "hash": "58b904c57847d2832f59e33352d1811de8a81af7c47cd9fd80ba5b33ce735959"
+    },
+    {
+      "name": "put in container",
+      "hash": "a03d09027d5ef42564851708b2f9269045a34a46abf6642f4abb8c2df9b399e3"
+    },
+    {
+      "name": "put on the web",
+      "hash": "74eb6883990e4441541c9282385a30924c3ea9d1a739d53f15f1f2e3fc753f68"
+    },
+    {
+      "name": "put this on aws",
+      "hash": "112384f2d0a7dc6723560c0b2ddfd9f9fefbf0bad2f41de679b4089636c08615"
+    },
+    {
+      "name": "remove deployment",
+      "hash": "5803516174acf5d8a31ed304a6efc3b178a9279bf5dc00e744e1a2b52b8de7f6"
+    },
+    {
+      "name": "security group issues",
+      "hash": "6ecbfbc96c82fd900545006586dd697b334c12a19e0216a90d23d1b7e22fe54f"
+    },
+    {
+      "name": "service is failing",
+      "hash": "7e9bb5995853bb071e24f679cdcea399946d28a4310af262c21360bd87929e6a"
+    },
+    {
+      "name": "service unreachable",
+      "hash": "6ecbfbc96c82fd900545006586dd697b334c12a19e0216a90d23d1b7e22fe54f"
+    },
+    {
+      "name": "ship it",
+      "hash": "bf94e8edab367a9daaeb42216ab94923a657bcaaa6c412796b05bd52ccfa7342"
+    },
+    {
+      "name": "ship to cloud",
+      "hash": "7d87b1717bb21ccd0cd9ca725d3be94f8408a76086801ef3621fdf1c4a20d47c"
+    },
+    {
+      "name": "show ecs clusters",
+      "hash": "166cad6ec4d926be94c31a5d36bc1fc93f55bcdcb17c29c45b0c88edd9c5c825"
+    },
+    {
+      "name": "show running containers",
+      "hash": "cfc9cefd73c710e5f1933bb14e69ef7c727d6b7f13af4713a4d96c06c7116d8b"
+    },
+    {
+      "name": "stack .* failed",
+      "hash": "dd725c4bc9de9a7d9d73d79ad350aceb0e2509f059a98aff2506b80b818a3ee6"
+    },
+    {
+      "name": "stack .* is broken",
+      "hash": "dd725c4bc9de9a7d9d73d79ad350aceb0e2509f059a98aff2506b80b818a3ee6"
+    },
+    {
+      "name": "target group",
+      "hash": "1aceeddc529f0a46a272848144d1290539b12c1327693845cb573abd8daaccdc"
+    },
+    {
+      "name": "tear down",
+      "hash": "c4f4599d9953e35dda54eca34cf54be049cbd1f70a3fc603cef03ab1700f6de1"
+    },
+    {
+      "name": "troubleshoot ecs",
+      "hash": "9bcbb65f757c4ba46c2bc54ede7b35843ffb9ca11649ed8fac155b05ecdc5113"
+    },
+    {
+      "name": "unable to connect",
+      "hash": "6ecbfbc96c82fd900545006586dd697b334c12a19e0216a90d23d1b7e22fe54f"
+    },
+    {
+      "name": "view ecs resources",
+      "hash": "dfa2c585eba6b6ccb27b27fd02bb12f3b101abf250292812d2a1455ac805a062"
+    },
+    {
+      "name": "view ecs tasks",
+      "hash": "e487d44ce8fa736f7a2a07c2d708347ca2357ac9ddf1998baa41392ff9946408"
+    },
+    {
+      "name": "what's wrong with my stack",
+      "hash": "9f15725552f2feae1e1b9bf00821b8d48b729651b164f16ec312972c83fa2cac"
+    },
+    {
+      "name": "why did my stack fail",
+      "hash": "dd725c4bc9de9a7d9d73d79ad350aceb0e2509f059a98aff2506b80b818a3ee6"
+    }
+  ]
+}

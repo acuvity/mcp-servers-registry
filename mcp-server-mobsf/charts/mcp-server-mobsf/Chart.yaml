@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-mobsf"
+description: "A Helm chart for Mobile application security testing framework for Android, iOS, and Windows applications"
+home: https://github.com/cyproxio/mcp-for-security/tree/HEAD/mobsf-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/cyproxio/mcp-for-security/tree/HEAD/mobsf-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-mobsf/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "1.0.0"
+keywords:
+  - mcp-server-mobsf
+  - mcp-server
+  - remote
+  - security

@@ -2,7 +2,7 @@
   "tools": [
     {
       "name": "get_neo4j_schema",
-      "hash": "79ed0ad33f150588d8996a6ac062806e84e65a0d7a2e357b5a5a44fdadfcb088"
+      "hash": "8d8a55e1a9afe505aed30f7d19ca66fe1bf3be840ed0a2d74192a5f624a11b28"
     },
     {
       "name": "read_neo4j_cypher",

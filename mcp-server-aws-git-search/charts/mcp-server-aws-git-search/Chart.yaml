@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-aws-git-search"
+description: "A Helm chart for Semantic search and analysis of Git repositories using Amazon Bedrock and FAISS"
+home: https://github.com/awslabs/mcp/tree/HEAD/src/git-repo-research-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/awslabs/mcp/tree/HEAD/src/git-repo-research-mcp-server
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-aws-git-search/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "1.0.3"
+keywords:
+  - mcp-server-aws-git-search
+  - mcp-server
+  - remote
+  - development
+  - research

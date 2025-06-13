@@ -1,0 +1,22 @@
+{
+  "id": "mcp-server-aws-postgres",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-postgres",
+  "description": "Natural language to PostgreSQL queries for AWS Aurora Postgres via RDS Data API",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-postgres",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/postgres-mcp-server"
+    },
+  "tags": ["database","cloud"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "1.0.1",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": null,
+  "resources": {
+  }
+}

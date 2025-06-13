@@ -19,12 +19,12 @@
 
 
 # What is mcp-server-21st-dev-magic?
-[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-21st-dev-magic/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-21st-dev-magic/0.0.47?logo=docker&logoColor=fff&label=0.0.47)](https://hub.docker.com/r/acuvity/mcp-server-21st-dev-magic)
-[![PyPI](https://img.shields.io/badge/0.0.47-3775A9?logo=pypi&logoColor=fff&label=@21st-dev/magic)](https://github.com/21st-dev/magic-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-21st-dev-magic/0.1.0?logo=docker&logoColor=fff&label=0.1.0)](https://hub.docker.com/r/acuvity/mcp-server-21st-dev-magic)
+[![PyPI](https://img.shields.io/badge/0.1.0-3775A9?logo=pypi&logoColor=fff&label=@21st-dev/magic)](https://github.com/21st-dev/magic-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-21st-dev-magic/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-21st-dev-magic&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22TWENTY_FIRST_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-21st-dev-magic%3A0.0.47%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-21st-dev-magic&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22TWENTY_FIRST_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-21st-dev-magic%3A0.1.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Create crafted UI components inspired by the best 21st.dev design engineers.
 
@@ -173,7 +173,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-21st-dev-magic&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22TWENTY_FIRST_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-21st-dev-magic%3A0.0.47%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-21st-dev-magic&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22TWENTY_FIRST_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-21st-dev-magic%3A0.1.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -195,7 +195,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "--read-only",
           "-e",
           "TWENTY_FIRST_API_KEY",
-          "docker.io/acuvity/mcp-server-21st-dev-magic:0.0.47"
+          "docker.io/acuvity/mcp-server-21st-dev-magic:0.1.0"
         ]
       }
     }
@@ -222,7 +222,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "--read-only",
         "-e",
         "TWENTY_FIRST_API_KEY",
-        "docker.io/acuvity/mcp-server-21st-dev-magic:0.0.47"
+        "docker.io/acuvity/mcp-server-21st-dev-magic:0.1.0"
       ]
     }
   }
@@ -253,7 +253,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "--read-only",
         "-e",
         "TWENTY_FIRST_API_KEY",
-        "docker.io/acuvity/mcp-server-21st-dev-magic:0.0.47"
+        "docker.io/acuvity/mcp-server-21st-dev-magic:0.1.0"
       ]
     }
   }
@@ -286,7 +286,7 @@ Add the following JSON block to your mcp configuration file:
         "--read-only",
         "-e",
         "TWENTY_FIRST_API_KEY",
-        "docker.io/acuvity/mcp-server-21st-dev-magic:0.0.47"
+        "docker.io/acuvity/mcp-server-21st-dev-magic:0.1.0"
       ]
     }
   }
@@ -317,7 +317,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "--read-only",
         "-e",
         "TWENTY_FIRST_API_KEY",
-        "docker.io/acuvity/mcp-server-21st-dev-magic:0.0.47"
+        "docker.io/acuvity/mcp-server-21st-dev-magic:0.1.0"
       ]
     }
   }
@@ -337,7 +337,7 @@ async with MCPServerStdio(
     params={
         "env": {"TWENTY_FIRST_API_KEY":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","TWENTY_FIRST_API_KEY","docker.io/acuvity/mcp-server-21st-dev-magic:0.0.47"]
+        "args": ["run","-i","--rm","--read-only","-e","TWENTY_FIRST_API_KEY","docker.io/acuvity/mcp-server-21st-dev-magic:0.1.0"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -366,7 +366,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e TWENTY_FIRST_API_KEY docker.io/acuvity/mcp-server-21st-dev-magic:0.0.47`
+- arguments: `run -i --rm --read-only -e TWENTY_FIRST_API_KEY docker.io/acuvity/mcp-server-21st-dev-magic:0.1.0`
 
 </details>
 
@@ -376,7 +376,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e TWENTY_FIRST_API_KEY docker.io/acuvity/mcp-server-21st-dev-magic:0.0.47
+docker run -it -p 8000:8000 --rm --read-only -e TWENTY_FIRST_API_KEY docker.io/acuvity/mcp-server-21st-dev-magic:0.1.0
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -499,9 +499,9 @@ After calling this tool, you must edit or add files to integrate the snippet int
 |-----------|------|-------------|-----------|
 | absolutePathToCurrentFile | string | Absolute path to the current file to which we want to apply changes | Yes
 | absolutePathToProjectDirectory | string | Absolute path to the project root directory | Yes
-| context | string | Extract additional context about what should be done to create a ui component/page based on the user's message, search query, and conversation history, files. Don't halucinate and be on point. | Yes
 | message | string | Full users message | Yes
 | searchQuery | string | Generate a search query for 21st.dev (library for searching UI components) to find a UI component that matches the user's message. Must be a two-four words max or phrase | Yes
+| standaloneRequestQuery | string | You need to formulate what component user wants to create, based on his message, possbile chat histroy and a place where he makes the request.Extract additional context about what should be done to create a ui component/page based on the user's message, search query, and conversation history, files. Don't halucinate and be on point. | Yes
 </details>
 <details>
 <summary>logo_search</summary>
@@ -595,9 +595,9 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | 21st_magic_component_builder | description | 011e0e5db60e77a06a3fd5063614b7b2b93ced2925663e8168cac8b0c6d7ae66 |
 | tools | 21st_magic_component_builder | absolutePathToCurrentFile | 450130593147c19a97f2a5f0ed209a5f0b84dd8e70b7b27b62400d4ef9957a91 |
 | tools | 21st_magic_component_builder | absolutePathToProjectDirectory | 6303e9e4a0b12ff5e2a097fe5f9abcbdb1ed49ec8ef42ad6fb24134ed64dc822 |
-| tools | 21st_magic_component_builder | context | 512f11c1d32d3e983da308c65118d7b61486c0c73385701d20c8249f8b0cb47f |
 | tools | 21st_magic_component_builder | message | 48cb03af6caea4c4c7719fdf6a43a50db0542485c3ba341a28532ef756da1652 |
 | tools | 21st_magic_component_builder | searchQuery | eb695e76137317ae4778f099cfa2f0940f955b1f6fb88c5b3043e782d826b9e3 |
+| tools | 21st_magic_component_builder | standaloneRequestQuery | b4e34943d286f59effe886d4785af078acd4f94984f3fbc7ddc24fc3cec59b75 |
 | tools | 21st_magic_component_inspiration | description | 3226eb3548d20e699204369a805c8e1181d3b51002d6539c0236998ec2aff33e |
 | tools | 21st_magic_component_inspiration | message | 48cb03af6caea4c4c7719fdf6a43a50db0542485c3ba341a28532ef756da1652 |
 | tools | 21st_magic_component_inspiration | searchQuery | fbc79e6c9c705ce4f5b8022da56323f221687b2af5d4b29478cfb72c10e0e597 |

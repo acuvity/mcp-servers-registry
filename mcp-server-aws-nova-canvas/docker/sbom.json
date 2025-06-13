@@ -1,0 +1,101 @@
+{
+  "tools": [
+    {
+      "name": "generate_image",
+      "hash": "910fc724f0bcfebf4350a5cfc87beec8652b536705485853fa8f9fba1ee478ac",
+      "params": [
+        {
+          "name": "cfg_scale",
+          "hash": "5c97cbefe83185fd8c0cc7ca9844b281d9c8d619bc1c87cc98e4ba1cc0b48f00"
+        },
+        {
+          "name": "filename",
+          "hash": "a867a673de75a1ac491964b2f773aaa0d3b25b9f5b8082ce6df7fb65552997f7"
+        },
+        {
+          "name": "height",
+          "hash": "5e572b152265cab9b22c845ae432feb63a0a47c188a6f30295bddc9edec332e8"
+        },
+        {
+          "name": "negative_prompt",
+          "hash": "42471174d0cd024cac57080837059cfcd75024d389c76d42f786e02a083773c1"
+        },
+        {
+          "name": "number_of_images",
+          "hash": "3b6ebf386534f2d9687db13dac1113bd6e6af3c3acfa24c726b307fbf5120841"
+        },
+        {
+          "name": "prompt",
+          "hash": "c81df3743353f7d2a1a5deb703121133fa89b6d1edc5c7b1d9b080e63ba5580f"
+        },
+        {
+          "name": "quality",
+          "hash": "e6d1c76b4f4c48219e06cc0055e8d42858998a81be93ed0ba654425afa200aae"
+        },
+        {
+          "name": "seed",
+          "hash": "e4cd8b468c958480532f0f303ac1acfef636f2d2be42837305babdb704d4654c"
+        },
+        {
+          "name": "width",
+          "hash": "3860515bc94091133b624b465b5d22d0ead174b2eaada280a9874e56837e8cdd"
+        },
+        {
+          "name": "workspace_dir",
+          "hash": "9d04d2a3560ca4a385fae821a05bbd5d4f89a588ed68c09d38f3a6854de9df34"
+        }
+      ]
+    },
+    {
+      "name": "generate_image_with_colors",
+      "hash": "7ee946a4c0855a470a613892868865b3c2592ff26b6e189d39e971a00aa71762",
+      "params": [
+        {
+          "name": "cfg_scale",
+          "hash": "5c97cbefe83185fd8c0cc7ca9844b281d9c8d619bc1c87cc98e4ba1cc0b48f00"
+        },
+        {
+          "name": "colors",
+          "hash": "150c7027ff6717b258029203f182efcfb342e2993f33bae153d7ab18999beb6c"
+        },
+        {
+          "name": "filename",
+          "hash": "a867a673de75a1ac491964b2f773aaa0d3b25b9f5b8082ce6df7fb65552997f7"
+        },
+        {
+          "name": "height",
+          "hash": "5e572b152265cab9b22c845ae432feb63a0a47c188a6f30295bddc9edec332e8"
+        },
+        {
+          "name": "negative_prompt",
+          "hash": "42471174d0cd024cac57080837059cfcd75024d389c76d42f786e02a083773c1"
+        },
+        {
+          "name": "number_of_images",
+          "hash": "3b6ebf386534f2d9687db13dac1113bd6e6af3c3acfa24c726b307fbf5120841"
+        },
+        {
+          "name": "prompt",
+          "hash": "c81df3743353f7d2a1a5deb703121133fa89b6d1edc5c7b1d9b080e63ba5580f"
+        },
+        {
+          "name": "quality",
+          "hash": "e6d1c76b4f4c48219e06cc0055e8d42858998a81be93ed0ba654425afa200aae"
+        },
+        {
+          "name": "seed",
+          "hash": "e4cd8b468c958480532f0f303ac1acfef636f2d2be42837305babdb704d4654c"
+        },
+        {
+          "name": "width",
+          "hash": "3860515bc94091133b624b465b5d22d0ead174b2eaada280a9874e56837e8cdd"
+        },
+        {
+          "name": "workspace_dir",
+          "hash": "8cfc07916b5c0898124e154c0f38a87eff9f9392e863c01045ed0cc970628a3a"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

@@ -1,0 +1,35 @@
+{
+  "tools": [
+    {
+      "name": "do-arjun",
+      "hash": "1aabc7874a53973b314809eab2ea926c19774c665956831620db81102642bf22",
+      "params": [
+        {
+          "name": "chunkSize",
+          "hash": "9ddc44c38c909c7128118a8659e93a1f9c6075d587a644ba3bd0012b300bf05e"
+        },
+        {
+          "name": "method",
+          "hash": "45e2685438fe776129764cf5faa61bdc718ef69852fe6a33a48c59cc78a0af3e"
+        },
+        {
+          "name": "rateLimit",
+          "hash": "0944c66d617bd0c5184aafde9e4d0efaa0e4dbe111868dd96045d08e86fab3ad"
+        },
+        {
+          "name": "textFile",
+          "hash": "6cd678125c0f3bb37a12b255a1fc762f055bcb84d43981a61b9c3a2fdbc3d784"
+        },
+        {
+          "name": "url",
+          "hash": "86bc108d9d3674c56f0140bba5e4b1bf06df0ff53f07bc2d6cc3828872580bf8"
+        },
+        {
+          "name": "wordlist",
+          "hash": "0b53b8e38cdec17321c1283bf6498109bc9fc150c2918ee5f3685e8297987f94"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

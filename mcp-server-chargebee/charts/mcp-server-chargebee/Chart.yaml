@@ -1,17 +1,17 @@
 apiVersion: v2
 name: "mcp-server-chargebee"
 description: "A Helm chart for MCP Server that connects AI agents to Chargebee platform."
-home: https://github.com/chargebee/agentkit/tree/main/modelcontextprotocol
+home: https://github.com/chargebee/agentkit/tree/HEAD/modelcontextprotocol
 sources:
   - https://github.com/acuvity/mcp-servers-registry
-  - https://github.com/chargebee/agentkit/tree/main/modelcontextprotocol
+  - https://github.com/chargebee/agentkit/tree/HEAD/modelcontextprotocol
 icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-chargebee/logo.png"
 type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 0.0.3
+appVersion: "0.0.3"
 keywords:
   - mcp-server-chargebee
   - mcp-server

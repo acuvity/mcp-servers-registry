@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-masscan",
+  "icon": "https://avatars.githubusercontent.com/u/89649708?s=200&v=4",
+  "name": "mcp-server-masscan",
+  "description": "Fast port scanner for large-scale network discovery using Masscan through MCP interface",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-masscan",
+      "application": "https://github.com/cyproxio/mcp-for-security/tree/HEAD/masscan-mcp"
+    },
+  "tags": ["security"],
+  "official": true,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "6190e55",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"f343879e12ce988bbe4fa9339cbd08fe273cb85e7780c9d4feb178c2d41358ed","reason":"The documentation has significant quality issues: the description lacks proper punctuation and clear structure, parameter descriptions contain formatting artifacts and incomplete information (e.g., 'Additional masscan arguments --max-rate' with trailing whitespace), and examples are redundant or unclear. The target parameter shows the same example twice, and the masscan_args description is incomplete. While the basic functionality is somewhat discernible, the poor formatting and incomplete explanations make this difficult to use confidently.","score":"D"},
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

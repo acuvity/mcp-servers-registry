@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-aws-eks",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-eks",
+  "description": "Manages Amazon EKS clusters and Kubernetes resources with infrastructure provisioning",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-eks",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/eks-mcp-server"
+    },
+  "tags": ["cloud","automation"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.1.5",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"613d392a4dbb98a1c31ccdac7b68ffa0285d7843e89d3818d16452952fc1af02","reason":"Exceptional documentation quality across all tools. Names are specific and clearly indicate AWS EKS functionality. Descriptions are comprehensive (2-4 sentences) covering functionality, usage context, requirements, and important limitations. Parameter documentation is thorough with clear purposes, constraints, and helpful examples. Consistent use of IMPORTANT callouts, detailed usage tips, and comprehensive requirements sections demonstrate proactive user guidance. The toolset maintains professional consistency while addressing complex AWS/Kubernetes operations with clarity.","score":"A"},
+  "resources": {
+    "tools": 14,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "tools": [
+    {
+      "name": "cache_add",
+      "hash": "81f280f8d222199eeae9759dc3fcb5aed6efd7b697341d9e6d0502b6a5fe18da"
+    },
+    {
+      "name": "cache_append",
+      "hash": "01631b0ad0ff6caf5dd7f2ed5d1e92940332e063ed9bf750d4dfa54bac41570f"
+    },
+    {
+      "name": "cache_cas",
+      "hash": "59cf334eb2d467ffef7c22edf0529fea828a9c41a7e039021a6fae2b2a0727a9"
+    },
+    {
+      "name": "cache_decr",
+      "hash": "fd784b4bd4dead1c91b4162f5d75e11b3769353765f0fa6901f275af61b4c0ef"
+    },
+    {
+      "name": "cache_delete",
+      "hash": "01915385c6c89099c143c470bc11cd659576bac2741874813cc9cb98a7e11b2a"
+    },
+    {
+      "name": "cache_delete_many",
+      "hash": "71746fd743c8b3e6114bba07f1eef689807859133b4b47b2f9294708f5324c5d"
+    },
+    {
+      "name": "cache_delete_multi",
+      "hash": "db1f86f259bab25a0ae690eaf72604f3cd52a444e0150e635ab586e5613a7f72"
+    },
+    {
+      "name": "cache_flush_all",
+      "hash": "e894ed489862c6fde5cc7a1e449f49f67dd08cdf4f7f3f0a38ec65ba5520c81b"
+    },
+    {
+      "name": "cache_get",
+      "hash": "07eb96e697fd6ca9ad6cd62d8b51814ba6d817e06957e29bc0618396d73af5e0"
+    },
+    {
+      "name": "cache_get_many",
+      "hash": "fabbf6e51f142a1069fe132d889bce23ef46d3402b7cbbe744ca0a68b3d8d7ff"
+    },
+    {
+      "name": "cache_get_multi",
+      "hash": "0462aecde4a078f2c360843feb113673c0480aec675c457c5ef0926ba32c771f"
+    },
+    {
+      "name": "cache_gets",
+      "hash": "d7be7ba2998a38b9bc95e79e7bc81fe75d2bcce37db6451e4f404e5a5461d65a"
+    },
+    {
+      "name": "cache_incr",
+      "hash": "60382566a20be4d3ff7d314625b5683338965ea06905850defe055db5d971ec3"
+    },
+    {
+      "name": "cache_prepend",
+      "hash": "a1455092720fd85777064b648ad1633e353c14bfc244b402ffe9dcde7d17cd88"
+    },
+    {
+      "name": "cache_quit",
+      "hash": "66d334197f33b112c62902ec5355b8b74cac9270930e88c7f802f9a2c04b4e66"
+    },
+    {
+      "name": "cache_replace",
+      "hash": "7009a3726e86bfc5c7d16ab52090377c1959fa37bced12ca50e7eb9d08be2faa"
+    },
+    {
+      "name": "cache_set",
+      "hash": "51acc097b7eeb8807f285cfcf8b8f34436fdafd71bdbcd56dad327e2b7c25f2c"
+    },
+    {
+      "name": "cache_set_many",
+      "hash": "a297bba815d083cd47de6914d1c7d90ddf68aa39fb2d1320846603be238cec1b"
+    },
+    {
+      "name": "cache_set_multi",
+      "hash": "9dec89dd2fed544cf87483b282eb15704f8abc6f1fdadb4294b80a46078dde7a"
+    },
+    {
+      "name": "cache_stats",
+      "hash": "730cde3a76b996323740f2817b48638d5e33a37dbd07cd28090a1d1ed2768faa"
+    },
+    {
+      "name": "cache_touch",
+      "hash": "d8bec5113bebbbaf0bc6039929a7c6707f0579d636b8076ad3e7c69a81ec3f3b"
+    },
+    {
+      "name": "cache_version",
+      "hash": "eba7a88ca8724f8fb3a494e168b940672dd8e4edded6ba575738400d1a24e23b"
+    }
+  ],
+  "prompts": []
+}

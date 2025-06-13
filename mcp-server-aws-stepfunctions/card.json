@@ -1,0 +1,22 @@
+{
+  "id": "mcp-server-aws-stepfunctions",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-stepfunctions",
+  "description": "AWS Step Functions MCP server for executing state machines as tools from AI models",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-stepfunctions",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/stepfunctions-tool-mcp-server"
+    },
+  "tags": ["automation","cloud"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.1.7",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": null,
+  "resources": {
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "tools": [
+    {
+      "name": "describe_table",
+      "hash": "b0250168b846673d0700066ec9df10a63b621908132f95fa2c6f537c35e404e0"
+    },
+    {
+      "name": "list_tables",
+      "hash": "a2f64219af7493595c9a66288dc578a80a052e7099a2eabc47c6ea2aace7d7a9"
+    },
+    {
+      "name": "read_query",
+      "hash": "1d0edc0e16433ebd382eb7dc390278c5925908145a2035a47264efca4b827695"
+    }
+  ],
+  "prompts": []
+}

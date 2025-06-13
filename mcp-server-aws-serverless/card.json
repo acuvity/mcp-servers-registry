@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-aws-serverless",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-serverless",
+  "description": "AI-powered tool for serverless development with AWS best practices and deployment guidance",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-serverless",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/aws-serverless-mcp-server"
+    },
+  "tags": ["cloud","development","automation"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.1.4",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"113aeb583c47a7e8cba63fe798d4fd04c25ea297bd9d6ca3917d4f315cd7c55f","reason":"The toolset demonstrates good documentation quality overall. Tool names are clear and purposeful, descriptions provide adequate context about functionality and usage, and parameter documentation is generally comprehensive with helpful examples. Strengths include detailed usage tips, clear requirements sections, and good coverage of constraints. However, some descriptions could be more concise (particularly for SAM tools), and a few parameters lack sufficient detail about their impact on behavior. The documentation successfully guides users through complex serverless deployment workflows while maintaining clarity.","score":"B"},
+  "resources": {
+    "tools": 18,
+    "prompts": 0,
+    "resources": 2,
+    "resourcesTemplates": 0
+  }
+}

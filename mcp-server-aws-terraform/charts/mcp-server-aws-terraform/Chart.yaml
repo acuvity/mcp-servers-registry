@@ -1,20 +1,21 @@
 apiVersion: v2
 name: "mcp-server-aws-terraform"
-description: "A Helm chart for Terraform AWS best practices, infrastructure as code patterns, and security compliance with Checkov."
-home: https://github.com/awslabs/mcp/tree/main/src/terraform-mcp-server
+description: "A Helm chart for Terraform on AWS best practices, infrastructure as code patterns, and security compliance"
+home: https://github.com/awslabs/mcp/tree/HEAD/src/terraform-mcp-server
 sources:
   - https://github.com/acuvity/mcp-servers-registry
-  - https://github.com/awslabs/mcp/tree/main/src/terraform-mcp-server
+  - https://github.com/awslabs/mcp/tree/HEAD/src/terraform-mcp-server
 icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-aws-terraform/logo.png"
 type: application
 maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 1.0.1
+appVersion: "1.0.1"
 keywords:
   - mcp-server-aws-terraform
   - mcp-server
-  - standalone
-  - research
+  - native
   - cloud
+  - development
+  - security

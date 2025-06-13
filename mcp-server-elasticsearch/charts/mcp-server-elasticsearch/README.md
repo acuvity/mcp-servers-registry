@@ -21,10 +21,10 @@
 # What is mcp-server-elasticsearch?
 [![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-elasticsearch/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-elasticsearch/0.1.1?logo=docker&logoColor=fff&label=0.1.1)](https://hub.docker.com/r/acuvity/mcp-server-elasticsearch)
-[![PyPI](https://img.shields.io/badge/0.1.1-3775A9?logo=pypi&logoColor=fff&label=@elastic/mcp-server-elasticsearch)](https://github.com/elastic/mcp-server-elasticsearch)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-elasticsearch/0.2.0?logo=docker&logoColor=fff&label=0.2.0)](https://hub.docker.com/r/acuvity/mcp-server-elasticsearch)
+[![PyPI](https://img.shields.io/badge/0.2.0-3775A9?logo=pypi&logoColor=fff&label=@elastic/mcp-server-elasticsearch)](https://github.com/elastic/mcp-server-elasticsearch)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-elasticsearch/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-elasticsearch&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22ES_API_KEY%22%2C%22-e%22%2C%22ES_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-elasticsearch%3A0.1.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-elasticsearch&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22ES_API_KEY%22%2C%22-e%22%2C%22ES_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-elasticsearch%3A0.2.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Connects to Elasticsearch for natural language data queries.
 
@@ -173,11 +173,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.1.1`
+  - container: `1.0.0-0.2.0`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-elasticsearch:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-elasticsearch:1.0.0-0.1.1`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-elasticsearch:1.0.0-0.2.0`
 
 ---
 
@@ -627,7 +627,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (3)
+## 🧰 Tools (4)
 <details>
 <summary>list_indices</summary>
 
@@ -641,6 +641,7 @@ List all available Elasticsearch indices
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| indexPattern | string | Index pattern of Elasticsearch indices to list | Yes
 </details>
 <details>
 <summary>get_mappings</summary>
@@ -673,6 +674,21 @@ Perform an Elasticsearch search with the provided query DSL. Highlights are alwa
 | index | string | Name of the Elasticsearch index to search | Yes
 | queryBody | object | Complete Elasticsearch query DSL object that can include query, size, from, sort, etc. | Yes
 </details>
+<details>
+<summary>get_shards</summary>
+
+**Description**:
+
+```
+Get shard information for all or specific indices
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| index | string | Optional index name to get shard information for | No
+</details>
 
 
 # 🔐 Resource SBOM
@@ -683,7 +699,10 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 |-----------|------|------|------|
 | tools | get_mappings | description | 9250939ebd53af6866bcd1c4f474ce862a54c6de58f2eaeef5f5264e9984aee6 |
 | tools | get_mappings | index | 0bbb8a48a088f25bac568841969164e9128c201e3673a6834fe394fd39e13948 |
+| tools | get_shards | description | 59f5bf494ffeea6a524f2c8a8a5c2b35b86f77b6da5372026f290f2eb4aa1a92 |
+| tools | get_shards | index | 1ab70defc67e3bda904e43cfb0bb5eccd4de889768373185184a6b2a7f6e9262 |
 | tools | list_indices | description | b8a9570272491ac3a8a50f6009acfbc97753f022318662f71c07d16e9b93304b |
+| tools | list_indices | indexPattern | 1e0ab961e458d2945554600fe740c2420ed3cd5906554f8ff74e7dbc09b64e3e |
 | tools | search | description | 4a3465c20f6a856aed825f0cd9a2b1c61f2df1538a893fba996e3d523ba3b1a7 |
 | tools | search | index | 6efea7c8a491d022de8e644b5952989153fa0ee52f6973f4613ea167d5ddec9c |
 | tools | search | queryBody | 4bbad88e58ece79cf1b74de26a51d0e39e02c53845153cb9d390e6382657431e |

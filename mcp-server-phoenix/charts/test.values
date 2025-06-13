@@ -1,0 +1,4 @@
+env:
+  PHOENIX_BASE_URL: dummy_value
+
+secrets:

@@ -171,6 +171,7 @@ env:
   AWS_PROFILE: 
   AWS_REGION: 
   KB_INCLUSION_TAG_KEY: 
+  BEDROCK_KB_RERANKING_ENABLED: false
 
 # This section handles secrets passed to the container.
 secrets:

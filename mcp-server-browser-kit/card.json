@@ -13,7 +13,7 @@
   "scope": "native",
   "mutitenant": false,
   "runtime": "node",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "requiresConfiguration": false,
   "requiresStorage": false,
   "rating": {"hash":"085d77ac7cb3f81bd64e94a0293733a58a6f24a3b70703dd19bf6c8626111587","reason":"Tool names are highly specific and intuitive with clear functional indicators. Descriptions are comprehensive (3-4+ sentences each) with detailed explanations of functionality, usage context, workflow guidance, and manifest version limitations. All parameters have clear, complete descriptions explaining purpose and expected values. Documentation proactively addresses workflow sequences, browser compatibility, and common usage patterns, making it exceptionally clear when and how to use each tool.","score":"A"},

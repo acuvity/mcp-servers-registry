@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-aws-dynamodb",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-dynamodb",
+  "description": "Official MCP server for AWS DynamoDB operations, table management, and backup features",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-dynamodb",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/dynamodb-mcp-server"
+    },
+  "tags": ["database","cloud"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "1.0.2",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"786a72ccabb35285920f969070c6f0e428bff10841eafcec1579b70f221af898","reason":"The toolset provides good documentation with clear, descriptive tool names and adequate descriptions that explain functionality and usage context. Parameter documentation is generally clear with proper type constraints and meaningful descriptions. However, some descriptions could be more comprehensive - particularly around usage patterns, limitations, and the important DynamoDB attribute value format requirements that are mentioned but not fully explained inline.","score":"B"},
+  "resources": {
+    "tools": 29,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

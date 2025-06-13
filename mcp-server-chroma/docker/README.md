@@ -169,7 +169,7 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
   - `arm64`
 
 **Base image**:
-  - `ghcr.io/astral-sh/uv:python3.10-bookworm`
+  - `ghcr.io/astral-sh/uv:python3.12-bookworm-slim`
 
 **Resources**:
   - [Charts](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-chroma/charts/mcp-server-chroma)

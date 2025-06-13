@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -14,9 +14,9 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-aws-bedrock-kb-retrieval"
-LABEL org.opencontainers.image.description="Query Amazon Bedrock Knowledge Bases using natural language to retrieve relevant information."
+LABEL org.opencontainers.image.description="Access and query Amazon Bedrock Knowledge Bases with natural language retrieval"
 LABEL org.opencontainers.image.version="1.0.1"
-LABEL org.opencontainers.image.source="https://github.com/awslabs/mcp/tree/main/src/bedrock-kb-retrieval-mcp-server"
+LABEL org.opencontainers.image.source="https://github.com/awslabs/mcp/tree/HEAD/src/bedrock-kb-retrieval-mcp-server"
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 LABEL org.opencontainers.image.author="AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com>"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"

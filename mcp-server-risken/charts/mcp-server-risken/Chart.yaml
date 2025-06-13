@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-risken"
+description: "A Helm chart for RISKEN's official MCP Server"
+home: https://github.com/ca-risken/risken-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/ca-risken/risken-mcp-server
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-risken/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "10363da"
+keywords:
+  - mcp-server-risken
+  - mcp-server
+  - remote
+  - security
+  - monitoring

@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-clickhouse",
+  "icon": "https://clickhouse.com/favicon.ico",
+  "name": "mcp-server-clickhouse",
+  "description": "Query your ClickHouse database server.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-clickhouse",
+      "application": "https://github.com/ClickHouse/mcp-clickhouse"
+    },
+  "tags": ["database"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.1.7",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"acc5c5a2f99f9a27e74fc918a0fd6535b5a31ca07e47435640dbb16561db2ba0","reason":"Tool names are clear and specific to ClickHouse functionality. Descriptions are adequate but minimal - they explain basic functionality but lack important details about usage context, constraints, and expected behavior. Parameter documentation is sparse with generic descriptions that don't explain purpose or provide examples. The 'like' parameter lacks any explanation of its filtering functionality.","score":"C"},
+  "resources": {
+    "tools": 3,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

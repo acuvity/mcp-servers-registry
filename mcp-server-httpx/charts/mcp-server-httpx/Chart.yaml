@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-httpx"
+description: "A Helm chart for Fast HTTP toolkit for probing web servers and analyzing technologies via MCP protocol"
+home: https://github.com/cyproxio/mcp-for-security/tree/HEAD/httpx-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/cyproxio/mcp-for-security/tree/HEAD/httpx-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-httpx/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "6190e55"
+keywords:
+  - mcp-server-httpx
+  - mcp-server
+  - native
+  - security

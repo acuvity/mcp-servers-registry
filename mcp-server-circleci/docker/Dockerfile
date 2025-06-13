@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-circleci"
 LABEL org.opencontainers.image.description="Enable AI Agents to fix build failures from CircleCI."
-LABEL org.opencontainers.image.version="0.9.0"
+LABEL org.opencontainers.image.version="0.9.1"
 LABEL org.opencontainers.image.source="https://github.com/CircleCI-Public/mcp-server-circleci"
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 LABEL org.opencontainers.image.author="Author"
@@ -39,7 +39,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev @circleci/mcp-server-circleci@0.9.0
+RUN npm i --omit-dev @circleci/mcp-server-circleci@0.9.1
 
 EXPOSE 8000/tcp
 

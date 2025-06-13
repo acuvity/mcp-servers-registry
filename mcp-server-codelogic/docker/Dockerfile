@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-codelogic"
 LABEL org.opencontainers.image.description="CodeLogic, provides access to code dependency analytics, risk analysis, and impact assessment."
-LABEL org.opencontainers.image.version="1.0.3"
+LABEL org.opencontainers.image.version="1.0.4"
 LABEL org.opencontainers.image.source="https://github.com/CodeLogicIncEngineering/codelogic-mcp-server"
 LABEL org.opencontainers.image.licenses="nil"
 LABEL org.opencontainers.image.author="garrmark <mgarrison@codelogic.com>"
@@ -45,7 +45,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uv venv && uv pip install codelogic-mcp-server==1.0.3
+RUN uv venv && uv pip install codelogic-mcp-server==1.0.4
 
 EXPOSE 8000/tcp
 

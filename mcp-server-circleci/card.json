@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"38b9f9bdb3c8717b967704343e7158863b8bac83b92a75a89697900696bd9975","reason":"The toolset provides clear, comprehensive descriptions with detailed usage scenarios and parameter explanations. Tool names are specific and intuitive (get_build_failure_logs, find_flaky_tests, etc.). Most descriptions thoroughly explain functionality, use cases, and constraints with good detail. Parameter descriptions are mostly clear with examples and format specifications. However, some descriptions are excessively verbose with repetitive warnings and instructions that could be more concise, and a few parameter descriptions lack complete clarity about their exact purpose or constraints.","score":"B"},
+  "rating": {"hash":"c1e6d8cb64bd425e38202beec6f8d81db947675a5a1898b1dc56358cd346c8c0","reason":"The toolset shows adequate documentation quality with clear tool names and basic functionality descriptions. However, the descriptions are excessively verbose with redundant warnings and instructions that would be better handled by the system rather than documentation. Parameter descriptions are generally clear but inconsistent in detail. While the tools are broadly functional, the documentation could be significantly more concise and focused on essential usage information.","score":"C"},
   "resources": {
-    "tools": 11,
+    "tools": 12,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

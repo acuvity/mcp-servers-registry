@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -16,7 +16,7 @@ LABEL "mcp-server-scope"="remote"
 LABEL org.opencontainers.image.title="mcp-server-neo4j-aura"
 LABEL org.opencontainers.image.description="Managing Neo4j Aura database instances through the Neo4j Aura API."
 LABEL org.opencontainers.image.version="0.2.2"
-LABEL org.opencontainers.image.source="https://github.com/neo4j-contrib/mcp-neo4j"
+LABEL org.opencontainers.image.source="https://github.com/neo4j-contrib/mcp-neo4j/tree/HEAD/servers/mcp-neo4j-cloud-aura-api"
 LABEL org.opencontainers.image.licenses="nil"
 LABEL org.opencontainers.image.author="Author"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"

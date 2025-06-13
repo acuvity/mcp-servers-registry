@@ -24,7 +24,7 @@
     },
     {
       "name": "add_pull_request_review_comment_to_pending_review",
-      "hash": "3c66a3942bb4b6cee8360f6b05c41a0e4f371fe3bdbe3ed8cd319849bb44e3b6",
+      "hash": "539c30ff7a06d5bca9d3fb808257ce3619326f2b0c58c96aff0095430a7d5883",
       "params": [
         {
           "name": "body",
@@ -422,7 +422,7 @@
         },
         {
           "name": "path",
-          "hash": "2957637372ff4e19e270a582b546db31597054befcac8ee9aa597018697273be"
+          "hash": "7feb0806ae965d2a00bf345a3f17897e9547100bfbb88544cce35312e9b9f27e"
         },
         {
           "name": "repo",

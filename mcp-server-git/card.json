@@ -6,7 +6,7 @@
   "links":
     {
       "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-git",
-      "application": "https://github.com/modelcontextprotocol/servers/tree/main/src/git"
+      "application": "https://github.com/modelcontextprotocol/servers/tree/HEAD/src/git"
     },
   "tags": ["development","research"],
   "official": true,

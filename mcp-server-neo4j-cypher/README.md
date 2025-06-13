@@ -21,14 +21,14 @@
 # What is mcp-server-neo4j-cypher?
 [![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-neo4j-cypher/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-neo4j-cypher/0.2.1?logo=docker&logoColor=fff&label=0.2.1)](https://hub.docker.com/r/acuvity/mcp-server-neo4j-cypher)
-[![PyPI](https://img.shields.io/badge/0.2.1-3775A9?logo=pypi&logoColor=fff&label=mcp-neo4j-cypher)](https://github.com/neo4j-contrib/mcp-neo4j)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-neo4j-cypher/0.2.3?logo=docker&logoColor=fff&label=0.2.3)](https://hub.docker.com/r/acuvity/mcp-server-neo4j-cypher)
+[![PyPI](https://img.shields.io/badge/0.2.3-3775A9?logo=pypi&logoColor=fff&label=mcp-neo4j-cypher)](https://github.com/neo4j-contrib/mcp-neo4j/tree/HEAD/servers/mcp-neo4j-cypher)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-neo4j-cypher/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-neo4j-cypher&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22NEO4J_DATABASE%22%2C%22-e%22%2C%22NEO4J_PASSWORD%22%2C%22-e%22%2C%22NEO4J_URI%22%2C%22-e%22%2C%22NEO4J_USERNAME%22%2C%22docker.io%2Facuvity%2Fmcp-server-neo4j-cypher%3A0.2.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-neo4j-cypher&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22NEO4J_DATABASE%22%2C%22-e%22%2C%22NEO4J_PASSWORD%22%2C%22-e%22%2C%22NEO4J_URI%22%2C%22-e%22%2C%22NEO4J_USERNAME%22%2C%22docker.io%2Facuvity%2Fmcp-server-neo4j-cypher%3A0.2.3%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Manage Cypher graph queries between LLMs and Neo4j with natural language queries.
 
-Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from mcp-neo4j-cypher original [sources](https://github.com/neo4j-contrib/mcp-neo4j).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from mcp-neo4j-cypher original [sources](https://github.com/neo4j-contrib/mcp-neo4j/tree/HEAD/servers/mcp-neo4j-cypher).
 
 **Quick links:**
 
@@ -161,7 +161,7 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
   - `NEO4J_URI` required to be set
   - `NEO4J_USERNAME` required to be set
 
-For more information and extra configuration you can consult the [package](https://github.com/neo4j-contrib/mcp-neo4j) documentation.
+For more information and extra configuration you can consult the [package](https://github.com/neo4j-contrib/mcp-neo4j/tree/HEAD/servers/mcp-neo4j-cypher) documentation.
 
 # 🧰 Clients Integrations
 
@@ -176,7 +176,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-neo4j-cypher&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22NEO4J_DATABASE%22%2C%22-e%22%2C%22NEO4J_PASSWORD%22%2C%22-e%22%2C%22NEO4J_URI%22%2C%22-e%22%2C%22NEO4J_USERNAME%22%2C%22docker.io%2Facuvity%2Fmcp-server-neo4j-cypher%3A0.2.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-neo4j-cypher&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22NEO4J_DATABASE%22%2C%22-e%22%2C%22NEO4J_PASSWORD%22%2C%22-e%22%2C%22NEO4J_URI%22%2C%22-e%22%2C%22NEO4J_USERNAME%22%2C%22docker.io%2Facuvity%2Fmcp-server-neo4j-cypher%3A0.2.3%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -207,7 +207,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "NEO4J_URI",
           "-e",
           "NEO4J_USERNAME",
-          "docker.io/acuvity/mcp-server-neo4j-cypher:0.2.1"
+          "docker.io/acuvity/mcp-server-neo4j-cypher:0.2.3"
         ]
       }
     }
@@ -243,7 +243,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "NEO4J_URI",
         "-e",
         "NEO4J_USERNAME",
-        "docker.io/acuvity/mcp-server-neo4j-cypher:0.2.1"
+        "docker.io/acuvity/mcp-server-neo4j-cypher:0.2.3"
       ]
     }
   }
@@ -283,7 +283,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "NEO4J_URI",
         "-e",
         "NEO4J_USERNAME",
-        "docker.io/acuvity/mcp-server-neo4j-cypher:0.2.1"
+        "docker.io/acuvity/mcp-server-neo4j-cypher:0.2.3"
       ]
     }
   }
@@ -325,7 +325,7 @@ Add the following JSON block to your mcp configuration file:
         "NEO4J_URI",
         "-e",
         "NEO4J_USERNAME",
-        "docker.io/acuvity/mcp-server-neo4j-cypher:0.2.1"
+        "docker.io/acuvity/mcp-server-neo4j-cypher:0.2.3"
       ]
     }
   }
@@ -365,7 +365,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "NEO4J_URI",
         "-e",
         "NEO4J_USERNAME",
-        "docker.io/acuvity/mcp-server-neo4j-cypher:0.2.1"
+        "docker.io/acuvity/mcp-server-neo4j-cypher:0.2.3"
       ]
     }
   }
@@ -385,7 +385,7 @@ async with MCPServerStdio(
     params={
         "env": {"NEO4J_DATABASE":"TO_BE_SET","NEO4J_PASSWORD":"TO_BE_SET","NEO4J_URI":"TO_BE_SET","NEO4J_USERNAME":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","NEO4J_DATABASE","-e","NEO4J_PASSWORD","-e","NEO4J_URI","-e","NEO4J_USERNAME","docker.io/acuvity/mcp-server-neo4j-cypher:0.2.1"]
+        "args": ["run","-i","--rm","--read-only","-e","NEO4J_DATABASE","-e","NEO4J_PASSWORD","-e","NEO4J_URI","-e","NEO4J_USERNAME","docker.io/acuvity/mcp-server-neo4j-cypher:0.2.3"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -414,7 +414,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e NEO4J_DATABASE -e NEO4J_PASSWORD -e NEO4J_URI -e NEO4J_USERNAME docker.io/acuvity/mcp-server-neo4j-cypher:0.2.1`
+- arguments: `run -i --rm --read-only -e NEO4J_DATABASE -e NEO4J_PASSWORD -e NEO4J_URI -e NEO4J_USERNAME docker.io/acuvity/mcp-server-neo4j-cypher:0.2.3`
 
 </details>
 
@@ -424,7 +424,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e NEO4J_DATABASE -e NEO4J_PASSWORD -e NEO4J_URI -e NEO4J_USERNAME docker.io/acuvity/mcp-server-neo4j-cypher:0.2.1
+docker run -it -p 8000:8000 --rm --read-only -e NEO4J_DATABASE -e NEO4J_PASSWORD -e NEO4J_URI -e NEO4J_USERNAME docker.io/acuvity/mcp-server-neo4j-cypher:0.2.3
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -540,8 +540,8 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 ```
 List all node, their attributes and their relationships to other nodes in the neo4j database.
-            If this fails with a message that includes "Neo.ClientError.Procedure.ProcedureNotFound"
-            suggest that the user install and enable the APOC plugin.
+        If this fails with a message that includes "Neo.ClientError.Procedure.ProcedureNotFound"
+        suggest that the user install and enable the APOC plugin.
         
 ```
 
@@ -590,7 +590,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
-| tools | get_neo4j_schema | description | 79ed0ad33f150588d8996a6ac062806e84e65a0d7a2e357b5a5a44fdadfcb088 |
+| tools | get_neo4j_schema | description | 8d8a55e1a9afe505aed30f7d19ca66fe1bf3be840ed0a2d74192a5f624a11b28 |
 | tools | read_neo4j_cypher | description | f164d7f3d855ae376b91098005edcc02e67fb83ed81f47141b64d9531b81ad90 |
 | tools | read_neo4j_cypher | params | 911034734390003e2319f5505aa2e915ddea6c7398af4089e6beca0608c683e4 |
 | tools | read_neo4j_cypher | query | 5afcfc405cad4e81111a63491cce882c1a263b9f760e77d2765a7aef7d146c7d |

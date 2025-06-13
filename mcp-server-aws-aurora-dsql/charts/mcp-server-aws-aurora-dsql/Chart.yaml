@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-aws-aurora-dsql"
+description: "A Helm chart for AWS Labs MCP server for Aurora DSQL with PostgreSQL-compatible SQL query execution"
+home: https://github.com/awslabs/mcp/tree/HEAD/src/aurora-dsql-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/awslabs/mcp/tree/HEAD/src/aurora-dsql-mcp-server
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-aws-aurora-dsql/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "1.0.1"
+keywords:
+  - mcp-server-aws-aurora-dsql
+  - mcp-server
+  - remote
+  - database
+  - cloud

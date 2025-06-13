@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-cartesia",
+  "icon": "https://play.cartesia.ai/icon.png",
+  "name": "mcp-server-cartesia",
+  "description": "Connect to Cartesia voice platform for text-to-speech and voice cloning",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-cartesia",
+      "application": "https://github.com/cartesia-ai/cartesia-mcp"
+    },
+  "tags": ["integration"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "0.1.6",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"0fc3157a447138dd6b02687dc81e45d2570d411466adb49057cf3093cacb0304","reason":"The tool descriptions are auto-generated from API documentation and lack essential context for LLM usage. While parameter lists are comprehensive, the descriptions fail to explain what each tool does, when to use them, or what they return. Most descriptions are just parameter lists without explaining functionality, making them difficult to use effectively in an LLM context.","score":"D"},
+  "resources": {
+    "tools": 9,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

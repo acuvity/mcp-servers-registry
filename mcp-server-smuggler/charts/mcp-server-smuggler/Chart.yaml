@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-smuggler"
+description: "A Helm chart for HTTP Request Smuggling detection tool for identifying desynchronization vulnerabilities"
+home: https://github.com/cyproxio/mcp-for-security/tree/HEAD/smuggler-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/cyproxio/mcp-for-security/tree/HEAD/smuggler-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-smuggler/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "6190e55"
+keywords:
+  - mcp-server-smuggler
+  - mcp-server
+  - native
+  - security

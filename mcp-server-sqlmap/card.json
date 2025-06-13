@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-sqlmap",
+  "icon": "https://avatars.githubusercontent.com/u/89649708?s=200&v=4",
+  "name": "mcp-server-sqlmap",
+  "description": "SQLMap SQL injection detection and exploitation tool bridge for MCP ecosystem",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-sqlmap",
+      "application": "https://github.com/cyproxio/mcp-for-security/tree/HEAD/sqlmap-mcp"
+    },
+  "tags": ["security"],
+  "official": true,
+  "scope": "native",
+  "mutitenant": false,
+  "runtime": "node",
+  "version": "6190e55",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"6981db4b71b1079740b62294bcb7f24fba0ad88fb95765c05bd9509f5388e988","reason":"The tool name 'do-sqlmap' is vague and unprofessional. The description is extremely brief (one sentence) and fails to explain what sqlmap is, when to use it, or what results to expect. While the sqlmap_args parameter has extensive documentation, it's essentially a copy-paste of sqlmap's help text rather than contextual guidance for this specific tool. The parameter documentation lacks clear explanations of how arguments should be formatted or combined, making it difficult for users to understand proper usage.","score":"D"},
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

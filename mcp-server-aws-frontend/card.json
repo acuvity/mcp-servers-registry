@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-aws-frontend",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-frontend",
+  "description": "Modern React application development with AWS integrations and Tailwind CSS",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-frontend",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/frontend-mcp-server"
+    },
+  "tags": ["development"],
+  "official": true,
+  "scope": "standalone",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "1.0.2",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"2a004748e2f00bbf36a91d62feeda254a82b2c9f3eb577db7e453f8b3454eb92","reason":"The tool has a clear, specific name and comprehensive description that explains functionality, usage context, and available options. The parameter documentation is excellent with clear enum values and detailed descriptions. However, the description format is somewhat verbose with redundant parameter explanations that could be more concise, and the return type documentation in the description goes beyond what's needed for parameter guidance.","score":"B"},
+  "resources": {
+    "tools": 1,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-coda"
 LABEL org.opencontainers.image.description="MCP server for Coda."
-LABEL org.opencontainers.image.version="1.2.3"
+LABEL org.opencontainers.image.version="1.4.1"
 LABEL org.opencontainers.image.source="https://github.com/orellazri/coda-mcp"
 LABEL org.opencontainers.image.licenses="unknown"
 LABEL org.opencontainers.image.author="Author"
@@ -39,7 +39,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev coda-mcp@1.2.3
+RUN npm i --omit-dev coda-mcp@1.4.1
 
 EXPOSE 8000/tcp
 

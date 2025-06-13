@@ -1,0 +1,7 @@
+env:
+  AWS_PROFILE: 
+  AWS_REGION: 
+  ALLOW_WRITE: 
+  ALLOW_SENSITIVE_DATA: 
+
+secrets:

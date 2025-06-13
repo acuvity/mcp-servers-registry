@@ -48,7 +48,7 @@ podAnnotations: {}
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 podLabels:
   app.kubernetes.io/component: mcp-server
-  mcp-server-scope: standalone
+  mcp-server-scope: native
 
 ## Security
 #

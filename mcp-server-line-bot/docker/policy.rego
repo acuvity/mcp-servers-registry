@@ -98,6 +98,14 @@ _cross_tool_exclude := [
 	#
 	"get_message_quota",
 	#
+	"get_rich_menu_list",
+	#
+	"delete_rich_menu",
+	#
+	"set_rich_menu_default",
+	#
+	"cancel_rich_menu_default",
+	#
 	# exclude word that might be misdetected
 	"to",
 	"this",

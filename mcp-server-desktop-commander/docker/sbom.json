@@ -46,7 +46,7 @@
     },
     {
       "name": "read_file",
-      "hash": "1cf5c80e1e4c660811ad42d6d501ff4305aec66e51ff41a55c473c53cf2567fc"
+      "hash": "96dcf541bed39a4887900164f1c62acbf87a1c112ce425db3c5904fef971af08"
     },
     {
       "name": "read_multiple_files",
@@ -70,7 +70,7 @@
     },
     {
       "name": "write_file",
-      "hash": "8902cf681e5c3245e8a93570fa15e43e0b0670add8b34e1fa704504ad75cbe5c"
+      "hash": "1c329b37aecef0e273658fe15b59ad432a182c904d9a14d8d8a6e2101e843a85"
     }
   ],
   "prompts": []

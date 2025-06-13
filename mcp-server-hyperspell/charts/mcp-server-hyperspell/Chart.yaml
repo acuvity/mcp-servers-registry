@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-hyperspell"
+description: "A Helm chart for Execute tasks and manage collections with Hyperspell MCP server."
+home: https://github.com/hyperspell/hyperspell-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/hyperspell/hyperspell-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-hyperspell/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "6fbf999"
+keywords:
+  - mcp-server-hyperspell
+  - mcp-server
+  - native
+  - automation
+  - integration

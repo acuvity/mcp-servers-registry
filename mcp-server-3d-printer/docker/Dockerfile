@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-3d-printer"
 LABEL org.opencontainers.image.description="Connects to various 3D printers for management and STL manipulation."
-LABEL org.opencontainers.image.version="1.0.2"
+LABEL org.opencontainers.image.version="1.0.3"
 LABEL org.opencontainers.image.source="https://github.com/DMontgomery40/mcp-3D-printer-server"
 LABEL org.opencontainers.image.licenses="GPL-2.0"
 LABEL org.opencontainers.image.author="David Montgomery"
@@ -39,7 +39,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev mcp-3d-printer-server@1.0.2
+RUN npm i --omit-dev mcp-3d-printer-server@1.0.3
 
 EXPOSE 8000/tcp
 

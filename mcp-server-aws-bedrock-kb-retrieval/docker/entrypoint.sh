@@ -1,7 +1,6 @@
 #!/bin/sh
 . .venv/bin/activate
-[ -z "$AWS_PROFILE" ] && echo "!!! Error mcp-server-aws-bedrock-kb-retrieval requires AWS_PROFILE env var to be set." && exit 1
-[ -z "$AWS_REGION" ] && echo "!!! Error mcp-server-aws-bedrock-kb-retrieval requires AWS_REGION env var to be set." && exit 1
+export BEDROCK_KB_RERANKING_ENABLED=${BEDROCK_KB_RERANKING_ENABLED:-"false"}
 
 if [ -z "$MINIBRIDGE_MODE" ]; then
   # check if stdin in open

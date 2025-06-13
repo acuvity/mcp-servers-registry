@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"0c98216b510fc637fba98eb6092ee1fd1c4b8662e1dcb2a3d8a69314c89d1aa9","reason":"Tool names are clear and indicate purpose well. Descriptions are brief but adequately explain basic functionality. Parameter descriptions are present and clear about their purpose, with good constraints like minLength. However, descriptions lack detail about when to use each tool, what specific information they return, and important usage context that would help an LLM make informed decisions about tool selection.","score":"C"},
+  "rating": {"hash":"45461ecb8c406a99efeea5e9d5df5df4ab8b0fe903357ebaa99a8429aa19b434","reason":"The toolset provides adequate documentation with clear tool names and basic functionality descriptions. However, descriptions are quite brief (1 sentence each) and lack important context like usage scenarios, limitations, or expected return data. Parameter documentation is minimal but functional. The tools are understandable but leave users with questions about constraints, error conditions, and detailed usage patterns.","score":"C"},
   "resources": {
-    "tools": 3,
+    "tools": 4,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

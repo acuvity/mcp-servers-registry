@@ -1,0 +1,19 @@
+apiVersion: v2
+name: "mcp-server-masscan"
+description: "A Helm chart for Fast port scanner for large-scale network discovery using Masscan through MCP interface"
+home: https://github.com/cyproxio/mcp-for-security/tree/HEAD/masscan-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/cyproxio/mcp-for-security/tree/HEAD/masscan-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-masscan/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "6190e55"
+keywords:
+  - mcp-server-masscan
+  - mcp-server
+  - native
+  - security

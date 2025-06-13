@@ -39,6 +39,8 @@ spec:
           {{- end }}
           env:
           {{- include "minibridge.env" . | nindent 12}}
+            - name: AWS_DOCUMENTATION_PARTITION
+              value: {{ .Values.env.AWS_DOCUMENTATION_PARTITION}}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default (printf  "%s-%s" .Chart.Version .Chart.AppVersion) }}"

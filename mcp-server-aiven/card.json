@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-aiven",
+  "icon": "https://aiven.io/favicon.ico",
+  "name": "mcp-server-aiven",
+  "description": "Navigate your Aiven projects and interact with PostgreSQL, Kafka, ClickHouse and OpenSearch services",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aiven",
+      "application": "https://github.com/Aiven-Open/mcp-aiven"
+    },
+  "tags": ["cloud","database"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "297e5bd",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"2f4d890b76da5d3341c7e71086c4ba9a126a977d586af4d2939b326fe886f848","reason":"All tools completely lack descriptions, making their purpose unclear. Parameter documentation is minimal with only titles that repeat parameter names. Tool names provide some indication of functionality but without descriptions or proper parameter documentation, users cannot understand what these tools do or how to use them effectively.","score":"F"},
+  "resources": {
+    "tools": 3,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

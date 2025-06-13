@@ -13,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.0.47",
+  "version": "0.1.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"fe3ec17aa8048729950763df84c89008ef87f888ead3292182cf05824bbcbbff","reason":"Tool names are descriptive and clearly indicate purpose within the 21st.dev ecosystem. Descriptions adequately explain functionality with 2-3 sentences covering what each tool does and when to use it. However, parameter descriptions vary in quality - some like 'searchQuery' have good constraints and guidance, while others like 'context' are verbose but unclear about expected input format. The overall documentation is functional but lacks the comprehensive clarity and consistent parameter descriptions needed for higher grades.","score":"C"},
+  "rating": {"hash":"a07b0f5220504b0170455c558aa0fc063f32d0af94f22d64626009318a22bd07","reason":"While tool names are reasonably descriptive, the descriptions are poorly structured with inconsistent formatting, contain unnecessary quotes and escape characters, and lack clarity about specific functionality. Parameter descriptions are adequate but inconsistent in quality, with some being vague (e.g., 'Full users message') and others containing grammatical errors. The overall documentation requires significant cleanup to be properly usable.","score":"D"},
   "resources": {
     "tools": 4,
     "prompts": 0,

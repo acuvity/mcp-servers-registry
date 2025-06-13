@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-atlan"
+description: "A Helm chart for The Atlan MCP server allows you to interact with Atlan services through multiple tools."
+home: https://github.com/atlanhq/agent-toolkit/tree/HEAD/modelcontextprotocol
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/atlanhq/agent-toolkit/tree/HEAD/modelcontextprotocol
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-atlan/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "0.2.1"
+keywords:
+  - mcp-server-atlan
+  - mcp-server
+  - remote
+  - database
+  - integration

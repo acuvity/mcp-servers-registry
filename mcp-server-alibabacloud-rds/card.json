@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-alibabacloud-rds",
+  "icon": "https://github.com/aliyun/alibabacloud-rds-openapi-mcp-server/blob/main/assets/alibabacloudrds.png",
+  "name": "mcp-server-alibabacloud-rds",
+  "description": "MCP server for Alibaba Cloud RDS OpenAPI, enabling programmatic management of RDS resources.",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-alibabacloud-rds",
+      "application": "https://github.com/aliyun/alibabacloud-rds-openapi-mcp-server"
+    },
+  "tags": ["cloud","database"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "1.7.7",
+  "requiresConfiguration": true,
+  "requiresStorage": false,
+  "rating": {"hash":"234731fb3bd0f3954a6b2cd66774b85586de7f7788557852fd9d3a12c18b0c01","reason":"The toolset shows mixed documentation quality. While tools like 'create_db_instance', 'modify_parameter', and 'describe_available_zones' have comprehensive descriptions and well-documented parameters with examples and constraints, many others suffer from significant weaknesses. Several tools have poorly formatted descriptions with inconsistent structure (mixing docstring format with incomplete sentences), minimal parameter descriptions lacking context or examples, and some tools like the first three have incomplete or malformed descriptions ending abruptly with ':return:'. The overall inconsistency and substantial gaps in documentation across multiple tools prevent a higher grade despite some individual tools being well-documented.","score":"C"},
+  "resources": {
+    "tools": 28,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

@@ -1,0 +1,985 @@
+{
+  "tools": [
+    {
+      "name": "abort_build",
+      "hash": "ef8c97cf42232ddba498237ea7d7c20bf9129d65f1835cce65fdd60f5a3eddff",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        },
+        {
+          "name": "build_slug",
+          "hash": "d61d679c4b78dbacd64f7f911bfcaa797cbe27cad4e871ac91dd66db6333e9da"
+        },
+        {
+          "name": "reason",
+          "hash": "46d09ed4bf44cfcfc4c869fa143485fb251a1eabe454467578730231fc34f2bd"
+        }
+      ]
+    },
+    {
+      "name": "abort_pipeline",
+      "hash": "cdbec36a3b871913fc74aaf20ccad0f64315f2e57dc320a6031f522c3ef3926a",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        },
+        {
+          "name": "pipeline_id",
+          "hash": "6e9966c5eff5c2582e4934292fcb402fc179b2064dbfee939e830522b70e1dd1"
+        },
+        {
+          "name": "reason",
+          "hash": "b458c1c086531c1cfb74af57513a255c8cf08fa863917c854b213d06c080905d"
+        }
+      ]
+    },
+    {
+      "name": "add_member_to_group",
+      "hash": "a94962f1d2e31ae8c81cdd75533acbe61b1030c3a8804f286ef858a6e1f5e834",
+      "params": [
+        {
+          "name": "group_slug",
+          "hash": "ff3f97f429d5e3a103244b1b8bff84e9c0a020b86a3a191017711a3285f38575"
+        },
+        {
+          "name": "user_slug",
+          "hash": "679cfa9d3f635ce83c31f593d18f7c3bc87236352f98afe5d91927c8b583e0f6"
+        }
+      ]
+    },
+    {
+      "name": "add_testers_to_tester_group",
+      "hash": "72ce73d34f3ba1f7a14a7c3a4cef578f59cb866162e1d52215be91e4dbf549e6",
+      "params": [
+        {
+          "name": "connected_app_id",
+          "hash": "a1f402921d99db58a195fdf902a5871945ae5d361f1a31ba76c9c5d3e8fd3287"
+        },
+        {
+          "name": "id",
+          "hash": "f22ddea39b815ed0916e6ba11db5679e1d337d3f35a599efcaedb0c89597f909"
+        },
+        {
+          "name": "user_slugs",
+          "hash": "c7c045de4d32079a595d72210c4e38266d47762564d9632a903b2351ce0dd891"
+        }
+      ]
+    },
+    {
+      "name": "create_connected_app",
+      "hash": "fbc3209f0bc8f36f981c2b27620f99c735d37e1d7c4e013b78b2a22bdcc97b35",
+      "params": [
+        {
+          "name": "id",
+          "hash": "ceed25d355c0955dc202ac2360febbe85716f605eb721fa9f9ecf03a6ae57ced"
+        },
+        {
+          "name": "manual_connection",
+          "hash": "1dd3cb0d4d3285fd8c835191e2810a7080aff2f15646433269e2b3476b15b149"
+        },
+        {
+          "name": "platform",
+          "hash": "bf4c3f0f25f3486392eb30780419c2dbd0896c927b3a1e64b0e65a6a4995ebb7"
+        },
+        {
+          "name": "project_id",
+          "hash": "8ed63733440d6a36a862c24fd905e8d8ef5710e47146348ba9df83d19b2fd762"
+        },
+        {
+          "name": "store_app_id",
+          "hash": "a00c83ebdc1f534996055ec1a5ae39e6449a55b024652a64ca18e02c54b4f6d1"
+        },
+        {
+          "name": "store_app_name",
+          "hash": "cdd7b608789d56a8615eeb4a97cef02e95c5992853d8f267c467a9e4b48d80ed"
+        },
+        {
+          "name": "store_credential_id",
+          "hash": "a08d919e2f347e1e491c30ac0636b96a6350a954593541a642f7b3bf6cc66e1f"
+        },
+        {
+          "name": "workspace_slug",
+          "hash": "c36e325940ea066bbd63c076be5a8dba665df83efc7c1e59b6784b2f92087ed4"
+        }
+      ]
+    },
+    {
+      "name": "create_tester_group",
+      "hash": "fa0c9c32233965f9ffc662e7d3b4c60a49d686b5b513e282cae8b4a1b76c5419",
+      "params": [
+        {
+          "name": "auto_notify",
+          "hash": "412c8f20771bfaa3547b52249191d0f685ddd65357131d38ab7b8d4c67acffa4"
+        },
+        {
+          "name": "connected_app_id",
+          "hash": "a1f402921d99db58a195fdf902a5871945ae5d361f1a31ba76c9c5d3e8fd3287"
+        },
+        {
+          "name": "name",
+          "hash": "fc30ac118d7af428d7ae9a59365880da541f0a6a0314f76ac2f00521150f47c2"
+        }
+      ]
+    },
+    {
+      "name": "create_workspace_group",
+      "hash": "7edd9e74cf00e789c352cf34a30c2fb549eb05432fb5ee900da687948a42d7e2",
+      "params": [
+        {
+          "name": "group_name",
+          "hash": "d692cebacdf6154863eb66a5cce4b9859bf4f0696a1115f2ccbf7d546bc035e2"
+        },
+        {
+          "name": "workspace_slug",
+          "hash": "ab86e8b6f4878c78da2f22e0f57cdf0f3283dc2a56dbcb3d7a303e5d94da7871"
+        }
+      ]
+    },
+    {
+      "name": "delete_all_cache_items",
+      "hash": "d4c375c21af665ee3941a0614251661a88d3fc7b4727e220701e76f22f9a3570",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        }
+      ]
+    },
+    {
+      "name": "delete_app",
+      "hash": "801fa3e14e78a3845458d6f45bb9c5197b8d5166d95e0802f62e0a70f711d9fc",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        }
+      ]
+    },
+    {
+      "name": "delete_cache_item",
+      "hash": "930513883bf175b79554a92e1abc3349f49d6193cd486f1da2ecf149466f6034",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        },
+        {
+          "name": "cache_item_id",
+          "hash": "cc3fb654aef43b59c4dfafbaf75d75aa1437b2e05d52f769333d55e21bfd50bf"
+        }
+      ]
+    },
+    {
+      "name": "finish_bitrise_app",
+      "hash": "2f8127dff5f78d6895dac8a1b93957bf3d80fa930c554fa6445bea1192fa4325",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "2ea685ede4257ca4697977495f9c4019cef8015c4c28c1f7c8a4089268049eba"
+        },
+        {
+          "name": "config",
+          "hash": "a95c3e3b104900722462b0787deb35fa28f7c7da2c3ea99120185dacff3fd6b8"
+        },
+        {
+          "name": "mode",
+          "hash": "cbdbd44073d0ab9dd7e9c8be07a16894489e95e5dde188ccf587b7a3689c365d"
+        },
+        {
+          "name": "project_type",
+          "hash": "017447274a841f3c5ef40ceeaa572b8b39d3a2075b2115fe2c0aabab60bce2fa"
+        },
+        {
+          "name": "stack_id",
+          "hash": "933aefe6ac5b42e0032bea642895f8bbd7796e15938b8b468e4a9555303f347c"
+        }
+      ]
+    },
+    {
+      "name": "generate_installable_artifact_upload_url",
+      "hash": "9423c9fe1f416f7fb030de3974fd4b19738d9ac6bd236c175f6a51410ecf820b",
+      "params": [
+        {
+          "name": "branch",
+          "hash": "d27cc736ca5638a2f2dabfda60096bde10e8092ad7264f3a05a08297d5890fab"
+        },
+        {
+          "name": "connected_app_id",
+          "hash": "78ecdd33cd32c970bd08e719ed640d58defc691573e1bb15b879ac9a743ebbee"
+        },
+        {
+          "name": "file_name",
+          "hash": "443a313a3548630c1297742a1d0fcac61ebcdcfe6396c292e5b167beeb0d4048"
+        },
+        {
+          "name": "file_size_bytes",
+          "hash": "03fac2a185d87b7b6290d5b544a171b7f2c64cd30f0adc65ddfabca7d18909cd"
+        },
+        {
+          "name": "installable_artifact_id",
+          "hash": "6187e899372406cab9d373aca4bb53b6caf0f2ed87d6d064c14e95dfbcc748b5"
+        },
+        {
+          "name": "with_public_page",
+          "hash": "00f61b9dea6344747632560bdd06d6365ad7f0bc4be2bf13d20bb79e55495f6b"
+        },
+        {
+          "name": "workflow",
+          "hash": "9ebdf7e983f45103ce0ba7f758f452fcfefeefad23f8948365e492d0e8b948fc"
+        }
+      ]
+    },
+    {
+      "name": "get_app",
+      "hash": "f058d2ff51f6bdf33a760f0ba2fb7a661c33a73f9ee89813aa1bbfdb4266833e",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        }
+      ]
+    },
+    {
+      "name": "get_artifact",
+      "hash": "51a62414d396f81f9e534a010b3772424de64cf79a09656f5a0b8b5fe618b65e",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        },
+        {
+          "name": "artifact_slug",
+          "hash": "4db785a401917603e99305e0ea8c6de87918bcc237c3d3164853746e280b0c8d"
+        },
+        {
+          "name": "build_slug",
+          "hash": "d61d679c4b78dbacd64f7f911bfcaa797cbe27cad4e871ac91dd66db6333e9da"
+        }
+      ]
+    },
+    {
+      "name": "get_bitrise_yml",
+      "hash": "60616deb2a0f2b3ab92be86af813274d7d8c672ffc8ced4a00ac79a962039720",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "c6b078f854286e9f9c5d61e8ce99f8d4a807c85cf2fb94be3f42899830eaf9e7"
+        }
+      ]
+    },
+    {
+      "name": "get_build",
+      "hash": "d1fc04f8bef3e65fa55901f30df898a31732c1ef3a1fe20e45c461bdbc5d6ed7",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        },
+        {
+          "name": "build_slug",
+          "hash": "d61d679c4b78dbacd64f7f911bfcaa797cbe27cad4e871ac91dd66db6333e9da"
+        }
+      ]
+    },
+    {
+      "name": "get_build_bitrise_yml",
+      "hash": "9fce8c4eb62d699e55cacb0b99e40b8178ef06b0156e959d1748a204cd51c356",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        },
+        {
+          "name": "build_slug",
+          "hash": "d61d679c4b78dbacd64f7f911bfcaa797cbe27cad4e871ac91dd66db6333e9da"
+        }
+      ]
+    },
+    {
+      "name": "get_build_log",
+      "hash": "5132b7f49b13e80eb0abeb1ea618c93cbf61eca5a2493d9d4bdb57b96ec11498",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "c6b078f854286e9f9c5d61e8ce99f8d4a807c85cf2fb94be3f42899830eaf9e7"
+        },
+        {
+          "name": "build_slug",
+          "hash": "ecbac931a310f8ac941f1e56f3506ac289083863043a1e91eb374170b642eab3"
+        }
+      ]
+    },
+    {
+      "name": "get_cache_item_download_url",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        },
+        {
+          "name": "cache_item_id",
+          "hash": "cc3fb654aef43b59c4dfafbaf75d75aa1437b2e05d52f769333d55e21bfd50bf"
+        }
+      ]
+    },
+    {
+      "name": "get_connected_app",
+      "hash": "0a3457f220d6b498a29105feda9fedfad4c5cc9324fdff257ff6a0f7b549d879",
+      "params": [
+        {
+          "name": "id",
+          "hash": "b1a45dfd256af6cb904458cedce27377dd9002252b0c0d6e4ce29fcb0bc5271b"
+        }
+      ]
+    },
+    {
+      "name": "get_installable_artifact_upload_and_processing_status",
+      "hash": "ca6ba25a9f2e2b8d75a06ed3f139f56c0b7d6be2dde2a816374a6d7ae4bf8a1b",
+      "params": [
+        {
+          "name": "connected_app_id",
+          "hash": "78ecdd33cd32c970bd08e719ed640d58defc691573e1bb15b879ac9a743ebbee"
+        },
+        {
+          "name": "installable_artifact_id",
+          "hash": "9a9a81c2c59b022fb6fdcbfafa7fe832f201755c9f5b6251396aaef6658e8476"
+        }
+      ]
+    },
+    {
+      "name": "get_pipeline",
+      "hash": "df7044cac25d58bdce432df9ec9c44eece9ad88ffad52a77a52a499b749bfeb4",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        },
+        {
+          "name": "pipeline_id",
+          "hash": "6e9966c5eff5c2582e4934292fcb402fc179b2064dbfee939e830522b70e1dd1"
+        }
+      ]
+    },
+    {
+      "name": "get_potential_testers",
+      "hash": "1c5497fad2af8452acf54e8d60cf2b42d43c15c1b7f58908fc8db4ac1e9af3b9",
+      "params": [
+        {
+          "name": "connected_app_id",
+          "hash": "a14a6a4d9c9ba703a8b03ae7e746df1a3ad46d4511bcdb6c1d0f42a2f7abcc1a"
+        },
+        {
+          "name": "id",
+          "hash": "6e4544adb313c4aae1679fda6f79d12887dfc63b13a8d525ce25a6620e938554"
+        },
+        {
+          "name": "items_per_page",
+          "hash": "9d5418828eb77491532ba9e5bfaa649f53143b679b948ca1ce1e04caa0690fc0"
+        },
+        {
+          "name": "page",
+          "hash": "e27f5234c9a9ba7e3e1e2a227f02bab4f75acae8283217201676e22244c10851"
+        },
+        {
+          "name": "search",
+          "hash": "7d425ef70d1cd49c5aef30b103418299431490dd6ed64196c5d74f3df4f1e7db"
+        }
+      ]
+    },
+    {
+      "name": "get_tester_group",
+      "hash": "647d2624a820716e8c1b001d4115056492a5e4fbea7e402cef46b79ed9b7cbf8",
+      "params": [
+        {
+          "name": "connected_app_id",
+          "hash": "a14a6a4d9c9ba703a8b03ae7e746df1a3ad46d4511bcdb6c1d0f42a2f7abcc1a"
+        },
+        {
+          "name": "id",
+          "hash": "6e4544adb313c4aae1679fda6f79d12887dfc63b13a8d525ce25a6620e938554"
+        }
+      ]
+    },
+    {
+      "name": "get_workspace",
+      "hash": "3a3b6dd2997de3c4c4089997498fe45a76617238965ca43af025de356499b5d2",
+      "params": [
+        {
+          "name": "workspace_slug",
+          "hash": "ab86e8b6f4878c78da2f22e0f57cdf0f3283dc2a56dbcb3d7a303e5d94da7871"
+        }
+      ]
+    },
+    {
+      "name": "get_workspace_groups",
+      "hash": "19373156d26162a045c058ed903c0ea5feeea80a8d9718f3c8ea02cb4b2f300d",
+      "params": [
+        {
+          "name": "workspace_slug",
+          "hash": "ab86e8b6f4878c78da2f22e0f57cdf0f3283dc2a56dbcb3d7a303e5d94da7871"
+        }
+      ]
+    },
+    {
+      "name": "get_workspace_members",
+      "hash": "54bf86afeaeb8486a94826045aa03abb178bcdca797c203149ba6bdc07785d71",
+      "params": [
+        {
+          "name": "workspace_slug",
+          "hash": "ab86e8b6f4878c78da2f22e0f57cdf0f3283dc2a56dbcb3d7a303e5d94da7871"
+        }
+      ]
+    },
+    {
+      "name": "invite_member_to_workspace",
+      "hash": "82bd3da1d0a32e49f97b4076e6ac2000c7aa387d616e8a51838814a41017206f",
+      "params": [
+        {
+          "name": "email",
+          "hash": "08583424bb1414c9e0d4077c4d4c155fb770ab10865b5d823ba660bdface0539"
+        },
+        {
+          "name": "workspace_slug",
+          "hash": "ab86e8b6f4878c78da2f22e0f57cdf0f3283dc2a56dbcb3d7a303e5d94da7871"
+        }
+      ]
+    },
+    {
+      "name": "list_apps",
+      "hash": "20f50354c16add3381427f8063fcdbc1bd08f454cba0a0bd821e86b63b89149e",
+      "params": [
+        {
+          "name": "limit",
+          "hash": "cdfd5419dc04c045cd4713666e7efc8047b295d894e3516fa3b18dcfb0378b9a"
+        },
+        {
+          "name": "next",
+          "hash": "3d01a9e934cdc3d09d38453cc7dee96d3ae5ca3f6fac12349af384209bed1e5a"
+        },
+        {
+          "name": "sort_by",
+          "hash": "5669788e1b849af161732aa5b50520a484b2b26918311869d7b9b865b6425cdc"
+        }
+      ]
+    },
+    {
+      "name": "list_artifacts",
+      "hash": "b5f1bd4798fde0d3fb943c5201e1c9d15b92a9148acbaed316f443a6e8d5457e",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        },
+        {
+          "name": "build_slug",
+          "hash": "d61d679c4b78dbacd64f7f911bfcaa797cbe27cad4e871ac91dd66db6333e9da"
+        },
+        {
+          "name": "limit",
+          "hash": "cdfd5419dc04c045cd4713666e7efc8047b295d894e3516fa3b18dcfb0378b9a"
+        },
+        {
+          "name": "next",
+          "hash": "aa2db3c4cb1d526268670daecbc04308c21f809682a5324913f4f9ef12af4b5c"
+        }
+      ]
+    },
+    {
+      "name": "list_branches",
+      "hash": "d7f40b58992b81ae90d5bc8e6d36b58c3d4ffe3df56f636e17c2aece8ea600e9",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        }
+      ]
+    },
+    {
+      "name": "list_build_distribution_version_test_builds",
+      "hash": "b06b2028b128bd7ccf2a6d1cbc1d3fe00222f9386f1da6004599c5d10e92661b",
+      "params": [
+        {
+          "name": "connected_app_id",
+          "hash": "ca11223cf06d1214bc2b16bbf5fd6519026b038f2317b556a47bc0181f850d49"
+        },
+        {
+          "name": "items_per_page",
+          "hash": "a87a40bb4a9ea96a03ec2dc7e55046f05e8f6a4bf11f93b9e16d3a422f645596"
+        },
+        {
+          "name": "page",
+          "hash": "e27f5234c9a9ba7e3e1e2a227f02bab4f75acae8283217201676e22244c10851"
+        },
+        {
+          "name": "version",
+          "hash": "5e511acf87855d16c871ccca3bbcc8782cf8054c39704a370747a512b015b5bc"
+        }
+      ]
+    },
+    {
+      "name": "list_build_distribution_versions",
+      "hash": "7d9702e933a2c1e1d1b3a5fadbfefafdfb737c78dc962e19930b89b8804541b7",
+      "params": [
+        {
+          "name": "connected_app_id",
+          "hash": "ca11223cf06d1214bc2b16bbf5fd6519026b038f2317b556a47bc0181f850d49"
+        },
+        {
+          "name": "items_per_page",
+          "hash": "5030c50a4551c7630abaf3f5052603b0316f24d5f9183896b7cc6fbc284d2ef9"
+        },
+        {
+          "name": "page",
+          "hash": "e27f5234c9a9ba7e3e1e2a227f02bab4f75acae8283217201676e22244c10851"
+        }
+      ]
+    },
+    {
+      "name": "list_build_workflows",
+      "hash": "001100e53ce56c7eb788bf91c4162933643d930f37d09ad930a526d389dff72a",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        }
+      ]
+    },
+    {
+      "name": "list_builds",
+      "hash": "b91b3908ced7288161e6dade0627d7f9f7d77e034a18b58ab09c5da79493e11a",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        },
+        {
+          "name": "branch",
+          "hash": "b4b89eb1b2971099da00c8685a9259900e0b0da9068149b2e954abff1ee662ec"
+        },
+        {
+          "name": "limit",
+          "hash": "cdfd5419dc04c045cd4713666e7efc8047b295d894e3516fa3b18dcfb0378b9a"
+        },
+        {
+          "name": "next",
+          "hash": "7aa37d82a2dc8a1e85609b83ad984b8eb43750d202b28633a2d7b95b94329cf7"
+        },
+        {
+          "name": "sort_by",
+          "hash": "f708558fec4a255366497537e12be6250e3fa2934ff3d5ffaeccb15bcdf1b3d7"
+        },
+        {
+          "name": "status",
+          "hash": "dfbe76da5c8ca30254849f8b37ee582f0421950635abef58cb809047e51716b3"
+        },
+        {
+          "name": "workflow",
+          "hash": "18e32947143046baade94c4a0cc915b31a26001d302bae7eca5dc2dfc567616a"
+        }
+      ]
+    },
+    {
+      "name": "list_cache_items",
+      "hash": "f082508f0074f0ef8e2507110ad5410540fbb2e61377184db37570965e75e15e",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        }
+      ]
+    },
+    {
+      "name": "list_connected_apps",
+      "hash": "b40ffb97eddac9a6c6cd27885acb9929306e1cacc2a22a992e9f8ca5cabb826b",
+      "params": [
+        {
+          "name": "items_per_page",
+          "hash": "b6792b0b411022973469673763d3ee2e877d98b24ca6bf9abc96fa0b03e29d3c"
+        },
+        {
+          "name": "page",
+          "hash": "e27f5234c9a9ba7e3e1e2a227f02bab4f75acae8283217201676e22244c10851"
+        },
+        {
+          "name": "platform",
+          "hash": "f8d638765f8688846479c08451b6ad2ca7ec81847689f8f96e345abb68fa96d7"
+        },
+        {
+          "name": "project_id",
+          "hash": "13c9ea3ac2a89de65b09a51a7bb594158e17aa7c3a430c346d2d7dd135e5ca9e"
+        },
+        {
+          "name": "search",
+          "hash": "ab2994d34177f4462ab60bfcad999df35978a9d09edbd1d85ba00fb53975eb61"
+        },
+        {
+          "name": "workspace_slug",
+          "hash": "981c6fec94d9d0b8c6e44b63e512d932999f704f5536b36cbe7fb1223287c33f"
+        }
+      ]
+    },
+    {
+      "name": "list_group_roles",
+      "hash": "da9e774f04fad098427d1f2b034ec9b47bedd9e3298ee9ef1074f83bc4483949",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        },
+        {
+          "name": "role_name",
+          "hash": "dfc578882381da691f1f35fcbf69f6472aecfec9e5c88a1d29d98dc3de6e8211"
+        }
+      ]
+    },
+    {
+      "name": "list_installable_artifacts",
+      "hash": "3cbf3b1371dd89bd0ebff121a876225056984715d5e172809d12d34420d2abb0",
+      "params": [
+        {
+          "name": "after_date",
+          "hash": "2af3f2712446f1218ce05a779751c16b907be7af4293393e65e5e34ff87f4893"
+        },
+        {
+          "name": "artifact_type",
+          "hash": "c3ad973145e8f5b18a702fa6cc0b2f89c60822c77e55c4a42536899b95652661"
+        },
+        {
+          "name": "before_date",
+          "hash": "93b9c96d13545184196c4c1d57026b270709097909d71356c60ca14e0c6f7ca2"
+        },
+        {
+          "name": "branch",
+          "hash": "9387278c2749f75ae8a6d36bf1c152306d3d8ec837d499ad81c6be22dcf23fda"
+        },
+        {
+          "name": "connected_app_id",
+          "hash": "8c60def5fcd7ecf65f27ba92e6fdc2be7bf0774905293bb7d9d015e13eca14fa"
+        },
+        {
+          "name": "distribution_ready",
+          "hash": "42d44685fbf2cd9fad484fe8fcb09ea788234622b7758ff9a268774dd53e6c4d"
+        },
+        {
+          "name": "items_per_page",
+          "hash": "97fbf5a4b62a9981df1e14cfba7e7db4f8acf3e4d50901af6d3144ce48e6fc72"
+        },
+        {
+          "name": "page",
+          "hash": "e27f5234c9a9ba7e3e1e2a227f02bab4f75acae8283217201676e22244c10851"
+        },
+        {
+          "name": "platform",
+          "hash": "7d9f3a96494bd9e44150b41466060f6f3e1dc3e12d7f1c4bb8ce5e4286dd6fc8"
+        },
+        {
+          "name": "search",
+          "hash": "2211e4b2c3c67cd779576a75046406d7d39fe61011a835c3a3139ebb543fd5cd"
+        },
+        {
+          "name": "source",
+          "hash": "febb71b50c4c79d99237fd6be766070878df05e33199b666d9d33642bd8ba1cc"
+        },
+        {
+          "name": "store_signed",
+          "hash": "098c1053d94a30942a9d782c309abefd31ad556de8d6818bad6ba29d34474aee"
+        },
+        {
+          "name": "version",
+          "hash": "22d99b8a17a4e221dcd4cba6eb225c5ef3016d22ba85feeac39093ac291c9d72"
+        },
+        {
+          "name": "workflow",
+          "hash": "cdc6791c7ba54da5888286c317d9e905cfd7de45a22f7cc34daa337f2add27ac"
+        }
+      ]
+    },
+    {
+      "name": "list_outgoing_webhooks",
+      "hash": "52acbacbad91e74c0bbe8bf97c6f5c331a648ec253751319529f971d21328336",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        }
+      ]
+    },
+    {
+      "name": "list_pipelines",
+      "hash": "f224915e6522186d2d517ffce2a0ec581e96bab9618d438917bee1b9af2d4e8d",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        }
+      ]
+    },
+    {
+      "name": "list_tester_groups",
+      "hash": "7c3c2648f280218ff612063904efa57ac9e9d0f12699a7a8e2bdcfa648e4a256",
+      "params": [
+        {
+          "name": "connected_app_id",
+          "hash": "a14a6a4d9c9ba703a8b03ae7e746df1a3ad46d4511bcdb6c1d0f42a2f7abcc1a"
+        },
+        {
+          "name": "items_per_page",
+          "hash": "056bf9acce917ade2d03d573cc1988b62fc37b9fa28fd06f71df05246ecc4087"
+        },
+        {
+          "name": "page",
+          "hash": "e27f5234c9a9ba7e3e1e2a227f02bab4f75acae8283217201676e22244c10851"
+        }
+      ]
+    },
+    {
+      "name": "list_workspaces",
+      "hash": "94efddc0886a4abedd193127c6ce4e1a551a936e0558b2f1856da11830e5477d"
+    },
+    {
+      "name": "me",
+      "hash": "9d8f6062d380932d47ecd31f08244048bd7636ad6a3a4a155c225b6e2c4795b6"
+    },
+    {
+      "name": "notify_tester_group",
+      "hash": "353b8391e6fd8ee110f1aec9a3850d8a4f47fda20c4c293b4b76d4f9e6d58216",
+      "params": [
+        {
+          "name": "connected_app_id",
+          "hash": "a1f402921d99db58a195fdf902a5871945ae5d361f1a31ba76c9c5d3e8fd3287"
+        },
+        {
+          "name": "id",
+          "hash": "233e498214acac872f431cad472b0c83d33fa38e859f68ba510954daf5b31653"
+        },
+        {
+          "name": "test_build_id",
+          "hash": "fc28f248324615dfa1186604e2feb03e43122442af931490acba6e90770e6545"
+        }
+      ]
+    },
+    {
+      "name": "rebuild_pipeline",
+      "hash": "f05c86b5f0a37346780db81b0a51c29156b98a1b96d0e638f7e8d26e65b8e7fc",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        },
+        {
+          "name": "pipeline_id",
+          "hash": "6e9966c5eff5c2582e4934292fcb402fc179b2064dbfee939e830522b70e1dd1"
+        }
+      ]
+    },
+    {
+      "name": "register_app",
+      "hash": "116266340b73b027a63808b4dd9abafce8123a1e6ad852b9ad09490e1520af96",
+      "params": [
+        {
+          "name": "is_public",
+          "hash": "0d54c4181f84ec111fe68287a56281ddf401b8cf555430bb07eeb2ea33a667ef"
+        },
+        {
+          "name": "organization_slug",
+          "hash": "f5e6e917ff9ef5492347e5d5653fb169327a660cd67e2e6dfbbde9c887221f18"
+        },
+        {
+          "name": "project_type",
+          "hash": "b83960b24daaebadd169fa9c2d0acd3ea14cd08749a11bb4b92cba1fcfa85677"
+        },
+        {
+          "name": "provider",
+          "hash": "d873f20a889f4ca480473f528dd00344315a5758dc61feafd94bc5703d0382e0"
+        },
+        {
+          "name": "repo_url",
+          "hash": "c83db0133850dfccdc6743bb4391c7765e59c5f12e22e9b6ed250e850e0f8c36"
+        }
+      ]
+    },
+    {
+      "name": "register_ssh_key",
+      "hash": "500d7099103a00aca1e1174a6e2e50319f03325d24cb61add1ab23ff4d28ed1d",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        },
+        {
+          "name": "auth_ssh_private_key",
+          "hash": "8acdf4459ec846fecbb28995491b72c758cc88b7b9b5aab2bca07c6e66096dd8"
+        },
+        {
+          "name": "auth_ssh_public_key",
+          "hash": "6c2dd5537ac1be6bed7eb92f0b4ff42bb2aa35ef28e487fbf98db548b79d5051"
+        },
+        {
+          "name": "is_register_key_into_provider_service",
+          "hash": "86a933db370e7688ced1be370e273b8b4d9d4b31e4303ac8ad0a8fa41d89c225"
+        }
+      ]
+    },
+    {
+      "name": "register_webhook",
+      "hash": "e8ec954020caaad04ec4d0eaaa281418ebf219e71a99dfaf41da70bf1aeef60a",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        }
+      ]
+    },
+    {
+      "name": "replace_group_roles",
+      "hash": "e722f651f109e2026f2a2a72abc6b414bd5da8fc57d26aa8c22e045036650f6d",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        },
+        {
+          "name": "group_slugs",
+          "hash": "83698b6392c3c72dfa142a8880f09d40ab8032dce7dc1f6f2ae15b22d78be66b"
+        },
+        {
+          "name": "role_name",
+          "hash": "dfc578882381da691f1f35fcbf69f6472aecfec9e5c88a1d29d98dc3de6e8211"
+        }
+      ]
+    },
+    {
+      "name": "set_installable_artifact_public_install_page",
+      "hash": "b115d334b5e4b1f4a0e1ba2f7faec17dee8ca0a0a7c126be2899fa7ecb677a06",
+      "params": [
+        {
+          "name": "connected_app_id",
+          "hash": "78ecdd33cd32c970bd08e719ed640d58defc691573e1bb15b879ac9a743ebbee"
+        },
+        {
+          "name": "installable_artifact_id",
+          "hash": "9a9a81c2c59b022fb6fdcbfafa7fe832f201755c9f5b6251396aaef6658e8476"
+        },
+        {
+          "name": "with_public_page",
+          "hash": "e30173967dd6aadda6877b928e7628eb78eb523bd746cf6014a20ded4054f315"
+        }
+      ]
+    },
+    {
+      "name": "trigger_bitrise_build",
+      "hash": "6e99241be7dc47be3df1d2597a7a0467208b477fab9288a2af689c48df0281b2",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "c6b078f854286e9f9c5d61e8ce99f8d4a807c85cf2fb94be3f42899830eaf9e7"
+        },
+        {
+          "name": "branch",
+          "hash": "84d8c05dc547465867baea43baca4d7dcab615cb11855f3f17fbe26310685cc1"
+        },
+        {
+          "name": "commit_hash",
+          "hash": "eb5b88dea305d119c5067ecd79b3df891909b9a28909ae39092ba2e8f312c4a4"
+        },
+        {
+          "name": "commit_message",
+          "hash": "9f36e2a81a20636e1963d873eed9a8f6818d9ae3bf5cfdca56e49294a6a23bba"
+        },
+        {
+          "name": "workflow_id",
+          "hash": "1953f5300d3a174f8f81f439f41d879be911a2a4ad239b3ae01fc2d8f0369d46"
+        }
+      ]
+    },
+    {
+      "name": "update_app",
+      "hash": "68b8e5f2e8479a74ad77de38335d82c2796f155feab14f9ca57eb338721bcb02",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "65749d80855f14dab4a238b607d70f74b702ea7c7eb178865d44fcdf99be9b66"
+        },
+        {
+          "name": "is_public",
+          "hash": "0d54c4181f84ec111fe68287a56281ddf401b8cf555430bb07eeb2ea33a667ef"
+        },
+        {
+          "name": "project_type",
+          "hash": "209869bd23a5d664808a01c83d559041e0f0e379f160b449f1e49fadf6ba1b04"
+        },
+        {
+          "name": "provider",
+          "hash": "d873f20a889f4ca480473f528dd00344315a5758dc61feafd94bc5703d0382e0"
+        },
+        {
+          "name": "repo_url",
+          "hash": "c83db0133850dfccdc6743bb4391c7765e59c5f12e22e9b6ed250e850e0f8c36"
+        }
+      ]
+    },
+    {
+      "name": "update_bitrise_yml",
+      "hash": "d2a59d9603f2597c4e7fa9abd9bc839f7d61aa7ee0baf848bb860fd275e5ab34",
+      "params": [
+        {
+          "name": "app_slug",
+          "hash": "c6b078f854286e9f9c5d61e8ce99f8d4a807c85cf2fb94be3f42899830eaf9e7"
+        },
+        {
+          "name": "bitrise_yml_as_json",
+          "hash": "0fa88738e585be3a2847977360c29a0432dd92227d9fa501fa6df2852edc6f3b"
+        }
+      ]
+    },
+    {
+      "name": "update_connected_app",
+      "hash": "38f24ddf4269beb52f819c800231fe581e16ffddf0e7e435dd90f32bb37f0e9a",
+      "params": [
+        {
+          "name": "connect_to_store",
+          "hash": "c9b06edbc4836aecb072bbc90304af2ceea2b6c53ff08c18c42ea41666235681"
+        },
+        {
+          "name": "connected_app_id",
+          "hash": "b28be0349de58bb3f1e53398314a99c494b973e8e9c2b7d3e2f9d426507e412b"
+        },
+        {
+          "name": "store_app_id",
+          "hash": "f5d4cbca496ba0d8ca6227ff01987332b443cd504863c5e8a609a0eb49cbce3b"
+        },
+        {
+          "name": "store_credential_id",
+          "hash": "a08d919e2f347e1e491c30ac0636b96a6350a954593541a642f7b3bf6cc66e1f"
+        }
+      ]
+    },
+    {
+      "name": "update_tester_group",
+      "hash": "25e5eec2e38032db568df618efc5f6026de667a110b9e33c929485eb08b9db47",
+      "params": [
+        {
+          "name": "auto_notify",
+          "hash": "f2bec9a4f9870718bb598345ac3a0c2c2aca038a0c0fdd27a9da628a834baf7d"
+        },
+        {
+          "name": "connected_app_id",
+          "hash": "a1f402921d99db58a195fdf902a5871945ae5d361f1a31ba76c9c5d3e8fd3287"
+        },
+        {
+          "name": "id",
+          "hash": "f22ddea39b815ed0916e6ba11db5679e1d337d3f35a599efcaedb0c89597f909"
+        },
+        {
+          "name": "name",
+          "hash": "ba6f9ce62378378d1c6d5f39a48725a0ee474d759e1993cbde0cab0fc2fe83ab"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

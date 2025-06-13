@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-nuclei",
+  "icon": "https://avatars.githubusercontent.com/u/89649708?s=200&v=4",
+  "name": "mcp-server-nuclei",
+  "description": "Template-based vulnerability scanner using Nuclei's extensive library of security checks",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-nuclei",
+      "application": "https://github.com/cyproxio/mcp-for-security/tree/HEAD/nuclei-mcp"
+    },
+  "tags": ["security"],
+  "official": true,
+  "scope": "native",
+  "mutitenant": true,
+  "runtime": "node",
+  "version": "6190e55",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"3942b3fe1d29f048098a67c3d7a7513a74b185da399c2c43fe7c646995f1694e","reason":"While the first tool has a good description explaining Nuclei's purpose and capabilities, it suffers from poor parameter documentation with grammatical errors and unclear guidance. The second tool has an extremely minimal description that fails to explain its purpose or functionality. Parameter documentation is inconsistent, with the tags parameter having poor grammar and the second tool having no parameters to document.","score":"D"},
+  "resources": {
+    "tools": 2,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

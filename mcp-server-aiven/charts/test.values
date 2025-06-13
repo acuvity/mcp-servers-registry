@@ -1,0 +1,10 @@
+env:
+  AIVEN_BASE_URL: dummy_value
+  AIVEN_PROJECT_NAME: 
+
+secrets:
+  AIVEN_TOKEN:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

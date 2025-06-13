@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -8,15 +8,15 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
     CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
 
-FROM ghcr.io/astral-sh/uv:python3.12-bookworm
+FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
 
 LABEL "maintainer"="support@acuvity.ai"
-LABEL "mcp-server-scope"="standalone"
+LABEL "mcp-server-scope"="native"
 
 LABEL org.opencontainers.image.title="mcp-server-aws-terraform"
-LABEL org.opencontainers.image.description="Terraform AWS best practices, infrastructure as code patterns, and security compliance with Checkov."
+LABEL org.opencontainers.image.description="Terraform on AWS best practices, infrastructure as code patterns, and security compliance"
 LABEL org.opencontainers.image.version="1.0.1"
-LABEL org.opencontainers.image.source="https://github.com/awslabs/mcp/tree/main/src/terraform-mcp-server"
+LABEL org.opencontainers.image.source="https://github.com/awslabs/mcp/tree/HEAD/src/terraform-mcp-server"
 LABEL org.opencontainers.image.licenses="nil"
 LABEL org.opencontainers.image.author="Author"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"

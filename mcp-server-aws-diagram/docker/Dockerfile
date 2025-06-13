@@ -1,4 +1,4 @@
-FROM golang:1.24 AS minibridge
+FROM golang:1.24-alpine3.21 AS minibridge
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -14,9 +14,9 @@ LABEL "maintainer"="support@acuvity.ai"
 LABEL "mcp-server-scope"="standalone"
 
 LABEL org.opencontainers.image.title="mcp-server-aws-diagram"
-LABEL org.opencontainers.image.description="Create diagrams using the Python diagrams package: sequence, flow, and class diagrams."
+LABEL org.opencontainers.image.description="Creates AWS architecture diagrams using Python diagrams package DSL"
 LABEL org.opencontainers.image.version="1.0.1"
-LABEL org.opencontainers.image.source="https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server"
+LABEL org.opencontainers.image.source="https://github.com/awslabs/mcp/tree/HEAD/src/aws-diagram-mcp-server"
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 LABEL org.opencontainers.image.author="AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com>"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"

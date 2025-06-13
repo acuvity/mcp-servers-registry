@@ -1,0 +1,19 @@
+{
+  "tools": [
+    {
+      "name": "do-smuggler",
+      "hash": "07f7c4519a3dae62fae3607c9ebff1fc750b40cf23d8be0cd88b9e94cb19324e",
+      "params": [
+        {
+          "name": "smuggler_args",
+          "hash": "c55a07c843241dca99307f64b4eb5633d80ce188709d1867c3d8a712a54f2d33"
+        },
+        {
+          "name": "url",
+          "hash": "87cc043dcccd0e3f2201c83d0c6888739c6e7acb8c4cb61caa2bdc05e3e633b0"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

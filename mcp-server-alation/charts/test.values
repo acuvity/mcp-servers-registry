@@ -1,0 +1,6 @@
+env:
+  ALATION_BASE_URL: dummy_value
+  ALATION_AUTH_METHOD: 
+  ALATION_USER_ID: 
+
+secrets:

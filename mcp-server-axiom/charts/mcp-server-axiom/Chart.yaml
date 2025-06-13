@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: v0.0.1
+appVersion: "v0.0.1"
 keywords:
   - mcp-server-axiom
   - mcp-server

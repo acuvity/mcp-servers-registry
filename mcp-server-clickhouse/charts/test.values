@@ -1,0 +1,16 @@
+env:
+  CLICKHOUSE_HOST: dummy_value
+  CLICKHOUSE_USER: dummy_value
+  CLICKHOUSE_PORT: 
+  CLICKHOUSE_SECURE: 
+  CLICKHOUSE_VERIFY: 
+  CLICKHOUSE_CONNECT_TIMEOUT: 
+  CLICKHOUSE_SEND_RECEIVE_TIMEOUT: 
+  CLICKHOUSE_DATABASE: 
+
+secrets:
+  CLICKHOUSE_PASSWORD:
+    value:
+    valueFrom:
+      name: dummy_path
+      key: dummy_key

@@ -19,16 +19,16 @@
 
 
 # What is mcp-server-aws-terraform?
-[![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-aws-terraform/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-terraform/1.0.1?logo=docker&logoColor=fff&label=1.0.1)](https://hub.docker.com/r/acuvity/mcp-server-aws-terraform)
-[![PyPI](https://img.shields.io/badge/1.0.1-3775A9?logo=pypi&logoColor=fff&label=awslabs.terraform-mcp-server)](https://github.com/awslabs/mcp/tree/main/src/terraform-mcp-server)
+[![PyPI](https://img.shields.io/badge/1.0.1-3775A9?logo=pypi&logoColor=fff&label=awslabs.terraform-mcp-server)](https://github.com/awslabs/mcp/tree/HEAD/src/terraform-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-aws-terraform/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-terraform&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-terraform%3A1.0.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
-**Description:** Terraform AWS best practices, infrastructure as code patterns, and security compliance with Checkov.
+**Description:** Terraform on AWS best practices, infrastructure as code patterns, and security compliance
 
-Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from awslabs.terraform-mcp-server original [sources](https://github.com/awslabs/mcp/tree/main/src/terraform-mcp-server).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from awslabs.terraform-mcp-server original [sources](https://github.com/awslabs/mcp/tree/HEAD/src/terraform-mcp-server).
 
 **Quick links:**
 
@@ -153,23 +153,23 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Maintained by**:
   - [Acuvity team](mailto:support@acuvity.ai) for packaging
-  - [ Author ](https://github.com/awslabs/mcp/tree/main/src/terraform-mcp-server) for original source application
+  - [ Author ](https://github.com/awslabs/mcp/tree/HEAD/src/terraform-mcp-server) for original source application
 
 **Where to get help**:
   - [The Acuvity MCP Forge repository](https://github.com/acuvity/mcp-servers-registry)
   - [The Acuvity community Discord](https://discord.gg/BkU7fBkrNk)
-  - [ awslabs.terraform-mcp-server ](https://github.com/awslabs/mcp/tree/main/src/terraform-mcp-server)
+  - [ awslabs.terraform-mcp-server ](https://github.com/awslabs/mcp/tree/HEAD/src/terraform-mcp-server)
 
 **Where to file issues**:
   - [Github issue tracker](https://github.com/acuvity/mcp-servers-registry/issues)
-  - [ awslabs.terraform-mcp-server ](https://github.com/awslabs/mcp/tree/main/src/terraform-mcp-server)
+  - [ awslabs.terraform-mcp-server ](https://github.com/awslabs/mcp/tree/HEAD/src/terraform-mcp-server)
 
 **Supported architectures**:
   - `amd64`
   - `arm64`
 
 **Base image**:
-  - `ghcr.io/astral-sh/uv:python3.12-bookworm`
+  - `ghcr.io/astral-sh/uv:python3.12-bookworm-slim`
 
 **Resources**:
   - [Charts](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-terraform/charts/mcp-server-aws-terraform)
@@ -188,9 +188,9 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 
 > [!TIP]
-> Given mcp-server-aws-terraform scope of operation it can be hosted anywhere.
+> Given mcp-server-aws-terraform scope of operation the intended usage is to run natively on the targeted machine to access local resources.
 
-For more information and extra configuration you can consult the [package](https://github.com/awslabs/mcp/tree/main/src/terraform-mcp-server) documentation.
+For more information and extra configuration you can consult the [package](https://github.com/awslabs/mcp/tree/HEAD/src/terraform-mcp-server) documentation.
 
 # 🧰 Clients Integrations
 

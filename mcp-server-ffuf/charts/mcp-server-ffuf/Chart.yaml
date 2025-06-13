@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-ffuf"
+description: "A Helm chart for Web content fuzzing tool for discovering hidden files and directories through MCP"
+home: https://github.com/cyproxio/mcp-for-security/tree/HEAD/ffuf-mcp
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/cyproxio/mcp-for-security/tree/HEAD/ffuf-mcp
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-ffuf/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "6190e55"
+keywords:
+  - mcp-server-ffuf
+  - mcp-server
+  - native
+  - security
+  - web

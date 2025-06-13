@@ -22,13 +22,13 @@
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-chargebee/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-chargebee/0.0.3?logo=docker&logoColor=fff&label=0.0.3)](https://hub.docker.com/r/acuvity/mcp-server-chargebee)
-[![PyPI](https://img.shields.io/badge/0.0.3-3775A9?logo=pypi&logoColor=fff&label=@chargebee/mcp)](https://github.com/chargebee/agentkit/tree/main/modelcontextprotocol)
+[![PyPI](https://img.shields.io/badge/0.0.3-3775A9?logo=pypi&logoColor=fff&label=@chargebee/mcp)](https://github.com/chargebee/agentkit/tree/HEAD/modelcontextprotocol)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-chargebee/)
 [![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-chargebee&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-chargebee%3A0.0.3%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** MCP Server that connects AI agents to Chargebee platform.
 
-Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from @chargebee/mcp original [sources](https://github.com/chargebee/agentkit/tree/main/modelcontextprotocol).
+Packaged by Acuvity and published to our curated MCP server [registry](https://mcp.acuvity.ai) from @chargebee/mcp original [sources](https://github.com/chargebee/agentkit/tree/HEAD/modelcontextprotocol).
 
 **Quick links:**
 
@@ -153,15 +153,15 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Maintained by**:
   - [the Acuvity team](support@acuvity.ai) for packaging
-  - [ Chargebee, Inc. ](https://github.com/chargebee/agentkit/tree/main/modelcontextprotocol) for application
+  - [ Chargebee, Inc. ](https://github.com/chargebee/agentkit/tree/HEAD/modelcontextprotocol) for application
 
 **Where to get help**:
   - [The Acuvity MCP Forge repository](https://github.com/acuvity/mcp-servers-registry)
-  - [ @chargebee/mcp ](https://github.com/chargebee/agentkit/tree/main/modelcontextprotocol)
+  - [ @chargebee/mcp ](https://github.com/chargebee/agentkit/tree/HEAD/modelcontextprotocol)
 
 **Where to file issues**:
   - [Github issue tracker](https://github.com/acuvity/mcp-servers-registry/issues)
-  - [ @chargebee/mcp ](https://github.com/chargebee/agentkit/tree/main/modelcontextprotocol)
+  - [ @chargebee/mcp ](https://github.com/chargebee/agentkit/tree/HEAD/modelcontextprotocol)
 
 **Supported architectures**:
   - `amd64`

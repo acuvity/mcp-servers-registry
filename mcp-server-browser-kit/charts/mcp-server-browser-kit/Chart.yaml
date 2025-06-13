@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: 5.0.1
+appVersion: "5.0.2"
 keywords:
   - mcp-server-browser-kit
   - mcp-server

@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-aws-git-search",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-git-search",
+  "description": "Semantic search and analysis of Git repositories using Amazon Bedrock and FAISS",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-git-search",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/git-repo-research-mcp-server"
+    },
+  "tags": ["development","research"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "1.0.3",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"b6dbd4226194ea77af07eeecceaffa87780a2f9e497e6db8dbf896d7bc4d4c00","reason":"Good overall documentation with comprehensive descriptions that explain functionality, context, and implementation details. Tool names are clear and specific. Parameter documentation is thorough with helpful defaults and constraints. Minor deduction for some verbose descriptions that could be more concise, and a few parameters could benefit from clearer explanations of their practical impact.","score":"B"},
+  "resources": {
+    "tools": 5,
+    "prompts": 0,
+    "resources": 1,
+    "resourcesTemplates": 0
+  }
+}

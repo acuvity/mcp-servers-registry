@@ -13,14 +13,14 @@
   "scope": "standalone",
   "mutitenant": false,
   "runtime": "python",
-  "version": "0.12.3",
+  "version": "0.13.5",
   "requiresConfiguration": false,
   "requiresStorage": true,
-  "rating": {"hash":"b6188697e384bfa8beabec46ed8c36793664c58030b304cf26c034acab11ca6a","reason":"Tool names are clear and intuitive, indicating their purposes well. Most descriptions adequately explain functionality, with some tools like 'build_context' and 'recent_activity' providing good detail about usage. However, parameter descriptions are largely missing or inadequate - most parameters only have generic titles without explaining their purpose, constraints, or how they affect tool behavior. The documentation leaves users guessing about parameter usage despite having clear tool-level descriptions.","score":"C"},
+  "rating": {"hash":"e6d00bd6194f42aa5850a1b04f4f562519779887713d4bbf38f72d1cc561844a","reason":"Mixed quality documentation with adequate tool descriptions but inconsistent parameter documentation. While some tools like 'build_context' and 'sync_status' have excellent comprehensive descriptions, many tools have minimal parameter descriptions (e.g., 'identifier', 'project', 'content' lack context about expected formats or constraints). The toolset covers complex functionality but leaves users guessing about parameter usage patterns and constraints in most cases.","score":"C"},
   "resources": {
-    "tools": 9,
-    "prompts": 3,
-    "resources": 1,
+    "tools": 19,
+    "prompts": 4,
+    "resources": 2,
     "resourcesTemplates": 0
   }
 }

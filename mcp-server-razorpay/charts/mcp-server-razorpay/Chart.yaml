@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: v1.2.0
+appVersion: "v1.2.0"
 keywords:
   - mcp-server-razorpay
   - mcp-server

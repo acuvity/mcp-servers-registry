@@ -1,5 +1,0 @@
-env:
-  AWS_PROFILE: dummy_value
-  AWS_REGION: dummy_value
-
-secrets:

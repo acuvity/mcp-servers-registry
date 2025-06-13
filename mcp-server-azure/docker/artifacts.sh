@@ -2,23 +2,21 @@
 set -eu
 
 # Check environment variables
-if [ -z "${TARGETARCH:-}" ]; then
-  echo "TARGETARCH environment variable is not set."
-  exit 1
-fi
+: "${TARGETARCH:?TARGETARCH environment variable is not set.}"
+: "${TARGETOS:?TARGETOS environment variable is not set.}"
 
-if [ -z "${TARGETOS:-}" ]; then
-  echo "TARGETOS environment variable is not set."
-  exit 1
-fi
-
+# Normalize arch names
 case "$TARGETARCH" in
 amd64) norm_arch="x86_64" ;;
 386) norm_arch="i386" ;;
-arm64) norm_arch="arm64" ;;
+arm64)
+  norm_arch="arm64"
+  alt_arch="arm"
+  ;;
 *) norm_arch="$TARGETARCH" ;;
 esac
 
+# Normalize OS names
 case "$TARGETOS" in
 linux) norm_os="linux" ;;
 darwin) norm_os="darwin" ;;
@@ -27,35 +25,105 @@ windows) norm_os="windows" ;;
 esac
 
 MATCHED_URL=""
+GOBUILD=""
 for url in "$@"; do
   lc_url=$(echo "$url" | tr '[:upper:]' '[:lower:]')
-  if echo "$lc_url" | grep -q "$norm_os" && echo "$lc_url" | grep -q "$norm_arch"; then
-    MATCHED_URL="$url"
-    break
+
+  # skip checksum files
+  case "$lc_url" in
+  *.sha256) continue ;;
+  gobuild:*)
+    GOBUILD=$(echo "$lc_url" | sed 's/gobuild://g')
+    ;;
+  esac
+
+  # must contain OS
+  if ! echo "$lc_url" | grep -q "$norm_os"; then
+    continue
+  fi
+
+  # match arch: either the primary or (for arm64) the alternative
+  if [ -n "$alt_arch" ]; then
+    if echo "$lc_url" | grep -E -q "($norm_arch|$alt_arch)"; then
+      MATCHED_URL="$url"
+      break
+    fi
+  else
+    if echo "$lc_url" | grep -q "$norm_arch"; then
+      MATCHED_URL="$url"
+      break
+    fi
   fi
 done
 
 # Verify we found a match
-if [ -z "$MATCHED_URL" ]; then
-  echo "No matching URL found for TARGETOS=$TARGETOS TARGETARCH=$TARGETARCH"
+if [ -z "$MATCHED_URL" ] && [ -z "$GOBUILD" ]; then
+  echo "No matching URL/build found for TARGETOS=$TARGETOS TARGETARCH=$TARGETARCH"
   exit 1
 fi
 
-echo "Downloading: $MATCHED_URL"
-curl -fsSL "$MATCHED_URL" -o /tmp/archive.tar.gz
-
 mkdir -p /tmp/binaries
-tar -xzf /tmp/archive.tar.gz -C /tmp/binaries
 
-# Filter and clean binaries
-for file in /tmp/binaries/*; do
-  [ -f "$file" ] || continue
-  if file "$file" | grep -qi "executable"; then
-    chmod +x "$file"
-  else
-    echo "Removing non-binary: $file"
-    rm -f "$file"
-  fi
+if [ -n "$MATCHED_URL" ]; then
+
+  echo "Downloading: $MATCHED_URL"
+  TMPFILE=$(mktemp)
+  curl -fSL "$MATCHED_URL" -o "$TMPFILE"
+
+  # Extract based on archive type
+  case "$MATCHED_URL" in
+  *.tar.gz | *.tgz)
+    tar -xzf "$TMPFILE" -C /tmp/binaries
+    ;;
+  *.zip)
+    unzip -qq "$TMPFILE" -d /tmp/binaries
+    ;;
+  *)
+    FILENAME=$(basename "$MATCHED_URL")
+    BINNAME=$(echo "$FILENAME" | sed -E 's/-linux-(arm64|amd64|x86_64|i386|ppc64le|s390x)$//')
+    mv "$TMPFILE" "/tmp/binaries/$BINNAME"
+    ;;
+  esac
+
+fi
+
+if [ -n "$GOBUILD" ]; then
+
+  echo "Building go artifacts"
+  export GOBIN=/tmp/binaries
+  oldIFS=$IFS
+  IFS=','
+  for bin in $GOBUILD; do
+    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install "$bin"
+  done
+  IFS=$oldIFS
+fi
+
+cd /tmp/binaries
+
+BINARIES=$(find . -type f -exec file {} \; | awk -F: '/executable/ {print $1}')
+
+if [ -z "$BINARIES" ]; then
+  echo "No executables found in /tmp/binaries" >&2
+  exit 1
+fi
+
+for BIN_PATH in $BINARIES; do
+  BIN_NAME=$(basename "$BIN_PATH")
+  mv "$BIN_PATH" "./$BIN_NAME"
+  chmod +x "./$BIN_NAME"
+  echo "Kept binary: $BIN_NAME"
 done
 
-rm -f /tmp/archive.tar.gz
+for FILE in ./*; do
+  keep=0
+  for BIN_PATH in $BINARIES; do
+    if [ "./$(basename "$BIN_PATH")" = "$FILE" ]; then
+      keep=1
+      break
+    fi
+  done
+  if [ $keep -eq 0 ] && [ "$FILE" != "./$(basename "$0")" ]; then
+    rm -rf "$FILE"
+  fi
+done

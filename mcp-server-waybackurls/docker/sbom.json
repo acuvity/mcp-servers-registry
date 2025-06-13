@@ -1,0 +1,19 @@
+{
+  "tools": [
+    {
+      "name": "do-waybackurls",
+      "hash": "a832238f0c22e98b3e37eab6c9517cf37bc3be85cb5556eb40431e893469ac29",
+      "params": [
+        {
+          "name": "noSub",
+          "hash": "15e5a2553259745ec995c6466ef381ab16dfc3cc71672a8c3c1be25a3590e90e"
+        },
+        {
+          "name": "target",
+          "hash": "aa677be427a6e1170ab0b790d332d4f402fd689de08be3387d023cb85c06b1b3"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

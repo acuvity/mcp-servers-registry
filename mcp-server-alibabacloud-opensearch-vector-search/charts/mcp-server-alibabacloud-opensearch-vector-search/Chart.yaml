@@ -1,0 +1,20 @@
+apiVersion: v2
+name: "mcp-server-alibabacloud-opensearch-vector-search"
+description: "A Helm chart for Universal interface between AI Agents and OpenSearch Vector."
+home: https://github.com/aliyun/alibabacloud-opensearch-mcp-server/tree/HEAD/opensearch-vector-mcp-server
+sources:
+  - https://github.com/acuvity/mcp-servers-registry
+  - https://github.com/aliyun/alibabacloud-opensearch-mcp-server/tree/HEAD/opensearch-vector-mcp-server
+icon: "https://raw.githubusercontent.com/acuvity/mcp-servers-registry/refs/heads/main/mcp-server-alibabacloud-opensearch-vector-search/logo.png"
+type: application
+maintainers:
+  - name: Acuvity
+    email: support@acuvity.ai
+version: 1.0.0
+appVersion: "545d264"
+keywords:
+  - mcp-server-alibabacloud-opensearch-vector-search
+  - mcp-server
+  - remote
+  - cloud
+  - integration

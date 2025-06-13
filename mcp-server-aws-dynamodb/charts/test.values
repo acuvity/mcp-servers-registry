@@ -1,0 +1,6 @@
+env:
+  AWS_REGION: 
+  AWS_PROFILE: 
+  DDB_MCP_READONLY: 
+
+secrets:

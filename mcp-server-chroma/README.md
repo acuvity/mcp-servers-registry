@@ -907,18 +907,6 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
-| tools | chroma_add_documents | description | fb4fc8a59779eeeeeae7ce6f3266a183514eb78b0671fc13b636328c3c7656b7 |
-| tools | chroma_create_collection | description | 5f3175ec903416f64d78427694c1b273eff494104b05c0aa0d7f4efa496f70a5 |
-| tools | chroma_delete_collection | description | a361003969b79e83a7d12f01a90673e38583b856951806d565b8d99a2b54c4ef |
-| tools | chroma_delete_documents | description | 23ab4256014ccae612288d23ff8838af64c2f56391dc7851c570da81aade2987 |
-| tools | chroma_get_collection_count | description | 33047599d472f45af90fa29d9eacb603f25e1dbb6d1e1d4fad63dda4d868efe8 |
-| tools | chroma_get_collection_info | description | bcde301a84c843b111bc751d56fc858b3dabd659be1336f7acf95522dcf81e1c |
-| tools | chroma_get_documents | description | 684820343977ed4618f5d3e8dcade8a185f3eb3d91a10af45dc8edf73cfa8b98 |
-| tools | chroma_list_collections | description | f38afda8f178cd3962a2d3d56ababd022794917ab7369d1b704ef6f774dc58bb |
-| tools | chroma_modify_collection | description | 554eb2c50155a2973d81efe74728befea9bf94a8d553c75854ee945050eb4754 |
-| tools | chroma_peek_collection | description | 9f2ddf70df5250db4c74e7576cb64a067997c6cf5659401d00481d280135a9ca |
-| tools | chroma_query_documents | description | 9284071e209e0ffc7566fa8fc14746dd34b310e186f0a0439b23e135cb6f8220 |
-| tools | chroma_update_documents | description | 038dbe7bb4d878805ac4552b9c62b8687e94954391a6ed95259b5029049de95d |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

@@ -1,0 +1,26 @@
+{
+  "id": "mcp-server-aws-nova-canvas",
+  "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/mcp/aws-terraform/live/logo-1749204850388.png",
+  "name": "mcp-server-aws-nova-canvas",
+  "description": "Generate images using Amazon Nova Canvas with text prompts and color-guided generation",
+  "links":
+    {
+      "artifacts": "https://hub.docker.com/r/acuvity/mcp-server-aws-nova-canvas",
+      "application": "https://github.com/awslabs/mcp/tree/HEAD/src/nova-canvas-mcp-server"
+    },
+  "tags": ["cloud"],
+  "official": true,
+  "scope": "remote",
+  "mutitenant": true,
+  "runtime": "python",
+  "version": "1.0.1",
+  "requiresConfiguration": false,
+  "requiresStorage": false,
+  "rating": {"hash":"54ef0662d8b77c375cb84396c677860a4a99f8418866bffebf09dc954b1d03fa","reason":"Excellent documentation quality with comprehensive descriptions covering functionality, usage context, and detailed best practices. Tool names are clear and specific. Extensive parameter documentation includes purpose, constraints, examples, and ranges. The descriptions proactively address user questions with practical guidance including prompt engineering tips, color scheme examples, and critical usage warnings about workspace directories.","score":"A"},
+  "resources": {
+    "tools": 2,
+    "prompts": 0,
+    "resources": 0,
+    "resourcesTemplates": 0
+  }
+}

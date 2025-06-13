@@ -1,0 +1,19 @@
+{
+  "tools": [
+    {
+      "name": "do-nmap",
+      "hash": "0e887cc7ab825894f8ff0be73535251f7578a5575f19870cb47f74282293f3f5",
+      "params": [
+        {
+          "name": "nmap_args",
+          "hash": "b6801f17b8e75323e91d1ee8685229de6893d7781b89d6a6e3b6725d033e0421"
+        },
+        {
+          "name": "target",
+          "hash": "a717bb7f1dbce6d539a0fd82a4bf0ce9c4a6a5b402e4f85b4c3681657a5c32a4"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}
