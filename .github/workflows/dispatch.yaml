@@ -26,64 +26,177 @@ jobs:
         id: set
         shell: bash
         run: |
+          set -euo pipefail
 
-          # workflow dispatch trigger
-          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" && -n "${{ github.event.inputs.name }}" ]]; then
-            IFS=',' read -ra SRVS <<< "${{ github.event.inputs.name }}"
-            records=()
-            for srv in "${SRVS[@]}"; do
-              srv="${srv// /}"
-              if [[ ! -d  mcp-server-${srv} ]]; then
-                echo "$srv is not a valid mcp-server."
-                exit 1
+          validate_server() {
+              local srv="$1"
+              if [[ ! -d "mcp-server-${srv}" ]]; then
+                  echo "Error: '$srv' is not a valid mcp-server (directory mcp-server-${srv} not found)" >&2
+                  return 1
               fi
-              records+=("{\"server\":\"$srv\",\"build_image\":true,\"build_chart\":true,\"build_readme\":true}")
-            done
-            MATRIX="[$(IFS=,; echo "${records[*]}")]"
-            echo "matrix=$MATRIX" >>"$GITHUB_OUTPUT"
-            exit 0
+              return 0
+          }
+
+          create_json_record() {
+              local server="$1"
+              local build_image="$2"
+              local build_chart="$3"
+
+              local escaped_server
+              escaped_server=$(printf '%s' "$server" | sed 's/"/\\"/g')
+
+              printf '{"server":"%s","build_image":%s,"build_chart":%s}' \
+                  "$escaped_server" "$build_image" "$build_chart"
+          }
+
+          output_matrix() {
+              local matrix="$1"
+              local compact_matrix
+
+              if ! compact_matrix=$(echo "$matrix" | jq -c . 2>/dev/null); then
+                  echo "Error: Invalid JSON matrix generated" >&2
+                  echo "Raw matrix: $matrix" >&2
+                  exit 1
+              fi
+
+              echo "matrix=$compact_matrix" >> "$GITHUB_OUTPUT"
+              echo "Generated matrix: $compact_matrix"
+          }
+
+          # Manual Workflow dispatch trigger
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" && -n "${{ github.event.inputs.name }}" ]]; then
+              echo "Processing workflow_dispatch with servers: ${{ github.event.inputs.name }}"
+
+              # Check for special "ALL" keyword
+              if [[ "${{ github.event.inputs.name }}" == "ALL" ]]; then
+                  echo "ALL keyword detected - rebuilding all mcp-servers"
+                  records=()
+
+                  shopt -s nullglob
+                  for dir in mcp-server-*/; do
+                      dir="${dir%/}"
+                      if [[ -d "$dir" ]]; then
+                          srv="${dir#mcp-server-}"
+                          [[ "$srv" =~ ^[a-zA-Z0-9_-]+$ ]] || { echo "Skip malformed dir $srv" >&2; continue; }
+                          record=$(create_json_record "$srv" "true" "true")
+                          records+=("$record")
+                      fi
+                  done
+
+                  if [[ ${#records[@]} -eq 0 ]]; then
+                      echo "Warning: No mcp-server-* directories found"
+                      MATRIX="[]"
+                  else
+                      echo "Found ${#records[@]} servers to rebuild"
+                      MATRIX="[$(IFS=,; echo "${records[*]}")]"
+                  fi
+
+                  output_matrix "$MATRIX"
+                  exit 0
+              fi
+
+              # Parse comma-separated provided server names
+              IFS=',' read -ra SRVS <<< "${{ github.event.inputs.name }}"
+
+              if [[ ${#SRVS[@]} -eq 0 ]]; then
+                  echo "Error: No servers specified in workflow_dispatch input" >&2
+                  exit 1
+              fi
+
+              records=()
+              for srv in "${SRVS[@]}"; do
+                  srv="${srv// /}"
+                  [[ -n "$srv" ]] || continue
+
+                  if [[ ! "$srv" =~ ^[a-zA-Z0-9_-]+$ ]]; then
+                      echo "Error: Invalid server name format: '$srv'" >&2
+                      exit 1
+                  fi
+
+                  if ! validate_server "$srv"; then
+                      exit 1
+                  fi
+
+                  record=$(create_json_record "$srv" "true" "true")
+                  records+=("$record")
+              done
+
+              if [[ ${#records[@]} -eq 0 ]]; then
+                  MATRIX="[]"
+              else
+                  MATRIX="[$(IFS=,; echo "${records[*]}")]"
+              fi
+
+              output_matrix "$MATRIX"
+              exit 0
           fi
 
-          # git driven matrix
+          # Git changes driven workflow
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            git fetch origin main --depth=1
-            BASE=$(git rev-parse origin/main)
+              echo "Pull request event - fetching main branch"
+              if ! git fetch origin main --depth=1; then
+                  echo "Error: Failed to fetch main branch" >&2
+                  exit 1
+              fi
+              BASE=$(git rev-parse origin/main)
           else
-            BASE="${{ github.event.before }}"
+              BASE="${{ github.event.before }}"
+              if [[ "$BASE" == "0000000000000000000000000000000000000000" ]]; then
+                  echo "Warning: No previous commit available, using empty tree"
+                  BASE=$(git hash-object -t tree /dev/null)
+              fi
           fi
 
           HEAD="${{ github.sha }}"
-          CHANGED_FILES=$(git diff --name-only "$BASE" "$HEAD" -- 'mcp-server-*/**')
-          MATRIX=$(echo "$CHANGED_FILES" |
-            awk -F/ '/^mcp-server-/{print $1}' | sort -u |
-            while read -r SRV; do
-              IMG=false; CHART=false; README=false
-              # look for docker changes except README and artifacts.sh
-              if echo "$CHANGED_FILES" | grep -q "^${SRV}/docker/"; then
-                if ! echo "$CHANGED_FILES" | grep -q -E "^${SRV}/docker/(README.md|artifacts.sh)$" \
-                  || echo "$CHANGED_FILES" | grep -q "^${SRV}/docker/[^R]"; then
-                  IMG=true
-                fi
-              fi
 
-              # look for chart changes
-              if echo "$CHANGED_FILES" | grep -q "^${SRV}/charts\(/.*\)\?$"; then
-                CHART=true
-              fi
+          if ! CHANGED_FILES=$(git diff --name-only "$BASE" "$HEAD" -- 'mcp-server-*/**' 2>/dev/null); then
+              echo "Error: Failed to get git diff" >&2
+              exit 1
+          fi
 
-              # look for docker README.md changes
-              if echo "$CHANGED_FILES" | grep -q "^${SRV}/docker/README.md$"; then
-                README=true
-              fi
+          if [[ -z "$CHANGED_FILES" ]]; then
+              echo "No mcp-server files changed"
+              output_matrix "[]"
+              exit 0
+          fi
 
-              # build the json object
-              printf '{"server":"%s","build_image":%s,"build_chart":%s,"build_readme":%s}\n' \
-                "${SRV#mcp-server-}" "$IMG" "$CHART" "$README"
+          MATRIX=$(echo "$CHANGED_FILES" |  cut -d/ -f1 | sort -u | \
+              while IFS= read -r SRV; do
+                  [[ -n "$SRV" ]] || continue
 
-            done | jq -s)
+                  if [[ ! -d "$SRV" ]]; then
+                      echo "Warning: Directory $SRV not found, skipping" >&2
+                      continue
+                  fi
 
-          [[ -z "$MATRIX" ]] && MATRIX="[]"
-          echo "matrix=$(echo "$MATRIX" | jq -c)" >>"$GITHUB_OUTPUT"
+                  IMG=false
+                  CHART=false
+
+                  SERVER_FILES=$(echo "$CHANGED_FILES" | grep "^${SRV}/" || true)
+
+                  # Check for chart changes
+                  if echo "$SERVER_FILES" | grep -q "^${SRV}/charts/"; then
+                      CHART=true
+                  fi
+
+                  DOCKER_FILES=$(echo "$SERVER_FILES" | grep "^${SRV}/docker/" || true)
+
+                  # Check for docker changes other than just README.md and artifacts.sh
+                  if [[ -n "$DOCKER_FILES" ]]; then
+                      NON_EXCLUDED=$(echo "$DOCKER_FILES" | grep -v -E "^${SRV}/docker/(README\.md|artifacts\.sh)$" || true)
+                      if [[ -n "$NON_EXCLUDED" ]]; then
+                          IMG=true
+                      fi
+                  fi
+
+                  create_json_record "${SRV#mcp-server-}" "$IMG" "$CHART"
+              done | jq -s .)
+
+          if [[ -z "$MATRIX" ]] || [[ "$MATRIX" == "null" ]]; then
+              MATRIX="[]"
+          fi
+
+          output_matrix "$MATRIX"
 
   release:
     name: "Release ${{ matrix.changes.server }}"
