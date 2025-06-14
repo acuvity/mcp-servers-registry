@@ -189,7 +189,9 @@ jobs:
                       fi
                   fi
 
-                  create_json_record "${SRV#mcp-server-}" "$IMG" "$CHART"
+                  if [[ "$IMG" == "true" ]] || [[ "$CHART" == "true" ]]; then
+                    create_json_record "${SRV#mcp-server-}" "$IMG" "$CHART"
+                  fi
               done | jq -s .)
 
           if [[ -z "$MATRIX" ]] || [[ "$MATRIX" == "null" ]]; then
@@ -210,5 +212,4 @@ jobs:
       server: ${{ matrix.changes.server }}
       build_image: ${{ matrix.changes.build_image }}
       build_chart: ${{ matrix.changes.build_chart }}
-      build_readme: ${{ matrix.changes.build_readme }}
     secrets: inherit
