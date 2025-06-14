@@ -6,6 +6,7 @@ set -eu
 : "${TARGETOS:?TARGETOS environment variable is not set.}"
 
 # Normalize arch names
+alt_arch=""
 case "$TARGETARCH" in
 amd64) norm_arch="x86_64" ;;
 386) norm_arch="i386" ;;
