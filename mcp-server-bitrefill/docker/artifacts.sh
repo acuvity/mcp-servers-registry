@@ -6,23 +6,30 @@ set -eu
 : "${TARGETOS:?TARGETOS environment variable is not set.}"
 
 # Normalize arch names
-alt_arch=""
-case "$TARGETARCH" in
-amd64) norm_arch="x86_64" ;;
-386) norm_arch="i386" ;;
-arm64)
-  norm_arch="arm64"
-  alt_arch="arm"
+
+case "${TARGETOS:-linux}" in
+linux) norm_os=linux ;;
+darwin) norm_os=darwin ;;
+windows) norm_os=windows ;;
+*)
+  echo "Unsupported TARGETOS: $TARGETOS" >&2
+  exit 1
   ;;
-*) norm_arch="$TARGETARCH" ;;
 esac
 
-# Normalize OS names
-case "$TARGETOS" in
-linux) norm_os="linux" ;;
-darwin) norm_os="darwin" ;;
-windows) norm_os="windows" ;;
-*) norm_os="$TARGETOS" ;;
+case "${TARGETARCH:-amd64}" in
+amd64 | x86_64)
+  norm_arch=x86_64
+  alt_arch=amd64
+  ;;
+arm64 | aarch64)
+  norm_arch=arm64
+  alt_arch=arm
+  ;;
+*)
+  echo "Unsupported TARGETARCH: $TARGETARCH" >&2
+  exit 1
+  ;;
 esac
 
 MATCHED_URL=""
@@ -38,23 +45,19 @@ for url in "$@"; do
     ;;
   esac
 
-  # must contain OS
-  if ! echo "$lc_url" | grep -q "$norm_os"; then
-    continue
-  fi
+  # common pattern for names, in order with a fallback on OS only for amd64
+  patterns="${norm_os}_${norm_arch} ${norm_os}_${alt_arch} ${norm_os}-${norm_arch} ${norm_os}-${alt_arch} ${norm_arch} ${alt_arch} ${norm_os}"
 
-  # match arch: either the primary or (for arm64) the alternative
-  if [ -n "$alt_arch" ]; then
-    if echo "$lc_url" | grep -E -q "($norm_arch|$alt_arch)"; then
-      MATCHED_URL="$url"
-      break
-    fi
-  else
-    if echo "$lc_url" | grep -q "$norm_arch"; then
-      MATCHED_URL="$url"
-      break
-    fi
-  fi
+  set -f
+  for pat in $patterns; do
+    case "$lc_url" in
+    *"$pat"*)
+      MATCHED_URL=$url
+      set +f
+      break 2
+      ;;
+    esac
+  done
 done
 
 # Verify we found a match
