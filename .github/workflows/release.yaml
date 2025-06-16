@@ -175,6 +175,7 @@ jobs:
           HTTP_CODE="${CATEGORIES_RESPONSE: -3}"
           if [[ "$HTTP_CODE" -ge 400 ]]; then
             echo "Failed to update categories. HTTP code: $HTTP_CODE"
+            echo "$CATEGORIES_RESPONSE"
             exit 1
           fi
           echo "Categories updated successfully."
@@ -190,6 +191,7 @@ jobs:
             HTTP_CODE="${LOGO_RESPONSE: -3}"
             if [[ "$HTTP_CODE" -ge 400 ]]; then
               echo "Failed to upload logo. HTTP code: $HTTP_CODE"
+              echo "$LOGO_RESPONSE"
               exit 1
             fi
             echo "Logo uploaded successfully."
@@ -213,6 +215,7 @@ jobs:
             HTTP_CODE="${DESC_RESPONSE: -3}"
             if [[ "$HTTP_CODE" -ge 400 ]]; then
               echo "Failed to update description. HTTP code: $HTTP_CODE"
+              echo "$DESC_RESPONSE"
               exit 1
             fi
             echo "Description updated successfully."
