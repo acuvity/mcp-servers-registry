@@ -43,7 +43,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uv venv && uv pip install mcp-server-git==2025.1.14
+RUN uv venv && uv pip install mcp-server-git==2026.1.14
 
 EXPOSE 8000/tcp
 
