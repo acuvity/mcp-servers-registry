@@ -108,6 +108,8 @@ _cross_tool_exclude := [
 	#
 	"git_show",
 	#
+	"git_branch",
+	#
 	# exclude word that might be misdetected
 	"to",
 	"this",

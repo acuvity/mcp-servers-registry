@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="native"
 
 LABEL org.opencontainers.image.title="mcp-server-git"
 LABEL org.opencontainers.image.description="Tools to read, search, and manipulate Git repositories."
-LABEL org.opencontainers.image.version="2025.1.14"
+LABEL org.opencontainers.image.version="2026.1.14"
 LABEL org.opencontainers.image.source="https://github.com/modelcontextprotocol/servers/tree/HEAD/src/git"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="Anthropic, PBC."
@@ -43,7 +43,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uv venv && uv pip install mcp-server-git==2025.1.14
+RUN uv venv && uv pip install mcp-server-git==2026.1.14
 
 EXPOSE 8000/tcp
 

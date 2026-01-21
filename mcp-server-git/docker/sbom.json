@@ -5,6 +5,28 @@
       "hash": "acbb1287741f13ed1321c0440055bb47469c4b80c151d7cf63c066013f7f99bc"
     },
     {
+      "name": "git_branch",
+      "hash": "d124e3dba2d5b3f4bc2e23d8ebad95a094192aec2d5c9853f723f5e874edcbf3",
+      "params": [
+        {
+          "name": "branch_type",
+          "hash": "d98fc69f3ada12a4206cc8041194db3adc993e3575eb83f99d290444d4a704d9"
+        },
+        {
+          "name": "contains",
+          "hash": "3aea6dbb8341c770d5008dd1f2bde7de4e3b264345fa72e83ee34e2a1b979e3f"
+        },
+        {
+          "name": "not_contains",
+          "hash": "c6778a7e39ce013797b10e9446ff627dfc4dd030536b4eea984cacd4d3f1b404"
+        },
+        {
+          "name": "repo_path",
+          "hash": "686efaada41b9d54430f2a73c0588d635022e8ddda3efb98167d15fde8ffe547"
+        }
+      ]
+    },
+    {
       "name": "git_checkout",
       "hash": "cef303fb5169c48c7afb36c66738ac6f54bd19edd08b96cba0ea07796900a7ec"
     },
@@ -30,7 +52,17 @@
     },
     {
       "name": "git_log",
-      "hash": "2dde51c25be72faa18b13b012a04c680b7055345964936b9cadac78b33ae9f10"
+      "hash": "2dde51c25be72faa18b13b012a04c680b7055345964936b9cadac78b33ae9f10",
+      "params": [
+        {
+          "name": "end_timestamp",
+          "hash": "96ee6006d39020184393056cc402f4aa5336ebb66b674d79f216f20ac4cb1bbc"
+        },
+        {
+          "name": "start_timestamp",
+          "hash": "bfada74c37e2d628f41285ffd3e66b296ec3af82ef1561642fa2ff7d9e3d7831"
+        }
+      ]
     },
     {
       "name": "git_reset",

@@ -13,12 +13,12 @@
   "scope": "native",
   "mutitenant": true,
   "runtime": "python",
-  "version": "2025.1.14",
+  "version": "2026.1.14",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"18b4c8497f11485b3f48fff007b4aa926308d8d90ca6a03bb18f098a67bd9eab","reason":"Tool names are clear and intuitive with consistent git_ prefix. However, descriptions are overly brief (mostly single short phrases) and lack essential context about when to use each tool, what information they provide, expected input formats, or limitations. Parameter descriptions are missing entirely - all parameters only have generic titles like 'Repo Path' without explaining their purpose, expected format, or constraints.","score":"D"},
+  "rating": {"hash":"6ce8c85ecfe318b5e90288df0846892524904e503e0e432127a7f94fc984f274","reason":"The toolset provides adequate but inconsistent documentation. While tool names are clear and purposeful, descriptions are mostly basic single sentences that lack usage context and important limitations. Parameter documentation varies significantly - some tools like git_log and git_branch have well-documented parameters with examples and constraints, while others like git_status and git_commit have minimal parameter descriptions. The repo_path parameter is consistently underdescribed across all tools, lacking explanation of expected path format or behavior.","score":"C"},
   "resources": {
-    "tools": 11,
+    "tools": 12,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

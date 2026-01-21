@@ -19,12 +19,12 @@
 
 
 # What is mcp-server-git?
-[![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
-[![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-git/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-git/2025.1.14?logo=docker&logoColor=fff&label=2025.1.14)](https://hub.docker.com/r/acuvity/mcp-server-git)
-[![PyPI](https://img.shields.io/badge/2025.1.14-3775A9?logo=pypi&logoColor=fff&label=mcp-server-git)](https://github.com/modelcontextprotocol/servers/tree/HEAD/src/git)
+[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Helm](https://img.shields.io/badge/1.0.1-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-git/tags/)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-git/2026.1.14?logo=docker&logoColor=fff&label=2026.1.14)](https://hub.docker.com/r/acuvity/mcp-server-git)
+[![PyPI](https://img.shields.io/badge/2026.1.14-3775A9?logo=pypi&logoColor=fff&label=mcp-server-git)](https://github.com/modelcontextprotocol/servers/tree/HEAD/src/git)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-git/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-git&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-git%3A2025.1.14%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-git&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-git%3A2026.1.14%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Tools to read, search, and manipulate Git repositories.
 
@@ -43,110 +43,40 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-git/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-git/docker/policy.rego) that enables a set of runtime [guardrails](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-git#%EF%B8%8F-guardrails) to help enforce security, privacy, and correct usage of your services. Below is list of each guardrail provided.
 
-### 🔒 Resource Integrity
-
-**Mitigates MCP Rug Pull Attacks**
-
-* **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
-* **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
-
-### 🛡️ Guardrails
-
-#### Covert Instruction Detection
-
-Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
-
-* **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
-* **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
-
-#### Sensitive Pattern Detection
-
-Block user-defined sensitive data patterns (credential paths, filesystem references).
-
-* **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
-* **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
-
-#### Shadowing Pattern Detection
-
-Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
-
-* **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
-* **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
-
-#### Schema Misuse Prevention
-
-Enforces strict adherence to MCP input schemas.
-
-* **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
-* **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
-
-#### Cross-Origin Tool Access
-
-Controls whether tools may invoke tools or services from external origins.
-
-* **Goal:** Prevent untrusted or out-of-scope services from being called.
-* **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
-
-#### Secrets Redaction
-
-Automatically masks sensitive values so they never appear in logs or responses.
-
-* **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
-* **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
-
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
-
-### Enable guardrails
-
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
 | Guardrail                        | Summary                                                                 |
 |----------------------------------|-------------------------------------------------------------------------|
+| `resource integrity`             | Embeds a hash of all exposed resources to ensure their authenticity and prevent unauthorized modifications, guarding against supply chain attacks and dynamic alterations of tool metadata. |
 | `covert-instruction-detection`   | Detects hidden or obfuscated directives in requests.                    |
 | `sensitive-pattern-detection`    | Flags patterns suggesting sensitive data or filesystem exposure.        |
 | `shadowing-pattern-detection`    | Identifies tool descriptions that override or influence others.         |
 | `schema-misuse-prevention`       | Enforces strict schema compliance on input data.                        |
 | `cross-origin-tool-access`       | Controls calls to external services or APIs.                            |
 | `secrets-redaction`              | Prevents exposure of credentials or sensitive values.                   |
+| `basic authentication`           | Enables the configuration of a shared secret to restrict unauthorized access to the MCP server and ensure only approved clients can connect. |
 
-Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
-
-## 🔒 Basic Authentication via Shared Secret
-
-Provides a lightweight auth layer using a single shared token.
-
-* **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
-* **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
-
-To turn on Basic Authentication, define `BASIC_AUTH_SECRET` environment variable with a shared secret.
-
-Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentication.
-
-> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
-> rotate credentials frequently and **always** use TLS.
-
-</details>
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference
@@ -172,12 +102,12 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
   - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-git/docker/Dockerfile)
 
 **Current supported version:**
-  - charts: `1.0.0`
-  - container: `1.0.0-2025.1.14`
+  - charts: `1.0.1`
+  - container: `1.0.1-2026.1.14`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
-  - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-git:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-git:1.0.0-2025.1.14`
+  - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-git:1.0.1`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-git:1.0.1-2026.1.14`
 
 ---
 
@@ -208,25 +138,25 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 Install will helm
 
 ```console
-helm install mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.0
+helm install mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.1
 ```
 
 You can inspect the chart:
 
 ```console
-helm show chart oci://docker.io/acuvity/mcp-server-git --version 1.0.0
+helm show chart oci://docker.io/acuvity/mcp-server-git --version 1.0.1
 ````
 
 You can inpect the values that you can configure:
 
 ```console
-helm show values oci://docker.io/acuvity/mcp-server-git --version 1.0.0
+helm show values oci://docker.io/acuvity/mcp-server-git --version 1.0.1
 ````
 
 Upgrade will helm
 
 ```console
-helm upgrade mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.0
+helm upgrade mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.1
 ```
 
 Uninstall with helm
@@ -566,7 +496,7 @@ minibridge:
 To enable guardrails you can set `minibridge.guardrails` list as:
 
 ```console
-helm upgrade mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.0 --set 'minibridge.guardrails={secrets-redaction}'
+helm upgrade mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.1 --set 'minibridge.guardrails={secrets-redaction}'
 ```
 
 or from a `values.yaml` file:
@@ -585,13 +515,13 @@ minibridge:
 Then upgrade with:
 
 ```console
-helm upgrade mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.0 -f values.yaml
+helm upgrade mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.1 -f values.yaml
 ```
 
 To enable basic auth:
 
 ```console
-helm upgrade mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.0 --set minibridge.basicAuth.value="supersecret"
+helm upgrade mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.1 --set minibridge.basicAuth.value="supersecret"
 ```
 
 or from a `values.yaml` file:
@@ -605,7 +535,7 @@ minibridge:
 Then upgrade with:
 
 ```console
-helm upgrade mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.0 -f values.yaml
+helm upgrade mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.1 -f values.yaml
 ```
 
 Then you can connect through `http/sse` as usual given that you pass an `Authorization` header with your secret as Bearer token.
@@ -616,7 +546,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (11)
+## 🧰 Tools (12)
 <details>
 <summary>git_status</summary>
 
@@ -645,6 +575,7 @@ Shows changes in the working directory that are not yet staged
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| context_lines | integer | not set | No
 | repo_path | string | not set | Yes
 </details>
 <details>
@@ -660,6 +591,7 @@ Shows changes that are staged for commit
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| context_lines | integer | not set | No
 | repo_path | string | not set | Yes
 </details>
 <details>
@@ -675,6 +607,7 @@ Shows differences between branches or commits
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| context_lines | integer | not set | No
 | repo_path | string | not set | Yes
 | target | string | not set | Yes
 </details>
@@ -738,8 +671,10 @@ Shows the commit logs
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| end_timestamp | any | End timestamp for filtering commits. Accepts: ISO 8601 format (e.g., '2024-01-15T14:30:25'), relative dates (e.g., '2 weeks ago', 'yesterday'), or absolute dates (e.g., '2024-01-15', 'Jan 15 2024') | No
 | max_count | integer | not set | No
 | repo_path | string | not set | Yes
+| start_timestamp | any | Start timestamp for filtering commits. Accepts: ISO 8601 format (e.g., '2024-01-15T14:30:25'), relative dates (e.g., '2 weeks ago', 'yesterday'), or absolute dates (e.g., '2024-01-15', 'Jan 15 2024') | No
 </details>
 <details>
 <summary>git_create_branch</summary>
@@ -790,6 +725,24 @@ Shows the contents of a commit
 | repo_path | string | not set | Yes
 | revision | string | not set | Yes
 </details>
+<details>
+<summary>git_branch</summary>
+
+**Description**:
+
+```
+List Git branches
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| branch_type | string | Whether to list local branches ('local'), remote branches ('remote') or all branches('all'). | Yes
+| contains | any | The commit sha that branch should contain. Do not pass anything to this param if no commit sha is specified | No
+| not_contains | any | The commit sha that branch should NOT contain. Do not pass anything to this param if no commit sha is specified | No
+| repo_path | string | The path to the Git repository. | Yes
+</details>
 
 
 # 🔐 Resource SBOM
@@ -799,6 +752,11 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
 | tools | git_add | description | acbb1287741f13ed1321c0440055bb47469c4b80c151d7cf63c066013f7f99bc |
+| tools | git_branch | description | d124e3dba2d5b3f4bc2e23d8ebad95a094192aec2d5c9853f723f5e874edcbf3 |
+| tools | git_branch | branch_type | d98fc69f3ada12a4206cc8041194db3adc993e3575eb83f99d290444d4a704d9 |
+| tools | git_branch | contains | 3aea6dbb8341c770d5008dd1f2bde7de4e3b264345fa72e83ee34e2a1b979e3f |
+| tools | git_branch | not_contains | c6778a7e39ce013797b10e9446ff627dfc4dd030536b4eea984cacd4d3f1b404 |
+| tools | git_branch | repo_path | 686efaada41b9d54430f2a73c0588d635022e8ddda3efb98167d15fde8ffe547 |
 | tools | git_checkout | description | cef303fb5169c48c7afb36c66738ac6f54bd19edd08b96cba0ea07796900a7ec |
 | tools | git_commit | description | 06de1d865828b1bbd62ed46e982e9fc8402f9a84a00b9f0f36250aa85b1e4beb |
 | tools | git_create_branch | description | af53f21afe3f7e12c569649756872a2601f7fe9ec37ed39e70a7e16b5d3322f6 |
@@ -806,6 +764,8 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | git_diff_staged | description | fe98ec6b642e743c352dfc6ba5d4ba070e02ccaeeb7bafc3f83488cd9a97c1cb |
 | tools | git_diff_unstaged | description | a0785f5b24f18cff8e217c8d19d5a82feeb88a3b2d7e54c4419d1233b142ab51 |
 | tools | git_log | description | 2dde51c25be72faa18b13b012a04c680b7055345964936b9cadac78b33ae9f10 |
+| tools | git_log | end_timestamp | 96ee6006d39020184393056cc402f4aa5336ebb66b674d79f216f20ac4cb1bbc |
+| tools | git_log | start_timestamp | bfada74c37e2d628f41285ffd3e66b296ec3af82ef1561642fa2ff7d9e3d7831 |
 | tools | git_reset | description | 27a9a7645420815c2b823de535988cc834a87548f668c340d2fea14cdd0cb2fd |
 | tools | git_show | description | eadfec3e4527b7281b53ef4a55bce41d087818c0c0d65d3bd4dc197f494aede6 |
 | tools | git_status | description | 6d422a00f372216df99866e4d8aca786b7cdae40939876d12052ddca2af65eed |
