@@ -110,19 +110,15 @@ _cross_tool_exclude := [
 	#
 	"move_note",
 	#
-	"sync_status",
-	#
 	"list_memory_projects",
-	#
-	"switch_project",
-	#
-	"get_current_project",
-	#
-	"set_default_project",
 	#
 	"create_memory_project",
 	#
 	"delete_project",
+	#
+	"search",
+	#
+	"fetch",
 	#
 	# exclude word that might be misdetected
 	"to",

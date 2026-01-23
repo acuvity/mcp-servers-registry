@@ -156,6 +156,16 @@ _cross_tool_exclude := [
 	#
 	"get_ai_action_invocation",
 	#
+	"get_comments",
+	#
+	"create_comment",
+	#
+	"get_single_comment",
+	#
+	"delete_comment",
+	#
+	"update_comment",
+	#
 	# exclude word that might be misdetected
 	"to",
 	"this",

@@ -2,71 +2,85 @@
   "tools": [
     {
       "name": "add_observations",
-      "hash": "f66d1982a935c25deae16641b447a894687858da5f4e56a4ffd5eded9f15287b"
+      "hash": "74685109ad3cb4420a3f78ecd806c01d759803b525dc605879abbb7aac0332f9",
+      "params": [
+        {
+          "name": "observations",
+          "hash": "1dd71ddf6c37cd97309614815eb4678af3b8ec1fa7d869530c77820f295c640e"
+        }
+      ]
     },
     {
       "name": "create_entities",
-      "hash": "5d2cd1d3e5d4ea6fd952e9568d41dd54e18c1c5a611daffe1c0399ebc57444e1"
+      "hash": "a029f2918d3008cf3fb59a0a5e56ef47911680558bde63e5f8de2fe94f5f9018",
+      "params": [
+        {
+          "name": "entities",
+          "hash": "81bf714250114c87d7635f4f37ec618a4919710bb558f06257409a3dfeb16202"
+        }
+      ]
     },
     {
       "name": "create_relations",
-      "hash": "eeb160c5595ea67cee737ea4d34dcf3d22b3d316e107d1edcf02d1dc71727f37"
+      "hash": "867a4b2cc7e44b7e459b51e552fe4cb7228fe39b5ad2d81d34aaa49f3356c7e7",
+      "params": [
+        {
+          "name": "relations",
+          "hash": "6c7122f97e10ddbd5f84c7ddd9d9486b6d87f7e18c441f0d1cb0fb2049b4ae1d"
+        }
+      ]
     },
     {
       "name": "delete_entities",
-      "hash": "4e8ad2271cd9cfd21a213070f051534e2fb5c6723d7f5d2eed86c9a2f41b05c2",
+      "hash": "4072c70aecf3e87e22273bf1964eeff7fa7d6baddd9b7af01b99dfeb5d50a844",
       "params": [
         {
           "name": "entityNames",
-          "hash": "a927153ab95010896fc74cf8f26a9c7bc3e840e7aaf9fc7f15866c3525873ab2"
+          "hash": "07de112fc04997e4c54813a6f550234605df1b834c18f3719db8c264dbd196d6"
         }
       ]
     },
     {
       "name": "delete_observations",
-      "hash": "bae5684867bc99aa4c62c3cb29dccb386983e7575a910a8be7d13ea023aafd80"
+      "hash": "4c2fbb82d68f5fb10f0e051f676537cfc90ff7e470c9a9945a8708732ffc59e1",
+      "params": [
+        {
+          "name": "deletions",
+          "hash": "15503546937d809c58c4c7e356abfd5adb13b37fda2af857cfa6c096042eb0f9"
+        }
+      ]
     },
     {
       "name": "delete_relations",
-      "hash": "1b07436348ac9732db58c69ed4db4dbebed012fd263851e1ee4e35e86fe0968e",
+      "hash": "9eb23da9b20cf68c38323bc5d32714bdc65a3b2c09f018069e2011744fbf4fb3",
       "params": [
         {
           "name": "relations",
-          "hash": "16642cf152c4f981edf60e0064e4fa10410158457a438a63b60c21c1c4beb5c9"
+          "hash": "8b67ac0a7ec71340f17625aab674a7b807a98a1a06c883939aaf72c718ae0b11"
         }
       ]
     },
     {
-      "name": "find_nodes",
-      "hash": "1317b6ca248df70d6eeace29b549d26ce01d7f412a0a6ce43063e3dadba2e73a",
+      "name": "find_memories_by_name",
+      "hash": "0cf3fbcbe4d028e188890a4e440486759d35e55ebe22f9eff111d73084619e41",
       "params": [
         {
           "name": "names",
-          "hash": "7275b2ac1cb2f632b23e78c872c589a8489cda3a5306f3b399dce23ca813e3ca"
-        }
-      ]
-    },
-    {
-      "name": "open_nodes",
-      "hash": "0a799b2e13cab0744fe6b8dd3dbacf7e04753376fdf0adb9d9b6821ad853eded",
-      "params": [
-        {
-          "name": "names",
-          "hash": "7275b2ac1cb2f632b23e78c872c589a8489cda3a5306f3b399dce23ca813e3ca"
+          "hash": "30dd21d889e064d390457c1c99e9d6eb58c49238c0691a8d558f5a2a986ffdc3"
         }
       ]
     },
     {
       "name": "read_graph",
-      "hash": "1dfb0bb4dcfe39f92a8a0464153263a3d836524a3c8fd9ff3f73be5ecb2a098c"
+      "hash": "8eeeccee1fdb8b2a187ce791a2c923e2ee4e82b6480c11f26d515ba4e8a3f348"
     },
     {
-      "name": "search_nodes",
-      "hash": "cdd54c52fcef34587fc903df13b58b02371a9fb2390cab93d0eeabd229c479f3",
+      "name": "search_memories",
+      "hash": "5b768f79973ccec75308c11a712ec3d5641124d594eb7b71358c2334352f3cf6",
       "params": [
         {
           "name": "query",
-          "hash": "2be985b738ac91d8f1e6039cc46c99b96b49b912c19eefccf337c0fc89173cff"
+          "hash": "727e760e5c1432a057d24c0d97099961093e08eec261f5cdfcc3af703d851712"
         }
       ]
     }

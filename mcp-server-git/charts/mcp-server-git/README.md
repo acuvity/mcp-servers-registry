@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -20,7 +20,7 @@
 
 # What is mcp-server-git?
 [![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
-[![Helm](https://img.shields.io/badge/1.0.1-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-git/tags/)
+[![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-git/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-git/2026.1.14?logo=docker&logoColor=fff&label=2026.1.14)](https://hub.docker.com/r/acuvity/mcp-server-git)
 [![PyPI](https://img.shields.io/badge/2026.1.14-3775A9?logo=pypi&logoColor=fff&label=mcp-server-git)](https://github.com/modelcontextprotocol/servers/tree/HEAD/src/git)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-git/)
@@ -102,12 +102,12 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
   - [Dockerfile](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-git/docker/Dockerfile)
 
 **Current supported version:**
-  - charts: `1.0.1`
-  - container: `1.0.1-2026.1.14`
+  - charts: `1.0.0`
+  - container: `1.0.0-2026.1.14`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
-  - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-git:1.0.1`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-git:1.0.1-2026.1.14`
+  - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-git:1.0.0`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-git:1.0.0-2026.1.14`
 
 ---
 
@@ -138,25 +138,25 @@ These controls ensure robust runtime integrity, prevent unauthorized behavior, a
 Install will helm
 
 ```console
-helm install mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.1
+helm install mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.0
 ```
 
 You can inspect the chart:
 
 ```console
-helm show chart oci://docker.io/acuvity/mcp-server-git --version 1.0.1
+helm show chart oci://docker.io/acuvity/mcp-server-git --version 1.0.0
 ````
 
 You can inpect the values that you can configure:
 
 ```console
-helm show values oci://docker.io/acuvity/mcp-server-git --version 1.0.1
+helm show values oci://docker.io/acuvity/mcp-server-git --version 1.0.0
 ````
 
 Upgrade will helm
 
 ```console
-helm upgrade mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.1
+helm upgrade mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.0
 ```
 
 Uninstall with helm
@@ -496,7 +496,7 @@ minibridge:
 To enable guardrails you can set `minibridge.guardrails` list as:
 
 ```console
-helm upgrade mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.1 --set 'minibridge.guardrails={secrets-redaction}'
+helm upgrade mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.0 --set 'minibridge.guardrails={secrets-redaction}'
 ```
 
 or from a `values.yaml` file:
@@ -515,13 +515,13 @@ minibridge:
 Then upgrade with:
 
 ```console
-helm upgrade mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.1 -f values.yaml
+helm upgrade mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.0 -f values.yaml
 ```
 
 To enable basic auth:
 
 ```console
-helm upgrade mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.1 --set minibridge.basicAuth.value="supersecret"
+helm upgrade mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.0 --set minibridge.basicAuth.value="supersecret"
 ```
 
 or from a `values.yaml` file:
@@ -535,7 +535,7 @@ minibridge:
 Then upgrade with:
 
 ```console
-helm upgrade mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.1 -f values.yaml
+helm upgrade mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.0 -f values.yaml
 ```
 
 Then you can connect through `http/sse` as usual given that you pass an `Authorization` header with your secret as Bearer token.

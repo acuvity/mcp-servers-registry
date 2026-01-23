@@ -13,13 +13,13 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.1.33",
+  "version": "0.1.34",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"f1d919f5d09a2b26d9d7d2f1991861ac72990298df9725b0688688a42179e5c0","reason":"Most tool names are adequately descriptive, but descriptions are consistently brief and lack crucial detail about functionality, limitations, and when to use each tool. Many parameter descriptions are minimal (e.g., 'incident ID', 'anomaly ID') without explaining their purpose or expected format. The 'run_query' tool has extensive schema documentation but a confusing description that relies heavily on examples rather than clear explanation of core functionality.","score":"D"},
+  "rating": {"hash":"07392adadc2ce29e86c669e0670eab3eb78c0f371ab4f088d2110446bcf08804","reason":"The toolset has adequate but inconsistent documentation quality. While most tools have clear names and basic descriptions, several key issues prevent a higher grade: many descriptions are too brief and lack context about when to use each tool (e.g., 'Get cloud incidents' vs more detailed explanations), parameter descriptions are often minimal ('incident ID', 'anomaly ID'), and there's significant inconsistency in documentation depth - some tools like 'run_query' have extensive parameter documentation while others like 'validate_user' are barely documented. The complex 'run_query' tool does provide comprehensive parameter documentation which elevates the overall score, but the widespread brevity and lack of usage context across most tools limits it to adequate level.","score":"C"},
   "resources": {
-    "tools": 14,
-    "prompts": 10,
+    "tools": 16,
+    "prompts": 11,
     "resources": 0,
     "resourcesTemplates": 0
   }

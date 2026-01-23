@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -21,10 +21,10 @@
 # What is mcp-server-alibabacloud-rds?
 [![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-alibabacloud-rds/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-alibabacloud-rds/1.7.7?logo=docker&logoColor=fff&label=1.7.7)](https://hub.docker.com/r/acuvity/mcp-server-alibabacloud-rds)
-[![PyPI](https://img.shields.io/badge/1.7.7-3775A9?logo=pypi&logoColor=fff&label=alibabacloud-rds-openapi-mcp-server)](https://github.com/aliyun/alibabacloud-rds-openapi-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-alibabacloud-rds/3.0.9?logo=docker&logoColor=fff&label=3.0.9)](https://hub.docker.com/r/acuvity/mcp-server-alibabacloud-rds)
+[![PyPI](https://img.shields.io/badge/3.0.9-3775A9?logo=pypi&logoColor=fff&label=alibabacloud-rds-openapi-mcp-server)](https://github.com/aliyun/alibabacloud-rds-openapi-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-alibabacloud-rds/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-alibabacloud-rds&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22ALIBABA_CLOUD_ACCESS_KEY_ID%22%2C%22-e%22%2C%22ALIBABA_CLOUD_ACCESS_KEY_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-alibabacloud-rds%3A1.7.7%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-alibabacloud-rds&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22ALIBABA_CLOUD_ACCESS_KEY_ID%22%2C%22-e%22%2C%22ALIBABA_CLOUD_ACCESS_KEY_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-alibabacloud-rds%3A3.0.9%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** MCP server for Alibaba Cloud RDS OpenAPI, enabling programmatic management of RDS resources.
 
@@ -43,69 +43,70 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
 The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-alibabacloud-rds/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
-### 🔒 Resource Integrity
+#### 🔒 Resource Integrity
 
 **Mitigates MCP Rug Pull Attacks**
 
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Guardrails
+#### 🛡️ Guardrails
 
-#### Covert Instruction Detection
+##### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-#### Sensitive Pattern Detection
+##### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-#### Shadowing Pattern Detection
+##### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-#### Schema Misuse Prevention
+##### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-#### Cross-Origin Tool Access
+##### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-#### Secrets Redaction
+##### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
@@ -114,7 +115,7 @@ Automatically masks sensitive values so they never appear in logs or responses.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
-### Enable guardrails
+#### Enable guardrails
 
 To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
@@ -129,7 +130,7 @@ To activate guardrails in your Docker containers, define the `GUARDRAILS` enviro
 
 Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
 
-## 🔒 Basic Authentication via Shared Secret
+#### 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
@@ -143,10 +144,8 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 > While basic auth will protect against unauthorized access, you should use it only in controlled environment,
 > rotate credentials frequently and **always** use TLS.
 
-</details>
-
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # 📦 How to Install
@@ -175,7 +174,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-alibabacloud-rds&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22ALIBABA_CLOUD_ACCESS_KEY_ID%22%2C%22-e%22%2C%22ALIBABA_CLOUD_ACCESS_KEY_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-alibabacloud-rds%3A1.7.7%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-alibabacloud-rds&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22ALIBABA_CLOUD_ACCESS_KEY_ID%22%2C%22-e%22%2C%22ALIBABA_CLOUD_ACCESS_KEY_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-alibabacloud-rds%3A3.0.9%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -200,7 +199,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "ALIBABA_CLOUD_ACCESS_KEY_ID",
           "-e",
           "ALIBABA_CLOUD_ACCESS_KEY_SECRET",
-          "docker.io/acuvity/mcp-server-alibabacloud-rds:1.7.7"
+          "docker.io/acuvity/mcp-server-alibabacloud-rds:3.0.9"
         ]
       }
     }
@@ -230,7 +229,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "ALIBABA_CLOUD_ACCESS_KEY_ID",
         "-e",
         "ALIBABA_CLOUD_ACCESS_KEY_SECRET",
-        "docker.io/acuvity/mcp-server-alibabacloud-rds:1.7.7"
+        "docker.io/acuvity/mcp-server-alibabacloud-rds:3.0.9"
       ]
     }
   }
@@ -264,7 +263,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "ALIBABA_CLOUD_ACCESS_KEY_ID",
         "-e",
         "ALIBABA_CLOUD_ACCESS_KEY_SECRET",
-        "docker.io/acuvity/mcp-server-alibabacloud-rds:1.7.7"
+        "docker.io/acuvity/mcp-server-alibabacloud-rds:3.0.9"
       ]
     }
   }
@@ -300,7 +299,7 @@ Add the following JSON block to your mcp configuration file:
         "ALIBABA_CLOUD_ACCESS_KEY_ID",
         "-e",
         "ALIBABA_CLOUD_ACCESS_KEY_SECRET",
-        "docker.io/acuvity/mcp-server-alibabacloud-rds:1.7.7"
+        "docker.io/acuvity/mcp-server-alibabacloud-rds:3.0.9"
       ]
     }
   }
@@ -334,7 +333,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "ALIBABA_CLOUD_ACCESS_KEY_ID",
         "-e",
         "ALIBABA_CLOUD_ACCESS_KEY_SECRET",
-        "docker.io/acuvity/mcp-server-alibabacloud-rds:1.7.7"
+        "docker.io/acuvity/mcp-server-alibabacloud-rds:3.0.9"
       ]
     }
   }
@@ -354,7 +353,7 @@ async with MCPServerStdio(
     params={
         "env": {"ALIBABA_CLOUD_ACCESS_KEY_ID":"TO_BE_SET","ALIBABA_CLOUD_ACCESS_KEY_SECRET":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","ALIBABA_CLOUD_ACCESS_KEY_ID","-e","ALIBABA_CLOUD_ACCESS_KEY_SECRET","docker.io/acuvity/mcp-server-alibabacloud-rds:1.7.7"]
+        "args": ["run","-i","--rm","--read-only","-e","ALIBABA_CLOUD_ACCESS_KEY_ID","-e","ALIBABA_CLOUD_ACCESS_KEY_SECRET","docker.io/acuvity/mcp-server-alibabacloud-rds:3.0.9"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -383,7 +382,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e ALIBABA_CLOUD_ACCESS_KEY_ID -e ALIBABA_CLOUD_ACCESS_KEY_SECRET docker.io/acuvity/mcp-server-alibabacloud-rds:1.7.7`
+- arguments: `run -i --rm --read-only -e ALIBABA_CLOUD_ACCESS_KEY_ID -e ALIBABA_CLOUD_ACCESS_KEY_SECRET docker.io/acuvity/mcp-server-alibabacloud-rds:3.0.9`
 
 </details>
 
@@ -393,7 +392,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e ALIBABA_CLOUD_ACCESS_KEY_ID -e ALIBABA_CLOUD_ACCESS_KEY_SECRET docker.io/acuvity/mcp-server-alibabacloud-rds:1.7.7
+docker run -it -p 8000:8000 --rm --read-only -e ALIBABA_CLOUD_ACCESS_KEY_ID -e ALIBABA_CLOUD_ACCESS_KEY_SECRET docker.io/acuvity/mcp-server-alibabacloud-rds:3.0.9
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -500,7 +499,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (28)
+## 🧰 Tools (34)
 <details>
 <summary>describe_db_instances</summary>
 
@@ -550,7 +549,9 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 ```
 
-    Queries the performance data of an instance.
+    Queries the performance data of an instance using the RDS OpenAPI.
+    This method provides performance data collected from the RDS service, such as MemCpuUsage, QPSTPS, Sessions, ThreadStatus, MBPS, etc.
+    
     Args:
         region_id: db instance region(e.g. cn-hangzhou)
         db_instance_id: db instance id(e.g. rm-xxx)
@@ -1406,6 +1407,166 @@ Restart an RDS instance.
 | region_id | string | not set | Yes
 | switch_time | string | not set | No
 </details>
+<details>
+<summary>describe_monitor_metrics</summary>
+
+**Description**:
+
+```
+
+    Queries performance and diagnostic metrics for an instance using the DAS (Database Autonomy Service) API.
+    This method provides extra monitoring and diagnostic data which cannot be queried by describe_db_instance_performance, such as IOPSUsage, MdlLockSession, etc.
+    
+    Args:
+        dbinstance_id (str): The ID of the RDS instance.
+        metrics_list (list[str]): The metrics to query. (e.g. ["IOBytesPS", "IOPSUsage", "MdlLockSession", "DiskUsage"])
+        db_type (str): The type of the database. (e.g. "mysql")
+        start_time(str): the start time. e.g. 2025-06-06 20:00:00
+        end_time(str): the end time. e.g. 2025-06-06 20:10:00
+    Returns:
+        the monitor metrics information.
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| db_type | string | not set | Yes
+| dbinstance_id | string | not set | Yes
+| end_time | string | not set | Yes
+| metrics_list | array | not set | Yes
+| start_time | string | not set | Yes
+</details>
+<details>
+<summary>describe_sql_insight_statistic</summary>
+
+**Description**:
+
+```
+
+    Query SQL Log statistics, including SQL cost time, execution times, and account.
+    Args:
+        dbinstance_id (str): The ID of the RDS instance.
+        start_time(str): the start time of sql insight statistic. e.g. 2025-06-06 20:00:00
+        end_time(str): the end time of sql insight statistic. e.g. 2025-06-06 20:10:00
+    Returns:
+        the sql insight statistic information in csv format.
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| dbinstance_id | string | not set | Yes
+| end_time | string | not set | Yes
+| start_time | string | not set | Yes
+</details>
+<details>
+<summary>show_engine_innodb_status</summary>
+
+**Description**:
+
+```
+
+    show engine innodb status in db.
+    Args:
+        dbinstance_id (str): The ID of the RDS instance.
+        region_id(str): the region id of instance.
+    Returns:
+        the sql result.
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| dbinstance_id | string | not set | Yes
+| region_id | string | not set | Yes
+</details>
+<details>
+<summary>show_create_table</summary>
+
+**Description**:
+
+```
+
+    show create table db_name.table_name
+    Args:
+        dbinstance_id (str): The ID of the RDS instance.
+        region_id(str): the region id of instance.
+        db_name(str): the db name for table.
+        table_name(str): the table name.
+    Returns:
+        the sql result.
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| db_name | string | not set | Yes
+| dbinstance_id | string | not set | Yes
+| region_id | string | not set | Yes
+| table_name | string | not set | Yes
+</details>
+<details>
+<summary>explain_sql</summary>
+
+**Description**:
+
+```
+
+    show sql execute plan
+    Args:
+        dbinstance_id (str): The ID of the RDS instance.
+        region_id(str): the region id of instance.
+        db_name(str): the db name for table.
+        sql(str): the target sql.
+    Returns:
+        the sql execute plan.
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| db_name | string | not set | Yes
+| dbinstance_id | string | not set | Yes
+| region_id | string | not set | Yes
+| sql | string | not set | Yes
+</details>
+<details>
+<summary>query_sql</summary>
+
+**Description**:
+
+```
+
+    execute read-only sql likes show xxx, select xxx
+    Args:
+        dbinstance_id (str): The ID of the RDS instance.
+        region_id(str): the region id of instance.
+        db_name(str): the db name for execute sql.
+        sql(str): the sql to be executed.
+    Returns:
+        the sql result.
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| db_name | string | not set | Yes
+| dbinstance_id | string | not set | Yes
+| region_id | string | not set | Yes
+| sql | string | not set | Yes
+</details>
 
 
 # 🔐 Resource SBOM
@@ -1429,19 +1590,25 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | describe_db_instance_ip_allowlist | description | c9678a8b66b424b1dac9c2ed9ca5734268a28c37e1f493e9f63e01cfbfdc3a47 |
 | tools | describe_db_instance_net_info | description | 803a80a75812b6ad0330bc3ff87f880d1a0078514b094d389532fcafde924733 |
 | tools | describe_db_instance_parameters | description | 18473454bf2b1f4f62da53a0456678ddda30cd64042a47b977eca71bbf263da0 |
-| tools | describe_db_instance_performance | description | a9879f780ffe599d8002075bcbf61f7a6151eb2b77941d9d3cdb00b076dc12dc |
+| tools | describe_db_instance_performance | description | 26493e20f405b2f508cb78ec97961042775327068d144563f70b2a451c9345ad |
 | tools | describe_db_instances | description | 11d137565a39eae46eb545c175e01e3f80a8c87b41746ab00f7582929b14835a |
 | tools | describe_error_logs | description | 40ed367c3771f4408bde70bb405e184dc8387b9f3f60c1e4d0ac389dc02ac983 |
 | tools | describe_instance_linked_whitelist_template | description | 7e288fb481d226ce4671af69e9397da4aab8811f7e881cbfad0a1c54cb489d86 |
+| tools | describe_monitor_metrics | description | ae3403ad908df4ddc325425b1f40929145fa54a50be94ff635adfe8f2a526792 |
 | tools | describe_slow_log_records | description | 428ae59a731cb803fe90a0327b1c44d1a88fc5948d571f55ff5894e0cb6271e1 |
+| tools | describe_sql_insight_statistic | description | a2635cf0da18dcdea34c5a6da7a6890f5e06c00f35769be72a8fae12ec051395 |
 | tools | describe_vpcs | description | 36f230af9297747024f73ee70cd5ad59fbf6fe903feb345051b344701b4309d2 |
 | tools | describe_vswitches | description | abc11a7354d9f15ccda4373c03c4210c6126e3c3f8ba90ccf727da7387ebb08d |
+| tools | explain_sql | description | 75f98485041adda1ba98ab06fa69b712f2cdf16022d03505896988e0c552c7c9 |
 | tools | get_current_time | description | c62d1661d0d638ed6b689471c8449d41e6641bac39e4d4353719e7a07901af7a |
 | tools | modify_db_instance_description | description | fe584046327e0bbba0f51ed0afb33d437fe3c0fd8ec81d8feced14ee8b08cb0d |
 | tools | modify_db_instance_spec | description | fd2047a56dfb562f438a910d1553bc6e9c3b8d6f6fd2359a1235b9ea3241d0be |
 | tools | modify_parameter | description | 59dd0072dfb97d68a151120b51f38517b7eb22b122792fbc4e6b0ac8701ef22c |
 | tools | modify_security_ips | description | cbfa4976349483b841ce78dbe0500b9d679942eefb19511784e0727f1814eb75 |
+| tools | query_sql | description | 86dd97d83c207ce3c7cbf422d70c6a5f04f53111a822a16752e227c3a3eddc2d |
 | tools | restart_db_instance | description | 7e85cf0f719d26c5ae57806ae4a44ef3e43f7386019c54f1a4617002d536bbd4 |
+| tools | show_create_table | description | 06b8403b3901efd75921668fbf1c1386d75ecddb352c7207e7c51add6e1f716d |
+| tools | show_engine_innodb_status | description | 9d9bda00ed6e1aed552ba8706e4252b6252e9d4968dc9921fa1d9eb66baea2eb |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

@@ -1,30 +1,30 @@
 {
   "tools": [
     {
-      "name": "get-library-docs",
-      "hash": "eb2a9adf3b2282cc1ef397d685657a8ab3f3fccb0f8f64526f5b0af90ded97d7",
+      "name": "query-docs",
+      "hash": "5b56f0dca3e6557f70b8f63525aa7b343c7c4fa1d48042214190317e7ab6eae8",
       "params": [
         {
-          "name": "context7CompatibleLibraryID",
+          "name": "libraryId",
           "hash": "6c34219525d407280dda56113382f386d34dcafd7b9e6c4e922218f7af6a73f7"
         },
         {
-          "name": "tokens",
-          "hash": "f540ae2f13fa0a62ed5bb41c4d1653aee29c1f1d46100e7509c4e3b73421ebb1"
-        },
-        {
-          "name": "topic",
-          "hash": "e8e61edf96c395a9d80df978b4720045e91ed73580b6b699f932f2b86708bf2a"
+          "name": "query",
+          "hash": "688f236430a0fde7ab9da21c81c02321ba90b65e7de5ce61ea4eadf87a005545"
         }
       ]
     },
     {
       "name": "resolve-library-id",
-      "hash": "000dc4f4254e96e2bad9603c8194a7247e598c76b007de661abf3a94028f1a1d",
+      "hash": "5422cff029f9d24bccf16cda0e8af5fba1c7c3fde133c4991f652e21ed63ef9f",
       "params": [
         {
           "name": "libraryName",
           "hash": "ea7e56753dac14ab7b06c226689b7db297b1bc9acd23fd68114da61e53f16743"
+        },
+        {
+          "name": "query",
+          "hash": "7f524cebbf7f44c48353448c610ae74f412483a7eb1451a9e8f8dec935c3748e"
         }
       ]
     }

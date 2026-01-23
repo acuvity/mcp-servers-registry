@@ -13,14 +13,14 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.1.4",
+  "version": "0.1.16",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"113aeb583c47a7e8cba63fe798d4fd04c25ea297bd9d6ca3917d4f315cd7c55f","reason":"The toolset demonstrates good documentation quality overall. Tool names are clear and purposeful, descriptions provide adequate context about functionality and usage, and parameter documentation is generally comprehensive with helpful examples. Strengths include detailed usage tips, clear requirements sections, and good coverage of constraints. However, some descriptions could be more concise (particularly for SAM tools), and a few parameters lack sufficient detail about their impact on behavior. The documentation successfully guides users through complex serverless deployment workflows while maintaining clarity.","score":"B"},
+  "rating": {"hash":"320ecc8b8d758a08feec7457cbb82fa201592f041d1eb058eb64d5547b130b35","reason":"Good overall documentation quality with comprehensive descriptions for most tools. Names are clear and purpose-specific. Most tools provide 2-4 sentence descriptions covering functionality, usage context, and key limitations. Parameter documentation is generally complete with clear types and constraints. Some inconsistencies exist - a few tools have overly verbose descriptions while others could benefit from more detail, and some parameter descriptions vary in depth. The toolset would benefit from more consistent formatting and slightly more concise descriptions in places, but overall provides solid guidance for users.","score":"B"},
   "resources": {
-    "tools": 18,
+    "tools": 25,
     "prompts": 0,
-    "resources": 2,
+    "resources": 4,
     "resourcesTemplates": 0
   }
 }

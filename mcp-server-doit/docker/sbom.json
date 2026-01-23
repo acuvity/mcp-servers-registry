@@ -1,8 +1,14 @@
 {
   "tools": [
     {
-      "name": "create_ticket",
-      "hash": "b0990b45b3f312d4cf1c6756d7e9f8ed2f143385ba7130ec35fa83ab15be317c"
+      "name": "get_allocation",
+      "hash": "bb8a68a1723d241150d1c88304e8463758df0e3f23fd756e5adbcead3bb579c4",
+      "params": [
+        {
+          "name": "id",
+          "hash": "0921eb4df27370daf6e92787a10c4ea88b1d906da8ef7205f6e61b50b5b7a809"
+        }
+      ]
     },
     {
       "name": "get_anomalies",
@@ -87,6 +93,26 @@
       ]
     },
     {
+      "name": "list_allocations",
+      "hash": "014f7142954c0747bd3db88be3a9b6044f2a46595491a86ac72a777d70c6715d",
+      "params": [
+        {
+          "name": "pageToken",
+          "hash": "13008295d9364bfd512878a26f7c86cc9ba7773ded8e66340fb6751b58e18800"
+        }
+      ]
+    },
+    {
+      "name": "list_assets",
+      "hash": "f57255cd75dd02d6bd04340e6c2cef3a2f97ee51a9a8a10949c60213d92aaa42",
+      "params": [
+        {
+          "name": "pageToken",
+          "hash": "13008295d9364bfd512878a26f7c86cc9ba7773ded8e66340fb6751b58e18800"
+        }
+      ]
+    },
+    {
       "name": "list_dimensions",
       "hash": "e9ec3b8f2f7cffefdb7d1a7a8f1c848ea2e880af63d71d3cb7367dc42a660efe",
       "params": [
@@ -140,7 +166,7 @@
     },
     {
       "name": "run_query",
-      "hash": "8a22e414f5512431140aef2901e09bf33b1964fc51a22f189fdfc6ed267e5eb9",
+      "hash": "82b8675441487590af9e3b9032b38433e7805db6c7668de37c3d7369ac3e754e",
       "params": [
         {
           "name": "config",
@@ -155,6 +181,14 @@
   ],
   "prompts": [
     {
+      "name": "Allocations Usage Guidance",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "Allow Artifacts",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
       "name": "Create Ticket",
       "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -164,10 +198,6 @@
     },
     {
       "name": "Document Output Reminder",
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    {
-      "name": "DoiT MCP Server tools output",
       "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {

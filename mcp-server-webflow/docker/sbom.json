@@ -19,6 +19,16 @@
       "hash": "85f6b0e69c5883d64bb75e42ac2fe025397ba097e8fe5ab98066c4cf55f60d84"
     },
     {
+      "name": "asset_tool",
+      "hash": "e18a70db324cf3e97d270e1fb4aa7966bd919154564114590c348154262c27af",
+      "params": [
+        {
+          "name": "siteId",
+          "hash": "887c1e7e937977d742a2d602a2c627db3d642aebeebca41c58fa5376f6bc52df"
+        }
+      ]
+    },
+    {
       "name": "collection_fields_create_option",
       "hash": "62a672e665513acde53ce1a510df12fc2e7f7689f9a3bb18fd1bd15f224fe285",
       "params": [
@@ -311,8 +321,70 @@
       ]
     },
     {
+      "name": "de_component_tool",
+      "hash": "d8bbbbac5d16eb9d1d3ae8dd891f85528fdd8fd7f3051b8b60d56987132456c0",
+      "params": [
+        {
+          "name": "siteId",
+          "hash": "887c1e7e937977d742a2d602a2c627db3d642aebeebca41c58fa5376f6bc52df"
+        }
+      ]
+    },
+    {
+      "name": "de_learn_more_about_styles",
+      "hash": "696ab4acc79b4fc2621bf70af1c03c345625c4a7557303185785f283a3ce0288"
+    },
+    {
+      "name": "de_page_tool",
+      "hash": "aaa5e1c80516c658e8315d57d9f42ba6ecc3ac4ac5ace08fd1db1c2d01dedd46",
+      "params": [
+        {
+          "name": "siteId",
+          "hash": "887c1e7e937977d742a2d602a2c627db3d642aebeebca41c58fa5376f6bc52df"
+        }
+      ]
+    },
+    {
       "name": "delete_all_site_scripts",
       "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "element_builder",
+      "hash": "e2188e3531e7dac572045d3edd633633511bc3c6e1102bb440115761c5e40087",
+      "params": [
+        {
+          "name": "siteId",
+          "hash": "887c1e7e937977d742a2d602a2c627db3d642aebeebca41c58fa5376f6bc52df"
+        }
+      ]
+    },
+    {
+      "name": "element_tool",
+      "hash": "3ab1b53b08d7ca2bae72c90eeccd0677c72fded4be76e039fcfc36c3670b0f7a",
+      "params": [
+        {
+          "name": "siteId",
+          "hash": "887c1e7e937977d742a2d602a2c627db3d642aebeebca41c58fa5376f6bc52df"
+        }
+      ]
+    },
+    {
+      "name": "get_designer_app_connection_info",
+      "hash": "774b38566576633051815c2dffb2a432d3b26968934d7cca47e2766fd18e6f95"
+    },
+    {
+      "name": "get_image_preview",
+      "hash": "e41be4650208ef0b2cf4c47b983dcb64ab125c56278d76ce5ed68251d498a88d",
+      "params": [
+        {
+          "name": "siteId",
+          "hash": "887c1e7e937977d742a2d602a2c627db3d642aebeebca41c58fa5376f6bc52df"
+        },
+        {
+          "name": "url",
+          "hash": "bfe18ad05d66c035ec5928482eb0a1f4b45182d66b23f0a3ba774dcf159b35f3"
+        }
+      ]
     },
     {
       "name": "pages_get_content",
@@ -451,6 +523,30 @@
           "hash": "c012e27d6f83f7433a656f22db20bee7dd830a37e94f37cc6378935ada9243a3"
         }
       ]
+    },
+    {
+      "name": "style_tool",
+      "hash": "49f484029b946935331a341ad5db6b8f78e410666df6ebd194ae3868656ffede",
+      "params": [
+        {
+          "name": "siteId",
+          "hash": "887c1e7e937977d742a2d602a2c627db3d642aebeebca41c58fa5376f6bc52df"
+        }
+      ]
+    },
+    {
+      "name": "variable_tool",
+      "hash": "52293db5cb993f9b2f3af34b132375077fd7d1756739342d5b8a2e759ba16139",
+      "params": [
+        {
+          "name": "siteId",
+          "hash": "887c1e7e937977d742a2d602a2c627db3d642aebeebca41c58fa5376f6bc52df"
+        }
+      ]
+    },
+    {
+      "name": "webflow_guide_tool",
+      "hash": "56452f251dbef7dc7470183075c71fd950dd4bc3f40fd9192c183c5a9ebfcbf3"
     }
   ],
   "prompts": []

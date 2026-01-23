@@ -108,7 +108,15 @@ _cross_tool_exclude := [
 	#
 	"rerun_workflow",
 	#
+	"download_usage_api_data",
+	#
+	"find_underused_resource_classes",
+	#
 	"analyze_diff",
+	#
+	"run_rollback_pipeline",
+	#
+	"list_component_versions",
 	#
 	# exclude word that might be misdetected
 	"to",

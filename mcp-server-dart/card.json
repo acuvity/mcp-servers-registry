@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.1.14",
+  "version": "0.2.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"f317a10e6a3d91f1bd47f233f56a5463dbadafc8a726148d65032b13c195156e","reason":"Tool names are clear and intuitive, indicating their purpose well. Descriptions adequately explain functionality and when to use each tool, though some could be more comprehensive. Parameter descriptions are generally clear and complete, with good use of constraints like regex patterns for IDs. The toolset provides solid documentation that would enable effective usage, with only minor gaps in detail that prevent it from reaching the highest grade.","score":"B"},
+  "rating": {"hash":"8646d1175bbb9f2f98b5615a00107d5dac594c0566a0f095e021a12f2f86c2a7","reason":"Good overall documentation with clear tool names and adequate descriptions covering functionality and usage context. Parameter documentation is generally comprehensive with proper constraints and examples. Some descriptions could be more detailed about limitations and edge cases, and a few parameters lack sufficient context (e.g., 'o' ordering parameter could be clearer), but the toolset provides solid guidance for effective usage.","score":"B"},
   "resources": {
-    "tools": 12,
+    "tools": 16,
     "prompts": 3,
     "resources": 0,
     "resourcesTemplates": 0

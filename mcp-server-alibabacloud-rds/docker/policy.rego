@@ -142,6 +142,18 @@ _cross_tool_exclude := [
 	#
 	"restart_db_instance",
 	#
+	"describe_monitor_metrics",
+	#
+	"describe_sql_insight_statistic",
+	#
+	"show_engine_innodb_status",
+	#
+	"show_create_table",
+	#
+	"explain_sql",
+	#
+	"query_sql",
+	#
 	# exclude word that might be misdetected
 	"to",
 	"this",

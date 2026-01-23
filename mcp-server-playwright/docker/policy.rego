@@ -94,21 +94,25 @@ _cross_tool_exclude := [
 	#
 	"browser_handle_dialog",
 	#
+	"browser_evaluate",
+	#
 	"browser_file_upload",
+	#
+	"browser_fill_form",
 	#
 	"browser_install",
 	#
 	"browser_press_key",
 	#
+	"browser_type",
+	#
 	"browser_navigate",
 	#
 	"browser_navigate_back",
 	#
-	"browser_navigate_forward",
-	#
 	"browser_network_requests",
 	#
-	"browser_pdf_save",
+	"browser_run_code",
 	#
 	"browser_take_screenshot",
 	#
@@ -120,19 +124,9 @@ _cross_tool_exclude := [
 	#
 	"browser_hover",
 	#
-	"browser_type",
-	#
 	"browser_select_option",
 	#
-	"browser_tab_list",
-	#
-	"browser_tab_new",
-	#
-	"browser_tab_select",
-	#
-	"browser_tab_close",
-	#
-	"browser_generate_playwright_test",
+	"browser_tabs",
 	#
 	"browser_wait_for",
 	#

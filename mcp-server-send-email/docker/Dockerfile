@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
+    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@5a873664a85bb4ba447c4edf89a48614689c1549
 
 FROM node:23.11.0-alpine3.21 as builder
 
@@ -33,7 +33,7 @@ LABEL org.opencontainers.image.title="mcp-server-send-email"
 LABEL org.opencontainers.image.description="Send and schedule emails using Resend's API."
 LABEL org.opencontainers.image.version="1e1e235"
 LABEL org.opencontainers.image.source="https://github.com/resend/mcp-send-email"
-LABEL org.opencontainers.image.licenses="unknown"
+LABEL org.opencontainers.image.licenses="MIT License"
 LABEL org.opencontainers.image.author="resend"
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 

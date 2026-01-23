@@ -1,22 +1,18 @@
 {
   "tools": [
     {
-      "name": "add",
-      "hash": "1efcb1f3567517e507fe44f6853681a389c3ac9ec493ea45f8e0da09b2d6aaf8",
+      "name": "echo",
+      "hash": "4d00e170dfb2475b38d7c595d6b83ddc873f4119814d8c3e96321a53aaf18fca",
       "params": [
         {
-          "name": "a",
-          "hash": "4d238256ad692183f3c2e945213eac5ae9e86bce06e6989360af210cae8751f4"
-        },
-        {
-          "name": "b",
-          "hash": "c079e9787b04a05e7e4dd561a044bce326711ebc3f0c90160f33823530da93d3"
+          "name": "message",
+          "hash": "2aa7ac486933d92f1de28d4b527088a577a0fe0ad5d33c0c36c1d122fc8477ba"
         }
       ]
     },
     {
-      "name": "annotatedMessage",
-      "hash": "c64e27024ec7adde221d1172fc30350a16cc89e948dee762bda74904f5bc9358",
+      "name": "get-annotated-message",
+      "hash": "6050c40378a145a00c1912f5904b37edb1266ce1c43fa430b6655a6f302d5222",
       "params": [
         {
           "name": "includeImage",
@@ -29,32 +25,90 @@
       ]
     },
     {
-      "name": "echo",
-      "hash": "befddbd2f7f4e08645d4777c5722d61db17d56a0115f5c9bdb19577e865a299b",
+      "name": "get-env",
+      "hash": "41cecdc4e2e1e3ab2be769fefe6cb155289da5ade9c381a1578bda7948111c26"
+    },
+    {
+      "name": "get-resource-links",
+      "hash": "0574c9e3571c77380de27d3927dbac8133e68c558150b8f0b95d2e884403613c",
       "params": [
         {
-          "name": "message",
-          "hash": "2aa7ac486933d92f1de28d4b527088a577a0fe0ad5d33c0c36c1d122fc8477ba"
+          "name": "count",
+          "hash": "710b4aa7c24cb2e02f1dfaaa05449a98f92d7ee2252f0da40c0685b614d00783"
         }
       ]
     },
     {
-      "name": "getResourceReference",
+      "name": "get-resource-reference",
       "hash": "f65488ea8977f68a7680a0ba04efa98d742a3007664649c9e00899f43f1d89de",
       "params": [
         {
           "name": "resourceId",
-          "hash": "babe671d40822849f662adcd0a04271ed201dc3849256f46bd5e721e0c752a69"
+          "hash": "747c611eadb757cc695479ba71ad7ad30123383782d50dcae9cc923c5ff6c7f4"
         }
       ]
     },
     {
-      "name": "getTinyImage",
-      "hash": "e05d66ca9c64728b0a6bb482363447a84c28caffab8df5c51e604876fd30b6fb"
+      "name": "get-roots-list",
+      "hash": "3b7b19f4e04c4ca99d1475992f4b95915e7415d4261cf4cebc291b7b3def7c8d"
     },
     {
-      "name": "longRunningOperation",
-      "hash": "56b51dc5e58071626c7d2658ccc5f1e252cbc9cae02a03d228fbb82ca57d5562",
+      "name": "get-structured-content",
+      "hash": "276d76ef534072c914d17df7855f06d6c44a8c5be3ee2b8eb686afdeb357d88c",
+      "params": [
+        {
+          "name": "location",
+          "hash": "43ae23322301a2f94c6b19a84e30a7d2681359513b6cea1000cffeafd8ee2920"
+        }
+      ]
+    },
+    {
+      "name": "get-sum",
+      "hash": "98b4e89d761c05f63a8acce7100a3950f49ca67537dea3716c0ba2a9431316f9",
+      "params": [
+        {
+          "name": "a",
+          "hash": "4d238256ad692183f3c2e945213eac5ae9e86bce06e6989360af210cae8751f4"
+        },
+        {
+          "name": "b",
+          "hash": "c079e9787b04a05e7e4dd561a044bce326711ebc3f0c90160f33823530da93d3"
+        }
+      ]
+    },
+    {
+      "name": "get-tiny-image",
+      "hash": "7eba2275ba1ae93a58102c84bcd8f1fb29126fb998d3cbd2947457cdbe685bde"
+    },
+    {
+      "name": "gzip-file-as-resource",
+      "hash": "e74512860ba0e5a1d47699b6bc8099970a510674295e14a861287882ed715243",
+      "params": [
+        {
+          "name": "data",
+          "hash": "fe50d774f0f3d2c53621ed9187fb8110a675cc16644da0368e3a94d3011f16e5"
+        },
+        {
+          "name": "name",
+          "hash": "fe91c771dbfa72cbd6dbd6404fb3eeb4aac574ebcbc8e111cd28b86cf882db5d"
+        },
+        {
+          "name": "outputType",
+          "hash": "216a80a9e4dce55bb3cf355f09d764bc7e399daa474b3aff4dc5c13da7e915f5"
+        }
+      ]
+    },
+    {
+      "name": "toggle-simulated-logging",
+      "hash": "4ece88d0dc82c58f375c0df4229b4fad8a4ee98398486f5d3e64f8b5d1f2219d"
+    },
+    {
+      "name": "toggle-subscriber-updates",
+      "hash": "8d2608e7a48902396a0c7b08e56cfdcf93667ecd09de825d71a6c47b207f22c8"
+    },
+    {
+      "name": "trigger-long-running-operation",
+      "hash": "d047c3fcbcb25a9255d0bd7584d019509a8aa5a181ce7e3c6109d76ea820d125",
       "params": [
         {
           "name": "duration",
@@ -67,12 +121,8 @@
       ]
     },
     {
-      "name": "printEnv",
-      "hash": "20b7f527310a05a74c119c317a418b8bb4d388fe182e2e4574758be98f06d06f"
-    },
-    {
-      "name": "sampleLLM",
-      "hash": "585d6f5a9315c93685cfc6daa069743de7a0b05e1a055e593cb413d2dd466363",
+      "name": "trigger-sampling-request",
+      "hash": "807babf5b7ff34397dda42ab6ad339d82f992dc120ddb6c92165c8ee0a217a14",
       "params": [
         {
           "name": "maxTokens",
@@ -87,32 +137,50 @@
   ],
   "prompts": [
     {
-      "name": "complex_prompt",
-      "hash": "09b401289593b83e9904a308f5f25490bdf350b411a5c0704c2b809d0e1617ca",
+      "name": "args-prompt",
+      "hash": "6bf9e87694814907d18376c10df390d1d026ab22dd25dc2f90c7f54fe3e872f2",
       "params": [
         {
-          "name": "style",
-          "hash": "f2e0e00a539e768a78c725148346c3b6c05beaa30157b103ce978e263381c4ba"
+          "name": "city",
+          "hash": "6e7972358d7f0ec8764bf526b14781a42654304776ea3ad233f60bf922899155"
         },
         {
-          "name": "temperature",
-          "hash": "15a255689d20cdae7535538cd0e874bba74ae5a398cda49bcd47b9301abf7b25"
+          "name": "state",
+          "hash": "9a5f7119fb7e49fe59783d064d75904aadf8acf32e7e60bdd5c5ace03c81df39"
         }
       ]
     },
     {
-      "name": "resource_prompt",
+      "name": "completable-prompt",
+      "hash": "440077b1101c42fe4de7f359ffe44f5428ea005d4d3003be8a7b008e4e657931",
+      "params": [
+        {
+          "name": "department",
+          "hash": "6c1697a1528ebdd17c722c8df0be4ebc7908e0932ab9c07a29a22ea3965b11a2"
+        },
+        {
+          "name": "name",
+          "hash": "8d9a952b1921cc303f93f852d16c1975a52c1296c869e9e062fd08a3ff6b7b30"
+        }
+      ]
+    },
+    {
+      "name": "resource-prompt",
       "hash": "485a9a963ffe2b74994e89a2ac741dc26ef7656974ba85d6e1a8fba8472adaca",
       "params": [
         {
           "name": "resourceId",
-          "hash": "1c5b7ee8d6755c3d34e32b2f8ef08d51cf7270d762759795aa86e158a488a824"
+          "hash": "747c611eadb757cc695479ba71ad7ad30123383782d50dcae9cc923c5ff6c7f4"
+        },
+        {
+          "name": "resourceType",
+          "hash": "54b6b2f551a23a9e4909208c06a589a3fca85a290fc1cb3cfdb626346eeeaacb"
         }
       ]
     },
     {
-      "name": "simple_prompt",
-      "hash": "388feeee3ff98cdb53b9fa774fe7e58b502a74241ccb5f4635160acf777ea5fb"
+      "name": "simple-prompt",
+      "hash": "bd5b0cf66fbff61626808db1d4285c51cda3d933d3d05a4ad7bd7500d0ab86ba"
     }
   ]
 }

@@ -13,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.1.7",
+  "version": "0.1.13",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"acc5c5a2f99f9a27e74fc918a0fd6535b5a31ca07e47435640dbb16561db2ba0","reason":"Tool names are clear and specific to ClickHouse functionality. Descriptions are adequate but minimal - they explain basic functionality but lack important details about usage context, constraints, and expected behavior. Parameter documentation is sparse with generic descriptions that don't explain purpose or provide examples. The 'like' parameter lacks any explanation of its filtering functionality.","score":"C"},
+  "rating": {"hash":"c01ea1bafc949daf6403be3ce16b949b64a9a94158283893c8627b65044526f8","reason":"Mixed quality documentation. 'list_tables' has excellent comprehensive documentation with detailed parameter descriptions and return value explanation. However, 'list_databases' and 'run_select_query' have minimal descriptions that barely explain their functionality or usage context, and their parameters lack meaningful descriptions entirely.","score":"C"},
   "resources": {
     "tools": 3,
     "prompts": 0,

@@ -94,6 +94,26 @@ _cross_tool_exclude := [
 	#
 	"update_assets_tool",
 	#
+	"query_asset_tool",
+	#
+	"create_glossaries",
+	#
+	"create_glossary_terms",
+	#
+	"create_glossary_categories",
+	#
+	"create_domains",
+	#
+	"create_data_products",
+	#
+	"create_dq_rules_tool",
+	#
+	"schedule_dq_rules_tool",
+	#
+	"delete_dq_rules_tool",
+	#
+	"update_dq_rules_tool",
+	#
 	# exclude word that might be misdetected
 	"to",
 	"this",

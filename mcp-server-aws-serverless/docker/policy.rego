@@ -122,6 +122,20 @@ _cross_tool_exclude := [
 	#
 	"update_webapp_frontend",
 	#
+	"esm_guidance",
+	#
+	"esm_kafka_troubleshoot",
+	#
+	"esm_optimize",
+	#
+	"secure_esm_msk_policy",
+	#
+	"secure_esm_sqs_policy",
+	#
+	"secure_esm_kinesis_policy",
+	#
+	"secure_esm_dynamodb_policy",
+	#
 	# exclude word that might be misdetected
 	"to",
 	"this",

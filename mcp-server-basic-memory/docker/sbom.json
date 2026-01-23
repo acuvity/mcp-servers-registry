@@ -2,7 +2,7 @@
   "tools": [
     {
       "name": "build_context",
-      "hash": "8864f9648ebb192186da87418b06d8d7a200eedfb7762ecd67e4a29fa85a8867"
+      "hash": "5a9db2017895c78083f90b9ab28d58605bc3d09d310a60869e9a602002d79e2e"
     },
     {
       "name": "canvas",
@@ -10,7 +10,7 @@
     },
     {
       "name": "create_memory_project",
-      "hash": "d3cbed6ef409f038824079681857e09fc92573440b22b618f6393bfc01f3824d"
+      "hash": "00d04c2aec156813a221a9e012152062b53fe5c01037c829e4e8805ec3fde06d"
     },
     {
       "name": "delete_note",
@@ -18,15 +18,15 @@
     },
     {
       "name": "delete_project",
-      "hash": "e684a0bd482c60d1ba3ee7bc935cf30436d56ad267f9b20d9b257e9c3722912a"
+      "hash": "c3d6ffc05720bc4d2413c20a5f73ad917e6954e03b8ec7b3ba4f1975fc933c8e"
     },
     {
       "name": "edit_note",
       "hash": "7e70b1ab505a2e06e8da48ad7b4368890e8d86778fd9465d88e02bc0c43fc556"
     },
     {
-      "name": "get_current_project",
-      "hash": "ec25ce3bd6c3f91340b4761b2976bbf17caa41d64f5660fd40edd781c07a86a5"
+      "name": "fetch",
+      "hash": "20a68f82bddb07ce389cac0cb2fe30d5db15aee31a8bc46f68b3ca3bcd9237f5"
     },
     {
       "name": "list_directory",
@@ -34,7 +34,7 @@
     },
     {
       "name": "list_memory_projects",
-      "hash": "944ac1e2c55826b72ca7fd53fc1c16dfe77ef71945500ecebc9756bf723c7c52"
+      "hash": "42d00f25c24b949a0abe56a14ae5a4a377b53110013bab2752b255d3ea631f9a"
     },
     {
       "name": "move_note",
@@ -50,23 +50,15 @@
     },
     {
       "name": "recent_activity",
-      "hash": "8b43acabdd7bc9e4ab6398f1f27b28203fb5df0314d7f0888946136d40f548d5"
+      "hash": "0768babdcbb8ce8f57c9a197eb183147d4e6bd8825a3a705931b83478171ec90"
+    },
+    {
+      "name": "search",
+      "hash": "3706ec9b490cce0c17f4fca6c321e217e0a41571df2b3a71396534ae1ead083b"
     },
     {
       "name": "search_notes",
-      "hash": "fcaec1323a397ec1b89c8d50efb4cf4af054f0574d569452599c927231594adc"
-    },
-    {
-      "name": "set_default_project",
-      "hash": "25c20445c664c4a3459c6188cd63e33b69219d984641f916d4c118ddd9a2877f"
-    },
-    {
-      "name": "switch_project",
-      "hash": "096b246c8d498cf080f5c936ffc13d14d21cea89e6f768b82d81aea3071ab5b4"
-    },
-    {
-      "name": "sync_status",
-      "hash": "00b145ea43da92d1e768bbdcb203a9104369d88d55314c30a0970c3edd03499c"
+      "hash": "58fb30dcbae336b4aba77cf67870411f4b92a4dd94aac9e62de72f13ec2ed765"
     },
     {
       "name": "view_note",
@@ -79,21 +71,35 @@
   ],
   "prompts": [
     {
-      "name": "Continue Conversation",
+      "name": "continue_conversation",
       "hash": "08f57034421ff1f069d1c1f6dd0dd640b9982a6ba21a5b2442953cb1b5dd6efa",
       "params": [
         {
           "name": "timeframe",
-          "hash": "cd9af00423b977d8f501edaeef3d43f42a323778bbbcc0900c4d88b6a4f9354e"
+          "hash": "79053544f5f692a4029a29d441eddc792330a24eed26004f06c12d7b32892129"
         },
         {
           "name": "topic",
-          "hash": "d8cb6ba6d70a65d763ba5f3f38b7f24ffee35f1f32c0fb1d5bfe095ba9f2d327"
+          "hash": "d05c28ddcc33f478c5ea800d88601aa1dc1286c9dfb64213688006964612eb4e"
         }
       ]
     },
     {
-      "name": "Search Knowledge Base",
+      "name": "recent_activity",
+      "hash": "a4ad3c0b4b9cfbc89c2bb0612ad7e1a6a45eca1653dee91498a45d2c58e6c6fd",
+      "params": [
+        {
+          "name": "project",
+          "hash": "8ea7ece6387b242003bb4480b908a4501dd0546108b767af5f9c3a4f3caaeaa1"
+        },
+        {
+          "name": "timeframe",
+          "hash": "4279066c7bbd242c4e7277c1a5643b6e1b546053ddacb0dac0f43015cda145ff"
+        }
+      ]
+    },
+    {
+      "name": "search_knowledge_base",
       "hash": "dcd0e4296554bc417239afd10b686e82c4879c842c3a7c60a2288ad0152513e3",
       "params": [
         {
@@ -102,23 +108,9 @@
         },
         {
           "name": "timeframe",
-          "hash": "ac891e951bb4167b6fafdd14fdac08a1dcf761aacef7f3add86de2000a8223fb"
+          "hash": "3843dff545d4aae893892b8df4c5307eaecaca0314f37ac06061ea52cf78b968"
         }
       ]
-    },
-    {
-      "name": "Share Recent Activity",
-      "hash": "acaf99888843d7d2c0243f8bf67259929179ab71579a4af5a16571f3485475f7",
-      "params": [
-        {
-          "name": "timeframe",
-          "hash": "cd9af00423b977d8f501edaeef3d43f42a323778bbbcc0900c4d88b6a4f9354e"
-        }
-      ]
-    },
-    {
-      "name": "sync_status_prompt",
-      "hash": "da4cc0a9c0044eef836c0023b8a9c33d53ac046beba62f756a3587f3da1ac1bc"
     }
   ]
 }

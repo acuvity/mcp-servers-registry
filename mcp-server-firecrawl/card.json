@@ -13,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "1.11.0",
+  "version": "3.7.4",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"3b5c2fba1abf2c85157a670f90a560ddccdfae071f3ff8461ac463a07e426841","reason":"Excellent documentation across all tools. Each tool has a comprehensive description explaining what it does, when to use it, when not to use it, common mistakes, and detailed usage examples. Parameter descriptions are clear and complete, explaining purpose, constraints, and expected values. The documentation proactively addresses typical user questions and provides concrete guidance for proper tool selection and usage.","score":"A"},
+  "rating": {"hash":"e988bbe89c5af112f958afe4f9bc2c6e75c5192e05864b39cfaff9935621f13a","reason":"The toolset demonstrates good documentation quality with comprehensive descriptions that include appropriate use cases, limitations, and usage examples. Tool names are clear and well-structured with consistent 'firecrawl_' prefix. Most parameters have adequate descriptions, though some complex nested schemas could benefit from more detailed explanations. The descriptions effectively communicate when to use each tool and common mistakes to avoid, which is valuable guidance for users.","score":"B"},
   "resources": {
     "tools": 8,
     "prompts": 0,

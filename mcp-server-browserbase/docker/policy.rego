@@ -86,43 +86,39 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
-	"browserbase_wait",
+	"multi_browserbase_stagehand_session_create",
 	#
-	"browserbase_close",
+	"multi_browserbase_stagehand_session_list",
 	#
-	"browserbase_resize",
+	"multi_browserbase_stagehand_session_close",
 	#
-	"browserbase_snapshot",
+	"multi_browserbase_stagehand_navigate_session",
 	#
-	"browserbase_click",
+	"multi_browserbase_stagehand_act_session",
 	#
-	"browserbase_drag",
+	"multi_browserbase_stagehand_extract_session",
 	#
-	"browserbase_hover",
+	"multi_browserbase_stagehand_observe_session",
 	#
-	"browserbase_type",
+	"multi_browserbase_stagehand_get_url_session",
 	#
-	"browserbase_select_option",
-	#
-	"browserbase_take_screenshot",
-	#
-	"browserbase_press_key",
-	#
-	"browserbase_get_text",
-	#
-	"browserbase_navigate",
-	#
-	"browserbase_navigate_back",
-	#
-	"browserbase_navigate_forward",
+	"browserbase_stagehand_get_all_urls",
 	#
 	"browserbase_session_create",
 	#
 	"browserbase_session_close",
 	#
-	"browserbase_context_create",
+	"browserbase_stagehand_navigate",
 	#
-	"browserbase_context_delete",
+	"browserbase_stagehand_act",
+	#
+	"browserbase_stagehand_extract",
+	#
+	"browserbase_stagehand_observe",
+	#
+	"browserbase_screenshot",
+	#
+	"browserbase_stagehand_get_url",
 	#
 	# exclude word that might be misdetected
 	"to",

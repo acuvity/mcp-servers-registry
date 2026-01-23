@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -21,10 +21,10 @@
 # What is mcp-server-kubernetes?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-kubernetes/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-kubernetes/2.3.1?logo=docker&logoColor=fff&label=2.3.1)](https://hub.docker.com/r/acuvity/mcp-server-kubernetes)
-[![PyPI](https://img.shields.io/badge/2.3.1-3775A9?logo=pypi&logoColor=fff&label=mcp-server-kubernetes)](https://github.com/Flux159/mcp-server-kubernetes)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-kubernetes/3.2.0?logo=docker&logoColor=fff&label=3.2.0)](https://hub.docker.com/r/acuvity/mcp-server-kubernetes)
+[![PyPI](https://img.shields.io/badge/3.2.0-3775A9?logo=pypi&logoColor=fff&label=mcp-server-kubernetes)](https://github.com/Flux159/mcp-server-kubernetes)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-kubernetes/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-kubernetes&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-kubernetes%3A2.3.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-kubernetes&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-kubernetes%3A3.2.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Typescript implementation of Kubernetes cluster operations for pods, deployments, services.
 
@@ -43,110 +43,40 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-kubernetes/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-kubernetes/docker/policy.rego) that enables a set of runtime [guardrails](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-kubernetes#%EF%B8%8F-guardrails) to help enforce security, privacy, and correct usage of your services. Below is list of each guardrail provided.
 
-### 🔒 Resource Integrity
-
-**Mitigates MCP Rug Pull Attacks**
-
-* **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
-* **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
-
-### 🛡️ Guardrails
-
-#### Covert Instruction Detection
-
-Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
-
-* **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
-* **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
-
-#### Sensitive Pattern Detection
-
-Block user-defined sensitive data patterns (credential paths, filesystem references).
-
-* **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
-* **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
-
-#### Shadowing Pattern Detection
-
-Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
-
-* **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
-* **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
-
-#### Schema Misuse Prevention
-
-Enforces strict adherence to MCP input schemas.
-
-* **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
-* **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
-
-#### Cross-Origin Tool Access
-
-Controls whether tools may invoke tools or services from external origins.
-
-* **Goal:** Prevent untrusted or out-of-scope services from being called.
-* **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
-
-#### Secrets Redaction
-
-Automatically masks sensitive values so they never appear in logs or responses.
-
-* **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
-* **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
-
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
-
-### Enable guardrails
-
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
 | Guardrail                        | Summary                                                                 |
 |----------------------------------|-------------------------------------------------------------------------|
+| `resource integrity`             | Embeds a hash of all exposed resources to ensure their authenticity and prevent unauthorized modifications, guarding against supply chain attacks and dynamic alterations of tool metadata. |
 | `covert-instruction-detection`   | Detects hidden or obfuscated directives in requests.                    |
 | `sensitive-pattern-detection`    | Flags patterns suggesting sensitive data or filesystem exposure.        |
 | `shadowing-pattern-detection`    | Identifies tool descriptions that override or influence others.         |
 | `schema-misuse-prevention`       | Enforces strict schema compliance on input data.                        |
 | `cross-origin-tool-access`       | Controls calls to external services or APIs.                            |
 | `secrets-redaction`              | Prevents exposure of credentials or sensitive values.                   |
+| `basic authentication`           | Enables the configuration of a shared secret to restrict unauthorized access to the MCP server and ensure only approved clients can connect. |
 
-Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
-
-## 🔒 Basic Authentication via Shared Secret
-
-Provides a lightweight auth layer using a single shared token.
-
-* **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
-* **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
-
-To turn on Basic Authentication, define `BASIC_AUTH_SECRET` environment variable with a shared secret.
-
-Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentication.
-
-> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
-> rotate credentials frequently and **always** use TLS.
-
-</details>
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference
@@ -173,11 +103,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-2.3.1`
+  - container: `1.0.0-3.2.0`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-kubernetes:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-kubernetes:1.0.0-2.3.1`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-kubernetes:1.0.0-3.2.0`
 
 ---
 
@@ -616,7 +546,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (20)
+## 🧰 Tools (22)
 <details>
 <summary>cleanup</summary>
 
@@ -645,10 +575,11 @@ Get or list Kubernetes resources by resource type, name, and optionally namespac
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | allNamespaces | boolean | If true, list resources across all namespaces | No
+| context | string | Kubeconfig Context to use for the command (optional - defaults to null) | No
 | fieldSelector | string | Filter resources by field selector (e.g. 'metadata.name=my-pod') | No
 | labelSelector | string | Filter resources by label selector (e.g. 'app=nginx') | No
 | name | string | Name of the resource (optional - if not provided, lists all resources of the specified type) | No
-| namespace | string | Namespace of the resource (optional - defaults to 'default' for namespaced resources) | No
+| namespace | string | Kubernetes namespace | No
 | output | string | Output format | No
 | resourceType | string | Type of resource to get (e.g., pods, deployments, services, configmaps, events, etc.) | Yes
 | sortBy | string | Sort events by a field (default: lastTimestamp). Only applicable for events. | No
@@ -667,29 +598,10 @@ Describe Kubernetes resources by resource type, name, and optionally namespace
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | allNamespaces | boolean | If true, describe resources across all namespaces | No
+| context | string | Kubeconfig Context to use for the command (optional - defaults to null) | No
 | name | string | Name of the resource to describe | Yes
-| namespace | string | Namespace of the resource (optional - defaults to 'default' for namespaced resources) | No
+| namespace | string | Kubernetes namespace | No
 | resourceType | string | Type of resource to describe (e.g., pods, deployments, services, etc.) | Yes
-</details>
-<details>
-<summary>kubectl_list</summary>
-
-**Description**:
-
-```
-List Kubernetes resources by resource type and optionally namespace
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| allNamespaces | boolean | If true, list resources across all namespaces | No
-| fieldSelector | string | Filter resources by field selector (e.g. 'metadata.name=my-pod') | No
-| labelSelector | string | Filter resources by label selector (e.g. 'app=nginx') | No
-| namespace | string | Namespace of the resources (optional - defaults to 'default' for namespaced resources) | No
-| output | string | Output format - 'formatted' uses a resource-specific format with key information | No
-| resourceType | string | Type of resource to list (e.g., pods, deployments, services, configmaps, etc.) | Yes
 </details>
 <details>
 <summary>kubectl_apply</summary>
@@ -704,11 +616,12 @@ Apply a Kubernetes YAML manifest from a string or file
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dryRun | boolean | If true, only validate the resource, don't apply it | No
+| context | string | Kubeconfig Context to use for the command (optional - defaults to null) | No
+| dryRun | boolean | If true, only validate the resource, don't actually execute the operation | No
 | filename | string | Path to a YAML file to apply (optional - use either manifest or filename) | No
 | force | boolean | If true, immediately remove resources from API and bypass graceful deletion | No
 | manifest | string | YAML manifest to apply | No
-| namespace | string | Namespace to apply the resource to (optional) | No
+| namespace | string | Kubernetes namespace | No
 </details>
 <details>
 <summary>kubectl_delete</summary>
@@ -724,13 +637,14 @@ Delete Kubernetes resources by resource type, name, labels, or from a manifest f
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | allNamespaces | boolean | If true, delete resources across all namespaces | No
+| context | string | Kubeconfig Context to use for the command (optional - defaults to null) | No
 | filename | string | Path to a YAML file to delete resources from (optional) | No
 | force | boolean | If true, immediately remove resources from API and bypass graceful deletion | No
 | gracePeriodSeconds | number | Period of time in seconds given to the resource to terminate gracefully | No
 | labelSelector | string | Delete resources matching this label selector (e.g. 'app=nginx') | No
 | manifest | string | YAML manifest defining resources to delete (optional) | No
 | name | string | Name of the resource to delete | No
-| namespace | string | Namespace of the resource (optional - defaults to 'default' for namespaced resources) | No
+| namespace | string | Kubernetes namespace | No
 | resourceType | string | Type of resource to delete (e.g., pods, deployments, services, etc.) | No
 </details>
 <details>
@@ -748,7 +662,8 @@ Create Kubernetes resources using various methods (from file or using subcommand
 |-----------|------|-------------|-----------|
 | annotations | array | Annotations to apply to the resource (e.g. ["key1=value1", "key2=value2"]) | No
 | command | array | Command to run in the container | No
-| dryRun | boolean | If true, only validate the resource, don't actually create it | No
+| context | string | Kubeconfig Context to use for the command (optional - defaults to null) | No
+| dryRun | boolean | If true, only validate the resource, don't actually execute the operation | No
 | filename | string | Path to a YAML file to create resources from | No
 | fromFile | array | Path to file for creating configmap (e.g. ["key1=/path/to/file1", "key2=/path/to/file2"]) | No
 | fromLiteral | array | Key-value pair for creating configmap (e.g. ["key1=value1", "key2=value2"]) | No
@@ -756,7 +671,7 @@ Create Kubernetes resources using various methods (from file or using subcommand
 | labels | array | Labels to apply to the resource (e.g. ["key1=value1", "key2=value2"]) | No
 | manifest | string | YAML manifest to create resources from | No
 | name | string | Name of the resource to create | No
-| namespace | string | Namespace to create the resource in | No
+| namespace | string | Kubernetes namespace | No
 | output | string | Output format. One of: json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-as-json|jsonpath-file | No
 | port | number | Port that the container exposes | No
 | replicas | number | Number of replicas to create for the deployment | No
@@ -782,10 +697,11 @@ Get logs from Kubernetes resources like pods, deployments, or jobs
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | container | string | Container name (required when pod has multiple containers) | No
+| context | string | Kubeconfig Context to use for the command (optional - defaults to null) | No
 | follow | boolean | Follow logs output (not recommended, may cause timeouts) | No
 | labelSelector | string | Filter resources by label selector | No
 | name | string | Name of the resource | Yes
-| namespace | string | Namespace of the resource | Yes
+| namespace | string | Kubernetes namespace | Yes
 | previous | boolean | Include logs from previously terminated containers | No
 | resourceType | string | Type of resource to get logs from | Yes
 | since | string | Show logs since relative time (e.g. '5s', '2m', '3h') | No
@@ -806,8 +722,9 @@ Scale a Kubernetes deployment
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| context | string | Kubeconfig Context to use for the command (optional - defaults to null) | No
 | name | string | Name of the deployment to scale | Yes
-| namespace | string | Namespace of the deployment | No
+| namespace | string | Kubernetes namespace | No
 | replicas | number | Number of replicas to scale to | Yes
 | resourceType | string | Resource type to scale (deployment, replicaset, statefulset) | No
 </details>
@@ -824,9 +741,10 @@ Update field(s) of a resource using strategic merge patch, JSON merge patch, or 
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| dryRun | boolean | If true, only print the object that would be sent, without sending it | No
+| context | string | Kubeconfig Context to use for the command (optional - defaults to null) | No
+| dryRun | boolean | If true, only validate the resource, don't actually execute the operation | No
 | name | string | Name of the resource to patch | Yes
-| namespace | string | Namespace of the resource | No
+| namespace | string | Kubernetes namespace | No
 | patchData | object | Patch data as a JSON object | No
 | patchFile | string | Path to a file containing the patch data (alternative to patchData) | No
 | patchType | string | Type of patch to apply | No
@@ -845,8 +763,9 @@ Manage the rollout of a resource (e.g., deployment, daemonset, statefulset)
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| context | string | Kubeconfig Context to use for the command (optional - defaults to null) | No
 | name | string | Name of the resource | Yes
-| namespace | string | Namespace of the resource | No
+| namespace | string | Kubernetes namespace | Yes
 | resourceType | string | Type of resource to manage rollout for | Yes
 | revision | number | Revision to rollback to (for undo subcommand) | No
 | subCommand | string | Rollout subcommand to execute | Yes
@@ -887,6 +806,7 @@ Get documentation for a Kubernetes resource or field
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | apiVersion | string | API version to use (e.g. 'apps/v1') | No
+| context | string | Kubeconfig Context to use for the command (optional - defaults to null) | No
 | output | string | Output format (plaintext or plaintext-openapiv2) | No
 | recursive | boolean | Print the fields of fields recursively | No
 | resource | string | Resource name or field path (e.g. 'pods' or 'pods.spec.containers') | Yes
@@ -897,18 +817,22 @@ Get documentation for a Kubernetes resource or field
 **Description**:
 
 ```
-Install a Helm chart
+Install a Helm chart with support for both standard and template-based installation
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| chart | string | Chart name | Yes
-| name | string | Release name | Yes
+| chart | string | Chart name (e.g., 'nginx') or path to chart directory | Yes
+| context | string | Kubeconfig Context to use for the command (optional - defaults to null) | No
+| createNamespace | boolean | Create namespace if it doesn't exist | No
+| name | string | Name of the Helm release | Yes
 | namespace | string | Kubernetes namespace | Yes
-| repo | string | Chart repository URL | Yes
-| values | object | Chart values | No
+| repo | string | Helm repository URL (optional if using local chart path) | No
+| useTemplate | boolean | Use helm template + kubectl apply instead of helm install (bypasses auth issues) | No
+| values | object | Custom values to override chart defaults | No
+| valuesFile | string | Path to values file (alternative to values object) | No
 </details>
 <details>
 <summary>upgrade_helm_chart</summary>
@@ -916,18 +840,20 @@ Install a Helm chart
 **Description**:
 
 ```
-Upgrade a Helm release
+Upgrade an existing Helm chart release
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| chart | string | Chart name | Yes
-| name | string | Release name | Yes
+| chart | string | Chart name or path to chart directory | Yes
+| context | string | Kubeconfig Context to use for the command (optional - defaults to null) | No
+| name | string | Name of the Helm release to upgrade | Yes
 | namespace | string | Kubernetes namespace | Yes
-| repo | string | Chart repository URL | Yes
-| values | object | Chart values | No
+| repo | string | Helm repository URL (optional if using local chart path) | No
+| values | object | Custom values to override chart defaults | No
+| valuesFile | string | Path to values file (alternative to values object) | No
 </details>
 <details>
 <summary>uninstall_helm_chart</summary>
@@ -935,15 +861,39 @@ Upgrade a Helm release
 **Description**:
 
 ```
-Uninstall a Helm release
+Uninstall a Helm chart release
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| name | string | Release name | Yes
+| context | string | Kubeconfig Context to use for the command (optional - defaults to null) | No
+| name | string | Name of the Helm release to uninstall | Yes
 | namespace | string | Kubernetes namespace | Yes
+</details>
+<details>
+<summary>node_management</summary>
+
+**Description**:
+
+```
+Manage Kubernetes nodes with cordon, drain, and uncordon operations
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| confirmDrain | boolean | Explicit confirmation to drain the node (required for drain operation) | No
+| deleteLocalData | boolean | Delete local data even if emptyDir volumes are used (for drain operation) | No
+| dryRun | boolean | Show what would be done without actually doing it (for drain operation) | No
+| force | boolean | Force the operation even if there are pods not managed by a ReplicationController, ReplicaSet, Job, DaemonSet or StatefulSet (for drain operation) | No
+| gracePeriod | number | Period of time in seconds given to each pod to terminate gracefully (for drain operation). If set to -1, uses the kubectl default grace period. | No
+| ignoreDaemonsets | boolean | Ignore DaemonSet-managed pods (for drain operation) | No
+| nodeName | string | Name of the node to operate on (required for cordon, drain, uncordon) | No
+| operation | string | Node operation to perform | Yes
+| timeout | string | The length of time to wait before giving up (for drain operation, e.g., '5m', '1h') | No
 </details>
 <details>
 <summary>port_forward</summary>
@@ -980,6 +930,26 @@ Stop a port-forward process
 | id | string | not set | Yes
 </details>
 <details>
+<summary>exec_in_pod</summary>
+
+**Description**:
+
+```
+Execute a command in a Kubernetes pod or container and return the output. Command must be an array of strings where the first element is the executable and remaining elements are arguments. This executes directly without shell interpretation for security.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| command | array | Command to execute as an array of strings (e.g. ["ls", "-la", "/app"]). First element is the executable, remaining are arguments. Shell operators like pipes, redirects, or command chaining are not supported - use explicit array format for security. | Yes
+| container | string | Container name (required when pod has multiple containers) | No
+| context | string | Kubeconfig Context to use for the command (optional - defaults to null) | No
+| name | string | Name of the pod to execute the command in | Yes
+| namespace | string | Kubernetes namespace | No
+| timeout | number | Timeout for command - 60000 milliseconds if not specified | No
+</details>
+<details>
 <summary>list_api_resources</summary>
 
 **Description**:
@@ -993,6 +963,7 @@ List the API resources available in the cluster
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | apiGroup | string | API group to filter by | No
+| context | string | Kubeconfig Context to use for the command (optional - defaults to null) | No
 | namespaced | boolean | If true, only show namespaced resources | No
 | output | string | Output format (wide, name, or no-headers) | No
 | verbs | array | List of verbs to filter by | No
@@ -1012,12 +983,27 @@ Execute any kubectl command with the provided arguments and flags
 |-----------|------|-------------|-----------|
 | args | array | Additional command arguments | No
 | command | string | The kubectl command to execute (e.g. patch, rollout, top) | Yes
+| context | string | Kubeconfig Context to use for the command (optional - defaults to null) | No
 | flags | object | Command flags as key-value pairs | No
 | name | string | Resource name | No
-| namespace | string | Namespace | No
+| namespace | string | Kubernetes namespace | No
 | outputFormat | string | Output format (e.g. json, yaml, wide) | No
 | resourceType | string | Resource type (e.g. pod, deployment) | No
 | subCommand | string | Subcommand if applicable (e.g. 'history' for rollout) | No
+</details>
+<details>
+<summary>ping</summary>
+
+**Description**:
+
+```
+Verify that the counterpart is still responsive and the connection is alive.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
 </details>
 
 ## 📚 Resources (5)
@@ -1035,6 +1021,25 @@ Execute any kubectl command with the provided arguments and flags
 
 </details>
 
+## 📝 Prompts (1)
+<details>
+<summary>k8s-diagnose</summary>
+
+**Description**:
+
+```
+Diagnose Kubernetes Resources.
+```
+
+**Parameter**:
+
+| Argument | Description | Required |
+|-----------|------|-------------|
+| keyword | A keyword to search pod/node names. |Yes |
+| namespace | Optional: Specify a namespace to narrow down the search. |No |
+
+</details>
+
 
 # 🔐 Resource SBOM
 
@@ -1042,24 +1047,40 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
+| prompts | k8s-diagnose | description | 857845e0feef131f5187dbd528ac7fb6bd3bba340fdd201802afb1c812166383 |
+| prompts | k8s-diagnose | keyword | b38371d9a98b3759f7ad1b9e238cfad4cf1b04c44316fadbc70bbafd4e66fcf7 |
+| prompts | k8s-diagnose | namespace | b0e6f900e6f219557ec1120ec8cf1cd55fdd3247f73fe11b1460125c0c277739 |
 | tools | cleanup | description | 8c2018f3780cafa2f853231f129562dc33c6a4571ac939e506f9aeb35665c5e2 |
+| tools | exec_in_pod | description | 5730abcd1da88fe3fc186484a75e1594e7579b3f05131dcbdfadd8d26c410989 |
+| tools | exec_in_pod | command | 74fd42bc7b267542629d4372d445bfc4878d24922329283d90bbded9175a103d |
+| tools | exec_in_pod | container | 0f93342e4a7003f29000cd347ee9cffc603c8da3f5ea9a03145b4eca923c051e |
+| tools | exec_in_pod | context | 3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95 |
+| tools | exec_in_pod | name | f13bbb0371e7cbf5b1ae82d35fd19a9a215c2734aa18e71259a3b9fcb895ffe2 |
+| tools | exec_in_pod | namespace | af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33 |
+| tools | exec_in_pod | timeout | 0dfe796c5743f5d70be5f253b03102401715d31c6bfc238f0f819fbb8560c46a |
 | tools | explain_resource | description | 592bffdd3e4c0184fd9a22057d0a06b31a60732ac1d7a52de72367880af173f8 |
 | tools | explain_resource | apiVersion | 34419a5eb3629e5311644dd9147365296dcdbc65740ea1d235ab5d1cf8cc7add |
+| tools | explain_resource | context | 3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95 |
 | tools | explain_resource | output | 1c93f2d24fb810943e12f684698acc46b732d21f2f1c99c5c4bb85bd4e48560e |
 | tools | explain_resource | recursive | db27ec72cc1154d1948550206b399586957968668bac95582a8635d103cc17fa |
 | tools | explain_resource | resource | 4ae1f5f38e1fd9e2087c6b08f33a3e9f44270af0a98f96af4264cf8ef277ae54 |
-| tools | install_helm_chart | description | 626fee4ec45bea4c946ed23014f3533b60a7f1cef73e0dd9ec68b8a16496feef |
-| tools | install_helm_chart | chart | b34d6b02df4598648d8c810655f76567962045de26a68a8211ab7b698c481663 |
-| tools | install_helm_chart | name | 85f01282f3161086faed8766800c17b4c00472620c5d158e1657d13041a197ed |
+| tools | install_helm_chart | description | 0d4421f932061c45b219437241c534698f7d80977c802e20e13625d1c2d9ae7f |
+| tools | install_helm_chart | chart | 9aea91ddc41890ce968f7eaed2388a2d057b6ebf95ef8a4f80abd70586c3b202 |
+| tools | install_helm_chart | context | 3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95 |
+| tools | install_helm_chart | createNamespace | a690e4f661ff36741ab8012de345cf6e4f28fadbf213bbe1162e88dbf3e20f89 |
+| tools | install_helm_chart | name | 3dbbdb4f91bd492b9aeffd1a6425626c4d72c0fe57d8e5c5792f8f3b7d89b74f |
 | tools | install_helm_chart | namespace | af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33 |
-| tools | install_helm_chart | repo | e87393dcf00bdf5f518603adad35eaced2f5d9bbc4b438c45c014886fe89079d |
-| tools | install_helm_chart | values | cce7f5207579dd6efd533d18288ae81090bd355d07a772b809d854851dfbd7ca |
+| tools | install_helm_chart | repo | de92ec27454e9959aa1b17df092ad7a8098616ef727c8137b0d230da52b395a5 |
+| tools | install_helm_chart | useTemplate | 96a74187304862e437e58cb775916984a48defcb23e62617c41cc6fb8c534fb6 |
+| tools | install_helm_chart | values | 88bbe0c8d6e98bb10fd54c70e4c7185db1c8d96c364b32591514396ed96ff4e6 |
+| tools | install_helm_chart | valuesFile | 0407e931b17d7a5ada15647744e9e7e8b61a8fcfd22d825220221f7a63125ab3 |
 | tools | kubectl_apply | description | 5a424c44d014d49e270431de434f142c4aa4ffd4f8f3dfc2c8361fc75fbb4eb2 |
-| tools | kubectl_apply | dryRun | 8671718b127808c7cdeae3a8e3cb5844496b43234365ae278691b8e1b99a9410 |
+| tools | kubectl_apply | context | 3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95 |
+| tools | kubectl_apply | dryRun | 7f99c87310b4dd53ddde08cdebd110f83e30def7bf0516ba8dc5dfad0c12f2df |
 | tools | kubectl_apply | filename | 50dacf632aa756960b0d7e801053eb5a35d08f21399ee4cbe7d6c6b9d5796105 |
 | tools | kubectl_apply | force | 12fe5bb456391f1636077bf710ebb2cfb10cf1bce3e14e257de7a30e07706843 |
 | tools | kubectl_apply | manifest | 8d3a6f319f6d1686925f2501285cdd06401df86a619cdcd00563338ff6654bf2 |
-| tools | kubectl_apply | namespace | 488b4f5f86eca6948950001cf05b489876e9a3c1dfc910312a50fbc72dd309d9 |
+| tools | kubectl_apply | namespace | af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33 |
 | tools | kubectl_context | description | bac4d9f94d67f5fd86934af217adf6230348d7f49ac4cd978428347245ac3b07 |
 | tools | kubectl_context | detailed | 5b60753941be3b793cbd87a088ca08397b4462e4cb1ac0f58f565efb6b304137 |
 | tools | kubectl_context | name | ff269fb598abb8581feec408a2c5383b7e7218838add20c0c6e84ad49d43ce76 |
@@ -1069,7 +1090,8 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | kubectl_create | description | 19243f532d01abb560d6b5740f1db404fa0c25416d50fb3e0a5f5bd717ff9ca8 |
 | tools | kubectl_create | annotations | 07bf97b55db229db4af840ea614842d48c84a27b3792275c5c96355c800483cb |
 | tools | kubectl_create | command | 6c63cfa4d17413696117affc971c127357f7d2ec35806dda932e2bd5c5369d59 |
-| tools | kubectl_create | dryRun | 8051174bfa6a7d90148738550332ec6835555308da9324cdc17ba2d788781d18 |
+| tools | kubectl_create | context | 3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95 |
+| tools | kubectl_create | dryRun | 7f99c87310b4dd53ddde08cdebd110f83e30def7bf0516ba8dc5dfad0c12f2df |
 | tools | kubectl_create | filename | 326c492e2afa888568258431ec5011070982fa553f2ea88c63311d3e7c90c4cb |
 | tools | kubectl_create | fromFile | 7daac169444d113e7bd8c9ceb678c38167f1d1438e0b6cacbbcf45ae5e13d514 |
 | tools | kubectl_create | fromLiteral | 8a649a803572c018248575ce5a060bce99f1788943b6a8471438bcc44ad7c74a |
@@ -1077,7 +1099,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | kubectl_create | labels | bc29c45c1ec89925da5e102d5ea8a3d0ae88a271d3602c45a38571e382c9e59f |
 | tools | kubectl_create | manifest | 3a8104c2c44257d9b1377ed08d7004867f80f113a7ac8cbc3ef31711e50c53a8 |
 | tools | kubectl_create | name | 4484aea145fec4d23fc437aaaea7e467cd8003dc859ec23355da78e7945be9c5 |
-| tools | kubectl_create | namespace | 3890a77bd4699ef2874b2387b75699754858428f7d4da2497d1f78e6c2d4e52c |
+| tools | kubectl_create | namespace | af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33 |
 | tools | kubectl_create | output | 2d0d977a54a6e549691596c0926d416775ecc233de68ef03f78c9205f768fbe3 |
 | tools | kubectl_create | port | bd1d76351ac02b7c803e6008cbaf02118ea5ed38774dd5cdbcbf18ade5445a3a |
 | tools | kubectl_create | replicas | af7bf5756cc2f3769b1fabbfa0bb7deb3c7b19a27315b566baa1bc77beb2d875 |
@@ -1090,50 +1112,48 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | kubectl_create | validate | e56eb145be170e57300bfdc98344d9279805f119fd1c506822a80f8216bb33e0 |
 | tools | kubectl_delete | description | 32b7082c51457b0ca44795f7724c549a656085bc4966129305941ab30353b609 |
 | tools | kubectl_delete | allNamespaces | cb759f7fbeb3101908e89a64821aeb596d463fed199c0ee4e5b9178261796e34 |
+| tools | kubectl_delete | context | 3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95 |
 | tools | kubectl_delete | filename | 54c5b981bfa320fc203f750c966ebb0cb18235e4d350db38b621e26ab7017ce0 |
 | tools | kubectl_delete | force | 12fe5bb456391f1636077bf710ebb2cfb10cf1bce3e14e257de7a30e07706843 |
 | tools | kubectl_delete | gracePeriodSeconds | a050518954710d462e4e357ae91fc177ff2921702eb2d353839c088021b06171 |
 | tools | kubectl_delete | labelSelector | 0d06fc10a84fea58782010a6f9b02fc0238e8d7cad50ed6ce5ac77321d66b203 |
 | tools | kubectl_delete | manifest | 00b01822a35fdcd94e64513f47f1521c025172655013aefb4fb162f8a5a903e3 |
 | tools | kubectl_delete | name | 5672110d71001bb921ab6b3c591f08b174c11f5564916283674ea01a2e11e704 |
-| tools | kubectl_delete | namespace | 9be52fa9fbccc00b73122daa021fa76c812ea4064f1fd018446c4fbcc5c86b3d |
+| tools | kubectl_delete | namespace | af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33 |
 | tools | kubectl_delete | resourceType | 877665e8f51cb23cd6cb4f5358bb2ef39c9c3b4305a8cfd5acffae3972f0b1a6 |
 | tools | kubectl_describe | description | b145e3fce38ca387e810cb2b52f3dbeaf4027fb7f7c51c44bca996b99fd60e9a |
 | tools | kubectl_describe | allNamespaces | 4242c1456715ec51c9cc6182e1613c80e27da79efdffc8374ec4e40eaae81bcd |
+| tools | kubectl_describe | context | 3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95 |
 | tools | kubectl_describe | name | 80a6ffb3265ae3c038762bd7d58eb239cb14e0ee6e926e7a0fd9ab647484cb4a |
-| tools | kubectl_describe | namespace | 9be52fa9fbccc00b73122daa021fa76c812ea4064f1fd018446c4fbcc5c86b3d |
+| tools | kubectl_describe | namespace | af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33 |
 | tools | kubectl_describe | resourceType | ed9d03a45ecb7935f8d7dac28e14b89b06291e8bb6b00c36f7f5b5cc18120906 |
 | tools | kubectl_generic | description | 701bfa1536b12fb711631b46a57b459a4e32acda030f7f490782500ada7a082c |
 | tools | kubectl_generic | args | ed5733d88aa57e46c31bb3ba881680d708d7dff6f16ed7452fdc9c0798702a6e |
 | tools | kubectl_generic | command | ba586487496d823e7e6ffc93388ea6f980213e25ca69c998caf7121eb6e44521 |
+| tools | kubectl_generic | context | 3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95 |
 | tools | kubectl_generic | flags | 60c5c32fad1a2d19230829ec8fa451674dc30543e95beeb2d8ec8eb670d2896d |
 | tools | kubectl_generic | name | 2098cc067f8b57f10d53655ff8d926b89dff2abdfae20762f1f00e6d4e5a77ad |
-| tools | kubectl_generic | namespace | c4e4e7abda206b07f8f017e706795f5fe305d5df2d99923d92a8ed0ab1d40cf8 |
+| tools | kubectl_generic | namespace | af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33 |
 | tools | kubectl_generic | outputFormat | 731281adc18eb222a661a27664ebff1b6c124532be98a9f7fb03a88840155dcb |
 | tools | kubectl_generic | resourceType | 29130a0a6d0ec09eeee5afdec911d6655f40909607a66627bc5d0bd8231db814 |
 | tools | kubectl_generic | subCommand | 9ee5d6efbad82222e18ab8b992c5d64c11d6b3f13f709898cce298dce675512e |
 | tools | kubectl_get | description | dcbd96c3437e578c18a6cc8af804b4a5a9431718415e3bdb03c5d3f59094b0f8 |
 | tools | kubectl_get | allNamespaces | 0ac50381c9661f02483d2d940158e739e7be70f573de32998e358a7076c3646d |
+| tools | kubectl_get | context | 3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95 |
 | tools | kubectl_get | fieldSelector | 68eae6f18642d304c402617622b872305d817e438f3bb105c8b779c500152f71 |
 | tools | kubectl_get | labelSelector | 24a79fb9db11e42d1ae909c5c38226825f588ca0a4a9375066237b611a41108d |
 | tools | kubectl_get | name | fea00e0a31591fba396a54596829ac9f6a6b63a3135247d30c5ad12c74ad3a16 |
-| tools | kubectl_get | namespace | 9be52fa9fbccc00b73122daa021fa76c812ea4064f1fd018446c4fbcc5c86b3d |
+| tools | kubectl_get | namespace | af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33 |
 | tools | kubectl_get | output | 93c53d3745136c4e4e142811cdff560c8dfb4b9c4c875b7a8687dda559f688e1 |
 | tools | kubectl_get | resourceType | 991e7076a096b87aefa68583d5a67127a1c71899290691065606a623e52d7a70 |
 | tools | kubectl_get | sortBy | 4176b6d93f9a289c284daf08d7048dd0439ee915ad155cec3d15440551c39af0 |
-| tools | kubectl_list | description | a80eacb2578f63f0a5f71baf3ac57636cd77a3d8d9c31ea7c78f8de0423a6ac8 |
-| tools | kubectl_list | allNamespaces | 0ac50381c9661f02483d2d940158e739e7be70f573de32998e358a7076c3646d |
-| tools | kubectl_list | fieldSelector | 68eae6f18642d304c402617622b872305d817e438f3bb105c8b779c500152f71 |
-| tools | kubectl_list | labelSelector | 24a79fb9db11e42d1ae909c5c38226825f588ca0a4a9375066237b611a41108d |
-| tools | kubectl_list | namespace | 2117705aa920f3b79615221686a425af386718c0c7d369ffba86082c3094c2f6 |
-| tools | kubectl_list | output | 6e88d022385884bd783eea276d75a8d6d87ba1173086531426991c00f768fb68 |
-| tools | kubectl_list | resourceType | 186d765bbbdd57104b6fb9fd756b3d9d0b98c865b57fb7a53ef8da00c9174cf0 |
 | tools | kubectl_logs | description | c8c16259183d8ec613c1e0c8b6829aad33554138516cad991813e875d9e3d5f5 |
 | tools | kubectl_logs | container | 0f93342e4a7003f29000cd347ee9cffc603c8da3f5ea9a03145b4eca923c051e |
+| tools | kubectl_logs | context | 3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95 |
 | tools | kubectl_logs | follow | 2ca79680aa607da7997c210dee37b48a9a4bf90b01c9ad77c7a3bc8b5fe49fac |
 | tools | kubectl_logs | labelSelector | 56a1ee9a1259d9f777219cd60ff352eb9a0c86695657422b426caff89779e782 |
 | tools | kubectl_logs | name | dee870968d1591eaf65c3d9d1a017c2c6a44a852bc2d990458b7557c3ae95580 |
-| tools | kubectl_logs | namespace | 833b97da46652f738fcf49f1ca6c1ec77724153f7d28c823406712d845265b3b |
+| tools | kubectl_logs | namespace | af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33 |
 | tools | kubectl_logs | previous | 967e4ad408de0061a1cd9075b66fb1a3a422ecb873bd4081c8eea7f667be0ae9 |
 | tools | kubectl_logs | resourceType | 1cf99af1321700f2e92cc08578a50342f9a6442758ecead4c2e30ad4d2107b5b |
 | tools | kubectl_logs | since | fd1abe84433fcb9ff50396f5173912e8a6a78e74ecfe232f8a67747c1290754e |
@@ -1141,16 +1161,18 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | kubectl_logs | tail | 9ce48481b1c58f4aa0984172c7717e04cc4c682444c66a003747d50b377e64c4 |
 | tools | kubectl_logs | timestamps | bed89b79d63742faca0091c32b57e3e60effe35201e3c42165489a963b7d701b |
 | tools | kubectl_patch | description | e64f3326f831bbcfe5f9d3bdcc602af0068d44130dd274dac1652226226c48f0 |
-| tools | kubectl_patch | dryRun | e61631178a08ca7c0cba847055dd9a6be82bf239aaa3d0785e7eca9cb5bd282f |
+| tools | kubectl_patch | context | 3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95 |
+| tools | kubectl_patch | dryRun | 7f99c87310b4dd53ddde08cdebd110f83e30def7bf0516ba8dc5dfad0c12f2df |
 | tools | kubectl_patch | name | 8b33f7f20b7e4494ef6f23ecad58905096afafaa0e90e239104a7778182f5588 |
-| tools | kubectl_patch | namespace | 833b97da46652f738fcf49f1ca6c1ec77724153f7d28c823406712d845265b3b |
+| tools | kubectl_patch | namespace | af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33 |
 | tools | kubectl_patch | patchData | 461695af3a519c30126e65e78578f44e7fc0fc45013ebe7e680c9896a5d85e9d |
 | tools | kubectl_patch | patchFile | e91918d5025d5e7786b105167784f69396626823bd1ceb19ae66db878d9d418a |
 | tools | kubectl_patch | patchType | f326f3ace4820abb2b0c40915fa5d6d2697e0b49492b07be65694a39297f20c2 |
 | tools | kubectl_patch | resourceType | 8b53dde8118a07ee31159408d2f8279635b278a742e5ad5d2db722127f211803 |
 | tools | kubectl_rollout | description | da59192fbfb0cf4dab8b072b21797ef81eb411c92a2807806b7a469fe0ed2a31 |
+| tools | kubectl_rollout | context | 3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95 |
 | tools | kubectl_rollout | name | dee870968d1591eaf65c3d9d1a017c2c6a44a852bc2d990458b7557c3ae95580 |
-| tools | kubectl_rollout | namespace | 833b97da46652f738fcf49f1ca6c1ec77724153f7d28c823406712d845265b3b |
+| tools | kubectl_rollout | namespace | af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33 |
 | tools | kubectl_rollout | resourceType | d13f94e9e32c531d46245bb20caa333d108f205c86d2a7ce13a0d3e570c7b194 |
 | tools | kubectl_rollout | revision | 0fb813514ae5af4883c9f8722b1fa05c75d0aabe12e8ea89ded9b5658ec27f8a |
 | tools | kubectl_rollout | subCommand | ffa990b98a50c83737f199c29fc61a50810168051d832c3b907b9693b8bb0682 |
@@ -1158,26 +1180,42 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | kubectl_rollout | toRevision | 59edd297440bac04677989f02efbba627e34feb01eb7e6d88a169803da5ef78e |
 | tools | kubectl_rollout | watch | 66818b63da899aa83958f4aa550783cc46f407a5b79aa61cb31cf17d5719e721 |
 | tools | kubectl_scale | description | 7b74eb50b7e1e72453a34c04405fb6ee2bde818ff5a8244c7064ca061d19f89a |
+| tools | kubectl_scale | context | 3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95 |
 | tools | kubectl_scale | name | b77c2393a323b93504825a018713ece375f72f5d6cc44f3b7b2ef34845041745 |
-| tools | kubectl_scale | namespace | 35f26aee248b55350fe8c2a6526c11af34bc3d83b882005c481f2a4b6e2fa911 |
+| tools | kubectl_scale | namespace | af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33 |
 | tools | kubectl_scale | replicas | c087fa65988238bd46789815247cf642ff1d3349986d9c8725182c3901e1733f |
 | tools | kubectl_scale | resourceType | 86835514d2926d0e9c8ca5bd7184b08c086d689d845a94cefd0ff2422e4dabbc |
 | tools | list_api_resources | description | d99de9c7cf60b9c8b686ebba4d04eed18da50f8df2b823b4854d00b3a339ccca |
 | tools | list_api_resources | apiGroup | db958e31706b8813e758249505765b5aed5e31a5f674c658ce1e91d66769b05d |
+| tools | list_api_resources | context | 3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95 |
 | tools | list_api_resources | namespaced | 044ae41369d6760faf5d2316d246f0e8d4acc598c130ae468c541a796e60222a |
 | tools | list_api_resources | output | 190426df5246d7950d8e9107d88947ebb5c0a47718ce4cd283d4619db4f71bc1 |
 | tools | list_api_resources | verbs | 082234f275654b2dc60aa5da636a7b22d621f90358449504699cafeff5c9c7a8 |
+| tools | node_management | description | 17e49efe433549936640cf2c605b691319db4601f94ce0f443ffd8bea8336d61 |
+| tools | node_management | confirmDrain | f6142e35b581ef3254f658f8f2c28457940446f7ad25a1ed406fde41125eed27 |
+| tools | node_management | deleteLocalData | 9fb65f49b0f0477c99f2ededec34b284874c546182c67ea0528cd5c0222c3cfb |
+| tools | node_management | dryRun | ec92b01e0aeb6f1a6a600d4f58c07698caea556b1ad3c7ac9f504f6adef4a4f6 |
+| tools | node_management | force | 40b2d77386c5e100bd2fd7e45cb975158e5f43a0527cadad58758025b4cf61fe |
+| tools | node_management | gracePeriod | 186e71dca9489286399b849d080d25462c77021eb8d144fade09fb36d4b8941f |
+| tools | node_management | ignoreDaemonsets | 0d7522f7b5465d2989383e39de6cd33cc814fa5db2154dba0b17d73fba36865b |
+| tools | node_management | nodeName | 2f47db3b9b9c2363b149939991f4324919b4b7d27fbcc0fa230d965d6fe4719c |
+| tools | node_management | operation | 5f4926bacbc8cb83bb921dc3d36c1791c9bf5e37c26f0daeaf765ecd0b2bfb13 |
+| tools | node_management | timeout | c1f5798cd8c2c947cb6fcb505c5f854b19aa73b7476dff9cafb84d8faa2c069a |
+| tools | ping | description | 9ebc0232ff877e070e2eb8a43a131abc7e5874d9549a319873c27c2d46b05d13 |
 | tools | port_forward | description | 931f8ee6f95ddbbb2d4cfed7c7ff1c92b59b4a26d98a1d6bbde906f11fcac0a9 |
 | tools | stop_port_forward | description | d6a519c2332736564873b93cb2fe3f3466fc094cc7af4be14c09a5d5b31bf246 |
-| tools | uninstall_helm_chart | description | 49c8f3a48a65df33b4f80b6c23d6793c3f8d2f111dbc9aefbb93c6b066eefc2d |
-| tools | uninstall_helm_chart | name | 85f01282f3161086faed8766800c17b4c00472620c5d158e1657d13041a197ed |
+| tools | uninstall_helm_chart | description | 529c0e4b672dd1cb25dc3171af3485b9d5337e3093554e3b217828695f46e157 |
+| tools | uninstall_helm_chart | context | 3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95 |
+| tools | uninstall_helm_chart | name | b471d56956bdecffbff3a381a395fc220ea45dbcb0b21dddbbdae613dfae4c6c |
 | tools | uninstall_helm_chart | namespace | af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33 |
-| tools | upgrade_helm_chart | description | e8c91747df6416edacd5b7483df523449010b3bdb8caae457892da1778498f31 |
-| tools | upgrade_helm_chart | chart | b34d6b02df4598648d8c810655f76567962045de26a68a8211ab7b698c481663 |
-| tools | upgrade_helm_chart | name | 85f01282f3161086faed8766800c17b4c00472620c5d158e1657d13041a197ed |
+| tools | upgrade_helm_chart | description | 29532a146768b1ed4bc17cac050fd0984ffb3f474bf119996e8a2eb4fc73b065 |
+| tools | upgrade_helm_chart | chart | b8bdef911e5a45a4c74346ab7f4c9fe3a7426bd7f52089e0f6fe83b2502b317e |
+| tools | upgrade_helm_chart | context | 3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95 |
+| tools | upgrade_helm_chart | name | 5abb499882d81f7f495898280e9b0db3cffe370ff540a393752d063848cea6e0 |
 | tools | upgrade_helm_chart | namespace | af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33 |
-| tools | upgrade_helm_chart | repo | e87393dcf00bdf5f518603adad35eaced2f5d9bbc4b438c45c014886fe89079d |
-| tools | upgrade_helm_chart | values | cce7f5207579dd6efd533d18288ae81090bd355d07a772b809d854851dfbd7ca |
+| tools | upgrade_helm_chart | repo | de92ec27454e9959aa1b17df092ad7a8098616ef727c8137b0d230da52b395a5 |
+| tools | upgrade_helm_chart | values | 88bbe0c8d6e98bb10fd54c70e4c7185db1c8d96c364b32591514396ed96ff4e6 |
+| tools | upgrade_helm_chart | valuesFile | 0407e931b17d7a5ada15647744e9e7e8b61a8fcfd22d825220221f7a63125ab3 |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

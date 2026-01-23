@@ -86,9 +86,9 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
-	"chargebee_documentation_search",
-	#
 	"chargebee_code_planner",
+	#
+	"chargebee_documentation_search",
 	#
 	# exclude word that might be misdetected
 	"to",

@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -21,10 +21,10 @@
 # What is mcp-server-aws-bedrock-kb-retrieval?
 [![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-aws-bedrock-kb-retrieval/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-bedrock-kb-retrieval/1.0.1?logo=docker&logoColor=fff&label=1.0.1)](https://hub.docker.com/r/acuvity/mcp-server-aws-bedrock-kb-retrieval)
-[![PyPI](https://img.shields.io/badge/1.0.1-3775A9?logo=pypi&logoColor=fff&label=awslabs.bedrock-kb-retrieval-mcp-server)](https://github.com/awslabs/mcp/tree/HEAD/src/bedrock-kb-retrieval-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-bedrock-kb-retrieval/1.0.15?logo=docker&logoColor=fff&label=1.0.15)](https://hub.docker.com/r/acuvity/mcp-server-aws-bedrock-kb-retrieval)
+[![PyPI](https://img.shields.io/badge/1.0.15-3775A9?logo=pypi&logoColor=fff&label=awslabs.bedrock-kb-retrieval-mcp-server)](https://github.com/awslabs/mcp/tree/HEAD/src/bedrock-kb-retrieval-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-aws-bedrock-kb-retrieval/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-bedrock-kb-retrieval&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-bedrock-kb-retrieval%3A1.0.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-bedrock-kb-retrieval&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-bedrock-kb-retrieval%3A1.0.15%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Access and query Amazon Bedrock Knowledge Bases with natural language retrieval
 
@@ -43,69 +43,70 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
 The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-bedrock-kb-retrieval/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
-### 🔒 Resource Integrity
+#### 🔒 Resource Integrity
 
 **Mitigates MCP Rug Pull Attacks**
 
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Guardrails
+#### 🛡️ Guardrails
 
-#### Covert Instruction Detection
+##### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-#### Sensitive Pattern Detection
+##### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-#### Shadowing Pattern Detection
+##### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-#### Schema Misuse Prevention
+##### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-#### Cross-Origin Tool Access
+##### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-#### Secrets Redaction
+##### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
@@ -114,7 +115,7 @@ Automatically masks sensitive values so they never appear in logs or responses.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
-### Enable guardrails
+#### Enable guardrails
 
 To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
@@ -129,7 +130,7 @@ To activate guardrails in your Docker containers, define the `GUARDRAILS` enviro
 
 Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
 
-## 🔒 Basic Authentication via Shared Secret
+#### 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
@@ -143,10 +144,8 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 > While basic auth will protect against unauthorized access, you should use it only in controlled environment,
 > rotate credentials frequently and **always** use TLS.
 
-</details>
-
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # 📦 How to Install
@@ -176,7 +175,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-bedrock-kb-retrieval&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-bedrock-kb-retrieval%3A1.0.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-bedrock-kb-retrieval&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-bedrock-kb-retrieval%3A1.0.15%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -193,7 +192,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "-i",
           "--rm",
           "--read-only",
-          "docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.1"
+          "docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.15"
         ]
       }
     }
@@ -215,7 +214,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.1"
+        "docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.15"
       ]
     }
   }
@@ -241,7 +240,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.1"
+        "docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.15"
       ]
     }
   }
@@ -269,7 +268,7 @@ Add the following JSON block to your mcp configuration file:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.1"
+        "docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.15"
       ]
     }
   }
@@ -295,7 +294,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.1"
+        "docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.15"
       ]
     }
   }
@@ -314,7 +313,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 async with MCPServerStdio(
     params={
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.1"]
+        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.15"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -343,7 +342,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.1`
+- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.15`
 
 </details>
 
@@ -353,7 +352,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.1
+docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-aws-bedrock-kb-retrieval:1.0.15
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -459,7 +458,55 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (1)
+## 🧰 Tools (2)
+<details>
+<summary>ListKnowledgeBases</summary>
+
+**Description**:
+
+```
+List all available Amazon Bedrock Knowledge Bases and their data sources.
+
+    This tool returns a mapping of knowledge base IDs to their details, including:
+    - name: The human-readable name of the knowledge base
+    - description: The description of the knowledge base
+    - data_sources: A list of data sources within the knowledge base, each with:
+      - id: The unique identifier of the data source
+      - name: The human-readable name of the data source
+
+    ## Example response structure:
+    ```json
+    {
+        "kb-12345": {
+            "name": "Customer Support KB",
+            "description": "Knowledge base containing customer support documentation and FAQs",
+            "data_sources": [
+                {"id": "ds-abc123", "name": "Technical Documentation"},
+                {"id": "ds-def456", "name": "FAQs"}
+            ]
+        },
+        "kb-67890": {
+            "name": "Product Information KB",
+            "description": "Comprehensive product specifications and details",
+            "data_sources": [
+                {"id": "ds-ghi789", "name": "Product Specifications"}
+            ]
+        }
+    }
+    ```
+
+    ## How to use this information:
+    1. Extract the knowledge base IDs (like "kb-12345") for use with the QueryKnowledgeBases tool
+    2. Note the data source IDs if you want to filter queries to specific data sources
+    3. Use the names to determine which knowledge base and data source(s) are most relevant to the user's query
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+</details>
 <details>
 <summary>QueryKnowledgeBases</summary>
 
@@ -469,7 +516,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 Query an Amazon Bedrock Knowledge Base using natural language.
 
     ## Usage Requirements
-    - You MUST first use the `resource://knowledgebases` resource to get valid knowledge base IDs
+    - You MUST first use the ListKnowledgeBases tool to get valid knowledge base IDs
     - You can query different knowledge bases or make multiple queries to the same knowledge base
 
     ## Query Tips
@@ -498,23 +545,12 @@ Query an Amazon Bedrock Knowledge Base using natural language.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| data_source_ids | any | The data source IDs to filter the knowledge base by. It must be a list of valid data source IDs from the resource://knowledgebases MCP resource | No
-| knowledge_base_id | string | The knowledge base ID to query. It must be a valid ID from the resource://knowledgebases MCP resource | Yes
+| data_source_ids | any | The data source IDs to filter the knowledge base by. It must be a list of valid data source IDs from the ListKnowledgeBases tool | No
+| knowledge_base_id | string | The knowledge base ID to query. It must be a valid ID from the ListKnowledgeBases tool | Yes
 | number_of_results | integer | The number of results to return. Use smaller values for focused results and larger values for broader coverage. | No
 | query | string | A natural language query to search the knowledge base with | Yes
 | reranking | boolean | Whether to rerank the results. Useful for improving relevance and sorting. Can be globally configured with BEDROCK_KB_RERANKING_ENABLED environment variable. | No
 | reranking_model_name | string | The name of the reranking model to use. Options: 'COHERE', 'AMAZON' | No
-</details>
-
-## 📚 Resources (1)
-
-<details>
-<summary>Resources</summary>
-
-| Name | Mime type | URI| Content |
-|-----------|------|-------------|-----------|
-| KnowledgeBases | application/json | resource://knowledgebases | - |
-
 </details>
 
 
@@ -524,9 +560,10 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
-| tools | QueryKnowledgeBases | description | 2bdad1de95ec1f65e58b1f469d93f944bdfbeb969fefaadcaebc4246a1948c1c |
-| tools | QueryKnowledgeBases | data_source_ids | 017edfd8213c7fb5e32a0e84308c2d5b487668eb92541f242c4687110c64739c |
-| tools | QueryKnowledgeBases | knowledge_base_id | f42cf0550fc4ac1ac6cc6d560c082ba50cdc6c8238978e7fbc8b1f6908353b28 |
+| tools | ListKnowledgeBases | description | 73e8ca7160a3ed77d3822907eab7f2033dce5dc1727a8eaeb3bddd810f16bbf7 |
+| tools | QueryKnowledgeBases | description | a40979d34e483435cb9bc902b05609dbfde44502a2b5e7faea5ed49e3ac63133 |
+| tools | QueryKnowledgeBases | data_source_ids | 07c68a43981a2439a046af9e664c8e90f790653a7fb395fa6e6ae76531db1226 |
+| tools | QueryKnowledgeBases | knowledge_base_id | dda6444199e029c7bfca9ee24d8c3c4f254c3403a8e2471ebd6aab933c1b62b5 |
 | tools | QueryKnowledgeBases | number_of_results | 889e9094d8a2827686ef6052ac08669485b636189cd2e887e35a5ad8b9948a72 |
 | tools | QueryKnowledgeBases | query | b17532082b0bf4c97e87d7598efd15a602dea8fd61e5114b1f328a3f1cb243e7 |
 | tools | QueryKnowledgeBases | reranking | e789e297fc2aff6e08744c0ddfbc63ca4a42411af88945b449db7d47f3de73a4 |

@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -21,10 +21,10 @@
 # What is mcp-server-aws-location?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-aws-location/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-location/2.0.1?logo=docker&logoColor=fff&label=2.0.1)](https://hub.docker.com/r/acuvity/mcp-server-aws-location)
-[![PyPI](https://img.shields.io/badge/2.0.1-3775A9?logo=pypi&logoColor=fff&label=awslabs.aws-location-mcp-server)](https://github.com/awslabs/mcp/tree/HEAD/src/aws-location-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-location/2.0.13?logo=docker&logoColor=fff&label=2.0.13)](https://hub.docker.com/r/acuvity/mcp-server-aws-location)
+[![PyPI](https://img.shields.io/badge/2.0.13-3775A9?logo=pypi&logoColor=fff&label=awslabs.aws-location-mcp-server)](https://github.com/awslabs/mcp/tree/HEAD/src/aws-location-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-aws-location/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-location&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-location%3A2.0.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-location&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-location%3A2.0.13%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** AWS Location Service MCP server for place search, geocoding, and route calculation
 
@@ -43,69 +43,70 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
 The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-location/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
-### 🔒 Resource Integrity
+#### 🔒 Resource Integrity
 
 **Mitigates MCP Rug Pull Attacks**
 
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Guardrails
+#### 🛡️ Guardrails
 
-#### Covert Instruction Detection
+##### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-#### Sensitive Pattern Detection
+##### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-#### Shadowing Pattern Detection
+##### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-#### Schema Misuse Prevention
+##### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-#### Cross-Origin Tool Access
+##### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-#### Secrets Redaction
+##### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
@@ -114,7 +115,7 @@ Automatically masks sensitive values so they never appear in logs or responses.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
-### Enable guardrails
+#### Enable guardrails
 
 To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
@@ -129,7 +130,7 @@ To activate guardrails in your Docker containers, define the `GUARDRAILS` enviro
 
 Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
 
-## 🔒 Basic Authentication via Shared Secret
+#### 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
@@ -143,10 +144,8 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 > While basic auth will protect against unauthorized access, you should use it only in controlled environment,
 > rotate credentials frequently and **always** use TLS.
 
-</details>
-
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # 📦 How to Install
@@ -177,7 +176,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-location&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-location%3A2.0.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-location&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-location%3A2.0.13%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -194,7 +193,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "-i",
           "--rm",
           "--read-only",
-          "docker.io/acuvity/mcp-server-aws-location:2.0.1"
+          "docker.io/acuvity/mcp-server-aws-location:2.0.13"
         ]
       }
     }
@@ -216,7 +215,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-aws-location:2.0.1"
+        "docker.io/acuvity/mcp-server-aws-location:2.0.13"
       ]
     }
   }
@@ -242,7 +241,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-aws-location:2.0.1"
+        "docker.io/acuvity/mcp-server-aws-location:2.0.13"
       ]
     }
   }
@@ -270,7 +269,7 @@ Add the following JSON block to your mcp configuration file:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-aws-location:2.0.1"
+        "docker.io/acuvity/mcp-server-aws-location:2.0.13"
       ]
     }
   }
@@ -296,7 +295,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-aws-location:2.0.1"
+        "docker.io/acuvity/mcp-server-aws-location:2.0.13"
       ]
     }
   }
@@ -315,7 +314,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 async with MCPServerStdio(
     params={
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-aws-location:2.0.1"]
+        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-aws-location:2.0.13"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -344,7 +343,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-aws-location:2.0.1`
+- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-aws-location:2.0.13`
 
 </details>
 
@@ -354,7 +353,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-aws-location:2.0.1
+docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-aws-location:2.0.13
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -463,7 +462,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (7)
+## 🧰 Tools (8)
 <details>
 <summary>search_places</summary>
 
@@ -512,6 +511,21 @@ Reverse geocode coordinates to an address using Amazon Location Service geo-plac
 |-----------|------|-------------|-----------|
 | latitude | number | Latitude of the location | Yes
 | longitude | number | Longitude of the location | Yes
+</details>
+<details>
+<summary>geocode</summary>
+
+**Description**:
+
+```
+Get coordinates for a location name or address using Amazon Location Service geo-places geocode API.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| location | string | Location name or address to geocode | Yes
 </details>
 <details>
 <summary>search_nearby</summary>
@@ -611,6 +625,8 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | calculate_route | destination_position | 1692a571ac9e29bc0a11f1e16f6c1b1ed42f988b539df04d64b76056b75fb92d |
 | tools | calculate_route | optimize_for | 5d1bc0ca69b9ae39c3b279950e65373a82795958d9aca5d46712c647383d6d1d |
 | tools | calculate_route | travel_mode | e70c6762ede4716c33f0882fddf60e4164858a3d1d8cecbf1d0054d26a533caa |
+| tools | geocode | description | 2dc68befa246b6d07ce38fbf1ed8630e028329a854e0e519f5da15ec3ef8284e |
+| tools | geocode | location | 19e089d140355f12253013173d5be4eb7bdfba5a273822ae663a94d440131d84 |
 | tools | get_place | description | fa018740b159a255a8fe8c69d299dc9f719a718c5fa95ce4634a3b57ecfa0012 |
 | tools | get_place | mode | 6b85486d21f4ca331a47387a47bf7ab1214bb4fec0f8c706254fd8e888a09254 |
 | tools | get_place | place_id | d065778edb9c66f96c79fa8ce71eb92bfb7a158e8e920200e79b5afe0a3df157 |

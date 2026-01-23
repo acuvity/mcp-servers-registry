@@ -13,7 +13,7 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "1.0.1",
+  "version": "1.0.11",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "rating": {"hash":"8b65724a44b940df2b1e1f14c46fa63e3795a69c494f644d94fbd3d274396f5f","reason":"Tool names are clear and specific, indicating their purpose well. Descriptions provide basic functionality but lack important context like usage scenarios, limitations, or data format details. Query parameters have minimal descriptions - just 'Query' and 'Parameters' without explaining query syntax, constraints, or expected formats. While functional, the documentation leaves users to infer many implementation details.","score":"C"},

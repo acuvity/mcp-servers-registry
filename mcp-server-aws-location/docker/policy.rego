@@ -92,6 +92,8 @@ _cross_tool_exclude := [
 	#
 	"reverse_geocode",
 	#
+	"geocode",
+	#
 	"search_nearby",
 	#
 	"search_places_open_now",

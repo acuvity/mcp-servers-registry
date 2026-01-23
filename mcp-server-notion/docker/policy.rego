@@ -92,8 +92,6 @@ _cross_tool_exclude := [
 	#
 	"API-get-self",
 	#
-	"API-post-database-query",
-	#
 	"API-post-search",
 	#
 	"API-get-block-children",
@@ -112,17 +110,23 @@ _cross_tool_exclude := [
 	#
 	"API-post-page",
 	#
-	"API-create-a-database",
-	#
-	"API-update-a-database",
-	#
-	"API-retrieve-a-database",
-	#
 	"API-retrieve-a-page-property",
 	#
 	"API-retrieve-a-comment",
 	#
 	"API-create-a-comment",
+	#
+	"API-query-data-source",
+	#
+	"API-retrieve-a-data-source",
+	#
+	"API-update-a-data-source",
+	#
+	"API-create-a-data-source",
+	#
+	"API-list-data-source-templates",
+	#
+	"API-move-page",
 	#
 	# exclude word that might be misdetected
 	"to",

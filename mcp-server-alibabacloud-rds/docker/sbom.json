@@ -62,7 +62,7 @@
     },
     {
       "name": "describe_db_instance_performance",
-      "hash": "a9879f780ffe599d8002075bcbf61f7a6151eb2b77941d9d3cdb00b076dc12dc"
+      "hash": "26493e20f405b2f508cb78ec97961042775327068d144563f70b2a451c9345ad"
     },
     {
       "name": "describe_db_instances",
@@ -77,8 +77,16 @@
       "hash": "7e288fb481d226ce4671af69e9397da4aab8811f7e881cbfad0a1c54cb489d86"
     },
     {
+      "name": "describe_monitor_metrics",
+      "hash": "ae3403ad908df4ddc325425b1f40929145fa54a50be94ff635adfe8f2a526792"
+    },
+    {
       "name": "describe_slow_log_records",
       "hash": "428ae59a731cb803fe90a0327b1c44d1a88fc5948d571f55ff5894e0cb6271e1"
+    },
+    {
+      "name": "describe_sql_insight_statistic",
+      "hash": "a2635cf0da18dcdea34c5a6da7a6890f5e06c00f35769be72a8fae12ec051395"
     },
     {
       "name": "describe_vpcs",
@@ -87,6 +95,10 @@
     {
       "name": "describe_vswitches",
       "hash": "abc11a7354d9f15ccda4373c03c4210c6126e3c3f8ba90ccf727da7387ebb08d"
+    },
+    {
+      "name": "explain_sql",
+      "hash": "75f98485041adda1ba98ab06fa69b712f2cdf16022d03505896988e0c552c7c9"
     },
     {
       "name": "get_current_time",
@@ -109,8 +121,20 @@
       "hash": "cbfa4976349483b841ce78dbe0500b9d679942eefb19511784e0727f1814eb75"
     },
     {
+      "name": "query_sql",
+      "hash": "86dd97d83c207ce3c7cbf422d70c6a5f04f53111a822a16752e227c3a3eddc2d"
+    },
+    {
       "name": "restart_db_instance",
       "hash": "7e85cf0f719d26c5ae57806ae4a44ef3e43f7386019c54f1a4617002d536bbd4"
+    },
+    {
+      "name": "show_create_table",
+      "hash": "06b8403b3901efd75921668fbf1c1386d75ecddb352c7207e7c51add6e1f716d"
+    },
+    {
+      "name": "show_engine_innodb_status",
+      "hash": "9d9bda00ed6e1aed552ba8706e4252b6252e9d4968dc9921fa1d9eb66baea2eb"
     }
   ],
   "prompts": []

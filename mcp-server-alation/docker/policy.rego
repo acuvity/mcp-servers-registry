@@ -86,10 +86,6 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
-	"alation_context",
-	#
-	"get_data_products",
-	#
 	# exclude word that might be misdetected
 	"to",
 	"this",

@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -21,10 +21,10 @@
 # What is mcp-server-aws-git-search?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-aws-git-search/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-git-search/1.0.3?logo=docker&logoColor=fff&label=1.0.3)](https://hub.docker.com/r/acuvity/mcp-server-aws-git-search)
-[![PyPI](https://img.shields.io/badge/1.0.3-3775A9?logo=pypi&logoColor=fff&label=awslabs.git-repo-research-mcp-server)](https://github.com/awslabs/mcp/tree/HEAD/src/git-repo-research-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-git-search/1.0.12?logo=docker&logoColor=fff&label=1.0.12)](https://hub.docker.com/r/acuvity/mcp-server-aws-git-search)
+[![PyPI](https://img.shields.io/badge/1.0.12-3775A9?logo=pypi&logoColor=fff&label=awslabs.git-repo-research-mcp-server)](https://github.com/awslabs/mcp/tree/HEAD/src/git-repo-research-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-aws-git-search/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-git-search&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-git-search%3A1.0.3%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-git-search&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-git-search%3A1.0.12%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Semantic search and analysis of Git repositories using Amazon Bedrock and FAISS
 
@@ -43,69 +43,70 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
 The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-git-search/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
-### 🔒 Resource Integrity
+#### 🔒 Resource Integrity
 
 **Mitigates MCP Rug Pull Attacks**
 
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Guardrails
+#### 🛡️ Guardrails
 
-#### Covert Instruction Detection
+##### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-#### Sensitive Pattern Detection
+##### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-#### Shadowing Pattern Detection
+##### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-#### Schema Misuse Prevention
+##### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-#### Cross-Origin Tool Access
+##### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-#### Secrets Redaction
+##### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
@@ -114,7 +115,7 @@ Automatically masks sensitive values so they never appear in logs or responses.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
-### Enable guardrails
+#### Enable guardrails
 
 To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
@@ -129,7 +130,7 @@ To activate guardrails in your Docker containers, define the `GUARDRAILS` enviro
 
 Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
 
-## 🔒 Basic Authentication via Shared Secret
+#### 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
@@ -143,10 +144,8 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 > While basic auth will protect against unauthorized access, you should use it only in controlled environment,
 > rotate credentials frequently and **always** use TLS.
 
-</details>
-
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # 📦 How to Install
@@ -175,7 +174,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-git-search&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-git-search%3A1.0.3%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-git-search&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-git-search%3A1.0.12%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -194,7 +193,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "--read-only",
           "--tmpfs",
           "/tmp:rw,nosuid,nodev",
-          "docker.io/acuvity/mcp-server-aws-git-search:1.0.3"
+          "docker.io/acuvity/mcp-server-aws-git-search:1.0.12"
         ]
       }
     }
@@ -218,7 +217,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "--read-only",
         "--tmpfs",
         "/tmp:rw,nosuid,nodev",
-        "docker.io/acuvity/mcp-server-aws-git-search:1.0.3"
+        "docker.io/acuvity/mcp-server-aws-git-search:1.0.12"
       ]
     }
   }
@@ -246,7 +245,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "--read-only",
         "--tmpfs",
         "/tmp:rw,nosuid,nodev",
-        "docker.io/acuvity/mcp-server-aws-git-search:1.0.3"
+        "docker.io/acuvity/mcp-server-aws-git-search:1.0.12"
       ]
     }
   }
@@ -276,7 +275,7 @@ Add the following JSON block to your mcp configuration file:
         "--read-only",
         "--tmpfs",
         "/tmp:rw,nosuid,nodev",
-        "docker.io/acuvity/mcp-server-aws-git-search:1.0.3"
+        "docker.io/acuvity/mcp-server-aws-git-search:1.0.12"
       ]
     }
   }
@@ -304,7 +303,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "--read-only",
         "--tmpfs",
         "/tmp:rw,nosuid,nodev",
-        "docker.io/acuvity/mcp-server-aws-git-search:1.0.3"
+        "docker.io/acuvity/mcp-server-aws-git-search:1.0.12"
       ]
     }
   }
@@ -323,7 +322,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 async with MCPServerStdio(
     params={
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","--tmpfs","/tmp:rw,nosuid,nodev","docker.io/acuvity/mcp-server-aws-git-search:1.0.3"]
+        "args": ["run","-i","--rm","--read-only","--tmpfs","/tmp:rw,nosuid,nodev","docker.io/acuvity/mcp-server-aws-git-search:1.0.12"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -352,7 +351,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only --tmpfs /tmp:rw,nosuid,nodev docker.io/acuvity/mcp-server-aws-git-search:1.0.3`
+- arguments: `run -i --rm --read-only --tmpfs /tmp:rw,nosuid,nodev docker.io/acuvity/mcp-server-aws-git-search:1.0.12`
 
 </details>
 
@@ -362,7 +361,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only --tmpfs /tmp:rw,nosuid,nodev docker.io/acuvity/mcp-server-aws-git-search:1.0.3
+docker run -it -p 8000:8000 --rm --read-only --tmpfs /tmp:rw,nosuid,nodev docker.io/acuvity/mcp-server-aws-git-search:1.0.12
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -478,22 +477,22 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 ```
 Build a FAISS index for a Git repository.
 
-This tool indexes a Git repository (local or remote) using FAISS and Amazon Bedrock embeddings.
-The index can then be used for semantic search within the repository.
+    This tool indexes a Git repository (local or remote) using FAISS and Amazon Bedrock embeddings.
+    The index can then be used for semantic search within the repository.
 
-Args:
-    ctx: MCP context object used for progress tracking and error reporting
-    repository_path: Path to local repository or URL to remote repository
-    output_path: Where to store the index (optional, uses default if not provided)
-    embedding_model: Which AWS embedding model to use
-    include_patterns: Glob patterns for files to include (optional)
-    exclude_patterns: Glob patterns for files to exclude (optional)
-    chunk_size: Maximum size of each chunk in characters
-    chunk_overlap: Overlap between chunks in characters
+    Args:
+        ctx: MCP context object used for progress tracking and error reporting
+        repository_path: Path to local repository or URL to remote repository
+        output_path: Where to store the index (optional, uses default if not provided)
+        embedding_model: Which AWS embedding model to use
+        include_patterns: Glob patterns for files to include (optional)
+        exclude_patterns: Glob patterns for files to exclude (optional)
+        chunk_size: Maximum size of each chunk in characters
+        chunk_overlap: Overlap between chunks in characters
 
-Returns:
-    Information about the created index
-
+    Returns:
+        Information about the created index
+    
 ```
 
 **Parameter**:
@@ -516,19 +515,19 @@ Returns:
 ```
 Perform semantic search within an indexed repository.
 
-This tool searches an indexed repository using semantic search with Amazon Bedrock embeddings.
-It returns results ranked by relevance to the query.
+    This tool searches an indexed repository using semantic search with Amazon Bedrock embeddings.
+    It returns results ranked by relevance to the query.
 
-Args:
-    ctx: MCP context object used for error reporting
-    index_path: Name of the repository or path to the index to search
-    query: The search query to use for semantic search
-    limit: Maximum number of results to return
-    threshold: Minimum similarity score threshold (0.0 to 1.0)
+    Args:
+        ctx: MCP context object used for error reporting
+        index_path: Name of the repository or path to the index to search
+        query: The search query to use for semantic search
+        limit: Maximum number of results to return
+        threshold: Minimum similarity score threshold (0.0 to 1.0)
 
-Returns:
-    Search results ranked by relevance to the query
-
+    Returns:
+        Search results ranked by relevance to the query
+    
 ```
 
 **Parameter**:
@@ -541,32 +540,32 @@ Returns:
 | threshold | number | Minimum similarity score threshold (0.0 to 1.0) | No
 </details>
 <details>
-<summary>search_repositories_on_github</summary>
+<summary>search_repos_on_github</summary>
 
 **Description**:
 
 ```
 Search for GitHub repositories based on keywords, scoped to specific organizations.
 
-This tool searches for GitHub repositories using the GitHub REST/GraphQL APIs, scoped to specific GitHub
-organizations (aws-samples, aws-solutions-library-samples, and awslabs).
+    This tool searches for GitHub repositories using the GitHub REST/GraphQL APIs, scoped to specific GitHub
+    organizations (aws-samples, aws-solutions-library-samples, and awslabs).
 
-Results are filtered to only include repositories with specific licenses (Apache License 2.0,
-MIT, and MIT No Attribution) and are sorted by stars (descending) and then by updated date.
+    Results are filtered to only include repositories with specific licenses (Apache License 2.0,
+    MIT, and MIT No Attribution) and are sorted by stars (descending) and then by updated date.
 
-For higher rate limits, you can set the GITHUB_TOKEN environment variable with a GitHub
-personal access token. Without a token, the API is limited to 60 requests per hour, and requests are
-made with the REST API. With a token, this increases to 5,000 requests per hour, and requests are made
-with the GraphQL API.
+    For higher rate limits, you can set the GITHUB_TOKEN environment variable with a GitHub
+    personal access token. Without a token, the API is limited to 60 requests per hour, and requests are
+    made with the REST API. With a token, this increases to 5,000 requests per hour, and requests are made
+    with the GraphQL API.
 
-Args:
-    ctx: MCP context object used for error reporting
-    keywords: List of keywords to search for
-    num_results: Number of results to return
+    Args:
+        ctx: MCP context object used for error reporting
+        keywords: List of keywords to search for
+        num_results: Number of results to return
 
-Returns:
-    List of GitHub repositories matching the search criteria
-
+    Returns:
+        List of GitHub repositories matching the search criteria
+    
 ```
 
 **Parameter**:
@@ -584,25 +583,25 @@ Returns:
 ```
 Access file or directory contents.
 
-This tool provides access to file or directory contents:
-- If the filepath references a text file, returns the content as a string
-- If the filepath references a directory, returns an array of files in the directory
-- If the filepath references a binary image (jpg, png), returns the image data
+    This tool provides access to file or directory contents:
+    - If the filepath references a text file, returns the content as a string
+    - If the filepath references a directory, returns an array of files in the directory
+    - If the filepath references a binary image (jpg, png), returns the image data
 
-For repository files, use the format: repository_name/repository/path/to/file
-Example: awslabs_mcp/repository/README.md
+    For repository files, use the format: repository_name/repository/path/to/file
+    Example: awslabs_mcp/repository/README.md
 
-For repositories with organization names, both formats are supported:
-- awslabs_mcp/repository/README.md (with underscore)
-- awslabs/mcp/repository/README.md (with slash)
+    For repositories with organization names, both formats are supported:
+    - awslabs_mcp/repository/README.md (with underscore)
+    - awslabs/mcp/repository/README.md (with slash)
 
-Args:
-    ctx: MCP context object used for error reporting
-    filepath: Path to the file or directory to access
+    Args:
+        ctx: MCP context object used for error reporting
+        filepath: Path to the file or directory to access
 
-Returns:
-    File content, directory listing, or image data
-
+    Returns:
+        File content, directory listing, or image data
+    
 ```
 
 **Parameter**:
@@ -619,17 +618,17 @@ Returns:
 ```
 Delete an indexed repository.
 
-This tool deletes an indexed repository and its associated files.
-It can be identified by repository name or the full path to the index.
+    This tool deletes an indexed repository and its associated files.
+    It can be identified by repository name or the full path to the index.
 
-Args:
-    ctx: MCP context object used for error reporting
-    repository_name_or_path: Name of the repository or path to the index to delete
-    index_directory: Directory to look for indices (optional, uses default if not provided)
+    Args:
+        ctx: MCP context object used for error reporting
+        repository_name_or_path: Name of the repository or path to the index to delete
+        index_directory: Directory to look for indices (optional, uses default if not provided)
 
-Returns:
-    Status of the delete operation
-
+    Returns:
+        Status of the delete operation
+    
 ```
 
 **Parameter**:
@@ -658,6 +657,27 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
+| tools | access_file | description | 538ae8c2c6143e9c751c269bcda26bf75732ea8f6457735b4e162fd34ebbe56e |
+| tools | access_file | filepath | 7e42f914e5e489b4037c9f6e16dff7ceceb935b6bd48b7319e0bd66f7c6a42d4 |
+| tools | create_research_repository | description | c940a8dd4b9e4d9deb67a67f60bbcf4599e557b46e62bcc987af0d243d8c52f2 |
+| tools | create_research_repository | chunk_overlap | 05c66ecb3debdcd434ddda278bd87023771034f434637bbbe5240a6ebd5cc2b3 |
+| tools | create_research_repository | chunk_size | 70bde938031148dfe995e9846bbd3c795b0954f8f7a4669f1b6569aa22cff313 |
+| tools | create_research_repository | embedding_model | 80bf3db2dca9c60281aad58727fdbb8cbc83af93eac41048dce3bb1d50a7c09c |
+| tools | create_research_repository | exclude_patterns | f9eaffd2bf611b3f52a2c0c637d25ea82a4ead0ef674dbbbc26de0c5dc6182b1 |
+| tools | create_research_repository | include_patterns | fb200038a763048571f840b9999411880fd51d656bbdf70546b9b5924f2fdfd9 |
+| tools | create_research_repository | output_path | 42ba0e0affe9cf20145b919588e638250b0fb98db081dbce813a93e8f1039f12 |
+| tools | create_research_repository | repository_path | 9e87b7491b858944f17c543f99ab2bcdf2af0c7e6bbac57c7622a84ed828d9f3 |
+| tools | delete_research_repository | description | e477aea91e163d0b7171e032ee484d6d2c024ca6effbd6aa33ceeacc8145a456 |
+| tools | delete_research_repository | index_directory | 091cb2afbc95074d36d2bc3b8b7aab33c7bc048371c92a747f4c26922f4d9d81 |
+| tools | delete_research_repository | repository_name_or_path | 4b7176a7aab176477f93010539482d3b0f25a4f9c176998c221547f86dc34453 |
+| tools | search_repos_on_github | description | afc2d618e7a37552c13bc7cfb4367b10bc34ed21e6d3779ffd879d9e4099cbdd |
+| tools | search_repos_on_github | keywords | a56318459b3ada36d7065a7b45a0fd85763ff28ae8b0897d32ffe8a5ccab8988 |
+| tools | search_repos_on_github | num_results | 6954eeae88250d596470c7aeb1f8f6b1350c408ae7182ea2db936a6fe2862bff |
+| tools | search_research_repository | description | fbcdc6d4c04bba6202c0ac04c0711e1e09ba24a0db837b2d7bf4ac52a6f8eb1a |
+| tools | search_research_repository | index_path | 85399129c160de5829951105ac839c04b1b40917fb516a51799d7201147fff6f |
+| tools | search_research_repository | limit | b04468046d2f2a5692b75e7d703a30fd2787b8f80972a3b07b618e4ca4b3fa70 |
+| tools | search_research_repository | query | 3fb13144244d3018c954845833da0792f2eced8241205b1535b7e98428b366e9 |
+| tools | search_research_repository | threshold | 237e1bdf986ebe9c0aee3f1a3c4e51cb9b4c0b0eda7a2f591d4f97def9fdb890 |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

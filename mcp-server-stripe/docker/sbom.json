@@ -88,7 +88,7 @@
     },
     {
       "name": "create_payment_link",
-      "hash": "7ee22eb6a60c86051230fc7b96a8576f8528b883bb17658116bb7f0066561db3",
+      "hash": "328371a7d40d0694b2872ca98bfcc6ca9ed0a4bab4cb6549316ea97b4fa01492",
       "params": [
         {
           "name": "price",
@@ -97,6 +97,10 @@
         {
           "name": "quantity",
           "hash": "5ea512a9bfc715a014d96c1a5fa8373b16249bff70fe8e006c2abd7c8c947672"
+        },
+        {
+          "name": "redirect_url",
+          "hash": "0b026f58fcf0c9d6fa086bd1f33fe958c9d1eb59bb275684100a6a232792b17a"
         }
       ]
     },
@@ -195,6 +199,20 @@
         {
           "name": "payment_intent",
           "hash": "33646415f148b9d0d7d013a37e99e35d2b487b6dcfbd7baae8f884abdf7858b8"
+        }
+      ]
+    },
+    {
+      "name": "list_invoices",
+      "hash": "04c559978b567bd3e6be7c074db06aaa33942006abc154b9b2dd8d912f622c46",
+      "params": [
+        {
+          "name": "customer",
+          "hash": "d43f5d98e83916a4d0e1b7de2ee4d8476529edd18002f8608981357bed4d84bc"
+        },
+        {
+          "name": "limit",
+          "hash": "57d5fc0d10d76b72692dfbbdf55291b6b1cfbd91efcfaeb3cde0df383d144a27"
         }
       ]
     },

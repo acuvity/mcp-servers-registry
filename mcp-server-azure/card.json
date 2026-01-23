@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.2.1",
+  "version": "2.0.0-beta.12",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"985cac0e3ec2b1611cfd9e3d416dbe029bf31666958e8994dcb45b19a629f8ed","reason":"The toolset demonstrates good overall documentation quality with comprehensive tool descriptions (2-4 sentences covering functionality, usage context, and return types) and clear parameter documentation. Tool names effectively use the 'azmcp-' prefix convention and are descriptive. However, there are some inconsistencies: several parameters like 'auth-method' and retry parameters use integer types without enum constraints despite having specific option lists, and some tools have overly verbose descriptions that could be more concise. The parameter descriptions are generally clear and include examples where helpful, though type constraints could be better specified for enumerated values.","score":"B"},
+  "rating": {"hash":"f2c239fb5045a0e4f0be6af3f48e025b3f81a3fbde33e4b7984fa71510f05ae3","reason":"Mixed quality with adequate documentation overall. Many tools have generic names and inconsistent description quality. While most tools clearly indicate they are hierarchical MCP command routers, descriptions vary significantly from comprehensive (e.g., 'applens' with clear use cases) to minimal (e.g., 'role' with basic functionality). Parameter documentation is adequate but repetitive across tools. The toolset would benefit from more specific tool names and consistent description depth.","score":"C"},
   "resources": {
-    "tools": 55,
+    "tools": 50,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -21,10 +21,10 @@
 # What is mcp-server-lara-translate?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-lara-translate/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-lara-translate/0.0.10?logo=docker&logoColor=fff&label=0.0.10)](https://hub.docker.com/r/acuvity/mcp-server-lara-translate)
-[![PyPI](https://img.shields.io/badge/0.0.10-3775A9?logo=pypi&logoColor=fff&label=@translated/lara-mcp)](https://github.com/translated/lara-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-lara-translate/0.0.13?logo=docker&logoColor=fff&label=0.0.13)](https://hub.docker.com/r/acuvity/mcp-server-lara-translate)
+[![PyPI](https://img.shields.io/badge/0.0.13-3775A9?logo=pypi&logoColor=fff&label=@translated/lara-mcp)](https://github.com/translated/lara-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-lara-translate/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-lara-translate&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22LARA_ACCESS_KEY_ID%22%2C%22-e%22%2C%22LARA_ACCESS_KEY_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-lara-translate%3A0.0.10%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-lara-translate&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22LARA_ACCESS_KEY_ID%22%2C%22-e%22%2C%22LARA_ACCESS_KEY_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-lara-translate%3A0.0.13%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** MCP server enabling powerful language translation capabilities.
 
@@ -43,69 +43,70 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
 The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-lara-translate/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
-### 🔒 Resource Integrity
+#### 🔒 Resource Integrity
 
 **Mitigates MCP Rug Pull Attacks**
 
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Guardrails
+#### 🛡️ Guardrails
 
-#### Covert Instruction Detection
+##### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-#### Sensitive Pattern Detection
+##### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-#### Shadowing Pattern Detection
+##### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-#### Schema Misuse Prevention
+##### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-#### Cross-Origin Tool Access
+##### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-#### Secrets Redaction
+##### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
@@ -114,7 +115,7 @@ Automatically masks sensitive values so they never appear in logs or responses.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
-### Enable guardrails
+#### Enable guardrails
 
 To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
@@ -129,7 +130,7 @@ To activate guardrails in your Docker containers, define the `GUARDRAILS` enviro
 
 Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
 
-## 🔒 Basic Authentication via Shared Secret
+#### 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
@@ -143,10 +144,8 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 > While basic auth will protect against unauthorized access, you should use it only in controlled environment,
 > rotate credentials frequently and **always** use TLS.
 
-</details>
-
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # 📦 How to Install
@@ -174,7 +173,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-lara-translate&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22LARA_ACCESS_KEY_ID%22%2C%22-e%22%2C%22LARA_ACCESS_KEY_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-lara-translate%3A0.0.10%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-lara-translate&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22LARA_ACCESS_KEY_ID%22%2C%22-e%22%2C%22LARA_ACCESS_KEY_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-lara-translate%3A0.0.13%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -199,7 +198,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "LARA_ACCESS_KEY_ID",
           "-e",
           "LARA_ACCESS_KEY_SECRET",
-          "docker.io/acuvity/mcp-server-lara-translate:0.0.10"
+          "docker.io/acuvity/mcp-server-lara-translate:0.0.13"
         ]
       }
     }
@@ -229,7 +228,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "LARA_ACCESS_KEY_ID",
         "-e",
         "LARA_ACCESS_KEY_SECRET",
-        "docker.io/acuvity/mcp-server-lara-translate:0.0.10"
+        "docker.io/acuvity/mcp-server-lara-translate:0.0.13"
       ]
     }
   }
@@ -263,7 +262,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "LARA_ACCESS_KEY_ID",
         "-e",
         "LARA_ACCESS_KEY_SECRET",
-        "docker.io/acuvity/mcp-server-lara-translate:0.0.10"
+        "docker.io/acuvity/mcp-server-lara-translate:0.0.13"
       ]
     }
   }
@@ -299,7 +298,7 @@ Add the following JSON block to your mcp configuration file:
         "LARA_ACCESS_KEY_ID",
         "-e",
         "LARA_ACCESS_KEY_SECRET",
-        "docker.io/acuvity/mcp-server-lara-translate:0.0.10"
+        "docker.io/acuvity/mcp-server-lara-translate:0.0.13"
       ]
     }
   }
@@ -333,7 +332,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "LARA_ACCESS_KEY_ID",
         "-e",
         "LARA_ACCESS_KEY_SECRET",
-        "docker.io/acuvity/mcp-server-lara-translate:0.0.10"
+        "docker.io/acuvity/mcp-server-lara-translate:0.0.13"
       ]
     }
   }
@@ -353,7 +352,7 @@ async with MCPServerStdio(
     params={
         "env": {"LARA_ACCESS_KEY_ID":"TO_BE_SET","LARA_ACCESS_KEY_SECRET":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","LARA_ACCESS_KEY_ID","-e","LARA_ACCESS_KEY_SECRET","docker.io/acuvity/mcp-server-lara-translate:0.0.10"]
+        "args": ["run","-i","--rm","--read-only","-e","LARA_ACCESS_KEY_ID","-e","LARA_ACCESS_KEY_SECRET","docker.io/acuvity/mcp-server-lara-translate:0.0.13"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -382,7 +381,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e LARA_ACCESS_KEY_ID -e LARA_ACCESS_KEY_SECRET docker.io/acuvity/mcp-server-lara-translate:0.0.10`
+- arguments: `run -i --rm --read-only -e LARA_ACCESS_KEY_ID -e LARA_ACCESS_KEY_SECRET docker.io/acuvity/mcp-server-lara-translate:0.0.13`
 
 </details>
 
@@ -392,7 +391,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e LARA_ACCESS_KEY_ID -e LARA_ACCESS_KEY_SECRET docker.io/acuvity/mcp-server-lara-translate:0.0.10
+docker run -it -p 8000:8000 --rm --read-only -e LARA_ACCESS_KEY_ID -e LARA_ACCESS_KEY_SECRET docker.io/acuvity/mcp-server-lara-translate:0.0.13
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -532,7 +531,7 @@ Create a translation memory with a custom name in your Lara Translate account. T
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | external_id | string | The ID of the memory to be imported from MyMemory. Use this to initialize the memory with external content. Format: ext_my_[MyMemory ID] | No
-| name | string | The name of the new memory, it should be short and generic, like 'catch_phrases' or 'brand_names' | Yes
+| name | string | not set | Yes
 </details>
 <details>
 <summary>delete_memory</summary>
@@ -563,7 +562,7 @@ Updates a translation memory in your Lara Translate account.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | id | string | The unique identifier of the memory to update. Format: mem_xyz123 | Yes
-| name | string | The new name for the memory | Yes
+| name | string | not set | Yes
 </details>
 <details>
 <summary>add_translation</summary>
@@ -622,10 +621,8 @@ Imports a TMX file into a translation memory in your Lara Translate account.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| gzip | boolean | Indicates if the file is a compressed .gz file | No
 | id | string | The ID of the memory to update. Format: mem_xyz123. | Yes
-| tmx_content | string | The content of the tmx file to upload. Don't provide this if you choose to use tmx_url. | No
-| tmx_url | string | A URL to the tmx file to upload. Don't provide this if you choose to use tmx_content. | No
+| tmx_content | string | The content of the tmx file to upload. | Yes
 </details>
 <details>
 <summary>check_import_status</summary>
@@ -703,7 +700,6 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | check_import_status | id | a6bac8140fc9463accb2718fc48c17cb93ca0ab9fceb417dd0f270ae5fb00240 |
 | tools | create_memory | description | 7a570a22fa815d92c8524683eb44d533583a5c8a7707f1453184cc29ec020253 |
 | tools | create_memory | external_id | 941422d45e8e6f71ed842799d1643aba334bde277f7e147fe1f17c29c0c4e057 |
-| tools | create_memory | name | 15aa1f35f480fa69592891769346f7aa4021e5cb9551384e05732a8f08a6c46e |
 | tools | delete_memory | description | 55a01ed697a6a2e2e6815aefd612bd3c7fd8f4cf8a7dc3450f33f6475090e7af |
 | tools | delete_memory | id | ffd44fc743d295ffac3258171d24997bd7ae32a235d85a7e656d8dd6db0943de |
 | tools | delete_translation | description | c960e0d50b8b4d1b655bb0e2f8596473d21f9cf0699e048a6689771335c14428 |
@@ -716,10 +712,8 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | delete_translation | translation | 4261fceaa98a52c89d6f04b34e1f023747f71849581ed9b8e47edd60290c75ef |
 | tools | delete_translation | tuid | a04149f24d09a0a9724e2f452464b1f717237bc824d7dd1e484b1bed8154bde0 |
 | tools | import_tmx | description | bc53fefa95defccc0371caf9426a14beba5a75a6ec6420a0f7067e827109f393 |
-| tools | import_tmx | gzip | 8b5335bd86641e96ebaa9dbe572bd79715b5489594fe49de99de4ea979bcbd70 |
 | tools | import_tmx | id | e6a3fe5204d2ae3d03d7e4bfc45a0bde4837fc3799ea1856ceda4c2555fa45c0 |
-| tools | import_tmx | tmx_content | c949bc1eda4b7a196edb4bd60c9615cbb9213da254c4e5a9e69fa5a385e608d8 |
-| tools | import_tmx | tmx_url | cd4c23aef7ecb0edbeebb2add30a44688999337dc85635f6dc5bfea57402b6de |
+| tools | import_tmx | tmx_content | fbb95da37e77195c75e5ab9b150bf5c25360ca8c2f15f335f5e2f50536a6834a |
 | tools | list_languages | description | 2ddf95e12cd539a3dee9872c4e5054d61dbd826e4ea7c2124226165dfe7ef64c |
 | tools | list_memories | description | 5928b92abea4b638a532de1c1a4698cf5874021e6570842a0917bd17e19b256a |
 | tools | translate | description | 49c7008373a693f08f6f234e69ca6a28e9f6dc9e4413a1f970422f49a69a3143 |
@@ -732,7 +726,6 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | translate | text | e90c9c7e1fab47e18f5fb434088ad160e904936c7d95e19c4e5e3c56d4544c32 |
 | tools | update_memory | description | a9c1fe58ed1e1616238d756f69a4f99de5a3fa93de1621812659c0768127e325 |
 | tools | update_memory | id | ffd44fc743d295ffac3258171d24997bd7ae32a235d85a7e656d8dd6db0943de |
-| tools | update_memory | name | 6b2f947d665ad51cb342dc4a2ca01cbd3a543c2934f81b3309f7af108028f4ed |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

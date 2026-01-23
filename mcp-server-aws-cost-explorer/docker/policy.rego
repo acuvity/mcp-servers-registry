@@ -92,6 +92,12 @@ _cross_tool_exclude := [
 	#
 	"get_tag_values",
 	#
+	"get_cost_forecast",
+	#
+	"get_cost_and_usage_comparisons",
+	#
+	"get_cost_comparison_drivers",
+	#
 	"get_cost_and_usage",
 	#
 	# exclude word that might be misdetected

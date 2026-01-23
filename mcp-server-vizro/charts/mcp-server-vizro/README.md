@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -19,12 +19,12 @@
 
 
 # What is mcp-server-vizro?
-[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-vizro/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-vizro/0.1.1?logo=docker&logoColor=fff&label=0.1.1)](https://hub.docker.com/r/acuvity/mcp-server-vizro)
-[![PyPI](https://img.shields.io/badge/0.1.1-3775A9?logo=pypi&logoColor=fff&label=vizro-mcp)](https://github.com/mckinsey/vizro)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-vizro/0.1.3?logo=docker&logoColor=fff&label=0.1.3)](https://hub.docker.com/r/acuvity/mcp-server-vizro)
+[![PyPI](https://img.shields.io/badge/0.1.3-3775A9?logo=pypi&logoColor=fff&label=vizro-mcp)](https://github.com/mckinsey/vizro)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-vizro/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-vizro&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-vizro%3A0.1.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-vizro&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-vizro%3A0.1.3%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** provides tools and templates to create a functioning Vizro chart or dashboard step by step
 
@@ -43,110 +43,40 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-vizro/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-vizro/docker/policy.rego) that enables a set of runtime [guardrails](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-vizro#%EF%B8%8F-guardrails) to help enforce security, privacy, and correct usage of your services. Below is list of each guardrail provided.
 
-### 🔒 Resource Integrity
-
-**Mitigates MCP Rug Pull Attacks**
-
-* **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
-* **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
-
-### 🛡️ Guardrails
-
-#### Covert Instruction Detection
-
-Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
-
-* **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
-* **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
-
-#### Sensitive Pattern Detection
-
-Block user-defined sensitive data patterns (credential paths, filesystem references).
-
-* **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
-* **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
-
-#### Shadowing Pattern Detection
-
-Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
-
-* **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
-* **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
-
-#### Schema Misuse Prevention
-
-Enforces strict adherence to MCP input schemas.
-
-* **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
-* **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
-
-#### Cross-Origin Tool Access
-
-Controls whether tools may invoke tools or services from external origins.
-
-* **Goal:** Prevent untrusted or out-of-scope services from being called.
-* **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
-
-#### Secrets Redaction
-
-Automatically masks sensitive values so they never appear in logs or responses.
-
-* **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
-* **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
-
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
-
-### Enable guardrails
-
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
 | Guardrail                        | Summary                                                                 |
 |----------------------------------|-------------------------------------------------------------------------|
+| `resource integrity`             | Embeds a hash of all exposed resources to ensure their authenticity and prevent unauthorized modifications, guarding against supply chain attacks and dynamic alterations of tool metadata. |
 | `covert-instruction-detection`   | Detects hidden or obfuscated directives in requests.                    |
 | `sensitive-pattern-detection`    | Flags patterns suggesting sensitive data or filesystem exposure.        |
 | `shadowing-pattern-detection`    | Identifies tool descriptions that override or influence others.         |
 | `schema-misuse-prevention`       | Enforces strict schema compliance on input data.                        |
 | `cross-origin-tool-access`       | Controls calls to external services or APIs.                            |
 | `secrets-redaction`              | Prevents exposure of credentials or sensitive values.                   |
+| `basic authentication`           | Enables the configuration of a shared secret to restrict unauthorized access to the MCP server and ensure only approved clients can connect. |
 
-Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
-
-## 🔒 Basic Authentication via Shared Secret
-
-Provides a lightweight auth layer using a single shared token.
-
-* **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
-* **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
-
-To turn on Basic Authentication, define `BASIC_AUTH_SECRET` environment variable with a shared secret.
-
-Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentication.
-
-> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
-> rotate credentials frequently and **always** use TLS.
-
-</details>
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference
@@ -173,11 +103,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.1.1`
+  - container: `1.0.0-0.1.3`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-vizro:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-vizro:1.0.0-0.1.1`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-vizro:1.0.0-0.1.3`
 
 ---
 
@@ -618,6 +548,47 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 ## 🧰 Tools (6)
 <details>
+<summary>get_vizro_chart_or_dashboard_plan</summary>
+
+**Description**:
+
+```
+Get instructions for creating a Vizro chart or dashboard. Call FIRST when asked to create Vizro things.
+
+    Must be ALWAYS called FIRST with advanced_mode=False, then call again with advanced_mode=True
+    if the JSON config does not suffice anymore.
+
+    Returns:
+        Instructions for creating a Vizro chart or dashboard
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| advanced_mode | boolean | Only call if you need to use custom CSS, custom components or custom actions.
+No need to call this with advanced_mode=True if you need advanced charts,
+use `custom_charts` in the `validate_dashboard_config` tool instead. | No
+| user_host | string | The host the user is using, if 'ide' you can use the IDE/editor to run python code | Yes
+| user_plan | string | The type of Vizro thing the user wants to create | Yes
+</details>
+<details>
+<summary>get_model_json_schema</summary>
+
+**Description**:
+
+```
+Get the JSON schema for the specified Vizro model. Server Vizro version: 0.1.50
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| model_name | string | Name of the Vizro model to get schema for (e.g., 'Card', 'Dashboard', 'Page') | Yes
+</details>
+<details>
 <summary>get_sample_data_info</summary>
 
 **Description**:
@@ -631,9 +602,6 @@ If user provides no data, use this tool to get sample data information.
         - stocks: stock prices, good for line, scatter, generally things that change over time
         - gapminder: demographic data, good for line, scatter, generally things with maps or many categories
 
-    Args:
-        data_name: Name of the dataset to get sample data for
-
     Returns:
         Data info object containing information about the dataset.
     
@@ -643,73 +611,7 @@ If user provides no data, use this tool to get sample data information.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| data_name | string | not set | Yes
-</details>
-<details>
-<summary>validate_model_config</summary>
-
-**Description**:
-
-```
-Validate Vizro model configuration. Run ALWAYS when you have a complete dashboard configuration.
-
-    If successful, the tool will return the python code and, if it is a remote file, the py.cafe link to the chart.
-    The PyCafe link will be automatically opened in your default browser if auto_open is True.
-
-    Args:
-        dashboard_config: Either a JSON string or a dictionary representing a Vizro dashboard model configuration
-        data_infos: List of DFMetaData objects containing information about the data files
-        auto_open: Whether to automatically open the PyCafe link in a browser
-
-    Returns:
-        ValidationResults object with status and dashboard details
-    
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| auto_open | boolean | not set | No
-| dashboard_config | object | not set | Yes
-| data_infos | array | not set | Yes
-</details>
-<details>
-<summary>get_model_json_schema</summary>
-
-**Description**:
-
-```
-Get the JSON schema for the specified Vizro model.
-
-    Args:
-        model_name: Name of the Vizro model to get schema for (e.g., 'Card', 'Dashboard', 'Page')
-
-    Returns:
-        JSON schema of the requested Vizro model
-    
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| model_name | string | not set | Yes
-</details>
-<details>
-<summary>get_vizro_chart_or_dashboard_plan</summary>
-
-**Description**:
-
-```
-Get instructions for creating a Vizro chart or dashboard. Call FIRST when asked to create Vizro things.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| user_plan | string | not set | Yes
+| data_name | string | Name of the dataset to get sample data for | Yes
 </details>
 <details>
 <summary>load_and_analyze_data</summary>
@@ -717,7 +619,7 @@ Get instructions for creating a Vizro chart or dashboard. Call FIRST when asked 
 **Description**:
 
 ```
-Load data from various file formats into a pandas DataFrame and analyze its structure.
+Use to understand local or remote data files. Must be called with absolute paths or URLs.
 
     Supported formats:
     - CSV (.csv)
@@ -726,9 +628,6 @@ Load data from various file formats into a pandas DataFrame and analyze its stru
     - Excel (.xls, .xlsx)
     - OpenDocument Spreadsheet (.ods)
     - Parquet (.parquet)
-
-    Args:
-        path_or_url: Local file path or URL to a data file
 
     Returns:
         DataAnalysisResults object containing DataFrame information and metadata
@@ -739,20 +638,18 @@ Load data from various file formats into a pandas DataFrame and analyze its stru
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| path_or_url | string | not set | Yes
+| path_or_url | string | Absolute (important!) local file path or URL to a data file | Yes
 </details>
 <details>
-<summary>validate_chart_code</summary>
+<summary>validate_dashboard_config</summary>
 
 **Description**:
 
 ```
-Validate the chart code created by the user and optionally open the PyCafe link in a browser.
+Validate Vizro model configuration. Run ALWAYS when you have a complete dashboard configuration.
 
-    Args:
-        chart_config: A ChartPlan object with the chart configuration
-        data_info: Metadata for the dataset to be used in the chart
-        auto_open: Whether to automatically open the PyCafe link in a browser
+    If successful, the tool will return the python code and, if it is a remote file, the py.cafe link to the chart.
+    The PyCafe link will be automatically opened in your default browser if auto_open is True.
 
     Returns:
         ValidationResults object with status and dashboard details
@@ -763,9 +660,31 @@ Validate the chart code created by the user and optionally open the PyCafe link 
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| auto_open | boolean | not set | No
-| chart_config | any | not set | Yes
-| data_info | any | not set | Yes
+| auto_open | boolean | Whether to automatically open the PyCafe link in a browser | No
+| custom_charts | array | List of ChartPlan objects containing information about the custom charts in the dashboard | Yes
+| dashboard_config | object | Either a JSON string or a dictionary representing a Vizro dashboard model configuration | Yes
+| data_infos | array | List of DFMetaData objects containing information about the data files | Yes
+</details>
+<details>
+<summary>validate_chart_code</summary>
+
+**Description**:
+
+```
+Validate the chart code created by the user and optionally open the PyCafe link in a browser.
+
+    Returns:
+        ValidationResults object with status and dashboard details
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| auto_open | boolean | Whether to automatically open the PyCafe link in a browser | No
+| chart_config | any | A ChartPlan object with the chart configuration | Yes
+| data_info | any | Metadata for the dataset to be used in the chart | Yes
 </details>
 
 ## 📝 Prompts (3)
@@ -778,7 +697,7 @@ Validate the chart code created by the user and optionally open the PyCafe link 
 Prompt template for getting started with Vizro.
 ```
 <details>
-<summary>create_eda_dashboard</summary>
+<summary>create_dashboard</summary>
 
 **Description**:
 
@@ -790,7 +709,8 @@ Prompt template for creating an EDA dashboard based on one dataset.
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| file_path_or_url | not set |Yes |
+| file_path_or_url | The absolute path or URL to the data file you want to use. |Yes |
+| context | (Optional) Describe the dashboard you want to create. |No |
 <details>
 <summary>create_vizro_chart</summary>
 
@@ -804,8 +724,8 @@ Prompt template for creating a Vizro chart.
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| chart_type | not set |Yes |
-| file_path_or_url | not set |No |
+| file_path_or_url | The absolute path or URL to the data file you want to use. |Yes |
+| context | (Optional) Describe the chart you want to create. |No |
 
 </details>
 
@@ -816,18 +736,32 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
-| prompts | create_eda_dashboard | description | f49688252b0e6994d4e5af8a373bb1f230daaa547a7715292f638d096b6f5d5e |
-| prompts | create_eda_dashboard | file_path_or_url | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| prompts | create_dashboard | description | f49688252b0e6994d4e5af8a373bb1f230daaa547a7715292f638d096b6f5d5e |
+| prompts | create_dashboard | context | 93d09e9c0d9e1927d050755dac7286088e9ec0d0c19a392f30758bc0b07b1a91 |
+| prompts | create_dashboard | file_path_or_url | a58f60107d39fbdba8feb44e77dd10eb212fb83713989ab23f4da6e6981aeb2d |
 | prompts | create_starter_dashboard | description | 3db6c73803667f67b738d9001648a03089d29457869df85b5f9d52d9549f994b |
 | prompts | create_vizro_chart | description | faa5f0d0a03c730d8b4d3cb0c684ffa46739ac0027b47aa54d9b3967e1f350b6 |
-| prompts | create_vizro_chart | chart_type | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
-| prompts | create_vizro_chart | file_path_or_url | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
-| tools | get_model_json_schema | description | d92731687ece77aabb2be987d117b04338834e2e435dc119dadff687fa2a8c1e |
-| tools | get_sample_data_info | description | d0c3654426c6e181a0471b992aaadd63c9e88281bed836343548eb2583a74f1d |
-| tools | get_vizro_chart_or_dashboard_plan | description | 6f05907ea3f3b663a47a6ee527504ddec4fc4ae17a1e726c832ae4a9f70e95da |
-| tools | load_and_analyze_data | description | 2c10343fd39c32e39b4c9c75ae8897bc8b8f6c4da8d72aa13e9305f0e0e100a8 |
-| tools | validate_chart_code | description | 3b821a0e889495284b3583b66f47ad585811028ae26016e89f02e59e4ebf23c1 |
-| tools | validate_model_config | description | 79865f63e5b29b8bb0fdec019a48c02acdad112893fe1dc5e37a6c36d35392f0 |
+| prompts | create_vizro_chart | context | 92b8e05b55d9f5054be7636a59d7e00e524b124b6b6bad0c7c8fb3d14add14b9 |
+| prompts | create_vizro_chart | file_path_or_url | a58f60107d39fbdba8feb44e77dd10eb212fb83713989ab23f4da6e6981aeb2d |
+| tools | get_model_json_schema | description | 2687eb83add50dc4bfc4f44d5324019ca670201bc8785196c6b7907fe74664a7 |
+| tools | get_model_json_schema | model_name | ff559139f4d9f677ce2796785f52b5e48758d8cf4251b27601930a3facb60d3c |
+| tools | get_sample_data_info | description | 2fccc91729d60d68da58c9099a6f082760f0028bdb3f26fda9bf38980efa3403 |
+| tools | get_sample_data_info | data_name | 6d9d841dd22fba2afd9a508e67dae1e667edbe3f80a7b260a6fae1684dbd37af |
+| tools | get_vizro_chart_or_dashboard_plan | description | 1e5a3655f1cce22cf8147c3578121a98bd182fd734b8bc89454fe11aa62caf5e |
+| tools | get_vizro_chart_or_dashboard_plan | advanced_mode | 661788646d39324e8a446b3c4136846f3184d610b6ddf03a19ffb239fbc00d32 |
+| tools | get_vizro_chart_or_dashboard_plan | user_host | b0bc4f4cc19b3a014238acd74bb1b8598a9caa3e5491f3b14e55483bd7ed22f7 |
+| tools | get_vizro_chart_or_dashboard_plan | user_plan | 7875047bbda1622ab6ae1b3d4fc07b00398450bb3e49d55e814cac82c704f907 |
+| tools | load_and_analyze_data | description | a0eb17a8ea994b5afe49ced92b98c4287cc1099b2c704d249abb18140f7997b2 |
+| tools | load_and_analyze_data | path_or_url | 6688808dbaa85881d7ea1bd6bbc1777d439a798f2b17062cf2ec4bfa29c9e5e7 |
+| tools | validate_chart_code | description | 080716bf7fc2aeffa83aead5079822694c5e63e05d62f3db591e7ddfab12abb7 |
+| tools | validate_chart_code | auto_open | 2ca8629dbc322d890b3bf2270c0bbb8659fc6f8106f27f0e9b447fb732f17912 |
+| tools | validate_chart_code | chart_config | 4d81d7c5f0d10fbc06831ccee1cd423ec39addd07dcc8a85269c97ba7a520736 |
+| tools | validate_chart_code | data_info | ae06a1ad2f8d9a88141d674385d3653a62e5f7c687c8ac3c31684833dcd8e189 |
+| tools | validate_dashboard_config | description | b3a994041c55a3b7ebf9cfefead2566ed81da48431295e1253976cd0adaef056 |
+| tools | validate_dashboard_config | auto_open | 2ca8629dbc322d890b3bf2270c0bbb8659fc6f8106f27f0e9b447fb732f17912 |
+| tools | validate_dashboard_config | custom_charts | 74f22cf1dfb3ff0959a797c17e8d94f9ff91a0f6283c9588da598eaa89a99476 |
+| tools | validate_dashboard_config | dashboard_config | 391d74fbc496ffa3287e9584596b7cf5c1f68ba1787759e465965456813d7f6a |
+| tools | validate_dashboard_config | data_infos | c9177be8106582d0230bf935ce8739d069c9088ffec5e40b48eb32d650c47e04 |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

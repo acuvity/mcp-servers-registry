@@ -136,6 +136,20 @@ _cross_tool_exclude := [
 	#
 	"listNotionDatabases",
 	#
+	"listDropboxFolders",
+	#
+	"listBoxFolders",
+	#
+	"listDiscordGuilds",
+	#
+	"listDiscordChannels",
+	#
+	"listNotionPages",
+	#
+	"listGoogleCalendars",
+	#
+	"listMicrosoftCalendars",
+	#
 	"listLinearProjects",
 	#
 	"listSlackChannels",

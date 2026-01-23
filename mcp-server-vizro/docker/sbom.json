@@ -2,37 +2,105 @@
   "tools": [
     {
       "name": "get_model_json_schema",
-      "hash": "d92731687ece77aabb2be987d117b04338834e2e435dc119dadff687fa2a8c1e"
+      "hash": "2687eb83add50dc4bfc4f44d5324019ca670201bc8785196c6b7907fe74664a7",
+      "params": [
+        {
+          "name": "model_name",
+          "hash": "ff559139f4d9f677ce2796785f52b5e48758d8cf4251b27601930a3facb60d3c"
+        }
+      ]
     },
     {
       "name": "get_sample_data_info",
-      "hash": "d0c3654426c6e181a0471b992aaadd63c9e88281bed836343548eb2583a74f1d"
+      "hash": "2fccc91729d60d68da58c9099a6f082760f0028bdb3f26fda9bf38980efa3403",
+      "params": [
+        {
+          "name": "data_name",
+          "hash": "6d9d841dd22fba2afd9a508e67dae1e667edbe3f80a7b260a6fae1684dbd37af"
+        }
+      ]
     },
     {
       "name": "get_vizro_chart_or_dashboard_plan",
-      "hash": "6f05907ea3f3b663a47a6ee527504ddec4fc4ae17a1e726c832ae4a9f70e95da"
+      "hash": "1e5a3655f1cce22cf8147c3578121a98bd182fd734b8bc89454fe11aa62caf5e",
+      "params": [
+        {
+          "name": "advanced_mode",
+          "hash": "661788646d39324e8a446b3c4136846f3184d610b6ddf03a19ffb239fbc00d32"
+        },
+        {
+          "name": "user_host",
+          "hash": "b0bc4f4cc19b3a014238acd74bb1b8598a9caa3e5491f3b14e55483bd7ed22f7"
+        },
+        {
+          "name": "user_plan",
+          "hash": "7875047bbda1622ab6ae1b3d4fc07b00398450bb3e49d55e814cac82c704f907"
+        }
+      ]
     },
     {
       "name": "load_and_analyze_data",
-      "hash": "2c10343fd39c32e39b4c9c75ae8897bc8b8f6c4da8d72aa13e9305f0e0e100a8"
+      "hash": "a0eb17a8ea994b5afe49ced92b98c4287cc1099b2c704d249abb18140f7997b2",
+      "params": [
+        {
+          "name": "path_or_url",
+          "hash": "6688808dbaa85881d7ea1bd6bbc1777d439a798f2b17062cf2ec4bfa29c9e5e7"
+        }
+      ]
     },
     {
       "name": "validate_chart_code",
-      "hash": "3b821a0e889495284b3583b66f47ad585811028ae26016e89f02e59e4ebf23c1"
+      "hash": "080716bf7fc2aeffa83aead5079822694c5e63e05d62f3db591e7ddfab12abb7",
+      "params": [
+        {
+          "name": "auto_open",
+          "hash": "2ca8629dbc322d890b3bf2270c0bbb8659fc6f8106f27f0e9b447fb732f17912"
+        },
+        {
+          "name": "chart_config",
+          "hash": "4d81d7c5f0d10fbc06831ccee1cd423ec39addd07dcc8a85269c97ba7a520736"
+        },
+        {
+          "name": "data_info",
+          "hash": "ae06a1ad2f8d9a88141d674385d3653a62e5f7c687c8ac3c31684833dcd8e189"
+        }
+      ]
     },
     {
-      "name": "validate_model_config",
-      "hash": "79865f63e5b29b8bb0fdec019a48c02acdad112893fe1dc5e37a6c36d35392f0"
+      "name": "validate_dashboard_config",
+      "hash": "b3a994041c55a3b7ebf9cfefead2566ed81da48431295e1253976cd0adaef056",
+      "params": [
+        {
+          "name": "auto_open",
+          "hash": "2ca8629dbc322d890b3bf2270c0bbb8659fc6f8106f27f0e9b447fb732f17912"
+        },
+        {
+          "name": "custom_charts",
+          "hash": "74f22cf1dfb3ff0959a797c17e8d94f9ff91a0f6283c9588da598eaa89a99476"
+        },
+        {
+          "name": "dashboard_config",
+          "hash": "391d74fbc496ffa3287e9584596b7cf5c1f68ba1787759e465965456813d7f6a"
+        },
+        {
+          "name": "data_infos",
+          "hash": "c9177be8106582d0230bf935ce8739d069c9088ffec5e40b48eb32d650c47e04"
+        }
+      ]
     }
   ],
   "prompts": [
     {
-      "name": "create_eda_dashboard",
+      "name": "create_dashboard",
       "hash": "f49688252b0e6994d4e5af8a373bb1f230daaa547a7715292f638d096b6f5d5e",
       "params": [
         {
+          "name": "context",
+          "hash": "93d09e9c0d9e1927d050755dac7286088e9ec0d0c19a392f30758bc0b07b1a91"
+        },
+        {
           "name": "file_path_or_url",
-          "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          "hash": "a58f60107d39fbdba8feb44e77dd10eb212fb83713989ab23f4da6e6981aeb2d"
         }
       ]
     },
@@ -45,12 +113,12 @@
       "hash": "faa5f0d0a03c730d8b4d3cb0c684ffa46739ac0027b47aa54d9b3967e1f350b6",
       "params": [
         {
-          "name": "chart_type",
-          "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          "name": "context",
+          "hash": "92b8e05b55d9f5054be7636a59d7e00e524b124b6b6bad0c7c8fb3d14add14b9"
         },
         {
           "name": "file_path_or_url",
-          "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          "hash": "a58f60107d39fbdba8feb44e77dd10eb212fb83713989ab23f4da6e6981aeb2d"
         }
       ]
     }

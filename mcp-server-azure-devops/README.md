@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -21,10 +21,10 @@
 # What is mcp-server-azure-devops?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-azure-devops/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-azure-devops/0.1.39?logo=docker&logoColor=fff&label=0.1.39)](https://hub.docker.com/r/acuvity/mcp-server-azure-devops)
-[![PyPI](https://img.shields.io/badge/0.1.39-3775A9?logo=pypi&logoColor=fff&label=@tiberriver256/mcp-server-azure-devops)](https://github.com/Tiberriver256/mcp-server-azure-devops)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-azure-devops/0.1.43?logo=docker&logoColor=fff&label=0.1.43)](https://hub.docker.com/r/acuvity/mcp-server-azure-devops)
+[![PyPI](https://img.shields.io/badge/0.1.43-3775A9?logo=pypi&logoColor=fff&label=@tiberriver256/mcp-server-azure-devops)](https://github.com/Tiberriver256/mcp-server-azure-devops)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-azure-devops/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure-devops&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AZURE_DEVOPS_AUTH_METHOD%22%2C%22-e%22%2C%22AZURE_DEVOPS_DEFAULT_PROJECT%22%2C%22-e%22%2C%22AZURE_DEVOPS_ORG_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure-devops%3A0.1.39%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure-devops&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AZURE_DEVOPS_AUTH_METHOD%22%2C%22-e%22%2C%22AZURE_DEVOPS_DEFAULT_PROJECT%22%2C%22-e%22%2C%22AZURE_DEVOPS_ORG_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure-devops%3A0.1.43%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Azure DevOps integration for repository management, work items, and pipelines.
 
@@ -43,69 +43,70 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
 The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-azure-devops/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
-### 🔒 Resource Integrity
+#### 🔒 Resource Integrity
 
 **Mitigates MCP Rug Pull Attacks**
 
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Guardrails
+#### 🛡️ Guardrails
 
-#### Covert Instruction Detection
+##### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-#### Sensitive Pattern Detection
+##### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-#### Shadowing Pattern Detection
+##### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-#### Schema Misuse Prevention
+##### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-#### Cross-Origin Tool Access
+##### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-#### Secrets Redaction
+##### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
@@ -114,7 +115,7 @@ Automatically masks sensitive values so they never appear in logs or responses.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
-### Enable guardrails
+#### Enable guardrails
 
 To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
@@ -129,7 +130,7 @@ To activate guardrails in your Docker containers, define the `GUARDRAILS` enviro
 
 Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
 
-## 🔒 Basic Authentication via Shared Secret
+#### 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
@@ -143,10 +144,8 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 > While basic auth will protect against unauthorized access, you should use it only in controlled environment,
 > rotate credentials frequently and **always** use TLS.
 
-</details>
-
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # 📦 How to Install
@@ -175,7 +174,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure-devops&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AZURE_DEVOPS_AUTH_METHOD%22%2C%22-e%22%2C%22AZURE_DEVOPS_DEFAULT_PROJECT%22%2C%22-e%22%2C%22AZURE_DEVOPS_ORG_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure-devops%3A0.1.39%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-azure-devops&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22AZURE_DEVOPS_AUTH_METHOD%22%2C%22-e%22%2C%22AZURE_DEVOPS_DEFAULT_PROJECT%22%2C%22-e%22%2C%22AZURE_DEVOPS_ORG_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-azure-devops%3A0.1.43%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -203,7 +202,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "AZURE_DEVOPS_DEFAULT_PROJECT",
           "-e",
           "AZURE_DEVOPS_ORG_URL",
-          "docker.io/acuvity/mcp-server-azure-devops:0.1.39"
+          "docker.io/acuvity/mcp-server-azure-devops:0.1.43"
         ]
       }
     }
@@ -236,7 +235,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "AZURE_DEVOPS_DEFAULT_PROJECT",
         "-e",
         "AZURE_DEVOPS_ORG_URL",
-        "docker.io/acuvity/mcp-server-azure-devops:0.1.39"
+        "docker.io/acuvity/mcp-server-azure-devops:0.1.43"
       ]
     }
   }
@@ -273,7 +272,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "AZURE_DEVOPS_DEFAULT_PROJECT",
         "-e",
         "AZURE_DEVOPS_ORG_URL",
-        "docker.io/acuvity/mcp-server-azure-devops:0.1.39"
+        "docker.io/acuvity/mcp-server-azure-devops:0.1.43"
       ]
     }
   }
@@ -312,7 +311,7 @@ Add the following JSON block to your mcp configuration file:
         "AZURE_DEVOPS_DEFAULT_PROJECT",
         "-e",
         "AZURE_DEVOPS_ORG_URL",
-        "docker.io/acuvity/mcp-server-azure-devops:0.1.39"
+        "docker.io/acuvity/mcp-server-azure-devops:0.1.43"
       ]
     }
   }
@@ -349,7 +348,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "AZURE_DEVOPS_DEFAULT_PROJECT",
         "-e",
         "AZURE_DEVOPS_ORG_URL",
-        "docker.io/acuvity/mcp-server-azure-devops:0.1.39"
+        "docker.io/acuvity/mcp-server-azure-devops:0.1.43"
       ]
     }
   }
@@ -369,7 +368,7 @@ async with MCPServerStdio(
     params={
         "env": {"AZURE_DEVOPS_AUTH_METHOD":"TO_BE_SET","AZURE_DEVOPS_DEFAULT_PROJECT":"TO_BE_SET","AZURE_DEVOPS_ORG_URL":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","AZURE_DEVOPS_AUTH_METHOD","-e","AZURE_DEVOPS_DEFAULT_PROJECT","-e","AZURE_DEVOPS_ORG_URL","docker.io/acuvity/mcp-server-azure-devops:0.1.39"]
+        "args": ["run","-i","--rm","--read-only","-e","AZURE_DEVOPS_AUTH_METHOD","-e","AZURE_DEVOPS_DEFAULT_PROJECT","-e","AZURE_DEVOPS_ORG_URL","docker.io/acuvity/mcp-server-azure-devops:0.1.43"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -398,7 +397,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e AZURE_DEVOPS_AUTH_METHOD -e AZURE_DEVOPS_DEFAULT_PROJECT -e AZURE_DEVOPS_ORG_URL docker.io/acuvity/mcp-server-azure-devops:0.1.39`
+- arguments: `run -i --rm --read-only -e AZURE_DEVOPS_AUTH_METHOD -e AZURE_DEVOPS_DEFAULT_PROJECT -e AZURE_DEVOPS_ORG_URL docker.io/acuvity/mcp-server-azure-devops:0.1.43`
 
 </details>
 
@@ -408,7 +407,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e AZURE_DEVOPS_AUTH_METHOD -e AZURE_DEVOPS_DEFAULT_PROJECT -e AZURE_DEVOPS_ORG_URL docker.io/acuvity/mcp-server-azure-devops:0.1.39
+docker run -it -p 8000:8000 --rm --read-only -e AZURE_DEVOPS_AUTH_METHOD -e AZURE_DEVOPS_DEFAULT_PROJECT -e AZURE_DEVOPS_ORG_URL docker.io/acuvity/mcp-server-azure-devops:0.1.43
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -513,7 +512,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (32)
+## 🧰 Tools (43)
 <details>
 <summary>get_me</summary>
 
@@ -693,6 +692,120 @@ Displays a hierarchical tree view of files and directories across multiple Azure
 | repositoryPattern | string | Repository name pattern (wildcard characters allowed) to filter which repositories are included | No
 </details>
 <details>
+<summary>get_repository_tree</summary>
+
+**Description**:
+
+```
+Displays a hierarchical tree view of files and directories within a single repository starting from an optional path
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| depth | integer | Maximum depth to traverse (0 = unlimited) | No
+| organizationId | string | The ID or name of the organization (Default: unknown-organization) | No
+| path | string | Path within the repository to start from | No
+| projectId | string | The ID or name of the project (Default: dummy) | No
+| repositoryId | string | The ID or name of the repository | Yes
+</details>
+<details>
+<summary>create_branch</summary>
+
+**Description**:
+
+```
+Create a new branch from an existing one
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| newBranch | string | Name of the new branch to create (without "refs/heads/", e.g., "feature/my-branch") | Yes
+| organizationId | string | The ID or name of the organization (Default: unknown-organization) | No
+| projectId | string | The ID or name of the project (Default: dummy) | No
+| repositoryId | string | The ID or name of the repository | Yes
+| sourceBranch | string | Name of the branch to copy from (without "refs/heads/", e.g., "master") | Yes
+</details>
+<details>
+<summary>create_commit</summary>
+
+**Description**:
+
+```
+Create a commit on an existing branch using file changes.
+- Provide plain branch names (no "refs/heads/").
+- ⚠️ Each file path may appear only once per commit request—combine all edits to a file into a single change entry.
+- Prefer multiple commits when you have sparse or unrelated edits; smaller focused commits keep review context clear.
+
+🎯 RECOMMENDED: Use the SEARCH/REPLACE format (much easier, no line counting!).
+
+**Option 1: SEARCH/REPLACE format (EASIEST)**
+Simply provide the exact text to find and replace:
+```json
+{
+  "changes": [{
+    "path": "src/api/services/function-call.ts",
+    "search": "return axios.post(apiUrl, payload, requestConfig);",
+    "replace": "return axios.post(apiUrl, payload, requestConfig).then(r => { processResponse(r); return r; });"
+  }]
+}
+```
+The server fetches the file, performs the replacement, and generates the diff automatically.
+No line counting, no hunk headers, no context lines needed!
+
+**Option 2: UNIFIED DIFF format (Advanced)**
+If you prefer full control, provide complete unified diffs:
+- Each patch MUST have complete hunk headers: @@ -oldStart,oldLines +newStart,newLines @@
+- CRITICAL: Every @@ marker MUST include line numbers. Do NOT use @@ without line ranges.
+- Include 3-5 context lines before and after changes.
+- For deletions: `--- a/filepath` and `+++ /dev/null`
+- For additions: `--- /dev/null` and `+++ b/filepath`
+
+Example unified diff:
+```json
+{
+  "changes": [{
+    "patch": "diff --git a/file.yaml b/file.yaml\n--- a/file.yaml\n+++ b/file.yaml\n@@ -4,7 +4,7 @@ spec:\n spec:\n   type: ClusterIP\n   ports:\n-    - port: 8080\n+    - port: 9090\n       targetPort: http\n"
+  }]
+}
+```
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| branchName | string | The branch to commit to (without "refs/heads/", e.g., "codex/test2-delete-main-py") | Yes
+| changes | array | List of file changes as either unified git diffs OR search/replace pairs | Yes
+| commitMessage | string | Commit message | Yes
+| organizationId | string | The ID or name of the organization (Default: unknown-organization) | No
+| projectId | string | The ID or name of the project (Default: dummy) | No
+| repositoryId | string | The ID or name of the repository | Yes
+</details>
+<details>
+<summary>list_commits</summary>
+
+**Description**:
+
+```
+List recent commits on a branch including file-level diff content for each commit
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| branchName | string | Branch name to list commits from | Yes
+| organizationId | string | The ID or name of the organization (Default: unknown-organization) | No
+| projectId | string | The ID or name of the project (Default: dummy) | No
+| repositoryId | string | The ID or name of the repository | Yes
+| skip | integer | Number of commits to skip from the newest | No
+| top | integer | Maximum number of commits to return (Default: 10) | No
+</details>
+<details>
 <summary>list_work_items</summary>
 
 **Description**:
@@ -726,7 +839,7 @@ Get details of a specific work item
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| expand | number | The level of detail to include in the response. Defaults to "all" if not specified. | No
+| expand | string | The level of detail to include in the response. Defaults to "all" if not specified. | No
 | workItemId | number | The ID of the work item | Yes
 </details>
 <details>
@@ -870,7 +983,7 @@ Search for work items across projects in Azure DevOps
 **Description**:
 
 ```
-Create a new pull request
+Create a new pull request, including reviewers, linked work items, and optional tags
 ```
 
 **Parameter**:
@@ -885,6 +998,7 @@ Create a new pull request
 | repositoryId | string | The ID or name of the repository | Yes
 | reviewers | array | List of reviewer email addresses or IDs | No
 | sourceRefName | string | The source branch name (e.g., refs/heads/feature-branch) | Yes
+| tags | array | List of tags to apply to the pull request | No
 | targetRefName | string | The target branch name (e.g., refs/heads/main) | Yes
 | title | string | The title of the pull request | Yes
 | workItemRefs | array | List of work item IDs to link to the pull request | No
@@ -905,6 +1019,7 @@ List pull requests in a repository
 | creatorId | string | Filter by creator ID (must be a UUID string) | No
 | organizationId | string | The ID or name of the organization (Default: unknown-organization) | No
 | projectId | string | The ID or name of the project (Default: dummy) | No
+| pullRequestId | number | If provided, return only the matching pull request ID | No
 | repositoryId | string | The ID or name of the repository | Yes
 | reviewerId | string | Filter by reviewer ID (must be a UUID string) | No
 | skip | number | Number of pull requests to skip for pagination | No
@@ -964,7 +1079,7 @@ Add a comment to a pull request (reply to existing comments or create new thread
 **Description**:
 
 ```
-Update an existing pull request with new properties, link work items, and manage reviewers
+Update an existing pull request with new properties, manage reviewers and work items, and add or remove tags
 ```
 
 **Parameter**:
@@ -972,6 +1087,7 @@ Update an existing pull request with new properties, link work items, and manage
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | addReviewers | array | List of reviewer email addresses or IDs to add | No
+| addTags | array | List of tags to add to the pull request | No
 | addWorkItemIds | array | List of work item IDs to link to the pull request | No
 | additionalProperties | object | Additional properties to update on the pull request | No
 | description | string | The updated description of the pull request | No
@@ -980,10 +1096,49 @@ Update an existing pull request with new properties, link work items, and manage
 | projectId | string | The ID or name of the project (Default: dummy) | No
 | pullRequestId | number | The ID of the pull request to update | Yes
 | removeReviewers | array | List of reviewer email addresses or IDs to remove | No
+| removeTags | array | List of tags to remove from the pull request | No
 | removeWorkItemIds | array | List of work item IDs to unlink from the pull request | No
 | repositoryId | string | The ID or name of the repository | Yes
 | status | string | The updated status of the pull request | No
 | title | string | The updated title of the pull request | No
+</details>
+<details>
+<summary>get_pull_request_changes</summary>
+
+**Description**:
+
+```
+Get the files changed in a pull request, their unified diffs, source/target branch names, and the status of policy evaluations
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| organizationId | string | The ID or name of the organization (Default: unknown-organization) | No
+| projectId | string | The ID or name of the project (Default: dummy) | No
+| pullRequestId | number | The ID of the pull request | Yes
+| repositoryId | string | The ID or name of the repository | Yes
+</details>
+<details>
+<summary>get_pull_request_checks</summary>
+
+**Description**:
+
+```
+Summarize the latest status checks and policy evaluations for a pull request.
+- Surfaces pipeline and run identifiers so you can jump straight to the blocking validation.
+- Pair with pipeline tools (e.g., get_pipeline_run, pipeline_timeline) to inspect failures in depth.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| organizationId | string | The ID or name of the organization (Default: unknown-organization) | No
+| projectId | string | The ID or name of the project (Default: dummy) | No
+| pullRequestId | number | The ID of the pull request | Yes
+| repositoryId | string | The ID or name of the repository | Yes
 </details>
 <details>
 <summary>list_pipelines</summary>
@@ -1018,6 +1173,106 @@ Get details of a specific pipeline
 | pipelineId | integer | The numeric ID of the pipeline to retrieve | Yes
 | pipelineVersion | integer | The version of the pipeline to retrieve (latest if not specified) | No
 | projectId | string | The ID or name of the project (Default: dummy) | No
+</details>
+<details>
+<summary>list_pipeline_runs</summary>
+
+**Description**:
+
+```
+List recent runs for a pipeline
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| branch | string | Branch to filter by (e.g., "main" or "refs/heads/main") | No
+| continuationToken | string | Continuation token for pagination | No
+| createdFrom | string | Filter runs created at or after this time (ISO 8601) | No
+| createdTo | string | Filter runs created at or before this time (ISO 8601) | No
+| orderBy | string | Sort order for run creation date | No
+| pipelineId | integer | Pipeline numeric ID | Yes
+| projectId | string | The ID or name of the project (Default: dummy) | No
+| result | string | Filter by final run result | No
+| state | string | Filter by current run state | No
+| top | integer | Maximum number of runs to return (1-100) | No
+</details>
+<details>
+<summary>get_pipeline_run</summary>
+
+**Description**:
+
+```
+Get details for a specific pipeline run
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| pipelineId | integer | Optional guard; validates the run belongs to this pipeline | No
+| projectId | string | The ID or name of the project (Default: dummy) | No
+| runId | integer | Pipeline run identifier | Yes
+</details>
+<details>
+<summary>download_pipeline_artifact</summary>
+
+**Description**:
+
+```
+Download a file from a pipeline run artifact and return its textual content
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| artifactPath | string | Path to the desired file inside the artifact (format: <artifactName>/<path/to/file>) | Yes
+| pipelineId | integer | Optional guard; validates the run belongs to this pipeline | No
+| projectId | string | The ID or name of the project (Default: dummy) | No
+| runId | integer | Pipeline run identifier | Yes
+</details>
+<details>
+<summary>pipeline_timeline</summary>
+
+**Description**:
+
+```
+Retrieve the timeline of stages and jobs for a pipeline run, to reduce the amount of data returned, you can filter by state and result
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| pipelineId | integer | Optional pipeline numeric ID for reference only | No
+| projectId | string | The ID or name of the project (Default: dummy) | No
+| result | any | Optional result filter (single value or array) applied to returned timeline records | No
+| runId | integer | Run identifier | Yes
+| state | any | Optional state filter (single value or array) applied to returned timeline records | No
+| timelineId | string | Optional timeline identifier to select a specific timeline record | No
+</details>
+<details>
+<summary>get_pipeline_log</summary>
+
+**Description**:
+
+```
+Retrieve a specific pipeline log using the timeline log identifier
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| endLine | integer | Optional ending line number for the log segment | No
+| format | string | Optional format for the log contents (plain or json) | No
+| logId | integer | Log identifier from the timeline record | Yes
+| pipelineId | integer | Optional pipeline numeric ID for reference only | No
+| projectId | string | The ID or name of the project (Default: dummy) | No
+| runId | integer | Pipeline run identifier | Yes
+| startLine | integer | Optional starting line number for the log segment | No
 </details>
 <details>
 <summary>trigger_pipeline</summary>
@@ -1127,9 +1382,7 @@ List pages within an Azure DevOps wiki
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | organizationId | any | The ID or name of the organization (Default: unknown-organization) | No
-| path | string | Optional path within the wiki | No
 | projectId | any | The ID or name of the project (Default: dummy) | No
-| recursionLevel | integer | Optional recursion depth (1-50) | No
 | wikiId | string | The ID or name of the wiki | Yes
 </details>
 <details>
@@ -1171,7 +1424,20 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | add_pull_request_comment | repositoryId | 25d0eeb6f8988c62240119c72427edb9c77cf55278a72464848f34bab83dc50f |
 | tools | add_pull_request_comment | status | ffabf76df390217c5584db6a238698fa71738990aabdbb41cf3058dd0c5dd319 |
 | tools | add_pull_request_comment | threadId | d3decffddc296ca72b0ca9a08b4f035eb7149cb508377250dec9509cfe526832 |
-| tools | create_pull_request | description | 838e20aa9fe6e7b85ec50dc75606232944376a8340ef481c87eac75e7753a61e |
+| tools | create_branch | description | ded66835d556738922df328692d05d6fd3d91115c8780e9bcc7094524bfe86cd |
+| tools | create_branch | newBranch | 4a4819fd7fddf77ae488085d27c5e790ab202ae01e37c2437fd02e4332263392 |
+| tools | create_branch | organizationId | 1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c |
+| tools | create_branch | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
+| tools | create_branch | repositoryId | 25d0eeb6f8988c62240119c72427edb9c77cf55278a72464848f34bab83dc50f |
+| tools | create_branch | sourceBranch | a9f5b34159c283e69c3a1388dd7ce34d3155c4196ea86bca9919ebd3d38b9ee9 |
+| tools | create_commit | description | 62c1907416cbeb65477d30afccf4de0f7d795c19104fe356d2f6bd90c7283061 |
+| tools | create_commit | branchName | c0859107733ec445a43dbe600df19b6cfa5555440bbc742c43e3d86daf4485b2 |
+| tools | create_commit | changes | 877036ed0397e503383acf75f574ad027526ad2f87bc85a9c523ca9e57f3cdaa |
+| tools | create_commit | commitMessage | 26306d203c4a6f1a77f32cd065d7d11593ba0c7a9b5c52c188b98f22b620941f |
+| tools | create_commit | organizationId | 1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c |
+| tools | create_commit | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
+| tools | create_commit | repositoryId | 25d0eeb6f8988c62240119c72427edb9c77cf55278a72464848f34bab83dc50f |
+| tools | create_pull_request | description | 438bd552e9937251bc456d2100714a766003943e316179a50bc9ff49cf54d244 |
 | tools | create_pull_request | additionalProperties | f29eb78476fa56c582446f2e64a5bf31ee4c76441197d37b854d54b1ebd1367d |
 | tools | create_pull_request | description | f5ddbb7163df84576aa7ed0cc776499df12f0d859d115d47ccfc075fafeeb943 |
 | tools | create_pull_request | isDraft | fc1ebd4bb02f777c1a5fb6665e78069749476d7ae61d824e85f1abb3d36a9322 |
@@ -1180,6 +1446,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | create_pull_request | repositoryId | 25d0eeb6f8988c62240119c72427edb9c77cf55278a72464848f34bab83dc50f |
 | tools | create_pull_request | reviewers | 7699755d118f22187776790eaf762040d1d52c1f4fa5fb647896e751517bdd44 |
 | tools | create_pull_request | sourceRefName | 9485211a2d365d553c7837244a3fb308bc673a0b835481fa1e254078b804a2ad |
+| tools | create_pull_request | tags | 7806a0f800971e85a2f7b74fa6cb2756e37394e18c8c03d1c8fa93beb95ac9bc |
 | tools | create_pull_request | targetRefName | 6fb245df5be7d9a6f883a102f56cef002848a14fbc5bf162363d4395d47630b5 |
 | tools | create_pull_request | title | c04c47bf2f47f484df617492655df04711f8dc4320b2c1fb9dfcbd6defdb18bc |
 | tools | create_pull_request | workItemRefs | d560f7bd59700bd8a96094e68ae4a51b7a09950aa589c9b6b0a9a11d1648ebcc |
@@ -1209,6 +1476,11 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | create_work_item | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
 | tools | create_work_item | title | 8886851671d368f793dcd912835deb0e2c2c6d2522c42252b65ded204bf40041 |
 | tools | create_work_item | workItemType | d70897a90d287102c3282e884c418c0900fb61a7681ffad29375af537029b74e |
+| tools | download_pipeline_artifact | description | 73328d56180f1db1dae7f659aa55abc4be770c18a79349668aa12dd5498fec95 |
+| tools | download_pipeline_artifact | artifactPath | 4d40c1a515c5da932cd2c51365a71ccd97695458b5743f89c85482249bb801e0 |
+| tools | download_pipeline_artifact | pipelineId | 0341ab6cacc44a0ef6cc39cf26598326a107aec48be14387fa89cf67aebd4d39 |
+| tools | download_pipeline_artifact | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
+| tools | download_pipeline_artifact | runId | 67642779884a6f188a54ac644b28f31d70f5fa549aeb014f3533e6a0b0e39471 |
 | tools | get_all_repositories_tree | description | 751c855a11f9ecc11c0dc3a71502da74a7f190b9144a04ddc64294423f1e3c7b |
 | tools | get_all_repositories_tree | depth | 9d649941d89d15735723a23948d6883cf8d8cde4baaf68e25872219c8e7f54ae |
 | tools | get_all_repositories_tree | organizationId | 45a145894e6832430715feb14051c28bc4155b6902b0377b8e75c7a7f0ae4d3e |
@@ -1227,6 +1499,18 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | get_pipeline | pipelineId | 967805b0daea9b77f8272a8ce7b834931086cd27497bf4d178016c4e7eed018f |
 | tools | get_pipeline | pipelineVersion | 9f4d20c046eb5ba7685a731295851b0c1e4554819912e9bc95c86b8a2f4b12f2 |
 | tools | get_pipeline | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
+| tools | get_pipeline_log | description | d197b2a8b610432199ae462eb6542697c7661f7e8a4fa224f48055310a9db4e2 |
+| tools | get_pipeline_log | endLine | 9f4162d4bda6c73e65b0cdb7de6684b2c7550a35a5aa7bb3c8cb29834143c61b |
+| tools | get_pipeline_log | format | 77617d306dc9d21f4fe84172b319523b8b0d71b5252861030dab6fb6cd77fc1a |
+| tools | get_pipeline_log | logId | ef394c6ddd53c48b6313f7a79e06d671bedf7172cb0e29b7b369ad57848edaea |
+| tools | get_pipeline_log | pipelineId | 1062b58d44d4ea4283dac897077edc284a0d93577a5e994af19158396e66bab3 |
+| tools | get_pipeline_log | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
+| tools | get_pipeline_log | runId | 67642779884a6f188a54ac644b28f31d70f5fa549aeb014f3533e6a0b0e39471 |
+| tools | get_pipeline_log | startLine | 90be271c934158252773c935b12e30b5c4cc98dfafaf448a582b237c9db0fc45 |
+| tools | get_pipeline_run | description | 5ca67ae749466f5cd36833ae4e1b7a0a64cf0534a853501b57b112add068a420 |
+| tools | get_pipeline_run | pipelineId | 0341ab6cacc44a0ef6cc39cf26598326a107aec48be14387fa89cf67aebd4d39 |
+| tools | get_pipeline_run | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
+| tools | get_pipeline_run | runId | 67642779884a6f188a54ac644b28f31d70f5fa549aeb014f3533e6a0b0e39471 |
 | tools | get_project | description | e6712b6fce183aa5bd921363a8279ee29647a257a79449c7cde1059257cd2d30 |
 | tools | get_project | organizationId | 1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c |
 | tools | get_project | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
@@ -1238,6 +1522,16 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | get_project_details | includeWorkItemTypes | 5e24f07d0c3b56704119a6367070ce6e9f6e61e84c7272964086dc71e94cec75 |
 | tools | get_project_details | organizationId | 1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c |
 | tools | get_project_details | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
+| tools | get_pull_request_changes | description | 25e794c9870ff28299622b123acb35314c8a17615b8dfe498b0e7384da50f7f6 |
+| tools | get_pull_request_changes | organizationId | 1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c |
+| tools | get_pull_request_changes | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
+| tools | get_pull_request_changes | pullRequestId | faf140fca98b8a45fc0c9dc4461ab9413be8326738129cd5d090465518d984fe |
+| tools | get_pull_request_changes | repositoryId | 25d0eeb6f8988c62240119c72427edb9c77cf55278a72464848f34bab83dc50f |
+| tools | get_pull_request_checks | description | 12d693a36c387c1bb5b7ccd4327f98b569ee4e52350ebc802a40f28a0db7e148 |
+| tools | get_pull_request_checks | organizationId | 1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c |
+| tools | get_pull_request_checks | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
+| tools | get_pull_request_checks | pullRequestId | faf140fca98b8a45fc0c9dc4461ab9413be8326738129cd5d090465518d984fe |
+| tools | get_pull_request_checks | repositoryId | 25d0eeb6f8988c62240119c72427edb9c77cf55278a72464848f34bab83dc50f |
 | tools | get_pull_request_comments | description | a730322602d53fca58d7213d941db6c36fa59c592e34062d1f9539d38aec0308 |
 | tools | get_pull_request_comments | includeDeleted | 7919ed9ff4de588ab7c4b6feb10d4815bea1814188aa1b32f76bdc09034bed6f |
 | tools | get_pull_request_comments | organizationId | 1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c |
@@ -1258,6 +1552,12 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | get_repository_details | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
 | tools | get_repository_details | refFilter | 70bbd90e9678f46b907bb1b82bf4568290fdfa5e78c6c3072f791a624b59a7c8 |
 | tools | get_repository_details | repositoryId | 25d0eeb6f8988c62240119c72427edb9c77cf55278a72464848f34bab83dc50f |
+| tools | get_repository_tree | description | a512abfa58a8cca23783422e448ac4f113dab9a8dafffc02c04fbb85c350d494 |
+| tools | get_repository_tree | depth | 285a8be4c4ff0565bc3aac970484e453b847514e91f708c0c35f7a7b7fc7cefc |
+| tools | get_repository_tree | organizationId | 1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c |
+| tools | get_repository_tree | path | b500aab70836b580aed1ca22c8457812ac9df2390a585230d95cba07d61bc419 |
+| tools | get_repository_tree | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
+| tools | get_repository_tree | repositoryId | 25d0eeb6f8988c62240119c72427edb9c77cf55278a72464848f34bab83dc50f |
 | tools | get_wiki_page | description | 376312ddc80ab4b81fe3641df1d638090060a4a14260c695519c8948aeb3bbb4 |
 | tools | get_wiki_page | organizationId | 1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c |
 | tools | get_wiki_page | pagePath | 0247b6415ece2a73b548d6e9e8e438cbec8d5de27b71ea21b45f1b529ba1ba41 |
@@ -1269,7 +1569,25 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | get_work_item | description | 0e0fae1a4ed60686cbcf47bcaf735a6f3a42ab8caeacecaec3fdb6512de8a2ce |
 | tools | get_work_item | expand | 02aa8717162266539b6ed4ab4edd28b4711e0ee31c3cb9242f5f8499f455e0d6 |
 | tools | get_work_item | workItemId | 2dfe12e41305496ae1a2f82193f4be4c451b791ea81e544805780994d2295114 |
+| tools | list_commits | description | 17a02a08857a2bc2825d528848925b08421d0416f07ab2ababd93705b70dc9d1 |
+| tools | list_commits | branchName | 3d95d6cef02256a9ec37c423eaf4a105a0164b1e90c52b4535fdff76f2eb671b |
+| tools | list_commits | organizationId | 1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c |
+| tools | list_commits | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
+| tools | list_commits | repositoryId | 25d0eeb6f8988c62240119c72427edb9c77cf55278a72464848f34bab83dc50f |
+| tools | list_commits | skip | 641ede42f74f802fd4d53d6671261f5e4f5d166534ee397eeff0d0a00ba1847d |
+| tools | list_commits | top | 7200c05749d915d4b105715923946eb0b29464cb894cc34508bbde920eec17b2 |
 | tools | list_organizations | description | bb0ebe702f2822dd6f75132f5a246022f95812a8112d3bfdbafd06a31c08f234 |
+| tools | list_pipeline_runs | description | 80367a4fe8a202e030d83f87fcac3404c5d55dbe640274ad2830a85d6f0c9159 |
+| tools | list_pipeline_runs | branch | 6e37e38c4571883f041aa516a6f8beee572e760395b13e940b03e0abf64c3b2d |
+| tools | list_pipeline_runs | continuationToken | 29d66d992bc57ae68440820b96c14d7ce3ec83329d6ca094b564f3d770f037e2 |
+| tools | list_pipeline_runs | createdFrom | f62a7c5da24b18692be7f8df3b632c71189259b439270826650e735fff8b5000 |
+| tools | list_pipeline_runs | createdTo | bfe73a58a4e82e3fbdb941e3fb4aacd68a561ea0bc4da104f268bf3de0dda858 |
+| tools | list_pipeline_runs | orderBy | e6106f0caa2c2b1e244c9187a8e8c9cf8109d679efdc2c5e8819ad0566dfd83b |
+| tools | list_pipeline_runs | pipelineId | e8ec00e8196243e52745b7e1bd8ea2b2bfa80bcd088089c0f6ebd468060f0439 |
+| tools | list_pipeline_runs | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
+| tools | list_pipeline_runs | result | 4ccbe2a8ef21fe7e8a2166ccdff89bb627cdb4fbacbc5474926876b1a9817c6a |
+| tools | list_pipeline_runs | state | 5fcb307bc4bc8f2f301b9818ca80c23165a5aae709c047dd8d16abafe7649864 |
+| tools | list_pipeline_runs | top | bce099ff87d98b869f2a8ab9d13d889fd50d8885a3b7b2f25ba03adda3f38211 |
 | tools | list_pipelines | description | 0a8b4b2b0d10e3d28b756b34f02423a29ba0a125bf85b74c25f2fa42e329727c |
 | tools | list_pipelines | orderBy | 111d019c08bf032933f9b508f0a66f36c75cb7bc2a773aaf9186bc2befa8fe1d |
 | tools | list_pipelines | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
@@ -1284,6 +1602,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | list_pull_requests | creatorId | 604bb366130e373e07329cc0a5c704221075c0b929a0fcccce0638cb9923c3d0 |
 | tools | list_pull_requests | organizationId | 1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c |
 | tools | list_pull_requests | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
+| tools | list_pull_requests | pullRequestId | 0bb604b8c71dc6e87d3b8a7573a827b60b2c4a84802ebdba19becb47ddb994f6 |
 | tools | list_pull_requests | repositoryId | 25d0eeb6f8988c62240119c72427edb9c77cf55278a72464848f34bab83dc50f |
 | tools | list_pull_requests | reviewerId | 963cdfdf0fd27b3a230c616e41fce56b1b6e83904bf58bbd4d444cb27f33e2df |
 | tools | list_pull_requests | skip | e6f769171fda17635735e3363f18a234318adc5eb5a057ce450751c93e04a0bd |
@@ -1297,9 +1616,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | list_repositories | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
 | tools | list_wiki_pages | description | 8ae746206428a0798645596459caddfcaf00e65c5d2990c4badf22439ec7f7e0 |
 | tools | list_wiki_pages | organizationId | 1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c |
-| tools | list_wiki_pages | path | f363b4bb2431f300bc26fbc8f14e3f960d3382385cb5d153d0403f361f5d7570 |
 | tools | list_wiki_pages | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
-| tools | list_wiki_pages | recursionLevel | 92a8672252fbe85ad6262eb9838d6855bad3e1f6b4286563190ab08e03918597 |
 | tools | list_wiki_pages | wikiId | 78550a0c4ca8efa5ee86b117ad438fdbd5060fbeed8d645d5dabd48b052eaf3e |
 | tools | list_work_items | description | 2661d95fe94e7baab4c9355f8bbc018769fb50cde6027fcf7e9b560170a77a29 |
 | tools | list_work_items | organizationId | 1e49f115f85bb882bdd2858436d548a50ea0ce592e01b9c1966169fedecd394c |
@@ -1318,6 +1635,13 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | manage_work_item_link | relationType | 70bf840f3959c5b3c45a14f8deff72e379d3a35a9de37857418449a9729b3a38 |
 | tools | manage_work_item_link | sourceWorkItemId | 7933bb03b851cd4b988691b3d7ff7ae85ba8f38084c16702de580d9f710586b3 |
 | tools | manage_work_item_link | targetWorkItemId | d359310764ca599c2392a2fce1afa1adbab33ad60ffa7bd60a798ba9f12c58cf |
+| tools | pipeline_timeline | description | e6eb1e4db750982aac31adc9e8e0cdf5dba8f53c7c61deabfcd2ca53a74d9211 |
+| tools | pipeline_timeline | pipelineId | 1062b58d44d4ea4283dac897077edc284a0d93577a5e994af19158396e66bab3 |
+| tools | pipeline_timeline | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
+| tools | pipeline_timeline | result | d36bb83f0c8396a6dfd1a6e1697c9717bfd682d26c74460458bb7efc321ba338 |
+| tools | pipeline_timeline | runId | c311c160ac577c175533b63b2eaa4edab064a821a7d21d1a426cfb5849e7b77c |
+| tools | pipeline_timeline | state | a51f2004c229182084f81492fab2e6d56a86cd55e2c9e80cbfecc15bcb9da2cb |
+| tools | pipeline_timeline | timelineId | 1199e395248d8b42083c1974a4f3578779b51033ef5b1e777a444ff4a5357666 |
 | tools | search_code | description | 0dad1b913d26c0d415a65ceba2907e23c99ddd312e7a454fb091f4f64aac8018 |
 | tools | search_code | filters | ee03a819e5cf30874c29321481f56f5b7e6249a9eb54b4ace3820b2404b8097c |
 | tools | search_code | includeContent | 4bcd0580d5c54f189903bbbd31d20c78178a316e177aea7e6d892210f4dbdfb9 |
@@ -1351,8 +1675,9 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | trigger_pipeline | stagesToSkip | 087dc6c739a5d75a45a1f7f3402cbff0476ad9bc905faf830eaa468085b7a8c6 |
 | tools | trigger_pipeline | templateParameters | 8bf18a6fc53caa7283d42fdd06d1f2a3b2cfad9817c1b3feb28718701488a66c |
 | tools | trigger_pipeline | variables | fddf63ee4400ea8cc3b8703749653ad2b443dbec0dd44034776c8b0ec4df0dc5 |
-| tools | update_pull_request | description | fe4b56fbdc51848e54a7b2d828a7b74e1401460a4ae6c9b29c9755f91230c889 |
+| tools | update_pull_request | description | 490e5b82efedd99507a84c108b5c8add845279abe957923fc4786844dfaf7a07 |
 | tools | update_pull_request | addReviewers | 74b1dd5c4f24146e3ce1167d0027ffac422a1a30ada0cd0a10f61603dc18f206 |
+| tools | update_pull_request | addTags | 006e11db8a0ca807d88ba939841c14059c6361e03b53cecb416e27c268bd1ed9 |
 | tools | update_pull_request | addWorkItemIds | d560f7bd59700bd8a96094e68ae4a51b7a09950aa589c9b6b0a9a11d1648ebcc |
 | tools | update_pull_request | additionalProperties | 3cb0c1ef84f3e816b840d6f0af54efc881ca99370a6e54b9711e62174d3de4d6 |
 | tools | update_pull_request | description | b3599eafb7dc913c5d6db96af7ff530a47213835847be3f1d251126553885c90 |
@@ -1361,6 +1686,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | update_pull_request | projectId | 2327c42e84ad2de11e684f8f34e0bedc0dcb85eb63e767b3c008698fd4ca8de0 |
 | tools | update_pull_request | pullRequestId | bab06b80be47af9f3c7339eb8d1d383335f8a84a807f11a1f9f48ced70c0ec6f |
 | tools | update_pull_request | removeReviewers | 6c32225e4b816f57b404b295ebd0df1e47fef9306b5f981e9f3f17c8d30cfe49 |
+| tools | update_pull_request | removeTags | a886df1e71e25a6904cd5c248b801c5b31679aa3adfb95e6244b28f99ceb3284 |
 | tools | update_pull_request | removeWorkItemIds | 2b50fded783214a18b76c80e4a7ebdbfcdb93d7b62aa952af9b4984b6c85c820 |
 | tools | update_pull_request | repositoryId | 25d0eeb6f8988c62240119c72427edb9c77cf55278a72464848f34bab83dc50f |
 | tools | update_pull_request | status | 24f8d8a7b8739c72aef4ae32a2285614508c424b43e20096331455825249d20f |

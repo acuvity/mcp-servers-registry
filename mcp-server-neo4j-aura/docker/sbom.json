@@ -2,7 +2,7 @@
   "tools": [
     {
       "name": "create_instance",
-      "hash": "80baa44396ebd55ced1067aedbe903b272b25cf774e4b8522abfffaa28e2c55a",
+      "hash": "cda7c1db08aa20e8065f9cb6edfe5ba9eaa8e5dec2f39c26f7158732779a4ba7",
       "params": [
         {
           "name": "cloud_provider",
@@ -26,7 +26,7 @@
         },
         {
           "name": "source_instance_id",
-          "hash": "85223e99df4b3a9f2a230a517160a7be5c18f56032404876608554944507f8ca"
+          "hash": "f3e0124f0c937e4c98a388af9b5578b60c05488096b130ca4f80ac0a1dcd5d95"
         },
         {
           "name": "tenant_id",
@@ -38,119 +38,53 @@
         },
         {
           "name": "vector_optimized",
-          "hash": "fb3d968e2e38bf593a1a0e1f1fb3371636a54c40e73ce27e76940c150bc82f88"
+          "hash": "3fc45809b575c486bc3816eaf08c01eb575c90b1ed9bb48514debb6e8be74c47"
         }
       ]
     },
     {
       "name": "delete_instance",
-      "hash": "3cba481e98eebe78fd76d167f88545b184dd1b4587c03cf6aa8baaa47bc23c48",
-      "params": [
-        {
-          "name": "instance_id",
-          "hash": "0a25da80c5a471e9002a0867d66b6a2621f0002680dff72739dc2ef142edb2fd"
-        }
-      ]
+      "hash": "97312116025a9aad672154ec5641828d515cf6b1cdb93c0ab8810fb51bdf4adb"
     },
     {
       "name": "get_instance_by_name",
-      "hash": "7a7156771d31815248f8b0b7c3c68fceaab6ee42ebd83de066e2b48c5956915a",
-      "params": [
-        {
-          "name": "name",
-          "hash": "839fdf3f92f8f921b27c78e40b7fdfeef0d50d0939c7fc024c480735c5d9f847"
-        }
-      ]
+      "hash": "a8c21e30e2dfb21c1596aeaf6e7a19f0a2fcc6b8a78174cabb30ce5d38f027d3"
     },
     {
       "name": "get_instance_details",
-      "hash": "d1a9b3bb0746ae9983034431321f4dd6180d1539eb8f863fc7efd0c81c8a0440",
-      "params": [
-        {
-          "name": "instance_ids",
-          "hash": "dbed060556c31b6f6e11bca2713196252d25097e68ccd2213d3ea9781caa859e"
-        }
-      ]
+      "hash": "cfe0a42a37e33393f55e7854e7ba6fb675d878937e02fe24bdc131fe18d91112"
     },
     {
       "name": "get_tenant_details",
-      "hash": "c745e698b82622715bde20ba647ddcac1456a74562752256a1a48526e8bb5574",
-      "params": [
-        {
-          "name": "tenant_id",
-          "hash": "36fe884d113dbf24331cf2f9ab13a5c67cc9b2d48368c6c65d87f9ed790b39dc"
-        }
-      ]
+      "hash": "b8aac80a67aafacbf96819d1be08504b1e7f9de9460ab4e3c4b3cf014c1682a3"
     },
     {
       "name": "list_instances",
-      "hash": "b5655f2bb53e2587f4d42e912b1d2a3665c8fccef971f85a1a11bfb33299f160"
+      "hash": "8e118ef6cac809436f7d9a2fb46b92c66a66a15867f91d847c80f6b0de54a3cd"
     },
     {
       "name": "list_tenants",
-      "hash": "2084e35eb28a90a1441cc16f8a7f26acc1dfacc2420f49057cbf761bfa0374af"
+      "hash": "2a7ff617d01646cd4080734f845d20b4aeee8f879929f3333e353149e9a305e9"
     },
     {
       "name": "pause_instance",
-      "hash": "b201aabbdc3e9a711a967284c466b5a8ccc9fa6309eb315ad0b915fe6ff4a2be",
-      "params": [
-        {
-          "name": "instance_id",
-          "hash": "58e86331f004440a0318f214a1845953886336fd4cad8482b1e1d0aebe999749"
-        }
-      ]
+      "hash": "6deb01357b18992b3027b651661322805baae9f9a064f7cb4855e3c6002f8661"
     },
     {
       "name": "resume_instance",
-      "hash": "35faffdd67b31d1072e17bdf868a59c8e429f46fc9b48bb39735fbbc45c7377c",
-      "params": [
-        {
-          "name": "instance_id",
-          "hash": "16b1860694e1aa570f5c17cf9868ad9d75edd91db8ca8aa5a115e439077a164a"
-        }
-      ]
+      "hash": "34ec063622a3610186af0601775073e77ed11d2025a0b8f5bfb33de709694dce"
     },
     {
       "name": "update_instance_memory",
-      "hash": "0bed1112f1e4df8c5c45be867471ced8048d2b5b106e3d238cb719c28e6509c1",
-      "params": [
-        {
-          "name": "instance_id",
-          "hash": "03223ffbb84e345ef189a829eb628b38c4d8a3db1c4b80cb0dfe3edc79848b7a"
-        },
-        {
-          "name": "memory",
-          "hash": "0825a63f725396cae160b6955d5b5b8eb1cf1bd50b9404b0c1d0cb2b0b9dbb84"
-        }
-      ]
+      "hash": "cc62468bbf38c961a02efb30e62b8983eba7b4f7bb2aa6abe6c4f2cbc4fdbbdc"
     },
     {
       "name": "update_instance_name",
-      "hash": "11861fe155ebba028e5cdf44d3d5a834d9fe5c6b3b76fcc783fcb4cba78ea4e5",
-      "params": [
-        {
-          "name": "instance_id",
-          "hash": "03223ffbb84e345ef189a829eb628b38c4d8a3db1c4b80cb0dfe3edc79848b7a"
-        },
-        {
-          "name": "name",
-          "hash": "5af44d472513df51f72e4a2519e1c9edbcd6d9f83e9b3b8d93efa34c671684b5"
-        }
-      ]
+      "hash": "791bde7b4211e7b15fbcc0aafb99e0db332e88924ed3a2359350e32d103ceb22"
     },
     {
       "name": "update_instance_vector_optimization",
-      "hash": "5160aacb993f5adf974cb1301ff7519234e82bbe0517e497db02f1b3431f0045",
-      "params": [
-        {
-          "name": "instance_id",
-          "hash": "03223ffbb84e345ef189a829eb628b38c4d8a3db1c4b80cb0dfe3edc79848b7a"
-        },
-        {
-          "name": "vector_optimized",
-          "hash": "f1073ddf891723d499365366da70e89d16a6b7b6bd000a9e7c24eb49600e25fd"
-        }
-      ]
+      "hash": "45a6bd0ff6bbb4c77ba821cac8276692efff7a98d53b7775ffe5e8629d94a7d0"
     }
   ],
   "prompts": []

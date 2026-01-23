@@ -13,14 +13,14 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "1.2.0",
+  "version": "2.0.4",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"4322faabc4e150b24a6091ec6e3861c5c1115e737c49b2fd39d26a8fcf1bc951","reason":"Tool names are clear and specific, indicating their purposes well. Most descriptions adequately explain functionality with 2-3 sentences covering what the tool does and when to use it. Parameter descriptions are comprehensive with good examples and context. However, some tools like 'get_transaction_receipt' and 'estimate_gas' have minimal descriptions, and there's some redundancy with similar tools (get_erc20_balance vs get_token_balance_erc20, transfer_erc20 vs transfer_token) that could confuse usage scenarios.","score":"B"},
+  "rating": {"hash":"d44199567f68045e6927728f4df0fcb2374c6ebced9a51e9df7811f273439b02","reason":"Good documentation overall with clear tool names and adequate descriptions that explain functionality and usage context. Parameter descriptions are generally helpful with examples and constraints. However, some descriptions could be more comprehensive - many are single sentences that could benefit from additional context about limitations, use cases, or important details. The toolset demonstrates solid understanding of EVM operations but falls slightly short of excellent documentation standards.","score":"B"},
   "resources": {
-    "tools": 28,
-    "prompts": 7,
-    "resources": 3,
+    "tools": 25,
+    "prompts": 10,
+    "resources": 1,
     "resourcesTemplates": 0
   }
 }

@@ -14,7 +14,7 @@
         },
         {
           "name": "data",
-          "hash": "11f7f679e2f6845cffb1445ee7fd7d5c7f167a29e991d7f50c7609234af52d81"
+          "hash": "560953ef7122474c7f71020eae681facfe6a34666d09a3eab0d8674349bec171"
         },
         {
           "name": "height",
@@ -23,6 +23,10 @@
         {
           "name": "stack",
           "hash": "da57ecb43f91bd7f5d6eec67c321b2e0ae8a8714c3e0719902b2adedfb56e6d4"
+        },
+        {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
         },
         {
           "name": "theme",
@@ -40,7 +44,7 @@
     },
     {
       "name": "generate_bar_chart",
-      "hash": "54908b15980cd5eedf85551873c79cfb332ae31ec5e34e8348676a74b815f856",
+      "hash": "851c20fedf7a1229f4acae0a81ae9aeee4a6f43da18a9bf6b485f28a3ed8fc78",
       "params": [
         {
           "name": "axisXTitle",
@@ -52,7 +56,7 @@
         },
         {
           "name": "data",
-          "hash": "b6f1bfd3a0b5ef1f273fef685cc47d125fe3cdab2ab989407eca2065e336408f"
+          "hash": "9b21ea889e48d9bca8a26dec5067876b5afd5fcde819a571c45bea7e6ca8559c"
         },
         {
           "name": "group",
@@ -65,6 +69,10 @@
         {
           "name": "stack",
           "hash": "d37095b67bd434c0d79727cb8f0c8261dddb092008eeb538ace5a33047c4e000"
+        },
+        {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
         },
         {
           "name": "theme",
@@ -101,6 +109,10 @@
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
         },
         {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
+        },
+        {
           "name": "theme",
           "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
         },
@@ -128,7 +140,7 @@
         },
         {
           "name": "data",
-          "hash": "e3fcfeb0b22c9163bdf59863d78ba7cdaa5c1840506c7c3e532b6a7d3ccddfc6"
+          "hash": "22616ddf122b403692ff8be61a8f4cf22a189ba2cb8649835d7850723a45de3b"
         },
         {
           "name": "group",
@@ -143,6 +155,10 @@
           "hash": "a3c00e77509d640c44a25a688a7a979e5806b9437976686bc59a26d2e0985a12"
         },
         {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
+        },
+        {
           "name": "theme",
           "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
         },
@@ -153,6 +169,28 @@
         {
           "name": "width",
           "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
+      "name": "generate_district_map",
+      "hash": "15a409da16b9b29e64dd73edc58ca6f58690d5c610aeec3e810c0aa24f1c8c48",
+      "params": [
+        {
+          "name": "data",
+          "hash": "028cf4c76450b2eea6cbb1fbdda956acdfa5aaf37ed28886cd0658fa00a43c79"
+        },
+        {
+          "name": "height",
+          "hash": "c9a0d8d3ee4f41be74633dbda07bbf3e02400df6c867a2d6efdbbfeffb611393"
+        },
+        {
+          "name": "title",
+          "hash": "9123a63a370db83a3be5d6f523acbdabf6a95dae5a0b613404b4c39920f37492"
+        },
+        {
+          "name": "width",
+          "hash": "0b25dfadd07901720b3faca28648134e5dadf09281a0118ffd8e26ae6126fb23"
         }
       ]
     },
@@ -177,6 +215,10 @@
           "hash": "cb4d9c990dccaa254b9661138fb7392d301dd6ad5a0f4cb1a39b6f498eee9c98"
         },
         {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
+        },
+        {
           "name": "theme",
           "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
         },
@@ -196,11 +238,15 @@
       "params": [
         {
           "name": "data",
-          "hash": "1671c924f3b8dc62b4fe72aefe34b1fa65d6258a04ccf440dbd075b64c898aa6"
+          "hash": "b7c4bf8e4d66ccd7ceff5644e6901db8122f033d76903c7ebe035e82b920f0cb"
         },
         {
           "name": "height",
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
         },
         {
           "name": "theme",
@@ -225,6 +271,10 @@
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
         },
         {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
+        },
+        {
           "name": "theme",
           "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
         },
@@ -245,6 +295,10 @@
         {
           "name": "height",
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
         },
         {
           "name": "theme",
@@ -274,15 +328,19 @@
         },
         {
           "name": "binNumber",
-          "hash": "aed7fd9c76b22c81f123e8354e8a1fab5474cf785057e597c82846271da1ed68"
+          "hash": "3829b0f436a69e0e7d19aefc53baf2b59ba1d9764a7059294862db7fcfd2a697"
         },
         {
           "name": "data",
-          "hash": "35385c4971063de47636b64aef28b82403c3d801c27f2b668d5f895577df95f3"
+          "hash": "481a8195d88797be2220c8663c542180057b23e3883780bdfb60997c6f4e2ed0"
         },
         {
           "name": "height",
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
         },
         {
           "name": "theme",
@@ -312,15 +370,15 @@
         },
         {
           "name": "data",
-          "hash": "336d1ef1d3875e1bde3df2f0314264aaa6ec864c307cdbfe853b1c2b905861b2"
+          "hash": "12bca6ce159aa9821ba1751cc2c9bf40f5ce873684f614c42a18fb2d6fdaaa3a"
         },
         {
           "name": "height",
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
         },
         {
-          "name": "stack",
-          "hash": "94ebe7342735fc11d93fead5b58d420f17706a780cfd3774c1d7169a9c1361af"
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
         },
         {
           "name": "theme",
@@ -353,6 +411,10 @@
           "hash": "45442be6c731955de95c299b160029b7b02179bd90f6c204f3295a375b3bd7b4"
         },
         {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
+        },
+        {
           "name": "theme",
           "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
         },
@@ -372,11 +434,15 @@
       "params": [
         {
           "name": "data",
-          "hash": "cca0ddf655078bcf4928cb016d35454fa6c0dcfe46d04490d03add67a9e8879a"
+          "hash": "0d86a00c89e2d5a1f6d15d035c521a5f6c1bc4d5fbfd99a8e033e35c3f092c13"
         },
         {
           "name": "height",
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
         },
         {
           "name": "theme",
@@ -401,6 +467,10 @@
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
         },
         {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
+        },
+        {
           "name": "theme",
           "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
         },
@@ -416,7 +486,7 @@
       "params": [
         {
           "name": "data",
-          "hash": "ef239d04adec0211c07d0fec477515ac5786c2399c5a645a3abc10b251a061ec"
+          "hash": "7db2731ac872d8863e4f5d8846a8f8e330c70981a45d85686c906115d09e8077"
         },
         {
           "name": "height",
@@ -425,6 +495,10 @@
         {
           "name": "orient",
           "hash": "28e240ab627fc10bcb0890ce59af27af9c275772c92d636b13b3c9a8d0c14bb1"
+        },
+        {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
         },
         {
           "name": "theme",
@@ -437,12 +511,34 @@
       ]
     },
     {
+      "name": "generate_path_map",
+      "hash": "8d4be394b0bd92144adb04a29538b63182b7089e284efcd0b152ebaf3e2146f1",
+      "params": [
+        {
+          "name": "data",
+          "hash": "8a8d8fef1bd66677372a9a5477e1c3247a04e33f8bbbac6cac57b76ce8dfeec2"
+        },
+        {
+          "name": "height",
+          "hash": "c9a0d8d3ee4f41be74633dbda07bbf3e02400df6c867a2d6efdbbfeffb611393"
+        },
+        {
+          "name": "title",
+          "hash": "9123a63a370db83a3be5d6f523acbdabf6a95dae5a0b613404b4c39920f37492"
+        },
+        {
+          "name": "width",
+          "hash": "0b25dfadd07901720b3faca28648134e5dadf09281a0118ffd8e26ae6126fb23"
+        }
+      ]
+    },
+    {
       "name": "generate_pie_chart",
       "hash": "2dc22593f3f742f01a0862cca0c664c9021840501d3f83b27f73f40690a742c6",
       "params": [
         {
           "name": "data",
-          "hash": "ef5c746f17b2bd8a099aa0d34fe884dd7039bb83f1d96aefadd8bc709d5431e4"
+          "hash": "2a7e1329057fc0f8e60fe13e9791613f62dc96ff88ebac75c317e1099235157e"
         },
         {
           "name": "height",
@@ -451,6 +547,10 @@
         {
           "name": "innerRadius",
           "hash": "1c0986959a56de7933a38d7d8781a68e883cc6b31b1fa82d74a82c5ba07ff4c5"
+        },
+        {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
         },
         {
           "name": "theme",
@@ -467,16 +567,46 @@
       ]
     },
     {
+      "name": "generate_pin_map",
+      "hash": "1a011a30084f03310c49cb900d22d0dfb2d72ea89d00481fafd12d32e432b721",
+      "params": [
+        {
+          "name": "data",
+          "hash": "8f72b1ca3af36780c951edbfeb0988096079b687d77f4f9113d0e9ab103fa34a"
+        },
+        {
+          "name": "height",
+          "hash": "c9a0d8d3ee4f41be74633dbda07bbf3e02400df6c867a2d6efdbbfeffb611393"
+        },
+        {
+          "name": "markerPopup",
+          "hash": "d72ae5658cea39e133c3fc7f7df07101a5e84d75e10d1992a92454f45936a099"
+        },
+        {
+          "name": "title",
+          "hash": "9123a63a370db83a3be5d6f523acbdabf6a95dae5a0b613404b4c39920f37492"
+        },
+        {
+          "name": "width",
+          "hash": "0b25dfadd07901720b3faca28648134e5dadf09281a0118ffd8e26ae6126fb23"
+        }
+      ]
+    },
+    {
       "name": "generate_radar_chart",
       "hash": "eadcd1d7352898155e8664e2c4ab360f4030c7c2f4f68eff86bbd984c4a891ab",
       "params": [
         {
           "name": "data",
-          "hash": "56d2c3632be9ccd0c97126c9fde5ca4869a3de8368178a7f8832d213ac259f26"
+          "hash": "c1ad898fe9e30a782fcf718e73813fde2142c899b4b628df71502d08b1b82018"
         },
         {
           "name": "height",
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
         },
         {
           "name": "theme",
@@ -509,6 +639,10 @@
           "hash": "a5452b2f630749f107e6e32924971733c463ec2a8ecec5a8c21e7b4a36469c8b"
         },
         {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
+        },
+        {
           "name": "theme",
           "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
         },
@@ -536,11 +670,15 @@
         },
         {
           "name": "data",
-          "hash": "fb0e6070681773230652c9023313d6abe8653f710c54ddea6db7d4af7408eab1"
+          "hash": "14e28fc132d7ee496b2b35f34b1a1e3411b8b19012984780ac09fc32c93ef3f8"
         },
         {
           "name": "height",
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
         },
         {
           "name": "theme",
@@ -562,11 +700,15 @@
       "params": [
         {
           "name": "data",
-          "hash": "46418098a4acbdde40f7809faae1b5c912d4834c99f098f8d6fa57eb1876a0d1"
+          "hash": "7e769732039e3e42e9acbda7e53191f962bd5df767c6ee07c8b288189319eece"
         },
         {
           "name": "height",
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
         },
         {
           "name": "theme",
@@ -593,6 +735,10 @@
         {
           "name": "height",
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
         },
         {
           "name": "theme",
@@ -622,11 +768,53 @@
         },
         {
           "name": "data",
-          "hash": "ad7ad5687541d6b89fab722f074db1ea69a13e1b0f670d0b0ca786ace7fbd8bc"
+          "hash": "379192e6341eaf3bbb6052bba2fbc3840c2e4e316f1a2eb96ca1a2f805ecc580"
         },
         {
           "name": "height",
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
+        },
+        {
+          "name": "theme",
+          "hash": "d294ce9e6fbe864837ac20965f6041140f5e728ef7a3860e5ff519ef72a55985"
+        },
+        {
+          "name": "title",
+          "hash": "dd3eec43d8ec9882fc9dd2273819b46df6a92f014b2f991512c340f48ce9632a"
+        },
+        {
+          "name": "width",
+          "hash": "7db2100bcdfa22714c5e28eecc0b03a4c809e3e69a5ca3ed77bde0a5d8190d59"
+        }
+      ]
+    },
+    {
+      "name": "generate_waterfall_chart",
+      "hash": "3856b83c61c30371206c511cec560c114903436696fe9515ebb173d2a1e0353c",
+      "params": [
+        {
+          "name": "axisXTitle",
+          "hash": "29da00b2ca33e5c509c776bee355032ab6e3591cb838264f0cec76ba77ff938a"
+        },
+        {
+          "name": "axisYTitle",
+          "hash": "66928c97bde9f9332a0dcda7c37eda3658f3a3f3949095ca4a0887dec2cbbf77"
+        },
+        {
+          "name": "data",
+          "hash": "85d0c7ea4d4b05ad26d9dbb3cf3d1f2dd8cda5f5a78e2e6a500bdb54bf683965"
+        },
+        {
+          "name": "height",
+          "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
         },
         {
           "name": "theme",
@@ -648,11 +836,15 @@
       "params": [
         {
           "name": "data",
-          "hash": "96cefdd74b2a99e0ea12f31dd504b58d37f9111d393feb6e25642a1cfc0db0d4"
+          "hash": "9c123f82a7bd569c3c1ef20a04f96c33c9cf7021b4ca6f1d133d1b95be2c9731"
         },
         {
           "name": "height",
           "hash": "8bfd1882554fd2adddbd6a5b5cedde14eaacddcf97464db773fe7c5d38d8d338"
+        },
+        {
+          "name": "style",
+          "hash": "e869f017a053f39667a120b3c32b2be93cc0dbe03f0eac400bc56ce9295fbf2e"
         },
         {
           "name": "theme",

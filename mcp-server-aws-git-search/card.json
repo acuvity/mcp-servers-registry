@@ -13,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "1.0.3",
+  "version": "1.0.12",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"b6dbd4226194ea77af07eeecceaffa87780a2f9e497e6db8dbf896d7bc4d4c00","reason":"Good overall documentation with comprehensive descriptions that explain functionality, context, and implementation details. Tool names are clear and specific. Parameter documentation is thorough with helpful defaults and constraints. Minor deduction for some verbose descriptions that could be more concise, and a few parameters could benefit from clearer explanations of their practical impact.","score":"B"},
+  "rating": {"hash":"1ae89d0f050460b3649a8ffc8f8fb9811041005fed739f73b3c537ea22691776","reason":"The toolset demonstrates good documentation quality overall. Tool names are clear and descriptive, indicating their purpose well (create_research_repository, search_research_repository, etc.). Descriptions are comprehensive, providing 2-4 sentences that explain functionality, usage context, and key details like the use of FAISS indexing and Amazon Bedrock embeddings. Parameter documentation is thorough with clear descriptions, appropriate defaults, and helpful examples. Minor areas for improvement include some redundancy in descriptions and the access_file tool could benefit from clearer organization of its multi-purpose functionality, but these don't significantly impact usability.","score":"B"},
   "resources": {
     "tools": 5,
     "prompts": 0,

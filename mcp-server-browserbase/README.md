@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -19,12 +19,12 @@
 
 
 # What is mcp-server-browserbase?
-[![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-browserbase/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-browserbase/1.0.5?logo=docker&logoColor=fff&label=1.0.5)](https://hub.docker.com/r/acuvity/mcp-server-browserbase)
-[![PyPI](https://img.shields.io/badge/1.0.5-3775A9?logo=pypi&logoColor=fff&label=@browserbasehq/mcp)](https://github.com/browserbase/mcp-server-browserbase)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-browserbase/2.1.0?logo=docker&logoColor=fff&label=2.1.0)](https://hub.docker.com/r/acuvity/mcp-server-browserbase)
+[![PyPI](https://img.shields.io/badge/2.1.0-3775A9?logo=pypi&logoColor=fff&label=@browserbasehq/mcp)](https://github.com/browserbase/mcp-server-browserbase)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-browserbase/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-browserbase&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22BROWSERBASE_API_KEY%22%2C%22-e%22%2C%22BROWSERBASE_PROJECT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-browserbase%3A1.0.5%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-browserbase&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22BROWSERBASE_API_KEY%22%2C%22-e%22%2C%22BROWSERBASE_PROJECT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-browserbase%3A2.1.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Automate browser interactions in the cloud (e.g. web navigation, data extraction, form filling).
 
@@ -43,69 +43,70 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
 The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-browserbase/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
-### 🔒 Resource Integrity
+#### 🔒 Resource Integrity
 
 **Mitigates MCP Rug Pull Attacks**
 
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Guardrails
+#### 🛡️ Guardrails
 
-#### Covert Instruction Detection
+##### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-#### Sensitive Pattern Detection
+##### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-#### Shadowing Pattern Detection
+##### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-#### Schema Misuse Prevention
+##### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-#### Cross-Origin Tool Access
+##### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-#### Secrets Redaction
+##### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
@@ -114,7 +115,7 @@ Automatically masks sensitive values so they never appear in logs or responses.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
-### Enable guardrails
+#### Enable guardrails
 
 To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
@@ -129,7 +130,7 @@ To activate guardrails in your Docker containers, define the `GUARDRAILS` enviro
 
 Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
 
-## 🔒 Basic Authentication via Shared Secret
+#### 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
@@ -143,10 +144,8 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 > While basic auth will protect against unauthorized access, you should use it only in controlled environment,
 > rotate credentials frequently and **always** use TLS.
 
-</details>
-
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # 📦 How to Install
@@ -174,7 +173,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-browserbase&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22BROWSERBASE_API_KEY%22%2C%22-e%22%2C%22BROWSERBASE_PROJECT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-browserbase%3A1.0.5%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-browserbase&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22BROWSERBASE_API_KEY%22%2C%22-e%22%2C%22BROWSERBASE_PROJECT_ID%22%2C%22docker.io%2Facuvity%2Fmcp-server-browserbase%3A2.1.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -199,7 +198,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "BROWSERBASE_API_KEY",
           "-e",
           "BROWSERBASE_PROJECT_ID",
-          "docker.io/acuvity/mcp-server-browserbase:1.0.5"
+          "docker.io/acuvity/mcp-server-browserbase:2.1.0"
         ]
       }
     }
@@ -229,7 +228,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "BROWSERBASE_API_KEY",
         "-e",
         "BROWSERBASE_PROJECT_ID",
-        "docker.io/acuvity/mcp-server-browserbase:1.0.5"
+        "docker.io/acuvity/mcp-server-browserbase:2.1.0"
       ]
     }
   }
@@ -263,7 +262,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "BROWSERBASE_API_KEY",
         "-e",
         "BROWSERBASE_PROJECT_ID",
-        "docker.io/acuvity/mcp-server-browserbase:1.0.5"
+        "docker.io/acuvity/mcp-server-browserbase:2.1.0"
       ]
     }
   }
@@ -299,7 +298,7 @@ Add the following JSON block to your mcp configuration file:
         "BROWSERBASE_API_KEY",
         "-e",
         "BROWSERBASE_PROJECT_ID",
-        "docker.io/acuvity/mcp-server-browserbase:1.0.5"
+        "docker.io/acuvity/mcp-server-browserbase:2.1.0"
       ]
     }
   }
@@ -333,7 +332,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "BROWSERBASE_API_KEY",
         "-e",
         "BROWSERBASE_PROJECT_ID",
-        "docker.io/acuvity/mcp-server-browserbase:1.0.5"
+        "docker.io/acuvity/mcp-server-browserbase:2.1.0"
       ]
     }
   }
@@ -353,7 +352,7 @@ async with MCPServerStdio(
     params={
         "env": {"BROWSERBASE_API_KEY":"TO_BE_SET","BROWSERBASE_PROJECT_ID":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","BROWSERBASE_API_KEY","-e","BROWSERBASE_PROJECT_ID","docker.io/acuvity/mcp-server-browserbase:1.0.5"]
+        "args": ["run","-i","--rm","--read-only","-e","BROWSERBASE_API_KEY","-e","BROWSERBASE_PROJECT_ID","docker.io/acuvity/mcp-server-browserbase:2.1.0"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -382,7 +381,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e BROWSERBASE_API_KEY -e BROWSERBASE_PROJECT_ID docker.io/acuvity/mcp-server-browserbase:1.0.5`
+- arguments: `run -i --rm --read-only -e BROWSERBASE_API_KEY -e BROWSERBASE_PROJECT_ID docker.io/acuvity/mcp-server-browserbase:2.1.0`
 
 </details>
 
@@ -392,7 +391,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e BROWSERBASE_API_KEY -e BROWSERBASE_PROJECT_ID docker.io/acuvity/mcp-server-browserbase:1.0.5
+docker run -it -p 8000:8000 --rm --read-only -e BROWSERBASE_API_KEY -e BROWSERBASE_PROJECT_ID docker.io/acuvity/mcp-server-browserbase:2.1.0
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -496,60 +495,30 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (19)
+## 🧰 Tools (17)
 <details>
-<summary>browserbase_wait</summary>
+<summary>multi_browserbase_stagehand_session_create</summary>
 
 **Description**:
 
 ```
-Wait for a specified time in seconds
+Create parallel browser session for multi-session workflows. Use this when you need multiple browser instances running simultaneously: parallel data scraping, concurrent automation, A/B testing, multiple user accounts, cross-site operations, batch processing, or any task requiring more than one browser. Creates an isolated browser session with independent cookies, authentication, and state. Always pair with session-specific tools (those ending with '_session'). Perfect for scaling automation tasks that require multiple browsers working in parallel.
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| time | number | Time in seconds | Yes
+| browserbaseSessionID | string | Resume an existing Browserbase session by providing its session ID. Use this to continue work in a previously created browser session that may have been paused or disconnected. | No
+| name | string | Highly recommended: Descriptive name for tracking multiple sessions (e.g. 'amazon-scraper', 'user-login-flow', 'checkout-test-1'). Makes debugging and session management much easier! | No
 </details>
 <details>
-<summary>browserbase_close</summary>
+<summary>multi_browserbase_stagehand_session_list</summary>
 
 **Description**:
 
 ```
-Close the current page...
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| random_string | string | Dummy parameter | No
-</details>
-<details>
-<summary>browserbase_resize</summary>
-
-**Description**:
-
-```
-Resize window...
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| height | number | not set | Yes
-| width | number | not set | Yes
-</details>
-<details>
-<summary>browserbase_snapshot</summary>
-
-**Description**:
-
-```
-Capture a new accessibility snapshot of the current page state. Use this if the page has changed to ensure subsequent actions use an up-to-date page representation.
+ONLY WORKS WITH MULTI-SESSION TOOLS! Track all parallel sessions: Critical tool for multi-session management! Shows all active browser sessions with their IDs, names, ages, and Browserbase session IDs. Use this frequently to monitor your parallel automation workflows, verify sessions are running, and get session IDs for session-specific tools. Essential for debugging and resource management in complex multi-browser scenarios.
 ```
 
 **Parameter**:
@@ -558,175 +527,108 @@ Capture a new accessibility snapshot of the current page state. Use this if the 
 |-----------|------|-------------|-----------|
 </details>
 <details>
-<summary>browserbase_click</summary>
+<summary>multi_browserbase_stagehand_session_close</summary>
 
 **Description**:
 
 ```
-Perform click on a web page using ref
+Cleanup parallel session for multi-session workflows. Properly terminates a browser session, ends the Browserbase session, and frees cloud resources. Always use this when finished with a session to avoid resource waste and billing charges. Critical for responsible multi-session automation - each unclosed session continues consuming resources!
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| element | string | Human-readable element description | Yes
-| ref | string | Exact target element reference from the page snapshot | Yes
+| sessionId | string | Exact session ID to close (get from 'multi_browserbase_stagehand_session_list'). Double-check this ID - once closed, the session cannot be recovered! | Yes
 </details>
 <details>
-<summary>browserbase_drag</summary>
+<summary>multi_browserbase_stagehand_navigate_session</summary>
 
 **Description**:
 
 ```
-Perform drag and drop between two elements using ref.
+Navigate to a URL in the browser. Only use this tool with URLs you're confident will work and stay up to date. Otherwise, use https://google.com as the starting point (for a specific session)
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| endElement | string | Target element description | Yes
-| endRef | string | Exact target element reference from the page snapshot | Yes
-| startElement | string | Source element description | Yes
-| startRef | string | Exact source element reference from the page snapshot | Yes
-</details>
-<details>
-<summary>browserbase_hover</summary>
-
-**Description**:
-
-```
-Hover over element on page using ref.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| element | string | Human-readable element description | Yes
-| ref | string | Exact target element reference from the page snapshot | Yes
-</details>
-<details>
-<summary>browserbase_type</summary>
-
-**Description**:
-
-```
-Type text into editable element using ref.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| element | string | Human-readable element description | Yes
-| ref | string | Exact target element reference from the page snapshot | Yes
-| slowly | boolean | Whether to type one character at a time. | No
-| submit | boolean | Whether to submit entered text (press Enter after) | No
-| text | string | Text to type into the element | Yes
-</details>
-<details>
-<summary>browserbase_select_option</summary>
-
-**Description**:
-
-```
-Select an option in a dropdown using ref.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| element | string | Human-readable element description | Yes
-| ref | string | Exact target element reference from the page snapshot | Yes
-| values | array | Array of values to select in the dropdown. | Yes
-</details>
-<details>
-<summary>browserbase_take_screenshot</summary>
-
-**Description**:
-
-```
-Take a screenshot of the current page or element using ref.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| element | string | Human-readable element description. | No
-| raw | boolean | Whether to return without compression (PNG). Default is false (JPEG). | No
-| ref | string | Exact target element reference from the page snapshot. | No
-</details>
-<details>
-<summary>browserbase_press_key</summary>
-
-**Description**:
-
-```
-Press a key on the keyboard
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| key | string | Name of the key to press or a character to generate, such as `ArrowLeft` or `a` | Yes
-</details>
-<details>
-<summary>browserbase_get_text</summary>
-
-**Description**:
-
-```
-Extract text content from the page or a specific element.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| selector | string | Optional CSS selector to get text from. If omitted, gets text from the whole body. | No
-| sessionId | string | not set | No
-</details>
-<details>
-<summary>browserbase_navigate</summary>
-
-**Description**:
-
-```
-Navigate to a URL
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
+| sessionId | string | The session ID to use | Yes
 | url | string | The URL to navigate to | Yes
 </details>
 <details>
-<summary>browserbase_navigate_back</summary>
+<summary>multi_browserbase_stagehand_act_session</summary>
 
 **Description**:
 
 ```
-Go back to the previous page
+Performs an action on a web page element. Act actions should be as atomic and specific as possible, i.e. "Click the sign in button" or "Type 'hello' into the search input". AVOID actions that are more than one step, i.e. "Order me pizza" or "Send an email to Paul asking him to call me". (for a specific session)
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| action | string | The action to perform. Should be as atomic and specific as possible, i.e. 'Click the sign in button' or 'Type 'hello' into the search input'. AVOID actions that are more than one step, i.e. 'Order me pizza' or 'Send an email to Paul asking him to call me'. The instruction should be just as specific as possible, and have a strong correlation to the text on the page. If unsure, use observe before using act. | Yes
+| sessionId | string | The session ID to use | Yes
+| variables | object | Variables used in the action template. ONLY use variables if you're dealing with sensitive data or dynamic content. For example, if you're logging in to a website, you can use a variable for the password. When using variables, you MUST have the variable key in the action template. For example: {"action": "Fill in the password", "variables": {"password": "123456"}} | No
 </details>
 <details>
-<summary>browserbase_navigate_forward</summary>
+<summary>multi_browserbase_stagehand_extract_session</summary>
 
 **Description**:
 
 ```
-Go forward to the next page
+Extracts structured information and text content from the current web page based on specific instructions and a defined schema. This tool is ideal for scraping data, gathering information, or pulling specific content from web pages. Use this tool when you need to get text content, data, or information from a page rather than interacting with elements. For interactive elements like buttons, forms, or clickable items, use the observe tool instead. The extraction works best when you provide clear, specific instructions about what to extract and a well-defined JSON schema for the expected output format. This ensures the extracted data is properly structured and usable. (for a specific session)
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| instruction | string | The specific instruction for what information to extract from the current page. Be as detailed and specific as possible about what you want to extract. For example: 'Extract all product names and prices from the listing page' or 'Get the article title, author, and publication date from this blog post'. The more specific your instruction, the better the extraction results will be. Avoid vague instructions like 'get everything' or 'extract the data'. Instead, be explicit about the exact elements, text, or information you need. | Yes
+| sessionId | string | The session ID to use | Yes
+</details>
+<details>
+<summary>multi_browserbase_stagehand_observe_session</summary>
+
+**Description**:
+
+```
+Observes and identifies specific interactive elements on the current web page that can be used for subsequent actions. This tool is specifically designed for finding actionable (interactable) elements such as buttons, links, form fields, dropdowns, checkboxes, and other UI components that you can interact with. Use this tool when you need to locate elements before performing actions with the act tool. DO NOT use this tool for extracting text content or data - use the extract tool instead for that purpose. The observe tool returns detailed information about the identified elements including their properties, location, and interaction capabilities. This information can then be used to craft precise actions. The more specific your observation instruction, the more accurate the element identification will be. Think of this as your 'eyes' on the page to find exactly what you need to interact with. (for a specific session)
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| instruction | string | Detailed instruction for what specific elements or components to observe on the web page. This instruction must be extremely specific and descriptive. For example: 'Find the red login button in the top right corner', 'Locate the search input field with placeholder text', or 'Identify all clickable product cards on the page'. The more specific and detailed your instruction, the better the observation results will be. Avoid generic instructions like 'find buttons' or 'see elements'. Instead, describe the visual characteristics, location, text content, or functionality of the elements you want to observe. This tool is designed to help you identify interactive elements that you can later use with the act tool for performing actions like clicking, typing, or form submission. | Yes
+| returnAction | boolean | Whether to return the action to perform on the element. If true, the action will be returned as a string. If false, the action will not be returned. | No
+| sessionId | string | The session ID to use | Yes
+</details>
+<details>
+<summary>multi_browserbase_stagehand_get_url_session</summary>
+
+**Description**:
+
+```
+Gets the current URL of the browser page. Returns the complete URL including protocol, domain, path, and any query parameters or fragments. (for a specific session)
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| sessionId | string | The session ID to use | Yes
+</details>
+<details>
+<summary>browserbase_stagehand_get_all_urls</summary>
+
+**Description**:
+
+```
+Gets the current URLs of all active browser sessions. Returns a mapping of session IDs to their current URLs.
 ```
 
 **Parameter**:
@@ -740,7 +642,7 @@ Go forward to the next page
 **Description**:
 
 ```
-Create or reuse a cloud browser session using Browserbase. Updates the active session.
+Create or reuse a single cloud browser session using Browserbase with fully initialized Stagehand. WARNING: This tool is for SINGLE browser workflows only. If you need multiple browser sessions running simultaneously (parallel scraping, A/B testing, multiple accounts), use 'multi_browserbase_stagehand_session_create' instead. This creates one browser session with all configuration flags (proxies, stealth, viewport, cookies, etc.) and initializes Stagehand to work with that session. Updates the active session.
 ```
 
 **Parameter**:
@@ -755,45 +657,132 @@ Create or reuse a cloud browser session using Browserbase. Updates the active se
 **Description**:
 
 ```
-Closes the current Browserbase session by disconnecting the Playwright browser. This will terminate the recording for the session.
+Closes the current Browserbase session by properly shutting down the Stagehand instance, which handles browser cleanup and terminates the session recording.
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| random_string | string | Dummy parameter to ensure consistent tool call format. | No
 </details>
 <details>
-<summary>browserbase_context_create</summary>
+<summary>browserbase_stagehand_navigate</summary>
 
 **Description**:
 
 ```
-Create a new Browserbase context for reusing cookies, authentication, and cached data across browser sessions
+Navigate to a URL in the browser. Only use this tool with URLs you're confident will work and stay up to date. Otherwise, use https://google.com as the starting point
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| name | string | Optional friendly name to reference this context later (otherwise, you'll need to use the returned ID) | No
+| url | string | The URL to navigate to | Yes
 </details>
 <details>
-<summary>browserbase_context_delete</summary>
+<summary>browserbase_stagehand_act</summary>
 
 **Description**:
 
 ```
-Delete a Browserbase context when you no longer need it
+Performs an action on a web page element. Act actions should be as atomic and specific as possible, i.e. "Click the sign in button" or "Type 'hello' into the search input". AVOID actions that are more than one step, i.e. "Order me pizza" or "Send an email to Paul asking him to call me".
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| contextId | string | The context ID to delete (required if name not provided) | No
-| name | string | The friendly name of the context to delete (required if contextId not provided) | No
+| action | string | The action to perform. Should be as atomic and specific as possible, i.e. 'Click the sign in button' or 'Type 'hello' into the search input'. AVOID actions that are more than one step, i.e. 'Order me pizza' or 'Send an email to Paul asking him to call me'. The instruction should be just as specific as possible, and have a strong correlation to the text on the page. If unsure, use observe before using act. | Yes
+| variables | object | Variables used in the action template. ONLY use variables if you're dealing with sensitive data or dynamic content. For example, if you're logging in to a website, you can use a variable for the password. When using variables, you MUST have the variable key in the action template. For example: {"action": "Fill in the password", "variables": {"password": "123456"}} | No
+</details>
+<details>
+<summary>browserbase_stagehand_extract</summary>
+
+**Description**:
+
+```
+Extracts structured information and text content from the current web page based on specific instructions and a defined schema. This tool is ideal for scraping data, gathering information, or pulling specific content from web pages. Use this tool when you need to get text content, data, or information from a page rather than interacting with elements. For interactive elements like buttons, forms, or clickable items, use the observe tool instead. The extraction works best when you provide clear, specific instructions about what to extract and a well-defined JSON schema for the expected output format. This ensures the extracted data is properly structured and usable.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| instruction | string | The specific instruction for what information to extract from the current page. Be as detailed and specific as possible about what you want to extract. For example: 'Extract all product names and prices from the listing page' or 'Get the article title, author, and publication date from this blog post'. The more specific your instruction, the better the extraction results will be. Avoid vague instructions like 'get everything' or 'extract the data'. Instead, be explicit about the exact elements, text, or information you need. | Yes
+</details>
+<details>
+<summary>browserbase_stagehand_observe</summary>
+
+**Description**:
+
+```
+Observes and identifies specific interactive elements on the current web page that can be used for subsequent actions. This tool is specifically designed for finding actionable (interactable) elements such as buttons, links, form fields, dropdowns, checkboxes, and other UI components that you can interact with. Use this tool when you need to locate elements before performing actions with the act tool. DO NOT use this tool for extracting text content or data - use the extract tool instead for that purpose. The observe tool returns detailed information about the identified elements including their properties, location, and interaction capabilities. This information can then be used to craft precise actions. The more specific your observation instruction, the more accurate the element identification will be. Think of this as your 'eyes' on the page to find exactly what you need to interact with.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| instruction | string | Detailed instruction for what specific elements or components to observe on the web page. This instruction must be extremely specific and descriptive. For example: 'Find the red login button in the top right corner', 'Locate the search input field with placeholder text', or 'Identify all clickable product cards on the page'. The more specific and detailed your instruction, the better the observation results will be. Avoid generic instructions like 'find buttons' or 'see elements'. Instead, describe the visual characteristics, location, text content, or functionality of the elements you want to observe. This tool is designed to help you identify interactive elements that you can later use with the act tool for performing actions like clicking, typing, or form submission. | Yes
+| returnAction | boolean | Whether to return the action to perform on the element. If true, the action will be returned as a string. If false, the action will not be returned. | No
+</details>
+<details>
+<summary>browserbase_screenshot</summary>
+
+**Description**:
+
+```
+Takes a screenshot of the current page. Use this tool to learn where you are on the page when controlling the browser with Stagehand. Only use this tool when the other tools are not sufficient to get the information you need.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| name | string | The name of the screenshot | No
+</details>
+<details>
+<summary>browserbase_stagehand_get_url</summary>
+
+**Description**:
+
+```
+Gets the current URL of the browser page. Returns the complete URL including protocol, domain, path, and any query parameters or fragments.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+</details>
+
+## 📝 Prompts (3)
+<details>
+<summary>browserbase_system</summary>
+
+**Description**:
+
+```
+System prompt defining the scope and capabilities of Browserbase MCP server
+```
+<details>
+<summary>multi_session_guidance</summary>
+
+**Description**:
+
+```
+Guidance on when and how to use multi-session browser automation
+```
+<details>
+<summary>stagehand_usage</summary>
+
+**Description**:
+
+```
+Guidelines on how to use Stagehand's act, observe, and extract utilities effectively
+```
+
 </details>
 
 
@@ -803,54 +792,48 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
-| tools | browserbase_click | description | 23eabf817ed05424ae6a9283669e721356f0b04f708ca7d5d1f0a22fec953b4b |
-| tools | browserbase_click | element | 1694eb3252cb80b50f80fb3fb83ea61f19b1d85a30ebcc301029e13e9db6fd14 |
-| tools | browserbase_click | ref | e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b |
-| tools | browserbase_close | description | 12be13a02fb51d37444cf489f570063e5e15f5757adf279093397544d31f3de2 |
-| tools | browserbase_close | random_string | 518053fd1ac5b466071723b8a3088b525ba8f5f845cbdb4ef1e1a2963829c83c |
-| tools | browserbase_context_create | description | 14ad364f58dac27c45d5d27fdf3ce50f45c3b39493dca538dfe5b0b8fcdcfae1 |
-| tools | browserbase_context_create | name | e44527d80c80f069d86e60c41de4153bae112b0eefeb71932e04286a32363cfe |
-| tools | browserbase_context_delete | description | 9797327409bec66e012ed5d0e89632be545ef59d3b122a76de8a810be6c92900 |
-| tools | browserbase_context_delete | contextId | 4487437e618ff87bf006c67433745e99ec6c26920b615645197427404fa43f97 |
-| tools | browserbase_context_delete | name | 2cc1b27e3fcccf0515e2f94669bb1c2bd3980f4b75bcaff08143b686bcae3126 |
-| tools | browserbase_drag | description | 18a8d4a0d738d68b584ad5f5c8ee9c14d288f8017450381290ad748af47f4241 |
-| tools | browserbase_drag | endElement | 2e12fa379751d8c237bd0612b5dd42f36f1964c0a2e21509d2a6443ea8269719 |
-| tools | browserbase_drag | endRef | e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b |
-| tools | browserbase_drag | startElement | aa162e9620fa27b204c29e276143accc0a8411ff3c8b30e90d8e2625a6e888d9 |
-| tools | browserbase_drag | startRef | a2a0c2d0f7b7d8056a3aaaa53c71eba4f2bfeb35a02c5c6d860b52a9cccb9088 |
-| tools | browserbase_get_text | description | 136f0744a4eed0487a4bd382c21c369b0eb998de238e7d7fcd14037202047edf |
-| tools | browserbase_get_text | selector | f4be6318427b3b2a1c587d72c698b46ed5dac0806a7b22ca30913481827e6199 |
-| tools | browserbase_hover | description | e53cd3c44908e91d35f071d4a414e52082d8385f1483e1c731d187b39846645f |
-| tools | browserbase_hover | element | 1694eb3252cb80b50f80fb3fb83ea61f19b1d85a30ebcc301029e13e9db6fd14 |
-| tools | browserbase_hover | ref | e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b |
-| tools | browserbase_navigate | description | 5e517ac29796df4781d6e8f8b3be061cc694f0c8e027f40e42ce0739e887b1d5 |
-| tools | browserbase_navigate | url | 63d749360d127f3c1d0d108336745c687aaa08760a306f0dadbbef4e9fadf27f |
-| tools | browserbase_navigate_back | description | 1070d603d3951f9282bc8e5111b7a6993fa05215c23ba5099429b567a9bdb467 |
-| tools | browserbase_navigate_forward | description | 4f74235e282e3cba526b98047b02c344c6bc32566bb325d5408e897eadfc6a7e |
-| tools | browserbase_press_key | description | aad8c3412d76c93e83c00bbe260068e5e2b988fb41080d148f31d49b5e7d2532 |
-| tools | browserbase_press_key | key | 99b4b6f2c8718d62ab46cca9b057177560c7ba358835bde04cebfdb9380036a2 |
-| tools | browserbase_resize | description | 8a048f66ca5985ffbe29b85a321269a7aa1d12663932dbb53ce37ddcf740d952 |
-| tools | browserbase_select_option | description | 3e7335503efca3ef2f22d38c51e6cd89447a4a0caca18e0d8a0ef2b2c38a6c26 |
-| tools | browserbase_select_option | element | 1694eb3252cb80b50f80fb3fb83ea61f19b1d85a30ebcc301029e13e9db6fd14 |
-| tools | browserbase_select_option | ref | e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b |
-| tools | browserbase_select_option | values | fc0448dc32f6a5e89d930fb447d5f4411e31253d3e9fa9841edec2cb4618f8fb |
-| tools | browserbase_session_close | description | c33af2ca6802a0e1c80d2430f86170b68c2e9ceb55621d8ca4b1b33ebd0f544e |
-| tools | browserbase_session_close | random_string | 6f65b1a9a0e92e0bc83edd0f63ff030db3acf3f02ab0ea9bba4938307e3c00c0 |
-| tools | browserbase_session_create | description | ea3a9035e2aa1743f77a76ef24175d7c66ad7a3afcdf080d004923acc19c5911 |
+| prompts | browserbase_system | description | 6d348ed160a8f58e3de7ad133706e869e00e07c2113e323ec745dd1e43410488 |
+| prompts | multi_session_guidance | description | 420ef61b9df1d610b9549343718a75d43c4750988cf335739e18b01a9a04a6b9 |
+| prompts | stagehand_usage | description | 9609ec0d2225d3d70bbe9088706f1a2d37b45b6e2a08b58b5aacfce076c20dc6 |
+| tools | browserbase_screenshot | description | 89360a2d914c21b0aed0f28c62c5d131b676834581fcda547d8ee68bade107f8 |
+| tools | browserbase_screenshot | name | 13cd9e5fd467a04eb3cc620b853c65d16744c185cd00d767e3688f0172bf9bdc |
+| tools | browserbase_session_close | description | 5881398eb991606ce9baa8c3d1628d78699882b8cad4e7323adea7470d9572b8 |
+| tools | browserbase_session_create | description | 0ca8b8ce03c8ce64812b90ab4f8963b87067e5d70174fa2956e32d58a82df41f |
 | tools | browserbase_session_create | sessionId | 2600a83521995510adcd784134a362806fe33f662254834faf3921034d05d68d |
-| tools | browserbase_snapshot | description | 6dc78620771eccf0ab550879bb7ae6369de34114b673c111a4f7fbd8fab5076c |
-| tools | browserbase_take_screenshot | description | 7c87de0df69fe81dbbf340f7ba062a60a9c436540dcb7ef67bbd43a54837262e |
-| tools | browserbase_take_screenshot | element | fc545fc9093d9c26b52b0186745392d475ba2a517f5622bdff35a3d85c379fb6 |
-| tools | browserbase_take_screenshot | raw | 7cd65c9a870086f58183b0fbe7eb0794e3ce3cc3a62dca3b30168abf7f02015e |
-| tools | browserbase_take_screenshot | ref | 335ff2d7572b8831cdb68863866c4ba5f92c6436846295cf4e054eeb00b7edfe |
-| tools | browserbase_type | description | b9dfec63c6922f5935627751dc97ae4e3d80993bf414b844f36f80648584b8d4 |
-| tools | browserbase_type | element | 1694eb3252cb80b50f80fb3fb83ea61f19b1d85a30ebcc301029e13e9db6fd14 |
-| tools | browserbase_type | ref | e39a6f5e4db7b686d2128626a5d61f81db06008308d63767bffc7d16ca432c3b |
-| tools | browserbase_type | slowly | 4dc8586a22406a330c309da2e8c10f90ee599b990993f654408b0e13d9001093 |
-| tools | browserbase_type | submit | 2878d7dee713522a404fd189b76b7ce01b439e50b164a1e5c992b6ba2f577106 |
-| tools | browserbase_type | text | 42bc9d6777b527b20636d608e53bc2cb9dc43f74c263b701827645bcc369d438 |
-| tools | browserbase_wait | description | fb6ee71ce0454853bc08cbf2eb48241f4e3e8b1f29753fe13c72f91a563603ba |
-| tools | browserbase_wait | time | ae02dada7574b65a44313329c9439160f19f9aca36734146c44ce857bfe80790 |
+| tools | browserbase_stagehand_act | description | a7d0922d73e82e2be5d47104e8e04724e64e6e2b1fcc83965e6bf00a2f750b4d |
+| tools | browserbase_stagehand_act | action | e9293cb61ac49f2aec9f63dc4b2dba31527d104cf9bca2a4980e0d01e4d71000 |
+| tools | browserbase_stagehand_act | variables | 82720b385db08e15c989c2efd014ccf8fe21190e18b0449a52edacbd2236fea8 |
+| tools | browserbase_stagehand_extract | description | 20612537693105b321844ab528bb199e0f568252ce320e56507029ba4c8a553a |
+| tools | browserbase_stagehand_extract | instruction | fb886260dfe51ddbca92dfdaf8ed971d83ce07fb1964cfb7511a8203f79d2732 |
+| tools | browserbase_stagehand_get_all_urls | description | 4e7f019e65e8afa9cd0ad480d5183dd41598256a5f916f69c54fdd8af2a0d9e3 |
+| tools | browserbase_stagehand_get_url | description | cf27467545bacb13bb3fb2eff73de10b4f5ea0c175c2b69c770c648d304c7fc7 |
+| tools | browserbase_stagehand_navigate | description | b518399dc910c7b93674f142e674f45be8ecbb6738cb6f16b74b31ed3e24ff11 |
+| tools | browserbase_stagehand_navigate | url | 63d749360d127f3c1d0d108336745c687aaa08760a306f0dadbbef4e9fadf27f |
+| tools | browserbase_stagehand_observe | description | 714aea3ccc8218d4f40ae7528fe54efeded59d5653196dc83bbf099120298095 |
+| tools | browserbase_stagehand_observe | instruction | cdd01fd5dabafb7ea35d7cc4714d017fc345168bc23fc12f2e8d592f940a4eed |
+| tools | browserbase_stagehand_observe | returnAction | 7db15bc1c9ef1f5b1be8a019d5c22afb833d0452d105d345b3741f9722e19a90 |
+| tools | multi_browserbase_stagehand_act_session | description | 86149c7dcccb259cf7e5f750c899e9d05f8a318700c7e78fd24f31ef24d3d82b |
+| tools | multi_browserbase_stagehand_act_session | action | e9293cb61ac49f2aec9f63dc4b2dba31527d104cf9bca2a4980e0d01e4d71000 |
+| tools | multi_browserbase_stagehand_act_session | sessionId | e4f7fd1a01e3e8b3f27936a848aaf39631e1ad5b6536f50bff3fb21551e63161 |
+| tools | multi_browserbase_stagehand_act_session | variables | 82720b385db08e15c989c2efd014ccf8fe21190e18b0449a52edacbd2236fea8 |
+| tools | multi_browserbase_stagehand_extract_session | description | 48ca615ffc668790a7f974f096e4147cf92c6aa9753d2dca03760d784ca686be |
+| tools | multi_browserbase_stagehand_extract_session | instruction | fb886260dfe51ddbca92dfdaf8ed971d83ce07fb1964cfb7511a8203f79d2732 |
+| tools | multi_browserbase_stagehand_extract_session | sessionId | e4f7fd1a01e3e8b3f27936a848aaf39631e1ad5b6536f50bff3fb21551e63161 |
+| tools | multi_browserbase_stagehand_get_url_session | description | b89170720896e8da9910ff7ff516b2b2047da4ccb86655987f17c2f15b046b12 |
+| tools | multi_browserbase_stagehand_get_url_session | sessionId | e4f7fd1a01e3e8b3f27936a848aaf39631e1ad5b6536f50bff3fb21551e63161 |
+| tools | multi_browserbase_stagehand_navigate_session | description | 55ae60a2f61fd150e20dbc13ffde071b6430393d3ec6c1e5d20a3f5527e2d99a |
+| tools | multi_browserbase_stagehand_navigate_session | sessionId | e4f7fd1a01e3e8b3f27936a848aaf39631e1ad5b6536f50bff3fb21551e63161 |
+| tools | multi_browserbase_stagehand_navigate_session | url | 63d749360d127f3c1d0d108336745c687aaa08760a306f0dadbbef4e9fadf27f |
+| tools | multi_browserbase_stagehand_observe_session | description | 84a1becd4973d9dc3052d05afcc286bcdec47ebff296b3ccb12f27d3113a1109 |
+| tools | multi_browserbase_stagehand_observe_session | instruction | cdd01fd5dabafb7ea35d7cc4714d017fc345168bc23fc12f2e8d592f940a4eed |
+| tools | multi_browserbase_stagehand_observe_session | returnAction | 7db15bc1c9ef1f5b1be8a019d5c22afb833d0452d105d345b3741f9722e19a90 |
+| tools | multi_browserbase_stagehand_observe_session | sessionId | e4f7fd1a01e3e8b3f27936a848aaf39631e1ad5b6536f50bff3fb21551e63161 |
+| tools | multi_browserbase_stagehand_session_close | description | fd30fd248aeac94864f5e1c7c74c615f6df65010b391bac965ab1263e0f97b27 |
+| tools | multi_browserbase_stagehand_session_close | sessionId | 038007064db96d543ef8bc7ca34730b9a85c763d2ada531df79755d254a0829f |
+| tools | multi_browserbase_stagehand_session_create | description | 7540fd99a9c78dfee7c2d89a6fee7712c56869559010b66bbf08172e3f3362cd |
+| tools | multi_browserbase_stagehand_session_create | browserbaseSessionID | b75f24d2d1fbf71243a3c3844b6a727ca346fd13db2d9229daaa141274c440ce |
+| tools | multi_browserbase_stagehand_session_create | name | 8759f2f0098eca37aa865f88db61ca3cdfd37e7646245c210f5b054986b2ed6d |
+| tools | multi_browserbase_stagehand_session_list | description | 3dbbb019380ebf54b6912b2854e8572128959d9f0068c90e3385773cf4fa6940 |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

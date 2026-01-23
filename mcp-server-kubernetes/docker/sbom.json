@@ -5,12 +5,46 @@
       "hash": "8c2018f3780cafa2f853231f129562dc33c6a4571ac939e506f9aeb35665c5e2"
     },
     {
+      "name": "exec_in_pod",
+      "hash": "5730abcd1da88fe3fc186484a75e1594e7579b3f05131dcbdfadd8d26c410989",
+      "params": [
+        {
+          "name": "command",
+          "hash": "74fd42bc7b267542629d4372d445bfc4878d24922329283d90bbded9175a103d"
+        },
+        {
+          "name": "container",
+          "hash": "0f93342e4a7003f29000cd347ee9cffc603c8da3f5ea9a03145b4eca923c051e"
+        },
+        {
+          "name": "context",
+          "hash": "3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95"
+        },
+        {
+          "name": "name",
+          "hash": "f13bbb0371e7cbf5b1ae82d35fd19a9a215c2734aa18e71259a3b9fcb895ffe2"
+        },
+        {
+          "name": "namespace",
+          "hash": "af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33"
+        },
+        {
+          "name": "timeout",
+          "hash": "0dfe796c5743f5d70be5f253b03102401715d31c6bfc238f0f819fbb8560c46a"
+        }
+      ]
+    },
+    {
       "name": "explain_resource",
       "hash": "592bffdd3e4c0184fd9a22057d0a06b31a60732ac1d7a52de72367880af173f8",
       "params": [
         {
           "name": "apiVersion",
           "hash": "34419a5eb3629e5311644dd9147365296dcdbc65740ea1d235ab5d1cf8cc7add"
+        },
+        {
+          "name": "context",
+          "hash": "3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95"
         },
         {
           "name": "output",
@@ -28,15 +62,23 @@
     },
     {
       "name": "install_helm_chart",
-      "hash": "626fee4ec45bea4c946ed23014f3533b60a7f1cef73e0dd9ec68b8a16496feef",
+      "hash": "0d4421f932061c45b219437241c534698f7d80977c802e20e13625d1c2d9ae7f",
       "params": [
         {
           "name": "chart",
-          "hash": "b34d6b02df4598648d8c810655f76567962045de26a68a8211ab7b698c481663"
+          "hash": "9aea91ddc41890ce968f7eaed2388a2d057b6ebf95ef8a4f80abd70586c3b202"
+        },
+        {
+          "name": "context",
+          "hash": "3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95"
+        },
+        {
+          "name": "createNamespace",
+          "hash": "a690e4f661ff36741ab8012de345cf6e4f28fadbf213bbe1162e88dbf3e20f89"
         },
         {
           "name": "name",
-          "hash": "85f01282f3161086faed8766800c17b4c00472620c5d158e1657d13041a197ed"
+          "hash": "3dbbdb4f91bd492b9aeffd1a6425626c4d72c0fe57d8e5c5792f8f3b7d89b74f"
         },
         {
           "name": "namespace",
@@ -44,11 +86,19 @@
         },
         {
           "name": "repo",
-          "hash": "e87393dcf00bdf5f518603adad35eaced2f5d9bbc4b438c45c014886fe89079d"
+          "hash": "de92ec27454e9959aa1b17df092ad7a8098616ef727c8137b0d230da52b395a5"
+        },
+        {
+          "name": "useTemplate",
+          "hash": "96a74187304862e437e58cb775916984a48defcb23e62617c41cc6fb8c534fb6"
         },
         {
           "name": "values",
-          "hash": "cce7f5207579dd6efd533d18288ae81090bd355d07a772b809d854851dfbd7ca"
+          "hash": "88bbe0c8d6e98bb10fd54c70e4c7185db1c8d96c364b32591514396ed96ff4e6"
+        },
+        {
+          "name": "valuesFile",
+          "hash": "0407e931b17d7a5ada15647744e9e7e8b61a8fcfd22d825220221f7a63125ab3"
         }
       ]
     },
@@ -57,8 +107,12 @@
       "hash": "5a424c44d014d49e270431de434f142c4aa4ffd4f8f3dfc2c8361fc75fbb4eb2",
       "params": [
         {
+          "name": "context",
+          "hash": "3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95"
+        },
+        {
           "name": "dryRun",
-          "hash": "8671718b127808c7cdeae3a8e3cb5844496b43234365ae278691b8e1b99a9410"
+          "hash": "7f99c87310b4dd53ddde08cdebd110f83e30def7bf0516ba8dc5dfad0c12f2df"
         },
         {
           "name": "filename",
@@ -74,7 +128,7 @@
         },
         {
           "name": "namespace",
-          "hash": "488b4f5f86eca6948950001cf05b489876e9a3c1dfc910312a50fbc72dd309d9"
+          "hash": "af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33"
         }
       ]
     },
@@ -117,8 +171,12 @@
           "hash": "6c63cfa4d17413696117affc971c127357f7d2ec35806dda932e2bd5c5369d59"
         },
         {
+          "name": "context",
+          "hash": "3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95"
+        },
+        {
           "name": "dryRun",
-          "hash": "8051174bfa6a7d90148738550332ec6835555308da9324cdc17ba2d788781d18"
+          "hash": "7f99c87310b4dd53ddde08cdebd110f83e30def7bf0516ba8dc5dfad0c12f2df"
         },
         {
           "name": "filename",
@@ -150,7 +208,7 @@
         },
         {
           "name": "namespace",
-          "hash": "3890a77bd4699ef2874b2387b75699754858428f7d4da2497d1f78e6c2d4e52c"
+          "hash": "af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33"
         },
         {
           "name": "output",
@@ -203,6 +261,10 @@
           "hash": "cb759f7fbeb3101908e89a64821aeb596d463fed199c0ee4e5b9178261796e34"
         },
         {
+          "name": "context",
+          "hash": "3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95"
+        },
+        {
           "name": "filename",
           "hash": "54c5b981bfa320fc203f750c966ebb0cb18235e4d350db38b621e26ab7017ce0"
         },
@@ -228,7 +290,7 @@
         },
         {
           "name": "namespace",
-          "hash": "9be52fa9fbccc00b73122daa021fa76c812ea4064f1fd018446c4fbcc5c86b3d"
+          "hash": "af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33"
         },
         {
           "name": "resourceType",
@@ -245,12 +307,16 @@
           "hash": "4242c1456715ec51c9cc6182e1613c80e27da79efdffc8374ec4e40eaae81bcd"
         },
         {
+          "name": "context",
+          "hash": "3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95"
+        },
+        {
           "name": "name",
           "hash": "80a6ffb3265ae3c038762bd7d58eb239cb14e0ee6e926e7a0fd9ab647484cb4a"
         },
         {
           "name": "namespace",
-          "hash": "9be52fa9fbccc00b73122daa021fa76c812ea4064f1fd018446c4fbcc5c86b3d"
+          "hash": "af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33"
         },
         {
           "name": "resourceType",
@@ -271,6 +337,10 @@
           "hash": "ba586487496d823e7e6ffc93388ea6f980213e25ca69c998caf7121eb6e44521"
         },
         {
+          "name": "context",
+          "hash": "3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95"
+        },
+        {
           "name": "flags",
           "hash": "60c5c32fad1a2d19230829ec8fa451674dc30543e95beeb2d8ec8eb670d2896d"
         },
@@ -280,7 +350,7 @@
         },
         {
           "name": "namespace",
-          "hash": "c4e4e7abda206b07f8f017e706795f5fe305d5df2d99923d92a8ed0ab1d40cf8"
+          "hash": "af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33"
         },
         {
           "name": "outputFormat",
@@ -305,6 +375,10 @@
           "hash": "0ac50381c9661f02483d2d940158e739e7be70f573de32998e358a7076c3646d"
         },
         {
+          "name": "context",
+          "hash": "3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95"
+        },
+        {
           "name": "fieldSelector",
           "hash": "68eae6f18642d304c402617622b872305d817e438f3bb105c8b779c500152f71"
         },
@@ -318,7 +392,7 @@
         },
         {
           "name": "namespace",
-          "hash": "9be52fa9fbccc00b73122daa021fa76c812ea4064f1fd018446c4fbcc5c86b3d"
+          "hash": "af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33"
         },
         {
           "name": "output",
@@ -335,42 +409,16 @@
       ]
     },
     {
-      "name": "kubectl_list",
-      "hash": "a80eacb2578f63f0a5f71baf3ac57636cd77a3d8d9c31ea7c78f8de0423a6ac8",
-      "params": [
-        {
-          "name": "allNamespaces",
-          "hash": "0ac50381c9661f02483d2d940158e739e7be70f573de32998e358a7076c3646d"
-        },
-        {
-          "name": "fieldSelector",
-          "hash": "68eae6f18642d304c402617622b872305d817e438f3bb105c8b779c500152f71"
-        },
-        {
-          "name": "labelSelector",
-          "hash": "24a79fb9db11e42d1ae909c5c38226825f588ca0a4a9375066237b611a41108d"
-        },
-        {
-          "name": "namespace",
-          "hash": "2117705aa920f3b79615221686a425af386718c0c7d369ffba86082c3094c2f6"
-        },
-        {
-          "name": "output",
-          "hash": "6e88d022385884bd783eea276d75a8d6d87ba1173086531426991c00f768fb68"
-        },
-        {
-          "name": "resourceType",
-          "hash": "186d765bbbdd57104b6fb9fd756b3d9d0b98c865b57fb7a53ef8da00c9174cf0"
-        }
-      ]
-    },
-    {
       "name": "kubectl_logs",
       "hash": "c8c16259183d8ec613c1e0c8b6829aad33554138516cad991813e875d9e3d5f5",
       "params": [
         {
           "name": "container",
           "hash": "0f93342e4a7003f29000cd347ee9cffc603c8da3f5ea9a03145b4eca923c051e"
+        },
+        {
+          "name": "context",
+          "hash": "3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95"
         },
         {
           "name": "follow",
@@ -386,7 +434,7 @@
         },
         {
           "name": "namespace",
-          "hash": "833b97da46652f738fcf49f1ca6c1ec77724153f7d28c823406712d845265b3b"
+          "hash": "af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33"
         },
         {
           "name": "previous",
@@ -419,8 +467,12 @@
       "hash": "e64f3326f831bbcfe5f9d3bdcc602af0068d44130dd274dac1652226226c48f0",
       "params": [
         {
+          "name": "context",
+          "hash": "3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95"
+        },
+        {
           "name": "dryRun",
-          "hash": "e61631178a08ca7c0cba847055dd9a6be82bf239aaa3d0785e7eca9cb5bd282f"
+          "hash": "7f99c87310b4dd53ddde08cdebd110f83e30def7bf0516ba8dc5dfad0c12f2df"
         },
         {
           "name": "name",
@@ -428,7 +480,7 @@
         },
         {
           "name": "namespace",
-          "hash": "833b97da46652f738fcf49f1ca6c1ec77724153f7d28c823406712d845265b3b"
+          "hash": "af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33"
         },
         {
           "name": "patchData",
@@ -453,12 +505,16 @@
       "hash": "da59192fbfb0cf4dab8b072b21797ef81eb411c92a2807806b7a469fe0ed2a31",
       "params": [
         {
+          "name": "context",
+          "hash": "3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95"
+        },
+        {
           "name": "name",
           "hash": "dee870968d1591eaf65c3d9d1a017c2c6a44a852bc2d990458b7557c3ae95580"
         },
         {
           "name": "namespace",
-          "hash": "833b97da46652f738fcf49f1ca6c1ec77724153f7d28c823406712d845265b3b"
+          "hash": "af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33"
         },
         {
           "name": "resourceType",
@@ -491,12 +547,16 @@
       "hash": "7b74eb50b7e1e72453a34c04405fb6ee2bde818ff5a8244c7064ca061d19f89a",
       "params": [
         {
+          "name": "context",
+          "hash": "3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95"
+        },
+        {
           "name": "name",
           "hash": "b77c2393a323b93504825a018713ece375f72f5d6cc44f3b7b2ef34845041745"
         },
         {
           "name": "namespace",
-          "hash": "35f26aee248b55350fe8c2a6526c11af34bc3d83b882005c481f2a4b6e2fa911"
+          "hash": "af216e81f96fcf52c4ea61eea71ac34bff7cd232f141faeaed24ae5402463d33"
         },
         {
           "name": "replicas",
@@ -517,6 +577,10 @@
           "hash": "db958e31706b8813e758249505765b5aed5e31a5f674c658ce1e91d66769b05d"
         },
         {
+          "name": "context",
+          "hash": "3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95"
+        },
+        {
           "name": "namespaced",
           "hash": "044ae41369d6760faf5d2316d246f0e8d4acc598c130ae468c541a796e60222a"
         },
@@ -531,6 +595,52 @@
       ]
     },
     {
+      "name": "node_management",
+      "hash": "17e49efe433549936640cf2c605b691319db4601f94ce0f443ffd8bea8336d61",
+      "params": [
+        {
+          "name": "confirmDrain",
+          "hash": "f6142e35b581ef3254f658f8f2c28457940446f7ad25a1ed406fde41125eed27"
+        },
+        {
+          "name": "deleteLocalData",
+          "hash": "9fb65f49b0f0477c99f2ededec34b284874c546182c67ea0528cd5c0222c3cfb"
+        },
+        {
+          "name": "dryRun",
+          "hash": "ec92b01e0aeb6f1a6a600d4f58c07698caea556b1ad3c7ac9f504f6adef4a4f6"
+        },
+        {
+          "name": "force",
+          "hash": "40b2d77386c5e100bd2fd7e45cb975158e5f43a0527cadad58758025b4cf61fe"
+        },
+        {
+          "name": "gracePeriod",
+          "hash": "186e71dca9489286399b849d080d25462c77021eb8d144fade09fb36d4b8941f"
+        },
+        {
+          "name": "ignoreDaemonsets",
+          "hash": "0d7522f7b5465d2989383e39de6cd33cc814fa5db2154dba0b17d73fba36865b"
+        },
+        {
+          "name": "nodeName",
+          "hash": "2f47db3b9b9c2363b149939991f4324919b4b7d27fbcc0fa230d965d6fe4719c"
+        },
+        {
+          "name": "operation",
+          "hash": "5f4926bacbc8cb83bb921dc3d36c1791c9bf5e37c26f0daeaf765ecd0b2bfb13"
+        },
+        {
+          "name": "timeout",
+          "hash": "c1f5798cd8c2c947cb6fcb505c5f854b19aa73b7476dff9cafb84d8faa2c069a"
+        }
+      ]
+    },
+    {
+      "name": "ping",
+      "hash": "9ebc0232ff877e070e2eb8a43a131abc7e5874d9549a319873c27c2d46b05d13"
+    },
+    {
       "name": "port_forward",
       "hash": "931f8ee6f95ddbbb2d4cfed7c7ff1c92b59b4a26d98a1d6bbde906f11fcac0a9"
     },
@@ -540,11 +650,15 @@
     },
     {
       "name": "uninstall_helm_chart",
-      "hash": "49c8f3a48a65df33b4f80b6c23d6793c3f8d2f111dbc9aefbb93c6b066eefc2d",
+      "hash": "529c0e4b672dd1cb25dc3171af3485b9d5337e3093554e3b217828695f46e157",
       "params": [
         {
+          "name": "context",
+          "hash": "3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95"
+        },
+        {
           "name": "name",
-          "hash": "85f01282f3161086faed8766800c17b4c00472620c5d158e1657d13041a197ed"
+          "hash": "b471d56956bdecffbff3a381a395fc220ea45dbcb0b21dddbbdae613dfae4c6c"
         },
         {
           "name": "namespace",
@@ -554,15 +668,19 @@
     },
     {
       "name": "upgrade_helm_chart",
-      "hash": "e8c91747df6416edacd5b7483df523449010b3bdb8caae457892da1778498f31",
+      "hash": "29532a146768b1ed4bc17cac050fd0984ffb3f474bf119996e8a2eb4fc73b065",
       "params": [
         {
           "name": "chart",
-          "hash": "b34d6b02df4598648d8c810655f76567962045de26a68a8211ab7b698c481663"
+          "hash": "b8bdef911e5a45a4c74346ab7f4c9fe3a7426bd7f52089e0f6fe83b2502b317e"
+        },
+        {
+          "name": "context",
+          "hash": "3079840fe95aadbda24a676814f6260c3f854b608e3b6ccf51aef4bdf7290e95"
         },
         {
           "name": "name",
-          "hash": "85f01282f3161086faed8766800c17b4c00472620c5d158e1657d13041a197ed"
+          "hash": "5abb499882d81f7f495898280e9b0db3cffe370ff540a393752d063848cea6e0"
         },
         {
           "name": "namespace",
@@ -570,14 +688,33 @@
         },
         {
           "name": "repo",
-          "hash": "e87393dcf00bdf5f518603adad35eaced2f5d9bbc4b438c45c014886fe89079d"
+          "hash": "de92ec27454e9959aa1b17df092ad7a8098616ef727c8137b0d230da52b395a5"
         },
         {
           "name": "values",
-          "hash": "cce7f5207579dd6efd533d18288ae81090bd355d07a772b809d854851dfbd7ca"
+          "hash": "88bbe0c8d6e98bb10fd54c70e4c7185db1c8d96c364b32591514396ed96ff4e6"
+        },
+        {
+          "name": "valuesFile",
+          "hash": "0407e931b17d7a5ada15647744e9e7e8b61a8fcfd22d825220221f7a63125ab3"
         }
       ]
     }
   ],
-  "prompts": []
+  "prompts": [
+    {
+      "name": "k8s-diagnose",
+      "hash": "857845e0feef131f5187dbd528ac7fb6bd3bba340fdd201802afb1c812166383",
+      "params": [
+        {
+          "name": "keyword",
+          "hash": "b38371d9a98b3759f7ad1b9e238cfad4cf1b04c44316fadbc70bbafd4e66fcf7"
+        },
+        {
+          "name": "namespace",
+          "hash": "b0e6f900e6f219557ec1120ec8cf1cd55fdd3247f73fe11b1460125c0c277739"
+        }
+      ]
+    }
+  ]
 }

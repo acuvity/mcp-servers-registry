@@ -153,6 +153,16 @@
           "hash": "54bbde434915298761a0e41ef26c250776e2129a4dc3e682586ca51f8bbc0c3b"
         }
       ]
+    },
+    {
+      "name": "coda_resolve_link",
+      "hash": "f4bb9e09e1047f152d9a7657ae609c9cf384a9bbe97119a4661ebbe313469e69",
+      "params": [
+        {
+          "name": "url",
+          "hash": "37b36ad2cede9e4d28fa84705ca24166501729ada9beaa99035d71b5d9b74253"
+        }
+      ]
     }
   ],
   "prompts": []

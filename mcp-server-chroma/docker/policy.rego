@@ -98,6 +98,8 @@ _cross_tool_exclude := [
 	#
 	"chroma_modify_collection",
 	#
+	"chroma_fork_collection",
+	#
 	"chroma_delete_collection",
 	#
 	"chroma_add_documents",

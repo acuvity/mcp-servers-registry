@@ -54,6 +54,8 @@ spec:
                 secretKeyRef:
                   name: "{{ .Values.secrets.AZURE_TENANT_ID.valueFrom.name | default (printf "%s-secrets" (include "base.fullname" .) ) }}"
                   key: "{{ .Values.secrets.AZURE_TENANT_ID.valueFrom.key | default "AZURE_TENANT_ID" }}"
+            - name: DOTNET_BUNDLE_EXTRACT_BASE_DIR
+              value: {{ .Values.env.DOTNET_BUNDLE_EXTRACT_BASE_DIR}}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default (printf  "%s-%s" .Chart.Version .Chart.AppVersion) }}"

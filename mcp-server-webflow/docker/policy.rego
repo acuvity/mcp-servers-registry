@@ -86,6 +86,8 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
+	"webflow_guide_tool",
+	#
 	"ask_webflow_ai",
 	#
 	"collections_list",
@@ -149,6 +151,26 @@ _cross_tool_exclude := [
 	"sites_get",
 	#
 	"sites_publish",
+	#
+	"asset_tool",
+	#
+	"get_image_preview",
+	#
+	"de_component_tool",
+	#
+	"element_builder",
+	#
+	"element_tool",
+	#
+	"de_page_tool",
+	#
+	"style_tool",
+	#
+	"de_learn_more_about_styles",
+	#
+	"variable_tool",
+	#
+	"get_designer_app_connection_info",
 	#
 	# exclude word that might be misdetected
 	"to",

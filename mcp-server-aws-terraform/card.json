@@ -13,7 +13,7 @@
   "scope": "native",
   "mutitenant": true,
   "runtime": "python",
-  "version": "1.0.1",
+  "version": "1.0.14",
   "requiresConfiguration": false,
   "requiresStorage": false,
   "rating": {"hash":"5752c7ab8a5be36544e2424f9be44b5daa664820a1a114ea33233b6a255e32fb","reason":"The toolset demonstrates solid documentation quality with comprehensive descriptions that clearly explain functionality, usage contexts, and parameters. Tool names are descriptive and purposeful, though some could be more concise (e.g., 'SearchSpecificAwsIaModules' vs 'SearchAwsIaModules'). The descriptions are detailed with good coverage of what each tool does, when to use it, and key limitations. Parameter documentation is thorough with clear explanations of purpose, types, and constraints. The extensive use of examples enhances usability. Minor deductions for occasional verbosity in descriptions and some parameter descriptions that could be more concise, but overall the documentation provides strong guidance for users.","score":"B"},

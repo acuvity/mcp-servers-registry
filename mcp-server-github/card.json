@@ -13,13 +13,13 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "binary",
-  "version": "v0.5.0",
+  "version": "v0.29.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"d3ec2f305456c3565b56be01c1d53e6b35e90bcd2b36d6adb9914b798c407a11","reason":"Good overall documentation quality with clear tool names and adequate parameter descriptions. Most tools have meaningful descriptions that explain their purpose, though some lack important context like usage scenarios or limitations. Parameter documentation is generally clear with proper types and constraints. Some complex tools like pull request review management could benefit from more detailed workflow guidance, and a few descriptions are quite brief. The toolset demonstrates consistent structure and organization across GitHub API operations.","score":"B"},
+  "rating": {"hash":"ad947467896075c96b0d5e8c41ba05d167100cee12e7a58efa6c0c5438709a78","reason":"Good overall documentation with clear, specific tool names and adequate descriptions that cover functionality and usage context. Parameter documentation is generally complete with clear purposes and constraints. Some tools excel with comprehensive descriptions (like assign_copilot_to_issue), while others are more basic but still functional. The toolset maintains consistency and provides sufficient information for users to understand when and how to use each tool, though some descriptions could be more detailed about limitations and edge cases.","score":"B"},
   "resources": {
-    "tools": 51,
-    "prompts": 0,
+    "tools": 40,
+    "prompts": 2,
     "resources": 0,
     "resourcesTemplates": 0
   }

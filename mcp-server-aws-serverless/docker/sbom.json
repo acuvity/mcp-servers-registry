@@ -85,6 +85,76 @@
       ]
     },
     {
+      "name": "esm_guidance",
+      "hash": "39a64540170a601251f235a110c988bad456f9700fac9e35c3e36dad29cea604",
+      "params": [
+        {
+          "name": "event_source",
+          "hash": "64eec6b0573dcb286b2dbebaecdf3c8c33de1fe899ca75f18ad129041bb796aa"
+        },
+        {
+          "name": "guidance_type",
+          "hash": "146ff5fc8ff65b4788327628ebccff2efbe6ea80bb4657355f5eedb7ad96cce0"
+        },
+        {
+          "name": "networking_question",
+          "hash": "a1c7db8dbdca33c1f2cce5598a27919297b6e0a143cc734e04b4ccd71690001b"
+        }
+      ]
+    },
+    {
+      "name": "esm_kafka_troubleshoot",
+      "hash": "5f00a7476a44469d292618a5a748767ba1a1739456c5051aa30984077215aa38",
+      "params": [
+        {
+          "name": "issue_type",
+          "hash": "55a24d29ba08a02a73a32b4302b911bf2f61313db3fe1e13f7936de5fc2db7ea"
+        },
+        {
+          "name": "kafka_type",
+          "hash": "47b6308ee696946058c785095dbf555db384442c071f4c934ef0e2434464e653"
+        }
+      ]
+    },
+    {
+      "name": "esm_optimize",
+      "hash": "ba4583cfe924b1638367b034aafac204477cb645b2ff8ce82334b2e3cd5e616f",
+      "params": [
+        {
+          "name": "action",
+          "hash": "037457bfe233d1f2d57a0c5d6eb109468603bf279d7ef849e4ae853ab5b22f9e"
+        },
+        {
+          "name": "configs",
+          "hash": "9114604f6b0676672936dcde784941a11fa937a9844be5ab7b9452cf0d2abce6"
+        },
+        {
+          "name": "esm_uuid",
+          "hash": "df89f0e97fc10f2ce979fd1eecee0c5302c2d7131b7def763dd11dd79a0e3217"
+        },
+        {
+          "name": "event_source",
+          "hash": "fb98210923068bb44b58306cb895606c40f1cef7eaf302b082794310f8474eb8"
+        },
+        {
+          "name": "optimization_targets",
+          "hash": "600516d8ed0a65f0e5f6b76e76d55dcd6916669a8cef7ef4836d401ddf425c7b"
+        },
+        {
+          "name": "optimized_configs",
+          "hash": "0bdd06b0864782d363afc52d9b5734f855bce05c27701da95746e731460cbe74"
+        },
+        {
+          "name": "project_name",
+          "hash": "f6265eaf2b38b100af91629ed97839300fbdb9c84529978a602ca2a574bc5d86"
+        },
+        {
+          "name": "region",
+          "hash": "295e09c8d1998aed6691091e86687dae8f64d731b4b60dbcb38480be775af3d3"
+        }
+      ]
+    },
+    {
       "name": "get_iac_guidance",
       "hash": "72e3655cfa09700e3dfde110d11498fff45aa2dd2c06a98932a2045fb167b5a3",
       "params": [
@@ -541,6 +611,122 @@
         {
           "name": "registry_name",
           "hash": "cfabacc828fefa842e7a4cc65e3c67420b63d41f6b15cba00525d9b8e81a9d70"
+        }
+      ]
+    },
+    {
+      "name": "secure_esm_dynamodb_policy",
+      "hash": "e6a90994946046fe2d46be6752294dc58fc29a27d1c1c8f39d7185d0112a2a71",
+      "params": [
+        {
+          "name": "account",
+          "hash": "978a140a385bce75bda1cc585c47a6532ffdcadb2315246ae84f4088bc4905ea"
+        },
+        {
+          "name": "function_name",
+          "hash": "0b9c3611cf0e71eaeecd11fbc6b23ca59be382924dc72e20ac2a05fc83970a3e"
+        },
+        {
+          "name": "partition",
+          "hash": "f2c85289d113b479549de808f247e77c54f355fbbdff49f9749e195f554e7671"
+        },
+        {
+          "name": "region",
+          "hash": "09d3d50b57172ebc0d1d6bea21abcf82a0e9d65b24b130d1356a5ac7d7093d7d"
+        },
+        {
+          "name": "table_name",
+          "hash": "0455a897d84e6583c490e3376b99e927b167dd2a649bf966fc9461dd6f820bb2"
+        }
+      ]
+    },
+    {
+      "name": "secure_esm_kinesis_policy",
+      "hash": "464df1481c79ab2e240c5fe78ec6ac9afb7b9642a7064f5200abad6d24ffa3ec",
+      "params": [
+        {
+          "name": "account",
+          "hash": "978a140a385bce75bda1cc585c47a6532ffdcadb2315246ae84f4088bc4905ea"
+        },
+        {
+          "name": "function_name",
+          "hash": "8c105c7792addc0c87a7c054aa04b213f08e7fc883dae2651608bbdf77294289"
+        },
+        {
+          "name": "partition",
+          "hash": "f2c85289d113b479549de808f247e77c54f355fbbdff49f9749e195f554e7671"
+        },
+        {
+          "name": "region",
+          "hash": "09d3d50b57172ebc0d1d6bea21abcf82a0e9d65b24b130d1356a5ac7d7093d7d"
+        },
+        {
+          "name": "stream_name",
+          "hash": "c1a0b165e0ee79abbe3fea04794b76bf7b7f6e03118b09b4076cdbded23823ac"
+        }
+      ]
+    },
+    {
+      "name": "secure_esm_msk_policy",
+      "hash": "058e8c8fae13490ace0199c46765a14739505054340abcba9b6e1efcc435e206",
+      "params": [
+        {
+          "name": "account",
+          "hash": "978a140a385bce75bda1cc585c47a6532ffdcadb2315246ae84f4088bc4905ea"
+        },
+        {
+          "name": "cluster_name",
+          "hash": "f883e10938c557dc7d3d0b27f8856da1f1e2bfdd414c20f71686a76ab2529468"
+        },
+        {
+          "name": "cluster_uuid",
+          "hash": "6cbe30e49d82a83936606eca920c22527e94fa1ca87ba3d669f4570694b66203"
+        },
+        {
+          "name": "consumer_group_pattern",
+          "hash": "ad07b683d68548318e55728c8a0300c2d5da8e00c6ccf7e7303f55afd5ca5ee9"
+        },
+        {
+          "name": "function_name",
+          "hash": "46b88f80c83416d2a73d346066f8b1641154b29200a9331b951690109f4108a1"
+        },
+        {
+          "name": "partition",
+          "hash": "f2c85289d113b479549de808f247e77c54f355fbbdff49f9749e195f554e7671"
+        },
+        {
+          "name": "region",
+          "hash": "09d3d50b57172ebc0d1d6bea21abcf82a0e9d65b24b130d1356a5ac7d7093d7d"
+        },
+        {
+          "name": "topic_pattern",
+          "hash": "15a2b724bc1fe9828dca03702b7019e54f73e24d01080781f8449b9712d21b7a"
+        }
+      ]
+    },
+    {
+      "name": "secure_esm_sqs_policy",
+      "hash": "60d7a3e664f7fe81f8426e9022886cde2ee88014f36cea800c2379fd900311e9",
+      "params": [
+        {
+          "name": "account",
+          "hash": "978a140a385bce75bda1cc585c47a6532ffdcadb2315246ae84f4088bc4905ea"
+        },
+        {
+          "name": "function_name",
+          "hash": "5f5283fa3e60f1f38c1115a7581cca6620d1e1caf24901d8d20dfee4ad3c31fc"
+        },
+        {
+          "name": "partition",
+          "hash": "f2c85289d113b479549de808f247e77c54f355fbbdff49f9749e195f554e7671"
+        },
+        {
+          "name": "queue_name",
+          "hash": "c58af919a41ffefcc8b85b9918e8619ef9a4a0255705ec173297fc2ed47492f1"
+        },
+        {
+          "name": "region",
+          "hash": "09d3d50b57172ebc0d1d6bea21abcf82a0e9d65b24b130d1356a5ac7d7093d7d"
         }
       ]
     },

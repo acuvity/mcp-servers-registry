@@ -13,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.0.1",
+  "version": "0.0.12",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"08fdd0203e5f61cef1f7bbcb697eb3786b7187159ed5920fc16b0f6db3de2349","reason":"Tool names are clear and purposeful, but descriptions are extremely brief (single sentence with minimal context) and fail to explain what information is returned, when to use each tool, or important limitations like read-only restrictions. Parameter descriptions are basic but adequate. The toolset lacks sufficient detail for users to understand capabilities and constraints.","score":"D"},
+  "rating": {"hash":"17af96beaaae667e0c5b712690502e6258a4b9d1bc5acbc14d4129c54588861b","reason":"Tool names are clear and purposeful. Descriptions are basic but functional, covering main functionality in 1-2 sentences. Parameter descriptions are clear and indicate purpose well. However, descriptions lack important context like usage scenarios, limitations (e.g., read-only nature), and details about what information is returned. The toolset is adequate for basic usage but leaves users with questions about constraints and expected outputs.","score":"C"},
   "resources": {
     "tools": 6,
     "prompts": 0,

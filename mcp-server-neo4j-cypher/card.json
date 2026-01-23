@@ -13,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.2.3",
+  "version": "0.5.2",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"8955135a646adc5329c19c44c105214aad79b4337ac539f044b337eda6965ad3","reason":"Tool names are clear and specific with appropriate neo4j prefixes. Descriptions are basic but functional - they explain what each tool does in 1-2 sentences. However, descriptions lack important context like when to use each tool, what information they provide, or key limitations (except for the APOC note). Parameter documentation is minimal but adequate, clearly indicating purpose and types. The toolset provides essential functionality but leaves users to infer usage patterns and constraints.","score":"C"},
+  "rating": {"hash":"a0a1d32527c96bf69263a16b456f583e4af89d1299dd1d0c1911e9d43986a993","reason":"Mixed quality documentation. The get_neo4j_schema tool has excellent documentation with comprehensive description, usage guidance, and detailed parameter explanation. However, read_neo4j_cypher and write_neo4j_cypher have minimal descriptions that barely explain their purpose beyond the obvious, and their parameter descriptions are too generic. The inconsistency and the fact that 2/3 tools lack adequate context brings the overall grade to adequate level.","score":"C"},
   "resources": {
     "tools": 3,
     "prompts": 0,

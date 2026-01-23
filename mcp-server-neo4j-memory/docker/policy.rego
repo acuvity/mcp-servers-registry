@@ -86,6 +86,8 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
+	"read_graph",
+	#
 	"create_entities",
 	#
 	"create_relations",
@@ -98,13 +100,9 @@ _cross_tool_exclude := [
 	#
 	"delete_relations",
 	#
-	"read_graph",
+	"search_memories",
 	#
-	"search_nodes",
-	#
-	"find_nodes",
-	#
-	"open_nodes",
+	"find_memories_by_name",
 	#
 	# exclude word that might be misdetected
 	"to",

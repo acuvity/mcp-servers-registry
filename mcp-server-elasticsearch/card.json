@@ -13,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.2.0",
+  "version": "0.3.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"45461ecb8c406a99efeea5e9d5df5df4ab8b0fe903357ebaa99a8429aa19b434","reason":"The toolset provides adequate documentation with clear tool names and basic functionality descriptions. However, descriptions are quite brief (1 sentence each) and lack important context like usage scenarios, limitations, or expected return data. Parameter documentation is minimal but functional. The tools are understandable but leave users with questions about constraints, error conditions, and detailed usage patterns.","score":"C"},
+  "rating": {"hash":"ae6a4b61bb04429b803ed331b915d3e46d6ef392a52e4ae157e61aa5b5df0e9d","reason":"The toolset provides adequate documentation with clear, specific tool names and basic descriptions that outline main functionality. Parameter descriptions are clear and include appropriate constraints. However, descriptions are quite brief (1 sentence each) and lack important context about when to use each tool, what specific information they return, and key limitations. The search tool mentions highlights are enabled but doesn't explain what this means or how it affects results.","score":"C"},
   "resources": {
     "tools": 4,
     "prompts": 0,

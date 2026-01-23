@@ -106,6 +106,14 @@ _cross_tool_exclude := [
 	#
 	"get_all_repositories_tree",
 	#
+	"get_repository_tree",
+	#
+	"create_branch",
+	#
+	"create_commit",
+	#
+	"list_commits",
+	#
 	"list_work_items",
 	#
 	"get_work_item",
@@ -132,9 +140,23 @@ _cross_tool_exclude := [
 	#
 	"update_pull_request",
 	#
+	"get_pull_request_changes",
+	#
+	"get_pull_request_checks",
+	#
 	"list_pipelines",
 	#
 	"get_pipeline",
+	#
+	"list_pipeline_runs",
+	#
+	"get_pipeline_run",
+	#
+	"download_pipeline_artifact",
+	#
+	"pipeline_timeline",
+	#
+	"get_pipeline_log",
 	#
 	"trigger_pipeline",
 	#

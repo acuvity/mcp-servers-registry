@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -21,10 +21,10 @@
 # What is mcp-server-razorpay?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-razorpay/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-razorpay/v1.2.0?logo=docker&logoColor=fff&label=v1.2.0)](https://hub.docker.com/r/acuvity/mcp-server-razorpay)
-[![GitHUB](https://img.shields.io/badge/v1.2.0-3775A9?logo=github&logoColor=fff&label=razorpay/razorpay-mcp-server)](https://github.com/razorpay/razorpay-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-razorpay/v1.2.1?logo=docker&logoColor=fff&label=v1.2.1)](https://hub.docker.com/r/acuvity/mcp-server-razorpay)
+[![GitHUB](https://img.shields.io/badge/v1.2.1-3775A9?logo=github&logoColor=fff&label=razorpay/razorpay-mcp-server)](https://github.com/razorpay/razorpay-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-razorpay/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-razorpay&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22RAZORPAY_KEY_ID%22%2C%22-e%22%2C%22RAZORPAY_KEY_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-razorpay%3Av1.2.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-razorpay&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22RAZORPAY_KEY_ID%22%2C%22-e%22%2C%22RAZORPAY_KEY_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-razorpay%3Av1.2.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Advanced payment processing with Razorpay APIs for devs and AI tools.
 
@@ -43,69 +43,70 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
 The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-razorpay/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
-### 🔒 Resource Integrity
+#### 🔒 Resource Integrity
 
 **Mitigates MCP Rug Pull Attacks**
 
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Guardrails
+#### 🛡️ Guardrails
 
-#### Covert Instruction Detection
+##### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-#### Sensitive Pattern Detection
+##### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-#### Shadowing Pattern Detection
+##### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-#### Schema Misuse Prevention
+##### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-#### Cross-Origin Tool Access
+##### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-#### Secrets Redaction
+##### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
@@ -114,7 +115,7 @@ Automatically masks sensitive values so they never appear in logs or responses.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
-### Enable guardrails
+#### Enable guardrails
 
 To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
@@ -129,7 +130,7 @@ To activate guardrails in your Docker containers, define the `GUARDRAILS` enviro
 
 Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
 
-## 🔒 Basic Authentication via Shared Secret
+#### 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
@@ -143,10 +144,8 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 > While basic auth will protect against unauthorized access, you should use it only in controlled environment,
 > rotate credentials frequently and **always** use TLS.
 
-</details>
-
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # 📦 How to Install
@@ -174,7 +173,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-razorpay&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22RAZORPAY_KEY_ID%22%2C%22-e%22%2C%22RAZORPAY_KEY_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-razorpay%3Av1.2.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-razorpay&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22RAZORPAY_KEY_ID%22%2C%22-e%22%2C%22RAZORPAY_KEY_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-razorpay%3Av1.2.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -199,7 +198,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "RAZORPAY_KEY_ID",
           "-e",
           "RAZORPAY_KEY_SECRET",
-          "docker.io/acuvity/mcp-server-razorpay:v1.2.0"
+          "docker.io/acuvity/mcp-server-razorpay:v1.2.1"
         ]
       }
     }
@@ -229,7 +228,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "RAZORPAY_KEY_ID",
         "-e",
         "RAZORPAY_KEY_SECRET",
-        "docker.io/acuvity/mcp-server-razorpay:v1.2.0"
+        "docker.io/acuvity/mcp-server-razorpay:v1.2.1"
       ]
     }
   }
@@ -263,7 +262,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "RAZORPAY_KEY_ID",
         "-e",
         "RAZORPAY_KEY_SECRET",
-        "docker.io/acuvity/mcp-server-razorpay:v1.2.0"
+        "docker.io/acuvity/mcp-server-razorpay:v1.2.1"
       ]
     }
   }
@@ -299,7 +298,7 @@ Add the following JSON block to your mcp configuration file:
         "RAZORPAY_KEY_ID",
         "-e",
         "RAZORPAY_KEY_SECRET",
-        "docker.io/acuvity/mcp-server-razorpay:v1.2.0"
+        "docker.io/acuvity/mcp-server-razorpay:v1.2.1"
       ]
     }
   }
@@ -333,7 +332,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "RAZORPAY_KEY_ID",
         "-e",
         "RAZORPAY_KEY_SECRET",
-        "docker.io/acuvity/mcp-server-razorpay:v1.2.0"
+        "docker.io/acuvity/mcp-server-razorpay:v1.2.1"
       ]
     }
   }
@@ -353,7 +352,7 @@ async with MCPServerStdio(
     params={
         "env": {"RAZORPAY_KEY_ID":"TO_BE_SET","RAZORPAY_KEY_SECRET":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","RAZORPAY_KEY_ID","-e","RAZORPAY_KEY_SECRET","docker.io/acuvity/mcp-server-razorpay:v1.2.0"]
+        "args": ["run","-i","--rm","--read-only","-e","RAZORPAY_KEY_ID","-e","RAZORPAY_KEY_SECRET","docker.io/acuvity/mcp-server-razorpay:v1.2.1"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -382,7 +381,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e RAZORPAY_KEY_ID -e RAZORPAY_KEY_SECRET docker.io/acuvity/mcp-server-razorpay:v1.2.0`
+- arguments: `run -i --rm --read-only -e RAZORPAY_KEY_ID -e RAZORPAY_KEY_SECRET docker.io/acuvity/mcp-server-razorpay:v1.2.1`
 
 </details>
 
@@ -392,7 +391,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e RAZORPAY_KEY_ID -e RAZORPAY_KEY_SECRET docker.io/acuvity/mcp-server-razorpay:v1.2.0
+docker run -it -p 8000:8000 --rm --read-only -e RAZORPAY_KEY_ID -e RAZORPAY_KEY_SECRET docker.io/acuvity/mcp-server-razorpay:v1.2.1
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -496,7 +495,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (37)
+## 🧰 Tools (41)
 <details>
 <summary>capture_payment</summary>
 
@@ -553,7 +552,17 @@ Create an instant settlement to get funds transferred to your bank account
 **Description**:
 
 ```
-Create a new order in Razorpay
+Create a new order in Razorpay. Supports both regular orders and mandate orders. 
+
+For REGULAR ORDERS: Provide amount, currency, and optional receipt/notes. 
+
+For MANDATE ORDERS (recurring payments): You MUST provide ALL of these fields: amount, currency, method='upi', customer_id (starts with 'cust_'), and token object. 
+
+The token object is required for mandate orders and must contain: max_amount (positive number), frequency (as_presented/monthly/one_time/yearly/weekly/daily), type='single_block_multiple_debit', and optionally expire_at (defaults to today+60days). 
+
+IMPORTANT: When token.type is 'single_block_multiple_debit', the method MUST be 'upi'. 
+
+Example mandate order payload: {"amount": 100, "currency": "INR", "method": "upi", "customer_id": "cust_abc123", "token": {"max_amount": 100, "frequency": "as_presented", "type": "single_block_multiple_debit"}, "receipt": "Receipt No. 1", "notes": {"key": "value"}}
 ```
 
 **Parameter**:
@@ -562,10 +571,14 @@ Create a new order in Razorpay
 |-----------|------|-------------|-----------|
 | amount | number | Payment amount in the smallest currency sub-unit (e.g., for ₹295, use 29500) | Yes
 | currency | string | ISO code for the currency (e.g., INR, USD, SGD) | Yes
+| customer_id | string | Customer ID for mandate orders. REQUIRED for mandate orders. Must start with 'cust_' followed by alphanumeric characters. Example: 'cust_xxx'. This identifies the customer for recurring payments. | No
 | first_payment_min_amount | number | Minimum amount for first partial payment (only if partial_payment is true) | No
+| method | string | Payment method for mandate orders. REQUIRED for mandate orders. Must be 'upi' when using token.type='single_block_multiple_debit'. This field is used only for mandate/recurring payment orders. | No
 | notes | object | Key-value pairs for additional information (max 15 pairs, 256 chars each) | No
 | partial_payment | boolean | Whether the customer can make partial payments | No
 | receipt | string | Receipt number for internal reference (max 40 chars, must be unique) | No
+| token | object | Token object for mandate orders. REQUIRED for mandate orders. Must contain: max_amount (positive number, maximum debit amount), frequency (as_presented/monthly/one_time/yearly/weekly/daily), type='single_block_multiple_debit' (only supported type), and optionally expire_at (Unix timestamp, defaults to today+60days). Example: {"max_amount": 100, "frequency": "as_presented", "type": "single_block_multiple_debit"} | No
+| transfers | array | Array of transfer objects for distributing payment amounts among multiple linked accounts. Each transfer object should contain: account (linked account ID), amount (in currency subunits), currency (ISO code), and optional fields like notes, linked_account_notes, on_hold, on_hold_until | No
 </details>
 <details>
 <summary>create_payment_link</summary>
@@ -1039,6 +1052,45 @@ Use this tool to retrieve details of a specific refund made for a payment.
 | refund_id | string | Unique identifier of the refund to be retrieved. ID should have a rfnd_ prefix. | Yes
 </details>
 <details>
+<summary>fetch_tokens</summary>
+
+**Description**:
+
+```
+Get all saved payment methods (cards, UPI) for a contact number. This tool first finds or creates a customer with the given contact number, then fetches all saved payment tokens associated with that customer including credit/debit cards, UPI IDs, digital wallets, and other tokenized payment instruments.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| contact | string | Contact number of the customer to fetch all saved payment methods for. For example, 9876543210 or +919876543210 | Yes
+</details>
+<details>
+<summary>initiate_payment</summary>
+
+**Description**:
+
+```
+Initiate a payment using the S2S JSON v1 flow. Required parameters: amount and order_id. For saved payment methods, provide token. For UPI collect flow, provide 'vpa' parameter which automatically sets UPI with flow='collect' and expiry_time='6'. For UPI intent flow, set 'upi_intent=true' parameter which automatically sets UPI with flow='intent' and API returns UPI URL. Supports additional parameters like customer_id, email, contact, and save. Returns payment details including next action steps if required.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| amount | number | Payment amount in the smallest currency sub-unit (e.g., for ₹100, use 10000) | Yes
+| contact | string | Customer's phone number | No
+| currency | string | Currency code for the payment. Default is 'INR' | No
+| customer_id | string | Customer ID for the payment. Must start with 'cust_' | No
+| email | string | Customer's email address (optional) | No
+| order_id | string | Order ID for which the payment is being initiated. Must start with 'order_' | Yes
+| save | boolean | Whether to save the payment method for future use | No
+| token | string | Token ID of the saved payment method. Must start with 'token_' | No
+| upi_intent | boolean | Enable UPI intent flow. When set to true, automatically sets method='upi' and UPI parameters with flow='intent'. The API will return a UPI URL in the response. | No
+| vpa | string | Virtual Payment Address (VPA) for UPI payment. When provided, automatically sets method='upi' and UPI parameters with flow='collect' and expiry_time='6' (e.g., '9876543210@ptsbi') | No
+</details>
+<details>
 <summary>payment_link_notify</summary>
 
 **Description**:
@@ -1055,7 +1107,7 @@ Send or resend notification for a payment link via SMS or email.
 | payment_link_id | string | ID of the payment link for which to send notification (ID should have a plink_ prefix). | Yes
 </details>
 <details>
-<summary>payment_link_upi.create</summary>
+<summary>payment_link_upi_create</summary>
 
 **Description**:
 
@@ -1083,6 +1135,37 @@ Create a new UPI payment link in Razorpay with a specified amount and additional
 | notify_sms | boolean | Send SMS notifications for the Payment Link. | No
 | reference_id | string | Reference number tagged to a Payment Link. Must be unique for each Payment Link. Max 40 characters. | No
 | reminder_enable | boolean | Enable payment reminders for the Payment Link. | No
+</details>
+<details>
+<summary>resend_otp</summary>
+
+**Description**:
+
+```
+Resend OTP to the customer's registered mobile number if the previous OTP was not received or has expired.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| payment_id | string | Unique identifier of the payment for which OTP needs to be generated. Must start with 'pay_' | Yes
+</details>
+<details>
+<summary>submit_otp</summary>
+
+**Description**:
+
+```
+Verify and submit the OTP received by the customer to complete the payment authentication process.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| otp_string | string | OTP string received from the user | Yes
+| payment_id | string | Unique identifier of the payment for which OTP needs to be submitted. Must start with 'pay_' | Yes
 </details>
 <details>
 <summary>update_order</summary>
@@ -1171,13 +1254,17 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | create_instant_settlement | description | 05b18f0241d04d9118678908e5b6b7ca58d28c415feaf46578baddade4bb1dec |
 | tools | create_instant_settlement | notes | 76998bdb949d7dfe5990d655b83144da1af6b5bdf0ef6666e21537f5eec162ea |
 | tools | create_instant_settlement | settle_full_balance | 40354b1d1a842bd146847414e5a20da9231622dee3dc793d93d4a92bec458be0 |
-| tools | create_order | description | 7d82117fec42acecc41ba70b5e8cf726e307b655fa4551869ad11f9fd2aba940 |
+| tools | create_order | description | 3df61c70d9aa81e65d3497465a952f89aebd18dbd42e2b7eae86c61f4963b6dc |
 | tools | create_order | amount | bb490265d75b06a8a5c82bf925b58e8d43bd6d33175797fc3bfa620c1155866d |
 | tools | create_order | currency | 6ae3295165b77a3e14cd3b9230d16e2900fae6c77d9660c9f1d6c16ae979accf |
+| tools | create_order | customer_id | 86f0a03f0d3fd854b9b8e5ef4bffc739114b37e3672c026ec2f6218067b3ff68 |
 | tools | create_order | first_payment_min_amount | 9dbdbf0f5e0f69feaeebf039378b7b74009d619bbb75d9937608b90fcbe0f23d |
+| tools | create_order | method | 4b3935ea01dc3822db739ca2832e85c3537eb3db1750d0a833497510f37f3ae6 |
 | tools | create_order | notes | 658fd3000d06e20f80d3ab2d2db0669810d45fbe5749cfd516774ff3a705b50b |
 | tools | create_order | partial_payment | 8eb6e2e132177fdfef11e605d9ed60f336cbefe0eb2911f731128e11255be62a |
 | tools | create_order | receipt | c82705f4e6b7ba32194af79440f25689eb8332ea2ae4d6d74954494b9dd75a56 |
+| tools | create_order | token | faf891f91b4eafedc7366dcfd104fbf8557f22828c5eeaa7028d31ace95425d2 |
+| tools | create_order | transfers | 3bc7f954764ba9784c8c73e80c30abd10210671c74524311880ac0414cc0c651 |
 | tools | create_payment_link | description | 11eb719a763a137a870f9d996cf709ce786d4c00c3d69e0e10f4b2d2d2fd79bf |
 | tools | create_payment_link | accept_partial | b923ec63e4ad67fe5547d265da298eae5469abac18720beac806ab1c5eef7ac5 |
 | tools | create_payment_link | amount | da4f244698a76a7caa472773c9971b9cc29f00a5b301f2ab5af951a969beae1d |
@@ -1298,26 +1385,44 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | fetch_specific_refund_for_payment | description | 2662c9506cd893264175c86a1e48b8150e3877e3ff94ee05cdf765df145b0bc1 |
 | tools | fetch_specific_refund_for_payment | payment_id | 9b26fdbcbc57574ec6a4e30d1f2dfd8c8ffbc9f8535da54bb35bbcfebd8cec5f |
 | tools | fetch_specific_refund_for_payment | refund_id | 7573be1d03d2052dc3873777c1f41c1e2968960dafcf1f725d7c7a859ef7cf48 |
+| tools | fetch_tokens | description | 40aa486225fd1482c76fe0cc1d5d114aec7c9093b0b7005227c81ab90368c0d3 |
+| tools | fetch_tokens | contact | 8f2aa82e00da8f39ad8c1c9f673ac45f4aa1d6da1132790e9661a81b4f892af3 |
+| tools | initiate_payment | description | 4037a4d8ada56444e8af72e8580b17fc7f4aab65bb5d3a5d29bb3552229e130e |
+| tools | initiate_payment | amount | 348e8512c7f502c0ccc1c503915121041c818481a7c0b81c75f9bb6c5064b05e |
+| tools | initiate_payment | contact | 5676f1429a3f86be45998bd3a3d84234fbe2d9b9e538b58a8bebf465cae2a98f |
+| tools | initiate_payment | currency | c589ca4b091cf1b45b6ba9405be11b16aa387f8f2fc53f5bcf0cdf5629150491 |
+| tools | initiate_payment | customer_id | a067956cac2c4616941c102b1d4df785112847ad4ea12dc292692a8406e5bfad |
+| tools | initiate_payment | email | f6b52529d3fc709bf9bafda0634bcd57e1dd0111c5b1ad9ed83cc62ef0601106 |
+| tools | initiate_payment | order_id | 7f77b2edf700f5a470f60b5a3a32a699034020b904f42d0cefaa6f4f4b0b96d4 |
+| tools | initiate_payment | save | e8b7ec270281de87e17aa41cc9f14e37c3ed1323006de756331d8fcf5150748f |
+| tools | initiate_payment | token | 2d360f3d0a2df4ac997708f9aae918f7ba63947dfd49342ff8035a08c487ee3f |
+| tools | initiate_payment | upi_intent | 41ebe010aa2ac0b85aa4ac64c5e9a865eab5919d95af68e8aff4945d2c8affa7 |
+| tools | initiate_payment | vpa | e9c4a20ab918106066ea37db403c7e0749c65f7fb81c23c3c489dc6284272fbe |
 | tools | payment_link_notify | description | a635457a624426b2d3991ab58673eeca77f91715661efd029a5ab7a3dc64db8c |
 | tools | payment_link_notify | medium | 759fd06956d74b75ba97b5c0a6fca7fe070b823cf0048c238671c0e6ec1de5b6 |
 | tools | payment_link_notify | payment_link_id | a81943b1bcf5c056b287466206efbb23271639a9eca24a5a433eede63e5325b3 |
-| tools | payment_link_upi.create | description | e35e601b97a50a3470a4e0eb23efa0062b2a1f0e1657f44d0dbd6fafb47e95b1 |
-| tools | payment_link_upi.create | accept_partial | b923ec63e4ad67fe5547d265da298eae5469abac18720beac806ab1c5eef7ac5 |
-| tools | payment_link_upi.create | amount | aa1a2f87e61363b781cc3154c73701fd9079e90dce2db0a98fc819b7006e5506 |
-| tools | payment_link_upi.create | callback_method | 88b90ba487239c69ef2d2e8e34ed66d2dc22f6e9b115087f7a1e0e01c9448a9b |
-| tools | payment_link_upi.create | callback_url | ecce69b9f2a9f746275764382bb4d936e2b88cd83ffd4384cb9eb256fd0d7704 |
-| tools | payment_link_upi.create | currency | 705ad3d157ff248e6036ce01f8a3558cf4e1af4b927293730f77b65816694c7e |
-| tools | payment_link_upi.create | customer_contact | 7407de16d0c40f06063946e98fd70e3012422ec51175063734345d9058fc91d6 |
-| tools | payment_link_upi.create | customer_email | b0721bb49af91271c856326da65a94cd2b2267eeb18d0d046af132c507d7cde9 |
-| tools | payment_link_upi.create | customer_name | 32a39d7f6f048f018654a0d99228d508776b01ee73f52687f46cb122f98cfc74 |
-| tools | payment_link_upi.create | description | fbf4d0b4ace492db0ac88a472bd6287c64ddab1ace9fecbc7e474f491e61c2b1 |
-| tools | payment_link_upi.create | expire_by | abb9dec8c11662893ffa45ed15b1f20f839221a9d9cc33ad0a927ac57c122769 |
-| tools | payment_link_upi.create | first_min_partial_amount | c63b5260dbf6aa0554cf049207a8d85b256117aae07106ed0af22c80b86bc6b5 |
-| tools | payment_link_upi.create | notes | 409ea3b80ab1f52ebf5f0e45db41122e3c705edf420a36991cf0a09e04221178 |
-| tools | payment_link_upi.create | notify_email | 4d29b9ce54dd1a4a5c90889d96506345bc22a8efbb9f49eca04a754b0346438f |
-| tools | payment_link_upi.create | notify_sms | 061a3e92f96459592a103dd986350a396a36089f1e51b1432dfde297e1d3290b |
-| tools | payment_link_upi.create | reference_id | 5d451c50c3ac7b8c433665f791b608e80dbe8102649f52761b994ce6e1e89d1a |
-| tools | payment_link_upi.create | reminder_enable | 111bf5aeb9fb3c946179ddca4100d9385ea5e092bc5392e2a70aefa0f07bd215 |
+| tools | payment_link_upi_create | description | e35e601b97a50a3470a4e0eb23efa0062b2a1f0e1657f44d0dbd6fafb47e95b1 |
+| tools | payment_link_upi_create | accept_partial | b923ec63e4ad67fe5547d265da298eae5469abac18720beac806ab1c5eef7ac5 |
+| tools | payment_link_upi_create | amount | aa1a2f87e61363b781cc3154c73701fd9079e90dce2db0a98fc819b7006e5506 |
+| tools | payment_link_upi_create | callback_method | 88b90ba487239c69ef2d2e8e34ed66d2dc22f6e9b115087f7a1e0e01c9448a9b |
+| tools | payment_link_upi_create | callback_url | ecce69b9f2a9f746275764382bb4d936e2b88cd83ffd4384cb9eb256fd0d7704 |
+| tools | payment_link_upi_create | currency | 705ad3d157ff248e6036ce01f8a3558cf4e1af4b927293730f77b65816694c7e |
+| tools | payment_link_upi_create | customer_contact | 7407de16d0c40f06063946e98fd70e3012422ec51175063734345d9058fc91d6 |
+| tools | payment_link_upi_create | customer_email | b0721bb49af91271c856326da65a94cd2b2267eeb18d0d046af132c507d7cde9 |
+| tools | payment_link_upi_create | customer_name | 32a39d7f6f048f018654a0d99228d508776b01ee73f52687f46cb122f98cfc74 |
+| tools | payment_link_upi_create | description | fbf4d0b4ace492db0ac88a472bd6287c64ddab1ace9fecbc7e474f491e61c2b1 |
+| tools | payment_link_upi_create | expire_by | abb9dec8c11662893ffa45ed15b1f20f839221a9d9cc33ad0a927ac57c122769 |
+| tools | payment_link_upi_create | first_min_partial_amount | c63b5260dbf6aa0554cf049207a8d85b256117aae07106ed0af22c80b86bc6b5 |
+| tools | payment_link_upi_create | notes | 409ea3b80ab1f52ebf5f0e45db41122e3c705edf420a36991cf0a09e04221178 |
+| tools | payment_link_upi_create | notify_email | 4d29b9ce54dd1a4a5c90889d96506345bc22a8efbb9f49eca04a754b0346438f |
+| tools | payment_link_upi_create | notify_sms | 061a3e92f96459592a103dd986350a396a36089f1e51b1432dfde297e1d3290b |
+| tools | payment_link_upi_create | reference_id | 5d451c50c3ac7b8c433665f791b608e80dbe8102649f52761b994ce6e1e89d1a |
+| tools | payment_link_upi_create | reminder_enable | 111bf5aeb9fb3c946179ddca4100d9385ea5e092bc5392e2a70aefa0f07bd215 |
+| tools | resend_otp | description | c4e0d704a1997aa1f28162ce21b780cc713baff5e297aa2e70c3e9bae71c8845 |
+| tools | resend_otp | payment_id | b0ff3754c8a1f8382b4f22c542b8faa936656f14c1b6c45a3b1b845dde89ba93 |
+| tools | submit_otp | description | 8e3955edb70dfa04721e9156d546f4f58edadf9448f0954e7893b66edc26a3aa |
+| tools | submit_otp | otp_string | 6278af8d92a2fbf1cb793a199185de04816a803c248f9439ace8fb9cf6bf248a |
+| tools | submit_otp | payment_id | 91acd75f5c29b3d9aa75f0e75cc5826ff081f91ca52da8636a66b2e1b04e491a |
 | tools | update_order | description | 2268a54ccb180030c66b33a78fc3bc302b4b8c9a9f12f662348f23dcbbcd4981 |
 | tools | update_order | notes | 07b087a1c2ce32ca37ae9850501d4750f1e0ee4ac442e5e6025c38113f405924 |
 | tools | update_order | order_id | bcba8145c15ca2e6d4637b153f03770aea34a05291133d2d34a8d8598f17d346 |

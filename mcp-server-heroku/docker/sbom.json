@@ -609,20 +609,6 @@
           "hash": "d1458146455eb236b30602f55211b969201fbec119fb383eb2ffad009d31c1e6"
         }
       ]
-    },
-    {
-      "name": "transfer_app",
-      "hash": "66b48d6191482551e5252398d78d18320043a73f5fe74565adbf4cfd04b961c9",
-      "params": [
-        {
-          "name": "app",
-          "hash": "d82fef382119028ddbf6b6a9df9463a93b4b6a4d32703bf362df2283a6ec2b72"
-        },
-        {
-          "name": "recipient",
-          "hash": "9bf8cad069d199dc0f3bee1cfdfba07d44318b0dc6cc2347eea9b42ae36dadf3"
-        }
-      ]
     }
   ],
   "prompts": []

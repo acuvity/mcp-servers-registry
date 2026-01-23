@@ -13,14 +13,14 @@
   "scope": "standalone",
   "mutitenant": true,
   "runtime": "node",
-  "version": "2025.5.12",
+  "version": "2026.1.14",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"7858108bd191e9d83dcc2c11e0730298b1d4f5594cb70681efaaf9b084b3f8d4","reason":"Tool names are clear but descriptions are overly brief (mostly one sentence fragments). While parameter descriptions exist and indicate basic purpose, the tool descriptions lack context about when to use them, what they return, or their limitations. Most descriptions read like tautological statements rather than informative guidance.","score":"D"},
+  "rating": {"hash":"99dd5e39bc375f9bf64cd363b62eedeb87c690ff899721265719069c60ff3c79","reason":"The toolset shows adequate documentation with clear parameter descriptions and proper constraints, but tool descriptions are generally brief (1-2 sentences) and often lack important context about when to use each tool or what limitations exist. While names like 'echo' and 'get-sum' are clear, others like 'get-annotated-message' require more explanation of their purpose. The parameter documentation is consistently good with clear types and constraints specified.","score":"C"},
   "resources": {
-    "tools": 8,
-    "prompts": 3,
-    "resources": 100,
+    "tools": 14,
+    "prompts": 4,
+    "resources": 7,
     "resourcesTemplates": 0
   }
 }

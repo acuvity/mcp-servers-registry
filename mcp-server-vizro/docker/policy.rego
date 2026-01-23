@@ -86,15 +86,15 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
-	"get_sample_data_info",
-	#
-	"validate_model_config",
+	"get_vizro_chart_or_dashboard_plan",
 	#
 	"get_model_json_schema",
 	#
-	"get_vizro_chart_or_dashboard_plan",
+	"get_sample_data_info",
 	#
 	"load_and_analyze_data",
+	#
+	"validate_dashboard_config",
 	#
 	"validate_chart_code",
 	#

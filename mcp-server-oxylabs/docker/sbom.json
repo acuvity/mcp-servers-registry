@@ -1,8 +1,162 @@
 {
   "tools": [
     {
+      "name": "ai_browser_agent",
+      "hash": "eab7fc894440a70a9205f917d761d84cead1873b1fd0ca76d46e07e7cf102b30",
+      "params": [
+        {
+          "name": "geo_location",
+          "hash": "601a6c2f2a538fd39739ac765e5883cb1e8d7c9fb23358fd2128e9ba37d074b4"
+        },
+        {
+          "name": "output_format",
+          "hash": "b34ec523ca4b38485179c92abe0e3878ee3060c0e7e2457b49dc81dcdbfcdaec"
+        },
+        {
+          "name": "schema",
+          "hash": "7e2522eafb14c18cae0776f832fb2ecd7468771b4817f563932d974039ee7ce3"
+        },
+        {
+          "name": "task_prompt",
+          "hash": "e48646a0ab730576db60142244c3112f134fcedc0a44a0c35644a72d762aa789"
+        },
+        {
+          "name": "url",
+          "hash": "ccc02d04935f6b5739a1aa3947c0e89aaef46067c73b23de5f6c499db0083d0d"
+        }
+      ]
+    },
+    {
+      "name": "ai_crawler",
+      "hash": "525643b20fbe3ea151c5a19d4c125b987cde286e824c84d195cd23a6e625b8dc",
+      "params": [
+        {
+          "name": "geo_location",
+          "hash": "c509bcdac9bf47d86714d53d960fdcb59a869260e35dc09901cc25f61aa50586"
+        },
+        {
+          "name": "output_format",
+          "hash": "aa3f936c7746c51f42142f5415d59f30efa87dc7d35b2a23e75eb0e30a7a169a"
+        },
+        {
+          "name": "render_javascript",
+          "hash": "994aaf4b564713ea26a6acee3e312b39974fb9820d33496006319278a342f0f6"
+        },
+        {
+          "name": "return_sources_limit",
+          "hash": "380b001754a6c1bfdd684a50ece0bcb48e5f0696aae988561a7d22e00291ff6e"
+        },
+        {
+          "name": "schema",
+          "hash": "9d17fdbd15b6722ec6e0b82e67d1284d68b503702bdcfe44bca64b9f279a2921"
+        },
+        {
+          "name": "url",
+          "hash": "aba40bb672941fd804ad5bc5d109402caa113fac89072a73a0513d495d536905"
+        },
+        {
+          "name": "user_prompt",
+          "hash": "3837a4d9859217305d0e62c843b51983bbbcbf0fb584097b4cb6de4e6daa0ac2"
+        }
+      ]
+    },
+    {
+      "name": "ai_map",
+      "hash": "dcc7647f4da8d94d7b1d784d91622404f3b65b3cb4ff1a8ee8b35f1b3f65a120",
+      "params": [
+        {
+          "name": "allow_external_domains",
+          "hash": "61c9640ae53e99430ec75dd8f7c6e55a0da267eefefa5f5c186c48e9963b97f6"
+        },
+        {
+          "name": "allow_subdomains",
+          "hash": "423682d78c2831696b4f2529269169eec3f591c4763fb71a0973bc13d9a5c622"
+        },
+        {
+          "name": "geo_location",
+          "hash": "fc894164cb2c55869c199dd6649525e4902ffad5e36870bdd0d54d50dcdda32a"
+        },
+        {
+          "name": "limit",
+          "hash": "0f1ca1a6ce4bc74b16576aef0b6de66c769fd3c64bef37738298d7ec709d12b7"
+        },
+        {
+          "name": "max_crawl_depth",
+          "hash": "bcfcb102610345270f87518d309a5a85d54128465d1456e3de77b2813258629a"
+        },
+        {
+          "name": "render_javascript",
+          "hash": "994aaf4b564713ea26a6acee3e312b39974fb9820d33496006319278a342f0f6"
+        },
+        {
+          "name": "search_keywords",
+          "hash": "ad9d5e36d28efcf372e6c2c9f8396d1c7c52128e4d00159269aff181fbe18416"
+        },
+        {
+          "name": "url",
+          "hash": "ad8af6a2f9988ea8a94366a0872fb280cf1a033539237d97909c30f865bb5696"
+        },
+        {
+          "name": "user_prompt",
+          "hash": "3f6cf16d60448cc0d9e3028e7fe423ee7140dc07ca3c2dba0da41c341f5a8863"
+        }
+      ]
+    },
+    {
+      "name": "ai_scraper",
+      "hash": "bc499ca1971ee027022c3afe76f8d68bf27f56dbb76cf4937742d1909638146f",
+      "params": [
+        {
+          "name": "geo_location",
+          "hash": "9e2d156a29a99d5c56be2a195fa8e0998aaabc4b474874faf70ec63281f04d6a"
+        },
+        {
+          "name": "output_format",
+          "hash": "247b4487def1524a04ed97c5c79ba805893b93c1eb0fb270c39e63e955c67be2"
+        },
+        {
+          "name": "render_javascript",
+          "hash": "1d8717beeaacdbf8e043878aa97bb85ab8974ca07ae426338960bc50707bbb38"
+        },
+        {
+          "name": "schema",
+          "hash": "03b0eb86f1a1939e756b073f9adebffc397729e0a8c50bdf53e931992fbdcc2a"
+        },
+        {
+          "name": "url",
+          "hash": "411017ed7507e7e9879b327be68b92dd9bd90e63a4ce7f399e5cc2d792d90db3"
+        }
+      ]
+    },
+    {
+      "name": "ai_search",
+      "hash": "3939da6f21cc72ed5a7954dae305c9d2c7c99bc4d02a77145657e59f71185768",
+      "params": [
+        {
+          "name": "geo_location",
+          "hash": "ce9fc383f7f27e2872d25fc13f292173d65f3c4da1d8fd001eda7410370fc61f"
+        },
+        {
+          "name": "limit",
+          "hash": "0f3bc3254706bf8efad63a5885bd4005cb4acbe248c3385172421b8273da8401"
+        },
+        {
+          "name": "query",
+          "hash": "c03cd7ada9a926bc64128a4f5d75edd257c623f579c718f77e465a7624fc252e"
+        },
+        {
+          "name": "render_javascript",
+          "hash": "352a709b5bdd706b25974118c84da8535288c5f8e7e4670b6a167e88a5d9c2dd"
+        },
+        {
+          "name": "return_content",
+          "hash": "8620473a899fd598a5cc9242a7ded3862c867a290c65042af226e0d5356c1053"
+        }
+      ]
+    },
+    {
       "name": "amazon_product_scraper",
-      "hash": "556ffee33f9b5f0f3da719d7b1b7c37fa398d92b63ad77bfbc024922468e2594",
+      "hash": "76549a6e44fa37e089690049939bfcc14315558ee6c3919cee8fd39e5e59c7f7",
       "params": [
         {
           "name": "autoselect_variant",
@@ -48,7 +202,7 @@
     },
     {
       "name": "amazon_search_scraper",
-      "hash": "b026096a4c93afe5c9ab78ec43196cc26c0325f5c7d36e637e4f09a1651e3dbf",
+      "hash": "4ce0bd7edb45c9cd733162f2d3eaa43e6fa15cd07237ba85296e505c221de0b6",
       "params": [
         {
           "name": "category_id",
@@ -105,8 +259,12 @@
       ]
     },
     {
+      "name": "generate_schema",
+      "hash": "655b32c6de853e5ed1139c0a33fc16ca2dc9bd8d5bb8182453cee849136cccd1"
+    },
+    {
       "name": "google_search_scraper",
-      "hash": "29fbda527f73d022b8ce16fa2cefa7154cdef35b6facfb5d0ec8e274e72a8d82",
+      "hash": "877f25bbc23c2c7f326834df738e1f7b59dfd1e5abae52ad5b483bd0dc1ca023",
       "params": [
         {
           "name": "ad_mode",
@@ -160,7 +318,7 @@
     },
     {
       "name": "universal_scraper",
-      "hash": "f17aff38c8d58bd300f276435edd6230f7a92afb25aa1fcf5e5ba10dd0cb237b",
+      "hash": "c77592db2a3bb1387111e53e244521075987dac3c77ccd0525ceec755a06c69a",
       "params": [
         {
           "name": "geo_location",

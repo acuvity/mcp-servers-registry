@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
+    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@5a873664a85bb4ba447c4edf89a48614689c1549
 
 FROM ghcr.io/astral-sh/uv:python3.12-alpine
 
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-aws-kendra-index"
 LABEL org.opencontainers.image.description="Provides AI assistants with access to Amazon Kendra search indexes for enhanced RAG context"
-LABEL org.opencontainers.image.version="1.0.1"
+LABEL org.opencontainers.image.version="1.0.12"
 LABEL org.opencontainers.image.source="https://github.com/awslabs/mcp/tree/HEAD/src/amazon-kendra-index-mcp-server"
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 LABEL org.opencontainers.image.author="AWSLabs MCP <203918161+awslabs-mcp@users.noreply.github.com>, Tom Ron <tomron-aws@users.noreply.github.com>"
@@ -43,7 +43,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uv venv && uv pip install awslabs.amazon-kendra-index-mcp-server==1.0.1
+RUN uv venv && uv pip install awslabs.amazon-kendra-index-mcp-server==1.0.12
 
 EXPOSE 8000/tcp
 

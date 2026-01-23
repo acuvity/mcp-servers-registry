@@ -169,7 +169,7 @@ affinity: {}
 # This section handles environment variables passed to the container.
 env:
   ALATION_BASE_URL: 
-  ALATION_AUTH_METHOD: user_account
+  ALATION_AUTH_METHOD: service_account
   ALATION_USER_ID: 
 
 # This section handles secrets passed to the container.

@@ -43,8 +43,8 @@ fi
 export MINIBRIDGE_OAUTH_DISABLED="${MINIBRIDGE_OAUTH_DISABLED:-"true"}"
 
 if [ "$#" -gt 0 ]; then
-  exec minibridge ${MINIBRIDGE_MODE} -- mcp-server "$@"
+  exec minibridge ${MINIBRIDGE_MODE} -- pulumi-mcp-server "$@"
 else
-  exec minibridge ${MINIBRIDGE_MODE} -- mcp-server
+  exec minibridge ${MINIBRIDGE_MODE} -- pulumi-mcp-server stdio
 fi
 

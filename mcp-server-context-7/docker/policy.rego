@@ -88,7 +88,7 @@ _cross_tool_exclude := [
 	#
 	"resolve-library-id",
 	#
-	"get-library-docs",
+	"query-docs",
 	#
 	# exclude word that might be misdetected
 	"to",

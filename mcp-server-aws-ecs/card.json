@@ -13,13 +13,13 @@
   "scope": "remote",
   "mutitenant": false,
   "runtime": "python",
-  "version": "0.1.3",
+  "version": "0.1.23",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"9ce74cc98b7bc637bbad63d6c538568b076a831f32ae039a55a9d77a194e8372","reason":"Good overall documentation with comprehensive descriptions covering functionality, usage instructions, and infrastructure details. Tool names are clear and specific. Parameter documentation is generally thorough with most having clear descriptions and constraints. Some minor areas for improvement include: the route_table_ids parameter lacks a description, the filters parameter could be more specific about expected filter keys, and a few parameters could benefit from example values or format specifications.","score":"B"},
+  "rating": {"hash":"f833c672610dbd6f19321eaf999f028082c4854548dfb1fcb6efc6b0a0fb31d6","reason":"The toolset demonstrates good documentation quality overall. Tool names are clear and specific (e.g., 'build_and_push_image_to_ecr', 'validate_ecs_express_mode_prerequisites'). Most descriptions are comprehensive, explaining functionality, usage context, parameters, and return values with good examples. Parameter documentation is generally complete with clear purposes and types. However, some inconsistencies exist - a few tools have overly verbose descriptions that could be more concise, and some parameter descriptions could be clearer. The troubleshooting tool's action enumeration and the AWS knowledge tools show excellent documentation practices, while others like 'containerize_app' have adequate but less polished descriptions.","score":"B"},
   "resources": {
-    "tools": 6,
-    "prompts": 82,
+    "tools": 12,
+    "prompts": 92,
     "resources": 0,
     "resourcesTemplates": 0
   }

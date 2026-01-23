@@ -34,29 +34,40 @@ esac
 
 MATCHED_URL=""
 GOBUILD=""
-for url in "$@"; do
-  lc_url=$(echo "$url" | tr '[:upper:]' '[:lower:]')
 
-  # skip checksum files
-  case "$lc_url" in
-  *.sha256) continue ;;
-  gobuild:*)
-    GOBUILD=$(echo "$lc_url" | sed 's/gobuild://g')
-    ;;
+pass1="${norm_os}_${norm_arch} ${norm_os}_${alt_arch} ${norm_os}-${norm_arch} ${norm_os}-${alt_arch}"
+pass2="${norm_os}"
+pass3="${norm_arch} ${alt_arch}"
+
+for pass in 1 2 3; do
+  case $pass in
+  1) patterns="$pass1" ;;
+  2) patterns="$pass2" ;;
+  3) patterns="$pass3" ;;
   esac
 
-  # common pattern for names, in order with a fallback on OS only for amd64
-  patterns="${norm_os}_${norm_arch} ${norm_os}_${alt_arch} ${norm_os}-${norm_arch} ${norm_os}-${alt_arch} ${norm_arch} ${alt_arch} ${norm_os}"
+  for url in "$@"; do
+    lc_url=$(echo "$url" | tr '[:upper:]' '[:lower:]')
 
-  set -f
-  for pat in $patterns; do
     case "$lc_url" in
-    *"$pat"*)
-      MATCHED_URL=$url
-      set +f
-      break 2
+    *.sha256) continue ;;
+    gobuild:*)
+      GOBUILD=$(echo "$lc_url" | sed 's/gobuild://g')
+      continue
       ;;
     esac
+
+    set -f
+    for pat in $patterns; do
+      case "$lc_url" in
+      *"$pat"*)
+        MATCHED_URL=$url
+        set +f
+        break 3
+        ;;
+      esac
+    done
+    set +f
   done
 done
 

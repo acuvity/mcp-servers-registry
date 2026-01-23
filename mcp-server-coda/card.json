@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": false,
   "runtime": "node",
-  "version": "1.4.1",
+  "version": "1.5.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"63b18d6e94d5f10891a6428ebd2ff5549874f4afeb2f89912122010c813b8e52","reason":"The toolset provides adequate documentation with clear, consistent naming and basic functionality descriptions. Parameter descriptions are generally clear and include helpful details like constraints and optional indicators. However, the tool descriptions are quite brief (mostly single sentences) and lack important context about usage scenarios, limitations, or what information is returned. While functional, the documentation leaves users with questions about when to use each tool and what to expect from them.","score":"C"},
+  "rating": {"hash":"dc00558b183d32e82adb25d2468095bae17189f269c05e47b7ba2719a44c5c8a","reason":"The toolset has clear, descriptive names and adequate parameter documentation with proper types and constraints. However, the tool descriptions are too brief (mostly single sentences) and lack important context about usage scenarios, limitations, and what information is returned. Most descriptions don't explain when to use each tool or provide sufficient detail about their functionality.","score":"C"},
   "resources": {
-    "tools": 9,
+    "tools": 10,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

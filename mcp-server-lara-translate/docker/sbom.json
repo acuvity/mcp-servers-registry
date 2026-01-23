@@ -55,10 +55,6 @@
         {
           "name": "external_id",
           "hash": "941422d45e8e6f71ed842799d1643aba334bde277f7e147fe1f17c29c0c4e057"
-        },
-        {
-          "name": "name",
-          "hash": "15aa1f35f480fa69592891769346f7aa4021e5cb9551384e05732a8f08a6c46e"
         }
       ]
     },
@@ -115,20 +111,12 @@
       "hash": "bc53fefa95defccc0371caf9426a14beba5a75a6ec6420a0f7067e827109f393",
       "params": [
         {
-          "name": "gzip",
-          "hash": "8b5335bd86641e96ebaa9dbe572bd79715b5489594fe49de99de4ea979bcbd70"
-        },
-        {
           "name": "id",
           "hash": "e6a3fe5204d2ae3d03d7e4bfc45a0bde4837fc3799ea1856ceda4c2555fa45c0"
         },
         {
           "name": "tmx_content",
-          "hash": "c949bc1eda4b7a196edb4bd60c9615cbb9213da254c4e5a9e69fa5a385e608d8"
-        },
-        {
-          "name": "tmx_url",
-          "hash": "cd4c23aef7ecb0edbeebb2add30a44688999337dc85635f6dc5bfea57402b6de"
+          "hash": "fbb95da37e77195c75e5ab9b150bf5c25360ca8c2f15f335f5e2f50536a6834a"
         }
       ]
     },
@@ -181,10 +169,6 @@
         {
           "name": "id",
           "hash": "ffd44fc743d295ffac3258171d24997bd7ae32a235d85a7e656d8dd6db0943de"
-        },
-        {
-          "name": "name",
-          "hash": "6b2f947d665ad51cb342dc4a2ca01cbd3a543c2934f81b3309f7af108028f4ed"
         }
       ]
     }

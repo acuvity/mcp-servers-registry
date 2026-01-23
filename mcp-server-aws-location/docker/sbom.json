@@ -23,6 +23,16 @@
       ]
     },
     {
+      "name": "geocode",
+      "hash": "2dc68befa246b6d07ce38fbf1ed8630e028329a854e0e519f5da15ec3ef8284e",
+      "params": [
+        {
+          "name": "location",
+          "hash": "19e089d140355f12253013173d5be4eb7bdfba5a273822ae663a94d440131d84"
+        }
+      ]
+    },
+    {
       "name": "get_place",
       "hash": "fa018740b159a255a8fe8c69d299dc9f719a718c5fa95ce4634a3b57ecfa0012",
       "params": [

@@ -13,13 +13,13 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"508cc9bb77963bc5dc1de540b7632b31cad9d448b053f36bef91c154398d3f5e","reason":"The toolset provides adequate documentation with clear tool names and basic functionality descriptions. However, the descriptions are quite brief (1-2 sentences) and lack important context about when to use each tool, potential limitations, or what outputs to expect. Parameter documentation is functional but minimal, with some helpful examples in the registry tools but missing key details like expected formats or constraints. The CLI tools especially lack clarity about their effects and risks.","score":"C"},
+  "rating": {"hash":"8a347a5178315f7073aedcb30ea3cd5f065f46e00a9fa19792cf84b08b798d90","reason":"This toolset demonstrates good documentation quality with clear, specific tool names and mostly comprehensive descriptions. The Pulumi registry tools (get-type, get-resource, etc.) have well-structured parameter documentation with helpful examples. The pulumi-resource-search tool stands out with exceptional detail including syntax rules and usage patterns. However, some tools like the CLI operations (preview, up, refresh) have minimal descriptions that don't explain their purpose or when to use them, and the deploy-to-aws tool lacks parameter documentation entirely. The overall quality is good but inconsistent across tools.","score":"B"},
   "resources": {
-    "tools": 5,
-    "prompts": 0,
+    "tools": 12,
+    "prompts": 2,
     "resources": 0,
     "resourcesTemplates": 0
   }

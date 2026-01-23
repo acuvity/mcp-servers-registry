@@ -94,8 +94,6 @@ _cross_tool_exclude := [
 	#
 	"rename_app",
 	#
-	"transfer_app",
-	#
 	"maintenance_on",
 	#
 	"maintenance_off",

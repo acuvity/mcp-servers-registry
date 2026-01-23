@@ -2,15 +2,15 @@
   "tools": [
     {
       "name": "get_cost_and_usage",
-      "hash": "5d28e7ad6d3e4e706fabc18fa5b392b1ee09489d492f745bdec9058e9254e2e0",
+      "hash": "a09f2be386793fac360138ec469727e609890a106067d4980742d6af53296872",
       "params": [
         {
           "name": "filter_expression",
-          "hash": "c83646dbd6572cfe1e5f3682c0a30b797579c18c6637149ed133999a3277b4c7"
+          "hash": "0eadd6038ace400941ac1273273069f063874acf5f9a75bb104ee203669b01b5"
         },
         {
           "name": "granularity",
-          "hash": "743020d46cb2e66e0fb5479674668b5cc5417e8bdfd9c3ec8f83a1c147f94b7a"
+          "hash": "c8ee2b0971f84af5b6ef414859f2461b9a6f92bccfb06a3a23841549989a0205"
         },
         {
           "name": "group_by",
@@ -18,7 +18,65 @@
         },
         {
           "name": "metric",
-          "hash": "9ff5fbad4a1f690ec6fd6fbea971552c4b73ea926317a55cc43114de58b8b85a"
+          "hash": "1553ff6e9ceaa8fd2b793a7bec7a8108335f79c840497be7cd1d94f90c29cb6e"
+        }
+      ]
+    },
+    {
+      "name": "get_cost_and_usage_comparisons",
+      "hash": "9c749865d7d1e3713dee5d66b886d7065389f32617694132a939e3a1345c54f5",
+      "params": [
+        {
+          "name": "filter_expression",
+          "hash": "9b4ef3fd38d3a3cb8e1b03437b9fab8ada225d5ebc6e27890d91cc78ed8dfb88"
+        },
+        {
+          "name": "group_by",
+          "hash": "317c3255ae60d63f4e477c4fe2035ab078738fa967d0e654e7bb494efc79fbee"
+        },
+        {
+          "name": "metric_for_comparison",
+          "hash": "b114b72e5ec0c26649995b1e69155a0ff118b31e09e892ac9eb1100c8f161f8e"
+        }
+      ]
+    },
+    {
+      "name": "get_cost_comparison_drivers",
+      "hash": "d0b82aa066222a12caa6fd53cd27a094b841c1a6df8285ac5eeed2b83d8c619c",
+      "params": [
+        {
+          "name": "filter_expression",
+          "hash": "874529cde5eb005345e1b68129fe14460b8f3741bdcf8874b39c3ca8a6a959ef"
+        },
+        {
+          "name": "group_by",
+          "hash": "5d75ffffeae8b8d913a411e095b7211a952c08e6d9cfa047326f27ba545080e5"
+        },
+        {
+          "name": "metric_for_comparison",
+          "hash": "7a716eae32ec6a1190c15fa6bf7c13d68157296e7af72a3f81f15036882001c9"
+        }
+      ]
+    },
+    {
+      "name": "get_cost_forecast",
+      "hash": "831cbbf0df81eeafad9bcf4a53b78d7eadc908adc4148002218a670dfc6dec6b",
+      "params": [
+        {
+          "name": "filter_expression",
+          "hash": "7ec072962f2015f83081f6ed55960630a6a0b7957b026661d7efe1a309030c28"
+        },
+        {
+          "name": "granularity",
+          "hash": "316aa99a86175840a31410fe295d92f25d01d78cc087f16388d0275dd6c00b96"
+        },
+        {
+          "name": "metric",
+          "hash": "e6ee0d261abd69c7a7afa17fe49fdd7b411642c733c94bfde39e0752312b4ad5"
+        },
+        {
+          "name": "prediction_interval_level",
+          "hash": "4c27aaed55a4e8a6311bc830437e1528e2359f2b63ede301bb819b474b53a7b9"
         }
       ]
     },
@@ -38,7 +96,7 @@
     },
     {
       "name": "get_today_date",
-      "hash": "bcb5a5d61c5a650f37397af52569fec9aea9d7aea467b6b2f4ebed2be0cd8eeb"
+      "hash": "ef8ca08b2b5a5c327c482f00ac801271109ad541f0b476b22f0e8c585ad67493"
     }
   ],
   "prompts": []

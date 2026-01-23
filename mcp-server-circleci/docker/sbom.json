@@ -2,7 +2,7 @@
   "tools": [
     {
       "name": "analyze_diff",
-      "hash": "3a6df735f38d4674c7151a2b9cef9c4be414cc5c0fd1e3421f8f345a6a54b7cb"
+      "hash": "9ee6b9394b34f13a242630fed7ad591ff6985c31373d9a397d1964525239a3b1"
     },
     {
       "name": "config_helper",
@@ -10,11 +10,19 @@
     },
     {
       "name": "create_prompt_template",
-      "hash": "1a0d5f49ed5ef89ab02439a0fc88d97c2623bd19082b8b8f307f513ba759313f"
+      "hash": "8b7fea3ff871e70405c6e03a6e9c9105e4ab114b0dee8ea0f52259915f107800"
+    },
+    {
+      "name": "download_usage_api_data",
+      "hash": "61f3671aa19af104425e1301b00878141cdb92e465889785ee371fee54b55ebd"
     },
     {
       "name": "find_flaky_tests",
       "hash": "d7791ab55054527245f4201e3f3e852a2260aabb35703b49b88f617f585ce931"
+    },
+    {
+      "name": "find_underused_resource_classes",
+      "hash": "bb91096154f1cee077539a8e36d7d9200e6b1f24ae32e8ef0f9914c71ad055e0"
     },
     {
       "name": "get_build_failure_logs",
@@ -27,6 +35,10 @@
     {
       "name": "get_latest_pipeline_status",
       "hash": "63b01e12f1d869921e612fd53bc8f010312aeec0af67a2a9fad71a73114bdb49"
+    },
+    {
+      "name": "list_component_versions",
+      "hash": "9e9452e495069d1bc7fefc8ff62d1f15e83b07b1b803f18c1116578f96b42de0"
     },
     {
       "name": "list_followed_projects",
@@ -47,6 +59,10 @@
     {
       "name": "run_pipeline",
       "hash": "27592345c42aec34546ce5d145ceab8ee313d902276bfea3d357ebd3c88126ae"
+    },
+    {
+      "name": "run_rollback_pipeline",
+      "hash": "3b682c4d061a1c77dad1f4a2ec46439329a6bfa56605d16b0b232cd66b51412b"
     }
   ],
   "prompts": []

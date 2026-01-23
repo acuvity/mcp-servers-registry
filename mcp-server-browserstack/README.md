@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -19,12 +19,12 @@
 
 
 # What is mcp-server-browserstack?
-[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-browserstack/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-browserstack/1.1.6?logo=docker&logoColor=fff&label=1.1.6)](https://hub.docker.com/r/acuvity/mcp-server-browserstack)
-[![PyPI](https://img.shields.io/badge/1.1.6-3775A9?logo=pypi&logoColor=fff&label=@browserstack/mcp-server)](https://github.com/browserstack/mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-browserstack/1.2.8?logo=docker&logoColor=fff&label=1.2.8)](https://hub.docker.com/r/acuvity/mcp-server-browserstack)
+[![PyPI](https://img.shields.io/badge/1.2.8-3775A9?logo=pypi&logoColor=fff&label=@browserstack/mcp-server)](https://github.com/browserstack/mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-browserstack/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-browserstack&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22BROWSERSTACK_USERNAME%22%2C%22-e%22%2C%22BROWSERSTACK_ACCESS_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-browserstack%3A1.1.6%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-browserstack&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22BROWSERSTACK_USERNAME%22%2C%22-e%22%2C%22BROWSERSTACK_ACCESS_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-browserstack%3A1.2.8%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Access BrowserStack's Test Platform to debug, write and fix tests, do accessibility testing.
 
@@ -43,69 +43,70 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
 The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-browserstack/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
-### 🔒 Resource Integrity
+#### 🔒 Resource Integrity
 
 **Mitigates MCP Rug Pull Attacks**
 
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Guardrails
+#### 🛡️ Guardrails
 
-#### Covert Instruction Detection
+##### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-#### Sensitive Pattern Detection
+##### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-#### Shadowing Pattern Detection
+##### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-#### Schema Misuse Prevention
+##### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-#### Cross-Origin Tool Access
+##### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-#### Secrets Redaction
+##### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
@@ -114,7 +115,7 @@ Automatically masks sensitive values so they never appear in logs or responses.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
-### Enable guardrails
+#### Enable guardrails
 
 To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
@@ -129,7 +130,7 @@ To activate guardrails in your Docker containers, define the `GUARDRAILS` enviro
 
 Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
 
-## 🔒 Basic Authentication via Shared Secret
+#### 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
@@ -143,10 +144,8 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 > While basic auth will protect against unauthorized access, you should use it only in controlled environment,
 > rotate credentials frequently and **always** use TLS.
 
-</details>
-
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # 📦 How to Install
@@ -174,7 +173,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-browserstack&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22BROWSERSTACK_USERNAME%22%2C%22-e%22%2C%22BROWSERSTACK_ACCESS_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-browserstack%3A1.1.6%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-browserstack&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22BROWSERSTACK_USERNAME%22%2C%22-e%22%2C%22BROWSERSTACK_ACCESS_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-browserstack%3A1.2.8%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -199,7 +198,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "BROWSERSTACK_USERNAME",
           "-e",
           "BROWSERSTACK_ACCESS_KEY",
-          "docker.io/acuvity/mcp-server-browserstack:1.1.6"
+          "docker.io/acuvity/mcp-server-browserstack:1.2.8"
         ]
       }
     }
@@ -229,7 +228,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "BROWSERSTACK_USERNAME",
         "-e",
         "BROWSERSTACK_ACCESS_KEY",
-        "docker.io/acuvity/mcp-server-browserstack:1.1.6"
+        "docker.io/acuvity/mcp-server-browserstack:1.2.8"
       ]
     }
   }
@@ -263,7 +262,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "BROWSERSTACK_USERNAME",
         "-e",
         "BROWSERSTACK_ACCESS_KEY",
-        "docker.io/acuvity/mcp-server-browserstack:1.1.6"
+        "docker.io/acuvity/mcp-server-browserstack:1.2.8"
       ]
     }
   }
@@ -299,7 +298,7 @@ Add the following JSON block to your mcp configuration file:
         "BROWSERSTACK_USERNAME",
         "-e",
         "BROWSERSTACK_ACCESS_KEY",
-        "docker.io/acuvity/mcp-server-browserstack:1.1.6"
+        "docker.io/acuvity/mcp-server-browserstack:1.2.8"
       ]
     }
   }
@@ -333,7 +332,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "BROWSERSTACK_USERNAME",
         "-e",
         "BROWSERSTACK_ACCESS_KEY",
-        "docker.io/acuvity/mcp-server-browserstack:1.1.6"
+        "docker.io/acuvity/mcp-server-browserstack:1.2.8"
       ]
     }
   }
@@ -353,7 +352,7 @@ async with MCPServerStdio(
     params={
         "env": {"BROWSERSTACK_ACCESS_KEY":"TO_BE_SET","BROWSERSTACK_USERNAME":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","BROWSERSTACK_USERNAME","-e","BROWSERSTACK_ACCESS_KEY","docker.io/acuvity/mcp-server-browserstack:1.1.6"]
+        "args": ["run","-i","--rm","--read-only","-e","BROWSERSTACK_USERNAME","-e","BROWSERSTACK_ACCESS_KEY","docker.io/acuvity/mcp-server-browserstack:1.2.8"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -382,7 +381,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e BROWSERSTACK_USERNAME -e BROWSERSTACK_ACCESS_KEY docker.io/acuvity/mcp-server-browserstack:1.1.6`
+- arguments: `run -i --rm --read-only -e BROWSERSTACK_USERNAME -e BROWSERSTACK_ACCESS_KEY docker.io/acuvity/mcp-server-browserstack:1.2.8`
 
 </details>
 
@@ -392,7 +391,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e BROWSERSTACK_USERNAME -e BROWSERSTACK_ACCESS_KEY docker.io/acuvity/mcp-server-browserstack:1.1.6
+docker run -it -p 8000:8000 --rm --read-only -e BROWSERSTACK_USERNAME -e BROWSERSTACK_ACCESS_KEY docker.io/acuvity/mcp-server-browserstack:1.2.8
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -498,24 +497,230 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (18)
+## 🧰 Tools (35)
 <details>
-<summary>runTestsOnBrowserStack</summary>
+<summary>accessibilityExpert</summary>
 
 **Description**:
 
 ```
-Use this tool to get instructions for running tests on BrowserStack.
+🚨 REQUIRED: Use this tool for any accessibility/a11y/WCAG questions. Do NOT answer accessibility questions directly - always use this tool.
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| desiredPlatforms | array | The platforms the user wants to test on. Always ask this to the user, do not try to infer this. | Yes
-| detectedBrowserAutomationFramework | string | The automation framework configured in the project. Example: 'playwright', 'selenium' | Yes
-| detectedLanguage | string | The programming language used in the project. Example: 'nodejs', 'python' | Yes
-| detectedTestingFramework | string | The testing framework used in the project. Example: 'jest', 'pytest' | Yes
+| query | string | Any accessibility, a11y, WCAG, or web accessibility question | Yes
+</details>
+<details>
+<summary>startAccessibilityScan</summary>
+
+**Description**:
+
+```
+Start an accessibility scan via BrowserStack and retrieve a local CSV report path.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| authConfigId | number | Optional auth config ID for authenticated scans | No
+| name | string | Name of the accessibility scan | Yes
+| pageURL | string | The URL to scan for accessibility issues | Yes
+</details>
+<details>
+<summary>createAccessibilityAuthConfig</summary>
+
+**Description**:
+
+```
+Create an authentication configuration for accessibility scans. Supports both form-based and basic authentication.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| name | string | Name for the auth configuration | Yes
+| password | string | Password for authentication | Yes
+| passwordSelector | string | CSS selector for password field (required for form auth) | No
+| submitSelector | string | CSS selector for submit button (required for form auth) | No
+| type | string | Authentication type: 'form' for form-based auth, 'basic' for HTTP basic auth | Yes
+| url | string | URL of the authentication page | Yes
+| username | string | Username for authentication | Yes
+| usernameSelector | string | CSS selector for username field (required for form auth) | No
+</details>
+<details>
+<summary>getAccessibilityAuthConfig</summary>
+
+**Description**:
+
+```
+Retrieve an existing authentication configuration by ID.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| configId | number | ID of the auth configuration to retrieve | Yes
+</details>
+<details>
+<summary>fetchAccessibilityIssues</summary>
+
+**Description**:
+
+```
+Fetch accessibility issues from a completed scan with pagination support. Use cursor parameter to get subsequent pages of results.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| cursor | number | Character offset for pagination (default: 0) | No
+| scanId | string | The scan ID from a completed accessibility scan | Yes
+| scanRunId | string | The scan run ID from a completed accessibility scan | Yes
+</details>
+<details>
+<summary>setupBrowserStackAutomateTests</summary>
+
+**Description**:
+
+```
+Set up and run automated web-based tests on BrowserStack using the BrowserStack SDK. Use this tool for functional or integration test setup on BrowserStack only. For any visual testing or Percy integration, use the dedicated Percy setup tool. Example prompts: run this test on browserstack; set up this project for browserstack.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| detectedBrowserAutomationFramework | string | not set | Yes
+| detectedLanguage | string | not set | Yes
+| detectedTestingFramework | string | not set | Yes
+| devices | array | Device objects array. Use the object format directly - no transformation needed. Add only when user explicitly requests devices. Examples: [{ platform: 'windows', osVersion: '11', browser: 'chrome', browserVersion: 'latest' }] or [{ platform: 'android', deviceName: 'Samsung Galaxy S24', osVersion: '14', browser: 'chrome' }]. | No
+| projectName | string | A single name for your project to organize all your tests. | Yes
+</details>
+<details>
+<summary>percyVisualTestIntegrationAgent</summary>
+
+**Description**:
+
+```
+Integrate Percy visual testing into new projects and demonstrate visual change detection through a step-by-step simulation. This tool handles initial Percy integration, setup, and creates a working demonstration for new users. Primary tool for prompts like: "Integrate percy for this project", "Integrate percy in this project {project_name}"
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| detectedBrowserAutomationFramework | string | not set | Yes
+| detectedLanguage | string | not set | Yes
+| detectedTestingFramework | string | not set | Yes
+| filePaths | array | An array of absolute file paths to specific UI test files. Use this when you want to target specific test files rather than entire folders. If not provided, will use folderPaths instead. | No
+| folderPaths | array | An array of absolute folder paths containing UI test files. If not provided, analyze codebase for UI test folders by scanning for test patterns which contain UI test cases as per framework. Return empty array if none found. | No
+| integrationType | string | Specify the Percy integration type: web (Percy Web) or automate (Percy Automate). If not provided, always prompt the user with: 'Please specify the Percy integration type.' Do not proceed without an explicit selection. Never use a default. | Yes
+| projectName | string | A unique name for your Percy project. | Yes
+</details>
+<details>
+<summary>expandPercyVisualTesting</summary>
+
+**Description**:
+
+```
+Set up or expand Percy visual testing configuration with comprehensive coverage for existing projects that might have Percy integrated. This supports both Percy Web Standalone and Percy Automate. Example prompts: Expand percy coverage for this project {project_name}
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| detectedBrowserAutomationFramework | string | not set | Yes
+| detectedLanguage | string | not set | Yes
+| detectedTestingFramework | string | not set | Yes
+| filePaths | array | An array of absolute file paths to specific UI test files. Use this when you want to target specific test files rather than entire folders. If not provided, will use folderPaths instead. | No
+| folderPaths | array | An array of absolute folder paths containing UI test files. If not provided, analyze codebase for UI test folders by scanning for test patterns which contain UI test cases as per framework. Return empty array if none found. | No
+| integrationType | string | Specify the Percy integration type: web (Percy Web) or automate (Percy Automate). If not provided, always prompt the user with: 'Please specify the Percy integration type.' Do not proceed without an explicit selection. Never use a default. | Yes
+| projectName | string | A unique name for your Percy project. | Yes
+</details>
+<details>
+<summary>addPercySnapshotCommands</summary>
+
+**Description**:
+
+```
+Adds Percy snapshot commands to the specified test files.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| index | number | Index of the test file to update | Yes
+</details>
+<details>
+<summary>listTestFiles</summary>
+
+**Description**:
+
+```
+Lists all test files for a given set of directories.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+</details>
+<details>
+<summary>runPercyScan</summary>
+
+**Description**:
+
+```
+Run a Percy visual test scan. Example prompts : Run this Percy build/scan. Never run percy scan/build without this tool
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| integrationType | string | Specifies whether to integrate with Percy Web or Percy Automate. If not explicitly provided, prompt the user to select the desired integration type. | Yes
+| percyRunCommand | string | The test command to run with Percy. Optional — the LLM should try to infer it first from project context. | No
+| projectName | string | The name of the project to run Percy on. | Yes
+</details>
+<details>
+<summary>fetchPercyChanges</summary>
+
+**Description**:
+
+```
+Retrieves and summarizes all visual changes detected by Percy AI between the latest and previous builds, helping quickly review what has changed in your project.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| project_name | string | The name of the BrowserStack project. If not found, ask user directly. | Yes
+</details>
+<details>
+<summary>managePercyBuildApproval</summary>
+
+**Description**:
+
+```
+Approve or reject a Percy build
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| action | string | The action to perform on the Percy build. | Yes
+| buildId | string | The ID of the Percy build to approve or reject. | Yes
 </details>
 <details>
 <summary>runAppLiveSession</summary>
@@ -557,22 +762,6 @@ Launch a BrowserStack Live session (desktop or mobile).
 | platformType | string | Must be 'desktop' or 'mobile' | Yes
 </details>
 <details>
-<summary>startAccessibilityScan</summary>
-
-**Description**:
-
-```
-Start an accessibility scan via BrowserStack and retrieve a local CSV report path.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| name | string | Name of the accessibility scan | Yes
-| pageURL | string | The URL to scan for accessibility issues | Yes
-</details>
-<details>
 <summary>createProjectOrFolder</summary>
 
 **Description**:
@@ -605,6 +794,7 @@ Use this tool to create a test case in BrowserStack Test Management.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| automation_status | string | Automation status of the test case. Common values include 'not_automated', 'automated', 'automation_not_required'. | No
 | custom_fields | object | Map of custom field names to values. | No
 | description | string | Brief description of the test case. | No
 | folder_id | string | The ID of the folder within the project where the test case should be created. If not provided, ask the user if they would like to create a new folder using the createProjectOrFolder tool. | Yes
@@ -777,6 +967,61 @@ Use this tool to take a screenshot of an app running on a BrowserStack device. T
 | desiredPlatformVersion | string | The platform version to run the app on. Use 'latest' or 'oldest' for dynamic resolution. | Yes
 </details>
 <details>
+<summary>runAppTestsOnBrowserStack</summary>
+
+**Description**:
+
+```
+Execute pre-built native mobile test suites (Espresso for Android, XCUITest for iOS) by direct upload to BrowserStack. ONLY for compiled .apk/.ipa test files. This is NOT for SDK integration or Appium tests. For Appium-based testing with SDK setup, use 'setupBrowserStackAppAutomateTests' instead.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| appPath | string | Path to your application file:
+If in development IDE directory:
+• For Android: 'gradle assembleDebug'
+• For iOS:
+  xcodebuild clean -scheme YOUR_SCHEME && \
+  xcodebuild archive -scheme YOUR_SCHEME -configuration Release -archivePath build/app.xcarchive && \
+  xcodebuild -exportArchive -archivePath build/app.xcarchive -exportPath build/ipa -exportOptionsPlist exportOptions.plist
+
+If in other directory, provide existing app path | Yes
+| detectedAutomationFramework | string | The automation framework used in the project, such as 'espresso' (Android) or 'xcuitest' (iOS). | Yes
+| devices | array | Tuples describing target mobile devices. Add device only when user asks explicitly for it. Defaults to [] . Example: [['android', 'Samsung Galaxy S24', '14'], ['ios', 'iPhone 15', '17']] | No
+| project | string | Project name for organizing test runs on BrowserStack. | No
+| testSuitePath | string | Path to your test suite file:
+If in development IDE directory:
+• For Android: 'gradle assembleAndroidTest'
+• For iOS:
+  xcodebuild test-without-building -scheme YOUR_SCHEME -destination 'generic/platform=iOS' && \
+  cd ~/Library/Developer/Xcode/DerivedData/*/Build/Products/Debug-iphonesimulator/ && \
+  zip -r Tests.zip *.xctestrun *-Runner.app
+
+If in other directory, provide existing test file path | Yes
+</details>
+<details>
+<summary>setupBrowserStackAppAutomateTests</summary>
+
+**Description**:
+
+```
+Set up BrowserStack App Automate SDK integration for Appium-based mobile app testing. ONLY for Appium based framework . This tool configures SDK for various languages with appium. For pre-built Espresso or XCUITest test suites, use 'runAppTestsOnBrowserStack' instead.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| appPath | string | Path to the mobile app file (.apk for Android, .ipa for iOS). Can be a local file path or a BrowserStack app URL (bs://) | Yes
+| detectedFramework | string | The mobile automation framework configured in the project. Example: 'appium' | Yes
+| detectedLanguage | string | The programming language used in the project. Supports Java and C#. Example: 'java', 'csharp' | Yes
+| detectedTestingFramework | string | The testing framework used in the project. Be precise with framework selection Example: 'testng', 'behave', 'pytest', 'robot' | Yes
+| devices | array | Tuples describing target mobile devices. Add device only when user asks explicitly for it. Defaults to [] . Example: [['android', 'Samsung Galaxy S24', '14'], ['ios', 'iPhone 15', '17']] | No
+| project | string | Project name for organizing test runs on BrowserStack. | No
+</details>
+<details>
 <summary>getFailureLogs</summary>
 
 **Description**:
@@ -825,6 +1070,86 @@ Retrieves AI-generated, self-healed selectors for a BrowserStack Automate sessio
 |-----------|------|-------------|-----------|
 | sessionId | string | The session ID of the test run | Yes
 </details>
+<details>
+<summary>fetchBuildInsights</summary>
+
+**Description**:
+
+```
+Fetches insights about a BrowserStack build by combining build details and quality gate results.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| buildId | string | The build UUID of the BrowserStack build | Yes
+</details>
+<details>
+<summary>fetchRCA</summary>
+
+**Description**:
+
+```
+Retrieves AI-RCA (Root Cause Analysis) data for a BrowserStack Automate and App-Automate session and provides insights into test failures.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| testId | array | Array of integer test IDs to fetch RCA data for (maximum 3 IDs). These must be numeric test IDs, not session IDs or strings. If not provided, use the listTestIds tool to get all failed testcases. If more than 3 IDs are provided, only the first 3 will be processed. | Yes
+</details>
+<details>
+<summary>getBuildId</summary>
+
+**Description**:
+
+```
+Get the BrowserStack build ID for a given project and build name.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| browserStackBuildName | string | The BrowserStack build name used during test run creation. Action: First, check browserstack.yml or any equivalent project configuration files. If the build name is found, extract and return it. If it is not found or if there is any uncertainty, immediately prompt the user to provide the value. Do not infer, guess, or assume a default. | Yes
+| browserStackProjectName | string | The BrowserStack project name used during test run creation. Action: First, check browserstack.yml or any equivalent project configuration files. If the project name is found, extract and return it. If it is not found or if there is any uncertainty, immediately prompt the user to provide the value. Do not infer, guess, or assume a default. | Yes
+</details>
+<details>
+<summary>listTestIds</summary>
+
+**Description**:
+
+```
+List test IDs from a BrowserStack Automate build, optionally filtered by status
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| buildId | string | The Browserstack Build ID of the test run. If not known, use the getBuildId tool to fetch it using project and build name | Yes
+| status | string | Filter tests by status. If not provided, all tests are returned. Example for RCA usecase always use failed status | Yes
+</details>
+
+## 📝 Prompts (1)
+<details>
+<summary>integrate-percy</summary>
+
+**Description**:
+
+```
+<no value>
+```
+
+**Parameter**:
+
+| Argument | Description | Required |
+|-----------|------|-------------|
+| project_name | The name of the project to integrate with Percy |Yes |
+
+</details>
 
 
 # 🔐 Resource SBOM
@@ -833,10 +1158,25 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
+| prompts | integrate-percy | description | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| prompts | integrate-percy | project_name | c3a563882c0fe67f9d15a4e90a6d01fb269ffd4e283666335017262e60c5034a |
+| tools | accessibilityExpert | description | 86d84ea32f3f372eb2f6131bedae2c5e1cb5d55832e88400f39e9d66d0bbb299 |
+| tools | accessibilityExpert | query | b9fd2dc351de3be69acd1403f6af9f3257374a1d63829ddaa6d5b58ea2348787 |
+| tools | addPercySnapshotCommands | description | acea96f4e7be2c28a7d61bef83e7d1331d5a1294f343d9963963e726a283024e |
+| tools | addPercySnapshotCommands | index | 4d0f3f55b80ce5e9bd99e3aee5633d60502e174047a3f9f35421f3893421d513 |
 | tools | addTestResult | description | cc2109318c2f2f439c042097bd218c02441beaba6763a50f777b45ff1f9ee532 |
 | tools | addTestResult | project_identifier | 6c62157d98f3a3579f77d8d19b65b8566108202987b5120eb459dc7319bbc86b |
 | tools | addTestResult | test_case_id | a0bf11cfea84003e21cf57d8e5a471b50f6cfe1bf5fd67277ad3371d3d0479fc |
 | tools | addTestResult | test_run_id | dd6796e0611b2656380232abc144a619b1b74bf20bf3b22fb68f235335dfdbf0 |
+| tools | createAccessibilityAuthConfig | description | 8874700cb4f9e4159cf118144349f890789679a8c3204078ab6da9f8525315d0 |
+| tools | createAccessibilityAuthConfig | name | b0a87e027d7e9a6b4ec1f7121df3c14a080a4a56ce251bb1f3c049e64ba3d2e9 |
+| tools | createAccessibilityAuthConfig | password | f0922cd4793efcc12ac430ca424c83b8a63d7aa59a95e165d79bd50db4601286 |
+| tools | createAccessibilityAuthConfig | passwordSelector | 8caa31029e66d24882f7f0dd21241fb0947a1d81e56adbfe7f241de1c3d42cb1 |
+| tools | createAccessibilityAuthConfig | submitSelector | f69bba65a84d91839ef01eaaeea1dad2d35edd0f71fc933181d54d0dd4ef5bf4 |
+| tools | createAccessibilityAuthConfig | type | dfdf75f9c17337de171291b2ebabf6b70751c1c1a2418556fe0417e8e94e4071 |
+| tools | createAccessibilityAuthConfig | url | d69eee5cae201b38bd3ae7db74eac69736108851931674a0a312b3a49a0f9974 |
+| tools | createAccessibilityAuthConfig | username | b2a34606c2ee6df5cbfa630e5b78f1d8dc69182722d7d5afb99c41b6eb926dbe |
+| tools | createAccessibilityAuthConfig | usernameSelector | 75d9a6d8c48f4beab10fa46867d8362c72e090df6b3d62b709180aad70908586 |
 | tools | createLCASteps | description | 3ab042e167faacf57685147c666092ef03afc65cce6455acbe3dbecea9e8df66 |
 | tools | createLCASteps | base_url | 4c5c642f1b70dc39ffe77d1ff4f903802e7ad4ae5c745223e7d8adf159bb685e |
 | tools | createLCASteps | credentials | 87b52bc90c9e6098cfa860d99603f9accf589b41839c1ce331cec252c4df0da1 |
@@ -854,6 +1194,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | createProjectOrFolder | project_identifier | bf678e9cd7bbe3bfd864e0ea804a12d70d509e66be1a51d2ce56d21936db79c8 |
 | tools | createProjectOrFolder | project_name | c071c9fbe7923c941268d56c79fb0ac12e37edf18c7b68099b9c3490dbb291ef |
 | tools | createTestCase | description | f79753f1cbee77f8ec15ef0b0772234e89d65c986bd6b82be0d5333d6ec5388e |
+| tools | createTestCase | automation_status | ce2541a99bece8f5636f5d955d837557c429876641811d937b0db7ee04ff7751 |
 | tools | createTestCase | custom_fields | 427a06f888b38e7210021bc459b99e7d5604fd42aa1b7ed81a99c4b7750510fb |
 | tools | createTestCase | description | abf1b1eee12721a67b652f322487678db003d4bdf031cb0bad27b9deb94725b0 |
 | tools | createTestCase | folder_id | a4ba636aa7f77cf6f2c0be168e1902bd0e2ba5645d4292f5ce3e96acca72cb2d |
@@ -870,11 +1211,31 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | createTestCasesFromFile | projectReferenceId | 6feb12c1b9b037157845cb6137b840d5da4eeb31ef3521aa5a66cb205a97a86f |
 | tools | createTestRun | description | 1b5b97bcc39017fa094f26eb56806082d82f687b7a1efa49aad565ba42df580f |
 | tools | createTestRun | project_identifier | 958319b90d7375b48dde33224fa823fd5b91d21ba1e2a8adc2437fcc15650186 |
+| tools | expandPercyVisualTesting | description | a1b248168b4856dd16bb540f85eddb8c1bd8fa0b2397b0aeffa7a60fe598fa02 |
+| tools | expandPercyVisualTesting | filePaths | 241a623255f5e687b2eaaaeaae71301de3bc26d50f364b5a6738d87e41040f3e |
+| tools | expandPercyVisualTesting | folderPaths | af4a360a53b9b2b49568200bdc77052f6d4549ad90e903c38caf44004abc79b8 |
+| tools | expandPercyVisualTesting | integrationType | 18e46bbd00a50bd9d8d16c93653dec46948b74aa4222f5c881fdeb2e9eb2a386 |
+| tools | expandPercyVisualTesting | projectName | 2eeac88ede3e647aefd0719de8b39c41ef3cfbb8d587ca9b5a1e691d36b3237b |
+| tools | fetchAccessibilityIssues | description | e176e7e1b9e2aae79f396e82e292a7267169d67c1a0a7967e36a7c47c28d9613 |
+| tools | fetchAccessibilityIssues | cursor | 86732ae3449318375d99c4aec25f74c31ce8396268ab3a723ef0837571378887 |
+| tools | fetchAccessibilityIssues | scanId | 51ffc24ea01453921b93f1b34a3d00f062547eecb9e253ad317cf34a8fcd09ac |
+| tools | fetchAccessibilityIssues | scanRunId | 104f0f61a57edfba95e696de03b82ac2e2de89c8646e4587c16c6f5444ddc3ff |
 | tools | fetchAutomationScreenshots | description | 077697d1de82318656d57ab7020073e07d0483261ef18c23d0eb8dd90b93c43e |
 | tools | fetchAutomationScreenshots | sessionId | 4a1a35e557a51bbcc1ee1da90be86fe09b2049104723f90c8c5ccc33940da414 |
 | tools | fetchAutomationScreenshots | sessionType | 7db47afe5cb3150197365c91b30448e31eaa6b95a2ba9ae4a28fcdc553b44a10 |
+| tools | fetchBuildInsights | description | 5ca3a18d52b77782c4c1f54f74635e80faedac43e277740e4831429525dcae5c |
+| tools | fetchBuildInsights | buildId | 706a2d20ebb2b878acbceb5904364d6e0041cdfb12b5025181a5309bdf3f9b59 |
+| tools | fetchPercyChanges | description | 295aaebfd2021db931aa635bf2f250d62333cc3400632dba8f6dae645d16e43c |
+| tools | fetchPercyChanges | project_name | b9f33c33fec26e06c29afc9f32b6d60e0dbd5629eff5ede15d932512b73a9bd6 |
+| tools | fetchRCA | description | ce1ec56ff718356febf26475a6cb421d6128fc3182a3b38b4928f9ce16eee4e2 |
+| tools | fetchRCA | testId | d07d148bdca50d569926ca49a67f1a7f69e12e3a51f193aba8a8d47db0260103 |
 | tools | fetchSelfHealedSelectors | description | 90260e3fb5a7f53c23ffd7718635ccc4d2b12f173fb2855c730087ab40a4a768 |
 | tools | fetchSelfHealedSelectors | sessionId | faf61902787c70137dfbc121511ed7d9b7e27502bfdf5d1125f6efd5d3031a58 |
+| tools | getAccessibilityAuthConfig | description | 385dcb32d42b0c0c08b494e3e6b13847c2037cd2f80ee68112a5423d1eb3872d |
+| tools | getAccessibilityAuthConfig | configId | 844291ec23cf934ecee3e5686d2b89bd91650556686786f56d4a5ef7840dffd6 |
+| tools | getBuildId | description | 7b7c8a539e0c45efa455702d1d3a3c41b67596537227da58a80126caeb32fba8 |
+| tools | getBuildId | browserStackBuildName | 12a6b595abbdccb873326ebba46860c3b394b1051ac2d1d4bcae9760b696efa8 |
+| tools | getBuildId | browserStackProjectName | d5c9c5adf292f49dc30a5e4678643456aefbf15656530f59431aab7acb1a5acf |
 | tools | getFailureLogs | description | 8c144b60db6fac766d3330c216f56f6c893adfd32841a14f2412b25367d0758c |
 | tools | getFailureLogs | buildId | ebc09c81c8f54829422701526f8ada1e09682f4026bc3ea12d7641541e8f7035 |
 | tools | getFailureLogs | logTypes | 0051404276165eb04388eee6d8b28f4e97dc5e08af7b0ce1481388311c2a13c1 |
@@ -886,14 +1247,32 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | listTestCases | p | a745ce57e9292ff9dbb392ddadbf3bf815e25da6d2402079cc6cde192ff1df19 |
 | tools | listTestCases | priority | 8ac604f4c95f6ad728d7bf47873d8ce4c68d939b05d487e352d991231fdb5d2a |
 | tools | listTestCases | project_identifier | 3ecb09b3a6128c8d676b805165762527ed12a633d5175b6c2fba8a2be293d3b5 |
+| tools | listTestFiles | description | fdd10518cde068aa66f46a90fa9bc43d095b70804f6edc83eac2d45153ed02ae |
+| tools | listTestIds | description | 1ff9ad34ce65a55d9baa5ebafe13049556757b6e516f9b51c5510165a7ec59d5 |
+| tools | listTestIds | buildId | 0208789f7b69c217a073d6f7677f2868b48ee152562fe62c73a34423482b2c97 |
+| tools | listTestIds | status | 91b1d05851d2bd328b554a3ae64d176662cee009216199fc49ece8a8fe4ee9a9 |
 | tools | listTestRuns | description | 9deada7b36628686538fab266b3955e84eb3f95c2cadb7b84641510d2f985c40 |
 | tools | listTestRuns | project_identifier | 6dd0a1641a0f0a8d1e3470f5fe14389a314d648ef4ac828c82eacf1f311819a8 |
 | tools | listTestRuns | run_state | 2b4c984fc93afed3efceb0b41af2429aa7cd9d4e2baba18bdd57310f870eeb98 |
+| tools | managePercyBuildApproval | description | 20bac6e8c9684e9d738b2b5c11514e270b8bdcb5ea5db5e706951228f6ecafff |
+| tools | managePercyBuildApproval | action | e323f7b614f7162eec6f51915970fd43e1db741ff6bc55a415b587c445c173a7 |
+| tools | managePercyBuildApproval | buildId | aa3be2f7b1261209d7f74cf961c5634c123cb64412f1b4d2f237b6c395bf13d2 |
+| tools | percyVisualTestIntegrationAgent | description | 2ad1accb9c2d44008e681d5ece0eddf40b1c9424e7c38c23dd1a106b8f9245aa |
+| tools | percyVisualTestIntegrationAgent | filePaths | 241a623255f5e687b2eaaaeaae71301de3bc26d50f364b5a6738d87e41040f3e |
+| tools | percyVisualTestIntegrationAgent | folderPaths | af4a360a53b9b2b49568200bdc77052f6d4549ad90e903c38caf44004abc79b8 |
+| tools | percyVisualTestIntegrationAgent | integrationType | 18e46bbd00a50bd9d8d16c93653dec46948b74aa4222f5c881fdeb2e9eb2a386 |
+| tools | percyVisualTestIntegrationAgent | projectName | 2eeac88ede3e647aefd0719de8b39c41ef3cfbb8d587ca9b5a1e691d36b3237b |
 | tools | runAppLiveSession | description | ae3d94db08fe1cd4697ec588ee8e5961460bb62a91f7be76313a33f526996895 |
 | tools | runAppLiveSession | appPath | 4fbc294738a75df01476e73e83ac97ae2e66f3d4470e5d04196cded374e674c7 |
 | tools | runAppLiveSession | desiredPhone | c7be751f195a60a46fc6831fdb6c2291d1f418385121310479140ee45d287b25 |
 | tools | runAppLiveSession | desiredPlatform | bf34e3e4a3d9557a0c4c8365c4d84c3dae56a69d2633e09a4c73bf2ceefaab69 |
 | tools | runAppLiveSession | desiredPlatformVersion | a6ec6d3f7fb930f84566a347db05834ccfb042d0275afbffe67740880f448a1a |
+| tools | runAppTestsOnBrowserStack | description | 5865129af27a369b5664e1c137ae120834b9d8e4acc26caed5de149f760e67bd |
+| tools | runAppTestsOnBrowserStack | appPath | 560924a3c4cacb2871596afe5c95ac0ae8275f137cdb32633098a39e8f91309b |
+| tools | runAppTestsOnBrowserStack | detectedAutomationFramework | 992849219f8b596e2d7b8ca0432342b88cb8dfbdd4a0b2c9fc0b6b445e9720cf |
+| tools | runAppTestsOnBrowserStack | devices | e9c59ac7ef73833d2b312be2acf00ca8c579b79cf03c77adfa59e9028fda42ab |
+| tools | runAppTestsOnBrowserStack | project | cee150eaebe1a252ca303f6139ad065d1985de8bef0245db8ca7991ffedc0543 |
+| tools | runAppTestsOnBrowserStack | testSuitePath | 4c768cdcc8ffe20f7f937b5c99dd6f64a0bf7bf061ebbc8ff36765c544b468d1 |
 | tools | runBrowserLiveSession | description | 15d7be2d1e8aadf64d968aa1badd1000879f571e236d3dddb6ed1e5f2bc5e33b |
 | tools | runBrowserLiveSession | desiredBrowser | d089ac36240f5ff99b74e8f423a09a4a1d8cba042aaa1863bb1757eef775d26e |
 | tools | runBrowserLiveSession | desiredBrowserVersion | 45106d6349643b6fde55bb0a47da6621906c0483e7e999079744b60fb2fbbc93 |
@@ -902,12 +1281,22 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | runBrowserLiveSession | desiredOSVersion | 2cb723b7a5534fa4dbf8768d0875779d688735b25779d95bd674d174cd328ec1 |
 | tools | runBrowserLiveSession | desiredURL | b85465cef9c8da1546ccd5e2e962887a60ade65e35e5be82ca6d4c6ae63884f3 |
 | tools | runBrowserLiveSession | platformType | 77536906f9cb2b3e6ab78109451efddb605ac051931011ad0db2004bf5320539 |
-| tools | runTestsOnBrowserStack | description | 475f62c3969e1060fb936f8398b780cb5f713e9de99bca9cb00b24488f418c30 |
-| tools | runTestsOnBrowserStack | desiredPlatforms | 681270cbcac1cce333e6026103a2042b90987f3227c648cb180afcfa5b360f8f |
-| tools | runTestsOnBrowserStack | detectedBrowserAutomationFramework | d608ae51766a4ab0852a8a0526a5ae7ecd1f2df6c3017052d51875f9d6cd1c96 |
-| tools | runTestsOnBrowserStack | detectedLanguage | bbc97bcd2aa36a106b9043a873898777cf56428e0ba5a40b53f4275a06a1c6ed |
-| tools | runTestsOnBrowserStack | detectedTestingFramework | b8e44a5be64633d381132cf247b0504defe89a8aa724f58f7b92b2e9220e14fc |
+| tools | runPercyScan | description | f5da7aed8f322a33ceb7f4309604f6cfaac03e6feb40483db180d4cfa56287a0 |
+| tools | runPercyScan | integrationType | 5a166815338471d6234c9c80f53562e180adf7cd882c738b08f7f8f2d9b2933b |
+| tools | runPercyScan | percyRunCommand | bd785655bb82624fd7498c4b0cb4d93b0c72e995584cd75d02775d4b034c94a3 |
+| tools | runPercyScan | projectName | cde30e9d9bc784015735fd5589d9d252084cf6496afbf21139630282c2836e25 |
+| tools | setupBrowserStackAppAutomateTests | description | ba9924788f7fc2de0ec3e4132f7c668d4a273d9f5fb860369f6224ba193617af |
+| tools | setupBrowserStackAppAutomateTests | appPath | db14432d45fcc0fcfdcf0949bb582fd263fbee01758fb84b2432752238e948bd |
+| tools | setupBrowserStackAppAutomateTests | detectedFramework | 9411fec7b53830609aee5e8f96b36ed468af0ae1bd2679224a01f664dd5c5931 |
+| tools | setupBrowserStackAppAutomateTests | detectedLanguage | 16e185865e75c915256d3cfcc10a175f56b72174102005044bbf410df568ab03 |
+| tools | setupBrowserStackAppAutomateTests | detectedTestingFramework | c74ea255228631d14502a45b7ea4e7499aa1fa2c7b03fb38fdba4a1f1f251d66 |
+| tools | setupBrowserStackAppAutomateTests | devices | e9c59ac7ef73833d2b312be2acf00ca8c579b79cf03c77adfa59e9028fda42ab |
+| tools | setupBrowserStackAppAutomateTests | project | cee150eaebe1a252ca303f6139ad065d1985de8bef0245db8ca7991ffedc0543 |
+| tools | setupBrowserStackAutomateTests | description | 3e7683ab2c2417bed4667033cd2e8e87eea86322f23b8e383823ea15bde90a58 |
+| tools | setupBrowserStackAutomateTests | devices | 6eef5e63e0038a4137cf1bdf3580aa642bb9f6ce7933fb78ed6d8302aa7993fd |
+| tools | setupBrowserStackAutomateTests | projectName | cfab53689431e2db5d7ac73ad9bb76f6798d9da813bbcf71a47c77400be55901 |
 | tools | startAccessibilityScan | description | 5c3a401cff7df900c2acc02fbb949568de1a52ba74e808767f896860fd47bbc2 |
+| tools | startAccessibilityScan | authConfigId | 8d4b64138116aa336b651c14e17a6257f8982d6b67e981cd8eb5e9f47eefa9d0 |
 | tools | startAccessibilityScan | name | 097628d59fa3cd14c2579fd01f92e133fab7e8f6ba709753610c19c22285a434 |
 | tools | startAccessibilityScan | pageURL | 06094cfdd3276e53fb4b6d5ea609f635218b8ee5d458a2fdba645acac5b3dce3 |
 | tools | takeAppScreenshot | description | 687870513f1c9e1627fc5c9cc4babe9d75b6388ef9e0554431378d09922ea90e |

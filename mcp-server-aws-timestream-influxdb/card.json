@@ -13,7 +13,7 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.0.1",
+  "version": "0.0.11",
   "requiresConfiguration": false,
   "requiresStorage": false,
   "rating": {"hash":"526a48dd5d05efdbb89b002509e90c28c0e2c1921b4339fccb90ff7796327e03","reason":"The toolset provides adequate basic documentation with clear parameter descriptions and consistent structure. Tool names are descriptive and indicate their AWS Timestream for InfluxDB functionality. However, descriptions are minimal (mostly single sentences) and lack important context about when to use each tool, what they return, or key limitations. Many tools with similar functionality (Create/Get/List/Delete operations) have nearly identical brief descriptions that don't differentiate their specific use cases or explain the relationship between clusters and instances.","score":"C"},

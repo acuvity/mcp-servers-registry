@@ -14,7 +14,11 @@
         },
         {
           "name": "pipeline",
-          "hash": "27ad7ca763e787f6fec26d3a8787378ab6e2e07d35f578ec442d1fc97e05e79c"
+          "hash": "a0e171843950c46fa182f233723ca7bb184c82d47b7c5e5d609e199dc6958b97"
+        },
+        {
+          "name": "responseBytesLimit",
+          "hash": "dc171e11d1661dec2496910e7ff273b95c71be16b7c342ac7f70ab1b221d1c8f"
         }
       ]
     },
@@ -25,6 +29,10 @@
         {
           "name": "clusterName",
           "hash": "84401bb0fee8476905c5b8abdedaec47d8b71fba3a2f51586359f529387ba1d6"
+        },
+        {
+          "name": "connectionType",
+          "hash": "7fa72b84a9077db82f2a68f740b98d7613e59de376b48d26619162dea2011d0a"
         },
         {
           "name": "projectId",
@@ -68,7 +76,7 @@
         },
         {
           "name": "password",
-          "hash": "59e7d907efee9ec1ff073c92e4aaaf84e14d57cda478f3417dba03c9bee9d516"
+          "hash": "c3b7e9068d587600d2228c2aa4ae35ea49ea3fba8e399b99c65e2d62f4e58d6a"
         },
         {
           "name": "projectId",
@@ -117,6 +125,32 @@
       ]
     },
     {
+      "name": "atlas-get-performance-advisor",
+      "hash": "dd39b8abf9368c87e558aa1dcbb63f8610acea19fd909a45ba945413a0443a43",
+      "params": [
+        {
+          "name": "clusterName",
+          "hash": "9dd33c3d745a0f13546e74260e9a6566971568e09055b50cff8eef6323b347db"
+        },
+        {
+          "name": "namespaces",
+          "hash": "499fceb9868da76fb7e302dc97276366b3526fb63d6ad2adc8db11deb2a552cb"
+        },
+        {
+          "name": "operations",
+          "hash": "2d22c77dce2140831315519b65c412c3798c5ef0502b7c82cff1115c27d9880e"
+        },
+        {
+          "name": "projectId",
+          "hash": "82dfac2d630c50ab869c0f1b7fd801164c700ee2927d490fbd8b4598919ea5ad"
+        },
+        {
+          "name": "since",
+          "hash": "107315557cb2b1f587c1fc097fe122874ce002e496e3c08eb87e2097ac7363a8"
+        }
+      ]
+    },
+    {
       "name": "atlas-inspect-access-list",
       "hash": "e0ba493bdd0e65272159df9d2658d5a07db54174cafb33ce77eed7265772e4d9",
       "params": [
@@ -128,7 +162,7 @@
     },
     {
       "name": "atlas-inspect-cluster",
-      "hash": "96bf62bb54a98763c2cc9ff89dc1adf6b2606e61740d17443e3077c209e5bc4a",
+      "hash": "abfcbd1eeb75b028f160d7445b8e016cd9ee4ab062db94230524fbdd566a1e12",
       "params": [
         {
           "name": "clusterName",
@@ -137,6 +171,16 @@
         {
           "name": "projectId",
           "hash": "673b73641c1cc83069b5085bc0958432a2135e1d2046f08fafaabfdb6f5d8be7"
+        }
+      ]
+    },
+    {
+      "name": "atlas-list-alerts",
+      "hash": "93f9e33d32f2de3499de9f88da9817816050d65a6c6beae00ba2c89e1e4e4cff",
+      "params": [
+        {
+          "name": "projectId",
+          "hash": "08b16ab91b7f140779aec8ff24057c06bed584e63392855734a1a12ee1cd60f4"
         }
       ]
     },
@@ -170,7 +214,7 @@
       "params": [
         {
           "name": "orgId",
-          "hash": "94334eae10c86525ac572b4a85af34234a8c6c8464f5ef679723e167f5984450"
+          "hash": "9f17311081cfb68c67432789943671303448afc7203d57b2e6d9a02257ada8ad"
         }
       ]
     },
@@ -199,6 +243,14 @@
         {
           "name": "database",
           "hash": "e97a0773fb7b656c174155270bd9ded70bc82caa0fc5d65b3ba24871577a5b08"
+        },
+        {
+          "name": "responseBytesLimit",
+          "hash": "a62ee5388f2dfb8c7edb4fb8bd48a14c7129ab9e1aa884d3067cf2afa6e487a9"
+        },
+        {
+          "name": "sampleSize",
+          "hash": "b53f99cf856fd30a875694fd507e3cb08556bddf2768ee8dd1c71a022124ce49"
         }
       ]
     },
@@ -218,7 +270,7 @@
     },
     {
       "name": "connect",
-      "hash": "c0302f33ba275defdb23f2ed6f0d7942191fac240321b74f72432ee5a3ffa38e",
+      "hash": "46f35eaae3c9188944385d3f9ab0c1d3125c4170a9d87a9aa51d4fc423179e97",
       "params": [
         {
           "name": "connectionString",
@@ -228,7 +280,7 @@
     },
     {
       "name": "count",
-      "hash": "aec7af22beb8e177a4f065486874a8ef89f07c2c2a432886198c552592fb1331",
+      "hash": "86aafe9bb89ecb2a662f12e354984fdbfe39e2980e18ae1870ec3cd49b3ae5d7",
       "params": [
         {
           "name": "collection",
@@ -240,7 +292,7 @@
         },
         {
           "name": "query",
-          "hash": "a2b23da54046b968f4a2f3f415c951c53306174788f60490324a31d865b38d62"
+          "hash": "8788932fc5225c7b3bbf1743a96680ee675914d7870d86128f08ac6659c2b794"
         }
       ]
     },
@@ -271,8 +323,8 @@
           "hash": "e97a0773fb7b656c174155270bd9ded70bc82caa0fc5d65b3ba24871577a5b08"
         },
         {
-          "name": "keys",
-          "hash": "9ea95393019f15541c12d92ae971ac8e77df2f306370ba8054ee544e07d33e9f"
+          "name": "definition",
+          "hash": "1228c9ecac9facabede8d573c7ef985ad2e834a05bb2a7b0805c184c7729094e"
         },
         {
           "name": "name",
@@ -333,6 +385,28 @@
       ]
     },
     {
+      "name": "drop-index",
+      "hash": "b2c96684a1944bd5750afbdbf48200eaf423224053f2361b49d6162272dad9a4",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "922214922b48f09e732a98c94e2f91391f0e4782749b280d909ee4d726492883"
+        },
+        {
+          "name": "database",
+          "hash": "e97a0773fb7b656c174155270bd9ded70bc82caa0fc5d65b3ba24871577a5b08"
+        },
+        {
+          "name": "indexName",
+          "hash": "077502031c3a0946857a13029d60c77911b96096a2d0c595ffe3f143f1399b30"
+        },
+        {
+          "name": "type",
+          "hash": "8f11c8d49efca3c9396a8f80d6741240b7e01a7a7472a3fc139e4d0b22034abc"
+        }
+      ]
+    },
+    {
       "name": "explain",
       "hash": "b60101adbc07e7ba014cc046f6b35b145b5de53b886dfc0a4ce91bf65788ef9a",
       "params": [
@@ -347,6 +421,36 @@
         {
           "name": "method",
           "hash": "700e30906f13235c995bc893d7096f03c11cbe235e06882ef3607d151da58a8d"
+        },
+        {
+          "name": "verbosity",
+          "hash": "4d80b100d9a7d0bc4f4e7bc50e4d59a9877a7df1dbe3cbe7bcd710c16081f763"
+        }
+      ]
+    },
+    {
+      "name": "export",
+      "hash": "8db04659456a103eaa1fcecd5e0eaf9273047016e38721ce304bf8715ca1a1f9",
+      "params": [
+        {
+          "name": "collection",
+          "hash": "922214922b48f09e732a98c94e2f91391f0e4782749b280d909ee4d726492883"
+        },
+        {
+          "name": "database",
+          "hash": "e97a0773fb7b656c174155270bd9ded70bc82caa0fc5d65b3ba24871577a5b08"
+        },
+        {
+          "name": "exportTarget",
+          "hash": "37307174e6d8818cd77eed94896fb22cd96061e63b2ba1bb96ea444718dde36f"
+        },
+        {
+          "name": "exportTitle",
+          "hash": "eda59af8ae676459b04ec41f4d1db4edea02335b77fdfe56176631ad683d084a"
+        },
+        {
+          "name": "jsonExportFormat",
+          "hash": "784dca89455bc4c7381a7668168b716229e27b4c8c27727694b9cea45c47b441"
         }
       ]
     },
@@ -375,14 +479,18 @@
           "hash": "2a1cb62a18517e56d059a18cf5553b27fa1adc38b8fe553b57d8e95556c22445"
         },
         {
+          "name": "responseBytesLimit",
+          "hash": "b9c05a295251ed65d708c781d79ab40d442e4eed4a3adf76f26324032b1f6187"
+        },
+        {
           "name": "sort",
-          "hash": "82431ec7a4424a135fa564ec0a8c65677f037e501f43e415dd20d29e45f66783"
+          "hash": "81f5b9fbb7727b212bf7d61b584bb8c7c8d4b05ec35b2fe6d7fb235a1fd58c3a"
         }
       ]
     },
     {
       "name": "insert-many",
-      "hash": "3998ae6353c8f21ae8ad473d68c48fa45e979b10e83a2e65e409c24ab58e0024",
+      "hash": "90f41cfcd72b4124f5a97cf2545ce44250b1502e214474ffc874072fc887ed37",
       "params": [
         {
           "name": "collection",
@@ -394,7 +502,7 @@
         },
         {
           "name": "documents",
-          "hash": "0de35e2bbb702fd1ce22806dfa1a3801d51278fd3d6f8f8c392785591fabaf81"
+          "hash": "b50c1c1399bace35c0046900c77537c56da2ef3347c79491ebffed0d5755c55e"
         }
       ]
     },
@@ -450,7 +558,7 @@
     },
     {
       "name": "update-many",
-      "hash": "13dac4d056cdbf7e1bee7293950e8b8f3748e883e0ad609a8375581ca89df3ed",
+      "hash": "bc7bada65c2c3a210432bd7b6190a638425adeba80895b8d553bdb20ddfe150e",
       "params": [
         {
           "name": "collection",

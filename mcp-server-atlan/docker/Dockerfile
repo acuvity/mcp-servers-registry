@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
+    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@5a873664a85bb4ba447c4edf89a48614689c1549
 
 FROM ghcr.io/astral-sh/uv:python3.12-alpine
 
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-atlan"
 LABEL org.opencontainers.image.description="The Atlan MCP server allows you to interact with Atlan services through multiple tools."
-LABEL org.opencontainers.image.version="0.2.1"
+LABEL org.opencontainers.image.version="0.3.1"
 LABEL org.opencontainers.image.source="https://github.com/atlanhq/agent-toolkit/tree/HEAD/modelcontextprotocol"
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.author="AtlanHQ <engineering@atlan.com>"
@@ -43,7 +43,7 @@ ENV UV_LINK_MODE=copy \
     UV_FROZEN=true \
     UV_PROJECT_ENVIRONMENT=/app
 
-RUN uv venv && uv pip install atlan-mcp-server==0.2.1
+RUN uv venv && uv pip install atlan-mcp-server==0.3.1
 
 EXPOSE 8000/tcp
 

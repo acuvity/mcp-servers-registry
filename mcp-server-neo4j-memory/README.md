@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -19,12 +19,12 @@
 
 
 # What is mcp-server-neo4j-memory?
-[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-neo4j-memory/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-neo4j-memory/0.1.4?logo=docker&logoColor=fff&label=0.1.4)](https://hub.docker.com/r/acuvity/mcp-server-neo4j-memory)
-[![PyPI](https://img.shields.io/badge/0.1.4-3775A9?logo=pypi&logoColor=fff&label=mcp-neo4j-memory)](https://github.com/neo4j-contrib/mcp-neo4j/tree/HEAD/servers/mcp-neo4j-memory)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-neo4j-memory/0.4.4?logo=docker&logoColor=fff&label=0.4.4)](https://hub.docker.com/r/acuvity/mcp-server-neo4j-memory)
+[![PyPI](https://img.shields.io/badge/0.4.4-3775A9?logo=pypi&logoColor=fff&label=mcp-neo4j-memory)](https://github.com/neo4j-contrib/mcp-neo4j/tree/HEAD/servers/mcp-neo4j-memory)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-neo4j-memory/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-neo4j-memory&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22NEO4J_PASSWORD%22%2C%22-e%22%2C%22NEO4J_URL%22%2C%22-e%22%2C%22NEO4J_USERNAME%22%2C%22docker.io%2Facuvity%2Fmcp-server-neo4j-memory%3A0.1.4%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-neo4j-memory&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22NEO4J_PASSWORD%22%2C%22-e%22%2C%22NEO4J_URL%22%2C%22-e%22%2C%22NEO4J_USERNAME%22%2C%22docker.io%2Facuvity%2Fmcp-server-neo4j-memory%3A0.4.4%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Provides persistent memory capabilities through Neo4j graph database integration.
 
@@ -43,69 +43,70 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
 The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-neo4j-memory/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
-### 🔒 Resource Integrity
+#### 🔒 Resource Integrity
 
 **Mitigates MCP Rug Pull Attacks**
 
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Guardrails
+#### 🛡️ Guardrails
 
-#### Covert Instruction Detection
+##### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-#### Sensitive Pattern Detection
+##### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-#### Shadowing Pattern Detection
+##### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-#### Schema Misuse Prevention
+##### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-#### Cross-Origin Tool Access
+##### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-#### Secrets Redaction
+##### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
@@ -114,7 +115,7 @@ Automatically masks sensitive values so they never appear in logs or responses.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
-### Enable guardrails
+#### Enable guardrails
 
 To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
@@ -129,7 +130,7 @@ To activate guardrails in your Docker containers, define the `GUARDRAILS` enviro
 
 Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
 
-## 🔒 Basic Authentication via Shared Secret
+#### 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
@@ -143,10 +144,8 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 > While basic auth will protect against unauthorized access, you should use it only in controlled environment,
 > rotate credentials frequently and **always** use TLS.
 
-</details>
-
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # 📦 How to Install
@@ -176,7 +175,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-neo4j-memory&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22NEO4J_PASSWORD%22%2C%22-e%22%2C%22NEO4J_URL%22%2C%22-e%22%2C%22NEO4J_USERNAME%22%2C%22docker.io%2Facuvity%2Fmcp-server-neo4j-memory%3A0.1.4%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-neo4j-memory&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22NEO4J_PASSWORD%22%2C%22-e%22%2C%22NEO4J_URL%22%2C%22-e%22%2C%22NEO4J_USERNAME%22%2C%22docker.io%2Facuvity%2Fmcp-server-neo4j-memory%3A0.4.4%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -204,7 +203,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "NEO4J_URL",
           "-e",
           "NEO4J_USERNAME",
-          "docker.io/acuvity/mcp-server-neo4j-memory:0.1.4"
+          "docker.io/acuvity/mcp-server-neo4j-memory:0.4.4"
         ]
       }
     }
@@ -237,7 +236,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "NEO4J_URL",
         "-e",
         "NEO4J_USERNAME",
-        "docker.io/acuvity/mcp-server-neo4j-memory:0.1.4"
+        "docker.io/acuvity/mcp-server-neo4j-memory:0.4.4"
       ]
     }
   }
@@ -274,7 +273,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "NEO4J_URL",
         "-e",
         "NEO4J_USERNAME",
-        "docker.io/acuvity/mcp-server-neo4j-memory:0.1.4"
+        "docker.io/acuvity/mcp-server-neo4j-memory:0.4.4"
       ]
     }
   }
@@ -313,7 +312,7 @@ Add the following JSON block to your mcp configuration file:
         "NEO4J_URL",
         "-e",
         "NEO4J_USERNAME",
-        "docker.io/acuvity/mcp-server-neo4j-memory:0.1.4"
+        "docker.io/acuvity/mcp-server-neo4j-memory:0.4.4"
       ]
     }
   }
@@ -350,7 +349,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "NEO4J_URL",
         "-e",
         "NEO4J_USERNAME",
-        "docker.io/acuvity/mcp-server-neo4j-memory:0.1.4"
+        "docker.io/acuvity/mcp-server-neo4j-memory:0.4.4"
       ]
     }
   }
@@ -370,7 +369,7 @@ async with MCPServerStdio(
     params={
         "env": {"NEO4J_PASSWORD":"TO_BE_SET","NEO4J_URL":"TO_BE_SET","NEO4J_USERNAME":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","NEO4J_PASSWORD","-e","NEO4J_URL","-e","NEO4J_USERNAME","docker.io/acuvity/mcp-server-neo4j-memory:0.1.4"]
+        "args": ["run","-i","--rm","--read-only","-e","NEO4J_PASSWORD","-e","NEO4J_URL","-e","NEO4J_USERNAME","docker.io/acuvity/mcp-server-neo4j-memory:0.4.4"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -399,7 +398,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e NEO4J_PASSWORD -e NEO4J_URL -e NEO4J_USERNAME docker.io/acuvity/mcp-server-neo4j-memory:0.1.4`
+- arguments: `run -i --rm --read-only -e NEO4J_PASSWORD -e NEO4J_URL -e NEO4J_USERNAME docker.io/acuvity/mcp-server-neo4j-memory:0.4.4`
 
 </details>
 
@@ -409,7 +408,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e NEO4J_PASSWORD -e NEO4J_URL -e NEO4J_USERNAME docker.io/acuvity/mcp-server-neo4j-memory:0.1.4
+docker run -it -p 8000:8000 --rm --read-only -e NEO4J_PASSWORD -e NEO4J_URL -e NEO4J_USERNAME docker.io/acuvity/mcp-server-neo4j-memory:0.4.4
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -519,21 +518,75 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (10)
+## 🧰 Tools (9)
 <details>
-<summary>create_entities</summary>
+<summary>read_graph</summary>
 
 **Description**:
 
 ```
-Create multiple new entities in the knowledge graph
+Read the entire knowledge graph with all entities and relationships.
+
+Returns the complete memory graph including all stored entities and their relationships.
+Use this to get a full overview of stored knowledge.
+
+Returns:
+    KnowledgeGraph: Complete graph with all entities and relations
+    
+Example response:
+{
+    "entities": [
+        {"name": "John Smith", "type": "person", "observations": ["Works at Neo4j"]},
+        {"name": "Neo4j Inc", "type": "company", "observations": ["Graph database company"]}
+    ],
+    "relations": [
+        {"source": "John Smith", "target": "Neo4j Inc", "relationType": "WORKS_AT"}
+    ]
+}
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| entities | array | not set | Yes
+</details>
+<details>
+<summary>create_entities</summary>
+
+**Description**:
+
+```
+Create multiple new entities in the knowledge graph.
+
+Creates new memory entities with their associated observations. If an entity with the same name
+already exists, this operation will merge the observations with existing ones.
+
+    
+Returns:
+    list[Entity]: The created entities with their final state
+    
+Example call:
+{
+    "entities": [
+        {
+            "name": "Alice Johnson",
+            "type": "person",
+            "observations": ["Software engineer", "Lives in Seattle", "Enjoys hiking"]
+        },
+        {
+            "name": "Microsoft",
+            "type": "company", 
+            "observations": ["Technology company", "Headquartered in Redmond, WA"]
+        }
+    ]
+}
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| entities | array | List of entities to create with name, type, and observations | Yes
 </details>
 <details>
 <summary>create_relations</summary>
@@ -541,14 +594,36 @@ Create multiple new entities in the knowledge graph
 **Description**:
 
 ```
-Create multiple new relations between entities in the knowledge graph. Relations should be in active voice
+Create multiple new relationships between existing entities in the knowledge graph.
+
+Creates directed relationships between entities that already exist. Both source and target
+entities must already be present in the graph. Use descriptive relationship types.
+
+Returns:
+    list[Relation]: The created relationships
+    
+Example call:
+{
+    "relations": [
+        {
+            "source": "Alice Johnson",
+            "target": "Microsoft", 
+            "relationType": "WORKS_AT"
+        },
+        {
+            "source": "Alice Johnson",
+            "target": "Seattle",
+            "relationType": "LIVES_IN"
+        }
+    ]
+}
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| relations | array | not set | Yes
+| relations | array | List of relations to create between existing entities | Yes
 </details>
 <details>
 <summary>add_observations</summary>
@@ -556,14 +631,34 @@ Create multiple new relations between entities in the knowledge graph. Relations
 **Description**:
 
 ```
-Add new observations to existing entities in the knowledge graph
+Add new observations/facts to existing entities in the knowledge graph.
+
+Appends new observations to entities that already exist. The entity must be present
+in the graph before adding observations. Each observation should be a distinct fact.
+
+Returns:
+    list[dict]: Details about the added observations including entity name and new facts
+    
+Example call:
+{
+    "observations": [
+        {
+            "entityName": "Alice Johnson",
+            "observations": ["Promoted to Senior Engineer", "Completed AWS certification"]
+        },
+        {
+            "entityName": "Microsoft",
+            "observations": ["Launched new AI products", "Stock price increased 15%"]
+        }
+    ]
+}
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| observations | array | not set | Yes
+| observations | array | List of observations to add to existing entities | Yes
 </details>
 <details>
 <summary>delete_entities</summary>
@@ -571,14 +666,27 @@ Add new observations to existing entities in the knowledge graph
 **Description**:
 
 ```
-Delete multiple entities and their associated relations from the knowledge graph
+Delete entities and all their associated relationships from the knowledge graph.
+
+Permanently removes entities from the graph along with all relationships they participate in.
+This is a destructive operation that cannot be undone. Entity names must match exactly.
+
+Returns:
+    str: Success confirmation message
+    
+Example call:
+{
+    "entityNames": ["Old Company", "Outdated Person"]
+}
+
+Warning: This will delete the entities and ALL relationships they're involved in.
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| entityNames | array | An array of entity names to delete | Yes
+| entityNames | array | List of exact entity names to delete permanently | Yes
 </details>
 <details>
 <summary>delete_observations</summary>
@@ -586,14 +694,36 @@ Delete multiple entities and their associated relations from the knowledge graph
 **Description**:
 
 ```
-Delete specific observations from entities in the knowledge graph
+Delete specific observations from existing entities in the knowledge graph.
+
+Removes specific observation texts from entities. The observation text must match exactly
+what is stored. The entity will remain but the specified observations will be deleted.
+
+Returns:
+    str: Success confirmation message
+    
+Example call:
+{
+    "deletions": [
+        {
+            "entityName": "Alice Johnson",
+            "observations": ["Old job title", "Outdated phone number"]
+        },
+        {
+            "entityName": "Microsoft", 
+            "observations": ["Former CEO information"]
+        }
+    ]
+}
+
+Note: Observation text must match exactly (case-sensitive) to be deleted.
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| deletions | array | not set | Yes
+| deletions | array | List of specific observations to remove from entities | Yes
 </details>
 <details>
 <summary>delete_relations</summary>
@@ -601,73 +731,96 @@ Delete specific observations from entities in the knowledge graph
 **Description**:
 
 ```
-Delete multiple relations from the knowledge graph
+Delete specific relationships between entities in the knowledge graph.
+
+Removes relationships while keeping the entities themselves. The source, target, and 
+relationship type must match exactly for deletion. This only affects the relationships,
+not the entities they connect.
+
+Returns:
+    str: Success confirmation message
+    
+Example call:
+{
+    "relations": [
+        {
+            "source": "Alice Johnson",
+            "target": "Old Company",
+            "relationType": "WORKS_AT"
+        },
+        {
+            "source": "John Smith", 
+            "target": "Former City",
+            "relationType": "LIVES_IN"
+        }
+    ]
+}
+
+Note: All fields (source, target, relationType) must match exactly for deletion.
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| relations | array | An array of relations to delete | Yes
+| relations | array | List of specific relationships to delete from the graph | Yes
 </details>
 <details>
-<summary>read_graph</summary>
+<summary>search_memories</summary>
 
 **Description**:
 
 ```
-Read the entire knowledge graph
+Search for entities in the knowledge graph using fulltext search.
+
+Searches across entity names, types, and observations using Neo4j's fulltext index.
+Returns matching entities and their related connections. Supports partial matches
+and multiple search terms.
+
+Returns:
+    KnowledgeGraph: Subgraph containing matching entities and their relationships
+    
+Example call:
+{
+    "query": "engineer software"
+}
+
+This searches for entities containing "engineer" or "software" in their name, type, or observations.
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| query | string | Fulltext search query to find entities by name, type, or observations | Yes
 </details>
 <details>
-<summary>search_nodes</summary>
+<summary>find_memories_by_name</summary>
 
 **Description**:
 
 ```
-Search for nodes in the knowledge graph based on a query
+Find specific entities by their exact names.
+
+Retrieves entities that exactly match the provided names, along with all their
+relationships and connected entities. Use this when you know the exact entity names.
+
+Returns:
+    KnowledgeGraph: Subgraph containing the specified entities and their relationships
+    
+Example call:
+{
+    "names": ["Alice Johnson", "Microsoft", "Seattle"]
+}
+
+This retrieves the entities with exactly those names plus their connections.
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| query | string | The search query to match against entity names, types, and observation content | Yes
-</details>
-<details>
-<summary>find_nodes</summary>
-
-**Description**:
-
-```
-Find specific nodes in the knowledge graph by their names
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| names | array | An array of entity names to retrieve | Yes
-</details>
-<details>
-<summary>open_nodes</summary>
-
-**Description**:
-
-```
-Open specific nodes in the knowledge graph by their names
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| names | array | An array of entity names to retrieve | Yes
+| names | array | List of exact entity names to retrieve | Yes
 </details>
 
 
@@ -677,21 +830,23 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
-| tools | add_observations | description | f66d1982a935c25deae16641b447a894687858da5f4e56a4ffd5eded9f15287b |
-| tools | create_entities | description | 5d2cd1d3e5d4ea6fd952e9568d41dd54e18c1c5a611daffe1c0399ebc57444e1 |
-| tools | create_relations | description | eeb160c5595ea67cee737ea4d34dcf3d22b3d316e107d1edcf02d1dc71727f37 |
-| tools | delete_entities | description | 4e8ad2271cd9cfd21a213070f051534e2fb5c6723d7f5d2eed86c9a2f41b05c2 |
-| tools | delete_entities | entityNames | a927153ab95010896fc74cf8f26a9c7bc3e840e7aaf9fc7f15866c3525873ab2 |
-| tools | delete_observations | description | bae5684867bc99aa4c62c3cb29dccb386983e7575a910a8be7d13ea023aafd80 |
-| tools | delete_relations | description | 1b07436348ac9732db58c69ed4db4dbebed012fd263851e1ee4e35e86fe0968e |
-| tools | delete_relations | relations | 16642cf152c4f981edf60e0064e4fa10410158457a438a63b60c21c1c4beb5c9 |
-| tools | find_nodes | description | 1317b6ca248df70d6eeace29b549d26ce01d7f412a0a6ce43063e3dadba2e73a |
-| tools | find_nodes | names | 7275b2ac1cb2f632b23e78c872c589a8489cda3a5306f3b399dce23ca813e3ca |
-| tools | open_nodes | description | 0a799b2e13cab0744fe6b8dd3dbacf7e04753376fdf0adb9d9b6821ad853eded |
-| tools | open_nodes | names | 7275b2ac1cb2f632b23e78c872c589a8489cda3a5306f3b399dce23ca813e3ca |
-| tools | read_graph | description | 1dfb0bb4dcfe39f92a8a0464153263a3d836524a3c8fd9ff3f73be5ecb2a098c |
-| tools | search_nodes | description | cdd54c52fcef34587fc903df13b58b02371a9fb2390cab93d0eeabd229c479f3 |
-| tools | search_nodes | query | 2be985b738ac91d8f1e6039cc46c99b96b49b912c19eefccf337c0fc89173cff |
+| tools | add_observations | description | 74685109ad3cb4420a3f78ecd806c01d759803b525dc605879abbb7aac0332f9 |
+| tools | add_observations | observations | 1dd71ddf6c37cd97309614815eb4678af3b8ec1fa7d869530c77820f295c640e |
+| tools | create_entities | description | a029f2918d3008cf3fb59a0a5e56ef47911680558bde63e5f8de2fe94f5f9018 |
+| tools | create_entities | entities | 81bf714250114c87d7635f4f37ec618a4919710bb558f06257409a3dfeb16202 |
+| tools | create_relations | description | 867a4b2cc7e44b7e459b51e552fe4cb7228fe39b5ad2d81d34aaa49f3356c7e7 |
+| tools | create_relations | relations | 6c7122f97e10ddbd5f84c7ddd9d9486b6d87f7e18c441f0d1cb0fb2049b4ae1d |
+| tools | delete_entities | description | 4072c70aecf3e87e22273bf1964eeff7fa7d6baddd9b7af01b99dfeb5d50a844 |
+| tools | delete_entities | entityNames | 07de112fc04997e4c54813a6f550234605df1b834c18f3719db8c264dbd196d6 |
+| tools | delete_observations | description | 4c2fbb82d68f5fb10f0e051f676537cfc90ff7e470c9a9945a8708732ffc59e1 |
+| tools | delete_observations | deletions | 15503546937d809c58c4c7e356abfd5adb13b37fda2af857cfa6c096042eb0f9 |
+| tools | delete_relations | description | 9eb23da9b20cf68c38323bc5d32714bdc65a3b2c09f018069e2011744fbf4fb3 |
+| tools | delete_relations | relations | 8b67ac0a7ec71340f17625aab674a7b807a98a1a06c883939aaf72c718ae0b11 |
+| tools | find_memories_by_name | description | 0cf3fbcbe4d028e188890a4e440486759d35e55ebe22f9eff111d73084619e41 |
+| tools | find_memories_by_name | names | 30dd21d889e064d390457c1c99e9d6eb58c49238c0691a8d558f5a2a986ffdc3 |
+| tools | read_graph | description | 8eeeccee1fdb8b2a187ce791a2c923e2ee4e82b6480c11f26d515ba4e8a3f348 |
+| tools | search_memories | description | 5b768f79973ccec75308c11a712ec3d5641124d594eb7b71358c2334352f3cf6 |
+| tools | search_memories | query | 727e760e5c1432a057d24c0d97099961093e08eec261f5cdfcc3af703d851712 |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.1.39",
+  "version": "0.1.43",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"aff8d92e2f0861aafc94caf3f62be94b38ae36edd30479515d66d6c17b97f77a","reason":"Tool names are clear and specific, indicating their Azure DevOps purpose well. Most descriptions adequately explain functionality in 1-2 sentences with good context about what each tool does. Parameter descriptions are generally clear and complete, explaining purpose, types, and expected values effectively. Some tools like 'get_all_repositories_tree' and search functions have particularly thorough documentation. Minor gaps exist in a few areas where descriptions could be slightly more comprehensive, but overall the documentation provides sufficient guidance for proper tool usage.","score":"B"},
+  "rating": {"hash":"b6d40cd21e605859d8a706310947a12da8c43544a8c04dba379e5071e7b47af5","reason":"This toolset demonstrates good overall documentation quality with clear, descriptive tool names and comprehensive parameter documentation. Most tools have detailed descriptions explaining functionality and usage context (e.g., create_commit, get_pull_request_checks). Parameter descriptions are thorough with proper type constraints and examples. However, some tools have overly brief descriptions (e.g., get_me, list_organizations) that could benefit from more context about when to use them and what information they provide. The complex tools like create_commit excel with extensive documentation including usage examples and format specifications.","score":"B"},
   "resources": {
-    "tools": 32,
+    "tools": 43,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

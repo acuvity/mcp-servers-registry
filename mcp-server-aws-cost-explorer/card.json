@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.0.4",
+  "version": "0.0.17",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"be35d6799cf8e78bd007158dd8c3ca54039c16cda0feb0c5d75f8262ca5d5e86","reason":"Good documentation with comprehensive descriptions and clear parameter definitions. Tool names are specific and intuitive. The main tool 'get_cost_and_usage' provides excellent detail including usage examples and important behavioral notes. Parameter descriptions are thorough with examples and constraints clearly specified. Minor deductions for some repetitive boilerplate (Args/Returns sections from docstrings) and the 'get_today_date' tool having a somewhat generic name, but overall the toolset provides strong guidance for users.","score":"B"},
+  "rating": {"hash":"1ab0f0abaf251ad1e5d0298e2c7ad12443f3123942d15c39bc35342e1e71f0b2","reason":"Good documentation overall with comprehensive descriptions and detailed examples, but inconsistent parameter documentation quality. Tool descriptions are excellent with 3-4 sentences covering functionality, usage context, and key limitations. Most tools provide helpful examples and explain complex concepts well. However, some parameters lack adequate descriptions (e.g., 'tag_key' has minimal description), and there's occasional redundancy in descriptions that could be more concise. The technical accuracy and depth of AWS-specific guidance elevates the quality significantly.","score":"B"},
   "resources": {
-    "tools": 4,
+    "tools": 7,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

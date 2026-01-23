@@ -13,13 +13,13 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "1.1.6",
+  "version": "1.2.8",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"8801ed12d9b0302f6d8840dc63840247794cdca3c347af24371595eb3debb8d0","reason":"The toolset demonstrates good documentation quality overall. Tool names are clear and purposeful, descriptions adequately explain functionality and usage context (typically 1-2 sentences), and parameter documentation is generally comprehensive with clear purposes and constraints. However, some tools have overly brief descriptions that could benefit from more context about limitations or specific use cases, and a few parameter descriptions could be more detailed about expected formats or behavior.","score":"B"},
+  "rating": {"hash":"0bb439666d66631dae82c827db68889b2f465709706db754633a39843b91a3c9","reason":"The toolset has adequate documentation with some notable strengths and weaknesses. Tool names are mostly clear and specific (e.g., 'startAccessibilityScan', 'createTestCase'), though some are lengthy. Descriptions vary significantly in quality - some provide comprehensive explanations with usage context and constraints, while others are minimal. Parameter documentation is generally adequate with types and basic descriptions, though some parameters lack clarity about their purpose or expected values. The accessibility tools and test management tools show good documentation practices, but several tools have sparse descriptions that leave users with questions about functionality and usage patterns.","score":"C"},
   "resources": {
-    "tools": 18,
-    "prompts": 0,
+    "tools": 35,
+    "prompts": 1,
     "resources": 0,
     "resourcesTemplates": 0
   }

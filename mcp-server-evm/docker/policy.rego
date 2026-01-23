@@ -86,61 +86,55 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
-	"get_chain_info",
+	"get_wallet_address",
 	#
-	"resolve_ens",
+	"get_chain_info",
 	#
 	"get_supported_networks",
 	#
-	"get_block_by_number",
+	"get_gas_price",
+	#
+	"resolve_ens_name",
+	#
+	"lookup_ens_address",
+	#
+	"get_block",
 	#
 	"get_latest_block",
 	#
 	"get_balance",
 	#
-	"get_erc20_balance",
-	#
 	"get_token_balance",
+	#
+	"get_allowance",
 	#
 	"get_transaction",
 	#
 	"get_transaction_receipt",
 	#
-	"estimate_gas",
+	"wait_for_transaction",
 	#
-	"transfer_eth",
-	#
-	"transfer_erc20",
-	#
-	"approve_token_spending",
-	#
-	"transfer_nft",
-	#
-	"transfer_erc1155",
-	#
-	"transfer_token",
+	"get_contract_abi",
 	#
 	"read_contract",
 	#
 	"write_contract",
 	#
-	"is_contract",
+	"multicall",
 	#
-	"get_token_info",
+	"transfer_native",
 	#
-	"get_token_balance_erc20",
+	"transfer_erc20",
+	#
+	"approve_token_spending",
 	#
 	"get_nft_info",
 	#
-	"check_nft_ownership",
-	#
-	"get_erc1155_token_uri",
-	#
-	"get_nft_balance",
-	#
 	"get_erc1155_balance",
 	#
-	"get_address_from_private_key",
+	"sign_message",
+	#
+	"sign_typed_data",
 	#
 	# exclude word that might be misdetected
 	"to",

@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -21,10 +21,10 @@
 # What is mcp-server-aws-documentation?
 [![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-aws-documentation/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-documentation/1.0.2?logo=docker&logoColor=fff&label=1.0.2)](https://hub.docker.com/r/acuvity/mcp-server-aws-documentation)
-[![PyPI](https://img.shields.io/badge/1.0.2-3775A9?logo=pypi&logoColor=fff&label=awslabs.aws-documentation-mcp-server)](https://github.com/awslabs/mcp/tree/HEAD/src/aws-documentation-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-documentation/1.1.16?logo=docker&logoColor=fff&label=1.1.16)](https://hub.docker.com/r/acuvity/mcp-server-aws-documentation)
+[![PyPI](https://img.shields.io/badge/1.1.16-3775A9?logo=pypi&logoColor=fff&label=awslabs.aws-documentation-mcp-server)](https://github.com/awslabs/mcp/tree/HEAD/src/aws-documentation-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-aws-documentation/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-documentation&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-documentation%3A1.0.2%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-documentation&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-documentation%3A1.1.16%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** AWS documentation access with search, content recommendations, and markdown conversion
 
@@ -43,69 +43,70 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
 The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-documentation/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
-### 🔒 Resource Integrity
+#### 🔒 Resource Integrity
 
 **Mitigates MCP Rug Pull Attacks**
 
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Guardrails
+#### 🛡️ Guardrails
 
-#### Covert Instruction Detection
+##### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-#### Sensitive Pattern Detection
+##### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-#### Shadowing Pattern Detection
+##### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-#### Schema Misuse Prevention
+##### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-#### Cross-Origin Tool Access
+##### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-#### Secrets Redaction
+##### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
@@ -114,7 +115,7 @@ Automatically masks sensitive values so they never appear in logs or responses.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
-### Enable guardrails
+#### Enable guardrails
 
 To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
@@ -129,7 +130,7 @@ To activate guardrails in your Docker containers, define the `GUARDRAILS` enviro
 
 Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
 
-## 🔒 Basic Authentication via Shared Secret
+#### 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
@@ -143,10 +144,8 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 > While basic auth will protect against unauthorized access, you should use it only in controlled environment,
 > rotate credentials frequently and **always** use TLS.
 
-</details>
-
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # 📦 How to Install
@@ -173,7 +172,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-documentation&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-documentation%3A1.0.2%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-documentation&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-documentation%3A1.1.16%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -190,7 +189,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "-i",
           "--rm",
           "--read-only",
-          "docker.io/acuvity/mcp-server-aws-documentation:1.0.2"
+          "docker.io/acuvity/mcp-server-aws-documentation:1.1.16"
         ]
       }
     }
@@ -212,7 +211,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-aws-documentation:1.0.2"
+        "docker.io/acuvity/mcp-server-aws-documentation:1.1.16"
       ]
     }
   }
@@ -238,7 +237,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-aws-documentation:1.0.2"
+        "docker.io/acuvity/mcp-server-aws-documentation:1.1.16"
       ]
     }
   }
@@ -266,7 +265,7 @@ Add the following JSON block to your mcp configuration file:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-aws-documentation:1.0.2"
+        "docker.io/acuvity/mcp-server-aws-documentation:1.1.16"
       ]
     }
   }
@@ -292,7 +291,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-aws-documentation:1.0.2"
+        "docker.io/acuvity/mcp-server-aws-documentation:1.1.16"
       ]
     }
   }
@@ -311,7 +310,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 async with MCPServerStdio(
     params={
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-aws-documentation:1.0.2"]
+        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-aws-documentation:1.1.16"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -340,7 +339,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-aws-documentation:1.0.2`
+- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-aws-documentation:1.1.16`
 
 </details>
 
@@ -350,7 +349,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-aws-documentation:1.0.2
+docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-aws-documentation:1.1.16
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -530,22 +529,35 @@ Search AWS documentation using the official AWS Documentation Search API.
     - Include service names to narrow results (e.g., "S3 bucket versioning" instead of just "versioning")
     - Use quotes for exact phrase matching (e.g., "AWS Lambda function URLs")
     - Include abbreviations and alternative terms to improve results
+    - Use guide_type and product_type filters found from a SearchResponse's "facets" property:
+        - Filter only for broad search queries with patterns:
+            - "What is [service]?" -> product_types: ["Amazon Simple Storage Service"]
+            - "How to use <service 1> with <service 2>?" -> product_types: [<service 1>, <service 2>]
+            - "[service] getting started" -> product_types: [<service>] + guide_types: ["User Guide, "Developer Guide"]
+            - "API reference for [service]" -> product_types: [<service>] + guide_types: ["API Reference"]
 
     ## Result Interpretation
 
-    Each result includes:
-    - rank_order: The relevance ranking (lower is more relevant)
-    - url: The documentation page URL
-    - title: The page title
-    - context: A brief excerpt or summary (if available)
+    Each SearchResponse includes:
+    - search_results: List of documentation pages, each with:
+        - rank_order: The relevance ranking (lower is more relevant)
+        - url: The documentation page URL
+        - title: The page title
+        - context: A brief excerpt or summary (if available)
+    - facets: Available filters (product_types, guide_types) for refining searches
+    - query_id: Unique identifier for this search session
+
 
     Args:
         ctx: MCP context for logging and error handling
         search_phrase: Search phrase to use
+        search_intent: The intent behind the search requested by the user
         limit: Maximum number of results to return
+        product_types: Filter by AWS product/service
+        guide_types: Filter by guide type
 
     Returns:
-        List of search results with URLs, titles, and context snippets
+        List of search results with URLs, titles, query ID, context snippets, and facets for filtering
     
 ```
 
@@ -553,7 +565,10 @@ Search AWS documentation using the official AWS Documentation Search API.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| guide_types | any | Filter results by guide type (e.g., ["User Guide", "API Reference", "Developer Guide"]) | No
 | limit | integer | Maximum number of results to return | No
+| product_types | any | Filter results by AWS product/service (e.g., ["Amazon Simple Storage Service"]) | No
+| search_intent | string | For the search_phrase parameter, describe the search intent of the user. CRITICAL: Do not include any PII or customer data, describe only the AWS-related intent for search. | No
 | search_phrase | string | Search phrase to use | Yes
 </details>
 <details>
@@ -629,8 +644,11 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | read_documentation | url | 4c39d34795e853ba5328692fca354ef75906f2341d44445dcdc3a2d9c559e449 |
 | tools | recommend | description | 0957b941cdccbd53956e861216f00cb0a42ac8ebf8a2cd59ac0cb9f8cfe74ab1 |
 | tools | recommend | url | 00fb834d5360ef6b242f27c72684470bfb789e8ffadf994fde36660e353df77f |
-| tools | search_documentation | description | 792056f237c78479f73d2c7547e91b2ed41e0c329765469722b2c677a24ed420 |
+| tools | search_documentation | description | 92dbcd0a5cc3751fe4d3dfb1e26d5a895091e718382373a182c7ec85ea60700a |
+| tools | search_documentation | guide_types | a9f2a2d2bfb7fc55f237c70cd3b4db2f92e1e30721cfd937f6f78378722ffbfd |
 | tools | search_documentation | limit | b04468046d2f2a5692b75e7d703a30fd2787b8f80972a3b07b618e4ca4b3fa70 |
+| tools | search_documentation | product_types | 574be655ea03ed7898a5c126df89b61bc7e596ebfa003d5ee886872ce058edca |
+| tools | search_documentation | search_intent | 84e2ae5fd77f6babc33c9d9b2efcd4e99c169cd71940fa0e6776cc2f0bdb623d |
 | tools | search_documentation | search_phrase | f93cbb9df9a44cfc1b47f061cd2589bce1142763d092ad6d5c122935968cc02c |
 
 

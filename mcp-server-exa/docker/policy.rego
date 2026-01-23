@@ -88,6 +88,10 @@ _cross_tool_exclude := [
 	#
 	"web_search_exa",
 	#
+	"company_research_exa",
+	#
+	"get_code_context_exa",
+	#
 	# exclude word that might be misdetected
 	"to",
 	"this",

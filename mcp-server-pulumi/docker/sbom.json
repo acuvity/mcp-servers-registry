@@ -1,8 +1,40 @@
 {
   "tools": [
     {
+      "name": "deploy-to-aws",
+      "hash": "0a24c7371bb30010e043be7eba2ec686194bf50cd5668be3c4fbee2bc48cb539"
+    },
+    {
+      "name": "neo-task-launcher",
+      "hash": "a7d7f5ffe9094b383d72e88104f5e2b5d6670f6c344e41371f0a42704abcb477",
+      "params": [
+        {
+          "name": "context",
+          "hash": "05ae8e4b48f5db2ba701750fc2396c0fae821c9afc1f4ae91400ccd8dcb15eb0"
+        },
+        {
+          "name": "query",
+          "hash": "f48f47ff5fa0476e249b322261995d7bbeded518bb5f84efe3fef21baddb2573"
+        }
+      ]
+    },
+    {
       "name": "pulumi-cli-preview",
       "hash": "77eebbe43ea5f25cc6c6afba4493876241cb4553c3c800fefa38414777f9001a",
+      "params": [
+        {
+          "name": "stackName",
+          "hash": "62db21bdc5f99aa735c5e247f7aa2b6a2df24ae221ab3bec8febd721ed361613"
+        },
+        {
+          "name": "workDir",
+          "hash": "197b126116a83a35d62f31f452c357c2b06c809cc9523c3ef31c02940ee17b98"
+        }
+      ]
+    },
+    {
+      "name": "pulumi-cli-refresh",
+      "hash": "2051576b742f677f54e34cc7073cd22f5d8a115bab0ff1a7379edb686020caab",
       "params": [
         {
           "name": "stackName",
@@ -47,12 +79,34 @@
       ]
     },
     {
+      "name": "pulumi-registry-get-function",
+      "hash": "deca77a2cd724e1e6347de7f3cd46f0bef35629a208c7afbe3b9f1f3d411d745",
+      "params": [
+        {
+          "name": "function",
+          "hash": "41781d7673ae216d861a74916a1d1140b37b9d23ac78e7f3365a770bca14ab80"
+        },
+        {
+          "name": "module",
+          "hash": "863b6f97dae28a9dfe55e288a125140172423942393113c8f56af5fac089b5bb"
+        },
+        {
+          "name": "provider",
+          "hash": "10128898059af3093cf26e98c16097f70b2db1b2912ca6b498295c0e4f8a58b0"
+        },
+        {
+          "name": "version",
+          "hash": "b91e073ffba9f6b18bcc0a7601843f0500b25630eb841dc715b1af9a7a09de29"
+        }
+      ]
+    },
+    {
       "name": "pulumi-registry-get-resource",
-      "hash": "8d2766376fa62799080b02c7916d4f482ac3be24fbe897e101384bb32258d9be",
+      "hash": "187e34cb220dab47370d558de593b9157264cbae9bf52d1ff54ab6dba5783991",
       "params": [
         {
           "name": "module",
-          "hash": "912e142e135630c83cb0e36edc94b26ef20354d5b8e38f3ec948dccfac468bca"
+          "hash": "c6939148bd48eb3acc755f0bb65d2ef94c5ee91c265b948ffc9d10cb26848b85"
         },
         {
           "name": "provider",
@@ -61,6 +115,50 @@
         {
           "name": "resource",
           "hash": "bd4be36001049fe09082abdb3eecc5b2a427e0d1fb0b0873bb28a897be45263b"
+        },
+        {
+          "name": "version",
+          "hash": "b91e073ffba9f6b18bcc0a7601843f0500b25630eb841dc715b1af9a7a09de29"
+        }
+      ]
+    },
+    {
+      "name": "pulumi-registry-get-type",
+      "hash": "c86705d3607c12cc3050e20ea36461dd7f58b32850e2e378295a19776ff440e7",
+      "params": [
+        {
+          "name": "module",
+          "hash": "912e142e135630c83cb0e36edc94b26ef20354d5b8e38f3ec948dccfac468bca"
+        },
+        {
+          "name": "name",
+          "hash": "ff0e769d54e1fdb895b7bd957584af333e5204c04050bbe34c91e7570c22f5aa"
+        },
+        {
+          "name": "provider",
+          "hash": "10128898059af3093cf26e98c16097f70b2db1b2912ca6b498295c0e4f8a58b0"
+        },
+        {
+          "name": "version",
+          "hash": "b91e073ffba9f6b18bcc0a7601843f0500b25630eb841dc715b1af9a7a09de29"
+        }
+      ]
+    },
+    {
+      "name": "pulumi-registry-list-functions",
+      "hash": "a7693331d1d6b2de628d279a752dbd8e1baebb00b9cc7210973def3639728716",
+      "params": [
+        {
+          "name": "module",
+          "hash": "de9a6844786d8547d8e984bdb7c39b73da5ac3917ae7761d956471cc31160d18"
+        },
+        {
+          "name": "provider",
+          "hash": "10128898059af3093cf26e98c16097f70b2db1b2912ca6b498295c0e4f8a58b0"
+        },
+        {
+          "name": "version",
+          "hash": "b91e073ffba9f6b18bcc0a7601843f0500b25630eb841dc715b1af9a7a09de29"
         }
       ]
     },
@@ -75,9 +173,50 @@
         {
           "name": "provider",
           "hash": "10128898059af3093cf26e98c16097f70b2db1b2912ca6b498295c0e4f8a58b0"
+        },
+        {
+          "name": "version",
+          "hash": "b91e073ffba9f6b18bcc0a7601843f0500b25630eb841dc715b1af9a7a09de29"
+        }
+      ]
+    },
+    {
+      "name": "pulumi-resource-search",
+      "hash": "32a16c5be45c3dbb6d30530060f7d7330cd1db7778a7612d9f725668fa77adc2",
+      "params": [
+        {
+          "name": "org",
+          "hash": "c7136e5ee12fab855f78fbad9925612fcd3db02f6702871de9ca37ff7331484f"
+        },
+        {
+          "name": "properties",
+          "hash": "29e8397d40408a28c654f7e9ea1c76ff3b3b0d1c024ac280a267dbaf2bab9059"
+        },
+        {
+          "name": "query",
+          "hash": "7ccf6bcba87c263358dd3d49be6c27167d2bb13b940e592bf1eb71f03cfb836c"
+        },
+        {
+          "name": "top",
+          "hash": "347f9266497294660354199156e84cbe89f03552f9d449fcfd0f7439e675cc41"
         }
       ]
     }
   ],
-  "prompts": []
+  "prompts": [
+    {
+      "name": "convert-terraform-to-typescript",
+      "hash": "46721b1af46ad5dc9f006d54a92682b4651a280fcc5ed1eb8c0c16508cf3676a",
+      "params": [
+        {
+          "name": "outputDir",
+          "hash": "79fb78573933eef422e5c6cfe8967a19bd80a3087dfb49427c7af29b9256c027"
+        }
+      ]
+    },
+    {
+      "name": "deploy-to-aws",
+      "hash": "84b5819f8a04f39f97b66ee3b302729d18ef812bec8446af245d45b485d4f216"
+    }
+  ]
 }

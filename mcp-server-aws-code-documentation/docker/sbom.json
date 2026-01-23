@@ -1,0 +1,37 @@
+{
+  "tools": [
+    {
+      "name": "create_context",
+      "hash": "e2d52a92ea993a796a9339f917a0992f0295c848c1bdf8420ad6ed8235589ac6",
+      "params": [
+        {
+          "name": "analysis",
+          "hash": "ccb564b5c11106f0f375e81db01dd98b4bbfb37c6839aebf3e71e13c10db235d"
+        },
+        {
+          "name": "project_root",
+          "hash": "2549d713cae9151b32ed49b6dffcfdc8a395b9371d8b5415dc2a08340306a974"
+        }
+      ]
+    },
+    {
+      "name": "generate_documentation",
+      "hash": "c8f8eee55fef1789f364ab79160e71956a03c1c724751e61f67bf5d7c8a5167e"
+    },
+    {
+      "name": "plan_documentation",
+      "hash": "73f35f61c3afa458497225f76d6fb3c5a4c1b208d192ff989c3e8fde9fc346dc"
+    },
+    {
+      "name": "prepare_repository",
+      "hash": "b05fac0a593cea4156b4dacecbe92b1b118ca8fad5df1913e2339cb3427b59cf",
+      "params": [
+        {
+          "name": "project_root",
+          "hash": "2549d713cae9151b32ed49b6dffcfdc8a395b9371d8b5415dc2a08340306a974"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

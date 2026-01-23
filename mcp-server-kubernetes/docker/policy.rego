@@ -92,8 +92,6 @@ _cross_tool_exclude := [
 	#
 	"kubectl_describe",
 	#
-	"kubectl_list",
-	#
 	"kubectl_apply",
 	#
 	"kubectl_delete",
@@ -118,13 +116,19 @@ _cross_tool_exclude := [
 	#
 	"uninstall_helm_chart",
 	#
+	"node_management",
+	#
 	"port_forward",
 	#
 	"stop_port_forward",
 	#
+	"exec_in_pod",
+	#
 	"list_api_resources",
 	#
 	"kubectl_generic",
+	#
+	"ping",
 	#
 	# exclude word that might be misdetected
 	"to",

@@ -13,12 +13,12 @@
   "scope": "native",
   "mutitenant": false,
   "runtime": "node",
-  "version": "2.1.0",
+  "version": "2.8.3",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"0fe77a22ce910ba578498e042eef70ebea6395a9ea5d180625006cb9b75e93cc","reason":"Mixed quality documentation. While some tools like 'search_engine' have adequate descriptions with clear functionality and parameter explanations, the majority suffer from minimal descriptions and poor parameter documentation. Many tools lack essential details about URL format requirements, and parameter descriptions are often missing (e.g., 'query' parameter has no description). The large number of specialized tools with repetitive, brief descriptions and inadequate parameter guidance brings the overall quality to adequate level.","score":"C"},
+  "rating": {"hash":"141d967fa1d1886db6789351775ffd69394823fd23864257ccf33c6fe832be2d","reason":"The toolset provides adequate basic functionality descriptions but has several documentation gaps. Tool names are clear and purposeful. Descriptions cover main functionality but lack important details like usage context and constraints. Parameter documentation is inconsistent - some parameters like 'query' and 'cursor' lack descriptions entirely, while others like 'urls' are well-documented. The inconsistency and missing parameter descriptions prevent a higher grade despite reasonable tool descriptions.","score":"C"},
   "resources": {
-    "tools": 48,
+    "tools": 4,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

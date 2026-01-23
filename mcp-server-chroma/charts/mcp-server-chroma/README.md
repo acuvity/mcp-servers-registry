@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -21,10 +21,10 @@
 # What is mcp-server-chroma?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-chroma/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-chroma/0.2.4?logo=docker&logoColor=fff&label=0.2.4)](https://hub.docker.com/r/acuvity/mcp-server-chroma)
-[![PyPI](https://img.shields.io/badge/0.2.4-3775A9?logo=pypi&logoColor=fff&label=chroma-mcp)](https://github.com/chroma-core/chroma-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-chroma/0.2.6?logo=docker&logoColor=fff&label=0.2.6)](https://hub.docker.com/r/acuvity/mcp-server-chroma)
+[![PyPI](https://img.shields.io/badge/0.2.6-3775A9?logo=pypi&logoColor=fff&label=chroma-mcp)](https://github.com/chroma-core/chroma-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-chroma/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-chroma&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CHROMA_CLIENT_TYPE%22%2C%22-e%22%2C%22CHROMA_DATABASE%22%2C%22-e%22%2C%22CHROMA_HOST%22%2C%22-e%22%2C%22CHROMA_PORT%22%2C%22-e%22%2C%22CHROMA_TENANT%22%2C%22docker.io%2Facuvity%2Fmcp-server-chroma%3A0.2.4%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-chroma&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CHROMA_CLIENT_TYPE%22%2C%22-e%22%2C%22CHROMA_DATABASE%22%2C%22-e%22%2C%22CHROMA_HOST%22%2C%22-e%22%2C%22CHROMA_PORT%22%2C%22-e%22%2C%22CHROMA_TENANT%22%2C%22docker.io%2Facuvity%2Fmcp-server-chroma%3A0.2.6%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Embedding database for LLM applications with advanced search capabilities.
 
@@ -43,110 +43,40 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-chroma/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-chroma/docker/policy.rego) that enables a set of runtime [guardrails](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-chroma#%EF%B8%8F-guardrails) to help enforce security, privacy, and correct usage of your services. Below is list of each guardrail provided.
 
-### 🔒 Resource Integrity
-
-**Mitigates MCP Rug Pull Attacks**
-
-* **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
-* **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
-
-### 🛡️ Guardrails
-
-#### Covert Instruction Detection
-
-Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
-
-* **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
-* **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
-
-#### Sensitive Pattern Detection
-
-Block user-defined sensitive data patterns (credential paths, filesystem references).
-
-* **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
-* **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
-
-#### Shadowing Pattern Detection
-
-Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
-
-* **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
-* **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
-
-#### Schema Misuse Prevention
-
-Enforces strict adherence to MCP input schemas.
-
-* **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
-* **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
-
-#### Cross-Origin Tool Access
-
-Controls whether tools may invoke tools or services from external origins.
-
-* **Goal:** Prevent untrusted or out-of-scope services from being called.
-* **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
-
-#### Secrets Redaction
-
-Automatically masks sensitive values so they never appear in logs or responses.
-
-* **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
-* **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
-
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
-
-### Enable guardrails
-
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
 | Guardrail                        | Summary                                                                 |
 |----------------------------------|-------------------------------------------------------------------------|
+| `resource integrity`             | Embeds a hash of all exposed resources to ensure their authenticity and prevent unauthorized modifications, guarding against supply chain attacks and dynamic alterations of tool metadata. |
 | `covert-instruction-detection`   | Detects hidden or obfuscated directives in requests.                    |
 | `sensitive-pattern-detection`    | Flags patterns suggesting sensitive data or filesystem exposure.        |
 | `shadowing-pattern-detection`    | Identifies tool descriptions that override or influence others.         |
 | `schema-misuse-prevention`       | Enforces strict schema compliance on input data.                        |
 | `cross-origin-tool-access`       | Controls calls to external services or APIs.                            |
 | `secrets-redaction`              | Prevents exposure of credentials or sensitive values.                   |
+| `basic authentication`           | Enables the configuration of a shared secret to restrict unauthorized access to the MCP server and ensure only approved clients can connect. |
 
-Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
-
-## 🔒 Basic Authentication via Shared Secret
-
-Provides a lightweight auth layer using a single shared token.
-
-* **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
-* **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
-
-To turn on Basic Authentication, define `BASIC_AUTH_SECRET` environment variable with a shared secret.
-
-Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentication.
-
-> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
-> rotate credentials frequently and **always** use TLS.
-
-</details>
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference
@@ -173,11 +103,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.2.4`
+  - container: `1.0.0-0.2.6`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-chroma:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-chroma:1.0.0-0.2.4`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-chroma:1.0.0-0.2.6`
 
 ---
 
@@ -636,7 +566,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (12)
+## 🧰 Tools (13)
 <details>
 <summary>chroma_list_collections</summary>
 
@@ -650,7 +580,7 @@ List all collection names in the Chroma database with pagination support.
         offset: Optional number of collections to skip before returning results
     
     Returns:
-        List of collection names
+        List of collection names or ["__NO_COLLECTIONS_FOUND__"] if database is empty
     
 ```
 
@@ -671,14 +601,6 @@ Create a new Chroma collection with configurable HNSW parameters.
     
     Args:
         collection_name: Name of the collection to create
-        space: Distance function used in HNSW index. Options: 'l2', 'ip', 'cosine'
-        ef_construction: Size of the dynamic candidate list for constructing the HNSW graph
-        ef_search: Size of the dynamic candidate list for searching the HNSW graph
-        max_neighbors: Maximum number of neighbors to consider during HNSW graph construction
-        num_threads: Number of threads to use during HNSW construction
-        batch_size: Number of elements to batch together during index construction
-        sync_threshold: Number of elements to process before syncing index to disk
-        resize_factor: Factor to resize the index by when it's full
         embedding_function_name: Name of the embedding function to use. Options: 'default', 'cohere', 'openai', 'jina', 'voyageai', 'ollama', 'roboflow'
         metadata: Optional metadata dict to add to the collection
     
@@ -688,17 +610,9 @@ Create a new Chroma collection with configurable HNSW parameters.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| batch_size | any | not set | No
 | collection_name | string | not set | Yes
-| ef_construction | any | not set | No
-| ef_search | any | not set | No
-| embedding_function_name | any | not set | No
-| max_neighbors | any | not set | No
+| embedding_function_name | string | not set | No
 | metadata | any | not set | No
-| num_threads | any | not set | No
-| resize_factor | any | not set | No
-| space | any | not set | No
-| sync_threshold | any | not set | No
 </details>
 <details>
 <summary>chroma_peek_collection</summary>
@@ -771,11 +685,6 @@ Modify a Chroma collection's name or metadata.
         collection_name: Name of the collection to modify
         new_name: Optional new name for the collection
         new_metadata: Optional new metadata for the collection
-        ef_search: Size of the dynamic candidate list for searching the HNSW graph
-        num_threads: Number of threads to use during HNSW construction
-        batch_size: Number of elements to batch together during index construction
-        sync_threshold: Number of elements to process before syncing index to disk
-        resize_factor: Factor to resize the index by when it's full
     
 ```
 
@@ -783,14 +692,31 @@ Modify a Chroma collection's name or metadata.
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| batch_size | any | not set | No
 | collection_name | string | not set | Yes
-| ef_search | any | not set | No
 | new_metadata | any | not set | No
 | new_name | any | not set | No
-| num_threads | any | not set | No
-| resize_factor | any | not set | No
-| sync_threshold | any | not set | No
+</details>
+<details>
+<summary>chroma_fork_collection</summary>
+
+**Description**:
+
+```
+Fork a Chroma collection.
+    
+    Args:
+        collection_name: Name of the collection to fork
+        new_collection_name: Name of the new collection to create
+        metadata: Optional metadata dict to add to the new collection
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| collection_name | string | not set | Yes
+| new_collection_name | string | not set | Yes
 </details>
 <details>
 <summary>chroma_delete_collection</summary>
@@ -822,8 +748,8 @@ Add documents to a Chroma collection.
     Args:
         collection_name: Name of the collection to add documents to
         documents: List of text documents to add
+        ids: List of IDs for the documents (required)
         metadatas: Optional list of metadata dictionaries for each document
-        ids: Optional list of IDs for the documents
     
 ```
 
@@ -833,7 +759,7 @@ Add documents to a Chroma collection.
 |-----------|------|-------------|-----------|
 | collection_name | string | not set | Yes
 | documents | array | not set | Yes
-| ids | any | not set | No
+| ids | array | not set | Yes
 | metadatas | any | not set | No
 </details>
 <details>
@@ -855,6 +781,13 @@ Query documents from a Chroma collection with advanced filtering.
                - Logical AND: {"$and": [{"field1": {"$eq": "value1"}}, {"field2": {"$gt": 5}}]}
                - Logical OR: {"$or": [{"field1": {"$eq": "value1"}}, {"field1": {"$eq": "value2"}}]}
         where_document: Optional document content filters
+               Examples:
+               - Contains: {"$contains": "value"}
+               - Not contains: {"$not_contains": "value"}
+               - Regex: {"$regex": "[a-z]+"}
+               - Not regex: {"$not_regex": "[a-z]+"}
+               - Logical AND: {"$and": [{"$contains": "value1"}, {"$not_regex": "[a-z]+"}]}
+               - Logical OR: {"$or": [{"$regex": "[a-z]+"}, {"$not_contains": "value2"}]}
         include: List of what to include in response. By default, this will include documents, metadatas, and distances.
     
 ```
@@ -888,6 +821,13 @@ Get documents from a Chroma collection with optional filtering.
                - Logical AND: {"$and": [{"field1": {"$eq": "value1"}}, {"field2": {"$gt": 5}}]}
                - Logical OR: {"$or": [{"field1": {"$eq": "value1"}}, {"field1": {"$eq": "value2"}}]}
         where_document: Optional document content filters
+               Examples:
+               - Contains: {"$contains": "value"}
+               - Not contains: {"$not_contains": "value"}
+               - Regex: {"$regex": "[a-z]+"}
+               - Not regex: {"$not_regex": "[a-z]+"}
+               - Logical AND: {"$and": [{"$contains": "value1"}, {"$not_regex": "[a-z]+"}]}
+               - Logical OR: {"$or": [{"$regex": "[a-z]+"}, {"$not_contains": "value2"}]}
         include: List of what to include in response. By default, this will include documents, and metadatas.
         limit: Optional maximum number of documents to return
         offset: Optional number of documents to skip before returning results
@@ -984,6 +924,19 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
+| tools | chroma_add_documents | description | c75391c9f0bd07200173f3d625933588e62236669cb02f3bcd52e8beead2f1e3 |
+| tools | chroma_create_collection | description | a71c32e7d4434ec9ccba014543c74d1075f64de1640c7b1e801841e9e793d1fa |
+| tools | chroma_delete_collection | description | a361003969b79e83a7d12f01a90673e38583b856951806d565b8d99a2b54c4ef |
+| tools | chroma_delete_documents | description | 23ab4256014ccae612288d23ff8838af64c2f56391dc7851c570da81aade2987 |
+| tools | chroma_fork_collection | description | 0e97debcb6b0a672bdaa3c6184c150bf96280adde5dca9b7bb92a8d1d866cc84 |
+| tools | chroma_get_collection_count | description | 33047599d472f45af90fa29d9eacb603f25e1dbb6d1e1d4fad63dda4d868efe8 |
+| tools | chroma_get_collection_info | description | bcde301a84c843b111bc751d56fc858b3dabd659be1336f7acf95522dcf81e1c |
+| tools | chroma_get_documents | description | 052f63d293b9544924144c49ed816a4c67abe7e312e2eccaacfc9b18825aaf2c |
+| tools | chroma_list_collections | description | 84eed66cb7c4265656325b0ec0ea43690c31e8a7d5bf312a478024908e56a2a8 |
+| tools | chroma_modify_collection | description | babb12ff7b6907dcad1dcda4ecc3214fc029fe447cca257d4d088708b8925d12 |
+| tools | chroma_peek_collection | description | 9f2ddf70df5250db4c74e7576cb64a067997c6cf5659401d00481d280135a9ca |
+| tools | chroma_query_documents | description | 0151aa809c0a9720ab93d5d7f7a88592e699c169c3ab2fcb32de9052e6b24b20 |
+| tools | chroma_update_documents | description | 038dbe7bb4d878805ac4552b9c62b8687e94954391a6ed95259b5029049de95d |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

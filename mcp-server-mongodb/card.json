@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.1.1",
+  "version": "1.5.0",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"56dabc5be6a6c28defacb57c91d98a6897040997889389d67706a4348a4918cf","reason":"The toolset shows adequate but inconsistent documentation quality. While parameter descriptions are generally clear and most tools have basic functional descriptions, many tool descriptions are too brief (1-2 words like 'List MongoDB Atlas clusters') and lack important context about usage, limitations, or expected outputs. Some tools like 'atlas-create-db-user' have comprehensive parameter documentation, but others like 'atlas-list-orgs' provide minimal guidance. The documentation is functional but leaves users with questions about when to use specific tools and what to expect from them.","score":"C"},
+  "rating": {"hash":"49b926f2a4f575449c4ecdae4ba947c1e65bc557faf43caa2ac40fad5de66457","reason":"This MongoDB toolset demonstrates good documentation quality with clear, specific tool names and adequate parameter descriptions throughout. Tool descriptions are generally informative and explain functionality well, though some could benefit from more context about usage scenarios. Parameter descriptions consistently explain purpose and constraints, with good examples and specific MongoDB syntax references. However, some descriptions are quite brief (e.g., 'collection-storage-size' just 'Gets the size of the collection') and could provide more detail about what information is returned or when to use the tool. The toolset shows consistent quality across all tools with only minor gaps in comprehensive usage context.","score":"B"},
   "resources": {
-    "tools": 31,
+    "tools": 35,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

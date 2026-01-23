@@ -13,10 +13,10 @@
   "scope": "standalone",
   "mutitenant": false,
   "runtime": "node",
-  "version": "2025.4.25",
+  "version": "2025.11.25",
   "requiresConfiguration": false,
   "requiresStorage": true,
-  "rating": {"hash":"07e83596758791b8eedbaea7448ff1a9e3a079985895627d825a4fa9092d1517","reason":"Tool names are clear and consistent. Descriptions provide basic functionality but lack important context about when to use each tool, what the knowledge graph structure represents, and key limitations. Parameter documentation is adequate with clear purposes and types, but could benefit from examples and more detailed explanations of complex nested structures like observations and relations.","score":"C"},
+  "rating": {"hash":"fb78306f8394eb9f5da6b35c3ed0ca311a98e2955c45f904d037577f8fab5fb5","reason":"The toolset provides basic but adequate documentation. Tool names are clear and purposeful, indicating their knowledge graph operations. Descriptions are concise (1-2 sentences) covering main functionality, though they lack usage context and constraints. Parameter descriptions are clear and indicate purpose, but miss helpful examples and detailed behavioral guidance. The documentation is functional but leaves users with questions about when to use each tool and how the knowledge graph system works.","score":"C"},
   "resources": {
     "tools": 9,
     "prompts": 0,

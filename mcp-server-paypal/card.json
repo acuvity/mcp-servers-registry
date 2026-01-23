@@ -13,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.3.4",
+  "version": "1.8.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"5105ea3a447f329b77604482cfe765ec4b92158d1d160ff7f99f0ce3e16ecb82","reason":"The toolset demonstrates good documentation quality overall. Tool names are clear and specific (e.g., 'create_invoice', 'send_invoice_reminder', 'generate_invoice_qr_code'). Most descriptions adequately explain functionality and usage context in 1-3 sentences. Parameter documentation is generally comprehensive with clear types, constraints, and purposes. However, some tools have inconsistencies: 'show_product_details' has a misleading description that doesn't match its function, several tools have overly verbose descriptions with unnecessary implementation details, and some parameter descriptions could be clearer. The overall quality is solid but falls short of excellence due to these inconsistencies and minor clarity issues.","score":"B"},
+  "rating": {"hash":"affa1892740b3ed2b56d64e7343bea6210884324b51ae717b128f31b8fc507f9","reason":"The toolset shows adequate documentation with clear tool names and basic functionality descriptions, but suffers from inconsistent quality and verbose descriptions that could be more concise. While most tools have clear purposes and reasonable parameter documentation, some tools like 'create_product' and 'create_subscription_plan' have overly lengthy descriptions with unnecessary payload examples. Parameter documentation is generally adequate but inconsistent in detail level across tools. The naming is appropriate and functional throughout.","score":"C"},
   "resources": {
     "tools": 28,
     "prompts": 0,

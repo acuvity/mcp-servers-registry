@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "1.0.20250613001",
+  "version": "1.0.20260112001",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"bc195cbc073ce125068c44159ebda8b82a5d2e47b228ba31d33b4bbaaeb450d6","reason":"All tools have clear, specific names that indicate their purpose. Descriptions are comprehensive and detailed, explaining what each tool does, when to use it, required environment variables, and important limitations. Parameter descriptions are thorough with clear explanations of purpose, constraints, and expected formats (like ISO 8601). The documentation proactively addresses common usage scenarios and provides helpful context like URL format examples and authentication requirements.","score":"A"},
+  "rating": {"hash":"8169b3e3b19c6301da10207dd14478c2b5f8ecaecbbdc41d053560a6699e61d1","reason":"This toolset demonstrates excellent documentation quality across all criteria. Tool names are clear and specific (e.g., 'promptConversation', 'retrieveSources', 'ingestGoogleDriveFiles'), immediately indicating their purpose. Descriptions are comprehensive, typically 2-4 sentences that explain functionality, usage context, constraints, and execution patterns. They consistently provide important details like environment variable requirements, asynchronous execution patterns, and specific use cases. Parameter documentation is thorough with clear descriptions, appropriate constraints (enums, defaults, formats), and helpful examples. The consistent structure and attention to detail across 80+ tools, combined with domain-specific guidance and clear differentiation between similar tools, makes this an exemplary set of API documentation.","score":"A"},
   "resources": {
-    "tools": 64,
+    "tools": 71,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

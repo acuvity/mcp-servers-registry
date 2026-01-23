@@ -13,10 +13,10 @@
   "scope": "standalone",
   "mutitenant": false,
   "runtime": "node",
-  "version": "0.6.2",
+  "version": "2025.12.18",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"892d0f4a0ae6a2a5164e0f29f0158dc9acc90a847441ae028cd39f446bda326c","reason":"The tool has a clear, descriptive name and exceptionally comprehensive description covering functionality, use cases, and detailed usage guidance. However, parameter documentation is inconsistent - while some parameters have clear descriptions (thought, thoughtNumber), others are too brief (branchId, needsMoreThoughts) given the tool's complexity. The mismatch between parameter names in the description (snake_case) and schema (camelCase) also reduces clarity.","score":"B"},
+  "rating": {"hash":"a051033c7161ff06eb87ebfdd158e8483cf1deb84a374f28ca1022687fe41fad","reason":"The tool has a clear, descriptive name and comprehensive documentation covering functionality, usage context, and key features. The description is thorough (perhaps overly detailed) and the parameter explanations are complete with purpose and constraints. However, the description is quite lengthy and could be more concise, and some parameter descriptions could be clearer about their specific roles in the thinking process.","score":"B"},
   "resources": {
     "tools": 1,
     "prompts": 0,

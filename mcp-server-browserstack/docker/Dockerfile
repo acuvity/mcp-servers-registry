@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
+    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@5a873664a85bb4ba447c4edf89a48614689c1549
 
 FROM node:23.11.0-alpine3.21
 
@@ -15,7 +15,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-browserstack"
 LABEL org.opencontainers.image.description="Access BrowserStack's Test Platform to debug, write and fix tests, do accessibility testing."
-LABEL org.opencontainers.image.version="1.1.6"
+LABEL org.opencontainers.image.version="1.2.8"
 LABEL org.opencontainers.image.source="https://github.com/browserstack/mcp-server"
 LABEL org.opencontainers.image.licenses="ISC"
 LABEL org.opencontainers.image.author="Author"
@@ -39,7 +39,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev @browserstack/mcp-server@1.1.6
+RUN npm i --omit-dev @browserstack/mcp-server@1.2.8
 
 EXPOSE 8000/tcp
 

@@ -13,7 +13,7 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.1.5",
+  "version": "0.1.8",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "rating": {"hash":"fada72b0f9b4641b2277a71abaf66a793a8f9a9fdeb92dc6aacdcb3004f0b6ae","reason":"Tool names are overly verbose and inconsistent in naming patterns. Most tools completely lack descriptions, making it impossible to understand their purpose, when to use them, or what they return. While parameter descriptions are generally adequate with good examples, the absence of tool-level descriptions creates significant gaps in usability. The documentation fails to explain basic functionality like what data sources are used or how tools differ from each other.","score":"D"},

@@ -118,6 +118,12 @@ _cross_tool_exclude := [
 	#
 	"list-projects",
 	#
+	"get-spans",
+	#
+	"get-span-annotations",
+	#
+	"phoenix-support",
+	#
 	# exclude word that might be misdetected
 	"to",
 	"this",

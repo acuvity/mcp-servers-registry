@@ -13,13 +13,13 @@
   "scope": "standalone",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"c4b5cff78ae412ee2d0f5a35fcb3f60b6c111e6892aff7c9170bea56cdb0039c","reason":"Tool name clearly indicates purpose. Description is brief but adequately explains functionality. Parameter descriptions are clear and helpful, especially the stdin parameter with good examples. However, the main description lacks important details about security considerations, command output handling, and usage limitations that would be expected for a system command execution tool.","score":"C"},
+  "rating": {"hash":"496e90f26696dcac020ec9a15546d5af11e3bee7fef89117d77d6fbfba8f1218","reason":"The tool name is clear and descriptive. The main description adequately conveys basic functionality but lacks important context about security implications, error handling, or usage guidelines for command execution. Parameter documentation is good - 'command' and 'workdir' have clear descriptions, and 'stdin' provides helpful examples. However, the overall documentation is sparse given the powerful and potentially risky nature of command execution, missing crucial details about limitations, safety considerations, or expected behavior.","score":"C"},
   "resources": {
     "tools": 1,
-    "prompts": 1,
+    "prompts": 2,
     "resources": 0,
     "resourcesTemplates": 0
   }

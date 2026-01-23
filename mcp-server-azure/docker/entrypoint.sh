@@ -3,6 +3,7 @@ export PATH="/app/node_modules/.bin:${PATH}"
 [ -z "$AZURE_CLIENT_ID" ] && echo "!!! Error mcp-server-azure requires AZURE_CLIENT_ID env var to be set." && exit 1
 [ -z "$AZURE_CLIENT_SECRET" ] && echo "!!! Error mcp-server-azure requires AZURE_CLIENT_SECRET env var to be set." && exit 1
 [ -z "$AZURE_TENANT_ID" ] && echo "!!! Error mcp-server-azure requires AZURE_TENANT_ID env var to be set." && exit 1
+export DOTNET_BUNDLE_EXTRACT_BASE_DIR=${DOTNET_BUNDLE_EXTRACT_BASE_DIR:-"/tmp"}
 
 if [ -z "$MINIBRIDGE_MODE" ]; then
   # check if stdin in open

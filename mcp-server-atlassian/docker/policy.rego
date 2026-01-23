@@ -124,11 +124,15 @@ _cross_tool_exclude := [
 	#
 	"jira_add_comment",
 	#
+	"jira_edit_comment",
+	#
 	"jira_add_worklog",
 	#
 	"jira_link_to_epic",
 	#
 	"jira_create_issue_link",
+	#
+	"jira_create_remote_issue_link",
 	#
 	"jira_remove_issue_link",
 	#
@@ -139,6 +143,12 @@ _cross_tool_exclude := [
 	"jira_update_sprint",
 	#
 	"jira_get_project_versions",
+	#
+	"jira_get_all_projects",
+	#
+	"jira_create_version",
+	#
+	"jira_batch_create_versions",
 	#
 	"confluence_search",
 	#
@@ -159,6 +169,8 @@ _cross_tool_exclude := [
 	"confluence_delete_page",
 	#
 	"confluence_add_comment",
+	#
+	"confluence_search_user",
 	#
 	# exclude word that might be misdetected
 	"to",

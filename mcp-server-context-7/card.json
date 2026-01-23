@@ -13,10 +13,10 @@
   "scope": "standalone",
   "mutitenant": true,
   "runtime": "node",
-  "version": "1.0.14",
+  "version": "2.1.0",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"babc51d91a9965b5078e3c119f857456f8b920be2dc5f9b3c7c56087a1deb940","reason":"Tool names are clear and specific, indicating their purpose effectively. Descriptions are comprehensive and detailed, explaining not only what each tool does but also when and how to use them, including important workflow requirements and selection criteria. Parameter descriptions are complete with clear explanations of purpose, format requirements, and constraints. The documentation proactively addresses the relationship between tools and provides thorough guidance for proper usage.","score":"A"},
+  "rating": {"hash":"9cf9c72099430c6b8a7dca2f679b6132e5711af47f4e27c703466ed9094d40b0","reason":"Excellent documentation quality across both tools. Names are specific and purposeful. Descriptions are comprehensive (4-6 sentences) covering functionality, usage context, workflow requirements, and important limitations. Parameters include detailed descriptions with clear examples and security warnings. The documentation proactively addresses the relationship between tools, usage limits, and edge cases, providing complete guidance for effective usage.","score":"A"},
   "resources": {
     "tools": 2,
     "prompts": 0,

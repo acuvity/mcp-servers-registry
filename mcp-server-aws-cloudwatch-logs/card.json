@@ -13,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.0.2",
+  "version": "0.0.8",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"baec3f7f7ed6922e4f5424069fd4ef8ff9ed91193e7b19aa3f60cf2f2c2ae18b","reason":"Exceptional documentation quality across all tools. Names are highly specific and descriptive (e.g., 'describe_log_groups', 'execute_log_insights_query'). Descriptions are comprehensive, providing clear functionality explanations, usage context, detailed return value specifications, and critical warnings about token consumption and parameter requirements. Parameter documentation is thorough with clear descriptions, constraints, examples, and important usage notes. The toolset demonstrates consistent excellence in addressing user questions proactively.","score":"A"},
+  "rating": {"hash":"6c94a64e2103b06b2a32e07a6ed97a361e2fc82045a3d21d138aa8f39fc4348a","reason":"Good overall documentation quality with comprehensive descriptions and clear parameter documentation. Tool names are specific and intuitive. Descriptions are detailed (2-4 sentences) covering functionality, usage context, and return values. Parameters include clear descriptions with constraints and examples. The prominent deprecation notices are helpful for users. Minor deduction for some verbosity in descriptions and occasional repetitive phrasing, but overall provides strong guidance for usage.","score":"B"},
   "resources": {
     "tools": 5,
     "prompts": 0,

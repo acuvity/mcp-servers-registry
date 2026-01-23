@@ -13,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.2.2",
+  "version": "0.4.7",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"2def507b780c09bdf1783091ae9ea2e9b1e96c8cb04acacbd7ba450d723c7e89","reason":"The toolset provides adequate documentation with clear, descriptive tool names and basic functionality descriptions. Parameter descriptions are clear and specify types/constraints appropriately. However, the tool descriptions are quite brief (mostly single sentences) and lack important context about usage scenarios, limitations, or behavioral details that would help users understand when and how to use each tool effectively.","score":"C"},
+  "rating": {"hash":"2a21c12ceccd4d74e5e200e2ecb847cd09c75b73a112534ae7f31e9c29736c09","reason":"Tool names are clear and specific, indicating their purpose well. However, descriptions are consistently minimal (1 sentence each) and lack important context about usage scenarios, limitations, or what information is returned. Parameter descriptions are basic but adequate, with the create_instance tool showing better parameter documentation. The toolset provides functional guidance but leaves users with questions about when to use specific tools and what to expect from them.","score":"C"},
   "resources": {
     "tools": 12,
     "prompts": 0,

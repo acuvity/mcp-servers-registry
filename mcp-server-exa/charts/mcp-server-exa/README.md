@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -21,10 +21,10 @@
 # What is mcp-server-exa?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-exa/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-exa/0.3.10?logo=docker&logoColor=fff&label=0.3.10)](https://hub.docker.com/r/acuvity/mcp-server-exa)
-[![PyPI](https://img.shields.io/badge/0.3.10-3775A9?logo=pypi&logoColor=fff&label=exa-mcp-server)](https://github.com/exa-labs/exa-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-exa/3.1.4?logo=docker&logoColor=fff&label=3.1.4)](https://hub.docker.com/r/acuvity/mcp-server-exa)
+[![PyPI](https://img.shields.io/badge/3.1.4-3775A9?logo=pypi&logoColor=fff&label=exa-mcp-server)](https://github.com/exa-labs/exa-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-exa/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-exa&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22EXA_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-exa%3A0.3.10%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-exa&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22EXA_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-exa%3A3.1.4%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** MCP server enabling AI models to perform real-time web searches.
 
@@ -43,110 +43,40 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-exa/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-exa/docker/policy.rego) that enables a set of runtime [guardrails](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-exa#%EF%B8%8F-guardrails) to help enforce security, privacy, and correct usage of your services. Below is list of each guardrail provided.
 
-### 🔒 Resource Integrity
-
-**Mitigates MCP Rug Pull Attacks**
-
-* **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
-* **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
-
-### 🛡️ Guardrails
-
-#### Covert Instruction Detection
-
-Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
-
-* **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
-* **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
-
-#### Sensitive Pattern Detection
-
-Block user-defined sensitive data patterns (credential paths, filesystem references).
-
-* **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
-* **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
-
-#### Shadowing Pattern Detection
-
-Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
-
-* **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
-* **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
-
-#### Schema Misuse Prevention
-
-Enforces strict adherence to MCP input schemas.
-
-* **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
-* **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
-
-#### Cross-Origin Tool Access
-
-Controls whether tools may invoke tools or services from external origins.
-
-* **Goal:** Prevent untrusted or out-of-scope services from being called.
-* **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
-
-#### Secrets Redaction
-
-Automatically masks sensitive values so they never appear in logs or responses.
-
-* **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
-* **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
-
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
-
-### Enable guardrails
-
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
 | Guardrail                        | Summary                                                                 |
 |----------------------------------|-------------------------------------------------------------------------|
+| `resource integrity`             | Embeds a hash of all exposed resources to ensure their authenticity and prevent unauthorized modifications, guarding against supply chain attacks and dynamic alterations of tool metadata. |
 | `covert-instruction-detection`   | Detects hidden or obfuscated directives in requests.                    |
 | `sensitive-pattern-detection`    | Flags patterns suggesting sensitive data or filesystem exposure.        |
 | `shadowing-pattern-detection`    | Identifies tool descriptions that override or influence others.         |
 | `schema-misuse-prevention`       | Enforces strict schema compliance on input data.                        |
 | `cross-origin-tool-access`       | Controls calls to external services or APIs.                            |
 | `secrets-redaction`              | Prevents exposure of credentials or sensitive values.                   |
+| `basic authentication`           | Enables the configuration of a shared secret to restrict unauthorized access to the MCP server and ensure only approved clients can connect. |
 
-Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
-
-## 🔒 Basic Authentication via Shared Secret
-
-Provides a lightweight auth layer using a single shared token.
-
-* **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
-* **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
-
-To turn on Basic Authentication, define `BASIC_AUTH_SECRET` environment variable with a shared secret.
-
-Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentication.
-
-> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
-> rotate credentials frequently and **always** use TLS.
-
-</details>
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference
@@ -173,11 +103,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.3.10`
+  - container: `1.0.0-3.1.4`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-exa:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-exa:1.0.0-0.3.10`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-exa:1.0.0-3.1.4`
 
 ---
 
@@ -624,7 +554,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (1)
+## 🧰 Tools (3)
 <details>
 <summary>web_search_exa</summary>
 
@@ -638,8 +568,74 @@ Search the web using Exa AI - performs real-time web searches and can scrape con
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| contextMaxCharacters | number | Maximum characters for context string optimized for LLMs (default: 10000) | No
+| livecrawl | string | Live crawl mode - 'fallback': use live crawling as backup if cached content unavailable, 'preferred': prioritize live crawling (default: 'fallback') | No
+| numResults | number | Number of search results to return (default: 8) | No
+| query | string | Websearch query | Yes
+| type | string | Search type - 'auto': balanced search (default), 'fast': quick results, 'deep': comprehensive search | No
+</details>
+<details>
+<summary>company_research_exa</summary>
+
+**Description**:
+
+```
+Research companies using Exa AI - finds comprehensive information about businesses, organizations, and corporations. Provides insights into company operations, news, financial information, and industry analysis.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| companyName | string | Name of the company to research | Yes
 | numResults | number | Number of search results to return (default: 5) | No
-| query | string | Search query | Yes
+</details>
+<details>
+<summary>get_code_context_exa</summary>
+
+**Description**:
+
+```
+Search and get relevant context for any programming task. Exa-code has the highest quality and freshest context for libraries, SDKs, and APIs. Use this tool for ANY question or task for related to programming. RULE: when the user's query contains exa-code or anything related to code, you MUST use this tool.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| query | string | Search query to find relevant context for APIs, Libraries, and SDKs. For example, 'React useState hook examples', 'Python pandas dataframe filtering', 'Express.js middleware', 'Next js partial prerendering configuration' | Yes
+| tokensNum | number | Number of tokens to return (1000-50000). Default is 5000 tokens. Adjust this value based on how much context you need - use lower values for focused queries and higher values for comprehensive documentation. | No
+</details>
+
+## 📚 Resources (1)
+
+<details>
+<summary>Resources</summary>
+
+| Name | Mime type | URI| Content |
+|-----------|------|-------------|-----------|
+| tools_list | application/json | exa://tools/list | - |
+
+</details>
+
+## 📝 Prompts (2)
+<details>
+<summary>web_search_help</summary>
+
+**Description**:
+
+```
+Get help with web search using Exa
+```
+<details>
+<summary>code_search_help</summary>
+
+**Description**:
+
+```
+Get help finding code examples and documentation
+```
+
 </details>
 
 
@@ -649,9 +645,20 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
+| prompts | code_search_help | description | c2b7a53450fdbcd56159f520aa60f9ebdbc016ec12e40228bc0fdee804e64e48 |
+| prompts | web_search_help | description | 7a6b90661a09f9715de961b128ae47e3d61cc5551cdc2f48dee44a8480a9ba3b |
+| tools | company_research_exa | description | e52947f6771cf64a41ddc90154a9464d6ef497868626b4b82655720796329f61 |
+| tools | company_research_exa | companyName | f706d790459a56c824461b3e31bf85220a35d53443c7eef98341f01ea8e7389c |
+| tools | company_research_exa | numResults | 5efcada65f753994e052c0dacd93213124520c6856dd2348a1604aee96a5ed69 |
+| tools | get_code_context_exa | description | dcefd657cbc35d178b6c2c718e229dddc82c14cda97222ae72035e2f1dc31415 |
+| tools | get_code_context_exa | query | 97635d4cb606bb5d5b39ee7d755b52a572c678d49ce3c9c3692e405df9b4ff07 |
+| tools | get_code_context_exa | tokensNum | d5e1b91d6c36f563f0bac2dde1157cc9a011900baba3070b00ed895b9ec3357d |
 | tools | web_search_exa | description | aa95da9a6a92902ba01f3d04f7f6f409feaaf7413f222423030a6b787e7a52ea |
-| tools | web_search_exa | numResults | 5efcada65f753994e052c0dacd93213124520c6856dd2348a1604aee96a5ed69 |
-| tools | web_search_exa | query | 9eef05233ecfc1fbcfe756aa79bd497fa20e58144012561b562b8856040f5100 |
+| tools | web_search_exa | contextMaxCharacters | 5db34cdeb8cf1d2bd7a5a6f24eb669d220b2545c91fb4ce009d3d60216239618 |
+| tools | web_search_exa | livecrawl | ada030162c3ada41d4f0dd6e27029a777cda68c3811a76bd948e26e10ef14c91 |
+| tools | web_search_exa | numResults | e08b54f8ac832b3641b63bfdd89aa0d7e83848d01847ac66787ed33c14db6adc |
+| tools | web_search_exa | query | 86e05feeb3ee2739d3af4f2913ed7cdc926cd339ce47b9a08942649e826d51d4 |
+| tools | web_search_exa | type | 21f0e6c725f98ac8e72c338dfbee09b1ab7213fd3127a0cd331633bb3a378b4d |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

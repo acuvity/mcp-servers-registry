@@ -2,15 +2,11 @@
   "tools": [
     {
       "name": "create_directory",
-      "hash": "3e16e56ccad14565f3bc65b56938c6b68cbd32fc6d551eb7a7e550e5b7b304af"
+      "hash": "35929f2a1500f142cedea08b105d64ae5803cc08f5137f1ef948d64580490642"
     },
     {
       "name": "edit_block",
-      "hash": "3ce36fcdbf191892c7c747905054a5d07f099e937cfd6b4d7febc5e1f32301bf"
-    },
-    {
-      "name": "execute_command",
-      "hash": "fc8b9e33ff1e44d77b6a4f4cda7f299d389898e094badc55308392875ef38ea2"
+      "hash": "a33681e0290593b4c30b329831e1743ccf0963c0cdbb5a4a5539f4f231c18b44"
     },
     {
       "name": "force_terminate",
@@ -18,59 +14,95 @@
     },
     {
       "name": "get_config",
-      "hash": "04f640303aa42b7852a6a2ac6ccebc0149b2a2f776b7993a32fc05f601e36ecb"
+      "hash": "23d2cf43fb5ae48251a88b2d2424a987031323838dbba337a7de4cf5367039a1"
     },
     {
       "name": "get_file_info",
-      "hash": "496b04e9d6d766a7057babf6517dde178fc82d321fb0381f9f092493748ee5a3"
+      "hash": "b5558228c7e033811be7888767773426b542700dbe19ccd488dd04a84d03ff99"
+    },
+    {
+      "name": "get_more_search_results",
+      "hash": "f336b2bfa716bf6ef6b2f07c3dfc9a4a156c5b93416f80218e2b2d1d3daa9f66"
+    },
+    {
+      "name": "get_prompts",
+      "hash": "1f8f70533ab74fe7a2cfaa96f3be413888af11481f6c250603c9261f3f766e2b"
+    },
+    {
+      "name": "get_recent_tool_calls",
+      "hash": "da806ef6ab0286b4fbf5bcb8a25789a3696ca449688b41421ad7c5cb35a7596f"
+    },
+    {
+      "name": "get_usage_stats",
+      "hash": "25b118cb6c54a7f596fa6745c1682647b494553a61f5ec2c3585d0e2691d3544"
+    },
+    {
+      "name": "give_feedback_to_desktop_commander",
+      "hash": "71f2b9f5565a3ea8f5cdf00c055b7495f0c4158a2155f4e240030a864db81dc5"
+    },
+    {
+      "name": "interact_with_process",
+      "hash": "cd80cc97b6638f9165e31f0e2d5b9d84164df7bd9ecc91a64d6f3199df1df3c2"
     },
     {
       "name": "kill_process",
-      "hash": "5e7eb30c182e5f57a93094478b83e066868eb3cb8d331487071226c952092835"
+      "hash": "e0f11a540a85bc7e384344d499958d6135cdb5335d2fdb9d048bf21cf3c8df4e"
     },
     {
       "name": "list_directory",
-      "hash": "96ce5a41302a1f01a26196645e2f93035630720958b21ef14a9f6d495b3e10c0"
+      "hash": "73bf9d202fdf067a0fdc65c2afc3b49429a32c0301d09d55730489f9fcd6af54"
     },
     {
       "name": "list_processes",
       "hash": "bccaf3bd87272c75e038e50077bca491355236be9fb99d131463c34553df9a2a"
     },
     {
+      "name": "list_searches",
+      "hash": "5f5e9de424d71de978b335ac89d6c52668903813c07643beff95c53663d873ff"
+    },
+    {
       "name": "list_sessions",
-      "hash": "efa60b39dc2cdcc845f5053cf2debd9e5c15b33dae15ce4001f2a8e1dffa2a16"
+      "hash": "7a355d8b85348a78e976ed84445a1246ddff6d4b3a1b2aff8f4cd2d9c9dc8fc7"
     },
     {
       "name": "move_file",
-      "hash": "ed4294c075e3f891f9980b6e3b458cb72967ae77d7b78b4fc2bc8330702b81ac"
+      "hash": "c7f6a7015717a302e2ce7502045fb05cc9f29522c9c70bfa9de8b1a0e8dde96d"
     },
     {
       "name": "read_file",
-      "hash": "96dcf541bed39a4887900164f1c62acbf87a1c112ce425db3c5904fef971af08"
+      "hash": "00a18b4f97cb9f9b86d86636eea3d43bc9e7e7b8da6d2ee3f1b2f392522086be"
     },
     {
       "name": "read_multiple_files",
-      "hash": "a565fd247993616d89e9cd247c024346f76fd65d2a21c994a0128b335b1b8752"
+      "hash": "bc0b5749147ce71c98529bc186f900af1414333f95f0f8dd0257d985a0bb4144"
     },
     {
-      "name": "read_output",
-      "hash": "01171776821f6acb671fd54c2e0b6d223c5f1a4765f2b9b7bba7f76e9fda79d2"
-    },
-    {
-      "name": "search_code",
-      "hash": "9e69a945172aebff5fc61dbe9522e0e285ef1e581ec74e02c63e07d114821f75"
-    },
-    {
-      "name": "search_files",
-      "hash": "f41652d2fd0f701958c382769c9a1dca4989b0f1eeb8fc83b32b7ef051e8aff5"
+      "name": "read_process_output",
+      "hash": "441069f97a9cc09c43e8f2ec0c28530b362dd8de35793acfa25370c0631d7d1f"
     },
     {
       "name": "set_config_value",
       "hash": "155afe1d85ebd07ac64f76703797548c8b48a1e2a3d63b14c2369633527df389"
     },
     {
+      "name": "start_process",
+      "hash": "77c8203a6f530d830ddf82b206582bc10f0916dc6b62f014fcf30bfa527518cd"
+    },
+    {
+      "name": "start_search",
+      "hash": "98be6d33259e5a29f48a48501c40d8691f9a07b794a409121ceb8c54f849ced6"
+    },
+    {
+      "name": "stop_search",
+      "hash": "b883c2ef066c772135bfa92d22654e4eedbe71b6afe10b4fb144d647cd063d44"
+    },
+    {
       "name": "write_file",
-      "hash": "1c329b37aecef0e273658fe15b59ad432a182c904d9a14d8d8a6e2101e843a85"
+      "hash": "1be2fa72e631cd018f7f831e7622a118a9ffa13986d57d09ae3d66c0981e336b"
+    },
+    {
+      "name": "write_pdf",
+      "hash": "ec46c51f5cd9030eec0c2af23fd0b0ad18c7d39c88a6557e6ff930ea786e672a"
     }
   ],
   "prompts": []

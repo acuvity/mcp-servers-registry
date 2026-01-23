@@ -90,7 +90,7 @@ _cross_tool_exclude := [
 	#
 	"search_research_repository",
 	#
-	"search_repositories_on_github",
+	"search_repos_on_github",
 	#
 	"access_file",
 	#

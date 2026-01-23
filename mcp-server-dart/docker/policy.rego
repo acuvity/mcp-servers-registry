@@ -88,9 +88,9 @@ _cross_tool_exclude := [
 	#
 	"get_config",
 	#
-	"list_tasks",
-	#
 	"create_task",
+	#
+	"list_tasks",
 	#
 	"get_task",
 	#
@@ -98,17 +98,25 @@ _cross_tool_exclude := [
 	#
 	"delete_task",
 	#
-	"add_task_comment",
+	"create_doc",
 	#
 	"list_docs",
-	#
-	"create_doc",
 	#
 	"get_doc",
 	#
 	"update_doc",
 	#
 	"delete_doc",
+	#
+	"add_task_comment",
+	#
+	"list_task_comments",
+	#
+	"get_dartboard",
+	#
+	"get_folder",
+	#
+	"get_view",
 	#
 	# exclude word that might be misdetected
 	"to",

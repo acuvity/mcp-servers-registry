@@ -13,7 +13,7 @@
   "scope": "native",
   "mutitenant": false,
   "runtime": "python",
-  "version": "0.1.2",
+  "version": "0.1.13",
   "requiresConfiguration": false,
   "requiresStorage": false,
   "rating": {"hash":"182e49cf35d0f587f2cc24f5aec348ffb84551d2291622fc68aa787510bd995f","reason":"Good documentation overall with comprehensive descriptions and clear parameter documentation. Tool names are specific and intuitive. Descriptions effectively explain functionality, usage context, and limitations including ECR integration details and read-only mode behavior. Parameter descriptions are clear with helpful examples. Minor areas for improvement include some verbose descriptions and a few parameters that could benefit from more specific constraint details (e.g., valid platform formats, progress output types).","score":"B"},

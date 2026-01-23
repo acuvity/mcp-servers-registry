@@ -11,7 +11,7 @@ maintainers:
   - name: Acuvity
     email: support@acuvity.ai
 version: 1.0.0
-appVersion: "1.0.2"
+appVersion: "1.1.16"
 keywords:
   - mcp-server-aws-documentation
   - mcp-server

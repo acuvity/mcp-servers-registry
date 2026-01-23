@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -21,10 +21,10 @@
 # What is mcp-server-fibery?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-fibery/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fibery/0.1.3?logo=docker&logoColor=fff&label=0.1.3)](https://hub.docker.com/r/acuvity/mcp-server-fibery)
-[![PyPI](https://img.shields.io/badge/0.1.3-3775A9?logo=pypi&logoColor=fff&label=fibery-mcp-server)](https://github.com/Fibery-inc/fibery-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-fibery/0.1.8?logo=docker&logoColor=fff&label=0.1.8)](https://hub.docker.com/r/acuvity/mcp-server-fibery)
+[![PyPI](https://img.shields.io/badge/0.1.8-3775A9?logo=pypi&logoColor=fff&label=fibery-mcp-server)](https://github.com/Fibery-inc/fibery-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-fibery/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-fibery&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22FIBERY_API_TOKEN%22%2C%22-e%22%2C%22FIBERY_HOST%22%2C%22docker.io%2Facuvity%2Fmcp-server-fibery%3A0.1.3%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-fibery&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22FIBERY_API_TOKEN%22%2C%22-e%22%2C%22FIBERY_HOST%22%2C%22docker.io%2Facuvity%2Fmcp-server-fibery%3A0.1.8%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Integrates Fibery workspace with LLMs using natural language queries.
 
@@ -43,69 +43,70 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
 The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-fibery/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
-### 🔒 Resource Integrity
+#### 🔒 Resource Integrity
 
 **Mitigates MCP Rug Pull Attacks**
 
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Guardrails
+#### 🛡️ Guardrails
 
-#### Covert Instruction Detection
+##### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-#### Sensitive Pattern Detection
+##### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-#### Shadowing Pattern Detection
+##### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-#### Schema Misuse Prevention
+##### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-#### Cross-Origin Tool Access
+##### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-#### Secrets Redaction
+##### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
@@ -114,7 +115,7 @@ Automatically masks sensitive values so they never appear in logs or responses.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
-### Enable guardrails
+#### Enable guardrails
 
 To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
@@ -129,7 +130,7 @@ To activate guardrails in your Docker containers, define the `GUARDRAILS` enviro
 
 Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
 
-## 🔒 Basic Authentication via Shared Secret
+#### 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
@@ -143,10 +144,8 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 > While basic auth will protect against unauthorized access, you should use it only in controlled environment,
 > rotate credentials frequently and **always** use TLS.
 
-</details>
-
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # 📦 How to Install
@@ -174,7 +173,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-fibery&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22FIBERY_API_TOKEN%22%2C%22-e%22%2C%22FIBERY_HOST%22%2C%22docker.io%2Facuvity%2Fmcp-server-fibery%3A0.1.3%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-fibery&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22FIBERY_API_TOKEN%22%2C%22-e%22%2C%22FIBERY_HOST%22%2C%22docker.io%2Facuvity%2Fmcp-server-fibery%3A0.1.8%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -199,7 +198,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "FIBERY_API_TOKEN",
           "-e",
           "FIBERY_HOST",
-          "docker.io/acuvity/mcp-server-fibery:0.1.3"
+          "docker.io/acuvity/mcp-server-fibery:0.1.8"
         ]
       }
     }
@@ -229,7 +228,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "FIBERY_API_TOKEN",
         "-e",
         "FIBERY_HOST",
-        "docker.io/acuvity/mcp-server-fibery:0.1.3"
+        "docker.io/acuvity/mcp-server-fibery:0.1.8"
       ]
     }
   }
@@ -263,7 +262,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "FIBERY_API_TOKEN",
         "-e",
         "FIBERY_HOST",
-        "docker.io/acuvity/mcp-server-fibery:0.1.3"
+        "docker.io/acuvity/mcp-server-fibery:0.1.8"
       ]
     }
   }
@@ -299,7 +298,7 @@ Add the following JSON block to your mcp configuration file:
         "FIBERY_API_TOKEN",
         "-e",
         "FIBERY_HOST",
-        "docker.io/acuvity/mcp-server-fibery:0.1.3"
+        "docker.io/acuvity/mcp-server-fibery:0.1.8"
       ]
     }
   }
@@ -333,7 +332,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "FIBERY_API_TOKEN",
         "-e",
         "FIBERY_HOST",
-        "docker.io/acuvity/mcp-server-fibery:0.1.3"
+        "docker.io/acuvity/mcp-server-fibery:0.1.8"
       ]
     }
   }
@@ -353,7 +352,7 @@ async with MCPServerStdio(
     params={
         "env": {"FIBERY_API_TOKEN":"TO_BE_SET","FIBERY_HOST":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","FIBERY_API_TOKEN","-e","FIBERY_HOST","docker.io/acuvity/mcp-server-fibery:0.1.3"]
+        "args": ["run","-i","--rm","--read-only","-e","FIBERY_API_TOKEN","-e","FIBERY_HOST","docker.io/acuvity/mcp-server-fibery:0.1.8"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -382,7 +381,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e FIBERY_API_TOKEN -e FIBERY_HOST docker.io/acuvity/mcp-server-fibery:0.1.3`
+- arguments: `run -i --rm --read-only -e FIBERY_API_TOKEN -e FIBERY_HOST docker.io/acuvity/mcp-server-fibery:0.1.8`
 
 </details>
 
@@ -392,7 +391,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e FIBERY_API_TOKEN -e FIBERY_HOST docker.io/acuvity/mcp-server-fibery:0.1.3
+docker run -it -p 8000:8000 --rm --read-only -e FIBERY_API_TOKEN -e FIBERY_HOST docker.io/acuvity/mcp-server-fibery:0.1.8
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -541,6 +540,7 @@ Get list of all fields (in format of 'Title [name]: type') in the selected Fiber
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | database_name | string | Database name as defined in Fibery schema | Yes
+| include_external_databases | boolean | Whether to include fields from related/external databases. Defaults to true. Set to false to reduce context size. | No
 </details>
 <details>
 <summary>query_database</summary>
@@ -643,7 +643,7 @@ Tool use:
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | q_from | string | Specifies the entity type in "Space/Type" format (e.g., "Product Management/feature", "Product Management/Insight") | Yes
-| q_limit | integer | Number of results per page (defaults to 50). Maximum allowed value is 1000 | No
+| q_limit | integer | Number of results per page (defaults to 50). Maximum allowed value is 1000 | Yes
 | q_offset | integer | Number of results to skip. Mainly used in combination with limit and orderBy for pagination. | No
 | q_order_by | object | List of sorting criteria in format {"field1": "q/asc", "field2": "q/desc"} | No
 | q_params | object | Dictionary of parameter values referenced in where using "$param" syntax. For example, {$fromDate: "2025-01-01"} | No
@@ -651,8 +651,9 @@ Tool use:
   - Primitive fields using format {"AliasName": "FieldName"} (i.e. {"Name": "Product Management/Name"})
   - Related entity fields using format {"AliasName": ["Related entity", "related entity field"]} (i.e. {"Secret": ["Product Management/Description", "Collaboration~Documents/secret"]}). Careful, does not work with 1-* connection!
 To work with 1-* relationships, you can use sub-querying: {"AliasName": {"q/from": "Related type", "q/select": {"AliasName 2": "fibery/id"}, "q/limit": 50}}
+Note: sub-queries use q/from, q/select, q/limit (with slashes), unlike top-level parameters that use underscores.
 AliasName can be of any arbitrary value. | Yes
-| q_where | object | Filter conditions in format [operator, [field_path], value] or ["q/and"|"q/or", ...conditions]. Common usages:
+| q_where | array | Filter conditions in format [operator, [field_path], value] or ["q/and"|"q/or", ...conditions]. Common usages:
 - Simple comparison: ["=", ["field", "path"], "$param"]. You cannot pass value of $param directly in where clause. Use params object instead. Pay really close attention to it as it is not common practice, but that's how it works in our case!
 - Logical combinations: ["q/and", ["<", ["field1"], "$param1"], ["=", ["field2"], "$param2"]]
 - Available operators: =, !=, <, <=, >, >=, q/contains, q/not-contains, q/in, q/not-in | No
@@ -767,6 +768,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | current_date | description | 9317cd62334b10a1e0fbd0c93e08392dfee2c80efeb713d9ae35f2f4acaabda4 |
 | tools | describe_database | description | dc90cb89fb73651dd904c01892c987de818b462e502d9bd7285a262b3e4bf47c |
 | tools | describe_database | database_name | da77a6362dc6213860767ae59face55d4bb3a5daa170e1035c98a933c7c40597 |
+| tools | describe_database | include_external_databases | 792b3b62185eeb22050289965790a5665c7e1df66a86d4a0e48142c65a7be449 |
 | tools | list_databases | description | 8651205b8fe64666d30925db3bd8b0cc41647b106c220aaa3de1dc7b7a893d20 |
 | tools | query_database | description | a5d75f5125a10f03de4ee4e8c275c2c5f451563ff21c0f2ef5d57404a390fe66 |
 | tools | query_database | q_from | 53a846dbac5b74f897204f60d0150e698c320b33651518eecf90a6bc2c36b8ef |
@@ -774,7 +776,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | query_database | q_offset | 469a88dc989a485be5cb148dc492667da857259280084542915660d60fec02b3 |
 | tools | query_database | q_order_by | 4076133f1c17635f9e2562f63d15eed0f67f437d6e73bb661aac31ea21497948 |
 | tools | query_database | q_params | eefc09ae29d168d8e72ce3d4b28178b0f57192caa17b86c4321bd781d0927290 |
-| tools | query_database | q_select | 47ef35a67e17868154e6268c8c53f604ab594c1a63b646881cb8a0bce8d81ce7 |
+| tools | query_database | q_select | 343d59e02ecbd214b2e6aa65c7986105dc3606f67efdd24ad8b101cc35812b2f |
 | tools | query_database | q_where | cc7a22d2d86cab4962b1dc336eaee161bf148749ad450e6137e53ce393c36146 |
 | tools | update_entity | description | de2dbdcda08f5527eaa3226a59c7da409138d3c0dacee9e7907b5f1334f36f39 |
 | tools | update_entity | database | 5f77c9ecd12602e71c8f30d3cf7c8ec3ec94cb6c107d08532b53e4b40ae5fe41 |

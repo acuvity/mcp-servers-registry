@@ -13,10 +13,10 @@
   "scope": "standalone",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"9ffff6e8e65726fa28e35f9e987dd76555818cb2fccc9f47621e0c021909c7d2","reason":"The toolset demonstrates good documentation quality overall. Names are clear and purposeful, descriptions adequately explain functionality and usage context (though some could be more concise), and parameter documentation is generally complete with helpful enums and constraints. The complex nested schemas for ChartPlan and DFMetaData are well-structured. However, some descriptions are verbose or contain formatting issues, and a few parameters lack sufficient detail about their purpose and usage.","score":"B"},
+  "rating": {"hash":"12565fec7daad0fdfda436a78f101e34a143b99227b8ecf81393ea2a13a66ddc","reason":"Documentation shows adequate basic functionality coverage but has significant inconsistencies and gaps. Tool names are clear and purposeful. Descriptions vary widely in quality - some provide good context (get_sample_data_info explains dataset purposes), while others are unclear or contain formatting issues (get_vizro_chart_or_dashboard_plan has confusing workflow instructions). Parameter documentation is mixed, with some having good descriptions and constraints (enums are well-defined) but others lacking clarity about their purpose or impact on behavior. Complex nested schemas lack sufficient explanation of their structure and usage.","score":"C"},
   "resources": {
     "tools": 6,
     "prompts": 3,

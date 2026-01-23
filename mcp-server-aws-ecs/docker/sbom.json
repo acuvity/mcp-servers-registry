@@ -1,8 +1,98 @@
 {
   "tools": [
     {
+      "name": "aws_knowledge_aws___get_regional_availability",
+      "hash": "4588e305f8c3173fa4846fa20e0e383b3bf48d4cd909525dc764900f674f8882",
+      "params": [
+        {
+          "name": "filters",
+          "hash": "d3603f01d1b212f835a4b8ec9b79dec6a9d637a7e8a7ab332011aca65d40b74e"
+        },
+        {
+          "name": "next_token",
+          "hash": "0ab36b403fc747285ee635982d74055b200ec422782b7aafc73beaeec120b9aa"
+        },
+        {
+          "name": "region",
+          "hash": "05dfe1a33f986ca93d3246d026f7faa190952501aa15ab723cf656991cdbe1f7"
+        },
+        {
+          "name": "resource_type",
+          "hash": "6d56fffd7e999195f2586deb3fdb1c38bb9f68b94fd090b112b4a9f52db5ab6a"
+        }
+      ]
+    },
+    {
+      "name": "aws_knowledge_aws___list_regions",
+      "hash": "5cb379d2fccc5e87e2f25af094b0b4fdb1b8ad5ea772334cef913ae138803409"
+    },
+    {
+      "name": "aws_knowledge_aws___read_documentation",
+      "hash": "ea0b822301636f9768e321a86afe0735496eb4c383bde8a9bd3ebc2ce07d0833",
+      "params": [
+        {
+          "name": "max_length",
+          "hash": "511bf7bf5fd07c76fa6127ffd435d5cb33e163917bb2c6df408c618249223b6a"
+        },
+        {
+          "name": "start_index",
+          "hash": "1a603971ae568b7e893946a4b5051f2e0b7400338ffed3c36d04506a1b8b2986"
+        },
+        {
+          "name": "url",
+          "hash": "4c39d34795e853ba5328692fca354ef75906f2341d44445dcdc3a2d9c559e449"
+        }
+      ]
+    },
+    {
+      "name": "aws_knowledge_aws___recommend",
+      "hash": "1befb9f6a4a9ec8dda24b3fdef857c17be145b2385a5c5be3d7976088b3313f3",
+      "params": [
+        {
+          "name": "url",
+          "hash": "00fb834d5360ef6b242f27c72684470bfb789e8ffadf994fde36660e353df77f"
+        }
+      ]
+    },
+    {
+      "name": "aws_knowledge_aws___search_documentation",
+      "hash": "9ad5c17afefb9369c3dad17236d6c1bb731b561f23f06ec7e8cfd85cfcf29fa9",
+      "params": [
+        {
+          "name": "limit",
+          "hash": "b04468046d2f2a5692b75e7d703a30fd2787b8f80972a3b07b618e4ca4b3fa70"
+        },
+        {
+          "name": "search_phrase",
+          "hash": "f93cbb9df9a44cfc1b47f061cd2589bce1142763d092ad6d5c122935968cc02c"
+        },
+        {
+          "name": "topics",
+          "hash": "c3ebe7f9bfdcce0847cf39ff5d3fac89284dbd4b69589173a66a121b540774e2"
+        }
+      ]
+    },
+    {
+      "name": "build_and_push_image_to_ecr",
+      "hash": "7365f6c0e117bad79b54966c7307dd297ed4719a4bce2bc44c743f8141d08cae",
+      "params": [
+        {
+          "name": "app_name",
+          "hash": "b88a7608291a11d331770e27176d1ecdb21c7b91298b826901873f0ca2526a4b"
+        },
+        {
+          "name": "app_path",
+          "hash": "893bf08d9a120c400e15cb7d922b57ee74a4bfa151f9ca1c1238e1afeabf4284"
+        },
+        {
+          "name": "tag",
+          "hash": "900edf0f2aee429432e2d76f5d53b4b666d41279698211b8cb8c2c4f7490459c"
+        }
+      ]
+    },
+    {
       "name": "containerize_app",
-      "hash": "1a74b55bc00de9667e8787e7bf07faaf31f8123e5f97a40c3e25b8d65eb078a0",
+      "hash": "1f5b7d8c65974d06fe7a5dd2a24da4fc8e98c022907f6d0c16504e3e4c6f3fcd",
       "params": [
         {
           "name": "app_path",
@@ -15,106 +105,70 @@
       ]
     },
     {
-      "name": "create_ecs_infrastructure",
-      "hash": "4544f0e794481e25fe7bd0dd32bbbf53c8d26660591ca028dd5221c17708d4e5",
+      "name": "delete_app",
+      "hash": "791e828d2b32943f6c592268f51601191a109c96b6adb633a4418b2e501489d0",
       "params": [
         {
           "name": "app_name",
-          "hash": "8683f3f7c6b1c2b761f455d6aedfda0c6769028ec5b8047bf2cace524866e21c"
+          "hash": "ce554523f96f93563fe588c5fa5fe2cd61e9b5da62a8d474805bd155bde39c81"
         },
         {
-          "name": "app_path",
-          "hash": "991a3ebc1e0d5c019f0e13bc75e03597e2f308c6c5e4248935f2a1259c32cf68"
-        },
-        {
-          "name": "container_port",
-          "hash": "449455aab20d2e3c11a9a539ea356f110aa7597aaf7f356fb24e80d553a224e0"
-        },
-        {
-          "name": "cpu",
-          "hash": "9216971c2d432760f097c89ba17e408ecfaff3ea02c37c5a85929a1022c7ef48"
-        },
-        {
-          "name": "deployment_step",
-          "hash": "bd45c0595c2d60e459cc75c413f8bdd86581da4d1b345f4bcfb9eeaa392905c0"
-        },
-        {
-          "name": "desired_count",
-          "hash": "c3ed70eabf8c5aaf771e5580fbf164f13bc2441501b1137471f57a32d7511db7"
-        },
-        {
-          "name": "force_deploy",
-          "hash": "1f180931fbdac7db25a3b3b86f4a2e4d14843b5f14a30b3ddb4080a7da2c17e9"
-        },
-        {
-          "name": "health_check_path",
-          "hash": "d6f7b6447b521862f76823017f4a8e03ca0a94c8fcdf4dd7e9938050c90aee75"
-        },
-        {
-          "name": "memory",
-          "hash": "93c3d58426f5b3f77594c81fcf85914a9e6870514334fea641926a7acb47af92"
-        },
-        {
-          "name": "vpc_id",
-          "hash": "6ad09bec5420b20bd585287c65949489a3fc8a37842e5b9863740c1947bb0732"
-        }
-      ]
-    },
-    {
-      "name": "delete_ecs_infrastructure",
-      "hash": "bd08eaa199ebb5406d91d5c229c124ead3725256966622e9b0c9f9efa7680cc4",
-      "params": [
-        {
-          "name": "app_name",
-          "hash": "8683f3f7c6b1c2b761f455d6aedfda0c6769028ec5b8047bf2cace524866e21c"
-        },
-        {
-          "name": "ecr_template_path",
-          "hash": "fcbeb3eb3e2b24250b6b46b568949ac91025c86ce9af6ecad59a46fd33f7be7c"
-        },
-        {
-          "name": "ecs_template_path",
-          "hash": "2e203cd163e0c36cdb55740996d91c9432793dfd6ea3443f8435d1926de7263b"
+          "name": "service_arn",
+          "hash": "ecf8ef7771abd6df7c642ff181ec8a958a0d73b797df4ede7960a9cc3faf35ea"
         }
       ]
     },
     {
       "name": "ecs_resource_management",
-      "hash": "9fe8fc3d1fb347b62bf7b2b9b9abe4af1551925ac91daa2fa9d2f498021667d4",
+      "hash": "079488f6d09610646ff8e7a621ed58efb638e3ee798905a573298aea0baf3829",
       "params": [
         {
-          "name": "action",
-          "hash": "5f035549da23ec95e9d31b8853b7ddc2b00cef9538e96bbde10dca6cd7f4bfa8"
+          "name": "api_operation",
+          "hash": "cec143311ad65dffd506147f518acd7978c4edc58989e3161dac603fef44cfd6"
         },
         {
-          "name": "resource_type",
-          "hash": "47ee9e7e88f3a9220103cbb91c32ba1d2ea5b916eff70e07bb0ff3d0b7397b69"
+          "name": "api_params",
+          "hash": "ab9181f34c5d76801ededdc7280fd658b142f9c6729d34db2f163b003b7dbca5"
         }
       ]
     },
     {
       "name": "ecs_troubleshooting_tool",
-      "hash": "4f06fa93abd2e80a3094672cea5c5e48fdd15faca70712a346bb0641377fdb93"
+      "hash": "c6a2cf3ac8c27e3297f619771e22573da53420bf5cbbf6258c861299fcd9d118"
     },
     {
-      "name": "get_deployment_status",
-      "hash": "acc8925b2df8853fc2ae89e706c55b6a158d7e3cebbca82570b6d53d8e0ead88",
+      "name": "validate_ecs_express_mode_prerequisites",
+      "hash": "51583f570380a3911777c984a48636056ba61f64426542ecc428edcc0e5004c8",
       "params": [
         {
-          "name": "app_name",
-          "hash": "8683f3f7c6b1c2b761f455d6aedfda0c6769028ec5b8047bf2cace524866e21c"
+          "name": "execution_role_arn",
+          "hash": "fced567aef7c124183879cc63911316bc8d900efc8a00247132c92c6db2a672d"
         },
         {
-          "name": "cluster_name",
+          "name": "image_uri",
+          "hash": "f13dd6f7541c5be0395cb1635e08e764d93935d8625cfad63dbe2eac4301e8fc"
+        },
+        {
+          "name": "infrastructure_role_arn",
+          "hash": "1be2e74c4ccfa3b2d57e1d99d982e34c15c58b086a239b335d50819874f198b2"
+        }
+      ]
+    },
+    {
+      "name": "wait_for_service_ready",
+      "hash": "c6457b800ef91e87f11fe2f84cc49adda3d96d08c14dae5ec247063f6da69bab",
+      "params": [
+        {
+          "name": "cluster",
           "hash": "8e2dd7b1c9a70c0173b34cf3834ed43938f843d4b4feda01c2298c5e86e6d613"
         },
         {
           "name": "service_name",
-          "hash": "d1b94d733903d0dd3aa973b87ea01f350d7b5f29720c34aa5e80b81e0280c2f0"
+          "hash": "2e5243f599aeba4f8252e24a7dace7ef87e13c2095e03aa2972fff37b7c08ad5"
         },
         {
-          "name": "stack_name",
-          "hash": "5720ac7b47a7118008a5d8ab8c062b32d85ae93a596f3ec09eb8fcbc43d877bb"
+          "name": "timeout_seconds",
+          "hash": "afa6f27350ec04ab7ed38571e547eca823ab271fa4ce51cd5cb02442fa4dadfa"
         }
       ]
     }
@@ -133,6 +187,14 @@
       "hash": "1aceeddc529f0a46a272848144d1290539b12c1327693845cb573abd8daaccdc"
     },
     {
+      "name": "How do I migrate from Fargate to Managed Instances",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "What alternatives do I have for Fargate?",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
       "name": "alb not working",
       "hash": "1aceeddc529f0a46a272848144d1290539b12c1327693845cb573abd8daaccdc"
     },
@@ -143,10 +205,6 @@
     {
       "name": "app won't deploy",
       "hash": "9f15725552f2feae1e1b9bf00821b8d48b729651b164f16ec312972c83fa2cac"
-    },
-    {
-      "name": "can people access this",
-      "hash": "81ff4948b0cce5f488f22b33835aad6b52c3e221177aa9bc69ffa042664010a0"
     },
     {
       "name": "can't pull image",
@@ -165,12 +223,24 @@
       "hash": "88e93d02a8108757653c728933d6e637e678470b74981a16a148708d6dc8af31"
     },
     {
-      "name": "clean up resources",
-      "hash": "56e580282c804ac316910d39cee5c92185293d994c89ca0e55003f78f610391b"
-    },
-    {
       "name": "cloudformation stack failed",
       "hash": "dd725c4bc9de9a7d9d73d79ad350aceb0e2509f059a98aff2506b80b818a3ee6"
+    },
+    {
+      "name": "configure b/g",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "configure blue green",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "configure ecs blue green deployments",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "configure ecs express mode",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "name": "connectivity issues",
@@ -193,40 +263,8 @@
       "hash": "cb69d96c13a9f9a567972b926364b616c11255c6a0ed94f8134acd8b98043e8d"
     },
     {
-      "name": "delete infrastructure",
-      "hash": "622b3cf659a29ffe7edfb69b80300316a24f9b9a6f645b5ae274c6d6fdd368e1"
-    },
-    {
-      "name": "deploy django",
-      "hash": "906366a045d5e9b9f097c8fcd8430493c83b98c2ae7683d97a3931150510b67c"
-    },
-    {
-      "name": "deploy express",
-      "hash": "96c7136cead6baf5ca5631deba59a37be28b7829233eec6bf106b307644882a8"
-    },
-    {
-      "name": "deploy flask",
-      "hash": "e3d20dd75b2234877c2fe79e6ba03dc49a2448500e9433d11c92d1f1b67aff0c"
-    },
-    {
-      "name": "deploy node",
-      "hash": "daf6ce09ed310758cabafe71d97762416f3e14d06e100b354371f1319f42092d"
-    },
-    {
-      "name": "deploy react",
-      "hash": "bf4d082206c91a42fc02f833b4b566debbf40ce33cd0e87fdd5656fb4a323424"
-    },
-    {
-      "name": "deploy to aws",
-      "hash": "112384f2d0a7dc6723560c0b2ddfd9f9fefbf0bad2f41de679b4089636c08615"
-    },
-    {
-      "name": "deploy to cloud",
-      "hash": "7d87b1717bb21ccd0cd9ca725d3be94f8408a76086801ef3621fdf1c4a20d47c"
-    },
-    {
-      "name": "deploy to ecs",
-      "hash": "0f6e7c2ac59690322aae219188b270efb5bef9863d4d97e03c24694b546a4d1f"
+      "name": "create blue green deployment",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "name": "deployment is broken",
@@ -245,6 +283,10 @@
       "hash": "9bcbb65f757c4ba46c2bc54ede7b35843ffb9ca11649ed8fac155b05ecdc5113"
     },
     {
+      "name": "difference between codedeploy and native blue green",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
       "name": "docker and deploy",
       "hash": "cb69d96c13a9f9a567972b926364b616c11255c6a0ed94f8134acd8b98043e8d"
     },
@@ -257,12 +299,56 @@
       "hash": "a03d09027d5ef42564851708b2f9269045a34a46abf6642f4abb8c2df9b399e3"
     },
     {
+      "name": "ecs MI",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ecs best practices",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ecs custom instance types",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
       "name": "ecs deployment failed",
       "hash": "9bcbb65f757c4ba46c2bc54ede7b35843ffb9ca11649ed8fac155b05ecdc5113"
     },
     {
+      "name": "ecs express mode",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ecs guidance",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ecs implementation guide",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ecs instance type selection",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ecs managed instances",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ecs native blue green deployments",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ecs recommendations",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
       "name": "ecs service events",
       "hash": "72fdfe28113f3e81047e188026823f35e6920706914948b367edfd795e23a829"
+    },
+    {
+      "name": "ecs specialized instance types",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "name": "ecs tasks failing",
@@ -285,14 +371,6 @@
       "hash": "9f15725552f2feae1e1b9bf00821b8d48b729651b164f16ec312972c83fa2cac"
     },
     {
-      "name": "get running on the web",
-      "hash": "a0b6d4fddf8c2763ab45af9c5a02afeb359b5d97047a31aff4fd1e2d16a3cee6"
-    },
-    {
-      "name": "get this online",
-      "hash": "74eb6883990e4441541c9282385a30924c3ea9d1a739d53f15f1f2e3fc753f68"
-    },
-    {
       "name": "healthcheck failing",
       "hash": "1aceeddc529f0a46a272848144d1290539b12c1327693845cb573abd8daaccdc"
     },
@@ -305,12 +383,20 @@
       "hash": "dd725c4bc9de9a7d9d73d79ad350aceb0e2509f059a98aff2506b80b818a3ee6"
     },
     {
-      "name": "host online",
-      "hash": "cf8fe4efbbaf65a8353632eca62d92fccf5ed2ed2cf01029457b6c8e9405a95a"
+      "name": "how to setup blue green",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "name": "how do i share this app",
-      "hash": "81ff4948b0cce5f488f22b33835aad6b52c3e221177aa9bc69ffa042664010a0"
+      "name": "how to setup ecs managed instances",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "how to setup express mode",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "how to use ecs effectively",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "name": "image pull failure",
@@ -329,8 +415,8 @@
       "hash": "cef0baeb16e138e76c1f73b5099f35d4119e2ba350b3522e0143222d7e009a60"
     },
     {
-      "name": "launch online",
-      "hash": "ad16ec4b2de83757817199dbca20f6541d6e2139ddb6158be66db1aa786c9c59"
+      "name": "latest ecs feature",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "name": "list ecs resources",
@@ -341,44 +427,28 @@
       "hash": "1aceeddc529f0a46a272848144d1290539b12c1327693845cb573abd8daaccdc"
     },
     {
-      "name": "make accessible",
-      "hash": "74eb6883990e4441541c9282385a30924c3ea9d1a739d53f15f1f2e3fc753f68"
+      "name": "managed instances ecs",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "name": "make accessible online",
-      "hash": "74eb6883990e4441541c9282385a30924c3ea9d1a739d53f15f1f2e3fc753f68"
+      "name": "native ecs b/g",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "name": "make live",
-      "hash": "7755eca68e4713a2c46074ec8245c769ee94396a2016cbe53085cabb3d9abae6"
-    },
-    {
-      "name": "make this public",
-      "hash": "abf744498929feff47b3cbaa37523a75eba991d520001f089ad392ea94c7e716"
+      "name": "native ecs blue green",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "name": "network issues",
       "hash": "6ecbfbc96c82fd900545006586dd697b334c12a19e0216a90d23d1b7e22fe54f"
     },
     {
-      "name": "push to prod",
-      "hash": "58b904c57847d2832f59e33352d1811de8a81af7c47cd9fd80ba5b33ce735959"
+      "name": "new ecs feature",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "name": "put in container",
       "hash": "a03d09027d5ef42564851708b2f9269045a34a46abf6642f4abb8c2df9b399e3"
-    },
-    {
-      "name": "put on the web",
-      "hash": "74eb6883990e4441541c9282385a30924c3ea9d1a739d53f15f1f2e3fc753f68"
-    },
-    {
-      "name": "put this on aws",
-      "hash": "112384f2d0a7dc6723560c0b2ddfd9f9fefbf0bad2f41de679b4089636c08615"
-    },
-    {
-      "name": "remove deployment",
-      "hash": "5803516174acf5d8a31ed304a6efc3b178a9279bf5dc00e744e1a2b52b8de7f6"
     },
     {
       "name": "security group issues",
@@ -393,12 +463,12 @@
       "hash": "6ecbfbc96c82fd900545006586dd697b334c12a19e0216a90d23d1b7e22fe54f"
     },
     {
-      "name": "ship it",
-      "hash": "bf94e8edab367a9daaeb42216ab94923a657bcaaa6c412796b05bd52ccfa7342"
+      "name": "setup ecs blue green",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "name": "ship to cloud",
-      "hash": "7d87b1717bb21ccd0cd9ca725d3be94f8408a76086801ef3621fdf1c4a20d47c"
+      "name": "setup ecs express mode",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "name": "show ecs clusters",
@@ -407,6 +477,10 @@
     {
       "name": "show running containers",
       "hash": "cfc9cefd73c710e5f1933bb14e69ef7c727d6b7f13af4713a4d96c06c7116d8b"
+    },
+    {
+      "name": "simplified ecs deployment",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "name": "stack .* failed",
@@ -419,10 +493,6 @@
     {
       "name": "target group",
       "hash": "1aceeddc529f0a46a272848144d1290539b12c1327693845cb573abd8daaccdc"
-    },
-    {
-      "name": "tear down",
-      "hash": "c4f4599d9953e35dda54eca34cf54be049cbd1f70a3fc603cef03ab1700f6de1"
     },
     {
       "name": "troubleshoot ecs",
@@ -441,8 +511,32 @@
       "hash": "e487d44ce8fa736f7a2a07c2d708347ca2357ac9ddf1998baa41392ff9946408"
     },
     {
+      "name": "what are b/g deployments",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "what are blue green deployments",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "what are ecs managed instances",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "what are express gateway services",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "what is ecs express mode",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
       "name": "what's wrong with my stack",
       "hash": "9f15725552f2feae1e1b9bf00821b8d48b729651b164f16ec312972c83fa2cac"
+    },
+    {
+      "name": "when to use express mode",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "name": "why did my stack fail",

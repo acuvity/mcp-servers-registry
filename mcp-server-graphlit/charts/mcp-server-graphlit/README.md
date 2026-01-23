@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -21,10 +21,10 @@
 # What is mcp-server-graphlit?
 [![Rating](https://img.shields.io/badge/A-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-graphlit/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-graphlit/1.0.20250613001?logo=docker&logoColor=fff&label=1.0.20250613001)](https://hub.docker.com/r/acuvity/mcp-server-graphlit)
-[![PyPI](https://img.shields.io/badge/1.0.20250613001-3775A9?logo=pypi&logoColor=fff&label=graphlit-mcp-server)](https://github.com/graphlit/graphlit-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-graphlit/1.0.20260112001?logo=docker&logoColor=fff&label=1.0.20260112001)](https://hub.docker.com/r/acuvity/mcp-server-graphlit)
+[![PyPI](https://img.shields.io/badge/1.0.20260112001-3775A9?logo=pypi&logoColor=fff&label=graphlit-mcp-server)](https://github.com/graphlit/graphlit-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-graphlit/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-graphlit&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22GRAPHLIT_ORGANIZATION_ID%22%2C%22-e%22%2C%22GRAPHLIT_ENVIRONMENT_ID%22%2C%22-e%22%2C%22GRAPHLIT_JWT_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-graphlit%3A1.0.20250613001%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-graphlit&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22GRAPHLIT_ORGANIZATION_ID%22%2C%22-e%22%2C%22GRAPHLIT_ENVIRONMENT_ID%22%2C%22-e%22%2C%22GRAPHLIT_JWT_SECRET%22%2C%22docker.io%2Facuvity%2Fmcp-server-graphlit%3A1.0.20260112001%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Integrates your MCP client with Graphlit to ingest and search content from dev tools.
 
@@ -43,110 +43,40 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-graphlit/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-graphlit/docker/policy.rego) that enables a set of runtime [guardrails](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-graphlit#%EF%B8%8F-guardrails) to help enforce security, privacy, and correct usage of your services. Below is list of each guardrail provided.
 
-### 🔒 Resource Integrity
-
-**Mitigates MCP Rug Pull Attacks**
-
-* **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
-* **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
-
-### 🛡️ Guardrails
-
-#### Covert Instruction Detection
-
-Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
-
-* **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
-* **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
-
-#### Sensitive Pattern Detection
-
-Block user-defined sensitive data patterns (credential paths, filesystem references).
-
-* **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
-* **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
-
-#### Shadowing Pattern Detection
-
-Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
-
-* **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
-* **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
-
-#### Schema Misuse Prevention
-
-Enforces strict adherence to MCP input schemas.
-
-* **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
-* **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
-
-#### Cross-Origin Tool Access
-
-Controls whether tools may invoke tools or services from external origins.
-
-* **Goal:** Prevent untrusted or out-of-scope services from being called.
-* **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
-
-#### Secrets Redaction
-
-Automatically masks sensitive values so they never appear in logs or responses.
-
-* **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
-* **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
-
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
-
-### Enable guardrails
-
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
 | Guardrail                        | Summary                                                                 |
 |----------------------------------|-------------------------------------------------------------------------|
+| `resource integrity`             | Embeds a hash of all exposed resources to ensure their authenticity and prevent unauthorized modifications, guarding against supply chain attacks and dynamic alterations of tool metadata. |
 | `covert-instruction-detection`   | Detects hidden or obfuscated directives in requests.                    |
 | `sensitive-pattern-detection`    | Flags patterns suggesting sensitive data or filesystem exposure.        |
 | `shadowing-pattern-detection`    | Identifies tool descriptions that override or influence others.         |
 | `schema-misuse-prevention`       | Enforces strict schema compliance on input data.                        |
 | `cross-origin-tool-access`       | Controls calls to external services or APIs.                            |
 | `secrets-redaction`              | Prevents exposure of credentials or sensitive values.                   |
+| `basic authentication`           | Enables the configuration of a shared secret to restrict unauthorized access to the MCP server and ensure only approved clients can connect. |
 
-Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
-
-## 🔒 Basic Authentication via Shared Secret
-
-Provides a lightweight auth layer using a single shared token.
-
-* **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
-* **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
-
-To turn on Basic Authentication, define `BASIC_AUTH_SECRET` environment variable with a shared secret.
-
-Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentication.
-
-> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
-> rotate credentials frequently and **always** use TLS.
-
-</details>
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference
@@ -173,11 +103,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-1.0.20250613001`
+  - container: `1.0.0-1.0.20260112001`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-graphlit:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-graphlit:1.0.0-1.0.20250613001`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-graphlit:1.0.0-1.0.20260112001`
 
 ---
 
@@ -641,7 +571,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (64)
+## 🧰 Tools (71)
 <details>
 <summary>configureProject</summary>
 
@@ -1142,6 +1072,122 @@ Lists available Notion databases.
 |-----------|------|-------------|-----------|
 </details>
 <details>
+<summary>listDropboxFolders</summary>
+
+**Description**:
+
+```
+Lists available Dropbox folders.
+    Requires environment variables to be configured: DROPBOX_APP_KEY, DROPBOX_APP_SECRET, DROPBOX_REFRESH_TOKEN.
+    Returns a list of Dropbox folders that can be used with file ingestion tools.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| folderPath | string | The folder path to list folders from. If not provided, lists from root. | No
+</details>
+<details>
+<summary>listBoxFolders</summary>
+
+**Description**:
+
+```
+Lists available Box folders.
+    Requires environment variables to be configured: BOX_CLIENT_ID, BOX_CLIENT_SECRET, BOX_REFRESH_TOKEN.
+    Returns a list of Box folders that can be used with file ingestion tools.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| folderId | string | The folder ID to list folders from. If not provided, lists from root. | No
+</details>
+<details>
+<summary>listDiscordGuilds</summary>
+
+**Description**:
+
+```
+Lists available Discord guilds (servers).
+    Requires environment variable to be configured: DISCORD_BOT_TOKEN.
+    Returns a list of Discord guilds that the bot has access to.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+</details>
+<details>
+<summary>listDiscordChannels</summary>
+
+**Description**:
+
+```
+Lists available Discord channels in a guild.
+    Requires environment variable to be configured: DISCORD_BOT_TOKEN.
+    Returns a list of Discord channels that can be used with Discord ingestion tools.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| guildId | string | The Discord guild (server) ID to list channels from. | Yes
+</details>
+<details>
+<summary>listNotionPages</summary>
+
+**Description**:
+
+```
+Lists pages from a Notion database.
+    Requires environment variable to be configured: NOTION_API_KEY.
+    Returns a list of Notion pages in the specified database.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| databaseId | string | The Notion database identifier to list pages from. | Yes
+</details>
+<details>
+<summary>listGoogleCalendars</summary>
+
+**Description**:
+
+```
+Lists available Google calendars.
+    Requires environment variables to be configured: GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_REFRESH_TOKEN.
+    Returns a list of Google calendars that can be used with calendar ingestion tools.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+</details>
+<details>
+<summary>listMicrosoftCalendars</summary>
+
+**Description**:
+
+```
+Lists available Microsoft calendars.
+    Requires environment variables to be configured: MICROSOFT_CLIENT_ID, MICROSOFT_CLIENT_SECRET, MICROSOFT_REFRESH_TOKEN.
+    Returns a list of Microsoft calendars that can be used with calendar ingestion tools.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+</details>
+<details>
 <summary>listLinearProjects</summary>
 
 **Description**:
@@ -1285,7 +1331,7 @@ Ingests files from Google Drive into Graphlit knowledge base.
 Ingests files from Dropbox into Graphlit knowledge base.
     Accepts optional relative path to Dropbox folder (i.e. /Pictures), and an optional read limit for the number of files to ingest.
     If no path provided, ingests files from root Dropbox folder.
-    Requires environment variables to be configured: DROPBOX_APP_KEY, DROPBOX_APP_SECRET, DROPBOX_REDIRECT_URI, DROPBOX_REFRESH_TOKEN.
+    Requires environment variables to be configured: DROPBOX_APP_KEY, DROPBOX_APP_SECRET, DROPBOX_REFRESH_TOKEN.
     Executes asynchronously, creates Dropbox feed, and returns the feed identifier. Optionally creates a recurring feed that checks for new content every 15 minutes when 'recurring' is set to true.
 ```
 
@@ -1651,7 +1697,7 @@ Performs web or podcast search based on search query. Can search for web pages o
     Use 'PODSCAN' search service type to search podcasts.
     Does *not* ingest pages or podcast episodes into Graphlit knowledge base.  
     When searching podcasts, *don't* include the term 'podcast' or 'episode' in the search query - that would be redundant.
-    Search service types: Tavily (web pages), Exa (web pages) and Podscan (podcasts). Defaults to Exa.
+    Search service types: Tavily (web pages), Exa (web pages), ExaCode (code & docs) and Podscan (podcasts). Defaults to Exa.
     Returns URL, title and relevant Markdown text from resulting web pages or podcast episode descriptions.
 ```
 
@@ -1661,7 +1707,7 @@ Performs web or podcast search based on search query. Can search for web pages o
 |-----------|------|-------------|-----------|
 | limit | number | Limit the number of search hits to be returned. Defaults to 10. | No
 | query | string | Search query. | Yes
-| searchService | string | Search service type (Tavily, Exa, Podscan). Defaults to Exa. | No
+| searchService | string | Search service type (Tavily, Exa, ExaCode, Podscan). Defaults to Exa. | No
 </details>
 <details>
 <summary>ingestRSS</summary>
@@ -2007,7 +2053,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | ingestDiscordMessages | readLimit | c52515d77ec305b6e04c55e0f415ba5b3cadc805247ab7597bfe67f5d5466858 |
 | tools | ingestDiscordMessages | recurring | f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c |
 | tools | ingestDiscordMessages | repeatInterval | 20abac7d5854ec6f6cfea2bf9d29fde712cf15ae3912606f7e06c92c82f7a287 |
-| tools | ingestDropboxFiles | description | 5d666eaca0023423df8e382a615b3a9ab0d86e69a094aefeb076f520d5f92a4e |
+| tools | ingestDropboxFiles | description | c057477c6408d23d20b402150c9213a3db40e1ed7625bbeca8472e2a03bd00fb |
 | tools | ingestDropboxFiles | path | a885c25af1c8245b05e68ce70efc80b86f9d22ef71b0566e4b4ade5ec83e2d0b |
 | tools | ingestDropboxFiles | readLimit | 212f13a2013bf40f6409324f1cb6a7f08daeeb4c814f642d2e3360c3cc60506b |
 | tools | ingestDropboxFiles | recurring | f4217d3652b25a5ff7f3df5930c89579add03afca64ea360ec1dcfcdbcfc893c |
@@ -2113,8 +2159,19 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | isContentDone | id | dd8f0409a49357e5b9dff484884b770b5b8bb70751b25da5f540ef9e0c34b40c |
 | tools | isFeedDone | description | c3d51893b73427f18b40016526953d61540fe837d6ac0df68526dfe8cef7a2f0 |
 | tools | isFeedDone | id | 9555d03f0ff39b49742e4703b8296e0690809208f2d183548e7640bc61e1e349 |
+| tools | listBoxFolders | description | b2b651f853b5612803c258a011b1ca5690c896fcc6080c82b4f05c3afa10db33 |
+| tools | listBoxFolders | folderId | b54a9a738938c68e2e011c53a9078d3da4b0b7da1b2a33bee3226cc86ca89c0a |
+| tools | listDiscordChannels | description | 8e3a82d5a623aef459515aa3df2b564a2c0d23ad02b20757a51a423fe23a4ffd |
+| tools | listDiscordChannels | guildId | 77b984e4197744e9a1685de95e232476aabfddfcea24f10bfbe1f0263b2b00f4 |
+| tools | listDiscordGuilds | description | 8f5fc7f150cf5ad4cafbb46fa6bc06f89ea019a9cc6e3b617be85e03171e6dd6 |
+| tools | listDropboxFolders | description | 47078d2bb92c3d1e5e4036b3dbb1a78e17f26c04c38c54ac50eade9bd6540eb9 |
+| tools | listDropboxFolders | folderPath | 572dc031619de69a378ee52b19633a31c1fad9365ff21f59a7c6d917bcfbe77d |
+| tools | listGoogleCalendars | description | 5813605154d4bbf8eaff216bb53d5a6baae6516fcf54e1754393f23a77c50b5c |
 | tools | listLinearProjects | description | 9c244f71037d658a2cdf9a36d42c9ff66e576bcc31c9f32ca2175f6c21b1fc34 |
+| tools | listMicrosoftCalendars | description | d1c7b17c5c02d93b7ad63c7294a302960a548893e2c6982346408d8aba893700 |
 | tools | listNotionDatabases | description | c30d12285808cee27892b6623d2c40086e580a42b22811f90f44dce51b9ff9f9 |
+| tools | listNotionPages | description | f05f34b7e1e6ed5a425f6187380211b7f41b28f5f80d0acdb299337330ea4476 |
+| tools | listNotionPages | databaseId | 9f6c1f146cb1886e02435a44864a979282705b45094329ce73e15da8fc3ef3dc |
 | tools | listSharePointFolders | description | 10c091a25bcfc0365c53fdd12779d2384ea713bf3e5f71b7ef95ca4c5256b034 |
 | tools | listSharePointFolders | libraryId | d049f22aa3e44ff63b4f3566a6b69bde80bf75a7bb771eff5697967c1adc33cc |
 | tools | listSharePointLibraries | description | 7d6b081a1fa97c0382d22e1a415f640b4e2408cf1a66c7141c9096b6f1bd2e11 |
@@ -2195,10 +2252,10 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | webCrawl | url | 82301c9879a2bd12c6a7e14d17902d8ede45bbb19abe38907cefb0be69c78c52 |
 | tools | webMap | description | c4d940b54759c10cff5cc22375234c595cb2de9a786718c94139d51f33957f7a |
 | tools | webMap | url | 82301c9879a2bd12c6a7e14d17902d8ede45bbb19abe38907cefb0be69c78c52 |
-| tools | webSearch | description | 08fbd6292e1280c788b5f30929d74295b7a15bb471fccc3f1e19e5b6eaf144f2 |
+| tools | webSearch | description | 2d41ddade88af6dbb0cbd904b1985bd19e8679f552cbe151ef62815897c8413c |
 | tools | webSearch | limit | 36e925df434ec2827ed9e5c43f8c6553c1e21103eda586e742c712b38b8a1caa |
 | tools | webSearch | query | b2d5e18f98e7168514f1b00d0c5d3e31b981afee7024b44d793a69eea54bcacf |
-| tools | webSearch | searchService | 09313f5cb737c5e7be7a7c6a023d0d143c626b4f1b570741dc2a0f0df91d50e1 |
+| tools | webSearch | searchService | 8dcf11f8125b6108e89b36ddbad8d7c2019450d8d7a2f89806fb45d21c45b656 |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

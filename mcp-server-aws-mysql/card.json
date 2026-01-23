@@ -13,7 +13,7 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "1.0.1",
+  "version": "1.0.14",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "rating": null,

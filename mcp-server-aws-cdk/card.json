@@ -13,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "1.0.2",
+  "version": "1.0.13",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"fddb2ebfde25603af42e9e8980c30a8dfed7c449bde2ee0d9f91f274f5efd4b3","reason":"Mixed documentation quality with adequate to good descriptions but inconsistent detail levels and some unclear parameter documentation. Tool names are mostly clear, and most descriptions provide basic functionality coverage, but several tools lack sufficient detail about usage context and constraints. Parameter descriptions vary from adequate to minimal.","score":"C"},
+  "rating": {"hash":"3635514fd6f8d231cda3fe5fe02f72f475885cfc798477de89b867d6b8de1acf","reason":"The toolset shows adequate documentation with significant inconsistencies. Some tools like 'ExplainCDKNagRule' provide comprehensive descriptions with usage examples, while others like 'CDKGeneralGuidance' have minimal descriptions. Parameter documentation is basic but functional across most tools. Two tools are marked as deprecated which reduces overall utility. Names are generally clear and purposeful.","score":"C"},
   "resources": {
     "tools": 7,
     "prompts": 0,

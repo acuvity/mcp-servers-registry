@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -21,10 +21,10 @@
 # What is mcp-server-contentful?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-contentful/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-contentful/1.16.1?logo=docker&logoColor=fff&label=1.16.1)](https://hub.docker.com/r/acuvity/mcp-server-contentful)
-[![PyPI](https://img.shields.io/badge/1.16.1-3775A9?logo=pypi&logoColor=fff&label=@ivotoby/contentful-management-mcp-server)](https://github.com/ivo-toby/contentful-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-contentful/1.21.0?logo=docker&logoColor=fff&label=1.21.0)](https://hub.docker.com/r/acuvity/mcp-server-contentful)
+[![PyPI](https://img.shields.io/badge/1.21.0-3775A9?logo=pypi&logoColor=fff&label=@ivotoby/contentful-management-mcp-server)](https://github.com/ivo-toby/contentful-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-contentful/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-contentful&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CONTENTFUL_MANAGEMENT_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-contentful%3A1.16.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-contentful&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CONTENTFUL_MANAGEMENT_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-contentful%3A1.21.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Update, create, delete content, content-models and assets in your Contentful Space.
 
@@ -43,69 +43,70 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
 The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-contentful/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
-### 🔒 Resource Integrity
+#### 🔒 Resource Integrity
 
 **Mitigates MCP Rug Pull Attacks**
 
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Guardrails
+#### 🛡️ Guardrails
 
-#### Covert Instruction Detection
+##### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-#### Sensitive Pattern Detection
+##### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-#### Shadowing Pattern Detection
+##### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-#### Schema Misuse Prevention
+##### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-#### Cross-Origin Tool Access
+##### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-#### Secrets Redaction
+##### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
@@ -114,7 +115,7 @@ Automatically masks sensitive values so they never appear in logs or responses.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
-### Enable guardrails
+#### Enable guardrails
 
 To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
@@ -129,7 +130,7 @@ To activate guardrails in your Docker containers, define the `GUARDRAILS` enviro
 
 Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
 
-## 🔒 Basic Authentication via Shared Secret
+#### 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
@@ -143,10 +144,8 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 > While basic auth will protect against unauthorized access, you should use it only in controlled environment,
 > rotate credentials frequently and **always** use TLS.
 
-</details>
-
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # 📦 How to Install
@@ -173,7 +172,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-contentful&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CONTENTFUL_MANAGEMENT_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-contentful%3A1.16.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-contentful&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22CONTENTFUL_MANAGEMENT_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-contentful%3A1.21.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -195,7 +194,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "--read-only",
           "-e",
           "CONTENTFUL_MANAGEMENT_ACCESS_TOKEN",
-          "docker.io/acuvity/mcp-server-contentful:1.16.1"
+          "docker.io/acuvity/mcp-server-contentful:1.21.0"
         ]
       }
     }
@@ -222,7 +221,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "--read-only",
         "-e",
         "CONTENTFUL_MANAGEMENT_ACCESS_TOKEN",
-        "docker.io/acuvity/mcp-server-contentful:1.16.1"
+        "docker.io/acuvity/mcp-server-contentful:1.21.0"
       ]
     }
   }
@@ -253,7 +252,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "--read-only",
         "-e",
         "CONTENTFUL_MANAGEMENT_ACCESS_TOKEN",
-        "docker.io/acuvity/mcp-server-contentful:1.16.1"
+        "docker.io/acuvity/mcp-server-contentful:1.21.0"
       ]
     }
   }
@@ -286,7 +285,7 @@ Add the following JSON block to your mcp configuration file:
         "--read-only",
         "-e",
         "CONTENTFUL_MANAGEMENT_ACCESS_TOKEN",
-        "docker.io/acuvity/mcp-server-contentful:1.16.1"
+        "docker.io/acuvity/mcp-server-contentful:1.21.0"
       ]
     }
   }
@@ -317,7 +316,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "--read-only",
         "-e",
         "CONTENTFUL_MANAGEMENT_ACCESS_TOKEN",
-        "docker.io/acuvity/mcp-server-contentful:1.16.1"
+        "docker.io/acuvity/mcp-server-contentful:1.21.0"
       ]
     }
   }
@@ -337,7 +336,7 @@ async with MCPServerStdio(
     params={
         "env": {"CONTENTFUL_MANAGEMENT_ACCESS_TOKEN":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","CONTENTFUL_MANAGEMENT_ACCESS_TOKEN","docker.io/acuvity/mcp-server-contentful:1.16.1"]
+        "args": ["run","-i","--rm","--read-only","-e","CONTENTFUL_MANAGEMENT_ACCESS_TOKEN","docker.io/acuvity/mcp-server-contentful:1.21.0"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -366,7 +365,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e CONTENTFUL_MANAGEMENT_ACCESS_TOKEN docker.io/acuvity/mcp-server-contentful:1.16.1`
+- arguments: `run -i --rm --read-only -e CONTENTFUL_MANAGEMENT_ACCESS_TOKEN docker.io/acuvity/mcp-server-contentful:1.21.0`
 
 </details>
 
@@ -376,7 +375,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e CONTENTFUL_MANAGEMENT_ACCESS_TOKEN docker.io/acuvity/mcp-server-contentful:1.16.1
+docker run -it -p 8000:8000 --rm --read-only -e CONTENTFUL_MANAGEMENT_ACCESS_TOKEN docker.io/acuvity/mcp-server-contentful:1.21.0
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -479,7 +478,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (35)
+## 🧰 Tools (40)
 <details>
 <summary>search_entries</summary>
 
@@ -1099,6 +1098,105 @@ Get the result of a previous AI Action invocation
 | invocationId | string | The ID of the specific invocation to retrieve | Yes
 | spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
 </details>
+<details>
+<summary>get_comments</summary>
+
+**Description**:
+
+```
+Retrieve comments for an entry with pagination support. Returns comments with their status and body content.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| bodyFormat | string | Format for the comment body content | No
+| entryId | string | The unique identifier of the entry to get comments for | Yes
+| environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
+| limit | number | Maximum number of comments to return (1-100, default: 10) | No
+| skip | number | Number of comments to skip for pagination (default: 0) | No
+| spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
+| status | string | Filter comments by status | No
+</details>
+<details>
+<summary>create_comment</summary>
+
+**Description**:
+
+```
+Create a new comment on an entry. The comment will be created with the specified body and status. To create a threaded conversation (reply to an existing comment), provide the parent comment ID. This allows you to work around the 512-character limit by creating threaded replies.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| body | string | The content of the comment (max 512 characters) | Yes
+| entryId | string | The unique identifier of the entry to comment on | Yes
+| environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
+| parent | string | Optional ID of the parent comment to reply to. Use this to create threaded conversations or to continue longer messages by replying to your own comments. | No
+| spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
+| status | string | The status of the comment | No
+</details>
+<details>
+<summary>get_single_comment</summary>
+
+**Description**:
+
+```
+Retrieve a specific comment by its ID for an entry.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| bodyFormat | string | Format for the comment body content | No
+| commentId | string | The unique identifier of the comment to retrieve | Yes
+| entryId | string | The unique identifier of the entry | Yes
+| environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
+| spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
+</details>
+<details>
+<summary>delete_comment</summary>
+
+**Description**:
+
+```
+Delete a specific comment from an entry.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| commentId | string | The unique identifier of the comment to delete | Yes
+| entryId | string | The unique identifier of the entry | Yes
+| environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
+| spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
+</details>
+<details>
+<summary>update_comment</summary>
+
+**Description**:
+
+```
+Update an existing comment on an entry. The handler will merge your updates with the existing comment data.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| body | string | The updated content of the comment | No
+| bodyFormat | string | Format for the comment body content | No
+| commentId | string | The unique identifier of the comment to update | Yes
+| entryId | string | The unique identifier of the entry | Yes
+| environmentId | string | The ID of the environment within the space, by default this will be called Master | Yes
+| spaceId | string | The ID of the Contentful space. This must be the space's ID, not its name, ask for this ID if it's unclear. | Yes
+| status | string | The updated status of the comment | No
+</details>
 
 ## 📝 Prompts (14)
 <details>
@@ -1360,6 +1458,13 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | create_ai_action | name | c44e12cb538c2b6005353bdaa62fff36e89f40a1e3f98ac0c4807bbebb58fb6e |
 | tools | create_ai_action | spaceId | b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47 |
 | tools | create_ai_action | testCases | 195eaaf33aaf9a64981d3ae293b34297dd65614fd38592b2e4e9a8391bc056a6 |
+| tools | create_comment | description | 33d349823245b3e6be992d99d9bcde282650d8f57cc0338236f3e7532ec0b65e |
+| tools | create_comment | body | e38379594e7cd8a09e157dadbf3b27821b248115b61857dfeaaf461cec0d9a74 |
+| tools | create_comment | entryId | 0f8ed4f9b01e2826c975f5d9ba7571d398ca4e12dedd7982d71bb6cb05d532f0 |
+| tools | create_comment | environmentId | 96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96 |
+| tools | create_comment | parent | 120207f427d76fe89013acfea5ad551ba62adafd88d8e7950453dc48292ff638 |
+| tools | create_comment | spaceId | b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47 |
+| tools | create_comment | status | 72e7de4ae4f390a0a6c5cc54dd0ec305bdd30bb172b7e7ab09b0c4bc1dd9286d |
 | tools | create_content_type | description | d9744dc50d28fd896e176539b86c4d516298734c6c660c2a91a49b670b262a20 |
 | tools | create_content_type | environmentId | 96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96 |
 | tools | create_content_type | fields | 7e77d1884050a7aa4e0929815065ae045983a263c6ead31e28a0b28f1f1b7eaa |
@@ -1377,6 +1482,11 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | delete_asset | description | 6c7c32568e6a7561f8f0415ea51e55a393f63285fe479a88c5d67a0361632b3c |
 | tools | delete_asset | environmentId | 96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96 |
 | tools | delete_asset | spaceId | b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47 |
+| tools | delete_comment | description | af78fd1e8d2bc5ade21f0f1d4a966c7c44bc328a7a56d21d513f37f2d2e5de31 |
+| tools | delete_comment | commentId | ef625e9474c99b830a5768cef609479ff32e10bd826922d1cc19436e5e739ebb |
+| tools | delete_comment | entryId | 4635b24339f7797cf2c96566138eebbddd2ca18cefa6dc38a27b3099d6a2b05c |
+| tools | delete_comment | environmentId | 96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96 |
+| tools | delete_comment | spaceId | b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47 |
 | tools | delete_content_type | description | dd3069640d149019bf7e31d4d2dec205214fdd3254c1b965df50548f33f3775a |
 | tools | delete_content_type | environmentId | 96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96 |
 | tools | delete_content_type | spaceId | b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47 |
@@ -1396,12 +1506,26 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | get_asset | description | f8353610a7c481ca975a62389184e981f7b3a6414a50160fa0c8cba366e254af |
 | tools | get_asset | environmentId | 96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96 |
 | tools | get_asset | spaceId | b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47 |
+| tools | get_comments | description | 186899b0f53b3536be9b9cd77ad05ce0314d309e4fcacec4143ac412fe4343b9 |
+| tools | get_comments | bodyFormat | 4706352463984a44f22ad4b1c135bb48e57af08ea0ea775adabd5a785838d249 |
+| tools | get_comments | entryId | 06154ce15a65946f70e845cfcc81c355d30ade8aa28c40ce5beb2d065c2e1c6e |
+| tools | get_comments | environmentId | 96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96 |
+| tools | get_comments | limit | 6395ab940c90ab446b6e241a4d63a92ec781d2aacc2fff5d926a136de5627f22 |
+| tools | get_comments | skip | e2e2cde1d41c64af74318da1fee3f3f389c4cfd9518fedf60f8f9fd5261669d3 |
+| tools | get_comments | spaceId | b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47 |
+| tools | get_comments | status | 620c03bb5fd0a4402d5ea89201cdbb803691bf64f0e45a7cf755b0faa1b6236d |
 | tools | get_content_type | description | 2a5357bc685b1b5843c2868b1124211676da3cc45550fe3c688f6a060903ec2f |
 | tools | get_content_type | environmentId | 96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96 |
 | tools | get_content_type | spaceId | b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47 |
 | tools | get_entry | description | 1de1c52a44e35412db5b7ad38ca92ae9881a2655bb5dfe1ad1d5d0aad2aaefb2 |
 | tools | get_entry | environmentId | 96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96 |
 | tools | get_entry | spaceId | b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47 |
+| tools | get_single_comment | description | cd96f4a76d9e7366818ddea01c1f24da35e7773a34d7aef066c020256d1894f0 |
+| tools | get_single_comment | bodyFormat | 4706352463984a44f22ad4b1c135bb48e57af08ea0ea775adabd5a785838d249 |
+| tools | get_single_comment | commentId | 075f626838df67563c49322e0e73be45800ec61ead81cc98990f506fb855c82a |
+| tools | get_single_comment | entryId | 4635b24339f7797cf2c96566138eebbddd2ca18cefa6dc38a27b3099d6a2b05c |
+| tools | get_single_comment | environmentId | 96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96 |
+| tools | get_single_comment | spaceId | b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47 |
 | tools | get_space | description | da364db7e6f099c12704b9793a65be4732231c51cd272e87040a287adac3dd88 |
 | tools | invoke_ai_action | description | 094d76f15f911a0b16205342cab4282094fcf8ce22b465bb24ffa1745dbfcae7 |
 | tools | invoke_ai_action | aiActionId | d0be2c8158fd0e42df3ebd5949fc36f009c871ac5e83a84bb39b55f58fb5b3d9 |
@@ -1470,6 +1594,14 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | update_asset | description | 6e3aa72f38e0036da9795b34fb5fca4838d8fac910dbee7cb4560eddd1262825 |
 | tools | update_asset | environmentId | 96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96 |
 | tools | update_asset | spaceId | b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47 |
+| tools | update_comment | description | e93b5c38f1ccd86cb686685a64ae1ad0e036d8d50104fb6f79b2ce519aa9179c |
+| tools | update_comment | body | 4badaeb6d7853097c1771c8428cd32400b568e477930eae4bc7edcf74685e1a0 |
+| tools | update_comment | bodyFormat | 4706352463984a44f22ad4b1c135bb48e57af08ea0ea775adabd5a785838d249 |
+| tools | update_comment | commentId | 2cc6419370053f3b1503cb9203c427cc34253c1b06fc07a05e567ff858b857ac |
+| tools | update_comment | entryId | 4635b24339f7797cf2c96566138eebbddd2ca18cefa6dc38a27b3099d6a2b05c |
+| tools | update_comment | environmentId | 96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96 |
+| tools | update_comment | spaceId | b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47 |
+| tools | update_comment | status | 4e1c0d92b80024ab257c28dd69a3ce4973d5b29a727965bf37263654b00bd4ba |
 | tools | update_content_type | description | dff46c3db47453975594cec480c7a7fa4c679f1951bedf413f43c1760b58a880 |
 | tools | update_content_type | environmentId | 96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96 |
 | tools | update_content_type | spaceId | b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47 |

@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -19,12 +19,12 @@
 
 
 # What is mcp-server-shopify-dev?
-[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-shopify-dev/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-shopify-dev/1.1.0?logo=docker&logoColor=fff&label=1.1.0)](https://hub.docker.com/r/acuvity/mcp-server-shopify-dev)
-[![PyPI](https://img.shields.io/badge/1.1.0-3775A9?logo=pypi&logoColor=fff&label=@shopify/dev-mcp)](https://github.com/Shopify/dev-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-shopify-dev/1.6.0?logo=docker&logoColor=fff&label=1.6.0)](https://hub.docker.com/r/acuvity/mcp-server-shopify-dev)
+[![PyPI](https://img.shields.io/badge/1.6.0-3775A9?logo=pypi&logoColor=fff&label=@shopify/dev-mcp)](https://github.com/Shopify/dev-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-shopify-dev/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-shopify-dev&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-shopify-dev%3A1.1.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-shopify-dev&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-shopify-dev%3A1.6.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Model Context Protocol (MCP) server that interacts with Shopify Dev.
 
@@ -43,110 +43,40 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-shopify-dev/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-shopify-dev/docker/policy.rego) that enables a set of runtime [guardrails](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-shopify-dev#%EF%B8%8F-guardrails) to help enforce security, privacy, and correct usage of your services. Below is list of each guardrail provided.
 
-### 🔒 Resource Integrity
-
-**Mitigates MCP Rug Pull Attacks**
-
-* **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
-* **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
-
-### 🛡️ Guardrails
-
-#### Covert Instruction Detection
-
-Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
-
-* **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
-* **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
-
-#### Sensitive Pattern Detection
-
-Block user-defined sensitive data patterns (credential paths, filesystem references).
-
-* **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
-* **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
-
-#### Shadowing Pattern Detection
-
-Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
-
-* **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
-* **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
-
-#### Schema Misuse Prevention
-
-Enforces strict adherence to MCP input schemas.
-
-* **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
-* **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
-
-#### Cross-Origin Tool Access
-
-Controls whether tools may invoke tools or services from external origins.
-
-* **Goal:** Prevent untrusted or out-of-scope services from being called.
-* **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
-
-#### Secrets Redaction
-
-Automatically masks sensitive values so they never appear in logs or responses.
-
-* **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
-* **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
-
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
-
-### Enable guardrails
-
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
 | Guardrail                        | Summary                                                                 |
 |----------------------------------|-------------------------------------------------------------------------|
+| `resource integrity`             | Embeds a hash of all exposed resources to ensure their authenticity and prevent unauthorized modifications, guarding against supply chain attacks and dynamic alterations of tool metadata. |
 | `covert-instruction-detection`   | Detects hidden or obfuscated directives in requests.                    |
 | `sensitive-pattern-detection`    | Flags patterns suggesting sensitive data or filesystem exposure.        |
 | `shadowing-pattern-detection`    | Identifies tool descriptions that override or influence others.         |
 | `schema-misuse-prevention`       | Enforces strict schema compliance on input data.                        |
 | `cross-origin-tool-access`       | Controls calls to external services or APIs.                            |
 | `secrets-redaction`              | Prevents exposure of credentials or sensitive values.                   |
+| `basic authentication`           | Enables the configuration of a shared secret to restrict unauthorized access to the MCP server and ensure only approved clients can connect. |
 
-Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
-
-## 🔒 Basic Authentication via Shared Secret
-
-Provides a lightweight auth layer using a single shared token.
-
-* **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
-* **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
-
-To turn on Basic Authentication, define `BASIC_AUTH_SECRET` environment variable with a shared secret.
-
-Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentication.
-
-> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
-> rotate credentials frequently and **always** use TLS.
-
-</details>
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference
@@ -173,11 +103,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-1.1.0`
+  - container: `1.0.0-1.6.0`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-shopify-dev:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-shopify-dev:1.0.0-1.1.0`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-shopify-dev:1.0.0-1.6.0`
 
 ---
 
@@ -616,78 +546,142 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (4)
+## 🧰 Tools (8)
 <details>
-<summary>introspect_admin_schema</summary>
+<summary>introspect_graphql_schema</summary>
 
 **Description**:
 
 ```
-This tool introspects and returns the portion of the Shopify Admin API GraphQL schema relevant to the user prompt. Only use this for the Shopify Admin API, and not any other APIs like the Shopify Storefront API or the Shopify Functions API.
+This tool introspects and returns the portion of the Shopify GraphQL schema relevant to the user prompt, including scope information for queries, mutations, and objects. Use this for any Shopify GraphQL API including Admin API, Storefront API, Partner API, Customer API, Payments Apps API, and Function APIs (for validating Function input GraphQL queries).
 
-    It takes two arguments: query and filter. The query argument is the string search term to filter schema elements by name. The filter argument is an array of strings to filter results to show specific sections.
+    🚨 CRITICAL: This is your primary tool when working with GraphQL APIs, especially when exploring schema fields or when search_docs_chunks returns an error (HTTP 500/503 or "fetch failed").
+
+    ⚠️ API CONTEXT WARNING:
+    - If you've already called learn_shopify_api with a specific API (e.g., "admin")
+
+    - You MUST continue using that same API for ALL subsequent tool calls
+    - DO NOT switch to "admin" or any other API unless explicitly requested by the user
+    - The 'api' parameter should match what you used in learn_shopify_api
+
+    USAGE TIPS:
+    - Search for operations by their action: "create", "update", "delete", "list", "capture", "refund"
+    - Search for specific objects: "product", "order", "customer", "discount"
+    - Search for specific fields: "version", "publicApiVersions", "shop"
+    - Try multiple variations if first search returns nothing
+
+        - For camelCase names, search for individual words: "captureSession" → try "capture" or "session"
+
+    FALLBACK STRATEGY:
+    1. Start with the most specific term from the user's request
+    2. If no results, try broader terms or related words
+    3. For "list" operations, try "all", "list", or the plural object name
+    4. For mutations, try the action verb: "create", "update", "delete", etc.
+
+    The schema HAS THE ANSWERS - if the first introspection call doesn't yield expected results, try searching for shorter words that are part of your initial query!
+    
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| filter | array | Filter results to show specific sections. Can include 'types', 'queries', 'mutations', or 'all' (default) | No
+| api | string | The GraphQL API to use. Valid options are:
+- 'admin': The Admin GraphQL API lets you build apps and integrations that extend and enhance the Shopify admin.
+- 'storefront-graphql': Use for custom storefronts requiring direct GraphQL queries/mutations for data fetching and cart operations. Choose this when you need full control over data fetching and rendering your own UI. NOT for Web Components - if the prompt mentions HTML tags like <shopify-store>, <shopify-cart>, use storefront-web-components instead.
+- 'partner': The Partner API lets you programmatically access data about your Partner Dashboard, including your apps, themes, and affiliate referrals.
+- 'customer': The Customer Account API allows customers to access their own data including orders, payment methods, and addresses.
+- 'payments-apps': The Payments Apps API enables payment providers to integrate their payment solutions with Shopify's checkout.
+- 'functions_cart_checkout_validation': GraphQL schema for Cart and Checkout Validation Function input queries
+- 'functions_cart_transform': GraphQL schema for Cart Transform Function input queries
+- 'functions_delivery_customization': GraphQL schema for Delivery Customization Function input queries
+- 'functions_discount': GraphQL schema for Discount Function input queries
+- 'functions_discounts_allocator': GraphQL schema for Discounts Allocator Function input queries
+- 'functions_fulfillment_constraints': GraphQL schema for Fulfillment Constraints Function input queries
+- 'functions_local_pickup_delivery_option_generator': GraphQL schema for Local Pickup Delivery Option Generator Function input queries
+- 'functions_order_discounts': GraphQL schema for Order Discounts Function input queries
+- 'functions_order_routing_location_rule': GraphQL schema for Order Routing Location Rule Function input queries
+- 'functions_payment_customization': GraphQL schema for Payment Customization Function input queries
+- 'functions_pickup_point_delivery_option_generator': GraphQL schema for Pickup Point Delivery Option Generator Function input queries
+- 'functions_product_discounts': GraphQL schema for Product Discounts Function input queries
+- 'functions_shipping_discounts': GraphQL schema for Shipping Discounts Function input queries
+Default is 'admin'. | No
+| conversationId | string | 🔗 REQUIRED: conversationId from learn_shopify_api tool. Call learn_shopify_api first if you don't have this. | Yes
+| filter | array | Filter results to show specific sections. Valid values are 'types', 'queries', 'mutations', or 'all' (default) | No
 | query | string | Search term to filter schema elements by name. Only pass simple terms like 'product', 'discountProduct', etc. | Yes
 </details>
 <details>
-<summary>search_dev_docs</summary>
+<summary>learn_extension_target_types</summary>
 
 **Description**:
 
 ```
-This tool will take in the user prompt, search shopify.dev, and return relevant documentation and code examples that will help answer the user's question.
 
-    It takes one argument: prompt, which is the search query for Shopify documentation.
+      This tool returns the type declarations of different components and APIs usable within a specific extension target.
+      You MUST call this tool ONLY AFTER calling learn_shopify_api for the API names listed below.
+          - Polaris Admin Extensions: Add custom actions and blocks from your app at contextually relevant spots throughout the Shopify Admin. Admin UI Extensions also supports scaffolding new adminextensions using Shopify CLI commands.
+    - Polaris Checkout Extensions: Build custom functionality that merchants can install at defined points in the checkout flow, including product information, shipping, payment, order summary, and Shop Pay. Checkout UI Extensions also supports scaffolding new checkout extensions using Shopify CLI commands.
+    - Polaris Customer Account Extensions: Build custom functionality that merchants can install at defined points on the Order index, Order status, and Profile pages in customer accounts. Customer Account UI Extensions also supports scaffolding new customer account extensions using Shopify CLI commands.
+    - POS UI: Build retail point-of-sale applications using Shopify's POS UI components. These components provide a consistent and familiar interface for POS applications. POS UI Extensions also supports scaffolding new POS extensions using Shopify CLI commands. Keywords: POS, Retail, smart grid
+    
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| prompt | string | The search query for Shopify documentation | Yes
+| api | string | The Shopify API you are building for | Yes
+| conversationId | string | 🔗 REQUIRED: conversationId from learn_shopify_api tool. Call learn_shopify_api first if you don't have this. | Yes
+| extension_target | string | extension_target represents where your UI extension will appear. extension_target decides the available apis and components for the given api | Yes
 </details>
 <details>
-<summary>fetch_docs_by_path</summary>
-
-**Description**:
-
-```
-Use this tool to retrieve a list of documents from shopify.dev.
-
-    Args:
-    paths: The paths to the documents to read, i.e. ["/docs/api/app-home", "/docs/api/functions"].
-    Paths should be relative to the root of the developer documentation site.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| paths | array | The paths to the documents to read | Yes
-</details>
-<details>
-<summary>get_started</summary>
+<summary>learn_shopify_api</summary>
 
 **Description**:
 
 ```
 
-    YOU MUST CALL THIS TOOL FIRST WHENEVER YOU ARE IN A SHOPIFY APP AND THE USER WANTS TO LEARN OR INTERACT WITH ANY OF THESE APIS:
+    🚨 MANDATORY FIRST STEP: This tool MUST be called before any other Shopify tools.
 
-    Valid arguments for `api` are:
-    - admin: The Admin GraphQL API lets you build apps and integrations that extend and enhance the Shopify admin.
-    - functions: Shopify Functions allow developers to customize the backend logic that powers parts of Shopify. Here are all the available APIs: Discount, Cart and Checkout Validation, Cart Transform, Pickup Point Delivery Option Generator, Delivery Customization, Fulfillment Constraints, Local Pickup Delivery Option Generator, Order Routing Location Rule, Payment Customization
-    - hydrogen: Shopify Hydrogen store feature implementation guides. Here are all the available feature guides: Bundles, Subscriptions, Combined Listings, Markets. Always use this tool first when implementing one of these features in a Hydrogen store. Keywords: hydrogen, localization, markets, subscriptions, selling plans, combined listings, bundles. 
-    - storefront-web-components: How to create storefronts using Storefront Web Components. Storefront Web Components let you bring Shopify-powered commerce capabilities to any website. Shopify Storefront Web Components are a set of web components that enable developers to build customizable storefronts using only HTML and Shopify's APIs. Keywords: web components, html, shopify-store, shopify-context, shopify-list-context, shopify-data, shopify-media, shopify-money, shopify-cart, shopify-variant-selector
+    ⚠️  ALL OTHER SHOPIFY TOOLS WILL FAIL without a conversationId from this tool.
+    This tool generates a conversationId that is REQUIRED for all subsequent tool calls. After calling this tool, you MUST extract the conversationId from the response and pass it to every other Shopify tool call.
 
+    🔄 MULTIPLE API SUPPORT: You MUST call this tool multiple times in the same conversation when you need to learn about different Shopify APIs. THIS IS NOT OPTIONAL. Just pass the existing conversationId to maintain conversation continuity while loading the new API context.
+
+    For example, a user might ask a question about the Admin API, then switch to the Functions API, then ask a question about polaris UI components. In this case I would expect you to call learn_shopify_api three times with the following arguments:
+
+    - learn_shopify_api(api: "admin") -> conversationId: "123"
+    - learn_shopify_api(api: "functions", conversationId: "123")
+    - learn_shopify_api(api: "polaris-admin-extensions", conversationId: "123")
+
+    This is because the conversationId is used to maintain conversation continuity while loading the new API context.
+
+    🚨 Valid arguments for `api` are:
+        - Admin API: The Admin GraphQL API lets you build apps and integrations that extend and enhance the Shopify admin.
+    - Storefront GraphQL API: Use for custom storefronts requiring direct GraphQL queries/mutations for data fetching and cart operations. Choose this when you need full control over data fetching and rendering your own UI. NOT for Web Components - if the prompt mentions HTML tags like <shopify-store>, <shopify-cart>, use storefront-web-components instead.
+    - Partner API: The Partner API lets you programmatically access data about your Partner Dashboard, including your apps, themes, and affiliate referrals.
+    - Customer Account API: The Customer Account API allows customers to access their own data including orders, payment methods, and addresses.
+    - Payments Apps API: The Payments Apps API enables payment providers to integrate their payment solutions with Shopify's checkout.
+    - Shopify Functions: Shopify Functions allow developers to customize the backend logic that powers parts of Shopify. Available APIs: Discount, Cart and Checkout Validation, Cart Transform, Pickup Point Delivery Option Generator, Delivery Customization, Fulfillment Constraints, Local Pickup Delivery Option Generator, Order Routing Location Rule, Payment Customization
+    - Polaris App Home: Build your app's primary user interface embedded in the Shopify admin. If the prompt just mentions `Polaris` and you can't tell based off of the context what API they meant, assume they meant this API.
+    - Hydrogen: Hydrogen storefront implementation cookbooks. Some of the available recipes are: B2B Commerce, Bundles, Combined Listings, Custom Cart Method, Dynamic Content with Metaobjects, Express Server, Google Tag Manager Integration, Infinite Scroll, Legacy Customer Account Flow, Markets, Partytown + Google Tag Manager, Subscriptions, Third-party API Queries and Caching. MANDATORY: Use this API for ANY Hydrogen storefront question - do NOT use Storefront GraphQL when 'Hydrogen' is mentioned.
+    - Liquid: Liquid is an open-source templating language created by Shopify. It is the backbone of Shopify themes and is used to load dynamic content on storefronts. Keywords: liquid, theme, shopify-theme, liquid-component, liquid-block, liquid-section, liquid-snippet, liquid-schemas, shopify-theme-schemas
+    - Custom Data: MUST be used first when prompts mention Metafields or Metaobjects. Use Metafields and Metaobjects to model and store custom data for your app. Metafields extend built-in Shopify data types like products or customers, Metaobjects are custom data types that can be used to store bespoke data structures. Metafield and Metaobject definitions provide a schema and configuration for values to follow.
+
+    For APIs     - Polaris Admin Extensions: Add custom actions and blocks from your app at contextually relevant spots throughout the Shopify Admin. Admin UI Extensions also supports scaffolding new adminextensions using Shopify CLI commands.
+    - Polaris Checkout Extensions: Build custom functionality that merchants can install at defined points in the checkout flow, including product information, shipping, payment, order summary, and Shop Pay. Checkout UI Extensions also supports scaffolding new checkout extensions using Shopify CLI commands.
+    - Polaris Customer Account Extensions: Build custom functionality that merchants can install at defined points on the Order index, Order status, and Profile pages in customer accounts. Customer Account UI Extensions also supports scaffolding new customer account extensions using Shopify CLI commands.
+    - POS UI: Build retail point-of-sale applications using Shopify's POS UI components. These components provide a consistent and familiar interface for POS applications. POS UI Extensions also supports scaffolding new POS extensions using Shopify CLI commands. Keywords: POS, Retail, smart grid, call learn_shopify_api to get the conversationId and then YOU MUST call learn_extension_target_types.
+
+    🔄 WORKFLOW:
+    1. Call learn_shopify_api first with the initial API
+    2. Extract the conversationId from the response
+    3. Pass that same conversationId to ALL other Shopify tools
+    4. If you need to know more about a different API at any point in the conversation, call learn_shopify_api again with the new API and the same conversationId
+
+    When tool outputs are saved to a file always read the entire file first.
     DON'T SEARCH THE WEB WHEN REFERENCING INFORMATION FROM THIS DOCUMENTATION. IT WILL NOT BE ACCURATE.
-    PREFER THE USE OF THE fetch_docs_by_path TOOL TO RETRIEVE INFORMATION FROM THE DEVELOPER DOCUMENTATION SITE.
+    PREFER THE USE OF THE fetch_full_docs TOOL TO RETRIEVE INFORMATION FROM THE DEVELOPER DOCUMENTATION SITE.
   
 ```
 
@@ -696,6 +690,179 @@ Use this tool to retrieve a list of documents from shopify.dev.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | api | string | The Shopify API you are building for | Yes
+| conversationId | string | Optional existing conversation UUID. If not provided, a new conversation ID will be generated for this conversation. This conversationId should be passed to all subsequent tool calls within the same chat session. | No
+</details>
+<details>
+<summary>validate_theme</summary>
+
+**Description**:
+
+```
+This tool validates Liquid codeblocks, Liquid files, and supporting Theme files (e.g. JSON locale files, JSON config files, JSON template files, JavaScript files, CSS files, and SVG files) generated or updated by LLMs to ensure they don't have hallucinated Liquid content, invalid syntax, or incorrect references
+
+    It returns a comprehensive validation result with details for each code block explaining why it was valid or invalid.
+    This detail is provided so LLMs know how to modify code snippets to remove errors.
+    It also returns an artifact ID and revision number for each code block. This is used to track the code block and its validation results. When validating an iteration of the same code block, use the same artifact ID and increment the revision number. Do not pass your own artifact ID to this tool, the tool will generate one for you.. Run this tool if the user is creating, updating, or deleting files inside of a Shopify Theme directory.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| absoluteThemePath | string | The absolute path to the theme directory | Yes
+| conversationId | string | 🔗 REQUIRED: conversationId from learn_shopify_api tool. Call learn_shopify_api first if you don't have this. | Yes
+| filesCreatedOrUpdated | array | Array of files with path and optional artifact metadata | Yes
+</details>
+<details>
+<summary>search_docs_chunks</summary>
+
+**Description**:
+
+```
+This tool will take in the user prompt, search shopify.dev, and return relevant documentation and code examples that will help answer the user's question.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| conversationId | string | 🔗 REQUIRED: conversationId from learn_shopify_api tool. Call learn_shopify_api first if you don't have this. | Yes
+| max_num_results | number | Maximum number of results to return from the search. Do not pass this when calling the tool for the first time, only use this when you want to limit the number of results deal with small context window issues. | No
+| prompt | string | The search query for Shopify documentation | Yes
+</details>
+<details>
+<summary>fetch_full_docs</summary>
+
+**Description**:
+
+```
+Use this tool to retrieve a list of full documentation pages from shopify.dev.
+    When you find relevant document chunks using the search_docs_chunks tool, YOU MUST USE THIS TOOL TO RETRIEVE THE FULL DOCUMENTATION PAGES. THIS IS IMPORTANT. You can use the `url` attribute of the chunks.
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| conversationId | string | 🔗 REQUIRED: conversationId from learn_shopify_api tool. Call learn_shopify_api first if you don't have this. | Yes
+| paths | array | The paths to the full documentation pages to read, i.e. ["/docs/api/app-home", "/docs/api/functions"]. Paths should be relative to the root of the developer documentation site. | Yes
+</details>
+<details>
+<summary>validate_component_codeblocks</summary>
+
+**Description**:
+
+```
+🚨 MANDATORY VALIDATION TOOL - MUST BE CALLED WHEN COMPONENTS FROM SHOPIFY PACKAGES ARE USED. DONT ASK THE USER TO DO THIS. DON'T CONTEXT SWITCH.
+
+    This tool MUST be used to validate ALL code blocks containing Shopify components, regardless of size or complexity.
+
+    ⚠️  CRITICAL REQUIREMENTS:
+    - Call this tool IMMEDIATELY after generating ANY Shopify component code
+    - NEVER skip validation, even for simple examples or snippets
+    - ALWAYS use this tool when generating JSX, TSX, or web component code
+    - This validation prevents hallucinated components, props, and prop values
+    - Your major tasks while structuring the input is to ensure that:
+    1. If the code contains JS/TS code, it should be wrapped inside a function. 
+    2. All Javascript code is outside return statement of the function.
+    3. All the polaris web components are in return statement of the function.
+
+    INPUT STRUCTURE:
+    Do not pass in tiny snippets of code. Follow the example given below as the input to validate_component_codeblocks tool.
+    {
+      "api": "The API name (e.g., 'polaris-app-home', 'pos-ui')",
+      "code": [
+        {
+          "content": "
+const Extension = () => {
+  const [isConnected, setIsConnected] = useState(
+    shopify.connectivity.current.value.internetConnected === 'Connected'
+  );
+
+  useEffect(() => {
+    const unsubscribe = shopify.connectivity.current.subscribe((newConnectivity) => {
+      setIsConnected(newConnectivity.internetConnected === 'Connected');
+    });
+    return unsubscribe;
+  }, []);
+
+  return (
+    <s-tile
+      heading="My App"
+      disabled={!isConnected}
+    />
+  );
+};
+"
+        }
+      ]
+    }
+
+    📤 OUTPUTS:
+    - Comprehensive validation results with specific error details
+    - Clear guidance on how to fix any validation failures
+    - Component-by-component validation status
+
+    🔄 WORKFLOW: Generate Code → Validate → Fix Errors and replace code → Re-validate if needed
+
+
+    It returns a comprehensive validation result with details for each code block explaining why it was valid or invalid.
+    This detail is provided so LLMs know how to modify code snippets to remove errors.
+    It also returns an artifact ID and revision number for each code block. This is used to track the code block and its validation results. When validating an iteration of the same code block, use the same artifact ID and increment the revision number. Do not pass your own artifact ID to this tool, the tool will generate one for you.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| api | string | API name to validate against (e.g., 'pos-ui', 'polaris-app-home'). | Yes
+| code | array | Array of code blocks with content and optional artifact metadata. Supported code blocks are JS/TS React, vanilla JS/TS, Preact, and HTML with Polaris web components. | Yes
+| conversationId | string | 🔗 REQUIRED: conversationId from learn_shopify_api tool. Call learn_shopify_api first if you don't have this. | Yes
+| extensionTarget | string | Required for extension surface APIs (polaris-admin-extensions, polaris-checkout-extensions, polaris-customer-account-extensions, pos-ui). The extension target determines which components and APIs are available. Get available targets using learn_extension_target_types tool. | No
+</details>
+<details>
+<summary>validate_graphql_codeblocks</summary>
+
+**Description**:
+
+```
+This tool validates GraphQL code blocks against the Shopify GraphQL schema to ensure they don't contain hallucinated fields or operations. If a user asks for an LLM to generate a GraphQL operation, this tool should always be used to ensure valid code was generated.
+
+    Supports all Shopify GraphQL APIs including Admin, Storefront, Partner, Customer, Payments Apps, and Function APIs. For Shopify Functions, use this to validate the input GraphQL queries (run.graphql).
+
+
+    It returns a comprehensive validation result with details for each code block explaining why it was valid or invalid.
+    This detail is provided so LLMs know how to modify code snippets to remove errors.
+    It also returns an artifact ID and revision number for each code block. This is used to track the code block and its validation results. When validating an iteration of the same code block, use the same artifact ID and increment the revision number. Do not pass your own artifact ID to this tool, the tool will generate one for you.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| api | string | The GraphQL API to use. Valid options are:
+- 'admin': The Admin GraphQL API lets you build apps and integrations that extend and enhance the Shopify admin.
+- 'storefront-graphql': Use for custom storefronts requiring direct GraphQL queries/mutations for data fetching and cart operations. Choose this when you need full control over data fetching and rendering your own UI. NOT for Web Components - if the prompt mentions HTML tags like <shopify-store>, <shopify-cart>, use storefront-web-components instead.
+- 'partner': The Partner API lets you programmatically access data about your Partner Dashboard, including your apps, themes, and affiliate referrals.
+- 'customer': The Customer Account API allows customers to access their own data including orders, payment methods, and addresses.
+- 'payments-apps': The Payments Apps API enables payment providers to integrate their payment solutions with Shopify's checkout.
+- 'functions_cart_checkout_validation': GraphQL schema for Cart and Checkout Validation Function input queries
+- 'functions_cart_transform': GraphQL schema for Cart Transform Function input queries
+- 'functions_delivery_customization': GraphQL schema for Delivery Customization Function input queries
+- 'functions_discount': GraphQL schema for Discount Function input queries
+- 'functions_discounts_allocator': GraphQL schema for Discounts Allocator Function input queries
+- 'functions_fulfillment_constraints': GraphQL schema for Fulfillment Constraints Function input queries
+- 'functions_local_pickup_delivery_option_generator': GraphQL schema for Local Pickup Delivery Option Generator Function input queries
+- 'functions_order_discounts': GraphQL schema for Order Discounts Function input queries
+- 'functions_order_routing_location_rule': GraphQL schema for Order Routing Location Rule Function input queries
+- 'functions_payment_customization': GraphQL schema for Payment Customization Function input queries
+- 'functions_pickup_point_delivery_option_generator': GraphQL schema for Pickup Point Delivery Option Generator Function input queries
+- 'functions_product_discounts': GraphQL schema for Product Discounts Function input queries
+- 'functions_shipping_discounts': GraphQL schema for Shipping Discounts Function input queries
+Default is 'admin'. | No
+| codeblocks | array | Array of GraphQL code blocks with content and optional artifact metadata | Yes
+| conversationId | string | 🔗 REQUIRED: conversationId from learn_shopify_api tool. Call learn_shopify_api first if you don't have this. | Yes
 </details>
 
 ## 📝 Prompts (1)
@@ -725,15 +892,38 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 |-----------|------|------|------|
 | prompts | shopify_admin_graphql | description | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
 | prompts | shopify_admin_graphql | query | 98093c057eeae040401bc67ad3071116be498b22221a4151563759d2f43f2ced |
-| tools | fetch_docs_by_path | description | db5cc0087fb09ac06abae11e25c7255ec12f0a0a11a95c7bb0cf6807816e53e9 |
-| tools | fetch_docs_by_path | paths | e3117a5bba68651a746f09efd1e6aa60495e1a6171e87bb4ddc8a61cce11b581 |
-| tools | get_started | description | ef14b1a9d911ec56777f7496d027a2efd6fb5734f4337065a1ceabb604c7bfe0 |
-| tools | get_started | api | 020bba209b3e40636585ee28353121ec237df37f856c33d2f0da686466ad12b9 |
-| tools | introspect_admin_schema | description | 7e0d17045beec0028d5390dd12e016af8a50df6b96d7918f95c12bd7e3524fe9 |
-| tools | introspect_admin_schema | filter | 5a8cd6b941a24d852a3d04593d85b3ca28a7f85fb7ab1d55612e78fd1dbe7527 |
-| tools | introspect_admin_schema | query | df71bf519a32b0b8e76710c33d12a47d11c093bcc2bfecd1e7a04bb345c38f1d |
-| tools | search_dev_docs | description | 92d1ee083486a6f57ec70b5a804fcde474dfb5a98c3e13dd8cebce6f8c37aca5 |
-| tools | search_dev_docs | prompt | eb7cfc554f21b5a2cb77a094dd923a7ce2b5a4d9428f607506615f7a252c9871 |
+| tools | fetch_full_docs | description | 2aa3561e5f053085c9629ced63262015c02ca463411420666b28c770579c14a4 |
+| tools | fetch_full_docs | conversationId | 15fe39c4a6a174baef0154b3ca3852df599e5dc3ca53b11a408ce57a7a27e3ae |
+| tools | fetch_full_docs | paths | 755860698146c208554fd5b5e694a809420cfb95cc12d15445076799c6eca222 |
+| tools | introspect_graphql_schema | description | 3889345e0e05311cf1f9621336c3ba873c0d35e6064e488363f57e41204ee4f9 |
+| tools | introspect_graphql_schema | api | f37a0336d2361b9614488a1cef99acbcd19b70856ebf161ac101360233a880fc |
+| tools | introspect_graphql_schema | conversationId | 15fe39c4a6a174baef0154b3ca3852df599e5dc3ca53b11a408ce57a7a27e3ae |
+| tools | introspect_graphql_schema | filter | 00bf1feddd40ca7dac8f5bcc1ea7ca723dcd1e58343c6bf5f3f09cea0cdbbf00 |
+| tools | introspect_graphql_schema | query | df71bf519a32b0b8e76710c33d12a47d11c093bcc2bfecd1e7a04bb345c38f1d |
+| tools | learn_extension_target_types | description | d3b5c3293af706e74c9660301acb2e711530c97a7209ce3f40d4139453d2dbe0 |
+| tools | learn_extension_target_types | api | 020bba209b3e40636585ee28353121ec237df37f856c33d2f0da686466ad12b9 |
+| tools | learn_extension_target_types | conversationId | 15fe39c4a6a174baef0154b3ca3852df599e5dc3ca53b11a408ce57a7a27e3ae |
+| tools | learn_extension_target_types | extension_target | 002ceb792dd961c740697cf1f548e02cc3a8e3c0cda87b4c2bcd61faa319b3b5 |
+| tools | learn_shopify_api | description | 88a845cf9e2216a698b3c9a6331b0d99dfd599ca8b847de597132fafff855d84 |
+| tools | learn_shopify_api | api | 020bba209b3e40636585ee28353121ec237df37f856c33d2f0da686466ad12b9 |
+| tools | learn_shopify_api | conversationId | 88075add27481ae31f608d1e7f4c39455522dd99f2d25dac00e2f1a714e6f324 |
+| tools | search_docs_chunks | description | 71b635f91481bb590101c163904f8c3b548425df09ff329e5a203a37023d366b |
+| tools | search_docs_chunks | conversationId | 15fe39c4a6a174baef0154b3ca3852df599e5dc3ca53b11a408ce57a7a27e3ae |
+| tools | search_docs_chunks | max_num_results | 52c464378da791f2bd8b5852648cb8b55d3b3a21213fbf5422dcceae1a92307c |
+| tools | search_docs_chunks | prompt | eb7cfc554f21b5a2cb77a094dd923a7ce2b5a4d9428f607506615f7a252c9871 |
+| tools | validate_component_codeblocks | description | 069ca4888909daff17f6e6195b4935f2afcd987a9bdb90ee59f404f31cdccdae |
+| tools | validate_component_codeblocks | api | 12ed4db1c15dd054b771a72292c3672dbc209d2bc85404b185df74520786f3b2 |
+| tools | validate_component_codeblocks | code | 65e344ba843f0537595e331a4002c3d99d4984f84e3b4bcb5196597421e71cf5 |
+| tools | validate_component_codeblocks | conversationId | 15fe39c4a6a174baef0154b3ca3852df599e5dc3ca53b11a408ce57a7a27e3ae |
+| tools | validate_component_codeblocks | extensionTarget | 1cf6682ec8af15afbc3a2a3ce557fbd86aebbd0c821457d30499ea2d577e2a93 |
+| tools | validate_graphql_codeblocks | description | 9f416005cfa1815c6f4c5b4ca418d03dbf0139024a10d63c0cc1f37b7e25627d |
+| tools | validate_graphql_codeblocks | api | f37a0336d2361b9614488a1cef99acbcd19b70856ebf161ac101360233a880fc |
+| tools | validate_graphql_codeblocks | codeblocks | 8a2dfbb017f6aa5dd4d15f16b2e39bf0436402fc33cde1052cc9bbee84d2431e |
+| tools | validate_graphql_codeblocks | conversationId | 15fe39c4a6a174baef0154b3ca3852df599e5dc3ca53b11a408ce57a7a27e3ae |
+| tools | validate_theme | description | a9bc7db19b94f9a1acbe028bfc1ee7c2cf6ec7522f046172cc514929152949ee |
+| tools | validate_theme | absoluteThemePath | 44d62c86a7d837e7adfec4d5d75ec3183e805ceeac1d39b48a0c1dc3aea13365 |
+| tools | validate_theme | conversationId | 15fe39c4a6a174baef0154b3ca3852df599e5dc3ca53b11a408ce57a7a27e3ae |
+| tools | validate_theme | filesCreatedOrUpdated | 8980f3aa6f6a1508ac1c0ace0e84e33674195e4e39540b7927ebecdaa3e29643 |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "2.0.1",
+  "version": "2.0.13",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"5ca904c08386d2cdca078645e9aa811b22983c6818536cd78cf41e9257da1887","reason":"The toolset demonstrates good documentation quality with clear, descriptive names and adequate parameter documentation. Most descriptions explain functionality and include helpful context about AWS Location Service integration. However, descriptions vary in completeness - some are comprehensive while others are brief. The calculate_route tool stands out with detailed parameter explanations in both description and schema, while others like get_place could benefit from more context about when to use them versus alternatives.","score":"B"},
+  "rating": {"hash":"9987f8a0f48790b1517f6307650cb279fa0b0a87e6e3073fdfecdcc703d41d53","reason":"The toolset provides clear, descriptive tool names and adequate descriptions that cover functionality and usage context. Parameter documentation is generally good with clear purposes and constraints. However, some tools have overly detailed descriptions that could be more concise, and the calculate_route tool embeds documentation in the description field rather than using proper parameter descriptions. The waypoints parameter lacks specific structure details despite being complex.","score":"B"},
   "resources": {
-    "tools": 7,
+    "tools": 8,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

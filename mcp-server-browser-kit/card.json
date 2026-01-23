@@ -13,12 +13,12 @@
   "scope": "native",
   "mutitenant": false,
   "runtime": "node",
-  "version": "5.0.2",
+  "version": "6.0.0",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"085d77ac7cb3f81bd64e94a0293733a58a6f24a3b70703dd19bf6c8626111587","reason":"Tool names are highly specific and intuitive with clear functional indicators. Descriptions are comprehensive (3-4+ sentences each) with detailed explanations of functionality, usage context, workflow guidance, and manifest version limitations. All parameters have clear, complete descriptions explaining purpose and expected values. Documentation proactively addresses workflow sequences, browser compatibility, and common usage patterns, making it exceptionally clear when and how to use each tool.","score":"A"},
+  "rating": {"hash":"3526c12d7244d6144fea07b9cc3bb16f3a56181aa10a54c646bf0bda2cdbe6ff","reason":"Good documentation with comprehensive descriptions and clear workflow guidance. Tool names are descriptive and purposeful. Descriptions effectively explain functionality, usage context, and include helpful workflow steps. Parameter documentation is clear with appropriate examples. Minor deduction for some overly verbose descriptions with excessive emoji usage, but overall maintains high clarity and completeness across all tools.","score":"B"},
   "resources": {
-    "tools": 11,
+    "tools": 14,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

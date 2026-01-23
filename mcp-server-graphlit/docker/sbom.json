@@ -244,7 +244,7 @@
     },
     {
       "name": "ingestDropboxFiles",
-      "hash": "5d666eaca0023423df8e382a615b3a9ab0d86e69a094aefeb076f520d5f92a4e",
+      "hash": "c057477c6408d23d20b402150c9213a3db40e1ed7625bbeca8472e2a03bd00fb",
       "params": [
         {
           "name": "path",
@@ -713,12 +713,64 @@
       ]
     },
     {
+      "name": "listBoxFolders",
+      "hash": "b2b651f853b5612803c258a011b1ca5690c896fcc6080c82b4f05c3afa10db33",
+      "params": [
+        {
+          "name": "folderId",
+          "hash": "b54a9a738938c68e2e011c53a9078d3da4b0b7da1b2a33bee3226cc86ca89c0a"
+        }
+      ]
+    },
+    {
+      "name": "listDiscordChannels",
+      "hash": "8e3a82d5a623aef459515aa3df2b564a2c0d23ad02b20757a51a423fe23a4ffd",
+      "params": [
+        {
+          "name": "guildId",
+          "hash": "77b984e4197744e9a1685de95e232476aabfddfcea24f10bfbe1f0263b2b00f4"
+        }
+      ]
+    },
+    {
+      "name": "listDiscordGuilds",
+      "hash": "8f5fc7f150cf5ad4cafbb46fa6bc06f89ea019a9cc6e3b617be85e03171e6dd6"
+    },
+    {
+      "name": "listDropboxFolders",
+      "hash": "47078d2bb92c3d1e5e4036b3dbb1a78e17f26c04c38c54ac50eade9bd6540eb9",
+      "params": [
+        {
+          "name": "folderPath",
+          "hash": "572dc031619de69a378ee52b19633a31c1fad9365ff21f59a7c6d917bcfbe77d"
+        }
+      ]
+    },
+    {
+      "name": "listGoogleCalendars",
+      "hash": "5813605154d4bbf8eaff216bb53d5a6baae6516fcf54e1754393f23a77c50b5c"
+    },
+    {
       "name": "listLinearProjects",
       "hash": "9c244f71037d658a2cdf9a36d42c9ff66e576bcc31c9f32ca2175f6c21b1fc34"
     },
     {
+      "name": "listMicrosoftCalendars",
+      "hash": "d1c7b17c5c02d93b7ad63c7294a302960a548893e2c6982346408d8aba893700"
+    },
+    {
       "name": "listNotionDatabases",
       "hash": "c30d12285808cee27892b6623d2c40086e580a42b22811f90f44dce51b9ff9f9"
+    },
+    {
+      "name": "listNotionPages",
+      "hash": "f05f34b7e1e6ed5a425f6187380211b7f41b28f5f80d0acdb299337330ea4476",
+      "params": [
+        {
+          "name": "databaseId",
+          "hash": "9f6c1f146cb1886e02435a44864a979282705b45094329ce73e15da8fc3ef3dc"
+        }
+      ]
     },
     {
       "name": "listSharePointFolders",
@@ -1080,7 +1132,7 @@
     },
     {
       "name": "webSearch",
-      "hash": "08fbd6292e1280c788b5f30929d74295b7a15bb471fccc3f1e19e5b6eaf144f2",
+      "hash": "2d41ddade88af6dbb0cbd904b1985bd19e8679f552cbe151ef62815897c8413c",
       "params": [
         {
           "name": "limit",
@@ -1092,7 +1144,7 @@
         },
         {
           "name": "searchService",
-          "hash": "09313f5cb737c5e7be7a7c6a023d0d143c626b4f1b570741dc2a0f0df91d50e1"
+          "hash": "8dcf11f8125b6108e89b36ddbad8d7c2019450d8d7a2f89806fb45d21c45b656"
         }
       ]
     }

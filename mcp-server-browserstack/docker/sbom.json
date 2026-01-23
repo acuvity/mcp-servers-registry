@@ -1,6 +1,26 @@
 {
   "tools": [
     {
+      "name": "accessibilityExpert",
+      "hash": "86d84ea32f3f372eb2f6131bedae2c5e1cb5d55832e88400f39e9d66d0bbb299",
+      "params": [
+        {
+          "name": "query",
+          "hash": "b9fd2dc351de3be69acd1403f6af9f3257374a1d63829ddaa6d5b58ea2348787"
+        }
+      ]
+    },
+    {
+      "name": "addPercySnapshotCommands",
+      "hash": "acea96f4e7be2c28a7d61bef83e7d1331d5a1294f343d9963963e726a283024e",
+      "params": [
+        {
+          "name": "index",
+          "hash": "4d0f3f55b80ce5e9bd99e3aee5633d60502e174047a3f9f35421f3893421d513"
+        }
+      ]
+    },
+    {
       "name": "addTestResult",
       "hash": "cc2109318c2f2f439c042097bd218c02441beaba6763a50f777b45ff1f9ee532",
       "params": [
@@ -15,6 +35,44 @@
         {
           "name": "test_run_id",
           "hash": "dd6796e0611b2656380232abc144a619b1b74bf20bf3b22fb68f235335dfdbf0"
+        }
+      ]
+    },
+    {
+      "name": "createAccessibilityAuthConfig",
+      "hash": "8874700cb4f9e4159cf118144349f890789679a8c3204078ab6da9f8525315d0",
+      "params": [
+        {
+          "name": "name",
+          "hash": "b0a87e027d7e9a6b4ec1f7121df3c14a080a4a56ce251bb1f3c049e64ba3d2e9"
+        },
+        {
+          "name": "password",
+          "hash": "f0922cd4793efcc12ac430ca424c83b8a63d7aa59a95e165d79bd50db4601286"
+        },
+        {
+          "name": "passwordSelector",
+          "hash": "8caa31029e66d24882f7f0dd21241fb0947a1d81e56adbfe7f241de1c3d42cb1"
+        },
+        {
+          "name": "submitSelector",
+          "hash": "f69bba65a84d91839ef01eaaeea1dad2d35edd0f71fc933181d54d0dd4ef5bf4"
+        },
+        {
+          "name": "type",
+          "hash": "dfdf75f9c17337de171291b2ebabf6b70751c1c1a2418556fe0417e8e94e4071"
+        },
+        {
+          "name": "url",
+          "hash": "d69eee5cae201b38bd3ae7db74eac69736108851931674a0a312b3a49a0f9974"
+        },
+        {
+          "name": "username",
+          "hash": "b2a34606c2ee6df5cbfa630e5b78f1d8dc69182722d7d5afb99c41b6eb926dbe"
+        },
+        {
+          "name": "usernameSelector",
+          "hash": "75d9a6d8c48f4beab10fa46867d8362c72e090df6b3d62b709180aad70908586"
         }
       ]
     },
@@ -91,6 +149,10 @@
       "hash": "f79753f1cbee77f8ec15ef0b0772234e89d65c986bd6b82be0d5333d6ec5388e",
       "params": [
         {
+          "name": "automation_status",
+          "hash": "ce2541a99bece8f5636f5d955d837557c429876641811d937b0db7ee04ff7751"
+        },
+        {
           "name": "custom_fields",
           "hash": "427a06f888b38e7210021bc459b99e7d5604fd42aa1b7ed81a99c4b7750510fb"
         },
@@ -161,6 +223,46 @@
       ]
     },
     {
+      "name": "expandPercyVisualTesting",
+      "hash": "a1b248168b4856dd16bb540f85eddb8c1bd8fa0b2397b0aeffa7a60fe598fa02",
+      "params": [
+        {
+          "name": "filePaths",
+          "hash": "241a623255f5e687b2eaaaeaae71301de3bc26d50f364b5a6738d87e41040f3e"
+        },
+        {
+          "name": "folderPaths",
+          "hash": "af4a360a53b9b2b49568200bdc77052f6d4549ad90e903c38caf44004abc79b8"
+        },
+        {
+          "name": "integrationType",
+          "hash": "18e46bbd00a50bd9d8d16c93653dec46948b74aa4222f5c881fdeb2e9eb2a386"
+        },
+        {
+          "name": "projectName",
+          "hash": "2eeac88ede3e647aefd0719de8b39c41ef3cfbb8d587ca9b5a1e691d36b3237b"
+        }
+      ]
+    },
+    {
+      "name": "fetchAccessibilityIssues",
+      "hash": "e176e7e1b9e2aae79f396e82e292a7267169d67c1a0a7967e36a7c47c28d9613",
+      "params": [
+        {
+          "name": "cursor",
+          "hash": "86732ae3449318375d99c4aec25f74c31ce8396268ab3a723ef0837571378887"
+        },
+        {
+          "name": "scanId",
+          "hash": "51ffc24ea01453921b93f1b34a3d00f062547eecb9e253ad317cf34a8fcd09ac"
+        },
+        {
+          "name": "scanRunId",
+          "hash": "104f0f61a57edfba95e696de03b82ac2e2de89c8646e4587c16c6f5444ddc3ff"
+        }
+      ]
+    },
+    {
       "name": "fetchAutomationScreenshots",
       "hash": "077697d1de82318656d57ab7020073e07d0483261ef18c23d0eb8dd90b93c43e",
       "params": [
@@ -175,12 +277,66 @@
       ]
     },
     {
+      "name": "fetchBuildInsights",
+      "hash": "5ca3a18d52b77782c4c1f54f74635e80faedac43e277740e4831429525dcae5c",
+      "params": [
+        {
+          "name": "buildId",
+          "hash": "706a2d20ebb2b878acbceb5904364d6e0041cdfb12b5025181a5309bdf3f9b59"
+        }
+      ]
+    },
+    {
+      "name": "fetchPercyChanges",
+      "hash": "295aaebfd2021db931aa635bf2f250d62333cc3400632dba8f6dae645d16e43c",
+      "params": [
+        {
+          "name": "project_name",
+          "hash": "b9f33c33fec26e06c29afc9f32b6d60e0dbd5629eff5ede15d932512b73a9bd6"
+        }
+      ]
+    },
+    {
+      "name": "fetchRCA",
+      "hash": "ce1ec56ff718356febf26475a6cb421d6128fc3182a3b38b4928f9ce16eee4e2",
+      "params": [
+        {
+          "name": "testId",
+          "hash": "d07d148bdca50d569926ca49a67f1a7f69e12e3a51f193aba8a8d47db0260103"
+        }
+      ]
+    },
+    {
       "name": "fetchSelfHealedSelectors",
       "hash": "90260e3fb5a7f53c23ffd7718635ccc4d2b12f173fb2855c730087ab40a4a768",
       "params": [
         {
           "name": "sessionId",
           "hash": "faf61902787c70137dfbc121511ed7d9b7e27502bfdf5d1125f6efd5d3031a58"
+        }
+      ]
+    },
+    {
+      "name": "getAccessibilityAuthConfig",
+      "hash": "385dcb32d42b0c0c08b494e3e6b13847c2037cd2f80ee68112a5423d1eb3872d",
+      "params": [
+        {
+          "name": "configId",
+          "hash": "844291ec23cf934ecee3e5686d2b89bd91650556686786f56d4a5ef7840dffd6"
+        }
+      ]
+    },
+    {
+      "name": "getBuildId",
+      "hash": "7b7c8a539e0c45efa455702d1d3a3c41b67596537227da58a80126caeb32fba8",
+      "params": [
+        {
+          "name": "browserStackBuildName",
+          "hash": "12a6b595abbdccb873326ebba46860c3b394b1051ac2d1d4bcae9760b696efa8"
+        },
+        {
+          "name": "browserStackProjectName",
+          "hash": "d5c9c5adf292f49dc30a5e4678643456aefbf15656530f59431aab7acb1a5acf"
         }
       ]
     },
@@ -233,6 +389,24 @@
       ]
     },
     {
+      "name": "listTestFiles",
+      "hash": "fdd10518cde068aa66f46a90fa9bc43d095b70804f6edc83eac2d45153ed02ae"
+    },
+    {
+      "name": "listTestIds",
+      "hash": "1ff9ad34ce65a55d9baa5ebafe13049556757b6e516f9b51c5510165a7ec59d5",
+      "params": [
+        {
+          "name": "buildId",
+          "hash": "0208789f7b69c217a073d6f7677f2868b48ee152562fe62c73a34423482b2c97"
+        },
+        {
+          "name": "status",
+          "hash": "91b1d05851d2bd328b554a3ae64d176662cee009216199fc49ece8a8fe4ee9a9"
+        }
+      ]
+    },
+    {
       "name": "listTestRuns",
       "hash": "9deada7b36628686538fab266b3955e84eb3f95c2cadb7b84641510d2f985c40",
       "params": [
@@ -243,6 +417,42 @@
         {
           "name": "run_state",
           "hash": "2b4c984fc93afed3efceb0b41af2429aa7cd9d4e2baba18bdd57310f870eeb98"
+        }
+      ]
+    },
+    {
+      "name": "managePercyBuildApproval",
+      "hash": "20bac6e8c9684e9d738b2b5c11514e270b8bdcb5ea5db5e706951228f6ecafff",
+      "params": [
+        {
+          "name": "action",
+          "hash": "e323f7b614f7162eec6f51915970fd43e1db741ff6bc55a415b587c445c173a7"
+        },
+        {
+          "name": "buildId",
+          "hash": "aa3be2f7b1261209d7f74cf961c5634c123cb64412f1b4d2f237b6c395bf13d2"
+        }
+      ]
+    },
+    {
+      "name": "percyVisualTestIntegrationAgent",
+      "hash": "2ad1accb9c2d44008e681d5ece0eddf40b1c9424e7c38c23dd1a106b8f9245aa",
+      "params": [
+        {
+          "name": "filePaths",
+          "hash": "241a623255f5e687b2eaaaeaae71301de3bc26d50f364b5a6738d87e41040f3e"
+        },
+        {
+          "name": "folderPaths",
+          "hash": "af4a360a53b9b2b49568200bdc77052f6d4549ad90e903c38caf44004abc79b8"
+        },
+        {
+          "name": "integrationType",
+          "hash": "18e46bbd00a50bd9d8d16c93653dec46948b74aa4222f5c881fdeb2e9eb2a386"
+        },
+        {
+          "name": "projectName",
+          "hash": "2eeac88ede3e647aefd0719de8b39c41ef3cfbb8d587ca9b5a1e691d36b3237b"
         }
       ]
     },
@@ -265,6 +475,32 @@
         {
           "name": "desiredPlatformVersion",
           "hash": "a6ec6d3f7fb930f84566a347db05834ccfb042d0275afbffe67740880f448a1a"
+        }
+      ]
+    },
+    {
+      "name": "runAppTestsOnBrowserStack",
+      "hash": "5865129af27a369b5664e1c137ae120834b9d8e4acc26caed5de149f760e67bd",
+      "params": [
+        {
+          "name": "appPath",
+          "hash": "560924a3c4cacb2871596afe5c95ac0ae8275f137cdb32633098a39e8f91309b"
+        },
+        {
+          "name": "detectedAutomationFramework",
+          "hash": "992849219f8b596e2d7b8ca0432342b88cb8dfbdd4a0b2c9fc0b6b445e9720cf"
+        },
+        {
+          "name": "devices",
+          "hash": "e9c59ac7ef73833d2b312be2acf00ca8c579b79cf03c77adfa59e9028fda42ab"
+        },
+        {
+          "name": "project",
+          "hash": "cee150eaebe1a252ca303f6139ad065d1985de8bef0245db8ca7991ffedc0543"
+        },
+        {
+          "name": "testSuitePath",
+          "hash": "4c768cdcc8ffe20f7f937b5c99dd6f64a0bf7bf061ebbc8ff36765c544b468d1"
         }
       ]
     },
@@ -303,24 +539,64 @@
       ]
     },
     {
-      "name": "runTestsOnBrowserStack",
-      "hash": "475f62c3969e1060fb936f8398b780cb5f713e9de99bca9cb00b24488f418c30",
+      "name": "runPercyScan",
+      "hash": "f5da7aed8f322a33ceb7f4309604f6cfaac03e6feb40483db180d4cfa56287a0",
       "params": [
         {
-          "name": "desiredPlatforms",
-          "hash": "681270cbcac1cce333e6026103a2042b90987f3227c648cb180afcfa5b360f8f"
+          "name": "integrationType",
+          "hash": "5a166815338471d6234c9c80f53562e180adf7cd882c738b08f7f8f2d9b2933b"
         },
         {
-          "name": "detectedBrowserAutomationFramework",
-          "hash": "d608ae51766a4ab0852a8a0526a5ae7ecd1f2df6c3017052d51875f9d6cd1c96"
+          "name": "percyRunCommand",
+          "hash": "bd785655bb82624fd7498c4b0cb4d93b0c72e995584cd75d02775d4b034c94a3"
+        },
+        {
+          "name": "projectName",
+          "hash": "cde30e9d9bc784015735fd5589d9d252084cf6496afbf21139630282c2836e25"
+        }
+      ]
+    },
+    {
+      "name": "setupBrowserStackAppAutomateTests",
+      "hash": "ba9924788f7fc2de0ec3e4132f7c668d4a273d9f5fb860369f6224ba193617af",
+      "params": [
+        {
+          "name": "appPath",
+          "hash": "db14432d45fcc0fcfdcf0949bb582fd263fbee01758fb84b2432752238e948bd"
+        },
+        {
+          "name": "detectedFramework",
+          "hash": "9411fec7b53830609aee5e8f96b36ed468af0ae1bd2679224a01f664dd5c5931"
         },
         {
           "name": "detectedLanguage",
-          "hash": "bbc97bcd2aa36a106b9043a873898777cf56428e0ba5a40b53f4275a06a1c6ed"
+          "hash": "16e185865e75c915256d3cfcc10a175f56b72174102005044bbf410df568ab03"
         },
         {
           "name": "detectedTestingFramework",
-          "hash": "b8e44a5be64633d381132cf247b0504defe89a8aa724f58f7b92b2e9220e14fc"
+          "hash": "c74ea255228631d14502a45b7ea4e7499aa1fa2c7b03fb38fdba4a1f1f251d66"
+        },
+        {
+          "name": "devices",
+          "hash": "e9c59ac7ef73833d2b312be2acf00ca8c579b79cf03c77adfa59e9028fda42ab"
+        },
+        {
+          "name": "project",
+          "hash": "cee150eaebe1a252ca303f6139ad065d1985de8bef0245db8ca7991ffedc0543"
+        }
+      ]
+    },
+    {
+      "name": "setupBrowserStackAutomateTests",
+      "hash": "3e7683ab2c2417bed4667033cd2e8e87eea86322f23b8e383823ea15bde90a58",
+      "params": [
+        {
+          "name": "devices",
+          "hash": "6eef5e63e0038a4137cf1bdf3580aa642bb9f6ce7933fb78ed6d8302aa7993fd"
+        },
+        {
+          "name": "projectName",
+          "hash": "cfab53689431e2db5d7ac73ad9bb76f6798d9da813bbcf71a47c77400be55901"
         }
       ]
     },
@@ -328,6 +604,10 @@
       "name": "startAccessibilityScan",
       "hash": "5c3a401cff7df900c2acc02fbb949568de1a52ba74e808767f896860fd47bbc2",
       "params": [
+        {
+          "name": "authConfigId",
+          "hash": "8d4b64138116aa336b651c14e17a6257f8982d6b67e981cd8eb5e9f47eefa9d0"
+        },
         {
           "name": "name",
           "hash": "097628d59fa3cd14c2579fd01f92e133fab7e8f6ba709753610c19c22285a434"
@@ -389,5 +669,16 @@
       ]
     }
   ],
-  "prompts": []
+  "prompts": [
+    {
+      "name": "integrate-percy",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "params": [
+        {
+          "name": "project_name",
+          "hash": "c3a563882c0fe67f9d15a4e90a6d01fb269ffd4e283666335017262e60c5034a"
+        }
+      ]
+    }
+  ]
 }

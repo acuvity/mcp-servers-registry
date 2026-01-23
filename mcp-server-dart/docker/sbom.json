@@ -34,7 +34,7 @@
     },
     {
       "name": "create_task",
-      "hash": "86105de7f2f4b65c5722494a8bc03b289f45ce29f0885a9289b074a33f50da47",
+      "hash": "92b3e560012ab12f99711f99ef176da36d217a92b2ae752e157c2c623ef50b75",
       "params": [
         {
           "name": "assignee",
@@ -43,6 +43,10 @@
         {
           "name": "assignees",
           "hash": "b3936aba1f174431e90c9d60e20ec5146d2200e51fb7eecabbf94002551823c2"
+        },
+        {
+          "name": "customProperties",
+          "hash": "675d9d346d17f2245ccf4f2b229cd59d95aa478250eb7bf7b1f2868860229039"
         },
         {
           "name": "dartboard",
@@ -66,7 +70,7 @@
         },
         {
           "name": "size",
-          "hash": "640ad4fdcd185fef7b3126e4f57a0cae606da1598628fe85fcf44aa4e06132fa"
+          "hash": "d9e55e94ee68006d6880c40e7732a231e51bcc5d2919c61f9aa672db3618369c"
         },
         {
           "name": "startAt",
@@ -81,8 +85,16 @@
           "hash": "12cb13942f1eefa25260f7af43bc280295e46a6d44837290f34d0455a9081571"
         },
         {
+          "name": "taskRelationships",
+          "hash": "05f5f06e1812eaedac119d2f8e5a6e3ee607551e9c8273a41c9af25af23875f9"
+        },
+        {
           "name": "title",
           "hash": "227c4b8ffe9734ef427c8a458dc90f40e0fe23ed742c406ef750d57badeca7a4"
+        },
+        {
+          "name": "type",
+          "hash": "ed360c9b1f537b7dc6c515aed63e80c075b100322bdee3c439159787a59e905f"
         }
       ]
     },
@@ -108,7 +120,17 @@
     },
     {
       "name": "get_config",
-      "hash": "c76d1adcac4431aa70f7a6fd9644dd31d4b7997e1703178ef6e4f1a1b50750cb"
+      "hash": "845f425a07237749ed9337378007f7cbf97c049f165d3981c88e31534f752d57"
+    },
+    {
+      "name": "get_dartboard",
+      "hash": "a3813283f67d57323790599676fc309e00a97c6ccccd47845f7ce6f366a3ba83",
+      "params": [
+        {
+          "name": "id",
+          "hash": "809ba99c7aeec0b09e2b5b337234bb553037ee0f73133b5a12166ee32efab9d0"
+        }
+      ]
     },
     {
       "name": "get_doc",
@@ -121,8 +143,18 @@
       ]
     },
     {
+      "name": "get_folder",
+      "hash": "b67299f5afbe7c4ce72f8dcf5bcf960cf5ae588ab258b7645ab507d25b610a68",
+      "params": [
+        {
+          "name": "id",
+          "hash": "57e52f66e9e5389196f34a939f1d3a3b31461fbc840f232aca7b2346209bb11e"
+        }
+      ]
+    },
+    {
       "name": "get_task",
-      "hash": "a9388e5a4e7ba546c128d7a24f0dc0f7a26dcce56cd076f85351ccd07507afcf",
+      "hash": "5c7a230ee9e968e0ac5cdac7ea58aff63debfe59721a658f3e65643068efefb9",
       "params": [
         {
           "name": "id",
@@ -131,32 +163,42 @@
       ]
     },
     {
+      "name": "get_view",
+      "hash": "0439c5f45eeb6d8129b68736da88c7e47ea618ae04f428823b543f55f06bb183",
+      "params": [
+        {
+          "name": "id",
+          "hash": "67eede71987004d3f8a74d74f796683ff2dcba846ceae2961b73b7fd8b3d00ff"
+        }
+      ]
+    },
+    {
       "name": "list_docs",
       "hash": "e065ce35eaf56e76ab337c4ca52aea287a1b53359ae8c8dff87cc101405b6436",
       "params": [
-        {
-          "name": "duids",
-          "hash": "273c161c10e76cb90173c32b8eda174f96f767b7ca59ec9439c667b935933001"
-        },
         {
           "name": "folder",
           "hash": "77ad23935380f926cc9ed1360f3c8a48e0b4d5ece8fd83b6b7f9de147e8140b8"
         },
         {
-          "name": "folder_duid",
+          "name": "folderId",
           "hash": "68454b6e7f309a58bb23f524036275414be192bc5a47e8a6b288912ea1ce2470"
         },
         {
-          "name": "in_trash",
-          "hash": "109c580129edd45e9db0bc8397f9c18b9418c9087123bac10a65453d22930d23"
+          "name": "ids",
+          "hash": "273c161c10e76cb90173c32b8eda174f96f767b7ca59ec9439c667b935933001"
         },
         {
-          "name": "is_draft",
-          "hash": "4eca8610f40002319534f91164cef94582afe8c78289846ac041cafeda20be8d"
+          "name": "inTrash",
+          "hash": "109c580129edd45e9db0bc8397f9c18b9418c9087123bac10a65453d22930d23"
         },
         {
           "name": "limit",
           "hash": "ac9d79bc23e286af13eb43e132623de430169d08776f2069fe25071f010de800"
+        },
+        {
+          "name": "o",
+          "hash": "d9cffb172e451b59842c758e04784278078c764d3c1240dcb3f8c8d5e68cbe72"
         },
         {
           "name": "offset",
@@ -177,52 +219,20 @@
       ]
     },
     {
-      "name": "list_tasks",
-      "hash": "c70368a4d7689bd93adb8daad25687f6862ac7768024487b64ddad7a691145d7",
+      "name": "list_task_comments",
+      "hash": "24538d73cc133faeaa7c9e6b70044056a44f75e0642d38aeb9df0114dc9b18e9",
       "params": [
         {
-          "name": "assignee",
-          "hash": "a5fd211f871a899c6b9194c0321692b7805725ef1073e3ed36b408792b1fa671"
+          "name": "author",
+          "hash": "913d2445117a511a28960f5b68a08ebecf27f17c375a54800ae3eaab13a83cc6"
         },
         {
-          "name": "assignee_duid",
-          "hash": "ef395ad9357aad1c0935b185bc4fb0a0598858110d05efabd3735484ca5221b9"
+          "name": "authorId",
+          "hash": "b81ac8356618a0d2a06ee943d39dec2571fb791b41793089b77eeeec18a6988d"
         },
         {
-          "name": "dartboard",
-          "hash": "b2185e89450d9791c0f31fc1c0d33cf33197c20f7d240464447529b953f00f47"
-        },
-        {
-          "name": "dartboard_duid",
-          "hash": "d9b66288a97d66a6486eda7c03b14969acb75ccd991249c705098112948d6ceb"
-        },
-        {
-          "name": "description",
-          "hash": "c963ada0d48c9816f49908a49c8df5cc102691d448c28ad6cdbe4540eaa43cd4"
-        },
-        {
-          "name": "due_at_after",
-          "hash": "f134726aacd5a93ed1f8a1491c3a3deb1929fe370cbb80e90b4036b86cf684c5"
-        },
-        {
-          "name": "due_at_before",
-          "hash": "4fd8b77ffdd64af3d862a81e3c9097b24c383788d96a293b9d37f008de9fca72"
-        },
-        {
-          "name": "duids",
-          "hash": "273c161c10e76cb90173c32b8eda174f96f767b7ca59ec9439c667b935933001"
-        },
-        {
-          "name": "in_trash",
-          "hash": "109c580129edd45e9db0bc8397f9c18b9418c9087123bac10a65453d22930d23"
-        },
-        {
-          "name": "is_draft",
-          "hash": "4eca8610f40002319534f91164cef94582afe8c78289846ac041cafeda20be8d"
-        },
-        {
-          "name": "kind",
-          "hash": "8e976eb25c3672f4fe60074f014ae04299a9aab06e65589d92c66a784e380df4"
+          "name": "ids",
+          "hash": "446f185fe4cfe00fa613a7581303109c6efb40732592267164980fe716c41a6c"
         },
         {
           "name": "limit",
@@ -233,6 +243,88 @@
           "hash": "2106ec42a90be7c699ecbeef51c4569f9d6373df685bebab58a7cd9891558a4d"
         },
         {
+          "name": "parentId",
+          "hash": "9661022164ed9f99d21a1256a935d794b63c763cf3e1df762859842958d0ded9"
+        },
+        {
+          "name": "publishedAtAfter",
+          "hash": "a21a2ba6c618b5773b77aee96cfe765126f4256d4e8ff96d6e08e5a4cb39d15c"
+        },
+        {
+          "name": "publishedAtBefore",
+          "hash": "6b79679d414dd95db179a31469b8d33fffb11155630c650464b35ebc1e393065"
+        },
+        {
+          "name": "task",
+          "hash": "0a450bc20927b92575688e1f54dfa08d6f49e6fa6fae77a450f80ca966215977"
+        },
+        {
+          "name": "taskId",
+          "hash": "4735d6a16e826cb6eaf735f663ffa971825de7c7fcb36b323475aedcfc887618"
+        },
+        {
+          "name": "text",
+          "hash": "7eb9dbb7203e7de46529900cb42da9ccd160bb077cbfcf3f568eaedfa786b678"
+        }
+      ]
+    },
+    {
+      "name": "list_tasks",
+      "hash": "c70368a4d7689bd93adb8daad25687f6862ac7768024487b64ddad7a691145d7",
+      "params": [
+        {
+          "name": "assignee",
+          "hash": "a5fd211f871a899c6b9194c0321692b7805725ef1073e3ed36b408792b1fa671"
+        },
+        {
+          "name": "assigneeId",
+          "hash": "ef395ad9357aad1c0935b185bc4fb0a0598858110d05efabd3735484ca5221b9"
+        },
+        {
+          "name": "dartboard",
+          "hash": "b2185e89450d9791c0f31fc1c0d33cf33197c20f7d240464447529b953f00f47"
+        },
+        {
+          "name": "dartboardId",
+          "hash": "d9b66288a97d66a6486eda7c03b14969acb75ccd991249c705098112948d6ceb"
+        },
+        {
+          "name": "description",
+          "hash": "c963ada0d48c9816f49908a49c8df5cc102691d448c28ad6cdbe4540eaa43cd4"
+        },
+        {
+          "name": "dueAtAfter",
+          "hash": "f134726aacd5a93ed1f8a1491c3a3deb1929fe370cbb80e90b4036b86cf684c5"
+        },
+        {
+          "name": "dueAtBefore",
+          "hash": "4fd8b77ffdd64af3d862a81e3c9097b24c383788d96a293b9d37f008de9fca72"
+        },
+        {
+          "name": "ids",
+          "hash": "273c161c10e76cb90173c32b8eda174f96f767b7ca59ec9439c667b935933001"
+        },
+        {
+          "name": "inTrash",
+          "hash": "109c580129edd45e9db0bc8397f9c18b9418c9087123bac10a65453d22930d23"
+        },
+        {
+          "name": "isCompleted",
+          "hash": "2b0005f1ee7feff95bbfe018b740e3302d6caa0758a162f6fac24e26810ebe33"
+        },
+        {
+          "name": "limit",
+          "hash": "ac9d79bc23e286af13eb43e132623de430169d08776f2069fe25071f010de800"
+        },
+        {
+          "name": "offset",
+          "hash": "2106ec42a90be7c699ecbeef51c4569f9d6373df685bebab58a7cd9891558a4d"
+        },
+        {
+          "name": "parentId",
+          "hash": "35dc07396183bcd9214a1b5a16f9ff1cf72c71b89b2a1de1d85698e27da0d248"
+        },
+        {
           "name": "priority",
           "hash": "48b74b8f81c021ef7f3135288dc6c2f3ac0f15d6c0fa7ec4392d7fb6488efc62"
         },
@@ -241,11 +333,11 @@
           "hash": "e33e3e1f461724ec2a8f6729a86a241228ea766f60d582dd8a23921774b460df"
         },
         {
-          "name": "start_at_after",
+          "name": "startAtAfter",
           "hash": "64d65f4c927386dbceb7b64df8857eb77e9233622ca21b20481c11c0af76c1a9"
         },
         {
-          "name": "start_at_before",
+          "name": "startAtBefore",
           "hash": "acf5c3877b2fdfd280f2870afad08debbf3ffc111af01545a30ea0a13c8b6fee"
         },
         {
@@ -253,20 +345,28 @@
           "hash": "94d5a7703a8250de4c9e24b29839ffafa5d8477efb19c56ebce83470102e6212"
         },
         {
-          "name": "status_duid",
+          "name": "statusId",
           "hash": "418121f1618200d91044a6ef7be84f0c6fb43557511c3069baf8a65eed938fa2"
-        },
-        {
-          "name": "subscriber_duid",
-          "hash": "b2ce99868d686c5cf5bab858fad1c7fb75b248f8cfa8ad01ae300006ebfa9924"
         },
         {
           "name": "tag",
           "hash": "b9274474d0990cb9063843f21ebcb42a4ee74d5875e493412eddc64666ec93bc"
         },
         {
+          "name": "tagId",
+          "hash": "8e6937730a406a69a9cc394d8d4643d38cbadda4038c471863e7537529760504"
+        },
+        {
           "name": "title",
           "hash": "f03711f770b6fa4f885df4dec6475307cd0ca446b569b49fed44243abc6717f4"
+        },
+        {
+          "name": "type",
+          "hash": "f194a8921e478ffb4f9f495f775746c87220141521076bbaa3ccbfa9cebd39a7"
+        },
+        {
+          "name": "typeId",
+          "hash": "99a1498624a5ced7b16cd984e4cb9bf6119ea24d91609e81ede0cae34e7bd92e"
         }
       ]
     },
@@ -294,7 +394,7 @@
     },
     {
       "name": "update_task",
-      "hash": "5af5f13cc77b37174329796a57d6a98cf48ee4d123ace451ae6217bd59dc2968",
+      "hash": "7b936dd8e5e8e4e625eddfa9fd1d9b97ecb4ca8b8cd3918a35287f39846af657",
       "params": [
         {
           "name": "assignee",
@@ -303,6 +403,10 @@
         {
           "name": "assignees",
           "hash": "b3936aba1f174431e90c9d60e20ec5146d2200e51fb7eecabbf94002551823c2"
+        },
+        {
+          "name": "customProperties",
+          "hash": "675d9d346d17f2245ccf4f2b229cd59d95aa478250eb7bf7b1f2868860229039"
         },
         {
           "name": "dartboard",
@@ -330,7 +434,7 @@
         },
         {
           "name": "size",
-          "hash": "640ad4fdcd185fef7b3126e4f57a0cae606da1598628fe85fcf44aa4e06132fa"
+          "hash": "d9e55e94ee68006d6880c40e7732a231e51bcc5d2919c61f9aa672db3618369c"
         },
         {
           "name": "startAt",
@@ -345,8 +449,16 @@
           "hash": "12cb13942f1eefa25260f7af43bc280295e46a6d44837290f34d0455a9081571"
         },
         {
+          "name": "taskRelationships",
+          "hash": "05f5f06e1812eaedac119d2f8e5a6e3ee607551e9c8273a41c9af25af23875f9"
+        },
+        {
           "name": "title",
           "hash": "d8da4c4d3526af1a57622c424e319610776173949629e64383033f6f28dae876"
+        },
+        {
+          "name": "type",
+          "hash": "ed360c9b1f537b7dc6c515aed63e80c075b100322bdee3c439159787a59e905f"
         }
       ]
     }

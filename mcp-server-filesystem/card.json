@@ -13,12 +13,12 @@
   "scope": "native",
   "mutitenant": true,
   "runtime": "node",
-  "version": "2025.3.28",
+  "version": "2026.1.14",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"b98c05ea2263fbb845157f6e94253a37661a8fe5edcc7c49210ed381d0683b1d","reason":"Tool names are clear and intuitive, indicating purpose immediately. Descriptions are comprehensive (3-4 sentences) explaining functionality, use cases, and limitations including security boundaries. Parameters have clear descriptions with explicit constraints and purpose. Documentation addresses common scenarios and proactively explains security limitations with 'allowed directories' throughout.","score":"A"},
+  "rating": {"hash":"d6b528a56536fc8c38f5eac1cfb91a36309cab52217f94084171df3e8e39fae8","reason":"Good overall documentation with comprehensive descriptions that explain functionality, usage context, and key constraints. Tool names are clear and specific. Most parameters have adequate descriptions, though some could be more detailed (e.g., 'path' parameters lack format examples). The consistent mention of 'allowed directories' constraint and clear usage guidance elevate this above average, but minor gaps in parameter specificity prevent an A grade.","score":"B"},
   "resources": {
-    "tools": 11,
+    "tools": 14,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

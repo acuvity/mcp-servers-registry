@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -21,10 +21,10 @@
 # What is mcp-server-aws-serverless?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-aws-serverless/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-serverless/0.1.4?logo=docker&logoColor=fff&label=0.1.4)](https://hub.docker.com/r/acuvity/mcp-server-aws-serverless)
-[![PyPI](https://img.shields.io/badge/0.1.4-3775A9?logo=pypi&logoColor=fff&label=awslabs.aws-serverless-mcp-server)](https://github.com/awslabs/mcp/tree/HEAD/src/aws-serverless-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-aws-serverless/0.1.16?logo=docker&logoColor=fff&label=0.1.16)](https://hub.docker.com/r/acuvity/mcp-server-aws-serverless)
+[![PyPI](https://img.shields.io/badge/0.1.16-3775A9?logo=pypi&logoColor=fff&label=awslabs.aws-serverless-mcp-server)](https://github.com/awslabs/mcp/tree/HEAD/src/aws-serverless-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-aws-serverless/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-serverless&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-serverless%3A0.1.4%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-aws-serverless&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22--tmpfs%22%2C%22%2Ftmp%3Arw%2Cnosuid%2Cnodev%22%2C%22docker.io%2Facuvity%2Fmcp-server-aws-serverless%3A0.1.16%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** AI-powered tool for serverless development with AWS best practices and deployment guidance
 
@@ -43,110 +43,40 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-serverless/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-serverless/docker/policy.rego) that enables a set of runtime [guardrails](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-aws-serverless#%EF%B8%8F-guardrails) to help enforce security, privacy, and correct usage of your services. Below is list of each guardrail provided.
 
-### 🔒 Resource Integrity
-
-**Mitigates MCP Rug Pull Attacks**
-
-* **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
-* **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
-
-### 🛡️ Guardrails
-
-#### Covert Instruction Detection
-
-Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
-
-* **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
-* **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
-
-#### Sensitive Pattern Detection
-
-Block user-defined sensitive data patterns (credential paths, filesystem references).
-
-* **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
-* **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
-
-#### Shadowing Pattern Detection
-
-Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
-
-* **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
-* **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
-
-#### Schema Misuse Prevention
-
-Enforces strict adherence to MCP input schemas.
-
-* **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
-* **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
-
-#### Cross-Origin Tool Access
-
-Controls whether tools may invoke tools or services from external origins.
-
-* **Goal:** Prevent untrusted or out-of-scope services from being called.
-* **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
-
-#### Secrets Redaction
-
-Automatically masks sensitive values so they never appear in logs or responses.
-
-* **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
-* **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
-
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
-
-### Enable guardrails
-
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
 | Guardrail                        | Summary                                                                 |
 |----------------------------------|-------------------------------------------------------------------------|
+| `resource integrity`             | Embeds a hash of all exposed resources to ensure their authenticity and prevent unauthorized modifications, guarding against supply chain attacks and dynamic alterations of tool metadata. |
 | `covert-instruction-detection`   | Detects hidden or obfuscated directives in requests.                    |
 | `sensitive-pattern-detection`    | Flags patterns suggesting sensitive data or filesystem exposure.        |
 | `shadowing-pattern-detection`    | Identifies tool descriptions that override or influence others.         |
 | `schema-misuse-prevention`       | Enforces strict schema compliance on input data.                        |
 | `cross-origin-tool-access`       | Controls calls to external services or APIs.                            |
 | `secrets-redaction`              | Prevents exposure of credentials or sensitive values.                   |
+| `basic authentication`           | Enables the configuration of a shared secret to restrict unauthorized access to the MCP server and ensure only approved clients can connect. |
 
-Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
-
-## 🔒 Basic Authentication via Shared Secret
-
-Provides a lightweight auth layer using a single shared token.
-
-* **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
-* **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
-
-To turn on Basic Authentication, define `BASIC_AUTH_SECRET` environment variable with a shared secret.
-
-Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentication.
-
-> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
-> rotate credentials frequently and **always** use TLS.
-
-</details>
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference
@@ -173,11 +103,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.1.4`
+  - container: `1.0.0-0.1.16`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-aws-serverless:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-aws-serverless:1.0.0-0.1.4`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-aws-serverless:1.0.0-0.1.16`
 
 ---
 
@@ -630,7 +560,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (18)
+## 🧰 Tools (25)
 <details>
 <summary>webapp_deployment_help</summary>
 
@@ -1305,14 +1235,150 @@ Update the frontend assets of a deployed web application.
 | project_root | string | Project root | Yes
 | region | any | AWS region to use (e.g., us-east-1) | No
 </details>
+<details>
+<summary>esm_guidance</summary>
 
-## 📚 Resources (2)
+**Description**:
+
+```
+Create and configure AWS infrastructure for streaming data processing. Handles Kafka clusters (MSK), Kinesis streams, DynamoDB streams, SQS queues with Lambda functions. Sets up VPCs, security groups, IAM roles, and Event Source Mappings. Generates complete SAM templates for deployment.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| event_source | any | Type of event source for which to get guidance | No
+| guidance_type | any | Type of guidance: "setup" for initial configuration, "networking" for VPC/connectivity, "troubleshooting" for issues | No
+| networking_question | any | Specific networking question (used with guidance_type="networking") | No
+</details>
+<details>
+<summary>esm_kafka_troubleshoot</summary>
+
+**Description**:
+
+```
+Troubleshoot Kafka streaming issues and connectivity problems. Diagnoses MSK cluster connectivity, Lambda function timeouts, authentication failures, and network configuration issues. Provides step-by-step resolution guidance for Kafka and Lambda integration problems.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| issue_type | any | Type of troubleshooting: "diagnosis" for identifying issues, or specific issue type for resolution steps | No
+| kafka_type | any | Type of Kafka cluster: "msk" for Amazon MSK, "self-managed" for self-managed Apache Kafka, "auto-detect" to determine automatically | No
+</details>
+<details>
+<summary>esm_optimize</summary>
+
+**Description**:
+
+```
+Optimize streaming data processing performance and costs. Analyzes Lambda function configurations for Kafka, Kinesis, DynamoDB, and SQS event sources. Provides recommendations for batch sizes, concurrency, throughput, and cost optimization. Validates configurations and generates deployment templates.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| action | string | Optimization action: "analyze" for tradeoff analysis, "validate" for config validation, "generate_template" for SAM template generation | No
+| configs | any | ESM configuration to validate (required for validate action) | No
+| esm_uuid | any | ESM UUID for template generation (required for generate_template action) | No
+| event_source | any | Event source type for validation (required for validate action) | No
+| optimization_targets | any | Optimization goals for analysis (required for analyze action) | No
+| optimized_configs | any | Optimized configuration for template generation (required for generate_template action) | No
+| project_name | string | Project name for template generation | No
+| region | string | AWS region | No
+</details>
+<details>
+<summary>secure_esm_msk_policy</summary>
+
+**Description**:
+
+```
+Generate security-approved IAM policy for MSK Kafka ESM with scoped permissions. Uses pre-approved templates, not LLM generation.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| account | string | AWS account ID (12 digits) | Yes
+| cluster_name | string | MSK cluster name | Yes
+| cluster_uuid | string | MSK cluster UUID | Yes
+| consumer_group_pattern | string | Consumer group pattern (default: *) | No
+| function_name | string | Lambda function name that will process Kafka events | Yes
+| partition | string | AWS partition (aws, aws-cn, aws-us-gov) | No
+| region | string | AWS region (e.g., us-east-1) | Yes
+| topic_pattern | string | Kafka topic pattern (default: *) | No
+</details>
+<details>
+<summary>secure_esm_sqs_policy</summary>
+
+**Description**:
+
+```
+Generate security-approved IAM policy for SQS ESM with scoped permissions. Uses pre-approved templates, not LLM generation.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| account | string | AWS account ID (12 digits) | Yes
+| function_name | string | Lambda function name that will process SQS messages | Yes
+| partition | string | AWS partition (aws, aws-cn, aws-us-gov) | No
+| queue_name | string | SQS queue name | Yes
+| region | string | AWS region (e.g., us-east-1) | Yes
+</details>
+<details>
+<summary>secure_esm_kinesis_policy</summary>
+
+**Description**:
+
+```
+Generate security-approved IAM policy for Kinesis ESM with scoped permissions. Uses pre-approved templates, not LLM generation.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| account | string | AWS account ID (12 digits) | Yes
+| function_name | string | Lambda function name that will process Kinesis records | Yes
+| partition | string | AWS partition (aws, aws-cn, aws-us-gov) | No
+| region | string | AWS region (e.g., us-east-1) | Yes
+| stream_name | string | Kinesis stream name | Yes
+</details>
+<details>
+<summary>secure_esm_dynamodb_policy</summary>
+
+**Description**:
+
+```
+Generate security-approved IAM policy for DynamoDB Streams ESM with scoped permissions. Uses pre-approved templates, not LLM generation.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| account | string | AWS account ID (12 digits) | Yes
+| function_name | string | Lambda function name that will process DynamoDB stream records | Yes
+| partition | string | AWS partition (aws, aws-cn, aws-us-gov) | No
+| region | string | AWS region (e.g., us-east-1) | Yes
+| table_name | string | DynamoDB table name | Yes
+</details>
+
+## 📚 Resources (4)
 
 <details>
 <summary>Resources</summary>
 
 | Name | Mime type | URI| Content |
 |-----------|------|-------------|-----------|
+| streaming_infrastructure_setup | text/plain | streaming://infrastructure-setup | - |
+| natural_language_detection | text/plain | streaming://natural-language-detection | - |
 | template_list | text/plain | template://list | - |
 | deployment_list | text/plain | deployment://list | - |
 
@@ -1344,6 +1410,22 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | describe_schema | registry_name | 78f1777d1782064eea1dfc2992fa9159a51b9dbef024ac38be91858e4caaf8f8 |
 | tools | describe_schema | schema_name | 4cfa6170bce98464860d06368a98feab6d933a2c7f380f31662408ab5c8706ed |
 | tools | describe_schema | schema_version | 6d247cc948a5995933592db4694574a22ab341efab561208cfe2d61d10d2d32d |
+| tools | esm_guidance | description | 39a64540170a601251f235a110c988bad456f9700fac9e35c3e36dad29cea604 |
+| tools | esm_guidance | event_source | 64eec6b0573dcb286b2dbebaecdf3c8c33de1fe899ca75f18ad129041bb796aa |
+| tools | esm_guidance | guidance_type | 146ff5fc8ff65b4788327628ebccff2efbe6ea80bb4657355f5eedb7ad96cce0 |
+| tools | esm_guidance | networking_question | a1c7db8dbdca33c1f2cce5598a27919297b6e0a143cc734e04b4ccd71690001b |
+| tools | esm_kafka_troubleshoot | description | 5f00a7476a44469d292618a5a748767ba1a1739456c5051aa30984077215aa38 |
+| tools | esm_kafka_troubleshoot | issue_type | 55a24d29ba08a02a73a32b4302b911bf2f61313db3fe1e13f7936de5fc2db7ea |
+| tools | esm_kafka_troubleshoot | kafka_type | 47b6308ee696946058c785095dbf555db384442c071f4c934ef0e2434464e653 |
+| tools | esm_optimize | description | ba4583cfe924b1638367b034aafac204477cb645b2ff8ce82334b2e3cd5e616f |
+| tools | esm_optimize | action | 037457bfe233d1f2d57a0c5d6eb109468603bf279d7ef849e4ae853ab5b22f9e |
+| tools | esm_optimize | configs | 9114604f6b0676672936dcde784941a11fa937a9844be5ab7b9452cf0d2abce6 |
+| tools | esm_optimize | esm_uuid | df89f0e97fc10f2ce979fd1eecee0c5302c2d7131b7def763dd11dd79a0e3217 |
+| tools | esm_optimize | event_source | fb98210923068bb44b58306cb895606c40f1cef7eaf302b082794310f8474eb8 |
+| tools | esm_optimize | optimization_targets | 600516d8ed0a65f0e5f6b76e76d55dcd6916669a8cef7ef4836d401ddf425c7b |
+| tools | esm_optimize | optimized_configs | 0bdd06b0864782d363afc52d9b5734f855bce05c27701da95746e731460cbe74 |
+| tools | esm_optimize | project_name | f6265eaf2b38b100af91629ed97839300fbdb9c84529978a602ca2a574bc5d86 |
+| tools | esm_optimize | region | 295e09c8d1998aed6691091e86687dae8f64d731b4b60dbcb38480be775af3d3 |
 | tools | get_iac_guidance | description | 72e3655cfa09700e3dfde110d11498fff45aa2dd2c06a98932a2045fb167b5a3 |
 | tools | get_iac_guidance | iac_tool | 5a01b9cb921354234cf422740278ff3300d1cd91294288cbccfcd8be05f1ef38 |
 | tools | get_iac_guidance | include_examples | e61965b2496831f968479bc1132dea059f0421b953093488c678894f5968b6f6 |
@@ -1453,6 +1535,33 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | search_schema | limit | 55423e9379a6d453ee600ae3c361d3306cb42364ad5f79494d3c229ace4b3283 |
 | tools | search_schema | next_token | 6006bfa5ae9e07700d027d9d96b9f757b12fe2b7743d8093a7953d4017692f08 |
 | tools | search_schema | registry_name | cfabacc828fefa842e7a4cc65e3c67420b63d41f6b15cba00525d9b8e81a9d70 |
+| tools | secure_esm_dynamodb_policy | description | e6a90994946046fe2d46be6752294dc58fc29a27d1c1c8f39d7185d0112a2a71 |
+| tools | secure_esm_dynamodb_policy | account | 978a140a385bce75bda1cc585c47a6532ffdcadb2315246ae84f4088bc4905ea |
+| tools | secure_esm_dynamodb_policy | function_name | 0b9c3611cf0e71eaeecd11fbc6b23ca59be382924dc72e20ac2a05fc83970a3e |
+| tools | secure_esm_dynamodb_policy | partition | f2c85289d113b479549de808f247e77c54f355fbbdff49f9749e195f554e7671 |
+| tools | secure_esm_dynamodb_policy | region | 09d3d50b57172ebc0d1d6bea21abcf82a0e9d65b24b130d1356a5ac7d7093d7d |
+| tools | secure_esm_dynamodb_policy | table_name | 0455a897d84e6583c490e3376b99e927b167dd2a649bf966fc9461dd6f820bb2 |
+| tools | secure_esm_kinesis_policy | description | 464df1481c79ab2e240c5fe78ec6ac9afb7b9642a7064f5200abad6d24ffa3ec |
+| tools | secure_esm_kinesis_policy | account | 978a140a385bce75bda1cc585c47a6532ffdcadb2315246ae84f4088bc4905ea |
+| tools | secure_esm_kinesis_policy | function_name | 8c105c7792addc0c87a7c054aa04b213f08e7fc883dae2651608bbdf77294289 |
+| tools | secure_esm_kinesis_policy | partition | f2c85289d113b479549de808f247e77c54f355fbbdff49f9749e195f554e7671 |
+| tools | secure_esm_kinesis_policy | region | 09d3d50b57172ebc0d1d6bea21abcf82a0e9d65b24b130d1356a5ac7d7093d7d |
+| tools | secure_esm_kinesis_policy | stream_name | c1a0b165e0ee79abbe3fea04794b76bf7b7f6e03118b09b4076cdbded23823ac |
+| tools | secure_esm_msk_policy | description | 058e8c8fae13490ace0199c46765a14739505054340abcba9b6e1efcc435e206 |
+| tools | secure_esm_msk_policy | account | 978a140a385bce75bda1cc585c47a6532ffdcadb2315246ae84f4088bc4905ea |
+| tools | secure_esm_msk_policy | cluster_name | f883e10938c557dc7d3d0b27f8856da1f1e2bfdd414c20f71686a76ab2529468 |
+| tools | secure_esm_msk_policy | cluster_uuid | 6cbe30e49d82a83936606eca920c22527e94fa1ca87ba3d669f4570694b66203 |
+| tools | secure_esm_msk_policy | consumer_group_pattern | ad07b683d68548318e55728c8a0300c2d5da8e00c6ccf7e7303f55afd5ca5ee9 |
+| tools | secure_esm_msk_policy | function_name | 46b88f80c83416d2a73d346066f8b1641154b29200a9331b951690109f4108a1 |
+| tools | secure_esm_msk_policy | partition | f2c85289d113b479549de808f247e77c54f355fbbdff49f9749e195f554e7671 |
+| tools | secure_esm_msk_policy | region | 09d3d50b57172ebc0d1d6bea21abcf82a0e9d65b24b130d1356a5ac7d7093d7d |
+| tools | secure_esm_msk_policy | topic_pattern | 15a2b724bc1fe9828dca03702b7019e54f73e24d01080781f8449b9712d21b7a |
+| tools | secure_esm_sqs_policy | description | 60d7a3e664f7fe81f8426e9022886cde2ee88014f36cea800c2379fd900311e9 |
+| tools | secure_esm_sqs_policy | account | 978a140a385bce75bda1cc585c47a6532ffdcadb2315246ae84f4088bc4905ea |
+| tools | secure_esm_sqs_policy | function_name | 5f5283fa3e60f1f38c1115a7581cca6620d1e1caf24901d8d20dfee4ad3c31fc |
+| tools | secure_esm_sqs_policy | partition | f2c85289d113b479549de808f247e77c54f355fbbdff49f9749e195f554e7671 |
+| tools | secure_esm_sqs_policy | queue_name | c58af919a41ffefcc8b85b9918e8619ef9a4a0255705ec173297fc2ed47492f1 |
+| tools | secure_esm_sqs_policy | region | 09d3d50b57172ebc0d1d6bea21abcf82a0e9d65b24b130d1356a5ac7d7093d7d |
 | tools | update_webapp_frontend | description | 36a5dec1d27be6074fc3e9963dcb99f02afd5dbaeb14006925a1e1035e78b7b3 |
 | tools | update_webapp_frontend | built_assets_path | 64484af1aba8e6af6e19b69c838d4381326750783dcda1e18571a32b10ccc3a1 |
 | tools | update_webapp_frontend | invalidate_cache | 499046d3b8dd45bd39969d1249404681652a6311aeb6cce105c30dcae450992e |

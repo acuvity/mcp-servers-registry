@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -21,10 +21,10 @@
 # What is mcp-server-phoenix?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-phoenix/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-phoenix/2.1.10?logo=docker&logoColor=fff&label=2.1.10)](https://hub.docker.com/r/acuvity/mcp-server-phoenix)
-[![PyPI](https://img.shields.io/badge/2.1.10-3775A9?logo=pypi&logoColor=fff&label=@arizeai/phoenix-mcp)](https://github.com/Arize-ai/phoenix/tree/HEAD/js/packages/phoenix-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-phoenix/2.3.3?logo=docker&logoColor=fff&label=2.3.3)](https://hub.docker.com/r/acuvity/mcp-server-phoenix)
+[![PyPI](https://img.shields.io/badge/2.3.3-3775A9?logo=pypi&logoColor=fff&label=@arizeai/phoenix-mcp)](https://github.com/Arize-ai/phoenix/tree/HEAD/js/packages/phoenix-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-phoenix/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-phoenix&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22PHOENIX_BASE_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-phoenix%3A2.1.10%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-phoenix&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22PHOENIX_BASE_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-phoenix%3A2.3.3%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Inspect traces, manage prompts, curate datasets, and run experiments using Arize Phoenix.
 
@@ -43,69 +43,70 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
 The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-phoenix/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
-### 🔒 Resource Integrity
+#### 🔒 Resource Integrity
 
 **Mitigates MCP Rug Pull Attacks**
 
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Guardrails
+#### 🛡️ Guardrails
 
-#### Covert Instruction Detection
+##### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-#### Sensitive Pattern Detection
+##### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-#### Shadowing Pattern Detection
+##### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-#### Schema Misuse Prevention
+##### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-#### Cross-Origin Tool Access
+##### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-#### Secrets Redaction
+##### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
@@ -114,7 +115,7 @@ Automatically masks sensitive values so they never appear in logs or responses.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
-### Enable guardrails
+#### Enable guardrails
 
 To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
@@ -129,7 +130,7 @@ To activate guardrails in your Docker containers, define the `GUARDRAILS` enviro
 
 Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
 
-## 🔒 Basic Authentication via Shared Secret
+#### 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
@@ -143,10 +144,8 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 > While basic auth will protect against unauthorized access, you should use it only in controlled environment,
 > rotate credentials frequently and **always** use TLS.
 
-</details>
-
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # 📦 How to Install
@@ -174,7 +173,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-phoenix&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22PHOENIX_BASE_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-phoenix%3A2.1.10%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-phoenix&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22PHOENIX_BASE_URL%22%2C%22docker.io%2Facuvity%2Fmcp-server-phoenix%3A2.3.3%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -196,7 +195,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "--read-only",
           "-e",
           "PHOENIX_BASE_URL",
-          "docker.io/acuvity/mcp-server-phoenix:2.1.10"
+          "docker.io/acuvity/mcp-server-phoenix:2.3.3"
         ]
       }
     }
@@ -223,7 +222,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "--read-only",
         "-e",
         "PHOENIX_BASE_URL",
-        "docker.io/acuvity/mcp-server-phoenix:2.1.10"
+        "docker.io/acuvity/mcp-server-phoenix:2.3.3"
       ]
     }
   }
@@ -254,7 +253,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "--read-only",
         "-e",
         "PHOENIX_BASE_URL",
-        "docker.io/acuvity/mcp-server-phoenix:2.1.10"
+        "docker.io/acuvity/mcp-server-phoenix:2.3.3"
       ]
     }
   }
@@ -287,7 +286,7 @@ Add the following JSON block to your mcp configuration file:
         "--read-only",
         "-e",
         "PHOENIX_BASE_URL",
-        "docker.io/acuvity/mcp-server-phoenix:2.1.10"
+        "docker.io/acuvity/mcp-server-phoenix:2.3.3"
       ]
     }
   }
@@ -318,7 +317,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "--read-only",
         "-e",
         "PHOENIX_BASE_URL",
-        "docker.io/acuvity/mcp-server-phoenix:2.1.10"
+        "docker.io/acuvity/mcp-server-phoenix:2.3.3"
       ]
     }
   }
@@ -338,7 +337,7 @@ async with MCPServerStdio(
     params={
         "env": {"PHOENIX_BASE_URL":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","PHOENIX_BASE_URL","docker.io/acuvity/mcp-server-phoenix:2.1.10"]
+        "args": ["run","-i","--rm","--read-only","-e","PHOENIX_BASE_URL","docker.io/acuvity/mcp-server-phoenix:2.3.3"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -367,7 +366,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e PHOENIX_BASE_URL docker.io/acuvity/mcp-server-phoenix:2.1.10`
+- arguments: `run -i --rm --read-only -e PHOENIX_BASE_URL docker.io/acuvity/mcp-server-phoenix:2.3.3`
 
 </details>
 
@@ -377,7 +376,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e PHOENIX_BASE_URL docker.io/acuvity/mcp-server-phoenix:2.1.10
+docker run -it -p 8000:8000 --rm --read-only -e PHOENIX_BASE_URL docker.io/acuvity/mcp-server-phoenix:2.3.3
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -483,7 +482,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (16)
+## 🧰 Tools (19)
 <details>
 <summary>list-prompts</summary>
 
@@ -1130,6 +1129,128 @@ Expected return:
 | includeExperimentProjects | boolean | not set | No
 | limit | number | not set | No
 </details>
+<details>
+<summary>get-spans</summary>
+
+**Description**:
+
+```
+Get spans from a project with filtering criteria.
+
+Spans represent individual operations or units of work within a trace. They contain timing information,
+attributes, and context about the operation being performed.
+
+Example usage:
+  Get recent spans from project "my-project"
+  Get spans in a time range from project "my-project"
+
+Expected return:
+  Object containing spans array and optional next cursor for pagination.
+  Example: {
+    "spans": [
+      {
+        "id": "span123",
+        "name": "http_request",
+        "context": {
+          "trace_id": "trace456",
+          "span_id": "span123"
+        },
+        "start_time": "2024-01-01T12:00:00Z",
+        "end_time": "2024-01-01T12:00:01Z",
+        "attributes": {
+          "http.method": "GET",
+          "http.url": "/api/users"
+        }
+      }
+    ],
+    "nextCursor": "cursor_for_pagination"
+  }
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| cursor | string | not set | No
+| endTime | string | not set | No
+| limit | number | not set | No
+| projectName | string | not set | Yes
+| startTime | string | not set | No
+</details>
+<details>
+<summary>get-span-annotations</summary>
+
+**Description**:
+
+```
+Get span annotations for a list of span IDs.
+
+Span annotations provide additional metadata, scores, or labels for spans. They can be created
+by humans, LLMs, or code and help in analyzing and categorizing spans.
+
+Example usage:
+  Get annotations for spans ["span1", "span2"] from project "my-project"
+  Get quality score annotations for span "span1" from project "my-project"
+
+Expected return:
+  Object containing annotations array and optional next cursor for pagination.
+  Example: {
+    "annotations": [
+      {
+        "id": "annotation123",
+        "span_id": "span1",
+        "name": "quality_score",
+        "result": {
+          "label": "good",
+          "score": 0.95,
+          "explanation": null
+        },
+        "annotator_kind": "LLM",
+        "metadata": {
+          "model": "gpt-4"
+        }
+      }
+    ],
+    "nextCursor": "cursor_for_pagination"
+  }
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| cursor | string | not set | No
+| excludeAnnotationNames | array | not set | No
+| includeAnnotationNames | array | not set | No
+| limit | number | not set | No
+| projectName | string | not set | Yes
+| spanIds | array | not set | Yes
+</details>
+<details>
+<summary>phoenix-support</summary>
+
+**Description**:
+
+```
+Get help with Phoenix and OpenInference.
+
+- Tracing AI applications via OpenInference and OpenTelemetry
+- Phoenix datasets, experiments, and prompt management
+- Phoenix evals and annotations
+
+Use this tool when you need assistance with Phoenix features, troubleshooting,
+or best practices.
+
+Expected return:
+  Expert guidance about how to use and integrate Phoenix
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| query | string | Your question about Arize Phoenix, OpenInference, or related topics | Yes
+</details>
 
 
 # 🔐 Resource SBOM
@@ -1147,12 +1268,16 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | get-prompt-by-identifier | description | 1a0323812d5c03b3354e35c6a268edbf17cc915cd37a0592f34c53f77b0c8e5d |
 | tools | get-prompt-version | description | 41310657a5adff08eebf484525733aaf62bf1954977bb8dbaef41d54db7c2d9b |
 | tools | get-prompt-version-by-tag | description | 425133c04c59768f6f21421781fb706057bf59dc2270ad24654334328083712a |
+| tools | get-span-annotations | description | cce7df7fad6cf7df9ad091db48897e5bf0b0abb70b60bc3eb00d47b82bf18623 |
+| tools | get-spans | description | e8aa17e3cb12480517d07adcbb7f1294c16aa6a852b2a4106fdb34689cfa394e |
 | tools | list-datasets | description | 08059e461d7a8d15235ecd8a680443fa05750a4ff4afe83eda532a413121334f |
 | tools | list-experiments-for-dataset | description | 8d25f7a21bcfd8f2ce6dd1d5d8bc29065cd7eb8e1afb6084a51a09c58469cc42 |
 | tools | list-projects | description | 13c5d94123bdffa6f6acaeb17412fef1ef9494cd0d0e1ec318250b7cd36dd9f1 |
 | tools | list-prompt-version-tags | description | 58d24038d7140bcbfd6e693f6b53ead1cfb21e0c7d3ff1112a4faf9bb4e3e69a |
 | tools | list-prompt-versions | description | 39c60f1f54d4f7f7286485ac6515d1aaaa81bc84eb901abc574e8e21d99e3f05 |
 | tools | list-prompts | description | 999cd435fea53746496c6e325a943cadbfc797633226f801738897c11d6eacdc |
+| tools | phoenix-support | description | 90839d8a6afaacd3ccaa8f60c955241eb63f4ce44bc5d01cd355fdb4f378eb82 |
+| tools | phoenix-support | query | 5932789fc3452e79ad9b4af9b72323f77ca1982627bc00008a26d2e6f83de5ab |
 | tools | upsert-prompt | description | bb147c1de19cb25c7f6aea4fccd60de50a6b3d730c4329b3f8b61c2486e19ac0 |
 
 

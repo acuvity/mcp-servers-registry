@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -21,10 +21,10 @@
 # What is mcp-server-github?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-github/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-github/v0.5.0?logo=docker&logoColor=fff&label=v0.5.0)](https://hub.docker.com/r/acuvity/mcp-server-github)
-[![GitHUB](https://img.shields.io/badge/v0.5.0-3775A9?logo=github&logoColor=fff&label=github/github-mcp-server)](https://github.com/github/github-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-github/v0.29.0?logo=docker&logoColor=fff&label=v0.29.0)](https://hub.docker.com/r/acuvity/mcp-server-github)
+[![GitHUB](https://img.shields.io/badge/v0.29.0-3775A9?logo=github&logoColor=fff&label=github/github-mcp-server)](https://github.com/github/github-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-github/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-github&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22GITHUB_PERSONAL_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-github%3Av0.5.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-github&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22GITHUB_PERSONAL_ACCESS_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-github%3Av0.29.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** GitHub's official MCP Server
 
@@ -43,110 +43,40 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-github/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-github/docker/policy.rego) that enables a set of runtime [guardrails](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-github#%EF%B8%8F-guardrails) to help enforce security, privacy, and correct usage of your services. Below is list of each guardrail provided.
 
-### 🔒 Resource Integrity
-
-**Mitigates MCP Rug Pull Attacks**
-
-* **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
-* **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
-
-### 🛡️ Guardrails
-
-#### Covert Instruction Detection
-
-Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
-
-* **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
-* **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
-
-#### Sensitive Pattern Detection
-
-Block user-defined sensitive data patterns (credential paths, filesystem references).
-
-* **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
-* **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
-
-#### Shadowing Pattern Detection
-
-Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
-
-* **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
-* **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
-
-#### Schema Misuse Prevention
-
-Enforces strict adherence to MCP input schemas.
-
-* **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
-* **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
-
-#### Cross-Origin Tool Access
-
-Controls whether tools may invoke tools or services from external origins.
-
-* **Goal:** Prevent untrusted or out-of-scope services from being called.
-* **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
-
-#### Secrets Redaction
-
-Automatically masks sensitive values so they never appear in logs or responses.
-
-* **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
-* **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
-
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
-
-### Enable guardrails
-
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
 | Guardrail                        | Summary                                                                 |
 |----------------------------------|-------------------------------------------------------------------------|
+| `resource integrity`             | Embeds a hash of all exposed resources to ensure their authenticity and prevent unauthorized modifications, guarding against supply chain attacks and dynamic alterations of tool metadata. |
 | `covert-instruction-detection`   | Detects hidden or obfuscated directives in requests.                    |
 | `sensitive-pattern-detection`    | Flags patterns suggesting sensitive data or filesystem exposure.        |
 | `shadowing-pattern-detection`    | Identifies tool descriptions that override or influence others.         |
 | `schema-misuse-prevention`       | Enforces strict schema compliance on input data.                        |
 | `cross-origin-tool-access`       | Controls calls to external services or APIs.                            |
 | `secrets-redaction`              | Prevents exposure of credentials or sensitive values.                   |
+| `basic authentication`           | Enables the configuration of a shared secret to restrict unauthorized access to the MCP server and ensure only approved clients can connect. |
 
-Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
-
-## 🔒 Basic Authentication via Shared Secret
-
-Provides a lightweight auth layer using a single shared token.
-
-* **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
-* **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
-
-To turn on Basic Authentication, define `BASIC_AUTH_SECRET` environment variable with a shared secret.
-
-Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentication.
-
-> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
-> rotate credentials frequently and **always** use TLS.
-
-</details>
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference
@@ -173,11 +103,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-v0.5.0`
+  - container: `1.0.0-v0.29.0`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-github:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-github:1.0.0-v0.5.0`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-github:1.0.0-v0.29.0`
 
 ---
 
@@ -627,32 +557,14 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (51)
+## 🧰 Tools (40)
 <details>
-<summary>add_issue_comment</summary>
+<summary>add_comment_to_pending_review</summary>
 
 **Description**:
 
 ```
-Add a comment to a specific issue in a GitHub repository.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| body | string | Comment content | Yes
-| issue_number | number | Issue number to comment on | Yes
-| owner | string | Repository owner | Yes
-| repo | string | Repository name | Yes
-</details>
-<details>
-<summary>add_pull_request_review_comment_to_pending_review</summary>
-
-**Description**:
-
-```
-Add a comment to the requester's latest pending pull request review, a pending review needs to already exist to call this (check with the user if not sure).
+Add review comment to the requester's latest pending pull request review. A pending review needs to already exist to call this (check with the user if not sure).
 ```
 
 **Parameter**:
@@ -669,6 +581,24 @@ Add a comment to the requester's latest pending pull request review, a pending r
 | startLine | number | For multi-line comments, the first line of the range that the comment applies to | No
 | startSide | string | For multi-line comments, the starting side of the diff that the comment applies to. LEFT indicates the previous state, RIGHT indicates the new state | No
 | subjectType | string | The level at which the comment is targeted | Yes
+</details>
+<details>
+<summary>add_issue_comment</summary>
+
+**Description**:
+
+```
+Add a comment to a specific issue in a GitHub repository. Use this tool to add comments to pull requests as well (in this case pass pull request number as issue_number), but only if user is not asking specifically to add review comments.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| body | string | Comment content | Yes
+| issue_number | number | Issue number to comment on | Yes
+| owner | string | Repository owner | Yes
+| repo | string | Repository name | Yes
 </details>
 <details>
 <summary>assign_copilot_to_issue</summary>
@@ -691,28 +621,10 @@ More information can be found at:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| issueNumber | number | Issue number | Yes
+| base_ref | string | Git reference (e.g., branch) that the agent will start its work from. If not specified, defaults to the repository's default branch | No
+| custom_instructions | string | Optional custom instructions to guide the agent beyond the issue body. Use this to provide additional context, constraints, or guidance that is not captured in the issue description | No
+| issue_number | number | Issue number | Yes
 | owner | string | Repository owner | Yes
-| repo | string | Repository name | Yes
-</details>
-<details>
-<summary>create_and_submit_pull_request_review</summary>
-
-**Description**:
-
-```
-Create and submit a review for a pull request without review comments.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| body | string | Review comment text | Yes
-| commitID | string | SHA of commit to review | No
-| event | string | Review action to perform | Yes
-| owner | string | Repository owner | Yes
-| pullNumber | number | Pull request number | Yes
 | repo | string | Repository name | Yes
 </details>
 <details>
@@ -734,33 +646,19 @@ Create a new branch in a GitHub repository
 | repo | string | Repository name | Yes
 </details>
 <details>
-<summary>create_issue</summary>
-
-**Description**:
-
-```
-Create a new issue in a GitHub repository.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| assignees | array | Usernames to assign to this issue | No
-| body | string | Issue body content | No
-| labels | array | Labels to apply to this issue | No
-| milestone | number | Milestone number | No
-| owner | string | Repository owner | Yes
-| repo | string | Repository name | Yes
-| title | string | Issue title | Yes
-</details>
-<details>
 <summary>create_or_update_file</summary>
 
 **Description**:
 
 ```
-Create or update a single file in a GitHub repository. If updating, you must provide the SHA of the file you want to update.
+Create or update a single file in a GitHub repository. 
+If updating, you should provide the SHA of the file you want to update. Use this tool to create or update a file in a GitHub repository remotely; do not use it for local file operations.
+
+In order to obtain the SHA of original file version before updating, use the following git command:
+git ls-tree HEAD <path to file>
+
+If the SHA is not provided, the tool will attempt to acquire it by fetching the current file contents from the repository, which may lead to rewriting latest committed changes if the file has changed since last retrieval.
+
 ```
 
 **Parameter**:
@@ -773,25 +671,7 @@ Create or update a single file in a GitHub repository. If updating, you must pro
 | owner | string | Repository owner (username or organization) | Yes
 | path | string | Path where to create/update the file | Yes
 | repo | string | Repository name | Yes
-| sha | string | SHA of file being replaced (for updates) | No
-</details>
-<details>
-<summary>create_pending_pull_request_review</summary>
-
-**Description**:
-
-```
-Create a pending review for a pull request. Call this first before attempting to add comments to a pending review, and ultimately submitting it. A pending pull request review means a pull request review, it is pending because you create it first and submit it later, and the PR author will not see it until it is submitted.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| commitID | string | SHA of commit to review | No
-| owner | string | Repository owner | Yes
-| pullNumber | number | Pull request number | Yes
-| repo | string | Repository name | Yes
+| sha | string | The blob SHA of the file being replaced. | No
 </details>
 <details>
 <summary>create_pull_request</summary>
@@ -821,7 +701,7 @@ Create a new pull request in a GitHub repository.
 **Description**:
 
 ```
-Create a new GitHub repository in your account
+Create a new GitHub repository in your account or specified organization
 ```
 
 **Parameter**:
@@ -831,6 +711,7 @@ Create a new GitHub repository in your account
 | autoInit | boolean | Initialize with README | No
 | description | string | Repository description | No
 | name | string | Repository name | Yes
+| organization | string | Organization to create the repository in (omit to create in your personal account) | No
 | private | boolean | Whether repo should be private | No
 </details>
 <details>
@@ -853,39 +734,6 @@ Delete a file from a GitHub repository
 | repo | string | Repository name | Yes
 </details>
 <details>
-<summary>delete_pending_pull_request_review</summary>
-
-**Description**:
-
-```
-Delete the requester's latest pending pull request review. Use this after the user decides not to submit a pending review, if you don't know if they already created one then check first.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| owner | string | Repository owner | Yes
-| pullNumber | number | Pull request number | Yes
-| repo | string | Repository name | Yes
-</details>
-<details>
-<summary>dismiss_notification</summary>
-
-**Description**:
-
-```
-Dismiss a notification by marking it as read or done
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| state | string | The new state of the notification (read/done) | No
-| threadID | string | The ID of the notification thread | Yes
-</details>
-<details>
 <summary>fork_repository</summary>
 
 **Description**:
@@ -903,23 +751,6 @@ Fork a GitHub repository to your account or specified organization
 | repo | string | Repository name | Yes
 </details>
 <details>
-<summary>get_code_scanning_alert</summary>
-
-**Description**:
-
-```
-Get details of a specific code scanning alert in a GitHub repository.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| alertNumber | number | The number of the alert. | Yes
-| owner | string | The owner of the repository. | Yes
-| repo | string | The name of the repository. | Yes
-</details>
-<details>
 <summary>get_commit</summary>
 
 **Description**:
@@ -932,6 +763,7 @@ Get details for a commit from a GitHub repository
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| include_diff | boolean | Whether to include file diffs and stats in the response. Default is true. | No
 | owner | string | Repository owner | Yes
 | page | number | Page number for pagination (min 1) | No
 | perPage | number | Results per page for pagination (min 1, max 100) | No
@@ -951,45 +783,43 @@ Get the contents of a file or directory from a GitHub repository
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| branch | string | Branch to get contents from | No
 | owner | string | Repository owner (username or organization) | Yes
-| path | string | Path to file/directory (directories must end with a slash '/') | Yes
+| path | string | Path to file/directory | No
+| ref | string | Accepts optional git refs such as `refs/tags/{tag}`, `refs/heads/{branch}` or `refs/pull/{pr_number}/head` | No
+| repo | string | Repository name | Yes
+| sha | string | Accepts optional commit SHA. If specified, it will be used instead of ref | No
+</details>
+<details>
+<summary>get_label</summary>
+
+**Description**:
+
+```
+Get a specific label from a repository.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| name | string | Label name. | Yes
+| owner | string | Repository owner (username or organization name) | Yes
 | repo | string | Repository name | Yes
 </details>
 <details>
-<summary>get_issue</summary>
+<summary>get_latest_release</summary>
 
 **Description**:
 
 ```
-Get details of a specific issue in a GitHub repository.
+Get the latest release in a GitHub repository
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| issue_number | number | The number of the issue | Yes
-| owner | string | The owner of the repository | Yes
-| repo | string | The name of the repository | Yes
-</details>
-<details>
-<summary>get_issue_comments</summary>
-
-**Description**:
-
-```
-Get comments for a specific issue in a GitHub repository.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| issue_number | number | Issue number | Yes
 | owner | string | Repository owner | Yes
-| page | number | Page number | No
-| per_page | number | Number of records per page | No
 | repo | string | Repository name | Yes
 </details>
 <details>
@@ -998,37 +828,21 @@ Get comments for a specific issue in a GitHub repository.
 **Description**:
 
 ```
-Get details of the authenticated GitHub user. Use this when a request includes "me", "my". The output will not change unless the user changes their profile, so only call this once.
+Get details of the authenticated GitHub user. Use this when a request is about the user's own profile for GitHub. Or when information is missing to build other tool calls.
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| reason | string | Optional: the reason for requesting the user information | No
 </details>
 <details>
-<summary>get_notification_details</summary>
+<summary>get_release_by_tag</summary>
 
 **Description**:
 
 ```
-Get detailed information for a specific GitHub notification, always call this tool when the user asks for details about a specific notification, if you don't know the ID list notifications first.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| notificationID | string | The ID of the notification | Yes
-</details>
-<details>
-<summary>get_pull_request</summary>
-
-**Description**:
-
-```
-Get details of a specific pull request in a GitHub repository.
+Get a specific release by its tag name in a GitHub repository
 ```
 
 **Parameter**:
@@ -1036,110 +850,8 @@ Get details of a specific pull request in a GitHub repository.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | owner | string | Repository owner | Yes
-| pullNumber | number | Pull request number | Yes
 | repo | string | Repository name | Yes
-</details>
-<details>
-<summary>get_pull_request_comments</summary>
-
-**Description**:
-
-```
-Get comments for a specific pull request.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| owner | string | Repository owner | Yes
-| pullNumber | number | Pull request number | Yes
-| repo | string | Repository name | Yes
-</details>
-<details>
-<summary>get_pull_request_diff</summary>
-
-**Description**:
-
-```
-Get the diff of a pull request.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| owner | string | Repository owner | Yes
-| pullNumber | number | Pull request number | Yes
-| repo | string | Repository name | Yes
-</details>
-<details>
-<summary>get_pull_request_files</summary>
-
-**Description**:
-
-```
-Get the files changed in a specific pull request.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| owner | string | Repository owner | Yes
-| pullNumber | number | Pull request number | Yes
-| repo | string | Repository name | Yes
-</details>
-<details>
-<summary>get_pull_request_reviews</summary>
-
-**Description**:
-
-```
-Get reviews for a specific pull request.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| owner | string | Repository owner | Yes
-| pullNumber | number | Pull request number | Yes
-| repo | string | Repository name | Yes
-</details>
-<details>
-<summary>get_pull_request_status</summary>
-
-**Description**:
-
-```
-Get the status of a specific pull request.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| owner | string | Repository owner | Yes
-| pullNumber | number | Pull request number | Yes
-| repo | string | Repository name | Yes
-</details>
-<details>
-<summary>get_secret_scanning_alert</summary>
-
-**Description**:
-
-```
-Get details of a specific secret scanning alert in a GitHub repository.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| alertNumber | number | The number of the alert. | Yes
-| owner | string | The owner of the repository. | Yes
-| repo | string | The name of the repository. | Yes
+| tag | string | Tag name (e.g., 'v1.0.0') | Yes
 </details>
 <details>
 <summary>get_tag</summary>
@@ -1157,6 +869,94 @@ Get details about a specific git tag in a GitHub repository
 | owner | string | Repository owner | Yes
 | repo | string | Repository name | Yes
 | tag | string | Tag name | Yes
+</details>
+<details>
+<summary>get_team_members</summary>
+
+**Description**:
+
+```
+Get member usernames of a specific team in an organization. Limited to organizations accessible with current credentials
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| org | string | Organization login (owner) that contains the team. | Yes
+| team_slug | string | Team slug | Yes
+</details>
+<details>
+<summary>get_teams</summary>
+
+**Description**:
+
+```
+Get details of the teams the user is a member of. Limited to organizations accessible with current credentials
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| user | string | Username to get teams for. If not provided, uses the authenticated user. | No
+</details>
+<details>
+<summary>issue_read</summary>
+
+**Description**:
+
+```
+Get information about a specific issue in a GitHub repository.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| issue_number | number | The number of the issue | Yes
+| method | string | The read operation to perform on a single issue.
+Options are:
+1. get - Get details of a specific issue.
+2. get_comments - Get issue comments.
+3. get_sub_issues - Get sub-issues of the issue.
+4. get_labels - Get labels assigned to the issue.
+ | Yes
+| owner | string | The owner of the repository | Yes
+| page | number | Page number for pagination (min 1) | No
+| perPage | number | Results per page for pagination (min 1, max 100) | No
+| repo | string | The name of the repository | Yes
+</details>
+<details>
+<summary>issue_write</summary>
+
+**Description**:
+
+```
+Create a new or update an existing issue in a GitHub repository.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| assignees | array | Usernames to assign to this issue | No
+| body | string | Issue body content | No
+| duplicate_of | number | Issue number that this issue is a duplicate of. Only used when state_reason is 'duplicate'. | No
+| issue_number | number | Issue number to update | No
+| labels | array | Labels to apply to this issue | No
+| method | string | Write operation to perform on a single issue.
+Options are:
+- 'create' - creates a new issue.
+- 'update' - updates an existing issue.
+ | Yes
+| milestone | number | Milestone number | No
+| owner | string | Repository owner | Yes
+| repo | string | Repository name | Yes
+| state | string | New state | No
+| state_reason | string | Reason for the state change. Ignored unless state is changed. | No
+| title | string | Issue title | No
+| type | string | Type of this issue. Only use if the repository has issue types configured. Use list_issue_types tool to get valid type values for the organization. If the repository doesn't support issue types, omit this parameter. | No
 </details>
 <details>
 <summary>list_branches</summary>
@@ -1177,43 +977,39 @@ List branches in a GitHub repository
 | repo | string | Repository name | Yes
 </details>
 <details>
-<summary>list_code_scanning_alerts</summary>
-
-**Description**:
-
-```
-List code scanning alerts in a GitHub repository.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| owner | string | The owner of the repository. | Yes
-| ref | string | The Git reference for the results you want to list. | No
-| repo | string | The name of the repository. | Yes
-| severity | string | Filter code scanning alerts by severity | No
-| state | string | Filter code scanning alerts by state. Defaults to open | No
-| tool_name | string | The name of the tool used for code scanning. | No
-</details>
-<details>
 <summary>list_commits</summary>
 
 **Description**:
 
 ```
-Get list of commits of a branch in a GitHub repository
+Get list of commits of a branch in a GitHub repository. Returns at least 30 results per page by default, but can return more if specified using the perPage parameter (up to 100).
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| author | string | Author username or email address to filter commits by | No
 | owner | string | Repository owner | Yes
 | page | number | Page number for pagination (min 1) | No
 | perPage | number | Results per page for pagination (min 1, max 100) | No
 | repo | string | Repository name | Yes
-| sha | string | SHA or Branch name | No
+| sha | string | Commit SHA, branch or tag name to list commits of. If not provided, uses the default branch of the repository. If a commit SHA is provided, will list commits up to that SHA. | No
+</details>
+<details>
+<summary>list_issue_types</summary>
+
+**Description**:
+
+```
+List supported issue types for repository owner (organization).
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| owner | string | The organization owner of the repository | Yes
 </details>
 <details>
 <summary>list_issues</summary>
@@ -1221,43 +1017,22 @@ Get list of commits of a branch in a GitHub repository
 **Description**:
 
 ```
-List issues in a GitHub repository.
+List issues in a GitHub repository. For pagination, use the 'endCursor' from the previous response's 'pageInfo' in the 'after' parameter.
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| direction | string | Sort direction | No
+| after | string | Cursor for pagination. Use the endCursor from the previous page's PageInfo for GraphQL APIs. | No
+| direction | string | Order direction. If provided, the 'orderBy' also needs to be provided. | No
 | labels | array | Filter by labels | No
+| orderBy | string | Order issues by field. If provided, the 'direction' also needs to be provided. | No
 | owner | string | Repository owner | Yes
-| page | number | Page number for pagination (min 1) | No
 | perPage | number | Results per page for pagination (min 1, max 100) | No
 | repo | string | Repository name | Yes
 | since | string | Filter by date (ISO 8601 timestamp) | No
-| sort | string | Sort order | No
-| state | string | Filter by state | No
-</details>
-<details>
-<summary>list_notifications</summary>
-
-**Description**:
-
-```
-Lists all GitHub notifications for the authenticated user, including unread notifications, mentions, review requests, assignments, and updates on issues or pull requests. Use this tool whenever the user asks what to work on next, requests a summary of their GitHub activity, wants to see pending reviews, or needs to check for new updates or tasks. This tool is the primary way to discover actionable items, reminders, and outstanding work on GitHub. Always call this tool when asked what to work on next, what is pending, or what needs attention in GitHub.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| before | string | Only show notifications updated before the given time (ISO 8601 format) | No
-| filter | string | Filter notifications to, use default unless specified. Read notifications are ones that have already been acknowledged by the user. Participating notifications are those that the user is directly involved in, such as issues or pull requests they have commented on or created. | No
-| owner | string | Optional repository owner. If provided with repo, only notifications for this repository are listed. | No
-| page | number | Page number for pagination (min 1) | No
-| perPage | number | Results per page for pagination (min 1, max 100) | No
-| repo | string | Optional repository name. If provided with owner, only notifications for this repository are listed. | No
-| since | string | Only show notifications updated after the given time (ISO 8601 format) | No
+| state | string | Filter by state, by default both open and closed issues are returned when not provided | No
 </details>
 <details>
 <summary>list_pull_requests</summary>
@@ -1265,7 +1040,7 @@ Lists all GitHub notifications for the authenticated user, including unread noti
 **Description**:
 
 ```
-List pull requests in a GitHub repository.
+List pull requests in a GitHub repository. If the user specifies an author, then DO NOT use this tool and use the search_pull_requests tool instead.
 ```
 
 **Parameter**:
@@ -1283,23 +1058,22 @@ List pull requests in a GitHub repository.
 | state | string | Filter by state | No
 </details>
 <details>
-<summary>list_secret_scanning_alerts</summary>
+<summary>list_releases</summary>
 
 **Description**:
 
 ```
-List secret scanning alerts in a GitHub repository.
+List releases in a GitHub repository
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| owner | string | The owner of the repository. | Yes
-| repo | string | The name of the repository. | Yes
-| resolution | string | Filter by resolution | No
-| secret_type | string | A comma-separated list of secret types to return. All default secret patterns are returned. To return generic patterns, pass the token name(s) in the parameter. | No
-| state | string | Filter by state | No
+| owner | string | Repository owner | Yes
+| page | number | Page number for pagination (min 1) | No
+| perPage | number | Results per page for pagination (min 1, max 100) | No
+| repo | string | Repository name | Yes
 </details>
 <details>
 <summary>list_tags</summary>
@@ -1320,56 +1094,6 @@ List git tags in a GitHub repository
 | repo | string | Repository name | Yes
 </details>
 <details>
-<summary>manage_notification_subscription</summary>
-
-**Description**:
-
-```
-Manage a notification subscription: ignore, watch, or delete a notification thread subscription.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| action | string | Action to perform: ignore, watch, or delete the notification subscription. | Yes
-| notificationID | string | The ID of the notification thread. | Yes
-</details>
-<details>
-<summary>manage_repository_notification_subscription</summary>
-
-**Description**:
-
-```
-Manage a repository notification subscription: ignore, watch, or delete repository notifications subscription for the provided repository.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| action | string | Action to perform: ignore, watch, or delete the repository notification subscription. | Yes
-| owner | string | The account owner of the repository. | Yes
-| repo | string | The name of the repository. | Yes
-</details>
-<details>
-<summary>mark_all_notifications_read</summary>
-
-**Description**:
-
-```
-Mark all notifications as read
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| lastReadAt | string | Describes the last point that notifications were checked (optional). Default: Now | No
-| owner | string | Optional repository owner. If provided with repo, only notifications for this repository are marked as read. | No
-| repo | string | Optional repository name. If provided with owner, only notifications for this repository are marked as read. | No
-</details>
-<details>
 <summary>merge_pull_request</summary>
 
 **Description**:
@@ -1385,6 +1109,62 @@ Merge a pull request in a GitHub repository.
 | commit_message | string | Extra detail for merge commit | No
 | commit_title | string | Title for merge commit | No
 | merge_method | string | Merge method | No
+| owner | string | Repository owner | Yes
+| pullNumber | number | Pull request number | Yes
+| repo | string | Repository name | Yes
+</details>
+<details>
+<summary>pull_request_read</summary>
+
+**Description**:
+
+```
+Get information on a specific pull request in GitHub repository.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| method | string | Action to specify what pull request data needs to be retrieved from GitHub. 
+Possible options: 
+ 1. get - Get details of a specific pull request.
+ 2. get_diff - Get the diff of a pull request.
+ 3. get_status - Get status of a head commit in a pull request. This reflects status of builds and checks.
+ 4. get_files - Get the list of files changed in a pull request. Use with pagination parameters to control the number of results returned.
+ 5. get_review_comments - Get review threads on a pull request. Each thread contains logically grouped review comments made on the same code location during pull request reviews. Returns threads with metadata (isResolved, isOutdated, isCollapsed) and their associated comments. Use cursor-based pagination (perPage, after) to control results.
+ 6. get_reviews - Get the reviews on a pull request. When asked for review comments, use get_review_comments method.
+ 7. get_comments - Get comments on a pull request. Use this if user doesn't specifically want review comments. Use with pagination parameters to control the number of results returned.
+ | Yes
+| owner | string | Repository owner | Yes
+| page | number | Page number for pagination (min 1) | No
+| perPage | number | Results per page for pagination (min 1, max 100) | No
+| pullNumber | number | Pull request number | Yes
+| repo | string | Repository name | Yes
+</details>
+<details>
+<summary>pull_request_review_write</summary>
+
+**Description**:
+
+```
+Create and/or submit, delete review of a pull request.
+
+Available methods:
+- create: Create a new review of a pull request. If "event" parameter is provided, the review is submitted. If "event" is omitted, a pending review is created.
+- submit_pending: Submit an existing pending review of a pull request. This requires that a pending review exists for the current user on the specified pull request. The "body" and "event" parameters are used when submitting the review.
+- delete_pending: Delete an existing pending review of a pull request. This requires that a pending review exists for the current user on the specified pull request.
+
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| body | string | Review comment text | No
+| commitID | string | SHA of commit to review | No
+| event | string | Review action to perform. | No
+| method | string | The write operation to perform on pull request review. | Yes
 | owner | string | Repository owner | Yes
 | pullNumber | number | Pull request number | Yes
 | repo | string | Repository name | Yes
@@ -1431,17 +1211,17 @@ Request a GitHub Copilot code review for a pull request. Use this for automated 
 **Description**:
 
 ```
-Search for code across GitHub repositories
+Fast and precise code search across ALL GitHub repositories using GitHub's native search engine. Best for finding exact symbols, functions, classes, or specific code patterns.
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| order | string | Sort order | No
+| order | string | Sort order for results | No
 | page | number | Page number for pagination (min 1) | No
 | perPage | number | Results per page for pagination (min 1, max 100) | No
-| q | string | Search query using GitHub code search syntax | Yes
+| query | string | Search query using GitHub's powerful code search syntax. Examples: 'content:Skill language:Java org:github', 'NOT is:archived language:Python OR language:go', 'repo:github/github-mcp-server'. Supports exact matching, language filters, path filters, and more. | Yes
 | sort | string | Sort field ('indexed' only) | No
 </details>
 <details>
@@ -1450,7 +1230,7 @@ Search for code across GitHub repositories
 **Description**:
 
 ```
-Search for issues in GitHub repositories.
+Search for issues in GitHub repositories using issues search syntax already scoped to is:issue
 ```
 
 **Parameter**:
@@ -1458,9 +1238,32 @@ Search for issues in GitHub repositories.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | order | string | Sort order | No
+| owner | string | Optional repository owner. If provided with repo, only issues for this repository are listed. | No
 | page | number | Page number for pagination (min 1) | No
 | perPage | number | Results per page for pagination (min 1, max 100) | No
-| q | string | Search query using GitHub issues search syntax | Yes
+| query | string | Search query using GitHub issues search syntax | Yes
+| repo | string | Optional repository name. If provided with owner, only issues for this repository are listed. | No
+| sort | string | Sort field by number of matches of categories, defaults to best match | No
+</details>
+<details>
+<summary>search_pull_requests</summary>
+
+**Description**:
+
+```
+Search for pull requests in GitHub repositories using issues search syntax already scoped to is:pr
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| order | string | Sort order | No
+| owner | string | Optional repository owner. If provided with repo, only pull requests for this repository are listed. | No
+| page | number | Page number for pagination (min 1) | No
+| perPage | number | Results per page for pagination (min 1, max 100) | No
+| query | string | Search query using GitHub pull request search syntax | Yes
+| repo | string | Optional repository name. If provided with owner, only pull requests for this repository are listed. | No
 | sort | string | Sort field by number of matches of categories, defaults to best match | No
 </details>
 <details>
@@ -1469,16 +1272,19 @@ Search for issues in GitHub repositories.
 **Description**:
 
 ```
-Search for GitHub repositories
+Find GitHub repositories by name, description, readme, topics, or other metadata. Perfect for discovering projects, finding examples, or locating specific repositories across GitHub.
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+| minimal_output | boolean | Return minimal repository information (default: true). When false, returns full GitHub API repository objects. | No
+| order | string | Sort order | No
 | page | number | Page number for pagination (min 1) | No
 | perPage | number | Results per page for pagination (min 1, max 100) | No
-| query | string | Search query | Yes
+| query | string | Repository search query. Examples: 'machine learning in:name stars:>1000 language:python', 'topic:react', 'user:facebook'. Supports advanced search syntax for precise filtering. | Yes
+| sort | string | Sort repositories by field, defaults to best match | No
 </details>
 <details>
 <summary>search_users</summary>
@@ -1486,7 +1292,7 @@ Search for GitHub repositories
 **Description**:
 
 ```
-Search for GitHub users
+Find GitHub users by username, real name, or other profile information. Useful for locating developers, contributors, or team members.
 ```
 
 **Parameter**:
@@ -1496,50 +1302,35 @@ Search for GitHub users
 | order | string | Sort order | No
 | page | number | Page number for pagination (min 1) | No
 | perPage | number | Results per page for pagination (min 1, max 100) | No
-| q | string | Search query using GitHub users search syntax | Yes
-| sort | string | Sort field by category | No
+| query | string | User search query. Examples: 'john smith', 'location:seattle', 'followers:>100'. Search is automatically scoped to type:user. | Yes
+| sort | string | Sort users by number of followers or repositories, or when the person joined GitHub. | No
 </details>
 <details>
-<summary>submit_pending_pull_request_review</summary>
+<summary>sub_issue_write</summary>
 
 **Description**:
 
 ```
-Submit the requester's latest pending pull request review, normally this is a final step after creating a pending review, adding comments first, unless you know that the user already did the first two steps, you should check before calling this.
+Add a sub-issue to a parent issue in a GitHub repository.
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| body | string | The text of the review comment | No
-| event | string | The event to perform | Yes
+| after_id | number | The ID of the sub-issue to be prioritized after (either after_id OR before_id should be specified) | No
+| before_id | number | The ID of the sub-issue to be prioritized before (either after_id OR before_id should be specified) | No
+| issue_number | number | The number of the parent issue | Yes
+| method | string | The action to perform on a single sub-issue
+Options are:
+- 'add' - add a sub-issue to a parent issue in a GitHub repository.
+- 'remove' - remove a sub-issue from a parent issue in a GitHub repository.
+- 'reprioritize' - change the order of sub-issues within a parent issue in a GitHub repository. Use either 'after_id' or 'before_id' to specify the new position.
+				 | Yes
 | owner | string | Repository owner | Yes
-| pullNumber | number | Pull request number | Yes
+| replace_parent | boolean | When true, replaces the sub-issue's current parent issue. Use with 'add' method only. | No
 | repo | string | Repository name | Yes
-</details>
-<details>
-<summary>update_issue</summary>
-
-**Description**:
-
-```
-Update an existing issue in a GitHub repository.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| assignees | array | New assignees | No
-| body | string | New description | No
-| issue_number | number | Issue number to update | Yes
-| labels | array | New labels | No
-| milestone | number | New milestone number | No
-| owner | string | Repository owner | Yes
-| repo | string | Repository name | Yes
-| state | string | New state | No
-| title | string | New title | No
+| sub_issue_id | number | The ID of the sub-issue to add. ID is not the same as issue number | Yes
 </details>
 <details>
 <summary>update_pull_request</summary>
@@ -1556,10 +1347,12 @@ Update an existing pull request in a GitHub repository.
 |-----------|------|-------------|-----------|
 | base | string | New base branch name | No
 | body | string | New description | No
+| draft | boolean | Mark pull request as draft (true) or ready for review (false) | No
 | maintainer_can_modify | boolean | Allow maintainer edits | No
 | owner | string | Repository owner | Yes
 | pullNumber | number | Pull request number to update | Yes
 | repo | string | Repository name | Yes
+| reviewers | array | GitHub usernames to request reviews from | No
 | state | string | New state | No
 | title | string | New title | No
 </details>
@@ -1582,6 +1375,43 @@ Update the branch of a pull request with the latest changes from the base branch
 | repo | string | Repository name | Yes
 </details>
 
+## 📝 Prompts (2)
+<details>
+<summary>AssignCodingAgent</summary>
+
+**Description**:
+
+```
+Assign GitHub Coding Agent to multiple tasks in a GitHub repository.
+```
+
+**Parameter**:
+
+| Argument | Description | Required |
+|-----------|------|-------------|
+| repo | The repository to assign tasks in (owner/repo). |Yes |
+<details>
+<summary>issue_to_fix_workflow</summary>
+
+**Description**:
+
+```
+Create an issue for a problem and then generate a pull request to fix it
+```
+
+**Parameter**:
+
+| Argument | Description | Required |
+|-----------|------|-------------|
+| owner | Repository owner |Yes |
+| repo | Repository name |Yes |
+| title | Issue title |Yes |
+| description | Issue description |Yes |
+| labels | Comma-separated list of labels to apply (optional) |No |
+| assignees | Comma-separated list of assignees (optional) |No |
+
+</details>
+
 
 # 🔐 Resource SBOM
 
@@ -1589,59 +1419,50 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
-| tools | add_issue_comment | description | a3210a0db80b6830285c353a98c4e7ae99af2fdce86c8bb0fc17a47dae866043 |
+| prompts | AssignCodingAgent | description | 4f9fe34b7c7e89aa96df3550d613d28352ad4e354c8450d3057a533d96a490c7 |
+| prompts | AssignCodingAgent | repo | c830ac58c90245c73c3a1f0ecd7c8722be8cb955ec08d2b1d4b74b00db1ddba4 |
+| prompts | issue_to_fix_workflow | description | fcf1ae23cc8ef26b35816db215df7336e943b45831868a6f37cebb64472df034 |
+| prompts | issue_to_fix_workflow | assignees | 2f70679e444e867cf3f5883993e4a91b0ea45a17b6685dfc7983d0554dd8fa9e |
+| prompts | issue_to_fix_workflow | description | 6fdf4c7fb5a19e122d009b8deed663a56034d8170be9300906c4368c423da250 |
+| prompts | issue_to_fix_workflow | labels | 03560bc948abee46f4a1d9d7d330447aec5d17fd21a8770d6d2c8da43d9d99f6 |
+| prompts | issue_to_fix_workflow | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
+| prompts | issue_to_fix_workflow | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
+| prompts | issue_to_fix_workflow | title | baebb0f722db7150e454ecfb2d432205f6331d57837328637d25ac8413f84644 |
+| tools | add_comment_to_pending_review | description | c01d9b539761ed349fdefe576e822b51e45119bb65ec58bae048f32d545a4a59 |
+| tools | add_comment_to_pending_review | body | 150bf72e1256c35c56d58cce6912ae25bb0a02e2a048a422297a7eead2024635 |
+| tools | add_comment_to_pending_review | line | 819e79a56ebb1ecd61715def06ef3dda6306d32677da2d9c797a17ea0c2fe4bc |
+| tools | add_comment_to_pending_review | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
+| tools | add_comment_to_pending_review | path | ad65a27b6cdd3e833939b5c162ff0e5e105a2a0d8120a83907c1c286c6ce1c6b |
+| tools | add_comment_to_pending_review | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
+| tools | add_comment_to_pending_review | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
+| tools | add_comment_to_pending_review | side | a8c682b21f75d5200a487c37af5d312ed2fe67abca69116aa93eb2a7ae228b5c |
+| tools | add_comment_to_pending_review | startLine | 19184c9e73d4d7fbb9661702c5af2054059047e4b6cfc56b0e66f31fe3c2ba16 |
+| tools | add_comment_to_pending_review | startSide | 6a4676ef00a54ce3692d9292bdd8dea138dceffd9d3a2bd7af22f2b776395448 |
+| tools | add_comment_to_pending_review | subjectType | 12fc508ce13c1c2a9607f35cb7add1b0335cddf96c243530df7db80cab254182 |
+| tools | add_issue_comment | description | 560688ce52ed72988fcfec72f46d01941035c9a05d96fdd8c4d10e8cf243d753 |
 | tools | add_issue_comment | body | 76196e088940dc7627854dccef8d659636b54a66ba71c85512d65beb0131a5a8 |
 | tools | add_issue_comment | issue_number | 55508553706f381501225c1367bc7f12548ab08da5ce677d10875fb316ee3ce4 |
 | tools | add_issue_comment | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
 | tools | add_issue_comment | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | add_pull_request_review_comment_to_pending_review | description | 539c30ff7a06d5bca9d3fb808257ce3619326f2b0c58c96aff0095430a7d5883 |
-| tools | add_pull_request_review_comment_to_pending_review | body | 150bf72e1256c35c56d58cce6912ae25bb0a02e2a048a422297a7eead2024635 |
-| tools | add_pull_request_review_comment_to_pending_review | line | 819e79a56ebb1ecd61715def06ef3dda6306d32677da2d9c797a17ea0c2fe4bc |
-| tools | add_pull_request_review_comment_to_pending_review | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
-| tools | add_pull_request_review_comment_to_pending_review | path | ad65a27b6cdd3e833939b5c162ff0e5e105a2a0d8120a83907c1c286c6ce1c6b |
-| tools | add_pull_request_review_comment_to_pending_review | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
-| tools | add_pull_request_review_comment_to_pending_review | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | add_pull_request_review_comment_to_pending_review | side | a8c682b21f75d5200a487c37af5d312ed2fe67abca69116aa93eb2a7ae228b5c |
-| tools | add_pull_request_review_comment_to_pending_review | startLine | 19184c9e73d4d7fbb9661702c5af2054059047e4b6cfc56b0e66f31fe3c2ba16 |
-| tools | add_pull_request_review_comment_to_pending_review | startSide | 6a4676ef00a54ce3692d9292bdd8dea138dceffd9d3a2bd7af22f2b776395448 |
-| tools | add_pull_request_review_comment_to_pending_review | subjectType | 12fc508ce13c1c2a9607f35cb7add1b0335cddf96c243530df7db80cab254182 |
 | tools | assign_copilot_to_issue | description | d9f189d6cd4dc4e14f648c16825a32209ecb55bc1528e8d7a5c5d47a936312f3 |
-| tools | assign_copilot_to_issue | issueNumber | b90458b6339c0e14f5cea20207035c8a316ca33c0fda5d372ab8c4fc51fdb075 |
+| tools | assign_copilot_to_issue | base_ref | 2b3bf8d14e1139ed7306f537db4d88e9a781961f457ddcea7b6772c0e3c163b2 |
+| tools | assign_copilot_to_issue | custom_instructions | 2646811ef631ffb8e9a63917c0e13f5bac4b8838839b7599d92f09e0fdf34916 |
+| tools | assign_copilot_to_issue | issue_number | b90458b6339c0e14f5cea20207035c8a316ca33c0fda5d372ab8c4fc51fdb075 |
 | tools | assign_copilot_to_issue | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
 | tools | assign_copilot_to_issue | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | create_and_submit_pull_request_review | description | b65276bcbe2570c4078cdcdd9f341cd364e5d420264d94d7c95df01c6feb0040 |
-| tools | create_and_submit_pull_request_review | body | 305435be37ca49348dd59f76ed78d1d3db653263c87268f19e38edd8e9903f8a |
-| tools | create_and_submit_pull_request_review | commitID | 8edaee0cc39481736353ab6b261838e08ea25f5a48ff2235247349671fd2d092 |
-| tools | create_and_submit_pull_request_review | event | 91cce26ef9317542f329d7df06c21c3f7640f53bac235489e5537867c87b579e |
-| tools | create_and_submit_pull_request_review | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
-| tools | create_and_submit_pull_request_review | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
-| tools | create_and_submit_pull_request_review | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
 | tools | create_branch | description | 178c4aa2cad9c4dec2d6883eb0913ba5385f367e681e9d97cb751a2eb0983645 |
 | tools | create_branch | branch | 23431660a4982622d8107024b732941aab6327a832c6715c57299e716e175d88 |
 | tools | create_branch | from_branch | 5fa655e2e4b9da16f3de9e22d4d842abb6226464a2e91758242eacc4fec42dc9 |
 | tools | create_branch | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
 | tools | create_branch | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | create_issue | description | b66991fa483e01e4bf1f289c9c542b7c3002e27cc3e80970504a896ae5615160 |
-| tools | create_issue | assignees | 4b3bd4c85313c2684d6dcf769e368485947d08818835207a231a61700dc3552b |
-| tools | create_issue | body | 16e4f6813850b28daf1d698946455b18a587988665d95175da2e415938a906f7 |
-| tools | create_issue | labels | 14ab87d13af5cc4d90c937d8c30258158c0afe9d6cedfb89b4a10d0d057d0397 |
-| tools | create_issue | milestone | 87dbe6860309e747c0fc0fc44621cdc1b20e79faaccdd485a4b74c5daa8e333d |
-| tools | create_issue | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
-| tools | create_issue | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | create_issue | title | baebb0f722db7150e454ecfb2d432205f6331d57837328637d25ac8413f84644 |
-| tools | create_or_update_file | description | 3cd2f9da0ba7a1abf23ebfb28dae1694615fa79bd4b6daadf3cf1774b5fc41f9 |
+| tools | create_or_update_file | description | 375ff78dd0fe9fbcf11a65d2225a5942e529b7ea6f69cea3eeb2080f4427da77 |
 | tools | create_or_update_file | branch | d6a5e87fe732d76cc378c1d1f1210e9b2deb75c9a0dc93b4e453bd5681e9ebe9 |
 | tools | create_or_update_file | content | 651936dc46e2fa051b60ccb3cbfe9f87f0f58f41773e79b4839a814525a7d688 |
 | tools | create_or_update_file | message | 26306d203c4a6f1a77f32cd065d7d11593ba0c7a9b5c52c188b98f22b620941f |
 | tools | create_or_update_file | owner | 637f8af6d00297f7764a512ae2421160b429cfc1592dcf476db18f1f2d9521b6 |
 | tools | create_or_update_file | path | c57e5f48646295c4493f5d052c3ce4d46f88f8c963d162f44c187ff5defa6791 |
 | tools | create_or_update_file | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | create_or_update_file | sha | aedc7ce1b7de89c1f0197052ccff35b4ed4f7836d9d93f2fc154b02d7ed67c75 |
-| tools | create_pending_pull_request_review | description | 81133c7429aaf6de4a3c1b39812a0e540bea242f847c4e635915b0fb372a0422 |
-| tools | create_pending_pull_request_review | commitID | 8edaee0cc39481736353ab6b261838e08ea25f5a48ff2235247349671fd2d092 |
-| tools | create_pending_pull_request_review | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
-| tools | create_pending_pull_request_review | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
-| tools | create_pending_pull_request_review | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
+| tools | create_or_update_file | sha | c6038773152de7f9db6ccc4b3b22f1b9af307f1c1cb5ae99a1837017e68e1728 |
 | tools | create_pull_request | description | b3ce1a8e1c8396e567b2df7957109ec2298ca873d8084f9a9c033f39657f3572 |
 | tools | create_pull_request | base | 68d3d352a8e9b1b21daef0144ddbd5ebbfdfafa1c150afd9184f2889aeba0f54 |
 | tools | create_pull_request | body | 6b20fc28a2739e184ca6e00b2e894ed90a2213780fe67c05664a6917b26e1010 |
@@ -1651,10 +1472,11 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | create_pull_request | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
 | tools | create_pull_request | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
 | tools | create_pull_request | title | 878bfb1640ec1cecdf8cab8f3c62f5413e6b4084e0e1a4494df8f65a5a5eebf7 |
-| tools | create_repository | description | f44928d7808fe825e9451518452be54abfa32929ece5256d2c96a8c91f7df5d1 |
+| tools | create_repository | description | 4b58d95b681b9e48375400e581666ae89d51cbad25412a2f5de964da9ce8bf80 |
 | tools | create_repository | autoInit | fb659aaef50b97ff2f1d0518139663caef0d38424fc1107a8bf1a0cd7d7a637b |
 | tools | create_repository | description | 2b96b72a003b28027236e3a9d7b66958233d752e92381122915202c3c00f6058 |
 | tools | create_repository | name | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
+| tools | create_repository | organization | 27408283fd33350e994962c641a90ca1a628ab59da48eb8e50e98f95cf7e4745 |
 | tools | create_repository | private | d2180d4e67c48806764e44a9533344b63b6c05db56d6974818cb393c38e666e1 |
 | tools | delete_file | description | a6706184f6656f1e0a1d8b6322d2c1c18bb3672a97cd2ac5bf71b0daf99e8900 |
 | tools | delete_file | branch | eed2c3cf92bd302596d7dd8c0d052f667e6d9d3e5debc46913ff50de8c370a59 |
@@ -1662,115 +1484,90 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | delete_file | owner | 637f8af6d00297f7764a512ae2421160b429cfc1592dcf476db18f1f2d9521b6 |
 | tools | delete_file | path | d4e57b1045d6bdf511b312f8574c99772b8c03cc0528da2604ebc5f7d6daa335 |
 | tools | delete_file | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | delete_pending_pull_request_review | description | a98af500cdc7ac540520f6a1927d0b9aec9d47abc7d7fca32cbcfc0d4c8e3968 |
-| tools | delete_pending_pull_request_review | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
-| tools | delete_pending_pull_request_review | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
-| tools | delete_pending_pull_request_review | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | dismiss_notification | description | 72806460489c61ba45e9f10a43ff5b5f5cf5d43155b64b4d192cffe3979c0305 |
-| tools | dismiss_notification | state | 80c2b70a2d60321a56fcd4a56d6f2118f18ff42da296406b28f49283ae40d5e5 |
-| tools | dismiss_notification | threadID | 962f9d0f9e05ca7be087c4469fa646fa0736953d173654910e94a0d5f817a1c2 |
 | tools | fork_repository | description | b9c81712c56e48175df559052b73f7e28646208f961b6b61c3ac3f3545eef86f |
 | tools | fork_repository | organization | 715d8a3a0d64573efa8d492a5ac06ccf88e4ecb1db7a7b6cb0d30ee9369e6ccb |
 | tools | fork_repository | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
 | tools | fork_repository | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | get_code_scanning_alert | description | c9355e6046bba99a24d2d56a7b7ae04bd213029c8921890e6a080b11cf924a17 |
-| tools | get_code_scanning_alert | alertNumber | 1cf32d483c0692dad2135b6c2188b130c24fe94e4b770e95250652466e365605 |
-| tools | get_code_scanning_alert | owner | 59efffac3bd8dd345c342df96df6e2a727f7c1d2483903c6bfb261acf946d96e |
-| tools | get_code_scanning_alert | repo | 077296c2d63a8df1f5032955887382a08bef79c0c8c9d5d5470ecb09dc10bb45 |
 | tools | get_commit | description | a27095bf05dc570a18bf4f6db26662c8dd39f2997f914127c59e8ecf906bf30f |
+| tools | get_commit | include_diff | f532a5fbbbb36f8afb93d9f4c4f3194b3c3b3c7a07c6f77e4286ca33e9097fcf |
 | tools | get_commit | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
 | tools | get_commit | page | b7c5240244916494e69b93a6fc0ad57b364a457e44ef68ed22739cb55ffb1359 |
 | tools | get_commit | perPage | 059dde8a01aac1a755c9e5efbbfaccb57fa34c3988494a154c873dfa7779a1d7 |
 | tools | get_commit | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
 | tools | get_commit | sha | dcf39de8e2207559c31e5f4576561e8e569c991a889b697d8db7a3460924b445 |
 | tools | get_file_contents | description | 54de6216aa12cd8da08e335b6955e2261b4241359f184959829407d0e40dcdc0 |
-| tools | get_file_contents | branch | 845c6e38397f1251842f78808bd433f2656d160a31e29109bae6088fba5037b4 |
 | tools | get_file_contents | owner | 637f8af6d00297f7764a512ae2421160b429cfc1592dcf476db18f1f2d9521b6 |
-| tools | get_file_contents | path | 7feb0806ae965d2a00bf345a3f17897e9547100bfbb88544cce35312e9b9f27e |
+| tools | get_file_contents | path | 2957637372ff4e19e270a582b546db31597054befcac8ee9aa597018697273be |
+| tools | get_file_contents | ref | 875f572a6b88be55fa675b365b115cebba9c3fed283430959254d3aaefd96da0 |
 | tools | get_file_contents | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | get_issue | description | e0739745fb9853ee88c1f23196a40765b25dd4c425d93132efddc0975e66e049 |
-| tools | get_issue | issue_number | 792880d24307a7c2e3ccb34d164888a960335024892f6faa8729fe06657409fe |
-| tools | get_issue | owner | ee38b59dccfd5b3c8d391330a1f61654141c77f7a3bfcd3da617d6f32f3fba55 |
-| tools | get_issue | repo | 707cdfc2a1225dbd1d0ab3c3e9c69aa50df8556f176cfcb822744bef5cee4481 |
-| tools | get_issue_comments | description | 53fa0ebd975991416f2920ec6a43587eefe7f81d8c78a331d86ccf3142a3cce8 |
-| tools | get_issue_comments | issue_number | b90458b6339c0e14f5cea20207035c8a316ca33c0fda5d372ab8c4fc51fdb075 |
-| tools | get_issue_comments | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
-| tools | get_issue_comments | page | 05fa2e3b0a10226acb6eb73c76977fe622ae5d2e1c11d1e00ea5e83da9321069 |
-| tools | get_issue_comments | per_page | 1da3c6e59c56c4f9ee1b4b0efd181852a0424750dc1dcce569d8a7fab419b678 |
-| tools | get_issue_comments | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | get_me | description | 9f897aa25f945c469a123122a5063c852f2660916835d4f3a310f809b4900c11 |
-| tools | get_me | reason | 67773473a042cb954c921a6bb447ad1fe2f4702a37cbebe7e00e88b3c35748b2 |
-| tools | get_notification_details | description | ec76845152fc49b3d76ac0087fe8752555ea3631b04d04d6a8d0f153cb0e1176 |
-| tools | get_notification_details | notificationID | 2a05833ca06d7a872d98001b3ac22be64ef6cfffa973772867b821b4ed5e421f |
-| tools | get_pull_request | description | ee092d1809d130e6bca75b71d2147a78e1d0a20bb08535182b5e7f037eafccb7 |
-| tools | get_pull_request | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
-| tools | get_pull_request | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
-| tools | get_pull_request | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | get_pull_request_comments | description | 3f4e80a03fad0cc5140e207224f2f5fda157d50a9b0e531016132b1613705dcd |
-| tools | get_pull_request_comments | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
-| tools | get_pull_request_comments | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
-| tools | get_pull_request_comments | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | get_pull_request_diff | description | 3e6c9aeb744fcfd564c176afe15c2df8ce5dbfa7e034db9cd27704ce49dc4d7f |
-| tools | get_pull_request_diff | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
-| tools | get_pull_request_diff | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
-| tools | get_pull_request_diff | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | get_pull_request_files | description | b1b26ff4305b4953a717913d7eec40389a6a2505544520107611a86a5a48f29f |
-| tools | get_pull_request_files | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
-| tools | get_pull_request_files | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
-| tools | get_pull_request_files | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | get_pull_request_reviews | description | 74424c9f5b5f967c46da1d93507e77c35ae6af0f2a5bfdf3cc5258354424d072 |
-| tools | get_pull_request_reviews | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
-| tools | get_pull_request_reviews | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
-| tools | get_pull_request_reviews | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | get_pull_request_status | description | c2fa8b4cf2f1cf0f5fa2464041726dfed49ec56fe494fcba8c7b77e94366afe8 |
-| tools | get_pull_request_status | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
-| tools | get_pull_request_status | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
-| tools | get_pull_request_status | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | get_secret_scanning_alert | description | 0cc5a272aafe264f496df0317c38e5b24c554afbc136cfe98919d2447663e5c3 |
-| tools | get_secret_scanning_alert | alertNumber | 1cf32d483c0692dad2135b6c2188b130c24fe94e4b770e95250652466e365605 |
-| tools | get_secret_scanning_alert | owner | 59efffac3bd8dd345c342df96df6e2a727f7c1d2483903c6bfb261acf946d96e |
-| tools | get_secret_scanning_alert | repo | 077296c2d63a8df1f5032955887382a08bef79c0c8c9d5d5470ecb09dc10bb45 |
+| tools | get_file_contents | sha | fda0ee26c9410debd8f92f8574994f92fc3f7f32c3c0110e5e038f72b245e40c |
+| tools | get_label | description | bc5e986298d736683f2928e24dd080fa0735fbcb3d1529aa2573a84570568b44 |
+| tools | get_label | name | 5f8530e3693ee4b5319375c6cb7b1aa2333dae312613974bca3551c13fca72e3 |
+| tools | get_label | owner | c7969e651591ec1fd11228666bf4b809fe9ea930cd86f42c4fa75dc7db62f664 |
+| tools | get_label | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
+| tools | get_latest_release | description | 57a49eb576b15e088997f3906897973907a872ac7532593fa48826e0b3d0d09a |
+| tools | get_latest_release | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
+| tools | get_latest_release | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
+| tools | get_me | description | bc34f566cc782d563dbfb6035ec4b94c7c7d46f34ef84c61cd7b02729ba281ce |
+| tools | get_release_by_tag | description | 370170693dc5177b119f9aadd27bb305c23eec6de6050e5accbee27acd764a7f |
+| tools | get_release_by_tag | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
+| tools | get_release_by_tag | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
+| tools | get_release_by_tag | tag | 5c5b50c5122e0628cc4cbf1692e097ea01b0f84cde76562125f4d0fc52ff1791 |
 | tools | get_tag | description | e6d557e07eb01ac88760ac5a62bc68d3b795b61d4d7fa4be36758c0f7ce61eae |
 | tools | get_tag | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
 | tools | get_tag | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
 | tools | get_tag | tag | 1ace926bc7cdee5323e297d439d2d268286749252b1c7f5e332d5003681d092d |
+| tools | get_team_members | description | e86ce60eeea8d7fcc9a5e50ae24c13b083aed10d254af864402ec8167502bbc4 |
+| tools | get_team_members | org | 8f82b1e1d8e55b252e1e32296aab20a519ec407a92f986379d8fc2b3e905ccf9 |
+| tools | get_team_members | team_slug | 80b01119e50dfe735a6881fe673751b4e5ea652b3060fd46cfbabb9a32c94202 |
+| tools | get_teams | description | 99380d708092b4760246658a3e9bc5f7991d7bcecc75c3dea03e13fcff6aa27b |
+| tools | get_teams | user | e7014fc86ff0dc1234683bd328e76b2d368abb424043c57b75e86007b281b4fc |
+| tools | issue_read | description | e3ccc7984b309935391ec33b448056c6177cd97383005727831d46e8c73213dc |
+| tools | issue_read | issue_number | 792880d24307a7c2e3ccb34d164888a960335024892f6faa8729fe06657409fe |
+| tools | issue_read | method | 8fc24ff5c235579b50c9495070de7e897a2d006321c4cb11d0cd277392c80521 |
+| tools | issue_read | owner | ee38b59dccfd5b3c8d391330a1f61654141c77f7a3bfcd3da617d6f32f3fba55 |
+| tools | issue_read | page | b7c5240244916494e69b93a6fc0ad57b364a457e44ef68ed22739cb55ffb1359 |
+| tools | issue_read | perPage | 059dde8a01aac1a755c9e5efbbfaccb57fa34c3988494a154c873dfa7779a1d7 |
+| tools | issue_read | repo | 707cdfc2a1225dbd1d0ab3c3e9c69aa50df8556f176cfcb822744bef5cee4481 |
+| tools | issue_write | description | 8fe78ac80b6a1295e9149d41aab56393236e2c6155abf09a5b56a23b09ef587c |
+| tools | issue_write | assignees | 4b3bd4c85313c2684d6dcf769e368485947d08818835207a231a61700dc3552b |
+| tools | issue_write | body | 16e4f6813850b28daf1d698946455b18a587988665d95175da2e415938a906f7 |
+| tools | issue_write | duplicate_of | 53698074a89edce07b87d2fee16e63accc21cdea6e50f4058a028e85da3ef427 |
+| tools | issue_write | issue_number | 45f54a035e52ddd24bd931710aed635cc2d5a202ba687d0708c618fe76095437 |
+| tools | issue_write | labels | 14ab87d13af5cc4d90c937d8c30258158c0afe9d6cedfb89b4a10d0d057d0397 |
+| tools | issue_write | method | 52170d190606d783c3383db65d6b72a6f4e6e9598ef831aa9f442874816bac38 |
+| tools | issue_write | milestone | 87dbe6860309e747c0fc0fc44621cdc1b20e79faaccdd485a4b74c5daa8e333d |
+| tools | issue_write | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
+| tools | issue_write | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
+| tools | issue_write | state | 73d2abfb99c5146711a52488e33aa097ebd94cc1f1d14a0e21e9a6ed88709818 |
+| tools | issue_write | state_reason | 9cea5f38007ac5ff5923758f8747775d5c14bf17a46336e52c159b26ef467128 |
+| tools | issue_write | title | baebb0f722db7150e454ecfb2d432205f6331d57837328637d25ac8413f84644 |
+| tools | issue_write | type | 4cdfe6d81ac007f40e6ffe451a7e4b3154c8a20af966032818941ef3d6588bd2 |
 | tools | list_branches | description | 8ce903bf8c1572fd527fd93f38d7d2ccb9b8d463ffe947100aeb1b8187363840 |
 | tools | list_branches | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
 | tools | list_branches | page | b7c5240244916494e69b93a6fc0ad57b364a457e44ef68ed22739cb55ffb1359 |
 | tools | list_branches | perPage | 059dde8a01aac1a755c9e5efbbfaccb57fa34c3988494a154c873dfa7779a1d7 |
 | tools | list_branches | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | list_code_scanning_alerts | description | 2157c013472c46218c4a0315e1b0ba5e6eb9315cf7065b1f572d0a4c25fd7db7 |
-| tools | list_code_scanning_alerts | owner | 59efffac3bd8dd345c342df96df6e2a727f7c1d2483903c6bfb261acf946d96e |
-| tools | list_code_scanning_alerts | ref | 2b4293ec0232d33ef23f0d89a5a150e1e4e234c5a3dc9a6b4273cd37d25393bc |
-| tools | list_code_scanning_alerts | repo | 077296c2d63a8df1f5032955887382a08bef79c0c8c9d5d5470ecb09dc10bb45 |
-| tools | list_code_scanning_alerts | severity | 9e8b684d29e88335cb2d708ce5ceca799ddb6094c60e0cb74c691f5f3b5cf2d9 |
-| tools | list_code_scanning_alerts | state | 9ddc484fe54a5a6c6c4633c8e012a31307a78cc9a8c11377ea40a724a5b741ed |
-| tools | list_code_scanning_alerts | tool_name | 8b7eaf66d0062b14f656ad3c31c6a95a723f743d0094208b0776ead3cbdf5402 |
-| tools | list_commits | description | 1c0d03ab4c651faf18fe16b157121151639027341f9e0e708ab106150cb23461 |
+| tools | list_commits | description | dd2e7a438ec8ef9f8c31a41ce203325fc971ad1dc601c7647f5a9a39ca372df9 |
+| tools | list_commits | author | 1f1de9b0a4f304b5c277397fc0f2ccfa560bd738a0629c1dfbea414c3b0d5525 |
 | tools | list_commits | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
 | tools | list_commits | page | b7c5240244916494e69b93a6fc0ad57b364a457e44ef68ed22739cb55ffb1359 |
 | tools | list_commits | perPage | 059dde8a01aac1a755c9e5efbbfaccb57fa34c3988494a154c873dfa7779a1d7 |
 | tools | list_commits | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | list_commits | sha | 1cb4096e4bfb01ccc794b77a3f36efdbd471ec34b3dea0516efaf93c0201f642 |
-| tools | list_issues | description | 64d775fc37887031520551399de4ef46513ad48a6624e52910b5f322c904f5c1 |
-| tools | list_issues | direction | 29c8371d927b118d8d71544c8c8d336f340b0fe893a48faa5a746880f578f373 |
+| tools | list_commits | sha | 32370fb2be08709a082e75aad76c4ea68131ea14e7c7d5397589551b4c578590 |
+| tools | list_issue_types | description | aad76d81c64bef558b289deaa559d6df71f073175296d652177fa5269ff75b46 |
+| tools | list_issue_types | owner | a52c8fb1e603a20184e28ac2617bf3691d25622e5c59b880455382e0b2992169 |
+| tools | list_issues | description | c41469eaf78f99580e51ff1bbbadc2922bdec37e47f0e5d142e1e576f3390c87 |
+| tools | list_issues | after | 08dda1d80d90e055580fd030062b62012b8ea50c39e1c4c8cb3224c35ab4c326 |
+| tools | list_issues | direction | fee43777658d13fc2a11ea0f8b5b82f03a410bef3ef26750efe89d8818d62951 |
 | tools | list_issues | labels | cd8837d9c837a6e1991502a822f57a44fc95a741eeece870f890f82c275c16a3 |
+| tools | list_issues | orderBy | f275807f86362c1b5c51261dd4081b2fd8997a5fc1c80b85fb7d6a9c40762cf5 |
 | tools | list_issues | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
-| tools | list_issues | page | b7c5240244916494e69b93a6fc0ad57b364a457e44ef68ed22739cb55ffb1359 |
 | tools | list_issues | perPage | 059dde8a01aac1a755c9e5efbbfaccb57fa34c3988494a154c873dfa7779a1d7 |
 | tools | list_issues | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
 | tools | list_issues | since | ea0dd87c74f5845692af7bc86972f1f210d984342fb26602fe35c0c04a3a49cd |
-| tools | list_issues | sort | 3c9b30285f90cf05528b2502044ec5c2b125b6c1885be9af8aeff0ba722fffbb |
-| tools | list_issues | state | 2b25d08228e3152d0b529fbf269381f1f000c2adf30f1186b7e9ac7eb2cba425 |
-| tools | list_notifications | description | d10e656b1bf56afd6198d99dfbacab9b89240e71050cb766e6fc4e1952e4cc1c |
-| tools | list_notifications | before | 8f3368c0cc20a07762d9ec5aedc6d3372c203d23d6a2e02c83941d4635cdf22d |
-| tools | list_notifications | filter | 6cff8ccd8331867367670666112d79969f23f7f39a92b0c292e4e24b1ec745ef |
-| tools | list_notifications | owner | 8e2cb4e3bf5d60a3aaac76a355e6de92a51d40a991243707ff5f7d8bae965ec0 |
-| tools | list_notifications | page | b7c5240244916494e69b93a6fc0ad57b364a457e44ef68ed22739cb55ffb1359 |
-| tools | list_notifications | perPage | 059dde8a01aac1a755c9e5efbbfaccb57fa34c3988494a154c873dfa7779a1d7 |
-| tools | list_notifications | repo | dca9d8fa52d40f94ac6413179eca8f64af79142cc78de65050c1e7c6931a5a65 |
-| tools | list_notifications | since | 2ec0b5bca09cc7fd1a3925f6fc0d35407e6bc1e95afcefeb3ed6f2eb0e5cf9c9 |
-| tools | list_pull_requests | description | f26161311922a22f509a5758def0b5736e9d57dab5a64de85cd6943ac3323cf9 |
+| tools | list_issues | state | da8480769e2cb1db597453b840eba06b9528d242e2ff2e0c4a3f6f5be675559b |
+| tools | list_pull_requests | description | c249adc3491b598845fda74d1b7f815b368107b47786634fc6e44ef0ea5f1a06 |
 | tools | list_pull_requests | base | 3915eefd074b833c42fa1a78466ff3667210bb7cd9e867bce531f6d69b6b25f1 |
 | tools | list_pull_requests | direction | 29c8371d927b118d8d71544c8c8d336f340b0fe893a48faa5a746880f578f373 |
 | tools | list_pull_requests | head | dc15fecf43097ca55e53fff94ae252ac6f7a0325fa37efb0ba854276c2eea920 |
@@ -1780,28 +1577,16 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | list_pull_requests | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
 | tools | list_pull_requests | sort | c9129025bd3ff6522a7eeebc1abf1481f36e4ac9d74524a473ac1c3be1c6fc2f |
 | tools | list_pull_requests | state | 2b25d08228e3152d0b529fbf269381f1f000c2adf30f1186b7e9ac7eb2cba425 |
-| tools | list_secret_scanning_alerts | description | 3894671d369d1afd5626bc7a85fd304dc23c40e42ac99eab42ef7472f50cf231 |
-| tools | list_secret_scanning_alerts | owner | 59efffac3bd8dd345c342df96df6e2a727f7c1d2483903c6bfb261acf946d96e |
-| tools | list_secret_scanning_alerts | repo | 077296c2d63a8df1f5032955887382a08bef79c0c8c9d5d5470ecb09dc10bb45 |
-| tools | list_secret_scanning_alerts | resolution | 43f25b84021219ca1dc81d938db1e65ba764b7c84b208724d8f426c9ab2f1004 |
-| tools | list_secret_scanning_alerts | secret_type | d92ec333a3e61d232bf74066b54f328522d20f590d20ef126cffdcc1af676e21 |
-| tools | list_secret_scanning_alerts | state | 2b25d08228e3152d0b529fbf269381f1f000c2adf30f1186b7e9ac7eb2cba425 |
+| tools | list_releases | description | 16c40a2d80141352b60b845be6bb163ab868e1dc3b7edbdbe14ca7b2d664e411 |
+| tools | list_releases | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
+| tools | list_releases | page | b7c5240244916494e69b93a6fc0ad57b364a457e44ef68ed22739cb55ffb1359 |
+| tools | list_releases | perPage | 059dde8a01aac1a755c9e5efbbfaccb57fa34c3988494a154c873dfa7779a1d7 |
+| tools | list_releases | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
 | tools | list_tags | description | b45b57651e9a56b5d03befc9edb790d1c1d92742cc6e1cd9d56f6b41fc3dca92 |
 | tools | list_tags | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
 | tools | list_tags | page | b7c5240244916494e69b93a6fc0ad57b364a457e44ef68ed22739cb55ffb1359 |
 | tools | list_tags | perPage | 059dde8a01aac1a755c9e5efbbfaccb57fa34c3988494a154c873dfa7779a1d7 |
 | tools | list_tags | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | manage_notification_subscription | description | be32b04a7ce2d90c4cf1ba0bfe8674b5eeed86fdac39522df6afe856d12b0a06 |
-| tools | manage_notification_subscription | action | 87165d54f132e25027bff709b19d191159dd029cf91fa180622a068a711468fd |
-| tools | manage_notification_subscription | notificationID | 621468ca2aa0eb1aa72bca26d3013ae8c4d200a6e66c5acf1f19e14ea5cd6452 |
-| tools | manage_repository_notification_subscription | description | 97e8f7279d5f6b8b031b73e5ecc55d093571b3eb9d4e244a65bc9acd31e907a1 |
-| tools | manage_repository_notification_subscription | action | ef0feed55d6ab9d2fc3a525a0fd662f1171691fcb8117f898df7290d1262a84f |
-| tools | manage_repository_notification_subscription | owner | dbf176c46bfb0ed84c9b81bea412da323f5912c25c9f54639916cd97e696f291 |
-| tools | manage_repository_notification_subscription | repo | 077296c2d63a8df1f5032955887382a08bef79c0c8c9d5d5470ecb09dc10bb45 |
-| tools | mark_all_notifications_read | description | 87e6c2a922e258ce8d6383d847f1cb480037d95d9baa6d366cf10fbca63a4c0b |
-| tools | mark_all_notifications_read | lastReadAt | 5d6a1f0fd2976b4afa70352c96bbca354414a3e178d571da71a713fabbcd33ff |
-| tools | mark_all_notifications_read | owner | c9850214816046dfdfca79df5569362340c4017116b2277684c90884b342c894 |
-| tools | mark_all_notifications_read | repo | 91e6d20fc5b1f0b5e86911e5662348e757761b7e3e0f9ea3739cb1a37ba09304 |
 | tools | merge_pull_request | description | 124cd641ce348386107609b1831084962d2198fa82fe58f7a040dd7e1cebb6b4 |
 | tools | merge_pull_request | commit_message | 8b3fd7f52419bc6922db1546614fcd15e214033be38066ff4cd1cbb841ba27ce |
 | tools | merge_pull_request | commit_title | df303c95cc0cb2a4ceb92b29c47c9b965ec484d53b5fee6add5c9189e2f96342 |
@@ -1809,6 +1594,21 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | merge_pull_request | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
 | tools | merge_pull_request | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
 | tools | merge_pull_request | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
+| tools | pull_request_read | description | 2d2b3f1fbb088bc1a5eef4fd77b7c8abdfd2753e2356abce8401dba5236cae5b |
+| tools | pull_request_read | method | 37b490bb771936c01b0ae2f765733376b218f25e74770b1f4f1af20fd4d9bc98 |
+| tools | pull_request_read | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
+| tools | pull_request_read | page | b7c5240244916494e69b93a6fc0ad57b364a457e44ef68ed22739cb55ffb1359 |
+| tools | pull_request_read | perPage | 059dde8a01aac1a755c9e5efbbfaccb57fa34c3988494a154c873dfa7779a1d7 |
+| tools | pull_request_read | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
+| tools | pull_request_read | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
+| tools | pull_request_review_write | description | 4395e0a7f82f40a8dd040d9b8a7a4711f37b4eda463858ccb989eecf00d33090 |
+| tools | pull_request_review_write | body | 305435be37ca49348dd59f76ed78d1d3db653263c87268f19e38edd8e9903f8a |
+| tools | pull_request_review_write | commitID | 8edaee0cc39481736353ab6b261838e08ea25f5a48ff2235247349671fd2d092 |
+| tools | pull_request_review_write | event | 00abd179b03232fbd602ad69bd7c4e4eec497999929b7b10ebc5b45cf762fd8e |
+| tools | pull_request_review_write | method | 6c9da86826c33d7875ac0f6c7a8a9f9c2f75507258df8b9e23f9bc152b71bc2a |
+| tools | pull_request_review_write | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
+| tools | pull_request_review_write | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
+| tools | pull_request_review_write | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
 | tools | push_files | description | 0ea99ad23e44e739ed503658bdaab5ee2dc239246cb00e715d8fff3d80fe544f |
 | tools | push_files | branch | 903fd236be715d2d2dabe8871e567bebdb55a876b1f9b4db0c49400e3b944e01 |
 | tools | push_files | files | 1c55ce034da38092a4c35795368bf7da13897eb6ab576f0539b22e02cda877a0 |
@@ -1819,51 +1619,59 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | request_copilot_review | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
 | tools | request_copilot_review | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
 | tools | request_copilot_review | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | search_code | description | c47330f5060c9cac8a1867a95cd93c42ab1e6e3b5e6aa7e7dd8b1dec1a8d1e79 |
-| tools | search_code | order | 3c9b30285f90cf05528b2502044ec5c2b125b6c1885be9af8aeff0ba722fffbb |
+| tools | search_code | description | 80d70342e3a3eb8b9ad5df5eb159840c6a363b7ef54bc757e541990984e2b2ad |
+| tools | search_code | order | 459d5b91cd6d44d4d449ac7ea47b374b8a64f41347ea88c26ff60293e91a5410 |
 | tools | search_code | page | b7c5240244916494e69b93a6fc0ad57b364a457e44ef68ed22739cb55ffb1359 |
 | tools | search_code | perPage | 059dde8a01aac1a755c9e5efbbfaccb57fa34c3988494a154c873dfa7779a1d7 |
-| tools | search_code | q | f28bd330504534bb418432cb9ed5d2710fd6ab8ce3ad1a15eef949522f7be10e |
+| tools | search_code | query | 4195e12d52f49f89827d3e4e20190f0b9246a116802728e6714b4fdc247f90ac |
 | tools | search_code | sort | 5a8b728c15aab0284ebfeb9dfb94debf67e55d178d8bf7c3b660fe36ef92855f |
-| tools | search_issues | description | 6c9613cebddafe9b57cfdbaf8cc66801954610fad9e51918ff4b014f1721bfe3 |
+| tools | search_issues | description | 43486d364155338655b54fc20c59d4b770504ecad84b4878c826745c01a3e39e |
 | tools | search_issues | order | 3c9b30285f90cf05528b2502044ec5c2b125b6c1885be9af8aeff0ba722fffbb |
+| tools | search_issues | owner | 2b0b674feebefdb92c2ae156a0d69926ea5c9b5bb7488dd0ee8dc69a6b475ff4 |
 | tools | search_issues | page | b7c5240244916494e69b93a6fc0ad57b364a457e44ef68ed22739cb55ffb1359 |
 | tools | search_issues | perPage | 059dde8a01aac1a755c9e5efbbfaccb57fa34c3988494a154c873dfa7779a1d7 |
-| tools | search_issues | q | ba2ce5263245f1c7beda19f750b937dee26e69df9b0773c5ee3902142e81e3ee |
+| tools | search_issues | query | ba2ce5263245f1c7beda19f750b937dee26e69df9b0773c5ee3902142e81e3ee |
+| tools | search_issues | repo | 1123ae7af5aa2a436f142f42ac4e8a8ec6c5242d90711eb443f60ca51bec7fd1 |
 | tools | search_issues | sort | 45f652334776f448a204bdd17cb144e1d6a7b0bf6e6746e677874ad01432470d |
-| tools | search_repositories | description | adf4a039f4409fab912a621c93aea801631f04db16e035808e7bab8e0f67aa82 |
+| tools | search_pull_requests | description | d8a220faae6baa7cd5dfad6e2acd46e0949ef79854cd1d98baa8c6a5e15b1cea |
+| tools | search_pull_requests | order | 3c9b30285f90cf05528b2502044ec5c2b125b6c1885be9af8aeff0ba722fffbb |
+| tools | search_pull_requests | owner | b4630553300033a3784143bef3cd6eaaf07fa13ac3ece89ad63b5af747263e59 |
+| tools | search_pull_requests | page | b7c5240244916494e69b93a6fc0ad57b364a457e44ef68ed22739cb55ffb1359 |
+| tools | search_pull_requests | perPage | 059dde8a01aac1a755c9e5efbbfaccb57fa34c3988494a154c873dfa7779a1d7 |
+| tools | search_pull_requests | query | 2eb3b226fb8c4d8de76cb2cafa5f133b8ad6d117590eb9eda9a79f0b7445b47d |
+| tools | search_pull_requests | repo | 689f726331c0f078fde7f7a94e4d9af223b58df8dd79d309a2a1d3fd5c4f59a3 |
+| tools | search_pull_requests | sort | 45f652334776f448a204bdd17cb144e1d6a7b0bf6e6746e677874ad01432470d |
+| tools | search_repositories | description | 7b9c5ffba195b04b1c4d835eca98ea84c999b254239740dd5a38e89d6f46ab02 |
+| tools | search_repositories | minimal_output | 4af9b88e9893e72033a60d84efb0087f44790e176b455f738cc15b7f6db7f3ab |
+| tools | search_repositories | order | 3c9b30285f90cf05528b2502044ec5c2b125b6c1885be9af8aeff0ba722fffbb |
 | tools | search_repositories | page | b7c5240244916494e69b93a6fc0ad57b364a457e44ef68ed22739cb55ffb1359 |
 | tools | search_repositories | perPage | 059dde8a01aac1a755c9e5efbbfaccb57fa34c3988494a154c873dfa7779a1d7 |
-| tools | search_repositories | query | 9eef05233ecfc1fbcfe756aa79bd497fa20e58144012561b562b8856040f5100 |
-| tools | search_users | description | 89d1a69aba0bca0b320f01ef132c9a72005ebefc054b69a0d01e035ed188a61e |
+| tools | search_repositories | query | 1c6a82bc7504d47ba45d87b94e4c35cab4392381291e88647e4215798d36bb3b |
+| tools | search_repositories | sort | 5bee5ee03cb669d6152c8059a10341aa6efdd05dbc76fc10a8d089556052867a |
+| tools | search_users | description | e2c14890a74e50c883b5ba65dd1ae521152ef8e7ffe67aab5336091fcefe0807 |
 | tools | search_users | order | 3c9b30285f90cf05528b2502044ec5c2b125b6c1885be9af8aeff0ba722fffbb |
 | tools | search_users | page | b7c5240244916494e69b93a6fc0ad57b364a457e44ef68ed22739cb55ffb1359 |
 | tools | search_users | perPage | 059dde8a01aac1a755c9e5efbbfaccb57fa34c3988494a154c873dfa7779a1d7 |
-| tools | search_users | q | 411fdded1833c9660c80d3528c9fe3117d7fc0efd34b8f6756fd7dd82b6b16fd |
-| tools | search_users | sort | 7b4f03e0b12896994cd874649134fe440d505ae1eafaa19f7f330a8b2fa4b055 |
-| tools | submit_pending_pull_request_review | description | 61929abd9c3ecaf274c5ecabcf310474f023dc63a93f029ffb624704bf789061 |
-| tools | submit_pending_pull_request_review | body | 150bf72e1256c35c56d58cce6912ae25bb0a02e2a048a422297a7eead2024635 |
-| tools | submit_pending_pull_request_review | event | 9cebe2efbb82f53c7afe8547fddd42a8324b996564d9b38efc390d1d028e07cf |
-| tools | submit_pending_pull_request_review | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
-| tools | submit_pending_pull_request_review | pullNumber | c45ef7560e9361e486ad92db8751f01655bdaad2e8375566effb91d07090b338 |
-| tools | submit_pending_pull_request_review | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | update_issue | description | 84a37c5e28746e6ff6c9ec1063d35d03b623e2124107697514916fcd04dd54ea |
-| tools | update_issue | assignees | 09ed592a172e1fab692d52395b578ddb80014f1348ab79b3685483856aecfbef |
-| tools | update_issue | body | 23b7ce65508de7bbfb013fd25a384491f896e839f62116c96813ec6f53945e98 |
-| tools | update_issue | issue_number | 45f54a035e52ddd24bd931710aed635cc2d5a202ba687d0708c618fe76095437 |
-| tools | update_issue | labels | d5304eef496f551a4ae71c2345ef665475ae22c93b4c8b3fc7043385e0011194 |
-| tools | update_issue | milestone | e503beb4738eefdedd535449eb967367e51888787a8c6d246206e94de8fdc60d |
-| tools | update_issue | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
-| tools | update_issue | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
-| tools | update_issue | state | 73d2abfb99c5146711a52488e33aa097ebd94cc1f1d14a0e21e9a6ed88709818 |
-| tools | update_issue | title | 522156b9b0af7eb99063569c92036931a3c9f027728ac6de8a70bcd0a1d3721c |
+| tools | search_users | query | 2bdd0f05eb601997f555c602d81a9a9fe3edde63d396cad58aea855fa094e00e |
+| tools | search_users | sort | 70aa5854fb750b213cbc0d4e95a3a50ced65335a521cd617c62673fb00894df3 |
+| tools | sub_issue_write | description | 0e8fa66b77f7ec60fa9ee3a6402d1aa53a8b4ee45621b52dea19a7777b9692c9 |
+| tools | sub_issue_write | after_id | b8451ca1764a44349b69eebff232b4a8eae441e4bf69e17632bb1798bb56cfb4 |
+| tools | sub_issue_write | before_id | c7b4548a5c32f2c45c00bdc0623fcbe84709343305e28c2d0f19f859e3ba5c04 |
+| tools | sub_issue_write | issue_number | 0ec2e63e1a2a883d952d2a60cec7f5c1cf7aa6af1da3e8477bfb3d3f825a374f |
+| tools | sub_issue_write | method | 70c3e687e87f43455200f2166483a85fb7a1d0ce1f6ad4bed7da4de0022a6d20 |
+| tools | sub_issue_write | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
+| tools | sub_issue_write | replace_parent | ee0549613454cbb10045f6efc25cc6d31b1a29de3daab4aceb13f1c7c3abc2bc |
+| tools | sub_issue_write | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
+| tools | sub_issue_write | sub_issue_id | 7016cafc44f9fd8fa96bec3e4c8f108772df7aec76cf899e1a6471fa8abcc6b3 |
 | tools | update_pull_request | description | bed4d74cfd86d23ab02749d6b4fffa5ba43c3290bfa7c9810514cf821e0563eb |
 | tools | update_pull_request | base | 33cd739abf299499afc569d0b3bf88e53d9833841bb0af1c9e7c3a61c827991a |
 | tools | update_pull_request | body | 23b7ce65508de7bbfb013fd25a384491f896e839f62116c96813ec6f53945e98 |
+| tools | update_pull_request | draft | 2348581419a41833f3019df10f6c1508524410025f4f0054b6995e508227a03f |
 | tools | update_pull_request | maintainer_can_modify | 4c61cb2daa11e76d1bd1483894ba1f0c8d8430cf9011793815d3cbd017f341ad |
 | tools | update_pull_request | owner | f0d16bda4d13e782383008c51526b15a1d34e639b794b48ce0e4aaa9929b2a4a |
 | tools | update_pull_request | pullNumber | 4f4b068a5c13d2a2547b7a13655111963fd97b583156f8cea0fd62c4a16f7375 |
 | tools | update_pull_request | repo | a2b1b3f24a4b0370e287023edc5ccf8c9b4d8af69e97a2f698cf3aa6dae8c558 |
+| tools | update_pull_request | reviewers | 9b88c448f5064122e6adde819b4b684e78631a4f6915b1bc5f4e67d29fef3c77 |
 | tools | update_pull_request | state | 73d2abfb99c5146711a52488e33aa097ebd94cc1f1d14a0e21e9a6ed88709818 |
 | tools | update_pull_request | title | 522156b9b0af7eb99063569c92036931a3c9f027728ac6de8a70bcd0a1d3721c |
 | tools | update_pull_request_branch | description | bb1dacdad1b56b12c6b26f7833d5b189a7827f66ea3d04917632eed63277d80d |

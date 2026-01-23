@@ -13,13 +13,13 @@
   "scope": "native",
   "mutitenant": true,
   "runtime": "node",
-  "version": "2.3.1",
+  "version": "3.2.0",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"e55e7e30e62793adeffc257f7d4f2c389efd2375ff58fadbb999ef2a03847943","reason":"The toolset provides good documentation with mostly clear tool names and adequate descriptions. Most tools have well-documented parameters with clear descriptions and appropriate constraints. However, some tools like 'cleanup' and 'port_forward' have minimal descriptions, and a few parameters lack sufficient detail about their purpose and usage context. The documentation is generally functional but could benefit from more comprehensive descriptions for complex operations.","score":"B"},
+  "rating": {"hash":"805c2540eddcc78f70bd61664f1f7b92b679530df92226acd0d018e2cdb7b9f3","reason":"The toolset demonstrates good documentation quality overall. Most tool names are clear and specific (kubectl_get, kubectl_apply, install_helm_chart), and descriptions adequately explain functionality and usage context. Parameter documentation is generally comprehensive with clear descriptions, proper type specifications, and helpful examples. However, some tools like 'cleanup' and 'ping' have minimal descriptions, and the port_forward tool lacks parameter descriptions entirely. The kubectl_generic tool could benefit from clearer guidance on when to use it versus specific kubectl tools.","score":"B"},
   "resources": {
-    "tools": 20,
-    "prompts": 0,
+    "tools": 22,
+    "prompts": 1,
     "resources": 5,
     "resourcesTemplates": 0
   }

@@ -2,7 +2,7 @@
   "tools": [
     {
       "name": "analyze_log_group",
-      "hash": "9f1db4e26a7b2d0ae4e0ab61b66a946772641c1e8cd020d6347699003e4f64fd",
+      "hash": "462b467faa9ce1d1f7c2be2a7e9a3e4345ec763cfdb72cb1259c90254564beb7",
       "params": [
         {
           "name": "end_time",
@@ -20,7 +20,7 @@
     },
     {
       "name": "cancel_query",
-      "hash": "a1319f825f9b8c1e6271cd67421d97b5ccdb5fdb0907b12a238c7f6ea418d8f7",
+      "hash": "b5facdcca801b6598de1aeaed3a70f7d8dded1d0e82b2913426b5d447119be91",
       "params": [
         {
           "name": "query_id",
@@ -30,7 +30,7 @@
     },
     {
       "name": "describe_log_groups",
-      "hash": "5934185a413253077acb8ccd064686809174d7428ea60b622d8fb5a17e01d34c",
+      "hash": "d21ffa52a0b67215b42cad25cbb21ca3b8f9a2859724e0a66d8ad47bb5ed5bde",
       "params": [
         {
           "name": "account_identifiers",
@@ -56,7 +56,7 @@
     },
     {
       "name": "execute_log_insights_query",
-      "hash": "d23d320d6029fa0b212d4a63d7274a0e57aabe2ca9967ac4bd6e33eb7fd5598a",
+      "hash": "a4757de9e9c01cca5b19d4cf1500342ef8275e53912828a2f5a916897630d48f",
       "params": [
         {
           "name": "end_time",
@@ -90,7 +90,7 @@
     },
     {
       "name": "get_query_results",
-      "hash": "f768653b64a79745bbdccaf386f47b38312826e6f79671173e407c1def162c46",
+      "hash": "0f45077406a559a1a12ed135a70c8a21e163fd58f0b74ba301c1cec8bdda7185",
       "params": [
         {
           "name": "query_id",

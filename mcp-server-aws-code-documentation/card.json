@@ -13,10 +13,10 @@
   "scope": "native",
   "mutitenant": true,
   "runtime": "python",
-  "version": "1.0.1",
+  "version": "1.0.9",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"ccc628127b6c5a9cf58a1a5d87963a3d9637530d627bbaf2f83390dfa9e73995","reason":"The toolset provides adequate documentation with clear workflow steps and comprehensive parameter descriptions, but suffers from inconsistent naming (prepare_repository vs create_context), overly verbose descriptions that mix implementation details with usage guidance, and complex nested schemas that could be more accessible. While functional, it requires significant mental effort to understand the workflow and could benefit from more concise, user-focused descriptions.","score":"C"},
+  "rating": {"hash":"d665ad05ab9e3c487784c9a868658297e5544f67402b6af265f22967dc976cc7","reason":"The toolset provides adequate documentation with clear workflow descriptions and detailed parameter schemas, but suffers from inconsistent quality. While complex parameters like ProjectAnalysis are well-documented with examples, the descriptions are verbose and include deprecation warnings that detract from clarity. Tool names are functional but generic, and some descriptions contain implementation details rather than focusing on usage context.","score":"C"},
   "resources": {
     "tools": 4,
     "prompts": 0,

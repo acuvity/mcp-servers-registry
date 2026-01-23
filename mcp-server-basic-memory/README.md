@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -21,10 +21,10 @@
 # What is mcp-server-basic-memory?
 [![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-basic-memory/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-basic-memory/0.13.5?logo=docker&logoColor=fff&label=0.13.5)](https://hub.docker.com/r/acuvity/mcp-server-basic-memory)
-[![PyPI](https://img.shields.io/badge/0.13.5-3775A9?logo=pypi&logoColor=fff&label=basic-memory)](https://pypi.org/project/basic-memory/)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-basic-memory/0.17.7?logo=docker&logoColor=fff&label=0.17.7)](https://hub.docker.com/r/acuvity/mcp-server-basic-memory)
+[![PyPI](https://img.shields.io/badge/0.17.7-3775A9?logo=pypi&logoColor=fff&label=basic-memory)](https://pypi.org/project/basic-memory/)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-basic-memory/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-basic-memory&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-v%22%2C%22memory%3A%2Fdata%22%2C%22docker.io%2Facuvity%2Fmcp-server-basic-memory%3A0.13.5%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-basic-memory&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-v%22%2C%22memory%3A%2Fdata%22%2C%22docker.io%2Facuvity%2Fmcp-server-basic-memory%3A0.17.7%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Local-first knowledge management combining Zettelkasten with knowledge graphs
 
@@ -43,69 +43,70 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
 The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-basic-memory/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
-### 🔒 Resource Integrity
+#### 🔒 Resource Integrity
 
 **Mitigates MCP Rug Pull Attacks**
 
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Guardrails
+#### 🛡️ Guardrails
 
-#### Covert Instruction Detection
+##### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-#### Sensitive Pattern Detection
+##### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-#### Shadowing Pattern Detection
+##### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-#### Schema Misuse Prevention
+##### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-#### Cross-Origin Tool Access
+##### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-#### Secrets Redaction
+##### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
@@ -114,7 +115,7 @@ Automatically masks sensitive values so they never appear in logs or responses.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
-### Enable guardrails
+#### Enable guardrails
 
 To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
@@ -129,7 +130,7 @@ To activate guardrails in your Docker containers, define the `GUARDRAILS` enviro
 
 Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
 
-## 🔒 Basic Authentication via Shared Secret
+#### 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
@@ -143,10 +144,8 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 > While basic auth will protect against unauthorized access, you should use it only in controlled environment,
 > rotate credentials frequently and **always** use TLS.
 
-</details>
-
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # 📦 How to Install
@@ -177,7 +176,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-basic-memory&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-v%22%2C%22memory%3A%2Fdata%22%2C%22docker.io%2Facuvity%2Fmcp-server-basic-memory%3A0.13.5%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-basic-memory&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-v%22%2C%22memory%3A%2Fdata%22%2C%22docker.io%2Facuvity%2Fmcp-server-basic-memory%3A0.17.7%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -196,7 +195,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "--read-only",
           "-v",
           "memory:/data",
-          "docker.io/acuvity/mcp-server-basic-memory:0.13.5"
+          "docker.io/acuvity/mcp-server-basic-memory:0.17.7"
         ]
       }
     }
@@ -220,7 +219,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "--read-only",
         "-v",
         "memory:/data",
-        "docker.io/acuvity/mcp-server-basic-memory:0.13.5"
+        "docker.io/acuvity/mcp-server-basic-memory:0.17.7"
       ]
     }
   }
@@ -248,7 +247,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "--read-only",
         "-v",
         "memory:/data",
-        "docker.io/acuvity/mcp-server-basic-memory:0.13.5"
+        "docker.io/acuvity/mcp-server-basic-memory:0.17.7"
       ]
     }
   }
@@ -278,7 +277,7 @@ Add the following JSON block to your mcp configuration file:
         "--read-only",
         "-v",
         "memory:/data",
-        "docker.io/acuvity/mcp-server-basic-memory:0.13.5"
+        "docker.io/acuvity/mcp-server-basic-memory:0.17.7"
       ]
     }
   }
@@ -306,7 +305,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "--read-only",
         "-v",
         "memory:/data",
-        "docker.io/acuvity/mcp-server-basic-memory:0.13.5"
+        "docker.io/acuvity/mcp-server-basic-memory:0.17.7"
       ]
     }
   }
@@ -325,7 +324,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 async with MCPServerStdio(
     params={
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-v","memory:/data","docker.io/acuvity/mcp-server-basic-memory:0.13.5"]
+        "args": ["run","-i","--rm","--read-only","-v","memory:/data","docker.io/acuvity/mcp-server-basic-memory:0.17.7"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -354,7 +353,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -v memory:/data docker.io/acuvity/mcp-server-basic-memory:0.13.5`
+- arguments: `run -i --rm --read-only -v memory:/data docker.io/acuvity/mcp-server-basic-memory:0.17.7`
 
 </details>
 
@@ -364,7 +363,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -v memory:/data docker.io/acuvity/mcp-server-basic-memory:0.13.5
+docker run -it -p 8000:8000 --rm --read-only -v memory:/data docker.io/acuvity/mcp-server-basic-memory:0.17.7
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -476,7 +475,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (19)
+## 🧰 Tools (17)
 <details>
 <summary>delete_note</summary>
 
@@ -516,16 +515,16 @@ Read a file's raw content by path or permalink
 
 ```
 Build context from a memory:// URI to continue conversations naturally.
-    
+
     Use this to follow up on previous discussions or explore related topics.
-    
+
     Memory URL Format:
-    - Use paths like "folder/note" or "memory://folder/note" 
+    - Use paths like "folder/note" or "memory://folder/note"
     - Pattern matching: "folder/*" matches all notes in folder
     - Valid characters: letters, numbers, hyphens, underscores, forward slashes
     - Avoid: double slashes (//), angle brackets (<>), quotes, pipes (|)
     - Examples: "specs/search", "projects/basic-memory", "notes/*"
-    
+
     Timeframes support natural language like:
     - "2 days ago", "last week", "today", "3 months ago"
     - Or standard formats like "7d", "24h"
@@ -550,12 +549,12 @@ Build context from a memory:// URI to continue conversations naturally.
 **Description**:
 
 ```
-Get recent activity from across the knowledge base.
+Get recent activity for a project or across all projects.
 
     Timeframe supports natural language formats like:
-    - "2 days ago"  
+    - "2 days ago"
     - "last week"
-    - "yesterday" 
+    - "yesterday"
     - "today"
     - "3 weeks ago"
     Or standard formats like "7d"
@@ -567,9 +566,6 @@ Get recent activity from across the knowledge base.
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | depth | integer | not set | No
-| max_related | integer | not set | No
-| page | integer | not set | No
-| page_size | integer | not set | No
 | project | any | not set | No
 | timeframe | string | not set | No
 | type | any | not set | No
@@ -580,7 +576,7 @@ Get recent activity from across the knowledge base.
 **Description**:
 
 ```
-Search across all content in the knowledge base.
+Search across all content in the knowledge base with advanced syntax support.
 ```
 
 **Parameter**:
@@ -647,6 +643,7 @@ Create or update a markdown note. Returns a markdown formatted summary of the se
 |-----------|------|-------------|-----------|
 | content | string | not set | Yes
 | folder | string | not set | Yes
+| note_type | string | not set | No
 | project | any | not set | No
 | tags | any | not set | No
 | title | string | not set | Yes
@@ -727,35 +724,6 @@ Move a note to a new location, updating database and maintaining links.
 | project | any | not set | No
 </details>
 <details>
-<summary>sync_status</summary>
-
-**Description**:
-
-```
-Check the status of file synchronization and background operations.
-    
-    Use this tool to:
-    - Check if file sync is in progress or completed
-    - Get detailed sync progress information  
-    - Understand if your files are fully indexed
-    - Get specific error details if sync operations failed
-    - Monitor initial project setup and legacy migration
-    
-    This covers all sync operations including:
-    - Initial project setup and file indexing
-    - Legacy project migration to unified database
-    - Ongoing file monitoring and updates
-    - Background processing of knowledge graphs
-    
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| project | any | not set | No
-</details>
-<details>
 <summary>list_memory_projects</summary>
 
 **Description**:
@@ -763,102 +731,29 @@ Check the status of file synchronization and background operations.
 ```
 List all available projects with their status.
 
-    Shows all Basic Memory projects that are available, indicating which one
-    is currently active and which is the default.
+Shows all Basic Memory projects that are available for MCP operations.
+Use this tool to discover projects when you need to know which project to use.
 
-    Returns:
-        Formatted list of projects with status indicators
+Use this tool:
+- At conversation start when project is unknown
+- When user asks about available projects
+- Before any operation requiring a project
 
-    Example:
-        list_projects()
-    
+After calling:
+- Ask user which project to use
+- Remember their choice for the session
+
+Returns:
+    Formatted list of projects with session management guidance
+
+Example:
+    list_memory_projects()
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-</details>
-<details>
-<summary>switch_project</summary>
-
-**Description**:
-
-```
-Switch to a different project context.
-
-    Changes the active project context for all subsequent tool calls.
-    Shows a project summary after switching successfully.
-
-    Args:
-        project_name: Name of the project to switch to
-
-    Returns:
-        Confirmation message with project summary
-
-    Example:
-        switch_project("work-notes")
-        switch_project("personal-journal")
-    
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| project_name | string | not set | Yes
-</details>
-<details>
-<summary>get_current_project</summary>
-
-**Description**:
-
-```
-Show the currently active project and basic stats.
-
-    Displays which project is currently active and provides basic information
-    about it.
-
-    Returns:
-        Current project name and basic statistics
-
-    Example:
-        get_current_project()
-    
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-</details>
-<details>
-<summary>set_default_project</summary>
-
-**Description**:
-
-```
-Set default project in config. Requires restart to take effect.
-
-    Updates the configuration to use a different default project. This change
-    only takes effect after restarting the Basic Memory server.
-
-    Args:
-        project_name: Name of the project to set as default
-
-    Returns:
-        Confirmation message about config update
-
-    Example:
-        set_default_project("work-notes")
-    
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| project_name | string | not set | Yes
 </details>
 <details>
 <summary>create_memory_project</summary>
@@ -868,21 +763,20 @@ Set default project in config. Requires restart to take effect.
 ```
 Create a new Basic Memory project.
 
-    Creates a new project with the specified name and path. The project directory
-    will be created if it doesn't exist. Optionally sets the new project as default.
+Creates a new project with the specified name and path. The project directory
+will be created if it doesn't exist. Optionally sets the new project as default.
 
-    Args:
-        project_name: Name for the new project (must be unique)
-        project_path: File system path where the project will be stored
-        set_default: Whether to set this project as the default (optional, defaults to False)
+Args:
+    project_name: Name for the new project (must be unique)
+    project_path: File system path where the project will be stored
+    set_default: Whether to set this project as the default (optional, defaults to False)
 
-    Returns:
-        Confirmation message with project details
+Returns:
+    Confirmation message with project details
 
-    Example:
-        create_project("my-research", "~/Documents/research")
-        create_project("work-notes", "/home/user/work", set_default=True)
-    
+Example:
+    create_memory_project("my-research", "~/Documents/research")
+    create_memory_project("work-notes", "/home/user/work", set_default=True)
 ```
 
 **Parameter**:
@@ -901,23 +795,22 @@ Create a new Basic Memory project.
 ```
 Delete a Basic Memory project.
 
-    Removes a project from the configuration and database. This does NOT delete
-    the actual files on disk - only removes the project from Basic Memory's
-    configuration and database records.
+Removes a project from the configuration and database. This does NOT delete
+the actual files on disk - only removes the project from Basic Memory's
+configuration and database records.
 
-    Args:
-        project_name: Name of the project to delete
+Args:
+    project_name: Name of the project to delete
 
-    Returns:
-        Confirmation message about project deletion
+Returns:
+    Confirmation message about project deletion
 
-    Example:
-        delete_project("old-project")
+Example:
+    delete_project("old-project")
 
-    Warning:
-        This action cannot be undone. The project will need to be re-added
-        to access its content through Basic Memory again.
-    
+Warning:
+    This action cannot be undone. The project will need to be re-added
+    to access its content through Basic Memory again.
 ```
 
 **Parameter**:
@@ -926,8 +819,38 @@ Delete a Basic Memory project.
 |-----------|------|-------------|-----------|
 | project_name | string | not set | Yes
 </details>
+<details>
+<summary>search</summary>
 
-## 📚 Resources (2)
+**Description**:
+
+```
+Search for content across the knowledge base
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| query | string | not set | Yes
+</details>
+<details>
+<summary>fetch</summary>
+
+**Description**:
+
+```
+Fetch the full contents of a search result document
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| id | string | not set | Yes
+</details>
+
+## 📚 Resources (1)
 
 <details>
 <summary>Resources</summary>
@@ -935,13 +858,12 @@ Delete a Basic Memory project.
 | Name | Mime type | URI| Content |
 |-----------|------|-------------|-----------|
 | ai assistant guide | text/plain | memory://ai_assistant_guide | - |
-| project_info | text/plain | memory://project_info | - |
 
 </details>
 
-## 📝 Prompts (4)
+## 📝 Prompts (3)
 <details>
-<summary>Continue Conversation</summary>
+<summary>continue_conversation</summary>
 
 **Description**:
 
@@ -953,24 +875,33 @@ Continue a previous conversation
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| topic | Topic or keyword to search for |No |
-| timeframe | How far back to look for activity (e.g. '1d', '1 week') |No |
+| topic | Topic or keyword to search for
+
+Provide as a JSON string matching the following schema: {"anyOf":[{"type":"string"},{"type":"null"}],"description":"Topic or keyword to search for"} |No |
+| timeframe | How far back to look for activity (e.g. '1d', '1 week')
+
+Provide as a JSON string matching the following schema: {"anyOf":[{"type":"string"},{"type":"null"}],"description":"How far back to look for activity (e.g. '1d', '1 week')"} |No |
 <details>
-<summary>Share Recent Activity</summary>
+<summary>recent_activity</summary>
 
 **Description**:
 
 ```
-Get recent activity from across the knowledge base
+Get recent activity from a specific project or across all projects
 ```
 
 **Parameter**:
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| timeframe | How far back to look for activity (e.g. '1d', '1 week') |No |
+| timeframe | How far back to look for activity (e.g. '1d', '1 week')
+
+Provide as a JSON string matching the following schema: {"description":"How far back to look for activity (e.g. '1d', '1 week')","type":"string"} |No |
+| project | Specific project to get activity from (None for discovery across all projects)
+
+Provide as a JSON string matching the following schema: {"anyOf":[{"type":"string"},{"type":"null"}],"description":"Specific project to get activity from (None for discovery across all projects)"} |No |
 <details>
-<summary>Search Knowledge Base</summary>
+<summary>search_knowledge_base</summary>
 
 **Description**:
 
@@ -983,19 +914,9 @@ Search across all content in basic-memory
 | Argument | Description | Required |
 |-----------|------|-------------|
 | query | not set |Yes |
-| timeframe | How far back to search (e.g. '1d', '1 week') |No |
-<details>
-<summary>sync_status_prompt</summary>
+| timeframe | How far back to search (e.g. '1d', '1 week')
 
-**Description**:
-
-```
-Get sync status with recommendations for AI assistants.
-    
-    This prompt provides both current sync status and guidance on how
-    AI assistants should respond when sync operations are in progress or completed.
-    
-```
+Provide as a JSON string matching the following schema: {"anyOf":[{"type":"string"},{"type":"null"}],"description":"How far back to search (e.g. '1d', '1 week')"} |No |
 
 </details>
 
@@ -1006,32 +927,30 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
-| prompts | Continue Conversation | description | 08f57034421ff1f069d1c1f6dd0dd640b9982a6ba21a5b2442953cb1b5dd6efa |
-| prompts | Continue Conversation | timeframe | cd9af00423b977d8f501edaeef3d43f42a323778bbbcc0900c4d88b6a4f9354e |
-| prompts | Continue Conversation | topic | d8cb6ba6d70a65d763ba5f3f38b7f24ffee35f1f32c0fb1d5bfe095ba9f2d327 |
-| prompts | Search Knowledge Base | description | dcd0e4296554bc417239afd10b686e82c4879c842c3a7c60a2288ad0152513e3 |
-| prompts | Search Knowledge Base | query | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
-| prompts | Search Knowledge Base | timeframe | ac891e951bb4167b6fafdd14fdac08a1dcf761aacef7f3add86de2000a8223fb |
-| prompts | Share Recent Activity | description | acaf99888843d7d2c0243f8bf67259929179ab71579a4af5a16571f3485475f7 |
-| prompts | Share Recent Activity | timeframe | cd9af00423b977d8f501edaeef3d43f42a323778bbbcc0900c4d88b6a4f9354e |
-| prompts | sync_status_prompt | description | da4cc0a9c0044eef836c0023b8a9c33d53ac046beba62f756a3587f3da1ac1bc |
-| tools | build_context | description | 8864f9648ebb192186da87418b06d8d7a200eedfb7762ecd67e4a29fa85a8867 |
+| prompts | continue_conversation | description | 08f57034421ff1f069d1c1f6dd0dd640b9982a6ba21a5b2442953cb1b5dd6efa |
+| prompts | continue_conversation | timeframe | 79053544f5f692a4029a29d441eddc792330a24eed26004f06c12d7b32892129 |
+| prompts | continue_conversation | topic | d05c28ddcc33f478c5ea800d88601aa1dc1286c9dfb64213688006964612eb4e |
+| prompts | recent_activity | description | a4ad3c0b4b9cfbc89c2bb0612ad7e1a6a45eca1653dee91498a45d2c58e6c6fd |
+| prompts | recent_activity | project | 8ea7ece6387b242003bb4480b908a4501dd0546108b767af5f9c3a4f3caaeaa1 |
+| prompts | recent_activity | timeframe | 4279066c7bbd242c4e7277c1a5643b6e1b546053ddacb0dac0f43015cda145ff |
+| prompts | search_knowledge_base | description | dcd0e4296554bc417239afd10b686e82c4879c842c3a7c60a2288ad0152513e3 |
+| prompts | search_knowledge_base | query | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| prompts | search_knowledge_base | timeframe | 3843dff545d4aae893892b8df4c5307eaecaca0314f37ac06061ea52cf78b968 |
+| tools | build_context | description | 5a9db2017895c78083f90b9ab28d58605bc3d09d310a60869e9a602002d79e2e |
 | tools | canvas | description | c739f799c4f54a0beebbbba387862e5370f4e715f36b65d0e523b3fe664d759c |
-| tools | create_memory_project | description | d3cbed6ef409f038824079681857e09fc92573440b22b618f6393bfc01f3824d |
+| tools | create_memory_project | description | 00d04c2aec156813a221a9e012152062b53fe5c01037c829e4e8805ec3fde06d |
 | tools | delete_note | description | b92bd108ffa7b65b4ac92c9f75167080771a08e3e9a78dd6ec3fabde085802b7 |
-| tools | delete_project | description | e684a0bd482c60d1ba3ee7bc935cf30436d56ad267f9b20d9b257e9c3722912a |
+| tools | delete_project | description | c3d6ffc05720bc4d2413c20a5f73ad917e6954e03b8ec7b3ba4f1975fc933c8e |
 | tools | edit_note | description | 7e70b1ab505a2e06e8da48ad7b4368890e8d86778fd9465d88e02bc0c43fc556 |
-| tools | get_current_project | description | ec25ce3bd6c3f91340b4761b2976bbf17caa41d64f5660fd40edd781c07a86a5 |
+| tools | fetch | description | 20a68f82bddb07ce389cac0cb2fe30d5db15aee31a8bc46f68b3ca3bcd9237f5 |
 | tools | list_directory | description | 8eaf254f8c67f5e7396f90b2a2942e9d47c64860e8b0261bca07de9c5b118d64 |
-| tools | list_memory_projects | description | 944ac1e2c55826b72ca7fd53fc1c16dfe77ef71945500ecebc9756bf723c7c52 |
+| tools | list_memory_projects | description | 42d00f25c24b949a0abe56a14ae5a4a377b53110013bab2752b255d3ea631f9a |
 | tools | move_note | description | cdc522815f6900fadbdd8fa11ded0afde844bca74753141970fb06972f2beead |
 | tools | read_content | description | 5b184094eabd23821254f0608ad35de1570fd776906e9ff822020cd68d129921 |
 | tools | read_note | description | 5d503b64dafb1601312dd1780eb5fbdb5d7988f7d1ce090545c3fb033c0bec77 |
-| tools | recent_activity | description | 8b43acabdd7bc9e4ab6398f1f27b28203fb5df0314d7f0888946136d40f548d5 |
-| tools | search_notes | description | fcaec1323a397ec1b89c8d50efb4cf4af054f0574d569452599c927231594adc |
-| tools | set_default_project | description | 25c20445c664c4a3459c6188cd63e33b69219d984641f916d4c118ddd9a2877f |
-| tools | switch_project | description | 096b246c8d498cf080f5c936ffc13d14d21cea89e6f768b82d81aea3071ab5b4 |
-| tools | sync_status | description | 00b145ea43da92d1e768bbdcb203a9104369d88d55314c30a0970c3edd03499c |
+| tools | recent_activity | description | 0768babdcbb8ce8f57c9a197eb183147d4e6bd8825a3a705931b83478171ec90 |
+| tools | search | description | 3706ec9b490cce0c17f4fca6c321e217e0a41571df2b3a71396534ae1ead083b |
+| tools | search_notes | description | 58fb30dcbae336b4aba77cf67870411f4b92a4dd94aac9e62de72f13ec2ed765 |
 | tools | view_note | description | 7cb3581bfc58d06d48b06d0e5ff77a8528b44729996ae403a134cfc8b1316303 |
 | tools | write_note | description | 3fb632ad40400235da2eae016e76b13f699cd2206aca615729e8ee85653ec98f |
 

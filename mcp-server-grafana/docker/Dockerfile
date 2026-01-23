@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
+    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@5a873664a85bb4ba447c4edf89a48614689c1549
 
 FROM alpine:3.21 AS artifacts
 
@@ -14,7 +14,7 @@ ARG TARGETOS TARGETARCH
 RUN apk update && apk add --no-cache curl file tar unzip go
 COPY artifacts.sh /tmp/artifacts.sh
 RUN chmod a+x /tmp/artifacts.sh
-RUN sh /tmp/artifacts.sh https://github.com/grafana/mcp-grafana/releases/download/v0.4.2/mcp-grafana_0.4.2_checksums.txt https://github.com/grafana/mcp-grafana/releases/download/v0.4.2/mcp-grafana_Darwin_arm64.tar.gz https://github.com/grafana/mcp-grafana/releases/download/v0.4.2/mcp-grafana_Darwin_x86_64.tar.gz https://github.com/grafana/mcp-grafana/releases/download/v0.4.2/mcp-grafana_Linux_arm64.tar.gz https://github.com/grafana/mcp-grafana/releases/download/v0.4.2/mcp-grafana_Linux_i386.tar.gz https://github.com/grafana/mcp-grafana/releases/download/v0.4.2/mcp-grafana_Linux_x86_64.tar.gz https://github.com/grafana/mcp-grafana/releases/download/v0.4.2/mcp-grafana_Windows_arm64.zip https://github.com/grafana/mcp-grafana/releases/download/v0.4.2/mcp-grafana_Windows_i386.zip https://github.com/grafana/mcp-grafana/releases/download/v0.4.2/mcp-grafana_Windows_x86_64.zip
+RUN sh /tmp/artifacts.sh https://github.com/grafana/mcp-grafana/releases/download/v0.8.2/darwin.arm64.grafana.tar.gz https://github.com/grafana/mcp-grafana/releases/download/v0.8.2/darwin.x64.grafana.tar.gz https://github.com/grafana/mcp-grafana/releases/download/v0.8.2/linux.arm64.grafana.tar.gz https://github.com/grafana/mcp-grafana/releases/download/v0.8.2/linux.x64.grafana.tar.gz https://github.com/grafana/mcp-grafana/releases/download/v0.8.2/mcp-grafana_0.8.2_checksums.txt https://github.com/grafana/mcp-grafana/releases/download/v0.8.2/mcp-grafana_Darwin_arm64.tar.gz https://github.com/grafana/mcp-grafana/releases/download/v0.8.2/mcp-grafana_Darwin_x86_64.tar.gz https://github.com/grafana/mcp-grafana/releases/download/v0.8.2/mcp-grafana_Linux_arm64.tar.gz https://github.com/grafana/mcp-grafana/releases/download/v0.8.2/mcp-grafana_Linux_i386.tar.gz https://github.com/grafana/mcp-grafana/releases/download/v0.8.2/mcp-grafana_Linux_x86_64.tar.gz https://github.com/grafana/mcp-grafana/releases/download/v0.8.2/mcp-grafana_Windows_arm64.zip https://github.com/grafana/mcp-grafana/releases/download/v0.8.2/mcp-grafana_Windows_i386.zip https://github.com/grafana/mcp-grafana/releases/download/v0.8.2/mcp-grafana_Windows_x86_64.zip https://github.com/grafana/mcp-grafana/releases/download/v0.8.2/win32.arm64.grafana.zip https://github.com/grafana/mcp-grafana/releases/download/v0.8.2/win32.x64.grafana.zip
 
 FROM alpine:3.21
 
@@ -23,7 +23,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-grafana"
 LABEL org.opencontainers.image.description="Access and manage Grafana dashboards and datasources."
-LABEL org.opencontainers.image.version="v0.4.2"
+LABEL org.opencontainers.image.version="v0.8.2"
 LABEL org.opencontainers.image.source="https://github.com/grafana/mcp-grafana"
 LABEL org.opencontainers.image.licenses="Apache License 2.0"
 LABEL org.opencontainers.image.author="grafana"

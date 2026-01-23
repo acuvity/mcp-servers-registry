@@ -104,6 +104,8 @@ _cross_tool_exclude := [
 	#
 	"coda_rename_page",
 	#
+	"coda_resolve_link",
+	#
 	# exclude word that might be misdetected
 	"to",
 	"this",

@@ -6,7 +6,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
+    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@5a873664a85bb4ba447c4edf89a48614689c1549
 
 FROM node:23.11.0-alpine3.21
 
@@ -15,9 +15,9 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-browserbase"
 LABEL org.opencontainers.image.description="Automate browser interactions in the cloud (e.g. web navigation, data extraction, form filling)."
-LABEL org.opencontainers.image.version="1.0.5"
+LABEL org.opencontainers.image.version="2.1.0"
 LABEL org.opencontainers.image.source="https://github.com/browserbase/mcp-server-browserbase"
-LABEL org.opencontainers.image.licenses="unknown"
+LABEL org.opencontainers.image.licenses="Apache-2.0"
 LABEL org.opencontainers.image.author="Browserbase, Inc."
 LABEL org.opencontainers.image.created="2006-01-02T15:04:05Z07:00"
 
@@ -39,7 +39,7 @@ ENV NODE_ENV=production
 
 USER appuser
 
-RUN npm i --omit-dev @browserbasehq/mcp@1.0.5
+RUN npm i --omit-dev @browserbasehq/mcp@2.1.0
 
 EXPOSE 8000/tcp
 

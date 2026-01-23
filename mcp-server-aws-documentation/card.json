@@ -13,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "1.0.2",
+  "version": "1.1.16",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"01405029d7e8f48cc67d2ae50f72c8e0f4cf91ab3244a55b38fd0db5134cd72b","reason":"All three tools demonstrate excellent documentation quality. The tool names are specific and clear ('read_documentation', 'search_documentation', 'recommend'). Each description is comprehensive with 3-4 detailed sections covering functionality, usage context, and practical guidance. The parameter documentation is thorough, including clear descriptions, appropriate constraints, and helpful context. The tools go beyond basic functionality to provide usage tips, examples, and detailed explanations of how to interpret results. This level of detail proactively addresses user questions and demonstrates exceptional documentation standards.","score":"A"},
+  "rating": {"hash":"2b44946720c006a3e060798c3935dcb4d6de75164e876560bea468cc0bc26701","reason":"Excellent documentation quality across all tools. Names are specific and clearly indicate purpose (read_documentation, search_documentation, recommend). Descriptions are comprehensive with detailed usage sections, clear explanations of functionality, specific examples, and practical guidance including when to use each tool and how to interpret results. Parameter documentation is thorough with clear descriptions, appropriate constraints, and helpful context. The documentation proactively addresses user questions about URL requirements, output formats, handling long documents, search strategies, and recommendation types.","score":"A"},
   "resources": {
     "tools": 3,
     "prompts": 0,

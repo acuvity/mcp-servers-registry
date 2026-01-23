@@ -52,7 +52,7 @@
     },
     {
       "name": "create_order",
-      "hash": "7d82117fec42acecc41ba70b5e8cf726e307b655fa4551869ad11f9fd2aba940",
+      "hash": "3df61c70d9aa81e65d3497465a952f89aebd18dbd42e2b7eae86c61f4963b6dc",
       "params": [
         {
           "name": "amount",
@@ -63,8 +63,16 @@
           "hash": "6ae3295165b77a3e14cd3b9230d16e2900fae6c77d9660c9f1d6c16ae979accf"
         },
         {
+          "name": "customer_id",
+          "hash": "86f0a03f0d3fd854b9b8e5ef4bffc739114b37e3672c026ec2f6218067b3ff68"
+        },
+        {
           "name": "first_payment_min_amount",
           "hash": "9dbdbf0f5e0f69feaeebf039378b7b74009d619bbb75d9937608b90fcbe0f23d"
+        },
+        {
+          "name": "method",
+          "hash": "4b3935ea01dc3822db739ca2832e85c3537eb3db1750d0a833497510f37f3ae6"
         },
         {
           "name": "notes",
@@ -77,6 +85,14 @@
         {
           "name": "receipt",
           "hash": "c82705f4e6b7ba32194af79440f25689eb8332ea2ae4d6d74954494b9dd75a56"
+        },
+        {
+          "name": "token",
+          "hash": "faf891f91b4eafedc7366dcfd104fbf8557f22828c5eeaa7028d31ace95425d2"
+        },
+        {
+          "name": "transfers",
+          "hash": "3bc7f954764ba9784c8c73e80c30abd10210671c74524311880ac0414cc0c651"
         }
       ]
     },
@@ -615,6 +631,62 @@
       ]
     },
     {
+      "name": "fetch_tokens",
+      "hash": "40aa486225fd1482c76fe0cc1d5d114aec7c9093b0b7005227c81ab90368c0d3",
+      "params": [
+        {
+          "name": "contact",
+          "hash": "8f2aa82e00da8f39ad8c1c9f673ac45f4aa1d6da1132790e9661a81b4f892af3"
+        }
+      ]
+    },
+    {
+      "name": "initiate_payment",
+      "hash": "4037a4d8ada56444e8af72e8580b17fc7f4aab65bb5d3a5d29bb3552229e130e",
+      "params": [
+        {
+          "name": "amount",
+          "hash": "348e8512c7f502c0ccc1c503915121041c818481a7c0b81c75f9bb6c5064b05e"
+        },
+        {
+          "name": "contact",
+          "hash": "5676f1429a3f86be45998bd3a3d84234fbe2d9b9e538b58a8bebf465cae2a98f"
+        },
+        {
+          "name": "currency",
+          "hash": "c589ca4b091cf1b45b6ba9405be11b16aa387f8f2fc53f5bcf0cdf5629150491"
+        },
+        {
+          "name": "customer_id",
+          "hash": "a067956cac2c4616941c102b1d4df785112847ad4ea12dc292692a8406e5bfad"
+        },
+        {
+          "name": "email",
+          "hash": "f6b52529d3fc709bf9bafda0634bcd57e1dd0111c5b1ad9ed83cc62ef0601106"
+        },
+        {
+          "name": "order_id",
+          "hash": "7f77b2edf700f5a470f60b5a3a32a699034020b904f42d0cefaa6f4f4b0b96d4"
+        },
+        {
+          "name": "save",
+          "hash": "e8b7ec270281de87e17aa41cc9f14e37c3ed1323006de756331d8fcf5150748f"
+        },
+        {
+          "name": "token",
+          "hash": "2d360f3d0a2df4ac997708f9aae918f7ba63947dfd49342ff8035a08c487ee3f"
+        },
+        {
+          "name": "upi_intent",
+          "hash": "41ebe010aa2ac0b85aa4ac64c5e9a865eab5919d95af68e8aff4945d2c8affa7"
+        },
+        {
+          "name": "vpa",
+          "hash": "e9c4a20ab918106066ea37db403c7e0749c65f7fb81c23c3c489dc6284272fbe"
+        }
+      ]
+    },
+    {
       "name": "payment_link_notify",
       "hash": "a635457a624426b2d3991ab58673eeca77f91715661efd029a5ab7a3dc64db8c",
       "params": [
@@ -629,7 +701,7 @@
       ]
     },
     {
-      "name": "payment_link_upi.create",
+      "name": "payment_link_upi_create",
       "hash": "e35e601b97a50a3470a4e0eb23efa0062b2a1f0e1657f44d0dbd6fafb47e95b1",
       "params": [
         {
@@ -695,6 +767,30 @@
         {
           "name": "reminder_enable",
           "hash": "111bf5aeb9fb3c946179ddca4100d9385ea5e092bc5392e2a70aefa0f07bd215"
+        }
+      ]
+    },
+    {
+      "name": "resend_otp",
+      "hash": "c4e0d704a1997aa1f28162ce21b780cc713baff5e297aa2e70c3e9bae71c8845",
+      "params": [
+        {
+          "name": "payment_id",
+          "hash": "b0ff3754c8a1f8382b4f22c542b8faa936656f14c1b6c45a3b1b845dde89ba93"
+        }
+      ]
+    },
+    {
+      "name": "submit_otp",
+      "hash": "8e3955edb70dfa04721e9156d546f4f58edadf9448f0954e7893b66edc26a3aa",
+      "params": [
+        {
+          "name": "otp_string",
+          "hash": "6278af8d92a2fbf1cb793a199185de04816a803c248f9439ace8fb9cf6bf248a"
+        },
+        {
+          "name": "payment_id",
+          "hash": "91acd75f5c29b3d9aa75f0e75cc5826ff081f91ca52da8636a66b2e1b04e491a"
         }
       ]
     },

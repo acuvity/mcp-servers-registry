@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -19,12 +19,12 @@
 
 
 # What is mcp-server-webflow?
-[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-webflow/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-webflow/0.6.0?logo=docker&logoColor=fff&label=0.6.0)](https://hub.docker.com/r/acuvity/mcp-server-webflow)
-[![PyPI](https://img.shields.io/badge/0.6.0-3775A9?logo=pypi&logoColor=fff&label=webflow-mcp-server)](https://github.com/webflow/mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-webflow/1.0.0?logo=docker&logoColor=fff&label=1.0.0)](https://hub.docker.com/r/acuvity/mcp-server-webflow)
+[![PyPI](https://img.shields.io/badge/1.0.0-3775A9?logo=pypi&logoColor=fff&label=webflow-mcp-server)](https://github.com/webflow/mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-webflow/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-webflow&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22WEBFLOW_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-webflow%3A0.6.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-webflow&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22WEBFLOW_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-webflow%3A1.0.0%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Enables AI agents to interact with Webflow APIs.
 
@@ -43,110 +43,40 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-webflow/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-webflow/docker/policy.rego) that enables a set of runtime [guardrails](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-webflow#%EF%B8%8F-guardrails) to help enforce security, privacy, and correct usage of your services. Below is list of each guardrail provided.
 
-### 🔒 Resource Integrity
-
-**Mitigates MCP Rug Pull Attacks**
-
-* **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
-* **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
-
-### 🛡️ Guardrails
-
-#### Covert Instruction Detection
-
-Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
-
-* **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
-* **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
-
-#### Sensitive Pattern Detection
-
-Block user-defined sensitive data patterns (credential paths, filesystem references).
-
-* **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
-* **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
-
-#### Shadowing Pattern Detection
-
-Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
-
-* **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
-* **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
-
-#### Schema Misuse Prevention
-
-Enforces strict adherence to MCP input schemas.
-
-* **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
-* **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
-
-#### Cross-Origin Tool Access
-
-Controls whether tools may invoke tools or services from external origins.
-
-* **Goal:** Prevent untrusted or out-of-scope services from being called.
-* **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
-
-#### Secrets Redaction
-
-Automatically masks sensitive values so they never appear in logs or responses.
-
-* **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
-* **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
-
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
-
-### Enable guardrails
-
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
 | Guardrail                        | Summary                                                                 |
 |----------------------------------|-------------------------------------------------------------------------|
+| `resource integrity`             | Embeds a hash of all exposed resources to ensure their authenticity and prevent unauthorized modifications, guarding against supply chain attacks and dynamic alterations of tool metadata. |
 | `covert-instruction-detection`   | Detects hidden or obfuscated directives in requests.                    |
 | `sensitive-pattern-detection`    | Flags patterns suggesting sensitive data or filesystem exposure.        |
 | `shadowing-pattern-detection`    | Identifies tool descriptions that override or influence others.         |
 | `schema-misuse-prevention`       | Enforces strict schema compliance on input data.                        |
 | `cross-origin-tool-access`       | Controls calls to external services or APIs.                            |
 | `secrets-redaction`              | Prevents exposure of credentials or sensitive values.                   |
+| `basic authentication`           | Enables the configuration of a shared secret to restrict unauthorized access to the MCP server and ensure only approved clients can connect. |
 
-Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
-
-## 🔒 Basic Authentication via Shared Secret
-
-Provides a lightweight auth layer using a single shared token.
-
-* **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
-* **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
-
-To turn on Basic Authentication, define `BASIC_AUTH_SECRET` environment variable with a shared secret.
-
-Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentication.
-
-> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
-> rotate credentials frequently and **always** use TLS.
-
-</details>
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference
@@ -173,11 +103,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.6.0`
+  - container: `1.0.0-1.0.0`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-webflow:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-webflow:1.0.0-0.6.0`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-webflow:1.0.0-1.0.0`
 
 ---
 
@@ -624,7 +554,21 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (32)
+## 🧰 Tools (43)
+<details>
+<summary>webflow_guide_tool</summary>
+
+**Description**:
+
+```
+Provides essential guidelines and best practices for effectively using the Webflow tools. Call this tool to understand recommended workflows and important considerations before performing actions. ALWAYS CALL THIS TOOL FIRST BEFORE CALLING ANY OTHER TOOLS.  ALWAYS CALL THIS TOOL FIRST BEFORE CALLING ANY OTHER TOOLS. 
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+</details>
 <details>
 <summary>ask_webflow_ai</summary>
 
@@ -1154,6 +1098,162 @@ Publish a site to specified domains. This will make the latest changes live on t
 | publishToWebflowSubdomain | boolean | Whether to publish to the Webflow subdomain. | No
 | site_id | string | Unique identifier for the site. | Yes
 </details>
+<details>
+<summary>asset_tool</summary>
+
+**Description**:
+
+```
+Designer Tool - Asset tool to perform actions like create folder, get all assets and folders, update assets and folders
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| actions | array | not set | Yes
+| siteId | string | The ID of the site. DO NOT ASSUME site id. ALWAYS ask user for site id if not already provided or known. use sites_list tool to fetch all sites and then ask user to select one of them. | Yes
+</details>
+<details>
+<summary>get_image_preview</summary>
+
+**Description**:
+
+```
+Designer Tool - Get image preview from url. this is helpful to get image preview from url.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| siteId | string | The ID of the site. DO NOT ASSUME site id. ALWAYS ask user for site id if not already provided or known. use sites_list tool to fetch all sites and then ask user to select one of them. | Yes
+| url | string | The URL of the image to get the preview from | Yes
+</details>
+<details>
+<summary>de_component_tool</summary>
+
+**Description**:
+
+```
+Designer tool - Component tool to perform actions like create component instances, get all components and more.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| actions | array | not set | Yes
+| siteId | string | The ID of the site. DO NOT ASSUME site id. ALWAYS ask user for site id if not already provided or known. use sites_list tool to fetch all sites and then ask user to select one of them. | Yes
+</details>
+<details>
+<summary>element_builder</summary>
+
+**Description**:
+
+```
+Designer Tool - Element builder to create element on current active page. only create elements upto max 3 levels deep. divide your elements into smaller elements to create complex structures. recall this tool to create more elements. but max level is upto 3 levels. you can have as many children as you want. but max level is 3 levels.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| actions | array | not set | Yes
+| siteId | string | The ID of the site. DO NOT ASSUME site id. ALWAYS ask user for site id if not already provided or known. use sites_list tool to fetch all sites and then ask user to select one of them. | Yes
+</details>
+<details>
+<summary>element_tool</summary>
+
+**Description**:
+
+```
+Designer Tool - Element tool to perform actions like get all elements, get selected element, select element on current active page. and more
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| actions | array | not set | Yes
+| siteId | string | The ID of the site. DO NOT ASSUME site id. ALWAYS ask user for site id if not already provided or known. use sites_list tool to fetch all sites and then ask user to select one of them. | Yes
+</details>
+<details>
+<summary>de_page_tool</summary>
+
+**Description**:
+
+```
+Designer Tool - Page tool to perform actions like create page, create page folder, get current page, switch page
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| actions | array | not set | Yes
+| siteId | string | The ID of the site. DO NOT ASSUME site id. ALWAYS ask user for site id if not already provided or known. use sites_list tool to fetch all sites and then ask user to select one of them. | Yes
+</details>
+<details>
+<summary>style_tool</summary>
+
+**Description**:
+
+```
+Designer Tool - Style tool to perform actions like create style, get all styles, update styles
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| actions | array | not set | Yes
+| siteId | string | The ID of the site. DO NOT ASSUME site id. ALWAYS ask user for site id if not already provided or known. use sites_list tool to fetch all sites and then ask user to select one of them. | Yes
+</details>
+<details>
+<summary>de_learn_more_about_styles</summary>
+
+**Description**:
+
+```
+Designer tool - Learn more about styles supported by Webflow Designer.Please do not use any other styles which is not supported by Webflow Designer.Please use the long-form alias of a CSS property when managing styles. For example, the property row-gap has a long-form alias of grid-row-gap, margin has long-form alias of margin-top, margin-right, margin-bottom, margin-left, etc.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+</details>
+<details>
+<summary>variable_tool</summary>
+
+**Description**:
+
+```
+Designer Tool - Variable tool to perform actions like create variable, get all variables, update variable
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| actions | array | not set | Yes
+| siteId | string | The ID of the site. DO NOT ASSUME site id. ALWAYS ask user for site id if not already provided or known. use sites_list tool to fetch all sites and then ask user to select one of them. | Yes
+</details>
+<details>
+<summary>get_designer_app_connection_info</summary>
+
+**Description**:
+
+```
+Get Webflow MCP App Connection Info. if user ask to get Webflow MCP app connection info, use this tool
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+</details>
 
 
 # 🔐 Resource SBOM
@@ -1166,6 +1266,8 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | add_inline_site_script | request | aa102df180b52825def499e4fe43678565faa9b5d49fb7f252c89e645f251e25 |
 | tools | add_inline_site_script | site_id | c012e27d6f83f7433a656f22db20bee7dd830a37e94f37cc6378935ada9243a3 |
 | tools | ask_webflow_ai | description | 85f6b0e69c5883d64bb75e42ac2fe025397ba097e8fe5ab98066c4cf55f60d84 |
+| tools | asset_tool | description | e18a70db324cf3e97d270e1fb4aa7966bd919154564114590c348154262c27af |
+| tools | asset_tool | siteId | 887c1e7e937977d742a2d602a2c627db3d642aebeebca41c58fa5376f6bc52df |
 | tools | collection_fields_create_option | description | 62a672e665513acde53ce1a510df12fc2e7f7689f9a3bb18fd1bd15f224fe285 |
 | tools | collection_fields_create_option | collection_id | 66d4114e3cddf0a95068c7be63e8966d91e952f972207e7a31beb949190c7a6b |
 | tools | collection_fields_create_reference | description | bef40d710120c44326c891a239d241cd71673f253f09f04272f442d865e80957 |
@@ -1230,7 +1332,20 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | components_update_properties | localeId | d2d12c4615bc4314a64f68a62885839a4ec8340cede10c10e342f95fedf106f6 |
 | tools | components_update_properties | properties | a80075dc14678a794348edfdde3d5f2d7d4ac154d385d30fc8806df501cd30ec |
 | tools | components_update_properties | site_id | 093137d76773f00522f69fe5d1d79d3f7189422258e583dd0fb7ddb13528f614 |
+| tools | de_component_tool | description | d8bbbbac5d16eb9d1d3ae8dd891f85528fdd8fd7f3051b8b60d56987132456c0 |
+| tools | de_component_tool | siteId | 887c1e7e937977d742a2d602a2c627db3d642aebeebca41c58fa5376f6bc52df |
+| tools | de_learn_more_about_styles | description | 696ab4acc79b4fc2621bf70af1c03c345625c4a7557303185785f283a3ce0288 |
+| tools | de_page_tool | description | aaa5e1c80516c658e8315d57d9f42ba6ecc3ac4ac5ace08fd1db1c2d01dedd46 |
+| tools | de_page_tool | siteId | 887c1e7e937977d742a2d602a2c627db3d642aebeebca41c58fa5376f6bc52df |
 | tools | delete_all_site_scripts | description | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| tools | element_builder | description | e2188e3531e7dac572045d3edd633633511bc3c6e1102bb440115761c5e40087 |
+| tools | element_builder | siteId | 887c1e7e937977d742a2d602a2c627db3d642aebeebca41c58fa5376f6bc52df |
+| tools | element_tool | description | 3ab1b53b08d7ca2bae72c90eeccd0677c72fded4be76e039fcfc36c3670b0f7a |
+| tools | element_tool | siteId | 887c1e7e937977d742a2d602a2c627db3d642aebeebca41c58fa5376f6bc52df |
+| tools | get_designer_app_connection_info | description | 774b38566576633051815c2dffb2a432d3b26968934d7cca47e2766fd18e6f95 |
+| tools | get_image_preview | description | e41be4650208ef0b2cf4c47b983dcb64ab125c56278d76ce5ed68251d498a88d |
+| tools | get_image_preview | siteId | 887c1e7e937977d742a2d602a2c627db3d642aebeebca41c58fa5376f6bc52df |
+| tools | get_image_preview | url | bfe18ad05d66c035ec5928482eb0a1f4b45182d66b23f0a3ba774dcf159b35f3 |
 | tools | pages_get_content | description | effc85cda69758932ff15da05b2058f56f8c281d4ec570932e4e18e744ef8a46 |
 | tools | pages_get_content | limit | 9146b99529c5390536212dc3047f99237c2a9402947460621fca401c975971f0 |
 | tools | pages_get_content | localeId | d2d12c4615bc4314a64f68a62885839a4ec8340cede10c10e342f95fedf106f6 |
@@ -1261,6 +1376,11 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | sites_publish | customDomains | 18fbd2084e46f0039226e64c99f75c9250c1f422135d86eb7f67a794d9de7ede |
 | tools | sites_publish | publishToWebflowSubdomain | f5362553c613f1672e8cd06f80b846ce5c5c234243670b590fce486cea5d89c4 |
 | tools | sites_publish | site_id | c012e27d6f83f7433a656f22db20bee7dd830a37e94f37cc6378935ada9243a3 |
+| tools | style_tool | description | 49f484029b946935331a341ad5db6b8f78e410666df6ebd194ae3868656ffede |
+| tools | style_tool | siteId | 887c1e7e937977d742a2d602a2c627db3d642aebeebca41c58fa5376f6bc52df |
+| tools | variable_tool | description | 52293db5cb993f9b2f3af34b132375077fd7d1756739342d5b8a2e759ba16139 |
+| tools | variable_tool | siteId | 887c1e7e937977d742a2d602a2c627db3d642aebeebca41c58fa5376f6bc52df |
+| tools | webflow_guide_tool | description | 56452f251dbef7dc7470183075c71fd950dd4bc3f40fd9192c183c5a9ebfcbf3 |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

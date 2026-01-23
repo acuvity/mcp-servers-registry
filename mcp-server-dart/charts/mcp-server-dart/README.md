@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -21,10 +21,10 @@
 # What is mcp-server-dart?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-dart/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-dart/0.1.14?logo=docker&logoColor=fff&label=0.1.14)](https://hub.docker.com/r/acuvity/mcp-server-dart)
-[![PyPI](https://img.shields.io/badge/0.1.14-3775A9?logo=pypi&logoColor=fff&label=dart-mcp-server)](https://github.com/its-dart/dart-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-dart/0.2.1?logo=docker&logoColor=fff&label=0.2.1)](https://hub.docker.com/r/acuvity/mcp-server-dart)
+[![PyPI](https://img.shields.io/badge/0.2.1-3775A9?logo=pypi&logoColor=fff&label=dart-mcp-server)](https://github.com/its-dart/dart-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-dart/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-dart&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22DART_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-dart%3A0.1.14%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-dart&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22DART_TOKEN%22%2C%22docker.io%2Facuvity%2Fmcp-server-dart%3A0.2.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** AI-powered project management server for task and document management.
 
@@ -43,110 +43,40 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-dart/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-dart/docker/policy.rego) that enables a set of runtime [guardrails](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-dart#%EF%B8%8F-guardrails) to help enforce security, privacy, and correct usage of your services. Below is list of each guardrail provided.
 
-### 🔒 Resource Integrity
-
-**Mitigates MCP Rug Pull Attacks**
-
-* **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
-* **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
-
-### 🛡️ Guardrails
-
-#### Covert Instruction Detection
-
-Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
-
-* **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
-* **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
-
-#### Sensitive Pattern Detection
-
-Block user-defined sensitive data patterns (credential paths, filesystem references).
-
-* **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
-* **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
-
-#### Shadowing Pattern Detection
-
-Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
-
-* **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
-* **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
-
-#### Schema Misuse Prevention
-
-Enforces strict adherence to MCP input schemas.
-
-* **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
-* **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
-
-#### Cross-Origin Tool Access
-
-Controls whether tools may invoke tools or services from external origins.
-
-* **Goal:** Prevent untrusted or out-of-scope services from being called.
-* **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
-
-#### Secrets Redaction
-
-Automatically masks sensitive values so they never appear in logs or responses.
-
-* **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
-* **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
-
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
-
-### Enable guardrails
-
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
 | Guardrail                        | Summary                                                                 |
 |----------------------------------|-------------------------------------------------------------------------|
+| `resource integrity`             | Embeds a hash of all exposed resources to ensure their authenticity and prevent unauthorized modifications, guarding against supply chain attacks and dynamic alterations of tool metadata. |
 | `covert-instruction-detection`   | Detects hidden or obfuscated directives in requests.                    |
 | `sensitive-pattern-detection`    | Flags patterns suggesting sensitive data or filesystem exposure.        |
 | `shadowing-pattern-detection`    | Identifies tool descriptions that override or influence others.         |
 | `schema-misuse-prevention`       | Enforces strict schema compliance on input data.                        |
 | `cross-origin-tool-access`       | Controls calls to external services or APIs.                            |
 | `secrets-redaction`              | Prevents exposure of credentials or sensitive values.                   |
+| `basic authentication`           | Enables the configuration of a shared secret to restrict unauthorized access to the MCP server and ensure only approved clients can connect. |
 
-Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
-
-## 🔒 Basic Authentication via Shared Secret
-
-Provides a lightweight auth layer using a single shared token.
-
-* **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
-* **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
-
-To turn on Basic Authentication, define `BASIC_AUTH_SECRET` environment variable with a shared secret.
-
-Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentication.
-
-> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
-> rotate credentials frequently and **always** use TLS.
-
-</details>
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference
@@ -173,11 +103,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.1.14`
+  - container: `1.0.0-0.2.1`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-dart:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-dart:1.0.0-0.1.14`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-dart:1.0.0-0.2.1`
 
 ---
 
@@ -624,20 +554,49 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (12)
+## 🧰 Tools (16)
 <details>
 <summary>get_config</summary>
 
 **Description**:
 
 ```
-Get information about the user's space, including all of the possible values that can be provided to other endpoints. This includes available assignees, dartboards, folders, statuses, tags, priorities, and sizes.
+Get information about the user's space, including all of the possible values that can be provided to other endpoints. This includes available assignees, dartboards, folders, statuses, tags, priorities, sizes, and all custom property definitions.
 ```
 
 **Parameter**:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
+</details>
+<details>
+<summary>create_task</summary>
+
+**Description**:
+
+```
+Create a new task in Dart. You can specify title, description, status, priority, size, dates, dartboard, assignees, tags, parent task, custom properties, and task relationships.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| assignee | string | Single assignee name or email (if workspace doesn't allow multiple assignees) | No
+| assignees | array | Array of assignee names or emails (if workspace allows multiple assignees) | No
+| customProperties | object | Custom properties to apply to the task. Use the property names from the config. Examples: { 'customCheckboxProperty': true, 'customTextProperty': 'Some text', 'customNumberProperty': 5, 'customSelectProperty': 'Option Name', 'customDatesProperty': '2025-05-10', 'customDatesPropertyWithRange': ['2025-05-01', '2025-05-30'], 'customMultiselectProperty': ['option1', 'option2'], 'customUserProperty': 'user@example.com', 'customMultipleUserProperty': ['user1@example.com', 'user2@example.com'], 'customTimeTrackingProperty': '1:30:00' } | No
+| dartboard | string | The title of the dartboard (project or list of tasks) | No
+| description | string | A longer description of the task, which can include markdown formatting | No
+| dueAt | string | The due date in ISO format (should be at 9:00am in user's timezone) | No
+| parentId | string | The ID of the parent task | No
+| priority | string | The priority (Critical, High, Medium, or Low) | No
+| size | [string number null] | The size which represents the amount of work needed | No
+| startAt | string | The start date in ISO format (should be at 9:00am in user's timezone) | No
+| status | string | The status from the list of available statuses | No
+| tags | array | Array of tags to apply to the task | No
+| taskRelationships | object | Task relationships including subtasks, blockers, duplicates, and related tasks | No
+| title | string | The title of the task (required) | Yes
+| type | string | The type of the task from the list of available types | No
 </details>
 <details>
 <summary>list_tasks</summary>
@@ -653,53 +612,29 @@ List tasks from Dart with optional filtering parameters. You can filter by assig
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | assignee | string | Filter by assignee name or email | No
-| assignee_duid | string | Filter by assignee ID | No
+| assigneeId | string | Filter by assignee ID | No
 | dartboard | string | Filter by dartboard title | No
-| dartboard_duid | string | Filter by dartboard ID | No
+| dartboardId | string | Filter by dartboard ID | No
 | description | string | Filter by description content | No
-| due_at_after | string | Filter by due date after (ISO format) | No
-| due_at_before | string | Filter by due date before (ISO format) | No
-| duids | string | Filter by IDs | No
-| in_trash | boolean | Filter by trash status | No
-| is_draft | boolean | Filter by draft status | No
-| kind | string | Filter by task kind | No
+| dueAtAfter | string | Filter by due date after (ISO format) | No
+| dueAtBefore | string | Filter by due date before (ISO format) | No
+| ids | string | Filter by IDs | No
+| inTrash | boolean | Filter by trash status | No
+| isCompleted | boolean | Filter by completion status | No
 | limit | number | Number of results per page | No
 | offset | number | Initial index for pagination | No
+| parentId | string | Filter by parent task ID | No
 | priority | string | Filter by priority | No
 | size | number | Filter by task size | No
-| start_at_after | string | Filter by start date after (ISO format) | No
-| start_at_before | string | Filter by start date before (ISO format) | No
+| startAtAfter | string | Filter by start date after (ISO format) | No
+| startAtBefore | string | Filter by start date before (ISO format) | No
 | status | string | Filter by status | No
-| status_duid | string | Filter by status ID | No
-| subscriber_duid | string | Filter by subscriber ID | No
+| statusId | string | Filter by status ID | No
 | tag | string | Filter by tag | No
+| tagId | string | Filter by tag ID | No
 | title | string | Filter by title | No
-</details>
-<details>
-<summary>create_task</summary>
-
-**Description**:
-
-```
-Create a new task in Dart. You can specify title, description, status, priority, size, dates, dartboard, assignees, tags, and parent task.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| assignee | string | Single assignee name or email (if workspace doesn't allow multiple assignees) | No
-| assignees | array | Array of assignee names or emails (if workspace allows multiple assignees) | No
-| dartboard | string | The title of the dartboard (project or list of tasks) | No
-| description | string | A longer description of the task, which can include markdown formatting | No
-| dueAt | string | The due date in ISO format (should be at 9:00am in user's timezone) | No
-| parentId | string | The ID of the parent task | No
-| priority | string | The priority (Critical, High, Medium, or Low) | No
-| size | number | A number that represents the amount of work needed | No
-| startAt | string | The start date in ISO format (should be at 9:00am in user's timezone) | No
-| status | string | The status from the list of available statuses | No
-| tags | array | Array of tags to apply to the task | No
-| title | string | The title of the task (required) | Yes
+| type | string | Filter by task type | No
+| typeId | string | Filter by task type ID | No
 </details>
 <details>
 <summary>get_task</summary>
@@ -707,7 +642,7 @@ Create a new task in Dart. You can specify title, description, status, priority,
 **Description**:
 
 ```
-Retrieve an existing task by its ID. Returns the task's information including title, description, status, priority, dates, and more.
+Retrieve an existing task by its ID. Returns the task's information including title, description, status, priority, dates, custom properties, and more.
 ```
 
 **Parameter**:
@@ -722,7 +657,7 @@ Retrieve an existing task by its ID. Returns the task's information including ti
 **Description**:
 
 ```
-Update an existing task. You can modify any of its properties including title, description, status, priority, dates, assignees, and more.
+Update an existing task. You can modify any of its properties including title, description, status, priority, dates, assignees, tags, custom properties, and task relationships.
 ```
 
 **Parameter**:
@@ -731,17 +666,20 @@ Update an existing task. You can modify any of its properties including title, d
 |-----------|------|-------------|-----------|
 | assignee | string | Single assignee name or email (if workspace doesn't allow multiple assignees) | No
 | assignees | array | Array of assignee names or emails (if workspace allows multiple assignees) | No
+| customProperties | object | Custom properties to apply to the task. Use the property names from the config. Examples: { 'customCheckboxProperty': true, 'customTextProperty': 'Some text', 'customNumberProperty': 5, 'customSelectProperty': 'Option Name', 'customDatesProperty': '2025-05-10', 'customDatesPropertyWithRange': ['2025-05-01', '2025-05-30'], 'customMultiselectProperty': ['option1', 'option2'], 'customUserProperty': 'user@example.com', 'customMultipleUserProperty': ['user1@example.com', 'user2@example.com'], 'customTimeTrackingProperty': '1:30:00' } | No
 | dartboard | string | The title of the dartboard (project or list of tasks) | No
 | description | string | A longer description of the task, which can include markdown formatting | No
 | dueAt | string | The due date in ISO format (should be at 9:00am in user's timezone) | No
 | id | string | The 12-character alphanumeric ID of the task | Yes
 | parentId | string | The ID of the parent task | No
 | priority | string | The priority (Critical, High, Medium, or Low) | No
-| size | number | A number that represents the amount of work needed | No
+| size | [string number null] | The size which represents the amount of work needed | No
 | startAt | string | The start date in ISO format (should be at 9:00am in user's timezone) | No
 | status | string | The status from the list of available statuses | No
 | tags | array | Array of tags to apply to the task | No
+| taskRelationships | object | Task relationships including subtasks, blockers, duplicates, and related tasks | No
 | title | string | The title of the task | No
+| type | string | The type of the task from the list of available types | No
 </details>
 <details>
 <summary>delete_task</summary>
@@ -759,46 +697,6 @@ Move an existing task to the trash, where it can be recovered if needed. Nothing
 | id | string | The 12-character alphanumeric ID of the task | Yes
 </details>
 <details>
-<summary>add_task_comment</summary>
-
-**Description**:
-
-```
-Add a comment to an existing task without modifying the task description. Comments support markdown formatting.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| taskId | string | The 12-character alphanumeric ID of the task | Yes
-| text | string | The full content of the comment, which can include markdown formatting. | Yes
-</details>
-<details>
-<summary>list_docs</summary>
-
-**Description**:
-
-```
-List docs from Dart with optional filtering parameters. You can filter by folder, title, text content, and more.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| duids | string | Filter by IDs | No
-| folder | string | Filter by folder title | No
-| folder_duid | string | Filter by folder ID | No
-| in_trash | boolean | Filter by trash status | No
-| is_draft | boolean | Filter by draft status | No
-| limit | number | Number of results per page | No
-| offset | number | Initial index for pagination | No
-| s | string | Search by title, text, or folder title | No
-| text | string | Filter by text content | No
-| title | string | Filter by title | No
-</details>
-<details>
 <summary>create_doc</summary>
 
 **Description**:
@@ -814,6 +712,30 @@ Create a new doc in Dart. You can specify title, text content, and folder.
 | folder | string | The title of the folder to place the doc in | No
 | text | string | The text content of the doc, which can include markdown formatting | No
 | title | string | The title of the doc (required) | Yes
+</details>
+<details>
+<summary>list_docs</summary>
+
+**Description**:
+
+```
+List docs from Dart with optional filtering parameters. You can filter by folder, title, text content, and more.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| folder | string | Filter by folder title | No
+| folderId | string | Filter by folder ID | No
+| ids | string | Filter by IDs | No
+| inTrash | boolean | Filter by trash status | No
+| limit | number | Number of results per page | No
+| o | array | Ordering options (use - prefix for descending) | No
+| offset | number | Initial index for pagination | No
+| s | string | Search by title, text, or folder title | No
+| text | string | Filter by text content | No
+| title | string | Filter by title | No
 </details>
 <details>
 <summary>get_doc</summary>
@@ -862,6 +784,92 @@ Move an existing doc to the trash, where it can be recovered if needed. Nothing 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | id | string | The 12-character alphanumeric ID of the doc | Yes
+</details>
+<details>
+<summary>add_task_comment</summary>
+
+**Description**:
+
+```
+Add a comment to an existing task without modifying the task description. Comments support markdown formatting.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| taskId | string | The 12-character alphanumeric ID of the task | Yes
+| text | string | The full content of the comment, which can include markdown formatting. | Yes
+</details>
+<details>
+<summary>list_task_comments</summary>
+
+**Description**:
+
+```
+List comments from Dart with optional filtering parameters. You can filter by author, task, text content, dates, and more.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| author | string | Filter by author name or email | No
+| authorId | string | Filter by author ID | No
+| ids | string | Filter by comment IDs | No
+| limit | number | Number of results per page | No
+| offset | number | Initial index for pagination | No
+| parentId | string | Filter by parent comment ID | No
+| publishedAtAfter | string | Filter by published date after (ISO format) | No
+| publishedAtBefore | string | Filter by published date before (ISO format) | No
+| task | string | Filter by task title | No
+| taskId | string | Filter by task ID | Yes
+| text | string | Filter by comment text content | No
+</details>
+<details>
+<summary>get_dartboard</summary>
+
+**Description**:
+
+```
+Retrieve an existing dartboard by its ID. Returns the dartboard's information including title, description, and all tasks within it.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| id | string | The 12-character alphanumeric ID of the dartboard | Yes
+</details>
+<details>
+<summary>get_folder</summary>
+
+**Description**:
+
+```
+Retrieve an existing folder by its ID. Returns the folder's information including title, description, and all docs within it.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| id | string | The 12-character alphanumeric ID of the folder | Yes
+</details>
+<details>
+<summary>get_view</summary>
+
+**Description**:
+
+```
+Retrieve an existing view by its ID. Returns the view's information including title, description, and all tasks within it.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| id | string | The 12-character alphanumeric ID of the view | Yes
 </details>
 
 ## 📝 Prompts (3)
@@ -944,81 +952,107 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | create_doc | folder | e6970c521d4f1d5516d4e75a38ad71a41aae2a6c11cbbbe09b436d570df373a5 |
 | tools | create_doc | text | c06f2b86fc675d1e4d04c7b139162cc39222bdc83a04fa75130ad9a7d4a90e12 |
 | tools | create_doc | title | 9cc6b9106a08ca41a40d45cabf35bb48046a5d649a292f612bf07a870f8ca516 |
-| tools | create_task | description | 86105de7f2f4b65c5722494a8bc03b289f45ce29f0885a9289b074a33f50da47 |
+| tools | create_task | description | 92b3e560012ab12f99711f99ef176da36d217a92b2ae752e157c2c623ef50b75 |
 | tools | create_task | assignee | f56457f6c5055fc6bf77bf013a6555ae0bb4f27c7a9038dd1666c9eb3a3f5be2 |
 | tools | create_task | assignees | b3936aba1f174431e90c9d60e20ec5146d2200e51fb7eecabbf94002551823c2 |
+| tools | create_task | customProperties | 675d9d346d17f2245ccf4f2b229cd59d95aa478250eb7bf7b1f2868860229039 |
 | tools | create_task | dartboard | 84958dda81147cfff7ff78fe9230d1db4ae900b89c7ca7285b7e98b4b04edd44 |
 | tools | create_task | description | 7c2356ba83e1aa6346e0416d087551f1cedd217150895082b8f3c2cdc360fe62 |
 | tools | create_task | dueAt | d6f19a43a34649d2b8cbab579ea85b432e20345146bd16762912dce21fd76e4a |
 | tools | create_task | parentId | ebaddcf284633e96b35be6aa4185b103378bdd3294606cdf1ac3cdea63adce9b |
 | tools | create_task | priority | 15e467342a400af7d45bebbcdbb6033fc254b918b8aa0a19d8f2f3bbcab472d1 |
-| tools | create_task | size | 640ad4fdcd185fef7b3126e4f57a0cae606da1598628fe85fcf44aa4e06132fa |
+| tools | create_task | size | d9e55e94ee68006d6880c40e7732a231e51bcc5d2919c61f9aa672db3618369c |
 | tools | create_task | startAt | d00148212e5b0387b0dec42855c40b624c4fb875c7706c62d978fcc9a9935e82 |
 | tools | create_task | status | f7e73edb7c5a9a0505b066a639e684bd0875476102240d9255db0f8b74758314 |
 | tools | create_task | tags | 12cb13942f1eefa25260f7af43bc280295e46a6d44837290f34d0455a9081571 |
+| tools | create_task | taskRelationships | 05f5f06e1812eaedac119d2f8e5a6e3ee607551e9c8273a41c9af25af23875f9 |
 | tools | create_task | title | 227c4b8ffe9734ef427c8a458dc90f40e0fe23ed742c406ef750d57badeca7a4 |
+| tools | create_task | type | ed360c9b1f537b7dc6c515aed63e80c075b100322bdee3c439159787a59e905f |
 | tools | delete_doc | description | 4f6e4077a8b6af7e6c8a65d246cac80088a983ea16c70617407cdac06aad7c98 |
 | tools | delete_doc | id | a4c9893001a2904378a196d3e8384822a0bc98f388f411aca489656504efa261 |
 | tools | delete_task | description | 841804ef33b8477ce8f7e7b3dfe3a562f008ae4113ef4506d8cb57999f1c3ff7 |
 | tools | delete_task | id | 310575c03a01f518120c4b24c0e723828d57433eb1d1465c4b4357d4a2870a5d |
-| tools | get_config | description | c76d1adcac4431aa70f7a6fd9644dd31d4b7997e1703178ef6e4f1a1b50750cb |
+| tools | get_config | description | 845f425a07237749ed9337378007f7cbf97c049f165d3981c88e31534f752d57 |
+| tools | get_dartboard | description | a3813283f67d57323790599676fc309e00a97c6ccccd47845f7ce6f366a3ba83 |
+| tools | get_dartboard | id | 809ba99c7aeec0b09e2b5b337234bb553037ee0f73133b5a12166ee32efab9d0 |
 | tools | get_doc | description | 97d2618ac41e053e00f329fe070ed2968b6200748fc705ccf77371232062f309 |
 | tools | get_doc | id | a4c9893001a2904378a196d3e8384822a0bc98f388f411aca489656504efa261 |
-| tools | get_task | description | a9388e5a4e7ba546c128d7a24f0dc0f7a26dcce56cd076f85351ccd07507afcf |
+| tools | get_folder | description | b67299f5afbe7c4ce72f8dcf5bcf960cf5ae588ab258b7645ab507d25b610a68 |
+| tools | get_folder | id | 57e52f66e9e5389196f34a939f1d3a3b31461fbc840f232aca7b2346209bb11e |
+| tools | get_task | description | 5c7a230ee9e968e0ac5cdac7ea58aff63debfe59721a658f3e65643068efefb9 |
 | tools | get_task | id | 310575c03a01f518120c4b24c0e723828d57433eb1d1465c4b4357d4a2870a5d |
+| tools | get_view | description | 0439c5f45eeb6d8129b68736da88c7e47ea618ae04f428823b543f55f06bb183 |
+| tools | get_view | id | 67eede71987004d3f8a74d74f796683ff2dcba846ceae2961b73b7fd8b3d00ff |
 | tools | list_docs | description | e065ce35eaf56e76ab337c4ca52aea287a1b53359ae8c8dff87cc101405b6436 |
-| tools | list_docs | duids | 273c161c10e76cb90173c32b8eda174f96f767b7ca59ec9439c667b935933001 |
 | tools | list_docs | folder | 77ad23935380f926cc9ed1360f3c8a48e0b4d5ece8fd83b6b7f9de147e8140b8 |
-| tools | list_docs | folder_duid | 68454b6e7f309a58bb23f524036275414be192bc5a47e8a6b288912ea1ce2470 |
-| tools | list_docs | in_trash | 109c580129edd45e9db0bc8397f9c18b9418c9087123bac10a65453d22930d23 |
-| tools | list_docs | is_draft | 4eca8610f40002319534f91164cef94582afe8c78289846ac041cafeda20be8d |
+| tools | list_docs | folderId | 68454b6e7f309a58bb23f524036275414be192bc5a47e8a6b288912ea1ce2470 |
+| tools | list_docs | ids | 273c161c10e76cb90173c32b8eda174f96f767b7ca59ec9439c667b935933001 |
+| tools | list_docs | inTrash | 109c580129edd45e9db0bc8397f9c18b9418c9087123bac10a65453d22930d23 |
 | tools | list_docs | limit | ac9d79bc23e286af13eb43e132623de430169d08776f2069fe25071f010de800 |
+| tools | list_docs | o | d9cffb172e451b59842c758e04784278078c764d3c1240dcb3f8c8d5e68cbe72 |
 | tools | list_docs | offset | 2106ec42a90be7c699ecbeef51c4569f9d6373df685bebab58a7cd9891558a4d |
 | tools | list_docs | s | 485037bab47b7046aca06f408de0d84c5d6dee2a4ef2f1b8efe19cb6738d1ade |
 | tools | list_docs | text | e0b3f6719afb4e1034dffe58ea8467a2a66abbade1a89775a40712de133d9a22 |
 | tools | list_docs | title | f03711f770b6fa4f885df4dec6475307cd0ca446b569b49fed44243abc6717f4 |
+| tools | list_task_comments | description | 24538d73cc133faeaa7c9e6b70044056a44f75e0642d38aeb9df0114dc9b18e9 |
+| tools | list_task_comments | author | 913d2445117a511a28960f5b68a08ebecf27f17c375a54800ae3eaab13a83cc6 |
+| tools | list_task_comments | authorId | b81ac8356618a0d2a06ee943d39dec2571fb791b41793089b77eeeec18a6988d |
+| tools | list_task_comments | ids | 446f185fe4cfe00fa613a7581303109c6efb40732592267164980fe716c41a6c |
+| tools | list_task_comments | limit | ac9d79bc23e286af13eb43e132623de430169d08776f2069fe25071f010de800 |
+| tools | list_task_comments | offset | 2106ec42a90be7c699ecbeef51c4569f9d6373df685bebab58a7cd9891558a4d |
+| tools | list_task_comments | parentId | 9661022164ed9f99d21a1256a935d794b63c763cf3e1df762859842958d0ded9 |
+| tools | list_task_comments | publishedAtAfter | a21a2ba6c618b5773b77aee96cfe765126f4256d4e8ff96d6e08e5a4cb39d15c |
+| tools | list_task_comments | publishedAtBefore | 6b79679d414dd95db179a31469b8d33fffb11155630c650464b35ebc1e393065 |
+| tools | list_task_comments | task | 0a450bc20927b92575688e1f54dfa08d6f49e6fa6fae77a450f80ca966215977 |
+| tools | list_task_comments | taskId | 4735d6a16e826cb6eaf735f663ffa971825de7c7fcb36b323475aedcfc887618 |
+| tools | list_task_comments | text | 7eb9dbb7203e7de46529900cb42da9ccd160bb077cbfcf3f568eaedfa786b678 |
 | tools | list_tasks | description | c70368a4d7689bd93adb8daad25687f6862ac7768024487b64ddad7a691145d7 |
 | tools | list_tasks | assignee | a5fd211f871a899c6b9194c0321692b7805725ef1073e3ed36b408792b1fa671 |
-| tools | list_tasks | assignee_duid | ef395ad9357aad1c0935b185bc4fb0a0598858110d05efabd3735484ca5221b9 |
+| tools | list_tasks | assigneeId | ef395ad9357aad1c0935b185bc4fb0a0598858110d05efabd3735484ca5221b9 |
 | tools | list_tasks | dartboard | b2185e89450d9791c0f31fc1c0d33cf33197c20f7d240464447529b953f00f47 |
-| tools | list_tasks | dartboard_duid | d9b66288a97d66a6486eda7c03b14969acb75ccd991249c705098112948d6ceb |
+| tools | list_tasks | dartboardId | d9b66288a97d66a6486eda7c03b14969acb75ccd991249c705098112948d6ceb |
 | tools | list_tasks | description | c963ada0d48c9816f49908a49c8df5cc102691d448c28ad6cdbe4540eaa43cd4 |
-| tools | list_tasks | due_at_after | f134726aacd5a93ed1f8a1491c3a3deb1929fe370cbb80e90b4036b86cf684c5 |
-| tools | list_tasks | due_at_before | 4fd8b77ffdd64af3d862a81e3c9097b24c383788d96a293b9d37f008de9fca72 |
-| tools | list_tasks | duids | 273c161c10e76cb90173c32b8eda174f96f767b7ca59ec9439c667b935933001 |
-| tools | list_tasks | in_trash | 109c580129edd45e9db0bc8397f9c18b9418c9087123bac10a65453d22930d23 |
-| tools | list_tasks | is_draft | 4eca8610f40002319534f91164cef94582afe8c78289846ac041cafeda20be8d |
-| tools | list_tasks | kind | 8e976eb25c3672f4fe60074f014ae04299a9aab06e65589d92c66a784e380df4 |
+| tools | list_tasks | dueAtAfter | f134726aacd5a93ed1f8a1491c3a3deb1929fe370cbb80e90b4036b86cf684c5 |
+| tools | list_tasks | dueAtBefore | 4fd8b77ffdd64af3d862a81e3c9097b24c383788d96a293b9d37f008de9fca72 |
+| tools | list_tasks | ids | 273c161c10e76cb90173c32b8eda174f96f767b7ca59ec9439c667b935933001 |
+| tools | list_tasks | inTrash | 109c580129edd45e9db0bc8397f9c18b9418c9087123bac10a65453d22930d23 |
+| tools | list_tasks | isCompleted | 2b0005f1ee7feff95bbfe018b740e3302d6caa0758a162f6fac24e26810ebe33 |
 | tools | list_tasks | limit | ac9d79bc23e286af13eb43e132623de430169d08776f2069fe25071f010de800 |
 | tools | list_tasks | offset | 2106ec42a90be7c699ecbeef51c4569f9d6373df685bebab58a7cd9891558a4d |
+| tools | list_tasks | parentId | 35dc07396183bcd9214a1b5a16f9ff1cf72c71b89b2a1de1d85698e27da0d248 |
 | tools | list_tasks | priority | 48b74b8f81c021ef7f3135288dc6c2f3ac0f15d6c0fa7ec4392d7fb6488efc62 |
 | tools | list_tasks | size | e33e3e1f461724ec2a8f6729a86a241228ea766f60d582dd8a23921774b460df |
-| tools | list_tasks | start_at_after | 64d65f4c927386dbceb7b64df8857eb77e9233622ca21b20481c11c0af76c1a9 |
-| tools | list_tasks | start_at_before | acf5c3877b2fdfd280f2870afad08debbf3ffc111af01545a30ea0a13c8b6fee |
+| tools | list_tasks | startAtAfter | 64d65f4c927386dbceb7b64df8857eb77e9233622ca21b20481c11c0af76c1a9 |
+| tools | list_tasks | startAtBefore | acf5c3877b2fdfd280f2870afad08debbf3ffc111af01545a30ea0a13c8b6fee |
 | tools | list_tasks | status | 94d5a7703a8250de4c9e24b29839ffafa5d8477efb19c56ebce83470102e6212 |
-| tools | list_tasks | status_duid | 418121f1618200d91044a6ef7be84f0c6fb43557511c3069baf8a65eed938fa2 |
-| tools | list_tasks | subscriber_duid | b2ce99868d686c5cf5bab858fad1c7fb75b248f8cfa8ad01ae300006ebfa9924 |
+| tools | list_tasks | statusId | 418121f1618200d91044a6ef7be84f0c6fb43557511c3069baf8a65eed938fa2 |
 | tools | list_tasks | tag | b9274474d0990cb9063843f21ebcb42a4ee74d5875e493412eddc64666ec93bc |
+| tools | list_tasks | tagId | 8e6937730a406a69a9cc394d8d4643d38cbadda4038c471863e7537529760504 |
 | tools | list_tasks | title | f03711f770b6fa4f885df4dec6475307cd0ca446b569b49fed44243abc6717f4 |
+| tools | list_tasks | type | f194a8921e478ffb4f9f495f775746c87220141521076bbaa3ccbfa9cebd39a7 |
+| tools | list_tasks | typeId | 99a1498624a5ced7b16cd984e4cb9bf6119ea24d91609e81ede0cae34e7bd92e |
 | tools | update_doc | description | c7ba17b4437c3335bbe54563051a9d234aea1385f57f1c026a46db681b874856 |
 | tools | update_doc | folder | e6970c521d4f1d5516d4e75a38ad71a41aae2a6c11cbbbe09b436d570df373a5 |
 | tools | update_doc | id | a4c9893001a2904378a196d3e8384822a0bc98f388f411aca489656504efa261 |
 | tools | update_doc | text | c06f2b86fc675d1e4d04c7b139162cc39222bdc83a04fa75130ad9a7d4a90e12 |
 | tools | update_doc | title | 9b4e5691ecfb7c86c3dcbff44139faa6d7eceb49dfbff7ddda26a606edb200df |
-| tools | update_task | description | 5af5f13cc77b37174329796a57d6a98cf48ee4d123ace451ae6217bd59dc2968 |
+| tools | update_task | description | 7b936dd8e5e8e4e625eddfa9fd1d9b97ecb4ca8b8cd3918a35287f39846af657 |
 | tools | update_task | assignee | f56457f6c5055fc6bf77bf013a6555ae0bb4f27c7a9038dd1666c9eb3a3f5be2 |
 | tools | update_task | assignees | b3936aba1f174431e90c9d60e20ec5146d2200e51fb7eecabbf94002551823c2 |
+| tools | update_task | customProperties | 675d9d346d17f2245ccf4f2b229cd59d95aa478250eb7bf7b1f2868860229039 |
 | tools | update_task | dartboard | 84958dda81147cfff7ff78fe9230d1db4ae900b89c7ca7285b7e98b4b04edd44 |
 | tools | update_task | description | 7c2356ba83e1aa6346e0416d087551f1cedd217150895082b8f3c2cdc360fe62 |
 | tools | update_task | dueAt | d6f19a43a34649d2b8cbab579ea85b432e20345146bd16762912dce21fd76e4a |
 | tools | update_task | id | 310575c03a01f518120c4b24c0e723828d57433eb1d1465c4b4357d4a2870a5d |
 | tools | update_task | parentId | ebaddcf284633e96b35be6aa4185b103378bdd3294606cdf1ac3cdea63adce9b |
 | tools | update_task | priority | 15e467342a400af7d45bebbcdbb6033fc254b918b8aa0a19d8f2f3bbcab472d1 |
-| tools | update_task | size | 640ad4fdcd185fef7b3126e4f57a0cae606da1598628fe85fcf44aa4e06132fa |
+| tools | update_task | size | d9e55e94ee68006d6880c40e7732a231e51bcc5d2919c61f9aa672db3618369c |
 | tools | update_task | startAt | d00148212e5b0387b0dec42855c40b624c4fb875c7706c62d978fcc9a9935e82 |
 | tools | update_task | status | f7e73edb7c5a9a0505b066a639e684bd0875476102240d9255db0f8b74758314 |
 | tools | update_task | tags | 12cb13942f1eefa25260f7af43bc280295e46a6d44837290f34d0455a9081571 |
+| tools | update_task | taskRelationships | 05f5f06e1812eaedac119d2f8e5a6e3ee607551e9c8273a41c9af25af23875f9 |
 | tools | update_task | title | d8da4c4d3526af1a57622c424e319610776173949629e64383033f6f28dae876 |
+| tools | update_task | type | ed360c9b1f537b7dc6c515aed63e80c075b100322bdee3c439159787a59e905f |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

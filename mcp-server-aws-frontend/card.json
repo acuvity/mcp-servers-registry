@@ -13,7 +13,7 @@
   "scope": "standalone",
   "mutitenant": true,
   "runtime": "python",
-  "version": "1.0.2",
+  "version": "1.0.10",
   "requiresConfiguration": false,
   "requiresStorage": false,
   "rating": {"hash":"2a004748e2f00bbf36a91d62feeda254a82b2c9f3eb577db7e453f8b3454eb92","reason":"The tool has a clear, specific name and comprehensive description that explains functionality, usage context, and available options. The parameter documentation is excellent with clear enum values and detailed descriptions. However, the description format is somewhat verbose with redundant parameter explanations that could be more concise, and the return type documentation in the description goes beyond what's needed for parameter guidance.","score":"B"},

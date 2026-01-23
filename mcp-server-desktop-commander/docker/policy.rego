@@ -96,23 +96,31 @@ _cross_tool_exclude := [
 	#
 	"write_file",
 	#
+	"write_pdf",
+	#
 	"create_directory",
 	#
 	"list_directory",
 	#
 	"move_file",
 	#
-	"search_files",
+	"start_search",
 	#
-	"search_code",
+	"get_more_search_results",
+	#
+	"stop_search",
+	#
+	"list_searches",
 	#
 	"get_file_info",
 	#
 	"edit_block",
 	#
-	"execute_command",
+	"start_process",
 	#
-	"read_output",
+	"read_process_output",
+	#
+	"interact_with_process",
 	#
 	"force_terminate",
 	#
@@ -121,6 +129,14 @@ _cross_tool_exclude := [
 	"list_processes",
 	#
 	"kill_process",
+	#
+	"get_usage_stats",
+	#
+	"get_recent_tool_calls",
+	#
+	"give_feedback_to_desktop_commander",
+	#
+	"get_prompts",
 	#
 	# exclude word that might be misdetected
 	"to",

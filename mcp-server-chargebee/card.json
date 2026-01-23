@@ -13,13 +13,13 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.0.3",
+  "version": "0.0.8",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"95187be9a453013a601f1ce6649cd1bbbe955ff8bdea813091988c108594bf91","reason":"Tool names are clear and specific, indicating their distinct purposes (documentation search vs code planning). Descriptions adequately explain functionality and when to use each tool, with good differentiation between the two. Parameter descriptions are clear and include helpful guidance like 'Check the user's application language.' The enum constraints for language are well-defined. Minor improvement could be made in describing what type of content/format each tool returns, but overall provides sufficient guidance for proper usage.","score":"B"},
+  "rating": {"hash":"8725b1bb4f4a74571c578581df64b4c566c6ac2929ceb1c2b00cfe90443787b0","reason":"Good documentation overall with clear tool names and comprehensive descriptions that explain functionality, usage context, and when to use each tool. The descriptions effectively distinguish between the two tools' purposes and include helpful usage guidelines. Parameter documentation is adequate with clear descriptions and proper enum constraints, though some parameters like 'goal' and 'query' could benefit from more specific examples or formatting guidance.","score":"B"},
   "resources": {
     "tools": 2,
-    "prompts": 0,
+    "prompts": 1,
     "resources": 0,
     "resourcesTemplates": 0
   }

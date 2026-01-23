@@ -9,8 +9,16 @@
       "hash": "944f896d7183752af29b2030d36de77589e7bd1e624042bc1d30de11cc7bea8b"
     },
     {
+      "name": "compose_music",
+      "hash": "6dede9647b4b86311e88f2278de4b8f000ea008915a44e9f33ad0a4ffd0c9857"
+    },
+    {
       "name": "create_agent",
       "hash": "b564fd50f13b82724320fcca60b4a43b6f4342615f94cad25b22d3feacd2bee5"
+    },
+    {
+      "name": "create_composition_plan",
+      "hash": "fc48737b745cc09e48a2e101a80dd74170787427d6e36c4d53d232f3ea39dbba"
     },
     {
       "name": "create_voice_from_preview",
@@ -21,16 +29,24 @@
       "hash": "4607c36f84519b2172276551d4c64b55a326d4cd53cbff83d59f427a7c550c4c"
     },
     {
+      "name": "get_conversation",
+      "hash": "f2ed073c7052b3d497172a207f08b9586e66a26182ff20678aadeb79c1322935"
+    },
+    {
       "name": "get_voice",
       "hash": "511ba8e3f9550db8dadc8561cab48730d25684f72069faf2461596a29c60ed79"
     },
     {
       "name": "isolate_audio",
-      "hash": "ecfd2b1b452ffd4492e23ff4680350ebe5ebed530e774ee25f9b8b5f20e71d04"
+      "hash": "b18518722b3800070d51f92a76f49ce56118b1629da456426fe584c8344545f5"
     },
     {
       "name": "list_agents",
       "hash": "c86fa37dac2e1f0c6d6ba4784faed7c330e907453c299a60992c8af4bef9b665"
+    },
+    {
+      "name": "list_conversations",
+      "hash": "13bfda88ec50c6ce08a5cc03ee3db70b399c65b3742628de1d7f794aedec23b3"
     },
     {
       "name": "list_models",
@@ -42,7 +58,7 @@
     },
     {
       "name": "make_outbound_call",
-      "hash": "d8e7480101ea19cfa95141215d12f5cdc5f87d75fc20c0869a18b3fb02f09cc8"
+      "hash": "5e5f9fa273dbd2a6b0c3ed3851efab1b2d704c83878334c3a0cacae377937501"
     },
     {
       "name": "play_audio",
@@ -58,23 +74,23 @@
     },
     {
       "name": "speech_to_speech",
-      "hash": "2d83a2662e59f363cd80d7d75803c8c5a2eef9a91356afccb16db9b963bae4eb"
+      "hash": "8a1e4847343a679cc44eff603e54489e4d1c82aa70608a5e949bf7bafe06c000"
     },
     {
       "name": "speech_to_text",
-      "hash": "aa8e90a21934f14abfc93728f02d72430eb266fe00889ad75a4ba4e989eb720d"
+      "hash": "a2546d745cae13810418cdf52f68f3c94c17713fc636b7b6adb5ef10dcb57d14"
     },
     {
       "name": "text_to_sound_effects",
-      "hash": "9fe63c424ebbf0133561c9bdb0ff941157b9b84b34680ce15764e4dccc45f931"
+      "hash": "7a49f3e845ef929a6e32cbb2c7d39756f20940269c1bde58f6668bd0bd2fb06a"
     },
     {
       "name": "text_to_speech",
-      "hash": "e35a9e71722f2a738bba2d0db9d3d111de584a979157de39da236df40f47a1dd"
+      "hash": "3b9abe184421f7e26bba49ac7d8ac5da353ee29e49f6422e33a5f072677b1800"
     },
     {
       "name": "text_to_voice",
-      "hash": "5a7eb20b8fce7560f39b99ab64bfea14a409f8ed0c1afe9529eb11d903cab523"
+      "hash": "328ff4695cb75ca12ae9872b1d6436cb9a95fb246fe4d0790a69c3678fff9453"
     },
     {
       "name": "voice_clone",

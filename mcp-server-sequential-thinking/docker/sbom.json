@@ -2,7 +2,7 @@
   "tools": [
     {
       "name": "sequentialthinking",
-      "hash": "638bac0560badec1e36742fbcf0ded31308fd3a06f05da4a432d43d473c52bed",
+      "hash": "dc4d2cfb24976f438e2140cb8160d1fae08ba09a3889ffee03413aa35aa6a2cf",
       "params": [
         {
           "name": "branchFromThought",
@@ -34,11 +34,11 @@
         },
         {
           "name": "thoughtNumber",
-          "hash": "be1ad5c36f2e119ad95831a6e6855e3111fd3a9d4f00826ae27d02eb94fee0d7"
+          "hash": "7386301a55ed5e7bd521519c9e075f04656116d43292000604c4d6a409bd1fc9"
         },
         {
           "name": "totalThoughts",
-          "hash": "9cb82eb4f2cd2c5836dfde2480f5538ecd30261801002a1487d2e3c88b2ff4ce"
+          "hash": "7507764637fdcfc4397fb384650b2013a40272ea8eaf65a2b31613c7e827b380"
         }
       ]
     }

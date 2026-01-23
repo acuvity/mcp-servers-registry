@@ -53,6 +53,36 @@
       ]
     },
     {
+      "name": "create_comment",
+      "hash": "33d349823245b3e6be992d99d9bcde282650d8f57cc0338236f3e7532ec0b65e",
+      "params": [
+        {
+          "name": "body",
+          "hash": "e38379594e7cd8a09e157dadbf3b27821b248115b61857dfeaaf461cec0d9a74"
+        },
+        {
+          "name": "entryId",
+          "hash": "0f8ed4f9b01e2826c975f5d9ba7571d398ca4e12dedd7982d71bb6cb05d532f0"
+        },
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "parent",
+          "hash": "120207f427d76fe89013acfea5ad551ba62adafd88d8e7950453dc48292ff638"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        },
+        {
+          "name": "status",
+          "hash": "72e7de4ae4f390a0a6c5cc54dd0ec305bdd30bb172b7e7ab09b0c4bc1dd9286d"
+        }
+      ]
+    },
+    {
       "name": "create_content_type",
       "hash": "d9744dc50d28fd896e176539b86c4d516298734c6c660c2a91a49b670b262a20",
       "params": [
@@ -118,6 +148,28 @@
       "name": "delete_asset",
       "hash": "6c7c32568e6a7561f8f0415ea51e55a393f63285fe479a88c5d67a0361632b3c",
       "params": [
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "delete_comment",
+      "hash": "af78fd1e8d2bc5ade21f0f1d4a966c7c44bc328a7a56d21d513f37f2d2e5de31",
+      "params": [
+        {
+          "name": "commentId",
+          "hash": "ef625e9474c99b830a5768cef609479ff32e10bd826922d1cc19436e5e739ebb"
+        },
+        {
+          "name": "entryId",
+          "hash": "4635b24339f7797cf2c96566138eebbddd2ca18cefa6dc38a27b3099d6a2b05c"
+        },
         {
           "name": "environmentId",
           "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
@@ -215,6 +267,40 @@
       ]
     },
     {
+      "name": "get_comments",
+      "hash": "186899b0f53b3536be9b9cd77ad05ce0314d309e4fcacec4143ac412fe4343b9",
+      "params": [
+        {
+          "name": "bodyFormat",
+          "hash": "4706352463984a44f22ad4b1c135bb48e57af08ea0ea775adabd5a785838d249"
+        },
+        {
+          "name": "entryId",
+          "hash": "06154ce15a65946f70e845cfcc81c355d30ade8aa28c40ce5beb2d065c2e1c6e"
+        },
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "limit",
+          "hash": "6395ab940c90ab446b6e241a4d63a92ec781d2aacc2fff5d926a136de5627f22"
+        },
+        {
+          "name": "skip",
+          "hash": "e2e2cde1d41c64af74318da1fee3f3f389c4cfd9518fedf60f8f9fd5261669d3"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        },
+        {
+          "name": "status",
+          "hash": "620c03bb5fd0a4402d5ea89201cdbb803691bf64f0e45a7cf755b0faa1b6236d"
+        }
+      ]
+    },
+    {
       "name": "get_content_type",
       "hash": "2a5357bc685b1b5843c2868b1124211676da3cc45550fe3c688f6a060903ec2f",
       "params": [
@@ -232,6 +318,32 @@
       "name": "get_entry",
       "hash": "1de1c52a44e35412db5b7ad38ca92ae9881a2655bb5dfe1ad1d5d0aad2aaefb2",
       "params": [
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "get_single_comment",
+      "hash": "cd96f4a76d9e7366818ddea01c1f24da35e7773a34d7aef066c020256d1894f0",
+      "params": [
+        {
+          "name": "bodyFormat",
+          "hash": "4706352463984a44f22ad4b1c135bb48e57af08ea0ea775adabd5a785838d249"
+        },
+        {
+          "name": "commentId",
+          "hash": "075f626838df67563c49322e0e73be45800ec61ead81cc98990f506fb855c82a"
+        },
+        {
+          "name": "entryId",
+          "hash": "4635b24339f7797cf2c96566138eebbddd2ca18cefa6dc38a27b3099d6a2b05c"
+        },
         {
           "name": "environmentId",
           "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
@@ -539,6 +651,40 @@
         {
           "name": "spaceId",
           "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        }
+      ]
+    },
+    {
+      "name": "update_comment",
+      "hash": "e93b5c38f1ccd86cb686685a64ae1ad0e036d8d50104fb6f79b2ce519aa9179c",
+      "params": [
+        {
+          "name": "body",
+          "hash": "4badaeb6d7853097c1771c8428cd32400b568e477930eae4bc7edcf74685e1a0"
+        },
+        {
+          "name": "bodyFormat",
+          "hash": "4706352463984a44f22ad4b1c135bb48e57af08ea0ea775adabd5a785838d249"
+        },
+        {
+          "name": "commentId",
+          "hash": "2cc6419370053f3b1503cb9203c427cc34253c1b06fc07a05e567ff858b857ac"
+        },
+        {
+          "name": "entryId",
+          "hash": "4635b24339f7797cf2c96566138eebbddd2ca18cefa6dc38a27b3099d6a2b05c"
+        },
+        {
+          "name": "environmentId",
+          "hash": "96da3c6e665898f36612669e041a2c4a4c566a8d8f96d2f2b15ea75addddae96"
+        },
+        {
+          "name": "spaceId",
+          "hash": "b2b25781b62ebfe08437eea6849c06eba6f634a9cd4f203c7031a88f1ed22c47"
+        },
+        {
+          "name": "status",
+          "hash": "4e1c0d92b80024ab257c28dd69a3ce4973d5b29a727965bf37263654b00bd4ba"
         }
       ]
     },

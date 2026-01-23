@@ -13,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.4.2",
+  "version": "0.6.4",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"fd695653425bed661dfe970d4616bc1c01148ead230f531a91b976f4411e4973","reason":"The toolset provides adequate documentation with clear tool names and basic functionality descriptions. However, the descriptions are somewhat brief and could better explain usage context and limitations. Parameter documentation is generally clear but inconsistent in detail - some parameters like 'depth' have comprehensive descriptions while others like 'fileName' are minimal. The documentation is functional but leaves some questions unanswered about when to use each tool and their specific constraints.","score":"C"},
+  "rating": {"hash":"13dc0ed516f3fa09a2de00b506debe8f1413bf3c3ba7ef596f3d21d247a7cead","reason":"Good documentation overall with clear names and comprehensive descriptions. Both tools provide adequate context about functionality and usage. Parameter documentation is generally thorough with helpful examples and constraints. Some minor areas for improvement include the depth parameter warning could be clearer, and a few technical parameters like cropTransform could benefit from more detailed explanations for non-Figma experts.","score":"B"},
   "resources": {
     "tools": 2,
     "prompts": 0,

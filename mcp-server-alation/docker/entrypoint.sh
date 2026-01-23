@@ -1,7 +1,7 @@
 #!/bin/sh
 . .venv/bin/activate
 [ -z "$ALATION_BASE_URL" ] && echo "!!! Error mcp-server-alation requires ALATION_BASE_URL env var to be set." && exit 1
-export ALATION_AUTH_METHOD=${ALATION_AUTH_METHOD:-"user_account"}
+export ALATION_AUTH_METHOD=${ALATION_AUTH_METHOD:-"service_account"}
 
 if [ -z "$MINIBRIDGE_MODE" ]; then
   # check if stdin in open

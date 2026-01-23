@@ -112,6 +112,10 @@ _cross_tool_exclude := [
 	#
 	"get_agent",
 	#
+	"get_conversation",
+	#
+	"list_conversations",
+	#
 	"speech_to_speech",
 	#
 	"text_to_voice",
@@ -125,6 +129,10 @@ _cross_tool_exclude := [
 	"list_phone_numbers",
 	#
 	"play_audio",
+	#
+	"compose_music",
+	#
+	"create_composition_plan",
 	#
 	# exclude word that might be misdetected
 	"to",

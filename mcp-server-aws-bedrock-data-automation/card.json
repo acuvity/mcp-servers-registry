@@ -13,7 +13,7 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.0.2",
+  "version": "0.0.14",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "rating": {"hash":"711cbf9ab085a5a95d6cca097f36fed3cad84549a143575742602f78109b8391","reason":"Excellent documentation quality across all tools. Names are clear and specific, descriptions are comprehensive with detailed usage sections, examples, and output format explanations. Parameter documentation is complete with clear purposes and constraints. The multi-section format with usage examples and output descriptions provides exceptional clarity for users.","score":"A"},

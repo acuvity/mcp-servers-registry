@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.2.1",
+  "version": "0.3.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"dfc3f7ed6a027992c88ee38a21039e13481bc3c3db386642d1c80e5666b70718","reason":"The toolset shows mixed documentation quality. While the search_assets_tool has exceptionally detailed documentation with comprehensive examples, the other tools have minimal descriptions and lack proper parameter documentation. The input schemas are mostly empty of descriptions, and tools like get_assets_by_dsl_tool and traverse_lineage_tool provide only basic functional descriptions without explaining key constraints or usage contexts.","score":"C"},
+  "rating": {"hash":"255508bdd048b3e5f158bdc6eadfce98400d1e2a84396a511e8d611fb245be65","reason":"Good overall documentation with some inconsistencies. Most tools have clear, descriptive names and comprehensive descriptions with excellent examples. Parameter documentation is generally adequate with clear types and purposes. However, the input schemas lack detailed parameter descriptions - most parameters only have basic titles without explanations of their purpose, constraints, or expected formats. The search_assets_tool stands out with exceptional documentation quality, while tools like get_assets_by_dsl_tool and some creation tools could benefit from more structured parameter descriptions in their schemas.","score":"B"},
   "resources": {
-    "tools": 4,
+    "tools": 14,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

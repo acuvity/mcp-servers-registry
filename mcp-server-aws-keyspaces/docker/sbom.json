@@ -1,0 +1,71 @@
+{
+  "tools": [
+    {
+      "name": "analyzeQueryPerformance",
+      "hash": "ddabf4e6abdca0d6bb49c5ce3006e619fab296c2e5e314b01ae6bbfb89261c62",
+      "params": [
+        {
+          "name": "keyspace",
+          "hash": "15ba18d31c4b79800f5f4aba6b381d92ba142788aad4f5df9816bf3bbdf54ce3"
+        },
+        {
+          "name": "query",
+          "hash": "f17e34b28a904ba602a24c18f0d118acc03c9bd0d31fd433ae6483b509d9041a"
+        }
+      ]
+    },
+    {
+      "name": "describeKeyspace",
+      "hash": "de5e97b0eaa2238fd15ce8f491137ea56961920a125b1a071c0dbe507206b143",
+      "params": [
+        {
+          "name": "keyspace",
+          "hash": "8009b2d2908eb800b7ad1a3143516f9528dd4379c2d7288d9655c8055a3bfa99"
+        }
+      ]
+    },
+    {
+      "name": "describeTable",
+      "hash": "9b8861030ffeb91b3a4b44957058f5e2171aa0e5d425b524d1852dedb2035656",
+      "params": [
+        {
+          "name": "keyspace",
+          "hash": "a2e06e2e8c1fe9845019b83cd51c231d20cbef57a85af0195d21b2f9ff141351"
+        },
+        {
+          "name": "table",
+          "hash": "6477aa43f17664fd9ba4079d5fdc6fbd304409cc26ec35f4919e0e75d782e92a"
+        }
+      ]
+    },
+    {
+      "name": "executeQuery",
+      "hash": "c0f2bb91a8cce25bd9aeb9d861200f3b55afb898b161fc3ececf1d74b996f23c",
+      "params": [
+        {
+          "name": "keyspace",
+          "hash": "59a411daae8e3f3652f3908b231bf346ad24b66d8039cb6abd1a860f8971b55e"
+        },
+        {
+          "name": "query",
+          "hash": "195b6e8f7ee45fc18140379f92b6c584e6c7d2e5ad9681887782b4229858253e"
+        }
+      ]
+    },
+    {
+      "name": "listKeyspaces",
+      "hash": "18504dcd1d2576eaa01328626611a5869110f3c181b4980d4913979281d0366e"
+    },
+    {
+      "name": "listTables",
+      "hash": "ffa2bad122fb0172858c02858e689d9c14b5ac0a77ac41d500a6cb7571f1e70a",
+      "params": [
+        {
+          "name": "keyspace",
+          "hash": "d00895d1892aa6265bc880c8b688cae9a7e13764e5e40235f74e62eaa1a9fa52"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

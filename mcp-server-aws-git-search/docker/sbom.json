@@ -1,0 +1,99 @@
+{
+  "tools": [
+    {
+      "name": "access_file",
+      "hash": "538ae8c2c6143e9c751c269bcda26bf75732ea8f6457735b4e162fd34ebbe56e",
+      "params": [
+        {
+          "name": "filepath",
+          "hash": "7e42f914e5e489b4037c9f6e16dff7ceceb935b6bd48b7319e0bd66f7c6a42d4"
+        }
+      ]
+    },
+    {
+      "name": "create_research_repository",
+      "hash": "c940a8dd4b9e4d9deb67a67f60bbcf4599e557b46e62bcc987af0d243d8c52f2",
+      "params": [
+        {
+          "name": "chunk_overlap",
+          "hash": "05c66ecb3debdcd434ddda278bd87023771034f434637bbbe5240a6ebd5cc2b3"
+        },
+        {
+          "name": "chunk_size",
+          "hash": "70bde938031148dfe995e9846bbd3c795b0954f8f7a4669f1b6569aa22cff313"
+        },
+        {
+          "name": "embedding_model",
+          "hash": "80bf3db2dca9c60281aad58727fdbb8cbc83af93eac41048dce3bb1d50a7c09c"
+        },
+        {
+          "name": "exclude_patterns",
+          "hash": "f9eaffd2bf611b3f52a2c0c637d25ea82a4ead0ef674dbbbc26de0c5dc6182b1"
+        },
+        {
+          "name": "include_patterns",
+          "hash": "fb200038a763048571f840b9999411880fd51d656bbdf70546b9b5924f2fdfd9"
+        },
+        {
+          "name": "output_path",
+          "hash": "42ba0e0affe9cf20145b919588e638250b0fb98db081dbce813a93e8f1039f12"
+        },
+        {
+          "name": "repository_path",
+          "hash": "9e87b7491b858944f17c543f99ab2bcdf2af0c7e6bbac57c7622a84ed828d9f3"
+        }
+      ]
+    },
+    {
+      "name": "delete_research_repository",
+      "hash": "e477aea91e163d0b7171e032ee484d6d2c024ca6effbd6aa33ceeacc8145a456",
+      "params": [
+        {
+          "name": "index_directory",
+          "hash": "091cb2afbc95074d36d2bc3b8b7aab33c7bc048371c92a747f4c26922f4d9d81"
+        },
+        {
+          "name": "repository_name_or_path",
+          "hash": "4b7176a7aab176477f93010539482d3b0f25a4f9c176998c221547f86dc34453"
+        }
+      ]
+    },
+    {
+      "name": "search_repos_on_github",
+      "hash": "afc2d618e7a37552c13bc7cfb4367b10bc34ed21e6d3779ffd879d9e4099cbdd",
+      "params": [
+        {
+          "name": "keywords",
+          "hash": "a56318459b3ada36d7065a7b45a0fd85763ff28ae8b0897d32ffe8a5ccab8988"
+        },
+        {
+          "name": "num_results",
+          "hash": "6954eeae88250d596470c7aeb1f8f6b1350c408ae7182ea2db936a6fe2862bff"
+        }
+      ]
+    },
+    {
+      "name": "search_research_repository",
+      "hash": "fbcdc6d4c04bba6202c0ac04c0711e1e09ba24a0db837b2d7bf4ac52a6f8eb1a",
+      "params": [
+        {
+          "name": "index_path",
+          "hash": "85399129c160de5829951105ac839c04b1b40917fb516a51799d7201147fff6f"
+        },
+        {
+          "name": "limit",
+          "hash": "b04468046d2f2a5692b75e7d703a30fd2787b8f80972a3b07b618e4ca4b3fa70"
+        },
+        {
+          "name": "query",
+          "hash": "3fb13144244d3018c954845833da0792f2eced8241205b1535b7e98428b366e9"
+        },
+        {
+          "name": "threshold",
+          "hash": "237e1bdf986ebe9c0aee3f1a3c4e51cb9b4c0b0eda7a2f591d4f97def9fdb890"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

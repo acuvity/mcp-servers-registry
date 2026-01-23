@@ -13,13 +13,13 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "go",
-  "version": "v1.0.0-beta",
+  "version": "v1.0.0-beta.16",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"1a2b01f0d9583e19f120015d926bb67fa5adab77be1b02ebce6f13c705ab59bd","reason":"Tool names are clear and consistently indicate their purpose (create_, get_, list_, download_, fetch_). Descriptions are concise and adequately explain functionality, though they could be more comprehensive. Parameter descriptions are generally clear and specify purpose and expected values. Most tools properly indicate required vs optional parameters. However, descriptions lack detail about when to use tools, what specific information they provide, and potential limitations. Some inconsistencies exist in pagination parameter naming (page vs limit) and default values.","score":"B"},
+  "rating": {"hash":"9b8615a4061357fb2bcd2b104b921fbc66cae5358b2188e71888d75378161e9f","reason":"Good documentation overall with clear, purposeful tool names and adequate descriptions covering basic functionality. Parameter documentation is generally clear with helpful constraints and examples. Minor gaps include some descriptions that could be more comprehensive (especially around usage context and limitations) and a few parameters that could benefit from more detailed explanations, but the toolset is broadly usable without confusion.","score":"B"},
   "resources": {
-    "tools": 17,
-    "prompts": 0,
+    "tools": 10,
+    "prompts": 5,
     "resources": 0,
     "resourcesTemplates": 0
   }

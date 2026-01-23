@@ -30,11 +30,23 @@
     },
     {
       "name": "search_documentation",
-      "hash": "792056f237c78479f73d2c7547e91b2ed41e0c329765469722b2c677a24ed420",
+      "hash": "92dbcd0a5cc3751fe4d3dfb1e26d5a895091e718382373a182c7ec85ea60700a",
       "params": [
+        {
+          "name": "guide_types",
+          "hash": "a9f2a2d2bfb7fc55f237c70cd3b4db2f92e1e30721cfd937f6f78378722ffbfd"
+        },
         {
           "name": "limit",
           "hash": "b04468046d2f2a5692b75e7d703a30fd2787b8f80972a3b07b618e4ca4b3fa70"
+        },
+        {
+          "name": "product_types",
+          "hash": "574be655ea03ed7898a5c126df89b61bc7e596ebfa003d5ee886872ce058edca"
+        },
+        {
+          "name": "search_intent",
+          "hash": "84e2ae5fd77f6babc33c9d9b2efcd4e99c169cd71940fa0e6776cc2f0bdb623d"
         },
         {
           "name": "search_phrase",

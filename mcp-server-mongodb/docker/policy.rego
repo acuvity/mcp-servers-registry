@@ -86,67 +86,75 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
-	"atlas-list-clusters",
-	#
-	"atlas-list-projects",
-	#
-	"atlas-inspect-cluster",
-	#
-	"atlas-create-free-cluster",
-	#
-	"atlas-create-access-list",
-	#
-	"atlas-inspect-access-list",
-	#
-	"atlas-list-db-users",
-	#
-	"atlas-create-db-user",
-	#
-	"atlas-create-project",
-	#
-	"atlas-list-orgs",
-	#
-	"atlas-connect-cluster",
-	#
-	"connect",
-	#
-	"list-collections",
-	#
-	"list-databases",
+	"aggregate",
 	#
 	"collection-indexes",
 	#
+	"collection-schema",
+	#
+	"collection-storage-size",
+	#
+	"connect",
+	#
+	"count",
+	#
+	"create-collection",
+	#
 	"create-index",
 	#
-	"collection-schema",
+	"db-stats",
+	#
+	"delete-many",
+	#
+	"drop-collection",
+	#
+	"drop-database",
+	#
+	"drop-index",
+	#
+	"explain",
+	#
+	"export",
 	#
 	"find",
 	#
 	"insert-many",
 	#
-	"delete-many",
+	"list-collections",
 	#
-	"collection-storage-size",
+	"list-databases",
 	#
-	"count",
-	#
-	"db-stats",
-	#
-	"aggregate",
-	#
-	"update-many",
+	"mongodb-logs",
 	#
 	"rename-collection",
 	#
-	"drop-database",
+	"update-many",
 	#
-	"drop-collection",
+	"atlas-connect-cluster",
 	#
-	"explain",
+	"atlas-create-access-list",
 	#
-	"create-collection",
+	"atlas-create-db-user",
 	#
-	"mongodb-logs",
+	"atlas-create-free-cluster",
+	#
+	"atlas-create-project",
+	#
+	"atlas-get-performance-advisor",
+	#
+	"atlas-inspect-access-list",
+	#
+	"atlas-inspect-cluster",
+	#
+	"atlas-list-alerts",
+	#
+	"atlas-list-clusters",
+	#
+	"atlas-list-db-users",
+	#
+	"atlas-list-orgs",
+	#
+	"atlas-list-projects",
 	#
 	# exclude word that might be misdetected
 	"to",

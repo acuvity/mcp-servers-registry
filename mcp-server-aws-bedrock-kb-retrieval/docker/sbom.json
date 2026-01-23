@@ -1,16 +1,20 @@
 {
   "tools": [
     {
+      "name": "ListKnowledgeBases",
+      "hash": "73e8ca7160a3ed77d3822907eab7f2033dce5dc1727a8eaeb3bddd810f16bbf7"
+    },
+    {
       "name": "QueryKnowledgeBases",
-      "hash": "2bdad1de95ec1f65e58b1f469d93f944bdfbeb969fefaadcaebc4246a1948c1c",
+      "hash": "a40979d34e483435cb9bc902b05609dbfde44502a2b5e7faea5ed49e3ac63133",
       "params": [
         {
           "name": "data_source_ids",
-          "hash": "017edfd8213c7fb5e32a0e84308c2d5b487668eb92541f242c4687110c64739c"
+          "hash": "07c68a43981a2439a046af9e664c8e90f790653a7fb395fa6e6ae76531db1226"
         },
         {
           "name": "knowledge_base_id",
-          "hash": "f42cf0550fc4ac1ac6cc6d560c082ba50cdc6c8238978e7fbc8b1f6908353b28"
+          "hash": "dda6444199e029c7bfca9ee24d8c3c4f254c3403a8e2471ebd6aab933c1b62b5"
         },
         {
           "name": "number_of_results",

@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.6.0",
+  "version": "1.0.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"76c373c61d216fece89d8a343cc00bd12aab6a51d58afa953a5849707f20a1a1","reason":"The toolset shows good documentation quality overall with clear, descriptive tool names and comprehensive parameter descriptions. Tool descriptions adequately explain functionality and usage context, though some could benefit from more detail about limitations or constraints. Parameter documentation is generally thorough with clear descriptions of purpose and types. However, some tools have minimal descriptions (like 'delete_all_site_scripts' with no description) and inconsistent detail levels across similar tools, preventing an A grade.","score":"B"},
+  "rating": {"hash":"569bf8340ea8cdd75022045c910ff6002ae05197ba3948127314d50dd656fc59","reason":"The toolset has adequate documentation with clear tool names and basic functionality descriptions. However, there are significant inconsistencies in parameter documentation quality - some tools have comprehensive parameter descriptions while others lack essential details. The first tool's repetitive description text and several tools with minimal parameter descriptions (like 'delete_all_site_scripts' missing a description entirely) prevent a higher grade. The core API tools are reasonably documented, but the designer tools vary widely in documentation completeness.","score":"C"},
   "resources": {
-    "tools": 32,
+    "tools": 43,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

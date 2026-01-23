@@ -21,8 +21,12 @@
   ],
   "prompts": [
     {
+      "name": "examples",
+      "hash": "37f25e690c39b8ed524e3dcf4c3dbdc5389000e22dd19fde00eae00b930186e8"
+    },
+    {
       "name": "run_command",
-      "hash": "d32e85c0360d865563ca76bb4c5a3871b34f94e2138fc147b66e45af6b6c227e",
+      "hash": "84a1da3594b5e638e6377cf9d130c9f7873501a0b8fb5fa3b2f1990d4b0cc665",
       "params": [
         {
           "name": "command",

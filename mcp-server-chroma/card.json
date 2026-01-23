@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.2.4",
+  "version": "0.2.6",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"e51bac8ccca2f1d4dd5e71986f26286e36e653c1b0911794f7eff253272b3993","reason":"Tool names are clear and intuitive with consistent 'chroma_' prefixes. Descriptions are generally comprehensive, explaining functionality and providing detailed parameter information. Most parameters have adequate descriptions, though some technical HNSW parameters could benefit from more context about their practical impact. The query filtering examples in descriptions are particularly helpful for understanding complex parameters.","score":"B"},
+  "rating": {"hash":"c8c9ac85889fa6b3bbc003c61a944397aec071a5b788dbd61c2f28695a20ddeb","reason":"The toolset demonstrates good documentation quality with clear, descriptive tool names using consistent 'chroma_' prefix, and comprehensive descriptions that explain functionality and usage context. Parameter documentation is thorough with detailed examples for complex filtering operations. However, some descriptions could be more concise (particularly the verbose Args/Returns format), and a few tools like 'chroma_fork_collection' lack sufficient detail about their specific behavior. Overall, the documentation provides strong guidance for users with only minor areas for improvement.","score":"B"},
   "resources": {
-    "tools": 12,
+    "tools": 13,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

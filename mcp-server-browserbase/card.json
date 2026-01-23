@@ -13,13 +13,13 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "1.0.5",
+  "version": "2.1.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"74750b7055916481b100580aa6163a15c9b0717a079c6c311ea6228467c78be3","reason":"While tool names are clear and indicate purpose, descriptions are inconsistent with many being overly brief (e.g., 'Close the current page...', 'Resize window...'). Critical parameter descriptions are missing or inadequate - width/height lack descriptions, sessionId appears without explanation, and dummy parameters suggest incomplete documentation. The toolset has significant gaps requiring users to infer functionality and usage details.","score":"D"},
+  "rating": {"hash":"aeb85e2e5161bf0c68a10b468278c5df4c0a9266a4e4c6e44f74071ea0e21a9c","reason":"The toolset demonstrates good documentation quality with clear, comprehensive descriptions for most tools, detailed parameter explanations, and specific usage guidance. Tool names are mostly clear and purposeful. However, inconsistencies in description length and detail across similar tools (e.g., single vs multi-session variants), along with some overly verbose descriptions that could be more concise, prevent it from reaching excellent quality. The documentation effectively addresses functionality, constraints, and usage context for the majority of tools.","score":"B"},
   "resources": {
-    "tools": 19,
-    "prompts": 0,
+    "tools": 17,
+    "prompts": 3,
     "resources": 0,
     "resourcesTemplates": 0
   }

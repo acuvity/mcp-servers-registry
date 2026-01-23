@@ -88,9 +88,17 @@ _cross_tool_exclude := [
 	#
 	"getBasicBrowserContext",
 	#
-	"captureActiveTab",
+	"captureTab",
 	#
-	"getInnerText",
+	"invokeJsFn",
+	#
+	"openTab",
+	#
+	"closeTab",
+	#
+	"getSelection",
+	#
+	"getReadableText",
 	#
 	"getReadableElements",
 	#
@@ -105,8 +113,6 @@ _cross_tool_exclude := [
 	"fillTextToReadableElement",
 	#
 	"hitEnterOnReadableElement",
-	#
-	"invokeJsFn",
 	#
 	# exclude word that might be misdetected
 	"to",

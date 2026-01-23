@@ -108,11 +108,15 @@ _cross_tool_exclude := [
 	#
 	"list_tickets",
 	#
-	"create_ticket",
-	#
 	"list_invoices",
 	#
 	"get_invoice",
+	#
+	"list_allocations",
+	#
+	"get_allocation",
+	#
+	"list_assets",
 	#
 	# exclude word that might be misdetected
 	"to",

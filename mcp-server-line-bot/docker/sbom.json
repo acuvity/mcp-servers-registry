@@ -13,6 +13,20 @@
       "hash": "5665fffb4bd328740228f593ceaa04b8838575e8489c1b9db3eebf27eefa9993"
     },
     {
+      "name": "create_rich_menu",
+      "hash": "58e5d0152ff327ce0fae3570dd9a50bd559c5da433320f8c6e04cab4cbd21112",
+      "params": [
+        {
+          "name": "actions",
+          "hash": "9f6675aafdca62783849a1dfd72d064d2cc7276b9833c236318076f2ba50cc80"
+        },
+        {
+          "name": "chatBarText",
+          "hash": "6ba84bd6cc9b53d9afe786af0b6c2a57fda5df0f414429849e53b6d41de9b6f6"
+        }
+      ]
+    },
+    {
       "name": "delete_rich_menu",
       "hash": "9354a24cd221401fe051d2738db054192319efb3b6d293f348cf5e9a27a3e434",
       "params": [

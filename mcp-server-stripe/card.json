@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.2.3",
+  "version": "0.2.5",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"f9c60d243ed5398b61c89ad5970995ed3e3924d90b038af472623f9523ee5f92","reason":"The toolset provides adequate documentation with clear tool names and basic functionality descriptions, but has inconsistent formatting, some unclear parameter descriptions, and missing contextual information. While most tools explain their core purpose, descriptions vary in quality from comprehensive (like update_subscription) to overly brief (like finalize_invoice), and several tools lack important usage context or constraints.","score":"C"},
+  "rating": {"hash":"f960d35234b91f1f550fbe2c1aa784154dc6da1dec52d9eb8df6cfc6fd24ba12","reason":"Good documentation overall with clear tool names and adequate descriptions. Most tools provide sufficient context about their functionality and when to use them. Parameter descriptions are generally clear with appropriate constraints specified. However, some descriptions are overly verbose with formatting issues, and a few tools have minor gaps in explaining important nuances like the relationship between amount_off and currency parameters.","score":"B"},
   "resources": {
-    "tools": 21,
+    "tools": 22,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

@@ -24,11 +24,21 @@
     },
     {
       "name": "list_allowed_directories",
-      "hash": "6ab054bcfc2f3cbbd833f8a3cb59ede6daae3b43f9939e58524e1d5b29458975"
+      "hash": "aa4aecbfa97e7b0b2f37e02248d576743e3ba69c5a3a33ef0334ed652e445474"
     },
     {
       "name": "list_directory",
       "hash": "2a89821007a4702b0f7e7cd13107b335d1c49baba8ffc4d38fe8d1cfbe3ac789"
+    },
+    {
+      "name": "list_directory_with_sizes",
+      "hash": "5f974132fd515ca908bb2dd84e3a7d95426b4b7905e785c6726f2399218a6d6b",
+      "params": [
+        {
+          "name": "sortBy",
+          "hash": "5e32ce70fcf53900d55250eb051af648d170d30b90c58bb858a94b7f8f807da2"
+        }
+      ]
     },
     {
       "name": "move_file",
@@ -36,15 +46,49 @@
     },
     {
       "name": "read_file",
-      "hash": "fcd11b5a6da30a56f0fb021421897c152c7a6cd1bf77a7a2fd420524064a000e"
+      "hash": "7abf56a4c306cf50c1ad1b4568b4d5f28086f068b4052f81aff20e72c0b92d47",
+      "params": [
+        {
+          "name": "head",
+          "hash": "715e4ce8d72883b7d5318a3869c210d4efb3e5ac4adc1938d331733dbe0db9df"
+        },
+        {
+          "name": "tail",
+          "hash": "deddd85a025f04978ca0517b89854a51acf2161a49dd63e47f11a06c6d162aba"
+        }
+      ]
+    },
+    {
+      "name": "read_media_file",
+      "hash": "206ef33602ac22560c67dbe0b926b6a096fbc0a29063c33882a7c54310b3715f"
     },
     {
       "name": "read_multiple_files",
-      "hash": "d5a30eac51a3257ccd4b0acf3b70788f2b180fe1b9807c02644fa3389ebcbcb0"
+      "hash": "d5a30eac51a3257ccd4b0acf3b70788f2b180fe1b9807c02644fa3389ebcbcb0",
+      "params": [
+        {
+          "name": "paths",
+          "hash": "3dfc4b4246dec264d1f51f24dfccd4b913c856e0629dac4578177331b26133b0"
+        }
+      ]
+    },
+    {
+      "name": "read_text_file",
+      "hash": "43033fa70cb5bafe3ded0443fe51f1edd90b4e9d45efac6118e4395d2524011f",
+      "params": [
+        {
+          "name": "head",
+          "hash": "715e4ce8d72883b7d5318a3869c210d4efb3e5ac4adc1938d331733dbe0db9df"
+        },
+        {
+          "name": "tail",
+          "hash": "deddd85a025f04978ca0517b89854a51acf2161a49dd63e47f11a06c6d162aba"
+        }
+      ]
     },
     {
       "name": "search_files",
-      "hash": "5a9ec8c0901b2ccf519cf939cdcd3a7fe262be2df9e6ab81605a7e04836b4788"
+      "hash": "7b4e41beb87051cba82183e4a36cbdce4ee542cc6decaa534a3fccf8b38c0a0e"
     },
     {
       "name": "write_file",

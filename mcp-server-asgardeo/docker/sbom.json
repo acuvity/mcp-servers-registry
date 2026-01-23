@@ -1,0 +1,307 @@
+{
+  "tools": [
+    {
+      "name": "authorize_api",
+      "hash": "632815c9d3127e053d8aa9a4af90ddf2a6121b6dd657957499fc722c10a9158f",
+      "params": [
+        {
+          "name": "appId",
+          "hash": "e98139e2fa215f0a072d3d7762cb2ac1074ff7ab5022f126c10ec3880a1e87c8"
+        },
+        {
+          "name": "id",
+          "hash": "d45c372d22b78e9573a7319c60397e8a9e7c7cf1e04ecaf5c7ea4e95cedf2d74"
+        },
+        {
+          "name": "policyIdentifier",
+          "hash": "c3e47001e7992c954b45880aa7d240de28e309f066843bffd88dfff9d6976fb5"
+        },
+        {
+          "name": "scopes",
+          "hash": "db76fe2e7bd14b99f328e48ea820565f689c764a7dab5228f155399aba32b583"
+        }
+      ]
+    },
+    {
+      "name": "create_api_resource",
+      "hash": "e3ed425ac72630fdc39ba3adc014dc17cd596374785aa349b10881c84df130bb",
+      "params": [
+        {
+          "name": "identifier",
+          "hash": "d7ee7df5e3b35e4a6313f3d62b3882a37bb9b1a2705463a7aa7569c40a59355d"
+        },
+        {
+          "name": "name",
+          "hash": "ffa76c55c412e5d5c02c03cc8b7d7d9a010a345689cb2947ac376854d278873b"
+        },
+        {
+          "name": "requiresAuthorization",
+          "hash": "6e96314b055ea57a1f2059237b464e1e3b5e0759ce49d86e9557aec409d9b633"
+        },
+        {
+          "name": "scopes",
+          "hash": "290be0099907e23b8fe41a38c19ff01b3091aa0cb8e8b60e5ee0fb44759b2edb"
+        }
+      ]
+    },
+    {
+      "name": "create_m2m_app",
+      "hash": "de93d576c132cd59000c8b750a1fb4711b74b5c6e84caf1578614e7e1fd4c856",
+      "params": [
+        {
+          "name": "application_name",
+          "hash": "8683f3f7c6b1c2b761f455d6aedfda0c6769028ec5b8047bf2cace524866e21c"
+        }
+      ]
+    },
+    {
+      "name": "create_mobile_app",
+      "hash": "7e88580345493a0938e5f5b93e6f7e723788921c836d22899e41b066f235af3d",
+      "params": [
+        {
+          "name": "application_name",
+          "hash": "8683f3f7c6b1c2b761f455d6aedfda0c6769028ec5b8047bf2cace524866e21c"
+        },
+        {
+          "name": "redirect_url",
+          "hash": "dcecbabd4baa9cae323de7f2314b8a49ff1b2ebe09eb73923ca2955845fa2aa6"
+        }
+      ]
+    },
+    {
+      "name": "create_single_page_app",
+      "hash": "03466ca6e9de34bd3820fecb932b7a65a16f3c1c1c3b85bf96a5d97a6f7f422b",
+      "params": [
+        {
+          "name": "application_name",
+          "hash": "8683f3f7c6b1c2b761f455d6aedfda0c6769028ec5b8047bf2cace524866e21c"
+        },
+        {
+          "name": "redirect_url",
+          "hash": "dcecbabd4baa9cae323de7f2314b8a49ff1b2ebe09eb73923ca2955845fa2aa6"
+        }
+      ]
+    },
+    {
+      "name": "create_user",
+      "hash": "d1fb75d82f6377c19d58b4c166c61777631a00a387d4e55b00295ce4a13d3b0a",
+      "params": [
+        {
+          "name": "email",
+          "hash": "7db36d84895e8d1062cf1a73fdd36d11d304aac83a56af7893a68a9c9dbac2b5"
+        },
+        {
+          "name": "first_name",
+          "hash": "38f09cc25f465ee8abef03fa637c0079523d6bda43c8bee9fee4a4f10995f0f5"
+        },
+        {
+          "name": "last_name",
+          "hash": "ad70e5b9d7f703085cddb673ae80530427f0829e1f71a0a0231d6f28a12415d6"
+        },
+        {
+          "name": "password",
+          "hash": "b8d132e4895e8d87bbd1d0ca32e5debaabbfcaf05a262cb258f95c5748d8ad28"
+        },
+        {
+          "name": "username",
+          "hash": "d7a81c9572fceb444f6685b897556ca1cfba8402baa61178f479e4e003908254"
+        },
+        {
+          "name": "userstore_domain",
+          "hash": "39dc32034370a104e9a107c75a9d3a32cefa38e031e0c2d8c8590d8a91a96b36"
+        }
+      ]
+    },
+    {
+      "name": "create_webapp_with_ssr",
+      "hash": "da28eb707cd9ddb6bf1c436b160c20a8edcd3f27c348c43d8fc31c948d937cf9",
+      "params": [
+        {
+          "name": "application_name",
+          "hash": "8683f3f7c6b1c2b761f455d6aedfda0c6769028ec5b8047bf2cace524866e21c"
+        },
+        {
+          "name": "redirect_url",
+          "hash": "dcecbabd4baa9cae323de7f2314b8a49ff1b2ebe09eb73923ca2955845fa2aa6"
+        }
+      ]
+    },
+    {
+      "name": "get_api_resource_by_identifier",
+      "hash": "8edfb2190c5a61b95a0f4bcb3e4efd70992e852819e564cf6d9280e3818bfced",
+      "params": [
+        {
+          "name": "identifier",
+          "hash": "62250c9d5d907511e9a103ae959b8c6a7ca9f86138661b52213a8b6921224bcd"
+        }
+      ]
+    },
+    {
+      "name": "get_application_by_client_id",
+      "hash": "aaa6d8292736aebf9786c3ba53e1ce9fad220b090dc1e9726b378159559907fc",
+      "params": [
+        {
+          "name": "client_id",
+          "hash": "fea2d22bb147c48919635b211da578c6a7b7d29dd7612ece3804f0e9a7a129e3"
+        }
+      ]
+    },
+    {
+      "name": "get_application_by_name",
+      "hash": "f0a6b530cb6c16428331e22b95663c74bdb758805839ae6c28424e3f82bb4853",
+      "params": [
+        {
+          "name": "application_name",
+          "hash": "8683f3f7c6b1c2b761f455d6aedfda0c6769028ec5b8047bf2cace524866e21c"
+        }
+      ]
+    },
+    {
+      "name": "list_api_resources",
+      "hash": "5d75e47271ead93fcfac97c3a646c13af1acf2c77d51008b47f0fcb8ba741aea",
+      "params": [
+        {
+          "name": "after",
+          "hash": "43872afe8214bcceb7f862baae29bea7df4f75668d4965494f4279efd0254ee8"
+        },
+        {
+          "name": "before",
+          "hash": "f14f2bbb351e539d4c508c285529a7567db84876f7f3d444aa9c498fbe3a7e1c"
+        },
+        {
+          "name": "filter",
+          "hash": "67b69db33dcfb01704ae26fb67ca65598780980066991b27464e11776fd0feb1"
+        },
+        {
+          "name": "limit",
+          "hash": "e3f232832c027402616aa0c999d16bf03bedaa0cfd2bedd1c5e31ff3dc238fda"
+        }
+      ]
+    },
+    {
+      "name": "list_applications",
+      "hash": "9e29dc2147acf8538dd821da7f340d94d58f92c349f4856755d40daf1da2da71"
+    },
+    {
+      "name": "list_authorized_api",
+      "hash": "f71cc2e6840655e115e18e3ee05dc665a0c3c4a6dc9fef3244f4ab1d1690f427",
+      "params": [
+        {
+          "name": "app_id",
+          "hash": "e98139e2fa215f0a072d3d7762cb2ac1074ff7ab5022f126c10ec3880a1e87c8"
+        }
+      ]
+    },
+    {
+      "name": "list_claims",
+      "hash": "aa699da0c2c65c1032ffe0e7a2064a1abd6d70ad21da0c51ce015a4f519d5f6e"
+    },
+    {
+      "name": "search_api_resources_by_name",
+      "hash": "9331d63a6f2cdb874481c8897905af6835488c838e0ab6bb5b2bee784ba00d39",
+      "params": [
+        {
+          "name": "name",
+          "hash": "ffa76c55c412e5d5c02c03cc8b7d7d9a010a345689cb2947ac376854d278873b"
+        }
+      ]
+    },
+    {
+      "name": "update_application_basic_info",
+      "hash": "88e00324edec52e53e7882756a3ff5e45948f6de0bd94f2a5b0576df25d18a5b",
+      "params": [
+        {
+          "name": "access_url",
+          "hash": "d0ed95af1a92f0e787dc62bc3ab5d7c0f28bf0b15710193693624f454d9fa664"
+        },
+        {
+          "name": "description",
+          "hash": "75b4d38aa3857aae5d5cd0e512126b6b994d83a7c69c68b9a1e95d65c33de17a"
+        },
+        {
+          "name": "id",
+          "hash": "eecfbec6a67cade85c8b06efb06c7d6ae8a89f259414633f613d285120070845"
+        },
+        {
+          "name": "image_url",
+          "hash": "487e288ae8ff0644b796138a95b1a9d2a637c65ce226bcb337ded907949970c0"
+        },
+        {
+          "name": "logout_return_url",
+          "hash": "6f16daf9a57fdaa457bcf3954e8d447234e359f9f060808ae78c4ade1acbde59"
+        },
+        {
+          "name": "name",
+          "hash": "8683f3f7c6b1c2b761f455d6aedfda0c6769028ec5b8047bf2cace524866e21c"
+        }
+      ]
+    },
+    {
+      "name": "update_application_claim_config",
+      "hash": "42d50ed0537bbfc3d8c9bf5f9a171f499f06bee31b7194122f74d93f6d3bde95",
+      "params": [
+        {
+          "name": "claims",
+          "hash": "cfe540b561695d147e9b4c80507426f28dc9645368f9d1d95d22dc43f333c057"
+        },
+        {
+          "name": "id",
+          "hash": "eecfbec6a67cade85c8b06efb06c7d6ae8a89f259414633f613d285120070845"
+        }
+      ]
+    },
+    {
+      "name": "update_application_oauth_config",
+      "hash": "861462abdf7c83390b13f2ae78f12eab79c68b33a403859b29aae0567c316708",
+      "params": [
+        {
+          "name": "access_token_attributes",
+          "hash": "d6d672675cca47b87d557f9a9c20af97215b1670019774ca3e224664bfc13baa"
+        },
+        {
+          "name": "allowed_origins",
+          "hash": "c36c4ef2af7557bb7f1d8400b7478dd9aa4767cf7743ffe8a577e1ed9c9b5401"
+        },
+        {
+          "name": "application_access_token_expiry_time",
+          "hash": "9a50c9518cf8abe607d1831045c83d52f6200cab6027a4f29fd83be2141b544b"
+        },
+        {
+          "name": "id",
+          "hash": "eecfbec6a67cade85c8b06efb06c7d6ae8a89f259414633f613d285120070845"
+        },
+        {
+          "name": "redirect_urls",
+          "hash": "05ba046a1d21fc8b6b14ef7164f7a3924851b5f62434f01abf0c3e2cac339c27"
+        },
+        {
+          "name": "refresh_token_expiry_time",
+          "hash": "cbf42c0e7a43066f49d5dc7457e6914c3a8dd626d461469b00ab3accf5e76285"
+        },
+        {
+          "name": "revoke_tokens_when_idp_session_terminated",
+          "hash": "aff0abf9840d6e03186a2a0e35f7dff42c1577058296dec56d492449a55e2059"
+        },
+        {
+          "name": "user_access_token_expiry_time",
+          "hash": "64a5472ff10a64fbfcf6497582419759bcd01ffba241edacd4ca3c272a8df4cd"
+        }
+      ]
+    },
+    {
+      "name": "update_login_flow",
+      "hash": "5e363a6927a6468a5e05f74f1685d9cdf0c322d45b3e8b0bba489b34d5e7dbbf",
+      "params": [
+        {
+          "name": "app_id",
+          "hash": "3b34b6e531c94f40d5d5faf05e2508898bec1f28ebfe5a4cac3bd9c539f950a2"
+        },
+        {
+          "name": "user_prompt",
+          "hash": "2c5150d6bbf061ef70610f487f2cf747fa710c970a504160f8a35a0036940db1"
+        }
+      ]
+    }
+  ],
+  "prompts": []
+}

@@ -1,19 +1,68 @@
 {
   "tools": [
     {
+      "name": "company_research_exa",
+      "hash": "e52947f6771cf64a41ddc90154a9464d6ef497868626b4b82655720796329f61",
+      "params": [
+        {
+          "name": "companyName",
+          "hash": "f706d790459a56c824461b3e31bf85220a35d53443c7eef98341f01ea8e7389c"
+        },
+        {
+          "name": "numResults",
+          "hash": "5efcada65f753994e052c0dacd93213124520c6856dd2348a1604aee96a5ed69"
+        }
+      ]
+    },
+    {
+      "name": "get_code_context_exa",
+      "hash": "dcefd657cbc35d178b6c2c718e229dddc82c14cda97222ae72035e2f1dc31415",
+      "params": [
+        {
+          "name": "query",
+          "hash": "97635d4cb606bb5d5b39ee7d755b52a572c678d49ce3c9c3692e405df9b4ff07"
+        },
+        {
+          "name": "tokensNum",
+          "hash": "d5e1b91d6c36f563f0bac2dde1157cc9a011900baba3070b00ed895b9ec3357d"
+        }
+      ]
+    },
+    {
       "name": "web_search_exa",
       "hash": "aa95da9a6a92902ba01f3d04f7f6f409feaaf7413f222423030a6b787e7a52ea",
       "params": [
         {
+          "name": "contextMaxCharacters",
+          "hash": "5db34cdeb8cf1d2bd7a5a6f24eb669d220b2545c91fb4ce009d3d60216239618"
+        },
+        {
+          "name": "livecrawl",
+          "hash": "ada030162c3ada41d4f0dd6e27029a777cda68c3811a76bd948e26e10ef14c91"
+        },
+        {
           "name": "numResults",
-          "hash": "5efcada65f753994e052c0dacd93213124520c6856dd2348a1604aee96a5ed69"
+          "hash": "e08b54f8ac832b3641b63bfdd89aa0d7e83848d01847ac66787ed33c14db6adc"
         },
         {
           "name": "query",
-          "hash": "9eef05233ecfc1fbcfe756aa79bd497fa20e58144012561b562b8856040f5100"
+          "hash": "86e05feeb3ee2739d3af4f2913ed7cdc926cd339ce47b9a08942649e826d51d4"
+        },
+        {
+          "name": "type",
+          "hash": "21f0e6c725f98ac8e72c338dfbee09b1ab7213fd3127a0cd331633bb3a378b4d"
         }
       ]
     }
   ],
-  "prompts": []
+  "prompts": [
+    {
+      "name": "code_search_help",
+      "hash": "c2b7a53450fdbcd56159f520aa60f9ebdbc016ec12e40228bc0fdee804e64e48"
+    },
+    {
+      "name": "web_search_help",
+      "hash": "7a6b90661a09f9715de961b128ae47e3d61cc5551cdc2f48dee44a8480a9ba3b"
+    }
+  ]
 }

@@ -13,12 +13,12 @@
   "scope": "native",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.2.3",
+  "version": "0.2.30",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"7eba86391c488fc5792215e1e404bc81524c9344505a3e8be1fd21b761e096ea","reason":"The toolset demonstrates good documentation quality overall. Tool names are clear and descriptive, indicating their purpose well. Descriptions are comprehensive (2-4 sentences) covering functionality, usage context, and important limitations. Most parameters have adequate descriptions with types and constraints specified. However, some parameter descriptions could be more detailed (e.g., 'shell' parameter lacks explanation of valid values), and a few tools have overly verbose descriptions that could be more concise. The consistent inclusion of usage notes and security warnings shows good attention to detail.","score":"B"},
+  "rating": {"hash":"6d1852dfa96708fe3d7b86722f4c2e1e1e3e06974328da60210e71775d967388","reason":"Good documentation quality with comprehensive descriptions and detailed parameter documentation. Tool names are clear and specific. Most descriptions effectively explain functionality, usage context, and constraints (2-4 sentences). Parameter documentation is thorough with clear descriptions of purpose, types, and constraints. However, some descriptions are overly verbose with excessive implementation details and formatting instructions that could be more concise. The Docker-specific notes and repetitive path guidance, while informative, add unnecessary bulk to the core documentation.","score":"B"},
   "resources": {
-    "tools": 18,
+    "tools": 26,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

@@ -35,8 +35,16 @@
       "hash": "4a3465c20f6a856aed825f0cd9a2b1c61f2df1538a893fba996e3d523ba3b1a7",
       "params": [
         {
+          "name": "explain",
+          "hash": "a1b451eee5c41f5b9a965ba1a2e0fdfec7c14061b096fd2d75ccee48285c9c65"
+        },
+        {
           "name": "index",
           "hash": "6efea7c8a491d022de8e644b5952989153fa0ee52f6973f4613ea167d5ddec9c"
+        },
+        {
+          "name": "profile",
+          "hash": "34fb540a387e5f18296bfcfbd32c96b7e6587e505fd7154baf1a41e9f1e89ca0"
         },
         {
           "name": "queryBody",

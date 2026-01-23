@@ -13,7 +13,7 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "1.0.2",
+  "version": "1.0.13",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "rating": {"hash":"2c2a3d10d608bd989c05cc97d727f6a8e58bdf6d7cff35d833cc6d8dfb752a47","reason":"The toolset provides adequate documentation with clear naming conventions (cache_ prefix) and basic functionality descriptions. However, the descriptions are overly brief and lack important context about Memcached-specific behavior, constraints, and usage patterns. Parameter documentation is minimal with generic titles like 'Key' and 'Value' without explaining expected formats or limitations. While the tools are generally understandable, they leave significant questions unanswered about cache behavior, error conditions, and parameter constraints.","score":"C"},

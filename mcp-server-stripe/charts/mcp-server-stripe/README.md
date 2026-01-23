@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -19,12 +19,12 @@
 
 
 # What is mcp-server-stripe?
-[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-stripe/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-stripe/0.2.3?logo=docker&logoColor=fff&label=0.2.3)](https://hub.docker.com/r/acuvity/mcp-server-stripe)
-[![PyPI](https://img.shields.io/badge/0.2.3-3775A9?logo=pypi&logoColor=fff&label=@stripe/mcp)](https://github.com/stripe/agent-toolkit)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-stripe/0.2.5?logo=docker&logoColor=fff&label=0.2.5)](https://hub.docker.com/r/acuvity/mcp-server-stripe)
+[![PyPI](https://img.shields.io/badge/0.2.5-3775A9?logo=pypi&logoColor=fff&label=@stripe/mcp)](https://github.com/stripe/agent-toolkit)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-stripe/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-stripe&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22STRIPE_SECRET_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-stripe%3A0.2.3%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-stripe&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22STRIPE_SECRET_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-stripe%3A0.2.5%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Integrates Stripe APIs with agent frameworks for payments and custom actions.
 
@@ -43,110 +43,40 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-stripe/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-stripe/docker/policy.rego) that enables a set of runtime [guardrails](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-stripe#%EF%B8%8F-guardrails) to help enforce security, privacy, and correct usage of your services. Below is list of each guardrail provided.
 
-### 🔒 Resource Integrity
-
-**Mitigates MCP Rug Pull Attacks**
-
-* **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
-* **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
-
-### 🛡️ Guardrails
-
-#### Covert Instruction Detection
-
-Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
-
-* **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
-* **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
-
-#### Sensitive Pattern Detection
-
-Block user-defined sensitive data patterns (credential paths, filesystem references).
-
-* **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
-* **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
-
-#### Shadowing Pattern Detection
-
-Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
-
-* **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
-* **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
-
-#### Schema Misuse Prevention
-
-Enforces strict adherence to MCP input schemas.
-
-* **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
-* **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
-
-#### Cross-Origin Tool Access
-
-Controls whether tools may invoke tools or services from external origins.
-
-* **Goal:** Prevent untrusted or out-of-scope services from being called.
-* **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
-
-#### Secrets Redaction
-
-Automatically masks sensitive values so they never appear in logs or responses.
-
-* **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
-* **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
-
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
-
-### Enable guardrails
-
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
 | Guardrail                        | Summary                                                                 |
 |----------------------------------|-------------------------------------------------------------------------|
+| `resource integrity`             | Embeds a hash of all exposed resources to ensure their authenticity and prevent unauthorized modifications, guarding against supply chain attacks and dynamic alterations of tool metadata. |
 | `covert-instruction-detection`   | Detects hidden or obfuscated directives in requests.                    |
 | `sensitive-pattern-detection`    | Flags patterns suggesting sensitive data or filesystem exposure.        |
 | `shadowing-pattern-detection`    | Identifies tool descriptions that override or influence others.         |
 | `schema-misuse-prevention`       | Enforces strict schema compliance on input data.                        |
 | `cross-origin-tool-access`       | Controls calls to external services or APIs.                            |
 | `secrets-redaction`              | Prevents exposure of credentials or sensitive values.                   |
+| `basic authentication`           | Enables the configuration of a shared secret to restrict unauthorized access to the MCP server and ensure only approved clients can connect. |
 
-Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
-
-## 🔒 Basic Authentication via Shared Secret
-
-Provides a lightweight auth layer using a single shared token.
-
-* **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
-* **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
-
-To turn on Basic Authentication, define `BASIC_AUTH_SECRET` environment variable with a shared secret.
-
-Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentication.
-
-> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
-> rotate credentials frequently and **always** use TLS.
-
-</details>
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference
@@ -173,11 +103,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.2.3`
+  - container: `1.0.0-0.2.5`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-stripe:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-stripe:1.0.0-0.2.3`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-stripe:1.0.0-0.2.5`
 
 ---
 
@@ -624,7 +554,7 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (21)
+## 🧰 Tools (22)
 <details>
 <summary>create_customer</summary>
 
@@ -769,6 +699,7 @@ This tool will create a payment link in Stripe.
 It takes two arguments:
 - price (str): The ID of the price to create the payment link for.
 - quantity (int): The quantity of the product to include in the payment link.
+- redirect_url (str, optional): The URL to redirect to after the payment is completed.
 
 ```
 
@@ -778,6 +709,7 @@ It takes two arguments:
 |-----------|------|-------------|-----------|
 | price | string | The ID of the price to create the payment link for. | Yes
 | quantity | integer | The quantity of the product to include. | Yes
+| redirect_url | string | The URL to redirect to after the payment is completed. | No
 </details>
 <details>
 <summary>create_invoice</summary>
@@ -801,6 +733,29 @@ It takes two arguments:
 |-----------|------|-------------|-----------|
 | customer | string | The ID of the customer to create the invoice for. | Yes
 | days_until_due | integer | The number of days until the invoice is due. | No
+</details>
+<details>
+<summary>list_invoices</summary>
+
+**Description**:
+
+```
+
+This tool will fetch a list of Invoices from Stripe.
+
+It takes two arguments:
+- customer (str, optional): The ID of the customer to list invoices for.
+
+- limit (int, optional): The number of invoices to return.
+
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| customer | string | The ID of the customer to list invoices for. | No
+| limit | integer | A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10. | No
 </details>
 <details>
 <summary>create_invoice_item</summary>
@@ -1137,9 +1092,10 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | create_invoice_item | customer | 3c3fef960529e8c6b2fa71f3a43740103fd6d9bf35ad5cbc4e16ef2b03d15c62 |
 | tools | create_invoice_item | invoice | 51c8ed0665f17d3b8c7caab19ae24998426670bfba0fdc21aeec6c49bf1ef5e3 |
 | tools | create_invoice_item | price | f8a3f965a97d74c6365019baede9a2ca2a3fecc3f355dbbed4ef4bce122056a0 |
-| tools | create_payment_link | description | 7ee22eb6a60c86051230fc7b96a8576f8528b883bb17658116bb7f0066561db3 |
+| tools | create_payment_link | description | 328371a7d40d0694b2872ca98bfcc6ca9ed0a4bab4cb6549316ea97b4fa01492 |
 | tools | create_payment_link | price | 1834560e20fba0615c43ff984736a2e457f2a4c3bcd257d8162a24be4711e284 |
 | tools | create_payment_link | quantity | 5ea512a9bfc715a014d96c1a5fa8373b16249bff70fe8e006c2abd7c8c947672 |
+| tools | create_payment_link | redirect_url | 0b026f58fcf0c9d6fa086bd1f33fe958c9d1eb59bb275684100a6a232792b17a |
 | tools | create_price | description | f34412f5f87a7c7f4b04b1e82c56b339f83ab88c2ad46a75ec07c8437bf5bc80 |
 | tools | create_price | currency | 6bf70be312491aea25785e8c8493a8499385cb847d6c9c92ce940e1938b67bf8 |
 | tools | create_price | product | 1e7e6adb4a5eed36d1a299a36256283e48384b5f3e60b5c690b657b0eb81a74b |
@@ -1161,6 +1117,9 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | list_disputes | charge | 21d5f5856187b91973b747cc0082b1d42acd460e1590eca04166a65f67c93e6f |
 | tools | list_disputes | limit | 57d5fc0d10d76b72692dfbbdf55291b6b1cfbd91efcfaeb3cde0df383d144a27 |
 | tools | list_disputes | payment_intent | 33646415f148b9d0d7d013a37e99e35d2b487b6dcfbd7baae8f884abdf7858b8 |
+| tools | list_invoices | description | 04c559978b567bd3e6be7c074db06aaa33942006abc154b9b2dd8d912f622c46 |
+| tools | list_invoices | customer | d43f5d98e83916a4d0e1b7de2ee4d8476529edd18002f8608981357bed4d84bc |
+| tools | list_invoices | limit | 57d5fc0d10d76b72692dfbbdf55291b6b1cfbd91efcfaeb3cde0df383d144a27 |
 | tools | list_payment_intents | description | 6f7b553eea744d425b376635973d57cdc1f09238dadffe2323ede06adc574a95 |
 | tools | list_payment_intents | customer | bc0374954b25a175943a5945850bc71d6f79fe33cab1ca1acdc4b11017663cae |
 | tools | list_payment_intents | limit | 405dd1ae7ab6f799c9c9986bf207e8a70fb9c28e5cb2e7d2a156376110adcb4f |

@@ -13,14 +13,14 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.3.10",
+  "version": "3.1.4",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"b84820f5de98f117043fc747185e8baca46d2d760ba56af75f37220bae1ee310","reason":"The tool name clearly indicates web search functionality with Exa AI. The description adequately explains what the tool does (web search and content scraping) and mentions key capabilities like configurable results and real-time search. Both parameters have clear descriptions with the query purpose obvious and numResults including default value. However, the description could be more specific about when to use it versus other search tools and what type of content/format is returned.","score":"B"},
+  "rating": {"hash":"fb1855a12acaf1c521559fb21c2a46d7346468d0f1a1902900c46eb4f2e61ba1","reason":"Good documentation overall with clear tool names and comprehensive descriptions that explain functionality and usage context. Parameter documentation is mostly complete with helpful details like defaults and constraints. However, some parameters lack full clarity (e.g., contextMaxCharacters could better explain its purpose), and the third tool's description includes implementation instructions that belong in system prompts rather than user documentation.","score":"B"},
   "resources": {
-    "tools": 1,
-    "prompts": 0,
-    "resources": 0,
+    "tools": 3,
+    "prompts": 2,
+    "resources": 1,
     "resourcesTemplates": 0
   }
 }

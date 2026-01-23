@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "binary",
-  "version": "v0.4.2",
+  "version": "v0.8.2",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"3c936ef58d07747eb064cdd5148435e078e02eaaa08e0b80c4b27d69deb97d82","reason":"Tool names are clear and specific, consistently indicating their purpose. Most descriptions are comprehensive (2-3+ sentences) and explain functionality, usage context, and key behaviors. The majority of parameters have clear, detailed descriptions explaining their purpose and expected values. Minor gaps exist in some parameter descriptions (e.g., missing constraints for severity/status enums, some brief descriptions like 'userId'), but overall documentation quality is good with strong clarity and usability.","score":"B"},
+  "rating": {"hash":"7c5fc0caa54a6260d2b0f13a2ef0bb31369b520b06c3ab5e11b9634db1f6bc48","reason":"The toolset demonstrates good documentation overall with clear, descriptive names and comprehensive descriptions for most tools. Complex tools like create_alert_rule and query_prometheus provide detailed explanations of functionality and usage context. Parameter documentation is generally strong with clear purposes and constraints. However, some inconsistencies exist - a few tools have overly brief descriptions (e.g., create_annotation, create_graphite_annotation), and some parameter descriptions could be more detailed. The toolset effectively covers a wide range of Grafana functionality with mostly good clarity, but the mixed quality prevents an A grade.","score":"B"},
   "resources": {
-    "tools": 35,
+    "tools": 55,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

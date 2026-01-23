@@ -13,10 +13,10 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.2.4",
+  "version": "0.2.12",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"ffa37bf3ea6485dcc24aed4fbb60b4161e1c98b718ba644ad421a58d5452d298","reason":"Exceptional documentation quality across all tools. Names are specific and clearly indicate purpose (tavily-search, tavily-extract, tavily-crawl, tavily-map). Descriptions are comprehensive, providing 2-4 sentences covering functionality, usage context, and key benefits. Parameter documentation is thorough with clear purposes, well-defined constraints, and helpful examples. Notable strengths include detailed enum values, appropriate defaults, and context-specific guidance (e.g., LinkedIn-specific recommendations). The toolset demonstrates consistent excellence in documentation standards.","score":"A"},
+  "rating": {"hash":"23a1a5b8a39bde033b93629625bd13f5b75f2754d8091d490e4898b3334cca0c","reason":"Excellent documentation across all tools with comprehensive descriptions that clearly explain functionality, use cases, and context. Parameter documentation is thorough with detailed descriptions, constraints, and practical guidance. Tool names are specific and intuitive. Minor areas for improvement include some overly verbose parameter descriptions, but the overall quality is consistently high with proactive coverage of user needs.","score":"A"},
   "resources": {
     "tools": 4,
     "prompts": 0,

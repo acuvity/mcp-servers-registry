@@ -86,115 +86,105 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
-	"azmcp-appconfig-account-list",
+	"documentation",
 	#
-	"azmcp-appconfig-kv-delete",
+	"azd",
 	#
-	"azmcp-appconfig-kv-list",
+	"get_azure_bestpractices",
 	#
-	"azmcp-appconfig-kv-lock",
+	"aks",
 	#
-	"azmcp-appconfig-kv-set",
+	"appconfig",
 	#
-	"azmcp-appconfig-kv-show",
+	"applens",
 	#
-	"azmcp-appconfig-kv-unlock",
+	"appservice",
 	#
-	"azmcp-bestpractices-get",
+	"role",
 	#
-	"azmcp-cosmos-account-list",
+	"datadog",
 	#
-	"azmcp-cosmos-database-container-item-query",
+	"managedlustre",
 	#
-	"azmcp-cosmos-database-container-list",
+	"azureterraformbestpractices",
 	#
-	"azmcp-cosmos-database-list",
+	"deploy",
 	#
-	"azmcp-extension-az",
+	"eventgrid",
 	#
-	"azmcp-extension-azd",
+	"acr",
 	#
-	"azmcp-group-list",
+	"bicepschema",
 	#
-	"azmcp-keyvault-key-create",
+	"cosmos",
 	#
-	"azmcp-keyvault-key-get",
+	"cloudarchitect",
 	#
-	"azmcp-keyvault-key-list",
+	"confidentialledger",
 	#
-	"azmcp-kusto-cluster-get",
+	"eventhubs",
 	#
-	"azmcp-kusto-cluster-list",
+	"fileshares",
 	#
-	"azmcp-kusto-database-list",
+	"foundry",
 	#
-	"azmcp-kusto-query",
+	"functionapp",
 	#
-	"azmcp-kusto-sample",
+	"grafana",
 	#
-	"azmcp-kusto-table-list",
+	"keyvault",
 	#
-	"azmcp-kusto-table-schema",
+	"kusto",
 	#
-	"azmcp-monitor-healthmodels-entity-gethealth",
+	"loadtesting",
 	#
-	"azmcp-monitor-log-query",
+	"marketplace",
 	#
-	"azmcp-monitor-table-list",
+	"quota",
 	#
-	"azmcp-monitor-table-type-list",
+	"monitor",
 	#
-	"azmcp-monitor-workspace-list",
+	"applicationinsights",
 	#
-	"azmcp-postgres-database-list",
+	"mysql",
 	#
-	"azmcp-postgres-database-query",
+	"policy",
 	#
-	"azmcp-postgres-server-config",
+	"postgres",
 	#
-	"azmcp-postgres-server-list",
+	"redis",
 	#
-	"azmcp-postgres-server-param",
+	"communication",
 	#
-	"azmcp-postgres-server-setparam",
+	"resourcehealth",
 	#
-	"azmcp-postgres-table-list",
+	"search",
 	#
-	"azmcp-postgres-table-schema",
+	"speech",
 	#
-	"azmcp-redis-cache-accesspolicy-list",
+	"servicebus",
 	#
-	"azmcp-redis-cache-list",
+	"signalr",
 	#
-	"azmcp-redis-cluster-database-list",
+	"sql",
 	#
-	"azmcp-redis-cluster-list",
+	"storage",
 	#
-	"azmcp-search-index-describe",
+	"storagesync",
 	#
-	"azmcp-search-index-list",
+	"virtualdesktop",
 	#
-	"azmcp-search-index-query",
+	"workbooks",
 	#
-	"azmcp-search-service-list",
+	"group_list",
 	#
-	"azmcp-servicebus-queue-details",
+	"subscription_list",
 	#
-	"azmcp-servicebus-topic-details",
+	"extension_azqr",
 	#
-	"azmcp-servicebus-topic-subscription-details",
+	"extension_cli_generate",
 	#
-	"azmcp-storage-account-list",
-	#
-	"azmcp-storage-blob-container-details",
-	#
-	"azmcp-storage-blob-container-list",
-	#
-	"azmcp-storage-blob-list",
-	#
-	"azmcp-storage-table-list",
-	#
-	"azmcp-subscription-list",
+	"extension_cli_install",
 	#
 	# exclude word that might be misdetected
 	"to",

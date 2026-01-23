@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.4.0",
+  "version": "0.9.1",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"68055298e6670c263f5f191436fcb64c8bca1b528117e7ac7d81521b8622256e","reason":"The toolset demonstrates good documentation quality overall. Most tools have clear, descriptive names that indicate their purpose, and the main functionality tools (text_to_speech, speech_to_text, text_to_sound_effects) feature comprehensive descriptions with detailed parameter explanations, ranges, and usage guidance. Cost warnings are consistently included for API-calling tools. However, some simpler tools like list_models, get_voice, and play_audio have minimal descriptions that could be more informative. Parameter descriptions in input schemas are often basic (just titles) rather than detailed explanations, though the main descriptions compensate for this in many cases.","score":"B"},
+  "rating": {"hash":"d8ccf07517a8ce444d2db246d6e339db34046319c339bcd4acfd3fcbcd8e28bd","reason":"This toolset demonstrates good documentation quality overall. Tool names are clear and descriptive (text_to_speech, voice_clone, create_agent), and most descriptions provide adequate context about functionality and usage. The inclusion of cost warnings is excellent and important for user awareness. However, parameter documentation is inconsistent - while some complex parameters have detailed explanations with ranges and constraints, many parameters lack sufficient descriptions (e.g., 'voice_id' simply says 'Voice Id'). The schema is well-structured with proper types and defaults, but the verbose description format in some tools creates inconsistency across the toolset.","score":"B"},
   "resources": {
-    "tools": 20,
+    "tools": 24,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

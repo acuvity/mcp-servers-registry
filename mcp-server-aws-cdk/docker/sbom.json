@@ -6,7 +6,7 @@
     },
     {
       "name": "CheckCDKNagSuppressions",
-      "hash": "c22fe68fc7d09f9cb2dd6db410b6b395a6729ca74d1ae02ecbe331d946c8ace9"
+      "hash": "72e2f259cd449079a3c09a050f1b77bacbd7c4e200297ee2c54478789293663d"
     },
     {
       "name": "ExplainCDKNagRule",
@@ -14,7 +14,7 @@
     },
     {
       "name": "GenerateBedrockAgentSchema",
-      "hash": "0e16e1a2af06ca18f7920f2b1274458b596811116c206bddebf7f09afbe98924"
+      "hash": "685913d429881af03b1929d13b124d9dc9606f00b142812ff9012cc15540d335"
     },
     {
       "name": "GetAwsSolutionsConstructPattern",

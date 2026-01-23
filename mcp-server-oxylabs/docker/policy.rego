@@ -86,6 +86,18 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
+	"ai_crawler",
+	#
+	"ai_scraper",
+	#
+	"ai_browser_agent",
+	#
+	"ai_search",
+	#
+	"generate_schema",
+	#
+	"ai_map",
+	#
 	"universal_scraper",
 	#
 	"google_search_scraper",

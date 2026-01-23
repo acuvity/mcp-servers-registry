@@ -13,7 +13,7 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "1.0.1",
+  "version": "1.0.12",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "rating": {"hash":"e6d7da8e7cd829b118dbb2b90468e3371b029629e80b565f3c30b6435d9e1a35","reason":"The tools have adequate documentation with clear names and comprehensive descriptions covering functionality and usage context. However, parameter documentation is weak - most parameters lack meaningful descriptions (just titles like 'Region', 'Query'), missing explanations of purpose, expected formats, or constraints. The descriptions also contain formatting inconsistencies and minor errors that detract from overall clarity.","score":"C"},

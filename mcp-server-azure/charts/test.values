@@ -1,4 +1,5 @@
 env:
+  DOTNET_BUNDLE_EXTRACT_BASE_DIR: 
 
 secrets:
   AZURE_CLIENT_ID:

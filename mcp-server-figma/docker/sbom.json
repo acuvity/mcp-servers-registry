@@ -6,7 +6,7 @@
       "params": [
         {
           "name": "fileKey",
-          "hash": "bada6642b3e747ab666cc69099ad47d222e5e38b9fe01aa27cc53759440c04ab"
+          "hash": "a32fa12ec77d0ff82572792755b113b134c989bdaea1a69d0a4302a969912a19"
         },
         {
           "name": "localPath",
@@ -19,20 +19,16 @@
         {
           "name": "pngScale",
           "hash": "88ed2938b9920f6d670ea64700afcebf35f7008bffb906ece808418c75bde6ba"
-        },
-        {
-          "name": "svgOptions",
-          "hash": "1e6b6dbd42211cb4a25b706812c7dfac529870c1a7ea154cdf08f6ad90f7d0df"
         }
       ]
     },
     {
       "name": "get_figma_data",
-      "hash": "e4dd808189802bfc78338d224f953fc6f0dd4b1ec04656b1865f3161fb001e16",
+      "hash": "a51af5366ba63f50a6f3e7ed6dbc2ca1a14411dba192590e04f0dea36153f8a1",
       "params": [
         {
           "name": "depth",
-          "hash": "a43fe901521170c7b82cf3199eadbeaa83f9f09c443c06764bb84fe43627f964"
+          "hash": "5678aa47771c7e0f5a3391cd3d7bc1a5cb71c20f25e41499cc4bc65924054672"
         },
         {
           "name": "fileKey",
@@ -40,7 +36,7 @@
         },
         {
           "name": "nodeId",
-          "hash": "39d47012469baf84f5e9ce6f71c7554c6229bb3dafc2b45e39e5b32f9a9f775d"
+          "hash": "d5b087f38d247ac5fe260cdace2a6dd087fe6345c0441f34748606fd50d75b26"
         }
       ]
     }

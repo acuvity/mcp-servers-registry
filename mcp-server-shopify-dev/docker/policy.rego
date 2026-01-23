@@ -86,13 +86,21 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
-	"introspect_admin_schema",
+	"introspect_graphql_schema",
 	#
-	"search_dev_docs",
+	"learn_extension_target_types",
 	#
-	"fetch_docs_by_path",
+	"learn_shopify_api",
 	#
-	"get_started",
+	"validate_theme",
+	#
+	"search_docs_chunks",
+	#
+	"fetch_full_docs",
+	#
+	"validate_component_codeblocks",
+	#
+	"validate_graphql_codeblocks",
 	#
 	# exclude word that might be misdetected
 	"to",

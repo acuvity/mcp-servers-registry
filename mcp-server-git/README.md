@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -20,7 +20,7 @@
 
 # What is mcp-server-git?
 [![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
-[![Helm](https://img.shields.io/badge/1.0.1-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-git/tags/)
+[![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-git/tags/)
 [![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-git/2026.1.14?logo=docker&logoColor=fff&label=2026.1.14)](https://hub.docker.com/r/acuvity/mcp-server-git)
 [![PyPI](https://img.shields.io/badge/2026.1.14-3775A9?logo=pypi&logoColor=fff&label=mcp-server-git)](https://github.com/modelcontextprotocol/servers/tree/HEAD/src/git)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-git/)
@@ -415,19 +415,19 @@ Minibridge offers a host of additional features. For step-by-step guidance, plea
 You can inspect the chart `README`:
 
 ```console
-helm show readme oci://docker.io/acuvity/mcp-server-git --version 1.0.1
+helm show readme oci://docker.io/acuvity/mcp-server-git --version 1.0.0
 ````
 
 You can inspect the values that you can configure:
 
 ```console
-helm show values oci://docker.io/acuvity/mcp-server-git --version 1.0.1
+helm show values oci://docker.io/acuvity/mcp-server-git --version 1.0.0
 ````
 
 Install with helm
 
 ```console
-helm install mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.1
+helm install mcp-server-git oci://docker.io/acuvity/mcp-server-git --version 1.0.0
 ```
 
 From there your MCP server mcp-server-git will be reachable by default through `http/sse` from inside the cluster using the Kubernetes Service `mcp-server-git` on port `8000` by default. You can change that by looking at the `service` section of the `values.yaml` file.

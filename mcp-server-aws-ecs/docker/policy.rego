@@ -88,15 +88,27 @@ _cross_tool_exclude := [
 	#
 	"containerize_app",
 	#
-	"create_ecs_infrastructure",
+	"build_and_push_image_to_ecr",
 	#
-	"get_deployment_status",
+	"validate_ecs_express_mode_prerequisites",
+	#
+	"delete_app",
+	#
+	"wait_for_service_ready",
 	#
 	"ecs_resource_management",
 	#
 	"ecs_troubleshooting_tool",
 	#
-	"delete_ecs_infrastructure",
+	"aws_knowledge_aws___get_regional_availability",
+	#
+	"aws_knowledge_aws___list_regions",
+	#
+	"aws_knowledge_aws___read_documentation",
+	#
+	"aws_knowledge_aws___recommend",
+	#
+	"aws_knowledge_aws___search_documentation",
 	#
 	# exclude word that might be misdetected
 	"to",

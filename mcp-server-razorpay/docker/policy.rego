@@ -148,9 +148,17 @@ _cross_tool_exclude := [
 	#
 	"fetch_specific_refund_for_payment",
 	#
+	"fetch_tokens",
+	#
+	"initiate_payment",
+	#
 	"payment_link_notify",
 	#
-	"payment_link_upi.create",
+	"payment_link_upi_create",
+	#
+	"resend_otp",
+	#
+	"submit_otp",
 	#
 	"update_order",
 	#

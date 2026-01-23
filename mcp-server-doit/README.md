@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -19,12 +19,12 @@
 
 
 # What is mcp-server-doit?
-[![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-doit/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-doit/0.1.33?logo=docker&logoColor=fff&label=0.1.33)](https://hub.docker.com/r/acuvity/mcp-server-doit)
-[![PyPI](https://img.shields.io/badge/0.1.33-3775A9?logo=pypi&logoColor=fff&label=@doitintl/doit-mcp-server)](https://github.com/doitintl/doit-mcp-server)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-doit/0.1.34?logo=docker&logoColor=fff&label=0.1.34)](https://hub.docker.com/r/acuvity/mcp-server-doit)
+[![PyPI](https://img.shields.io/badge/0.1.34-3775A9?logo=pypi&logoColor=fff&label=@doitintl/doit-mcp-server)](https://github.com/doitintl/doit-mcp-server)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-doit/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-doit&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22DOIT_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-doit%3A0.1.33%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-doit&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22DOIT_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-doit%3A0.1.34%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Access DoiT API for analyzing cloud data and troubleshooting.
 
@@ -43,69 +43,70 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
 The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-doit/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
-### 🔒 Resource Integrity
+#### 🔒 Resource Integrity
 
 **Mitigates MCP Rug Pull Attacks**
 
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Guardrails
+#### 🛡️ Guardrails
 
-#### Covert Instruction Detection
+##### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-#### Sensitive Pattern Detection
+##### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-#### Shadowing Pattern Detection
+##### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-#### Schema Misuse Prevention
+##### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-#### Cross-Origin Tool Access
+##### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-#### Secrets Redaction
+##### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
@@ -114,7 +115,7 @@ Automatically masks sensitive values so they never appear in logs or responses.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
-### Enable guardrails
+#### Enable guardrails
 
 To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
@@ -129,7 +130,7 @@ To activate guardrails in your Docker containers, define the `GUARDRAILS` enviro
 
 Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
 
-## 🔒 Basic Authentication via Shared Secret
+#### 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
@@ -143,10 +144,8 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 > While basic auth will protect against unauthorized access, you should use it only in controlled environment,
 > rotate credentials frequently and **always** use TLS.
 
-</details>
-
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # 📦 How to Install
@@ -173,7 +172,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-doit&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22DOIT_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-doit%3A0.1.33%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-doit&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22DOIT_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-doit%3A0.1.34%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -195,7 +194,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "--read-only",
           "-e",
           "DOIT_API_KEY",
-          "docker.io/acuvity/mcp-server-doit:0.1.33"
+          "docker.io/acuvity/mcp-server-doit:0.1.34"
         ]
       }
     }
@@ -222,7 +221,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "--read-only",
         "-e",
         "DOIT_API_KEY",
-        "docker.io/acuvity/mcp-server-doit:0.1.33"
+        "docker.io/acuvity/mcp-server-doit:0.1.34"
       ]
     }
   }
@@ -253,7 +252,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "--read-only",
         "-e",
         "DOIT_API_KEY",
-        "docker.io/acuvity/mcp-server-doit:0.1.33"
+        "docker.io/acuvity/mcp-server-doit:0.1.34"
       ]
     }
   }
@@ -286,7 +285,7 @@ Add the following JSON block to your mcp configuration file:
         "--read-only",
         "-e",
         "DOIT_API_KEY",
-        "docker.io/acuvity/mcp-server-doit:0.1.33"
+        "docker.io/acuvity/mcp-server-doit:0.1.34"
       ]
     }
   }
@@ -317,7 +316,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "--read-only",
         "-e",
         "DOIT_API_KEY",
-        "docker.io/acuvity/mcp-server-doit:0.1.33"
+        "docker.io/acuvity/mcp-server-doit:0.1.34"
       ]
     }
   }
@@ -337,7 +336,7 @@ async with MCPServerStdio(
     params={
         "env": {"DOIT_API_KEY":"TO_BE_SET"},
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","-e","DOIT_API_KEY","docker.io/acuvity/mcp-server-doit:0.1.33"]
+        "args": ["run","-i","--rm","--read-only","-e","DOIT_API_KEY","docker.io/acuvity/mcp-server-doit:0.1.34"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -366,7 +365,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only -e DOIT_API_KEY docker.io/acuvity/mcp-server-doit:0.1.33`
+- arguments: `run -i --rm --read-only -e DOIT_API_KEY docker.io/acuvity/mcp-server-doit:0.1.34`
 
 </details>
 
@@ -376,7 +375,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only -e DOIT_API_KEY docker.io/acuvity/mcp-server-doit:0.1.33
+docker run -it -p 8000:8000 --rm --read-only -e DOIT_API_KEY docker.io/acuvity/mcp-server-doit:0.1.34
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -479,7 +478,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (14)
+## 🧰 Tools (16)
 <details>
 <summary>get_cloud_incidents</summary>
 
@@ -566,7 +565,8 @@ Lists Cloud Analytics reports that your account has access to
 ```
 Runs a report query with the specified configuration without persisting it. 
     Fields that are not populated will use their default values if needed.
-    Use the dimension tool before running the query to get the list of dimensions and their types.
+    You must use the 'limit' field to limit the number of rows in the report, maximum is 25.
+    Use the dimension tool or allocation tool before running the query to get the list of dimensions and their types or allocations.
     If possible, use `timeRange` instead of `customTimeRange` when no specific dates are given.
     Example for cost report:
     {
@@ -664,21 +664,6 @@ List support tickets from DoiT using the support API.
 | pageToken | string | Page token for pagination | No
 </details>
 <details>
-<summary>create_ticket</summary>
-
-**Description**:
-
-```
-Create a new support ticket in DoiT using the support API.
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| ticket | object | not set | Yes
-</details>
-<details>
 <summary>list_invoices</summary>
 
 **Description**:
@@ -708,8 +693,54 @@ Retrieve the full details of an invoice specified by the invoice number from the
 |-----------|------|-------------|-----------|
 | id | string | The ID of the invoice to retrieve. | Yes
 </details>
+<details>
+<summary>list_allocations</summary>
 
-## 📝 Prompts (10)
+**Description**:
+
+```
+List allocations for the report or run_query configuration that your account has access to from the DoiT API.
+    Allocations in the DoiT Cloud Intelligence Platform are a powerful feature that allows you to group and attribute cloud costs to specific business units, teams, projects, or any other logical grouping relevant to your organization.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| pageToken | string | Token for pagination. Use this to get the next page of results. | No
+</details>
+<details>
+<summary>get_allocation</summary>
+
+**Description**:
+
+```
+Get a specific allocation by ID from the DoiT API
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| id | string | The ID of the allocation to retrieve | Yes
+</details>
+<details>
+<summary>list_assets</summary>
+
+**Description**:
+
+```
+Returns a list of all available customer assets such as Google Cloud billing accounts, G Suite/Workspace subscriptions, etc. Assets are returned in reverse chronological order by default.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| pageToken | string | Token for pagination. Use this to get the next page of results. | No
+</details>
+
+## 📝 Prompts (11)
 <details>
 <summary>Filter Fields Reference</summary>
 
@@ -783,7 +814,15 @@ Retrieve the full details of an invoice specified by the invoice number from the
 <no value>
 ```
 <details>
-<summary>DoiT MCP Server tools output</summary>
+<summary>Allocations Usage Guidance</summary>
+
+**Description**:
+
+```
+<no value>
+```
+<details>
+<summary>Allow Artifacts</summary>
 
 **Description**:
 
@@ -800,17 +839,19 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
+| prompts | Allocations Usage Guidance | description | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| prompts | Allow Artifacts | description | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
 | prompts | Create Ticket | description | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
 | prompts | Dimension Usage Guidance | description | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
 | prompts | Document Output Reminder | description | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
-| prompts | DoiT MCP Server tools output | description | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
 | prompts | Filter Fields Reference | description | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
 | prompts | Generate Anomalies Document | description | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
 | prompts | Generate Invoice Details Document | description | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
 | prompts | Generate Report Command | description | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
 | prompts | Generate Report Document | description | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
 | prompts | Query Best Practice | description | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
-| tools | create_ticket | description | b0990b45b3f312d4cf1c6756d7e9f8ed2f143385ba7130ec35fa83ab15be317c |
+| tools | get_allocation | description | bb8a68a1723d241150d1c88304e8463758df0e3f23fd756e5adbcead3bb579c4 |
+| tools | get_allocation | id | 0921eb4df27370daf6e92787a10c4ea88b1d906da8ef7205f6e61b50b5b7a809 |
 | tools | get_anomalies | description | 5ddc31a7b26a361ee8d3772187396b1159bcbcf4414fd664182ad001a3f655e6 |
 | tools | get_anomalies | pageToken | 13008295d9364bfd512878a26f7c86cc9ba7773ded8e66340fb6751b58e18800 |
 | tools | get_anomaly | description | c715dacb2c5847b249ce2e14e62daaea3aba6f7d9c57d131470d5bcdcdae7aa7 |
@@ -828,6 +869,10 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | get_invoice | id | d1619687a9b7811554b2b52a162c5db0636d6c1a69c1afa7159728979f6c0dc6 |
 | tools | get_report_results | description | 6924c4f21ff6a139b4bcdaf96ded8f1cfffea347515aa19c9860751d83c63746 |
 | tools | get_report_results | id | d5825ce03b2d662974a266552fa04f002f835a37310474dc792a6f42ef307fc6 |
+| tools | list_allocations | description | 014f7142954c0747bd3db88be3a9b6044f2a46595491a86ac72a777d70c6715d |
+| tools | list_allocations | pageToken | 13008295d9364bfd512878a26f7c86cc9ba7773ded8e66340fb6751b58e18800 |
+| tools | list_assets | description | f57255cd75dd02d6bd04340e6c2cef3a2f97ee51a9a8a10949c60213d92aaa42 |
+| tools | list_assets | pageToken | 13008295d9364bfd512878a26f7c86cc9ba7773ded8e66340fb6751b58e18800 |
 | tools | list_dimensions | description | e9ec3b8f2f7cffefdb7d1a7a8f1c848ea2e880af63d71d3cb7367dc42a660efe |
 | tools | list_dimensions | filter | fe1ac58d13ee5bc995c0cc7962e299a6958a8acfcfe9b300cdc234a3356e87d8 |
 | tools | list_dimensions | pageToken | 13008295d9364bfd512878a26f7c86cc9ba7773ded8e66340fb6751b58e18800 |
@@ -839,7 +884,7 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 | tools | list_tickets | description | 49781956cac6e31b3a74dba206b22151141bb2ee6a4bc71450f91e5732a889b8 |
 | tools | list_tickets | pageSize | e05aad3d415e9d87a79b7110464ecd80fb864213d00a8ab7345d8cded3172b03 |
 | tools | list_tickets | pageToken | 5296c3041da463734e7ae218bd23d6b450eb81963799837041d74cebdf48e4e5 |
-| tools | run_query | description | 8a22e414f5512431140aef2901e09bf33b1964fc51a22f189fdfc6ed267e5eb9 |
+| tools | run_query | description | 82b8675441487590af9e3b9032b38433e7805db6c7668de37c3d7369ac3e754e |
 | tools | run_query | config | b52ccad97d2b886d7bb949f12b9b0d3d73e1ddacc0f9347dda6d4808ccfe8b99 |
 | tools | validate_user | description | 33b088747d3d7660516645ec1d7b9626f650f45741603cbf1dfe2f4adc65a31a |
 

@@ -13,7 +13,7 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "1.0.1",
+  "version": "1.0.12",
   "requiresConfiguration": false,
   "requiresStorage": false,
   "rating": {"hash":"54ef0662d8b77c375cb84396c677860a4a99f8418866bffebf09dc954b1d03fa","reason":"Excellent documentation quality with comprehensive descriptions covering functionality, usage context, and detailed best practices. Tool names are clear and specific. Extensive parameter documentation includes purpose, constraints, examples, and ranges. The descriptions proactively address user questions with practical guidance including prompt engineering tips, color scheme examples, and critical usage warnings about workspace directories.","score":"A"},

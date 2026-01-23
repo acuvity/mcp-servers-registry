@@ -2,7 +2,7 @@
   "tools": [
     {
       "name": "chargebee_code_planner",
-      "hash": "4eca3e4c2e78c54c82bb5eb48f37510f336891d641899c91e9bf3f8e34b78b48",
+      "hash": "7c0ca9cba2e04fa874bc68177a5440858458e3efdf777ac5ebde04971adea1df",
       "params": [
         {
           "name": "goal",
@@ -16,7 +16,7 @@
     },
     {
       "name": "chargebee_documentation_search",
-      "hash": "ce67701be188ea7e41d9271b80dbf7fca5530f6631bc78c49338feef1adfc04a",
+      "hash": "53142143b2473fa5d06295278212f7ca0f100bab9cc20b2457cc0efb5882b01c",
       "params": [
         {
           "name": "language",
@@ -33,5 +33,10 @@
       ]
     }
   ],
-  "prompts": []
+  "prompts": [
+    {
+      "name": "chargebee-tool-selection",
+      "hash": "671daf04f92341cfe5bfc818a633325f25ad0fa2bafec71fa184bf10f1e235f1"
+    }
+  ]
 }

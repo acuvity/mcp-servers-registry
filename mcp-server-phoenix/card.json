@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "2.1.10",
+  "version": "2.3.3",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"ea0894d20ec0ff24e6bb2b5833feb8b0685916a11abc7d204d48fc093bf689b4","reason":"The toolset demonstrates good documentation quality with comprehensive descriptions that include functionality, usage context, and detailed examples with expected returns. Tool names are clear and purposeful. Parameter documentation is adequate with clear types and constraints. However, some inconsistencies in parameter naming conventions (camelCase vs snake_case) and occasional verbosity in descriptions prevent it from reaching excellence.","score":"B"},
+  "rating": {"hash":"8a56fb3c23d6edb3f677b0460c4ffe15dafb6622ceaad52c62c4f6e4e981891e","reason":"Good documentation quality overall. Tool names are clear and specific, descriptions are comprehensive with usage context and examples, and parameters are well-documented with purpose and constraints. The inclusion of detailed expected return examples is particularly helpful. Minor deductions for some parameter names being less intuitive (e.g., 'datasetId' vs 'dataset_id' inconsistency) and occasional verbosity that could be more concise.","score":"B"},
   "resources": {
-    "tools": 16,
+    "tools": 19,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

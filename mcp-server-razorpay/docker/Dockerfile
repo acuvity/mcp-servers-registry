@@ -6,7 +6,15 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@0dcdb583396eb8d853f9822f2bf1d700cd7ae240
+    CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go install go.acuvity.ai/minibridge@5a873664a85bb4ba447c4edf89a48614689c1549
+
+FROM alpine:3.21 AS artifacts
+
+ARG TARGETOS TARGETARCH
+RUN apk update && apk add --no-cache curl file tar unzip go
+COPY artifacts.sh /tmp/artifacts.sh
+RUN chmod a+x /tmp/artifacts.sh
+RUN sh /tmp/artifacts.sh https://github.com/razorpay/razorpay-mcp-server/releases/download/v1.2.1/razorpay-mcp-server_1.2.1_checksums.txt https://github.com/razorpay/razorpay-mcp-server/releases/download/v1.2.1/razorpay-mcp-server_Darwin_arm64.tar.gz https://github.com/razorpay/razorpay-mcp-server/releases/download/v1.2.1/razorpay-mcp-server_Darwin_x86_64.tar.gz https://github.com/razorpay/razorpay-mcp-server/releases/download/v1.2.1/razorpay-mcp-server_Linux_arm64.tar.gz https://github.com/razorpay/razorpay-mcp-server/releases/download/v1.2.1/razorpay-mcp-server_Linux_i386.tar.gz https://github.com/razorpay/razorpay-mcp-server/releases/download/v1.2.1/razorpay-mcp-server_Linux_x86_64.tar.gz https://github.com/razorpay/razorpay-mcp-server/releases/download/v1.2.1/razorpay-mcp-server_Windows_arm64.zip https://github.com/razorpay/razorpay-mcp-server/releases/download/v1.2.1/razorpay-mcp-server_Windows_i386.zip https://github.com/razorpay/razorpay-mcp-server/releases/download/v1.2.1/razorpay-mcp-server_Windows_x86_64.zip
 
 FROM golang:1.24-alpine3.21 as builder
 
@@ -15,7 +23,7 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 WORKDIR /app
 RUN apk update && apk add --no-cache git curl
 RUN git clone https://github.com/razorpay/razorpay-mcp-server .
-RUN git checkout v1.2.0
+RUN git checkout v1.2.1
 
 ENV GO111MODULE=on
 ARG TARGETOS TARGETARCH
@@ -30,7 +38,7 @@ LABEL "mcp-server-scope"="remote"
 
 LABEL org.opencontainers.image.title="mcp-server-razorpay"
 LABEL org.opencontainers.image.description="Advanced payment processing with Razorpay APIs for devs and AI tools."
-LABEL org.opencontainers.image.version="v1.2.0"
+LABEL org.opencontainers.image.version="v1.2.1"
 LABEL org.opencontainers.image.source="https://github.com/razorpay/razorpay-mcp-server"
 LABEL org.opencontainers.image.licenses="MIT License"
 LABEL org.opencontainers.image.author="razorpay"
@@ -42,6 +50,8 @@ ARG BUILDKIT_SBOM_SCAN_STAGE=true
 
 RUN apk update \
     && apk add --no-cache curl
+
+COPY --from=artifacts /tmp/binaries /usr/local/bin
 
 COPY --from=builder /app/bin/razorpay-mcp-server /usr/bin/razorpay-mcp-server
 

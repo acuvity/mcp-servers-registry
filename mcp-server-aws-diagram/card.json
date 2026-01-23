@@ -13,7 +13,7 @@
   "scope": "standalone",
   "mutitenant": true,
   "runtime": "python",
-  "version": "1.0.1",
+  "version": "1.0.16",
   "requiresConfiguration": false,
   "requiresStorage": false,
   "rating": {"hash":"72b4e29f9a86ece7ef3d09c7fb195fb5edc7a41983e78a7f46292adecd152d2a","reason":"The toolset demonstrates good documentation quality with comprehensive descriptions that explain functionality, usage context, and workflow. The generate_diagram tool excels with detailed usage instructions and code requirements. However, some parameter descriptions are verbose without adding clarity (workspace_dir's 'CRITICAL' emphasis), and the list_icons tool could better explain the hierarchical filtering approach. Overall, the documentation provides sufficient detail for effective usage with minor areas for improvement in conciseness and parameter clarity.","score":"B"},

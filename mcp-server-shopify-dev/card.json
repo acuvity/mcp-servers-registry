@@ -13,12 +13,12 @@
   "scope": "standalone",
   "mutitenant": true,
   "runtime": "node",
-  "version": "1.1.0",
+  "version": "1.6.0",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"9b428284531628c60d7c682b6de992bffd42ea7da2b21faf5ffccebb65ac29db","reason":"Mixed quality documentation with some tools having adequate descriptions while others suffer from significant issues. The introspect_admin_schema and search_dev_docs tools have clear purposes and reasonable parameter documentation. However, fetch_docs_by_path has a vague description that doesn't clearly explain its purpose or when to use it. The get_started tool has an overly verbose description with excessive capitalization and formatting issues that detract from clarity, plus unclear usage instructions. Parameter documentation is generally adequate but could be more detailed in some cases.","score":"C"},
+  "rating": {"hash":"f4d1cb6dc45709da2512d6da94e350d4813bcd6f5f592ac19095a8d5fae7be0e","reason":"The toolset demonstrates good documentation quality overall. Tool names are clear and specific (e.g., 'introspect_graphql_schema', 'validate_component_codeblocks'). Descriptions are comprehensive, providing detailed context about functionality, usage guidelines, and important warnings. Parameter documentation is thorough with clear explanations of purpose and constraints. However, some descriptions are overly verbose with excessive formatting (emojis, warnings) that could distract from core functionality, and a few parameters could benefit from clearer constraint specifications. The consistent quality across all tools and strong technical detail warrant a B grade.","score":"B"},
   "resources": {
-    "tools": 4,
+    "tools": 8,
     "prompts": 1,
     "resources": 0,
     "resourcesTemplates": 0

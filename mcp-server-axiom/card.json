@@ -13,7 +13,7 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "binary",
-  "version": "v0.0.1",
+  "version": "v0.0.5",
   "requiresConfiguration": true,
   "requiresStorage": false,
   "rating": null,

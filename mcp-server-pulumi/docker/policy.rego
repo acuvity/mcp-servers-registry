@@ -86,15 +86,29 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
+	"pulumi-registry-get-type",
+	#
 	"pulumi-registry-get-resource",
 	#
+	"pulumi-registry-get-function",
+	#
 	"pulumi-registry-list-resources",
+	#
+	"pulumi-registry-list-functions",
 	#
 	"pulumi-cli-preview",
 	#
 	"pulumi-cli-up",
 	#
 	"pulumi-cli-stack-output",
+	#
+	"pulumi-cli-refresh",
+	#
+	"deploy-to-aws",
+	#
+	"pulumi-resource-search",
+	#
+	"neo-task-launcher",
 	#
 	# exclude word that might be misdetected
 	"to",

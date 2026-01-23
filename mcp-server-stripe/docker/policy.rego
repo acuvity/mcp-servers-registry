@@ -102,6 +102,8 @@ _cross_tool_exclude := [
 	#
 	"create_invoice",
 	#
+	"list_invoices",
+	#
 	"create_invoice_item",
 	#
 	"finalize_invoice",

@@ -13,14 +13,14 @@
   "scope": "standalone",
   "mutitenant": false,
   "runtime": "python",
-  "version": "0.13.5",
+  "version": "0.17.7",
   "requiresConfiguration": false,
   "requiresStorage": true,
-  "rating": {"hash":"e6d00bd6194f42aa5850a1b04f4f562519779887713d4bbf38f72d1cc561844a","reason":"Mixed quality documentation with adequate tool descriptions but inconsistent parameter documentation. While some tools like 'build_context' and 'sync_status' have excellent comprehensive descriptions, many tools have minimal parameter descriptions (e.g., 'identifier', 'project', 'content' lack context about expected formats or constraints). The toolset covers complex functionality but leaves users guessing about parameter usage patterns and constraints in most cases.","score":"C"},
+  "rating": {"hash":"5f33d3742e520dbcc744a1d087560b796c0fcc7901d33706e07d48a2288720bf","reason":"Mixed quality documentation with some tools having good descriptions (build_context, list_memory_projects) while others lack sufficient detail. Many parameter descriptions are minimal or missing key information about their purpose and usage. Tool names are generally clear, but overall documentation leaves significant gaps requiring users to infer functionality.","score":"C"},
   "resources": {
-    "tools": 19,
-    "prompts": 4,
-    "resources": 2,
+    "tools": 17,
+    "prompts": 3,
+    "resources": 1,
     "resourcesTemplates": 0
   }
 }

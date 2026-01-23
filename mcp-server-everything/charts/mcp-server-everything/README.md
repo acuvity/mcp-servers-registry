@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -19,12 +19,12 @@
 
 
 # What is mcp-server-everything?
-[![Rating](https://img.shields.io/badge/D-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
+[![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-everything/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-everything/2025.5.12?logo=docker&logoColor=fff&label=2025.5.12)](https://hub.docker.com/r/acuvity/mcp-server-everything)
-[![PyPI](https://img.shields.io/badge/2025.5.12-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-everything)](https://modelcontextprotocol.io)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-everything/2026.1.14?logo=docker&logoColor=fff&label=2026.1.14)](https://hub.docker.com/r/acuvity/mcp-server-everything)
+[![PyPI](https://img.shields.io/badge/2026.1.14-3775A9?logo=pypi&logoColor=fff&label=@modelcontextprotocol/server-everything)](https://modelcontextprotocol.io)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-everything/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-everything&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-everything%3A2025.5.12%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-everything&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-everything%3A2026.1.14%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** MCP server that exercises all the features of the MCP protocol
 
@@ -43,110 +43,40 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-everything/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-everything/docker/policy.rego) that enables a set of runtime [guardrails](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-everything#%EF%B8%8F-guardrails) to help enforce security, privacy, and correct usage of your services. Below is list of each guardrail provided.
 
-### 🔒 Resource Integrity
-
-**Mitigates MCP Rug Pull Attacks**
-
-* **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
-* **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
-
-### 🛡️ Guardrails
-
-#### Covert Instruction Detection
-
-Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
-
-* **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
-* **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
-
-#### Sensitive Pattern Detection
-
-Block user-defined sensitive data patterns (credential paths, filesystem references).
-
-* **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
-* **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
-
-#### Shadowing Pattern Detection
-
-Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
-
-* **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
-* **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
-
-#### Schema Misuse Prevention
-
-Enforces strict adherence to MCP input schemas.
-
-* **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
-* **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
-
-#### Cross-Origin Tool Access
-
-Controls whether tools may invoke tools or services from external origins.
-
-* **Goal:** Prevent untrusted or out-of-scope services from being called.
-* **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
-
-#### Secrets Redaction
-
-Automatically masks sensitive values so they never appear in logs or responses.
-
-* **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
-* **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
-
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
-
-### Enable guardrails
-
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
 | Guardrail                        | Summary                                                                 |
 |----------------------------------|-------------------------------------------------------------------------|
+| `resource integrity`             | Embeds a hash of all exposed resources to ensure their authenticity and prevent unauthorized modifications, guarding against supply chain attacks and dynamic alterations of tool metadata. |
 | `covert-instruction-detection`   | Detects hidden or obfuscated directives in requests.                    |
 | `sensitive-pattern-detection`    | Flags patterns suggesting sensitive data or filesystem exposure.        |
 | `shadowing-pattern-detection`    | Identifies tool descriptions that override or influence others.         |
 | `schema-misuse-prevention`       | Enforces strict schema compliance on input data.                        |
 | `cross-origin-tool-access`       | Controls calls to external services or APIs.                            |
 | `secrets-redaction`              | Prevents exposure of credentials or sensitive values.                   |
+| `basic authentication`           | Enables the configuration of a shared secret to restrict unauthorized access to the MCP server and ensure only approved clients can connect. |
 
-Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
-
-## 🔒 Basic Authentication via Shared Secret
-
-Provides a lightweight auth layer using a single shared token.
-
-* **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
-* **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
-
-To turn on Basic Authentication, define `BASIC_AUTH_SECRET` environment variable with a shared secret.
-
-Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentication.
-
-> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
-> rotate credentials frequently and **always** use TLS.
-
-</details>
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference
@@ -173,11 +103,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-2025.5.12`
+  - container: `1.0.0-2026.1.14`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-everything:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-everything:1.0.0-2025.5.12`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-everything:1.0.0-2026.1.14`
 
 ---
 
@@ -616,14 +546,14 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (8)
+## 🧰 Tools (14)
 <details>
 <summary>echo</summary>
 
 **Description**:
 
 ```
-Echoes back the input
+Echoes back the input string
 ```
 
 **Parameter**:
@@ -633,88 +563,12 @@ Echoes back the input
 | message | string | Message to echo | Yes
 </details>
 <details>
-<summary>add</summary>
+<summary>get-annotated-message</summary>
 
 **Description**:
 
 ```
-Adds two numbers
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| a | number | First number | Yes
-| b | number | Second number | Yes
-</details>
-<details>
-<summary>printEnv</summary>
-
-**Description**:
-
-```
-Prints all environment variables, helpful for debugging MCP server configuration
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-</details>
-<details>
-<summary>longRunningOperation</summary>
-
-**Description**:
-
-```
-Demonstrates a long running operation with progress updates
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| duration | number | Duration of the operation in seconds | No
-| steps | number | Number of steps in the operation | No
-</details>
-<details>
-<summary>sampleLLM</summary>
-
-**Description**:
-
-```
-Samples from an LLM using MCP's sampling feature
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-| maxTokens | number | Maximum number of tokens to generate | No
-| prompt | string | The prompt to send to the LLM | Yes
-</details>
-<details>
-<summary>getTinyImage</summary>
-
-**Description**:
-
-```
-Returns the MCP_TINY_IMAGE
-```
-
-**Parameter**:
-
-| Name | Type | Description | Required? |
-|-----------|------|-------------|-----------|
-</details>
-<details>
-<summary>annotatedMessage</summary>
-
-**Description**:
-
-```
-Demonstrates how annotations can be used to provide metadata about content
+Demonstrates how annotations can be used to provide metadata about content.
 ```
 
 **Parameter**:
@@ -725,7 +579,36 @@ Demonstrates how annotations can be used to provide metadata about content
 | messageType | string | Type of message to demonstrate different annotation patterns | Yes
 </details>
 <details>
-<summary>getResourceReference</summary>
+<summary>get-env</summary>
+
+**Description**:
+
+```
+Returns all environment variables, helpful for debugging MCP server configuration
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+</details>
+<details>
+<summary>get-resource-links</summary>
+
+**Description**:
+
+```
+Returns up to ten resource links that reference different types of resources
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| count | number | Number of resource links to return (1-10) | No
+</details>
+<details>
+<summary>get-resource-reference</summary>
 
 **Description**:
 
@@ -737,145 +620,204 @@ Returns a resource reference that can be used by MCP clients
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| resourceId | number | ID of the resource to reference (1-100) | Yes
+| resourceId | number | ID of the text resource to fetch | No
+| resourceType | string | not set | No
+</details>
+<details>
+<summary>get-structured-content</summary>
+
+**Description**:
+
+```
+Returns structured content along with an output schema for client data validation
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| location | string | Choose city | Yes
+</details>
+<details>
+<summary>get-sum</summary>
+
+**Description**:
+
+```
+Returns the sum of two numbers
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| a | number | First number | Yes
+| b | number | Second number | Yes
+</details>
+<details>
+<summary>get-tiny-image</summary>
+
+**Description**:
+
+```
+Returns a tiny MCP logo image.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+</details>
+<details>
+<summary>gzip-file-as-resource</summary>
+
+**Description**:
+
+```
+Compresses a single file using gzip compression. Depending upon the selected output type, returns either the compressed data as a gzipped resource or a resource link, allowing it to be downloaded in a subsequent request during the current session.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| data | string | URL or data URI of the file content to compress | No
+| name | string | Name of the output file | No
+| outputType | string | How the resulting gzipped file should be returned. 'resourceLink' returns a link to a resource that can be read later, 'resource' returns a full resource object. | No
+</details>
+<details>
+<summary>toggle-simulated-logging</summary>
+
+**Description**:
+
+```
+Toggles simulated, random-leveled logging on or off.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+</details>
+<details>
+<summary>toggle-subscriber-updates</summary>
+
+**Description**:
+
+```
+Toggles simulated resource subscription updates on or off.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+</details>
+<details>
+<summary>trigger-long-running-operation</summary>
+
+**Description**:
+
+```
+Demonstrates a long running operation with progress updates.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| duration | number | Duration of the operation in seconds | No
+| steps | number | Number of steps in the operation | No
+</details>
+<details>
+<summary>get-roots-list</summary>
+
+**Description**:
+
+```
+Lists the current MCP roots provided by the client. Demonstrates the roots protocol capability even though this server doesn't access files.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+</details>
+<details>
+<summary>trigger-sampling-request</summary>
+
+**Description**:
+
+```
+Trigger a Request from the Server for LLM Sampling
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| maxTokens | number | Maximum number of tokens to generate | No
+| prompt | string | The prompt to send to the LLM | Yes
 </details>
 
-## 📚 Resources (100)
+## 📚 Resources (7)
 
 <details>
 <summary>Resources</summary>
 
 | Name | Mime type | URI| Content |
 |-----------|------|-------------|-----------|
-| Resource 1 | text/plain | test://static/resource/1 | - |
-| Resource 2 | application/octet-stream | test://static/resource/2 | - |
-| Resource 3 | text/plain | test://static/resource/3 | - |
-| Resource 4 | application/octet-stream | test://static/resource/4 | - |
-| Resource 5 | text/plain | test://static/resource/5 | - |
-| Resource 6 | application/octet-stream | test://static/resource/6 | - |
-| Resource 7 | text/plain | test://static/resource/7 | - |
-| Resource 8 | application/octet-stream | test://static/resource/8 | - |
-| Resource 9 | text/plain | test://static/resource/9 | - |
-| Resource 10 | application/octet-stream | test://static/resource/10 | - |
-| Resource 11 | text/plain | test://static/resource/11 | - |
-| Resource 12 | application/octet-stream | test://static/resource/12 | - |
-| Resource 13 | text/plain | test://static/resource/13 | - |
-| Resource 14 | application/octet-stream | test://static/resource/14 | - |
-| Resource 15 | text/plain | test://static/resource/15 | - |
-| Resource 16 | application/octet-stream | test://static/resource/16 | - |
-| Resource 17 | text/plain | test://static/resource/17 | - |
-| Resource 18 | application/octet-stream | test://static/resource/18 | - |
-| Resource 19 | text/plain | test://static/resource/19 | - |
-| Resource 20 | application/octet-stream | test://static/resource/20 | - |
-| Resource 21 | text/plain | test://static/resource/21 | - |
-| Resource 22 | application/octet-stream | test://static/resource/22 | - |
-| Resource 23 | text/plain | test://static/resource/23 | - |
-| Resource 24 | application/octet-stream | test://static/resource/24 | - |
-| Resource 25 | text/plain | test://static/resource/25 | - |
-| Resource 26 | application/octet-stream | test://static/resource/26 | - |
-| Resource 27 | text/plain | test://static/resource/27 | - |
-| Resource 28 | application/octet-stream | test://static/resource/28 | - |
-| Resource 29 | text/plain | test://static/resource/29 | - |
-| Resource 30 | application/octet-stream | test://static/resource/30 | - |
-| Resource 31 | text/plain | test://static/resource/31 | - |
-| Resource 32 | application/octet-stream | test://static/resource/32 | - |
-| Resource 33 | text/plain | test://static/resource/33 | - |
-| Resource 34 | application/octet-stream | test://static/resource/34 | - |
-| Resource 35 | text/plain | test://static/resource/35 | - |
-| Resource 36 | application/octet-stream | test://static/resource/36 | - |
-| Resource 37 | text/plain | test://static/resource/37 | - |
-| Resource 38 | application/octet-stream | test://static/resource/38 | - |
-| Resource 39 | text/plain | test://static/resource/39 | - |
-| Resource 40 | application/octet-stream | test://static/resource/40 | - |
-| Resource 41 | text/plain | test://static/resource/41 | - |
-| Resource 42 | application/octet-stream | test://static/resource/42 | - |
-| Resource 43 | text/plain | test://static/resource/43 | - |
-| Resource 44 | application/octet-stream | test://static/resource/44 | - |
-| Resource 45 | text/plain | test://static/resource/45 | - |
-| Resource 46 | application/octet-stream | test://static/resource/46 | - |
-| Resource 47 | text/plain | test://static/resource/47 | - |
-| Resource 48 | application/octet-stream | test://static/resource/48 | - |
-| Resource 49 | text/plain | test://static/resource/49 | - |
-| Resource 50 | application/octet-stream | test://static/resource/50 | - |
-| Resource 51 | text/plain | test://static/resource/51 | - |
-| Resource 52 | application/octet-stream | test://static/resource/52 | - |
-| Resource 53 | text/plain | test://static/resource/53 | - |
-| Resource 54 | application/octet-stream | test://static/resource/54 | - |
-| Resource 55 | text/plain | test://static/resource/55 | - |
-| Resource 56 | application/octet-stream | test://static/resource/56 | - |
-| Resource 57 | text/plain | test://static/resource/57 | - |
-| Resource 58 | application/octet-stream | test://static/resource/58 | - |
-| Resource 59 | text/plain | test://static/resource/59 | - |
-| Resource 60 | application/octet-stream | test://static/resource/60 | - |
-| Resource 61 | text/plain | test://static/resource/61 | - |
-| Resource 62 | application/octet-stream | test://static/resource/62 | - |
-| Resource 63 | text/plain | test://static/resource/63 | - |
-| Resource 64 | application/octet-stream | test://static/resource/64 | - |
-| Resource 65 | text/plain | test://static/resource/65 | - |
-| Resource 66 | application/octet-stream | test://static/resource/66 | - |
-| Resource 67 | text/plain | test://static/resource/67 | - |
-| Resource 68 | application/octet-stream | test://static/resource/68 | - |
-| Resource 69 | text/plain | test://static/resource/69 | - |
-| Resource 70 | application/octet-stream | test://static/resource/70 | - |
-| Resource 71 | text/plain | test://static/resource/71 | - |
-| Resource 72 | application/octet-stream | test://static/resource/72 | - |
-| Resource 73 | text/plain | test://static/resource/73 | - |
-| Resource 74 | application/octet-stream | test://static/resource/74 | - |
-| Resource 75 | text/plain | test://static/resource/75 | - |
-| Resource 76 | application/octet-stream | test://static/resource/76 | - |
-| Resource 77 | text/plain | test://static/resource/77 | - |
-| Resource 78 | application/octet-stream | test://static/resource/78 | - |
-| Resource 79 | text/plain | test://static/resource/79 | - |
-| Resource 80 | application/octet-stream | test://static/resource/80 | - |
-| Resource 81 | text/plain | test://static/resource/81 | - |
-| Resource 82 | application/octet-stream | test://static/resource/82 | - |
-| Resource 83 | text/plain | test://static/resource/83 | - |
-| Resource 84 | application/octet-stream | test://static/resource/84 | - |
-| Resource 85 | text/plain | test://static/resource/85 | - |
-| Resource 86 | application/octet-stream | test://static/resource/86 | - |
-| Resource 87 | text/plain | test://static/resource/87 | - |
-| Resource 88 | application/octet-stream | test://static/resource/88 | - |
-| Resource 89 | text/plain | test://static/resource/89 | - |
-| Resource 90 | application/octet-stream | test://static/resource/90 | - |
-| Resource 91 | text/plain | test://static/resource/91 | - |
-| Resource 92 | application/octet-stream | test://static/resource/92 | - |
-| Resource 93 | text/plain | test://static/resource/93 | - |
-| Resource 94 | application/octet-stream | test://static/resource/94 | - |
-| Resource 95 | text/plain | test://static/resource/95 | - |
-| Resource 96 | application/octet-stream | test://static/resource/96 | - |
-| Resource 97 | text/plain | test://static/resource/97 | - |
-| Resource 98 | application/octet-stream | test://static/resource/98 | - |
-| Resource 99 | text/plain | test://static/resource/99 | - |
-| Resource 100 | application/octet-stream | test://static/resource/100 | - |
+| architecture.md | text/markdown | demo://resource/static/document/architecture.md | - |
+| extension.md | text/markdown | demo://resource/static/document/extension.md | - |
+| features.md | text/markdown | demo://resource/static/document/features.md | - |
+| how-it-works.md | text/markdown | demo://resource/static/document/how-it-works.md | - |
+| instructions.md | text/markdown | demo://resource/static/document/instructions.md | - |
+| startup.md | text/markdown | demo://resource/static/document/startup.md | - |
+| structure.md | text/markdown | demo://resource/static/document/structure.md | - |
 
 </details>
 
-## 📝 Prompts (3)
+## 📝 Prompts (4)
 <details>
-<summary>simple_prompt</summary>
+<summary>simple-prompt</summary>
 
 **Description**:
 
 ```
-A prompt without arguments
+A prompt with no arguments
 ```
 <details>
-<summary>complex_prompt</summary>
+<summary>args-prompt</summary>
 
 **Description**:
 
 ```
-A prompt with arguments
+A prompt with two arguments, one required and one optional
 ```
 
 **Parameter**:
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| temperature | Temperature setting |Yes |
-| style | Output style |No |
+| city | Name of the city |Yes |
+| state | Name of the state |No |
 <details>
-<summary>resource_prompt</summary>
+<summary>completable-prompt</summary>
+
+**Description**:
+
+```
+First argument choice narrows values for second argument.
+```
+
+**Parameter**:
+
+| Argument | Description | Required |
+|-----------|------|-------------|
+| department | Choose the department. |Yes |
+| name | Choose a team member to lead the selected department. |Yes |
+<details>
+<summary>resource-prompt</summary>
 
 **Description**:
 
@@ -887,7 +829,8 @@ A prompt that includes an embedded resource reference
 
 | Argument | Description | Required |
 |-----------|------|-------------|
-| resourceId | Resource ID to include (1-100) |Yes |
+| resourceType | Type of resource to fetch |Yes |
+| resourceId | ID of the text resource to fetch |Yes |
 
 </details>
 
@@ -898,30 +841,45 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
-| prompts | complex_prompt | description | 09b401289593b83e9904a308f5f25490bdf350b411a5c0704c2b809d0e1617ca |
-| prompts | complex_prompt | style | f2e0e00a539e768a78c725148346c3b6c05beaa30157b103ce978e263381c4ba |
-| prompts | complex_prompt | temperature | 15a255689d20cdae7535538cd0e874bba74ae5a398cda49bcd47b9301abf7b25 |
-| prompts | resource_prompt | description | 485a9a963ffe2b74994e89a2ac741dc26ef7656974ba85d6e1a8fba8472adaca |
-| prompts | resource_prompt | resourceId | 1c5b7ee8d6755c3d34e32b2f8ef08d51cf7270d762759795aa86e158a488a824 |
-| prompts | simple_prompt | description | 388feeee3ff98cdb53b9fa774fe7e58b502a74241ccb5f4635160acf777ea5fb |
-| tools | add | description | 1efcb1f3567517e507fe44f6853681a389c3ac9ec493ea45f8e0da09b2d6aaf8 |
-| tools | add | a | 4d238256ad692183f3c2e945213eac5ae9e86bce06e6989360af210cae8751f4 |
-| tools | add | b | c079e9787b04a05e7e4dd561a044bce326711ebc3f0c90160f33823530da93d3 |
-| tools | annotatedMessage | description | c64e27024ec7adde221d1172fc30350a16cc89e948dee762bda74904f5bc9358 |
-| tools | annotatedMessage | includeImage | 3f577041e74ad35132f1242ae17815ed70e39bad9533b717021987963f8abb27 |
-| tools | annotatedMessage | messageType | 48ca223484fb0957dc6efa4920a79cc385ab419c7c3af0309e8acb4784c58d0d |
-| tools | echo | description | befddbd2f7f4e08645d4777c5722d61db17d56a0115f5c9bdb19577e865a299b |
+| prompts | args-prompt | description | 6bf9e87694814907d18376c10df390d1d026ab22dd25dc2f90c7f54fe3e872f2 |
+| prompts | args-prompt | city | 6e7972358d7f0ec8764bf526b14781a42654304776ea3ad233f60bf922899155 |
+| prompts | args-prompt | state | 9a5f7119fb7e49fe59783d064d75904aadf8acf32e7e60bdd5c5ace03c81df39 |
+| prompts | completable-prompt | description | 440077b1101c42fe4de7f359ffe44f5428ea005d4d3003be8a7b008e4e657931 |
+| prompts | completable-prompt | department | 6c1697a1528ebdd17c722c8df0be4ebc7908e0932ab9c07a29a22ea3965b11a2 |
+| prompts | completable-prompt | name | 8d9a952b1921cc303f93f852d16c1975a52c1296c869e9e062fd08a3ff6b7b30 |
+| prompts | resource-prompt | description | 485a9a963ffe2b74994e89a2ac741dc26ef7656974ba85d6e1a8fba8472adaca |
+| prompts | resource-prompt | resourceId | 747c611eadb757cc695479ba71ad7ad30123383782d50dcae9cc923c5ff6c7f4 |
+| prompts | resource-prompt | resourceType | 54b6b2f551a23a9e4909208c06a589a3fca85a290fc1cb3cfdb626346eeeaacb |
+| prompts | simple-prompt | description | bd5b0cf66fbff61626808db1d4285c51cda3d933d3d05a4ad7bd7500d0ab86ba |
+| tools | echo | description | 4d00e170dfb2475b38d7c595d6b83ddc873f4119814d8c3e96321a53aaf18fca |
 | tools | echo | message | 2aa7ac486933d92f1de28d4b527088a577a0fe0ad5d33c0c36c1d122fc8477ba |
-| tools | getResourceReference | description | f65488ea8977f68a7680a0ba04efa98d742a3007664649c9e00899f43f1d89de |
-| tools | getResourceReference | resourceId | babe671d40822849f662adcd0a04271ed201dc3849256f46bd5e721e0c752a69 |
-| tools | getTinyImage | description | e05d66ca9c64728b0a6bb482363447a84c28caffab8df5c51e604876fd30b6fb |
-| tools | longRunningOperation | description | 56b51dc5e58071626c7d2658ccc5f1e252cbc9cae02a03d228fbb82ca57d5562 |
-| tools | longRunningOperation | duration | 611a5d1b6734296bafe76d21bca6f9c984b30ae9cf9921554c4440d26b7ea431 |
-| tools | longRunningOperation | steps | 70c271e49e3c4217d398f502fda4be342f73aa5875a69b7f59fc749564181707 |
-| tools | printEnv | description | 20b7f527310a05a74c119c317a418b8bb4d388fe182e2e4574758be98f06d06f |
-| tools | sampleLLM | description | 585d6f5a9315c93685cfc6daa069743de7a0b05e1a055e593cb413d2dd466363 |
-| tools | sampleLLM | maxTokens | 877bc91aff3481950f61058439e2f8d8e4a15e3cfa9d1f031c94e945ba2d516e |
-| tools | sampleLLM | prompt | 472f849bc61d2fc5c70dac589c4cab3ee7ed1800fbc61dc1c78ba30546c40e95 |
+| tools | get-annotated-message | description | 6050c40378a145a00c1912f5904b37edb1266ce1c43fa430b6655a6f302d5222 |
+| tools | get-annotated-message | includeImage | 3f577041e74ad35132f1242ae17815ed70e39bad9533b717021987963f8abb27 |
+| tools | get-annotated-message | messageType | 48ca223484fb0957dc6efa4920a79cc385ab419c7c3af0309e8acb4784c58d0d |
+| tools | get-env | description | 41cecdc4e2e1e3ab2be769fefe6cb155289da5ade9c381a1578bda7948111c26 |
+| tools | get-resource-links | description | 0574c9e3571c77380de27d3927dbac8133e68c558150b8f0b95d2e884403613c |
+| tools | get-resource-links | count | 710b4aa7c24cb2e02f1dfaaa05449a98f92d7ee2252f0da40c0685b614d00783 |
+| tools | get-resource-reference | description | f65488ea8977f68a7680a0ba04efa98d742a3007664649c9e00899f43f1d89de |
+| tools | get-resource-reference | resourceId | 747c611eadb757cc695479ba71ad7ad30123383782d50dcae9cc923c5ff6c7f4 |
+| tools | get-roots-list | description | 3b7b19f4e04c4ca99d1475992f4b95915e7415d4261cf4cebc291b7b3def7c8d |
+| tools | get-structured-content | description | 276d76ef534072c914d17df7855f06d6c44a8c5be3ee2b8eb686afdeb357d88c |
+| tools | get-structured-content | location | 43ae23322301a2f94c6b19a84e30a7d2681359513b6cea1000cffeafd8ee2920 |
+| tools | get-sum | description | 98b4e89d761c05f63a8acce7100a3950f49ca67537dea3716c0ba2a9431316f9 |
+| tools | get-sum | a | 4d238256ad692183f3c2e945213eac5ae9e86bce06e6989360af210cae8751f4 |
+| tools | get-sum | b | c079e9787b04a05e7e4dd561a044bce326711ebc3f0c90160f33823530da93d3 |
+| tools | get-tiny-image | description | 7eba2275ba1ae93a58102c84bcd8f1fb29126fb998d3cbd2947457cdbe685bde |
+| tools | gzip-file-as-resource | description | e74512860ba0e5a1d47699b6bc8099970a510674295e14a861287882ed715243 |
+| tools | gzip-file-as-resource | data | fe50d774f0f3d2c53621ed9187fb8110a675cc16644da0368e3a94d3011f16e5 |
+| tools | gzip-file-as-resource | name | fe91c771dbfa72cbd6dbd6404fb3eeb4aac574ebcbc8e111cd28b86cf882db5d |
+| tools | gzip-file-as-resource | outputType | 216a80a9e4dce55bb3cf355f09d764bc7e399daa474b3aff4dc5c13da7e915f5 |
+| tools | toggle-simulated-logging | description | 4ece88d0dc82c58f375c0df4229b4fad8a4ee98398486f5d3e64f8b5d1f2219d |
+| tools | toggle-subscriber-updates | description | 8d2608e7a48902396a0c7b08e56cfdcf93667ecd09de825d71a6c47b207f22c8 |
+| tools | trigger-long-running-operation | description | d047c3fcbcb25a9255d0bd7584d019509a8aa5a181ce7e3c6109d76ea820d125 |
+| tools | trigger-long-running-operation | duration | 611a5d1b6734296bafe76d21bca6f9c984b30ae9cf9921554c4440d26b7ea431 |
+| tools | trigger-long-running-operation | steps | 70c271e49e3c4217d398f502fda4be342f73aa5875a69b7f59fc749564181707 |
+| tools | trigger-sampling-request | description | 807babf5b7ff34397dda42ab6ad339d82f992dc120ddb6c92165c8ee0a217a14 |
+| tools | trigger-sampling-request | maxTokens | 877bc91aff3481950f61058439e2f8d8e4a15e3cfa9d1f031c94e945ba2d516e |
+| tools | trigger-sampling-request | prompt | 472f849bc61d2fc5c70dac589c4cab3ee7ed1800fbc61dc1c78ba30546c40e95 |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

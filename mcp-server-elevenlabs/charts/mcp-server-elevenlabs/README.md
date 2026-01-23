@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -21,10 +21,10 @@
 # What is mcp-server-elevenlabs?
 [![Rating](https://img.shields.io/badge/B-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-elevenlabs/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-elevenlabs/0.4.0?logo=docker&logoColor=fff&label=0.4.0)](https://hub.docker.com/r/acuvity/mcp-server-elevenlabs)
-[![PyPI](https://img.shields.io/badge/0.4.0-3775A9?logo=pypi&logoColor=fff&label=elevenlabs-mcp)](https://github.com/elevenlabs/elevenlabs-mcp)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-elevenlabs/0.9.1?logo=docker&logoColor=fff&label=0.9.1)](https://hub.docker.com/r/acuvity/mcp-server-elevenlabs)
+[![PyPI](https://img.shields.io/badge/0.9.1-3775A9?logo=pypi&logoColor=fff&label=elevenlabs-mcp)](https://github.com/elevenlabs/elevenlabs-mcp)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-elevenlabs/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-elevenlabs&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22ELEVENLABS_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-elevenlabs%3A0.4.0%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-elevenlabs&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22-e%22%2C%22ELEVENLABS_API_KEY%22%2C%22docker.io%2Facuvity%2Fmcp-server-elevenlabs%3A0.9.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Enables voice synthesis and audio processing via APIs.
 
@@ -43,110 +43,40 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
-The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-elevenlabs/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
+The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-elevenlabs/docker/policy.rego) that enables a set of runtime [guardrails](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-elevenlabs#%EF%B8%8F-guardrails) to help enforce security, privacy, and correct usage of your services. Below is list of each guardrail provided.
 
-### 🔒 Resource Integrity
-
-**Mitigates MCP Rug Pull Attacks**
-
-* **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
-* **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
-
-### 🛡️ Guardrails
-
-#### Covert Instruction Detection
-
-Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
-
-* **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
-* **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
-
-#### Sensitive Pattern Detection
-
-Block user-defined sensitive data patterns (credential paths, filesystem references).
-
-* **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
-* **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
-
-#### Shadowing Pattern Detection
-
-Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
-
-* **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
-* **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
-
-#### Schema Misuse Prevention
-
-Enforces strict adherence to MCP input schemas.
-
-* **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
-* **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
-
-#### Cross-Origin Tool Access
-
-Controls whether tools may invoke tools or services from external origins.
-
-* **Goal:** Prevent untrusted or out-of-scope services from being called.
-* **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
-
-#### Secrets Redaction
-
-Automatically masks sensitive values so they never appear in logs or responses.
-
-* **Goal:** Ensure that API keys, tokens, passwords, and other credentials cannot leak in plaintext.
-* **Mechanism:** Scans every text output for known secret formats (e.g., AWS keys, GitHub PATs, JWTs). Matches are replaced with `[REDACTED]` before the response is sent or recorded.
-
-These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
-
-### Enable guardrails
-
-To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
 | Guardrail                        | Summary                                                                 |
 |----------------------------------|-------------------------------------------------------------------------|
+| `resource integrity`             | Embeds a hash of all exposed resources to ensure their authenticity and prevent unauthorized modifications, guarding against supply chain attacks and dynamic alterations of tool metadata. |
 | `covert-instruction-detection`   | Detects hidden or obfuscated directives in requests.                    |
 | `sensitive-pattern-detection`    | Flags patterns suggesting sensitive data or filesystem exposure.        |
 | `shadowing-pattern-detection`    | Identifies tool descriptions that override or influence others.         |
 | `schema-misuse-prevention`       | Enforces strict schema compliance on input data.                        |
 | `cross-origin-tool-access`       | Controls calls to external services or APIs.                            |
 | `secrets-redaction`              | Prevents exposure of credentials or sensitive values.                   |
+| `basic authentication`           | Enables the configuration of a shared secret to restrict unauthorized access to the MCP server and ensure only approved clients can connect. |
 
-Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
-
-## 🔒 Basic Authentication via Shared Secret
-
-Provides a lightweight auth layer using a single shared token.
-
-* **Mechanism:** Expects clients to send an `Authorization` header with the predefined secret.
-* **Use Case:** Quickly lock down your endpoint in development or simple internal deployments—no complex OAuth/OIDC setup required.
-
-To turn on Basic Authentication, define `BASIC_AUTH_SECRET` environment variable with a shared secret.
-
-Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentication.
-
-> While basic auth will protect against unauthorized access, you should use it only in controlled environment,
-> rotate credentials frequently and **always** use TLS.
-
-</details>
+These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # Quick reference
@@ -173,11 +103,11 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 
 **Current supported version:**
   - charts: `1.0.0`
-  - container: `1.0.0-0.4.0`
+  - container: `1.0.0-0.9.1`
 
 **Verify signature with [cosign](https://github.com/sigstore/cosign):**
   - charts: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-elevenlabs:1.0.0`
-  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-elevenlabs:1.0.0-0.4.0`
+  - container: `cosign verify --certificate-oidc-issuer "https://token.actions.githubusercontent.com" --certificate-identity "https://github.com/acuvity/mcp-servers-registry/.github/workflows/release.yaml@refs/heads/main" docker.io/acuvity/mcp-server-elevenlabs:1.0.0-0.9.1`
 
 ---
 
@@ -624,15 +554,15 @@ Then you can connect through `http/sse` as usual given that you pass an `Authori
 
 # 🧠 Server features
 
-## 🧰 Tools (20)
+## 🧰 Tools (24)
 <details>
 <summary>text_to_speech</summary>
 
 **Description**:
 
 ```
-Convert text to speech with a given voice and save the output audio file to a given directory.
-    Directory is optional, if not provided, the output file will be saved to $HOME/Desktop.
+Convert text to speech with a given voice. Saves output file to directory (default: $HOME/Desktop).
+    
     Only one of voice_id or voice_name can be provided. If none are provided, the default voice will be used.
 
     ⚠️ COST WARNING: This tool makes an API call to ElevenLabs which may incur costs. Only use when explicitly requested by the user.
@@ -640,12 +570,20 @@ Convert text to speech with a given voice and save the output audio file to a gi
      Args:
         text (str): The text to convert to speech.
         voice_name (str, optional): The name of the voice to use.
+        model_id (str, optional): The model ID to use for speech synthesis. Options include:
+            - eleven_multilingual_v2: High quality multilingual model (29 languages)
+            - eleven_flash_v2_5: Fastest model with ultra-low latency (32 languages)
+            - eleven_turbo_v2_5: Balanced quality and speed (32 languages)
+            - eleven_flash_v2: Fast English-only model
+            - eleven_turbo_v2: Balanced English-only model
+            - eleven_monolingual_v1: Legacy English model
+            Defaults to eleven_multilingual_v2 or environment variable ELEVENLABS_MODEL_ID.
         stability (float, optional): Stability of the generated audio. Determines how stable the voice is and the randomness between each generation. Lower values introduce broader emotional range for the voice. Higher values can result in a monotonous voice with limited emotion. Range is 0 to 1.
         similarity_boost (float, optional): Similarity boost of the generated audio. Determines how closely the AI should adhere to the original voice when attempting to replicate it. Range is 0 to 1.
         style (float, optional): Style of the generated audio. Determines the style exaggeration of the voice. This setting attempts to amplify the style of the original speaker. It does consume additional computational resources and might increase latency if set to anything other than 0. Range is 0 to 1.
         use_speaker_boost (bool, optional): Use speaker boost of the generated audio. This setting boosts the similarity to the original speaker. Using this setting requires a slightly higher computational load, which in turn increases latency.
         speed (float, optional): Speed of the generated audio. Controls the speed of the generated speech. Values range from 0.7 to 1.2, with 1.0 being the default speed. Lower values create slower, more deliberate speech while higher values produce faster-paced speech. Extreme values can impact the quality of the generated speech. Range is 0.7 to 1.2.
-        output_directory (str, optional): Directory where files should be saved.
+        output_directory (str, optional): Directory where files should be saved (only used when saving files).
             Defaults to $HOME/Desktop if not provided.
         language: ISO 639-1 language code for the voice.
         output_format (str, optional): Output format of the generated audio. Formatted as codec_sample_rate_bitrate. So an mp3 with 22.05kHz sample rate at 32kbs is represented as mp3_22050_32. MP3 with 192kbps bitrate requires you to be subscribed to Creator tier or above. PCM with 44.1kHz sample rate requires you to be subscribed to Pro tier or above. Note that the μ-law format (sometimes written mu-law, often approximated as u-law) is commonly used for Twilio audio inputs.
@@ -670,7 +608,7 @@ Convert text to speech with a given voice and save the output audio file to a gi
             opus_48000_192
 
     Returns:
-        Text content with the path to the output file and name of the voice used.
+        Text content with file path or MCP resource with audio data, depending on output mode.
     
 ```
 
@@ -679,6 +617,7 @@ Convert text to speech with a given voice and save the output audio file to a gi
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | language | string | not set | No
+| model_id | any | not set | No
 | output_directory | any | not set | No
 | output_format | string | not set | No
 | similarity_boost | number | not set | No
@@ -696,21 +635,21 @@ Convert text to speech with a given voice and save the output audio file to a gi
 **Description**:
 
 ```
-Transcribe speech from an audio file and either save the output text file to a given directory or return the text to the client directly.
+Transcribe speech from an audio file. When save_transcript_to_file=True: Saves output file to directory (default: $HOME/Desktop). When return_transcript_to_client_directly=True, always returns text directly regardless of output mode.
 
     ⚠️ COST WARNING: This tool makes an API call to ElevenLabs which may incur costs. Only use when explicitly requested by the user.
 
     Args:
         file_path: Path to the audio file to transcribe
-        language_code: ISO 639-3 language code for transcription (default: "eng" for English)
+        language_code: ISO 639-3 language code for transcription. If not provided, the language will be detected automatically.
         diarize: Whether to diarize the audio file. If True, which speaker is currently speaking will be annotated in the transcription.
         save_transcript_to_file: Whether to save the transcript to a file.
         return_transcript_to_client_directly: Whether to return the transcript to the client directly.
-        output_directory: Directory where files should be saved.
+        output_directory: Directory where files should be saved (only used when saving files).
             Defaults to $HOME/Desktop if not provided.
 
     Returns:
-        TextContent containing the transcription. If save_transcript_to_file is True, the transcription will be saved to a file in the output directory.
+        TextContent containing the transcription or MCP resource with transcript data.
     
 ```
 
@@ -720,7 +659,7 @@ Transcribe speech from an audio file and either save the output text file to a g
 |-----------|------|-------------|-----------|
 | diarize | boolean | not set | No
 | input_file_path | string | not set | Yes
-| language_code | string | not set | No
+| language_code | any | not set | No
 | output_directory | any | not set | No
 | return_transcript_to_client_directly | boolean | not set | No
 | save_transcript_to_file | boolean | not set | No
@@ -731,8 +670,8 @@ Transcribe speech from an audio file and either save the output text file to a g
 **Description**:
 
 ```
-Convert text description of a sound effect to sound effect with a given duration and save the output audio file to a given directory.
-    Directory is optional, if not provided, the output file will be saved to $HOME/Desktop.
+Convert text description of a sound effect to sound effect with a given duration. Saves output file to directory (default: $HOME/Desktop).
+    
     Duration must be between 0.5 and 5 seconds.
 
     ⚠️ COST WARNING: This tool makes an API call to ElevenLabs which may incur costs. Only use when explicitly requested by the user.
@@ -740,8 +679,9 @@ Convert text description of a sound effect to sound effect with a given duration
     Args:
         text: Text description of the sound effect
         duration_seconds: Duration of the sound effect in seconds
-        output_directory: Directory where files should be saved.
+        output_directory: Directory where files should be saved (only used when saving files).
             Defaults to $HOME/Desktop if not provided.
+        loop: Whether to loop the sound effect. Defaults to False.
         output_format (str, optional): Output format of the generated audio. Formatted as codec_sample_rate_bitrate. So an mp3 with 22.05kHz sample rate at 32kbs is represented as mp3_22050_32. MP3 with 192kbps bitrate requires you to be subscribed to Creator tier or above. PCM with 44.1kHz sample rate requires you to be subscribed to Pro tier or above. Note that the μ-law format (sometimes written mu-law, often approximated as u-law) is commonly used for Twilio audio inputs.
             Defaults to "mp3_44100_128". Must be one of:
             mp3_22050_32
@@ -770,6 +710,7 @@ Convert text description of a sound effect to sound effect with a given duration
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
 | duration_seconds | number | not set | No
+| loop | boolean | not set | No
 | output_directory | any | not set | No
 | output_format | string | not set | No
 | text | string | not set | Yes
@@ -857,8 +798,7 @@ Create an instant voice clone of a voice using provided audio files.
 **Description**:
 
 ```
-Isolate audio from a file and save the output audio file to a given directory.
-    Directory is optional, if not provided, the output file will be saved to $HOME/Desktop.
+Isolate audio from a file. Saves output file to directory (default: $HOME/Desktop).
 
     ⚠️ COST WARNING: This tool makes an API call to ElevenLabs which may incur costs. Only use when explicitly requested by the user.
     
@@ -997,12 +937,60 @@ Get details about a specific conversational AI agent
 | agent_id | string | not set | Yes
 </details>
 <details>
+<summary>get_conversation</summary>
+
+**Description**:
+
+```
+Gets conversation with transcript. Returns: conversation details and full transcript. Use when: analyzing completed agent conversations.
+
+    Args:
+        conversation_id: The unique identifier of the conversation to retrieve, you can get the ids from the list_conversations tool.
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| conversation_id | string | not set | Yes
+</details>
+<details>
+<summary>list_conversations</summary>
+
+**Description**:
+
+```
+Lists agent conversations. Returns: conversation list with metadata. Use when: asked about conversation history.
+
+    Args:
+        agent_id (str, optional): Filter conversations by specific agent ID
+        cursor (str, optional): Pagination cursor for retrieving next page of results
+        call_start_before_unix (int, optional): Filter conversations that started before this Unix timestamp
+        call_start_after_unix (int, optional): Filter conversations that started after this Unix timestamp
+        page_size (int, optional): Number of conversations to return per page (1-100, defaults to 30)
+        max_length (int, optional): Maximum character length of the response text (defaults to 10000)
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| agent_id | any | not set | No
+| call_start_after_unix | any | not set | No
+| call_start_before_unix | any | not set | No
+| cursor | any | not set | No
+| max_length | integer | not set | No
+| page_size | integer | not set | No
+</details>
+<details>
 <summary>speech_to_speech</summary>
 
 **Description**:
 
 ```
-Transform audio from one voice to another using provided audio files.
+Transform audio from one voice to another using provided audio files. Saves output file to directory (default: $HOME/Desktop).
 
     ⚠️ COST WARNING: This tool makes an API call to ElevenLabs which may incur costs. Only use when explicitly requested by the user.
     
@@ -1022,7 +1010,9 @@ Transform audio from one voice to another using provided audio files.
 **Description**:
 
 ```
-Create voice previews from a text prompt. Creates three previews with slight variations. Saves the previews to a given directory. If no text is provided, the tool will auto-generate text.
+Create voice previews from a text prompt. Creates three previews with slight variations. Saves output file to directory (default: $HOME/Desktop).
+    
+    If no text is provided, the tool will auto-generate text.
 
     Voice preview files are saved as: voice_design_(generated_voice_id)_(timestamp).mp3
 
@@ -1066,7 +1056,7 @@ Add a generated voice to the voice library. Uses the voice ID from the `text_to_
 **Description**:
 
 ```
-Make an outbound call via Twilio using an ElevenLabs agent.
+Make an outbound call using an ElevenLabs agent. Automatically detects provider type (Twilio or SIP trunk) and uses the appropriate API.
 
     ⚠️ COST WARNING: This tool makes an API call to ElevenLabs which may incur costs. Only use when explicitly requested by the user.
 
@@ -1143,6 +1133,56 @@ Play an audio file. Supports WAV and MP3 formats.
 |-----------|------|-------------|-----------|
 | input_file_path | string | not set | Yes
 </details>
+<details>
+<summary>compose_music</summary>
+
+**Description**:
+
+```
+Convert a prompt to music and save the output audio file to a given directory.
+    Directory is optional, if not provided, the output file will be saved to $HOME/Desktop.
+
+    Args:
+        prompt: Prompt to convert to music. Must provide either prompt or composition_plan.
+        output_directory: Directory to save the output audio file
+        composition_plan: Composition plan to use for the music. Must provide either prompt or composition_plan.
+        music_length_ms: Length of the generated music in milliseconds. Cannot be used if composition_plan is provided.
+
+    ⚠️ COST WARNING: This tool makes an API call to ElevenLabs which may incur costs. Only use when explicitly requested by the user.
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| composition_plan | any | not set | No
+| music_length_ms | any | not set | No
+| output_directory | any | not set | No
+| prompt | any | not set | No
+</details>
+<details>
+<summary>create_composition_plan</summary>
+
+**Description**:
+
+```
+Create a composition plan for music generation. Usage of this endpoint does not cost any credits but is subject to rate limiting depending on your tier. Composition plans can be used when generating music with the compose_music tool.
+
+    Args:
+        prompt: Prompt to create a composition plan for
+        music_length_ms: The length of the composition plan to generate in milliseconds. Must be between 10000ms and 300000ms. Optional - if not provided, the model will choose a length based on the prompt.
+        source_composition_plan: An optional composition plan to use as a source for the new composition plan
+    
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| music_length_ms | any | not set | No
+| prompt | string | not set | Yes
+| source_composition_plan | any | not set | No
+</details>
 
 
 # 🔐 Resource SBOM
@@ -1153,23 +1193,27 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 |-----------|------|------|------|
 | tools | add_knowledge_base_to_agent | description | 91f9e1324f9247ab9d29e6fd2ae071e9178f243ecb15b906249414fc19bdc059 |
 | tools | check_subscription | description | 944f896d7183752af29b2030d36de77589e7bd1e624042bc1d30de11cc7bea8b |
+| tools | compose_music | description | 6dede9647b4b86311e88f2278de4b8f000ea008915a44e9f33ad0a4ffd0c9857 |
 | tools | create_agent | description | b564fd50f13b82724320fcca60b4a43b6f4342615f94cad25b22d3feacd2bee5 |
+| tools | create_composition_plan | description | fc48737b745cc09e48a2e101a80dd74170787427d6e36c4d53d232f3ea39dbba |
 | tools | create_voice_from_preview | description | ba761d6a2b112b520cf8463bedd5da0b841720a48149e4ab0ec93fa2cd5afefa |
 | tools | get_agent | description | 4607c36f84519b2172276551d4c64b55a326d4cd53cbff83d59f427a7c550c4c |
+| tools | get_conversation | description | f2ed073c7052b3d497172a207f08b9586e66a26182ff20678aadeb79c1322935 |
 | tools | get_voice | description | 511ba8e3f9550db8dadc8561cab48730d25684f72069faf2461596a29c60ed79 |
-| tools | isolate_audio | description | ecfd2b1b452ffd4492e23ff4680350ebe5ebed530e774ee25f9b8b5f20e71d04 |
+| tools | isolate_audio | description | b18518722b3800070d51f92a76f49ce56118b1629da456426fe584c8344545f5 |
 | tools | list_agents | description | c86fa37dac2e1f0c6d6ba4784faed7c330e907453c299a60992c8af4bef9b665 |
+| tools | list_conversations | description | 13bfda88ec50c6ce08a5cc03ee3db70b399c65b3742628de1d7f794aedec23b3 |
 | tools | list_models | description | a0ff65affde407f1cf84fe2a125e4d8632eaa1db8594889e246ef31e82b00bb5 |
 | tools | list_phone_numbers | description | cced243ecf3b23b4b992847064779c30f844e6cb3f64618a53c72ce1f0ca1622 |
-| tools | make_outbound_call | description | d8e7480101ea19cfa95141215d12f5cdc5f87d75fc20c0869a18b3fb02f09cc8 |
+| tools | make_outbound_call | description | 5e5f9fa273dbd2a6b0c3ed3851efab1b2d704c83878334c3a0cacae377937501 |
 | tools | play_audio | description | ead1307454561355d22fb5546a6124de7899e129b244b565faac3072021fb3fa |
 | tools | search_voice_library | description | 4a3cfacd422e0dd663ef421e72ccc80afcec75279c13422e884d7c79114a2a6d |
 | tools | search_voices | description | 9546f9a40cc3db7af9115a8edb8afeda0fb34152df1be35b7906137627dc3af4 |
-| tools | speech_to_speech | description | 2d83a2662e59f363cd80d7d75803c8c5a2eef9a91356afccb16db9b963bae4eb |
-| tools | speech_to_text | description | aa8e90a21934f14abfc93728f02d72430eb266fe00889ad75a4ba4e989eb720d |
-| tools | text_to_sound_effects | description | 9fe63c424ebbf0133561c9bdb0ff941157b9b84b34680ce15764e4dccc45f931 |
-| tools | text_to_speech | description | e35a9e71722f2a738bba2d0db9d3d111de584a979157de39da236df40f47a1dd |
-| tools | text_to_voice | description | 5a7eb20b8fce7560f39b99ab64bfea14a409f8ed0c1afe9529eb11d903cab523 |
+| tools | speech_to_speech | description | 8a1e4847343a679cc44eff603e54489e4d1c82aa70608a5e949bf7bafe06c000 |
+| tools | speech_to_text | description | a2546d745cae13810418cdf52f68f3c94c17713fc636b7b6adb5ef10dcb57d14 |
+| tools | text_to_sound_effects | description | 7a49f3e845ef929a6e32cbb2c7d39756f20940269c1bde58f6668bd0bd2fb06a |
+| tools | text_to_speech | description | 3b9abe184421f7e26bba49ac7d8ac5da353ee29e49f6422e33a5f072677b1800 |
+| tools | text_to_voice | description | 328ff4695cb75ca12ae9872b1d6436cb9a95fb246fe4d0790a69c3678fff9453 |
 | tools | voice_clone | description | e81d355303d7ca9c566f571a7b7ff18ab155f1296ad57767025c7bbe90ff3a66 |
 
 

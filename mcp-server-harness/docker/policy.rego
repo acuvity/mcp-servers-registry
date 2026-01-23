@@ -86,39 +86,25 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
-	"create_pull_request",
-	#
-	"download_execution_logs",
-	#
 	"fetch_execution_url",
+	#
+	"get_connector_details",
+	#
+	"get_dashboard_data",
 	#
 	"get_execution",
 	#
 	"get_pipeline",
 	#
-	"get_pull_request",
+	"list_connector_catalogue",
 	#
-	"get_pull_request_checks",
+	"list_connectors",
 	#
-	"get_registry",
-	#
-	"get_repository",
-	#
-	"list_artifact_files",
-	#
-	"list_artifact_versions",
-	#
-	"list_artifacts",
+	"list_dashboards",
 	#
 	"list_executions",
 	#
 	"list_pipelines",
-	#
-	"list_pull_requests",
-	#
-	"list_registries",
-	#
-	"list_repositories",
 	#
 	# exclude word that might be misdetected
 	"to",

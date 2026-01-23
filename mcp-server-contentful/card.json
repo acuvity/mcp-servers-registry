@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "1.16.1",
+  "version": "1.21.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"b677f50cbc5926b3c92fd2f123831fdac21d54497c661782d22a2d0415de9dbf","reason":"Tool names are clear and intuitive, indicating their Contentful-specific purposes well. Most descriptions adequately explain functionality and usage context, with some providing excellent detail (like create_entry and update_entry with locale requirements). However, many tools have minimal descriptions that lack comprehensive guidance on when to use them or important limitations. Parameter descriptions are generally clear with good use of constraints and defaults, though some could benefit from more detailed explanations of their purpose and impact on tool behavior.","score":"B"},
+  "rating": {"hash":"681dd799614d8d054108907a36c2047d775fe476a78c53a84b3452b24b7d763b","reason":"The toolset has clear, descriptive names and generally good functionality descriptions. Most parameters are well-documented with clear purposes and constraints. However, some descriptions are overly verbose (create_entry, update_entry), while others lack sufficient detail (get_entry, delete_asset). Parameter documentation is generally strong but inconsistent - some tools have excellent examples and constraints while others have minimal descriptions. The repetitive spaceId description across tools and some technical inconsistencies (like the list_content_types limit description mismatch) prevent this from reaching an A grade.","score":"B"},
   "resources": {
-    "tools": 35,
+    "tools": 40,
     "prompts": 14,
     "resources": 0,
     "resourcesTemplates": 0

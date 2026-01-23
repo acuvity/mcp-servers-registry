@@ -90,17 +90,17 @@ _cross_tool_exclude := [
 	#
 	"firecrawl_map",
 	#
+	"firecrawl_search",
+	#
 	"firecrawl_crawl",
 	#
 	"firecrawl_check_crawl_status",
 	#
-	"firecrawl_search",
-	#
 	"firecrawl_extract",
 	#
-	"firecrawl_deep_research",
+	"firecrawl_agent",
 	#
-	"firecrawl_generate_llmstxt",
+	"firecrawl_agent_status",
 	#
 	# exclude word that might be misdetected
 	"to",

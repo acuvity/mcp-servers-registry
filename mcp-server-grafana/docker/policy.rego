@@ -88,13 +88,33 @@ _cross_tool_exclude := [
 	#
 	"add_activity_to_incident",
 	#
+	"create_alert_rule",
+	#
+	"create_annotation",
+	#
+	"create_folder",
+	#
+	"create_graphite_annotation",
+	#
 	"create_incident",
+	#
+	"delete_alert_rule",
+	#
+	"fetch_pyroscope_profile",
 	#
 	"find_error_pattern_logs",
 	#
 	"find_slow_requests",
 	#
+	"generate_deeplink",
+	#
+	"get_alert_group",
+	#
 	"get_alert_rule_by_uid",
+	#
+	"get_annotation_tags",
+	#
+	"get_annotations",
 	#
 	"get_assertions",
 	#
@@ -104,6 +124,10 @@ _cross_tool_exclude := [
 	#
 	"get_dashboard_panel_queries",
 	#
+	"get_dashboard_property",
+	#
+	"get_dashboard_summary",
+	#
 	"get_datasource_by_name",
 	#
 	"get_datasource_by_uid",
@@ -112,9 +136,13 @@ _cross_tool_exclude := [
 	#
 	"get_oncall_shift",
 	#
+	"get_panel_image",
+	#
 	"get_sift_analysis",
 	#
 	"get_sift_investigation",
+	#
+	"list_alert_groups",
 	#
 	"list_alert_rules",
 	#
@@ -142,9 +170,15 @@ _cross_tool_exclude := [
 	#
 	"list_prometheus_metric_names",
 	#
+	"list_pyroscope_label_names",
+	#
+	"list_pyroscope_label_values",
+	#
+	"list_pyroscope_profile_types",
+	#
 	"list_sift_investigations",
 	#
-	"list_teams",
+	"patch_annotation",
 	#
 	"query_loki_logs",
 	#
@@ -153,6 +187,12 @@ _cross_tool_exclude := [
 	"query_prometheus",
 	#
 	"search_dashboards",
+	#
+	"search_folders",
+	#
+	"update_alert_rule",
+	#
+	"update_annotation",
 	#
 	"update_dashboard",
 	#

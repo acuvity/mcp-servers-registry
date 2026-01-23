@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.11.2",
+  "version": "0.13.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"d1e40bc1c920e8410ef13f8303c9c7acedb7c915fdc27ad64be90849ceca3d9a","reason":"Tool names are highly specific and intuitive, clearly indicating their purpose (e.g., 'jira_get_user_profile', 'confluence_create_page'). Descriptions are comprehensive and detailed, explaining functionality, when to use each tool, what they return, and important limitations. Parameter descriptions are exceptionally clear with extensive examples, format specifications, and usage guidance. Documentation proactively addresses user questions with concrete examples for complex parameters like JQL queries and field specifications.","score":"A"},
+  "rating": {"hash":"b1d0480d17c86e91d05ba3c70c2bf32f33d06041141365930d70e3a39bf2ca36","reason":"Good overall documentation with comprehensive tool descriptions and well-structured parameter definitions. Most tools provide clear 2-4 sentence descriptions explaining functionality, context, and key details. Parameter documentation is thorough with helpful examples and constraints. Tool names are descriptive and follow consistent patterns. Minor areas for improvement include some overly verbose descriptions that could be more concise, and a few parameters that could benefit from clearer constraint specifications.","score":"B"},
   "resources": {
-    "tools": 37,
+    "tools": 43,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

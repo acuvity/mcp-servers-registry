@@ -2,7 +2,13 @@
   "tools": [
     {
       "name": "get_neo4j_schema",
-      "hash": "8d8a55e1a9afe505aed30f7d19ca66fe1bf3be840ed0a2d74192a5f624a11b28"
+      "hash": "f3ada5d5cde18f6e5124f6853354aa15df3460bb4f294337dea236eda5e9748b",
+      "params": [
+        {
+          "name": "sample_size",
+          "hash": "24dd535e561799794239015760ed4933e54d21d8e998ce2201a93ece6c472b1d"
+        }
+      ]
     },
     {
       "name": "read_neo4j_cypher",

@@ -13,14 +13,14 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "1.0.1",
+  "version": "1.0.15",
   "requiresConfiguration": false,
   "requiresStorage": false,
-  "rating": {"hash":"a041e55b25d80fda6f887c81b2b952c29675ae365ec1755962e5be8795b23186","reason":"Excellent documentation with comprehensive description covering functionality, usage requirements, query tips, output format, and best practices. All parameters have clear descriptions with purpose, constraints, and expected values. The tool name is specific and intuitive, clearly indicating its AWS Bedrock knowledge base querying purpose.","score":"A"},
+  "rating": {"hash":"c740ebc12692c8e7a6741240575ad655bec86c92b79112fc82c87ad7ca2f6f64","reason":"Excellent documentation with comprehensive descriptions that explain functionality, usage context, and constraints. Tool names are clear and specific. Parameter documentation is thorough with detailed explanations of purpose, constraints, and usage guidance. The descriptions include helpful examples, best practices, and multi-step usage instructions that proactively address user questions.","score":"A"},
   "resources": {
-    "tools": 1,
+    "tools": 2,
     "prompts": 0,
-    "resources": 1,
+    "resources": 0,
     "resourcesTemplates": 0
   }
 }

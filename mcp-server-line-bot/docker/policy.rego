@@ -106,6 +106,8 @@ _cross_tool_exclude := [
 	#
 	"cancel_rich_menu_default",
 	#
+	"create_rich_menu",
+	#
 	# exclude word that might be misdetected
 	"to",
 	"this",

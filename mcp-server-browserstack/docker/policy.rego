@@ -86,13 +86,35 @@ _cross_tool_patterns := [
 _cross_tool_exclude := [
 	# add our tools to exclude list
 	#
-	"runTestsOnBrowserStack",
+	"accessibilityExpert",
+	#
+	"startAccessibilityScan",
+	#
+	"createAccessibilityAuthConfig",
+	#
+	"getAccessibilityAuthConfig",
+	#
+	"fetchAccessibilityIssues",
+	#
+	"setupBrowserStackAutomateTests",
+	#
+	"percyVisualTestIntegrationAgent",
+	#
+	"expandPercyVisualTesting",
+	#
+	"addPercySnapshotCommands",
+	#
+	"listTestFiles",
+	#
+	"runPercyScan",
+	#
+	"fetchPercyChanges",
+	#
+	"managePercyBuildApproval",
 	#
 	"runAppLiveSession",
 	#
 	"runBrowserLiveSession",
-	#
-	"startAccessibilityScan",
 	#
 	"createProjectOrFolder",
 	#
@@ -116,11 +138,23 @@ _cross_tool_exclude := [
 	#
 	"takeAppScreenshot",
 	#
+	"runAppTestsOnBrowserStack",
+	#
+	"setupBrowserStackAppAutomateTests",
+	#
 	"getFailureLogs",
 	#
 	"fetchAutomationScreenshots",
 	#
 	"fetchSelfHealedSelectors",
+	#
+	"fetchBuildInsights",
+	#
+	"fetchRCA",
+	#
+	"getBuildId",
+	#
+	"listTestIds",
 	#
 	# exclude word that might be misdetected
 	"to",

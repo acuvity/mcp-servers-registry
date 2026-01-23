@@ -37,6 +37,14 @@
       "hash": "425133c04c59768f6f21421781fb706057bf59dc2270ad24654334328083712a"
     },
     {
+      "name": "get-span-annotations",
+      "hash": "cce7df7fad6cf7df9ad091db48897e5bf0b0abb70b60bc3eb00d47b82bf18623"
+    },
+    {
+      "name": "get-spans",
+      "hash": "e8aa17e3cb12480517d07adcbb7f1294c16aa6a852b2a4106fdb34689cfa394e"
+    },
+    {
       "name": "list-datasets",
       "hash": "08059e461d7a8d15235ecd8a680443fa05750a4ff4afe83eda532a413121334f"
     },
@@ -59,6 +67,16 @@
     {
       "name": "list-prompts",
       "hash": "999cd435fea53746496c6e325a943cadbfc797633226f801738897c11d6eacdc"
+    },
+    {
+      "name": "phoenix-support",
+      "hash": "90839d8a6afaacd3ccaa8f60c955241eb63f4ce44bc5d01cd355fdb4f378eb82",
+      "params": [
+        {
+          "name": "query",
+          "hash": "5932789fc3452e79ad9b4af9b72323f77ca1982627bc00008a26d2e6f83de5ab"
+        }
+      ]
     },
     {
       "name": "upsert-prompt",

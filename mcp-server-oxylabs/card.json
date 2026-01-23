@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "python",
-  "version": "0.3.0",
+  "version": "0.7.5",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"1547515e6be3e7c36250a470673eea40d8668ab59b172febe9d53c1a4872eabc","reason":"The toolset demonstrates good documentation quality with clear, descriptive tool names and comprehensive parameter descriptions. Tool descriptions provide adequate context about functionality and use cases, though they could be more specific about when to use each tool. Parameter documentation is thorough with helpful examples and clear explanations of purpose and constraints. The consistent documentation style across all tools and detailed coverage of complex parameters like output formats and geo-location elevate this above average, though some descriptions could be more concise and focused.","score":"B"},
+  "rating": {"hash":"5f32d2e4005d9329cd6ad9446ceb40f5bd9b60eb3fd77dcc9b1dae94f1e4fad5","reason":"Good overall documentation with clear tool names and comprehensive descriptions that explain functionality and usage context. Most parameters have adequate descriptions with constraints and examples. However, some tools suffer from verbose descriptions with embedded formatting that reduces clarity, and certain parameters like 'schema' could benefit from more specific guidance. The mixed quality across tools (some excellent, others adequate) prevents an A grade.","score":"B"},
   "resources": {
-    "tools": 4,
+    "tools": 10,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

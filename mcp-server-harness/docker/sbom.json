@@ -1,0 +1,300 @@
+{
+  "tools": [
+    {
+      "name": "fetch_execution_url",
+      "hash": "1469e23ea5f5d25213828d61fff7594b96376297d7c66b48beec3ec08c00c0c5",
+      "params": [
+        {
+          "name": "org_id",
+          "hash": "319a0322acf57f3d1885f6bf36706596433a9097f11a943825999a3e7e258a04"
+        },
+        {
+          "name": "pipeline_id",
+          "hash": "50fc23224221dbf67c12e6ee33931b2c183b8e2cabd7a56da6c32e56ae238e0b"
+        },
+        {
+          "name": "plan_execution_id",
+          "hash": "a300ba3e01c7428f5992ae07c929da21111bd7670e0b40888978c0901e84101d"
+        },
+        {
+          "name": "project_id",
+          "hash": "5d1f5b068b7410f0be65011b3777b74de87f210ff517482f6b95e72a2256e4e3"
+        }
+      ]
+    },
+    {
+      "name": "get_connector_details",
+      "hash": "8c5ddfc268db76b78ea0fca8c2db9d5562d60e8c478fcb8cdb3fd052e03ac3df",
+      "params": [
+        {
+          "name": "connector_identifier",
+          "hash": "826392cc68b209aa18516dad2b71930b5c410e6619d88207d87e6d6ab2e39653"
+        },
+        {
+          "name": "org_id",
+          "hash": "c15d7bdf41af98ffd70856ef4ed869a683e4112a1cfcaa60f8c4689da0504689"
+        },
+        {
+          "name": "project_id",
+          "hash": "fa81aafa8ba6089f19b9cda92185b2cfc5adbfb5a51918749af91cf2a9a24367"
+        }
+      ]
+    },
+    {
+      "name": "get_dashboard_data",
+      "hash": "10c77c396b6f99f4f1f19f1cda386fd513029cdd5d4cac50b3a440cda1bb6e74",
+      "params": [
+        {
+          "name": "dashboard_id",
+          "hash": "86e16b3179d0f5b1deeedf6807a53cedde4b660f52a321cbe78cb5966c8e0b0a"
+        },
+        {
+          "name": "reporting_timeframe",
+          "hash": "dd80093a054760a295d2d60e4bf0903177ac7d80c3a9fd2adc9c067cd7a3b1f9"
+        }
+      ]
+    },
+    {
+      "name": "get_execution",
+      "hash": "3b3bbc6e056cfc8da6d02c6bd74e8bdf8365653e48c6cca6a52519adb75b9872",
+      "params": [
+        {
+          "name": "child_stage_node_id",
+          "hash": "f6961caa69c059c7eba1452c419575295d89ade33d282c4f17fbc4ea685e9263"
+        },
+        {
+          "name": "org_id",
+          "hash": "319a0322acf57f3d1885f6bf36706596433a9097f11a943825999a3e7e258a04"
+        },
+        {
+          "name": "plan_execution_id",
+          "hash": "a300ba3e01c7428f5992ae07c929da21111bd7670e0b40888978c0901e84101d"
+        },
+        {
+          "name": "project_id",
+          "hash": "5d1f5b068b7410f0be65011b3777b74de87f210ff517482f6b95e72a2256e4e3"
+        },
+        {
+          "name": "stage_node_id",
+          "hash": "d26afda8814479d12a8c539e20fe5e6da4afe62f2e2f749e21ca009adb416bbb"
+        }
+      ]
+    },
+    {
+      "name": "get_pipeline",
+      "hash": "cfa125a010652461b7dcaa62f159663928b9d79eae437c95b838491abf1079ba",
+      "params": [
+        {
+          "name": "org_id",
+          "hash": "319a0322acf57f3d1885f6bf36706596433a9097f11a943825999a3e7e258a04"
+        },
+        {
+          "name": "pipeline_id",
+          "hash": "50fc23224221dbf67c12e6ee33931b2c183b8e2cabd7a56da6c32e56ae238e0b"
+        },
+        {
+          "name": "project_id",
+          "hash": "5d1f5b068b7410f0be65011b3777b74de87f210ff517482f6b95e72a2256e4e3"
+        }
+      ]
+    },
+    {
+      "name": "list_connector_catalogue",
+      "hash": "70cc00497a581feeff7e59c215f8af203d1f73209740a3066ccaad47d348ae0d",
+      "params": [
+        {
+          "name": "org_id",
+          "hash": "c15d7bdf41af98ffd70856ef4ed869a683e4112a1cfcaa60f8c4689da0504689"
+        },
+        {
+          "name": "project_id",
+          "hash": "fa81aafa8ba6089f19b9cda92185b2cfc5adbfb5a51918749af91cf2a9a24367"
+        }
+      ]
+    },
+    {
+      "name": "list_connectors",
+      "hash": "aa851eb542613b132df15049638a668b6286a390c88bfe91f81c9b5d291d3dff",
+      "params": [
+        {
+          "name": "categories",
+          "hash": "b6c93909654f267671ce112f61703f6f43bf5425b13be02f726034e6213ed7bc"
+        },
+        {
+          "name": "connectivity_statuses",
+          "hash": "1cdc9000af20b5b84aab006cfe52bfcbc9003e083c170e8fa9c08522d3d5a21b"
+        },
+        {
+          "name": "connector_connectivity_modes",
+          "hash": "792b469eddde9c6642fb3b0261aea2e9c69e2480e2005532830ccdf27aae8181"
+        },
+        {
+          "name": "connector_identifiers",
+          "hash": "85497353b305bf627aebe613e2ad8b4ad2b480c21ea171b56cfeb14eb249472a"
+        },
+        {
+          "name": "connector_names",
+          "hash": "6da5da3e1f214b817910137e8cae8c90c6b1621c01105a9a50b722afbd7bd74e"
+        },
+        {
+          "name": "description",
+          "hash": "9662e2257a8bb3694bc52c96d80f0453fd471a0165070dbc50a1764a153e9c66"
+        },
+        {
+          "name": "inheriting_credentials_from_delegate",
+          "hash": "437c5039e7caec70e37b8e09bc204e69abe64167ba926a572b37f798b90f9ec4"
+        },
+        {
+          "name": "org_id",
+          "hash": "c15d7bdf41af98ffd70856ef4ed869a683e4112a1cfcaa60f8c4689da0504689"
+        },
+        {
+          "name": "project_id",
+          "hash": "fa81aafa8ba6089f19b9cda92185b2cfc5adbfb5a51918749af91cf2a9a24367"
+        },
+        {
+          "name": "tags",
+          "hash": "f5098c6a93c5c5a69c042b39b5b0afd8bf0e6172a8eb2d160fbddc6056408f16"
+        },
+        {
+          "name": "types",
+          "hash": "ebd2b9e4f3efca85c855d7bec917ac0d72043ea752c56a64e28adb8c8851a809"
+        }
+      ]
+    },
+    {
+      "name": "list_dashboards",
+      "hash": "3d6c84acaa262adbc5396ea7304bd9e96f4ef71629538ea5eb6636d734554c87",
+      "params": [
+        {
+          "name": "page",
+          "hash": "3b67bf7602d18880d7bcf11fdb15e7560ef6fc58fb8136f570b9e6da83d2b084"
+        },
+        {
+          "name": "size",
+          "hash": "f2e65f0a130e2d69335772c1c1dda0767a3ef9415251fdfa0cd4178a574259ca"
+        }
+      ]
+    },
+    {
+      "name": "list_executions",
+      "hash": "639d87a9fc8c56b9da15de96fe1d69f2e6ddfd83f213f72498005f7dc931d025",
+      "params": [
+        {
+          "name": "branch",
+          "hash": "33b16f813d79b5b0a0e5c5cb8c36260f23491303a4dc312b40585e68210ac5a1"
+        },
+        {
+          "name": "my_deployments",
+          "hash": "f6e15331fb4a9d878510fdcb6e0e71e0fe9536766dcb9bf93286f2e80d0443ee"
+        },
+        {
+          "name": "org_id",
+          "hash": "319a0322acf57f3d1885f6bf36706596433a9097f11a943825999a3e7e258a04"
+        },
+        {
+          "name": "page",
+          "hash": "0f84a52795332fb9fca966705296e85388355771590489c2692620c6babff80b"
+        },
+        {
+          "name": "pipeline_identifier",
+          "hash": "ea32bdb79e8c29d407c287993c9e078ad539e607ba8271648d3fb69dcd645054"
+        },
+        {
+          "name": "project_id",
+          "hash": "5d1f5b068b7410f0be65011b3777b74de87f210ff517482f6b95e72a2256e4e3"
+        },
+        {
+          "name": "search_term",
+          "hash": "a31863dbe6950a21ba780b23fadc50767cf84f1df1b74894ce32fb479d35c36d"
+        },
+        {
+          "name": "size",
+          "hash": "f2e65f0a130e2d69335772c1c1dda0767a3ef9415251fdfa0cd4178a574259ca"
+        },
+        {
+          "name": "status",
+          "hash": "cd4cfdb5b7e3bd9b0dac5b737705047da58c5c1d338879715e357995b7c531df"
+        }
+      ]
+    },
+    {
+      "name": "list_pipelines",
+      "hash": "b4106dda0c4f300945d433b87ffaaaed53a36422ff2c8a23ad6d2f557bdf4ab4",
+      "params": [
+        {
+          "name": "org_id",
+          "hash": "319a0322acf57f3d1885f6bf36706596433a9097f11a943825999a3e7e258a04"
+        },
+        {
+          "name": "page",
+          "hash": "0f84a52795332fb9fca966705296e85388355771590489c2692620c6babff80b"
+        },
+        {
+          "name": "project_id",
+          "hash": "5d1f5b068b7410f0be65011b3777b74de87f210ff517482f6b95e72a2256e4e3"
+        },
+        {
+          "name": "search_term",
+          "hash": "cd148af67bed8f4944b2971b11e88a1b87c244c7efd418adf5379a116e86afaa"
+        },
+        {
+          "name": "size",
+          "hash": "f2e65f0a130e2d69335772c1c1dda0767a3ef9415251fdfa0cd4178a574259ca"
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "name": "ask_confirmation_for_update_and_delete_operations",
+      "hash": "5ebf3bbc2ab5ada8722d5d3a3812d73b7768576c64077ffecbb74e7854b95d3d",
+      "params": [
+        {
+          "name": "mode",
+          "hash": "4a1f6a4c26aa5af21d91edf6d2944b28be7acac3b8b37ca2e43aea8fba0fff05"
+        }
+      ]
+    },
+    {
+      "name": "ask_release_agent_prompt",
+      "hash": "cb41cf88479a9a0fe9e3c8a639efebfcef0e653ec9a75d9bd66e7d1a2b61a5cb",
+      "params": [
+        {
+          "name": "mode",
+          "hash": "4a1f6a4c26aa5af21d91edf6d2944b28be7acac3b8b37ca2e43aea8fba0fff05"
+        }
+      ]
+    },
+    {
+      "name": "get_ccm_overview",
+      "hash": "6ae6e3112b6126cc106fa401bdc9199e5510a3176aa521d2e1b7291d5ccb0964",
+      "params": [
+        {
+          "name": "mode",
+          "hash": "4a1f6a4c26aa5af21d91edf6d2944b28be7acac3b8b37ca2e43aea8fba0fff05"
+        }
+      ]
+    },
+    {
+      "name": "pipeline_error_analysis",
+      "hash": "66b3866bce0909dd748682bcca045a725382f678663cf1bc91539b45012abf9a",
+      "params": [
+        {
+          "name": "mode",
+          "hash": "4a1f6a4c26aa5af21d91edf6d2944b28be7acac3b8b37ca2e43aea8fba0fff05"
+        }
+      ]
+    },
+    {
+      "name": "pipeline_summarizer",
+      "hash": "f06a64cf79f69c86fb003f1c6dfdb8f3ff21df634f26c549e525b2ee370fb26c",
+      "params": [
+        {
+          "name": "mode",
+          "hash": "4a1f6a4c26aa5af21d91edf6d2944b28be7acac3b8b37ca2e43aea8fba0fff05"
+        }
+      ]
+    }
+  ]
+}

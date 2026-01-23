@@ -94,6 +94,8 @@ _cross_tool_exclude := [
 	#
 	"generate_column_chart",
 	#
+	"generate_district_map",
+	#
 	"generate_dual_axes_chart",
 	#
 	"generate_fishbone_diagram",
@@ -114,7 +116,11 @@ _cross_tool_exclude := [
 	#
 	"generate_organization_chart",
 	#
+	"generate_path_map",
+	#
 	"generate_pie_chart",
+	#
+	"generate_pin_map",
 	#
 	"generate_radar_chart",
 	#
@@ -127,6 +133,8 @@ _cross_tool_exclude := [
 	"generate_venn_chart",
 	#
 	"generate_violin_chart",
+	#
+	"generate_waterfall_chart",
 	#
 	"generate_word_cloud_chart",
 	#

@@ -106,11 +106,15 @@
     },
     {
       "name": "get_anime",
-      "hash": "01427fe8bff6f28b326483a960e9f8a703eb65a3b9f6ab6496e2739c4e6eb323",
+      "hash": "d9b9eca5a5cd7577b95ffd99edcfabb555d751d5fe3a4289d1275d8f15292bd3",
       "params": [
         {
-          "name": "id",
-          "hash": "e84f610046dfa29979b874dd94eedd62985185c1f8725b4cb96ace70df1b68ef"
+          "name": "fullData",
+          "hash": "8beb14df5af173be32c0b1c9a0a74aff3063ee5c603f829c7958290595af63b7"
+        },
+        {
+          "name": "ids",
+          "hash": "ffb104e58ecae2f58782adf30670f76ab36c81e63fd0b4393112ef3d951d90fd"
         }
       ]
     },
@@ -144,11 +148,15 @@
     },
     {
       "name": "get_manga",
-      "hash": "ff745d329e1ded5519ec851464b84991bac3477ba666eb00ebf364c3cdc58f58",
+      "hash": "7e0130ec9f4430c5036a99795ea2590bdba79ee5a80abc77dfb6c19acbdd5aac",
       "params": [
         {
-          "name": "id",
-          "hash": "50a243b88b74c604f24eedfc156eed1edac57b0f5a75e686ccc8c502b4363d32"
+          "name": "fullData",
+          "hash": "8beb14df5af173be32c0b1c9a0a74aff3063ee5c603f829c7958290595af63b7"
+        },
+        {
+          "name": "ids",
+          "hash": "82abd28ac663c282009e2984d4d113383f40ebb6d4a6a66f046b4dda007ae4a1"
         }
       ]
     },

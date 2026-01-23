@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://acuvity.ai">
     <picture>
-      <img src="https://mma.prnewswire.com/media/2544052/Acuvity__Logo.jpg" height="90" alt="Acuvity logo"/>
+      <img src="https://acuvity.ai/wp-content/uploads/2025/09/1.-Acuvity-Logo-Black-scaled-e1758135197226.png" height="90" alt="Acuvity logo"/>
     </picture>
   </a>
 </p>
@@ -21,10 +21,10 @@
 # What is mcp-server-circleci?
 [![Rating](https://img.shields.io/badge/C-3775A9?label=Rating)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/implement-tool-use#best-practices-for-tool-definitions)
 [![Helm](https://img.shields.io/badge/1.0.0-3775A9?logo=helm&label=Charts&logoColor=fff)](https://hub.docker.com/r/acuvity/mcp-server-circleci/tags/)
-[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-circleci/0.9.1?logo=docker&logoColor=fff&label=0.9.1)](https://hub.docker.com/r/acuvity/mcp-server-circleci)
-[![PyPI](https://img.shields.io/badge/0.9.1-3775A9?logo=pypi&logoColor=fff&label=@circleci/mcp-server-circleci)](https://github.com/CircleCI-Public/mcp-server-circleci)
+[![Docker](https://img.shields.io/docker/image-size/acuvity/mcp-server-circleci/0.14.1?logo=docker&logoColor=fff&label=0.14.1)](https://hub.docker.com/r/acuvity/mcp-server-circleci)
+[![PyPI](https://img.shields.io/badge/0.14.1-3775A9?logo=pypi&logoColor=fff&label=@circleci/mcp-server-circleci)](https://github.com/CircleCI-Public/mcp-server-circleci)
 [![Scout](https://img.shields.io/badge/Active-3775A9?logo=docker&logoColor=fff&label=Scout)](https://hub.docker.com/r/acuvity/mcp-server-circleci/)
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-circleci&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-circleci%3A0.9.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-circleci&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-circleci%3A0.14.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 **Description:** Enable AI Agents to fix build failures from CircleCI.
 
@@ -43,69 +43,70 @@ To address this need, we've created a secure and robust Docker image designed to
 
 ## 🔐 Key Security Features
 
-<details>
-<summary>📦 Isolated Immutable Sandbox </summary>
+### 📦 Isolated Immutable Sandbox
 
-- **Isolated Execution**: All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.
-- **Non-root by Default**: Enforces least-privilege principles, minimizing the impact of potential security breaches.
-- **Read-only Filesystem**: Ensures runtime immutability, preventing unauthorized modification.
-- **Version Pinning**: Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.
-- **CVE Scanning**: Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation.
-- **SBOM & Provenance**: Delivers full supply chain transparency by embedding metadata and traceable build information."
-</details>
+| Feature                   | Description                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Isolated Execution        | All tools run within secure, containerized sandboxes to enforce process isolation and prevent lateral movement.         |
+| Non-root by Default       | Enforces least-privilege principles, minimizing the impact of potential security breaches.                              |
+| Read-only Filesystem      | Ensures runtime immutability, preventing unauthorized modification.                                                     |
+| Version Pinning           | Guarantees consistency and reproducibility across deployments by locking tool and dependency versions.                  |
+| CVE Scanning              | Continuously scans images for known vulnerabilities using [Docker Scout](https://docs.docker.com/scout/) to support proactive mitigation. |
+| SBOM & Provenance         | Delivers full supply chain transparency by embedding metadata and traceable build information.                          |
+| Container Signing (Cosign) | Implements image signing using [Cosign](https://github.com/sigstore/cosign) to ensure integrity and authenticity of container images.                             |
 
-<details>
-<summary>🛡️ Runtime Security and Guardrails</summary>
+
+### 🛡️ Runtime Security and Guardrails
 
 **Minibridge Integration**: [Minibridge](https://github.com/acuvity/minibridge) establishes secure Agent-to-MCP connectivity, supports Rego/HTTP-based policy enforcement 🕵️, and simplifies orchestration.
 
 The [ARC](https://github.com/acuvity/mcp-servers-registry/tree/main) container includes a [built-in Rego policy](https://github.com/acuvity/mcp-servers-registry/tree/main/mcp-server-circleci/docker/policy.rego) that enables a set of runtime "guardrails"" to help enforce security, privacy, and correct usage of your services. Below is an overview of each guardrail provided.
 
-### 🔒 Resource Integrity
+#### 🔒 Resource Integrity
 
 **Mitigates MCP Rug Pull Attacks**
 
 * **Goal:** Protect users from malicious tool description changes after initial approval, preventing post-installation manipulation or deception.
 * **Mechanism:** Locks tool descriptions upon client approval and verifies their integrity before execution. Any modification to the description triggers a security violation, blocking unauthorized changes from server-side updates.
 
-### 🛡️ Guardrails
+#### 🛡️ Guardrails
 
-#### Covert Instruction Detection
+##### Covert Instruction Detection
 
 Monitors incoming requests for hidden or obfuscated directives that could alter policy behavior.
 
 * **Goal:** Stop attackers from slipping unnoticed commands or payloads into otherwise harmless data.
 * **Mechanism:** Applies a library of regex patterns and binary‐encoding checks to the full request body. If any pattern matches a known covert channel (e.g., steganographic markers, hidden HTML tags, escape-sequence tricks), the request is rejected.
 
-#### Sensitive Pattern Detection
+##### Sensitive Pattern Detection
 
 Block user-defined sensitive data patterns (credential paths, filesystem references).
 
 * **Goal:** Block accidental or malicious inclusion of sensitive information that violates data-handling rules.
 * **Mechanism:** Runs a curated set of regexes against all payloads and tool descriptions—matching patterns such as `.env` files, RSA key paths, directory traversal sequences.
 
-#### Shadowing Pattern Detection
+##### Shadowing Pattern Detection
 
 Detects and blocks "shadowing" attacks, where a malicious MCP server sneaks hidden directives into its own tool descriptions to hijack or override the behavior of other, trusted tools.
 
 * **Goal:** Stop a rogue server from poisoning the agent’s logic by embedding instructions that alter how a different server’s tools operate (e.g., forcing all emails to go to an attacker’s address even when the user calls a separate `send_email` tool).
 * **Mechanism:** During policy load, each tool description is scanned for cross‐tool override patterns—such as `<IMPORTANT>` sections referencing other tool names, hidden side‐effects, or directives that apply to a different server’s API. Any description that attempts to shadow or extend instructions for a tool outside its own namespace triggers a policy violation and is rejected.
 
-#### Schema Misuse Prevention
+##### Schema Misuse Prevention
 
 Enforces strict adherence to MCP input schemas.
 
 * **Goal:** Prevent malformed or unexpected fields from bypassing validations, causing runtime errors, or enabling injections.
 * **Mechanism:** Compares each incoming JSON object against the declared schema (required properties, allowed keys, types). Any extra, missing, or mistyped field triggers an immediate policy violation.
 
-#### Cross-Origin Tool Access
+##### Cross-Origin Tool Access
 
 Controls whether tools may invoke tools or services from external origins.
 
 * **Goal:** Prevent untrusted or out-of-scope services from being called.
 * **Mechanism:** Examines tool invocation requests and outgoing calls, verifying each target against an allowlist of approved domains or service names. Calls to any non-approved origin are blocked.
 
-#### Secrets Redaction
+##### Secrets Redaction
 
 Automatically masks sensitive values so they never appear in logs or responses.
 
@@ -114,7 +115,7 @@ Automatically masks sensitive values so they never appear in logs or responses.
 
 These controls ensure robust runtime integrity, prevent unauthorized behavior, and provide a foundation for secure-by-design system operations.
 
-### Enable guardrails
+#### Enable guardrails
 
 To activate guardrails in your Docker containers, define the `GUARDRAILS` environment variable with the protections you need.
 
@@ -129,7 +130,7 @@ To activate guardrails in your Docker containers, define the `GUARDRAILS` enviro
 
 Example: add `-e GUARDRAILS="secrets-redaction sensitive-pattern-detection"` to enable those guardrails.
 
-## 🔒 Basic Authentication via Shared Secret
+#### 🔒 Basic Authentication via Shared Secret
 
 Provides a lightweight auth layer using a single shared token.
 
@@ -143,10 +144,8 @@ Example: add `-e BASIC_AUTH_SECRET="supersecret"` to enable the basic authentica
 > While basic auth will protect against unauthorized access, you should use it only in controlled environment,
 > rotate credentials frequently and **always** use TLS.
 
-</details>
-
 > [!NOTE]
-> By default, all guardrails are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
+> By default, all guardrails except `resource integrity` are turned off. You can enable or disable each one individually, ensuring that only the protections your environment needs are active.
 
 
 # 📦 How to Install
@@ -174,7 +173,7 @@ Below are the steps for configuring most clients that use MCP to elevate their C
 
 To get started immediately, you can use the "one-click" link below:
 
-[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-circleci&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-circleci%3A0.9.1%22%5D%2C%22command%22%3A%22docker%22%7D)
+[![Install in VS Code Docker](https://img.shields.io/badge/VS_Code-One_click_install-0078d7?logo=githubcopilot)](https://insiders.vscode.dev/redirect/mcp/install?name=mcp-server-circleci&config=%7B%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22--read-only%22%2C%22docker.io%2Facuvity%2Fmcp-server-circleci%3A0.14.1%22%5D%2C%22command%22%3A%22docker%22%7D)
 
 ## Global scope
 
@@ -191,7 +190,7 @@ Press `ctrl + shift + p` and type `Preferences: Open User Settings JSON` to add 
           "-i",
           "--rm",
           "--read-only",
-          "docker.io/acuvity/mcp-server-circleci:0.9.1"
+          "docker.io/acuvity/mcp-server-circleci:0.14.1"
         ]
       }
     }
@@ -213,7 +212,7 @@ In your workspace create a file called `.vscode/mcp.json` and add the following 
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-circleci:0.9.1"
+        "docker.io/acuvity/mcp-server-circleci:0.14.1"
       ]
     }
   }
@@ -239,7 +238,7 @@ In `~/.codeium/windsurf/mcp_config.json` add the following section:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-circleci:0.9.1"
+        "docker.io/acuvity/mcp-server-circleci:0.14.1"
       ]
     }
   }
@@ -267,7 +266,7 @@ Add the following JSON block to your mcp configuration file:
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-circleci:0.9.1"
+        "docker.io/acuvity/mcp-server-circleci:0.14.1"
       ]
     }
   }
@@ -293,7 +292,7 @@ In the `claude_desktop_config.json` configuration file add the following section
         "-i",
         "--rm",
         "--read-only",
-        "docker.io/acuvity/mcp-server-circleci:0.9.1"
+        "docker.io/acuvity/mcp-server-circleci:0.14.1"
       ]
     }
   }
@@ -312,7 +311,7 @@ See [Anthropic documentation](https://docs.anthropic.com/en/docs/agents-and-tool
 async with MCPServerStdio(
     params={
         "command": "docker",
-        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-circleci:0.9.1"]
+        "args": ["run","-i","--rm","--read-only","docker.io/acuvity/mcp-server-circleci:0.14.1"]
     }
 ) as server:
     tools = await server.list_tools()
@@ -341,7 +340,7 @@ See [OpenAI Agents SDK docs](https://openai.github.io/openai-agents-python/mcp/)
 In your client configuration set:
 
 - command: `docker`
-- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-circleci:0.9.1`
+- arguments: `run -i --rm --read-only docker.io/acuvity/mcp-server-circleci:0.14.1`
 
 </details>
 
@@ -351,7 +350,7 @@ In your client configuration set:
 Simply run as:
 
 ```console
-docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-circleci:0.9.1
+docker run -it -p 8000:8000 --rm --read-only docker.io/acuvity/mcp-server-circleci:0.14.1
 ```
 
 Then on your application/client, you can configure to use it like:
@@ -455,7 +454,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 # 🧠 Server features
 
-## 🧰 Tools (12)
+## 🧰 Tools (16)
 <details>
 <summary>get_build_failure_logs</summary>
 
@@ -509,7 +508,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| params | object | not set | Yes
+| params | object | not set | No
 </details>
 <details>
 <summary>find_flaky_tests</summary>
@@ -558,7 +557,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| params | object | not set | Yes
+| params | object | not set | No
 </details>
 <details>
 <summary>get_latest_pipeline_status</summary>
@@ -613,7 +612,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| params | object | not set | Yes
+| params | object | not set | No
 </details>
 <details>
 <summary>get_job_test_results</summary>
@@ -683,7 +682,7 @@ See full charts [Readme](https://github.com/acuvity/mcp-servers-registry/tree/ma
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| params | object | not set | Yes
+| params | object | not set | No
 </details>
 <details>
 <summary>config_helper</summary>
@@ -721,7 +720,7 @@ orbs:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| params | object | not set | Yes
+| params | object | not set | No
 </details>
 <details>
 <summary>create_prompt_template</summary>
@@ -747,14 +746,16 @@ orbs:
   - params: object
     - prompt: string (the feature requirements or pre-existing prompt/prompt template that will be used to generate a prompt template. Can be a multi-line string.)
     - promptOrigin: "codebase" | "requirements" (indicates whether the prompt comes from an existing codebase or from new requirements)
-    - model: string (the model that the prompt template will be tested against. Explicitly specify the model if it can be inferred from the codebase. Otherwise, defaults to `gpt-4o-mini`.)
+    - model: string (the model that the prompt template will be tested against. Explicitly specify the model if it can be inferred from the codebase. Otherwise, defaults to `gpt-4.1-mini`.)
+    - temperature: number (the temperature of the prompt template. Explicitly specify the temperature if it can be inferred from the codebase. Otherwise, defaults to 1.)
 
   EXAMPLE USAGE (from new requirements):
   {
     "params": {
       "prompt": "Create an app that takes any topic and an age (in years), then renders a 1-minute bedtime story for a person of that age.",
       "promptOrigin": "requirements"
-      "model": "gpt-4o-mini"
+      "model": "gpt-4.1-mini"
+      "temperature": 1.0
     }
   }
 
@@ -764,6 +765,7 @@ orbs:
       "prompt": "The user wants a bedtime story about {{topic}} for a person of age {{age}} years old. Please craft a captivating tale that captivates their imagination and provides a delightful bedtime experience.",
       "promptOrigin": "codebase"
       "model": "claude-3-5-sonnet-latest"
+      "temperature": 0.7
     }
   }
 
@@ -780,7 +782,7 @@ orbs:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| params | object | not set | Yes
+| params | object | not set | No
 </details>
 <details>
 <summary>recommend_prompt_template_tests</summary>
@@ -823,7 +825,7 @@ orbs:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| params | object | not set | Yes
+| params | object | not set | No
 </details>
 <details>
 <summary>run_pipeline</summary>
@@ -877,7 +879,7 @@ orbs:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| params | object | not set | Yes
+| params | object | not set | No
 </details>
 <details>
 <summary>list_followed_projects</summary>
@@ -913,7 +915,7 @@ orbs:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| params | object | not set | Yes
+| params | object | not set | No
 </details>
 <details>
 <summary>run_evaluation_tests</summary>
@@ -974,7 +976,7 @@ orbs:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| params | object | not set | Yes
+| params | object | not set | No
 </details>
 <details>
 <summary>rerun_workflow</summary>
@@ -1007,7 +1009,79 @@ Option 2 - Workflow URL:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| params | object | not set | Yes
+| params | object | not set | No
+</details>
+<details>
+<summary>download_usage_api_data</summary>
+
+**Description**:
+
+```
+
+    ⚠️ **MANDATORY: The handler will REJECT any call that does not include BOTH outputDir and originalUserMessage. These parameters are REQUIRED for all tool calls.**
+    
+    ⚠️ **MANDATORY OUTPUT DIRECTORY SELECTION FOR AI AGENTS:**
+    1. If the project root (workspace root) is available (e.g., via `workspaceRoot` or known repository context), you MUST pass it as the `outputDir` parameter.
+    2. If the project root is not available, you MUST use the user's Downloads folder (e.g., `~/Downloads` or `%USERPROFILE%\Downloads`) as the `outputDir` parameter.
+    3. Only if neither is available, use the current working directory (`process.cwd()`).
+    4. **Never omit the `outputDir` parameter. Always make the output location explicit.**
+    5. **Omitting `outputDir` is a critical error. Tool calls without `outputDir` may be rejected or flagged as incorrect. Repeated violations may be treated as a bug in the AI agent.**
+    6. **AI agents MUST validate their tool calls to ensure `outputDir` is present before execution.**
+
+    Downloads usage data from the CircleCI Usage API for a given organization and date range.
+    This tool both starts the export job and downloads the resulting CSV file when ready.
+    Required parameters: orgId, startDate, endDate, outputDir.
+
+    **outputDir (required):**
+    The directory where the usage data CSV will be saved.
+    - You MUST provide `outputDir` for every tool call.
+    - The file will be saved in the specified directory.
+    - Omitting `outputDir` will result in an error.
+
+    **Directory Selection Instructions for AI Agents:**
+    - If the project root is available (e.g., via `workspaceRoot`, `outputDir`, or known repository context), always use it as the output directory for file outputs.
+    - If no project root is available (e.g., running in the user's home directory or a generic environment), use the user's Downloads folder (e.g., `~/Downloads` or `%USERPROFILE%\Downloads`)
+    - If neither is available, fall back to the current working directory.
+    - Never place output files in a location that is hard to discover for the user.
+    - **Always double-check that `outputDir` is present in your tool call.**
+    - **Always double-check that `originalUserMessage` is present in your tool call.**
+
+    This ensures that downloaded usage data is always saved in a location that is relevant and easy for the user to find, and that the output is always copy-paste friendly for status checks, regardless of the environment in which the tool is run.
+  
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| params | object | not set | No
+</details>
+<details>
+<summary>find_underused_resource_classes</summary>
+
+**Description**:
+
+```
+
+    Analyzes a CircleCI usage data CSV file to find jobs/resource classes with average or max CPU/RAM usage below a given threshold (default 40%).
+    This helps identify underused resource classes that may be oversized for their workload.
+
+    Required parameter:
+    - csvFilePath: Path to the usage data CSV file (string). IMPORTANT: This must be an absolute path. If you are given a relative path, you must resolve it to an absolute path before calling this tool.
+
+    Optional parameter:
+    - threshold: Usage percentage threshold (number, default 40)
+
+    The tool expects the CSV to have columns: job_name, resource_class, median_cpu_utilization_pct, max_cpu_utilization_pct, median_ram_utilization_pct, max_ram_utilization_pct (case-insensitive). These required columns are a subset of the columns in the CircleCI usage API output and the tool will work with the full set of columns from the usage API CSV.
+    It returns a summary report listing all jobs/resource classes where any of these metrics is below the threshold.
+  
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| params | object | not set | No
 </details>
 <details>
 <summary>analyze_diff</summary>
@@ -1016,16 +1090,18 @@ Option 2 - Workflow URL:
 
 ```
 
-  This tool is used to analyze a git diff (unstaged, staged, or all changes) against cursor rules to check for rule violations.
-  By default, the tool will use the staged changes if the user does not explicitly ask for unstaged changes or all changes.
+  This tool is used to analyze a git diff (unstaged, staged, or all changes) against IDE rules to identify rule violations.
+  By default, the tool will use the staged changes, unless the user explicitly asks for unstaged or all changes.
 
   Parameters:
   - params: An object containing:
+    - speedMode: boolean - A mode that can be enabled to speed up the analysis. Default value is false.
+    - filterBy: enum - "Violations" | "Compliants" | "Human Review Required" | "None" - A filter that can be applied to set the focus of the analysis. Default is None.
     - diff: string - A git diff string.
-    - rules: string - Rules to use for analysis. Rule from .cursorrules or rules in .cursor/rules directory. Combine all rules from multiple files by separating them with ---
+    - rules: string - Rules to use for analysis, found in the rules subdirectory of the IDE workspace settings. Combine all rules from multiple files by separating them with ---
 
   Returns:
-  - A list of violations found in the git diff.
+  - A list of rule violations found in the git diff.
   
 ```
 
@@ -1033,7 +1109,137 @@ Option 2 - Workflow URL:
 
 | Name | Type | Description | Required? |
 |-----------|------|-------------|-----------|
-| params | object | not set | Yes
+| params | object | not set | No
+</details>
+<details>
+<summary>run_rollback_pipeline</summary>
+
+**Description**:
+
+```
+
+    Run a rollback pipeline for a CircleCI project. This tool guides you through the full rollback process, adapting to the information you provide and prompting for any missing details.
+
+    **Initial Requirements:**
+    - You need either a `projectSlug` (from `listFollowedProjects`) or a `projectID`. The tool will automatically resolve the project information from either of these.
+
+    **Typical Flow:**
+    1. **Start:** User initiates a rollback request.
+    2. **Project Selection:** If project id or project slug are not provided, call `listFollowedProjects` to get the list of projects the user follows and present the full list of projects to the user so that they can select the project they want to rollback.
+    3. **Project Information:** Provide either `projectSlug` or `projectID`. The tool will automatically resolve the project information as needed.
+    4. **Version Selection:** If component environment and version are not provided, call `listComponentVersions` to get the list of versions for the selected component and environment. If there is only one version, proceed automatically and do not ask the user to select a version. Otherwise, present the user with the full list of versions and ask them to select one. Always return all available values without categorizing them.
+    5. **Rollback Reason** ask the user for an optional reason for the rollback (e.g., "Critical bug fix"). Skip this step is the user explicitly requests a rollback by workflow rerun.
+    6. **Rollback pipeline check** if the tool reports that no rollback pipeline is defined, ask the user if they want to trigger a rollback by workflow rerun or suggest to setup a rollback pipeline following the documentation at https://circleci.com/docs/deploy/rollback-a-project-using-the-rollback-pipeline/.
+    7. **Confirmation:** Summarize the rollback request and confirm with the user before submitting.
+    8. **Pipeline Rollback:**  if the user requested a rollback by pipeline, call `runRollbackPipeline` passing all parameters including the namespace associated with the version to the tool.
+    9. **Workflow Rerun** If the user requested a rollback by workflow rerun, call `rerunWorkflow` passing the workflow ID of the selected version to the tool.
+    10.**Completion:** Report the outcome of the operation.
+
+    **Parameters:**
+    - `projectSlug` (optional): The project slug from `listFollowedProjects` (e.g., "gh/organization/project"). Either this or `projectID` must be provided.
+    - `projectID` (optional): The CircleCI project ID (UUID). Either this or `projectSlug` must be provided.
+    - `environmentName` (required): The target environment (e.g., "production", "staging").
+    - `componentName` (required): The component to rollback (e.g., "frontend", "backend").
+    - `currentVersion` (required): The currently deployed version.
+    - `targetVersion` (required): The version to rollback to.
+    - `namespace` (required): The namespace of the component.
+    - `reason` (optional): Reason for the rollback.
+    - `parameters` (optional): Additional rollback parameters as key-value pairs.
+
+    **Behavior:**
+    - If there are more than 20 environments or components, ask the user to refine their selection.
+    - Never attempt to guess or construct project slugs or URLs; always use values provided by the user or from `listFollowedProjects`.
+    - Do not prompt for missing parameters until versions have been listed.
+    - Do not call this tool with incomplete parameters.
+    - If the selected project lacks rollback pipeline configuration, provide a definitive error message without suggesting alternative projects.
+
+    **Returns:**
+    - On success: The rollback ID or a confirmation in case of workflow rerun.
+    - On error: A clear message describing what is missing or what went wrong.
+    - If the selected project does not have a rollback pipeline configured: The tool will provide a clear error message specific to that project and will NOT suggest trying another project.
+
+    **Important Note:**
+    - This tool is designed to work only with the specific project provided by the user.
+    - If a project does not have rollback capability configured, the tool will NOT recommend trying other projects.
+    - The assistant should NOT suggest trying different projects when a project lacks rollback configuration.
+    - Each project must have its own rollback pipeline configuration to be eligible for rollback operations.
+    - When a project cannot be rolled back, provide only the configuration guidance for THAT specific project.
+    - The tool automatically resolves project information from either `projectSlug` or `projectID`.
+    If no version is found, the tool will suggest the user to set up deploy markers following the documentation at:
+    https://circleci.com/docs/deploy/configure-deploy-markers/
+  
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| params | object | not set | No
+</details>
+<details>
+<summary>list_component_versions</summary>
+
+**Description**:
+
+```
+
+     This tool lists all versions for a CircleCI component. It guides you through a multi-step process to gather the required information and provides lists of available options when parameters are missing.
+
+     **Initial Requirements:**
+     - You need either a `projectSlug` (from `listFollowedProjects`) or a `projectID`. The tool will automatically resolve the `orgID` from either of these.
+
+     **Typical Flow:**
+     1. **Start:** User requests component versions or deployment information.
+     2. **Project Information:** Provide either `projectSlug` or `projectID`. The tool will automatically resolve the `orgID` and `projectID` as needed.
+     3. **Environment Selection:** If `environmentID` is not provided, the tool will list all available environments for the organization and prompt the user to select one. Always return all available values without categorizing them.
+     4. **Component Selection:** If `componentID` is not provided, the tool will list all available components for the project and prompt the user to select one. Always return all available values without categorizing them.
+     5. **Version Listing:** Once both `environmentID` and `componentID` are provided, the tool will list all versions for that component in the specified environment.
+     6. **Selection:** User selects a version from the list for subsequent operations.
+
+     **Parameters:**
+     - `projectSlug` (optional): The project slug from `listFollowedProjects` (e.g., "gh/organization/project"). Either this or `projectID` must be provided.
+     - `projectID` (optional): The CircleCI project ID (UUID). Either this or `projectSlug` must be provided.
+     - `orgID` (optional): The organization ID. If not provided, it will be automatically resolved from `projectSlug` or `projectID`.
+     - `environmentID` (optional): The environment ID. If not provided, available environments will be listed.
+     - `componentID` (optional): The component ID. If not provided, available components will be listed.
+
+     **Behavior:**
+     - The tool will guide you through the selection process step by step.
+     - Automatically resolves `orgID` from `projectSlug` or `projectID` when needed.
+     - When `environmentID` is missing, it lists environments and waits for user selection.
+     - When `componentID` is missing (but `environmentID` is provided), it lists components and waits for user selection.
+     - Only when both `environmentID` and `componentID` are provided will it list the actual component versions.
+     - Make multiple calls to this tool as you gather the required parameters.
+
+     **Common Use Cases:**
+     - Identify which versions were deployed for a component
+     - Identify which versions are live for a component
+     - Identify which versions were deployed to an environment for a component
+     - Identify which versions are not live for a component in an environment
+     - Select a version for rollback or deployment operations
+     - Obtain version name, namespace, and environment details for other CircleCI tools
+
+     **Returns:**
+     - When missing `environmentID`: A list of available environments with their IDs
+     - When missing `componentID`: A list of available components with their IDs  
+     - When both `environmentID` and `componentID` provided: A list of component versions with version name, namespace, environment ID, and is_live status
+
+     **Important Notes:**
+     - This tool requires multiple calls to gather all necessary information.
+     - Either `projectSlug` or `projectID` must be provided; the tool will resolve the missing project information automatically.
+     - The tool will prompt for missing `environmentID` and `componentID` by providing selection lists.
+     - Always use the exact IDs returned by the tool in subsequent calls.
+     - If pagination limits are reached, the tool will indicate that not all items could be displayed.
+
+     **IMPORTANT:** Do not automatically run additional tools after this tool is called. Wait for explicit user instruction before executing further tool calls. The LLM MUST NOT invoke other CircleCI tools until receiving clear instruction from the user about what to do next, even if the user selects an option. It is acceptable to list out tool call options for the user to choose from, but do not execute them until instructed.
+     
+```
+
+**Parameter**:
+
+| Name | Type | Description | Required? |
+|-----------|------|-------------|-----------|
+| params | object | not set | No
 </details>
 
 
@@ -1043,18 +1249,22 @@ Minibridge will perform hash checks for the following resources. The hashes are 
 
 | Resource | Name | Parameter | Hash |
 |-----------|------|------|------|
-| tools | analyze_diff | description | 3a6df735f38d4674c7151a2b9cef9c4be414cc5c0fd1e3421f8f345a6a54b7cb |
+| tools | analyze_diff | description | 9ee6b9394b34f13a242630fed7ad591ff6985c31373d9a397d1964525239a3b1 |
 | tools | config_helper | description | f02dd33f38a3495a590d901debe94a7d61f55b1c13aa49695ea04495280a6a81 |
-| tools | create_prompt_template | description | 1a0d5f49ed5ef89ab02439a0fc88d97c2623bd19082b8b8f307f513ba759313f |
+| tools | create_prompt_template | description | 8b7fea3ff871e70405c6e03a6e9c9105e4ab114b0dee8ea0f52259915f107800 |
+| tools | download_usage_api_data | description | 61f3671aa19af104425e1301b00878141cdb92e465889785ee371fee54b55ebd |
 | tools | find_flaky_tests | description | d7791ab55054527245f4201e3f3e852a2260aabb35703b49b88f617f585ce931 |
+| tools | find_underused_resource_classes | description | bb91096154f1cee077539a8e36d7d9200e6b1f24ae32e8ef0f9914c71ad055e0 |
 | tools | get_build_failure_logs | description | 0a53cd10b05b19c22e09353276900b0eac42fae325a0a17f0404a38eb917a3da |
 | tools | get_job_test_results | description | f193e7ccd1d8695d7c7b830f6ad58ec602a544b679c1309bc6d19a7ec9d61b72 |
 | tools | get_latest_pipeline_status | description | 63b01e12f1d869921e612fd53bc8f010312aeec0af67a2a9fad71a73114bdb49 |
+| tools | list_component_versions | description | 9e9452e495069d1bc7fefc8ff62d1f15e83b07b1b803f18c1116578f96b42de0 |
 | tools | list_followed_projects | description | 505f69b885e2acbd4c3210dd5d405128bef0b85673ecbe797674ecb358410533 |
 | tools | recommend_prompt_template_tests | description | 7481bf74eda856271b8b6ae88d71d8aa8a64f031ee83b407c3362332386b1b39 |
 | tools | rerun_workflow | description | 37895cf96d7fd2ed226e0aa1e0c5c30652436fae285136016d3a30205bb29ee8 |
 | tools | run_evaluation_tests | description | f9b65c47dc2ab687a5d6e567fc28177ae5f5ca552f74a3cf1c30e68a761e0082 |
 | tools | run_pipeline | description | 27592345c42aec34546ce5d145ceab8ee313d902276bfea3d357ebd3c88126ae |
+| tools | run_rollback_pipeline | description | 3b682c4d061a1c77dad1f4a2ec46439329a6bfa56605d16b0b232cd66b51412b |
 
 
 💬 Questions? Open an issue or contact [ support@acuvity.ai ](mailto:support@acuvity.ai).

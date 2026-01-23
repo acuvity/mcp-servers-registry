@@ -88,19 +88,31 @@ _cross_tool_exclude := [
 	#
 	"echo",
 	#
-	"add",
+	"get-annotated-message",
 	#
-	"printEnv",
+	"get-env",
 	#
-	"longRunningOperation",
+	"get-resource-links",
 	#
-	"sampleLLM",
+	"get-resource-reference",
 	#
-	"getTinyImage",
+	"get-structured-content",
 	#
-	"annotatedMessage",
+	"get-sum",
 	#
-	"getResourceReference",
+	"get-tiny-image",
+	#
+	"gzip-file-as-resource",
+	#
+	"toggle-simulated-logging",
+	#
+	"toggle-subscriber-updates",
+	#
+	"trigger-long-running-operation",
+	#
+	"get-roots-list",
+	#
+	"trigger-sampling-request",
 	#
 	# exclude word that might be misdetected
 	"to",

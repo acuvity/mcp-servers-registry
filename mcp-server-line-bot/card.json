@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "0.3.0",
+  "version": "0.4.2",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"6436cfc8769aa395ea98c443ebc13f3a5d5278e6d20473be6266bc788b125bd9","reason":"The toolset demonstrates good documentation quality with clear, descriptive names and comprehensive descriptions that explain functionality, usage context, and important warnings (like broadcast warnings). Parameter documentation is generally thorough with clear descriptions, types, and constraints. However, some complex parameters like the flex message 'contents' structure could benefit from more detailed explanation of the LINE Flex Message format requirements, and a few simpler tools have minimal but adequate descriptions.","score":"B"},
+  "rating": {"hash":"3cd2c5854a8d372f8f199e04893afa3faff010bf66b689781a07fbb7cc6eabdf","reason":"The toolset provides clear, descriptive tool names and good descriptions that explain functionality and context. Most tools include helpful warnings about broadcast behavior and adequate parameter documentation. However, the extremely complex flex message schemas with deep nesting and extensive references create readability challenges, and some parameter descriptions could be more detailed (e.g., userId defaults, rich menu ID formats).","score":"B"},
   "resources": {
-    "tools": 10,
+    "tools": 11,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0

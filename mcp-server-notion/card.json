@@ -13,12 +13,12 @@
   "scope": "remote",
   "mutitenant": true,
   "runtime": "node",
-  "version": "1.8.1",
+  "version": "2.0.0",
   "requiresConfiguration": true,
   "requiresStorage": false,
-  "rating": {"hash":"bf3ca516d32c70d64d18873c4e6f76235a047f62aa1aca8fde857619d7b98fea","reason":"Most tool descriptions are extremely brief (1-4 words) and lack context about functionality, usage, or limitations. While parameter descriptions are generally adequate with clear types and purposes, the tool descriptions fail to explain what the tools do, when to use them, or what they return. The consistent 'API-' prefix doesn't help distinguish between tools, and descriptions like 'Query a database' or 'Search by title' provide minimal guidance for proper usage.","score":"D"},
+  "rating": {"hash":"9f3e90c0ee935c66001a479ffb0dfbc3dd0d9929f444bfec35a53743a0847a08","reason":"Tool names use clear API prefixes but descriptions are extremely minimal, providing only basic operation names with generic error responses. Parameter documentation is sparse with many parameters lacking meaningful descriptions or context about their purpose and usage. The toolset fails to explain when tools should be used, what information they provide, or important constraints, leaving users to guess most implementation details.","score":"D"},
   "resources": {
-    "tools": 19,
+    "tools": 21,
     "prompts": 0,
     "resources": 0,
     "resourcesTemplates": 0
